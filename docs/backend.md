@@ -1,9 +1,10 @@
-# Backend Architecture & Cloud Infrastructure Specification
+# Backend Architecture & Cloud Infrastructure Specification (Phase 0 Amendment)
 
 ## 1. Executive Summary & Infrastructure Overview
 
 The Pharmacy Education Platform relies on a cloud-native, serverless architecture hosted on **Google Cloud Platform (GCP)** and **Firebase**. The backend is designed for:
-- **Zero-Trust Access Control**: Server-authoritative content gating where proprietary lesson steps are inaccessible without cryptographically verified entitlements.
+- **Zero-Trust Access Control**: Server-authoritative content gating where proprietary lesson steps beyond the free tier are strictly inaccessible without cryptographically verified entitlements.
+- **Freemium & 7-Day Free Trial Architecture**: Permanent free access to Lessons 1 & 2 of every module, with server-enforced 1-time 7-day trials of full Premium and automated Day 8 downgrade.
 - **Cost Minimization & Predictability**: Pay-per-use serverless execution within free-tier allowances during development, with automated budget alert limits.
 - **Local-First Development**: 100% testable offline via the Firebase Local Emulator Suite (Auth, Firestore, Cloud Functions).
 - **High-Fidelity Chemistry & Pharmacology Delivery**: Efficient caching of molecular structures, simulation configs, and user spaced-repetition queues.
@@ -24,16 +25,17 @@ The Pharmacy Education Platform relies on a cloud-native, serverless architectur
 +-------------------+---------+     +-------------+-------------------------------+
 |       CLOUD FIRESTORE       |     |          FIREBASE CLOUD FUNCTIONS           |
 |                             |     |                                             |
-|  - /courses/{courseId}      |     |  1. createCheckoutSession (Callable)       |
-|  - /courses/.../lessons     |     |  2. handleDodoWebhook (HTTP Webhook)        |
-|  - /courses/.../steps       |     |  3. syncSpacedRepetitionQueue (Callable)    |
-|  - /users/{userId}          |     |  4. verifyContentAccess (Internal Helper)   |
-|  - /users/.../entitlements  |     +-------------+-------------------------------+
-|  - /users/.../progress      |                   |
-|  - /users/.../spaced_review |                   | Webhook Verification / API
-|  - /webhook_events (audit)  |                   v
-+-------------------+---------+     +-------------+-------------------------------+
-                    ^               |            PAYMENT GATEWAY                  |
+|  - /courses/{courseId}      |     |  1. startFreeTrial (Callable, 1x/account)  |
+|  - /courses/.../lessons     |     |  2. createCheckoutSession (Callable)       |
+|  - /courses/.../steps       |     |  3. handleDodoWebhook (HTTP Webhook)        |
+|  - /users/{userId}          |     |  4. syncSpacedRepetitionQueue (Callable)    |
+|  - /users/.../entitlements  |     |  5. cleanupExpiredTrials (Scheduled Cron)   |
+|  - /users/.../progress      |     +-------------+-------------------------------+
+|  - /users/.../spaced_review |                   |
+|  - /webhook_events (audit)  |                   | Webhook Verification / API
++-------------------+---------+                   v
+                    ^               +-------------+-------------------------------+
+                    |               |            PAYMENT GATEWAY                  |
                     |               |             (Dodo Payments)                 |
                     +---------------+---------------------------------------------+
                Entitlement Writes
@@ -56,14 +58,14 @@ All collections adhere to strict naming conventions and schema validation contra
 ```
 
 #### Collection: `/courses/{courseId}`
-- `courseId`: string (e.g., `"medchem"` or `"pharmacology"`)
-- `title`: string (e.g., `"Medicinal Chemistry"`)
-- `slug`: string (e.g., `"medicinal-chemistry"`)
+- `courseId`: string (`"medchem"` or `"pharmacology"`)
+- `title`: string (`"Medicinal Chemistry"` or `"Pharmacology"`)
+- `slug`: string (`"medicinal-chemistry"` or `"pharmacology"`)
 - `description`: string
 - `modulesCount`: number
 - `totalLessons`: number
 - `estimatedHours`: number
-- `freePreviewLessonsCount`: number (default: `2`)
+- `freeLessonsPerModule`: number (default: `2`)
 - `bannerAsset`: string (SVG/WebP URI)
 - `published`: boolean
 - `updatedAt`: timestamp
@@ -79,27 +81,27 @@ All collections adhere to strict naming conventions and schema validation contra
 #### Collection: `/courses/{courseId}/lessons/{lessonId}`
 - `lessonId`: string (e.g., `"mc-les-01"`)
 - `moduleId`: string
-- `orderIndex`: number
+- `orderIndexInModule`: number (1, 2, 3... — **lessons 1 and 2 are always free**)
 - `title`: string
 - `summary`: string
-- `isFreePreview`: boolean (`true` for the first 2 lessons of each course, `false` otherwise)
+- `isFreePreview`: boolean (`true` if `orderIndexInModule <= 2`, `false` otherwise)
 - `stepCount`: number (typically 8–15 steps)
 - `estimatedMinutes`: number (typically 10–15 min)
 - `sources`: array of `{ file: string, page: string | number }`
 - `published`: boolean
 
 #### Collection: `/courses/{courseId}/lessons/{lessonId}/steps/{stepId}`
-*Critical: Protected by Firestore Security Rules. Unlocks only if `step.isFreePreview == true` OR `lesson.isFreePreview == true` OR user possesses an active entitlement.*
+*Critical: Protected by Firestore Security Rules. Unlocks if `step.isFreePreview == true` OR user possesses an active entitlement (`plan == "trial"` or `"premium"` with `expiresAt > request.time`).*
 - `stepId`: string (e.g., `"step-01"`)
 - `orderIndex`: number (1-indexed)
-- `isFreePreview`: boolean (denormalized from lesson for O(1) security rule evaluation)
+- `isFreePreview`: boolean (denormalized from lesson: `true` for first 2 lessons of every module)
 - `pedagogicalType`: string (`"predict_reveal"` | `"worked_example"` | `"faded_practice"` | `"independent_challenge"`)
 - `interactionType`: string (`"multiple_choice"` | `"atom_select"` | `"pk_slider"` | `"curve_match"` | `"bioisostere_replace"`)
 - `prompt`: string (concise instructional text, <40 words)
 - `widgetConfig`: object (typed JSON configuration matching Zod widget schema)
 - `correctAnswer`: any (validated against widget output)
 - `misconceptionFeedback`: map of `{ [misconceptionKey: string]: string }`
-- `hints`: string[] (3-tier ladder: 1. Nudge, 2. Structural/kinetic clue, 3. Solution step)
+- `hints`: string[] (3-tier ladder: 1. Nudge [free], 2. Structural clue [premium/trial], 3. Solution step [premium/trial])
 - `explanation`: string (revealed post-attempt)
 - `sources`: array of `{ file: string, page: string | number }`
 
@@ -118,29 +120,37 @@ All collections adhere to strict naming conventions and schema validation contra
 - `userId`: string (matches Firebase Auth UID)
 - `email`: string
 - `displayName`: string
+- `plan`: string (`"free"` | `"trial"` | `"premium"`)
+- `trialStartedAt`: timestamp | null
+- `trialEndsAt`: timestamp | null
+- `trialUsed`: boolean (server-managed flag, initialized `false`, permanently `true` once activated)
+- `entitlements`: string[] (e.g. `["first_two_lessons_per_module", "core_widgets", "tier1_hints"]` on free, full capabilities on trial/premium)
 - `preferredLanguage`: `"tr"` | `"en"`
-- `country`: string (ISO-2 code, used for PPP determination)
+- `country`: string (ISO-2 code, used for PPP calculation)
 - `createdAt`: timestamp
 - `lastActiveAt`: timestamp
 
 #### Collection: `/users/{userId}/entitlements/{courseId}`
-*Strictly read-only for clients. Writes restricted exclusively to Cloud Functions via Firebase Admin SDK. Document ID is `courseId` (`"medchem"`, `"pharmacology"`, or `"dual_bundle"`) to enable O(1) direct exists() evaluation in security rules.*
+*Strictly read-only for clients. Writes restricted exclusively to Cloud Functions via Firebase Admin SDK. Document ID is `courseId` (`"medchem"`, `"pharmacology"`, or `"dual_bundle"`).*
 - `courseId`: string (`"medchem"` | `"pharmacology"` | `"dual_bundle"`)
-- `entitlementId`: string (unique audit ID, e.g., `"ent_mc_annual_2026"`)
-- `planId`: string (`"monthly"` | `"semester"` | `"annual"` | `"lifetime"`)
-- `status`: string (`"active"` | `"canceled"` | `"expired"` | `"past_due"`)
-- `billingCycle`: string (`"monthly"` | `"semi-annual"` | `"annual"` | `"one-time"`)
+- `entitlementId`: string (unique audit ID)
+- `plan`: string (`"trial"` | `"premium"`)
+- `status`: string (`"active"` | `"expired"` | `"canceled"` | `"revoked"` | `"past_due"`)
+- `planId`: string (`"single_monthly"` | `"single_semester"` | `"single_annual"` | `"trial_7day"` | `"bundle_monthly"` | `"bundle_semester"` | `"bundle_annual"`)
+- `entitlements`: string[] (e.g., `["all_lessons", "ai_feedback", "tier2_3_hints", "cross_device_sync", "certificates"]`)
+- `billingCycle`: string (`"monthly"` | `"semester"` | `"annual"` | `"trial"`)
 - `currency`: string (`"USD"` | `"TRY"` | `"SAR"` | `"EUR"`)
 - `amountPaid`: number
-- `paymentGateway`: string (`"dodo_payments"`)
+- `paymentGateway`: string (`"dodo_payments"` or `"system"` for trial)
 - `gatewaySubscriptionId`: string | null
-- `gatewayOrderId`: string
+- `gatewayOrderId`: string | null
 - `startedAt`: timestamp
-- `expiresAt`: timestamp (ISO timestamp marking end of granted period)
+- `expiresAt`: timestamp (end of trial or paid billing cycle)
 - `autoRenew`: boolean
 - `revokedAt`: timestamp | null
 
 #### Collection: `/users/{userId}/progress/{courseId}`
+*User progress is permanently preserved across trial upgrades and Day 8 auto-downgrades.*
 - `courseId`: string
 - `completedLessonIds`: string[]
 - `currentModuleId`: string
@@ -211,7 +221,7 @@ service cloud.firestore {
     }
 
     // Server-authoritative entitlement check:
-    // User has access if they hold an active entitlement for this specific course OR the dual bundle
+    // Returns true if user possesses an active entitlement (trial or premium) whose expiresAt > request.time
     function hasCourseAccess(courseId) {
       return isAuthenticated() && (
         (
@@ -241,6 +251,8 @@ service cloud.firestore {
         allow write: if false;
 
         // Steps collection: GATED
+        // Permitted if step is in Lesson 1 or 2 of any module (isFreePreview == true)
+        // OR user holds active course/bundle entitlement
         match /steps/{stepId} {
           allow read: if resource.data.isFreePreview == true ||
                          get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.isFreePreview == true ||
@@ -253,11 +265,15 @@ service cloud.firestore {
     // User document & subcollections
     match /users/{userId} {
       allow read: if isOwner(userId);
+      // On creation, client cannot grant self roles, plan, or trialUsed status
       allow create: if isOwner(userId) &&
                        request.resource.data.userId == request.auth.uid &&
-                       !request.resource.data.keys().hasAny(['roles', 'isAdmin']);
+                       !request.resource.data.keys().hasAny(['roles', 'isAdmin', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements']);
+      // On update, sensitive entitlement fields can NEVER be modified by client
       allow update: if isOwner(userId) &&
-                       !request.resource.data.diff(resource.data).affectedKeys().hasAny(['roles', 'isAdmin', 'userId']);
+                       !request.resource.data.diff(resource.data).affectedKeys().hasAny([
+                         'roles', 'isAdmin', 'userId', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements'
+                       ]);
       allow delete: if false;
 
       // Entitlements: Client READ ONLY. Write restricted to Cloud Functions via Admin SDK
@@ -303,24 +319,12 @@ Implemented in **TypeScript** targeting the **Node.js 20/22 runtime** using Fire
 
 | Function Name | Trigger | Auth Required | Purpose |
 | :--- | :--- | :--- | :--- |
+| `startFreeTrial` | `onCall` (HTTPS Callable) | Yes (User Auth) | Server-verifies `trialUsed == false`, provisions 7-day trial across both courses, sets `trialEndsAt = now + 7d`, atomic transaction. |
 | `createCheckoutSession` | `onCall` (HTTPS Callable) | Yes (User Auth) | Validates user & selected plan, generates Dodo Payments checkout session URL with PPP calculation, returns redirect link. |
-| `handleDodoWebhook` | `onRequest` (HTTP) | No (Signature Verified) | Receives signed webhook payloads from Dodo Payments, checks event idempotency, provisions or cancels entitlements. |
+| `handleDodoWebhook` | `onRequest` (HTTP) | No (HMAC Signature Verified) | Receives signed webhook payloads from Dodo Payments, checks event idempotency, provisions or cancels entitlements. |
+| `cleanupExpiredTrials` | `onSchedule` (Daily Cron) | No (Internal System) | Identifies expired trials (`now > trialEndsAt`), sets `user.plan = "free"`, updates entitlement status to `"expired"`. Progress is preserved. |
 | `syncSpacedRepetitionQueue` | `onCall` (HTTPS Callable) | Yes (User Auth) | Computes daily cards due for review based on Leitner intervals and returns prioritized queue. |
-| `onUserCreated` | `auth.user().onCreate` | Background Trigger | Initializes default `/users/{userId}` profile document and tracks onboarding metrics. |
-
-### 5.2 Webhook Signature & Idempotency Pipeline
-
-1. **Signature Verification**: Dodo Payments sends an `x-dodo-signature` header containing an HMAC-SHA256 hash. The function retrieves the webhook secret from **Google Cloud Secret Manager** and verifies the signature prior to reading the body.
-2. **Idempotency Transaction**:
-   - The function extracts `event_id` from the payload.
-   - It performs an atomic Firestore read against `/webhook_events/{event_id}`.
-   - If the document exists, the function immediately returns `HTTP 200 OK` (duplicate request dismissed safely).
-   - If new, it creates `/webhook_events/{event_id}` with status `"processing"` in the transaction.
-3. **Entitlement Provisioning**:
-   - On `"payment.succeeded"` or `"subscription.active"`: Updates or creates `/users/{userId}/entitlements/{courseId}` with `status = "active"` and computes `expiresAt`.
-   - On `"subscription.cancelled"`: Updates `autoRenew = false`. Entitlement remains `"active"` until `expiresAt`.
-   - On `"refund.processed"`: Sets `status = "revoked"` immediately and logs the refund event.
-4. **Completion**: Updates `/webhook_events/{event_id}` status to `"success"`.
+| `onUserCreated` | `auth.user().onCreate` | Background Trigger | Initializes default `/users/{userId}` profile document (`plan: "free"`, `trialUsed: false`, local progress initialized). |
 
 ---
 
@@ -335,6 +339,6 @@ Implemented in **TypeScript** targeting the **Node.js 20/22 runtime** using Fire
 ## 7. Local Emulator & Testing Strategy
 
 All backend rules and functions are tested offline before cloud deployment:
-1. `@firebase/rules-unit-testing`: Tests all 12 permission branches (public access, anonymous lock, valid entitlement unlock, expired entitlement lock, client entitlement write rejection).
-2. Local Cloud Functions testing using the Firebase Functions Emulator with mock Dodo webhook triggers.
+1. `@firebase/rules-unit-testing`: Tests all permission branches (public module catalog, anonymous lesson gating, free-preview unlock for Lessons 1 & 2 of all modules, trial entitlement unlock, expired trial lock, client entitlement write rejection).
+2. Local Cloud Functions testing using the Firebase Functions Emulator with mock `startFreeTrial` calls and mock Dodo webhook triggers.
 3. Zero network egress during automated test execution.

@@ -11,8 +11,11 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 2. **Course B: Pharmacology** (Source: `/materials/pharmacology`)
 
 - **Pedagogical Core**: Active learn-by-doing in the style of Brilliant (short bite-sized steps, predict-then-reveal interactions, immediate misconception-targeted feedback, 3-tiered hint ladders, worked-example fading, and spaced review).
-- **Visual Design**: Neo-Brutalist design language (stark 3-4px high-contrast borders `#000000`, 6px hard drop shadows with zero blur, vivid high-contrast accent blocks, heavy grotesque typography, and monospace chemistry/math notation).
-- **Commercial Strategy**: Researched premium pricing positioned 20–30% above Brilliant (~$29–$39/mo or $288–$312/yr), justified by deep pharmacy licensure and clinical curriculum alignment.
+- **Visual Design**: Refined Neo-Brutalist design language (stark 3-4px high-contrast borders `#000000`, 6px hard drop shadows with zero blur, restrained palette with purposeful semantic accents, heavy grotesque typography, monospace chemistry/math notation, and smooth 150–250ms micro-motion without layout thrashing).
+- **Commercial Strategy**: High-conversion accessible student monetization:
+  - **Permanent Freemium**: Lessons 1 and 2 of **every single module** free forever with core widgets and Tier 1 hints.
+  - **7-Day Free Trial of Full Premium**: Frictionless 1-click activation without upfront credit card requirements. Auto-downgrades to Free on Day 8 with 100% student progress preserved. Server-side single-use enforcement.
+  - **Student-First Academic Passes**: Materially cheaper than legacy test-prep (Option A Recommended: $14/mo, $49/semester, $89/yr; Turkey PPP: ₺250/mo, ₺850/sem, ₺1,450/yr), sustaining >93% gross margins.
 - **Deployment**: Google Cloud Platform / Firebase (Hosting, Firestore, Functions, Authentication) staged with strict cost guards and emulator-first verification.
 
 ---
@@ -32,7 +35,81 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 
 ---
 
-## 3. Repository Architecture
+## 3. Standing Quality Protocol & Independent Review Loop (Mandatory for All Phases)
+
+**Core Mandate: Author agents are strictly forbidden from approving their own work.**
+
+Before any phase STOP gate may be presented for user sign-off:
+1. **Fresh-Context Reviewer Subagents**: The coordinator spawns fresh-context reviewer subagents that receive only the repo and specification documents, deliberately isolated from the author's internal chain-of-thought or rationalizations.
+2. **Specialized Review Roles**:
+   - **Design Critic**: Evaluates visual hierarchy, spacing scale, typography, contrast ratios, and consistency against [`/docs/ui-guidelines.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/ui-guidelines.md).
+   - **Code Reviewer**: Audits correctness, TypeScript strictness, project architecture, dead code, performance, and keyboard/screen-reader accessibility.
+   - **Security Reviewer**: Audits Firestore security rules, Dodo webhook HMAC signature validation, trial-abuse prevention paths, and secret management.
+   - **Content / Pedagogy Reviewer**: Audits factual accuracy vs source slide decks in `/materials`, strict 40-word step limit, predict-then-reveal mechanics, and 3-tier hint ladders.
+   - **QA Agent**: Executes the comprehensive Playwright UI verification suite (see Section 4).
+3. **Structured Review Artifacts**: Each reviewer documents findings in:
+   `/docs/reviews/<phase>-iteration-<n>-<role>.md`
+   Each finding is assigned a severity level:
+   - `P0`: Blocker (Fatal security vulnerability, broken entitlement gating, factual falsehood, crash)
+   - `P1`: Critical (Visual break, contrast failure, accessibility violation, dark pattern, unhandled error)
+   - `P2`: Minor (Polishing note, non-blocking copy refinement, minor code styling)
+   Every finding must cite exact `file:line` locations and provide concrete actionable fix suggestions.
+4. **Resolution Cycle**: The author agent fixes all `P0` and `P1` findings. A fresh reviewer instance then re-audits the fixes. The loop repeats until **zero P0 and zero P1 issues remain**, up to a maximum of 4 iterations. If unresolved blockers persist after 4 iterations, work halts and escalates directly to the project owner. Every iteration is permanently logged in [`/docs/walkthrough.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/walkthrough.md).
+
+---
+
+## 4. Playwright UI Verification & Brave Browser Protocol
+
+UI verification is executed exclusively via Playwright controlling the user's local Brave Browser installation:
+
+### 4.1 Brave Browser Configuration
+- **Verified Executable Path (Windows)**:
+  `C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`
+- **Launch Harness**:
+  ```typescript
+  import { chromium } from '@playwright/test';
+
+  const browser = await chromium.launch({
+    executablePath: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+    headless: false,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+  ```
+- **Brave Shields Dual-Mode Requirement**:
+  - Tests must pass with **Shields Default** (aggressive tracker/fingerprint blocking). Essential app requests (Auth, Firestore websockets, local storage) must never be blocked.
+  - Tests must pass with **Shields Down** (disabled). Visual rendering and behavior must remain 100% consistent across both configurations.
+
+### 4.2 Comprehensive Matrix Coverage
+- **Routes**: Catalog, module overview, interactive lesson step viewer, spaced review queue, paywall/checkout modal, user profile/settings.
+- **Widget & Component States**: `default`, `hover`, `focus`, `active`, `disabled`, `loading`, `error`, `empty`, `correct answer`, `incorrect answer`, `paywall prompt`, `active trial banner`, `expired trial banner`.
+- **Viewports**: Mobile (`375x667`), Tablet (`768x1024`), Desktop (`1440x900`).
+- **Themes**: `light` (cream `#FFF8E7` canvas) + `dark` (neo-brutalist `#121212` canvas).
+- **Locales**: `EN` (English LTR), `AR` (Arabic RTL with mirrored cards and directional controls), `TR` (Turkish LTR).
+- **Visual Screenshot Inspection**: Screenshots saved to `docs/screenshots/<phase>/iteration-<n>/`. Reviewer agents must inspect PNGs for overflow, clipping, dropped borders, contrast, and RTL breaks.
+- **Automated Assertions**: Zero console errors, zero failed network requests, axe-core 0 serious/critical violations, full keyboard navigation, Lighthouse score >= 90.
+- **Jank & Motion Budget**: Key flow video recordings verify zero long frames (>50ms) and CLS < 0.05.
+
+---
+
+## 5. Refined Design & Motion Standards
+
+1. **Geometry & Palette**:
+   - 3px or 4px solid `#000000` borders on all cards, inputs, and modals.
+   - Zero-blur hard drop shadows: 6px resting, 8px hover, 0px active sink.
+   - Restrained palette: Warm cream `#FFF8E7`, Pure White `#FFFFFF`, Ink `#000000`. Semantic accents: Yellow `#FFD93D` (hints/active), Green `#6BCB77` (correct/mastery), Pink `#FF6B9D` (misconceptions/errors), Blue `#4D96FF` (MedChem), Orange `#FF9F45` (Pharm).
+2. **Spacing & Typography Scale**:
+   - Strict 8-point geometric scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).
+   - Space Grotesk / Archivo Black for display headers; Inter / Space Grotesk for body; JetBrains Mono for SMILES, pKa, constants.
+3. **Motion Constraints**:
+   - Micro-interactions: 150ms–250ms. Page/step transitions: up to 400ms.
+   - Easing: `cubic-bezier(0.22, 1, 0.36, 1)` or `ease-out`. Never use bounce or overshoot.
+   - Animate `transform` and `opacity` ONLY. Layout-thrashing properties (`width`, `height`, `margin`, `padding`) are strictly forbidden. Small offsets (4px–12px max).
+   - Feedback: Gentle 4px lift + green tint for correct; gentle 4px horizontal shift + pink tint for incorrect. No confetti, no screen shaking.
+   - Strict adherence to `prefers-reduced-motion: reduce`.
+
+---
+
+## 6. Repository Architecture
 
 ```text
 /
@@ -41,6 +118,7 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 │   │   ├── coding-standards.md
 │   │   ├── content-rules.md
 │   │   ├── design-rules.md
+│   │   ├── review-rules.md
 │   │   └── security-rules.md
 │   ├── skills/                # Agent capability definitions
 │   │   ├── content-extraction/SKILL.md
@@ -53,6 +131,7 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 │   └── workflows/             # Standard operational workflows
 │       ├── phase-status.md
 │       ├── factcheck.md
+│       ├── independent-review-loop.md
 │       ├── deploy-staging.md
 │       └── run-emulator-tests.md
 ├── apps/
@@ -84,6 +163,7 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 │   ├── legal-notes.md
 │   ├── agent-playbook.md
 │   ├── decisions.md
+│   ├── walkthrough.md
 │   └── open-questions.md
 ├── .gitignore
 ├── AGENTS.md
@@ -92,48 +172,13 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 
 ---
 
-## 4. Agent Team Roles & Ownership
-
-| Agent Role | Direct Outputs & Responsibilities | Handoff Artifact |
-| :--- | :--- | :--- |
-| **Pedagogy Analyst** | Owns learning science principles, lesson anatomy, step rules | [`/docs/pedagogy-spec.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pedagogy-spec.md) |
-| **Content Extractor** | Ingests `/materials`, OCR, term normalization, source index | `/docs/<course>/inventory.md`, `/docs/<course>/concept-map.json` |
-| **Curriculum Architect** | Dependency-ordered modules, lessons, steps, diagnostic tests | Module manifests, lesson sequences, `course.config.json` |
-| **Widget Engineer** | Data-driven interactive widgets in `/packages/widgets` | Tested widget gallery, Zod schemas, unit tests |
-| **UI Designer** | Neo-brutalist token system & base components in `/packages/ui` | Interactive component gallery `/gallery` |
-| **Backend/DevOps** | Firebase Auth, Firestore security rules, Functions, emulators | Passing emulator tests, [`/docs/backend.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/backend.md), [`/docs/deployment-runbook.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/deployment-runbook.md) |
-| **Pricing Analyst** | Research, competitive analysis, PPP tiers, unit economics | [`/docs/pricing-analysis.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pricing-analysis.md), [`/docs/payments-plan.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/payments-plan.md), `/courses/*/pricing.json` |
-| **QA / Fact-Checker** | Independent source cross-check, widget accessibility & security | `/docs/qa/<course>-factcheck.md`, QA signoff |
-
----
-
-## 5. Development Commands & Tooling
-
-```bash
-# Package management (pnpm workspaces)
-pnpm install                     # Install all dependencies across workspace
-pnpm build                       # Build web app, packages, functions, and content linter
-pnpm test                        # Run unit & component tests across all packages (Vitest)
-pnpm test:rules                  # Execute Firestore security rules unit tests against local emulator
-pnpm test:e2e                    # Run Playwright end-to-end tests
-pnpm lint                        # ESLint, Prettier, and custom Content Linter
-
-# Firebase Local Emulators
-pnpm emulators:start             # Spin up local Auth, Firestore, and Functions emulators
-pnpm emulators:seed              # Seed local Firestore with lesson JSON content via Admin SDK
-
-# Staging & Verification
-pnpm deploy:staging              # Deploy Hosting and Functions to approved staging environment
-```
-
----
-
-## 6. Definition of Done (DoD)
+## 7. Definition of Done (DoD)
 
 A task or phase is only considered **DONE** when:
 1. **Source Verifiability**: 100% of scientific claims, equations, and structures are traced to specific slide/page numbers in `/materials`.
 2. **Schema & Linter Compliance**: All lesson content validates against the strict Zod `Step` schema without warnings.
-3. **Automated Test Coverage**: Vitest unit tests pass for widgets/UI; Firestore emulator rules tests pass with 0 security regressions.
-4. **Accessibility Standards**: Components pass WCAG AA standards (high-contrast ratios, complete keyboard navigation, explicit ARIA roles).
-5. **Artifacts Published**: All design rationale, architecture decisions, and open issues are committed to `/docs/`.
-6. **Explicit User Gate Approval**: Orchestration never proceeds across phase STOP gates without direct user signoff.
+3. **Independent Review Sign-Off**: The 5-agent Independent Review Loop completes with **zero P0 and zero P1 issues**, verified and logged in `/docs/walkthrough.md`.
+4. **Playwright UI Verification Pass**: Tests execute in Brave Browser (Shields default AND off) with zero console errors, zero failed network requests, axe-core a11y 0 serious/critical violations, and visual screenshot reviews completed.
+5. **Automated Test Coverage**: Vitest unit tests pass for widgets/UI; Firestore emulator rules tests pass with 0 security regressions.
+6. **Artifacts Published**: All design rationale, architecture decisions, review files, and open issues are committed to `/docs/`.
+7. **Explicit User Gate Approval**: Orchestration never proceeds across phase STOP gates without direct user signoff.

@@ -2,19 +2,67 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "courseId": "medchem",
   "courseTitle": "Medicinal Chemistry",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "currencyDefault": "USD",
   "gateway": "dodo_payments",
-  "freePreview": {
-    "freeLessonsCount": 2,
+  "freemium": {
+    "moduleScope": "first_2_lessons_of_every_module",
+    "freeLessonsPerModule": 2,
+    "coreWidgetsIncluded": true,
+    "hintAccessTier": 1,
+    "aiFeedbackIncluded": false,
+    "crossDeviceSyncIncluded": false,
+    "certificatesIncluded": false,
     "requiresAuth": true,
     "requiresCard": false,
-    "description": "Lessons 1 and 2 are free forever without credit card"
+    "description": "Permanent free access to Lessons 1 & 2 of every module, core widgets, and Tier 1 hints."
+  },
+  "freeTrial": {
+    "durationDays": 7,
+    "durationHours": 168,
+    "requiresCard": false,
+    "autoDowngradeDay": 8,
+    "progressRetainedOnDowngrade": true,
+    "oneTrialPerAccount": true,
+    "enforcement": "server_authoritative",
+    "description": "7-day full access pass to all modules, 3-tier hints, AI feedback, and cross-device sync. No card upfront. Auto-downgrades to Free."
+  },
+  "pricingOptionsCatalog": {
+    "recommendedOption": "option_a",
+    "options": {
+      "option_a": {
+        "name": "Option A: Student Value Pass (Recommended)",
+        "singleMonthlyUSD": 14.00,
+        "singleSemesterUSD": 49.00,
+        "singleAnnualUSD": 89.00,
+        "bundleMonthlyUSD": 19.00,
+        "bundleSemesterUSD": 69.00,
+        "bundleAnnualUSD": 129.00
+      },
+      "option_b": {
+        "name": "Option B: High-Volume Accessible Tier",
+        "singleMonthlyUSD": 9.99,
+        "singleSemesterUSD": 39.99,
+        "singleAnnualUSD": 69.99,
+        "bundleMonthlyUSD": 14.99,
+        "bundleSemesterUSD": 59.99,
+        "bundleAnnualUSD": 99.99
+      },
+      "option_c": {
+        "name": "Option C: Academic Modular Plan",
+        "singleMonthlyUSD": 16.00,
+        "singleSemesterUSD": 59.00,
+        "singleAnnualUSD": 109.00,
+        "bundleMonthlyUSD": 22.00,
+        "bundleSemesterUSD": 79.00,
+        "bundleAnnualUSD": 149.00
+      }
+    }
   },
   "refundPolicy": {
     "guaranteeDays": 14,
     "maxLessonsCompletedForRefund": 2,
-    "description": "14-day 100% money-back guarantee if 2 or fewer paid lessons have been completed"
+    "description": "14-day 100% money-back guarantee if 2 or fewer paid lessons have been completed."
   },
   "plans": {
     "single_monthly": {
@@ -22,12 +70,12 @@
       "type": "single_course",
       "billingInterval": "monthly",
       "recurring": true,
-      "basePriceUSD": 39.00,
+      "basePriceUSD": 14.00,
       "localizedPrices": {
-        "USD": { "amount": 39.00, "symbol": "$" },
-        "TRY": { "amount": 650.00, "symbol": "₺" },
-        "SAR": { "amount": 145.00, "symbol": "SAR" },
-        "EUR": { "amount": 36.00, "symbol": "€" }
+        "USD": { "amount": 14.00, "symbol": "$" },
+        "TRY": { "amount": 250.00, "symbol": "₺" },
+        "SAR": { "amount": 55.00, "symbol": "SAR" },
+        "EUR": { "amount": 13.00, "symbol": "€" }
       },
       "name": "Medicinal Chemistry — Monthly",
       "description": "Full access to all Medicinal Chemistry modules, SAR visualizers, and bioisostere editors with month-to-month flexibility."
@@ -38,17 +86,17 @@
       "billingInterval": "semester",
       "durationMonths": 6,
       "recurring": false,
-      "basePriceUSD": 169.00,
-      "effectiveMonthlyUSD": 28.16,
+      "basePriceUSD": 49.00,
+      "effectiveMonthlyUSD": 8.17,
       "localizedPrices": {
-        "USD": { "amount": 169.00, "symbol": "$" },
-        "TRY": { "amount": 2750.00, "symbol": "₺" },
-        "SAR": { "amount": 630.00, "symbol": "SAR" },
-        "EUR": { "amount": 155.00, "symbol": "€" }
+        "USD": { "amount": 49.00, "symbol": "$" },
+        "TRY": { "amount": 850.00, "symbol": "₺" },
+        "SAR": { "amount": 190.00, "symbol": "SAR" },
+        "EUR": { "amount": 45.00, "symbol": "€" }
       },
       "badge": "Best for University Semester",
       "name": "Medicinal Chemistry — Semester Pass (6 Months)",
-      "description": "6-month one-time pass covering the full academic semester exam period. No recurring auto-renewal."
+      "description": "6-month one-time pass covering the academic semester and exam cycle. Zero recurring billing risk."
     },
     "single_annual": {
       "id": "mc_annual",
@@ -56,29 +104,29 @@
       "billingInterval": "annual",
       "durationMonths": 12,
       "recurring": true,
-      "basePriceUSD": 288.00,
-      "effectiveMonthlyUSD": 24.00,
+      "basePriceUSD": 89.00,
+      "effectiveMonthlyUSD": 7.42,
       "localizedPrices": {
-        "USD": { "amount": 288.00, "symbol": "$" },
-        "TRY": { "amount": 4800.00, "symbol": "₺" },
-        "SAR": { "amount": 1080.00, "symbol": "SAR" },
-        "EUR": { "amount": 265.00, "symbol": "€" }
+        "USD": { "amount": 89.00, "symbol": "$" },
+        "TRY": { "amount": 1450.00, "symbol": "₺" },
+        "SAR": { "amount": 340.00, "symbol": "SAR" },
+        "EUR": { "amount": 82.00, "symbol": "€" }
       },
-      "badge": "Save 38%",
+      "badge": "Save 47%",
       "name": "Medicinal Chemistry — Annual Pass",
-      "description": "Comprehensive 12-month access including all board exam preparation sets and Leitner spaced review queue."
+      "description": "12-month access covering comprehensive board exam preparation sets and Leitner spaced review queue."
     },
     "bundle_monthly": {
       "id": "bundle_monthly",
       "type": "dual_bundle",
       "billingInterval": "monthly",
       "recurring": true,
-      "basePriceUSD": 49.00,
+      "basePriceUSD": 19.00,
       "localizedPrices": {
-        "USD": { "amount": 49.00, "symbol": "$" },
-        "TRY": { "amount": 850.00, "symbol": "₺" },
-        "SAR": { "amount": 185.00, "symbol": "SAR" },
-        "EUR": { "amount": 45.00, "symbol": "€" }
+        "USD": { "amount": 19.00, "symbol": "$" },
+        "TRY": { "amount": 350.00, "symbol": "₺" },
+        "SAR": { "amount": 75.00, "symbol": "SAR" },
+        "EUR": { "amount": 18.00, "symbol": "€" }
       },
       "name": "All-Access Dual Pass — Monthly",
       "description": "Complete access to BOTH Medicinal Chemistry and Pharmacology with cross-course bridge cards."
@@ -89,13 +137,13 @@
       "billingInterval": "semester",
       "durationMonths": 6,
       "recurring": false,
-      "basePriceUSD": 229.00,
-      "effectiveMonthlyUSD": 38.16,
+      "basePriceUSD": 69.00,
+      "effectiveMonthlyUSD": 11.50,
       "localizedPrices": {
-        "USD": { "amount": 229.00, "symbol": "$" },
-        "TRY": { "amount": 3600.00, "symbol": "₺" },
-        "SAR": { "amount": 850.00, "symbol": "SAR" },
-        "EUR": { "amount": 210.00, "symbol": "€" }
+        "USD": { "amount": 69.00, "symbol": "$" },
+        "TRY": { "amount": 1150.00, "symbol": "₺" },
+        "SAR": { "amount": 265.00, "symbol": "SAR" },
+        "EUR": { "amount": 64.00, "symbol": "€" }
       },
       "badge": "Popular for Dual Courses",
       "name": "All-Access Dual Pass — Semester (6 Months)",
@@ -107,13 +155,13 @@
       "billingInterval": "annual",
       "durationMonths": 12,
       "recurring": true,
-      "basePriceUSD": 348.00,
-      "effectiveMonthlyUSD": 29.00,
+      "basePriceUSD": 129.00,
+      "effectiveMonthlyUSD": 10.75,
       "localizedPrices": {
-        "USD": { "amount": 348.00, "symbol": "$" },
-        "TRY": { "amount": 5900.00, "symbol": "₺" },
-        "SAR": { "amount": 1300.00, "symbol": "SAR" },
-        "EUR": { "amount": 320.00, "symbol": "€" }
+        "USD": { "amount": 129.00, "symbol": "$" },
+        "TRY": { "amount": 2100.00, "symbol": "₺" },
+        "SAR": { "amount": 490.00, "symbol": "SAR" },
+        "EUR": { "amount": 119.00, "symbol": "€" }
       },
       "badge": "Ultimate Licensure Pack",
       "name": "All-Access Dual Pass — Annual",

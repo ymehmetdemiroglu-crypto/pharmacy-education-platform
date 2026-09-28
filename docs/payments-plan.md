@@ -1,10 +1,16 @@
-# Payments & Monetization Plan: Commercial Strategy & Technical Integration
+# Payments & Monetization Plan: Commercial Strategy & Technical Integration (Phase 0 Amendment)
 
 ## 1. Executive Summary
 
 This document specifies the commercial payment architecture, provider selection, billing mechanics, purchasing power parity (PPP) localization, and technical integration pipeline for the Pharmacy Education Platform.
 
 The platform employs a **Merchant of Record (MoR)** model to eliminate tax complexity, enable frictionless international compliance (global VAT/sales taxes), and accept regional debit/credit cards across Turkey, North America, Europe, and the Middle East.
+
+Following the Phase 0 Amendment:
+- **Freemium Tier**: Permanent free access to the first 2 lessons of **every single module**, core widgets, and Tier 1 hints.
+- **7-Day Free Trial of Full Premium**: Frictionless 1-click trial without upfront credit card requirements. Server-side auto-downgrade to Free on Day 8 with 100% student progress preserved. Trial activation is limited to once per account and strictly enforced server-side.
+- **Materially Cheaper Paid Passes**: Substantially lowered pricing (Option A Recommended: $14/mo, $49/semester, $89/yr; Turkey PPP: ₺250/mo, ₺850/sem, ₺1,450/yr), reducing student financial friction while sustaining >93% gross margins.
+- **Ethical Upgrade UX**: Transparent paywalls with zero dark patterns, no false countdowns, and equally weighted dismissal actions.
 
 ---
 
@@ -31,37 +37,35 @@ The platform employs a **Merchant of Record (MoR)** model to eliminate tax compl
 
 ## 3. Product Catalog & Pricing Architecture
 
-All prices are established in accordance with the **20% to 30% premium above Brilliant baseline** benchmark documented in [`/docs/pricing-analysis.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pricing-analysis.md).
+All prices are established in accordance with the revised accessible pricing models documented in [`/docs/pricing-analysis.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pricing-analysis.md).
 
-### 3.1 Tier Structure
+### 3.1 Plan Tiers (Option A — Recommended Baseline)
 
 #### Product 1: Course A (Medicinal Chemistry) — Single Course Pass
-- **Monthly Recurring**: **$39 / month**
-- **Semester Pass (6 Months, One-Time)**: **$169** ($28.16 / month effective — aligned with university semester duration)
-- **Annual Pass (12 Months Recurring)**: **$288 / year** ($24.00 / month effective)
+- **Monthly Recurring**: **$14.00 / month** (billed monthly, cancel anytime)
+- **Semester Pass (6 Months, One-Time)**: **$49.00** ($8.17 / month effective — aligned with university semester duration, no auto-renew)
+- **Annual Pass (12 Months Recurring)**: **$89.00 / year** ($7.42 / month effective — save 47% vs monthly)
 
 #### Product 2: Course B (Pharmacology) — Single Course Pass
-- **Monthly Recurring**: **$39 / month**
-- **Semester Pass (6 Months, One-Time)**: **$169** ($28.16 / month effective)
-- **Annual Pass (12 Months Recurring)**: **$288 / year** ($24.00 / month effective)
+- **Monthly Recurring**: **$14.00 / month**
+- **Semester Pass (6 Months, One-Time)**: **$49.00** ($8.17 / month effective)
+- **Annual Pass (12 Months Recurring)**: **$89.00 / year** ($7.42 / month effective)
 
 #### Product 3: Dual Course Bundle (All-Access Pass: MedChem + Pharmacology)
-- **Monthly Recurring**: **$49 / month**
-- **Semester Pass (6 Months, One-Time)**: **$229** ($38.16 / month effective)
-- **Annual Pass (12 Months Recurring)**: **$348 / year** ($29.00 / month effective)
+- **Monthly Recurring**: **$19.00 / month**
+- **Semester Pass (6 Months, One-Time)**: **$69.00** ($11.50 / month effective)
+- **Annual Pass (12 Months Recurring)**: **$129.00 / year** ($10.75 / month effective)
 
 ---
 
-### 3.2 Regional Purchasing Power Parity (PPP) Matrix
-
-To maximize adoption and avoid prohibitive currency barrier pricing in key pharmacy student markets, the platform provides localized pricing:
+### 3.2 Regional Purchasing Power Parity (PPP) Matrix (Option A)
 
 | Market | Currency | Single Monthly | Single Semester | Single Annual | Bundle Monthly | Bundle Semester | Bundle Annual |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **Global / US (Baseline)** | `USD ($)` | $39 | $169 | $288 | $49 | $229 | $348 |
-| **Turkey (Domestic)** | `TRY (₺)` | ₺650 | ₺2,750 | ₺4,800 | ₺850 | ₺3,600 | ₺5,900 |
-| **Gulf / Saudi Arabia** | `SAR` | 145 SAR | 630 SAR | 1,080 SAR | 185 SAR | 850 SAR | 1,300 SAR |
-| **European Union** | `EUR (€)` | €36 | €155 | €265 | €45 | €210 | €320 |
+| **Global / US (Baseline)** | `USD ($)` | $14.00 | $49.00 | $89.00 | $19.00 | $69.00 | $129.00 |
+| **Turkey (Domestic)** | `TRY (₺)` | ₺250 | ₺850 | ₺1,450 | ₺350 | ₺1,150 | ₺2,100 |
+| **Gulf / Saudi Arabia** | `SAR` | 55 SAR | 190 SAR | 340 SAR | 75 SAR | 265 SAR | 490 SAR |
+| **European Union** | `EUR (€)` | €13 | €45 | €82 | €18 | €64 | €119 |
 
 #### PPP Enforcement & Anti-Abuse Rules:
 1. **IP Geolocation**: Client requests determine initial country via Cloudflare/Firebase request headers (`x-country-code`).
@@ -70,27 +74,84 @@ To maximize adoption and avoid prohibitive currency barrier pricing in key pharm
 
 ---
 
-## 4. Freemium Funnel & Conversion Mechanics
+## 4. Freemium Funnel, 7-Day Trial & Conversion Lifecycle
 
-### 4.1 Free Preview Rules
-1. **Permanent Free Access**: Lessons 1 and 2 of both Medicinal Chemistry and Pharmacology are completely free forever.
-2. **Zero Friction Onboarding**: Free preview lessons can be accessed immediately after standard email/Google authentication. No credit card or trial authorization required.
-3. **Completion CTA**: At the final step of Lesson 2, the user encounters a completion celebration card with a high-intent prompt to continue into Lesson 3.
-
-### 4.2 Paywall Trigger & User Experience
-1. When a user clicks Lesson 3 or attempts to query a restricted step, the UI displays the **Neo-Brutalist Paywall Modal**:
-   - High-contrast visual summary of course modules and interactive widgets.
-   - Transparent price options (Monthly vs Semester vs Annual) with clear highlighting of the **Semester Pass (Best Value for Students)**.
-   - Guaranteed **14-day money-back guarantee** badge.
-2. Clicking "Upgrade to Full Access" invokes the `createCheckoutSession` Cloud Function.
-
-### 4.3 Refund Policy
-- **14-Day Money-Back Guarantee**: Full refund granted within 14 calendar days of purchase if the user has completed fewer than 3 paid lessons.
-- **Automated Processing**: Users can initiate refund requests via their settings page; if eligible under the threshold, the refund is executed automatically via Dodo API.
+### 4.1 Freemium Scope & Permanent Utility
+1. **Scope**: Lessons 1 and 2 of **every module** across both Medicinal Chemistry and Pharmacology are permanently accessible without payment.
+2. **No Upfront Hurdles**: Users sign in with standard email/Google authentication. No credit card required.
+3. **Included Features**:
+   - Step prompts and interactive exercises for Lessons 1 & 2 of all modules.
+   - Core widgets (SMILES editor, PK compartment sliders, dose-response curves).
+   - Tier 1 hints (conceptual orientation / gentle nudges).
+4. **Gated Features**:
+   - Lessons 3 through N in each module.
+   - Tier 2 structural clues and Tier 3 full worked solutions.
+   - Real-time Gemini AI misconception analysis and conversational diagnostic coaching.
+   - Cross-device cloud progress synchronization (free tier stored locally in IndexedDB).
+   - Course completion certificates and licensure board diagnostic sets.
 
 ---
 
-## 5. Technical Integration Architecture
+### 4.2 7-Day Free Trial Architecture & Server-Side Enforcement
+
+```
+User App (Client)          Firebase Cloud Function           Firestore Database
+      |                                |                                   |
+      | 1. Click "Start Free Trial"    |                                   |
+      |------------------------------->|                                   |
+      |                                | 2. Verify Auth & trialUsed flag   |
+      |                                |---------------------------------->|
+      |                                |<----------------------------------|
+      |                                |    doc.data().trialUsed == false  |
+      |                                |                                   |
+      |                                | 3. Atomic Transaction:            |
+      |                                |    - user.trialUsed = true        |
+      |                                |    - user.plan = "trial"          |
+      |                                |    - user.trialStartedAt = now    |
+      |                                |    - user.trialEndsAt = now + 7d  |
+      |                                |    - entitlements: create "trial" |
+      |                                |---------------------------------->|
+      | 4. Snapshot Listener Updates   |<----------------------------------|
+      |<-------------------------------|                                   |
+      | 5. Immediate Full Unlock       |                                   |
+      |                                |                                   |
+      |                                | === DAY 8: AUTO-DOWNGRADE ===     |
+      |                                | Scheduled Check OR On-Read Rule:  |
+      |                                | now > trialEndsAt                 |
+      |                                | -> Entitlement status = "expired" |
+      |                                | -> user.plan = "free"             |
+      | 6. Graceful Banner Displayed   | -> All Progress 100% Preserved!   |
+      |<-------------------------------------------------------------------|
+```
+
+#### Server-Side Enforcement Details:
+1. **Zero Client Authority**: The client cannot initiate or renew a trial by writing to Firestore. Firestore Security Rules forbid client creation or modification of `trialStartedAt`, `trialEndsAt`, `trialUsed`, or `/entitlements/{courseId}`.
+2. **One-Time Account Guarantee**: The `startFreeTrial` Cloud Function verifies `trialUsed == false`. If `trialUsed == true`, the request is rejected with `PERMISSION_DENIED ("Free trial has already been used for this account")`.
+3. **No Card Upfront**: The trial is provisioned entirely within Firebase without contacting Dodo Payments. No payment token or authorization hold is created.
+4. **Day 8 Auto-Downgrade State Machine**:
+   - At `trialEndsAt = trialStartedAt + 7 days`, access expires automatically.
+   - Firestore security rules evaluate `request.time < entitlement.expiresAt`. Once `trialEndsAt` passes, rule evaluation immediately revokes access to Lessons 3+ and advanced hints.
+   - A background Cloud Function (`cleanupExpiredTrials`) sweeps expired trials daily and updates `user.plan = "free"` and `entitlement.status = "expired"`.
+   - **Student Progress Retained**: All lesson completions, XP, and spaced review records remain intact. The user is greeted on Day 8 with a non-intrusive notification: *"Your 7-day trial has finished. Your progress is completely safe. Continue on the Free plan or select an academic pass."*
+
+---
+
+### 4.3 Upgrade-Prompt UX Specification (Zero Dark Patterns)
+
+1. **Trigger Locations**:
+   - Free user attempts to access Lesson 3 of any module.
+   - Free user requests Tier 2 or Tier 3 hints.
+   - Free user clicks "Analyze Misconception with AI".
+   - Free trial concludes on Day 8.
+2. **Design Standards**:
+   - **Equally Sized Dismissal**: The "Continue with Free" button has equal optical weight and hit area as the upgrade action.
+   - **No Guilt Tripping**: No manipulative negative copy (e.g. *"I don't care about my career"*).
+   - **Clear Pricing Breakdown**: Clearly display monthly vs semester vs annual prices with exact monthly equivalents.
+   - **14-Day Money-Back Guarantee**: Clearly badge the 14-day guarantee for paid passes.
+
+---
+
+## 5. Technical Integration Architecture: Dodo Payments
 
 ```
 User App (Client)          Firebase Functions         Dodo Payments API        Firestore DB
@@ -100,7 +161,8 @@ User App (Client)          Firebase Functions         Dodo Payments API        F
       |                            | 2. Create Checkout      |                      |
       |                            |------------------------>|                      |
       |                            |<------------------------|                      |
-      |<---------------------------|  Returns Checkout URL   |                      |
+      |                            |  Returns Checkout URL   |                      |
+      |<---------------------------|                         |                      |
       | 3. Redirect to Dodo Hosted |                         |                      |
       |    Checkout Page           |                         |                      |
       |                            |                         |                      |
@@ -119,33 +181,45 @@ User App (Client)          Firebase Functions         Dodo Payments API        F
       |                            |                                                |
       | 9. Real-time Snapshot fires|                                                |
       |<----------------------------------------------------------------------------|
-      | 10. Instant Unlock Confetti|                                                |
+      | 10. Instant Unlock Feedback|                                                |
 ```
 
-### 5.1 Cloud Function: `createCheckoutSession`
-- **Type**: Firebase HTTPS Callable Function (`functions.https.onCall`).
+### 5.1 Cloud Functions Specifications
+
+#### Function 1: `startFreeTrial`
+- **Trigger**: `onCall` (HTTPS Callable)
+- **Auth**: User must be authenticated (`request.auth.uid`).
+- **Logic**:
+  1. Transactionally read `/users/{uid}`.
+  2. If `user.trialUsed === true`, throw `https.HttpsError('failed-precondition', 'Trial already redeemed')`.
+  3. Set `user.trialUsed = true`, `user.plan = 'trial'`, `user.trialStartedAt = now`, `user.trialEndsAt = now + 7 days`.
+  4. Write `/users/{uid}/entitlements/medchem` and `/users/{uid}/entitlements/pharmacology` with:
+     ```json
+     {
+       "plan": "trial",
+       "status": "active",
+       "startedAt": "timestamp",
+       "expiresAt": "timestamp (now + 7 days)",
+       "entitlements": ["all_lessons", "ai_feedback", "tier2_3_hints", "cross_device_sync", "certificates"]
+     }
+     ```
+  5. Return `{ success: true, trialEndsAt }`.
+
+#### Function 2: `createCheckoutSession`
+- **Trigger**: `onCall` (HTTPS Callable)
 - **Input Parameters**:
   - `courseId`: `"medchem"` | `"pharmacology"` | `"dual_bundle"`
-  - `planId`: `"monthly"` | `"semester"` | `"annual"`
+  - `planId`: `"single_monthly"` | `"single_semester"` | `"single_annual"` | `"bundle_monthly"` | `"bundle_semester"` | `"bundle_annual"`
   - `currency`: `"USD"` | `"TRY"` | `"SAR"` | `"EUR"`
-- **Execution Steps**:
-  1. Validates user authentication context (`request.auth.uid`).
+- **Logic**:
+  1. Validates auth.
   2. Resolves price and product IDs from `/courses/{courseId}/pricing.json`.
-  3. Retrieves `DODO_PAYMENTS_API_KEY` securely from Google Cloud Secret Manager.
-  4. Calls `https://api.dodopayments.com/v1/checkouts` passing:
-     - `customer`: `{ email: user.email, name: user.displayName }`
-     - `client_reference_id`: `request.auth.uid`
-     - `metadata`: `{ userId, courseId, planId }`
-     - `return_url`: `https://<domain>/checkout/success?session_id={CHECKOUT_SESSION_ID}`
-     - `cancel_url`: `https://<domain>/pricing?canceled=true`
-  5. Returns `{ checkoutUrl: response.data.url }`.
+  3. Invocates Dodo Payments API to create checkout session.
+  4. Returns checkout URL.
 
----
-
-### 5.2 Webhook Handling & Signature Verification
-
-- **Endpoint**: `https://<region>-<project-id>.cloudfunctions.net/handleDodoWebhook`
-- **Security Check**:
+#### Function 3: `handleDodoWebhook`
+- **Trigger**: `onRequest` (HTTP)
+- **HMAC Verification**:
   ```typescript
   const signature = req.headers['x-dodo-signature'];
   const expectedSignature = crypto
@@ -158,43 +232,16 @@ User App (Client)          Firebase Functions         Dodo Payments API        F
     return;
   }
   ```
-
-### 5.3 Webhook Events & State Machine
-
-| Event Type | Action Taken | Entitlement State |
-| :--- | :--- | :--- |
-| `payment.succeeded` | Provisions entitlement; records order document | `status: "active"`, updates `expiresAt` |
-| `subscription.renewed` | Extends `expiresAt` date; updates last billing timestamp | `status: "active"`, extends `expiresAt` |
-| `subscription.cancelled` | Sets `autoRenew: false`; user retains access until current period ends | `status: "active"` (until `expiresAt`), then `"expired"` |
-| `payment.failed` | Logs billing failure; triggers in-app warning banner; grants 3-day grace period | `status: "past_due"` |
-| `refund.processed` | Immediately invalidates access; logs refund audit trail | `status: "revoked"` |
-
-### 5.4 Idempotency Protection
-Every incoming webhook is tracked in Firestore `/webhook_events/{eventId}`:
-```typescript
-const eventRef = db.collection('webhook_events').doc(event.id);
-await db.runTransaction(async (transaction) => {
-  const doc = await transaction.get(eventRef);
-  if (doc.exists) {
-    // Already processed this exact event
-    return;
-  }
-  transaction.set(eventRef, {
-    eventId: event.id,
-    type: event.type,
-    processedAt: admin.firestore.FieldValue.serverTimestamp(),
-    status: 'success'
-  });
-  // Execute entitlement updates inside the same transaction
-});
-```
+- **Idempotency**: Firestore transaction on `/webhook_events/{eventId}` ensures duplicate deliveries are acknowledged with 200 OK without re-provisioning.
+- **Entitlement Provisioning**: Writes `/users/{uid}/entitlements/{courseId}` with `plan: "premium"`, `status: "active"`, and appropriate `expiresAt`.
 
 ---
 
 ## 6. Testing & Sandbox Verification Checklist
 
-- [ ] **Webhook Signature Verification**: Verify 401 response on spoofed headers.
-- [ ] **Duplicate Webhook Delivery**: Send identical `event_id` twice; ensure entitlement is only updated once.
-- [ ] **Free-to-Paid Transition**: Complete Lesson 2 -> Attempt Lesson 3 -> Pay via Dodo Sandbox -> Real-time Firestore snapshot unlocks Lesson 3 with 0 page reloads.
-- [ ] **Refund Revocation**: Trigger test refund in Dodo dashboard; ensure Lesson 3 steps are locked immediately by Firestore rules.
-- [ ] **PPP Localization Display**: Verify that a Turkish IP correctly sees `₺650/mo` and not `$39/mo`.
+- [ ] **7-Day Trial Single Use**: Attempt second trial invocation via Admin SDK; assert rejection.
+- [ ] **Day 8 Auto-Downgrade**: Advance clock past 7 days; verify Firestore rules block Lesson 3 reads and Tier 2/3 hints while preserving user progress documents.
+- [ ] **Webhook Signature Verification**: Verify 401 response on invalid/missing HMAC signature.
+- [ ] **Duplicate Webhook Delivery**: Dispatch identical `event_id` twice; assert single idempotent entitlement write.
+- [ ] **PPP Localization Display**: Assert Turkish client receives `₺250/mo` and `₺850/sem` without currency mismatch.
+- [ ] **Upgrade Flow**: Complete Lesson 2 -> View ethical modal -> Activate trial or complete Dodo checkout -> Verify real-time reactive unlock with zero full page reload.
