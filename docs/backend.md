@@ -89,9 +89,10 @@ All collections adhere to strict naming conventions and schema validation contra
 - `published`: boolean
 
 #### Collection: `/courses/{courseId}/lessons/{lessonId}/steps/{stepId}`
-*Critical: Protected by Firestore Security Rules. Unlocks only if `lesson.isFreePreview == true` OR user possesses an active entitlement.*
+*Critical: Protected by Firestore Security Rules. Unlocks only if `step.isFreePreview == true` OR `lesson.isFreePreview == true` OR user possesses an active entitlement.*
 - `stepId`: string (e.g., `"step-01"`)
 - `orderIndex`: number (1-indexed)
+- `isFreePreview`: boolean (denormalized from lesson for O(1) security rule evaluation)
 - `pedagogicalType`: string (`"predict_reveal"` | `"worked_example"` | `"faded_practice"` | `"independent_challenge"`)
 - `interactionType`: string (`"multiple_choice"` | `"atom_select"` | `"pk_slider"` | `"curve_match"` | `"bioisostere_replace"`)
 - `prompt`: string (concise instructional text, <40 words)
@@ -108,7 +109,7 @@ All collections adhere to strict naming conventions and schema validation contra
 
 ```
 /users/{userId}
-    ├── /entitlements/{entitlementId}
+    ├── /entitlements/{courseId}
     ├── /progress/{courseId}
     └── /spaced_repetition/{cardId}
 ```
@@ -122,10 +123,10 @@ All collections adhere to strict naming conventions and schema validation contra
 - `createdAt`: timestamp
 - `lastActiveAt`: timestamp
 
-#### Collection: `/users/{userId}/entitlements/{entitlementId}`
-*Strictly read-only for clients. Writes restricted exclusively to Cloud Functions via Firebase Admin SDK.*
-- `entitlementId`: string (e.g., `"ent_mc_annual_2026"`)
+#### Collection: `/users/{userId}/entitlements/{courseId}`
+*Strictly read-only for clients. Writes restricted exclusively to Cloud Functions via Firebase Admin SDK. Document ID is `courseId` (`"medchem"`, `"pharmacology"`, or `"dual_bundle"`) to enable O(1) direct exists() evaluation in security rules.*
 - `courseId`: string (`"medchem"` | `"pharmacology"` | `"dual_bundle"`)
+- `entitlementId`: string (unique audit ID, e.g., `"ent_mc_annual_2026"`)
 - `planId`: string (`"monthly"` | `"semester"` | `"annual"` | `"lifetime"`)
 - `status`: string (`"active"` | `"canceled"` | `"expired"` | `"past_due"`)
 - `billingCycle`: string (`"monthly"` | `"semi-annual"` | `"annual"` | `"one-time"`)
@@ -213,13 +214,15 @@ service cloud.firestore {
     // User has access if they hold an active entitlement for this specific course OR the dual bundle
     function hasCourseAccess(courseId) {
       return isAuthenticated() && (
-        exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)) &&
-        get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.status == 'active' &&
-        get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.expiresAt > request.time
-      ) || (
-        exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle) &&
-        get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.status == 'active' &&
-        get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.expiresAt > request.time
+        (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)) &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.status == 'active' &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.expiresAt > request.time
+        ) || (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle) &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.status == 'active' &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.expiresAt > request.time
+        )
       );
     }
 
@@ -250,19 +253,26 @@ service cloud.firestore {
     // User document & subcollections
     match /users/{userId} {
       allow read: if isOwner(userId);
-      allow create: if isOwner(userId) && request.resource.data.userId == request.auth.uid;
-      allow update: if isOwner(userId) && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['roles', 'isAdmin']);
+      allow create: if isOwner(userId) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       !request.resource.data.keys().hasAny(['roles', 'isAdmin']);
+      allow update: if isOwner(userId) &&
+                       !request.resource.data.diff(resource.data).affectedKeys().hasAny(['roles', 'isAdmin', 'userId']);
       allow delete: if false;
 
       // Entitlements: Client READ ONLY. Write restricted to Cloud Functions via Admin SDK
-      match /entitlements/{entitlementId} {
+      match /entitlements/{courseId} {
         allow read: if isOwner(userId);
         allow write: if false;
       }
 
       // Progress & Spaced Repetition: User can update own learning state
       match /progress/{courseId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) &&
+          request.resource.data.completedLessonIds is list &&
+          request.resource.data.completedLessonIds.size() < 500;
+        allow delete: if false;
       }
 
       match /spaced_repetition/{cardId} {

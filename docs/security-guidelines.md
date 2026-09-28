@@ -14,9 +14,11 @@ The platform enforces a strict zero-trust model across client and server boundar
   ├── progress/{courseId}          # User's completion state, scores, review queue
   └── entitlements/{courseId}      # SERVER-ONLY write: active/expired course passes
 
-/courseCatalog/{courseId}          # Public read: metadata, curriculum, lesson titles
-/courses/{courseId}/lessons/{id}   # GATED read: full step content (free vs paid)
-/payments/{eventId}                # SERVER-ONLY: idempotency journal for webhooks
+/courses/{courseId}              # Public read: metadata, curriculum, modules
+/courses/{courseId}/lessons/{id} # Public read: lesson summary, free preview status
+/courses/.../steps/{stepId}      # GATED read: full step content (free preview vs active entitlement)
+/webhook_events/{eventId}        # SERVER-ONLY: idempotency journal for webhooks
+/orders/{orderId}                # SERVER-ONLY: purchase audit records
 ```
 
 ### 2.2 Security Rules Implementation (`firestore.rules`)
@@ -33,10 +35,17 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
     function hasActiveEntitlement(courseId) {
-      let entDoc = get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId));
-      return entDoc != null && 
-             entDoc.data.status == "active" && 
-             entDoc.data.expiresAt > request.time;
+      return isAuthenticated() && (
+        (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)) &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.status == 'active' &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.expiresAt > request.time
+        ) || (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle) &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.status == 'active' &&
+          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.expiresAt > request.time
+        )
+      );
     }
 
     // Default deny
@@ -96,5 +105,5 @@ service cloud.firestore {
 
 ## 4. Payment Webhook Security (Dodo Payments Plan)
 - Webhooks must be verified using HMAC-SHA256 signature verification over the raw request payload before processing.
-- Idempotency is enforced by journaling `eventId` in the `/payments/{eventId}` collection within a Firestore transaction.
-- If an entitlement is refunded or disputed, the Cloud Function updates `/users/{uid}/entitlements/{courseId}` with `status = 'refunded'`, immediately revoking lesson access in Firestore rules.
+- Idempotency is enforced by journaling `eventId` in the `/webhook_events/{eventId}` collection within a Firestore transaction.
+- If an entitlement is refunded or disputed, the Cloud Function updates `/users/{uid}/entitlements/{courseId}` with `status = 'revoked'`, immediately revoking lesson access in Firestore rules.

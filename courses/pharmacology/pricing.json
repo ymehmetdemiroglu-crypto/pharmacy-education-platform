@@ -122,6 +122,12 @@
   },
   "dodoProductMapping": {
     "sandbox": {
+      "monthly": "p_sb_pharm_mo",
+      "semester": "p_sb_pharm_sem",
+      "annual": "p_sb_pharm_yr",
+      "single_monthly": "p_sb_pharm_mo",
+      "single_semester": "p_sb_pharm_sem",
+      "single_annual": "p_sb_pharm_yr",
       "pharm_monthly": "p_sb_pharm_mo",
       "pharm_semester": "p_sb_pharm_sem",
       "pharm_annual": "p_sb_pharm_yr",
@@ -130,6 +136,12 @@
       "bundle_annual": "p_sb_bun_yr"
     },
     "production": {
+      "monthly": "p_live_pharm_mo",
+      "semester": "p_live_pharm_sem",
+      "annual": "p_live_pharm_yr",
+      "single_monthly": "p_live_pharm_mo",
+      "single_semester": "p_live_pharm_sem",
+      "single_annual": "p_live_pharm_yr",
       "pharm_monthly": "p_live_pharm_mo",
       "pharm_semester": "p_live_pharm_sem",
       "pharm_annual": "p_live_pharm_yr",

@@ -122,6 +122,12 @@
   },
   "dodoProductMapping": {
     "sandbox": {
+      "monthly": "p_sb_mc_mo",
+      "semester": "p_sb_mc_sem",
+      "annual": "p_sb_mc_yr",
+      "single_monthly": "p_sb_mc_mo",
+      "single_semester": "p_sb_mc_sem",
+      "single_annual": "p_sb_mc_yr",
       "mc_monthly": "p_sb_mc_mo",
       "mc_semester": "p_sb_mc_sem",
       "mc_annual": "p_sb_mc_yr",
@@ -130,6 +136,12 @@
       "bundle_annual": "p_sb_bun_yr"
     },
     "production": {
+      "monthly": "p_live_mc_mo",
+      "semester": "p_live_mc_sem",
+      "annual": "p_live_mc_yr",
+      "single_monthly": "p_live_mc_mo",
+      "single_semester": "p_live_mc_sem",
+      "single_annual": "p_live_mc_yr",
       "mc_monthly": "p_live_mc_mo",
       "mc_semester": "p_live_mc_sem",
       "mc_annual": "p_live_mc_yr",

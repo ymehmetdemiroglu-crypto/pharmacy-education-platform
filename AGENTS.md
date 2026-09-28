@@ -76,6 +76,8 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 │   ├── ui-guidelines.md
 │   ├── engineering-guidelines.md
 │   ├── security-guidelines.md
+│   ├── backend.md             # Backend architecture, data models, Firestore security rules
+│   ├── payments-plan.md       # Dodo Payments MoR monetization and webhook integration
 │   ├── deployment-runbook.md
 │   ├── pricing-analysis.md
 │   ├── qa-plan.md
@@ -99,8 +101,8 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 | **Curriculum Architect** | Dependency-ordered modules, lessons, steps, diagnostic tests | Module manifests, lesson sequences, `course.config.json` |
 | **Widget Engineer** | Data-driven interactive widgets in `/packages/widgets` | Tested widget gallery, Zod schemas, unit tests |
 | **UI Designer** | Neo-brutalist token system & base components in `/packages/ui` | Interactive component gallery `/gallery` |
-| **Backend/DevOps** | Firebase Auth, Firestore security rules, Functions, emulators | Passing emulator tests, `/docs/deployment-runbook.md` |
-| **Pricing Analyst** | Research, competitive analysis, PPP tiers, unit economics | [`/docs/pricing-analysis.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pricing-analysis.md), `/courses/*/pricing.json` |
+| **Backend/DevOps** | Firebase Auth, Firestore security rules, Functions, emulators | Passing emulator tests, [`/docs/backend.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/backend.md), [`/docs/deployment-runbook.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/deployment-runbook.md) |
+| **Pricing Analyst** | Research, competitive analysis, PPP tiers, unit economics | [`/docs/pricing-analysis.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/pricing-analysis.md), [`/docs/payments-plan.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/payments-plan.md), `/courses/*/pricing.json` |
 | **QA / Fact-Checker** | Independent source cross-check, widget accessibility & security | `/docs/qa/<course>-factcheck.md`, QA signoff |
 
 ---
