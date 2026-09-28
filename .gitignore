@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+
+# Environment variables & secrets (Rule 7)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+service-account*.json
+*serviceAccount*.json
+*credential*.json
+client-secret*.json
+
+# Firebase & GCP
+.firebase/
+*-debug.log
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+
+# Testing & coverage
+coverage/
+test-results/
+playwright-report/
+blob-report/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# IDE & editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# Temporary / scratch
+tmp/
+*.tmp
