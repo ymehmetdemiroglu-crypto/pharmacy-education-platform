@@ -46,3 +46,18 @@
 - **Context**: Need to position the product appropriately against broad general education platforms (Brilliant) and expensive board review suites (UWorld, Sketchy).
 - **Decision**: Target the single course at **$39/month** or **$288/year**, and the dual course bundle at **$49/month** or **$348/year**, backed by regional PPP adjustments for Turkey (₺650/mo) and the Gulf (145 SAR/mo).
 - **Consequences**: Captures high-margin professional education willingness-to-pay while remaining accessible via student-focused semester passes.
+
+---
+
+## ADR-008: Merchant of Record (MoR) with Dodo Payments for Global & Turkish Checkout
+- **Context**: The platform targets domestic Turkish pharmacy students (EUS candidates) alongside international students (NAPLEX/PEBC). Direct Stripe processing requires multi-jurisdiction tax registration, complex foreign entity management, and suffers high Turkish bank debit card decline rates without 3D Secure domestic routing.
+- **Decision**: Adopt Dodo Payments as the primary Merchant of Record. Dodo handles global sales tax/VAT remittance, native 3D Secure processing for Turkish cards, multi-currency display (USD, TRY, SAR, EUR), and competitive transaction fees (~3.5% + $0.30).
+- **Consequences**: Eliminates legal tax filing overhead, ensures high conversion rates for Turkish students, and handles subscription billing and semester passes natively.
+
+---
+
+## ADR-009: Serverless Cloud Functions v2 with Secret Manager & Webhook Idempotency
+- **Context**: Entitlement provisioning and checkout creation must be cryptographically secure and tamper-proof while remaining cost-effective with zero baseline server idle charges.
+- **Decision**: Implement serverless Cloud Functions v2 (TypeScript on Node 20/22) in `europe-west1` / `europe-west3`. Store payment secrets exclusively in Google Cloud Secret Manager. Enforce transactional webhook idempotency via `/webhook_events/{eventId}` in Cloud Firestore.
+- **Consequences**: Prevents double-provisioning replay attacks, guarantees 100% server-authoritative entitlements, and maintains zero idle infrastructure costs during initial phases.
+

@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "courseId": "pharmacology",
+  "courseTitle": "Pharmacology",
+  "version": "1.0.0",
+  "currencyDefault": "USD",
+  "gateway": "dodo_payments",
+  "freePreview": {
+    "freeLessonsCount": 2,
+    "requiresAuth": true,
+    "requiresCard": false,
+    "description": "Lessons 1 and 2 are free forever without credit card"
+  },
+  "refundPolicy": {
+    "guaranteeDays": 14,
+    "maxLessonsCompletedForRefund": 2,
+    "description": "14-day 100% money-back guarantee if 2 or fewer paid lessons have been completed"
+  },
+  "plans": {
+    "single_monthly": {
+      "id": "pharm_monthly",
+      "type": "single_course",
+      "billingInterval": "monthly",
+      "recurring": true,
+      "basePriceUSD": 39.00,
+      "localizedPrices": {
+        "USD": { "amount": 39.00, "symbol": "$" },
+        "TRY": { "amount": 650.00, "symbol": "₺" },
+        "SAR": { "amount": 145.00, "symbol": "SAR" },
+        "EUR": { "amount": 36.00, "symbol": "€" }
+      },
+      "name": "Pharmacology — Monthly",
+      "description": "Full access to all Pharmacology modules, interactive PK multi-compartment simulators, and live dose-response curve modulators."
+    },
+    "single_semester": {
+      "id": "pharm_semester",
+      "type": "single_course",
+      "billingInterval": "semester",
+      "durationMonths": 6,
+      "recurring": false,
+      "basePriceUSD": 169.00,
+      "effectiveMonthlyUSD": 28.16,
+      "localizedPrices": {
+        "USD": { "amount": 169.00, "symbol": "$" },
+        "TRY": { "amount": 2750.00, "symbol": "₺" },
+        "SAR": { "amount": 630.00, "symbol": "SAR" },
+        "EUR": { "amount": 155.00, "symbol": "€" }
+      },
+      "badge": "Best for University Semester",
+      "name": "Pharmacology — Semester Pass (6 Months)",
+      "description": "6-month one-time pass covering the university pharmacology semester and clinical exam period. No recurring auto-renewal."
+    },
+    "single_annual": {
+      "id": "pharm_annual",
+      "type": "single_course",
+      "billingInterval": "annual",
+      "durationMonths": 12,
+      "recurring": true,
+      "basePriceUSD": 288.00,
+      "effectiveMonthlyUSD": 24.00,
+      "localizedPrices": {
+        "USD": { "amount": 288.00, "symbol": "$" },
+        "TRY": { "amount": 4800.00, "symbol": "₺" },
+        "SAR": { "amount": 1080.00, "symbol": "SAR" },
+        "EUR": { "amount": 265.00, "symbol": "€" }
+      },
+      "badge": "Save 38%",
+      "name": "Pharmacology — Annual Pass",
+      "description": "12-month access covering comprehensive receptor dynamics, autonomic pharmacology, and spaced repetition queues."
+    },
+    "bundle_monthly": {
+      "id": "bundle_monthly",
+      "type": "dual_bundle",
+      "billingInterval": "monthly",
+      "recurring": true,
+      "basePriceUSD": 49.00,
+      "localizedPrices": {
+        "USD": { "amount": 49.00, "symbol": "$" },
+        "TRY": { "amount": 850.00, "symbol": "₺" },
+        "SAR": { "amount": 185.00, "symbol": "SAR" },
+        "EUR": { "amount": 45.00, "symbol": "€" }
+      },
+      "name": "All-Access Dual Pass — Monthly",
+      "description": "Complete access to BOTH Medicinal Chemistry and Pharmacology with cross-course bridge cards."
+    },
+    "bundle_semester": {
+      "id": "bundle_semester",
+      "type": "dual_bundle",
+      "billingInterval": "semester",
+      "durationMonths": 6,
+      "recurring": false,
+      "basePriceUSD": 229.00,
+      "effectiveMonthlyUSD": 38.16,
+      "localizedPrices": {
+        "USD": { "amount": 229.00, "symbol": "$" },
+        "TRY": { "amount": 3600.00, "symbol": "₺" },
+        "SAR": { "amount": 850.00, "symbol": "SAR" },
+        "EUR": { "amount": 210.00, "symbol": "€" }
+      },
+      "badge": "Popular for Dual Courses",
+      "name": "All-Access Dual Pass — Semester (6 Months)",
+      "description": "One-time 6-month dual pass for students studying both MedChem and Pharmacology concurrently."
+    },
+    "bundle_annual": {
+      "id": "bundle_annual",
+      "type": "dual_bundle",
+      "billingInterval": "annual",
+      "durationMonths": 12,
+      "recurring": true,
+      "basePriceUSD": 348.00,
+      "effectiveMonthlyUSD": 29.00,
+      "localizedPrices": {
+        "USD": { "amount": 348.00, "symbol": "$" },
+        "TRY": { "amount": 5900.00, "symbol": "₺" },
+        "SAR": { "amount": 1300.00, "symbol": "SAR" },
+        "EUR": { "amount": 320.00, "symbol": "€" }
+      },
+      "badge": "Ultimate Licensure Pack",
+      "name": "All-Access Dual Pass — Annual",
+      "description": "The complete pharmaceutical science suite for NAPLEX, EUS, PEBC, and SPLE board preparation."
+    }
+  },
+  "dodoProductMapping": {
+    "sandbox": {
+      "pharm_monthly": "p_sb_pharm_mo",
+      "pharm_semester": "p_sb_pharm_sem",
+      "pharm_annual": "p_sb_pharm_yr",
+      "bundle_monthly": "p_sb_bun_mo",
+      "bundle_semester": "p_sb_bun_sem",
+      "bundle_annual": "p_sb_bun_yr"
+    },
+    "production": {
+      "pharm_monthly": "p_live_pharm_mo",
+      "pharm_semester": "p_live_pharm_sem",
+      "pharm_annual": "p_live_pharm_yr",
+      "bundle_monthly": "p_live_bun_mo",
+      "bundle_semester": "p_live_bun_sem",
+      "bundle_annual": "p_live_bun_yr"
+    }
+  }
+}
