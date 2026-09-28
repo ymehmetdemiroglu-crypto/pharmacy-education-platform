@@ -85,6 +85,34 @@ def extract_deck_pages(pdf_path: str) -> List[Dict[str, Any]]:
     return pages
 
 
+def synthesize_slide_topic(lines: List[str], page_num: int) -> Tuple[str, str]:
+    """
+    Summarize slide metadata without verbatim copying of 8+ word sentences.
+    Extracts distinct scientific terms/keywords into an original catalog entry.
+    """
+    if not lines:
+        return f"Slide {page_num}: Structural Model", "[Chemical Diagram / Active Site Visual]"
+    stop = {
+        've', 'veya', 'ile', 'için', 'olan', 'olarak', 'gibi', 'bu', 'bir', 'da', 'de',
+        'ise', 'göre', 'denir', 'the', 'and', 'or', 'of', 'in', 'to', 'for', 'with', 'on',
+        'var', 'yok', 'daha', 'çok', 'en', 'ise', 'her', 'tüm', 'bazı', 'neden', 'olur'
+    }
+    terms = []
+    for l in lines:
+        words = re.findall(r'\b[a-zA-ZçğıöşüÇĞİÖŞÜ0-9\-]+\b', l)
+        for w in words:
+            if len(w) >= 3 and w.lower() not in stop and w not in terms:
+                terms.append(w)
+            if len(terms) >= 7:
+                break
+        if len(terms) >= 7:
+            break
+            
+    headline = f"Slide {page_num}: " + (" / ".join(terms[:3]) if terms else "Chemical Focus")
+    entities = ", ".join(terms[3:7]) if len(terms) > 3 else (", ".join(terms[:3]) if terms else "Core Structure")
+    return headline[:60], entities[:70]
+
+
 def analyze_medchem_inventory(materials_dir: str) -> Tuple[Dict[str, Any], List[Dict[str, Any]]]:
     medchem_dir = os.path.join(materials_dir, "medchem")
     decks = sorted([f for f in os.listdir(medchem_dir) if f.endswith(".pdf")])
@@ -182,8 +210,7 @@ def write_medchem_inventory_md(summary: Dict[str, Any], inventory: List[Dict[str
             f.write("| Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |\n")
             f.write("| :--- | :--- | :--- | :--- | :--- | :--- |\n")
             for p in d["pages"]:
-                snippet = p["title"].replace("|", "/")[:60]
-                entities = ", ".join(p["lines"][:2]).replace("|", "/")[:70] if p["lines"] else "[Raster Image / Structure]"
+                snippet, entities = synthesize_slide_topic(p["lines"], p["slideNumber"])
                 f.write(f"| Slide {p['slideNumber']:2d} | {snippet} | {p['charCount']} | {p['confidence']:.2f} | `{p['qualityFlag']}` | {entities} |\n")
             f.write("\n")
 
@@ -232,8 +259,7 @@ def write_pharmacology_inventory_md(summary: Dict[str, Any], inventory: List[Dic
             f.write("| Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |\n")
             f.write("| :--- | :--- | :--- | :--- | :--- | :--- |\n")
             for p in d["pages"]:
-                snippet = p["title"].replace("|", "/")[:60]
-                entities = ", ".join(p["lines"][:2]).replace("|", "/")[:70] if p["lines"] else "[Raster Image / Structure]"
+                snippet, entities = synthesize_slide_topic(p["lines"], p["slideNumber"])
                 f.write(f"| Slide {p['slideNumber']:2d} | {snippet} | {p['charCount']} | {p['confidence']:.2f} | `{p['qualityFlag']}` | {entities} |\n")
             f.write("\n")
 

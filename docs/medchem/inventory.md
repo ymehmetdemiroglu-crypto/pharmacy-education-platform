@@ -29,219 +29,219 @@
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | Biyoizosteri | 651 | 0.95 | `FULL_TEXT` | Biyoizosteri, Aktivitesi bilinen bir molekülden, moleküler modifikasyo |
-| Slide  2 | N2O CO2 | 472 | 0.95 | `FULL_TEXT` | N2O CO2, Viskozite (20 oC) 148 x 10-6 148 x 10-6 |
-| Slide  3 | Daha sonra Grimm’in hidrür katımı kanunu ve psödo atom kavra | 428 | 0.95 | `FULL_TEXT` | Daha sonra Grimm’in hidrür katımı kanunu ve psödo atom kavramını, orta |
-| Slide  4 | Hidrür katımı kavramıyla geliştirilmiş izosterik gruplar: | 274 | 0.95 | `FULL_TEXT` | Hidrür katımı kavramıyla geliştirilmiş izosterik gruplar:, Elektron sa |
-| Slide  5 | Bugünkü anlamıyla izosterler girdikleri yapıya benzer fiziks | 673 | 0.95 | `FULL_TEXT` | Bugünkü anlamıyla izosterler girdikleri yapıya benzer fiziksel,, kimya |
-| Slide  6 | Klasik biyoizosterlere örnekler : | 265 | 0.95 | `FULL_TEXT` | Klasik biyoizosterlere örnekler :, i.- Monovalan atom veya gruplar |
-| Slide  7 | iv.- Tetravalan atomlar | 106 | 0.85 | `BULLET_SUMMARY` | iv.- Tetravalan atomlar, v.- Halka ekivalanları |
-| Slide  8 | b) -CH= -N= | 63 | 0.85 | `BULLET_SUMMARY` | b) -CH= -N=, c) -O- -S- -CH2- -NH- |
-| Slide  9 | Nonklasik biyoizosterlere örnekler : | 192 | 0.95 | `FULL_TEXT` | Nonklasik biyoizosterlere örnekler :, i.- Karbonil |
-| Slide 10 | iii.- Hidroksil : -NHCOR, -NHSO2R, -CH2OH, -OH, -NHCN, | 159 | 0.95 | `FULL_TEXT` | iii.- Hidroksil : -NHCOR, -NHSO2R, -CH2OH, -OH, -NHCN,, CH(CN)2 |
-| Slide 11 | vii.- Piridin : | 82 | 0.85 | `BULLET_SUMMARY` | vii.- Piridin :, N |
-| Slide 12 | Düz veya dallanmış zincirli siklik olmayan yapılara karşı | 367 | 0.95 | `FULL_TEXT` | Düz veya dallanmış zincirli siklik olmayan yapılara karşı, halkalı yap |
-| Slide 13 | Bazı ilaçların alt grupları biyoizosterizm esasına göre | 331 | 0.95 | `FULL_TEXT` | Bazı ilaçların alt grupları biyoizosterizm esasına göre, geliştirilmiş |
-| Slide 14 | N | 488 | 0.95 | `FULL_TEXT` | N, N N |
-| Slide 15 | S | 260 | 0.95 | `FULL_TEXT` | S, CH2 CH COOH |
+| Slide  1 | Slide 1: Biyoizosteri / Aktivitesi / bilinen | 651 | 0.95 | `FULL_TEXT` | molekülden, moleküler, modifikasyonla, aktif |
+| Slide  2 | Slide 2: N2O / CO2 / Viskozite | 472 | 0.95 | `FULL_TEXT` | 148, 10-6, Dansite, 856 |
+| Slide  3 | Slide 3: sonra / Grimm / hidrür | 428 | 0.95 | `FULL_TEXT` | katımı, kanunu, psödo, atom |
+| Slide  4 | Slide 4: Hidrür / katımı / kavramıyla | 274 | 0.95 | `FULL_TEXT` | geliştirilmiş, izosterik, gruplar, Elektron |
+| Slide  5 | Slide 5: Bugünkü / anlamıyla / izosterler | 673 | 0.95 | `FULL_TEXT` | girdikleri, yapıya, benzer, fiziksel |
+| Slide  6 | Slide 6: Klasik / biyoizosterlere / örnekler | 265 | 0.95 | `FULL_TEXT` | Monovalan, atom, gruplar, CH3 |
+| Slide  7 | Slide 7: Tetravalan / atomlar / Halka | 106 | 0.85 | `BULLET_SUMMARY` | ekivalanları, Sia, benzen, tiyofen |
+| Slide  8 | Slide 8: CH2 / piridin / benzen | 63 | 0.85 | `BULLET_SUMMARY` | CH2, piridin, benzen |
+| Slide  9 | Slide 9: Nonklasik / biyoizosterlere / örnekler | 192 | 0.95 | `FULL_TEXT` | Karbonil, Karboksil, NH2, OEt |
+| Slide 10 | Slide 10: iii / Hidroksil / NHCOR | 159 | 0.95 | `FULL_TEXT` | NHSO2R, CH2OH, NHCN, Halojen |
+| Slide 11 | Slide 11: vii / Piridin / NO2 | 82 | 0.85 | `BULLET_SUMMARY` | NR3, viii, Hacim, artışı |
+| Slide 12 | Slide 12: Düz / dallanmış / zincirli | 367 | 0.95 | `FULL_TEXT` | siklik, olmayan, yapılara, karşı |
+| Slide 13 | Slide 13: ilaçların / alt / grupları | 331 | 0.95 | `FULL_TEXT` | biyoizosterizm, esasına, geliştirilmiştir, Örneğin |
+| Slide 14 | Slide 14: Genel / yapısı / bileşikte | 488 | 0.95 | `FULL_TEXT` | COO, grubunun, girmesiyle, aminoalkol |
+| Slide 15 | Slide 15: CH2 / COOH / NH2 | 260 | 0.95 | `FULL_TEXT` | tiyenilalanin, fenilalanin, CH3, 5-bromourasil |
 
 ### Deck: `Farmasötik ve Medisinal Kimya 1-Giriş.pdf` (23 slides, Avg Confidence: 89.8%)
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | ECZ 335 | 68 | 0.85 | `BULLET_SUMMARY` | ECZ 335, FARMASÖTİK VE MEDİSİNAL |
-| Slide  2 | Farmasötik Kimya, kelime anlamıyla eczacılık kimyasıdır. | 544 | 0.95 | `FULL_TEXT` | Farmasötik Kimya, kelime anlamıyla eczacılık kimyasıdır., İlaç olabile |
-| Slide  3 |  İlaç etken maddesi tasarlamak ve sentezlemek | 643 | 0.95 | `FULL_TEXT` |  İlaç etken maddesi tasarlamak ve sentezlemek,  Sentez yöntemlerini  |
-| Slide  4 |  Bir preparatta yer alan etken madde yada maddelerin | 322 | 0.95 | `FULL_TEXT` |  Bir preparatta yer alan etken madde yada maddelerin, stabilitesini y |
-| Slide  5 | İlaç Etken Maddesi | 287 | 0.95 | `FULL_TEXT` | İlaç Etken Maddesi, Kimyasal sentez yolu ile ya da doğal kaynaklardan |
-| Slide  6 | İnsan sağlığını korumak | 92 | 0.85 | `BULLET_SUMMARY` | İnsan sağlığını korumak, Yaşam kalitesini yükseltmek |
-| Slide  7 | İlaç Etken Madde Kaynakları | 232 | 0.95 | `FULL_TEXT` | İlaç Etken Madde Kaynakları, 1-Doğal Kaynaklı İlaçlar: Bitkiler veya h |
-| Slide  8 | İlaç Etken Madde Kaynakları | 73 | 0.85 | `BULLET_SUMMARY` | İlaç Etken Madde Kaynakları, 2-Yarı Sentetik Kaynaklı İlaçlar |
-| Slide  9 | İlaç Etken Madde Kaynakları | 105 | 0.85 | `BULLET_SUMMARY` | İlaç Etken Madde Kaynakları, 3-Sentetik Kaynaklı İlaçlar |
-| Slide 10 | İlaçların Sınıflandırılması | 474 | 0.95 | `FULL_TEXT` | İlaçların Sınıflandırılması,  Kimyasal yapı: taşıdıkları kimyasal yap |
-| Slide 11 |  Moleküler seviyede etki mekanizması: Henüz bütün | 470 | 0.95 | `FULL_TEXT` |  Moleküler seviyede etki mekanizması: Henüz bütün, ilaçların etki mek |
-| Slide 12 | Slide 12 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 13 | İlaçların İsimlendirilmesi | 291 | 0.95 | `FULL_TEXT` | İlaçların İsimlendirilmesi,  Kod numarası: Genellikle ilacı ilk elde  |
-| Slide 14 |  Kimyasal isim: Bileşiğin kimyasal yapısını tam olarak açık | 371 | 0.95 | `FULL_TEXT` |  Kimyasal isim: Bileşiğin kimyasal yapısını tam olarak açıklayan,, IU |
-| Slide 15 | Jenerik İsim: Dünya Sağlık Örgütü’nün INN Programı veya | 694 | 0.95 | `FULL_TEXT` | Jenerik İsim: Dünya Sağlık Örgütü’nün INN Programı veya, Amerika Birle |
-| Slide 16 | Ticari( Marka) İsimleri: | 677 | 0.95 | `FULL_TEXT` | Ticari( Marka) İsimleri:, İlaç şirketleri tarafından yaratılan ve paza |
-| Slide 17 | İlaç ve Organizma | 354 | 0.95 | `FULL_TEXT` | İlaç ve Organizma, İlaç aktivitesi biyokimya, farmakoloji ve medisinal |
-| Slide 18 | Ferguson Prensibi: | 292 | 0.95 | `FULL_TEXT` | Ferguson Prensibi:, Aktiviteden endobiyofazdaki konsantrasyon sorumlud |
-| Slide 19 | Ferguson prensibine, yani termodinamik aktivitelerine göre | 411 | 0.95 | `FULL_TEXT` | Ferguson prensibine, yani termodinamik aktivitelerine göre, ilaçlar ik |
-| Slide 20 | Yapı Spesifik İlaçlar: Temel bir yapı taşırlar. Yapıdaki küç | 319 | 0.95 | `FULL_TEXT` | Yapı Spesifik İlaçlar: Temel bir yapı taşırlar. Yapıdaki küçük, değişi |
-| Slide 21 | Tolbutamid (Kısa etkili hipoglisemik) | 112 | 0.85 | `BULLET_SUMMARY` | Tolbutamid (Kısa etkili hipoglisemik), Klorpropamid (Uzun etkili hipog |
-| Slide 22 | NH | 73 | 0.85 | `BULLET_SUMMARY` | NH, N |
-| Slide 23 | Yapı nonspesifik İlaçlar: | 400 | 0.95 | `FULL_TEXT` | Yapı nonspesifik İlaçlar:, Farmakolojik etki kimyasal yapıdan bağımsız |
+| Slide  1 | Slide 1: ECZ / 335 / FARMASÖTİK | 68 | 0.85 | `BULLET_SUMMARY` | MEDİSİNAL, KİMYA-1, Prof, Bedia |
+| Slide  2 | Slide 2: Farmasötik / Kimya / kelime | 544 | 0.95 | `FULL_TEXT` | anlamıyla, eczacılık, kimyasıdır, İlaç |
+| Slide  3 | Slide 3: İlaç / etken / maddesi | 643 | 0.95 | `FULL_TEXT` | tasarlamak, sentezlemek, Sentez, yöntemlerini |
+| Slide  4 | Slide 4: preparatta / yer / alan | 322 | 0.95 | `FULL_TEXT` | etken, madde, yada, maddelerin |
+| Slide  5 | Slide 5: İlaç / Etken / Maddesi | 287 | 0.95 | `FULL_TEXT` | Kimyasal, sentez, yolu, doğal |
+| Slide  6 | Slide 6: İnsan / sağlığını / korumak | 92 | 0.85 | `BULLET_SUMMARY` | Yaşam, kalitesini, yükseltmek, Sağlıklı |
+| Slide  7 | Slide 7: İlaç / Etken / Madde | 232 | 0.95 | `FULL_TEXT` | Kaynakları, 1-Doğal, Kaynaklı, İlaçlar |
+| Slide  8 | Slide 8: İlaç / Etken / Madde | 73 | 0.85 | `BULLET_SUMMARY` | Kaynakları, 2-Yarı, Sentetik, Kaynaklı |
+| Slide  9 | Slide 9: İlaç / Etken / Madde | 105 | 0.85 | `BULLET_SUMMARY` | Kaynakları, 3-Sentetik, Kaynaklı, İlaçlar |
+| Slide 10 | Slide 10: İlaçların / Sınıflandırılması / Kimyasal | 474 | 0.95 | `FULL_TEXT` | yapı, taşıdıkları, kimyasal, yapıya |
+| Slide 11 | Slide 11: Moleküler / seviyede / etki | 470 | 0.95 | `FULL_TEXT` | mekanizması, Henüz, bütün, ilaçların |
+| Slide 12 | Slide 12: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 13 | Slide 13: İlaçların / İsimlendirilmesi / Kod | 291 | 0.95 | `FULL_TEXT` | numarası, Genellikle, ilacı, ilk |
+| Slide 14 | Slide 14: Kimyasal / isim / Bileşiğin | 371 | 0.95 | `FULL_TEXT` | kimyasal, yapısını, tam, açıklayan |
+| Slide 15 | Slide 15: Jenerik / İsim / Dünya | 694 | 0.95 | `FULL_TEXT` | Sağlık, Örgütü, nün, INN |
+| Slide 16 | Slide 16: Ticari / Marka / İsimleri | 677 | 0.95 | `FULL_TEXT` | İlaç, şirketleri, tarafından, yaratılan |
+| Slide 17 | Slide 17: İlaç / Organizma / aktivitesi | 354 | 0.95 | `FULL_TEXT` | biyokimya, farmakoloji, medisinal, kimya |
+| Slide 18 | Slide 18: Ferguson / Prensibi / Aktiviteden | 292 | 0.95 | `FULL_TEXT` | endobiyofazdaki, konsantrasyon, sorumludur, Ekzobiyofaz-endobiyofaz |
+| Slide 19 | Slide 19: Ferguson / prensibine / yani | 411 | 0.95 | `FULL_TEXT` | termodinamik, aktivitelerine, ilaçlar, iki |
+| Slide 20 | Slide 20: Yapı / Spesifik / İlaçlar | 319 | 0.95 | `FULL_TEXT` | Temel, yapı, taşırlar, Yapıdaki |
+| Slide 21 | Slide 21: Tolbutamid / Kısa / etkili | 112 | 0.85 | `BULLET_SUMMARY` | hipoglisemik, Klorpropamid, Uzun, SO2NHCONHC3H7 |
+| Slide 22 | Slide 22: Urasil / metabolit / 5-Fluorourasil | 73 | 0.85 | `BULLET_SUMMARY` | Antimetabolit |
+| Slide 23 | Slide 23: Yapı / nonspesifik / İlaçlar | 400 | 0.95 | `FULL_TEXT` | Farmakolojik, etki, kimyasal, yapıdan |
 
 ### Deck: `Fonksiyonel gruplar.pdf` (36 slides, Avg Confidence: 51.4%)
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | KİMYASAL ADLANDIRMA VE | 71 | 0.85 | `BULLET_SUMMARY` | KİMYASAL ADLANDIRMA VE, FONKSİYONEL GRUPLAR |
-| Slide  2 | ALKOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ALKOLLER |
-| Slide  3 | FENOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | FENOLLER |
-| Slide  4 | Slide 4 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide  5 | ETERLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ETERLER |
-| Slide  6 | Slide 6 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide  7 | ALDEHİTLER | 10 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ALDEHİTLER |
-| Slide  8 | KETONLAR | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KETONLAR |
-| Slide  9 | Slide 9 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 10 | Slide 10 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 11 | KARBOKSİLİK ASİTLER | 19 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KARBOKSİLİK ASİTLER |
-| Slide 12 | Slide 12 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 13 | Slide 13 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 14 | Slide 14 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 15 | AÇİL GRUPLARI | 13 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AÇİL GRUPLARI |
-| Slide 16 | ASİT KLORÜRLER | 14 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ASİT KLORÜRLER |
-| Slide 17 | ESTERLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ESTERLER |
-| Slide 18 | Slide 18 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 19 | Slide 19 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 20 | AMİNLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AMİNLER |
-| Slide 21 | Slide 21 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 22 | Slide 22 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 23 | AMİTLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AMİTLER |
-| Slide 24 | Slide 24 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 25 | Slide 25 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 26 | NİTRİLLER | 9 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | NİTRİLLER |
-| Slide 27 | ÜRE BİLEŞİKLERİ | 15 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ÜRE BİLEŞİKLERİ |
-| Slide 28 | TİYOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | TİYOLLER |
-| Slide 29 | KÜKÜRTLÜ ASİTLER | 16 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KÜKÜRTLÜ ASİTLER |
-| Slide 30 | Slide 30 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 31 | Slide 31 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 32 | HETEROSİKLİK BİLEŞİKLER | 23 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | HETEROSİKLİK BİLEŞİKLER |
-| Slide 33 | Heterosiklik Halkalar | 21 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | Heterosiklik Halkalar |
-| Slide 34 | Slide 34 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 35 | Slide 35 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 36 | HETEROSİKLİK RADİKALLER | 23 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | HETEROSİKLİK RADİKALLER |
+| Slide  1 | Slide 1: KİMYASAL / ADLANDIRMA / FONKSİYONEL | 71 | 0.85 | `BULLET_SUMMARY` | GRUPLAR, Prof, Bedia, Kaymakçıoğlu |
+| Slide  2 | Slide 2: ALKOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ALKOLLER |
+| Slide  3 | Slide 3: FENOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | FENOLLER |
+| Slide  4 | Slide 4: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide  5 | Slide 5: ETERLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ETERLER |
+| Slide  6 | Slide 6: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide  7 | Slide 7: ALDEHİTLER | 10 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ALDEHİTLER |
+| Slide  8 | Slide 8: KETONLAR | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KETONLAR |
+| Slide  9 | Slide 9: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 10 | Slide 10: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 11 | Slide 11: KARBOKSİLİK / ASİTLER | 19 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KARBOKSİLİK, ASİTLER |
+| Slide 12 | Slide 12: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 13 | Slide 13: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 14 | Slide 14: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 15 | Slide 15: AÇİL / GRUPLARI | 13 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AÇİL, GRUPLARI |
+| Slide 16 | Slide 16: ASİT / KLORÜRLER | 14 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ASİT, KLORÜRLER |
+| Slide 17 | Slide 17: ESTERLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ESTERLER |
+| Slide 18 | Slide 18: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 19 | Slide 19: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 20 | Slide 20: AMİNLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AMİNLER |
+| Slide 21 | Slide 21: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 22 | Slide 22: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 23 | Slide 23: AMİTLER | 7 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | AMİTLER |
+| Slide 24 | Slide 24: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 25 | Slide 25: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 26 | Slide 26: NİTRİLLER | 9 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | NİTRİLLER |
+| Slide 27 | Slide 27: ÜRE / BİLEŞİKLERİ | 15 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | ÜRE, BİLEŞİKLERİ |
+| Slide 28 | Slide 28: TİYOLLER | 8 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | TİYOLLER |
+| Slide 29 | Slide 29: KÜKÜRTLÜ / ASİTLER | 16 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | KÜKÜRTLÜ, ASİTLER |
+| Slide 30 | Slide 30: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 31 | Slide 31: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 32 | Slide 32: HETEROSİKLİK / BİLEŞİKLER | 23 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | HETEROSİKLİK, BİLEŞİKLER |
+| Slide 33 | Slide 33: Heterosiklik / Halkalar | 21 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | Heterosiklik, Halkalar |
+| Slide 34 | Slide 34: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 35 | Slide 35: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 36 | Slide 36: HETEROSİKLİK / RADİKALLER | 23 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | HETEROSİKLİK, RADİKALLER |
 
 ### Deck: `İlaç metabolizması-2026.pdf` (44 slides, Avg Confidence: 93.6%)
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | ORGANİK BİLEŞİKLERDE METABOLİK REAKSİYONLAR | 991 | 0.95 | `FULL_TEXT` | ORGANİK BİLEŞİKLERDE METABOLİK REAKSİYONLAR, Organizmamız ilaçlar dahi |
-| Slide  2 | Örneğin sülfadiazinin asetil metaboliti suda çözünmediği içi | 686 | 0.95 | `FULL_TEXT` | Örneğin sülfadiazinin asetil metaboliti suda çözünmediği için böbrek,  |
-| Slide  3 | İlaç Metabolizması Araştırmaları ile Neler Saptanabilir? | 739 | 0.95 | `FULL_TEXT` | İlaç Metabolizması Araştırmaları ile Neler Saptanabilir?, 1 – Organizm |
-| Slide  4 | Faz I reaksiyonları ile molekülde Faz II reaksiyonuna girebi | 476 | 0.95 | `FULL_TEXT` | Faz I reaksiyonları ile molekülde Faz II reaksiyonuna girebilecek –, O |
-| Slide  5 | Metabonat | 440 | 0.95 | `FULL_TEXT` | Metabonat, Bazı bileşikler organizmada non-enzimatik (kimyasal olarak) |
-| Slide  6 | İlaç Metabolizmasının Etkileri | 359 | 0.95 | `FULL_TEXT` | İlaç Metabolizmasının Etkileri, Istenen bir durum 1.Istenmeyen bir dur |
-| Slide  7 | Bir ilaç bazı nedenlerden dolayı metabolize olmayabilir; | 175 | 0.95 | `FULL_TEXT` | Bir ilaç bazı nedenlerden dolayı metabolize olmayabilir;, - Gerekli en |
-| Slide  8 | Metabolizma Teknikleri | 361 | 0.95 | `FULL_TEXT` | Metabolizma Teknikleri, İn vitro teknikler |
-| Slide  9 | Metabolitlerin Ortak Özellikleri | 419 | 0.95 | `FULL_TEXT` | Metabolitlerin Ortak Özellikleri, - Çoğu stabil değildir. Isı, ışık ve |
-| Slide 10 | İlaç Metabolizması Araştırmalarındaki Yöntemler | 320 | 0.95 | `FULL_TEXT` | İlaç Metabolizması Araştırmalarındaki Yöntemler, (in vivo – in vitro) |
-| Slide 11 | Substrat ve muhtemel | 402 | 0.95 | `FULL_TEXT` | Substrat ve muhtemel, metabolit tespiti, sentezi |
-| Slide 12 | Metabolitlerin Biyolojik Ortamdan Ekstraksiyonu | 587 | 0.95 | `FULL_TEXT` | Metabolitlerin Biyolojik Ortamdan Ekstraksiyonu, Burada amaç sulu fazd |
-| Slide 13 | Sıvı – sıvı ekstraksiyonunda maddenin organik faza alınmasın | 1023 | 0.95 | `FULL_TEXT` | Sıvı – sıvı ekstraksiyonunda maddenin organik faza alınmasında sorun,  |
-| Slide 14 | FAZ I REAKSİYONLARI | 244 | 0.95 | `FULL_TEXT` | FAZ I REAKSİYONLARI, 1) Oksidasyon |
-| Slide 15 | CH3CH2CH3 | 242 | 0.95 | `FULL_TEXT` | CH3CH2CH3, CH3CH2CH2OH |
-| Slide 16 | iii – aromatik karbon oksidasyonu | 143 | 0.85 | `BULLET_SUMMARY` | iii – aromatik karbon oksidasyonu, ( O ) O |
-| Slide 17 | iv – alisiklik karbon oksidasyonu | 76 | 0.85 | `BULLET_SUMMARY` | iv – alisiklik karbon oksidasyonu, OH |
-| Slide 18 | v – alkol ve aldehid oksidasyonu | 143 | 0.85 | `BULLET_SUMMARY` | v – alkol ve aldehid oksidasyonu, CH3CH2OH CH3CHO CH3COOH |
-| Slide 19 | vi – heterosiklik karbon oksidasyonu | 165 | 0.95 | `FULL_TEXT` | vi – heterosiklik karbon oksidasyonu, Ar CH2 N N |
-| Slide 20 | vii – oksidatif O, S, N-dealkilasyon | 332 | 0.95 | `FULL_TEXT` | vii – oksidatif O, S, N-dealkilasyon, Eter, tiyoeter ve aminlerde (sek |
-| Slide 21 | viii – oksidatif deaminasyon | 197 | 0.95 | `FULL_TEXT` | viii – oksidatif deaminasyon, +NH3 |
-| Slide 22 | ix – kükürt oksidasyonu | 317 | 0.95 | `FULL_TEXT` | ix – kükürt oksidasyonu, İlgili enzimler karmafonksiyonlu oksidazlardı |
-| Slide 23 | x – azot oksidasyonu | 187 | 0.95 | `FULL_TEXT` | x – azot oksidasyonu, --- amin oksidasyonu |
-| Slide 24 | --- azo grubu oksidasyonu | 152 | 0.95 | `FULL_TEXT` | --- azo grubu oksidasyonu, R N N R R N N R |
-| Slide 25 | 2.- Redüksiyon | 233 | 0.95 | `FULL_TEXT` | 2.- Redüksiyon, a) Nitro grubu redüksiyonu |
-| Slide 26 | c) Karbonil grubu redüksiyonu | 193 | 0.95 | `FULL_TEXT` | c) Karbonil grubu redüksiyonu, İlgili enzim aldehid redüktaz ve keton  |
-| Slide 27 | e) Redüktif dehalojenizasyon | 86 | 0.85 | `BULLET_SUMMARY` | e) Redüktif dehalojenizasyon, CCl4  CHCl3 |
-| Slide 28 | 3.- Hidroliz | 166 | 0.95 | `FULL_TEXT` | 3.- Hidroliz, a) Ester hidrolizi |
-| Slide 29 | c) Epoksid hidrolizi | 184 | 0.95 | `FULL_TEXT` | c) Epoksid hidrolizi, İlgili enzim epoksid hidrolazdır. |
-| Slide 30 | f) Hidrazon hidrolizi | 115 | 0.85 | `BULLET_SUMMARY` | f) Hidrazon hidrolizi, R-CH=N-NH2 + H2O  R-CHO + H2N-NH2 |
-| Slide 31 | FAZ II REAKSİYONLARI | 199 | 0.95 | `FULL_TEXT` | FAZ II REAKSİYONLARI, 1. Asetilasyon |
-| Slide 32 | 2. Metilasyon | 333 | 0.95 | `FULL_TEXT` | 2. Metilasyon, -OH, -SH ve -NH2 grupları metilasyona uğrar. Endojen |
-| Slide 33 | 4. Glukuronik asidle konjugasyon | 306 | 0.95 | `FULL_TEXT` | 4. Glukuronik asidle konjugasyon, -OH grupları eter glukuronidlerini,  |
-| Slide 34 | 5. Aminoasit konjugasyonu | 215 | 0.95 | `FULL_TEXT` | 5. Aminoasit konjugasyonu, -COOH grupları, glisin ve glutamin gibi ami |
-| Slide 35 | 6. Glutatyon konjugasyonu | 552 | 0.95 | `FULL_TEXT` | 6. Glutatyon konjugasyonu, R CH CH2 |
-| Slide 36 | R S CH2 CH | 189 | 0.95 | `FULL_TEXT` | R S CH2 CH, CONH CH2 COOH |
-| Slide 37 | Reaksiyon Adı ve | 499 | 0.95 | `FULL_TEXT` | Reaksiyon Adı ve, Fonksiyonel Gruplar |
-| Slide 38 | Aminoasit ile | 465 | 0.95 | `FULL_TEXT` | Aminoasit ile, konjugasyon |
-| Slide 39 | METABOLİZMAYIETKİLEYEN FAKTÖRLER | 368 | 0.95 | `FULL_TEXT` | METABOLİZMAYIETKİLEYEN FAKTÖRLER, 1) Endojen Faktörler |
-| Slide 40 | Asetilasyon Polimorfizmi : Eskimolar ve Japonlar hızlı aseti | 468 | 0.95 | `FULL_TEXT` | Asetilasyon Polimorfizmi : Eskimolar ve Japonlar hızlı asetilatör,, Mı |
-| Slide 41 | STEREOKİMYASAL FAKTÖRLERİN | 529 | 0.95 | `FULL_TEXT` | STEREOKİMYASAL FAKTÖRLERİN, İLAÇ BİYOTRANSFORMASYONU ÜZERİNDEKİ |
-| Slide 42 | O CH2 CH CH2 NH CH | 94 | 0.85 | `BULLET_SUMMARY` | O CH2 CH CH2 NH CH, CH3 |
-| Slide 43 | METABOLİZMA REAKSİYONLARININ MEYDANA | 210 | 0.95 | `FULL_TEXT` | METABOLİZMA REAKSİYONLARININ MEYDANA, GELDİĞİ BAŞLICA BÖLGELER |
-| Slide 44 | İdrarda : Bir üriner sistem antiseptik prodrug olan | 556 | 0.95 | `FULL_TEXT` | İdrarda : Bir üriner sistem antiseptik prodrug olan, Hegzametilen tetr |
+| Slide  1 | Slide 1: ORGANİK / BİLEŞİKLERDE / METABOLİK | 991 | 0.95 | `FULL_TEXT` | REAKSİYONLAR, Organizmamız, ilaçlar, dahil |
+| Slide  2 | Slide 2: Örneğin / sülfadiazinin / asetil | 686 | 0.95 | `FULL_TEXT` | metaboliti, suda, çözünmediği, böbrek |
+| Slide  3 | Slide 3: İlaç / Metabolizması / Araştırmaları | 739 | 0.95 | `FULL_TEXT` | Neler, Saptanabilir, Organizmanın, kimyasala |
+| Slide  4 | Slide 4: Faz / reaksiyonları / molekülde | 476 | 0.95 | `FULL_TEXT` | reaksiyonuna, girebilecek, NH2, tiyol |
+| Slide  5 | Slide 5: Metabonat / bileşikler / organizmada | 440 | 0.95 | `FULL_TEXT` | non-enzimatik, kimyasal, değişikliğe, uğrayabilirler |
+| Slide  6 | Slide 6: İlaç / Metabolizmasının / Etkileri | 359 | 0.95 | `FULL_TEXT` | Istenen, durum, Istenmeyen, Toksik |
+| Slide  7 | Slide 7: ilaç / nedenlerden / dolayı | 175 | 0.95 | `FULL_TEXT` | metabolize, olmayabilir, Gerekli, enzim |
+| Slide  8 | Slide 8: Metabolizma / Teknikleri / vitro | 361 | 0.95 | `FULL_TEXT` | teknikler, Deney, hayvanının, ilgili |
+| Slide  9 | Slide 9: Metabolitlerin / Ortak / Özellikleri | 419 | 0.95 | `FULL_TEXT` | Çoğu, stabil, değildir, Isı |
+| Slide 10 | Slide 10: İlaç / Metabolizması / Araştırmalarındaki | 320 | 0.95 | `FULL_TEXT` | Yöntemler, vivo, vitro, Substrat |
+| Slide 11 | Slide 11: Substrat / muhtemel / metabolit | 402 | 0.95 | `FULL_TEXT` | tespiti, sentezi, yapi, aydinlatmasi |
+| Slide 12 | Slide 12: Metabolitlerin / Biyolojik / Ortamdan | 587 | 0.95 | `FULL_TEXT` | Ekstraksiyonu, Burada, amaç, sulu |
+| Slide 13 | Slide 13: Sıvı / sıvı / ekstraksiyonunda | 1023 | 0.95 | `FULL_TEXT` | maddenin, organik, faza, alınmasında |
+| Slide 14 | Slide 14: FAZ / REAKSİYONLARI / Oksidasyon | 244 | 0.95 | `FULL_TEXT` | Redüksiyon, Hidroliz, Karbon, oksidasyonu |
+| Slide 15 | Slide 15: CH3CH2CH3 / CH3CH2CH2OH / CH3 | 242 | 0.95 | `FULL_TEXT` | 1-Propanol, 2-Propanol, oksidasyonu, primer |
+| Slide 16 | Slide 16: iii / aromatik / karbon | 143 | 0.85 | `BULLET_SUMMARY` | oksidasyonu, epoksit, ara, ürün |
+| Slide 17 | Slide 17: alisiklik / karbon / oksidasyonu | 76 | 0.85 | `BULLET_SUMMARY` | tetralin, tetralin-1-ol, tetralin-2-ol |
+| Slide 18 | Slide 18: alkol / aldehid / oksidasyonu | 143 | 0.85 | `BULLET_SUMMARY` | CH3CH2OH, CH3CHO, CH3COOH, dehidrogenaz |
+| Slide 19 | Slide 19: heterosiklik / karbon / oksidasyonu | 165 | 0.95 | `FULL_TEXT` | CH2, N-benzil, prolidin, karbinolamin |
+| Slide 20 | Slide 20: vii / oksidatif / N-dealkilasyon | 332 | 0.95 | `FULL_TEXT` | Eter, tiyoeter, aminlerde, sekonder |
+| Slide 21 | Slide 21: viii / oksidatif / deaminasyon | 197 | 0.95 | `FULL_TEXT` | NH3, CH2, NH2, CH3 |
+| Slide 22 | Slide 22: kükürt / oksidasyonu / İlgili | 317 | 0.95 | `FULL_TEXT` | enzimler, karmafonksiyonlu, oksidazlardır, tiyol |
+| Slide 23 | Slide 23: azot / oksidasyonu / amin | 187 | 0.95 | `FULL_TEXT` | primer, hidroksilamin, sekonder, tersiyer |
+| Slide 24 | Slide 24: azo / grubu / oksidasyonu | 152 | 0.95 | `FULL_TEXT` | azoksi, Ilgili, enzim, karma |
+| Slide 25 | Slide 25: Redüksiyon / Nitro / grubu | 233 | 0.95 | `FULL_TEXT` | redüksiyonu, İlgili, enzim, nitro |
+| Slide 26 | Slide 26: Karbonil / grubu / redüksiyonu | 193 | 0.95 | `FULL_TEXT` | İlgili, enzim, aldehid, redüktaz |
+| Slide 27 | Slide 27: Redüktif / dehalojenizasyon / CCl4 | 86 | 0.85 | `BULLET_SUMMARY` | CHCl3, S-S, bağının, kopması |
+| Slide 28 | Slide 28: Hidroliz / Ester / hidrolizi | 166 | 0.95 | `FULL_TEXT` | R-COOR1, H2O, R-COOH, R1OH |
+| Slide 29 | Slide 29: Epoksid / hidrolizi / İlgili | 184 | 0.95 | `FULL_TEXT` | enzim, epoksid, hidrolazdır, CH2 |
+| Slide 30 | Slide 30: Hidrazon / hidrolizi / R-CH | 115 | 0.85 | `BULLET_SUMMARY` | N-NH2, H2O, R-CHO, H2N-NH2 |
+| Slide 31 | Slide 31: FAZ / REAKSİYONLARI / Asetilasyon | 199 | 0.95 | `FULL_TEXT` | NH2, grupları, asetilasyona, uğrar |
+| Slide 32 | Slide 32: Metilasyon / NH2 / grupları | 333 | 0.95 | `FULL_TEXT` | metilasyona, uğrar, Endojen, madde |
+| Slide 33 | Slide 33: Glukuronik / asidle / konjugasyon | 306 | 0.95 | `FULL_TEXT` | grupları, eter, glukuronidlerini, COOH |
+| Slide 34 | Slide 34: Aminoasit / konjugasyonu / COOH | 215 | 0.95 | `FULL_TEXT` | grupları, glisin, glutamin, aminoasitlerle |
+| Slide 35 | Slide 35: Glutatyon / konjugasyonu / CH2 | 552 | 0.95 | `FULL_TEXT` | GSH, epoksid, glutatyon, konjugati |
+| Slide 36 | Slide 36: CH2 / CONH / COOH | 189 | 0.95 | `FULL_TEXT` | NHCOCH2, NH2, glutatyonaz, NHCOCH3 |
+| Slide 37 | Slide 37: Reaksiyon / Adı / Fonksiyonel | 499 | 0.95 | `FULL_TEXT` | Gruplar, İlgili, Endojen, Madde |
+| Slide 38 | Slide 38: Aminoasit / konjugasyon / COOH | 465 | 0.95 | `FULL_TEXT` | Açil, transferazlar, H2N-CH2-COOH, Glutatyon |
+| Slide 39 | Slide 39: METABOLİZMAYIETKİLEYEN / FAKTÖRLER / Endojen | 368 | 0.95 | `FULL_TEXT` | Faktörler, Fizyolojik, patolojik, faktörler |
+| Slide 40 | Slide 40: Asetilasyon / Polimorfizmi / Eskimolar | 468 | 0.95 | `FULL_TEXT` | Japonlar, hızlı, asetilatör, Mısırlılar |
+| Slide 41 | Slide 41: STEREOKİMYASAL / FAKTÖRLERİN / İLAÇ | 529 | 0.95 | `FULL_TEXT` | BİYOTRANSFORMASYONU, ÜZERİNDEKİ, ETKİLERİ, rasemik |
+| Slide 42 | Slide 42: CH2 / CH3 / CH3OH | 94 | 0.85 | `BULLET_SUMMARY` | propranolol, 4-hidroksipropranolol |
+| Slide 43 | Slide 43: METABOLİZMA / REAKSİYONLARININ / MEYDANA | 210 | 0.95 | `FULL_TEXT` | GELDİĞİ, BAŞLICA, BÖLGELER, 1-Karaciğer |
+| Slide 44 | Slide 44: İdrarda / üriner / sistem | 556 | 0.95 | `FULL_TEXT` | antiseptik, prodrug, Hegzametilen, tetramin |
 
 ### Deck: `İlaçlarda  İzomeri.pdf` (43 slides, Avg Confidence: 92.9%)
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | Prof.Dr. Bedia KAYMAKÇIOĞLU | 46 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | Prof.Dr. Bedia KAYMAKÇIOĞLU, İLAÇLARDA İZOMERİ |
-| Slide  2 | İLAÇLARDA İZOMERİ | 369 | 0.95 | `FULL_TEXT` | İLAÇLARDA İZOMERİ, İlaç-reseptör etkileşmesi hangi mekanizmaya göre |
-| Slide  3 | Kovalan Bağlar | 206 | 0.95 | `FULL_TEXT` | Kovalan Bağlar, İyonik Bağlar |
-| Slide  4 | hidrofobik | 171 | 0.95 | `FULL_TEXT` | hidrofobik, hidrojen bagidipol - dipol |
-| Slide  5 | İzomerler Yapısal izomerler | 251 | 0.95 | `FULL_TEXT` | İzomerler Yapısal izomerler, Stereoizomerler |
-| Slide  6 | Yapısal İzomeri: | 293 | 0.95 | `FULL_TEXT` | Yapısal İzomeri:, Yapısal izomeri konum farklılığı veya fonksiyonel gr |
-| Slide  7 | Yine kapalı formülleri aynı olup, molekül formülleri farklı  | 184 | 0.95 | `FULL_TEXT` | Yine kapalı formülleri aynı olup, molekül formülleri farklı olan, etan |
-| Slide  8 | Stereo İzomeri: | 592 | 0.95 | `FULL_TEXT` | Stereo İzomeri:, Stereo izomeri, konfigürasyon ve konformasyon izomeri |
-| Slide  9 | Çifte bağ etrafındaki atom veya grupların en az iki tanesi a | 366 | 0.95 | `FULL_TEXT` | Çifte bağ etrafındaki atom veya grupların en az iki tanesi aynı ise, “ |
-| Slide 10 | CH3 | 225 | 0.95 | `FULL_TEXT` | CH3, Cl |
-| Slide 11 | Cahn Ingold Prelog (CIP): Bu sistem ile çifte bağ etrafındak | 674 | 0.95 | `FULL_TEXT` | Cahn Ingold Prelog (CIP): Bu sistem ile çifte bağ etrafındaki, gruplar |
-| Slide 12 | Geometrik izomerlerin çözünürlük, pKa, logP, iyonizasyon, er | 414 | 0.95 | `FULL_TEXT` | Geometrik izomerlerin çözünürlük, pKa, logP, iyonizasyon, erime, derec |
-| Slide 13 | Optik İzomeri: Dört farklı sübstitüentin bağlı olduğu karbon | 871 | 0.95 | `FULL_TEXT` | Optik İzomeri: Dört farklı sübstitüentin bağlı olduğu karbon atomu (as |
-| Slide 14 | Bu optik izomerler polarize ışın düzlemini farklı yönlere | 652 | 0.95 | `FULL_TEXT` | Bu optik izomerler polarize ışın düzlemini farklı yönlere, çevirirler. |
-| Slide 15 | Birden fazla asimetrik merkezi olan bileşiklerde dekstrojir  | 546 | 0.95 | `FULL_TEXT` | Birden fazla asimetrik merkezi olan bileşiklerde dekstrojir ve, levoji |
-| Slide 16 | Örneğin; İbuprofen | 97 | 0.85 | `BULLET_SUMMARY` | Örneğin; İbuprofen, O |
-| Slide 17 | Birden fazla asimetrik merkez taşıyan bileşiklerde birbirini | 517 | 0.95 | `FULL_TEXT` | Birden fazla asimetrik merkez taşıyan bileşiklerde birbirinin ayna, gö |
-| Slide 18 | D/L izomeri | 363 | 0.95 | `FULL_TEXT` | D/L izomeri, Amino asit ve karbonhidrat adlandırmalarında kullanılan, |
-| Slide 19 | (-)-(1R,2R) | 292 | 0.95 | `FULL_TEXT` | (-)-(1R,2R), (+)-(1S,2S) |
-| Slide 20 | Mezo- Bir molekülde birden fazla asimetrik grup var ise ve b | 415 | 0.95 | `FULL_TEXT` | Mezo- Bir molekülde birden fazla asimetrik grup var ise ve bu, asimetr |
-| Slide 21 | Stereokimyasal faktörler biyolojik aktiviteyi üç farklı şeki | 514 | 0.95 | `FULL_TEXT` | Stereokimyasal faktörler biyolojik aktiviteyi üç farklı şekilde, etkil |
-| Slide 22 | Geometrik izomeri ve farmakolojik aktivite | 649 | 0.95 | `FULL_TEXT` | Geometrik izomeri ve farmakolojik aktivite, •Fizikokimyasal özellikler |
-| Slide 23 | Optik izomeri ve farmakolojik aktivite | 908 | 0.95 | `FULL_TEXT` | Optik izomeri ve farmakolojik aktivite, Optik izomerlerin aktiviteleri |
-| Slide 24 | Bu seçici kademeler özellikle in vivo şartlarda geçerlidir. | 810 | 0.95 | `FULL_TEXT` | Bu seçici kademeler özellikle in vivo şartlarda geçerlidir., • Membran |
-| Slide 25 | Optik izomerlerin farklı aktivitelerinde en önemli faktör sp | 149 | 0.85 | `BULLET_SUMMARY` | Optik izomerlerin farklı aktivitelerinde en önemli faktör spesifik, re |
-| Slide 26 | •Çarpıcı bir diğer örnek muskarindir. Üç asimetrik merkez iç | 518 | 0.95 | `FULL_TEXT` | •Çarpıcı bir diğer örnek muskarindir. Üç asimetrik merkez içeren, musk |
-| Slide 27 | * | 366 | 0.95 | `FULL_TEXT` | *, N H |
-| Slide 28 | Enantiyomerlerin farmakolojik aktivitelerinde ençok rastlana | 760 | 0.95 | `FULL_TEXT` | Enantiyomerlerin farmakolojik aktivitelerinde ençok rastlanan durum, h |
-| Slide 29 | Distomerin olası etkileri: | 525 | 0.95 | `FULL_TEXT` | Distomerin olası etkileri:, 1-Her iki izomer de istenen aktiviteyi gös |
-| Slide 30 | Talidomid 1953 yılında bulunmuş ve | 506 | 0.95 | `FULL_TEXT` | Talidomid 1953 yılında bulunmuş ve, ilk olarak 1957 yılında "Contergan |
-| Slide 31 | Fakomeli hastalığı ile doğan | 361 | 0.95 | `FULL_TEXT` | Fakomeli hastalığı ile doğan, bebeklerde normalden kısa, |
-| Slide 32 | 3-Bazı durumlarda aktif izomerlerden biri farklı bir etki | 298 | 0.95 | `FULL_TEXT` | 3-Bazı durumlarda aktif izomerlerden biri farklı bir etki, göstermesin |
-| Slide 33 | OCH3 | 127 | 0.85 | `BULLET_SUMMARY` | OCH3, N |
-| Slide 34 | Limonen (1-Metil-4-(1-metiletenil) | 201 | 0.95 | `FULL_TEXT` | Limonen (1-Metil-4-(1-metiletenil), sikloheksen) olarak adlandırılan b |
-| Slide 35 | 5-Zıt etki gösteren enansiyomer örnekleri de vardır. | 181 | 0.95 | `FULL_TEXT` | 5-Zıt etki gösteren enansiyomer örnekleri de vardır., OH |
-| Slide 36 | Saf enansiyomer elde edilmesi – Rasemik karışımların resolüs | 500 | 0.95 | `FULL_TEXT` | Saf enansiyomer elde edilmesi – Rasemik karışımların resolüsyonu, Safs |
-| Slide 37 | 1-Şiral stasyoner faz veya mobil faza katılan şiral ajanları | 587 | 0.95 | `FULL_TEXT` | 1-Şiral stasyoner faz veya mobil faza katılan şiral ajanların, kullanı |
-| Slide 38 | : | 230 | 0.95 | `FULL_TEXT` | :, (-) (-) (-) |
-| Slide 39 | Konformasyon izomerisi ve farmakolojik aktivite | 439 | 0.95 | `FULL_TEXT` | Konformasyon izomerisi ve farmakolojik aktivite, •Konformerler arasınd |
-| Slide 40 | a | 15 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | a, a |
-| Slide 41 | Farmakolojik aktiviteye etkisi | 579 | 0.95 | `FULL_TEXT` | Farmakolojik aktiviteye etkisi, Trankilizan etkili 4-(4-hidroksipiperi |
-| Slide 42 | Asetilkolin, histamin gibi etkin biyomoleküllerin, farklı bi | 451 | 0.95 | `FULL_TEXT` | Asetilkolin, histamin gibi etkin biyomoleküllerin, farklı biyolojik, e |
-| Slide 43 | Histaminin A konformerinin H1-reseptörleri, azotlar arası | 264 | 0.95 | `FULL_TEXT` | Histaminin A konformerinin H1-reseptörleri, azotlar arası, mesafesi da |
+| Slide  1 | Slide 1: Prof / Bedia / KAYMAKÇIOĞLU | 46 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | İLAÇLARDA, İZOMERİ |
+| Slide  2 | Slide 2: İLAÇLARDA / İZOMERİ / İlaç-reseptör | 369 | 0.95 | `FULL_TEXT` | etkileşmesi, hangi, mekanizmaya, gerçekleşirse |
+| Slide  3 | Slide 3: Kovalan / Bağlar / İyonik | 206 | 0.95 | `FULL_TEXT` | Hidrojen, Bağı, İyon, Dipol |
+| Slide  4 | Slide 4: hidrofobik / hidrojen / bagidipol | 171 | 0.95 | `FULL_TEXT` | dipol, iyon, yük, transfer |
+| Slide  5 | Slide 5: İzomerler / Yapısal / izomerler | 251 | 0.95 | `FULL_TEXT` | Stereoizomerler, Konfigürasyon, izomerleri, Konformerler |
+| Slide  6 | Slide 6: Yapısal / İzomeri / izomeri | 293 | 0.95 | `FULL_TEXT` | konum, farklılığı, fonksiyonel, grup |
+| Slide  7 | Slide 7: Yine / kapalı / formülleri | 184 | 0.95 | `FULL_TEXT` | aynı, olup, molekül, farklı |
+| Slide  8 | Slide 8: Stereo / İzomeri / izomeri | 592 | 0.95 | `FULL_TEXT` | konfigürasyon, konformasyon, olmak, üzere |
+| Slide  9 | Slide 9: Çifte / bağ / etrafındaki | 366 | 0.95 | `FULL_TEXT` | atom, grupların, iki, tanesi |
+| Slide 10 | Slide 10: CH3 / Çifte / bağ | 225 | 0.95 | `FULL_TEXT` | etrafında, dört, farklı, grup |
+| Slide 11 | Slide 11: Cahn / Ingold / Prelog | 674 | 0.95 | `FULL_TEXT` | CIP, sistem, çifte, bağ |
+| Slide 12 | Slide 12: Geometrik / izomerlerin / çözünürlük | 414 | 0.95 | `FULL_TEXT` | pKa, logP, iyonizasyon, erime |
+| Slide 13 | Slide 13: Optik / İzomeri / Dört | 871 | 0.95 | `FULL_TEXT` | farklı, sübstitüentin, bağlı, olduğu |
+| Slide 14 | Slide 14: optik / izomerler / polarize | 652 | 0.95 | `FULL_TEXT` | ışın, düzlemini, farklı, yönlere |
+| Slide 15 | Slide 15: Birden / fazla / asimetrik | 546 | 0.95 | `FULL_TEXT` | merkezi, bileşiklerde, dekstrojir, levojir |
+| Slide 16 | Slide 16: Örneğin / İbuprofen / CH3 | 97 | 0.85 | `BULLET_SUMMARY` | OHH, CH3O |
+| Slide 17 | Slide 17: Birden / fazla / asimetrik | 517 | 0.95 | `FULL_TEXT` | merkez, taşıyan, bileşiklerde, birbirinin |
+| Slide 18 | Slide 18: izomeri / Amino / asit | 363 | 0.95 | `FULL_TEXT` | karbonhidrat, adlandırmalarında, kullanılan, Fisher |
+| Slide 19 | Slide 19: Diastereomer / Enansiyomer / D-Treoz | 292 | 0.95 | `FULL_TEXT` | L-Treoz, 620, CH2, OHH |
+| Slide 20 | Slide 20: Mezo / molekülde / birden | 415 | 0.95 | `FULL_TEXT` | fazla, asimetrik, grup, merkezler |
+| Slide 21 | Slide 21: Stereokimyasal / faktörler / biyolojik | 514 | 0.95 | `FULL_TEXT` | aktiviteyi, farklı, şekilde, etkiler |
+| Slide 22 | Slide 22: Geometrik / izomeri / farmakolojik | 649 | 0.95 | `FULL_TEXT` | aktivite, Fizikokimyasal, özelliklerinin, farklı |
+| Slide 23 | Slide 23: Optik / izomeri / farmakolojik | 908 | 0.95 | `FULL_TEXT` | aktivite, izomerlerin, aktiviteleri, arasındaki |
+| Slide 24 | Slide 24: seçici / kademeler / özellikle | 810 | 0.95 | `FULL_TEXT` | vivo, şartlarda, geçerlidir, Membran |
+| Slide 25 | Slide 25: Optik / izomerlerin / farklı | 149 | 0.85 | `BULLET_SUMMARY` | aktivitelerinde, önemli, faktör, spesifik |
+| Slide 26 | Slide 26: Çarpıcı / diğer / örnek | 518 | 0.95 | `FULL_TEXT` | muskarindir, asimetrik, merkez, içeren |
+| Slide 27 | Slide 27: CH3 / Deksklorfeniramin / muhtemelen | 366 | 0.95 | `FULL_TEXT` | proteinlerin, şiral, olmalarından, kaynaklanmaktadır |
+| Slide 28 | Slide 28: Enantiyomerlerin / farmakolojik / aktivitelerinde | 760 | 0.95 | `FULL_TEXT` | ençok, rastlanan, durum, iki |
+| Slide 29 | Slide 29: Distomerin / olası / etkileri | 525 | 0.95 | `FULL_TEXT` | 1-Her, iki, izomer, istenen |
+| Slide 30 | Slide 30: Talidomid / 1953 / yılında | 506 | 0.95 | `FULL_TEXT` | bulunmuş, ilk, 1957, Contergan |
+| Slide 31 | Slide 31: Fakomeli / hastalığı / doğan | 361 | 0.95 | `FULL_TEXT` | bebeklerde, normalden, kısa, yüzgeç |
+| Slide 32 | Slide 32: 3-Bazı / durumlarda / aktif | 298 | 0.95 | `FULL_TEXT` | izomerlerden, biri, farklı, etki |
+| Slide 33 | Slide 33: OCH3 / CH3 / NCH3 | 127 | 0.85 | `BULLET_SUMMARY` | Dekstropropoksifen, Levopropoksifen, analjezik, antitussif |
+| Slide 34 | Slide 34: Limonen / 1-Metil-4 / 1-metiletenil | 201 | 0.95 | `FULL_TEXT` | sikloheksen, adlandırılan, bileşiğin, enantiyomerik |
+| Slide 35 | Slide 35: 5-Zıt / etki / gösteren | 181 | 0.95 | `FULL_TEXT` | enansiyomer, örnekleri, vardır, NCH3CH2CH2 |
+| Slide 36 | Slide 36: Saf / enansiyomer / elde | 500 | 0.95 | `FULL_TEXT` | edilmesi, Rasemik, karışımların, resolüsyonu |
+| Slide 37 | Slide 37: 1-Şiral / stasyoner / faz | 587 | 0.95 | `FULL_TEXT` | mobil, faza, katılan, şiral |
+| Slide 38 | Slide 38: Diastereomerik / tuz1 / tuz | 230 | 0.95 | `FULL_TEXT` | Optikçe, aktif, amin, Amin |
+| Slide 39 | Slide 39: Konformasyon / izomerisi / farmakolojik | 439 | 0.95 | `FULL_TEXT` | aktivite, Konformerler, arasındaki, farklar |
+| Slide 40 | Slide 40: Chemical Focus | 15 | 0.65 | `DIAGRAM_HEAVY_LOW_TEXT` | Core Structure |
+| Slide 41 | Slide 41: Farmakolojik / aktiviteye / etkisi | 579 | 0.95 | `FULL_TEXT` | Trankilizan, etkili, 4-hidroksipiperidino, fluorobutirofenon |
+| Slide 42 | Slide 42: Asetilkolin / histamin / etkin | 451 | 0.95 | `FULL_TEXT` | biyomoleküllerin, farklı, biyolojik, etkilere |
+| Slide 43 | Slide 43: Histaminin / konformerinin / H1-reseptörleri | 264 | 0.95 | `FULL_TEXT` | azotlar, arası, mesafesi, reseptörleriyle |
 
 ### Deck: `İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf` (29 slides, Avg Confidence: 82.2%)
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | Prof.Dr. Bedia KAYMAKÇIOĞLU | 62 | 0.85 | `BULLET_SUMMARY` | Prof.Dr. Bedia KAYMAKÇIOĞLU, İLAÇLARDA |
-| Slide  2 | İlaç Aktivitesi | 600 | 0.95 | `FULL_TEXT` | İlaç Aktivitesi, Oral kullanılan bir ilaç vücuda verilişinden, fizyolo |
-| Slide  3 | Slide 3 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide  4 | Çözünürlük | 510 | 0.95 | `FULL_TEXT` | Çözünürlük, Çözünürlük, etki yerinde ilacın aktif konsantrasyonunu |
-| Slide  5 | Slide 5 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide  6 | Teorik olarak bir madde hem polar hem de nonpolar | 635 | 0.95 | `FULL_TEXT` | Teorik olarak bir madde hem polar hem de nonpolar, ortamda çözünebilir |
-| Slide  7 | Çok kullanılan bazı çözücülerin dielektrik sabitleri ve pola | 319 | 0.95 | `FULL_TEXT` | Çok kullanılan bazı çözücülerin dielektrik sabitleri ve polarite, sıra |
-| Slide  8 | Bir maddenin su veya yağdaki çözünürlüğü üzerine etkili | 273 | 0.95 | `FULL_TEXT` | Bir maddenin su veya yağdaki çözünürlüğü üzerine etkili, fonksiyonel g |
-| Slide  9 | Moleküle oksijen, azot gibi heteroatomlar veya bunları | 749 | 0.95 | `FULL_TEXT` | Moleküle oksijen, azot gibi heteroatomlar veya bunları, içeren fonksiy |
-| Slide 10 | Düz zincirli bileşikler, dallanmış analoglarından daha çok | 781 | 0.95 | `FULL_TEXT` | Düz zincirli bileşikler, dallanmış analoglarından daha çok, yağda çözü |
-| Slide 11 | İlaç molekülünün etki göstermek üzere geçmek zorunda | 223 | 0.95 | `FULL_TEXT` | İlaç molekülünün etki göstermek üzere geçmek zorunda, olduğu membranla |
-| Slide 12 | Slide 12 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 13 | Suda çözünürlüğü fazla olan maddelerin membranları geçerek | 451 | 0.95 | `FULL_TEXT` | Suda çözünürlüğü fazla olan maddelerin membranları geçerek, etki yerin |
-| Slide 14 | Örneğin izatin--tiyosemikarbazon’larda antiviral | 317 | 0.95 | `FULL_TEXT` | Örneğin izatin--tiyosemikarbazon’larda antiviral, aktiviteleri, kloro |
-| Slide 15 | Sübstitüent Klorofomdaki çözünürlük Antibakteriyel etki | 166 | 0.95 | `FULL_TEXT` | Sübstitüent Klorofomdaki çözünürlük Antibakteriyel etki, 7-karboksi 0  |
-| Slide 16 | İlacın yağda çözünme eğiliminin bir ölçüsü olan partisyon | 356 | 0.95 | `FULL_TEXT` | İlacın yağda çözünme eğiliminin bir ölçüsü olan partisyon, katsayısı,  |
-| Slide 17 | Bir ilacın organizmadaki dağılımının tayini çok zor olduğu | 664 | 0.95 | `FULL_TEXT` | Bir ilacın organizmadaki dağılımının tayini çok zor olduğu, için ilaçl |
-| Slide 18 | Slide 18 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 19 | Belli miktardaki kimyasal bileşiğin ölçülü miktarlarda su il | 784 | 0.95 | `FULL_TEXT` | Belli miktardaki kimyasal bileşiğin ölçülü miktarlarda su ile, doyurul |
-| Slide 20 | Slide 20 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 21 | Log P = a (alıkonma zamanı) + b | 618 | 0.95 | `FULL_TEXT` | Log P = a (alıkonma zamanı) + b, a : doğrunun eğimi |
-| Slide 22 | = log PX – Log PH | 370 | 0.95 | `FULL_TEXT` | = log PX – Log PH,  : süstitüentin hidrofobik bağ sabiti |
-| Slide 23 | Örnegin bir sedatif hipnotik bileşik olan etklorvinol’ün log | 209 | 0.95 | `FULL_TEXT` | Örnegin bir sedatif hipnotik bileşik olan etklorvinol’ün log P değeri, |
-| Slide 24 | Log P partisyon katsayısı özellikle genel anestezikler, | 666 | 0.95 | `FULL_TEXT` | Log P partisyon katsayısı özellikle genel anestezikler,, hipnotikler g |
-| Slide 25 | Partisyon katsayısı ilaçların etki süreleri bakımından da | 580 | 0.95 | `FULL_TEXT` | Partisyon katsayısı ilaçların etki süreleri bakımından da, önemlidir.  |
-| Slide 26 | Slide 26 (Diagram/Structure) | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Raster Image / Structure] |
-| Slide 27 | Lipinski'nin “beş kuralı”, ilaç geliştirme ortamında | 773 | 0.95 | `FULL_TEXT` | Lipinski'nin “beş kuralı”, ilaç geliştirme ortamında, çözünürlüğü, mem |
-| Slide 28 | Lipinski 5 kuralı, | 175 | 0.95 | `FULL_TEXT` | Lipinski 5 kuralı,, - Hidrojen bağı vericisi 5’den küçük, |
-| Slide 29 | Makrolidler hariç tutulduğunda, küçük moleküllü inhibitörler | 754 | 0.95 | `FULL_TEXT` | Makrolidler hariç tutulduğunda, küçük moleküllü inhibitörlerin, ortala |
+| Slide  1 | Slide 1: Prof / Bedia / KAYMAKÇIOĞLU | 62 | 0.85 | `BULLET_SUMMARY` | İLAÇLARDA, YAPI, AKTİVİTE, İLİŞKİLERİ |
+| Slide  2 | Slide 2: İlaç / Aktivitesi / Oral | 600 | 0.95 | `FULL_TEXT` | kullanılan, ilaç, vücuda, verilişinden |
+| Slide  3 | Slide 3: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide  4 | Slide 4: Çözünürlük / etki / yerinde | 510 | 0.95 | `FULL_TEXT` | ilacın, aktif, konsantrasyonunu, sağlama |
+| Slide  5 | Slide 5: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide  6 | Slide 6: Teorik / madde / hem | 635 | 0.95 | `FULL_TEXT` | polar, nonpolar, ortamda, çözünebilir |
+| Slide  7 | Slide 7: kullanılan / çözücülerin / dielektrik | 319 | 0.95 | `FULL_TEXT` | sabitleri, polarite, sıralamaları, Bileşik |
+| Slide  8 | Slide 8: maddenin / yağdaki / çözünürlüğü | 273 | 0.95 | `FULL_TEXT` | üzerine, etkili, fonksiyonel, gruplar |
+| Slide  9 | Slide 9: Moleküle / oksijen / azot | 749 | 0.95 | `FULL_TEXT` | heteroatomlar, bunları, içeren, fonksiyonel |
+| Slide 10 | Slide 10: Düz / zincirli / bileşikler | 781 | 0.95 | `FULL_TEXT` | dallanmış, analoglarından, yağda, çözünürler |
+| Slide 11 | Slide 11: İlaç / molekülünün / etki | 223 | 0.95 | `FULL_TEXT` | göstermek, üzere, geçmek, zorunda |
+| Slide 12 | Slide 12: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 13 | Slide 13: Suda / çözünürlüğü / fazla | 451 | 0.95 | `FULL_TEXT` | maddelerin, membranları, geçerek, etki |
+| Slide 14 | Slide 14: Örneğin / izatin / tiyosemikarbazon | 317 | 0.95 | `FULL_TEXT` | larda, antiviral, aktiviteleri, kloroform |
+| Slide 15 | Slide 15: Sübstitüent / Klorofomdaki / çözünürlük | 166 | 0.95 | `FULL_TEXT` | Antibakteriyel, etki, 7-karboksi, 5-metoksi |
+| Slide 16 | Slide 16: İlacın / yağda / çözünme | 356 | 0.95 | `FULL_TEXT` | eğiliminin, ölçüsü, partisyon, katsayısı |
+| Slide 17 | Slide 17: ilacın / organizmadaki / dağılımının | 664 | 0.95 | `FULL_TEXT` | tayini, zor, olduğu, ilaçların |
+| Slide 18 | Slide 18: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 19 | Slide 19: Belli / miktardaki / kimyasal | 784 | 0.95 | `FULL_TEXT` | bileşiğin, ölçülü, miktarlarda, doyurulmuş |
+| Slide 20 | Slide 20: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 21 | Slide 21: Log / alıkonma / zamanı | 618 | 0.95 | `FULL_TEXT` | doğrunun, eğimi, eksenini, kestiği |
+| Slide 22 | Slide 22: log / Log / süstitüentin | 370 | 0.95 | `FULL_TEXT` | hidrofobik, bağ, sabiti, ana |
+| Slide 23 | Slide 23: Örnegin / sedatif / hipnotik | 209 | 0.95 | `FULL_TEXT` | bileşik, etklorvinol, log, değeri |
+| Slide 24 | Slide 24: Log / partisyon / katsayısı | 666 | 0.95 | `FULL_TEXT` | özellikle, genel, anestezikler, hipnotikler |
+| Slide 25 | Slide 25: Partisyon / katsayısı / ilaçların | 580 | 0.95 | `FULL_TEXT` | etki, süreleri, bakımından, önemlidir |
+| Slide 26 | Slide 26: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
+| Slide 27 | Slide 27: Lipinski / nin / beş | 773 | 0.95 | `FULL_TEXT` | kuralı, ilaç, geliştirme, ortamında |
+| Slide 28 | Slide 28: Lipinski / kuralı / Hidrojen | 175 | 0.95 | `FULL_TEXT` | bağı, vericisi, den, küçük |
+| Slide 29 | Slide 29: Makrolidler / hariç / tutulduğunda | 754 | 0.95 | `FULL_TEXT` | küçük, moleküllü, inhibitörlerin, ortalama |
 

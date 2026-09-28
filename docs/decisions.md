@@ -51,8 +51,12 @@
 
 ## ADR-008: Merchant of Record (MoR) with Dodo Payments for Global & Turkish Checkout
 - **Context**: The platform targets domestic Turkish pharmacy students (EUS candidates) alongside international students (NAPLEX/PEBC). Direct Stripe processing requires multi-jurisdiction tax registration, complex foreign entity management, and suffers high Turkish bank debit card decline rates without 3D Secure domestic routing.
-- **Decision**: Adopt Dodo Payments as the primary Merchant of Record. Dodo handles global sales tax/VAT remittance, native 3D Secure processing for Turkish cards, multi-currency display (USD, TRY, SAR, EUR), and competitive transaction fees (~3.5% + $0.30).
-- **Consequences**: Eliminates legal tax filing overhead, ensures high conversion rates for Turkish students, and handles subscription billing and semester passes natively.
+- **Decision**: Adopt Dodo Payments as the primary Merchant of Record. Dodo handles global sales tax/VAT remittance, native 3D Secure processing for Turkish cards, multi-currency display (USD, TRY, SAR, EUR), and published fee schedules (4% + $0.40 base, +1.5% international, +0.5% subscription, +1.5% FX).
+- **Turkish Domestic Card & Currency Verification**:
+  - Dodo supports direct checkout in TRY and SAR via local currency presentation.
+  - Turkish Visa and Mastercard debit/credit cards issued by major domestic banks (İş Bankası, Garanti BBVA, Akbank, Yapı Kredi, Ziraat) process seamlessly via 3D Secure.
+  - **Domestic Fallback Protocol**: For local Turkish cards running on the domestic **Troy** payment scheme that may not be supported by international card rails, the platform architecture provides a dedicated localized gateway fallback using **iyzico / Param POS** webhooks mapped into the identical `/users/{userId}/entitlements` schema.
+- **Consequences**: Eliminates legal tax filing overhead, ensures high conversion rates for Turkish students, and handles subscription billing and semester passes natively with an explicit fallback path for domestic Troy cards.
 
 ---
 
