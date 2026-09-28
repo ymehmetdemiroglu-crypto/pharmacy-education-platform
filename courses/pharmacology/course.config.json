@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "courseId": "pharmacology",
+  "title": "Pharmacology / Farmakoloji",
+  "description": "Interactive, learn-by-doing course on drug-receptor interactions, dose-response relationships, pharmacodynamics, and pharmacokinetics designed for pharmacy students.",
+  "accentColor": "#6BCB77",
+  "sourcePath": "materials/pharmacology",
+  "defaultLocale": "tr",
+  "supportedLocales": ["tr", "en"],
+  "freePreviewLessonCount": 2,
+  "modules": [
+    {
+      "id": "ph-mod-01",
+      "slug": "drug-receptor-interactions-bonding",
+      "title": "Module 1: Drug-Receptor Interactions & Binding Forces",
+      "sourceDecks": [
+        "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf"
+      ]
+    },
+    {
+      "id": "ph-mod-02",
+      "slug": "pharmacokinetics-metabolism-elimination",
+      "title": "Module 2: Pharmacokinetics & Drug Biotransformation",
+      "sourceDecks": [
+        "İlaç metabolizması-2026.pdf"
+      ]
+    }
+  ]
+}

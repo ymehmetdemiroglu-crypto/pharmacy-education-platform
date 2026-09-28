@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "courseId": "medchem",
+  "title": "Medicinal Chemistry / Farmasötik ve Medisinal Kimya",
+  "description": "Interactive, learn-by-doing course on structure-activity relationships (SAR), chemical bonding, bioisosterism, isomerism, and drug metabolism designed for pharmacy students.",
+  "accentColor": "#4D96FF",
+  "sourcePath": "materials/medchem",
+  "defaultLocale": "tr",
+  "supportedLocales": ["tr", "en"],
+  "freePreviewLessonCount": 2,
+  "modules": [
+    {
+      "id": "mc-mod-01",
+      "slug": "introduction-physicochemical-properties",
+      "title": "Module 1: Introduction & Physicochemical Principles",
+      "sourceDecks": [
+        "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+        "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf"
+      ]
+    },
+    {
+      "id": "mc-mod-02",
+      "slug": "functional-groups-bonding",
+      "title": "Module 2: Functional Groups & Intermolecular Bonding",
+      "sourceDecks": [
+        "Fonksiyonel gruplar.pdf"
+      ]
+    },
+    {
+      "id": "mc-mod-03",
+      "slug": "bioisosterism-drug-design",
+      "title": "Module 3: Bioisosterism & Rational Molecular Design",
+      "sourceDecks": [
+        "Biyoizosterizm.pdf"
+      ]
+    },
+    {
+      "id": "mc-mod-04",
+      "slug": "stereochemistry-isomerism",
+      "title": "Module 4: Stereochemistry & Optical Isomerism in Drug Action",
+      "sourceDecks": [
+        "İlaçlarda  İzomeri.pdf"
+      ]
+    },
+    {
+      "id": "mc-mod-05",
+      "slug": "biotransformation-metabolism",
+      "title": "Module 5: Drug Biotransformation & Phase I/II Metabolism",
+      "sourceDecks": [
+        "İlaç metabolizması-2026.pdf"
+      ]
+    }
+  ]
+}
