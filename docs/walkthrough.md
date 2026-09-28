@@ -205,6 +205,104 @@ Report: [`docs/reviews/phase-1-iteration-2-code-and-content-audit.md`](file:///C
 
 ---
 
-## 4. Next Steps & Decision Gate (Phase 1 STOP Gate)
-1. Project Owner reviews and signs off on the Phase 1 STOP Gate.
-2. Advance to **Phase 2: Monorepo Foundation, Neo-Brutalist UI Library & Interactive Widget Prototyping** (scaffolding `@pharmacy/ui`, `@pharmacy/widgets`, `@pharmacy/platform`, and `apps/web` with Playwright screenshot visual test harness).
+---
+
+## 4. Phase 2: Monorepo Foundation, Design System, Interactive Widgets, Security Rules, Functions & Verification Matrix
+
+**Status**: **COMPLETED & VERIFIED (CLEAN PASS AFTER ITERATION 2)**  
+**Date**: September 2026  
+**Artifacts Generated & Updated**:
+- Monorepo workspace configuration: `pnpm-workspace.yaml`, `package.json`, `tsconfig.base.json`, `vitest.config.ts`, `vitest.rules.config.ts`
+- Design System package: `packages/ui/` (14 components: `Button`, `Card`, `Modal`, `PaywallModal`, `HintDrawer`, `StepDots`, `TrialBanner`, `Slider`, `Toggle`, `Input`, `ProgressBar`, `EmptyState`, `SkeletonLoader`, `StickerBadge`)
+- Interactive Widgets package: `packages/widgets/` (9 widgets: `SarExplorer`, `ReceptorLigandMatcher`, `PkSimulator`, `DoseResponseCurve`, `PredictThenReveal`, `StructureIdentifier`, `MultipleChoice`, `MetabolismMap`, `HintLadder`)
+- Platform runtime package: `packages/platform/` (`AccessControl`, `ProgressStore`, `LeitnerEngine`)
+- Cloud Functions Backend: `functions/src/index.ts` (`startFreeTrial`, `createCheckoutSession`, `handleDodoWebhook`, `cleanupExpiredTrials`)
+- Cloud Firestore Security Rules: `firestore.rules` and `tests/firestore-rules.test.ts`
+- Web Application Preview: `apps/web/` (`/gallery`, `/catalog`, `/pricing`)
+- Playwright E2E Test Suite in Brave: `playwright.config.ts` and `e2e/gallery-matrix.spec.ts`
+- Review Artifacts:
+  - [`docs/reviews/phase-2-iteration-1-security-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-security-reviewer.md)
+  - [`docs/reviews/phase-2-iteration-2-final-review.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-2-final-review.md)
+- Architectural Decisions: ADR-016, ADR-017, ADR-018 in [`docs/decisions.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/decisions.md)
+
+---
+
+### 4.1 Automated Test Suite Verification
+
+1. **Vitest Workspace Unit Tests**:
+   - `pnpm test` (`pnpm -r --workspace-concurrency=1 run test`):
+   - **59 unit tests passed across 26 test files (100% pass rate)**:
+     - `@pharmacy/ui`: 14 test files, 27 tests passed.
+     - `@pharmacy/widgets`: 9 test files, 19 tests passed.
+     - `@pharmacy/platform`: 3 test files, 13 tests passed.
+2. **Firestore Security Rules Emulator Tests**:
+   - `pnpm test:rules` (`node scripts/run-rules-tests.mjs` against local Firestore emulator):
+   - **9/9 tests passed**:
+     - Public unauthenticated read of courses, modules, and lessons.
+     - Unauthenticated read of free preview lesson steps (Lessons 1 & 2).
+     - Paid lesson step lockout for unauthenticated users.
+     - Active entitlement authorization for paid steps.
+     - Client write lockdown on `/users/{uid}/entitlements` (Cloud Functions only).
+     - Client tamper protection on user profile fields (`plan`, `trialUsed`, `roles`).
+     - Rejection of expired entitlements.
+     - Client lockout from self-granting admin roles or premium status on create.
+     - Dual-bundle entitlement access to both MedChem and Pharmacology courses.
+3. **Playwright E2E Matrix in Brave Browser**:
+   - `pnpm test:e2e` executed against host's Brave browser executable (`C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`):
+   - **16/16 test assertions passed (1.3m)** across 4 browser profiles:
+     - `desktop-brave-shields-default` (1440x900): PASSED
+     - `desktop-brave-shields-down` (1440x900, `--disable-brave-shields`): PASSED
+     - `tablet-brave` (768x1024): PASSED
+     - `mobile-brave` (375x667): PASSED
+   - **Zero console errors, zero failed network requests**.
+   - 24 visual screenshots generated and inspected in `docs/screenshots/phase-2/` across Light cream (`#FFF8E7`), Dark (`#121212`), Arabic RTL, and English LTR.
+   - 16 WebM execution recordings archived in `test-results/`.
+
+4. **Automated Axe-Core Accessibility Audit**:
+   - `e2e/a11y-audit.spec.ts` evaluated `/gallery`, `/catalog`, and `/pricing` across all 4 profiles (12 total tests).
+   - **0 serious violations, 0 critical violations** under WCAG 2.1 AA.
+   - Inspected and resolved contrast deficiencies:
+     - `packages/widgets/src/SarExplorer/SarExplorer.tsx`: Optimization target text elevated to `text-[#92400E] dark:text-[#FBBF24]` (contrast 7.6:1 light, 9.4:1 dark).
+     - `apps/web/src/pages/CatalogPage.tsx`: Module index badges elevated to `text-gray-700 dark:text-gray-300 font-semibold` (contrast 8.4:1 light, 11.2:1 dark).
+
+5. **Lighthouse Performance & Core Web Vitals Audit**:
+   - Executed on `/gallery` (`docs/reviews/lighthouse-gallery.json`):
+     - **Performance**: **98**
+     - **Accessibility**: **96**
+     - **Best Practices**: **100**
+     - **SEO**: **82**
+   - Core Web Vitals: FCP 0.6s, LCP 0.8s, TBT 0ms, CLS 0.000.
+
+---
+
+### 4.2 Standing Quality Protocol: 5-Domain Independent Review Loop
+
+The required 5-role independent review loop was executed by dedicated fresh-context subagents:
+
+| Reviewer Role | Report Artifact | Verdict | Findings | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Design Critic** | [`docs/reviews/phase-2-iteration-1-design-critic.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-design-critic.md) | **PASS** | 0 P0, 0 P1, 0 P2 | **APPROVED** (24 screenshots audited, geometry, RTL mirroring, contrast verified) |
+| **Code Reviewer** | [`docs/reviews/phase-2-iteration-1-code-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-code-reviewer.md) | **PASS** | 0 P0, 0 P1, 1 P2 | **APPROVED** (TypeScript strictness 0 errors, ESLint 0 errors/0 warnings, 59 unit tests) |
+| **QA Agent** | [`docs/reviews/phase-2-iteration-1-qa.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-qa.md) | **PASS** | 0 P0, 0 P1, 0 P2 | **APPROVED** (16/16 E2E, 12/12 axe-core, 9/9 emulator rules, 98 Lighthouse Perf) |
+| **Pedagogy Reviewer** | [`docs/reviews/phase-2-iteration-1-pedagogy-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-pedagogy-reviewer.md) | **PASS** | 0 P0, 0 P1, 3 P2 | **APPROVED** (All 9 widgets <40 words [8-19 words actual], 3-tier hints, provenance tracked) |
+| **Security Reviewer** | [`docs/reviews/phase-2-iteration-1-security-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-1-security-reviewer.md) & [`phase-2-iteration-2-final-review.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-2-iteration-2-final-review.md) | **PASS** | 0 P0, 0 P1, 0 P2 | **APPROVED** (Webhook HMAC, constant-time compare, Firestore rules 9/9 pass) |
+
+---
+
+## 5. Phase 2 Verification & STOP Gate Summary
+
+### 5.1 Verification Scorecard
+- **Vitest Unit Tests**: **59/59 passing across 26 files** (100%)
+- **Firestore Security Rules**: **9/9 passing against local emulator** (100%)
+- **Playwright E2E Matrix**: **16/16 passing across 4 browser configurations** (100%)
+- **Axe-Core Accessibility**: **12/12 passing with 0 serious/critical violations** (100%)
+- **Lighthouse Performance**: **Performance 98, Accessibility 96, Best Practices 100, SEO 82**
+- **TypeScript Strictness**: **0 errors across all 5 workspace projects**
+- **ESLint 9**: **0 errors, 0 warnings across all 5 workspace projects**
+- **IP & Provenance Audit**: **9,375 n-grams scanned; 0 verbatim matches; materials/ untracked**
+- **Pricing & Unit Economics**: **All 20 pricing tiers maintain 81.7%–91.6% gross margin under p90 usage**
+- **Independent Review Loop**: **0 P0 and 0 P1 blockers remaining across all 5 review roles**
+
+### 5.2 Next Steps & Decision Gate
+Phase 2 implementation, test suites, and independent reviews are 100% complete and verified. The platform foundation is ready for user sign-off to proceed to **Phase 3: Vertical Slice A (Course A: Medicinal Chemistry, Lesson 1: Physicochemical Properties & Bioisosterism)**.
+

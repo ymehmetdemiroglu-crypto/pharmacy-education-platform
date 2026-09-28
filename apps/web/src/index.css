@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Focus ring standards from UI guidelines (WCAG 2.1 AA) */
+  :focus-visible {
+    outline: 3px solid #000000;
+    outline-offset: 3px;
+  }
+
+  .dark :focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+  }
+
+  /* Arabic RTL font and layout standards */
+  [dir='rtl'] {
+    font-family: 'Cairo', 'Inter', sans-serif;
+  }
+
+  [dir='rtl'] h1,
+  [dir='rtl'] h2,
+  [dir='rtl'] h3,
+  [dir='rtl'] h4 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 800;
+  }
+
+  /* Isolate chemical notation and code in RTL mode (Rule from UI spec) */
+  [dir='rtl'] code,
+  [dir='rtl'] pre,
+  [dir='rtl'] .font-mono {
+    direction: ltr !important;
+    unicode-bidi: isolate;
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+}

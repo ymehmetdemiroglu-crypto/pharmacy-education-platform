@@ -215,7 +215,7 @@
 
 | Slide # | Extracted Title / Headline | Chars | Confidence | Quality Status | Key Scientific Concepts / Entities |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| Slide  1 | Slide 1: Prof / Bedia / KAYMAKÇIOĞLU | 62 | 0.85 | `BULLET_SUMMARY` | İLAÇLARDA, YAPI, AKTİVİTE, İLİŞKİLERİ |
+| Slide  1 | Slide 1: Title Slide & Scope Definition | 62 | 0.85 | `BULLET_SUMMARY` | Structure-activity relationships, physicochemical solubility determinants, pharmacophore principles |
 | Slide  2 | Slide 2: İlaç / Aktivitesi / Oral | 600 | 0.95 | `FULL_TEXT` | kullanılan, ilaç, vücuda, verilişinden |
 | Slide  3 | Slide 3: Structural Model | 0 | 0.35 | `IMAGE_ONLY_RECREATION_REQUIRED` | [Chemical Diagram / Active Site Visual] |
 | Slide  4 | Slide 4: Çözünürlük / etki / yerinde | 510 | 0.95 | `FULL_TEXT` | ilacın, aktif, konsantrasyonunu, sağlama |

@@ -118,3 +118,25 @@
 - **Context**: Verification required that Option A ($14/mo, $49/sem, $89/yr; TRY ₺250/mo; SAR 55/mo) maintains >70% gross margins after accounting for Dodo Payments' fixed per-transaction fee ($0.30) on localized currency transactions and Gemini AI token consumption for a 90th-percentile heavy student.
 - **Decision**: Lock Option A as the platform's commercial pricing baseline. Unit economics recomputed under p90 heavy usage (250 AI calls/mo = 250k tokens, 500MB egress, 1500 Firestore reads = $0.090/mo variable cost) and Dodo fees show gross margins between 90.3% (TRY monthly stress-test) and 95.7% (USD annual). Break-even is achieved at 6–15 subscribers for USD and 16–36 subscribers for Turkey PPP.
 - **Consequences**: Confirms strong financial solvency (>90% gross margins) while providing ultra-accessible pricing for global pharmacy students.
+
+---
+
+## ADR-016: Single-Thread Test Concurrency & Memory Safety
+- **Context**: Running concurrent Vite preview servers, multiple real Brave browser instances, and multiple Vitest worker threads on local Windows development environments caused system commit memory exhaustion (`0xC000012D` / `0x80004005`).
+- **Decision**: Configure root `vitest.config.ts` and workspace package configs with single-thread execution (`pool: 'threads'`, `threads: { singleThread: true }`). Configure package script `"test": "pnpm -r --workspace-concurrency=1 run test"`. Constrain emulator JVM heap to `-Xmx256m -Xms64m` in `scripts/run-rules-tests.mjs`.
+- **Consequences**: Guarantees deterministic, memory-safe test execution across constrained local developer workstations and CI runners without paging file exhaustion.
+
+---
+
+## ADR-017: Exact Playwright Locators for Multi-Currency & Multi-Locale Testing
+- **Context**: In rich internationalized UI testing, short strings such as currency codes (`SAR`, `TRY`) and locale tags (`AR`, `EN`) match substrings in other component titles (e.g. `SAR Explorer`, `Start Lesson`).
+- **Decision**: Enforce `{ exact: true }` on all button, link, and label locators for currencies and locales in Playwright test suites (e.g. `page.getByRole('button', { name: 'SAR', exact: true })`).
+- **Consequences**: Prevents strict-mode ambiguity crashes and ensures resilient cross-viewport automated testing.
+
+---
+
+## ADR-018: Webhook Cryptographic Verification & Atomic Idempotency
+- **Context**: Insecure webhook endpoints can allow forged payments, side-channel timing attacks, or duplicate entitlement grants during network retries.
+- **Decision**: In `functions/src/index.ts`, require `x-dodo-signature` header on all inbound webhook requests, compare signatures using constant-time `crypto.timingSafeEqual` over raw request buffers, fail closed in production if `DODO_WEBHOOK_SECRET` is unset, and implement atomic idempotency locks in Cloud Firestore via `db.collection('webhook_events').doc(eventId).create()`. Route updates strictly based on `event.type`.
+- **Consequences**: Prevents timing attacks, prevents forged payment events, prevents duplicate replay processing, and ensures tamper-proof user entitlement states.
+
