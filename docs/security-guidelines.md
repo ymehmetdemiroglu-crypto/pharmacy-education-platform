@@ -105,5 +105,6 @@ service cloud.firestore {
 
 ## 4. Payment Webhook Security (Dodo Payments Plan)
 - Webhooks must be verified using HMAC-SHA256 signature verification over the raw request payload before processing.
+- Signatures must strictly be verified via constant-time comparison (`crypto.timingSafeEqual`) after validating matching buffer lengths to eliminate side-channel timing attacks.
 - Idempotency is enforced by journaling `eventId` in the `/webhook_events/{eventId}` collection within a Firestore transaction.
 - If an entitlement is refunded or disputed, the Cloud Function updates `/users/{uid}/entitlements/{courseId}` with `status = 'revoked'`, immediately revoking lesson access in Firestore rules.

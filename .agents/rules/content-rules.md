@@ -31,7 +31,14 @@
   `"Model Illustration: For educational simulation only. Governed by [Equation Name] from [Source Ref]."`
 
 ## 5. Concise Bite-Sized Learning Constraints
-- Maximum 40 words of expository text per interactive step (excluding question prompt).
-- Pure "read" informational cards are strictly limited to at most 2 per lesson.
-- Learning is active: every step must demand an explicit user interaction (prediction, slider adjustment, atom selection, matching) before revealing the full conceptual rationale.
-- Explanations must target the specific misconception inherent in the chosen option or input.
+- **Strict 40-Word Limit**: Total prompt instruction text per interactive step MUST NOT exceed 40 words. Long explanatory text belongs in post-attempt feedback or progressive hint tiers, never in the initial prompt.
+- **Predict-Then-Reveal Mechanic**: Every step requires active student commitment (hypothesis selection, parameter adjustment, atom selection) BEFORE any explanation or outcome is revealed.
+- **3-Tier Hint Ladder**: Every problem step must provide a graduated 3-tier hint ladder:
+  1. *Tier 1: Nudge* (Unlocks free for all students; guides attention to relevant principle without giving away answer).
+  2. *Tier 2: Structural Clue* (Premium/Trial; references governing equation, functional group role, or pharmacokinetic relationship).
+  3. *Tier 3: Worked Solution* (Premium/Trial; walks through the exact deduction to the correct option).
+- **Worked-Example Fading**: Module step progressions strictly follow cognitive load fading:
+  - Step 1: Fully worked problem with annotated rationale.
+  - Step 2: Faded practice with partially completed reasoning.
+  - Step 3+: Independent challenge with misconception-targeted diagnostic feedback.
+- Pure "read-only" informational cards are strictly capped at maximum 2 per lesson.

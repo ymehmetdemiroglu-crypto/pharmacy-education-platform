@@ -11,24 +11,23 @@ The platform adopts a bold, distinctive **Neo-Brutalist** visual aesthetic tailo
   - Subtle Hover lift: `8px 8px 0px #000000` (transforms `translate(-2px, -2px)`)
   - Active / pressed state: `0px 0px 0px #000000` (transforms `translate(6px, 6px)`)
 - **Spacing Scale**: Strict 8-point geometric scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).
-- **Backgrounds**: High-contrast, warm foundational tone:
-  - Canvas: Cream `#FFF8E7`
-  - Cards & Interactive Surfaces: Pure White `#FFFFFF`
-  - Ink / Text: `#000000`
+- **Backgrounds**: High-contrast foundational tones:
+  - Light Canvas: Cream `#FFF8E7` | Cards: Pure White `#FFFFFF` | Ink / Text: `#000000`
+  - Dark Canvas: Deep Ink `#121212` | Cards: Charcoal `#1E1E1E` | Ink / Text: White `#FFFFFF`
 
 ## 3. Restrained Semantic Color Palette
 Vibrant colors are strictly reserved for pedagogical meaning:
-- `accent-yellow` (`#FFD93D`): Hints, active selections, attention items.
-- `accent-green` (`#6BCB77`): Correct answers, progress mastery.
-- `accent-pink` (`#FF6B9D`): Incorrect answers, misconception alerts.
-- `accent-blue` (`#4D96FF`): MedChem theme accent, chemical structure links.
-- `accent-orange` (`#FF9F45`): Pharmacology theme accent, receptor binding highlights.
-- `surface-muted` (`#E5E7EB`): Disabled states, inactive step indicators.
+- `accent-yellow` (`#FFD93D`): Hints, active selections, attention items (13.9:1 contrast vs black, AAA).
+- `accent-green` (`#6BCB77`): Correct answers, progress mastery (10.4:1 contrast vs black, AAA).
+- `accent-pink` (`#FF6B9D`): Incorrect answers, misconception alerts (6.8:1 contrast vs black, AA).
+- `accent-blue` (`#4D96FF`): MedChem theme accent, chemical structure links (7.9:1 contrast vs black, AA).
+- `accent-orange` (`#FF9F45`): Pharmacology theme accent, receptor binding highlights (9.8:1 contrast vs black, AAA).
+- `surface-muted` (`#E5E7EB` light / `#2D2D2D` dark): Disabled states, inactive step indicators.
 
 ## 4. Typography Hierarchy
 - **Headings & Display**: Heavy grotesque sans-serif (`Space Grotesk` or `Archivo Black`). Bold weight (700–800), tracking tight (-0.02em).
 - **Body Prompts**: Grotesque sans-serif (`Inter` or `Space Grotesk` at weight 400/500). Max 40 words per prompt.
-- **Formulas, SMILES & Constants**: Strict monospaced font (`JetBrains Mono`). Required for all SMILES strings, chemical equations, stoichiometric numbers, and pharmacokinetic metrics.
+- **Formulas, SMILES & Constants**: Strict monospaced font (`JetBrains Mono`). Required for all SMILES strings, chemical equations, stoichiometric numbers, and pharmacokinetic metrics. Always rendered strictly LTR (`dir="ltr"`) even in Arabic RTL viewports.
 
 ## 5. Animation & Motion Rules (Subtle, Smooth & Performant)
 1. **Durations**:
@@ -49,9 +48,10 @@ Vibrant colors are strictly reserved for pedagogical meaning:
    - Strictly obey `prefers-reduced-motion: reduce`. When active, disable all transforms (`transform: none !important`) and limit transitions to instantaneous state changes or subtle 100ms opacity cross-fades.
 
 ## 6. Accessibility & Responsiveness (WCAG AA)
-- **Contrast Ratios**: All colored buttons and cards paired with `#000000` text exceed 4.5:1 ratio requirement (all primary tokens exceed 7:1 against black).
+- **Contrast Ratios**: All colored buttons and cards exceed 4.5:1 ratio requirement (all primary tokens exceed 7:1 against black).
 - **Focus Rings**: Accessible, high-visibility 3px offset focus rings (`outline: 3px solid #000000; outline-offset: 3px`).
 - **Touch Targets**: Minimum 48x48px on all interactive elements.
-- **Sticky Bottom Action Bar**: Mobile viewports (<768px) host submit and hint actions in a thumb-accessible sticky bottom container.
+- **Sticky Bottom Action Bar**: Mobile viewports (<768px) host submit and hint actions in a thumb-accessible sticky bottom container padded with `padding-bottom: max(16px, env(safe-area-inset-bottom))`.
 - **Empty States**: Styled with 3px border, 45-degree diagonal hatched pattern, and prominent tactile CTA.
 - **Loading Skeletons**: Solid neo-brutalist blocks with 3px black border and gentle opacity pulse (no blurred shimmering gradients).
+- **Arabic (AR) RTL Support**: Directional sequences invert right-to-left; chemistry and equations isolate strictly LTR; hard drop shadows maintain downward lighting.

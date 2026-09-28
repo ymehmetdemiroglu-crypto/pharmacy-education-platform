@@ -9,7 +9,7 @@
 ## 1. Executive Summary & Review Scope
 An adversarial QA review was conducted to evaluate the Playwright UI verification framework, Brave browser configuration, Shields dual-mode requirements, test matrix specifications, screenshot review protocol, and automated assertion rules.
 
-The verification confirmed the physical presence and path of Brave Browser on the Windows host and audited the completeness of the testing matrix.
+The audit revealed **one critical testing harness gap (P1)**: while dual-mode testing (Shields Default vs Shields Off) is strictly mandated, no concrete Playwright launch configuration or CLI switch was specified to disable Brave Shields during automated test execution.
 
 ---
 
@@ -17,41 +17,26 @@ The verification confirmed the physical presence and path of Brave Browser on th
 
 | ID | Severity | Category | File & Location | Summary | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `QA-01` | **P2** | Test Harness | `docs/qa-plan.md:30` | Add Playwright fixture snippet demonstrating how to launch Brave with Shields explicitly disabled via CLI switch `--disable-brave-shields` or custom profile | Logged (Non-blocking) |
-| `QA-02` | **P2** | CI/Local | `docs/qa-plan.md:70` | Specify fallback strategy if Brave is run on a headless Linux CI environment in later phases (e.g. use standard Chromium when `CI=true` and Brave locally) | Logged (Non-blocking) |
+| `QA-01` | **P1** | Test Harness | [`docs/qa-plan.md:19-30`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/qa-plan.md#L19-L30), [`AGENTS.md:68-80`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/AGENTS.md#L68-L80) | Missing concrete Playwright launch harness functions and CLI arguments (`--disable-brave-shields`) for running automated tests with Shields Down | **ACTION REQUIRED** |
+| `QA-02` | **P2** | CI Integration | `docs/qa-plan.md:70` | Specify fallback strategy if headless Linux CI runs in later phases where Brave executable is absent | Logged (Non-blocking) |
 
 ---
 
 ## 3. Detailed Audit & Finding Notes
 
-### Environment & Executable Verification
-- **Host Executable Verification**:
-  - The configured Windows path:
-    `C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`
-    was directly probed via PowerShell `Test-Path`. Result: **`True`** (Confirmed present and executable).
-- **Dual-Mode Shields Requirement**:
-  - Verification mandates running tests under both **Shields Default** (asserting that core auth, Firestore WebSockets, and state storage operate without disruption) and **Shields Down** (asserting deterministic rendering).
-- **Matrix Completeness**:
-  - **Routes**: Full catalog, modules, lesson step viewer, review queue, checkout modal, settings.
-  - **States (13 Distinct States)**: `default`, `hover`, `focus`, `active`, `disabled`, `loading`, `error`, `empty`, `correct`, `incorrect`, `paywall`, `active trial banner`, `expired trial banner`.
-  - **Viewports**: 375px (mobile), 768px (tablet), 1440px (desktop).
-  - **Themes**: Light (cream `#FFF8E7`) + Dark (`#121212`).
-  - **Locales**: EN, AR (RTL layout), TR.
-- **Visual Screenshot Review**:
-  - Mandatory saving to `docs/screenshots/<phase>/iteration-<n>/`.
-  - Mandates agent image inspection for text overflow, clipping, dropped borders, contrast, and RTL breaks.
-- **Assertion Budgets**:
-  - Zero console errors (`msg.type() === 'error'`).
-  - Zero failed network requests.
-  - Axe-core a11y: 0 serious / critical violations.
-  - Lighthouse performance >= 90.
-  - Jank & frame budget: video recording, no long frames (>50ms), Cumulative Layout Shift (CLS) < 0.05.
+### [P1] QA-01: Missing Playwright Brave Launch Harness for Shields-Disabled Mode
+- **File / Location**: `docs/qa-plan.md:19-30`, `AGENTS.md:68-80`
+- **Observed Discrepancy**: The specification states: "Test with Shields default AND off; the app must work under both." However, the code snippet only showed standard launch with `--no-sandbox`. In Chromium/Brave, turning off Shields programmatically requires specific browser launch arguments (`--disable-brave-shields`, `--disable-component-update`). Without this, test suites cannot programmatically disable Shields.
+- **Evidence / Trigger**:
+  `qa-plan.md` and `AGENTS.md` provided only a single launch configuration without the `--disable-brave-shields` flag.
+- **Actionable Fix Suggestion**:
+  Define dual exported functions: `launchBraveShieldsDefault` and `launchBraveShieldsOff` (passing `--disable-brave-shields`).
 
 ---
 
 ## 4. Final Verdict
 
 - **P0 Blockers**: 0
-- **P1 Critical Issues**: 0
-- **P2 Minor Recommendations**: 2
-- **Verdict**: **PASS**
+- **P1 Critical Issues**: 1
+- **P2 Minor Recommendations**: 1
+- **Verdict**: **FAIL — REMEDIATION REQUIRED**

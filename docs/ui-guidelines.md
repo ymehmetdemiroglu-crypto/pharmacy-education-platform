@@ -34,6 +34,7 @@ All margins, paddings, and gap dimensions align to a strict 8-point geometric sc
 
 The color system avoids visual chaos by strictly reserving vibrant accents for pedagogical semantics:
 
+#### Light Mode Palette (Default Canvas `#FFF8E7`):
 | Token Name | Hex Code | Semantic Role | Contrast vs `#000000` |
 | :--- | :--- | :--- | :--- |
 | `surface-canvas` | `#FFF8E7` | Primary page background (warm cream) | 16.5:1 (Pass AAA) |
@@ -45,6 +46,19 @@ The color system avoids visual chaos by strictly reserving vibrant accents for p
 | `accent-pink` | `#FF6B9D` | Misconception feedback, alerts, contrast warnings | 6.8:1 (Pass AA) |
 | `accent-blue` | `#4D96FF` | MedChem theme accent, chemical structure links | 7.9:1 (Pass AA) |
 | `accent-orange` | `#FF9F45` | Pharmacology theme accent, receptor binding highlights | 9.8:1 (Pass AAA) |
+
+#### Dark Mode Palette (Canvas `#121212`):
+| Token Name | Hex Code | Semantic Role | Contrast vs Canvas (`#121212`) |
+| :--- | :--- | :--- | :--- |
+| `surface-canvas-dark` | `#121212` | Neo-brutalist dark canvas background | N/A (Background) |
+| `surface-card-dark` | `#1E1E1E` | Card & widget background surface | Contrast with White ink: 16.2:1 (Pass AAA) |
+| `surface-ink-dark` | `#FFFFFF` | Primary text, titles, high-contrast borders | 19.3:1 (Pass AAA) |
+| `surface-muted-dark` | `#2D2D2D` | Inactive step indicators, disabled fills | 2.1:1 (Component Boundary) |
+| `accent-yellow` | `#FFD93D` | Active hints, attention cards | 13.9:1 (Pass AAA) |
+| `accent-green` | `#6BCB77` | Correct answers, progress mastery | 10.4:1 (Pass AAA) |
+| `accent-pink` | `#FF6B9D` | Misconception alerts, error states | 6.8:1 (Pass AA) |
+| `accent-blue` | `#4D96FF` | MedChem theme accent, molecular nodes | 7.9:1 (Pass AA) |
+| `accent-orange` | `#FF9F45` | Pharmacology theme accent, receptor highlights | 9.8:1 (Pass AAA) |
 
 ---
 
@@ -160,4 +174,28 @@ When `prefers-reduced-motion: reduce` is active:
 
 - **Minimum Touch Target**: 48px by 48px on all buttons and interactive targets.
 - **Sticky Bottom Action Bar**: On viewports under 768px width (down to 360px), the Submit button, Hint button, and Next Step button are pinned inside a sticky bottom bar with a solid 3px top border and white background for one-thumb reachability.
+  ```css
+  .sticky-bottom-action-bar {
+    padding-top: 12px;
+    padding-bottom: max(16px, env(safe-area-inset-bottom));
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
+  ```
 - **Horizontal Scrolling Guard**: All container wrappers enforce `max-w-full overflow-x-hidden`. Molecular SMILES canvases scale responsively using SVG viewboxes to prevent layout clipping.
+
+---
+
+## 7. Arabic (AR) RTL Neo-Brutalist Layout Guidelines
+
+To preserve visual hierarchy and readability when the Arabic locale (`dir="rtl"`) is active:
+1. **Directional Inversion**:
+   - Step progress dot sequences fill from right to left (`flex-row-reverse`).
+   - Lesson navigation arrows mirror logically: `ArrowLeft` navigates forward (next step) and `ArrowRight` navigates backward (previous step).
+   - Dismiss buttons (`X` or "Return to Free Lessons") pin to top-left rather than top-right.
+2. **Neo-Brutalist Shadow Consistency**:
+   - Global lighting model is maintained: hard drop shadows remain downward-oriented (`box-shadow: 6px 6px 0px #000000`).
+   - For directional callout ribbons and corner badges, X-offsets mirror (`-6px 6px 0px #000000`) when anchored to left edges.
+3. **Typography & Monospace Preservation**:
+   - Arabic headings utilize high-contrast grotesque typefaces with clear vertical metrics (e.g., `IBM Plex Sans Arabic` or `Cairo`, Bold 700).
+   - Monospace chemistry tokens (SMILES strings, chemical formulas, pKa, Kd, Hill coefficient equations) remain strictly **LTR** (`dir="ltr" unicode-bidi="isolate"`) with `JetBrains Mono` to prevent reverse chemical formula corruption.

@@ -9,7 +9,7 @@
 ## 1. Executive Summary & Review Scope
 An adversarial security assessment was conducted to audit the monetization gating rules, trial-abuse vectors, webhook signature verification pipelines, and entitlement protections introduced in the Phase 0 Amendment.
 
-The assessment analyzed potential client-side tampering, replay attacks, trial recycling loops, and unauthorized data leakage.
+The assessment revealed **two critical security vulnerabilities (P1)** that require immediate remediation before advancing past the Phase 0 gate.
 
 ---
 
@@ -17,46 +17,54 @@ The assessment analyzed potential client-side tampering, replay attacks, trial r
 
 | ID | Severity | Category | File & Location | Summary | Status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| `SEC-01` | **P2** | Abuse Prevention | `docs/payments-plan.md:120` | Add IP-based and device fingerprint velocity limits to `startFreeTrial` Cloud Function to curb automated disposable email account generation | Logged (Non-blocking) |
-| `SEC-02` | **P2** | Secrets Hardening | `docs/backend.md:313` | Ensure `DODO_WEBHOOK_SECRET` rotation runbook is documented in deployment guides | Logged (Non-blocking) |
+| `SEC-01` | **P1** | Cryptographic Vulnerability | [`docs/payments-plan.md:230`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/payments-plan.md#L230) | Insecure string comparison (`signature !== expectedSignature`) leaks timing information and enables side-channel forgery of payment events; missing buffer length validation | **ACTION REQUIRED** |
+| `SEC-02` | **P1** | Rule Evaluation Crash | [`docs/backend.md:258`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/backend.md#L258) | Unguarded `get(...).data.isFreePreview` fails abruptly if parent lesson document does not exist, causing rule failure and locking out valid entitlement holders; extra reads inflate Firestore billing | **ACTION REQUIRED** |
+| `SEC-03` | **P2** | Abuse Prevention | `docs/payments-plan.md:120` | Add IP-based and device fingerprint velocity limits to `startFreeTrial` Cloud Function to curb automated disposable email account generation | Logged (Non-blocking) |
 
 ---
 
 ## 3. Detailed Audit & Finding Notes
 
-### Threat Model & Attack Vector Analysis
+### [P1] SEC-01: Timing Attack Vulnerability in Webhook HMAC Verification
+- **File / Location**: `docs/payments-plan.md:230`
+- **Observed Discrepancy**: Standard JavaScript string comparison (`signature !== expectedSignature`) short-circuits on the first non-matching byte, leaking timing differences that allow an attacker to reconstruct valid HMAC signatures.
+- **Evidence / Trigger**:
+  ```typescript
+  if (signature !== expectedSignature) { res.status(401).send('Invalid signature'); }
+  ```
+- **Actionable Fix Suggestion**:
+  Mandate `crypto.timingSafeEqual` with strict header type validation and buffer length comparison:
+  ```typescript
+  const sigBuffer = Buffer.from(signature, 'utf8');
+  const expectedBuffer = Buffer.from(expectedSignature, 'utf8');
+  if (sigBuffer.length !== expectedBuffer.length || !crypto.timingSafeEqual(sigBuffer, expectedBuffer)) {
+    res.status(401).send('Invalid signature');
+  }
+  ```
 
-#### 1. Trial Abuse & Recycling Vector: Can a client spoof or reset its trial?
-- **Inspection**:
-  - In `docs/backend.md`, `users/{userId}` update rule enforces:
-    `!request.resource.data.diff(resource.data).affectedKeys().hasAny(['roles', 'isAdmin', 'userId', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements'])`
-  - In `users/{userId}` create rule, clients cannot provide `plan`, `trialUsed`, or `entitlements`.
-  - The `startFreeTrial` function is an HTTPS Callable running Firebase Admin SDK privileges that atomically inspects `user.trialUsed === false` before setting `trialUsed = true` and creating entitlement documents.
-- **Finding**: Tamper-proof. Clients cannot alter their trial state or bypass the one-trial-per-account restriction via Firestore SDK.
-
-#### 2. Entitlement Elevation: Can a client grant itself paid access?
-- **Inspection**:
-  - `match /users/{userId}/entitlements/{courseId}` specifies:
-    `allow read: if isOwner(userId); allow write: if false;`
-- **Finding**: Client write access is completely blocked. Only Cloud Functions via Firebase Admin SDK can create or update entitlements.
-
-#### 3. Webhook Replay & Spoofing: Can a malicious actor forge purchase notifications?
-- **Inspection**:
-  - `handleDodoWebhook` enforces HMAC-SHA256 signature verification using `crypto.createHmac` with a secret stored in Google Cloud Secret Manager.
-  - Idempotency is enforced using a Firestore transaction on `/webhook_events/{eventId}`, preventing duplicate entitlement provisioning on replayed requests.
-- **Finding**: Secure. Signature validation rejects forged requests; transaction prevents replays.
-
-#### 4. Content Leakage: Can unauthenticated users read proprietary steps?
-- **Inspection**:
-  - `steps/{stepId}` read rule requires `isFreePreview == true` OR `hasCourseAccess(courseId)`.
-  - `hasCourseAccess(courseId)` strictly checks `request.auth != null`, existence of entitlement, `status == 'active'`, and `expiresAt > request.time`.
-- **Finding**: Secure. Unauthenticated users cannot read proprietary steps. Expired trials/passes lose step access immediately upon expiry.
+### [P1] SEC-02: Rule Evaluation Crash Hazard in Step Gating
+- **File / Location**: `docs/backend.md:258`
+- **Observed Discrepancy**: The rule calls `get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.isFreePreview == true` without checking `exists(...)`. If a lesson document is missing or corrupted, calling `.data` causes the entire rule evaluation to throw an error, preventing the subsequent `hasCourseAccess(courseId)` from executing and denying legitimate paid users.
+- **Evidence / Trigger**:
+  ```javascript
+  allow read: if resource.data.isFreePreview == true ||
+                 get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.isFreePreview == true ||
+                 hasCourseAccess(courseId);
+  ```
+- **Actionable Fix Suggestion**:
+  Use `resource.data.get('isFreePreview', false)` on the step, and wrap parent lesson access with `exists(...)`:
+  ```javascript
+  allow read: if resource.data.get('isFreePreview', false) == true ||
+                 (exists(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)) &&
+                  get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.get('isFreePreview', false) == true) ||
+                 hasCourseAccess(courseId);
+  ```
 
 ---
 
 ## 4. Final Verdict
 
 - **P0 Blockers**: 0
-- **P1 Critical Issues**: 0
-- **P2 Minor Recommendations**: 2
-- **Verdict**: **PASS**
+- **P1 Critical Issues**: 2
+- **P2 Minor Recommendations**: 1
+- **Verdict**: **FAIL — REMEDIATION REQUIRED**

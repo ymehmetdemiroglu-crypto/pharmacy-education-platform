@@ -252,10 +252,12 @@ service cloud.firestore {
 
         // Steps collection: GATED
         // Permitted if step is in Lesson 1 or 2 of any module (isFreePreview == true)
-        // OR user holds active course/bundle entitlement
+        // OR user holds active course/bundle entitlement.
+        // Guards parent lesson lookup with exists() to prevent runtime rule evaluation crashes.
         match /steps/{stepId} {
-          allow read: if resource.data.isFreePreview == true ||
-                         get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.isFreePreview == true ||
+          allow read: if resource.data.get('isFreePreview', false) == true ||
+                         (exists(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)) &&
+                          get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.get('isFreePreview', false) == true) ||
                          hasCourseAccess(courseId);
           allow write: if false;
         }
@@ -265,7 +267,8 @@ service cloud.firestore {
     // User document & subcollections
     match /users/{userId} {
       allow read: if isOwner(userId);
-      // On creation, client cannot grant self roles, plan, or trialUsed status
+      // On creation, client cannot grant self roles, plan, or trialUsed status.
+      // Baseline plan="free" and trialUsed=false flags are initialized authoritatively by onUserCreated Cloud Function.
       allow create: if isOwner(userId) &&
                        request.resource.data.userId == request.auth.uid &&
                        !request.resource.data.keys().hasAny(['roles', 'isAdmin', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements']);

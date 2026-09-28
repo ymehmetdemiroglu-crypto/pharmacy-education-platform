@@ -219,15 +219,24 @@ User App (Client)          Firebase Functions         Dodo Payments API        F
 
 #### Function 3: `handleDodoWebhook`
 - **Trigger**: `onRequest` (HTTP)
-- **HMAC Verification**:
+- **HMAC Verification (Timing-Safe)**:
   ```typescript
   const signature = req.headers['x-dodo-signature'];
+  if (!signature || typeof signature !== 'string') {
+    res.status(401).send('Missing or invalid signature header');
+    return;
+  }
+
   const expectedSignature = crypto
     .createHmac('sha256', process.env.DODO_WEBHOOK_SECRET!)
     .update(req.rawBody)
     .digest('hex');
 
-  if (signature !== expectedSignature) {
+  const sigBuffer = Buffer.from(signature, 'utf8');
+  const expectedBuffer = Buffer.from(expectedSignature, 'utf8');
+
+  // Constant-time comparison to prevent side-channel timing attacks
+  if (sigBuffer.length !== expectedBuffer.length || !crypto.timingSafeEqual(sigBuffer, expectedBuffer)) {
     res.status(401).send('Invalid signature');
     return;
   }

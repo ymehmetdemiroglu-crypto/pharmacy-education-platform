@@ -69,15 +69,25 @@ UI verification is executed exclusively via Playwright controlling the user's lo
   ```typescript
   import { chromium } from '@playwright/test';
 
-  const browser = await chromium.launch({
-    executablePath: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
+  const BRAVE_PATH = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe';
+
+  // Mode 1: Shields Default
+  const browserDefault = await chromium.launch({
+    executablePath: BRAVE_PATH,
     headless: false,
     args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+
+  // Mode 2: Shields Down (parity verification)
+  const browserShieldsDown = await chromium.launch({
+    executablePath: BRAVE_PATH,
+    headless: false,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-brave-shields', '--disable-component-update']
   });
   ```
 - **Brave Shields Dual-Mode Requirement**:
   - Tests must pass with **Shields Default** (aggressive tracker/fingerprint blocking). Essential app requests (Auth, Firestore websockets, local storage) must never be blocked.
-  - Tests must pass with **Shields Down** (disabled). Visual rendering and behavior must remain 100% consistent across both configurations.
+  - Tests must pass with **Shields Down** (`--disable-brave-shields`). Visual rendering and behavior must remain 100% consistent across both configurations.
 
 ### 4.2 Comprehensive Matrix Coverage
 - **Routes**: Catalog, module overview, interactive lesson step viewer, spaced review queue, paywall/checkout modal, user profile/settings.

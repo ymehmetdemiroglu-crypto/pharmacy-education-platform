@@ -15,22 +15,43 @@ All browser-based UI and interaction testing runs against the user's local Brave
 ### 2.1 Brave Browser Configuration
 - **Verified Executable Path (Windows)**:
   `C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe`
-- **Playwright Launch Configuration**:
+- **Playwright Launch Configuration Harness**:
   ```typescript
-  import { chromium } from '@playwright/test';
+  import { chromium, Browser, LaunchOptions } from '@playwright/test';
 
-  const browser = await chromium.launch({
-    executablePath: 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe',
-    headless: false, // Visual verification
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox'
-    ]
-  });
+  export const BRAVE_EXECUTABLE_PATH = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe';
+
+  // Mode 1: Shields Default (aggressive tracker & fingerprint blocking enabled)
+  export async function launchBraveShieldsDefault(options: LaunchOptions = {}): Promise<Browser> {
+    return await chromium.launch({
+      executablePath: BRAVE_EXECUTABLE_PATH,
+      headless: false, // Visual verification
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+      ],
+      ...options
+    });
+  }
+
+  // Mode 2: Shields Off (protections disabled for baseline parity verification)
+  export async function launchBraveShieldsOff(options: LaunchOptions = {}): Promise<Browser> {
+    return await chromium.launch({
+      executablePath: BRAVE_EXECUTABLE_PATH,
+      headless: false,
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+        '--disable-brave-shields', // Disables ad, tracker, and fingerprint protections
+        '--disable-component-update'
+      ],
+      ...options
+    });
+  }
   ```
 - **Brave Shields Dual Verification Requirement**:
   1. **Shields Default (Standard Protections)**: Test with Brave's aggressive default tracker/ad blocking and fingerprint protection enabled. Assert that authentication, Firestore WebSocket synchronization, local storage, and widget interactivity work seamlessly without blocked essential calls.
-  2. **Shields Down (Disabled)**: Test with Shields turned off. Verify identical visual rendering and deterministic functionality. The application must function flawlessly under both configurations.
+  2. **Shields Down (Disabled via `--disable-brave-shields`)**: Test with Shields turned off. Verify identical visual rendering and deterministic functionality. The application must function flawlessly under both configurations.
 
 ---
 
