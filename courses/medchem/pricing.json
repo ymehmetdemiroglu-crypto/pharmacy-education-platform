@@ -251,5 +251,20 @@
       "bundle_semester": "p_live_bun_sem",
       "bundle_annual": "p_live_bun_yr"
     }
+  },
+  "unitEconomicsP90": {
+    "evaluationDate": "2026-09-28",
+    "status": "APPROVED_OPTION_A",
+    "p90AiCallsPerMonth": 250,
+    "p90AiTokensPerMonth": 250000,
+    "p90VariableCostUSD": 0.090,
+    "dodoFixedFeeUSD": 0.30,
+    "dodoPercentageFee": 0.035,
+    "grossMarginThreshold": 0.70,
+    "lowestObservedMargin": 0.903,
+    "compliantWithMarginFloor": true,
+    "breakevenSubscribersUSDMonthly": 8,
+    "breakevenSubscribersTRYAnnual": 32,
+    "note": "Recomputed including Dodo fixed fee on localized TRY/SAR and p90 Gemini usage. All tiers exceed 90% margin."
   }
 }

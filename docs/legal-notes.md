@@ -1,15 +1,18 @@
 # Legal, Privacy & Compliance Notes
 
-## 1. Intellectual Property & Course Materials Rights Gate (Critical)
+## 1. Intellectual Property & Course Materials Rights Gate (CODIFIED & RESOLVED)
 
-> [!WARNING] **Mandatory Commercial Rights Gate**
-> The source materials in `/materials/medchem` and `/materials/pharmacology` represent university lecture presentations and academic curriculum slides.
+> [!IMPORTANT] **Codified IP Architecture & Private Reference Rule**
+> At the Phase 1 Stop Gate, the project owner confirmed: **No written commercial authorization exists for the slide materials.**
 > 
-> **Rule**: Before ANY paid course content is deployed to a commercial production environment or offered for sale, the project owner MUST confirm written authorization, license, or copyright clearance from the authors/institutions holding the copyright.
+> **Operational Status**: RESOLVED & CODIFIED (Phase 1 Gate Decision).
 > 
-> **Status**: PENDING USER CONFIRMATION AT PHASE 1 GATE.
-> 
-> **Protection Mechanism**: All platform text, diagrams, and code are written from scratch in original wording. No university slides, diagrams, or verbatim text are published.
+> **Mandatory Operating Rules**:
+> 1. **Private Internal Reference Only**: The decks in `/materials/medchem` and `/materials/pharmacology` are classified strictly as private reference material for internal scientific accuracy and curriculum verification. They MUST NEVER be served, bundled, exposed, or made downloadable to end users.
+> 2. **100% Original Authorship**: All shipped platform instructional prose, step explanations, multiple-choice distractors, diagnostic questions, hints, and clinical vignettes MUST be authored completely de novo in original wording. No verbatim copying, structural mirroring, or slide paraphrasing is permitted.
+> 3. **Native Asset Recreation**: Raw lecture slides, diagrams, and scanned figures must NEVER be embedded or displayed in the platform. All chemical structures are rendered natively via SMILES (validated with SmilesDrawer / RDKit), and all biological pathway diagrams are recreated as native, semantic SVGs.
+> 4. **Provenance & Asset Logging**: Every lesson step data schema maintains a verifiable provenance trail (`sources: { file: string; page: number | string }[]`) for internal pedagogical auditing. All recreated structural and conceptual assets are logged in [`/docs/asset-log.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/asset-log.md).
+> 5. **Pharmacology Reference Standard**: Pharmacology curriculum structure is synthesized using standard global pharmacology compendia (Katzung's *Basic & Clinical Pharmacology*, Goodman & Gilman's *The Pharmacological Basis of Therapeutics*) as independent pedagogical reference points, anchored on the unique 33-page receptor deck. Every lesson undergoes rigorous `/factcheck` against foundational pharmacology.
 
 ---
 

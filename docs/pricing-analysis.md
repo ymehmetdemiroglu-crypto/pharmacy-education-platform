@@ -147,46 +147,96 @@ Option C (Academic Mod): $16/mo   | $59/semester ($9.83/mo)   | $109/year ($9.08
 
 ---
 
-## 4. Rigorous Unit Economics & Break-Even Analysis
+## 4. Rigorous Unit Economics & Break-Even Analysis (p90 Heavy Student Model)
 
-### 4.1 Cost Structure Breakdown per Active Student (Monthly)
-Unlike static video courses, our platform provides active interactive widgets and on-demand Gemini AI misconception tutoring.
+### 4.1 Cost Structure Breakdown: Average vs. p90 Heavy-Use Student
 
-| Cost Component | Unit Rate / Usage Assumptions | Monthly Cost per Active Student |
-| :--- | :--- | :--- |
-| **Payment Gateway (Dodo Payments)** | 3.5% + $0.30 per successful checkout | On $14.00/mo: **$0.79**<br>On $89.00/yr ($7.42/mo amortized): **$0.28/mo** |
-| **Gemini AI Misconception Tutoring** | Gemini 1.5/2.0 Flash API: ~50 prompt calls/mo @ ~1,000 tokens (800 in / 200 out) = ~50k tokens. Rates: $0.075/1M input, $0.30/1M output. | **~$0.020 / month** |
-| **Firebase Cloud Hosting & Bandwidth** | Static assets, cached SMILES bundles, ~150MB egress/mo | **~$0.015 / month** |
-| **Cloud Firestore Reads & Writes** | ~250 reads/mo, ~60 writes/mo (progress, Leitner queue) | **~$0.003 / month** |
-| **Cloud Functions Invocations** | Auth triggers, entitlement checks, AI mediation | **~$0.005 / month** |
-| **Total Variable Cost (Excl. Payment Gateway)** | Infrastructure + AI Tutoring | **~$0.043 / student / month** |
-| **Total Operational Cost (Option A Monthly)** | Infrastructure + AI + Dodo Payment Fee | **~$0.83 / student / month** |
-| **Total Operational Cost (Option A Annual)** | Infrastructure + AI + Amortized Dodo Fee | **~$0.32 / student / month** |
+To ensure fiscal robustness under worst-case usage patterns, unit economics are evaluated for both an **average learner** and a **90th-percentile (p90) heavy-use student**:
+- **Average Student**: Completes ~15 lessons/month, invokes Gemini AI feedback ~50 times (~50k tokens), generates ~150 MB egress, ~250 Firestore reads.
+- **p90 Heavy Student**: Completes 40+ lessons/month, invokes Gemini AI tutoring ~250 times (~250k tokens: 200k input / 50k output), generates ~500 MB egress, ~1,500 Firestore reads, and 300 Cloud Function invocations.
 
-### 4.2 Gross Margin Comparison Across Options
-
-| Plan | Gross Revenue | Dodo MoR Fee | Cloud + Gemini AI | Net Contribution Margin | Margin % |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Option A: Monthly ($14.00)** | $14.00 | $0.79 | $0.043 | **$13.17** | **94.1%** |
-| **Option A: Semester ($49.00 / 6 mo)** | $8.17 / mo | $0.34 / mo | $0.043 | **$7.79 / mo** | **95.3%** |
-| **Option A: Annual ($89.00 / 12 mo)** | $7.42 / mo | $0.28 / mo | $0.043 | **$7.10 / mo** | **95.7%** |
-| **Option A: Turkey Annual (₺1,450 ≈ $42)** | $3.50 / mo | $0.18 / mo | $0.043 | **$3.28 / mo** | **93.7%** |
-| **Option B: Annual ($69.99 / 12 mo)** | $5.83 / mo | $0.23 / mo | $0.043 | **$5.56 / mo** | **95.4%** |
-| **Option C: Annual ($109.00 / 12 mo)** | $9.08 / mo | $0.34 / mo | $0.043 | **$8.70 / mo** | **95.8%** |
-
-*Conclusion*: Variable cloud and AI costs remain under $0.05/student/month. Net gross margins remain above **93% across all tiers and regions**.
-
-### 4.3 Break-Even Subscriber Analysis
-Assuming fixed baseline platform overhead of **$100.00 / month** (domain, developer tooling, monitoring, staging environment guards):
-
-| Pricing Option | Plan | Net Margin per Sub / Month | Break-Even Active Subscribers |
+| Cost Component | Unit Rate & Specifications | Average Student / Mo | p90 Heavy Student / Mo |
 | :--- | :--- | :--- | :--- |
-| **Option A (Recommended)** | Single Course Monthly ($14) | $13.17 | **8 subscribers** |
-| **Option A (Recommended)** | Single Course Semester ($49) | $7.79 / mo | **13 subscribers** |
-| **Option A (Recommended)** | Single Course Annual ($89) | $7.10 / mo | **15 subscribers** |
-| **Option A (Recommended)** | Turkey PPP Annual (₺1,450) | $3.28 / mo | **31 subscribers** |
-| **Option B (Volume Micro)** | Single Course Annual ($70) | $5.56 / mo | **18 subscribers** |
-| **Option C (Academic Mod)** | Single Course Annual ($109) | $8.70 / mo | **12 subscribers** |
+| **Gemini AI Misconception Tutoring** | Gemini 1.5/2.0 Flash: $0.075/1M input, $0.30/1M output | ~$0.020 (50k tokens) | **$0.030** (200k in / 50k out) |
+| **Firebase Cloud Hosting & Bandwidth** | Static assets, cached SMILES bundles, SVGs (~150MB avg, ~500MB p90) | ~$0.015 | **$0.035** |
+| **Cloud Firestore (Progress & Review)** | $0.06/100k reads, $0.18/100k writes (~250 reads avg, ~1,500 reads p90) | ~$0.003 | **$0.015** |
+| **Cloud Functions (v2 Serverless)** | Auth triggers, entitlements, AI mediation (~100 avg, ~300 p90) | ~$0.005 | **$0.010** |
+| **Total Variable Cost (Excl. Payment MoR)** | **Infrastructure + AI Tutoring** | **$0.043 / student / mo** | **$0.090 / student / mo** |
+
+---
+
+### 4.2 Dodo Payments Merchant of Record (MoR) Fee Schedule Across Currencies
+
+Dodo Payments charges **3.5% + $0.30 fixed fee** per transaction. When assessing monthly vs. multi-month passes and localized currencies, the fixed $0.30 fee represents a higher percentage on low-ticket monthly transactions in emerging markets:
+
+| Currency Tier | Transaction Amount | FX Rate to USD | USD Equivalent | Dodo % Fee (3.5%) | Dodo Fixed Fee ($0.30) | Total Dodo Fee (USD) | Dodo Fee % of Revenue |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **USD Single Monthly** | $14.00 | 1.00 | $14.00 | $0.490 | $0.300 | **$0.790** | 5.64% |
+| **USD Single Semester** | $49.00 (6 mo) | 1.00 | $49.00 ($8.17/mo) | $1.715 | $0.300 | **$2.015** ($0.336/mo) | 4.11% |
+| **USD Single Annual** | $89.00 (12 mo) | 1.00 | $89.00 ($7.42/mo) | $3.115 | $0.300 | **$3.415** ($0.285/mo) | 3.84% |
+| **SAR Single Monthly** | 55.00 SAR | 3.75 | $14.67 | $0.513 | $0.300 (1.13 SAR) | **$0.813** | 5.54% |
+| **SAR Single Semester** | 190.00 SAR (6 mo) | 3.75 | $50.67 ($8.44/mo) | $1.773 | $0.300 | **$2.073** ($0.346/mo) | 4.09% |
+| **SAR Single Annual** | 340.00 SAR (12 mo)| 3.75 | $90.67 ($7.56/mo) | $3.173 | $0.300 | **$3.473** ($0.289/mo) | 3.83% |
+| **TRY Single Monthly (₺250)** | ₺250.00 | 35.00 | $7.14 | $0.250 | $0.300 (₺10.50) | **$0.550** | 7.70% |
+| **TRY Single Semester (₺850)**| ₺850.00 (6 mo) | 35.00 | $24.29 ($4.05/mo) | $0.850 | $0.300 (₺10.50) | **$1.150** ($0.192/mo) | 4.73% |
+| **TRY Single Annual (₺1,450)**| ₺1,450.00 (12 mo)| 35.00 | $41.43 ($3.45/mo) | $1.450 | $0.300 (₺10.50) | **$1.750** ($0.146/mo) | 4.22% |
+| **TRY Monthly (Stress FX 40)**| ₺250.00 | 40.00 | $6.25 | $0.219 | $0.300 (₺12.00) | **$0.519** | 8.30% |
+
+---
+
+### 4.3 p90 Gross Margin Matrix Across Option A Tiers (Strict 70% Guard Verification)
+
+Every tier was recomputed under p90 heavy student consumption ($0.090/student/month variable cloud + Gemini AI costs) plus full Dodo MoR fees:
+
+| Plan / Tier | Gross Rev / Mo (USD) | Dodo MoR / Mo (USD) | p90 Infra + AI / Mo | Net Margin / Mo (USD) | p90 Gross Margin % | Status (>=70% Target) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **USD Single Monthly ($14.00)** | $14.00 | $0.790 | $0.090 | **$13.12** | **93.7%** | PASS (Exceeds 70%) |
+| **USD Single Semester ($49.00 / 6 mo)** | $8.17 | $0.336 | $0.090 | **$7.74** | **94.8%** | PASS (Exceeds 70%) |
+| **USD Single Annual ($89.00 / 12 mo)** | $7.42 | $0.285 | $0.090 | **$7.04** | **94.9%** | PASS (Exceeds 70%) |
+| **USD Dual Bundle Monthly ($19.00)** | $19.00 | $0.965 | $0.090 | **$17.95** | **94.4%** | PASS (Exceeds 70%) |
+| **USD Dual Bundle Semester ($69.00 / 6 mo)** | $11.50 | $0.453 | $0.090 | **$10.96** | **95.3%** | PASS (Exceeds 70%) |
+| **USD Dual Bundle Annual ($129.00 / 12 mo)** | $10.75 | $0.401 | $0.090 | **$10.26** | **95.4%** | PASS (Exceeds 70%) |
+| **SAR Single Monthly (55 SAR ≈ $14.67)** | $14.67 | $0.813 | $0.090 | **$13.76** | **93.8%** | PASS (Exceeds 70%) |
+| **SAR Single Semester (190 SAR / 6 mo)** | $8.44 | $0.346 | $0.090 | **$8.01** | **94.8%** | PASS (Exceeds 70%) |
+| **SAR Single Annual (340 SAR / 12 mo)** | $7.56 | $0.289 | $0.090 | **$7.18** | **95.0%** | PASS (Exceeds 70%) |
+| **SAR Dual Bundle Monthly (75 SAR ≈ $20.00)** | $20.00 | $1.000 | $0.090 | **$18.91** | **94.5%** | PASS (Exceeds 70%) |
+| **SAR Dual Bundle Semester (265 SAR / 6 mo)**| $11.78 | $0.459 | $0.090 | **$11.23** | **95.3%** | PASS (Exceeds 70%) |
+| **SAR Dual Bundle Annual (490 SAR / 12 mo)** | $10.89 | $0.406 | $0.090 | **$10.39** | **95.4%** | PASS (Exceeds 70%) |
+| **TRY Single Monthly (₺250 ≈ $7.14 @ FX 35)**| $7.14 | $0.550 | $0.090 | **$6.50** | **91.0%** | PASS (Exceeds 70%) |
+| **TRY Single Semester (₺850 / 6 mo @ FX 35)**| $4.05 | $0.192 | $0.090 | **$3.77** | **93.0%** | PASS (Exceeds 70%) |
+| **TRY Single Annual (₺1,450 / 12 mo @ FX 35)**| $3.45 | $0.146 | $0.090 | **$3.22** | **93.2%** | PASS (Exceeds 70%) |
+| **TRY Dual Bundle Monthly (₺350 ≈ $10.00)** | $10.00 | $0.650 | $0.090 | **$9.26** | **92.6%** | PASS (Exceeds 70%) |
+| **TRY Dual Bundle Semester (₺1,150 / 6 mo)** | $5.48 | $0.242 | $0.090 | **$5.14** | **93.9%** | PASS (Exceeds 70%) |
+| **TRY Dual Bundle Annual (₺2,100 / 12 mo)** | $5.00 | $0.203 | $0.090 | **$4.71** | **94.2%** | PASS (Exceeds 70%) |
+| **TRY Single Monthly Stress Test (FX 40)** | $6.25 | $0.519 | $0.090 | **$5.64** | **90.3%** | PASS (Exceeds 70%) |
+| **TRY Single Annual Stress Test (FX 40)** | $3.02 | $0.134 | $0.090 | **$2.80** | **92.7%** | PASS (Exceeds 70%) |
+
+**Finding**: Even in the lowest-margin scenario (Turkish Lira single monthly tier under severe macroeconomic devaluation at 40 TRY/USD), the gross margin remains at **90.3%**, dramatically exceeding the mandatory 70% floor. No price amendment is necessary; Option A is locked as final approved commercial pricing.
+
+---
+
+### 4.4 Break-Even Subscriber Analysis at p90 Usage
+
+Baseline fixed infrastructure overhead is projected at **$100.00 / month** (custom domain routing, DNS/CDN reserve, Sentry error monitoring tier, and staging environment guards). Under p90 heavy-usage student consumption, break-even requires:
+
+| Pricing Option / Tier | Plan | p90 Net Contribution / Mo | Break-Even Active Subscribers |
+| :--- | :--- | :--- | :--- |
+| **Option A (Recommended)** | Single Course Monthly ($14.00) | $13.12 | **8 subscribers** (7.6) |
+| **Option A (Recommended)** | Single Course Semester ($49.00 / 6 mo) | $7.74 / mo | **13 subscribers** (12.9) |
+| **Option A (Recommended)** | Single Course Annual ($89.00 / 12 mo) | $7.04 / mo | **15 subscribers** (14.2) |
+| **Option A (Recommended)** | Dual Bundle Monthly ($19.00) | $17.95 | **6 subscribers** (5.6) |
+| **Option A (Recommended)** | Dual Bundle Semester ($69.00 / 6 mo) | $10.96 / mo | **10 subscribers** (9.1) |
+| **Option A (Recommended)** | Dual Bundle Annual ($129.00 / 12 mo) | $10.26 / mo | **10 subscribers** (9.7) |
+| **Option A (Gulf PPP)** | SAR Single Monthly (55 SAR) | $13.76 | **8 subscribers** (7.3) |
+| **Option A (Gulf PPP)** | SAR Single Semester (190 SAR / 6 mo) | $8.01 / mo | **13 subscribers** (12.5) |
+| **Option A (Gulf PPP)** | SAR Single Annual (340 SAR / 12 mo) | $7.18 / mo | **14 subscribers** (13.9) |
+| **Option A (Turkey PPP)** | TRY Single Monthly (₺250 @ FX 35) | $6.50 | **16 subscribers** (15.4) |
+| **Option A (Turkey PPP)** | TRY Single Semester (₺850 / 6 mo) | $3.77 / mo | **27 subscribers** (26.6) |
+| **Option A (Turkey PPP)** | TRY Single Annual (₺1,450 / 12 mo) | $3.22 / mo | **32 subscribers** (31.1) |
+| **Option A (Turkey Stress)**| TRY Single Monthly (₺250 @ FX 40) | $5.64 | **18 subscribers** (17.7) |
+| **Option A (Turkey Stress)**| TRY Single Annual (₺1,450 @ FX 40) | $2.80 / mo | **36 subscribers** (35.7) |
+
+**Conclusion**: The platform achieves self-sustaining commercial profitability with fewer than **15 international students** or **32 Turkish annual subscribers**, even when all active students operate at the 90th percentile of AI tutoring and cloud data consumption.
 
 ---
 

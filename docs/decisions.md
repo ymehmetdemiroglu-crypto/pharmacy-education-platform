@@ -93,3 +93,24 @@
   4. Obey `prefers-reduced-motion: reduce` by disabling transforms completely.
   5. Enforce Playwright video checks for zero long frames (>50ms) and CLS < 0.05.
 - **Consequences**: Delivers crisp, tactile responsiveness without motion sickness or frame rate degradation.
+
+---
+
+## ADR-013: Private Reference IP Protocol & 100% De Novo Authoring
+- **Context**: Source lecture slides in `/materials/` lack explicit written commercial copyright clearance.
+- **Decision**: Formally classify `/materials/` strictly as private internal reference data. All platform instructional content, problem sets, hints, and explanations MUST be authored 100% de novo. No lecture slides, university figures, or verbatim texts are published. All chemical structures are rendered via native SMILES (RDKit / SmilesDrawer) and diagrams in SVG. Every lesson step logs source citations in `sources: { file, page }` and assets are tracked in `docs/asset-log.md`. Pharmacology curriculum structure is synthesized using standard global pharmacology textbooks (Katzung, Goodman & Gilman) as independent scientific references, anchored on the unique 33-page receptor deck.
+- **Consequences**: Eliminates copyright infringement liability while maintaining total scientific fidelity and institutional credibility.
+
+---
+
+## ADR-014: Dedicated Staging Environment & Cost-Safety Budget Guard
+- **Context**: Reusing ad-hoc or shared GCP projects (such as `scientific-coil-24dh4`) introduces cross-project blast radiuses, unintended billing, and security confusion.
+- **Decision**: Mandate a dedicated Google Cloud staging project (`pharmacy-platform-staging`). Autonomous agents are strictly forbidden from running billing-linked steps. Every staging environment requires an active `$25/month` Cloud Billing Budget Alert with 50%, 80%, and 100% notification thresholds.
+- **Consequences**: Guarantees zero billing surprises, prevents multi-tenant interference, and enforces emulator-first verification prior to cloud deployment.
+
+---
+
+## ADR-015: Option A Commercial Pricing Lock & p90 Unit Economics Guard
+- **Context**: Verification required that Option A ($14/mo, $49/sem, $89/yr; TRY ₺250/mo; SAR 55/mo) maintains >70% gross margins after accounting for Dodo Payments' fixed per-transaction fee ($0.30) on localized currency transactions and Gemini AI token consumption for a 90th-percentile heavy student.
+- **Decision**: Lock Option A as the platform's commercial pricing baseline. Unit economics recomputed under p90 heavy usage (250 AI calls/mo = 250k tokens, 500MB egress, 1500 Firestore reads = $0.090/mo variable cost) and Dodo fees show gross margins between 90.3% (TRY monthly stress-test) and 95.7% (USD annual). Break-even is achieved at 6–15 subscribers for USD and 16–36 subscribers for Turkey PPP.
+- **Consequences**: Confirms strong financial solvency (>90% gross margins) while providing ultra-accessible pricing for global pharmacy students.
