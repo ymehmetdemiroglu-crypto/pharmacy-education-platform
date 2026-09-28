@@ -50,3 +50,8 @@ desktop.ini
 # Temporary / scratch
 tmp/
 *.tmp
+
+# Source materials & raw extractions (Private reference only - IP Gate)
+materials/
+docs/extracted_raw/
+*.pdf
