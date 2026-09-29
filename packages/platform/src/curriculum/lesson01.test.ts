@@ -286,4 +286,60 @@ describe('Freemium & Trial Lifecycle Rules', () => {
     const expectedClientCode = generatorModule.generateClientLesson(sourceRaw);
     expect(existingClientCode.trim()).toBe(expectedClientCode.trim());
   });
+
+  it('strictly verifies client data never claims verified when source JSON does not', async () => {
+    const lessonJsonPath = path.resolve(__dirname, '../../../../courses/medchem/lessons/lesson-01.json');
+    const sourceRaw = fs.readFileSync(lessonJsonPath, 'utf8');
+    const source = JSON.parse(sourceRaw);
+    // @ts-expect-error External ESM script located outside package src root
+    const generatorModule = await import('../../../../scripts/generate-lesson-client.mjs');
+    const clientCode = generatorModule.generateClientLesson(sourceRaw);
+
+    const jsonMatch = clientCode.match(/export const clientLesson01: LessonData = ([\s\S]*?) as unknown as LessonData;/);
+    expect(jsonMatch).toBeTruthy();
+    const clientData = JSON.parse(jsonMatch![1]!);
+
+    // Citations: client status cannot be verified if source is not verified
+    (clientData.citations || []).forEach((cCit: any, idx: number) => {
+      const sCit = source.citations?.[idx];
+      if (cCit.status === 'verified') {
+        expect(
+          sCit?.status,
+          `Client citation ${cCit.id || idx} claims 'verified' but source is '${sCit?.status}'`
+        ).toBe('verified');
+      }
+    });
+
+    // Spaced review cards: client status cannot be verified if source is not verified
+    (clientData.spacedReviewCards || []).forEach((cCard: any) => {
+      const sCard = (source.spacedReviewCards || []).find((c: any) => c.cardId === cCard.cardId);
+      if (cCard.status === 'verified') {
+        expect(
+          sCard?.status,
+          `Client spaced card ${cCard.cardId} claims 'verified' but source is '${sCard?.status}'`
+        ).toBe('verified');
+      }
+    });
+
+    // Disk client data verification
+    const clientDiskPath = path.resolve(__dirname, '../../../../apps/web/src/data/lesson01.client.ts');
+    const diskContent = fs.readFileSync(clientDiskPath, 'utf8');
+    const diskJsonMatch = diskContent.match(/export const clientLesson01: LessonData = ([\s\S]*?) as unknown as LessonData;/);
+    expect(diskJsonMatch).toBeTruthy();
+    const diskClientData = JSON.parse(diskJsonMatch![1]!);
+
+    (diskClientData.citations || []).forEach((cCit: any, idx: number) => {
+      const sCit = source.citations?.[idx];
+      if (cCit.status === 'verified') {
+        expect(sCit?.status).toBe('verified');
+      }
+    });
+
+    (diskClientData.spacedReviewCards || []).forEach((cCard: any) => {
+      const sCard = (source.spacedReviewCards || []).find((c: any) => c.cardId === cCard.cardId);
+      if (cCard.status === 'verified') {
+        expect(sCard?.status).toBe('verified');
+      }
+    });
+  });
 });

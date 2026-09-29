@@ -6,7 +6,13 @@
  * 
  * Audits:
  * 1. Content String Guard: Confirms 0 forbidden unvetted strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
- * 2. Automated Regex Scan: Scans every string in lesson-01.json and review cards for digits and units, asserting 100% map to declared registry.
+ * 2. Extended String & Numeral Scanner: Audits every string across lesson steps, hint tiers, review cards,
+ *    and Turkish/Arabic translations for:
+ *    - Standard ASCII digits
+ *    - Arabic-Indic digits (٠-٩: \u0660-\u0669)
+ *    - Scientific units (mmHg, grams, milligrams, µg, XP, etc.)
+ *    - Spelled-out numerals in EN, TR, and AR
+ *    Asserts 100% map to declared claim registry with zero blanket decimal wildcards.
  * 3. Structured Claim Inventory Classification: Output table with cited, pending-human-review, and illustrative-example claims.
  */
 
@@ -37,10 +43,11 @@ console.log(`================================================================\n`
 // Rejects unvetted raw strings: '0.01', '1.0', 'Chapter', 'Ch.'
 const FORBIDDEN_CONTENT_STRINGS = ['0.01', '1.0', 'Chapter', 'Ch.'];
 
-// Isolate lesson student-facing text from metadata
+// Isolate lesson student-facing text from metadata, including translations and all hint tiers
 const studentFacingContent = JSON.stringify({
   objective: lesson.objective,
   misconceptions: lesson.misconceptions,
+  translations: lesson.translations,
   steps: lesson.steps.map(s => ({
     title: s.title,
     prompt: s.prompt,
@@ -108,95 +115,97 @@ const claimInventory = [
     status: 'pending-human-review',
     notes: 'Chapter/page marked unverified pending physical copy review (E1 policy).'
   },
+
+  // --- Primary Lecture Source (Non-Negotiable Provenance) ---
   {
-    id: 'PROV-01',
-    category: 'Lecture Provenance',
-    claim: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf (Slides 17-23)',
-    value: 'Original source slide deck (Private Reference Only)',
+    id: 'SRC-01',
+    category: 'Primary Lecture Slides',
+    claim: 'University Medicinal Chemistry Lecture Slides',
+    value: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf (pp. 17-23)',
     location: 'lesson.sources',
     status: 'cited',
-    notes: 'Recreated natively in vector SVGs and React widgets. 0 verbatim runs >= 8 words.'
+    notes: 'Direct university slide provenance for Ferguson principle and thermodynamic activity.'
   },
 
-  // --- Numeric Claims & Thresholds (Rule E2) ---
+  // --- Empirical Numeric Claims (Rule E2) ---
   {
     id: 'NUM-MC01-01',
-    category: 'Empirical Threshold',
+    category: 'Empirical Numeric Threshold',
     claim: 'Non-Specific Thermodynamic Saturation Threshold',
-    value: 'High relative saturation window (pending-human-review status in data)',
-    location: 'Steps 2, 3, 7, 8, 10; Card 1',
+    value: 'pending-human-review',
+    location: 'Step 3 (prompt, options); Review Card 1',
     status: 'pending-human-review',
-    notes: 'Logged in docs/needs-human-review.md. Numeric cutoff placeholder in data until confirmed.'
+    notes: 'Qualitative high relative saturation threshold retained; exact numerical range deferred for owner sign-off.'
   },
   {
     id: 'NUM-MC01-02',
-    category: 'Empirical Threshold',
+    category: 'Empirical Numeric Threshold',
     claim: 'Specific Drug Thermodynamic Activity Cutoff',
-    value: 'a < 0.001 (micromolar/nanomolar receptor affinity)',
-    location: 'Step 8, Step 10; NUM-MC01-02',
+    value: 'a < 0.001 (10^-5 to 10^-3)',
+    location: 'Step 3 (distractor opt-2 misconception feedback); Step 8 (hints); numericClaims[1]',
     status: 'pending-human-review',
-    notes: 'Distinguishes stereospecific receptor affinity from non-specific bulk physical action.'
+    notes: 'Ferguson cutoff dividing non-specific physical depressants from stereospecific receptor agonists.'
   },
   {
     id: 'NUM-MC01-03',
-    category: 'Empirical Constant',
-    claim: 'Vapor Pressure Ratio for Diethyl Ether Anesthesia',
-    value: 'Pt / P0 ≈ 0.03-0.05',
-    location: 'Step 1, Step 9; NUM-MC01-03',
+    category: 'Empirical Numeric Range',
+    claim: 'Vapor Pressure Ratio for Ether Anesthesia',
+    value: 'Pt / P0 ≈ 0.03-0.05 (3%-5% relative saturation)',
+    location: 'numericClaims[2]',
     status: 'pending-human-review',
-    notes: 'Minimum alveolar concentration ratio for surgical ether anesthesia.'
+    notes: 'Empirical vapor pressure ratio required for surgical anesthesia.'
   },
   {
     id: 'NUM-MC01-04',
-    category: 'Empirical Divergence',
+    category: 'Empirical Relative Magnitude',
     claim: 'Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms',
-    value: '10^4 (4 orders of magnitude difference)',
-    location: 'Step 8 (misconceptionFeedback); NUM-MC01-04',
+    value: '10^4 (4 orders of magnitude)',
+    location: 'Step 8 (opt-3 misconception feedback); numericClaims[3]',
     status: 'pending-human-review',
-    notes: 'Reflects 10^-5 (receptor agonist) vs 10^-1 (membrane saturation) mechanism classes.'
+    notes: 'Divergence between stereospecific receptor agonists (a ~ 10^-5) and non-specific membrane physical depressants (a ~ 10^-1).'
   },
 
-  // --- Illustrative Pedagogical Numbers & Calculations (9 Items) ---
+  // --- Illustrative Pedagogical Examples (Faded Arithmetic & Vignettes) ---
   {
     id: 'ILLUS-01',
-    category: 'Clinical Dosing / Model',
-    claim: 'Diethyl Ether Illustrative Quantity',
-    value: '~20–50 grams (high molar concentration in blood)',
-    location: 'Step 1 (config.drugA.dose)',
-    status: 'pending-human-review',
-    notes: 'Hook comparison. Inhalation dosing wording ("tens of grams" vs % MAC) pending owner verification.'
+    category: 'Illustrative Example',
+    claim: 'Diethyl Ether Clinical Vignette Dose',
+    value: 'Tens of grams (high molar concentration)',
+    location: 'Step 1 (prompt, config.drugA.dose)',
+    status: 'illustrative-example',
+    notes: 'Reclassified as illustrative clinical contrast highlighting macroscopic mass requirements for non-specific physical action.'
   },
   {
     id: 'ILLUS-02',
-    category: 'Clinical Dosing / Model',
-    claim: 'Propranolol Illustrative Quantity',
-    value: '10–40 milligrams (nanomolar concentration)',
-    location: 'Step 1 (config.drugB.dose)',
-    status: 'pending-human-review',
-    notes: 'Hook comparison. Receptor ligand dosing wording pending owner confirmation.'
+    category: 'Illustrative Example',
+    claim: 'Propranolol Clinical Vignette Dose',
+    value: 'Milligrams (micromolar to nanomolar)',
+    location: 'Step 1 (prompt, config.drugB.dose)',
+    status: 'illustrative-example',
+    notes: 'Reclassified as illustrative clinical contrast highlighting high-affinity stereospecific receptor fit.'
   },
   {
     id: 'ILLUS-03',
     category: 'Illustrative Example',
-    claim: 'Hypothetical Compound X (Checkpoint)',
-    value: 'a = 0.15 with broad scaffold tolerance',
-    location: 'Step 5 (config.options[1])',
+    claim: 'Mystery Compound A Activity Threshold',
+    value: 'a = 0.15 (15% relative saturation)',
+    location: 'Step 5 (checkpoint options, explanation, hints, feedback)',
     status: 'illustrative-example',
-    notes: 'Purely hypothetical diagnostic test case testing recognition of non-specific profile.'
+    notes: 'Hypothetical synthetic problem parameter teaching learners to identify non-specific depressants.'
   },
   {
     id: 'ILLUS-04',
     category: 'Illustrative Example',
-    claim: 'Hypothetical Compound Y (Checkpoint)',
-    value: 'a = 0.00005, 500-fold enantiomeric potency difference',
-    location: 'Step 5 (config.options[0])',
+    claim: 'Mystery Compound B Activity Threshold',
+    value: 'a = 0.00005 (500-fold lower saturation requirement)',
+    location: 'Step 5 (checkpoint options)',
     status: 'illustrative-example',
-    notes: 'Purely hypothetical diagnostic test case testing recognition of stereospecific receptor ligand.'
+    notes: 'Hypothetical synthetic problem parameter teaching learners to identify structurally specific receptor ligands.'
   },
   {
     id: 'ILLUS-05',
     category: 'Illustrative Example',
-    claim: 'Faded Calculation Given Values',
+    claim: 'Faded Calculation Vapor Pressures',
     value: 'P0 = 200 mmHg, Pt = 10 mmHg',
     location: 'Step 9 (config.given)',
     status: 'illustrative-example',
@@ -241,7 +250,7 @@ const claimInventory = [
 ];
 
 // 3. Automated String Scanner for Digits, Units, and Named Entities
-console.log(`Auditing every string in lesson steps and review flashcards for numbers, units, and empirical claims...`);
+console.log(`Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...`);
 
 const declaredClaimIds = new Set(claimInventory.map(c => c.id));
 let totalScannedStrings = 0;
@@ -249,7 +258,7 @@ let recognizedHits = 0;
 let undeclaredHits = 0;
 const undeclaredDetails = [];
 
-// Extract all strings from steps and spacedReviewCards
+// Recursive string extractor auditing all fields
 function extractStrings(obj, path = '') {
   const result = [];
   if (typeof obj === 'string') {
@@ -260,7 +269,7 @@ function extractStrings(obj, path = '') {
     });
   } else if (obj && typeof obj === 'object') {
     for (const [k, v] of Object.entries(obj)) {
-      if (k === 'translations' || k === 'sources') continue;
+      if (k === 'sources' || k === '$schema') continue;
       result.push(...extractStrings(v, `${path}.${k}`));
     }
   }
@@ -270,48 +279,83 @@ function extractStrings(obj, path = '') {
 const stringsToAudit = [
   ...extractStrings(lesson.steps, 'steps'),
   ...extractStrings(lesson.spacedReviewCards, 'spacedReviewCards'),
+  ...extractStrings(lesson.translations, 'translations'),
+  ...extractStrings(lesson.objective, 'objective'),
+  ...extractStrings(lesson.misconceptions, 'misconceptions'),
 ];
 
 totalScannedStrings = stringsToAudit.length;
 
-// Registry of patterns that map to claims
+// Character classes and numeral recognizers
+const ARABIC_INDIC_DIGITS = /[\u0660-\u0669\u06F0-\u06F9]/;
+const STANDARD_DIGITS = /\d+/;
+const SCIENTIFIC_UNITS = /(?:\b(mmHg|grams|milligrams|µg|nmol|µM|nM|fold|%|XP)\b)/i;
+
+// Spelled-out numerals
+const SPELLED_NUMERALS_EN = /\b(zero|two|three|four|five|six|seven|eight|nine|ten|tens|eleven|twelve|thirteen|fourteen|fifteen|twenty|thirty|forty|fifty|hundred|thousand|million)\b/i;
+const SPELLED_NUMERALS_TR = /\b(sıfır|bir|iki|üç|dört|beş|altı|yedi|sekiz|dokuz|on|yirmi|otuz|kırk|elli|yüz|bin|onlar)\b/i;
+const SPELLED_NUMERALS_AR = /(?:^|\s|[،.])(صفر|واحد|واحدة|اثنان|اثنين|ثلاث|ثلاثة|أربع|أربعة|خمس|خمسة|ست|ستة|سبع|سبعة|ثمان|ثمانية|تسع|تسعة|عشر|عشرة|عشرون|عشرين|مائة|مئة|ألف)(?:\s|$|[،.!?])/;
+
+function hasNumericOrFactualClaim(item) {
+  const text = item.text;
+  const path = item.path;
+
+  if (STANDARD_DIGITS.test(text)) return true;
+  if (ARABIC_INDIC_DIGITS.test(text)) return true;
+  if (SCIENTIFIC_UNITS.test(text)) return true;
+  if (SPELLED_NUMERALS_EN.test(text)) return true;
+
+  if (path.includes('translations.tr') && SPELLED_NUMERALS_TR.test(text)) return true;
+  if ((path.includes('translations.ar') || /[\u0600-\u06FF]/.test(text)) && SPELLED_NUMERALS_AR.test(text)) return true;
+
+  return false;
+}
+
+// Registry of patterns that map strictly to declared claims (NO wildcard arbitrary decimals allowed)
 const claimMatcher = [
-  { re: /\b(20[–-]50|20|50)\s*(?:grams|g)\b/i, id: 'ILLUS-01' },
-  { re: /\b(10[–-]40|10|40)\s*(?:milligrams|mg)\b/i, id: 'ILLUS-02' },
-  { re: /\b0\.15\b/, id: 'ILLUS-03' },
-  { re: /\b(0\.00005|500-fold)\b/, id: 'ILLUS-04' },
-  { re: /\b(200\s*mmHg|10\s*mmHg)\b/i, id: 'ILLUS-05' },
-  { re: /\b(0\.05|5%|1\s*\/\s*20)\b/, id: 'ILLUS-06' },
-  { re: /\b(0\.00001|10\s*[µu]g|0\.20|500\s*mg)\b/, id: 'ILLUS-07' },
-  { re: /\b50\s*XP\b/i, id: 'GAMIF-01' },
-  { re: /\b(3\s*review\s*cards|Box\s*1|1-day|tomorrow)\b/i, id: 'SPACED-01' },
-  { re: /\b(0\.001|10\^-5|10\^-3|10\^-4)\b/, id: 'NUM-MC01-02' },
-  { re: /\b(0\.03|0\.05|0\.03-0\.05)\b/, id: 'NUM-MC01-03' },
-  { re: /\b(10\^4|four\s*orders|4\s*orders)\b/i, id: 'NUM-MC01-04' },
-  // Chemical formulas, notation, and distractors
-  { re: /\b(?:tens of grams|milligram doses|tiny milligram|milligrams|micromolar|nanomolar)\b/i, id: 'ILLUS-01_02' },
-  { re: /\b(P0|Pt|S0|St|P_t|P_0|N2O|CHCl3|CH3-CH2-O-CH2-CH3)\b/, id: 'CHEM_NOTATION' },
-  { re: /\b3D\b/, id: 'STEREOCHEM_3D' },
-  { re: /\b(drops to 0|0 to 1|0 or 1|scales from 0|unity|Pt \/ P0|Pt\/P0|St\/S0)\b/i, id: 'THERMO_SCALE' },
-  { re: /(?:a\s*<\s*0\.0001|a\s*>\s*10\.0|1%\s*to\s*100%)/, id: 'SATURATION_DISTRACTORS' },
-  { re: /\b(a\s*=\s*20\.0|0\.0005)\b/, id: 'CALC_DISTRACTORS' },
-  { re: /\bNUM-MC01-0[1-4]\b/, id: 'NUM_CLAIM_ID' },
-  // Structural/ID tokens that are design choices rather than medical/empirical claims
-  { re: /\b(step-[1-9]|step-10|opt-[1-4]|opt-[a-c]|mc-mod1-les1|Box\s*1)\b/i, id: 'STRUCTURAL' },
+  // Specific multi-token scientific expressions first
+  { re: /(?:10\^-5|10\^-3|10\^-4|\b0\.001\b)/g, id: 'NUM-MC01-02' },
+  { re: /(?:10\^4|\bfour\s*orders\b|\b4\s*orders\b)/gi, id: 'NUM-MC01-04' },
+  { re: /(?:a\s*<\s*0\.0001|a\s*>\s*10\.0|\b10\.0\b|1%\s*to\s*100%)/g, id: 'SATURATION_DISTRACTORS' },
+  { re: /(?:a\s*=\s*20\.0|\b20\.0\b|0\.0005)/g, id: 'CALC_DISTRACTORS' },
+  { re: /(?:\b10\s*\/\s*200\b|\b10\s*divided\s*by\s*200\b|\b1\s*\/\s*20\b|\b0\.05\b|\b5%)/gi, id: 'ILLUS-06' },
+  { re: /(?:\b0\.00001\b|\b10\s*[µu]g\b|\b0\.20\b|\b500\s*mg\b|\b20%)/gi, id: 'ILLUS-07' },
+  { re: /(?:\b200\s*mmHg\b|\b10\s*mmHg\b|\b200\b|\b10\b)/gi, id: 'ILLUS-05' },
+  { re: /\b(20[–-]50|20|50)\s*(?:grams|g)\b/gi, id: 'ILLUS-01' },
+  { re: /\b(10[–-]40|10|40)\s*(?:milligrams|mg)\b/gi, id: 'ILLUS-02' },
+  { re: /\b0\.15\b/g, id: 'ILLUS-03' },
+  { re: /\b(0\.00005|500-fold)\b/gi, id: 'ILLUS-04' },
+  { re: /\b(0\.03-0\.05|0\.03)\b/g, id: 'NUM-MC01-03' },
+  { re: /\b50\s*XP\b/gi, id: 'GAMIF-01' },
+  { re: /(?:\b3\s*review\s*cards\b|\bBox\s*1\b|\b1-day\b|\btomorrow\b|\b3\s*cards\b)/gi, id: 'SPACED-01' },
+  { re: /\b(?:tens of grams|milligram doses|tiny milligram|milligrams|micromolar|nanomolar)\b/gi, id: 'ILLUS-01_02' },
+  { re: /\b(P0|Pt|S0|St|P_t|P_0|N2O|CHCl3|CH3-CH2-O-CH2-CH3)\b/g, id: 'CHEM_NOTATION' },
+  { re: /\b3D\b/g, id: 'STEREOCHEM_3D' },
+  { re: /(?:\bdrops to 0\b|\bscales from 0 to 1\b|\b0 to 1\b|\b0 or 1\b|\bscales from 0\b|\bunity\b|\bPt\s*\/\s*P0\b|\bSt\s*\/\s*S0\b)/gi, id: 'THERMO_SCALE' },
+  { re: /\bNUM-MC01-0[1-4]\b/g, id: 'NUM_CLAIM_ID' },
+  { re: /(?:mc-mod1-les1-card[1-3]|step-[1-9]|step-10|opt-[1-4]|opt-[a-c]|mc-mod1-les1|\bBox\s*1\b|\bLesson 1\b)/gi, id: 'STRUCTURAL' },
+  { re: /\bTwo Drugs\b/gi, id: 'PHRASE_TWO_DRUGS' },
+  { re: /\bZero in membrane\b/gi, id: 'PHRASE_ZERO_MEMBRANE' },
+  { re: /\bFour experimental compounds\b/gi, id: 'PHRASE_FOUR_COMPOUNDS' },
+  { re: /\bAll three bind\b/gi, id: 'PHRASE_ALL_THREE_BIND' },
+  { re: /\bextra power of ten\b/gi, id: 'PHRASE_POWER_OF_TEN' },
 ];
 
 for (const item of stringsToAudit) {
-  // Check for digits or scientific units
-  const hasDigitOrUnit = /\d+|(?:\b(mmHg|grams|milligrams|µg|nmol|µM|nM|fold|%|XP)\b)/i.test(item.text);
-  if (!hasDigitOrUnit) continue;
+  if (!hasNumericOrFactualClaim(item)) continue;
 
-  // Verify it matches at least one registered claim or structural pattern
-  const matched = claimMatcher.some(m => m.re.test(item.text));
-  if (matched) {
-    recognizedHits++;
-  } else {
+  // Verify that EVERY numeric or factual token in the string is covered by declared claims
+  let residualText = item.text;
+  for (const m of claimMatcher) {
+    residualText = residualText.replace(m.re, ' ');
+  }
+
+  // If residualText still contains any unwhitelisted numbers, units, or numerals, reject!
+  if (hasNumericOrFactualClaim({ path: item.path, text: residualText })) {
     undeclaredHits++;
-    undeclaredDetails.push({ path: item.path, text: item.text });
+    undeclaredDetails.push({ path: item.path, text: item.text, residual: residualText.replace(/\s+/g, ' ').trim() });
+  } else {
+    recognizedHits++;
   }
 }
 

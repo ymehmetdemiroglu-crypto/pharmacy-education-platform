@@ -15,9 +15,9 @@ export const StepCitationSchema = z.object({
   book: z.string(),
   edition: z.string(),
   topic: z.string(),
-  chapter: z.string(), // Must be "unverified" if not directly confirmed
-  page: z.union([z.string(), z.number()]),
-  status: z.enum(['unverified', 'verified', 'pending-human-review']),
+  chapter: z.string().optional(), // Must be "unverified" if not directly confirmed
+  page: z.union([z.string(), z.number()]).optional(),
+  status: z.enum(['unverified', 'verified', 'pending-human-review']).optional(),
 });
 
 export const NumericClaimSchema = z.object({
@@ -79,7 +79,7 @@ export const SpacedReviewCardSeedSchema = z.object({
   answer: z.string(),
   box: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]).default(1),
   intervalDays: z.number().default(1),
-  status: z.enum(['pending-human-review', 'verified', 'unverified']).default('verified'),
+  status: z.enum(['pending-human-review', 'verified', 'unverified']).optional(),
 });
 
 export const LessonSchema = z.object({

@@ -58,7 +58,7 @@ export interface ReviewCardSeed {
   answer: string;
   box?: 1 | 2 | 3 | 4 | 5;
   intervalDays?: number;
-  status?: string;
+  status?: string | undefined;
 }
 
 export function enqueueReviewCards(

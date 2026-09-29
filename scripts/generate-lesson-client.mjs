@@ -23,28 +23,47 @@ const TARGET_PATH = path.join(REPO_ROOT, 'apps/web/src/data/lesson01.client.ts')
 export function generateClientLesson(sourceJson) {
   const data = typeof sourceJson === 'string' ? JSON.parse(sourceJson) : sourceJson;
 
-  // Clean citations for client bundle (removes 'unverified' flags)
-  const citations = (data.citations || []).map((c, i) => ({
-    id: `cit-ref-0${i + 1}`,
-    book: c.book,
-    edition: c.edition,
-    topic: c.topic,
-    chapter: 'reference',
-    page: 'primary-text',
-    status: 'verified',
-  }));
+  // Clean citations for client bundle:
+  // Preserves legitimate textbook bibliographic information (book, edition, topic).
+  // Strictly removes unverified/pending internal metadata and avoids false verification labels.
+  // Shipped status fields must mirror the source JSON or be absent.
+  const citations = (data.citations || []).map((c, i) => {
+    const citation = {
+      id: `cit-ref-0${i + 1}`,
+      book: c.book,
+      edition: c.edition,
+      topic: c.topic,
+    };
+    if (c.chapter && c.chapter !== 'unverified') {
+      citation.chapter = c.chapter;
+    }
+    if (c.page && c.page !== 'unverified') {
+      citation.page = c.page;
+    }
+    if (c.status === 'verified') {
+      citation.status = 'verified';
+    }
+    return citation;
+  });
 
-  // Clean spaced review cards (removes 'pending-human-review' status)
-  const spacedReviewCards = (data.spacedReviewCards || []).map((card) => ({
-    cardId: card.cardId,
-    courseId: card.courseId,
-    drugOrConcept: card.drugOrConcept,
-    prompt: card.prompt,
-    answer: card.answer,
-    box: card.box,
-    intervalDays: card.intervalDays,
-    status: 'verified',
-  }));
+  // Clean spaced review cards:
+  // Preserves learner-facing flashcard prompts and spaced repetition parameters.
+  // Shipped status fields must mirror source JSON if verified, or be absent if pending review.
+  const spacedReviewCards = (data.spacedReviewCards || []).map((card) => {
+    const cleanCard = {
+      cardId: card.cardId,
+      courseId: card.courseId,
+      drugOrConcept: card.drugOrConcept,
+      prompt: card.prompt,
+      answer: card.answer,
+      box: card.box,
+      intervalDays: card.intervalDays,
+    };
+    if (card.status === 'verified') {
+      cleanCard.status = 'verified';
+    }
+    return cleanCard;
+  });
 
   // Clean steps (removes internal numericClaims and preserves clean pedagogical structure)
   const steps = (data.steps || []).map((step) => {

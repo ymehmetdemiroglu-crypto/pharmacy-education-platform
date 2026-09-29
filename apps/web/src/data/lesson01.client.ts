@@ -45,28 +45,19 @@ export const clientLesson01: LessonData = {
       "id": "cit-ref-01",
       "book": "Foye's Principles of Medicinal Chemistry",
       "edition": "8th ed.",
-      "topic": "Thermodynamic Activity and Ferguson's Principle",
-      "chapter": "reference",
-      "page": "primary-text",
-      "status": "verified"
+      "topic": "Thermodynamic Activity and Ferguson's Principle"
     },
     {
       "id": "cit-ref-02",
       "book": "An Introduction to Medicinal Chemistry",
       "edition": "6th ed.",
-      "topic": "Ferguson's Principle of Non-Specific Action",
-      "chapter": "reference",
-      "page": "primary-text",
-      "status": "verified"
+      "topic": "Ferguson's Principle of Non-Specific Action"
     },
     {
       "id": "cit-ref-03",
       "book": "The Practice of Medicinal Chemistry",
       "edition": "4th ed.",
-      "topic": "Physicochemical Properties and Biological Activity",
-      "chapter": "reference",
-      "page": "primary-text",
-      "status": "verified"
+      "topic": "Physicochemical Properties and Biological Activity"
     }
   ],
   "spacedReviewCards": [
@@ -77,8 +68,7 @@ export const clientLesson01: LessonData = {
       "prompt": "What is the relative thermodynamic saturation range (a = Pt/P0 or St/S0) defining structurally non-specific drug action?",
       "answer": "High relative saturation threshold (substantial fraction of saturation equilibrium)",
       "box": 1,
-      "intervalDays": 1,
-      "status": "verified"
+      "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les1-card2",

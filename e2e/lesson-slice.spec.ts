@@ -293,7 +293,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Academic Sources & Textbook Verification/i }).click();
     await expect(page.getByText(/Foye's Principles of Medicinal Chemistry/i)).toBeVisible();
-    await expect(page.getByText(/Authoritative Textbook References/i)).toBeVisible();
+    await expect(page.getByText(/^References:/i)).toBeVisible();
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-citations-accordion.png`),
@@ -372,9 +372,6 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
   test('verifies keyboard-only completion through all 10 steps and reduced-motion fallback', async ({
     page,
   }, testInfo) => {
-    // Assert counter ensuring all 10 steps execute across every profile (including mobile)
-    let executedStepCount = 0;
-
     // Emulate reduced motion
     await page.emulateMedia({ reducedMotion: 'reduce' });
 
@@ -384,88 +381,136 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.reload();
     await page.waitForLoadState('networkidle');
 
-    // Step 1: Hook -> ArrowRight
-    await expect(page.getByText('Thermodynamic Activity & The Ferguson Principle')).toBeVisible();
-    executedStepCount++;
-    expect(executedStepCount).toBe(1);
+    // -------------------------------------------------------------
+    // Step 1: Hook Clinical Vignette -> ArrowRight
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 1 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Two Drugs, Vastly Different Quantities' })
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
-    await expect(page.getByText('Thermodynamic Activity of Vapors')).toBeVisible();
 
-    // Step 2: Option 2 (Index 1) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(2);
+    // -------------------------------------------------------------
+    // Step 2: Predict Thermodynamic Activity of Vapors
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 2 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Thermodynamic Activity of Vapors' })
+    ).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
-    await expect(page.getByText(/Diagnostic Feedback|Hypothesis Confirmed/i)).toBeVisible();
+    await expect(page.getByText(/Diagnostic Feedback: Misconception Identified|Hypothesis Confirmed/i)).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 3: Option 1 (Index 0) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(3);
-    await expect(page.getByText('The Non-Specific Activity Threshold')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 3: Predict The Non-Specific Activity Threshold
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 3 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'The Non-Specific Activity Threshold' })
+    ).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/Non-specific depressants act within a high relative saturation range/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 4: Option 3 (Index 2) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(4);
-    await expect(page.getByText('Exobiophase to Endobiophase Equilibrium')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 4: Predict Exobiophase to Endobiophase Equilibrium
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 4 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Exobiophase to Endobiophase Equilibrium' })
+    ).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/Chemical potential and thermodynamic activity a are identical across all phases/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 5: Checkpoint -> Option 2 (Index 1) -> Enter (commit) -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(5);
-    await expect(page.getByText('Classify Mystery Compounds')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 5: Checkpoint Classify Mystery Compounds
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 5 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Classify Mystery Compounds' })
+    ).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Correct! High thermodynamic activity/i)).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 6: Option 1 (Index 0) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(6);
-    await expect(page.getByText('Core Structural Sensitivity')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 6: Predict Core Structural Sensitivity
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 6 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Core Structural Sensitivity' })
+    ).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/Activity drops sharply or converts into antagonism when key binding groups are altered/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 7: Option 3 (Index 2) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(7);
-    await expect(page.getByText('Chemical Diversity in Anesthesia')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 7: Predict Chemical Diversity in Anesthesia
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 7 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Chemical Diversity in Anesthesia' })
+    ).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/Non-specific depressants produce equal biological effects at equal thermodynamic activities/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 8: Option 2 (Index 1) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(8);
-    await expect(page.getByText('Differentiating Affinity from Saturation')).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 8: Predict Differentiating Affinity from Saturation
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 8 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Differentiating Affinity from Saturation' })
+    ).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/Drug A is structurally specific \(low thermodynamic activity\); Drug B is structurally non-specific/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 9: Option 3 (Index 2) -> Enter -> ArrowRight
-    executedStepCount++;
-    expect(executedStepCount).toBe(9);
-    await expect(page.getByRole('heading', { name: 'Calculate Thermodynamic Activity' })).toBeVisible();
+    // -------------------------------------------------------------
+    // Step 9: Faded Calculation Calculate Thermodynamic Activity
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 9 of 10')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Calculate Thermodynamic Activity' })
+    ).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(
+      page.getByText(/a = 10 \/ 200 = 0\.05|5% of its saturation limit/i)
+    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
-    // Step 10: Recap Mastered
-    executedStepCount++;
-    expect(executedStepCount).toBe(10);
+    // -------------------------------------------------------------
+    // Step 10: Lesson 1 Recap Mastered & XP Celebration
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 10 of 10')).toBeVisible();
     await expect(page.getByText('Lesson 1 Mastered!')).toBeVisible();
+    await expect(page.getByText('+50 XP Earned')).toBeVisible();
+    await expect(page.getByText(/Enqueued Leitner Spaced Review Cards/i)).toBeVisible();
 
     await page.screenshot({
       path: path.join(

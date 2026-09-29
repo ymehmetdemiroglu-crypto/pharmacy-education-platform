@@ -811,8 +811,8 @@ export const LessonPage: React.FC = () => {
             <div className="space-y-2">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 {import.meta.env.DEV
-                  ? 'Authoritative Textbook References (Citation Status: Unverified per E1 Policy):'
-                  : 'Authoritative Textbook References:'}
+                  ? 'References (Citation Status: Unverified per E1 Policy):'
+                  : 'References:'}
               </span>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-800 dark:text-gray-200">
                 {lesson.citations.map((c: StepCitation) => (
@@ -820,7 +820,7 @@ export const LessonPage: React.FC = () => {
                     <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot;
                     {import.meta.env.DEV && (
                       <span className="italic text-gray-600 dark:text-gray-400">
-                        {' '}[Section: {c.chapter}, Page: {c.page} — Pending Physical Copy Verification]
+                        {' '}[Section: {c.chapter || 'unverified'}, Page: {c.page || 'unverified'} — Pending Physical Copy Verification]
                       </span>
                     )}
                   </li>
