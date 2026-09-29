@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { calculateNewStreak, completeLesson } from './ProgressStore';
+import {
+  calculateNewStreak,
+  completeLesson,
+  updateStepProgress,
+  mergeGuestProgressWithCloud,
+} from './ProgressStore';
 import { UserProgress } from '../types';
 
 describe('ProgressStore and Streak Engine', () => {
@@ -42,4 +47,61 @@ describe('ProgressStore and Streak Engine', () => {
     expect(updated.totalXP).toBe(100);
     expect(updated.streakDays).toBe(2);
   });
+
+  it('updates step progress for mid-lesson autosave without altering completion or XP', () => {
+    const initialProgress: UserProgress = {
+      courseId: 'medchem',
+      completedLessonIds: [],
+      currentModuleId: 'mc-mod-01',
+      currentLessonId: 'mc-mod1-les1',
+      currentStepIndex: 0,
+      streakDays: 0,
+      lastStreakDate: '',
+      totalXP: 0,
+      accuracyRate: 100,
+    };
+
+    const midLesson = updateStepProgress(initialProgress, 'mc-mod1-les1', 4);
+    expect(midLesson.currentLessonId).toBe('mc-mod1-les1');
+    expect(midLesson.currentStepIndex).toBe(4);
+    expect(midLesson.completedLessonIds.length).toBe(0);
+    expect(midLesson.totalXP).toBe(0);
+  });
+
+  it('correctly merges guest offline progress into cloud account on login', () => {
+    const guestProgress: UserProgress = {
+      courseId: 'medchem',
+      completedLessonIds: ['mc-mod1-les1'],
+      currentModuleId: 'mc-mod-01',
+      currentLessonId: 'mc-mod1-les1',
+      currentStepIndex: 9,
+      streakDays: 2,
+      lastStreakDate: '2026-09-28',
+      totalXP: 50,
+      accuracyRate: 100,
+    };
+
+    const cloudProgress: UserProgress = {
+      courseId: 'medchem',
+      completedLessonIds: ['mc-mod1-les2'],
+      currentModuleId: 'mc-mod-01',
+      currentLessonId: 'mc-mod1-les2',
+      currentStepIndex: 2,
+      streakDays: 1,
+      lastStreakDate: '2026-09-27',
+      totalXP: 40,
+      accuracyRate: 95,
+    };
+
+    const merged = mergeGuestProgressWithCloud(guestProgress, cloudProgress);
+    // Lessons unioned
+    expect(merged.completedLessonIds).toContain('mc-mod1-les1');
+    expect(merged.completedLessonIds).toContain('mc-mod1-les2');
+    expect(merged.completedLessonIds.length).toBe(2);
+    // Max XP & streak
+    expect(merged.totalXP).toBe(50);
+    expect(merged.streakDays).toBe(2);
+    expect(merged.lastStreakDate).toBe('2026-09-28');
+  });
 });
+

@@ -80,3 +80,54 @@ export function saveLocalProgress(progress: UserProgress): void {
     console.warn('Failed to save local progress:', err);
   }
 }
+
+/**
+ * Mid-Lesson Step Progress Autosave
+ * Updates current lesson and step index without modifying completion or awarding XP.
+ */
+export function updateStepProgress(
+  current: UserProgress,
+  lessonId: string,
+  stepIndex: number
+): UserProgress {
+  return {
+    ...current,
+    currentLessonId: lessonId,
+    currentStepIndex: stepIndex,
+  };
+}
+
+/**
+ * Guest-to-Cloud Merge Policy
+ * Reconciles local guest offline achievements with an authenticated cloud account:
+ * - Completed lessons are unioned without duplicates
+ * - Total XP takes the maximum of guest vs cloud
+ * - Streak days take the maximum of guest vs cloud
+ * - Most recent streak date is retained
+ * - Active lesson and step index preserved
+ */
+export function mergeGuestProgressWithCloud(
+  guest: UserProgress,
+  cloud: UserProgress | null
+): UserProgress {
+  if (!cloud) return guest;
+  const allCompleted = Array.from(
+    new Set([...guest.completedLessonIds, ...cloud.completedLessonIds])
+  );
+  return {
+    ...cloud,
+    completedLessonIds: allCompleted,
+    totalXP: Math.max(guest.totalXP, cloud.totalXP),
+    streakDays: Math.max(guest.streakDays, cloud.streakDays),
+    lastStreakDate:
+      guest.lastStreakDate > cloud.lastStreakDate
+        ? guest.lastStreakDate
+        : cloud.lastStreakDate,
+    currentLessonId: guest.currentLessonId || cloud.currentLessonId,
+    currentStepIndex:
+      typeof guest.currentStepIndex === 'number'
+        ? guest.currentStepIndex
+        : cloud.currentStepIndex,
+  };
+}
+

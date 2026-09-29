@@ -132,11 +132,11 @@ export const Navbar: React.FC = () => {
 
           {/* User / Trial badge */}
           {user?.plan === 'trial' ? (
-            <StickerBadge variant="yellow" size="sm" className="hidden sm:inline-flex">
+            <StickerBadge variant="yellow" size="sm" className="inline-flex">
               {locale === 'tr' ? 'Deneme Aktif' : locale === 'ar' ? 'تجربة نشطة' : 'Trial Active'}
             </StickerBadge>
           ) : user?.plan === 'premium' ? (
-            <StickerBadge variant="green" size="sm" className="hidden sm:inline-flex">
+            <StickerBadge variant="green" size="sm" className="inline-flex">
               {locale === 'tr' ? 'Abonelik Aktif' : locale === 'ar' ? 'مشترك' : 'Pass Holder'}
             </StickerBadge>
           ) : (

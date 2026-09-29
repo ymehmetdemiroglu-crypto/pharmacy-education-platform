@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { GalleryPage } from './pages/GalleryPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { PricingPage } from './pages/PricingPage';
 import { LessonPage } from './pages/LessonPage';
+import { TrialBanner, PaywallModal } from '@pharmacy/ui';
+import { useAuth } from '@pharmacy/platform';
 
 export const App: React.FC = () => {
+  const { user } = useAuth();
+  const [paywallOpen, setPaywallOpen] = useState(false);
+
+  const calculateDaysRemaining = () => {
+    if (!user?.trialEndsAt) return 7;
+    const diffMs = new Date(user.trialEndsAt).getTime() - Date.now();
+    return Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF8E7] dark:bg-[#121212] text-black dark:text-white transition-colors duration-150">
       <Navbar />
+
+      {/* Account Plan Status Banner */}
+      {user?.plan === 'trial' ? (
+        <TrialBanner
+          status="active_trial"
+          daysRemaining={calculateDaysRemaining()}
+          onActionClick={() => setPaywallOpen(true)}
+        />
+      ) : user?.trialUsed && user?.plan === 'free' ? (
+        <TrialBanner
+          status="expired_trial"
+          onActionClick={() => setPaywallOpen(true)}
+        />
+      ) : null}
 
       <main className="flex-1">
         <Routes>
@@ -43,6 +68,14 @@ export const App: React.FC = () => {
           </div>
         </div>
       </footer>
+
+      {/* Global Paywall Modal */}
+      <PaywallModal
+        isOpen={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        onSelectPlan={() => setPaywallOpen(false)}
+        onStartTrial={() => setPaywallOpen(false)}
+      />
     </div>
   );
 };

@@ -285,7 +285,14 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-light-en.png`),
+      fullPage: false,
     });
+    if (prefix.includes('mobile')) {
+      await page.screenshot({
+        path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-viewport-375.png`),
+        fullPage: false,
+      });
+    }
 
     // Test Paywall in Dark Mode
     await page.keyboard.press('Escape');
@@ -295,6 +302,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-dark.png`),
+      fullPage: false,
     });
 
     // Test Paywall in Arabic RTL + Dark
@@ -305,6 +313,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-dark-rtl-ar.png`),
+      fullPage: false,
     });
 
     await page.keyboard.press('Escape');
@@ -418,20 +427,108 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
   test('verifies free trial start and expiry banner state in UI', async ({ page }, testInfo) => {
     const prefix = testInfo.project.name;
 
-    // Ensure clean state starting from Step 1
+    // 1. Seed initial guest student progress and review cards
+    await page.goto('/courses/medchem/lessons/1');
+    await page.evaluate(() => {
+      localStorage.clear();
+      localStorage.setItem(
+        'pharmacy_progress_medchem',
+        JSON.stringify({
+          courseId: 'medchem',
+          completedLessonIds: ['mc-mod1-les1'],
+          currentModuleId: 'mc-mod-01',
+          currentLessonId: 'mc-mod1-les1',
+          currentStepIndex: 9,
+          streakDays: 1,
+          lastStreakDate: '2026-09-29',
+          totalXP: 50,
+          accuracyRate: 100,
+        })
+      );
+      localStorage.setItem(
+        'pharmacy_review_cards_medchem',
+        JSON.stringify([
+          {
+            id: 'card-1',
+            front: 'What is thermodynamic activity (a) for an ideal gas or vapor?',
+            back: 'a = p / p0 (partial pressure divided by saturation vapor pressure)',
+            box: 1,
+            nextDueDate: '2026-09-30T00:00:00.000Z',
+            intervalDays: 1,
+          },
+          {
+            id: 'card-2',
+            front: 'Ferguson rule for structurally non-specific drugs:',
+            back: 'They achieve cellular effect at roughly equal thermodynamic activities (a = [pending-human-review]).',
+            box: 1,
+            nextDueDate: '2026-09-30T00:00:00.000Z',
+            intervalDays: 1,
+          },
+          {
+            id: 'card-3',
+            front: 'Ferguson rule for structurally specific drugs:',
+            back: 'They act at much lower thermodynamic activities because specific target binding provides high affinity.',
+            box: 1,
+            nextDueDate: '2026-09-30T00:00:00.000Z',
+            intervalDays: 1,
+          },
+        ])
+      );
+    });
+
+    // 2. Navigate to locked Lesson 3
     await page.goto('/courses/medchem/lessons/3');
-    await page.evaluate(() => localStorage.clear());
-    await page.reload();
     await page.waitForLoadState('networkidle');
 
+    // PaywallModal is open
     await expect(page.getByRole('dialog')).toBeVisible();
+
+    // 3. Click "Start 7-Day Free Trial"
     await page.getByRole('dialog').getByRole('button', { name: /Start Free Trial/i }).click();
 
-    // After clicking start trial, user profile receives active trial
-    // Modal closes and lesson 3 becomes accessible
+    // 4. Trial activated: Dialog closes and trial banner appears
     await expect(page.getByRole('dialog')).not.toBeVisible();
+    await expect(page.getByLabel('Account Plan Status')).toBeVisible();
+    await expect(page.getByText(/7 days remaining/i).first()).toBeVisible();
+
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-trial-started-ui.png`),
     });
+
+    // 5. Expire the trial: Simulate backend expiration downgrade
+    await page.evaluate(() => {
+      const user = JSON.parse(localStorage.getItem('pharmacy_user_profile') || '{}');
+      user.plan = 'free';
+      user.trialEndsAt = '2026-09-01T00:00:00.000Z';
+      localStorage.setItem('pharmacy_user_profile', JSON.stringify(user));
+
+      const ents = JSON.parse(localStorage.getItem('pharmacy_entitlements') || '[]');
+      const updatedEnts = ents.map((e: any) => ({ ...e, status: 'expired' }));
+      localStorage.setItem('pharmacy_entitlements', JSON.stringify(updatedEnts));
+    });
+
+    await page.reload();
+    await page.waitForLoadState('networkidle');
+
+    // 6. Verify downgraded to Free & Lesson 3 locked again
+    await expect(page.getByRole('dialog')).toBeVisible();
+    await expect(page.getByText(/Your 7-day trial has ended|TRIAL EXPIRED/i).first()).toBeVisible();
+
+    await page.screenshot({
+      path: path.join(SCREENSHOT_DIR, `${prefix}-trial-expired-downgrade.png`),
+    });
+
+    // 7. Verify 100% of student progress and review cards remain completely intact
+    const progressData = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('pharmacy_progress_medchem') || '{}')
+    );
+    expect(progressData.completedLessonIds).toContain('mc-mod1-les1');
+    expect(progressData.totalXP).toBeGreaterThanOrEqual(50);
+
+    const reviewCards = await page.evaluate(() =>
+      JSON.parse(localStorage.getItem('pharmacy_review_cards_medchem') || '[]')
+    );
+    expect(reviewCards.length).toBeGreaterThanOrEqual(3);
+    expect(reviewCards[0].front).toContain('thermodynamic activity');
   });
 });

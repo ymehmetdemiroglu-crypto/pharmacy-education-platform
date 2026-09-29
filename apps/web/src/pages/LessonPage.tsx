@@ -14,6 +14,7 @@ import {
   useAuth,
   hasCourseAccess,
   completeLesson,
+  updateStepProgress,
   loadLocalProgress,
   saveLocalProgress,
   loadLocalReviewCards,
@@ -23,6 +24,7 @@ import {
   LessonData,
   StepCitation,
   SpacedReviewCardSeed,
+  UserProgress,
 } from '@pharmacy/platform';
 import {
   ChevronLeft,
@@ -142,14 +144,38 @@ export const LessonPage: React.FC = () => {
     }
   }, [lessonCompleted, progress, lesson]);
 
+  const persistStepProgress = useCallback(
+    (stepIdx: number) => {
+      setProgress((prev) => {
+        const base: UserProgress = prev || {
+          courseId: 'medchem',
+          completedLessonIds: [],
+          currentModuleId: 'mc-mod-01',
+          currentLessonId: lesson.id,
+          currentStepIndex: stepIdx,
+          streakDays: 0,
+          lastStreakDate: '',
+          totalXP: 0,
+          accuracyRate: 100,
+        };
+        const updated = updateStepProgress(base, lesson.id, stepIdx);
+        saveLocalProgress(updated);
+        return updated;
+      });
+    },
+    [lesson.id]
+  );
+
   const handleNextStep = useCallback(() => {
     if (currentStepIndex < totalSteps - 1) {
-      setCurrentStepIndex((prev) => prev + 1);
+      const nextIdx = currentStepIndex + 1;
+      setCurrentStepIndex(nextIdx);
+      persistStepProgress(nextIdx);
       window.scrollTo(0, 0);
     } else {
       handleCompleteLesson();
     }
-  }, [currentStepIndex, totalSteps, handleCompleteLesson]);
+  }, [currentStepIndex, totalSteps, handleCompleteLesson, persistStepProgress]);
 
   // Persist completion and enqueue cards as soon as user arrives at Step 10 Recap
   useEffect(() => {
@@ -160,10 +186,12 @@ export const LessonPage: React.FC = () => {
 
   const handlePrevStep = useCallback(() => {
     if (currentStepIndex > 0) {
-      setCurrentStepIndex((prev) => prev - 1);
+      const prevIdx = currentStepIndex - 1;
+      setCurrentStepIndex(prevIdx);
+      persistStepProgress(prevIdx);
       window.scrollTo(0, 0);
     }
-  }, [currentStepIndex]);
+  }, [currentStepIndex, persistStepProgress]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -382,6 +410,7 @@ export const LessonPage: React.FC = () => {
             onSelectStep={(idx: number) => {
               if (idx <= currentStepIndex || stepInteractions[idx]?.isRevealed) {
                 setCurrentStepIndex(idx);
+                persistStepProgress(idx);
               }
             }}
           />

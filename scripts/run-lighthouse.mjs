@@ -4,6 +4,7 @@ import fs from 'fs';
 
 const targetPath = process.argv[2] || '/courses/medchem/lessons/1';
 const outputPath = process.argv[3] || './docs/reviews/lighthouse-lesson-1.json';
+const mode = process.argv[4] || 'desktop';
 
 // 1. Start preview server
 const server = spawn('pnpm', ['--filter', '@pharmacy/web', 'preview', '--port', '4173'], {
@@ -34,21 +35,24 @@ function waitForServer(timeoutMs = 15000) {
 
 try {
   await waitForServer();
-  console.log(`Preview server ready on port 4173. Running Lighthouse on ${targetPath}...`);
+  console.log(`Preview server ready on port 4173. Running Lighthouse (${mode}) on ${targetPath}...`);
 
-  const lhResult = spawnSync(
-    'npx',
-    [
-      'lighthouse',
-      `http://localhost:4173${targetPath}`,
-      '--chrome-flags="--headless --no-sandbox"',
-      '--output=json',
-      `--output-path=${outputPath}`,
-      '--preset=desktop',
-      '--only-categories=performance,accessibility,best-practices,seo',
-    ],
-    { shell: true, stdio: 'inherit' }
-  );
+  const lhArgs = [
+    'lighthouse',
+    `http://localhost:4173${targetPath}`,
+    '--chrome-flags="--headless --no-sandbox"',
+    '--output=json',
+    `--output-path=${outputPath}`,
+    '--only-categories=performance,accessibility,best-practices,seo',
+  ];
+
+  if (mode === 'desktop') {
+    lhArgs.push('--preset=desktop');
+  } else {
+    lhArgs.push('--form-factor=mobile', '--screenEmulation.mobile=true', '--screenEmulation.width=375', '--screenEmulation.height=667', '--screenEmulation.deviceScaleFactor=2');
+  }
+
+  const lhResult = spawnSync('npx', lhArgs, { shell: true, stdio: 'inherit' });
 
   console.log('Lighthouse exit code:', lhResult.status);
 
