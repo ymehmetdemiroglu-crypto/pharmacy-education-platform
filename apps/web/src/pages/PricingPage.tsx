@@ -162,7 +162,7 @@ export const PricingPage: React.FC = () => {
           <Card
             variant="default"
             elevated
-            className="p-6 space-y-5 flex flex-col justify-between relative bg-[#FFFDF7] dark:bg-[#1E1E1E] ring-3 ring-black dark:ring-white scale-[1.02] z-10"
+            className="p-6 space-y-5 flex flex-col justify-between relative bg-[#FFFDF7] dark:bg-[#1E1E1E] ring-3 ring-black dark:ring-white scale-[102%] z-10"
           >
             <div className="absolute -top-3.5 left-6">
               <StickerBadge variant="green" size="md">

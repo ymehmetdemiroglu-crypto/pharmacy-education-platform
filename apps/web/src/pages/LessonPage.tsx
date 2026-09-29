@@ -766,14 +766,14 @@ export const LessonPage: React.FC = () => {
             {/* Textbook Citations (E1 Policy) */}
             <div className="space-y-2">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                Authoritative Textbook References (Chapter Status: Unverified per E1 Policy):
+                Authoritative Textbook References (Citation Status: Unverified per E1 Policy):
               </span>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-800 dark:text-gray-200">
                 {lesson.citations.map((c: StepCitation) => (
                   <li key={c.id}>
                     <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot; •{' '}
                     <span className="italic text-gray-600 dark:text-gray-400">
-                      [Chapter: {c.chapter}, Page: {c.page} — Pending Physical Copy Verification]
+                      [Section: {c.chapter}, Page: {c.page} — Pending Physical Copy Verification]
                     </span>
                   </li>
                 ))}
@@ -797,7 +797,7 @@ export const LessonPage: React.FC = () => {
               <Info className="w-4 h-4 shrink-0 mt-0.5" />
               <span>
                 <strong>Empirical Threshold Note (E2):</strong> The thermodynamic saturation range{' '}
-                <code>a = 0.01–1.0</code> is registered in <code>docs/needs-human-review.md</code> as{' '}
+                <code>[pending-human-review: saturation threshold]</code> is registered in <code>docs/needs-human-review.md</code> as{' '}
                 <code>pending-human-review</code> for direct owner verification against primary literature.
               </span>
             </div>
