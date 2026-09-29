@@ -24,12 +24,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary: 'bg-[#FFD93D] text-black hover:bg-[#FACC15]',
-  secondary: 'bg-white dark:bg-[#1E1E1E] text-black dark:text-white',
+  secondary: 'bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
   success: 'bg-[#6BCB77] text-black hover:bg-[#5BB866]',
   danger: 'bg-[#FF6B9D] text-black hover:bg-[#FF558F]',
   medchem: 'bg-[#4D96FF] text-black hover:bg-[#3B82F6]',
   pharm: 'bg-[#FF9F45] text-black hover:bg-[#F97316]',
-  ghost: 'bg-transparent text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10',
+  ghost: 'bg-transparent text-black dark:text-slate-100 hover:bg-black/5 dark:hover:bg-slate-800/50',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -66,12 +66,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           clsx(
             // Base structural Neo-Brutalist styles
             'inline-flex items-center justify-center font-display tracking-tight uppercase select-none',
-            'border-3 border-black dark:border-white rounded-none',
+            'border-3 border-black dark:border-slate-700 rounded-none',
             'transition-all duration-150 ease-neo',
             // Elevation & drop shadow
             !isEffectiveDisabled && 'shadow-neo dark:shadow-neo-dark hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg dark:hover:shadow-neo-dark-lg active:translate-x-1.5 active:translate-y-1.5 active:shadow-none',
             // Focus ring standards
-            'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-offset-2',
+            'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-black dark:focus-visible:ring-[#F59E0B] focus-visible:ring-offset-2',
             // Disabled / Loading state
             isEffectiveDisabled && 'bg-gray-200 dark:bg-gray-800 text-gray-500 border-gray-400 dark:border-gray-600 shadow-none cursor-not-allowed',
             variantStyles[variant],

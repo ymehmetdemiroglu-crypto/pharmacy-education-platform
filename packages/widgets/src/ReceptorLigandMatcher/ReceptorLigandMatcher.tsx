@@ -85,7 +85,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Left Column: Drug Functional Groups */}
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
             Ligand Functional Groups ({config.drugName})
           </span>
           <div className="space-y-2">
@@ -100,18 +100,18 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   key={pair.id}
                   onClick={() => handleSelectPair(pair.id)}
                   className={clsx(
-                    'p-3 border-2 border-black dark:border-white cursor-pointer transition-all flex flex-col gap-1',
-                    isSelected && 'ring-2 ring-[#FFD93D] bg-[#FFF8E7] dark:bg-[#252525] shadow-neo-sm translate-x-1',
-                    !isSelected && 'bg-white dark:bg-[#1E1E1E] hover:bg-gray-50',
-                    isSubmitted && isCorrect && 'border-[#6BCB77] bg-[#EBFBEE] dark:bg-[#1C3322]',
-                    isSubmitted && !isCorrect && 'border-[#FF6B9D] bg-[#FFF0F5] dark:bg-[#331C24]'
+                    'p-3 border-2 border-black dark:border-slate-700 cursor-pointer transition-all flex flex-col gap-1',
+                    isSelected && 'ring-2 ring-[#FFD93D] bg-[#FFF8E7] dark:bg-[#1E293B] shadow-neo-sm translate-x-1',
+                    !isSelected && 'bg-white dark:bg-[#131B2A] hover:bg-gray-50 dark:hover:bg-slate-800 text-black dark:text-slate-100',
+                    isSubmitted && isCorrect && 'border-[#6BCB77] dark:border-emerald-600 bg-[#EBFBEE] dark:bg-[#072518] text-black dark:text-emerald-200',
+                    isSubmitted && !isCorrect && 'border-[#FF6B9D] dark:border-rose-600 bg-[#FFF0F5] dark:bg-[#2A0E18] text-black dark:text-rose-200'
                   )}
                 >
                   <div className="flex items-center justify-between">
                     <strong className="text-xs font-mono">{pair.drugGroup}</strong>
-                    <span className="text-[10px] font-mono text-gray-700 dark:text-gray-300">[{pair.energyKcalMol}]</span>
+                    <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300">[{pair.energyKcalMol}]</span>
                   </div>
-                  <div className="text-[11px] font-mono flex items-center gap-1 text-gray-700 dark:text-gray-300">
+                  <div className="text-[11px] font-mono flex items-center gap-1 text-gray-700 dark:text-slate-300">
                     <LinkIcon className="w-3 h-3 text-gray-400" />
                     <span>
                       Paired to:{' '}
@@ -126,7 +126,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
 
         {/* Right Column: Receptor Residues */}
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
             Binding Pocket Residues ({config.receptorName})
           </span>
           <div className="space-y-2">
@@ -140,15 +140,15 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   disabled={disabled || isSubmitted || !selectedPairId}
                   onClick={() => handleSelectResidue(res.id)}
                   className={clsx(
-                    'w-full p-2.5 border-2 border-black dark:border-white text-left transition-all flex items-center justify-between',
+                    'w-full p-2.5 border-2 border-black dark:border-slate-700 text-left transition-all flex items-center justify-between',
                     selectedPairId && 'hover:bg-[#FFD93D] hover:text-black cursor-pointer shadow-sm',
-                    isUsed ? 'bg-gray-100 dark:bg-[#252525] border-dashed text-gray-700 dark:text-gray-300' : 'bg-white dark:bg-[#1E1E1E]',
+                    isUsed ? 'bg-gray-100 dark:bg-[#1E293B] border-dashed text-gray-700 dark:text-slate-300' : 'bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
                     (!selectedPairId || isSubmitted) && 'cursor-default'
                   )}
                 >
                   <div>
                     <strong className="text-xs font-mono">{res.residueName}</strong>
-                    <p className="text-[10px] text-gray-700 dark:text-gray-300">{res.description}</p>
+                    <p className="text-[10px] text-gray-700 dark:text-slate-300">{res.description}</p>
                   </div>
                   {isUsed && (
                     <span className="text-[10px] font-mono font-bold bg-[#FFD93D] text-black px-1.5 py-0.5 border border-black">
@@ -176,7 +176,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
 
       {/* Feedback Summary */}
       {isSubmitted && (
-        <div className="pt-3 border-t-3 border-black dark:border-white space-y-2">
+        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
           <div className="flex items-center gap-2">
             {isAllCorrect ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
@@ -192,7 +192,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
           </div>
           <div className="space-y-1.5">
             {config.pairs.map((p) => (
-              <div key={p.id} className="p-2 bg-[#FFFDF7] dark:bg-[#202020] border border-black/20 text-xs font-body">
+              <div key={p.id} className="p-2 bg-[#FFFDF7] dark:bg-[#1E293B] border border-black/20 dark:border-slate-700 text-xs font-body text-black dark:text-slate-100">
                 <strong>{p.drugGroup} ↔ {p.correctResidueId}: </strong>
                 {p.explanation}
               </div>

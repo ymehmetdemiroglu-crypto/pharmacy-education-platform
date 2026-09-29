@@ -49,14 +49,14 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-valuemax={100}
         aria-label={label || 'Progress'}
         className={clsx(
-          'w-full bg-white dark:bg-[#252525] border-3 border-black dark:border-white rounded-none',
-          'shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#FFFFFF] overflow-hidden',
+          'w-full bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none',
+          'shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] overflow-hidden',
           heightMap[size]
         )}
       >
         <div
           className={clsx(
-            'h-full border-r-3 border-black dark:border-white transition-all duration-300 ease-neo',
+            'h-full border-r-3 border-black dark:border-slate-700 transition-all duration-300 ease-neo',
             colorMap[variant]
           )}
           style={{ width: `${percentage}%` }}

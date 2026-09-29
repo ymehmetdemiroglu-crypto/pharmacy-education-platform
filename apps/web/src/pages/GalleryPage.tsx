@@ -86,14 +86,14 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="w-full pb-20 space-y-12">
       {/* Hero Header */}
-      <section className="bg-[#FFF8E7] dark:bg-[#121212] border-b-3 border-black dark:border-white py-12 px-4 sm:px-6">
+      <section className="bg-[#FFF8E7] dark:bg-[#0B0F17] border-b-3 border-black dark:border-slate-700 py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <StickerBadge variant="black" size="sm">{copy.badgeGallery}</StickerBadge>
             <StickerBadge variant="green" size="sm">Commercial Grade</StickerBadge>
             <StickerBadge variant="yellow" size="sm">Neo-Brutalist</StickerBadge>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-white">
+          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-slate-100">
             {copy.heroTitle}
           </h1>
           <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
@@ -109,7 +109,7 @@ export const GalleryPage: React.FC = () => {
 
       {/* Trial Banners Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-4">
-        <div className="border-b-2 border-black/20 dark:border-white/20 pb-2">
+        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
           <h2 className="font-display font-black text-xl uppercase tracking-tight">1. Trial & Plan Banners</h2>
           <p className="text-xs text-gray-600 dark:text-gray-400">Header banners displaying student subscription and trial state.</p>
         </div>
@@ -128,7 +128,7 @@ export const GalleryPage: React.FC = () => {
 
       {/* Interactive Pharmacy Widgets Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
-        <div className="border-b-2 border-black/20 dark:border-white/20 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="font-display font-black text-xl uppercase tracking-tight">2. Interactive Pharmacy Widgets</h2>
             <p className="text-xs text-gray-600 dark:text-gray-400">Data-driven, accessible widgets with Zod configuration and event emission.</p>
@@ -143,10 +143,10 @@ export const GalleryPage: React.FC = () => {
               key={w.id}
               type="button"
               onClick={() => setActiveWidgetTab(w.id)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-white transition-all ${
+              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all ${
                 activeWidgetTab === w.id
                   ? 'bg-[#FFD93D] text-black shadow-[3px_3px_0px_#000000] scale-102'
-                  : 'bg-white dark:bg-[#202020] text-black dark:text-white hover:bg-gray-100'
+                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
               }`}
             >
               {w.name}
@@ -155,14 +155,14 @@ export const GalleryPage: React.FC = () => {
         </div>
 
         {/* Active Widget Display */}
-        <div data-testid="active-widget-container" className="p-2 sm:p-4 bg-gray-50 dark:bg-[#151515] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
+        <div data-testid="active-widget-container" className="p-2 sm:p-4 bg-gray-50 dark:bg-[#0B0F17] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
           {widgets.find((w) => w.id === activeWidgetTab)?.component}
         </div>
       </section>
 
       {/* Core UI Components Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="border-b-2 border-black/20 dark:border-white/20 pb-2">
+        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
           <h2 className="font-display font-black text-xl uppercase tracking-tight">3. Neo-Brutalist UI Primitives</h2>
           <p className="text-xs text-gray-600 dark:text-gray-400">Tactile, high-contrast building blocks adhering to 3px borders and 6px shadows.</p>
         </div>
@@ -193,7 +193,7 @@ export const GalleryPage: React.FC = () => {
             </Card>
             <Card variant="highlight" data-testid="card-highlight">
               <h4 className="font-display font-bold text-sm uppercase">Highlight Card</h4>
-              <p className="text-xs text-black mt-1">Yellow surface for key rules and checkpoints.</p>
+              <p className="text-xs text-black dark:text-amber-200 mt-1">Yellow surface for key rules and checkpoints.</p>
             </Card>
             <Card variant="misconception" data-testid="card-misconception">
               <h4 className="font-display font-bold text-sm uppercase text-rose-800 dark:text-rose-200">Misconception Card</h4>
@@ -208,7 +208,7 @@ export const GalleryPage: React.FC = () => {
 
         {/* StepDots & ProgressBars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div data-testid="section-steppers" className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+          <div data-testid="section-steppers" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
             <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">StepDots Stepper (Default, Active, Completed)</h3>
             <div className="space-y-3">
               <StepDots
@@ -231,7 +231,7 @@ export const GalleryPage: React.FC = () => {
             <p className="text-[11px] font-mono text-gray-700 dark:text-gray-300">Click a dot to change active step.</p>
           </div>
 
-          <div data-testid="section-progress" className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+          <div data-testid="section-progress" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
             <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Progress Bars (In-Progress, Completed, Small)</h3>
             <div className="space-y-3">
               <ProgressBar value={68} label="Course Progress (In Progress)" variant="green" data-testid="progress-in-progress" />
@@ -246,7 +246,7 @@ export const GalleryPage: React.FC = () => {
           <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">
             Form Controls State Matrix (Default, Focus, Error, Disabled)
           </h3>
-          <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
+          <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
             <div className="space-y-4">
               <Input
                 label="Physiological pH (Default)"
@@ -330,7 +330,7 @@ export const GalleryPage: React.FC = () => {
 
           <div
             data-testid="state-loading"
-            className="space-y-4 p-6 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark flex flex-col justify-center"
+            className="space-y-4 p-6 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex flex-col justify-center"
           >
             <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">Skeleton Loaders (Loading State — Zero CLS)</span>
             <SkeletonLoader height="h-8" />

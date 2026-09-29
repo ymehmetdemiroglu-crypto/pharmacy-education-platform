@@ -108,13 +108,13 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
     <div
       ref={containerRef}
       className={clsx(
-        'w-full bg-[#FFFDF7] dark:bg-[#1C1C1C] border-3 border-black dark:border-white rounded-none',
+        'w-full bg-[#FFFDF7] dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 rounded-none',
         'shadow-neo dark:shadow-neo-dark transition-all duration-200',
         className
       )}
     >
       {/* Header bar */}
-      <div className="flex items-center justify-between p-3 border-b-3 border-black dark:border-white bg-[#FFD93D] text-black">
+      <div className="flex items-center justify-between p-3 border-b-3 border-black dark:border-slate-700 bg-[#FFD93D] text-black">
         <div className="flex items-center gap-2">
           <Lightbulb className="w-5 h-5 stroke-[2.5]" />
           <span className="font-display font-black text-xs sm:text-sm uppercase tracking-tight">
@@ -159,14 +159,14 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
               <div
                 key={idx}
                 className={clsx(
-                  'p-3 border-2 border-black dark:border-white rounded-none transition-all duration-150',
+                  'p-3 border-2 border-black dark:border-slate-700 rounded-none transition-all duration-150',
                   isRevealed
-                    ? 'bg-white dark:bg-[#252525] text-black dark:text-white shadow-[2px_2px_0px_#000000]'
-                    : 'bg-gray-100 dark:bg-[#181818] text-gray-400 border-dashed'
+                    ? 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]'
+                    : 'bg-gray-100 dark:bg-[#0B0F17] text-gray-400 dark:text-slate-500 border-dashed'
                 )}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white">
+                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-200">
                     {getTierLabel(idx)}
                   </span>
                   {!isPremiumOrTrial && idx >= 1 && (
@@ -191,7 +191,7 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
                       <button
                         type="button"
                         onClick={onUpgradeClick}
-                        className="font-bold underline text-black dark:text-white hover:text-blue-600"
+                        className="font-bold underline text-black dark:text-slate-100 hover:text-blue-600"
                       >
                         {locale === 'tr' ? 'Ücretsiz Dene' : locale === 'ar' ? 'جرّب مجاناً' : 'Try Free'}
                       </button>

@@ -106,13 +106,13 @@ test.describe('Motion Verification & Jank Budget Suite (A2 Protocol)', () => {
       }
 
       // Flow 2: Open and Close Paywall Modal
-      await page.getByRole('button', { name: /open paywall/i }).first().click();
+      await page.getByRole('button', { name: /open paywall|abonelik ve ödeme/i }).first().click();
       await expect(page.getByRole('dialog')).toBeVisible();
 
-      // Switch currencies in modal
-      await page.getByRole('button', { name: 'TRY', exact: true }).click();
-      await page.getByRole('button', { name: 'SAR', exact: true }).click();
-      await page.getByRole('button', { name: 'USD', exact: true }).click();
+      // Switch plans in modal (TRY pricing)
+      await page.getByText('₺850').first().click();
+      await page.getByText('₺1450').first().click();
+      await page.getByText('₺250').first().click();
 
       await page.keyboard.press('Escape');
       await expect(page.getByRole('dialog')).not.toBeVisible();

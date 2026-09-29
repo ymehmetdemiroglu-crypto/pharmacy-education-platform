@@ -109,7 +109,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
       </div>
 
       {/* Route & Multi-dose toggles */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-gray-50 dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <div className="flex items-center gap-2">
           {config.routes.map((r) => (
             <button
@@ -118,10 +118,10 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
               disabled={disabled}
               onClick={() => setRoute(r)}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-white transition-all',
+                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
                 route === r
                   ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#202020] text-black dark:text-white'
+                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
               {r === 'iv_bolus' ? 'IV Bolus' : 'Oral (F=0.7)'}
@@ -138,7 +138,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
       </div>
 
       {/* SVG Concentration-Time Plot */}
-      <div className="w-full bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark p-3">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3">
         <svg
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"
@@ -170,8 +170,8 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           </text>
 
           {/* Axes */}
-          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-white" />
-          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-white" />
+          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
+          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
 
           {/* Axis Labels */}
           <text x="35" y="40" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">
@@ -202,28 +202,28 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
         </svg>
 
         {/* Readout Summary */}
-        <div aria-live="polite" className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2 border-t border-black/10 dark:border-white/10 text-xs font-mono text-center">
-          <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Elimination Half-Life</span>
+        <div aria-live="polite" className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2 border-t border-black/10 dark:border-slate-700 text-xs font-mono text-center">
+          <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Elimination Half-Life</span>
             <strong>{tHalf} hr</strong>
           </div>
-          <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Elimination Rate (ke)</span>
+          <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Elimination Rate (ke)</span>
             <strong>{ke.toFixed(3)} h⁻¹</strong>
           </div>
-          <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Peak Cp (Cmax)</span>
+          <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Peak Cp (Cmax)</span>
             <strong>{maxObservedCp.toFixed(1)} mg/L</strong>
           </div>
-          <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Average Css</span>
+          <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Average Css</span>
             <strong>{isMultipleDosing ? `${cssAvg} mg/L` : 'N/A'}</strong>
           </div>
         </div>
       </div>
 
       {/* Sliders */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-gray-50 dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <Slider
           label="Dose (mg)"
           value={doseMg}
@@ -257,7 +257,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
       </div>
 
       {isMultipleDosing && (
-        <div className="p-3 bg-white dark:bg-[#202020] border-2 border-black dark:border-white">
+        <div className="p-3 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
           <Slider
             label="Dosing Interval (Tau)"
             value={tauHr}

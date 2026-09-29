@@ -24,13 +24,13 @@ export interface ThemeProviderProps {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   defaultTheme = 'light',
-  defaultLocale = 'en',
+  defaultLocale = 'tr',
 }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('pharmacy_theme') as Theme | null;
       if (saved === 'light' || saved === 'dark') return saved;
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+      if (typeof window.matchMedia === 'function' && window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
     }
     return defaultTheme;
   });
@@ -89,7 +89,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 export const useTheme = (): ThemeContextType => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    return {
+      theme: 'light',
+      direction: 'ltr',
+      locale: 'tr',
+      setTheme: () => {},
+      setLocale: () => {},
+      toggleTheme: () => {},
+    };
   }
   return context;
 };

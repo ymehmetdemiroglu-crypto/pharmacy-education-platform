@@ -48,7 +48,7 @@ export const Slider: React.FC<SliderProps> = ({
   return (
     <div className={twMerge('w-full flex flex-col gap-2', className)}>
       <div className="flex justify-between items-center text-xs font-mono font-bold uppercase">
-        <label htmlFor={`slider-${label}`} className="text-black dark:text-white">
+        <label htmlFor={`slider-${label}`} className="text-black dark:text-slate-100">
           {label}
         </label>
         <span className="px-2 py-0.5 bg-[#FFD93D] border-2 border-black text-black font-mono">
@@ -72,8 +72,8 @@ export const Slider: React.FC<SliderProps> = ({
           onKeyDown={handleKeyDown}
           onChange={(e) => onChange(parseFloat(e.target.value))}
           className={clsx(
-            'w-full h-3 bg-white dark:bg-[#252525] border-3 border-black dark:border-white rounded-none appearance-none cursor-pointer',
-            'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]',
+            'w-full h-3 bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none appearance-none cursor-pointer',
+            'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]',
             'focus:outline-none focus:ring-2 focus:ring-[#FFD93D]',
             // Custom thumb styling
             '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6',
@@ -85,7 +85,7 @@ export const Slider: React.FC<SliderProps> = ({
           )}
         />
       </div>
-      <div className="flex justify-between text-[10px] font-mono text-gray-500 dark:text-gray-400">
+      <div className="flex justify-between text-[10px] font-mono text-gray-500 dark:text-slate-400">
         <span>{min} {unit}</span>
         <span>{max} {unit}</span>
       </div>

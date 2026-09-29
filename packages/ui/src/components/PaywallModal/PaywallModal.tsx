@@ -47,30 +47,17 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   isOpen,
   onClose,
   canStartTrial = true,
-  defaultCurrency,
   onStartTrial,
   onSelectPlan,
 }) => {
   const themeCtx = React.useContext(ThemeContext);
   const themeLocale = themeCtx?.locale;
 
-  const initialCurrency: Currency =
-    defaultCurrency ||
-    (themeLocale === 'tr' ? 'TRY' : themeLocale === 'ar' ? 'SAR' : 'USD');
-
-  const [currency, setCurrency] = useState<Currency>(initialCurrency);
+  const currency: Currency = 'TRY';
   const [isBundle, setIsBundle] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<PlanType>('semester');
 
-  React.useEffect(() => {
-    if (!defaultCurrency && themeLocale) {
-      if (themeLocale === 'tr') setCurrency('TRY');
-      else if (themeLocale === 'ar') setCurrency('SAR');
-      else setCurrency('USD');
-    }
-  }, [themeLocale, defaultCurrency]);
-
-  const prices = pricingTable[currency];
+  const prices = pricingTable.TRY;
   const activePrices = isBundle ? prices.bundle : prices.single;
 
   const handleCheckout = () => {
@@ -115,10 +102,10 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
             <span className="flex items-center gap-1">
               <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
               {themeLocale === 'tr'
-                ? 'Dodo Payments ile güvenli tek tıkla ödeme'
+                ? 'Dodo Payments ile güvenli tek tıkla ödeme (₺ TRY)'
                 : themeLocale === 'ar'
-                ? 'دفع آمن بنقرة واحدة عبر Dodo Payments'
-                : 'Secure 1-click checkout powered by Dodo Payments'}
+                ? 'دفع آمن بنقرة واحدة بالليرة التركية (₺ TRY) عبر Dodo Payments'
+                : 'Secure 1-click checkout powered by Dodo Payments (₺ TRY)'}
             </span>
             <button
               type="button"
@@ -138,9 +125,9 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
       <div className="space-y-3 sm:space-y-4">
         {/* Trial banner highlight if eligible */}
         {canStartTrial && onStartTrial && (
-          <div className="p-2 sm:p-3 bg-[#FFF8E7] dark:bg-[#252525] border-2 sm:border-3 border-black dark:border-white shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF] flex items-center justify-between gap-2">
+          <div className="p-2 sm:p-3 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 sm:border-3 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center justify-between gap-2">
             <div className="space-y-0.5">
-              <div className="inline-flex items-center gap-1.5 font-display font-black text-xs sm:text-sm uppercase text-[#92400E] dark:text-[#FBBF24]">
+              <div className="inline-flex items-center gap-1.5 font-display font-black text-xs sm:text-sm uppercase text-[#92400E] dark:text-amber-400">
                 <Sparkles className="w-3.5 h-3.5 shrink-0" />{' '}
                 {themeLocale === 'tr'
                   ? '7 Günlük Ücretsiz Deneme'
@@ -148,7 +135,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
                   ? 'تجربة مجانية لمدة 7 أيام'
                   : '7-Day Free Trial Available'}
               </div>
-              <p className="hidden sm:block text-[11px] text-gray-700 dark:text-gray-300">
+              <p className="hidden sm:block text-[11px] text-gray-700 dark:text-slate-300">
                 {themeLocale === 'tr'
                   ? 'Kredi kartı gerekmeden 55 modülün tümünü ve gelişmiş ipuçlarını deneyimleyin.'
                   : themeLocale === 'ar'
@@ -171,18 +158,18 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
           </div>
         )}
 
-        {/* Currency & Bundle Selector */}
-        <div className="flex flex-wrap items-center justify-between gap-1.5 border-b-2 border-black/20 dark:border-white/20 pb-2.5">
+        {/* Bundle Selector & Exclusive TRY Currency */}
+        <div className="flex flex-wrap items-center justify-between gap-1.5 border-b-2 border-black/20 dark:border-slate-700 pb-2.5">
           {/* Bundle Toggle */}
           <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={() => setIsBundle(false)}
               className={clsx(
-                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-white',
+                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-slate-700',
                 !isBundle
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]'
-                  : 'bg-white dark:bg-black text-black dark:text-white'
+                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]'
+                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200'
               )}
             >
               {themeLocale === 'tr' ? 'Tek Ders' : themeLocale === 'ar' ? 'مقرر واحد' : 'Single Course'}
@@ -191,36 +178,21 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               type="button"
               onClick={() => setIsBundle(true)}
               className={clsx(
-                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-white',
+                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-slate-700',
                 isBundle
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]'
-                  : 'bg-white dark:bg-black text-black dark:text-white'
+                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]'
+                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200'
               )}
             >
               {themeLocale === 'tr' ? 'İkili Paket' : themeLocale === 'ar' ? 'الحزمة المزدوجة' : 'Dual Bundle (Both Courses)'}
             </button>
           </div>
 
-          {/* Currency Switcher */}
+          {/* Exclusive TRY Currency Badge */}
           <div className="flex items-center gap-1 font-mono text-xs">
-            <span className="text-gray-700 dark:text-gray-300 font-bold uppercase mr-0.5 text-[11px] sm:text-xs">
-              {themeLocale === 'tr' ? 'Para:' : themeLocale === 'ar' ? 'العملة:' : 'Currency:'}
+            <span className="px-2 py-0.5 border-2 border-black dark:border-slate-700 font-bold text-[11px] sm:text-xs bg-[#FFD93D] text-black shadow-[1px_1px_0px_#000000]">
+              ₺ TRY
             </span>
-            {(['USD', 'TRY', 'SAR'] as Currency[]).map((curr) => (
-              <button
-                key={curr}
-                type="button"
-                onClick={() => setCurrency(curr)}
-                className={clsx(
-                  'px-1.5 py-0.5 border border-black dark:border-white font-bold text-[11px] sm:text-xs',
-                  currency === curr
-                    ? 'bg-black text-white dark:bg-white dark:text-black'
-                    : 'bg-transparent text-black dark:text-white'
-                )}
-              >
-                {curr}
-              </button>
-            ))}
           </div>
         </div>
 
@@ -239,22 +211,22 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'monthly'
-                ? 'bg-white dark:bg-[#252525] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
-                : 'bg-gray-50 dark:bg-[#181818] hover:bg-white'
+                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                : 'bg-gray-50 dark:bg-[#0B0F17] hover:bg-white'
             )}
           >
-            <span className="text-[9px] sm:text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300 leading-tight block break-words">
+            <span className="text-[9px] sm:text-xs font-mono font-bold uppercase text-gray-700 dark:text-slate-300 leading-tight block break-words">
               {planLabels.monthly}
             </span>
             <div className="my-0.5 sm:my-1.5 flex items-baseline gap-0.5 sm:gap-1" dir="ltr">
               <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.monthly}
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/mo</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-slate-300">/mo</span>
             </div>
-            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
+            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-slate-400">
               {themeLocale === 'tr'
                 ? 'Aydan aya esnek erişim'
                 : themeLocale === 'ar'
@@ -276,9 +248,9 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#202020] focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#131B2A] focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'semester'
-                ? 'shadow-neo sm:shadow-neo-lg dark:shadow-neo-dark-lg ring-2 sm:ring-3 ring-black dark:ring-white scale-[1.01] sm:scale-[1.02] z-10'
+                ? 'shadow-neo sm:shadow-neo-lg dark:shadow-neo-dark-lg ring-2 sm:ring-3 ring-black dark:ring-amber-500 scale-[1.01] sm:scale-[1.02] z-10'
                 : 'hover:bg-white'
             )}
           >
@@ -294,9 +266,9 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.semester}
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/sem</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-slate-300">/sem</span>
             </div>
-            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
+            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-slate-400">
               {themeLocale === 'tr'
                 ? '6 tam ay boyunca sınav hazırlığı (~%40 indirim)'
                 : themeLocale === 'ar'
@@ -318,10 +290,10 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'annual'
-                ? 'bg-white dark:bg-[#252525] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
-                : 'bg-gray-50 dark:bg-[#181818] hover:bg-white'
+                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                : 'bg-gray-50 dark:bg-[#0B0F17] hover:bg-white'
             )}
           >
             <div className="absolute -top-2 left-1 sm:-top-3 sm:left-3">
@@ -336,7 +308,7 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.annual}
               </span>
-              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/yr</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-slate-300">/yr</span>
             </div>
             <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
               {themeLocale === 'tr'

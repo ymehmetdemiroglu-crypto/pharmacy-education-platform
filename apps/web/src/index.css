@@ -28,7 +28,7 @@ html {
   }
 
   .dark :focus-visible {
-    outline: 3px solid #FFFFFF;
+    outline: 3px solid #F59E0B;
     outline-offset: 3px;
   }
 

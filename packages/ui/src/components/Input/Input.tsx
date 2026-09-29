@@ -17,7 +17,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white"
+            className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100"
           >
             {label}
           </label>
@@ -28,10 +28,10 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           disabled={disabled}
           className={twMerge(
             clsx(
-              'w-full px-3.5 py-2.5 bg-white dark:bg-[#1E1E1E] text-black dark:text-white font-mono text-sm',
-              'border-3 border-black dark:border-white rounded-none',
-              'shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#FFFFFF]',
-              'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] focus:shadow-[6px_6px_0px_#000000] dark:focus:shadow-[6px_6px_0px_#FFFFFF]',
+              'w-full px-3.5 py-2.5 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100 font-mono text-sm',
+              'border-3 border-black dark:border-slate-700 rounded-none',
+              'shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712]',
+              'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] focus:shadow-[6px_6px_0px_#000000] dark:focus:shadow-[6px_6px_0px_#030712]',
               'transition-all duration-150',
               error && 'border-[#FF6B9D] focus:ring-[#FF6B9D]',
               disabled && 'bg-gray-200 dark:bg-gray-800 text-gray-400 border-gray-400 shadow-none cursor-not-allowed',

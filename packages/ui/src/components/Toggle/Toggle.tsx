@@ -38,9 +38,9 @@ export const Toggle: React.FC<ToggleProps> = ({
         {/* Track */}
         <div
           className={clsx(
-            'w-12 h-6 border-3 border-black dark:border-white transition-colors duration-150 pointer-events-none',
-            'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]',
-            checked ? 'bg-[#6BCB77]' : 'bg-gray-200 dark:bg-gray-700'
+            'w-12 h-6 border-3 border-black dark:border-slate-700 transition-colors duration-150 pointer-events-none',
+            'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]',
+            checked ? 'bg-[#6BCB77]' : 'bg-gray-200 dark:bg-slate-800'
           )}
         />
         {/* Thumb */}
@@ -51,7 +51,7 @@ export const Toggle: React.FC<ToggleProps> = ({
           )}
         />
       </div>
-      <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white">
+      <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
         {label}
       </span>
     </label>

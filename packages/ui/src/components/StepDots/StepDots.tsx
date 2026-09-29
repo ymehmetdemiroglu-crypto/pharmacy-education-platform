@@ -42,7 +42,7 @@ export const StepDots: React.FC<StepDotsProps> = ({
             className={clsx(
               // Responsive touch hit target area (compact on mobile to prevent clipping)
               'min-w-[28px] sm:min-w-[40px] md:min-w-[44px] min-h-[36px] sm:min-h-[44px] p-0.5 sm:p-1.5 flex items-center justify-center select-none rounded-none',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-[#F59E0B]',
               isClickable ? 'cursor-pointer' : 'cursor-default'
             )}
           >
@@ -58,7 +58,7 @@ export const StepDots: React.FC<StepDotsProps> = ({
                   'bg-[#6BCB77] border-2 border-black text-black shadow-[1px_1px_0px_#000000]',
                 !isCurrent &&
                   !isCompleted &&
-                  'bg-white dark:bg-[#252525] border-2 border-black/60 dark:border-white/60 text-gray-700 dark:text-gray-300',
+                  'bg-white dark:bg-[#1E293B] border-2 border-black/60 dark:border-slate-700 text-gray-700 dark:text-slate-300',
                 isClickable && !isCurrent && 'hover:scale-105'
               )}
             >

@@ -74,16 +74,16 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           const isSelected = selectedIds.includes(opt.id);
           const correct = isOptionCorrect(opt.id);
 
-          let optionStyle = 'bg-white dark:bg-[#252525] hover:bg-gray-50';
+          let optionStyle = 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800';
           if (isSelected && !isSubmitted) {
             optionStyle = 'bg-[#FFD93D] text-black font-bold shadow-neo-sm translate-x-1';
           } else if (isSubmitted) {
             if (correct) {
-              optionStyle = 'bg-[#EBFBEE] dark:bg-[#1C3322] border-[#6BCB77] text-black dark:text-white font-bold';
+              optionStyle = 'bg-[#EBFBEE] dark:bg-[#072518] border-[#6BCB77] dark:border-emerald-600 text-black dark:text-emerald-200 font-bold';
             } else if (isSelected && !correct) {
-              optionStyle = 'bg-[#FFF0F5] dark:bg-[#331C24] border-[#FF6B9D] text-black dark:text-white';
+              optionStyle = 'bg-[#FFF0F5] dark:bg-[#2A0E18] border-[#FF6B9D] dark:border-rose-600 text-black dark:text-rose-200';
             } else {
-              optionStyle = 'opacity-60 bg-gray-100 dark:bg-[#1C1C1C]';
+              optionStyle = 'opacity-60 bg-gray-100 dark:bg-[#0B0F17] text-gray-500 dark:text-slate-400';
             }
           }
 
@@ -96,7 +96,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
                 disabled={isSubmitted || disabled}
                 onClick={() => toggleSelect(opt.id)}
                 className={clsx(
-                  'w-full text-left p-3 border-3 border-black dark:border-white rounded-none font-body text-sm',
+                  'w-full text-left p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
                   'transition-all duration-150 flex items-center justify-between gap-3',
                   optionStyle,
                   disabled && 'opacity-50 cursor-not-allowed'
@@ -111,8 +111,8 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
                   {!isSubmitted && (
                     <span
                       className={clsx(
-                        'w-4 h-4 border-2 border-black inline-block',
-                        isSelected ? 'bg-black' : 'bg-white'
+                        'w-4 h-4 border-2 border-black dark:border-slate-700 inline-block',
+                        isSelected ? 'bg-black dark:bg-amber-400' : 'bg-white dark:bg-[#131B2A]'
                       )}
                     />
                   )}
@@ -121,7 +121,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
 
               {/* Show distractor rationale when selected and incorrect */}
               {isSubmitted && isSelected && !correct && opt.distractorRationale && (
-                <div className="p-2.5 bg-[#FFE4E6] dark:bg-[#3D1A22] border-2 border-black text-xs font-body text-rose-900 dark:text-rose-200">
+                <div className="p-2.5 bg-[#FFE4E6] dark:bg-[#2A0E18] border-2 border-black dark:border-rose-600 text-xs font-body text-rose-900 dark:text-rose-200">
                   <strong>Misconception: </strong>
                   {opt.distractorRationale}
                 </div>
@@ -143,7 +143,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-white space-y-2">
+        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
           <div className="flex items-center gap-2">
             {config.options
               .filter((o) => o.isCorrect)
@@ -160,9 +160,9 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
               </div>
             )}
           </div>
-          <div className="p-3 bg-[#FFFDF7] dark:bg-[#202020] border-2 border-black dark:border-white shadow-[2px_2px_0px_#000000]">
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">Explanation:</span>
-            <p className="text-xs font-body leading-relaxed pt-1 text-gray-800 dark:text-gray-200">
+          <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-slate-300">Explanation:</span>
+            <p className="text-xs font-body leading-relaxed pt-1 text-gray-800 dark:text-slate-200">
               {config.explanation}
             </p>
           </div>

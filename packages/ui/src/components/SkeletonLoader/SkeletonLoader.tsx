@@ -21,8 +21,8 @@ export const SkeletonLoader: React.FC<SkeletonLoaderProps> = ({
         clsx(
           width,
           height,
-          'bg-gray-200 dark:bg-[#252525] border-3 border-black dark:border-white rounded-none',
-          'shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#FFFFFF]',
+          'bg-gray-200 dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none',
+          'shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712]',
           'animate-pulse transition-opacity duration-200',
           className
         )

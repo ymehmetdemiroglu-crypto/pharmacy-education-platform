@@ -79,11 +79,11 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
                 disabled={isRevealed || disabled}
                 onClick={() => handleSelect(opt.id)}
                 className={clsx(
-                  'w-full text-left p-3 border-3 border-black dark:border-white rounded-none font-body text-sm',
+                  'w-full text-left p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
                   'transition-all duration-150 flex items-center justify-between',
                   isSelected
                     ? 'bg-[#FFD93D] text-black shadow-neo-sm font-bold translate-x-1'
-                    : 'bg-white dark:bg-[#252525] text-black dark:text-white hover:bg-gray-100 dark:hover:bg-[#303030]',
+                    : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800',
                   disabled && 'opacity-60 cursor-not-allowed'
                 )}
               >
@@ -108,7 +108,7 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-white space-y-3 animate-in fade-in duration-200">
+        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-3 animate-in fade-in duration-200">
           <div className="flex items-center gap-2">
             {selectedOption?.isCorrect ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
@@ -125,19 +125,19 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
 
           {/* Targeted Misconception feedback if incorrect */}
           {!selectedOption?.isCorrect && selectedOption?.misconceptionFeedback && (
-            <div className="p-3 bg-[#FFE4E6] dark:bg-[#3F1B24] border-2 border-black font-body text-xs leading-relaxed text-black dark:text-white">
+            <div className="p-3 bg-[#FFE4E6] dark:bg-[#2A0E18] border-2 border-black dark:border-rose-600 font-body text-xs leading-relaxed text-rose-900 dark:text-rose-200">
               <strong>Targeted Note: </strong>
               {selectedOption.misconceptionFeedback}
             </div>
           )}
 
           {/* Outcome & Full Explanation */}
-          <div className="p-3 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white space-y-1.5 shadow-[2px_2px_0px_#000000]">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+          <div className="p-3 bg-white dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 space-y-1.5 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] text-black dark:text-slate-100">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-slate-300">
               Experimental Finding:
             </span>
             <p className="font-body text-sm font-semibold">{config.revealedOutcome}</p>
-            <p className="font-body text-xs text-gray-700 dark:text-gray-300 leading-relaxed pt-1">
+            <p className="font-body text-xs text-gray-700 dark:text-slate-300 leading-relaxed pt-1">
               {config.explanation}
             </p>
           </div>

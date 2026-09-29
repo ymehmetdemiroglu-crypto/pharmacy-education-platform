@@ -20,7 +20,7 @@ export default defineConfig({
   webServer: {
     command: 'pnpm --filter @pharmacy/web preview --port 4173',
     port: 4173,
-    reuseExistingServer: false,
+    reuseExistingServer: true,
     timeout: 60000,
   },
   projects: [

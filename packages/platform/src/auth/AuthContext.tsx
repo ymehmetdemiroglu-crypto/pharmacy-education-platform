@@ -6,6 +6,9 @@ export interface AuthContextType {
   entitlements: CourseEntitlement[];
   loading: boolean;
   signInGuest: () => void;
+  signInWithEmail?: (email: string, password?: string | undefined) => Promise<void>;
+  signUpWithEmail?: (details: { name: string; email: string; password?: string | undefined; university?: string | undefined }) => Promise<void>;
+  signInWithGoogle?: () => Promise<void>;
   startTrial: () => Promise<boolean>;
   logout: () => void;
 }
@@ -32,7 +35,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       trialUsed: false,
       trialStartedAt: null,
       trialEndsAt: null,
-      preferredLanguage: 'en',
+      preferredLanguage: 'tr',
       createdAt: new Date().toISOString(),
       lastActiveAt: new Date().toISOString(),
     };
@@ -75,7 +78,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       trialUsed: false,
       trialStartedAt: null,
       trialEndsAt: null,
-      preferredLanguage: 'en',
+      preferredLanguage: 'tr',
       createdAt: new Date().toISOString(),
       lastActiveAt: new Date().toISOString(),
     };
@@ -118,6 +121,74 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return true;
   };
 
+  const signInWithEmail = async (email: string, _password?: string): Promise<void> => {
+    setLoading(true);
+    const existing = user || ({} as Partial<UserProfile>);
+    const nameFromEmail = email.split('@')[0] || 'Öğrenci';
+    const loggedInUser: UserProfile = {
+      userId: 'usr-' + Math.random().toString(36).substring(2, 9),
+      email,
+      displayName: existing.displayName && !existing.displayName.includes('Guest') ? existing.displayName : nameFromEmail,
+      university: existing.university || 'İstanbul Üniversitesi',
+      plan: existing.plan || 'free',
+      trialUsed: existing.trialUsed ?? false,
+      trialStartedAt: existing.trialStartedAt ?? null,
+      trialEndsAt: existing.trialEndsAt ?? null,
+      preferredLanguage: existing.preferredLanguage || 'tr',
+      createdAt: existing.createdAt || new Date().toISOString(),
+      lastActiveAt: new Date().toISOString(),
+    };
+    setUser(loggedInUser);
+    setLoading(false);
+  };
+
+  const signUpWithEmail = async ({
+    name,
+    email,
+    university,
+  }: {
+    name: string;
+    email: string;
+    password?: string | undefined;
+    university?: string | undefined;
+  }): Promise<void> => {
+    setLoading(true);
+    const newUser: UserProfile = {
+      userId: 'usr-' + Math.random().toString(36).substring(2, 9),
+      email,
+      displayName: name,
+      university: university || 'İstanbul Üniversitesi',
+      plan: 'free',
+      trialUsed: false,
+      trialStartedAt: null,
+      trialEndsAt: null,
+      preferredLanguage: 'tr',
+      createdAt: new Date().toISOString(),
+      lastActiveAt: new Date().toISOString(),
+    };
+    setUser(newUser);
+    setLoading(false);
+  };
+
+  const signInWithGoogle = async (): Promise<void> => {
+    setLoading(true);
+    const googleUser: UserProfile = {
+      userId: 'g-user-' + Math.random().toString(36).substring(2, 9),
+      email: 'student@istanbul.edu.tr',
+      displayName: 'Ecz. Öğrencisi',
+      university: 'İstanbul Üniversitesi',
+      plan: 'free',
+      trialUsed: false,
+      trialStartedAt: null,
+      trialEndsAt: null,
+      preferredLanguage: 'tr',
+      createdAt: new Date().toISOString(),
+      lastActiveAt: new Date().toISOString(),
+    };
+    setUser(googleUser);
+    setLoading(false);
+  };
+
   const logout = () => {
     setUser(null);
     setEntitlements([]);
@@ -134,6 +205,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         entitlements,
         loading,
         signInGuest,
+        signInWithEmail,
+        signUpWithEmail,
+        signInWithGoogle,
         startTrial,
         logout,
       }}

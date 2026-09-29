@@ -20,14 +20,14 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
   return (
     <div
       aria-label="Mathematical Model Disclaimer"
-      className={`border-2 border-black dark:border-white bg-[#FFFDF7] dark:bg-[#1A1A1A] p-2 text-xs font-mono select-none ${className || ''}`}
+      className={`border-2 border-black dark:border-slate-700 bg-[#FFFDF7] dark:bg-[#131B2A] p-2 text-xs font-mono select-none text-black dark:text-slate-100 ${className || ''}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
           <StickerBadge variant="yellow" size="sm">
             Model Illustration
           </StickerBadge>
-          <span className="text-[11px] text-gray-700 dark:text-gray-300">
+          <span className="text-[11px] text-gray-700 dark:text-slate-300">
             Simplified educational mathematical model
           </span>
         </div>
@@ -35,7 +35,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
           type="button"
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
-          className="flex items-center gap-1 font-bold underline hover:text-blue-600"
+          className="flex items-center gap-1 font-bold underline hover:text-amber-500"
         >
           <Info className="w-3.5 h-3.5" />
           <span>{isExpanded ? 'Hide Equation' : 'View Equation'}</span>
@@ -44,21 +44,21 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
       </div>
 
       {isExpanded && (
-        <div className="mt-2 pt-2 border-t border-black/20 dark:border-white/20 space-y-1.5 text-[11px]">
+        <div className="mt-2 pt-2 border-t border-black/20 dark:border-slate-700 space-y-1.5 text-[11px]">
           <div>
-            <span className="font-bold text-gray-700 dark:text-gray-300">Governing Equation: </span>
-            <code className="bg-black/5 dark:bg-white/10 px-1 py-0.5 font-mono text-black dark:text-white">
+            <span className="font-bold text-gray-700 dark:text-slate-300">Governing Equation: </span>
+            <code className="bg-black/5 dark:bg-[#1E293B] px-1 py-0.5 font-mono text-black dark:text-amber-300 border border-black/20 dark:border-slate-700">
               {equation}
             </code>
           </div>
           <div>
-            <span className="font-bold text-gray-700 dark:text-gray-300">Source: </span>
-            <span className="italic text-gray-700 dark:text-gray-300">{sourceReference}</span>
+            <span className="font-bold text-gray-700 dark:text-slate-300">Source: </span>
+            <span className="italic text-gray-700 dark:text-slate-300">{sourceReference}</span>
           </div>
           {assumptions && assumptions.length > 0 && (
             <div>
-              <span className="font-bold text-gray-700 dark:text-gray-300">Assumptions: </span>
-              <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 pl-1">
+              <span className="font-bold text-gray-700 dark:text-slate-300">Assumptions: </span>
+              <ul className="list-disc list-inside text-gray-600 dark:text-slate-400 pl-1">
                 {assumptions.map((a, i) => (
                   <li key={i}>{a}</li>
                 ))}

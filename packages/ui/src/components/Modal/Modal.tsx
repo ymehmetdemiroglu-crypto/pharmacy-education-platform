@@ -89,7 +89,7 @@ export const Modal: React.FC<ModalProps> = ({
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-none animate-in fade-in duration-150"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 dark:bg-black/80 backdrop-blur-none animate-in fade-in duration-150"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -98,9 +98,9 @@ export const Modal: React.FC<ModalProps> = ({
         ref={modalRef}
         className={twMerge(
           clsx(
-            'w-full bg-white dark:bg-[#1E1E1E] text-black dark:text-white',
-            'border-4 border-black dark:border-white rounded-none',
-            'shadow-[8px_8px_0px_#000000] dark:shadow-[8px_8px_0px_#FFFFFF]',
+            'w-full bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
+            'border-4 border-black dark:border-slate-700 rounded-none',
+            'shadow-[8px_8px_0px_#000000] dark:shadow-[8px_8px_0px_#030712]',
             'flex flex-col overflow-hidden max-h-[90vh]',
             maxWidthMap[maxWidth],
             className
@@ -108,7 +108,7 @@ export const Modal: React.FC<ModalProps> = ({
         )}
       >
         {/* Header - [DES-P1-02] RTL layout handling */}
-        <div className="flex items-center justify-between p-4 sm:p-5 border-b-3 border-black dark:border-white bg-[#FFF8E7] dark:bg-[#121212]">
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b-3 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0B0F17]">
           <h2
             id="modal-title"
             className="font-display font-black text-lg sm:text-xl tracking-tight uppercase"
@@ -119,7 +119,7 @@ export const Modal: React.FC<ModalProps> = ({
             type="button"
             onClick={onClose}
             aria-label="Close modal"
-            className="p-1.5 border-2 border-black dark:border-white hover:bg-black/10 dark:hover:bg-white/10 active:translate-x-0.5 active:translate-y-0.5 transition-transform"
+            className="p-1.5 border-2 border-black dark:border-slate-700 hover:bg-black/10 dark:hover:bg-slate-800 text-black dark:text-slate-100 active:translate-x-0.5 active:translate-y-0.5 transition-transform"
           >
             <X className="w-5 h-5 stroke-[2.5]" />
           </button>
@@ -130,7 +130,7 @@ export const Modal: React.FC<ModalProps> = ({
 
         {/* Footer */}
         {footer && (
-          <div className="p-4 border-t-3 border-black dark:border-white bg-[#FFF8E7] dark:bg-[#121212]">
+          <div className="p-4 border-t-3 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0B0F17]">
             {footer}
           </div>
         )}

@@ -59,7 +59,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       </div>
 
       {/* Interactive Molecule & Metabolic Sites Diagram */}
-      <div className="w-full bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark p-4 flex flex-col items-center">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex flex-col items-center">
         <svg
           viewBox="0 0 400 200"
           className="w-full max-w-md h-auto select-none"
@@ -75,7 +75,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
             fill="#FFF8E7"
             stroke="#000000"
             strokeWidth="3"
-            className="dark:fill-[#2A2A2A] dark:stroke-white"
+            className="dark:fill-[#1E293B] dark:stroke-slate-600"
           />
           <text
             x="200"
@@ -120,7 +120,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                   stroke="#000000"
                   strokeWidth="2.5"
                   strokeDasharray="4 3"
-                  className="dark:stroke-white"
+                  className="dark:stroke-slate-500"
                 />
 
                 {/* Hotspot Box */}
@@ -163,9 +163,9 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
 
       {/* Selected Site Detail Inspection */}
       {selectedSite && (
-        <div className="p-3 bg-[#FFFDF7] dark:bg-[#202020] border-2 border-black dark:border-white shadow-[2px_2px_0px_#000000] space-y-2">
+        <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono font-bold uppercase text-black dark:text-white">
+            <span className="text-xs font-mono font-bold uppercase text-black dark:text-slate-100">
               Selected Pathway: {selectedSite.label} ({selectedSite.reactionType})
             </span>
             <div className="flex items-center gap-1.5">
@@ -182,7 +182,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
               )}
             </div>
           </div>
-          <p className="text-xs font-body text-gray-700 dark:text-gray-300">
+          <p className="text-xs font-body text-gray-700 dark:text-slate-300">
             <strong>Outcome: </strong> {selectedSite.metaboliteOutcome}
           </p>
         </div>
@@ -191,7 +191,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       {/* Submit / Outcome */}
       {!isSubmitted ? (
         <div className="flex items-center justify-between pt-2">
-          <span className="text-xs font-mono text-gray-700 dark:text-gray-300">
+          <span className="text-xs font-mono text-gray-700 dark:text-slate-300">
             {selectedSite ? 'Click confirm to verify toxic risk pathway' : 'Select a metabolic site on the diagram'}
           </span>
           <Button
@@ -203,7 +203,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-white space-y-2">
+        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
           <div className="flex items-center gap-2">
             {selectedSite?.isTargetSite ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
@@ -217,7 +217,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
               </div>
             )}
           </div>
-          <div className="p-3 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white text-xs font-body leading-relaxed text-black dark:text-white shadow-[2px_2px_0px_#000000]">
+          <div className="p-3 bg-white dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-body leading-relaxed text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
             {config.explanation}
           </div>
         </div>

@@ -9,7 +9,8 @@ export interface UserProfile {
   trialEndsAt?: string | null; // ISO timestamp
   trialUsed: boolean;
   preferredLanguage: 'tr' | 'en' | 'ar';
-  country?: string;
+  country?: string | undefined;
+  university?: string | undefined;
   createdAt: string;
   lastActiveAt: string;
 }

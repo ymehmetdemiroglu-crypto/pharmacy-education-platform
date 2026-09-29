@@ -159,23 +159,11 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
     await page.getByRole('button', { name: /need a hint/i }).click();
     await widgetContainer.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-widget-9-hint-ladder-tier2.png`) });
 
-    // 6. Paywall Modal Matrix (USD, TRY, SAR, and Dark+RTL)
-    await page.getByRole('button', { name: /open paywall/i }).first().click();
+    // 6. Paywall Modal Matrix (TRY only and Dark+RTL)
+    await page.getByRole('button', { name: /open paywall|abonelik ve ödeme|فتح نافذة الاشتراك/i }).first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
-
-    // USD
-    await page.getByRole('button', { name: 'USD', exact: true }).click();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-paywall-modal-usd.png`) });
-
-    // TRY
-    await page.getByRole('button', { name: 'TRY', exact: true }).click();
     await expect(page.getByText('₺850', { exact: true })).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-paywall-modal-try.png`) });
-
-    // SAR
-    await page.getByRole('button', { name: 'SAR', exact: true }).click();
-    await expect(page.getByText('SAR 190', { exact: true })).toBeVisible();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-paywall-modal-sar.png`) });
 
     // Close modal
     await page.keyboard.press('Escape');

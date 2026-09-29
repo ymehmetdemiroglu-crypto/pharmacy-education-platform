@@ -70,15 +70,15 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       </div>
 
       {/* Chemical Metadata Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2 p-2 bg-[#FFF8E7] dark:bg-[#1C1C1C] border-2 border-black dark:border-white text-xs font-mono">
+      <div className="flex flex-wrap items-center justify-between gap-2 p-2 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-mono">
         <span>Molecule: <strong>{config.moleculeName}</strong></span>
         <span className="truncate max-w-xs" title={config.smiles}>
-          SMILES: <code className="bg-white dark:bg-black px-1 border">{config.smiles}</code>
+          SMILES: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700">{config.smiles}</code>
         </span>
       </div>
 
       {/* Interactive Molecule SVG Canvas */}
-      <div className="w-full bg-white dark:bg-[#1A1A1A] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark p-4 flex items-center justify-center relative overflow-hidden">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex items-center justify-center relative overflow-hidden">
         <svg
           viewBox="0 0 400 240"
           className="w-full max-w-md h-auto select-none"
@@ -101,7 +101,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                   stroke="#000000"
                   strokeWidth="3.5"
                   strokeLinecap="round"
-                  className="dark:stroke-white"
+                  className="dark:stroke-slate-300"
                 />
                 {isDouble && (
                   <line
@@ -112,7 +112,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                     stroke="#000000"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    className="dark:stroke-white"
+                    className="dark:stroke-slate-300"
                   />
                 )}
               </g>
@@ -199,7 +199,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-white space-y-2">
+        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
           <div className="flex items-center gap-2">
             {selectedAtom?.isTarget ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
@@ -214,12 +214,12 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
             )}
           </div>
           {selectedAtom && !selectedAtom.isTarget && selectedAtom.distractorRationale && (
-            <div className="p-3 bg-[#FFF0F5] dark:bg-[#2D1B22] border-2 border-[#FF6B9D] text-xs font-body leading-relaxed text-black dark:text-white">
+            <div className="p-3 bg-[#FFF0F5] dark:bg-[#2D1B22] border-2 border-[#FF6B9D] text-xs font-body leading-relaxed text-black dark:text-rose-200">
               <span className="font-bold font-mono text-[#D92662] dark:text-[#FF85B2] uppercase block mb-1">Misconception Note:</span>
               {selectedAtom.distractorRationale}
             </div>
           )}
-          <div className="p-3 bg-[#FFFDF7] dark:bg-[#202020] border-2 border-black dark:border-white text-xs font-body leading-relaxed text-black dark:text-white shadow-[2px_2px_0px_#000000]">
+          <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-body leading-relaxed text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
             {config.explanation}
           </div>
         </div>

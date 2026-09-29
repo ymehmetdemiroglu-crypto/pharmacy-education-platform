@@ -26,7 +26,7 @@ export const HintLadder: React.FC<HintLadderProps> = ({
         </span>
       </div>
 
-      <p className="font-body text-sm font-semibold text-black dark:text-white">
+      <p className="font-body text-sm font-semibold text-black dark:text-slate-100">
         {config.stepPrompt}
       </p>
 

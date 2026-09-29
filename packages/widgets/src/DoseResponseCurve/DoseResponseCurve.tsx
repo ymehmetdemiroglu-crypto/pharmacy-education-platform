@@ -96,10 +96,10 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
             disabled={disabled}
             onClick={() => handleModeChange(mode)}
             className={clsx(
-              'px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-white transition-all',
+              'px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
               activeMode === mode
                 ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000] scale-102'
-                : 'bg-white dark:bg-[#202020] text-black dark:text-white hover:bg-gray-100'
+                : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
             )}
           >
             {mode.replace('_', ' ')}
@@ -108,7 +108,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
       </div>
 
       {/* SVG Canvas Curve */}
-      <div className="w-full bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark p-3">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3">
         <svg
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"
@@ -121,8 +121,8 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           <line x1="50" y1="210" x2="370" y2="210" stroke="#E5E7EB" strokeWidth="1" />
 
           {/* Axes */}
-          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-white" />
-          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-white" />
+          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
+          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
 
           {/* Axis Labels */}
           <text x="35" y="45" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">100%</text>
@@ -167,7 +167,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
         </svg>
 
         {/* Legend */}
-        <div aria-live="polite" className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-white/10 text-[11px] font-mono">
+        <div aria-live="polite" className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-slate-700 text-[11px] font-mono">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 bg-[#FF9F45] border border-black inline-block" /> Active Response
@@ -185,7 +185,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
       </div>
 
       {/* Interactive Controls */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-gray-50 dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <Slider
           label="Agonist Potency (log EC50)"
           value={logEc50}
