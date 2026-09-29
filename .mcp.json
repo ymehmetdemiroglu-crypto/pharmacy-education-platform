@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "dodopayments": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "DODO_PAYMENTS_API_KEY": "${DODO_PAYMENTS_API_KEY}",
+        "DODO_PAYMENTS_ENVIRONMENT": "test_mode"
+      }
+    }
+  }
+}
