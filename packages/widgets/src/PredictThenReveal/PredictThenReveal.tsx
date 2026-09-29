@@ -52,7 +52,7 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
           <StickerBadge variant="blue" size="sm">
             Predict-Then-Reveal
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -66,7 +66,7 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
 
       {/* Options Selection */}
       <div className="space-y-2.5">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-500">
+        <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
           Step 1: Commit your hypothesis
         </span>
         <div className="grid grid-cols-1 gap-2">
@@ -133,7 +133,7 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
 
           {/* Outcome & Full Explanation */}
           <div className="p-3 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white space-y-1.5 shadow-[2px_2px_0px_#000000]">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-500">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
               Experimental Finding:
             </span>
             <p className="font-body text-sm font-semibold">{config.revealedOutcome}</p>

@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const MatchPairSchema = z.object({
   id: z.string(),
@@ -17,7 +18,7 @@ export const ReceptorResidueSchema = z.object({
 
 export const ReceptorLigandMatcherConfigSchema = z.object({
   title: z.string(),
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   drugName: z.string(),
   receptorName: z.string(),
   pairs: z.array(MatchPairSchema).min(2).max(4),

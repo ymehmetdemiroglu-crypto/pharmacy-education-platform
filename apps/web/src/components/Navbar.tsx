@@ -14,11 +14,34 @@ export const Navbar: React.FC = () => {
     setLocale(newLocale);
   };
 
+  const getNavLabel = (key: 'gallery' | 'courses' | 'pricing') => {
+    if (locale === 'tr') {
+      if (key === 'gallery') return 'Galeri';
+      if (key === 'courses') return 'Dersler';
+      if (key === 'pricing') return 'Fiyatlandırma';
+    }
+    if (locale === 'ar') {
+      if (key === 'gallery') return 'المعرض';
+      if (key === 'courses') return 'المقررات';
+      if (key === 'pricing') return 'الأسعار';
+    }
+    if (key === 'gallery') return 'Gallery';
+    if (key === 'courses') return 'Courses';
+    return 'Pricing';
+  };
+
   const navLinks = [
-    { to: '/gallery', label: 'Gallery', icon: Layers },
-    { to: '/catalog', label: 'Courses', icon: BookOpen },
-    { to: '/pricing', label: 'Pricing', icon: CreditCard },
+    { to: '/gallery', label: getNavLabel('gallery'), icon: Layers },
+    { to: '/catalog', label: getNavLabel('courses'), icon: BookOpen },
+    { to: '/pricing', label: getNavLabel('pricing'), icon: CreditCard },
   ];
+
+  const brandSubtitle =
+    locale === 'tr'
+      ? 'Medisinal Kimya ve Farmakoloji'
+      : locale === 'ar'
+      ? 'الكيمياء الدوائية وعلم الأدوية'
+      : 'MedChem & Pharmacology';
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white dark:bg-[#1A1A1A] border-b-3 border-black dark:border-white shadow-[0_4px_0_0_#000000] dark:shadow-[0_4px_0_0_#FFFFFF]">
@@ -28,15 +51,15 @@ export const Navbar: React.FC = () => {
           to="/gallery"
           className="flex items-center gap-2 select-none group focus:outline-none"
         >
-          <div className="w-9 h-9 bg-[#FFD93D] border-3 border-black flex items-center justify-center font-black text-lg shadow-[2px_2px_0px_#000000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+          <div className="w-9 h-9 bg-[#FFD93D] text-black border-3 border-black flex items-center justify-center font-black text-lg shadow-[2px_2px_0px_#000000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
             Rx
           </div>
           <div className="flex flex-col">
             <span className="font-display font-black text-base sm:text-lg uppercase tracking-tight text-black dark:text-white leading-none">
               PharmLearn
             </span>
-            <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">
-              MedChem & Pharmacology
+            <span className="text-[10px] font-mono text-gray-600 dark:text-gray-300 uppercase tracking-wider">
+              {brandSubtitle}
             </span>
           </div>
         </Link>
@@ -110,11 +133,11 @@ export const Navbar: React.FC = () => {
           {/* User / Trial badge */}
           {user?.plan === 'trial' ? (
             <StickerBadge variant="yellow" size="sm" className="hidden sm:inline-flex">
-              Trial Active
+              {locale === 'tr' ? 'Deneme Aktif' : locale === 'ar' ? 'تجربة نشطة' : 'Trial Active'}
             </StickerBadge>
           ) : user?.plan === 'premium' ? (
             <StickerBadge variant="green" size="sm" className="hidden sm:inline-flex">
-              Pass Holder
+              {locale === 'tr' ? 'Abonelik Aktif' : locale === 'ar' ? 'مشترك' : 'Pass Holder'}
             </StickerBadge>
           ) : (
             <Button
@@ -124,7 +147,7 @@ export const Navbar: React.FC = () => {
               className="hidden sm:inline-flex"
               leftIcon={<Sparkles className="w-3.5 h-3.5" />}
             >
-              Free Trial
+              {locale === 'tr' ? 'Ücretsiz Deneme' : locale === 'ar' ? 'تجربة مجانية' : 'Free Trial'}
             </Button>
           )}
         </div>

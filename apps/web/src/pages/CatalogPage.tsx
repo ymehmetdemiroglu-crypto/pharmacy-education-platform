@@ -1,14 +1,62 @@
 import React from 'react';
-import { Card, Button, StickerBadge } from '@pharmacy/ui';
+import { Card, Button, StickerBadge, useTheme } from '@pharmacy/ui';
 import { Layers, Clock, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const CatalogPage: React.FC = () => {
+  const { locale } = useTheme();
+
+  const copy = {
+    en: {
+      heroTitle: 'Pharmacy Course Catalog',
+      heroDesc: 'Two distinct, rigorous university-level courses engineered specifically for pharmacy students. Every module starts with two free interactive lessons to guarantee deep conceptual grasp before committing.',
+      freemiumBadge: 'Permanent Freemium',
+      freeLessonsBadge: 'Lessons 1 & 2 Free Forever',
+      medchemTitle: 'Course A: Medicinal Chemistry',
+      medchemTagline: 'Structure-Activity Relationships, Bioisosterism & Drug Design',
+      pharmTitle: 'Course B: Pharmacology',
+      pharmTagline: 'Receptor Dynamics, Signal Transduction & Pharmacokinetics',
+      exploreBtn: 'Explore Course Curriculum',
+    },
+    tr: {
+      heroTitle: 'Eczacılık Ders Kataloğu',
+      heroDesc: 'Eczacılık öğrencileri için özel olarak tasarlanmış iki kapsamlı ve etkileşimli ders. Her modül, kavramları derinlemesine öğrenmeniz için ilk iki dersi tamamen ücretsiz sunar.',
+      freemiumBadge: 'Kalıcı Ücretsiz Erişim',
+      freeLessonsBadge: 'Her Modülde 1. ve 2. Ders Ücretsiz',
+      medchemTitle: 'Ders A: Farmasötik Kimya (MedChem)',
+      medchemTagline: 'Yapı-Etki İlişkileri (SAR), Biyoizosterizm ve İlaç Tasarımı',
+      pharmTitle: 'Ders B: Farmakoloji',
+      pharmTagline: 'Reseptör Dinamikleri, Sinyal İletimi ve Farmakokinetik',
+      exploreBtn: 'Müfredatı İncele',
+    },
+    ar: {
+      heroTitle: 'دليل المقررات الصيدلانية',
+      heroDesc: 'مقرران جامعيان تفاعليان ومتقنان صُمما خصيصاً لطلاب كليات الصيدلة. يبدأ كل موديول بدرسين مجانيين بالكامل لضمان استيعاب المفاهيم الأساسية.',
+      freemiumBadge: 'نموذج مجاني دائم',
+      freeLessonsBadge: 'الدرس 1 و 2 مجاناً في كل موديول',
+      medchemTitle: 'المقرر أ: الكيمياء الدوائية',
+      medchemTagline: 'علاقات البنية بالفعالية الحيوية والتصميم الدوائي',
+      pharmTitle: 'المقرر ب: علم الأدوية (الفارماكولوجي)',
+      pharmTagline: 'ديناميكا المستقبلات ونقل الإشارة والحركية الدوائية',
+      exploreBtn: 'استكشف المنهج الدراسي',
+    },
+  }[locale] || {
+    heroTitle: 'Pharmacy Course Catalog',
+    heroDesc: 'Two distinct, rigorous university-level courses engineered specifically for pharmacy students. Every module starts with two free interactive lessons to guarantee deep conceptual grasp before committing.',
+    freemiumBadge: 'Permanent Freemium',
+    freeLessonsBadge: 'Lessons 1 & 2 Free Forever',
+    medchemTitle: 'Course A: Medicinal Chemistry',
+    medchemTagline: 'Structure-Activity Relationships, Bioisosterism & Drug Design',
+    pharmTitle: 'Course B: Pharmacology',
+    pharmTagline: 'Receptor Dynamics, Signal Transduction & Pharmacokinetics',
+    exploreBtn: 'Explore Course Curriculum',
+  };
+
   const courses = [
     {
       id: 'medchem',
-      title: 'Course A: Medicinal Chemistry',
-      tagline: 'Structure-Activity Relationships, Bioisosterism & Drug Design',
+      title: copy.medchemTitle,
+      tagline: copy.medchemTagline,
       accent: 'blue',
       badgeColor: 'blue' as const,
       modulesCount: 5,
@@ -27,8 +75,8 @@ export const CatalogPage: React.FC = () => {
     },
     {
       id: 'pharmacology',
-      title: 'Course B: Pharmacology',
-      tagline: 'Receptor Dynamics, Signal Transduction & Pharmacokinetics',
+      title: copy.pharmTitle,
+      tagline: copy.pharmTagline,
       accent: 'orange',
       badgeColor: 'orange' as const,
       modulesCount: 6,
@@ -54,14 +102,14 @@ export const CatalogPage: React.FC = () => {
       <section className="bg-[#FFF8E7] dark:bg-[#121212] border-b-3 border-black dark:border-white py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <StickerBadge variant="green" size="sm">Permanent Freemium</StickerBadge>
-            <StickerBadge variant="yellow" size="sm">Lessons 1 & 2 Free Forever</StickerBadge>
+            <StickerBadge variant="green" size="sm">{copy.freemiumBadge}</StickerBadge>
+            <StickerBadge variant="yellow" size="sm">{copy.freeLessonsBadge}</StickerBadge>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight">
-            Pharmacy Course Catalog
+          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-white">
+            {copy.heroTitle}
           </h1>
           <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
-            Two distinct, rigorous university-level courses engineered specifically for pharmacy students. Every module starts with two free interactive lessons to guarantee deep conceptual grasp before committing.
+            {copy.heroDesc}
           </p>
         </div>
       </section>
@@ -91,11 +139,11 @@ export const CatalogPage: React.FC = () => {
 
               <div className="flex items-center gap-4 text-xs font-mono">
                 <div className="flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-gray-500" />
+                  <Layers className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                   <span>{course.modulesCount} Modules ({course.totalLessons} Lessons)</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-gray-500" />
+                  <Clock className="w-4 h-4 text-gray-700 dark:text-gray-300" />
                   <span>~{course.estimatedHours} Hours</span>
                 </div>
               </div>
@@ -113,7 +161,7 @@ export const CatalogPage: React.FC = () => {
 
             {/* Modules List */}
             <div className="space-y-3">
-              <h3 className="font-mono font-bold text-xs uppercase tracking-wider text-gray-500">
+              <h3 className="font-mono font-bold text-xs uppercase tracking-wider text-gray-700 dark:text-gray-300">
                 Course Curriculum Modules
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -144,14 +192,21 @@ export const CatalogPage: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 No credit card required to start free lessons
               </span>
-              <div className="flex gap-3">
+              <div className="flex flex-wrap gap-3">
+                {course.id === 'medchem' && (
+                  <Link to="/courses/medchem/lessons/1">
+                    <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4" />}>
+                      Start Free Lesson 1
+                    </Button>
+                  </Link>
+                )}
                 <Link to="/gallery">
                   <Button variant="secondary" size="md">
                     Explore Widgets
                   </Button>
                 </Link>
                 <Link to="/pricing">
-                  <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4" />}>
+                  <Button variant="secondary" size="md">
                     View Student Passes
                   </Button>
                 </Link>

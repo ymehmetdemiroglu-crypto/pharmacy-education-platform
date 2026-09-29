@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const HintLadderConfigSchema = z.object({
-  stepPrompt: z.string().max(240),
+  stepPrompt: maxWords(40),
   hints: z.array(z.string()).min(1).max(3),
   source: z.object({
     file: z.string(),

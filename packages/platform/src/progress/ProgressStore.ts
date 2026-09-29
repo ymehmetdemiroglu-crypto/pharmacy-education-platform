@@ -44,3 +44,39 @@ export function completeLesson(
     currentLessonId: lessonId,
   };
 }
+
+export function getDefaultProgress(courseId: string = 'medchem'): UserProgress {
+  return {
+    courseId,
+    completedLessonIds: [],
+    currentModuleId: 'mc-mod-01',
+    currentLessonId: 'mc-mod1-les1',
+    currentStepIndex: 0,
+    streakDays: 0,
+    lastStreakDate: '',
+    totalXP: 0,
+    accuracyRate: 100,
+  };
+}
+
+export function loadLocalProgress(courseId: string = 'medchem'): UserProgress {
+  if (typeof window === 'undefined') return getDefaultProgress(courseId);
+  try {
+    const raw = localStorage.getItem(`pharmacy_progress_${courseId}`);
+    if (raw) {
+      return JSON.parse(raw);
+    }
+  } catch (err) {
+    console.warn('Failed to load local progress:', err);
+  }
+  return getDefaultProgress(courseId);
+}
+
+export function saveLocalProgress(progress: UserProgress): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(`pharmacy_progress_${progress.courseId}`, JSON.stringify(progress));
+  } catch (err) {
+    console.warn('Failed to save local progress:', err);
+  }
+}

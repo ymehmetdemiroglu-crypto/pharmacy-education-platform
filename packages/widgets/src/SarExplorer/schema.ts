@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const SubstituentOptionSchema = z.object({
   id: z.string(),
@@ -18,7 +19,7 @@ export const SubstitutionPositionSchema = z.object({
 
 export const SarExplorerConfigSchema = z.object({
   scaffoldName: z.string(),
-  scaffoldDescription: z.string(),
+  scaffoldDescription: maxWords(40),
   baseLogP: z.number(),
   basePka: z.number(),
   baseAffinityNm: z.number(),

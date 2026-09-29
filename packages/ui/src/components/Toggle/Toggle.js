@@ -1,6 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-export const Toggle = ({ label, checked, onChange, disabled = false, className, }) => {
-    return (_jsxs("label", { className: twMerge(clsx('inline-flex items-center gap-3 select-none cursor-pointer', disabled && 'opacity-50 cursor-not-allowed', className)), children: [_jsxs("div", { className: "relative inline-flex items-center", children: [_jsx("input", { type: "checkbox", className: "sr-only peer", checked: checked, disabled: disabled, onChange: (e) => onChange(e.target.checked) }), _jsx("div", { className: clsx('w-12 h-6 border-3 border-black dark:border-white transition-colors duration-150', 'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]', checked ? 'bg-[#6BCB77]' : 'bg-gray-200 dark:bg-gray-700') }), _jsx("div", { className: clsx('absolute top-0.5 left-0.5 w-5 h-5 bg-white border-2 border-black transition-transform duration-150', checked ? 'translate-x-6 bg-[#FFD93D]' : 'translate-x-0') })] }), _jsx("span", { className: "text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white", children: label })] }));
-};

@@ -7,7 +7,7 @@
     "dev": "pnpm --filter @pharmacy/web dev",
     "build": "pnpm -r --filter=!./functions run build",
     "lint": "pnpm -r run lint",
-    "typecheck": "pnpm -r run typecheck",
+    "typecheck": "pnpm -r --workspace-concurrency=1 run typecheck",
     "test": "pnpm -r --workspace-concurrency=1 run test",
     "test:watch": "vitest",
     "test:rules": "node scripts/run-rules-tests.mjs",

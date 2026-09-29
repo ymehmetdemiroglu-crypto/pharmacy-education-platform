@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { Card, Button, StickerBadge } from '@pharmacy/ui';
+import { Card, Button, StickerBadge, useTheme } from '@pharmacy/ui';
 import { Check, Sparkles, ArrowRight } from 'lucide-react';
 import { useAuth } from '@pharmacy/platform';
 
 type Currency = 'USD' | 'TRY' | 'SAR';
 
 export const PricingPage: React.FC = () => {
-  const [currency, setCurrency] = useState<Currency>('USD');
+  const { locale } = useTheme();
+  const [currency, setCurrency] = useState<Currency>(() => (locale === 'tr' ? 'TRY' : locale === 'ar' ? 'SAR' : 'USD'));
   const [isBundle, setIsBundle] = useState(false);
   const { startTrial } = useAuth();
+
+  React.useEffect(() => {
+    if (locale === 'tr') setCurrency('TRY');
+    else if (locale === 'ar') setCurrency('SAR');
+    else setCurrency('USD');
+  }, [locale]);
 
   const prices = {
     USD: {
@@ -25,6 +32,32 @@ export const PricingPage: React.FC = () => {
     },
   };
 
+  const copy = {
+    en: {
+      badgeEconomics: 'Student-First Economics',
+      badgeTrial: '7-Day Free Trial',
+      heroTitle: 'Transparent Academic Passes',
+      heroDesc: 'High-comprehension pharmacy education built for students. Permanent free access to the first two lessons of every module, plus 7-day trials with zero card commitment.',
+    },
+    tr: {
+      badgeEconomics: 'Öğrenci Dostu Fiyatlandırma',
+      badgeTrial: '7 Günlük Ücretsiz Deneme',
+      heroTitle: 'Şeffaf Akademik Abonelikler',
+      heroDesc: 'Eczacılık öğrencileri için yüksek kavrama odaklı eğitim. Her modülün ilk iki dersine kalıcı ücretsiz erişim ve kredi kartı gerektirmeyen 7 günlük deneme sürümü.',
+    },
+    ar: {
+      badgeEconomics: 'اقتصاديات داعمة للطلاب',
+      badgeTrial: 'تجربة مجانية لمدة 7 أيام',
+      heroTitle: 'اشتراكات أكاديمية شفافة',
+      heroDesc: 'تعليم صيدلاني عالي الفهم والاستيعاب مخصص للطلاب. وصول مجاني دائم لأول درسين من كل موديول مع تجربة مجانية لمدة 7 أيام دون الحاجة لبطاقة ائتمانية.',
+    },
+  }[locale] || {
+    badgeEconomics: 'Student-First Economics',
+    badgeTrial: '7-Day Free Trial',
+    heroTitle: 'Transparent Academic Passes',
+    heroDesc: 'High-comprehension pharmacy education built for students. Permanent free access to the first two lessons of every module, plus 7-day trials with zero card commitment.',
+  };
+
   const active = isBundle ? prices[currency].bundle : prices[currency].single;
   const symbol = prices[currency].single.symbol;
 
@@ -34,14 +67,14 @@ export const PricingPage: React.FC = () => {
       <section className="bg-[#FFF8E7] dark:bg-[#121212] border-b-3 border-black dark:border-white py-12 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <div className="inline-flex items-center gap-2">
-            <StickerBadge variant="green" size="sm">Student-First Economics</StickerBadge>
-            <StickerBadge variant="yellow" size="sm">7-Day Free Trial</StickerBadge>
+            <StickerBadge variant="green" size="sm">{copy.badgeEconomics}</StickerBadge>
+            <StickerBadge variant="yellow" size="sm">{copy.badgeTrial}</StickerBadge>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight">
-            Transparent Academic Passes
+          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-white">
+            {copy.heroTitle}
           </h1>
           <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            High-comprehension pharmacy education built for students. Permanent free access to the first two lessons of every module, plus 7-day trials with zero card commitment.
+            {copy.heroDesc}
           </p>
         </div>
       </section>
@@ -51,12 +84,12 @@ export const PricingPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
           {/* Bundle Toggle */}
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold uppercase text-gray-500 mr-2">Scope:</span>
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300 mr-2">Scope:</span>
             <button
               type="button"
               onClick={() => setIsBundle(false)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black ${
-                !isBundle ? 'bg-[#FFD93D] shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black text-black dark:text-white'
+              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-white ${
+                !isBundle ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black text-black dark:text-white'
               }`}
             >
               Single Course (MedChem or Pharm)
@@ -64,8 +97,8 @@ export const PricingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsBundle(true)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black ${
-                isBundle ? 'bg-[#FFD93D] shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black text-black dark:text-white'
+              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-white ${
+                isBundle ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black text-black dark:text-white'
               }`}
             >
               Dual Bundle (Both Courses)
@@ -74,16 +107,16 @@ export const PricingPage: React.FC = () => {
 
           {/* Currency Switcher */}
           <div className="flex items-center gap-1.5">
-            <span className="text-xs font-mono font-bold uppercase text-gray-500 mr-1">Currency:</span>
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300 mr-1">Currency:</span>
             {(['USD', 'TRY', 'SAR'] as Currency[]).map((c) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setCurrency(c)}
-                className={`px-2.5 py-1 text-xs font-mono font-bold border-2 border-black ${
+                className={`px-2.5 py-1 text-xs font-mono font-bold border-2 border-black dark:border-white ${
                   currency === c
                     ? 'bg-black text-white dark:bg-white dark:text-black'
-                    : 'bg-transparent hover:bg-gray-100 text-black dark:text-white'
+                    : 'bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white'
                 }`}
               >
                 {c}

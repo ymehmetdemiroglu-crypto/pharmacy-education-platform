@@ -21,7 +21,7 @@ export const HintLadder: React.FC<HintLadderProps> = ({
         <StickerBadge variant="yellow" size="sm">
           3-Tier Hint Ladder
         </StickerBadge>
-        <span className="text-[11px] font-mono text-gray-500">
+        <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
           Source: {config.source.file} (p. {config.source.page})
         </span>
       </div>

@@ -46,18 +46,18 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
       {isExpanded && (
         <div className="mt-2 pt-2 border-t border-black/20 dark:border-white/20 space-y-1.5 text-[11px]">
           <div>
-            <span className="font-bold text-gray-500">Governing Equation: </span>
+            <span className="font-bold text-gray-700 dark:text-gray-300">Governing Equation: </span>
             <code className="bg-black/5 dark:bg-white/10 px-1 py-0.5 font-mono text-black dark:text-white">
               {equation}
             </code>
           </div>
           <div>
-            <span className="font-bold text-gray-500">Source: </span>
+            <span className="font-bold text-gray-700 dark:text-gray-300">Source: </span>
             <span className="italic text-gray-700 dark:text-gray-300">{sourceReference}</span>
           </div>
           {assumptions && assumptions.length > 0 && (
             <div>
-              <span className="font-bold text-gray-500">Assumptions: </span>
+              <span className="font-bold text-gray-700 dark:text-gray-300">Assumptions: </span>
               <ul className="list-disc list-inside text-gray-600 dark:text-gray-400 pl-1">
                 {assumptions.map((a, i) => (
                   <li key={i}>{a}</li>

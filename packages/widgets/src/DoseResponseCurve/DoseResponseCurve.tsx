@@ -75,7 +75,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           <StickerBadge variant="orange" size="sm">
             Dose-Response Simulator
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -167,13 +167,13 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
         </svg>
 
         {/* Legend */}
-        <div className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-white/10 text-[11px] font-mono">
+        <div aria-live="polite" className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-white/10 text-[11px] font-mono">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <span className="w-3 h-3 bg-[#FF9F45] border border-black inline-block" /> Active Response
             </span>
             {compPoints.length > 0 && (
-              <span className="flex items-center gap-1 text-gray-500">
+              <span className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
                 <span className="w-3 h-0.5 border-t border-dashed border-gray-400 inline-block" /> Agonist Alone
               </span>
             )}

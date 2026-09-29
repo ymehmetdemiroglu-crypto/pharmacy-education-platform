@@ -1,8 +1,9 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const DoseResponseCurveConfigSchema = z.object({
   title: z.string(),
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   defaultEc50: z.number().positive(),
   defaultEmax: z.number().min(1).max(100),
   defaultHillSlope: z.number().default(1.0),

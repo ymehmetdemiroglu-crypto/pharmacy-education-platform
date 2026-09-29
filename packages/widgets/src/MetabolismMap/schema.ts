@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const MetabolicSiteSchema = z.object({
   id: z.string(),
@@ -15,7 +16,7 @@ export const MetabolicSiteSchema = z.object({
 
 export const MetabolismMapConfigSchema = z.object({
   drugName: z.string(),
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   moleculeSvgDescription: z.string(),
   sites: z.array(MetabolicSiteSchema).min(2),
   source: z.object({

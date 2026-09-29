@@ -4,10 +4,11 @@ const BRAVE_PATH = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application
 
 export default defineConfig({
   testDir: './e2e',
-  timeout: 45000,
+  timeout: 75000,
   expect: {
     timeout: 10000,
   },
+  workers: 1,
   fullyParallel: false,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {

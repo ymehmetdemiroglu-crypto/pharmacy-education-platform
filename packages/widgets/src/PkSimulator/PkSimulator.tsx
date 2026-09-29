@@ -98,7 +98,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           <StickerBadge variant="orange" size="sm">
             PK Simulator (1-Compartment)
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -202,21 +202,21 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
         </svg>
 
         {/* Readout Summary */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2 border-t border-black/10 dark:border-white/10 text-xs font-mono text-center">
+        <div aria-live="polite" className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2 border-t border-black/10 dark:border-white/10 text-xs font-mono text-center">
           <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-500 uppercase block">Elimination Half-Life</span>
+            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Elimination Half-Life</span>
             <strong>{tHalf} hr</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-500 uppercase block">Elimination Rate (ke)</span>
+            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Elimination Rate (ke)</span>
             <strong>{ke.toFixed(3)} h⁻¹</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-500 uppercase block">Peak Cp (Cmax)</span>
+            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Peak Cp (Cmax)</span>
             <strong>{maxObservedCp.toFixed(1)} mg/L</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#252525] p-1.5 border border-black/20">
-            <span className="text-[10px] text-gray-500 uppercase block">Average Css</span>
+            <span className="text-[10px] text-gray-700 dark:text-gray-300 uppercase block">Average Css</span>
             <strong>{isMultipleDosing ? `${cssAvg} mg/L` : 'N/A'}</strong>
           </div>
         </div>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { clsx } from 'clsx';
 import { Lightbulb, Lock, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '../Button/Button';
+import { ThemeContext } from '../../theme/ThemeProvider';
 
 export interface HintDrawerProps {
   hints: string[]; // max 3 hints: [Tier 1, Tier 2, Tier 3]
@@ -18,6 +19,15 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [unlockedTier, setUnlockedTier] = useState<number>(0); // 0 = none, 1, 2, 3
+  const containerRef = useRef<HTMLDivElement>(null);
+  const themeCtx = useContext(ThemeContext);
+  const locale = themeCtx?.locale || 'en';
+
+  useEffect(() => {
+    if (isOpen && containerRef.current && typeof containerRef.current.scrollIntoView === 'function') {
+      containerRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }, [isOpen, unlockedTier]);
 
   const handleNextHint = () => {
     if (!isOpen) {
@@ -38,6 +48,30 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
   };
 
   const getTierLabel = (tierIndex: number) => {
+    if (locale === 'tr') {
+      switch (tierIndex) {
+        case 0:
+          return '1. Aşama: Yönlendirici İpucu';
+        case 1:
+          return '2. Aşama: Yapısal İpucu';
+        case 2:
+          return '3. Aşama: Tam Çözüm Adımı';
+        default:
+          return `İpucu ${tierIndex + 1}`;
+      }
+    }
+    if (locale === 'ar') {
+      switch (tierIndex) {
+        case 0:
+          return 'المستوى 1: تلميح توجيهي';
+        case 1:
+          return 'المستوى 2: تلميح بنيوي';
+        case 2:
+          return 'المستوى 3: خطوة الحل الكاملة';
+        default:
+          return `تلميح ${tierIndex + 1}`;
+      }
+    }
     switch (tierIndex) {
       case 0:
         return 'Tier 1: Guiding Nudge';
@@ -50,8 +84,29 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
     }
   };
 
+  const headerTitle =
+    locale === 'tr'
+      ? `İpucu Basamakları (${unlockedTier}/${hints.length} Açık)`
+      : locale === 'ar'
+      ? `سلم التلميحات (${unlockedTier}/${hints.length} متاح)`
+      : `Hint Ladder (${unlockedTier}/${hints.length} Unlocked)`;
+
+  const buttonText =
+    unlockedTier === 0
+      ? locale === 'tr'
+        ? 'İpucu Lazım mı?'
+        : locale === 'ar'
+        ? 'هل تحتاج تلميحاً؟'
+        : 'Need a Hint?'
+      : locale === 'tr'
+      ? 'Sonraki Seviye'
+      : locale === 'ar'
+      ? 'المستوى التالي'
+      : 'Next Tier';
+
   return (
     <div
+      ref={containerRef}
       className={clsx(
         'w-full bg-[#FFFDF7] dark:bg-[#1C1C1C] border-3 border-black dark:border-white rounded-none',
         'shadow-neo dark:shadow-neo-dark transition-all duration-200',
@@ -63,7 +118,7 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
         <div className="flex items-center gap-2">
           <Lightbulb className="w-5 h-5 stroke-[2.5]" />
           <span className="font-display font-black text-xs sm:text-sm uppercase tracking-tight">
-            Hint Ladder ({unlockedTier}/{hints.length} Unlocked)
+            {headerTitle}
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -72,13 +127,14 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
               size="sm"
               variant="secondary"
               onClick={handleNextHint}
+              className="!border-black !text-black !bg-white hover:!bg-gray-100 !shadow-[2px_2px_0px_#000000] active:translate-x-0.5 active:translate-y-0.5"
               leftIcon={
                 unlockedTier >= 1 && !isPremiumOrTrial ? (
-                  <Lock className="w-3.5 h-3.5" />
+                  <Lock className="w-3.5 h-3.5 text-black" />
                 ) : undefined
               }
             >
-              {unlockedTier === 0 ? 'Need a Hint?' : 'Next Tier'}
+              {buttonText}
             </Button>
           )}
           <button
@@ -124,8 +180,12 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
                   <p className="text-sm font-body leading-relaxed">{hint}</p>
                 ) : isLockedPremium ? (
                   <div className="flex items-center justify-between text-xs py-1">
-                    <span className="italic text-gray-500">
-                      Tier 2 & 3 hints unlock with 7-Day Free Trial or Pass
+                    <span className="italic text-gray-700 dark:text-gray-300">
+                      {locale === 'tr'
+                        ? 'Aşama 2 ve 3 ipuçları 7 Günlük Ücretsiz Deneme veya Paket ile açılır'
+                        : locale === 'ar'
+                        ? 'يتم فتح التلميحين 2 و 3 عبر التجربة المجانية لمدة 7 أيام أو باقة الطالب'
+                        : 'Tier 2 & 3 hints unlock with 7-Day Free Trial or Pass'}
                     </span>
                     {onUpgradeClick && (
                       <button
@@ -133,7 +193,7 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
                         onClick={onUpgradeClick}
                         className="font-bold underline text-black dark:text-white hover:text-blue-600"
                       >
-                        Try Free
+                        {locale === 'tr' ? 'Ücretsiz Dene' : locale === 'ar' ? 'جرّب مجاناً' : 'Try Free'}
                       </button>
                     )}
                   </div>

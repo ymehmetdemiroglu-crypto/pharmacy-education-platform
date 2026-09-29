@@ -69,7 +69,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
           <StickerBadge variant="blue" size="sm">
             Receptor-Ligand Matcher
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -109,7 +109,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                 >
                   <div className="flex items-center justify-between">
                     <strong className="text-xs font-mono">{pair.drugGroup}</strong>
-                    <span className="text-[10px] font-mono text-gray-500">[{pair.energyKcalMol}]</span>
+                    <span className="text-[10px] font-mono text-gray-700 dark:text-gray-300">[{pair.energyKcalMol}]</span>
                   </div>
                   <div className="text-[11px] font-mono flex items-center gap-1 text-gray-700 dark:text-gray-300">
                     <LinkIcon className="w-3 h-3 text-gray-400" />
@@ -148,7 +148,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                 >
                   <div>
                     <strong className="text-xs font-mono">{res.residueName}</strong>
-                    <p className="text-[10px] text-gray-500">{res.description}</p>
+                    <p className="text-[10px] text-gray-700 dark:text-gray-300">{res.description}</p>
                   </div>
                   {isUsed && (
                     <span className="text-[10px] font-mono font-bold bg-[#FFD93D] text-black px-1.5 py-0.5 border border-black">

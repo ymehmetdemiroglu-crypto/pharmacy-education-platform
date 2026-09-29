@@ -12,6 +12,7 @@ import {
   SkeletonLoader,
   TrialBanner,
   PaywallModal,
+  useTheme,
 } from '@pharmacy/ui';
 import {
   PredictThenReveal,
@@ -36,12 +37,39 @@ import {
 import { BookOpen, Sparkles } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
+  const { locale } = useTheme();
   const [sliderVal, setSliderVal] = useState(50);
   const [toggleVal, setToggleVal] = useState(true);
   const [inputVal, setInputVal] = useState('7.4');
   const [stepDotIdx, setStepDotIdx] = useState(2);
   const [isPaywallOpen, setIsPaywallOpen] = useState(false);
   const [activeWidgetTab, setActiveWidgetTab] = useState<string>('sar');
+
+  const copy = {
+    en: {
+      heroTitle: 'Pharmacy Interactive Gallery',
+      heroDesc: 'A comprehensive, battle-tested suite of accessible Neo-Brutalist UI components and domain-specific interactive pharmacy widgets designed for active, learn-by-doing education.',
+      badgeGallery: 'Design System & Component Gallery',
+      paywallBtn: 'Open Paywall & Pass Modal',
+    },
+    tr: {
+      heroTitle: 'Eczacılık Etkileşimli Galerisi',
+      heroDesc: 'Aktif ve uygulayarak öğrenme odaklı, erişilebilir Neo-Brutalist kullanıcı arayüzü bileşenleri ve eczacılık alanına özel etkileşimli modüller koleksiyonu.',
+      badgeGallery: 'Tasarım Sistemi ve Bileşen Galerisi',
+      paywallBtn: 'Abonelik ve Ödeme Penceresini Aç',
+    },
+    ar: {
+      heroTitle: 'معرض الصيدلة التفاعلي',
+      heroDesc: 'مجموعة شاملة ومثبتة من مكونات واجهة المستخدم ذات الطراز النيو-بروتالي والأدوات التفاعلية الصيدلانية المصممة للتعلم بالممارسة الفعالة.',
+      badgeGallery: 'نظام التصميم ومعرض المكونات',
+      paywallBtn: 'فتح نافذة الاشتراك والاشتراكات الأكاديمية',
+    },
+  }[locale] || {
+    heroTitle: 'Pharmacy Interactive Gallery',
+    heroDesc: 'A comprehensive, battle-tested suite of accessible Neo-Brutalist UI components and domain-specific interactive pharmacy widgets designed for active, learn-by-doing education.',
+    badgeGallery: 'Design System & Component Gallery',
+    paywallBtn: 'Open Paywall & Pass Modal',
+  };
 
   const widgets = [
     { id: 'sar', name: 'SAR Explorer', component: <SarExplorer config={sarExplorerStandardDemo} /> },
@@ -61,19 +89,19 @@ export const GalleryPage: React.FC = () => {
       <section className="bg-[#FFF8E7] dark:bg-[#121212] border-b-3 border-black dark:border-white py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <StickerBadge variant="black" size="sm">Design System & Component Gallery</StickerBadge>
+            <StickerBadge variant="black" size="sm">{copy.badgeGallery}</StickerBadge>
             <StickerBadge variant="green" size="sm">Commercial Grade</StickerBadge>
             <StickerBadge variant="yellow" size="sm">Neo-Brutalist</StickerBadge>
           </div>
           <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-white">
-            Pharmacy Interactive Gallery
+            {copy.heroTitle}
           </h1>
           <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
-            A comprehensive, battle-tested suite of accessible Neo-Brutalist UI components and domain-specific interactive pharmacy widgets designed for active, learn-by-doing education.
+            {copy.heroDesc}
           </p>
           <div className="pt-2 flex flex-wrap gap-3">
             <Button variant="primary" onClick={() => setIsPaywallOpen(true)} leftIcon={<Sparkles className="w-4 h-4" />}>
-              Open Paywall & Pass Modal
+              {copy.paywallBtn}
             </Button>
           </div>
         </div>
@@ -85,10 +113,16 @@ export const GalleryPage: React.FC = () => {
           <h2 className="font-display font-black text-xl uppercase tracking-tight">1. Trial & Plan Banners</h2>
           <p className="text-xs text-gray-600 dark:text-gray-400">Header banners displaying student subscription and trial state.</p>
         </div>
-        <div className="space-y-3">
-          <TrialBanner status="free_preview" onActionClick={() => setIsPaywallOpen(true)} />
-          <TrialBanner status="active_trial" daysRemaining={5} onActionClick={() => setIsPaywallOpen(true)} />
-          <TrialBanner status="expired_trial" onActionClick={() => setIsPaywallOpen(true)} />
+        <div data-testid="section-trial-banners" className="space-y-3">
+          <div data-testid="banner-free-preview">
+            <TrialBanner status="free_preview" onActionClick={() => setIsPaywallOpen(true)} />
+          </div>
+          <div data-testid="banner-active-trial">
+            <TrialBanner status="active_trial" daysRemaining={5} onActionClick={() => setIsPaywallOpen(true)} />
+          </div>
+          <div data-testid="banner-expired-trial">
+            <TrialBanner status="expired_trial" onActionClick={() => setIsPaywallOpen(true)} />
+          </div>
         </div>
       </section>
 
@@ -121,7 +155,7 @@ export const GalleryPage: React.FC = () => {
         </div>
 
         {/* Active Widget Display */}
-        <div className="p-2 sm:p-4 bg-gray-50 dark:bg-[#151515] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
+        <div data-testid="active-widget-container" className="p-2 sm:p-4 bg-gray-50 dark:bg-[#151515] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
           {widgets.find((w) => w.id === activeWidgetTab)?.component}
         </div>
       </section>
@@ -133,99 +167,172 @@ export const GalleryPage: React.FC = () => {
           <p className="text-xs text-gray-600 dark:text-gray-400">Tactile, high-contrast building blocks adhering to 3px borders and 6px shadows.</p>
         </div>
 
-        {/* Buttons Grid */}
-        <div className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-500">Buttons & Variants</h3>
-          <div className="flex flex-wrap gap-3">
-            <Button variant="primary">Primary (Yellow)</Button>
-            <Button variant="secondary">Secondary (White)</Button>
-            <Button variant="success">Success (Green)</Button>
-            <Button variant="danger">Danger (Pink)</Button>
-            <Button variant="medchem">MedChem (Blue)</Button>
-            <Button variant="pharm">Pharm (Orange)</Button>
-            <Button variant="ghost">Ghost Border</Button>
-            <Button variant="primary" disabled>Disabled State</Button>
+        {/* Buttons Grid with State Matrix */}
+        <div data-testid="section-buttons" className="space-y-3">
+          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Buttons & State Matrix (Default, Hover, Focus, Disabled, Loading)</h3>
+          <div className="flex flex-wrap items-center gap-3">
+            <Button variant="primary" data-testid="btn-default">Default (Primary)</Button>
+            <Button variant="secondary" data-testid="btn-secondary">Secondary</Button>
+            <Button variant="success" data-testid="btn-success">Success</Button>
+            <Button variant="danger" data-testid="btn-danger">Danger</Button>
+            <Button variant="medchem">MedChem</Button>
+            <Button variant="pharm">Pharm</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="primary" disabled data-testid="btn-disabled">Disabled State</Button>
+            <Button variant="primary" isLoading data-testid="btn-loading">Loading State</Button>
           </div>
         </div>
 
         {/* Cards Grid */}
         <div className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-500">Cards & Surface Containers</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Card variant="default">
+          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Cards & Surface Containers (Default, Highlight, Misconception, Success)</h3>
+          <div data-testid="section-cards" className="grid grid-cols-1 sm:grid-cols-4 gap-4">
+            <Card variant="default" data-testid="card-default">
               <h4 className="font-display font-bold text-sm uppercase">Default Card</h4>
               <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">3px black border, 6px hard shadow.</p>
             </Card>
-            <Card variant="highlight">
+            <Card variant="highlight" data-testid="card-highlight">
               <h4 className="font-display font-bold text-sm uppercase">Highlight Card</h4>
               <p className="text-xs text-black mt-1">Yellow surface for key rules and checkpoints.</p>
             </Card>
-            <Card variant="misconception">
+            <Card variant="misconception" data-testid="card-misconception">
               <h4 className="font-display font-bold text-sm uppercase text-rose-800 dark:text-rose-200">Misconception Card</h4>
               <p className="text-xs text-rose-700 dark:text-rose-300 mt-1">Targeted feedback on cognitive traps.</p>
+            </Card>
+            <Card variant="success" data-testid="card-success">
+              <h4 className="font-display font-bold text-sm uppercase text-emerald-800 dark:text-emerald-200">Success Card</h4>
+              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-1">Positive reinforcement & mastery verified.</p>
             </Card>
           </div>
         </div>
 
         {/* StepDots & ProgressBars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-500">StepDots Stepper</h3>
-            <StepDots
-              totalSteps={6}
-              currentStepIndex={stepDotIdx}
-              completedStepIndices={[0, 1]}
-              onSelectStep={setStepDotIdx}
-            />
-            <p className="text-[11px] font-mono text-gray-500">Click a dot to change active step.</p>
+          <div data-testid="section-steppers" className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">StepDots Stepper (Default, Active, Completed)</h3>
+            <div className="space-y-3">
+              <StepDots
+                totalSteps={6}
+                currentStepIndex={stepDotIdx}
+                completedStepIndices={[0, 1]}
+                onSelectStep={setStepDotIdx}
+                data-testid="stepdots-interactive"
+              />
+              <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
+                <span className="text-[11px] font-mono text-gray-700 dark:text-gray-300 block mb-1">Completed State:</span>
+                <StepDots
+                  totalSteps={5}
+                  currentStepIndex={4}
+                  completedStepIndices={[0, 1, 2, 3, 4]}
+                  data-testid="stepdots-completed"
+                />
+              </div>
+            </div>
+            <p className="text-[11px] font-mono text-gray-700 dark:text-gray-300">Click a dot to change active step.</p>
           </div>
 
-          <div className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-500">Progress Bars</h3>
-            <ProgressBar value={68} label="Course Progress" variant="green" />
-            <ProgressBar value={40} label="Diagnostic Accuracy" variant="yellow" size="sm" />
+          <div data-testid="section-progress" className="space-y-3 p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white">
+            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Progress Bars (In-Progress, Completed, Small)</h3>
+            <div className="space-y-3">
+              <ProgressBar value={68} label="Course Progress (In Progress)" variant="green" data-testid="progress-in-progress" />
+              <ProgressBar value={100} label="Module Mastery (Completed)" variant="green" data-testid="progress-completed" />
+              <ProgressBar value={40} label="Diagnostic Accuracy (Small)" variant="yellow" size="sm" data-testid="progress-small" />
+            </div>
           </div>
         </div>
 
-        {/* Form Controls: Input, Slider, Toggle */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
-          <Input
-            label="Physiological pH"
-            value={inputVal}
-            onChange={(e) => setInputVal(e.target.value)}
-            helperText="Standard buffer range 7.35–7.45"
-          />
+        {/* Form Controls: Input, Slider, Toggle across all states */}
+        <div className="space-y-4">
+          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">
+            Form Controls State Matrix (Default, Focus, Error, Disabled)
+          </h3>
+          <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark">
+            <div className="space-y-4">
+              <Input
+                label="Physiological pH (Default)"
+                value={inputVal}
+                onChange={(e) => setInputVal(e.target.value)}
+                helperText="Standard buffer range 7.35–7.45"
+                data-testid="input-default"
+              />
+              <Input
+                label="Acid Dissociation Constant (Error State)"
+                value="99.9"
+                error="Value exceeds valid aqueous pKa spectrum (-2 to 16)"
+                data-testid="input-error"
+                readOnly
+              />
+              <Input
+                label="Avogadro Constant (Disabled State)"
+                value="6.022e23 mol⁻¹"
+                disabled
+                data-testid="input-disabled"
+              />
+            </div>
 
-          <Slider
-            label="Concentration"
-            value={sliderVal}
-            min={0}
-            max={100}
-            unit="μM"
-            onChange={setSliderVal}
-          />
+            <div className="space-y-6">
+              <Slider
+                label="Drug Concentration (Default)"
+                value={sliderVal}
+                min={0}
+                max={100}
+                unit="μM"
+                onChange={setSliderVal}
+                data-testid="slider-default"
+              />
+              <Slider
+                label="Receptor Density (Disabled State)"
+                value={25}
+                min={0}
+                max={100}
+                unit="fmol/mg"
+                disabled
+                onChange={() => {}}
+                data-testid="slider-disabled"
+              />
+            </div>
 
-          <div className="flex flex-col justify-center">
-            <Toggle
-              label="Enable Real-Time Simulation"
-              checked={toggleVal}
-              onChange={setToggleVal}
-            />
+            <div className="flex flex-col justify-center space-y-4">
+              <Toggle
+                label="Real-Time Simulation (Default / Checked)"
+                checked={toggleVal}
+                onChange={setToggleVal}
+                data-testid="toggle-checked"
+              />
+              <Toggle
+                label="Subcellular Compartmentalization (Unchecked)"
+                checked={false}
+                onChange={() => {}}
+                data-testid="toggle-unchecked"
+              />
+              <Toggle
+                label="Allosteric Cooperative Binding (Disabled)"
+                checked={true}
+                disabled
+                onChange={() => {}}
+                data-testid="toggle-disabled"
+              />
+            </div>
           </div>
         </div>
 
         {/* Empty State & Skeleton Loader */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <EmptyState
-            icon={<BookOpen className="w-8 h-8" />}
-            title="Review Queue Empty"
-            description="You have cleared all active Leitner spaced review cards for today. Keep up the high retention!"
-            actionLabel="Start New Module"
-            onAction={() => alert('Navigating to next module!')}
-          />
+        <div data-testid="section-empty-skeleton" className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div data-testid="state-empty">
+            <EmptyState
+              icon={<BookOpen className="w-8 h-8" />}
+              title="Review Queue Empty"
+              description="You have cleared all active Leitner spaced review cards for today. Keep up the high retention!"
+              actionLabel="Start New Module"
+              onAction={() => alert('Navigating to next module!')}
+            />
+          </div>
 
-          <div className="space-y-4 p-6 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark flex flex-col justify-center">
-            <span className="text-xs font-mono font-bold uppercase text-gray-500">Skeleton Loaders (No layout shift)</span>
+          <div
+            data-testid="state-loading"
+            className="space-y-4 p-6 bg-white dark:bg-[#1E1E1E] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark flex flex-col justify-center"
+          >
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">Skeleton Loaders (Loading State — Zero CLS)</span>
             <SkeletonLoader height="h-8" />
             <SkeletonLoader height="h-16" />
             <SkeletonLoader height="h-10" />

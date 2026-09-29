@@ -59,7 +59,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           <StickerBadge variant="orange" size="sm">
             {config.isMultiSelect ? 'Multi-Select Question' : 'Multiple Choice Question'}
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -161,7 +161,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
             )}
           </div>
           <div className="p-3 bg-[#FFFDF7] dark:bg-[#202020] border-2 border-black dark:border-white shadow-[2px_2px_0px_#000000]">
-            <span className="text-xs font-mono font-bold uppercase text-gray-500">Explanation:</span>
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">Explanation:</span>
             <p className="text-xs font-body leading-relaxed pt-1 text-gray-800 dark:text-gray-200">
               {config.explanation}
             </p>

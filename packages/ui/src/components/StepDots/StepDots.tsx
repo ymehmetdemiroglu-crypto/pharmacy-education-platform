@@ -23,7 +23,7 @@ export const StepDots: React.FC<StepDotsProps> = ({
       role="navigation"
       aria-label="Lesson Progress"
       className={twMerge(
-        clsx('flex items-center gap-1 rtl:space-x-reverse overflow-x-auto py-1', className)
+        clsx('flex items-center gap-0.5 sm:gap-1 rtl:space-x-reverse overflow-x-auto py-1', className)
       )}
     >
       {Array.from({ length: totalSteps }, (_, idx) => {
@@ -40,25 +40,25 @@ export const StepDots: React.FC<StepDotsProps> = ({
             aria-label={`Step ${idx + 1}${isCurrent ? ' (current)' : ''}${isCompleted ? ' (completed)' : ''}`}
             aria-current={isCurrent ? 'step' : undefined}
             className={clsx(
-              // [DES-P1-01] Ensure 44x44px touch hit target area
-              'min-w-[44px] min-h-[44px] p-2 flex items-center justify-center select-none rounded-none',
+              // Responsive touch hit target area (compact on mobile to prevent clipping)
+              'min-w-[28px] sm:min-w-[40px] md:min-w-[44px] min-h-[36px] sm:min-h-[44px] p-0.5 sm:p-1.5 flex items-center justify-center select-none rounded-none',
               'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-white',
               isClickable ? 'cursor-pointer' : 'cursor-default'
             )}
           >
             <div
               className={clsx(
-                'w-6 h-6 flex items-center justify-center text-[10px] font-mono font-bold select-none rounded-none',
+                'w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-[9px] sm:text-[10px] font-mono font-bold select-none rounded-none',
                 'transition-all duration-150 ease-neo',
                 // State styles
                 isCurrent &&
-                  'bg-[#FFD93D] border-3 border-black text-black shadow-[2px_2px_0px_#000000] scale-110 z-10',
+                  'bg-[#FFD93D] border-2 sm:border-3 border-black text-black shadow-[2px_2px_0px_#000000] scale-110 z-10',
                 isCompleted &&
                   !isCurrent &&
                   'bg-[#6BCB77] border-2 border-black text-black shadow-[1px_1px_0px_#000000]',
                 !isCurrent &&
                   !isCompleted &&
-                  'bg-white dark:bg-[#252525] border-2 border-black/60 dark:border-white/60 text-gray-400',
+                  'bg-white dark:bg-[#252525] border-2 border-black/60 dark:border-white/60 text-gray-700 dark:text-gray-300',
                 isClickable && !isCurrent && 'hover:scale-105'
               )}
             >

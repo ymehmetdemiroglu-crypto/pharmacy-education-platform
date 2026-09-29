@@ -52,7 +52,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
           <StickerBadge variant="blue" size="sm">
             Structure Identifier
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -187,7 +187,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       {/* Controls & Feedback */}
       {!isSubmitted ? (
         <div className="flex items-center justify-between gap-3 pt-2">
-          <span className="text-xs font-mono text-gray-500">
+          <span className="text-xs font-mono text-gray-700 dark:text-gray-300">
             {selectedAtom ? `Selected: ${selectedAtom.label} (Node ${selectedAtom.id})` : 'Click an atom above to select'}
           </span>
           <Button
@@ -213,6 +213,12 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
               </div>
             )}
           </div>
+          {selectedAtom && !selectedAtom.isTarget && selectedAtom.distractorRationale && (
+            <div className="p-3 bg-[#FFF0F5] dark:bg-[#2D1B22] border-2 border-[#FF6B9D] text-xs font-body leading-relaxed text-black dark:text-white">
+              <span className="font-bold font-mono text-[#D92662] dark:text-[#FF85B2] uppercase block mb-1">Misconception Note:</span>
+              {selectedAtom.distractorRationale}
+            </div>
+          )}
           <div className="p-3 bg-[#FFFDF7] dark:bg-[#202020] border-2 border-black dark:border-white text-xs font-body leading-relaxed text-black dark:text-white shadow-[2px_2px_0px_#000000]">
             {config.explanation}
           </div>

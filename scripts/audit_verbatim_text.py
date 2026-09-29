@@ -30,7 +30,8 @@ print(f"Total 8-word n-grams extracted from materials: {len(pdf_ngrams)}")
 
 target_files = glob.glob('docs/**/inventory.md', recursive=True) + \
                glob.glob('docs/**/curriculum-plan.md', recursive=True) + \
-               glob.glob('docs/**/concept-map.json', recursive=True)
+               glob.glob('docs/**/concept-map.json', recursive=True) + \
+               glob.glob('courses/**/*.json', recursive=True)
 
 total_matches = 0
 for tf in target_files:

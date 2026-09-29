@@ -1,8 +1,9 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const PkSimulatorConfigSchema = z.object({
   drugName: z.string(),
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   defaultDoseMg: z.number().positive(),
   defaultClearanceLHr: z.number().positive(),
   defaultVdL: z.number().positive(),

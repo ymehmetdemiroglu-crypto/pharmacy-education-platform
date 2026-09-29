@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const PredictOptionSchema = z.object({
   id: z.string(),
@@ -8,7 +9,7 @@ export const PredictOptionSchema = z.object({
 });
 
 export const PredictThenRevealConfigSchema = z.object({
-  prompt: z.string().max(200),
+  prompt: maxWords(40),
   scenarioDescription: z.string(),
   options: z.array(PredictOptionSchema).min(2).max(4),
   revealedOutcome: z.string(),

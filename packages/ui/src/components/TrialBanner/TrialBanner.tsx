@@ -62,7 +62,7 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
           size="sm"
           variant={status === 'active_trial' ? 'secondary' : 'primary'}
           onClick={onActionClick}
-          rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+          rightIcon={<ArrowRight className="w-3.5 h-3.5 rtl:rotate-180" />}
         >
           {status === 'active_trial' && 'View Student Passes'}
           {status === 'free_preview' && 'Start 7-Day Free Trial'}

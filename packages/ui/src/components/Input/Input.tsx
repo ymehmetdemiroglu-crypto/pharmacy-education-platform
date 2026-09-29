@@ -41,7 +41,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
         {error && (
-          <p className="text-xs font-mono font-bold text-[#FF6B9D] flex items-center gap-1 mt-0.5">
+          <p className="text-xs font-mono font-bold text-rose-700 dark:text-rose-400 flex items-center gap-1 mt-0.5">
             ⚠ {error}
           </p>
         )}

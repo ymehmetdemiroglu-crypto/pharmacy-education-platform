@@ -46,7 +46,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
           <StickerBadge variant="pink" size="sm">
             Metabolism & Biotransformation Map
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -191,7 +191,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       {/* Submit / Outcome */}
       {!isSubmitted ? (
         <div className="flex items-center justify-between pt-2">
-          <span className="text-xs font-mono text-gray-500">
+          <span className="text-xs font-mono text-gray-700 dark:text-gray-300">
             {selectedSite ? 'Click confirm to verify toxic risk pathway' : 'Select a metabolic site on the diagram'}
           </span>
           <Button

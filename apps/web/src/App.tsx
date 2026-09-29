@@ -4,6 +4,7 @@ import { Navbar } from './components/Navbar';
 import { GalleryPage } from './pages/GalleryPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { PricingPage } from './pages/PricingPage';
+import { LessonPage } from './pages/LessonPage';
 
 export const App: React.FC = () => {
   return (
@@ -16,6 +17,8 @@ export const App: React.FC = () => {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
+          <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
           <Route path="*" element={<Navigate to="/gallery" replace />} />
         </Routes>
       </main>

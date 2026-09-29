@@ -390,5 +390,94 @@ describe('Firestore Security Rules Testing', () => {
         .get()
     );
   });
+
+  it('strictly allows unauthenticated read of Lesson 1 steps (free preview) but rejects Lesson 3 steps (paid)', async () => {
+    await testEnv.withSecurityRulesDisabled(async (context) => {
+      const db = context.firestore();
+      await db
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-01')
+        .collection('steps')
+        .doc('step-01')
+        .set({
+          stepId: 'step-01',
+          isFreePreview: true,
+          title: 'Thermodynamic Activity',
+        });
+
+      await db
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-03')
+        .collection('steps')
+        .doc('step-01')
+        .set({
+          stepId: 'step-01',
+          isFreePreview: false,
+          title: 'Partition Coefficient Calculations',
+        });
+    });
+
+    const unauthDb = testEnv.unauthenticatedContext().firestore();
+
+    // L1 step succeeds for unauthenticated guest
+    await assertSucceeds(
+      unauthDb
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-01')
+        .collection('steps')
+        .doc('step-01')
+        .get()
+    );
+
+    // L3 step fails for unauthenticated guest
+    await assertFails(
+      unauthDb
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-03')
+        .collection('steps')
+        .doc('step-01')
+        .get()
+    );
+  });
+
+  it('strictly rejects unauthenticated client writes to user progress (must use localStorage offline)', async () => {
+    const unauthDb = testEnv.unauthenticatedContext().firestore();
+    await assertFails(
+      unauthDb
+        .collection('users')
+        .doc('guest-student')
+        .collection('progress')
+        .doc('medchem')
+        .set({
+          completedLessonIds: ['mc-mod1-les1'],
+          score: 100,
+        })
+    );
+  });
+
+  it('strictly rejects unauthenticated client writes to course catalog and lesson steps', async () => {
+    const unauthDb = testEnv.unauthenticatedContext().firestore();
+    await assertFails(
+      unauthDb.collection('courses').doc('medchem').set({ title: 'Hacked MedChem' })
+    );
+    await assertFails(
+      unauthDb
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-01')
+        .collection('steps')
+        .doc('step-01')
+        .set({ title: 'Hacked Step' })
+    );
+  });
 });
 

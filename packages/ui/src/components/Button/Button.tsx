@@ -19,6 +19,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   fullWidth?: boolean;
   leftIcon?: React.ReactNode;
   rightIcon?: React.ReactNode;
+  isLoading?: boolean;
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -46,6 +47,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       size = 'md',
       fullWidth = false,
       disabled = false,
+      isLoading = false,
       leftIcon,
       rightIcon,
       type = 'button',
@@ -53,11 +55,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref
   ) => {
+    const isEffectiveDisabled = disabled || isLoading;
     return (
       <button
         ref={ref}
         type={type}
-        disabled={disabled}
+        disabled={isEffectiveDisabled}
+        aria-busy={isLoading}
         className={twMerge(
           clsx(
             // Base structural Neo-Brutalist styles
@@ -65,11 +69,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             'border-3 border-black dark:border-white rounded-none',
             'transition-all duration-150 ease-neo',
             // Elevation & drop shadow
-            !disabled && 'shadow-neo dark:shadow-neo-dark hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg dark:hover:shadow-neo-dark-lg active:translate-x-1.5 active:translate-y-1.5 active:shadow-none',
+            !isEffectiveDisabled && 'shadow-neo dark:shadow-neo-dark hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg dark:hover:shadow-neo-dark-lg active:translate-x-1.5 active:translate-y-1.5 active:shadow-none',
             // Focus ring standards
             'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-black dark:focus-visible:ring-white focus-visible:ring-offset-2',
-            // Disabled state
-            disabled && 'bg-gray-200 dark:bg-gray-800 text-gray-500 border-gray-400 dark:border-gray-600 shadow-none cursor-not-allowed',
+            // Disabled / Loading state
+            isEffectiveDisabled && 'bg-gray-200 dark:bg-gray-800 text-gray-500 border-gray-400 dark:border-gray-600 shadow-none cursor-not-allowed',
             variantStyles[variant],
             sizeStyles[size],
             fullWidth && 'w-full',
@@ -78,9 +82,28 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         )}
         {...props}
       >
-        {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
-        <span>{children}</span>
-        {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
+        {isLoading ? (
+          <span className="inline-flex items-center gap-2">
+            <svg
+              className="animate-spin -ml-1 mr-2 h-4 w-4 text-current"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              role="status"
+              aria-label="Loading"
+            >
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Loading...</span>
+          </span>
+        ) : (
+          <>
+            {leftIcon && <span className="inline-flex shrink-0">{leftIcon}</span>}
+            <span>{children}</span>
+            {rightIcon && <span className="inline-flex shrink-0">{rightIcon}</span>}
+          </>
+        )}
       </button>
     );
   }

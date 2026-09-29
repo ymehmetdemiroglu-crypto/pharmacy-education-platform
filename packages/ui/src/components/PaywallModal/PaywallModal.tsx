@@ -5,6 +5,8 @@ import { Modal } from '../Modal/Modal';
 import { Button } from '../Button/Button';
 import { StickerBadge } from '../StickerBadge/StickerBadge';
 
+import { ThemeContext } from '../../theme/ThemeProvider';
+
 export type Currency = 'USD' | 'TRY' | 'SAR';
 export type PlanType = 'monthly' | 'semester' | 'annual';
 
@@ -12,6 +14,7 @@ export interface PaywallModalProps {
   isOpen: boolean;
   onClose: () => void;
   canStartTrial?: boolean;
+  defaultCurrency?: Currency;
   onStartTrial?: () => void;
   onSelectPlan?: (plan: PlanType, currency: Currency, isBundle: boolean) => void;
 }
@@ -44,12 +47,28 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
   isOpen,
   onClose,
   canStartTrial = true,
+  defaultCurrency,
   onStartTrial,
   onSelectPlan,
 }) => {
-  const [currency, setCurrency] = useState<Currency>('USD');
+  const themeCtx = React.useContext(ThemeContext);
+  const themeLocale = themeCtx?.locale;
+
+  const initialCurrency: Currency =
+    defaultCurrency ||
+    (themeLocale === 'tr' ? 'TRY' : themeLocale === 'ar' ? 'SAR' : 'USD');
+
+  const [currency, setCurrency] = useState<Currency>(initialCurrency);
   const [isBundle, setIsBundle] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<PlanType>('semester');
+
+  React.useEffect(() => {
+    if (!defaultCurrency && themeLocale) {
+      if (themeLocale === 'tr') setCurrency('TRY');
+      else if (themeLocale === 'ar') setCurrency('SAR');
+      else setCurrency('USD');
+    }
+  }, [themeLocale, defaultCurrency]);
 
   const prices = pricingTable[currency];
   const activePrices = isBundle ? prices.bundle : prices.single;
@@ -60,72 +79,140 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
     }
   };
 
+  const modalTitle =
+    themeLocale === 'tr'
+      ? 'Tüm Eczacılık Müfredatını Aç'
+      : themeLocale === 'ar'
+      ? 'فتح الإتقان الكامل للعلوم الصيدلانية'
+      : 'Unlock Full Pharmacy Mastery';
+
+  const planLabels = {
+    monthly: themeLocale === 'tr' ? 'Aylık' : themeLocale === 'ar' ? 'شهري' : 'Monthly',
+    semester: themeLocale === 'tr' ? 'Dönemlik Paket' : themeLocale === 'ar' ? 'باقة الفصل الدراسي' : 'Semester Pass',
+    annual: themeLocale === 'tr' ? 'Yıllık Paket' : themeLocale === 'ar' ? 'الباقة السنوية' : 'Annual Pass',
+  };
+
+  const footerCtaText =
+    themeLocale === 'tr'
+      ? `${planLabels[selectedPlan]} ile Devam Et — ${prices.symbol}${activePrices[selectedPlan]}`
+      : themeLocale === 'ar'
+      ? `المتابعة مع ${planLabels[selectedPlan]} — ${prices.symbol}${activePrices[selectedPlan]}`
+      : `Continue with ${selectedPlan === 'semester' ? 'Semester' : selectedPlan === 'annual' ? 'Annual' : 'Monthly'} Pass — ${prices.symbol}${activePrices[selectedPlan]}`;
+
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title="Unlock Full Pharmacy Mastery"
+      title={modalTitle}
       maxWidth="lg"
+      footer={
+        <div className="w-full flex flex-col gap-2.5">
+          <Button variant="primary" fullWidth size="lg" onClick={handleCheckout} className="py-2.5 sm:py-3">
+            {footerCtaText}
+          </Button>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between text-[11px] sm:text-xs text-gray-700 dark:text-gray-300 gap-1.5">
+            <span className="flex items-center gap-1">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
+              {themeLocale === 'tr'
+                ? 'Dodo Payments ile güvenli tek tıkla ödeme'
+                : themeLocale === 'ar'
+                ? 'دفع آمن بنقرة واحدة عبر Dodo Payments'
+                : 'Secure 1-click checkout powered by Dodo Payments'}
+            </span>
+            <button
+              type="button"
+              onClick={onClose}
+              className="underline font-bold text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
+            >
+              {themeLocale === 'tr'
+                ? 'Ders 1 ve 2 ile Ücretsiz Devam Et'
+                : themeLocale === 'ar'
+                ? 'المتابعة مجاناً مع الدرسين 1 و 2'
+                : 'Continue Free with Lessons 1 & 2'}
+            </button>
+          </div>
+        </div>
+      }
     >
-      <div className="space-y-6">
+      <div className="space-y-3 sm:space-y-4">
         {/* Trial banner highlight if eligible */}
         {canStartTrial && onStartTrial && (
-          <div className="p-4 bg-[#FFF8E7] dark:bg-[#252525] border-3 border-black dark:border-white shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#FFFFFF] flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="space-y-1 text-center sm:text-left">
-              <div className="inline-flex items-center gap-1.5 font-display font-black text-sm uppercase text-[#D97706] dark:text-[#FBBF24]">
-                <Sparkles className="w-4 h-4" /> 7-Day Free Trial Available
+          <div className="p-2 sm:p-3 bg-[#FFF8E7] dark:bg-[#252525] border-2 sm:border-3 border-black dark:border-white shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF] flex items-center justify-between gap-2">
+            <div className="space-y-0.5">
+              <div className="inline-flex items-center gap-1.5 font-display font-black text-xs sm:text-sm uppercase text-[#92400E] dark:text-[#FBBF24]">
+                <Sparkles className="w-3.5 h-3.5 shrink-0" />{' '}
+                {themeLocale === 'tr'
+                  ? '7 Günlük Ücretsiz Deneme'
+                  : themeLocale === 'ar'
+                  ? 'تجربة مجانية لمدة 7 أيام'
+                  : '7-Day Free Trial Available'}
               </div>
-              <p className="text-xs text-gray-700 dark:text-gray-300">
-                Experience all 55 modules, advanced hints & AI explanations with zero credit card commitment.
+              <p className="hidden sm:block text-[11px] text-gray-700 dark:text-gray-300">
+                {themeLocale === 'tr'
+                  ? 'Kredi kartı gerekmeden 55 modülün tümünü ve gelişmiş ipuçlarını deneyimleyin.'
+                  : themeLocale === 'ar'
+                  ? 'استكشف جميع الوحدات الـ 55 والتلميحات المتقدمة دون الحاجة لبطاقة ائتمان.'
+                  : 'Experience all 55 modules, advanced hints & AI explanations with zero credit card commitment.'}
               </p>
             </div>
             <Button
               variant="primary"
               size="sm"
               onClick={onStartTrial}
-              className="shrink-0 whitespace-nowrap"
+              className="shrink-0 whitespace-nowrap text-xs py-1 px-2.5"
             >
-              Start Free Trial
+              {themeLocale === 'tr'
+                ? 'Ücretsiz Denemeyi Başlat'
+                : themeLocale === 'ar'
+                ? 'بدء التجربة المجانية'
+                : 'Start Free Trial'}
             </Button>
           </div>
         )}
 
         {/* Currency & Bundle Selector */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b-2 border-black/20 dark:border-white/20 pb-4">
+        <div className="flex flex-wrap items-center justify-between gap-1.5 border-b-2 border-black/20 dark:border-white/20 pb-2.5">
           {/* Bundle Toggle */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1">
             <button
               type="button"
               onClick={() => setIsBundle(false)}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold border-2 border-black',
-                !isBundle ? 'bg-[#FFD93D] shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black'
+                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-white',
+                !isBundle
+                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]'
+                  : 'bg-white dark:bg-black text-black dark:text-white'
               )}
             >
-              Single Course
+              {themeLocale === 'tr' ? 'Tek Ders' : themeLocale === 'ar' ? 'مقرر واحد' : 'Single Course'}
             </button>
             <button
               type="button"
               onClick={() => setIsBundle(true)}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold border-2 border-black',
-                isBundle ? 'bg-[#FFD93D] shadow-[2px_2px_0px_#000000]' : 'bg-white dark:bg-black'
+                'px-2 py-0.5 sm:px-2.5 sm:py-1 text-[11px] sm:text-xs font-mono font-bold border-2 border-black dark:border-white',
+                isBundle
+                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#FFFFFF]'
+                  : 'bg-white dark:bg-black text-black dark:text-white'
               )}
             >
-              Dual Bundle (Both Courses)
+              {themeLocale === 'tr' ? 'İkili Paket' : themeLocale === 'ar' ? 'الحزمة المزدوجة' : 'Dual Bundle (Both Courses)'}
             </button>
           </div>
 
           {/* Currency Switcher */}
           <div className="flex items-center gap-1 font-mono text-xs">
-            <span className="text-gray-500 font-bold uppercase mr-1">Currency:</span>
+            <span className="text-gray-700 dark:text-gray-300 font-bold uppercase mr-0.5 text-[11px] sm:text-xs">
+              {themeLocale === 'tr' ? 'Para:' : themeLocale === 'ar' ? 'العملة:' : 'Currency:'}
+            </span>
             {(['USD', 'TRY', 'SAR'] as Currency[]).map((curr) => (
               <button
                 key={curr}
                 type="button"
                 onClick={() => setCurrency(curr)}
                 className={clsx(
-                  'px-2 py-0.5 border border-black dark:border-white font-bold',
+                  'px-1.5 py-0.5 border border-black dark:border-white font-bold text-[11px] sm:text-xs',
                   currency === curr
                     ? 'bg-black text-white dark:bg-white dark:text-black'
                     : 'bg-transparent text-black dark:text-white'
@@ -137,119 +224,171 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
           </div>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {/* Pricing Cards Grid (All 3 plans visible side-by-side) */}
+        <div role="radiogroup" aria-label="Select an academic pass plan" className="grid grid-cols-3 gap-1.5 sm:gap-3">
           {/* Monthly */}
           <div
+            role="radio"
+            aria-checked={selectedPlan === 'monthly'}
+            tabIndex={0}
             onClick={() => setSelectedPlan('monthly')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setSelectedPlan('monthly');
+              }
+            }}
             className={clsx(
-              'p-3.5 border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'monthly'
-                ? 'bg-white dark:bg-[#252525] shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                ? 'bg-white dark:bg-[#252525] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
                 : 'bg-gray-50 dark:bg-[#181818] hover:bg-white'
             )}
           >
-            <span className="text-xs font-mono font-bold uppercase text-gray-500">Monthly</span>
-            <div className="my-2">
-              <span className="font-display font-black text-2xl">
+            <span className="text-[9px] sm:text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300 leading-tight block break-words">
+              {planLabels.monthly}
+            </span>
+            <div className="my-0.5 sm:my-1.5 flex items-baseline gap-0.5 sm:gap-1" dir="ltr">
+              <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.monthly}
               </span>
-              <span className="text-xs font-mono text-gray-500">/mo</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/mo</span>
             </div>
-            <p className="text-[11px] text-gray-600 dark:text-gray-400">Flexible month-to-month access</p>
+            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
+              {themeLocale === 'tr'
+                ? 'Aydan aya esnek erişim'
+                : themeLocale === 'ar'
+                ? 'اشتراك شهري مرن'
+                : 'Flexible month-to-month access'}
+            </p>
           </div>
 
           {/* Semester */}
           <div
+            role="radio"
+            aria-checked={selectedPlan === 'semester'}
+            tabIndex={0}
             onClick={() => setSelectedPlan('semester')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setSelectedPlan('semester');
+              }
+            }}
             className={clsx(
-              'p-3.5 border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#202020]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#202020] focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'semester'
-                ? 'shadow-neo-lg dark:shadow-neo-dark-lg ring-3 ring-black dark:ring-white scale-[1.02] z-10'
+                ? 'shadow-neo sm:shadow-neo-lg dark:shadow-neo-dark-lg ring-2 sm:ring-3 ring-black dark:ring-white scale-[1.01] sm:scale-[1.02] z-10'
                 : 'hover:bg-white'
             )}
           >
-            <div className="absolute -top-3 left-3">
-              <StickerBadge variant="green" size="sm">
-                Most Popular
+            <div className="absolute -top-2 left-1 sm:-top-3 sm:left-3">
+              <StickerBadge variant="green" size="sm" className="scale-75 sm:scale-100 origin-top-left px-1 py-0 text-[9px] sm:text-xs">
+                {themeLocale === 'tr' ? 'Popüler' : themeLocale === 'ar' ? 'شائع' : 'Most Popular'}
               </StickerBadge>
             </div>
-            <span className="text-xs font-mono font-bold uppercase text-emerald-600">Semester Pass</span>
-            <div className="my-2">
-              <span className="font-display font-black text-2xl">
+            <span className="text-[9px] sm:text-xs font-mono font-bold uppercase text-emerald-800 dark:text-emerald-300 leading-tight block break-words">
+              {planLabels.semester}
+            </span>
+            <div className="my-0.5 sm:my-1.5 flex items-baseline gap-0.5 sm:gap-1" dir="ltr">
+              <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.semester}
               </span>
-              <span className="text-xs font-mono text-gray-500">/sem</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/sem</span>
             </div>
-            <p className="text-[11px] text-gray-600 dark:text-gray-400">
-              6 full months of exam prep (~40% discount)
+            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
+              {themeLocale === 'tr'
+                ? '6 tam ay boyunca sınav hazırlığı (~%40 indirim)'
+                : themeLocale === 'ar'
+                ? '6 أشهر كاملة للتحضير للاختبارات (خصم ~40%)'
+                : '6 full months of exam prep (~40% discount)'}
             </p>
           </div>
 
           {/* Annual */}
           <div
+            role="radio"
+            aria-checked={selectedPlan === 'annual'}
+            tabIndex={0}
             onClick={() => setSelectedPlan('annual')}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setSelectedPlan('annual');
+              }
+            }}
             className={clsx(
-              'p-3.5 border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-white cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
               selectedPlan === 'annual'
-                ? 'bg-white dark:bg-[#252525] shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                ? 'bg-white dark:bg-[#252525] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
                 : 'bg-gray-50 dark:bg-[#181818] hover:bg-white'
             )}
           >
-            <div className="absolute -top-3 left-3">
-              <StickerBadge variant="yellow" size="sm">
-                Best Value
+            <div className="absolute -top-2 left-1 sm:-top-3 sm:left-3">
+              <StickerBadge variant="yellow" size="sm" className="scale-75 sm:scale-100 origin-top-left px-1 py-0 text-[9px] sm:text-xs">
+                {themeLocale === 'tr' ? 'Değer' : themeLocale === 'ar' ? 'أفضل' : 'Best Value'}
               </StickerBadge>
             </div>
-            <span className="text-xs font-mono font-bold uppercase text-amber-600">Annual Pass</span>
-            <div className="my-2">
-              <span className="font-display font-black text-2xl">
+            <span className="text-[9px] sm:text-xs font-mono font-bold uppercase text-amber-800 dark:text-amber-300 leading-tight block break-words">
+              {planLabels.annual}
+            </span>
+            <div className="my-0.5 sm:my-1.5 flex items-baseline gap-0.5 sm:gap-1" dir="ltr">
+              <span className="font-display font-black text-lg sm:text-2xl">
                 {prices.symbol}{activePrices.annual}
               </span>
-              <span className="text-xs font-mono text-gray-500">/yr</span>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-700 dark:text-gray-300">/yr</span>
             </div>
-            <p className="text-[11px] text-gray-600 dark:text-gray-400">Full 12 months for licensing board exams</p>
+            <p className="hidden sm:block text-[10px] sm:text-[11px] text-gray-600 dark:text-gray-400">
+              {themeLocale === 'tr'
+                ? 'Kurul ve lisanslama sınavlarına hazırlık'
+                : themeLocale === 'ar'
+                ? '12 شهراً كاملاً لاختبارات البورد والترخيص'
+                : 'Full 12 months for licensing board exams'}
+            </p>
           </div>
         </div>
 
         {/* Value Proposition Highlights */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
-          <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[3]" />
-            <span>All 55 interactive modules & widgets</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[3]" />
-            <span>Tier 2 & 3 solution step hints</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[3]" />
-            <span>Targeted misconception feedback</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Check className="w-4 h-4 text-emerald-600 shrink-0 stroke-[3]" />
-            <span>Cross-device spaced repetition sync</span>
-          </div>
-        </div>
-
-        {/* Action Buttons & Guarantees */}
-        <div className="pt-2 flex flex-col gap-3">
-          <Button variant="primary" fullWidth size="lg" onClick={handleCheckout}>
-            Continue with {selectedPlan} Pass — {prices.symbol}{activePrices[selectedPlan]}
-          </Button>
-
-          <div className="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-2">
-            <span className="flex items-center gap-1">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              Secure 1-click checkout powered by Dodo Payments
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-mono">
+          <div className="flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[3]" />
+            <span>
+              {themeLocale === 'tr'
+                ? '55 interaktif modül ve bileşenin tümü'
+                : themeLocale === 'ar'
+                ? 'جميع الوحدات التفاعلية الـ 55 والأدوات'
+                : 'All 55 interactive modules & widgets'}
             </span>
-            <button
-              type="button"
-              onClick={onClose}
-              className="underline font-bold text-gray-700 dark:text-gray-300 hover:text-black"
-            >
-              Continue Free with Lessons 1 & 2
-            </button>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[3]" />
+            <span>
+              {themeLocale === 'tr'
+                ? '2. ve 3. Aşama çözüm adımı ipuçları'
+                : themeLocale === 'ar'
+                ? 'تلميحات خطوات الحل للمستويين 2 و 3'
+                : 'Tier 2 & 3 solution step hints'}
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[3]" />
+            <span>
+              {themeLocale === 'tr'
+                ? 'Hedefe yönelik kavram yanılgısı geri bildirimi'
+                : themeLocale === 'ar'
+                ? 'ملاحظات تشخيصية موجهة للمفاهيم الخاطئة'
+                : 'Targeted misconception feedback'}
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[3]" />
+            <span>
+              {themeLocale === 'tr'
+                ? 'Cihazlar arası aralıklı tekrar eşitlemesi'
+                : themeLocale === 'ar'
+                ? 'مزامنة التكرار المتباعد عبر الأجهزة'
+                : 'Cross-device spaced repetition sync'}
+            </span>
           </div>
         </div>
       </div>

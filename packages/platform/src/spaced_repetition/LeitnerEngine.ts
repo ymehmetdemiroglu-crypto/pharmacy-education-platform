@@ -49,3 +49,75 @@ export function getDueReviewCards(
     .filter((card) => new Date(card.nextReviewDue).getTime() <= currentTimestamp)
     .sort((a, b) => a.box - b.box); // Prioritize lower boxes (harder/earlier items) first
 }
+
+export interface ReviewCardSeed {
+  cardId: string;
+  courseId: string;
+  drugOrConcept: string;
+  prompt: string;
+  answer: string;
+  box?: 1 | 2 | 3 | 4 | 5;
+  intervalDays?: number;
+  status?: string;
+}
+
+export function enqueueReviewCards(
+  existingCards: SpacedReviewCard[],
+  newSeeds: ReviewCardSeed[],
+  now: Date = new Date()
+): SpacedReviewCard[] {
+  const existingMap = new Map(existingCards.map((c) => [c.cardId, c]));
+  const updated = [...existingCards];
+
+  for (const seed of newSeeds) {
+    if (!existingMap.has(seed.cardId)) {
+      const box = (seed.box || 1) as 1 | 2 | 3 | 4 | 5;
+      const intervalDays = seed.intervalDays || LEITNER_INTERVALS[box] || 1;
+      const nextDueDate = new Date(now.getTime() + intervalDays * 24 * 60 * 60 * 1000);
+
+      const newCard: SpacedReviewCard = {
+        cardId: seed.cardId,
+        courseId: seed.courseId,
+        drugOrConcept: seed.drugOrConcept,
+        prompt: seed.prompt,
+        answer: seed.answer,
+        box,
+        intervalDays,
+        lastReviewedAt: now.toISOString(),
+        nextReviewDue: nextDueDate.toISOString(),
+        reviewCount: 0,
+        lapseCount: 0,
+      };
+      updated.push(newCard);
+      existingMap.set(seed.cardId, newCard);
+    }
+  }
+
+  return updated;
+}
+
+export function loadLocalReviewCards(courseId: string = 'medchem'): SpacedReviewCard[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const raw =
+      localStorage.getItem(`pharmacy_leitner_${courseId}`) ||
+      localStorage.getItem(`pharmacy_review_cards_${courseId}`);
+    if (raw) {
+      return JSON.parse(raw);
+    }
+  } catch (err) {
+    console.warn('Failed to load local review cards:', err);
+  }
+  return [];
+}
+
+export function saveLocalReviewCards(courseId: string, cards: SpacedReviewCard[]): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const serialized = JSON.stringify(cards);
+    localStorage.setItem(`pharmacy_leitner_${courseId}`, serialized);
+    localStorage.setItem(`pharmacy_review_cards_${courseId}`, serialized);
+  } catch (err) {
+    console.warn('Failed to save local review cards:', err);
+  }
+}

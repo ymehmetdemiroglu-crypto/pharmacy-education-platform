@@ -15,6 +15,7 @@ In strict compliance with **Non-Negotiable Rule 3 (No Verbatim Republishing)**:
 | `mc-asset-001` | MedChem: Bioisosterism | `Biyoizosterizm.pdf` p. 4 | Classical vs Non-Classical Bioisostere classification table & examples | Native SVG Card + SmilesDrawer | Custom React SVG Component | Pending Human Signoff |
 | `mc-asset-002` | MedChem: Functional Groups | `Fonksiyonel gruplar.pdf` p. 12 | Carboxylic acid vs Tetrazole bioisosteric replacement | Interactive SmilesDrawer | RDKit Canonical SMILES | Pending Human Signoff |
 | `mc-asset-003` | MedChem: Metabolism | `İlaç metabolizması-2026.pdf` p. 8 | Phase I Cytochrome P450 oxidation catalytic cycle | Vector SVG Infographic | Custom React SVG Component | Pending Human Signoff |
+| `mc-asset-004` | MedChem: Ferguson Principle (Lesson 1) | `Farmasötik ve Medisinal Kimya 1-Giriş.pdf` pp. 17–23 | Thermodynamic activity threshold (a = 0.01–1.0) & ether vs beta-blocker contrast | Native Neo-Brutalist Interactive Widgets | React Component / SVG Primitive | Pending Human Signoff |
 | `ph-asset-001` | Pharmacology: Receptor Binding | `İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf` p. 6 | Chemical bond types & energetic hierarchy in drug-receptor binding | Interactive Neo-Brutalist SVG Chart | Recharts / SVG Primitive | Pending Human Signoff |
 | `ph-asset-002` | Pharmacology: Dose-Response | `İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf` p. 18 | Agonist vs Partial Agonist vs Antagonist dose-response curves | Interactive Simulation Canvas | Recharts DoseResponseCurve | Pending Human Signoff |
 

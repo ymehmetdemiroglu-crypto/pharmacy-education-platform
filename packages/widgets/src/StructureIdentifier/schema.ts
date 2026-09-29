@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const MoleculeAtomSchema = z.object({
   id: z.string(),
@@ -7,6 +8,7 @@ export const MoleculeAtomSchema = z.object({
   y: z.number(),
   isTarget: z.boolean(),
   hintName: z.string().optional(),
+  distractorRationale: z.string().optional(),
 });
 
 export const MoleculeBondSchema = z.object({
@@ -17,7 +19,7 @@ export const MoleculeBondSchema = z.object({
 
 export const StructureIdentifierConfigSchema = z.object({
   title: z.string(),
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   moleculeName: z.string(),
   smiles: z.string(),
   atoms: z.array(MoleculeAtomSchema).min(3),

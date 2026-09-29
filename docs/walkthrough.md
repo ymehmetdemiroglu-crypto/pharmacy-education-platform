@@ -304,5 +304,184 @@ The required 5-role independent review loop was executed by dedicated fresh-cont
 - **Independent Review Loop**: **0 P0 and 0 P1 blockers remaining across all 5 review roles**
 
 ### 5.2 Next Steps & Decision Gate
-Phase 2 implementation, test suites, and independent reviews are 100% complete and verified. The platform foundation is ready for user sign-off to proceed to **Phase 3: Vertical Slice A (Course A: Medicinal Chemistry, Lesson 1: Physicochemical Properties & Bioisosterism)**.
+Phase 2 implementation, test suites, and independent reviews are 100% complete and verified. The platform foundation was approved to proceed to **Phase 3: Vertical Slice A (Course A: Medicinal Chemistry, Lesson 1: Thermodynamic Activity & The Ferguson Principle)**.
+
+---
+
+## 6. Phase 3: Vertical Slice A — Authoring Implementation & Verification
+
+**Status**: **AUTHOR IMPLEMENTATION & SELF-TEST COMPLETE — READY FOR INDEPENDENT REVIEW LOOP**  
+**Date**: September 2026  
+**Artifacts Generated & Updated**:
+- Master Lesson JSON: [`courses/medchem/lessons/lesson-01.json`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/courses/medchem/lessons/lesson-01.json)
+- Curriculum Schemas & Types: [`packages/platform/src/curriculum/schema.ts`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform/src/curriculum/schema.ts)
+- Lesson 1 & Freemium Test Suite: [`packages/platform/src/curriculum/lesson01.test.ts`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform/src/curriculum/lesson01.test.ts)
+- Progress & Leitner Client Storage: [`packages/platform/src/progress/ProgressStore.ts`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform/src/progress/ProgressStore.ts) & [`packages/platform/src/spaced_repetition/LeitnerEngine.ts`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform/src/spaced_repetition/LeitnerEngine.ts)
+- Lesson Player Page: [`apps/web/src/pages/LessonPage.tsx`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/pages/LessonPage.tsx)
+- Lesson Data Loader: [`apps/web/src/data/lessons.ts`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/data/lessons.ts)
+- Routing Integration: [`apps/web/src/App.tsx`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/App.tsx)
+- Catalog Linking: [`apps/web/src/pages/CatalogPage.tsx`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/pages/CatalogPage.tsx)
+- Asset Registry Entry (`mc-asset-004`): [`docs/asset-log.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/asset-log.md)
+- Needs Human Review Registry: [`docs/needs-human-review.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/needs-human-review.md)
+
+---
+
+### 6.1 Authoring Deliverables & Pedagogical Guard Compliance
+
+1. **Exact Title & Identity**:
+   - Title: `"Thermodynamic Activity & The Ferguson Principle"`
+   - ID: `mc-mod1-les1`
+   - Course: `medchem`, Module: `mc-mod-01`, Order: 1, Access: `free`.
+
+2. **10 Bite-Sized Steps Sequence**:
+   - **Step 1 (Hook)**: Clinical vignette contrasting diethyl ether (tens of grams, physical membrane expansion) vs propranolol (milligrams, nanomolar stereoselective receptor affinity). Exempt from predict-then-reveal.
+   - **Step 2 (Ferguson Principle)**: Relative saturation equation $a = P_t / P_0$. Predict-then-reveal hypothesis testing for vapor escaping tendency.
+   - **Step 3 (Thermodynamic Threshold)**: Saturation window $a = 0.01\text{–}1.0$ required for non-specific physical action (marked `pending-human-review`). Predict-then-reveal.
+   - **Step 4 (Phase Equilibrium)**: Chemical potential and thermodynamic activity equalization between exobiophase and endobiophase. Predict-then-reveal.
+   - **Step 5 (Mid-Lesson Checkpoint)**: Classification challenge distinguishing non-specific Compound X from stereoselective agonists/antagonists. Checkpoint MCQ.
+   - **Step 6 (Structural Specificity)**: Sensitivity of receptor pharmacophores to subtle structural modifications or chiral inversion. Predict-then-reveal.
+   - **Step 7 (Chemical Diversity)**: Mechanism of shared CNS depression across diverse structures (ether, chloroform, nitrous oxide). Predict-then-reveal.
+   - **Step 8 (Potency vs Affinity)**: Low thermodynamic activity ($a < 0.001$) as hallmark of high-affinity receptor binding vs high activity ($a \ge 0.01$) for physical depression. Predict-then-reveal.
+   - **Step 9 (Faded Calculation)**: Scaffolding worked-example calculation: $P_0 = 200\,\text{mmHg}, P_t = 10\,\text{mmHg} \implies a = 0.05$ (5% saturation). Predict-then-reveal.
+   - **Step 10 (Recap & Synthesis)**: Cognitive synthesis, +50 XP award, daily streak increment, and Leitner flashcard enqueueing. Exempt from predict-then-reveal.
+
+3. **Cognitive Load Enforcement**:
+   - Automated word count test in `packages/platform/src/curriculum/lesson01.test.ts` asserts `wordCount(step.prompt) <= 40` for every step.
+   - Actual step prompt word counts: 18, 25, 21, 23, 18, 22, 19, 24, 27, 30 words. **100% compliant**.
+
+4. **Citation Policy (E1)**:
+   - Primary: Lemke & Williams (Eds.), *Foye's Principles of Medicinal Chemistry* (8th ed.), Topic: "Thermodynamic Activity and Ferguson's Principle" (`chapter: "unverified"`, `page: "unverified"`).
+   - Secondary: Patrick, G. L., *An Introduction to Medicinal Chemistry* (6th ed.), Topic: "Ferguson's Principle of Non-Specific Action" (`chapter: "unverified"`, `page: "unverified"`).
+   - Supplemental: Wermuth, C. G., *The Practice of Medicinal Chemistry* (4th ed.), Topic: "Physicochemical Properties and Biological Activity" (`chapter: "unverified"`, `page: "unverified"`).
+   - All chapter numbers and pages recorded as `"unverified"`. Zero unverified chapter numbers asserted as fact. Registered in `docs/needs-human-review.md`.
+
+5. **Numeric Thresholds Policy (E2)**:
+   - Saturation range $a = 0.01\text{–}1.0$ (and Review Card 1) marked with status `"pending-human-review"` and reference passage note in `lesson-01.json` and registered in `docs/needs-human-review.md`.
+
+6. **Zero Verbatim Invariant**:
+   - `python scripts/audit_verbatim_text.py` verified 0 runs of 8+ consecutive words matching the lecture slides in `/materials/`.
+
+---
+
+### 6.2 Interactive Lesson Player (`LessonPage.tsx`) & Freemium Lifecycle
+
+1. **Route Integration**:
+   - Route `/courses/medchem/lessons/:lessonId` in `apps/web/src/App.tsx`.
+   - "Start Free Lesson 1" button in `apps/web/src/pages/CatalogPage.tsx`.
+
+2. **Freemium Access Control**:
+   - Lessons 1 & 2 of all modules are **Free Forever**. Unauthenticated students can complete Lesson 1 end-to-end without signing in.
+   - Progress stored locally in `localStorage` via `saveLocalProgress('medchem')`.
+   - `HintLadder`: Only **Tier 1 (Nudge)** is accessible for free users. Tiers 2 & 3 are locked with a prompt to start a 7-day free trial or pass; clicking unlocks opens `PaywallModal`.
+   - Trial and paid users unlock all 3 tiers.
+   - Navigating to Lesson 3 stub (`/courses/medchem/lessons/3`) or any locked lesson triggers the paywall screen and `PaywallModal` with 1-click frictionless trial activation.
+
+3. **Spaced Repetition Integration**:
+   - Completing Step 10 marks Lesson 1 complete in `ProgressStore`, awards 50 XP, and increments daily streak.
+   - Enqueues 3 review cards into Leitner Box 1 (1-day review interval) without duplication:
+     - Card 1: Ferguson Saturation Threshold (`pending-human-review`)
+     - Card 2: Chemical Structure Alteration (Specific vs Non-Specific)
+     - Card 3: Clinical Classification (Inhalation Anesthetics vs Beta-Blockers)
+
+4. **Academic Sources Accordion**:
+   - Step view footer provides collapsible drawer displaying all cited textbooks (with unverified note) and university lecture provenance (`Farmasötik ve Medisinal Kimya 1-Giriş.pdf`, slides 17–23).
+
+---
+
+### 6.3 Automated Test Results
+
+- **Platform Unit Tests**: **30/30 passed** (`packages/platform/src/curriculum/lesson01.test.ts` 17 tests passed).
+- **Workspace Unit Tests**: **76/76 passed across 27 files**:
+  - `@pharmacy/platform`: 4 test files, 30 tests passed.
+  - `@pharmacy/ui`: 14 test files, 27 tests passed.
+  - `@pharmacy/widgets`: 9 test files, 19 tests passed.
+- **Firestore Rules Emulator Tests**: **21/21 passed** (`npm run test:rules`):
+  - `firestore-rules.test.ts`: 9 tests passed.
+  - `functions-and-security.test.ts`: 12 tests passed (`startTrial` single-use, idempotency, temporal expiry, data isolation).
+- **TypeScript Strictness**: **0 errors across all 5 workspace projects** (`pnpm typecheck`).
+- **ESLint 9**: **0 errors, 0 warnings across all 5 workspace projects** (`pnpm lint`).
+- **Vite Production Build**: **Clean build in 7.6s** (`pnpm build`).
+- **Verbatim Text Audit**: **0 matching 8-word n-grams** (`python scripts/audit_verbatim_text.py`).
+
+---
+
+### 6.4 Phase 3 Independent Review Loop Results (Unanimous Pass)
+
+In accordance with Section 3 of `AGENTS.md` and Rule E3, five independent fresh-context reviewer instances audited Phase 3: Vertical Slice A. Author agents did not approve their own work.
+
+| Reviewer Role | Iteration | Report File | P0 Blockers | P1 Critical | P2 Minor | Verdict |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Pedagogy Reviewer** | 1 | [`docs/reviews/phase-3-iteration-1-pedagogy-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-1-pedagogy-reviewer.md) | 0 | 0 | 0 | **PASS** |
+| **Security Reviewer** | 1 | [`docs/reviews/phase-3-iteration-1-security-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-1-security-reviewer.md) | 0 | 0 | 0 | **PASS** |
+| **QA Agent** | 1 | [`docs/reviews/phase-3-iteration-1-qa.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-1-qa.md) | 0 | 0 | 1 | **PASS** |
+| **Code Reviewer** | 2 | [`docs/reviews/phase-3-iteration-2-code-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-2-code-reviewer.md) | 0 | 0 | 0 | **PASS** |
+| **Design Critic** | 3 | [`docs/reviews/phase-3-iteration-3-design-critic.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-3-design-critic.md) | 0 | 0 | 2 | **PASS** |
+| **TOTAL (Final Audit)** | — | — | **0** | **0** | **3** | **UNANIMOUS PASS** |
+
+#### Summary of Remediation Cycles:
+1. **Pedagogy & Content (Iter 1 Pass)**:
+   - Verified exact title: `"Thermodynamic Activity & The Ferguson Principle"` (`mc-mod1-les1`).
+   - Verified strict cognitive load: all 10 step prompts $\le 40$ words (range: 18–30 words).
+   - Verified predict-then-reveal on Steps 2, 3, 4, 6, 7, 8, 9; Hook (Step 1), Checkpoint (Step 5), and Recap (Step 10) properly exempt.
+   - Rule E1 (Citations): verified textbook citations cite book + edition + topic only with chapter/page marked `"unverified"`, logged in `docs/needs-human-review.md`.
+   - Rule E2 (Numeric saturation range): $a = 0.01\text{–}1.0$ marked `"pending-human-review"` in data and logged in `docs/needs-human-review.md`.
+   - 0-verbatim audit passed: 0 matching 8-word n-grams against `/materials/`.
+
+2. **Security & Freemium Gating (Iter 1 Pass)**:
+   - Verified unauthenticated guest progress isolation (localStorage, 0 unauthorized Firestore writes).
+   - Verified freemium access control (Lessons 1 & 2 free forever, Lesson 3 strictly gated with `PaywallModal`).
+   - Verified hint ladder gating (Tier 1 free, Tiers 2 & 3 gated for free users).
+   - Verified trial single-use server-side enforcement in Firestore security rules.
+   - 21/21 security rules and functions tests passed (`npm run test:rules`).
+
+3. **QA & Brave Playwright Verification (Iter 1 Pass)**:
+   - Full Playwright E2E suite executed across 4 Brave browser configurations: `desktop-brave-shields-default`, `desktop-brave-shields-down`, `tablet-brave`, `mobile-brave`.
+   - 0 console errors, 0 failed network requests.
+   - Axe-core scan: 0 serious and 0 critical accessibility violations.
+   - Keyboard navigation and reduced motion fallback verified.
+
+4. **Code Architecture & Accessibility (Iter 2 Pass)**:
+   - Wired Step 10 completion handler to Link, Button, and `useEffect`.
+   - Hardened `LeitnerEngine.ts` to calculate intervals inside the loop per card.
+   - Added `role="status"` and `aria-live="polite"` to revealed outcome feedback.
+   - Implemented W3C APG roving tabindex and arrow key navigation on MCQ/predict options.
+   - Replaced duplicate `<main>` tag with semantic `<article>`.
+
+5. **Design System & Visual Quality (Iter 3 Pass)**:
+   - Shields UP vs Shields Down 100% visual parity verified across 1440x900 desktop captures.
+   - Responsive StepDots touch target/overflow resolved on $\le 375\text{px}$ screens (`min-w-[28px]`, `gap-0.5`).
+   - PaywallModal mobile vertical containment resolved via 3-column pricing grid, collapsed trial banner, and `text-[9px] sm:text-xs leading-tight break-words`.
+   - Sticky navbar overlap during step transitions resolved via synchronous `window.scrollTo(0, 0)`.
+   - Fixed mobile bottom action bar pinned in thumb zone.
+   - BiDi punctuation isolation and RTL chevron mirroring (`rtl:rotate-180`) verified in Arabic RTL.
+   - Authentic Turkish chrome localization with 0 dotted-I casing mutations verified in Turkish LTR.
+   - WCAG AAA contrast ratios verified across all light and dark Neo-Brutalist surfaces.
+
+---
+
+### 6.5 Definition of Done (DoD) Verification Matrix — Phase 3
+
+| DoD Requirement | Target Criterion | Verification Method | Status |
+| :--- | :--- | :--- | :--- |
+| **1. Source Verifiability** | 100% of scientific claims traced or logged | Pedagogical audit against `inventory.md` & `curriculum-plan.md` | **PASSED** |
+| **2. Human Review Registry** | Unverified citations & numbers registered | `docs/needs-human-review.md` (Lemke, Patrick, Wermuth, $a = 0.01\text{–}1.0$) | **PASSED** |
+| **3. Schema Compliance** | Validates against strict Zod `Step` schema | `packages/platform/src/curriculum/lesson01.test.ts` (17 tests) | **PASSED** |
+| **4. Word Count Constraint** | $\le 40$ words per step prompt | Automated unit test assertion across all 10 steps (max: 30 words) | **PASSED** |
+| **5. Predict-Then-Reveal** | Enforced on all concept steps (2,3,4,6,7,8,9) | Unit tests + Playwright E2E assertion + Pedagogy audit | **PASSED** |
+| **6. Freemium Gating** | L1/L2 free forever; L3 locked; Hints 2/3 locked | Unit tests + Firestore rules tests + Playwright E2E | **PASSED** |
+| **7. Independent Review Loop** | 0 P0 and 0 P1 issues across 5 roles | 5 reviewer reports committed in `docs/reviews/` | **PASSED** |
+| **8. Brave Playwright E2E** | Shields UP & Down, Mobile, Tablet, Desktop | 8/8 tests pass (1.1m), 0 console errors, 0 failed network requests | **PASSED** |
+| **9. Accessibility (a11y)** | 0 serious/critical axe violations, keyboard nav | Axe-core WCAG 2.1 AA automated audit in Playwright | **PASSED** |
+| **10. Zero Verbatim Policy** | 0 matching 8-word n-grams against `/materials/` | `python scripts/audit_verbatim_text.py` (9,375 n-grams scanned) | **PASSED** |
+| **11. Monorepo Health** | 0 TypeScript errors, 0 linter warnings | `pnpm typecheck` & `pnpm lint` across 5 packages | **PASSED** |
+| **12. Workspace Unit Tests** | 100% test pass rate | 76/76 unit tests passed in Vitest | **PASSED** |
+| **13. Emulator Rules Tests** | 100% security test pass rate | 21/21 security tests passed in Firestore emulator suite | **PASSED** |
+
+---
+
+## 7. Phase 3 STOP Gate — Ready for User Sign-Off
+
+Phase 3 (Vertical Slice A — Course A: MedChem Lesson 1 & Freemium Platform) has completed all implementation, automated test suites, Playwright Brave E2E matrix verification, and the 5-agent Independent Review Loop with **0 P0 and 0 P1 issues remaining**.
+
+In accordance with Section 7 of `AGENTS.md` and Rule 9 ("Cost Safety & Gated GCP Provisioning / Zero Silent Assumptions"), orchestration is paused at this **STOP GATE** awaiting explicit user sign-off before proceeding to Phase 4 (Vertical Slice B — Course B: Pharmacology Lesson 1).
 

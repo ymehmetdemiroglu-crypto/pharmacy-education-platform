@@ -96,11 +96,11 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
     <Card variant="default" className={clsx('w-full flex flex-col gap-4', className)}>
       {/* Header */}
       <div className="space-y-1.5">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <StickerBadge variant="blue" size="sm">
             SAR Explorer
           </StickerBadge>
-          <span className="text-[11px] font-mono text-gray-500">
+          <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
             Source: {config.source.file} (p. {config.source.page})
           </span>
         </div>
@@ -121,19 +121,19 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
       {/* Dynamic Property Readout Box */}
       <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-[#252525] border-3 border-black dark:border-white shadow-neo dark:shadow-neo-dark text-center">
         <div>
-          <span className="text-[10px] font-mono text-gray-500 uppercase block">LogP (Lipophilicity)</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-gray-300 uppercase block">LogP (Lipophilicity)</span>
           <span className="font-mono font-bold text-lg text-black dark:text-white">
             {roundedLogP}
           </span>
         </div>
         <div className="border-x-2 border-black/20 dark:border-white/20">
-          <span className="text-[10px] font-mono text-gray-500 uppercase block">pKa</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-gray-300 uppercase block">pKa</span>
           <span className="font-mono font-bold text-lg text-black dark:text-white">
             {roundedPka}
           </span>
         </div>
         <div>
-          <span className="text-[10px] font-mono text-gray-500 uppercase block">Affinity Kd</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-gray-300 uppercase block">Affinity Kd</span>
           <span className="font-mono font-bold text-lg text-black dark:text-white">
             {currentAffinityNm} nM
           </span>
@@ -150,7 +150,7 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-white">
                 Substitution Site: {pos.positionName}
               </span>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 {pos.options.map((opt) => {
                   const isSelected = currentSelected === opt.id;
                   return (
@@ -170,7 +170,10 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
                         <span>{opt.name}</span>
                         <code className="text-[10px] opacity-80">{opt.structureSnippet}</code>
                       </div>
-                      <div className="mt-2 text-[10px] font-mono text-gray-600 dark:text-gray-400 flex justify-between">
+                      <div className={clsx(
+                        "mt-2 text-[10px] font-mono flex justify-between",
+                        isSelected ? "text-black font-bold" : "text-gray-700 dark:text-gray-300"
+                      )}>
                         <span>ΔlogP: {opt.deltaLogP > 0 ? `+${opt.deltaLogP}` : opt.deltaLogP}</span>
                         <span>Affinity: {opt.affinityMultiplier}x</span>
                       </div>

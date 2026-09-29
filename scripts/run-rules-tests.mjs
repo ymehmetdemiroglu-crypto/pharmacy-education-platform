@@ -2,7 +2,7 @@ import { spawnSync } from 'child_process';
 
 const env = {
   ...process.env,
-  JAVA_TOOL_OPTIONS: '-Xmx256m -Xms64m',
+  JAVA_TOOL_OPTIONS: '-XX:+UseSerialGC -Xmx256m -Xms32m',
 };
 
 const result = spawnSync(
@@ -22,7 +22,7 @@ if (result.stderr) {
 }
 
 const rawOutput = ((result.stdout || '') + (result.stderr || '')).replace(/\x1b\[[0-9;]*m/g, '');
-const passed = rawOutput.includes('9 passed') && !rawOutput.includes('failed');
+const passed = (result.status === 0) && !rawOutput.includes('ERR!') && !rawOutput.includes('FAIL') && rawOutput.includes('passed');
 
 process.exit(passed ? 0 : (result.status ?? 1));
 

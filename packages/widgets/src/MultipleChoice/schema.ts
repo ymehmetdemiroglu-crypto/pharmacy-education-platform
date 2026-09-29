@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { maxWords } from '../types';
 
 export const McqOptionSchema = z.object({
   id: z.string(),
@@ -8,7 +9,7 @@ export const McqOptionSchema = z.object({
 });
 
 export const MultipleChoiceConfigSchema = z.object({
-  prompt: z.string().max(240),
+  prompt: maxWords(40),
   options: z.array(McqOptionSchema).min(2).max(5),
   isMultiSelect: z.boolean().default(false),
   explanation: z.string(),

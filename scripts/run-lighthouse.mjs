@@ -2,6 +2,9 @@ import { spawn, spawnSync } from 'child_process';
 import http from 'http';
 import fs from 'fs';
 
+const targetPath = process.argv[2] || '/courses/medchem/lessons/1';
+const outputPath = process.argv[3] || './docs/reviews/lighthouse-lesson-1.json';
+
 // 1. Start preview server
 const server = spawn('pnpm', ['--filter', '@pharmacy/web', 'preview', '--port', '4173'], {
   shell: true,
@@ -17,7 +20,7 @@ function waitForServer(timeoutMs = 15000) {
         return;
       }
       http
-        .get('http://localhost:4173/gallery', (res) => {
+        .get(`http://localhost:4173${targetPath}`, (res) => {
           if (res.statusCode === 200) resolve();
           else setTimeout(check, 500);
         })
@@ -31,16 +34,16 @@ function waitForServer(timeoutMs = 15000) {
 
 try {
   await waitForServer();
-  console.log('Preview server ready on port 4173. Running Lighthouse...');
+  console.log(`Preview server ready on port 4173. Running Lighthouse on ${targetPath}...`);
 
   const lhResult = spawnSync(
     'npx',
     [
       'lighthouse',
-      'http://localhost:4173/gallery',
+      `http://localhost:4173${targetPath}`,
       '--chrome-flags="--headless --no-sandbox"',
       '--output=json',
-      '--output-path=./docs/reviews/lighthouse-gallery.json',
+      `--output-path=${outputPath}`,
       '--preset=desktop',
       '--only-categories=performance,accessibility,best-practices,seo',
     ],
@@ -49,8 +52,8 @@ try {
 
   console.log('Lighthouse exit code:', lhResult.status);
 
-  if (fs.existsSync('./docs/reviews/lighthouse-gallery.json')) {
-    const data = JSON.parse(fs.readFileSync('./docs/reviews/lighthouse-gallery.json', 'utf8'));
+  if (fs.existsSync(outputPath)) {
+    const data = JSON.parse(fs.readFileSync(outputPath, 'utf8'));
     console.log('=== LIGHTHOUSE RESULTS ===');
     console.log('Performance:', Math.round((data.categories.performance?.score || 0) * 100));
     console.log('Accessibility:', Math.round((data.categories.accessibility?.score || 0) * 100));
