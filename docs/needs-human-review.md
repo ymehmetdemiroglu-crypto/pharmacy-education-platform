@@ -26,6 +26,9 @@ This registry logs all domain claims, textbook chapter citations, numeric values
 | **NUM-MC01-02** | Specific Drug Thermodynamic Activity Cutoff | $a < 0.001$ | Step 4, Step 10 | `pending-human-review` | Confirm Ferguson threshold dividing non-specific physical accumulation from stereospecific receptor binding ($a < 10^{-3}$ vs $10^{-4}$). |
 | **NUM-MC01-03** | Vapor Pressure Ratio for Ether Anesthesia | $P_t / P_0 \approx 0.03$ | Step 1, Step 9 | `pending-human-review` | Check empirical vapor pressure ratio cited for diethyl ether minimum alveolar concentration (MAC) / biological activity. |
 | **NUM-MC01-04** | Activity Divergence Between Specific and Non-Specific Mechanisms | $10^4$ (4 orders of magnitude difference) | Step 8 (Misconception feedback) | `pending-human-review` | Verify in *Foye's* or *Patrick* whether the relative thermodynamic activity difference between stereospecific receptor agonists ($a \sim 10^{-5}$) and non-specific membrane depressants ($a \sim 10^{-1}$) is formally quoted as 4 orders of magnitude ($10^4$). |
+| **ILLUS-01** | Diethyl Ether Illustrative Dose | Tens of grams (bulk membrane accumulation) | Step 1 (Hook vignette) | `pending-human-review` | Verify whether ether dosing in inhalation anesthesia should be expressed by concentration (% MAC) rather than bulk mass ('tens of grams'). |
+| **ILLUS-02** | Propranolol Illustrative Dose | Milligrams (micromolar to nanomolar) | Step 1 (Hook vignette) | `pending-human-review` | Confirm whether propranolol comparison dose should be retained as illustrative milligrams or stated with specific target plasma concentration. |
+| **ILLUS-07** | Contrast Dose Comparison | 10 µg vs 500 mg | Step 8 (Contrast comparison) | `pending-human-review` | Verify illustrative model doses for contrast cases between receptor agonist and membrane depressant. |
 
 ---
 

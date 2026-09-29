@@ -275,4 +275,15 @@ describe('Freemium & Trial Lifecycle Rules', () => {
     const cards2 = enqueueReviewCards(cards, seeds);
     expect(cards2.length).toBe(2);
   });
+
+  it('guarantees client lesson data (lesson01.client.ts) is in sync with master JSON (no drift)', async () => {
+    const lessonJsonPath = path.resolve(__dirname, '../../../../courses/medchem/lessons/lesson-01.json');
+    const sourceRaw = fs.readFileSync(lessonJsonPath, 'utf8');
+    const clientPath = path.resolve(__dirname, '../../../../apps/web/src/data/lesson01.client.ts');
+    const existingClientCode = fs.readFileSync(clientPath, 'utf8');
+    // @ts-expect-error External ESM script located outside package src root
+    const generatorModule = await import('../../../../scripts/generate-lesson-client.mjs');
+    const expectedClientCode = generatorModule.generateClientLesson(sourceRaw);
+    expect(existingClientCode.trim()).toBe(expectedClientCode.trim());
+  });
 });

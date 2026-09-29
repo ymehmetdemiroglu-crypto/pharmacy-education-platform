@@ -91,6 +91,27 @@
       "value": "10^4 (4 orders of magnitude)",
       "status": "pending-human-review",
       "referencePassage": "Verify in Foye's or Patrick whether the relative thermodynamic activity difference between stereospecific receptor agonists (a ~ 10^-5) and non-specific membrane physical depressants (a ~ 10^-1) is formally stated as 4 orders of magnitude (10^4-fold)."
+    },
+    {
+      "id": "ILLUS-01",
+      "parameter": "Diethyl Ether Illustrative Dose",
+      "value": "Tens of grams (high molar concentration)",
+      "status": "pending-human-review",
+      "referencePassage": "Verify whether ether dosing in inhalation anesthesia should be expressed as concentration (% MAC) rather than bulk mass ('tens of grams')."
+    },
+    {
+      "id": "ILLUS-02",
+      "parameter": "Propranolol Illustrative Dose",
+      "value": "Milligrams (micromolar to nanomolar)",
+      "status": "pending-human-review",
+      "referencePassage": "Confirm whether propranolol comparison dose should be retained as illustrative milligrams or stated with specific target plasma concentration."
+    },
+    {
+      "id": "ILLUS-07",
+      "parameter": "Drug A vs Drug B Model Dose Comparison",
+      "value": "10 µg vs 500 mg (a = 0.00001 vs 0.20)",
+      "status": "pending-human-review",
+      "referencePassage": "Verify illustrative model doses for contrast cases between receptor agonist and membrane depressant."
     }
   ],
   "spacedReviewCards": [
@@ -578,20 +599,20 @@
           },
           {
             "id": "opt-1",
-            "label": "a = 0.05 (5% saturation, structurally non-specific range)",
+            "label": "a = 0.05 (5% relative saturation)",
             "isCorrect": true
           }
         ],
         "revealedOutcome": "a = 10 / 200 = 0.05. The agent achieves anesthesia at 5% of its saturation limit.",
-        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. Because 0.05 falls in the high saturation range, this confirms structurally non-specific action."
+        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. The calculated value represents 5% relative saturation."
       },
       "hints": [
         "Divide partial vapor pressure Pt by saturated vapor pressure P0.",
         "Calculate: a = 10 mmHg / 200 mmHg = 1 / 20.",
-        "1 / 20 = 0.05. This relative saturation of 5% falls directly within Ferguson's non-specific anesthesia range."
+        "1 / 20 = 0.05, representing 5% relative saturation."
       ],
       "feedback": {
-        "correct": "Outstanding! 10 / 200 gives a = 0.05, placing this anesthetic squarely within the non-specific saturation window.",
+        "correct": "Outstanding! 10 / 200 gives a = 0.05 (5% relative saturation).",
         "incorrect": "Calculate 10 divided by 200. The result is 0.05 (5% relative saturation)."
       },
       "sources": [

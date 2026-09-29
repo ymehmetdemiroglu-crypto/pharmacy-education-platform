@@ -1,4 +1,11 @@
-$ node scripts/claim-inventory.mjs
+================================================================
+PHARMACY EDUCATION PLATFORM ظ¤ STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+================================================================
+
+[CONTENT GUARD VIOLATION] Found 1 occurrence(s) of forbidden token "Chapter" in student-facing content.
+[FAIL] Content string guard failed with 1 violations.
+
 ================================================================
 PHARMACY EDUCATION PLATFORM ظ¤ STRUCTURED CLAIM INVENTORY AUDIT
 Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
@@ -42,3 +49,17 @@ INVENTORY AUDIT SUMMARY:
 [PASS] Step 8's '4 orders of magnitude' (NUM-MC01-04) verified in claim inventory.
 ================================================================
 
+================================================================
+PHARMACY EDUCATION PLATFORM ظ¤ STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps and review flashcards for numbers, units, and empirical claims...
+- Total String Nodes Audited: 241
+- Recognized Number/Unit Matches Mapped to Registry: 99
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In steps[1].title: "Thermodynamic Activity of Vapors (a = 0.07)"

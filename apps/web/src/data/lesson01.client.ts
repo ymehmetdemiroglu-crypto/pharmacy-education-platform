@@ -456,7 +456,7 @@ export const clientLesson01: LessonData = {
       "config": {
         "comparison": {
           "drugA": {
-            "a": 1e-05,
+            "a": 0.00001,
             "dose": "10 µg"
           },
           "drugB": {
@@ -531,20 +531,20 @@ export const clientLesson01: LessonData = {
           },
           {
             "id": "opt-1",
-            "label": "a = 0.05 (5% saturation, structurally non-specific range)",
+            "label": "a = 0.05 (5% relative saturation)",
             "isCorrect": true
           }
         ],
         "revealedOutcome": "a = 10 / 200 = 0.05. The agent achieves anesthesia at 5% of its saturation limit.",
-        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. Because 0.05 falls in the high saturation range, this confirms structurally non-specific action."
+        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. The calculated value represents 5% relative saturation."
       },
       "hints": [
         "Divide partial vapor pressure Pt by saturated vapor pressure P0.",
         "Calculate: a = 10 mmHg / 200 mmHg = 1 / 20.",
-        "1 / 20 = 0.05. This relative saturation of 5% falls directly within Ferguson's non-specific anesthesia range."
+        "1 / 20 = 0.05, representing 5% relative saturation."
       ],
       "feedback": {
-        "correct": "Outstanding! 10 / 200 gives a = 0.05, placing this anesthetic squarely within the non-specific saturation window.",
+        "correct": "Outstanding! 10 / 200 gives a = 0.05 (5% relative saturation).",
         "incorrect": "Calculate 10 divided by 200. The result is 0.05 (5% relative saturation)."
       },
       "sources": [

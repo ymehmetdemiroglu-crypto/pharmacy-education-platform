@@ -246,7 +246,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     // Select correct calculation
     await page
-      .getByRole('radio', { name: /a = 0\.05 \(5% saturation, structurally non-specific range\)/i })
+      .getByRole('radio', { name: /a = 0\.05 \(5% relative saturation\)/i })
       .click();
     await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
@@ -372,7 +372,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
   test('verifies keyboard-only completion through all 10 steps and reduced-motion fallback', async ({
     page,
   }, testInfo) => {
-    if (testInfo.project.name.includes('mobile')) return; // Keyboard navigation applies to desktop/tablet
+    // Assert counter ensuring all 10 steps execute across every profile (including mobile)
+    let executedStepCount = 0;
 
     // Emulate reduced motion
     await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -384,16 +385,23 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.waitForLoadState('networkidle');
 
     // Step 1: Hook -> ArrowRight
+    await expect(page.getByText('Thermodynamic Activity & The Ferguson Principle')).toBeVisible();
+    executedStepCount++;
+    expect(executedStepCount).toBe(1);
     await page.keyboard.press('ArrowRight');
     await expect(page.getByText('Thermodynamic Activity of Vapors')).toBeVisible();
 
     // Step 2: Option 2 (Index 1) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(2);
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Diagnostic Feedback|Hypothesis Confirmed/i)).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // Step 3: Option 1 (Index 0) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(3);
     await expect(page.getByText('The Non-Specific Activity Threshold')).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
@@ -401,6 +409,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 4: Option 3 (Index 2) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(4);
     await expect(page.getByText('Exobiophase to Endobiophase Equilibrium')).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
@@ -408,6 +418,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 5: Checkpoint -> Option 2 (Index 1) -> Enter (commit) -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(5);
     await expect(page.getByText('Classify Mystery Compounds')).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
@@ -415,6 +427,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 6: Option 1 (Index 0) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(6);
     await expect(page.getByText('Core Structural Sensitivity')).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
@@ -422,6 +436,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 7: Option 3 (Index 2) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(7);
     await expect(page.getByText('Chemical Diversity in Anesthesia')).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
@@ -429,6 +445,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 8: Option 2 (Index 1) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(8);
     await expect(page.getByText('Differentiating Affinity from Saturation')).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
@@ -436,6 +454,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 9: Option 3 (Index 2) -> Enter -> ArrowRight
+    executedStepCount++;
+    expect(executedStepCount).toBe(9);
     await expect(page.getByRole('heading', { name: 'Calculate Thermodynamic Activity' })).toBeVisible();
     await page.keyboard.press('3');
     await page.keyboard.press('Enter');
@@ -443,6 +463,8 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('ArrowRight');
 
     // Step 10: Recap Mastered
+    executedStepCount++;
+    expect(executedStepCount).toBe(10);
     await expect(page.getByText('Lesson 1 Mastered!')).toBeVisible();
 
     await page.screenshot({

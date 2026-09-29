@@ -159,21 +159,21 @@ const claimInventory = [
   // --- Illustrative Pedagogical Numbers & Calculations (9 Items) ---
   {
     id: 'ILLUS-01',
-    category: 'Illustrative Example',
-    claim: 'Diethyl Ether Clinical Quantity',
+    category: 'Clinical Dosing / Model',
+    claim: 'Diethyl Ether Illustrative Quantity',
     value: '~20–50 grams (high molar concentration in blood)',
     location: 'Step 1 (config.drugA.dose)',
-    status: 'illustrative-example',
-    notes: 'Hook comparison highlighting bulk membrane volume saturation requirement.'
+    status: 'pending-human-review',
+    notes: 'Hook comparison. Inhalation dosing wording ("tens of grams" vs % MAC) pending owner verification.'
   },
   {
     id: 'ILLUS-02',
-    category: 'Illustrative Example',
-    claim: 'Propranolol Clinical Quantity',
+    category: 'Clinical Dosing / Model',
+    claim: 'Propranolol Illustrative Quantity',
     value: '10–40 milligrams (nanomolar concentration)',
     location: 'Step 1 (config.drugB.dose)',
-    status: 'illustrative-example',
-    notes: 'Hook comparison highlighting stereoselective receptor pocket binding.'
+    status: 'pending-human-review',
+    notes: 'Hook comparison. Receptor ligand dosing wording pending owner confirmation.'
   },
   {
     id: 'ILLUS-03',
@@ -182,7 +182,7 @@ const claimInventory = [
     value: 'a = 0.15 with broad scaffold tolerance',
     location: 'Step 5 (config.options[1])',
     status: 'illustrative-example',
-    notes: 'Pedagogical diagnostic distractor testing recognition of non-specific drug profile.'
+    notes: 'Purely hypothetical diagnostic test case testing recognition of non-specific profile.'
   },
   {
     id: 'ILLUS-04',
@@ -191,7 +191,7 @@ const claimInventory = [
     value: 'a = 0.00005, 500-fold enantiomeric potency difference',
     location: 'Step 5 (config.options[0])',
     status: 'illustrative-example',
-    notes: 'Pedagogical diagnostic distractor testing recognition of stereospecific receptor ligand.'
+    notes: 'Purely hypothetical diagnostic test case testing recognition of stereospecific receptor ligand.'
   },
   {
     id: 'ILLUS-05',
@@ -200,25 +200,25 @@ const claimInventory = [
     value: 'P0 = 200 mmHg, Pt = 10 mmHg',
     location: 'Step 9 (config.given)',
     status: 'illustrative-example',
-    notes: 'Worked example fading step for thermodynamic activity calculation.'
+    notes: 'Hypothetical problem parameters for thermodynamic activity calculation.'
   },
   {
     id: 'ILLUS-06',
     category: 'Illustrative Example',
     claim: 'Calculated Thermodynamic Activity Value',
-    value: 'a = Pt / P0 = 10 / 200 = 0.05 (5% saturation)',
+    value: 'a = Pt / P0 = 10 / 200 = 0.05 (5% relative saturation)',
     location: 'Step 9 (options, revealedOutcome, explanation)',
     status: 'illustrative-example',
-    notes: 'Exact mathematical division confirming structurally non-specific activity window.'
+    notes: 'Pure arithmetic division with no range claim.'
   },
   {
     id: 'ILLUS-07',
-    category: 'Illustrative Example',
-    claim: 'Step 8 Drug A vs Drug B Comparison',
+    category: 'Model Dosing Contrast',
+    claim: 'Step 8 Drug A vs Drug B Contrast Dosing',
     value: 'Drug A: a = 0.00001 (10 µg); Drug B: a = 0.20 (500 mg)',
     location: 'Step 8 (config.comparison)',
-    status: 'illustrative-example',
-    notes: 'Illustrative contrast teaching distinction between potency and saturation.'
+    status: 'pending-human-review',
+    notes: 'Illustrative contrast teaching distinction between potency and saturation; doses pending owner review.'
   },
   {
     id: 'GAMIF-01',

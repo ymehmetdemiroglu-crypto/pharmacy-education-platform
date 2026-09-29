@@ -1,0 +1,8 @@
+[WebServer] $ vite preview "--port" "4173"
+
+Running 1 test using 1 worker
+
+  ok 1 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:372:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies keyboard-only completion through all 10 steps and reduced-motion fallback (3.8s)
+[WebServer] [ELIFECYCLE] Command failed with exit code 1.
+
+  1 passed (9.6s)
