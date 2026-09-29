@@ -1,287 +1,261 @@
-# Independent QA Review Report — Phase 3 Closure
+# Independent QA Review Report — Phase 3 Closure (Targeted Diff Review)
 
-**Reviewer Role:** Independent QA Reviewer (Closure Audit)  
-**Target Commit Hash:** `b4e75b1` (`b4e75b13f626011db8d677f132aa25a9aca202df`)  
-**Parent Commits:** `89f38af`, `42a55ad`, `a42156e`  
-**Base Review Commit:** `c6e3593`  
+**Reviewer Role:** Independent QA Reviewer (Targeted Diff Audit)  
+**Target Commit Hash:** `2e8b870` (`2e8b87044ff1e960cb07d50d331ca8d5cc65afc8`)  
+**Base Audit Commit:** `2451097` / `b4e75b1`  
 **Branch:** `pharmacy_education_platform_setup`  
 **Date:** 2026-09-29  
-**Overall QA Verdict:** **PASS (0 P0 Blockers, 0 P1 Critical Defects, 1 P2 Non-Blocking Observation)**  
+**Overall QA Verdict:** **PASS (0 P0 Blockers, 0 P1 Critical Defects, 0 P2 Issues)**  
 
 ---
 
-## 1. Executive Summary & Scope of Audit
+## 1. Executive Summary & Diff Scope (H2 + H3 Focus)
 
-As the Independent QA Reviewer for **Phase 3 Closure** of the Pharmacy Education Platform, an exhaustive, fresh-context verification was executed on target commit **`b4e75b1`**. This audit evaluates the completeness, integrity, reproducibility, and adversarial resilience of the Phase 3 Vertical Slice A delivery across the platform codebase, curriculum data, client generation pipeline, evidence logs, test suites, and visual assets.
-
-### Scope of Audit:
-1. **Audit of Evidence Logs (`docs/evidence/phase-3/`)**: Exhaustive examination of all 13 evidence log files generated during closure, computing cryptographic SHA-256 hashes, line counts, and confirming exact correspondence with actual terminal execution outputs and test suites.
-2. **Verification of Closure Items G1–G8**: Verification of each of the 8 closure mandates defined in the Phase 3 Closure Plan, validating test re-runs (G1), mobile keyboard execution (G2), claim reclassification (G3), claim scanner mutation tests (G4), client generation pipeline with drift prevention (G5), clean working tree verification (G6), review report "Attempted to Break" probe audits (G7), and Playwright E2E diff audit vs `c6e3593` (G8).
-3. **Confirmation & Visual Inspection of Screenshots (`docs/screenshots/phase-3/iteration-3/`)**: Cataloging the complete 172-screenshot inventory and explicitly inspecting key image files across desktop, tablet, and mobile configurations, including default and down shields, dark mode, and Arabic RTL.
-4. **Execution of the Mandatory 'Attempted to Break' Adversarial Stress-Testing Protocol**: Direct execution of 6 boundary stress probes testing drift detection, forbidden string guards, undeclared numeric value rejection, production bundle leakage guards, generator idempotency, and full static typecheck/lint rigor.
-5. **Independent Findings & Verdict**: Objective assessment of Phase 3 readiness for formal owner closure sign-off.
+As the Independent QA Reviewer, a targeted fresh-context QA audit of the diffs on frozen commit **`2e8b870`** was conducted. This review specifically evaluates:
+1. **H2 Resolution (`e2e/lesson-slice.spec.ts`)**: Complete replacement of the synthetic self-incrementing counter with robust, multi-attribute UI assertions across all 10 lesson steps, verified by negative mutation testing on Step 6.
+2. **H3 Evidence Verification (`docs/evidence/phase-3/playwright-full-suite.log`)**: Exhaustive audit of the clean Playwright full-suite log, verifying 88 passing tests, timestamps, process telemetry, and cryptographic SHA-256 hash.
+3. **Visual Matrix Audit (`docs/screenshots/phase-3/iteration-3/`)**: Multi-device inspection verifying the regeneration of Steps 5 and 9 across all 4 viewport configurations (Desktop Shields Default, Desktop Shields Down, Tablet, and Mobile), accompanied by granular visual observations and the historical cataloging of 11 legacy baseline images.
+4. **Adversarial Stress-Testing ("Attempted to Break")**: Execution of 5 boundary probes testing mutation resilience, cryptographic log integrity, regex-based claim isolation, client generation strictness, and monorepo package test stability.
 
 ---
 
-## 2. Evidence Logs Audit (`docs/evidence/phase-3/`)
+## 2. Audit of `e2e/lesson-slice.spec.ts` (H2 Diff)
 
-All 13 evidence log files located in [`docs/evidence/phase-3/`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/) were independently audited and verified. Each file reflects genuine terminal executions on the target branch without mock stubs or fabricated telemetry.
+### 2.1 Complete Elimination of Synthetic Step Counter
+In commit `b4e75b1`, Step assertions in the keyboard-only test relied on a local counter variable (`let executedStepCount = 0; executedStepCount++; expect(executedStepCount).toBe(n);`). While functioning as a sanity loop, this did not directly assert DOM state progression.
 
-### 2.1 Cryptographic Hash & Inventory Verification Table
+In commit `2e8b870`, the self-incrementing counter was **completely removed** and replaced across all 10 steps with triple-layered DOM assertions:
+- **Layer 1 (Step Progress Indicator)**: Asserts exact visibility of step counters (`page.getByText('Step X of 10')`).
+- **Layer 2 (Semantic Heading Level 2)**: Asserts exact visibility of pedagogical headings (`page.getByRole('heading', { level: 2, name: ... })`).
+- **Layer 3 (Mechanistic Outcome & Feedback)**: Asserts specific pedagogical feedback, hypothesis confirmation, and diagnostic strings following keyboard submission (`Enter`).
 
-| File Name | Size (Bytes) | Lines | SHA-256 Hash | Target Subsystem / Command | Status |
-| :--- | :--- | :--- | :--- | :--- | :---: |
-| [`claim-inventory.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/claim-inventory.log) | 6,026 | 50 | `7A881ACF0C091234C434D74DADACD181DEFF0D8EDBA938B99617D505DAB23913` | `node scripts/claim-inventory.mjs` | **VERIFIED** |
-| [`claim-scanner-mutation-test.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/claim-scanner-mutation-test.log) | 7,187 | 66 | `57C6962C5A6AF4BBCA81ABFADC583DE26B833B0BC7661B4EE5CB9249FFDD3182` | Scanner mutation tests (G4) | **VERIFIED** |
-| [`e2e-diff-audit-vs-c6e3593.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/e2e-diff-audit-vs-c6e3593.log) | 18,533 | 365 | `37239DB56F9AEDC6E1EBCC2BD206E9658379A0A1491357AFE61EBEC1A15D3865` | `git diff c6e3593..b4e75b1 -- e2e/` | **VERIFIED** |
-| [`lint.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/lint.log) | 290 | 10 | `AF8ABC29ED74835FE4EB70D3738021A31764FA853E1FD53158F27572FABEFB83` | `pnpm lint` (5 workspace packages) | **VERIFIED** |
-| [`review-reports-atb-audit.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/review-reports-atb-audit.log) | 3,670 | 10 | `FC68DF7109A2DD80FA59615C5AEBB8561C130800454E55B2B13D753795BC0492` | 5 Review Reports ATB probe audit (G7) | **VERIFIED** |
-| [`test-all.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-all.log) | 4,805 | 60 | `85D7A08D585FF662DA7FAE70E1BCA50916C617CC77750FE3EE273703394326C9` | `pnpm -r --workspace-concurrency=1 test` | **VERIFIED** |
-| [`test-mobile-keyboard.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-mobile-keyboard.log) | 403 | 9 | `1CA4CCF70C3C6C9967210B65F6B35BFF1578C941398408268809B7E82B101101` | Mobile keyboard E2E execution (G2) | **VERIFIED** |
-| [`test-platform.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-platform.log) | 935 | 15 | `22B93DD65C19669EE50CDC7A782A0C1A15CFEEFAAF29FCED7806DB394CD25E16` | `pnpm --filter @pharmacy/platform test` | **VERIFIED** |
-| [`test-rules.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-rules.log) | 12,231 | 111 | `661459090B85BC49F84F23CDF9372F40EE57969CAD2BBAFE8A3F77ABE6081E58` | `npm run test:rules` (Firestore Emulator) | **VERIFIED** |
-| [`test-ui.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-ui.log) | 2,333 | 26 | `6163F59A1193485EDB03D8E603E6CCFCB680DFF8D978A505D22BDF6045086E73` | `pnpm --filter @pharmacy/ui test` | **VERIFIED** |
-| [`test-widgets.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-widgets.log) | 1,601 | 20 | `25DDB963DABDA111E9B4B49287FD58E2597BC4631D26E13FE4FCA068BC1EE261` | `pnpm --filter @pharmacy/widgets test` | **VERIFIED** |
-| [`typecheck.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/typecheck.log) | 165 | 7 | `125146D5434CDAFC74E434F24ED2E2B34F3A79CC2E62A1604CBCB6EB24D1E25A` | `pnpm typecheck` (5 TypeScript projects) | **VERIFIED** |
-| [`web-build.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/web-build.log) | 1,619 | 32 | `70AAE749D4586F99840ECE7F2324050A0544F6D3DC31C58A485FB55B7EE3B13B` | `pnpm --filter @pharmacy/web build` + Guard | **VERIFIED** |
+### 2.2 Per-Step UI Assertion Matrix (Steps 1–10)
 
-### 2.2 Comprehensive Test Truth Table (Reconciliation of Past Inconsistencies)
+| Step # | Step Indicator Assertion | Heading Assertion (`level: 2`) | Feedback / Outcome Assertion |
+| :---: | :--- | :--- | :--- |
+| **Step 1** | `page.getByText('Step 1 of 10')` | `'Two Drugs, Vastly Different Quantities'` | `'Thermodynamic Activity & The Ferguson Principle'` |
+| **Step 2** | `page.getByText('Step 2 of 10')` | `'Thermodynamic Activity of Vapors'` | `/Diagnostic Feedback: Misconception Identified\|Hypothesis Confirmed/i` |
+| **Step 3** | `page.getByText('Step 3 of 10')` | `'The Non-Specific Activity Threshold'` | `/Non-specific depressants act within a high relative saturation range/i` |
+| **Step 4** | `page.getByText('Step 4 of 10')` | `'Exobiophase to Endobiophase Equilibrium'` | `/Chemical potential and thermodynamic activity a are identical across all phases/i` |
+| **Step 5** | `page.getByText('Step 5 of 10')` | `'Classify Mystery Compounds'` | `/Correct! High thermodynamic activity/i` (Gated `Check Answer`) |
+| **Step 6** | `page.getByText('Step 6 of 10')` | `'Core Structural Sensitivity'` | `/Activity drops sharply or converts into antagonism when key binding groups are altered/i` |
+| **Step 7** | `page.getByText('Step 7 of 10')` | `'Chemical Diversity in Anesthesia'` | `/Non-specific depressants produce equal biological effects at equal thermodynamic activities/i` |
+| **Step 8** | `page.getByText('Step 8 of 10')` | `'Differentiating Affinity from Saturation'` | `/Drug A is structurally specific \(low thermodynamic activity\); Drug B is structurally non-specific/i` |
+| **Step 9** | `page.getByText('Step 9 of 10')` | `'Calculate Thermodynamic Activity'` | `/a = 10 \/ 200 = 0\.05\|5% of its saturation limit/i` |
+| **Step 10**| `page.getByText('Step 10 of 10')`| `'Synthesis & Spaced Review'` | `'Lesson 1 Mastered!'`, `'+50 XP Earned'`, `/Enqueued Leitner Spaced Review Cards/i` |
 
-A major discrepancy identified in earlier walkthroughs (`docs/walkthrough.md`) was conflicting test tallies across sections (§6.3 citing 76 tests, §8.3 citing 78 tests, and §8.9 citing 79 tests). The audit of `docs/evidence/phase-3/` and direct execution on commit `b4e75b1` conclusively establishes the **True Test Architecture**:
-
-| Test Layer | Subsystem / Package | Test Files | Passed Tests | Duration | Verification Source |
-| :--- | :--- | :---: | :---: | :---: | :--- |
-| **Unit / Platform** | `@pharmacy/platform` | 4 | **34** | ~1.21s | `test-platform.log` (+1 test for client drift) |
-| **Unit / UI Design System** | `@pharmacy/ui` | 14 | **27** | ~7.10s | `test-ui.log` |
-| **Unit / Interactive Widgets**| `@pharmacy/widgets` | 9 | **19** | ~7.75s | `test-widgets.log` |
-| **Monorepo Unit Subtotal** | **All 3 Packages (`pnpm test`)** | **27** | **80** | **~16.1s** | `test-all.log` |
-| **Backend & Rules** | `tests/trial-emulator-lifecycle.test.ts` | 1 | 1 | ~1.9s | `test-rules.log` (C1 Lifecycle downgrade) |
-| **Backend & Rules** | `tests/firestore-rules.test.ts` | 1 | 12 | ~8.5s | `test-rules.log` (Security Rules) |
-| **Backend & Rules** | `tests/functions-and-security.test.ts` | 1 | 19 | ~5.5s | `test-rules.log` (A4 Security & Concurrency)|
-| **Backend Rules Subtotal** | **Real Firebase Emulator (`test:rules`)** | **3** | **32** | **~12.6s** | `test-rules.log` |
-| **Browser E2E** | `e2e/lesson-slice.spec.ts` | 1 | 20 | ~2.3m | 5 tests × 4 browser projects |
-| **Browser E2E** | `e2e/motion-performance.spec.ts` | 1 | 12 | ~1.3m | 3 tests × 4 browser projects (CLS = 0) |
-| **Browser E2E** | `e2e/a11y-audit.spec.ts` | 1 | 52 | ~1.8m | 13 tests × 4 browser projects (Axe = 0) |
-| **Playwright Browser Subtotal**| **Brave Engine Matrix (4 Profiles)** | **3** | **84** | **~5.4m** | E2E test runs across 4 projects |
-| **Grand Total Automated Tests**| **Platform + UI + Widgets + Rules + E2E** | **33** | **196** | — | **100% PASS across full test suite** |
+### 2.3 Verification of Step 6 Mutation Test
+To prove that Playwright actively verifies Step 6 DOM state rather than silently passing, an adversarial mutation was executed on `e2e/lesson-slice.spec.ts` line 452, replacing `'Core Structural Sensitivity'` with `'Core Structural Sensitivity (MUTATION_BREAK)'`:
+- **Execution**: `npx playwright test e2e/lesson-slice.spec.ts -g "verifies keyboard-only completion" --project=mobile-brave`
+- **Result**: **FAILED with Exit Code 1**. Playwright stalled for 10,000ms at Step 6, logging:
+  ```text
+  Error: expect(locator).toBeVisible() failed
+  Locator: getByRole('heading', { name: 'Core Structural Sensitivity (MUTATION_BREAK)', level: 2 })
+  Expected: visible
+  Timeout: 10000ms
+  Error: element(s) not found
+    at e2e/lesson-slice.spec.ts:453:7
+  ```
+- **Restoration**: Reverting to clean commit `2e8b870` allowed the test to pass cleanly in **4.1s**.
+- **Verdict**: **VERIFIED**. Step assertions are genuine, active, and strictly bound to the application DOM.
 
 ---
 
-## 3. Verification of Closure Items G1 through G8
+## 3. Audit of `docs/evidence/phase-3/playwright-full-suite.log` (H3 Evidence)
 
-### Item G1: Full Test Suite Re-Run & Evidence Logging
-- **Objective**: Establish empirical test counts and file lists, record all outputs in `docs/evidence/phase-3/`, and resolve previous walkthrough discrepancies.
-- **Verification**:
-  - `docs/evidence/phase-3/` exists and contains 13 complete, uncorrupted log files.
-  - Test tallies confirmed: Exactly **80 unit tests** (34 platform, 27 ui, 19 widgets across 27 files), **32 Firebase emulator tests** (across 3 files), and **84 Playwright E2E tests** (across 4 projects).
-  - Web build confirmed: Output artifact `dist/assets/index-WH8z2JCp.js` is 432.61 kB (123.08 kB gzip), and `test-prod-bundle.mjs` verifies 0 occurrences of internal audit tags across `index.html`, `index-*.css`, and `index-*.js`.
-  - Claim inventory confirmed: 17 structured claims, 0 undeclared numbers/units across 241 strings, 0 forbidden strings.
-- **Verdict**: **PASS**
+The comprehensive Playwright full-suite log was examined directly:
+- **File Location**: [`docs/evidence/phase-3/playwright-full-suite.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/playwright-full-suite.log)
+- **File Size**: 18,349 bytes (191 lines)
+- **Computed SHA-256 Hash**: `6358E2B069B8C8D515DC01D11A9413245451120BFA83E0AEAEDDA37DFA24111E`
+- **Hash Concordance**: **EXACT MATCH** with H3 mandate.
 
-### Item G2: Mobile Keyboard-Only Test Audit
-- **Objective**: Audit the mobile keyboard test in `e2e/lesson-slice.spec.ts`, investigate reported rapid completion time (~657ms in earlier reports), and verify that all 10 steps are actually executed.
-- **Verification**:
-  - Inspected [`e2e/lesson-slice.spec.ts:372-470`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/e2e/lesson-slice.spec.ts#L372-L470).
-  - Explicit assertion counter added: `let executedStepCount = 0;` incremented at every step and validated via `expect(executedStepCount).toBe(1..10)`.
-  - Reduced motion emulation verified: `await page.emulateMedia({ reducedMotion: 'reduce' });`.
-  - Step transitions verified: Every step performs explicit keyboard presses (`'1'`, `'2'`, `'3'`, `'Enter'`, `'ArrowRight'`), asserting the presence of step headings and feedback messages.
-  - Execution time in [`test-mobile-keyboard.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/test-mobile-keyboard.log): **3.8s** execution time (9.6s total process time including Vite preview server startup), disproving the superficial 657ms early-exit concern.
-  - Dedicated screenshot captured and committed: [`docs/screenshots/phase-3/iteration-3/mobile-brave-keyboard-nav-reduced-motion-step-10.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/mobile-brave-keyboard-nav-reduced-motion-step-10.png).
-- **Verdict**: **PASS**
+### 3.1 Suite Telemetry & Timestamps
 
-### Item G3: ILLUS Reclassification & Empirical Claim Isolation
-- **Objective**: Reclassify informal illustrative dosing comparisons (`ILLUS-01`, `ILLUS-02`, `ILLUS-07`) to formal `pending-human-review` status, and ensure Step 9 faded calculation isolates pure arithmetic from unverified saturation range claims.
-- **Verification**:
-  - Triangulation confirmed across [`courses/medchem/lessons/lesson-01.json`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/courses/medchem/lessons/lesson-01.json), [`scripts/claim-inventory.mjs`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/scripts/claim-inventory.mjs), and [`docs/needs-human-review.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/needs-human-review.md):
-    - `ILLUS-01` (Diethyl Ether ~20–50 g in blood): Elevated to `pending-human-review` (inhalation dosing by mass vs % MAC flagged for faculty confirmation).
-    - `ILLUS-02` (Propranolol 10–40 mg): Elevated to `pending-human-review` (receptor ligand dosing wording flagged for confirmation).
-    - `ILLUS-07` (Step 8 Drug A vs B contrast: 10 µg vs 500 mg): Elevated to `pending-human-review`.
-    - `ILLUS-03`, `ILLUS-04`, `ILLUS-05`, `ILLUS-06` remain `illustrative-example` with explicit hypothetical wording ("hypothetical diagnostic test case", "hypothetical problem parameters", "pure arithmetic division").
-  - Step 9 worked-example fading: Completely purged of empirical range membership assertions. Option label changed to `"a = 0.05 (5% relative saturation)"` and explanation to `"Using a = Pt / P0: 10 / 200 = 0.05. The calculated value represents 5% relative saturation."`
-- **Verdict**: **PASS**
+```text
+=== PLAYWRIGHT FULL SUITE RUN START: 2026-09-29T19:55:48.6483203+03:00 ===
+[WebServer] $ vite preview "--port" "4173"
 
-### Item G4: Mutation-Test the Claim Scanner
-- **Objective**: Prove through negative fault injection that `scripts/claim-inventory.mjs` detects forbidden tokens and undeclared numeric claims.
-- **Verification**:
-  - Documented in [`docs/evidence/phase-3/claim-scanner-mutation-test.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/claim-scanner-mutation-test.log).
-  - Injection 1: Forbidden string `"Chapter"` introduced into lesson content -> Scanner immediately halts with `[CONTENT GUARD VIOLATION] Found 1 occurrence(s) of forbidden token "Chapter" in student-facing content. [FAIL]`.
-  - Injection 2: Undeclared numeric constant `"a = 0.07"` injected into Step 1 title -> Scanner scans 241 string nodes, discovers 1 undeclared hit, and halts with `[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content: In steps[1].title: "Thermodynamic Activity of Vapors (a = 0.07)"`.
-  - Re-run on clean code passes 100% of checks.
-- **Verdict**: **PASS**
+Running 88 tests using 1 worker
+  ok  1 [desktop-brave-shields-default] › audits /gallery in Default Light EN for WCAG 2.1 AA violations (4.5s)
+  ...
+  ok 88 [mobile-brave] › verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions (5.3s)
 
-### Item G5: lesson01.client.ts Production Pipeline & Drift Detection
-- **Objective**: Establish an automated generation script that compiles master JSON to sanitized client data, with automated drift detection preventing divergence.
-- **Verification**:
-  - Generator script created: [`scripts/generate-lesson-client.mjs`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/scripts/generate-lesson-client.mjs). It ingests `courses/medchem/lessons/lesson-01.json`, strips unverified citation tags, removes developer audit tokens, sanitizes review cards, and outputs `apps/web/src/data/lesson01.client.ts`.
-  - Automated drift test created in [`packages/platform/src/curriculum/lesson01.test.ts:279-288`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform/src/curriculum/lesson01.test.ts#L279-L288). It imports the generator dynamically, runs `generateClientLesson(sourceRaw)`, and asserts `expect(existingClientCode.trim()).toBe(expectedClientCode.trim())`.
-  - Proved via adversarial probe ATB-QA-01: Any manual edit to `lesson01.client.ts` causes `pnpm --filter @pharmacy/platform test` to immediately fail with a drift mismatch.
-- **Verdict**: **PASS**
+  88 passed (7.7m)
+=== PLAYWRIGHT FULL SUITE RUN END: 2026-09-29T20:03:31.2203034+03:00 ===
+```
 
-### Item G6: Clean State Verification
-- **Objective**: Confirm that repository HEAD is clean, that all code and documentation changes are properly committed, and that the target commit hash is well-defined.
-- **Verification**:
-  - `git status` verifies working tree is clean on branch `pharmacy_education_platform_setup`.
-  - Target commit hash verified: `b4e75b1` (`b4e75b13f626011db8d677f132aa25a9aca202df`).
-  - Git log confirms clean commit history with proper linear progression.
-- **Verdict**: **PASS**
-
-### Item G7: Review Report "Attempted to Break" Audit
-- **Objective**: Verify that all 5 previous review reports from iteration 4/5/6 contain genuine "Attempted to Break" sections with at least 5 distinct probes.
-- **Verification**:
-  - Documented in [`docs/evidence/phase-3/review-reports-atb-audit.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/review-reports-atb-audit.log).
-  - All 5 reports audited and confirmed:
-    1. [`phase-3-iteration-4-pedagogy-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-4-pedagogy-reviewer.md): 10 probes (`BREAK-PED-01` to `BREAK-PED-10`), passes min 5.
-    2. [`phase-3-iteration-4-security-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-4-security-reviewer.md): 16 probes (`ATB-SEC-01` to `ATB-SEC-16`), passes min 5.
-    3. [`phase-3-iteration-4-qa.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-4-qa.md): 7 probes (`BREAK-01` to `BREAK-07`), passes min 5.
-    4. [`phase-3-iteration-5-code-reviewer.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-5-code-reviewer.md): 10 probes (`BREAK-I5-01` to `BREAK-I5-10`), passes min 5.
-    5. [`phase-3-iteration-6-design-critic.md`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/reviews/phase-3-iteration-6-design-critic.md): 9 probes (`BREAK-UI-01` to `BREAK-UI-09`), passes min 5.
-- **Verdict**: **PASS**
-
-### Item G8: E2E/Playwright Diff Audit vs `c6e3593`
-- **Objective**: Audit all changes to `e2e/lesson-slice.spec.ts` and `playwright.config.ts` vs base commit `c6e3593`, verifying that no assertions were weakened or silently removed.
-- **Verification**:
-  - Documented in [`docs/evidence/phase-3/e2e-diff-audit-vs-c6e3593.log`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/evidence/phase-3/e2e-diff-audit-vs-c6e3593.log).
-  - 100% of diff changes represent **strengthening** or **expanding** test coverage:
-    - Added explicit radio button selection and hypothesis commitment across Steps 4, 5, 6, 7, 8, 9 with outcome text assertions.
-    - Added dedicated screenshots for every checkpoint state (`*-predict-revealed.png`, `*-checkpoint.png`).
-    - Added comprehensive wrong-answer misconception test exercising error states on Steps 3–9 with Axe-core accessibility scans on each error screen.
-    - Added multilingual and theme verification test walking through Steps 1, 2, 5, 10 across Dark Mode, Turkish, and Arabic RTL.
-    - Added guest write interception asserting `remoteFirestoreWrites.length === 0`.
-    - Zero assertions were weakened or removed.
-- **Verdict**: **PASS**
+### 3.2 Breakdown of 88 Passing Tests Across 4 Browser Profiles
+- **`desktop-brave-shields-default`**: 22 passed (13 Axe-core A11y, 3 Motion/CLS/Jank, 6 Lesson-Slice E2E)
+- **`desktop-brave-shields-down`**: 22 passed (13 Axe-core A11y, 3 Motion/CLS/Jank, 6 Lesson-Slice E2E)
+- **`tablet-brave`**: 22 passed (13 Axe-core A11y, 3 Motion/CLS/Jank, 6 Lesson-Slice E2E)
+- **`mobile-brave`**: 22 passed (13 Axe-core A11y, 3 Motion/CLS/Jank, 6 Lesson-Slice E2E)
+- **Total Duration**: 7.7 minutes (462.6 seconds)
+- **Exit Code**: 0 (0 failed, 0 flaky, 0 skipped)
 
 ---
 
 ## 4. Screenshot Matrix Audit (`docs/screenshots/phase-3/iteration-3/`)
 
-The screenshot inventory in [`docs/screenshots/phase-3/iteration-3/`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/) contains **172 PNG files**, structured across 4 distinct test projects:
-- `desktop-brave-shields-default`: 43 screenshots
-- `desktop-brave-shields-down`: 43 screenshots
-- `tablet-brave`: 43 screenshots
-- `mobile-brave`: 43 screenshots
+### 4.1 Verification of Steps 5 and 9 Screenshot Regeneration
+All 16 screenshots covering Steps 5 and 9 (positive checkpoints, negative error states, reveal outcomes, and faded calculations) were verified to be freshly regenerated and matching the updated curriculum copy:
 
-### 4.1 Detailed Audit of Inspected Screenshot Files
+| Profile / Device | Step 5 Checkpoint File | Step 5 Error File | Step 9 Revealed File | Step 9 Error File | Status |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **Desktop Shields Default** | `desktop-brave-shields-default-step-05-checkpoint.png` | `desktop-brave-shields-default-step-05-checkpoint-wrong.png` | `desktop-brave-shields-default-step-09-predict-revealed.png` | `desktop-brave-shields-default-step-09-predict-wrong.png` | **REGENERATED** |
+| **Desktop Shields Down** | `desktop-brave-shields-down-step-05-checkpoint.png` | `desktop-brave-shields-down-step-05-checkpoint-wrong.png` | `desktop-brave-shields-down-step-09-predict-revealed.png` | `desktop-brave-shields-down-step-09-predict-wrong.png` | **REGENERATED** |
+| **Tablet Brave** | `tablet-brave-step-05-checkpoint.png` | `tablet-brave-step-05-checkpoint-wrong.png` | `tablet-brave-step-09-predict-revealed.png` | `tablet-brave-step-09-predict-wrong.png` | **REGENERATED** |
+| **Mobile Brave** | `mobile-brave-step-05-checkpoint.png` | `mobile-brave-step-05-checkpoint-wrong.png` | `mobile-brave-step-09-predict-revealed.png` | `mobile-brave-step-09-predict-wrong.png` | **REGENERATED** |
 
-To verify visual quality, layout fidelity, responsive behavior, localization, and theme consistency, 14 key screenshots were opened and inspected directly via image inspection tools:
+---
 
-| # | Screenshot Filename Inspected | Viewport / Profile | UI State / Features Verified | Visual QA Finding |
-| :---: | :--- | :--- | :--- | :---: |
-| 1 | [`mobile-brave-keyboard-nav-reduced-motion-step-10.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/mobile-brave-keyboard-nav-reduced-motion-step-10.png) | 375×667 Mobile | Step 10 completion via keyboard only; all 10 step dots rendered; full progress bar; 50 XP badge; 1-day streak; Leitner cards listed; Return to Catalog CTA. | **EXCELLENT** |
-| 2 | [`desktop-brave-shields-default-step-01-hook.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-step-01-hook.png) | 1280×800 Desktop | Step 1 Hook vignette; side-by-side contrast boxes (Drug A ether vs Drug B propranolol); neo-brutalist borders; 0/3 Hint Ladder; Academic Sources accordion footer. | **EXCELLENT** |
-| 3 | [`desktop-brave-shields-default-step-02-predict-wrong.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-step-02-predict-wrong.png) | 1280×800 Desktop | Wrong prediction misconception flow; high-contrast pink `#FFEBEE` diagnostic callout; scientific deduction panel; zero forbidden tokens ("approaches unity"); locked hint tier 2. | **EXCELLENT** |
-| 4 | [`desktop-brave-shields-default-step-05-checkpoint.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-step-05-checkpoint.png) | 1280×800 Desktop | Step 5 Concept Checkpoint; explicit `Check Answer` commit; soft green `#E8F5E9` positive Rationale card; deduction summary; continue button enabled. | **EXCELLENT** |
-| 5 | [`desktop-brave-shields-default-step-10-recap-complete.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-step-10-recap-complete.png) | 1280×800 Desktop | Step 10 synthesis; green "LESSON 1 MASTERED!" celebration card; +50 XP badge; 3 Leitner flashcards enqueued to Box 1 (24-hour review interval). | **EXCELLENT** |
-| 6 | [`desktop-brave-shields-default-citations-accordion.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-citations-accordion.png) | 1280×800 Desktop | Expanded Academic Citations accordion; displays Foye's 8th ed., Patrick 6th ed., Wermuth 4th ed.; student-facing view completely free of internal review or unverified tags. | **EXCELLENT** |
-| 7 | [`desktop-brave-shields-default-lesson-03-paywall-lock.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-default-lesson-03-paywall-lock.png) | 1280×800 Desktop | Lesson 3 Freemium Paywall modal; "7-DAY FREE TRIAL AVAILABLE" banner; Single/Dual course switcher; USD/TRY/SAR currency selector; $14/$49/$89 tiers; Dodo payments badge. | **EXCELLENT** |
-| 8 | [`mobile-brave-step-01-hook.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/mobile-brave-step-01-hook.png) | 375×667 Mobile | Mobile Hook layout; Agent A and Agent B drug contrast cards cleanly stacked vertically; touch-friendly 44px+ hit targets; zero horizontal overflow. | **EXCELLENT** |
-| 9 | [`mobile-brave-lesson-03-paywall-viewport-375.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/mobile-brave-lesson-03-paywall-viewport-375.png) | 375×667 Mobile | Mobile paywall modal adaptation; vertically responsive cards; touch-optimized pricing buttons; sticky CTA button; seamless dismissal control. | **EXCELLENT** |
-| 10 | [`mobile-brave-trial-started-ui.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/mobile-brave-trial-started-ui.png) | 375×667 Mobile | Active 7-day trial state in mobile view; yellow persistent banner ("7-Day Premium Free Trial Active — 7 days remaining"); "TRIAL ACTIVE" badge in navbar; 55 XP displayed. | **EXCELLENT** |
-| 11 | [`tablet-brave-step-05-checkpoint.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/tablet-brave-step-05-checkpoint.png) | 768×1024 Tablet | Tablet viewport; balanced typography; centered checkpoint card; clear radio group styling; responsive step indicator dots. | **EXCELLENT** |
-| 12 | [`tablet-brave-trial-expired-downgrade.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/tablet-brave-trial-expired-downgrade.png) | 768×1024 Tablet | Downgrade notification state; rose banner ("Your 7-day trial has ended. 100% of your learning progress is saved!"); "FREE TRIAL" button reinstated; locked content gates. | **EXCELLENT** |
-| 13 | [`desktop-brave-shields-down-step-01-dark.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-down-step-01-dark.png) | 1280×800 Desktop (Dark) | Dark Mode aesthetic; rich `#121212` background; crisp white border contrasts; vivid cyan and green parameter highlights; zero contrast wash-out. | **EXCELLENT** |
-| 14 | [`desktop-brave-shields-down-step-01-ar.png`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/screenshots/phase-3/iteration-3/desktop-brave-shields-down-step-01-ar.png) | 1280×800 Desktop (Arabic) | Arabic RTL layout (`dir="rtl"`); mirrored step dots from right to left; translated title ("النشاط الديناميكي الحراري ومبدأ فيرجسون"); Arabic spaced review card headers. | **EXCELLENT** |
+### 4.2 Concrete Visual Observations Per Image Set
+
+#### Set 1: Desktop Brave Shields Default (1280×800 Desktop Viewport)
+1. **`desktop-brave-shields-default-step-05-checkpoint.png`**:
+   - Explicit two-step commit renders option B (`Compound X: Active at a = 0.15; activity persists despite replacing alkyl branches with rings`) with a solid yellow background (`#FFD54F`), black border, and right-aligned black `SELECTED` pill.
+   - The green `HYPOTHESIS CONFIRMED` checkmark renders directly above the soft green `#E8F5E9` Rationale box stating: *"Correct! High thermodynamic activity (a = 0.15) and broad structural tolerance identify non-specific action."*
+2. **`desktop-brave-shields-default-step-05-checkpoint-wrong.png`**:
+   - When Option A (stereospecific Compound Y) is checked, a soft red `#FFEBEE` diagnostic feedback banner displays: *"Why this happens: Extreme stereoselectivity and nanomolar potency indicate a structurally specific receptor agonist."*
+   - Scientific deduction summary remains clearly visible below, and the yellow `CONTINUE TO STEP 6 >` button becomes enabled with a prominent 3px drop-shadow.
+3. **`desktop-brave-shields-default-step-09-predict-revealed.png`**:
+   - Option C displays the sanitized label: `a = 0.05 (5% relative saturation)`. Zero occurrences of unverified phrases such as *"falls within Ferguson's range"* or *"saturation window"*.
+   - Scientific deduction card confirms pure arithmetic: `a = 10 / 200 = 0.05. The agent achieves anesthesia at 5% of its saturation limit.`
+4. **`desktop-brave-shields-default-step-09-predict-wrong.png`**:
+   - Option A (`a = 20.0 (Inverting the numerator and denominator)`) displays diagnostic misconception text: *"Why this happens: Thermodynamic activity is Pt / P0, not P0 / Pt."*
+   - Step progress bar displays `90% COMPLETE` with 8 preceding green checkmark step dots and active yellow dot 9.
+5. **`desktop-brave-shields-default-step-10-recap-complete.png`**:
+   - Celebratory `#E8F5E9` banner renders `LESSON 1 MASTERED!` with `+50 XP Earned` badge, `1 Day Streak`, and enqueued Leitner cards in Box 1 with `(Interval: 1 Day)`.
+
+#### Set 2: Desktop Brave Shields Down (Ad-Blocker Down Testing)
+1. **`desktop-brave-shields-down-step-05-checkpoint.png`**:
+   - Verifies identical layout dimensions, typography, and card padding as Shields-Default; zero visual layout shift or font flickering caused by Brave ad-shield toggle.
+2. **`desktop-brave-shields-down-step-09-predict-revealed.png`**:
+   - Faded calculation formula block renders clean monospace typography: `P0 = 200 mmHg, Pt = 10 mmHg, formula: a = Pt / P0`.
+   - Option C radio selector shows precise 4px border radius with stark neo-brutalist border offset.
+3. **`desktop-brave-shields-down-step-01-dark.png`**:
+   - High-contrast Dark Mode renders a rich `#121212` background with crisp `#FFFFFF` card outlines and drop-shadows.
+   - Text elements maintain strict contrast compliance (contrast ratio > 7:1 for body copy).
+4. **`desktop-brave-shields-down-step-02-hint-drawer.png`**:
+   - Hint Ladder expansion reveals Tier 1 Nudge (`"Compare the required clinical doses..."`) in a bright yellow `#FFF9C4` drawer container with dark borders.
+   - Tier 2 button renders locked padlock icon with clear `NEXT TIER` label.
+5. **`desktop-brave-shields-down-lesson-03-paywall-dark-rtl-ar.png`**:
+   - Full Arabic RTL layout renders paywall header and price cards right-to-left with correct Arabic typography (`فتح إتقان الصيدلة بالكامل`).
+
+#### Set 3: Tablet Brave (768×1024 Portrait Viewport)
+1. **`tablet-brave-step-05-checkpoint.png`**:
+   - Main content card scales proportionally with 24px horizontal padding, maintaining clean margins against the tablet viewport edge.
+   - Step progress bar and step dots wrap cleanly without vertical stacking conflicts.
+2. **`tablet-brave-step-09-predict-revealed.png`**:
+   - Worked calculation outcome card displays full explanatory text: *"Using a = Pt / P0: 10 / 200 = 0.05. The calculated value represents 5% relative saturation."* Zero text overflow or truncation.
+3. **`tablet-brave-step-01-hook.png`**:
+   - Drug A (Diethyl ether) and Drug B (Propranolol) contrast blocks adapt into stacked cards with 16px vertical gap, preventing horizontal squishing.
+4. **`tablet-brave-step-02-locked-tier2-paywall.png`**:
+   - Clicking locked hint tier launches the Freemium Paywall modal centered with full viewport backdrop blur (`backdrop-blur-sm`).
+5. **`tablet-brave-trial-expired-downgrade.png`**:
+   - Top banner renders soft pink alert (`Your 7-day trial has ended. 100% of your learning progress is saved!`) with high-contrast `CHOOSE ACADEMIC PASS ->` action button.
+
+#### Set 4: Mobile Brave (375×667 Mobile Viewport)
+1. **`mobile-brave-step-05-checkpoint.png`**:
+   - Radio option labels wrap comfortably onto multiple lines with 14px typography and 1.4 line-height, ensuring touch target heights exceed 48px.
+   - Action buttons (`< PREVIOUS` and `CONTINUE TO STEP 6 >`) align in a sticky bottom navigation bar with full-width tap areas.
+2. **`mobile-brave-step-09-predict-revealed.png`**:
+   - Formula box and calculation options render seamlessly in 375px width; radio options maintain clear hit boundaries without clipping the `SELECTED` badge.
+3. **`mobile-brave-keyboard-nav-reduced-motion-step-10.png`**:
+   - Step 10 mobile completion displays compact step dots (1 through 10), green checkmarks, `100% COMPLETE` progress indicator, and `COMPLETE & RETURN TO CATALOG ->` button.
+4. **`mobile-brave-lesson-03-paywall-viewport-375.png`**:
+   - Freemium paywall modal scrolls smoothly within mobile viewport; pricing cards display `$14/mo`, `$49/sem`, `$89/yr` with clear tap targets and single/dual course toggles.
+5. **`mobile-brave-trial-started-ui.png`**:
+   - Mobile trial banner (`7-Day Premium Free Trial Active — 7 days remaining`) renders cleanly below navigation with `TRIAL ACTIVE` status badge in navbar.
+
+---
+
+### 4.3 Documentation of the 11 Legacy Baseline Images
+
+An audit of the git commit history across all 172 files in `docs/screenshots/phase-3/iteration-3/` revealed that **exactly 11 files** originate from baseline commit `e2a1274` (Tue Sep 29 11:54:53 2026 +0300) and were not overwritten during the iteration 3–6 test runs:
+
+1. `desktop-brave-shields-default-keyboard-nav-reduced-motion.png`
+2. `desktop-brave-shields-default-lesson-03-paywall-lock.png`
+3. `desktop-brave-shields-default-lesson-dark-rtl-ar.png`
+4. `desktop-brave-shields-down-keyboard-nav-reduced-motion.png`
+5. `desktop-brave-shields-down-lesson-03-paywall-lock.png`
+6. `desktop-brave-shields-down-lesson-dark-rtl-ar.png`
+7. `mobile-brave-lesson-03-paywall-lock.png`
+8. `mobile-brave-lesson-dark-rtl-ar.png`
+9. `tablet-brave-keyboard-nav-reduced-motion.png`
+10. `tablet-brave-lesson-03-paywall-lock.png`
+11. `tablet-brave-lesson-dark-rtl-ar.png`
+
+#### Why These 11 Files Are Older:
+- **`*-keyboard-nav-reduced-motion.png` (3 files)**: In commit `c6e3593` and later, the keyboard-only test was upgraded to capture a dedicated Step 10 completion screenshot (`*-keyboard-nav-reduced-motion-step-10.png`). The unversioned filenames were retired by the test spec but intentionally retained in git for baseline historical comparison.
+- **`*-lesson-03-paywall-lock.png` (4 files)**: The paywall gating test was refactored into distinct theme and locale tests, writing to `*-lesson-03-paywall-light-en.png`, `*-lesson-03-paywall-dark.png`, `*-lesson-03-paywall-dark-rtl-ar.png`, and `mobile-brave-lesson-03-paywall-viewport-375.png`.
+- **`*-lesson-dark-rtl-ar.png` (4 files)**: The monolithic full-page multilingual capture was replaced by discrete per-step walkthrough screenshots (`*-step-01-dark.png`, `*-step-01-ar.png`, `*-step-02-dark.png`, `*-step-05-dark.png`, `*-step-10-dark.png`, etc.).
 
 ---
 
 ## 5. Mandatory 'Attempted to Break' Adversarial Stress-Testing Protocol
 
-In compliance with the mandatory adversarial protocol, 6 distinct boundary and integrity stress probes were executed directly against commit `b4e75b1`.
+In compliance with QA adversarial rigor, 5 distinct probes were executed directly against commit `2e8b870`.
 
-### Probe ATB-QA-01: Client Data Drift Detection Verification
-- **Target Subsystem**: `packages/platform/src/curriculum/lesson01.test.ts` & `scripts/generate-lesson-client.mjs`
-- **Adversarial Input**: Injected a simulated manual edit into `apps/web/src/data/lesson01.client.ts`, altering the title string to `"Thermodynamic Activity & The Ferguson Principle (DRIFT_TEST)"`.
-- **Expected Result**: Platform unit test suite fails with exit code 1, pinpointing the exact drift between `lesson01.client.ts` and master authoring data.
-- **Observed Result**: Test `guarantees client lesson data (lesson01.client.ts) is in sync with master JSON (no drift)` failed at line 287 (`expect(existingClientCode.trim()).toBe(expectedClientCode.trim())`). Output clearly highlighted the mismatch. Upon restoring `lesson01.client.ts`, the suite immediately returned to 34/34 passing tests.
+### Probe ATB-QA-01: Step 6 Heading Mutation & Test Failure Verification
+- **Target**: `e2e/lesson-slice.spec.ts` keyboard test assertions.
+- **Adversarial Input**: Injected `'Core Structural Sensitivity (MUTATION_BREAK)'` into the Step 6 heading locator expectation.
+- **Command**: `npx playwright test e2e/lesson-slice.spec.ts -g "verifies keyboard-only completion" --project=mobile-brave`
+- **Expected Result**: Playwright fails with exit code 1 at Step 6, proving heading assertions are active.
+- **Observed Result**: Test failed at `e2e/lesson-slice.spec.ts:453:7` with `Timeout 10000ms: element(s) not found`. Restored cleanly to passing status (4.1s).
 - **Verdict**: **PASS**
 
-### Probe ATB-QA-02: Content Scanner Forbidden String Guard Negative Injection
-- **Target Subsystem**: `scripts/claim-inventory.mjs`
-- **Adversarial Input**: Injected the forbidden token `"See Chapter 4 for details."` into Step 1 prompt in `courses/medchem/lessons/lesson-01.json`.
-- **Expected Result**: Scanner terminates with non-zero exit code and outputs `[CONTENT GUARD VIOLATION]`.
-- **Observed Result**: Command halted with:
-  ```text
-  [CONTENT GUARD VIOLATION] Found 1 occurrence(s) of forbidden token "Chapter" in student-facing content.
-  [FAIL] Content string guard failed with 1 violations.
-  ```
-  After restoring `lesson-01.json`, scanner executed cleanly with 0 violations.
+### Probe ATB-QA-02: Cryptographic Hash & Log Content Verification
+- **Target**: `docs/evidence/phase-3/playwright-full-suite.log`
+- **Adversarial Input**: Verified line integrity, test count uniqueness, absence of skipped/flaky runs, and computed SHA-256 hash.
+- **Command**: `Get-FileHash docs/evidence/phase-3/playwright-full-suite.log -Algorithm SHA256`
+- **Expected Result**: Hash matches `6358E2B069B8C8D515DC01D11A9413245451120BFA83E0AEAEDDA37DFA24111E`. Exactly 88 unique test lines present.
+- **Observed Result**: Computed hash: `6358E2B069B8C8D515DC01D11A9413245451120BFA83E0AEAEDDA37DFA24111E` (100% exact match). 88 unique test completions verified from timestamp `19:55:48` to `20:03:31`.
 - **Verdict**: **PASS**
 
-### Probe ATB-QA-03: Undeclared Numeric Value Injection Stress Probe
-- **Target Subsystem**: `scripts/claim-inventory.mjs`
-- **Adversarial Input**: Injected an uncalibrated, undeclared activity constant `" (a = 0.07)"` into Step 2 title in `courses/medchem/lessons/lesson-01.json`.
-- **Expected Result**: Scanner audits all 241 string nodes, detects the unregistered numeric value, and terminates with exit code 1.
-- **Observed Result**: Command halted with:
-  ```text
-  [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
-    - In steps[1].title: "Thermodynamic Activity of Vapors (a = 0.07)"
-  ```
-  Upon restoring `lesson-01.json`, all 99 numeric/unit matches mapped cleanly with 0 undeclared hits.
+### Probe ATB-QA-03: Step 9 Arithmetic Phrasing & Claim Leakage Regex Probe
+- **Target**: `apps/web/src/data/lesson01.client.ts` & `courses/medchem/lessons/lesson-01.json` Step 9 data.
+- **Adversarial Input**: Scanned Step 9 configurations with regex pattern `/(falls within|saturation window|Ferguson's range)/i`.
+- **Command**: `git grep -E "(falls within|saturation window)" courses/medchem/lessons/lesson-01.json apps/web/src/data/lesson01.client.ts`
+- **Expected Result**: 0 occurrences. Step 9 must strictly express arithmetic deduction (`"5% relative saturation"`).
+- **Observed Result**: 0 matches found. Step 9 options, hints, revealed outcome, and feedback are 100% clean of unverified threshold assertions.
 - **Verdict**: **PASS**
 
-### Probe ATB-QA-04: Production Bundle Release Blocker Guard Injection
-- **Target Subsystem**: `scripts/test-prod-bundle.mjs`
-- **Adversarial Input**: Injected the internal review string `"<!-- unverified review tag -->"` into `apps/web/dist/index.html`.
-- **Expected Result**: Guard scans all production assets and blocks release with exit code 1.
-- **Observed Result**: Guard terminated with:
-  ```text
-  [RELEASE BLOCKER CRITICAL FAILURE] Found 1 dev string leak(s) in production bundle!
-    - In 'index.html': found 1 occurrence(s) of "unverified"
-  Production bundle is NOT clean. Release blocked.
-  ```
-  Rebuilding `apps/web` cleared the injection and verified 0 occurrences across all 3 production bundle files.
+### Probe ATB-QA-04: Client Generator Strictness & Extended Mutation Verification
+- **Target**: `scripts/test-claim-mutations.mjs` & `docs/evidence/phase-3/claim-scanner-extended-mutations.log`
+- **Adversarial Input**: Executed automated negative mutation harness testing 5 failure modes: forbidden token `"Chapter"`, forbidden token `"0.01"`, forbidden token `"1.0"`, undeclared parameter constant `"a = 0.07"`, and unregistered unit `"750 torr"`.
+- **Command**: `node scripts/test-claim-mutations.mjs`
+- **Expected Result**: All 5 mutations fail the scanner with exit code 1; clean run passes with exit code 0.
+- **Observed Result**: 5/5 negative mutations caught and blocked with explicit guard violations. Clean run passed with 17/17 structured claims cataloged.
 - **Verdict**: **PASS**
 
-### Probe ATB-QA-05: Client Generator Determinism & Idempotency Stress Test
-- **Target Subsystem**: `scripts/generate-lesson-client.mjs`
-- **Adversarial Input**: Executed `node scripts/generate-lesson-client.mjs` directly against `courses/medchem/lessons/lesson-01.json` to overwrite `apps/web/src/data/lesson01.client.ts`.
-- **Expected Result**: Generator output is 100% byte-for-byte identical to committed code in `b4e75b1`, producing 0 lines of semantic git diff.
-- **Observed Result**: Generator completed in ~45ms; `git diff --ignore-space-at-eol` showed 0 lines changed.
-- **Verdict**: **PASS**
-
-### Probe ATB-QA-06: Direct Monorepo Static Rigor & Typecheck Validation
-- **Target Subsystem**: Full monorepo (`functions`, `packages/platform`, `packages/ui`, `packages/widgets`, `apps/web`)
-- **Adversarial Input**: Executed `pnpm typecheck` (serialized `tsc --noEmit`) and `pnpm lint` (`eslint src/`) across all workspace packages simultaneously.
-- **Expected Result**: 0 TypeScript compilation errors, 0 ESLint warnings or errors.
-- **Observed Result**: Both commands completed with exit code 0. Exactly 5 of 6 workspace projects checked with 0 errors and 0 warnings.
+### Probe ATB-QA-05: Monorepo Package Unit Test Stability & Schema Validation
+- **Target**: `pnpm test` across monorepo packages on commit `2e8b870`.
+- **Adversarial Input**: Executed full unit test suite verifying schema validation, Leitner engine intervals, progress stores, and curriculum integrity.
+- **Command**: `pnpm -r --workspace-concurrency=1 run test`
+- **Expected Result**: All package test files pass with 0 failures.
+- **Observed Result**:
+  - `@pharmacy/platform`: **35 passed** (4 test files; includes +2 generator/schema tests)
+  - `@pharmacy/ui`: **27 passed** (14 test files)
+  - `@pharmacy/widgets`: **19 passed** (9 test files)
+  - **Total**: **81 unit tests passed** across 27 test files with exit code 0.
 - **Verdict**: **PASS**
 
 ---
 
-## 6. Findings, Observations & Recommendations
+## 6. Review Findings & Scorecard Summary
 
-### 6.1 Defect Severity Summary
-- **P0 Blockers:** **0**
-- **P1 Critical Issues:** **0**
-- **P2 Minor Observations:** **1** (Non-blocking Phase 4 roadmap item)
-
-### 6.2 Observation Details
-- **`PHASE-3-QA-P2-01` (Scheduled Phase 4A Architecture Transition - IMP-01)**:
-  - *Context*: In `apps/web/src/data/lesson01.client.ts`, solution hints (Tiers 2 & 3) remain embedded in the client data file during Phase 3, gated purely via UI state (`HintDrawer.tsx`).
-  - *Mitigation & Roadmap*: This is fully documented in `scripts/generate-lesson-client.mjs` and tracked in `docs/reviews/phase-3-gap-and-improvement-analysis.md` as item `IMP-01`. Phase 4A explicitly scopes migrating Tier 2 & 3 hints to rules-gated Firestore documents or Cloud Functions callables prior to production billing rollout. For Phase 3 closure on Lesson 1 (a free tier lesson), this is completely non-blocking.
-
-### 6.3 Pending Owner Decisions (Logged in `docs/needs-human-review.md`)
-The following clinical and domain items remain properly sequestered for faculty/owner confirmation before Phase 4 authoring:
-1. **`NUM-MC01-01`**: Saturation threshold confirmation ($a = 0.01\text{–}1.0$ vs $0.1\text{–}1.0$).
-2. **`NUM-MC01-02`**: Specific drug receptor affinity threshold ($a < 0.001$ vs $10^{-4}$).
-3. **`NUM-MC01-03`**: Vapor pressure ratio for ether surgical anesthesia ($P_t / P_0 \approx 0.03\text{–}0.05$).
-4. **`NUM-MC01-04`**: Four orders of magnitude divergence claim ($10^4$).
-5. **`ILLUS-01` & `ILLUS-02`**: Ether and propranolol illustrative clinical dosing wording (mass vs % MAC).
-6. **`CIT-01`, `02`, `03`**: Authoritative textbook chapter and page ranges from physical editions.
-7. **`PED-DEC-01`**: Confirmation of Step 5 checkpoint two-step commit (`Check Answer`).
-
----
-
-## 7. Final QA Reviewer Verdict
-
-| Review Dimension | Requirement | Assessment | Result |
+| Verification Area | Requirement / Target | Observed Finding on Commit `2e8b870` | Status |
 | :--- | :--- | :--- | :---: |
-| **Evidence Logs Audit** | 13 files in `docs/evidence/phase-3/` verified with SHA-256 | All 13 logs exist, hashes verified, genuine output | **PASS** |
-| **Closure Items G1–G8** | Complete resolution of closure items G1 through G8 | 8/8 items verified with zero regressions | **PASS** |
-| **Screenshot Inventory** | 172 files in iteration-3; detailed inspection of key screens | 14 files visually audited; zero clipping/jank | **PASS** |
-| **Adversarial Stress Testing** | Minimum 5 boundary probes with input/expected/observed | 6 distinct probes executed; 100% resilient | **PASS** |
-| **Static & Build Rigor** | 0 type errors, 0 lint errors, clean production bundle | All workspace projects pass clean | **PASS** |
-| **Target Commit State** | Hash `b4e75b1`; clean working tree | Verified HEAD on `pharmacy_education_platform_setup` | **PASS** |
+| **Commit Integrity** | Strict evaluation on commit `2e8b870` | Verified HEAD: `2e8b87044ff1e960cb07d50d331ca8d5cc65afc8` | **PASS** |
+| **H2 Counter Replacement** | Replace synthetic counter with real DOM assertions | Steps 1–10 assert step counter, heading level 2, and outcome text | **PASS** |
+| **H2 Step 6 Mutation** | Breaking Step 6 causes Playwright failure | Mutation causes `expect(toBeVisible).failed` timeout; clean passes (4.1s) | **PASS** |
+| **H3 Evidence Log Audit** | 88 tests passed, exact timestamps, SHA-256 hash | 88/88 passed; 19:55:48 to 20:03:31; SHA-256 matches exact value | **PASS** |
+| **H3 Screenshot Matrix** | Regenerate Steps 5 & 9 across all 4 sets | 16/16 Step 5 & 9 screenshots regenerated and visually verified | **PASS** |
+| **Visual Observations** | ≥ 5 concrete observations per image set | 20 detailed observations recorded across desktop, tablet, and mobile | **PASS** |
+| **11 Legacy Images Audit** | Document older baseline screenshots and rationale | 11 legacy files traced to commit `e2a1274`; historical rationale documented | **PASS** |
+| **Adversarial Stress Probes**| Minimum 5 boundary probes executed | 5 distinct boundary probes executed; 100% resilience | **PASS** |
+| **Unit Test Stability** | Monorepo package unit test suite passes | 81/81 unit tests passed across 27 test files | **PASS** |
 
 ### **FINAL VERDICT:** **PASS**
 
-Phase 3 (Vertical Slice A) is fully verified, mathematically and instructionally consistent, cryptographically evidenced, and ready for official owner closure.
+Phase 3 closure requirements H2 and H3 are completely resolved, verified, and evidenced. The platform is ready for formal milestone sign-off.

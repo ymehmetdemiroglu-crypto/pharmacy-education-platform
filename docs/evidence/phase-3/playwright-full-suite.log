@@ -1,0 +1,168 @@
+=== PLAYWRIGHT FULL SUITE RUN START: 2026-09-29T19:55:48.6483203+03:00 ===
+[WebServer] $ vite preview "--port" "4173"
+
+Running 88 tests using 1 worker
+
+  ok  1 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Default Light EN for WCAG 2.1 AA violations (4.5s)
+  ok  2 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Dark Mode for WCAG 2.1 AA violations (3.4s)
+  ok  3 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Arabic RTL Mode for WCAG 2.1 AA violations (4.3s)
+  ok  4 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Turkish TR Locale for WCAG 2.1 AA violations (3.5s)
+  ok  5 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Default Light EN for WCAG 2.1 AA violations (2.7s)
+  ok  6 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Dark Mode for WCAG 2.1 AA violations (2.7s)
+  ok  7 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Arabic RTL Mode for WCAG 2.1 AA violations (3.3s)
+  ok  8 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Turkish TR Locale for WCAG 2.1 AA violations (2.6s)
+  ok  9 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Default Light EN for WCAG 2.1 AA violations (2.9s)
+  ok 10 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Dark Mode for WCAG 2.1 AA violations (2.7s)
+  ok 11 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Arabic RTL Mode for WCAG 2.1 AA violations (2.9s)
+  ok 12 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Turkish TR Locale for WCAG 2.1 AA violations (2.7s)
+  ok 13 [desktop-brave-shields-default] ظ║ e2e\a11y-audit.spec.ts:83:3 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits Open Paywall Modal across Light, Dark, and RTL for WCAG 2.1 AA violations (5.9s)
+  ok 14 [desktop-brave-shields-default] ظ║ e2e\gallery-matrix.spec.ts:14:3 ظ║ Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Protocol) ظ║ comprehensive screenshot state matrix, multi-locale, dark/RTL, and keyboard navigation (14.8s)
+  ok 15 [desktop-brave-shields-default] ظ║ e2e\lesson-slice.spec.ts:22:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ executes end-to-end Lesson 1 flow, axe scan on all 10 steps, hints, and paywall gating (12.8s)
+  ok 16 [desktop-brave-shields-default] ظ║ e2e\lesson-slice.spec.ts:372:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies keyboard-only completion through all 10 steps and reduced-motion fallback (2.4s)
+  ok 17 [desktop-brave-shields-default] ظ║ e2e\lesson-slice.spec.ts:523:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies free trial start and expiry banner state in UI (2.8s)
+  ok 18 [desktop-brave-shields-default] ظ║ e2e\lesson-slice.spec.ts:631:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures interactive lesson steps across Dark Mode, Turkish (TR), and Arabic (AR RTL) (10.4s)
+  ok 19 [desktop-brave-shields-default] ظ║ e2e\lesson-slice.spec.ts:689:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 3-9) (15.1s)
+[REDUCED-MOTION] Button computed styles: {
+  animationDuration: '1e-05s',
+  transitionDuration: '1e-05s',
+  transform: 'none'
+}
+[REDUCED-MOTION] Modal transform: none
+  ok 20 [desktop-brave-shields-default] ظ║ e2e\motion-performance.spec.ts:17:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ prefers-reduced-motion: reduce Mode ظ║ proves transitions fall back to instant/fade and eliminates transforms (1.9s)
+[PERFORMANCE-METRICS] {
+  "totalCLS": 0,
+  "shiftsCount": 0,
+  "longTasksCount": 0,
+  "blockingTasksCount": 0,
+  "blockingTasks": []
+}
+  ok 21 [desktop-brave-shields-default] ظ║ e2e\motion-performance.spec.ts:58:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero frame drops > 50ms on key flows (5.7s)
+[LESSON-PERF-METRICS] {
+  "totalCLS": 0,
+  "blockingCount": 0,
+  "blockingTasks": []
+}
+  ok 22 [desktop-brave-shields-default] ظ║ e2e\motion-performance.spec.ts:151:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions (5.1s)
+  ok 23 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Default Light EN for WCAG 2.1 AA violations (4.1s)
+  ok 24 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Dark Mode for WCAG 2.1 AA violations (2.8s)
+  ok 25 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Arabic RTL Mode for WCAG 2.1 AA violations (3.2s)
+  ok 26 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Turkish TR Locale for WCAG 2.1 AA violations (2.8s)
+  ok 27 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Default Light EN for WCAG 2.1 AA violations (2.4s)
+  ok 28 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Dark Mode for WCAG 2.1 AA violations (2.6s)
+  ok 29 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Arabic RTL Mode for WCAG 2.1 AA violations (2.6s)
+  ok 30 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Turkish TR Locale for WCAG 2.1 AA violations (2.6s)
+  ok 31 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Default Light EN for WCAG 2.1 AA violations (2.2s)
+  ok 32 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Dark Mode for WCAG 2.1 AA violations (2.5s)
+  ok 33 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Arabic RTL Mode for WCAG 2.1 AA violations (2.7s)
+  ok 34 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Turkish TR Locale for WCAG 2.1 AA violations (2.5s)
+  ok 35 [desktop-brave-shields-down] ظ║ e2e\a11y-audit.spec.ts:83:3 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits Open Paywall Modal across Light, Dark, and RTL for WCAG 2.1 AA violations (5.1s)
+  ok 36 [desktop-brave-shields-down] ظ║ e2e\gallery-matrix.spec.ts:14:3 ظ║ Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Protocol) ظ║ comprehensive screenshot state matrix, multi-locale, dark/RTL, and keyboard navigation (13.3s)
+  ok 37 [desktop-brave-shields-down] ظ║ e2e\lesson-slice.spec.ts:22:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ executes end-to-end Lesson 1 flow, axe scan on all 10 steps, hints, and paywall gating (12.8s)
+  ok 38 [desktop-brave-shields-down] ظ║ e2e\lesson-slice.spec.ts:372:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies keyboard-only completion through all 10 steps and reduced-motion fallback (3.8s)
+  ok 39 [desktop-brave-shields-down] ظ║ e2e\lesson-slice.spec.ts:523:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies free trial start and expiry banner state in UI (3.0s)
+  ok 40 [desktop-brave-shields-down] ظ║ e2e\lesson-slice.spec.ts:631:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures interactive lesson steps across Dark Mode, Turkish (TR), and Arabic (AR RTL) (10.3s)
+  ok 41 [desktop-brave-shields-down] ظ║ e2e\lesson-slice.spec.ts:689:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 3-9) (20.7s)
+[REDUCED-MOTION] Button computed styles: {
+  animationDuration: '1e-05s',
+  transitionDuration: '1e-05s',
+  transform: 'none'
+}
+[REDUCED-MOTION] Modal transform: none
+  ok 42 [desktop-brave-shields-down] ظ║ e2e\motion-performance.spec.ts:17:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ prefers-reduced-motion: reduce Mode ظ║ proves transitions fall back to instant/fade and eliminates transforms (1.9s)
+[PERFORMANCE-METRICS] {
+  "totalCLS": 0,
+  "shiftsCount": 0,
+  "longTasksCount": 0,
+  "blockingTasksCount": 0,
+  "blockingTasks": []
+}
+  ok 43 [desktop-brave-shields-down] ظ║ e2e\motion-performance.spec.ts:58:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero frame drops > 50ms on key flows (5.5s)
+[LESSON-PERF-METRICS] {
+  "totalCLS": 0,
+  "blockingCount": 0,
+  "blockingTasks": []
+}
+  ok 44 [desktop-brave-shields-down] ظ║ e2e\motion-performance.spec.ts:151:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions (5.2s)
+  ok 45 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Default Light EN for WCAG 2.1 AA violations (3.7s)
+  ok 46 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Dark Mode for WCAG 2.1 AA violations (2.9s)
+  ok 47 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Arabic RTL Mode for WCAG 2.1 AA violations (3.0s)
+  ok 48 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Turkish TR Locale for WCAG 2.1 AA violations (3.1s)
+  ok 49 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Default Light EN for WCAG 2.1 AA violations (2.3s)
+  ok 50 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Dark Mode for WCAG 2.1 AA violations (2.5s)
+  ok 51 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Arabic RTL Mode for WCAG 2.1 AA violations (2.6s)
+  ok 52 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Turkish TR Locale for WCAG 2.1 AA violations (2.5s)
+  ok 53 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Default Light EN for WCAG 2.1 AA violations (2.3s)
+  ok 54 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Dark Mode for WCAG 2.1 AA violations (2.6s)
+  ok 55 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Arabic RTL Mode for WCAG 2.1 AA violations (2.7s)
+  ok 56 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Turkish TR Locale for WCAG 2.1 AA violations (2.6s)
+  ok 57 [tablet-brave] ظ║ e2e\a11y-audit.spec.ts:83:3 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits Open Paywall Modal across Light, Dark, and RTL for WCAG 2.1 AA violations (6.7s)
+  ok 58 [tablet-brave] ظ║ e2e\gallery-matrix.spec.ts:14:3 ظ║ Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Protocol) ظ║ comprehensive screenshot state matrix, multi-locale, dark/RTL, and keyboard navigation (14.9s)
+  ok 59 [tablet-brave] ظ║ e2e\lesson-slice.spec.ts:22:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ executes end-to-end Lesson 1 flow, axe scan on all 10 steps, hints, and paywall gating (15.9s)
+  ok 60 [tablet-brave] ظ║ e2e\lesson-slice.spec.ts:372:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies keyboard-only completion through all 10 steps and reduced-motion fallback (3.8s)
+  ok 61 [tablet-brave] ظ║ e2e\lesson-slice.spec.ts:523:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies free trial start and expiry banner state in UI (2.7s)
+  ok 62 [tablet-brave] ظ║ e2e\lesson-slice.spec.ts:631:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures interactive lesson steps across Dark Mode, Turkish (TR), and Arabic (AR RTL) (10.2s)
+  ok 63 [tablet-brave] ظ║ e2e\lesson-slice.spec.ts:689:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 3-9) (15.2s)
+[REDUCED-MOTION] Button computed styles: {
+  animationDuration: '1e-05s',
+  transitionDuration: '1e-05s',
+  transform: 'none'
+}
+[REDUCED-MOTION] Modal transform: none
+  ok 64 [tablet-brave] ظ║ e2e\motion-performance.spec.ts:17:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ prefers-reduced-motion: reduce Mode ظ║ proves transitions fall back to instant/fade and eliminates transforms (2.0s)
+[PERFORMANCE-METRICS] {
+  "totalCLS": 0,
+  "shiftsCount": 0,
+  "longTasksCount": 0,
+  "blockingTasksCount": 0,
+  "blockingTasks": []
+}
+  ok 65 [tablet-brave] ظ║ e2e\motion-performance.spec.ts:58:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero frame drops > 50ms on key flows (5.7s)
+[LESSON-PERF-METRICS] {
+  "totalCLS": 0,
+  "blockingCount": 0,
+  "blockingTasks": []
+}
+  ok 66 [tablet-brave] ظ║ e2e\motion-performance.spec.ts:151:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions (5.3s)
+  ok 67 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Default Light EN for WCAG 2.1 AA violations (3.7s)
+  ok 68 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Dark Mode for WCAG 2.1 AA violations (3.4s)
+  ok 69 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Arabic RTL Mode for WCAG 2.1 AA violations (2.7s)
+  ok 70 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /gallery in Turkish TR Locale for WCAG 2.1 AA violations (2.7s)
+  ok 71 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Default Light EN for WCAG 2.1 AA violations (2.2s)
+  ok 72 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Dark Mode for WCAG 2.1 AA violations (2.3s)
+  ok 73 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Arabic RTL Mode for WCAG 2.1 AA violations (2.4s)
+  ok 74 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /catalog in Turkish TR Locale for WCAG 2.1 AA violations (2.5s)
+  ok 75 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:11:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Default Light EN for WCAG 2.1 AA violations (2.4s)
+  ok 76 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:28:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Dark Mode for WCAG 2.1 AA violations (2.3s)
+  ok 77 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:46:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Arabic RTL Mode for WCAG 2.1 AA violations (4.1s)
+  ok 78 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:64:5 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits /pricing in Turkish TR Locale for WCAG 2.1 AA violations (3.2s)
+  ok 79 [mobile-brave] ظ║ e2e\a11y-audit.spec.ts:83:3 ظ║ Automated Axe-Core Accessibility Audit Matrix (A3 Protocol) ظ║ audits Open Paywall Modal across Light, Dark, and RTL for WCAG 2.1 AA violations (4.9s)
+  ok 80 [mobile-brave] ظ║ e2e\gallery-matrix.spec.ts:14:3 ظ║ Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Protocol) ظ║ comprehensive screenshot state matrix, multi-locale, dark/RTL, and keyboard navigation (13.7s)
+  ok 81 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:22:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ executes end-to-end Lesson 1 flow, axe scan on all 10 steps, hints, and paywall gating (10.8s)
+  ok 82 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:372:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies keyboard-only completion through all 10 steps and reduced-motion fallback (2.3s)
+  ok 83 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:523:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ verifies free trial start and expiry banner state in UI (2.6s)
+  ok 84 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:631:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures interactive lesson steps across Dark Mode, Turkish (TR), and Arabic (AR RTL) (9.5s)
+  ok 85 [mobile-brave] ظ║ e2e\lesson-slice.spec.ts:689:3 ظ║ Phase 3: Vertical Slice A ظ¤ Interactive Lesson 1 & Freemium Gating E2E ظ║ captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 3-9) (14.6s)
+[REDUCED-MOTION] Button computed styles: {
+  animationDuration: '1e-05s',
+  transitionDuration: '1e-05s',
+  transform: 'none'
+}
+[REDUCED-MOTION] Modal transform: none
+  ok 86 [mobile-brave] ظ║ e2e\motion-performance.spec.ts:17:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ prefers-reduced-motion: reduce Mode ظ║ proves transitions fall back to instant/fade and eliminates transforms (2.0s)
+[PERFORMANCE-METRICS] {
+  "totalCLS": 0,
+  "shiftsCount": 0,
+  "longTasksCount": 0,
+  "blockingTasksCount": 0,
+  "blockingTasks": []
+}
+  ok 87 [mobile-brave] ظ║ e2e\motion-performance.spec.ts:58:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero frame drops > 50ms on key flows (5.4s)
+[LESSON-PERF-METRICS] {
+  "totalCLS": 0,
+  "blockingCount": 0,
+  "blockingTasks": []
+}
+  ok 88 [mobile-brave] ظ║ e2e\motion-performance.spec.ts:151:5 ظ║ Motion Verification & Jank Budget Suite (A2 Protocol) ظ║ Frame Timing & Cumulative Layout Shift (CLS) Verification ظ║ verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions (5.3s)
+
+  88 passed (7.7m)
+=== PLAYWRIGHT FULL SUITE RUN END: 2026-09-29T20:03:31.2203034+03:00 ===
