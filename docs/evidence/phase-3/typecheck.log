@@ -1,0 +1,7 @@
+$ pnpm -r --workspace-concurrency=1 run typecheck
+Scope: 5 of 6 workspace projects
+$ tsc --noEmit
+$ tsc --noEmit
+$ tsc --noEmit
+$ tsc --noEmit
+$ tsc --noEmit

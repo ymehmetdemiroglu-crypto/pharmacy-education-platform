@@ -1,0 +1,19 @@
+$ vitest run
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/widgets[39m
+
+ [32mظ£ô[39m src/DoseResponseCurve/DoseResponseCurve.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 355[2mms[22m[39m
+ [32mظ£ô[39m src/SarExplorer/SarExplorer.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 220[2mms[22m[39m
+ [32mظ£ô[39m src/ReceptorLigandMatcher/ReceptorLigandMatcher.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 126[2mms[22m[39m
+ [32mظ£ô[39m src/PredictThenReveal/PredictThenReveal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 70[2mms[22m[39m
+ [32mظ£ô[39m src/StructureIdentifier/StructureIdentifier.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 86[2mms[22m[39m
+ [32mظ£ô[39m src/PkSimulator/PkSimulator.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 68[2mms[22m[39m
+ [32mظ£ô[39m src/MetabolismMap/MetabolismMap.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 69[2mms[22m[39m
+ [32mظ£ô[39m src/MultipleChoice/MultipleChoice.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 56[2mms[22m[39m
+ [32mظ£ô[39m src/HintLadder/HintLadder.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 32[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+[2m      Tests [22m [1m[32m19 passed[39m[22m[90m (19)[39m
+[2m   Start at [22m 18:26:21
+[2m   Duration [22m 12.21s[2m (transform 1.70s, setup 1.23s, collect 6.27s, tests 1.08s, environment 2.24s, prepare 513ms)[22m
+

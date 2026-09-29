@@ -1,0 +1,110 @@
+
+> pharmacy-education-platform@0.1.0 test:rules
+> node scripts/run-rules-tests.mjs
+
+[33m[1m!  emulators:[22m[39m You are not currently authenticated so some features may not work correctly. Please run [1mfirebase login[22m to authenticate the CLI.
+[36m[1mi  emulators:[22m[39m Starting emulators: firestore
+[36m[1mi  firestore:[22m[39m Firestore Emulator logging to [1mfirestore-debug.log[22m
+[32m[1m+  firestore:[22m[39m Firestore Emulator UI websocket is running on 9150.
+[36m[1mi [22m[39m Running script: [1mvitest run -c vitest.rules.config.ts[22m
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup[39m
+
+ [32mظ£ô[39m tests/trial-emulator-lifecycle.test.ts [2m([22m[2m1 test[22m[2m)[22m[33m 1912[2mms[22m[39m
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mallows public unauthenticated read of courses, modules, and lessons
+[22m[39m[2026-09-29T15:30:04.940Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40de6 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L181, false for 'update' @ L181
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mstrictly forbids client writes to entitlements subcollection
+[22m[39m[2026-09-29T15:30:05.646Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40dee error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L225, false for 'update' @ L225
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mstartTrial Single-Use & Atomic Concurrency[2m > [22m[2mstrictly forbids client from resetting trialUsed in Firestore security rules
+[22m[39m[2026-09-29T15:30:05.841Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56ce error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L216:24 for 'update' @ L216, false for 'update' @ L216
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mprevents user from modifying sensitive profile fields (plan, trialUsed, roles)
+[22m[39m[2026-09-29T15:30:05.858Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40df0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L216:24 for 'update' @ L216, false for 'update' @ L216
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mprevents user from modifying sensitive profile fields (plan, trialUsed, roles)
+[22m[39m[2026-09-29T15:30:05.898Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40df1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L216:24 for 'update' @ L216, false for 'update' @ L216
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mprevents user from modifying sensitive profile fields (plan, trialUsed, roles)
+[22m[39m[2026-09-29T15:30:05.928Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40df2 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L216:24 for 'update' @ L216, false for 'update' @ L216
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mstartTrial Single-Use & Atomic Concurrency[2m > [22m[2mstrictly binds trial to caller auth.uid and rejects unauthorized writes to another user profile
+[22m[39m[2026-09-29T15:30:05.948Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56d0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'update' @ L216
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mstartTrial Single-Use & Atomic Concurrency[2m > [22m[2mstrictly binds trial to caller auth.uid and rejects unauthorized writes to another user profile
+[22m[39m[2026-09-29T15:30:05.979Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56d1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L225, false for 'update' @ L225
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mforbids client from self-creating a profile with sensitive fields (roles, plan, trialUsed)
+[22m[39m[2026-09-29T15:30:06.153Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40df5 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L212, evaluation error at L216:24 for 'update' @ L216, false for 'create' @ L212
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mforbids client from self-creating a profile with sensitive fields (roles, plan, trialUsed)
+[22m[39m[2026-09-29T15:30:06.183Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40df6 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L212, evaluation error at L216:24 for 'update' @ L216, false for 'create' @ L212
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mstrictly rejects unauthenticated client writes to user progress (must use localStorage offline)
+[22m[39m[2026-09-29T15:30:06.570Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40dfc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L231, false for 'update' @ L231
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mstrictly rejects unauthenticated client writes to course catalog and lesson steps
+[22m[39m[2026-09-29T15:30:06.628Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40dfd error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L181, false for 'update' @ L181
+
+[90mstderr[2m | tests/firestore-rules.test.ts[2m > [22m[2mFirestore Security Rules Testing[2m > [22m[2mstrictly rejects unauthenticated client writes to course catalog and lesson steps
+[22m[39m[2026-09-29T15:30:06.649Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x54f40dfe error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L202, false for 'update' @ L202
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mCross-User Data Isolation[2m > [22m[2mstrictly forbids User A from reading or modifying User B progress or entitlements
+[22m[39m[2026-09-29T15:30:06.813Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56e4 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L231, false for 'update' @ L231
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mCross-User Data Isolation[2m > [22m[2mstrictly forbids User A from reading or modifying User B progress or entitlements
+[22m[39m[2026-09-29T15:30:06.872Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56e5 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L225, false for 'update' @ L225
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mProgress Write & Unauthenticated Step Access Rules[2m > [22m[2mallows student to update their own lesson progress, but denies writing to entitlements
+[22m[39m[2026-09-29T15:30:06.979Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56e7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L225, false for 'update' @ L225
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mProgress Write & Unauthenticated Step Access Rules[2m > [22m[2mstrictly denies unauthenticated client writes to user progress or profiles
+[22m[39m[2026-09-29T15:30:07.052Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56e8 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L231, false for 'update' @ L231
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mProgress Write & Unauthenticated Step Access Rules[2m > [22m[2mstrictly denies unauthenticated client writes to user progress or profiles
+[22m[39m[2026-09-29T15:30:07.068Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56e9 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L212, false for 'update' @ L216
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mProgress Write & Unauthenticated Step Access Rules[2m > [22m[2mstrictly rejects unauthenticated writes to course steps or catalog
+[22m[39m[2026-09-29T15:30:07.243Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56ec error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L202, false for 'update' @ L202
+
+[90mstderr[2m | tests/functions-and-security.test.ts[2m > [22m[2mCloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22m[2mProgress Write & Unauthenticated Step Access Rules[2m > [22m[2mstrictly rejects unauthenticated writes to course steps or catalog
+[22m[39m[2026-09-29T15:30:07.262Z]  @firebase/firestore: Firestore (10.14.1): GrpcConnection RPC 'Write' stream 0x686d56ed error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L181, false for 'update' @ L181
+
+   [33m[2mظ£ô[22m[39m Real Firebase Emulator Free Trial Lifecycle & Data Integrity E2E (C1 Suite)[2m > [22mcalls real startFreeTrial and real cleanupExpiredTrials on emulator, asserting Firestore progress and cards stay 100% intact after downgrade [33m 1536[2mms[22m[39m
+ [32mظ£ô[39m tests/firestore-rules.test.ts [2m([22m[2m12 tests[22m[2m)[22m[33m 8517[2mms[22m[39m
+   [33m[2mظ£ô[22m[39m Firestore Security Rules Testing[2m > [22mallows public unauthenticated read of courses, modules, and lessons [33m 2343[2mms[22m[39m
+ [32mظ£ô[39m tests/functions-and-security.test.ts [2m([22m[2m19 tests[22m[2m)[22m[33m 5470[2mms[22m[39m
+   [33m[2mظ£ô[22m[39m Cloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22mstartTrial Single-Use & Atomic Concurrency[2m > [22msuccessfully provisions 7-day free trial on first call using real function export [33m 1281[2mms[22m[39m
+   [33m[2mظ£ô[22m[39m Cloud Functions & Backend Entitlement Security Tests (A4 Suite)[2m > [22mstartTrial Single-Use & Atomic Concurrency[2m > [22mguarantees atomic concurrency: concurrent startTrial calls allow only 1 success [33m 1307[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m3 passed[39m[22m[90m (3)[39m
+[2m      Tests [22m [1m[32m32 passed[39m[22m[90m (32)[39m
+[2m   Start at [22m 18:29:54
+[2m   Duration [22m 12.65s[2m (transform 841ms, setup 0ms, collect 13.56s, tests 15.90s, environment 1ms, prepare 1.76s)[22m
+
+[32m[1m+ [22m[39m Script exited successfully (code 0)
+[36m[1mi  emulators:[22m[39m Shutting down emulators.
+[36m[1mi  firestore:[22m[39m Stopping Firestore Emulator
+[33m[1m! [22m[39m Firestore Emulator has exited upon receiving signal: SIGINT
+[36m[1mi  logging:[22m[39m Stopping Logging Emulator

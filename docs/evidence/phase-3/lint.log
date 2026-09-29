@@ -1,0 +1,10 @@
+$ pnpm -r run lint
+Scope: 5 of 6 workspace projects
+packages/platform lint$ eslint src/
+packages/ui lint$ eslint src/
+packages/platform lint: Done
+packages/ui lint: Done
+packages/widgets lint$ eslint src/
+packages/widgets lint: Done
+apps/web lint$ eslint src/
+apps/web lint: Done
