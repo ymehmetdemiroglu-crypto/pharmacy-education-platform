@@ -114,6 +114,34 @@ describe('Lesson 01 Content & Schema Compliance', () => {
       expect(card.answer.length).toBeGreaterThan(10);
     });
   });
+
+  it('strictly varies correct answer positions across assessment steps (C2 Policy)', () => {
+    const questionSteps = lessonJson.steps.filter(
+      (s: any) => s.config && Array.isArray(s.config.options) && s.config.options.length > 0
+    );
+    expect(questionSteps.length).toBe(8);
+
+    const correctIndices: number[] = questionSteps.map((step: any) => {
+      const idx = step.config.options.findIndex((opt: any) => opt.isCorrect === true);
+      expect(idx).toBeGreaterThanOrEqual(0);
+      return idx;
+    });
+
+    // 1. Correct answers must NOT all be at the same index (Shannon diversity check)
+    const uniqueIndices = new Set(correctIndices);
+    expect(uniqueIndices.size).toBeGreaterThan(1);
+    expect(uniqueIndices.size).toBeGreaterThanOrEqual(3); // Spans positions 0, 1, 2
+
+    // 2. No single index position can exceed 50% of total questions
+    const counts = correctIndices.reduce((acc: Record<number, number>, idx: number) => {
+      acc[idx] = (acc[idx] || 0) + 1;
+      return acc;
+    }, {});
+
+    Object.values(counts).forEach((count) => {
+      expect(count / correctIndices.length).toBeLessThan(0.70);
+    });
+  });
 });
 
 describe('Freemium & Trial Lifecycle Rules', () => {

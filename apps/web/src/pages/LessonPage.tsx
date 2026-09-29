@@ -20,11 +20,11 @@ import {
   loadLocalReviewCards,
   saveLocalReviewCards,
   enqueueReviewCards,
-  LessonStep,
-  LessonData,
-  StepCitation,
-  SpacedReviewCardSeed,
-  UserProgress,
+  type LessonStep,
+  type LessonData,
+  type StepCitation,
+  type SpacedReviewCardSeed,
+  type UserProgress,
 } from '@pharmacy/platform';
 import {
   ChevronLeft,
@@ -95,16 +95,19 @@ export const LessonPage: React.FC = () => {
   }, [lessonId, lesson]);
 
   const currentStep: LessonStep | undefined = lesson?.steps[currentStepIndex];
+  const isPredictStep = Boolean(currentStep?.predictThenReveal);
   const totalSteps = lesson?.steps.length || 10;
   const currentInteraction = stepInteractions[currentStepIndex] || {};
 
   // Step completion logic
-  const handleSelectOption = (optionId: string, _isCorrect: boolean) => {
+  const handleSelectOption = (optionId: string, _isCorrect?: boolean) => {
     setStepInteractions((prev) => ({
       ...prev,
       [currentStepIndex]: {
         ...prev[currentStepIndex],
         selectedId: optionId,
+        isRevealed: false,
+        isCorrect: false,
       },
     }));
   };
@@ -223,7 +226,7 @@ export const LessonPage: React.FC = () => {
           handleSelectOption(options[idx]!.id, options[idx]!.isCorrect);
         }
       } else if (e.key === 'Enter') {
-        if (currentStep?.predictThenReveal && currentInteraction.selectedId && !currentInteraction.isRevealed) {
+        if (currentInteraction.selectedId && !currentInteraction.isRevealed) {
           handleRevealPrediction();
         }
       }
@@ -239,6 +242,7 @@ export const LessonPage: React.FC = () => {
     totalSteps,
     handleNextStep,
     handlePrevStep,
+    handleRevealPrediction,
   ]);
 
   const handleStartTrialClick = async () => {
@@ -308,7 +312,6 @@ export const LessonPage: React.FC = () => {
     return <div>Loading step...</div>;
   }
 
-  const isPredictStep = Boolean(currentStep.predictThenReveal);
   const options = (currentStep.config.options as Array<{
     id: string;
     label?: string;
@@ -319,8 +322,9 @@ export const LessonPage: React.FC = () => {
   }>) || [];
 
   const selectedOpt = options.find((o) => o.id === currentInteraction.selectedId);
+  const hasOptions = options.length > 0;
   const canProceed =
-    !isPredictStep ||
+    (!hasOptions && !isPredictStep) ||
     currentInteraction.isRevealed ||
     currentStepIndex === 0 ||
     currentStepIndex === totalSteps - 1;
@@ -338,6 +342,7 @@ export const LessonPage: React.FC = () => {
     choosePrediction: locale === 'tr' ? 'Tahmin hipotezinizi seçin:' : locale === 'ar' ? 'اختر فرضيتك التوقعية:' : 'Choose your prediction hypothesis:',
     selectConclusion: locale === 'tr' ? 'En doğru sonucu seçin:' : locale === 'ar' ? 'اختر النتيجة الأكثر دقة:' : 'Select the most accurate conclusion:',
     commitHypothesis: locale === 'tr' ? 'Hipotezi Onayla ve Sonucu Gör' : locale === 'ar' ? 'تأكيد الفرضية وكشف النتيجة' : 'Commit Hypothesis & Reveal Outcome',
+    checkAnswer: locale === 'tr' ? 'Cevabı Kontrol Et' : locale === 'ar' ? 'تحقق من الإجابة' : 'Check Answer',
     previous: locale === 'tr' ? 'Önceki' : locale === 'ar' ? 'السابق' : 'Previous',
     continueToStep: (n: number) =>
       locale === 'tr' ? `Adım ${n}'e Devam Et` : locale === 'ar' ? `المتابعة إلى الخطوة ${n}` : `Continue to Step ${n}`,
@@ -548,7 +553,7 @@ export const LessonPage: React.FC = () => {
             </div>
 
             {/* Lock-In / Reveal Button */}
-            {isPredictStep && !currentInteraction.isRevealed && (
+            {!currentInteraction.isRevealed && (
               <div className="pt-3">
                 <Button
                   variant="primary"
@@ -557,7 +562,7 @@ export const LessonPage: React.FC = () => {
                   onClick={handleRevealPrediction}
                   rightIcon={<ArrowRight className="w-4 h-4 rtl:rotate-180" />}
                 >
-                  {t.commitHypothesis}
+                  {isPredictStep ? t.commitHypothesis : t.checkAnswer}
                 </Button>
               </div>
             )}
@@ -584,14 +589,24 @@ export const LessonPage: React.FC = () => {
                   )}
                 </div>
 
-                {/* Misconception Alert if Incorrect */}
-                {!selectedOpt.isCorrect &&
-                  (selectedOpt.misconceptionFeedback || selectedOpt.distractorRationale) && (
-                    <div className="p-3 bg-[#FFE4E6] dark:bg-[#3F1B24] border-2 border-black text-black dark:text-white font-body text-xs sm:text-sm leading-relaxed" dir={locale === 'ar' ? 'ltr' : undefined}>
-                      <strong>{locale === 'tr' ? 'Nedeni: ' : locale === 'ar' ? 'السبب: ' : 'Why this happens: '}</strong>
-                      {selectedOpt.misconceptionFeedback || selectedOpt.distractorRationale}
-                    </div>
-                  )}
+                {/* Rationale / Misconception Feedback */}
+                {(selectedOpt.misconceptionFeedback || selectedOpt.distractorRationale) && (
+                  <div
+                    className={`p-3 border-2 border-black font-body text-xs sm:text-sm leading-relaxed ${
+                      selectedOpt.isCorrect
+                        ? 'bg-[#E8F5E9] dark:bg-[#1B3820] text-emerald-950 dark:text-emerald-100'
+                        : 'bg-[#FFE4E6] dark:bg-[#3F1B24] text-black dark:text-white'
+                    }`}
+                    dir={locale === 'ar' ? 'ltr' : undefined}
+                  >
+                    <strong>
+                      {selectedOpt.isCorrect
+                        ? (locale === 'tr' ? 'Açıklama: ' : locale === 'ar' ? 'التفسير: ' : 'Rationale: ')
+                        : (locale === 'tr' ? 'Nedeni: ' : locale === 'ar' ? 'السبب: ' : 'Why this happens: ')}
+                    </strong>
+                    {selectedOpt.misconceptionFeedback || selectedOpt.distractorRationale}
+                  </div>
+                )}
 
                 {/* Model Outcome & Rationale */}
                 <div className="p-4 bg-white dark:bg-[#1E1E1E] border-2 border-black dark:border-white space-y-2 shadow-[2px_2px_0px_#000000]">
@@ -661,7 +676,7 @@ export const LessonPage: React.FC = () => {
                         <span className="text-[10px] font-mono font-bold uppercase text-gray-700 dark:text-gray-300">
                           {locale === 'tr' ? `Kart 0${idx + 1}` : locale === 'ar' ? `بطاقة 0${idx + 1}` : `Card 0${idx + 1}`}
                         </span>
-                        {card.status === 'pending-human-review' && (
+                        {import.meta.env.DEV && card.status === 'pending-human-review' && (
                           <span className="text-[9px] font-mono bg-yellow-200 text-black px-1 border border-black">
                             {locale === 'tr' ? 'İnceleme Gerekli' : locale === 'ar' ? 'مراجعة مطلوبة' : 'Review Required'}
                           </span>
@@ -795,41 +810,49 @@ export const LessonPage: React.FC = () => {
             {/* Textbook Citations (E1 Policy) */}
             <div className="space-y-2">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                Authoritative Textbook References (Citation Status: Unverified per E1 Policy):
+                {import.meta.env.DEV
+                  ? 'Authoritative Textbook References (Citation Status: Unverified per E1 Policy):'
+                  : 'Authoritative Textbook References:'}
               </span>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-800 dark:text-gray-200">
                 {lesson.citations.map((c: StepCitation) => (
                   <li key={c.id}>
-                    <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot; •{' '}
-                    <span className="italic text-gray-600 dark:text-gray-400">
-                      [Section: {c.chapter}, Page: {c.page} — Pending Physical Copy Verification]
-                    </span>
+                    <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot;
+                    {import.meta.env.DEV && (
+                      <span className="italic text-gray-600 dark:text-gray-400">
+                        {' '}[Section: {c.chapter}, Page: {c.page} — Pending Physical Copy Verification]
+                      </span>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* University Lecture Provenance */}
-            <div className="space-y-1">
-              <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                Internal Lecture Materials Provenance:
-              </span>
-              <p className="text-gray-800 dark:text-gray-200">
-                Source Slides: <code>Farmasötik ve Medisinal Kimya 1-Giriş.pdf</code> (Slides 17–23).
-                Recreated natively via Neo-Brutalist vector components; zero university slide images embedded.
-                Logged in <code>docs/asset-log.md</code> under <code>mc-asset-004</code>.
-              </p>
-            </div>
+            {import.meta.env.DEV && (
+              <div className="space-y-1">
+                <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                  Internal Lecture Materials Provenance:
+                </span>
+                <p className="text-gray-800 dark:text-gray-200">
+                  Source Slides: <code>Farmasötik ve Medisinal Kimya 1-Giriş.pdf</code> (Slides 17–23).
+                  Recreated natively via Neo-Brutalist vector components; zero university slide images embedded.
+                  Logged in <code>docs/asset-log.md</code> under <code>mc-asset-004</code>.
+                </p>
+              </div>
+            )}
 
             {/* Numeric Parameters Disclaimer (E2 Policy) */}
-            <div className="p-2.5 bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-700 text-yellow-900 dark:text-yellow-200 flex items-start gap-2">
-              <Info className="w-4 h-4 shrink-0 mt-0.5" />
-              <span>
-                <strong>Empirical Threshold Note (E2):</strong> The thermodynamic saturation range{' '}
-                <code>[pending-human-review: saturation threshold]</code> is registered in <code>docs/needs-human-review.md</code> as{' '}
-                <code>pending-human-review</code> for direct owner verification against primary literature.
-              </span>
-            </div>
+            {import.meta.env.DEV && (
+              <div className="p-2.5 bg-yellow-50 dark:bg-yellow-950/30 border border-yellow-700 text-yellow-900 dark:text-yellow-200 flex items-start gap-2">
+                <Info className="w-4 h-4 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Empirical Threshold Note (E2):</strong> The thermodynamic saturation range{' '}
+                  <code>[pending-human-review: saturation threshold]</code> is registered in <code>docs/needs-human-review.md</code> as{' '}
+                  <code>pending-human-review</code> for direct owner verification against primary literature.
+                </span>
+              </div>
+            )}
           </div>
         )}
       </footer>

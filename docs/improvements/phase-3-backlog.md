@@ -17,7 +17,8 @@ This document outlines prioritized, high-leverage architectural and product impr
 ## Top 5 Prioritized Improvement Recommendations
 
 ### 1. `IMP-01`: Serve Paid Lessons (Lessons 3+) via Rules-Gated Firestore / Cloud Functions
-- **Rank**: 1 (Critical Commercial IP Security)
+- **Rank**: 1 (Critical Commercial IP Security — **OPEN P0 BLOCKER FOR AUTHORING PAID LESSONS IN PHASE 4 (P4A)**)
+- **Status & Reconciliation**: Open P0 Blocker for Paid Lessons (Phase 4A prerequisite). While Phase 3 received 0 P0s from Security because Vertical Slice A only ships Lesson 1 (which is permanently free preview under freemium rules), authoring or shipping proprietary paid Lessons 3+ without rules-gated Firestore serving is strictly blocked by this P0 requirement.
 - **Problem**: Client-side bundling of paid lesson curricula compromises commercial IP gating and allows straightforward bypass via browser devtools.
 - **Evidence**:
   - [`apps/web/src/pages/LessonPage.tsx`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/pages/LessonPage.tsx) statically imports lesson data.

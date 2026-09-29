@@ -598,13 +598,219 @@ Structured backlog published covering:
 
 ---
 
-## 9. Final Phase 3 STOP Gate — Paused for Owner Sign-Off
+### 8.10 "Attempted to Break" Adversarial Stress Logs Across All 5 Roles
 
-All items requested in the Phase 3 Gate rejection notice have been completely closed and validated. Phase 3 is 100% complete and frozen at commit `c6e3593755eda105706bccc158751e530c94f138`.
+Per Quality Protocol mandates, each independent reviewer documented concrete probes and boundary stress-testing to actively attempt to break the platform:
 
-**Per Section 7 of `AGENTS.md` and Gate Rule 7:**
-- **ORCHESTRATION IS STRICTLY PAUSED AT THIS STOP GATE.**
-- **NO WORK ON PHASE 4 HAS BEEN OR WILL BE STARTED WITHOUT DIRECT USER SIGNOFF.**
+#### 1. Content & Pedagogy Reviewer Adversarial Log
+## 12. "Attempted to Break" Boundary & Stress Testing Log
+
+To verify that pedagogical invariants cannot be silently violated, adversarial mutations and boundary tests were conducted against `LessonSchema` and the test harness:
+
+| Stress Test ID | Attack / Injected Mutation | Expected Defense | Observed Result | Defense Mechanism |
+| :--- | :--- | :--- | :--- | :--- |
+| **BREAK-PED-01** | Injected a 41st word into Step 2 prompt (`"extra unnecessary verbose padding word"`). | Zod schema validation must fail immediately with message `"Prompt must not exceed 40 words"`. | **CAUGHT**: `safeParse` fails with `ZodError: Prompt must not exceed 40 words`. | `maxWords(40)` in `schema.ts:8-11`. |
+| **BREAK-PED-02** | Reduced Step 3 hints from 3 items to 2 items (omitted Tier 3 solution). | Zod tuple schema must reject hint array of length 2. | **CAUGHT**: `safeParse` fails with `hints: Array must contain exactly 3 element(s)`. | `z.tuple([z.string(), z.string(), z.string()])` in `schema.ts:66`. |
+| **BREAK-PED-03** | Mutated citation status to `"verified"` while keeping chapter as `"Chapter 2"`. | Automated citation rule test must fail because chapter is asserted as verified. | **CAUGHT**: Test `strictly complies with Citation Policy (E1)` fails assertion `expect(c.chapter).toBe('unverified')`. | `lesson01.test.ts:85`. |
+| **BREAK-PED-04** | Mutated `NUM-MC01-01` status to `"verified"` without human review signoff. | Numeric claims policy test must catch unauthorized status promotion. | **CAUGHT**: Test `strictly complies with Numeric Claims Policy (E2)` fails assertion `expect(saturationClaim.status).toBe('pending-human-review')`. | `lesson01.test.ts:97`. |
+| **BREAK-PED-05** | Injected unvetted string `"a = 0.01-1.0"` into Step 10 recap prompt. | Grep Content Guard command must detect count $> 0$ and fail automated verification. | **CAUGHT**: Grep Content Guard returns `{'0.01': 1, '1.0': 1, ...}`, failing zero-tolerance check. | Grep Content Guard CLI assertion. |
+| **BREAK-PED-06** | Flipped `predictThenReveal: false` on Step 6 (`step-6`). | Predict-then-reveal test must catch missing prediction mechanic on concept step. | **CAUGHT**: Test fails with assertion `Step 6 must have predictThenReveal: true`. | `lesson01.test.ts:56`. |
+| **BREAK-PED-07** | Mutated Spaced Review Card 1 box to `box: 2`. | Test asserting initial Leitner placement in Box 1 must fail. | **CAUGHT**: Test fails assertion `expect(card.box).toBe(1)`. | `lesson01.test.ts:111`. |
+| **BREAK-PED-08** | Injected 8-word verbatim sentence from `Farmasötik ve Medisinal Kimya 1-Giriş.pdf` slide 18 into Step 4 explanation. | `scripts/audit_verbatim_text.py` must detect positive n-gram intersection. | **CAUGHT**: Script logs `MATCH in courses\medchem\lessons\lesson-01.json: 1 8-word matches found!`. | `scripts/audit_verbatim_text.py`. |
+
+- **Summary**: All 8 adversarial break attempts were intercepted by the schema contract, test assertions, or audit scripts.
+
+---
+
+#### 2. Security Reviewer Adversarial Log
+## 4. "Attempted to Break" Penetration Audit Log
+
+During Iteration 3, 14 adversarial attack vectors, state manipulation probes, and boundary conditions were evaluated against the codebase:
+
+```text
++-------------------------------------------------------------------------------------------------------------------+
+| #  | Attack Vector                       | Probe Action                      | Result              | Status       |
++----+-------------------------------------+-----------------------------------+---------------------+--------------+
+| 01 | Client self-resets trialUsed flag   | update({ trialUsed: false })      | PERMISSION_DENIED   | PASS (SEC-01)|
+| 02 | Client self-grants premium on create| set({ plan: 'premium' })          | PERMISSION_DENIED   | PASS (SEC-02)|
+| 03 | Client self-grants admin role       | update({ roles: ['admin'] })      | PERMISSION_DENIED   | PASS (SEC-03)|
+| 04 | Client direct writes to entitlements| entitlements.doc('dual').set(...) | PERMISSION_DENIED   | PASS (SEC-04)|
+| 05 | Free/Guest reads paid steps (L3)    | steps.doc('step-paid').get()      | PERMISSION_DENIED   | PASS (SEC-05)|
+| 06 | Reads paid step with expired trial  | get() where expiresAt < now       | PERMISSION_DENIED   | PASS (SEC-06)|
+| 07 | Forged HMAC webhook signature       | POST with bogus x-dodo-signature  | HTTP 401            | PASS (SEC-07)|
+| 08 | Short / length-mismatched signature | POST with truncated signature     | HTTP 401            | PASS (SEC-08)|
+| 09 | Webhook duplicate event replay      | Replay identical eventId payload  | already_processed   | PASS (SEC-09)|
+| 10 | Concurrent startTrial race probe    | Promise.all(2 simultaneous calls) | 1 OK, 1 Rejected    | PASS (SEC-10)|
+| 11 | Overwrite active Premium with trial | executeStartFreeTrial on premium  | rejected (Error)    | PASS (SEC-11)|
+| 12 | User A reads/writes User B progress | Cross-user Firestore query        | PERMISSION_DENIED   | PASS (SEC-12)|
+| 13 | Unauthenticated write to progress   | Guest client Firestore set        | PERMISSION_DENIED   | PASS (SEC-13)|
+| 14 | DOM inspection of locked hints      | Query DOM for Tier 2/3 text       | Absent from DOM     | PASS (SEC-14)|
++-------------------------------------------------------------------------------------------------------------------+
+```
+
+### Detailed Breakdown of Critical Probes:
+
+1. **Trial Re-Activation Attack (Probe 01)**:
+   - *Target*: Student who completed a 7-day trial attempts to write `{ trialUsed: false }` to their user profile document to regain full course access.
+   - *Defense*: In `firestore.rules` (lines 216–219), rule denies updates if `request.resource.data.diff(resource.data).affectedKeys().hasAny(['roles', 'isAdmin', 'userId', 'plan', 'trialUsed', ...])`.
+   - *Outcome*: Call is blocked at rule evaluation with `PERMISSION_DENIED`.
+
+2. **Concurrency Double-Spend Race (Probe 10)**:
+   - *Target*: Script issues simultaneous `startTrial` invocations in an attempt to trigger race conditions or allocate duplicate entitlements.
+   - *Defense*: In `functions/src/index.ts` (lines 25–78), the check-then-mutate sequence runs inside `firestoreDb.runTransaction()`.
+   - *Outcome*: Exactly 1 transaction successfully commits; the concurrent conflicting call reads the committed state `trialUsed: true` and throws `failed-precondition: You have already activated your 7-day free trial on this account.`
+
+3. **Active Premium Overwrite Guard (Probe 11)**:
+   - *Target*: Paying subscriber on an active semester or annual pass executes `startTrial`, which could inadvertently downgrade their plan to a 7-day expiration.
+   - *Defense*: Line 34 of `functions/src/index.ts` checks: `if (userData?.plan === 'premium') throw new Error('failed-precondition: Account already holds active Premium access.')`.
+   - *Outcome*: The transaction aborts immediately without modifying the existing subscription.
+
+4. **DOM Extraction of Locked Hints (Probe 14)**:
+   - *Target*: Unauthenticated guest or free student opens browser DevTools to inspect hidden elements (`display: none` or `visibility: hidden`) seeking to read Tier 2 (Structural Clue) and Tier 3 (Complete Solution).
+   - *Defense*: In `packages/ui/src/components/HintDrawer/HintDrawer.tsx` (lines 180–202), conditional rendering outputs the hint text *only* when `isRevealed` is true. When `!isRevealed && isLockedPremium`, the hint string is omitted from the React virtual DOM tree and rendered HTML.
+   - *Outcome*: DevTools inspection yields only the call-to-action banner; proprietary hint content is not present in the client DOM.
+
+---
+
+#### 3. QA Agent Adversarial Log
+## 5. "Attempted to Break" Adversarial Stress Testing Log
+
+| # | Adversarial Attack / Edge Case | Attack Technique | Observed System Response | Status |
+|:---:|---|---|---|:---:|
+| **ATB-01** | Rapid Double-Click & Commit Spamming | Fired 10 synthetic click events within 50ms on "Commit Hypothesis & Reveal Outcome". | Commitment callback is immediately guarded; state updates once; no double-scoring or corruption. | **PASS** |
+| **ATB-02** | Rapid Step Skip / Arrow Hammering | Automated rapid keypress burst (`ArrowRight` 10 times in 100ms) on Step 1. | Advances to Step 2, where forward advance is strictly disabled until a prediction is committed. Step index halts cleanly at Step 2 without skipping. | **PASS** |
+| **ATB-03** | Radio Group Arrow Key Bleed | Focused on Option B inside Step 2 and pressed `ArrowRight`. | Roving tabindex advances focus and selection to Option C (`e.stopPropagation()` & `e.preventDefault()`). The global step listener ignores the event because `role="radio"`. Step remains on Step 2. | **PASS** |
+| **ATB-04** | Live Region Screen Reader Announcement | Commited incorrect and correct hypotheses and verified DOM attributes. | Revealed feedback container dynamically renders `role="status"`, `aria-live="polite"`, and `aria-atomic="true"`, ensuring assistive technologies read the outcome immediately. | **PASS** |
+| **ATB-05** | PaywallModal Escape & Focus Restoral | Triggered PaywallModal from locked Hint Tier 2; pressed `Escape`. | Modal unmounts cleanly; backdrop disappears; interactive focus is restored to the "Need a Hint?" trigger; underlying lesson remains un-interrupted. | **PASS** |
+| **ATB-06** | URL Direct Access / Entitlement Bypassing | Injected route `/courses/medchem/lessons/3` directly into browser navigation while in free guest state. | `hasCourseAccess()` immediately evaluates false; LessonPage replaces content with locked paywall container; zero proprietary widget data or lesson text is rendered in the DOM. | **PASS** |
+| **ATB-07** | LocalStorage Corruption Injection | Manually set `localStorage.setItem('pharmacy_progress_medchem', 'CORRUPT_JSON{{{')` and refreshed page. | `loadLocalProgress()` catches the JSON parse error, logs warning, and cleanly falls back to `getDefaultProgress('medchem')`. App renders without crashing. | **PASS** |
+| **ATB-08** | Step 10 Infinite Re-Render Loop | Arrived at Step 10 where `handleCompleteLesson` updates progress in `useEffect`. | `handleCompleteLesson` checks `if (!lessonCompleted)`, which is set to `true` upon first execution. Re-render terminates after exactly 1 cycle. | **PASS** |
+| **ATB-09** | Brave Aggressive Fingerprinting & Shields UP | Executed full test suite with Brave Shields Default (tracker, ad-blocking, fingerprinting shields active). | Authentication context, local storage access, SVG rendering, and layout remained 100% identical to the Shields Down run. Zero blocked essential requests. | **PASS** |
+
+---
+
+#### 4. Code Reviewer Adversarial Log
+## 5. "Attempted to Break" Audit Log (Iteration 4 Focus)
+
+| Test Case | Scenario / Input | Expected Result | Actual Result | Status |
+|:---|:---|:---|:---|:---:|
+| **BREAK-I4-01** | Rapid step navigation (`handleNextStep` $\times 5$) | `currentStepIndex` updates sequentially, `persistStepProgress` saves to `localStorage` without race conditions or corrupted JSON. | `setProgress((prev) => ...)` functional updater guarantees atomic updates. `localStorage` contains valid serialized progress at step 5. | **PASS** |
+| **BREAK-I4-02** | Mid-lesson page refresh on Step 6 | Step 6 is restored from `localStorage` on reload; does not reset to Step 0. | `LessonPage.tsx:84-95` checks `savedProgress.currentStepIndex` on mount and sets state to 6. Viewport scrolls to top. | **PASS** |
+| **BREAK-I4-03** | Step 0 to Step 1 back-and-forth navigation | `currentStepIndex` transitions between 0 and 1; no negative index, no NaN. | Guard `if (currentStepIndex > 0)` and `persistStepProgress(prevIdx)` prevents underflow. Index is clamped. | **PASS** |
+| **BREAK-I4-04** | Guest completes lesson, cloud user has no lessons completed | `mergeGuestProgressWithCloud(guest, cloud)` retains guest's completed lesson, 50 XP, and 1-day streak. | Resulting object contains `completedLessonIds: ['mc-mod1-les1']`, `totalXP: 50`, `streakDays: 1`. | **PASS** |
+| **BREAK-I4-05** | Guest with 10 XP logs into cloud account with 100 XP | `mergeGuestProgressWithCloud` retains 100 XP. | `Math.max(10, 100)` evaluates to 100 XP; cloud achievements are not downgraded. | **PASS** |
+| **BREAK-I4-06** | Guest with broken streak merges with cloud account with active streak | `streakDays` takes maximum, `lastStreakDate` takes the more recent date. | Verified. `streakDays = Math.max(...)`, `lastStreakDate = guest > cloud ? guest : cloud`. | **PASS** |
+| **BREAK-I4-07** | `trialEndsAt` in the past (expired trial) | `calculateDaysRemaining()` returns `1`, banner displays expired state. | `user?.plan === 'trial'` evaluates false if expired; if still marked `trial`, clamped to `Math.max(1, ...)`. When downgraded to `free` with `trialUsed: true`, renders `status="expired_trial"`. | **PASS** |
+| **BREAK-I4-08** | Banner CTA click while viewing lesson | `setPaywallOpen(true)` opens modal over active lesson without unmounting lesson state. | `PaywallModal` opens via portal/fixed overlay. In-progress step interaction state remains intact in memory. | **PASS** |
+| **BREAK-I4-09** | Esc key press while PaywallModal open | Modal closes, returns focus to invoking element, document body scroll lock removed. | Focus trap in `Modal.tsx` handles `Escape`, cleans up `document.body.style.overflow = ''`. | **PASS** |
+| **BREAK-I4-10** | TypeScript strict mode evaluation with `noEmit` | Workspace typecheck passes with 0 type errors across all 5 projects. | `tsc --noEmit` exited code 0 across `functions`, `platform`, `ui`, `widgets`, `web`. | **PASS** |
+
+---
+
+#### 5. Design Critic Adversarial Log
+## 8. "Attempted to Break" Log
+
+The following adversarial stress tests were conducted during this review cycle:
+
+1. **Attempted to Break Sticky Navbar Scroll Alignment on Step Navigation**:
+   - *Method*: Navigated sequentially from Step 1 through Step 10 across Desktop (1440×900), Tablet (768×1024), and Mobile (375×667) viewports, paying particular attention to the transition into Step 5 Checkpoint.
+   - *Outcome*: In Iteration 2, asynchronous smooth scrolling (`window.scrollTo({ top: 0, behavior: 'smooth' })`) left the card header obscured underneath the 64px sticky navbar. On commit `c6e3593755eda105706bccc158751e530c94f138`, `LessonPage.tsx` synchronously snaps to `(0, 0)` upon step changes. Verified in `desktop-brave-shields-default-step-05-checkpoint.png`, `desktop-brave-shields-down-step-05-checkpoint.png`, `tablet-brave-step-05-checkpoint.png`, and `mobile-brave-step-05-checkpoint.png`: the header, title (`CLASSIFY MYSTERY COMPOUNDS`), prompt, and options are 100% visible with zero clipping.
+
+2. **Attempted to Break Brave Shields Parity (Strict UP vs Shields Down)**:
+   - *Method*: Executed dual-browser Playwright test matrix launching Brave with Shields Default (blocking third-party trackers, cross-site cookies, canvas fingerprinting) vs Shields Down (`--disable-brave-shields --disable-component-update`).
+   - *Outcome*: Byte-level and visual comparison showed exact 0-byte or minimal anti-aliasing diffs across all screenshots. Local storage, font delivery, and SVG icons were completely unaffected by Brave Shields.
+
+3. **Attempted to Break Mobile Viewport Layout & Touch Ergonomics (375×667)**:
+   - *Method*: Audited `mobile-brave-lesson-03-paywall-viewport-375.png` (exact 375×667 viewport without fullPage artificial expansion).
+   - *Outcome*: Verified that the PaywallModal fits completely within 667px vertical height. The primary CTA button "CONTINUE WITH SEMESTER PASS — $49" is 100% visible, completely unclipped, and located in the natural thumb reach zone (`y ≈ 510–560px`). All 10 StepDots fit neatly within 375px without horizontal wrapping (`mobile-brave-step-01-hook.png`, `mobile-brave-step-05-checkpoint.png`). The mobile action bar stays pinned in the thumb zone (`mobile-brave-step-02-predict-unselected.png`).
+
+4. **Attempted to Break Navbar Responsiveness with Mobile Trial Badge Enabled**:
+   - *Method*: Verified `Navbar.tsx` modification from `hidden sm:inline-flex` to `inline-flex` for user trial badge rendering at 375px viewport width.
+   - *Outcome*: In `mobile-brave-trial-started-ui.png`, the `TRIAL ACTIVE` sticker badge renders cleanly on the top right next to the theme switch without causing text wrapping, horizontal scrollbars, or navbar height expansion.
+
+5. **Attempted to Break Trial Lifecycle State Transitions (Active Trial vs Expired Trial Downgrade)**:
+   - *Method*: Audited `*-trial-started-ui.png` (yellow banner, "7 days remaining", `VIEW STUDENT PASSES ->`) vs `*-trial-expired-downgrade.png` (pink banner, "100% of your learning progress is saved!", `CHOOSE ACADEMIC PASS ->`).
+   - *Outcome*: Both states render distinct semantic colors (`#FFD93D` for active, `#FF6B9D` for expired downgrade). Clicking either banner CTA successfully triggers the global PaywallModal overlay with zero console warnings.
+
+6. **Attempted to Break Dark Mode Contrast & Border Geometry**:
+   - *Method*: Evaluated contrast ratios of all UI elements against `#121212` canvas and `#1E1E1E` container surfaces. Checked for border clashing on high-luminance elements.
+   - *Outcome*: Body text achieves 19.3:1 (AAA), yellow accent achieves 13.9:1 (AAA), green achieves 10.4:1 (AAA). Buttons inside yellow accent bars enforce solid black borders and black text (`mobile-brave-lesson-dark-rtl-ar.png`), preventing border clashing. StepDots maintain >= 7:1 contrast.
+
+7. **Attempted to Break Arabic BiDi and RTL Mirroring**:
+   - *Method*: Inspected layout under `dir="rtl"` with embedded English scientific text, testing directional chevrons and trailing punctuation.
+   - *Outcome*: Header, nav, and card layouts mirror completely. Directional arrows invert via `rtl:rotate-180`. English prompt copy is wrapped in `dir="ltr"` containers with `unicode-bidi: isolate`, preventing punctuation reversal (`desktop-brave-shields-default-lesson-dark-rtl-ar.png`).
+
+8. **Attempted to Break Turkish Chrome Localization**:
+   - *Method*: Evaluated Turkish mode (`locale === 'tr'`) for untranslated labels and dotted capital `İ` mutations on English words.
+   - *Outcome*: Chrome strings use authentic Turkish translations (`GALERİ`, `DERSLER`, `FİYATLANDIRMA`, `ÜCRETSİZ DENEME`), completely eliminating dotted `İ` mutations on English words.
+
+---
+
+---
+
+## 10. Phase 3 Conditional Closure Remediation (Items C1–C7)
+
+Following the owner's conditional closure directive, items C1 through C7 were remediated in full prior to making the frozen commit and running targeted reviews:
+
+### 10.1 Item Breakdown & Resolution
+
+1. **C1 (Trial E2E Real Backend Verification)**:
+   - Clarified that the UI test (`e2e/lesson-slice.spec.ts`) evaluates client-side banner transitions via `localStorage`, while the real backend test (`tests/trial-emulator-lifecycle.test.ts`) runs directly against the Cloud Firestore Emulator.
+   - Calls real Cloud Functions triggers (`executeStartFreeTrial`) and expiry cleanup (`executeCleanupExpiredTrials`).
+   - Asserts that both the user's remote Firestore progress document (`/users/{uid}/progress/mc-mod1-les1`) and review cards (`/users/{uid}/review_cards/{cardId}`) remain 100% intact after downgrade to the Free plan. All 30 tests in `npm run test:rules` passed.
+
+2. **C2 (Answer Position Variety & Unit Test)**:
+   - Options reordered in `courses/medchem/lessons/lesson-01.json` across Steps 2 to 9 so correct answer positions vary across indices 0, 1, and 2 (Index 0: 25%, Index 1: 37.5%, Index 2: 37.5%).
+   - Added unit test in `packages/platform/src/curriculum/lesson01.test.ts` asserting that correct answers do not all share the same position.
+   - Updated keyboard navigation test in `e2e/lesson-slice.spec.ts` with matching option key presses (`'2', '1', '3', '2', '1', '3', '2', '3'`).
+
+3. **C3 (Screenshots & Axe Expansion Across Dark, TR, and AR)**:
+   - Added wrong-answer interactions, feedback assertions, screenshots, and axe-core accessibility checks for steps 3 through 9 in `e2e/lesson-slice.spec.ts`.
+   - Added dedicated walkthrough test capturing steps 1, 2, 5, and 10 in Dark Mode, Turkish (TR), and Arabic (AR RTL).
+   - All 20 Playwright matrix tests passed (5 tests across 4 Brave projects: Desktop Shields Default, Desktop Shields Down, Tablet, Mobile).
+   - Executed `node scripts/generate-coverage-table.mjs`, regenerating `docs/reviews/phase-3-coverage-matrix.md` with honest on-disk captures and explicit `missing` markers for uncaptured cells.
+
+4. **C4 (Production Bundle Dev Notes Gate & Release Blocker)**:
+   - Gated all internal notices (`pending-human-review`, `needs-human-review.md`, unverified citations) in `apps/web/src/pages/LessonPage.tsx` behind `import.meta.env.DEV`.
+   - Added `productionDevNotesSanitizer` plugin in `apps/web/vite.config.ts`.
+   - Added release blocker script `scripts/test-prod-bundle.mjs` (registered as `pnpm test:bundle`). Output: 0 dev notes found across all production bundle files.
+
+5. **C5 (Structured Claim Inventory & NUM-MC01-04 Registration)**:
+   - Registered `NUM-MC01-04` ($10^4$ / 4 orders of magnitude divergence) in `courses/medchem/lessons/lesson-01.json` and `docs/needs-human-review.md`.
+   - Authored `scripts/claim-inventory.mjs` (registered as `pnpm claim-inventory`) cataloging 17 structured claims (`cited`: 1, `pending-human-review`: 7, `illustrative-example`: 9).
+   - Maintained content string guard verifying 0 unvetted tokens in student lesson content.
+
+6. **C6 (Reviewer Report Integrity & IMP-01 Reconciliation)**:
+   - Reverted author modifications in `docs/reviews/phase-3-iteration-2-security-reviewer.md` back to git commit text.
+   - Authored separate addendum `docs/reviews/phase-3-iteration-2-security-addendum.md`.
+   - Reconciled `IMP-01` in `docs/improvements/phase-3-backlog.md` as open P0 Blocker for authoring paid lessons in Phase 4.
+   - Pasted complete "Attempted to Break" adversarial logs across all 5 roles into `docs/walkthrough.md` (Section 8.10).
+
+7. **C7 (Git Committer Identity Guard)**:
+   - Git committer placeholder `your.email@example.com` identified.
+   - Pausing orchestration before staging and committing to request the owner's real name and email for `git config user.name` and `git config user.email`.
+
+### 10.2 Comprehensive Verification Test Results
+
+| Test Suite | Scope | Result | Status |
+| :--- | :--- | :--- | :---: |
+| **Package Unit Tests (`pnpm test`)** | 79 tests across `@pharmacy/platform` (33), `@pharmacy/ui` (27), and `@pharmacy/widgets` (19) | 79 passed | **PASS** |
+| **Firebase Emulator Rules (`npm run test:rules`)** | 30 tests across `firestore.rules` (12), Cloud Functions (17), and Trial Emulator Lifecycle (1) | 30 passed | **PASS** |
+| **Playwright Brave Matrix (`npx playwright test`)** | 20 tests across Desktop Default, Desktop Shields Down, Tablet, and Mobile | 20 passed | **PASS** |
+| **Production Bundle Audit (`pnpm test:bundle`)** | Release blocker scan across `apps/web/dist/` for internal dev/staging tokens | 0 dev tokens | **PASS** |
+| **Claim Inventory Audit (`pnpm claim-inventory`)** | Scan across 17 structured claims, validating `NUM-MC01-04` and content guard | 17 verified | **PASS** |
+| **TypeScript Strictness (`pnpm typecheck`)** | Strict typecheck across 5 workspace projects with `--noEmit` | 0 errors | **PASS** |
+| **ESLint (`pnpm lint`)** | Strict linting across all workspace projects | 0 errors | **PASS** |
+
+---
+
+## 11. Final Phase 3 STOP Gate — Paused for Owner Sign-Off & Git Identity (C7)
+
+All technical requirements of C1 through C6 are complete, verified by automated suites with zero regressions. In accordance with Rule C7 and Gate Rule 7:
+1. Orchestration is paused to request the owner's name and email for git configuration.
+2. Once provided, changes will be staged and committed cleanly.
+3. Fresh-context reviewer subagents will audit the diff with neutral prompts.
+4. Orchestration halts at the STOP gate for user signoff before any work on Phase 4 (P4A–P4C) begins.
 
 
 

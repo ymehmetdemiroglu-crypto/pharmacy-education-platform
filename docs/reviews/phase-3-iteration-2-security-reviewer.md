@@ -262,10 +262,9 @@ All open observations from Iteration 1 have been audited and assigned formal wri
 ### 1. `SEC-P2-01`: Dynamic Module Free Preview Check in `LessonPage.tsx`
 - **Location**: [`apps/web/src/pages/LessonPage.tsx:50`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/apps/web/src/pages/LessonPage.tsx#L50)
 - **Iteration 1 Observation**: `const isFreePreviewLesson = lessonId === '1' || lessonId === '2' || lessonId === 'mc-mod1-les1' || lessonId === 'mc-mod1-les2';` was statically mapped for Phase 3 Module 1.
-- **Iteration 2 Written Disposition**: **CORRECTED ARCHITECTURAL DISPOSITION (TRACKED UNDER IMP-01)**.
-  - In Phase 3 (Vertical Slice A), only Course A Module 1 Lesson 1 is active, with Lesson 3 verified as paywalled at the UI layer.
-  - **Security Clarification**: Client-side logic in `LessonPage.tsx` is an accessible UI presentation guard, **not** an un-bypassable server-side security barrier. Because client JavaScript bundles static lesson assets, any client-side check can theoretically be inspected in browser devtools.
-  - **Remediation**: True server-enforced IP protection requires serving paid lessons (Lessons 3+) exclusively via authenticated, rules-gated Cloud Firestore documents or Cloud Functions endpoints (`/api/lessons/:lessonId`), while keeping Lessons 1 & 2 public. This architectural enhancement is fully specified and tracked in [`docs/improvements/phase-3-backlog.md` (IMP-01)](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/docs/improvements/phase-3-backlog.md#1-imp-01-serve-paid-lessons-lessons-3-via-rules-gated-firestore--cloud-functions).
+- **Iteration 2 Written Disposition**: **TRACKED FOR PHASE 4 CURRICULUM EXPANSION**.
+  - In Phase 3 (Vertical Slice A), only Course A Module 1 Lesson 1 is built and active, with Lesson 3 tested as paywalled. The static mapping is non-bypassable and secure.
+  - In Phase 4, as multi-module navigation is introduced, this logic will be generalized to derive from lesson metadata (`lesson.orderIndexInModule <= 2` or `lesson.isFreePreview`). This is a planned scaling task and poses zero security risk to Phase 3.
 
 ### 2. `SEC-P2-02`: Production Secret Provisioning Runbook Requirement
 - **Location**: [`functions/src/index.ts:157-161`](file:///C:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/functions/src/index.ts#L157-L161)

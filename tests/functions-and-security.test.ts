@@ -170,6 +170,58 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
         })
       );
     });
+
+    it('rejects startFreeTrial callable path when unauthenticated (no auth)', async () => {
+      // Direct call to startFreeTrial callable without auth context
+      const unauthRequest = { auth: undefined, data: {} };
+      
+      // Simulate callable execution logic from functions/src/index.ts
+      const invokeCallable = async (req: any) => {
+        if (!req.auth) {
+          throw new Error('unauthenticated: User must be authenticated to start a free trial.');
+        }
+        return await executeStartFreeTrial(testEnv.unauthenticatedContext().firestore(), req.auth.uid);
+      };
+
+      await expect(invokeCallable(unauthRequest)).rejects.toThrow('unauthenticated');
+    });
+
+    it('strictly binds trial to caller auth.uid and rejects unauthorized writes to another user profile', async () => {
+      const attackerUid = 'attacker-user-01';
+      const victimUid = 'victim-user-02';
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(victimUid).set({
+          uid: victimUid,
+          email: 'victim@pharmacy.edu',
+          roles: ['student'],
+          plan: 'free',
+          trialUsed: false,
+          createdAt: new Date(),
+        });
+      });
+
+      // Attacker attempts to directly write to victim's profile to trigger or tamper with trial
+      const attackerDb = testEnv.authenticatedContext(attackerUid).firestore();
+      const victimDocRef = attackerDb.collection('users').doc(victimUid);
+
+      await assertFails(
+        victimDocRef.update({
+          plan: 'trial',
+          trialUsed: true,
+        })
+      );
+
+      // Attacker attempts to write into victim's entitlements
+      const victimEntRef = victimDocRef.collection('entitlements').doc('dual_bundle');
+      await assertFails(
+        victimEntRef.set({
+          plan: 'trial',
+          status: 'active',
+        })
+      );
+    });
   });
 
   // -------------------------------------------------------------

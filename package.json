@@ -12,6 +12,8 @@
     "test:watch": "vitest",
     "test:rules": "node scripts/run-rules-tests.mjs",
     "test:e2e": "playwright test",
+    "test:bundle": "node scripts/test-prod-bundle.mjs",
+    "claim-inventory": "node scripts/claim-inventory.mjs",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
     "emulators": "firebase emulators:start --only firestore,auth,functions"
   },

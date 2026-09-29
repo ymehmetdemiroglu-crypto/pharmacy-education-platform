@@ -84,6 +84,13 @@
       "value": "Pt / P0 ≈ 0.03-0.05",
       "status": "pending-human-review",
       "referencePassage": "Check empirical vapor pressure ratio cited for diethyl ether minimum alveolar concentration (MAC) / biological activity."
+    },
+    {
+      "id": "NUM-MC01-04",
+      "parameter": "Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms",
+      "value": "10^4 (4 orders of magnitude)",
+      "status": "pending-human-review",
+      "referencePassage": "Verify in Foye's or Patrick whether the relative thermodynamic activity difference between stereospecific receptor agonists (a ~ 10^-5) and non-specific membrane physical depressants (a ~ 10^-1) is formally stated as 4 orders of magnitude (10^4-fold)."
     }
   ],
   "spacedReviewCards": [
@@ -92,7 +99,7 @@
       "courseId": "medchem",
       "drugOrConcept": "Ferguson Saturation Threshold",
       "prompt": "What is the relative thermodynamic saturation range (a = Pt/P0 or St/S0) defining structurally non-specific drug action?",
-      "answer": "High relative saturation threshold [pending-human-review] (substantial fraction of saturation equilibrium)",
+      "answer": "High relative saturation threshold (substantial fraction of saturation equilibrium)",
       "box": 1,
       "intervalDays": 1,
       "status": "pending-human-review"
@@ -112,7 +119,7 @@
       "courseId": "medchem",
       "drugOrConcept": "Clinical Classification",
       "prompt": "Classify inhalation anesthetics (halothane, nitrous oxide) vs stereoselective beta-blockers (propranolol) according to Ferguson's principle.",
-      "answer": "Inhalation anesthetics are structurally non-specific (physical membrane depression at high relative saturation [pending-human-review]); beta-blockers are structurally specific (3D receptor binding at low thermodynamic activity).",
+      "answer": "Inhalation anesthetics are structurally non-specific (physical membrane depression at high relative saturation); beta-blockers are structurally specific (3D receptor binding at low thermodynamic activity).",
       "box": 1,
       "intervalDays": 1,
       "status": "verified"
@@ -176,15 +183,15 @@
         "formula": "a = P_t / P_0",
         "options": [
           {
-            "id": "opt-1",
-            "label": "a approaches unity (complete saturation), maximizing physical escaping tendency into biophase tissues.",
-            "isCorrect": true
-          },
-          {
             "id": "opt-2",
             "label": "a drops to 0, because saturated vapors cannot dissolve into membranes.",
             "isCorrect": false,
             "misconceptionFeedback": "Saturation maximizes escaping tendency; it does not stop dissolution."
+          },
+          {
+            "id": "opt-1",
+            "label": "a approaches unity (complete saturation), maximizing physical escaping tendency into biophase tissues.",
+            "isCorrect": true
           },
           {
             "id": "opt-3",
@@ -225,7 +232,7 @@
         "options": [
           {
             "id": "opt-1",
-            "label": "High relative saturation [pending-human-review] (substantial saturation needed to alter membranes)",
+            "label": "High relative saturation (substantial saturation needed to alter membranes)",
             "isCorrect": true
           },
           {
@@ -241,17 +248,17 @@
             "misconceptionFeedback": "Thermodynamic activity at standard equilibrium does not exceed unity."
           }
         ],
-        "revealedOutcome": "Non-specific depressants act within a high relative saturation range [pending-human-review], requiring substantial physical accumulation.",
+        "revealedOutcome": "Non-specific depressants act within a high relative saturation range, requiring substantial physical accumulation.",
         "explanation": "Without specific receptor binding, drugs must achieve 1% to 100% of their saturation limit to alter biophase membrane fluidity."
       },
       "hints": [
         "Non-specific drugs need a substantial fraction of their maximum solubility or vapor pressure.",
-        "Ferguson observed diverse depressants induce anesthesia at substantial relative saturation [pending-human-review].",
-        "Because action depends on physical presence rather than receptor affinity, high thermodynamic activity [pending-human-review] is obligatory."
+        "Ferguson observed diverse depressants induce anesthesia at substantial relative saturation.",
+        "Because action depends on physical presence rather than receptor affinity, high thermodynamic activity is obligatory."
       ],
       "feedback": {
-        "correct": "Accurate! Non-specific agents require high relative saturation [pending-human-review] to physically perturb membranes.",
-        "incorrect": "Non-specific drugs do not possess high-affinity receptor targets, so they require substantial relative saturation [pending-human-review]."
+        "correct": "Accurate! Non-specific agents require high relative saturation to physically perturb membranes.",
+        "incorrect": "Non-specific drugs do not possess high-affinity receptor targets, so they require substantial relative saturation."
       },
       "sources": [
         {
@@ -277,13 +284,11 @@
       "predictThenReveal": true,
       "widgetType": "predict_reveal",
       "config": {
-        "phases": ["Exobiophase (Extracellular/Blood)", "Endobiophase (Cellular Membrane)"],
+        "phases": [
+          "Exobiophase (Extracellular/Blood)",
+          "Endobiophase (Cellular Membrane)"
+        ],
         "options": [
-          {
-            "id": "opt-1",
-            "label": "Equal: thermodynamic activity a is identical in both phases at equilibrium.",
-            "isCorrect": true
-          },
           {
             "id": "opt-2",
             "label": "Much higher in blood because blood volume exceeds membrane volume.",
@@ -295,6 +300,11 @@
             "label": "Zero in membrane because lipids repel volatile compounds.",
             "isCorrect": false,
             "misconceptionFeedback": "Volatile anesthetics are lipophilic and readily partition into lipid bilayers."
+          },
+          {
+            "id": "opt-1",
+            "label": "Equal: thermodynamic activity a is identical in both phases at equilibrium.",
+            "isCorrect": true
           }
         ],
         "revealedOutcome": "Chemical potential and thermodynamic activity a are identical across all phases in dynamic equilibrium.",
@@ -327,16 +337,16 @@
       "config": {
         "options": [
           {
-            "id": "opt-a",
-            "text": "Compound X: Active at a = 0.15; activity persists despite replacing alkyl branches with rings.",
-            "isCorrect": true,
-            "distractorRationale": "Correct! High thermodynamic activity (a = 0.15) and broad structural tolerance identify non-specific action."
-          },
-          {
             "id": "opt-b",
             "text": "Compound Y: Active at a = 0.00005; (R)-enantiomer is 500-fold more potent than (S)-enantiomer.",
             "isCorrect": false,
             "distractorRationale": "Extreme stereoselectivity and nanomolar potency indicate a structurally specific receptor agonist."
+          },
+          {
+            "id": "opt-a",
+            "text": "Compound X: Active at a = 0.15; activity persists despite replacing alkyl branches with rings.",
+            "isCorrect": true,
+            "distractorRationale": "Correct! High thermodynamic activity (a = 0.15) and broad structural tolerance identify non-specific action."
           },
           {
             "id": "opt-c",
@@ -354,13 +364,13 @@
         "explanation": "Compound X requires high thermodynamic activity (a = 0.15) and tolerates structural alterations without losing sedative action, classic hallmarks of non-specific agents."
       },
       "hints": [
-        "Look for high thermodynamic activity [pending-human-review] and tolerance to structural alteration.",
+        "Look for high thermodynamic activity and tolerance to structural alteration.",
         "Structurally specific drugs exhibit stereoselectivity and nanomolar potency (a < 0.001); non-specific drugs act via bulk physical presence.",
         "Compound X acts at a = 0.15 and retains effect across diverse scaffolds, identifying it as structurally non-specific."
       ],
       "feedback": {
         "correct": "Brilliant! Compound X operates at high thermodynamic saturation (a = 0.15) and tolerates scaffold changes, typical of non-specific drugs.",
-        "incorrect": "Look for the compound acting at high thermodynamic activity [pending-human-review] whose effect is insensitive to structural changes."
+        "incorrect": "Look for the compound acting at high thermodynamic activity whose effect is insensitive to structural changes."
       },
       "sources": [
         {
@@ -425,13 +435,12 @@
       "predictThenReveal": true,
       "widgetType": "predict_reveal",
       "config": {
-        "compounds": ["N2O (Nitrous Oxide)", "CH3-CH2-O-CH2-CH3 (Diethyl Ether)", "CHCl3 (Chloroform)"],
+        "compounds": [
+          "N2O (Nitrous Oxide)",
+          "CH3-CH2-O-CH2-CH3 (Diethyl Ether)",
+          "CHCl3 (Chloroform)"
+        ],
         "options": [
-          {
-            "id": "opt-1",
-            "label": "They act non-specifically by physically accumulating into lipid membranes at comparable thermodynamic activities.",
-            "isCorrect": true
-          },
           {
             "id": "opt-2",
             "label": "All three bind the identical single stereoselective allosteric receptor pocket.",
@@ -443,10 +452,15 @@
             "label": "They all metabolize in vivo into the identical active chemical intermediate.",
             "isCorrect": false,
             "misconceptionFeedback": "Inhalation anesthetics are mostly excreted unchanged and do not form a shared active metabolite."
+          },
+          {
+            "id": "opt-1",
+            "label": "They act non-specifically by physically accumulating into lipid membranes at comparable thermodynamic activities.",
+            "isCorrect": true
           }
         ],
         "revealedOutcome": "Non-specific depressants produce equal biological effects at equal thermodynamic activities, independent of structure.",
-        "explanation": "When thermodynamic activity a reaches a threshold saturation [pending-human-review], membrane lipids undergo physical volume expansion, impairing neuronal ion conduction regardless of chemical structure."
+        "explanation": "When thermodynamic activity a reaches a threshold saturation, membrane lipids undergo physical volume expansion, impairing neuronal ion conduction regardless of chemical structure."
       },
       "hints": [
         "Think about Ferguson's core deduction: biological effect tracks thermodynamic saturation, not chemical structure.",
@@ -474,20 +488,26 @@
       "widgetType": "predict_reveal",
       "config": {
         "comparison": {
-          "drugA": { "a": 0.00001, "dose": "10 µg" },
-          "drugB": { "a": 0.20, "dose": "500 mg" }
+          "drugA": {
+            "a": 1e-05,
+            "dose": "10 µg"
+          },
+          "drugB": {
+            "a": 0.2,
+            "dose": "500 mg"
+          }
         },
         "options": [
-          {
-            "id": "opt-1",
-            "label": "Drug A is structurally specific (high-affinity receptor ligand); Drug B is structurally non-specific (bulk physical depressant).",
-            "isCorrect": true
-          },
           {
             "id": "opt-2",
             "label": "Drug B is more potent because its thermodynamic activity is much higher.",
             "isCorrect": false,
             "misconceptionFeedback": "Higher thermodynamic activity requirement means lower potency/affinity, not higher."
+          },
+          {
+            "id": "opt-1",
+            "label": "Drug A is structurally specific (high-affinity receptor ligand); Drug B is structurally non-specific (bulk physical depressant).",
+            "isCorrect": true
           },
           {
             "id": "opt-3",
@@ -496,17 +516,17 @@
             "misconceptionFeedback": "A four orders of magnitude difference in thermodynamic activity reflects fundamentally different mechanism classes."
           }
         ],
-        "revealedOutcome": "Drug A is structurally specific (low thermodynamic activity); Drug B is structurally non-specific (high relative saturation [pending-human-review]).",
+        "revealedOutcome": "Drug A is structurally specific (low thermodynamic activity); Drug B is structurally non-specific (high relative saturation).",
         "explanation": "A low thermodynamic activity requirement reflects high-affinity stereospecific binding. A high thermodynamic activity requirement indicates physical membrane accumulation."
       },
       "hints": [
-        "Compare the thermodynamic activities to the Ferguson cutoff (low thermodynamic activity vs high relative saturation [pending-human-review]).",
+        "Compare the thermodynamic activities to the Ferguson cutoff (low thermodynamic activity vs high relative saturation).",
         "Structurally specific drugs act at very low thermodynamic activity because receptor affinity concentrates their biological effect.",
         "Drug A acts at a = 10^-5 (specific receptor target); Drug B requires a = 0.20 (20% saturation, non-specific action)."
       ],
       "feedback": {
         "correct": "Correct! Low thermodynamic activity (a = 10^-5) denotes specific receptor affinity; high activity (a = 0.20) denotes non-specific physical action.",
-        "incorrect": "Review the Ferguson cutoffs: low thermodynamic activity identifies structurally specific drugs, whereas high relative saturation [pending-human-review] indicates non-specific physical depressants."
+        "incorrect": "Review the Ferguson cutoffs: low thermodynamic activity identifies structurally specific drugs, whereas high relative saturation indicates non-specific physical depressants."
       },
       "sources": [
         {
@@ -519,6 +539,12 @@
           "id": "NUM-MC01-02",
           "parameter": "Specific Drug Thermodynamic Activity Cutoff",
           "value": "a < 0.001",
+          "status": "pending-human-review"
+        },
+        {
+          "id": "NUM-MC01-04",
+          "parameter": "Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms",
+          "value": "10^4 (4 orders of magnitude)",
           "status": "pending-human-review"
         }
       ],
@@ -539,11 +565,6 @@
         },
         "options": [
           {
-            "id": "opt-1",
-            "label": "a = 0.05 (5% saturation, structurally non-specific range)",
-            "isCorrect": true
-          },
-          {
             "id": "opt-2",
             "label": "a = 20.0 (Inverting the numerator and denominator)",
             "isCorrect": false,
@@ -554,10 +575,15 @@
             "label": "a = 0.0005 (Dividing by extra power of ten)",
             "isCorrect": false,
             "misconceptionFeedback": "10 / 200 = 1 / 20 = 0.05, not 0.0005."
+          },
+          {
+            "id": "opt-1",
+            "label": "a = 0.05 (5% saturation, structurally non-specific range)",
+            "isCorrect": true
           }
         ],
         "revealedOutcome": "a = 10 / 200 = 0.05. The agent achieves anesthesia at 5% of its saturation limit.",
-        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. Because 0.05 falls in the high saturation range [pending-human-review], this confirms structurally non-specific action."
+        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. Because 0.05 falls in the high saturation range, this confirms structurally non-specific action."
       },
       "hints": [
         "Divide partial vapor pressure Pt by saturated vapor pressure P0.",
@@ -565,7 +591,7 @@
         "1 / 20 = 0.05. This relative saturation of 5% falls directly within Ferguson's non-specific anesthesia range."
       ],
       "feedback": {
-        "correct": "Outstanding! 10 / 200 gives a = 0.05, placing this anesthetic squarely within the non-specific saturation window [pending-human-review].",
+        "correct": "Outstanding! 10 / 200 gives a = 0.05, placing this anesthetic squarely within the non-specific saturation window.",
         "incorrect": "Calculate 10 divided by 200. The result is 0.05 (5% relative saturation)."
       },
       "sources": [
@@ -588,24 +614,24 @@
       "id": "step-10",
       "type": "recap",
       "title": "Synthesis & Spaced Review",
-      "prompt": "You have mastered Ferguson's Principle! Structurally specific drugs act at low thermodynamic activity via receptors; non-specific drugs require high relative saturation [pending-human-review] through membrane saturation. 3 review cards added to Box 1.",
+      "prompt": "You have mastered Ferguson's Principle! Structurally specific drugs act at low thermodynamic activity via receptors; non-specific drugs require high relative saturation through membrane saturation. 3 review cards added to Box 1.",
       "predictThenReveal": false,
       "widgetType": "recap_summary",
       "config": {
         "keyTakeaways": [
           "Structurally Specific Drugs: Act at low thermodynamic activity (a < 0.001) via stereoselective 3D receptor fit.",
-          "Structurally Non-Specific Drugs: Act at high relative saturation [pending-human-review] through bulk physical membrane alteration.",
+          "Structurally Non-Specific Drugs: Act at high relative saturation through bulk physical membrane alteration.",
           "Equal Thermodynamic Activity = Equal Biological Effect across structurally diverse non-specific agents."
         ],
         "reviewCardsEnqueued": [
-          "Ferguson Saturation Threshold (pending-human-review)",
+          "Ferguson Saturation Threshold",
           "Chemical Structure Alteration",
           "Clinical Classification"
         ],
         "xpAwarded": 50
       },
       "hints": [
-        "Review the contrast: receptor complementarity at low activity vs physical saturation [pending-human-review].",
+        "Review the contrast: receptor complementarity at low activity vs physical saturation.",
         "Remember that non-specific action is independent of chemical structure and sensitive to thermodynamic activity.",
         "Your review cards will reappear tomorrow to reinforce long-term memory via Leitner spacing."
       ],

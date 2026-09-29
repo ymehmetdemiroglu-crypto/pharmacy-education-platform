@@ -25,6 +25,7 @@ This registry logs all domain claims, textbook chapter citations, numeric values
 | **NUM-MC01-01** | Non-Specific Thermodynamic Saturation Threshold | $a = 0.01\text{–}1.0$ (Relative Saturation $P_t / P_0$ or $S_t / S_0$) | Steps 2–4, Review Card 1 | `pending-human-review` | Verify in *Foye's* / *Patrick* whether the standard thermodynamic activity range for structurally non-specific drugs is quoted as $0.01\text{–}1.0$ or $0.1\text{–}1.0$. |
 | **NUM-MC01-02** | Specific Drug Thermodynamic Activity Cutoff | $a < 0.001$ | Step 4, Step 10 | `pending-human-review` | Confirm Ferguson threshold dividing non-specific physical accumulation from stereospecific receptor binding ($a < 10^{-3}$ vs $10^{-4}$). |
 | **NUM-MC01-03** | Vapor Pressure Ratio for Ether Anesthesia | $P_t / P_0 \approx 0.03$ | Step 1, Step 9 | `pending-human-review` | Check empirical vapor pressure ratio cited for diethyl ether minimum alveolar concentration (MAC) / biological activity. |
+| **NUM-MC01-04** | Activity Divergence Between Specific and Non-Specific Mechanisms | $10^4$ (4 orders of magnitude difference) | Step 8 (Misconception feedback) | `pending-human-review` | Verify in *Foye's* or *Patrick* whether the relative thermodynamic activity difference between stereospecific receptor agonists ($a \sim 10^{-5}$) and non-specific membrane depressants ($a \sim 10^{-1}$) is formally quoted as 4 orders of magnitude ($10^4$). |
 
 ---
 
@@ -39,3 +40,14 @@ This registry logs all domain claims, textbook chapter citations, numeric values
 | **LOC-AR-01** | Arabic (`ar`) | Lesson 1 Header | "النشاط الديناميكي الحراري ومبدأ فيرجسون" | `draft` | Native Arabic academic phrasing for thermodynamic activity. |
 | **LOC-AR-02** | Arabic (`ar`) | Structure Specificity | "الأدوية غير النوعية بنيوياً مقابل الأدوية النوعية" | `draft` | Pharmacy curriculum terminology in Gulf/Middle Eastern faculties. |
 | **LOC-BIDI-01** | Arabic (`ar`) | Chemical Notation | SMILES, $P_t / P_0$, pKa, Kd values | `verified-isolated` | Programmatic LTR wrapper (`dir="ltr"`) verified in Playwright E2E. |
+
+---
+
+## 4. Pedagogical Formative Assessment Decisions (F2)
+
+> **Policy**: Decisions regarding formative interactive mechanics (e.g. click-to-commit vs instant reveal) are documented for owner alignment against `docs/pedagogy-spec.md`.
+
+| ID | Component / Step | Mechanism | Pedagogy Specification Justification | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **PED-DEC-01** | Step 5 Concept Checkpoint | Explicit Commit Button (`Check Answer`) required before feedback reveal | In accordance with `docs/pedagogy-spec.md` Section 3 (Predict-Then-Reveal & Deliberate Practice) and Sweller's Cognitive Load Theory, formative assessment checkpoints require the learner to deliberately commit to a chosen hypothesis before diagnostic feedback is unlocked. Instant reveal upon radio selection risks accidental feedback triggers and passive recognition rather than active cognitive retrieval. | `implemented-for-owner-review` |
+

@@ -2,8 +2,10 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
-export default defineConfig({
-  plugins: [react()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+  ],
   resolve: {
     alias: {
       '@pharmacy/ui': path.resolve(__dirname, '../../packages/ui/src'),
@@ -14,4 +16,4 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-});
+}));
