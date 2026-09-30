@@ -216,6 +216,7 @@ export const LessonPage: React.FC = () => {
   const [selectedPresetId, setSelectedPresetId] = useState<string | null>(interactiveData.presets[0]?.id || null);
   const [completedMissions, setCompletedMissions] = useState<Record<string, boolean>>({});
   const [missionXPAwarded, setMissionXPAwarded] = useState<number>(0);
+  const [missionErrors, setMissionErrors] = useState<Record<string, string>>({});
 
   // Paywall guard
   useEffect(() => {
@@ -904,24 +905,36 @@ export const LessonPage: React.FC = () => {
                             if (mission.validator(simParams)) {
                               setCompletedMissions((prev) => ({ ...prev, [mission.id]: true }));
                               setMissionXPAwarded((prev) => prev + mission.rewardXP);
+                              setMissionErrors((prev) => {
+                                const next = { ...prev };
+                                delete next[mission.id];
+                                return next;
+                              });
                               setProgress((prev) => {
                                 const updated = { ...prev, totalXP: (prev?.totalXP || 0) + mission.rewardXP };
                                 saveLocalProgress(updated);
                                 return updated;
                               });
                             } else {
-                              alert(
+                              const errMsg =
                                 locale === 'tr'
                                   ? 'Görev parametreleri henüz karşılanmadı. Simülatörü ayarlayıp tekrar deneyin.'
                                   : locale === 'ar'
                                   ? 'لم يتم استيفاء شروط المهمة بعد. اضبط المحاكاة وحاول مجدداً.'
-                                  : 'Mission target parameters not yet met. Adjust simulation controls and verify again.'
-                              );
+                                  : 'Mission target parameters not yet met. Adjust simulation controls and verify again.';
+                              setMissionErrors((prev) => ({ ...prev, [mission.id]: errMsg }));
                             }
                           }}
                         >
                           {locale === 'tr' ? 'Durumu Doğrula' : locale === 'ar' ? 'تحقق من النتيجة' : 'Verify State'}
                         </Button>
+                      </div>
+                    )}
+
+                    {missionErrors[mission.id] && !isDone && (
+                      <div className="mt-2.5 p-2 bg-rose-100 dark:bg-rose-950/40 border border-rose-500 text-rose-900 dark:text-rose-200 text-xs font-semibold flex items-center gap-2 animate-in fade-in">
+                        <AlertCircle className="w-4 h-4 text-rose-600 dark:text-rose-400 shrink-0" />
+                        <span>{missionErrors[mission.id]}</span>
                       </div>
                     )}
                   </div>
