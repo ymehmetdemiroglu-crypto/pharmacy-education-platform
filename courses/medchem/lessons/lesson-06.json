@@ -4,18 +4,21 @@
   "moduleId": "mc-mod-03",
   "title": {
     "tr": "Klasik Olmayan Biyoizosterler: Karboksilik Asit ve Tetrazol",
-    "ar": "المتشابهات الحيوية غير الكلاسيكية: حمض الكربوكسيل والتترازول"
+    "ar": "المتشابهات الحيوية غير الكلاسيكية: حمض الكربوكسيل والتترازول",
+    "en": "Non-Classical Bioisosteres: Carboxylic Acid & Tetrazole"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Karboksilat ve tetrazol biyoizosterizmini inceleyerek asidik planar yük dağılımı ve lipofilisite optimizasyonunu kavramak.",
-    "ar": "فهم التشابه الحيوي بين الكربوكسيل والتترازول لتحسين التوزيع المستوي للشحنة الحامضية والنفاذية الدهنية."
+    "ar": "فهم التشابه الحيوي بين الكربوكسيل والتترازول لتحسين التوزيع المستوي للشحنة الحامضية والنفاذية الدهنية.",
+    "en": "Differentiate classical from non-classical bioisosteres and justify the replacement of carboxylic acids with tetrazoles in drug design."
   },
   "misconceptions": [
     {
       "tr": "5 üyeli bir halkanın tek bir karboksilik asit grubuyla eşdeğer olamayacağı yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن حلقة خماسية لا يمكن أن تكون مكافئة حيوياً لمجموعة كربوكسيل بسيطة."
+      "ar": "الاعتقاد الخاطئ بأن حلقة خماسية لا يمكن أن تكون مكافئة حيوياً لمجموعة كربوكسيل بسيطة.",
+      "en": "A 5-membered tetrazole ring cannot mimic a simple carboxylic acid group."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Non-Classical Bioisosteres: Carboxylic Acid & Tetrazole",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Losartanın Doğuştan Sırrı",
-        "ar": "سر ولادة دواء Losartan"
+        "ar": "سر ولادة دواء Losartan",
+        "en": "The Losartan Breakthrough: Overcoming Oral Barrier"
       },
       "prompt": {
         "tr": "İlk anjiyotensin antagonistleri bağırsaktan hiç emilmezken, losartan bir karboksilik asidi tetrazol halkasıyla değiştirerek nasıl milyar dolarlık ilaca dönüştü?",
-        "ar": "بينما عجزت مضادات أنجيوتنسين الأولى عن الامتصاص الفموي، كيف تحول Losartan إلى دواء ملياري باستبدال الكربوكسيل بحلقة tetrazol؟"
+        "ar": "بينما عجزت مضادات أنجيوتنسين الأولى عن الامتصاص الفموي، كيف تحول Losartan إلى دواء ملياري باستبدال الكربوكسيل بحلقة tetrazol؟",
+        "en": "Early AT1 antagonists carrying benzoic acid failed clinical trials due to poor oral bioavailability. How did a tetrazole ring rescue losartan?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Yük Dağılımı ve pKa",
-        "ar": "توقع: توزيع الشحنة و pKa"
+        "ar": "توقع: توزيع الشحنة و pKa",
+        "en": "Prediction: Tetrazole Charge at Physiological pH"
       },
       "prompt": {
         "tr": "5 üyeli aromatik tetrazol halkası fizyolojik pH 7.4 te negatif yük taşır mı?",
-        "ar": "هل تحمل حلقة tetrazol العطرية الخماسية شحنة سالبة عند pH 7.4 الفسيولوجي؟"
+        "ar": "هل تحمل حلقة tetrazol العطرية الخماسية شحنة سالبة عند pH 7.4 الفسيولوجي؟",
+        "en": "A 5-substituted tetrazole has pKa ≈ 4.5 - 4.9. What percentage of tetrazole is negatively charged in systemic blood at pH 7.4?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-mc32-1",
             "text": {
               "tr": "Evet, pKa sı ~4.8 dir ve rezonansla yük 4 azot atomu üzerine yayılır.",
-              "ar": "نعم، فقيمة pKa تقارب 4.8 وتتوزع الشحنة بالرنين على ذرات النتروجين الأربع."
+              "ar": "نعم، فقيمة pKa تقارب 4.8 وتتوزع الشحنة بالرنين على ذرات النتروجين الأربع.",
+              "en": "They exhibit different physical, chemical, and biological properties."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-mc32-2",
             "text": {
               "tr": "Hayır, tüm aromatik halkalar nötrdür.",
-              "ar": "لا، فجميع الحلقات العطرية محايدة كهربائياً."
+              "ar": "لا، فجميع الحلقات العطرية محايدة كهربائياً.",
+              "en": "They have identical melting points and solubilities."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Model: Genişletilmiş Düzlemsel Yük",
-        "ar": "تشبيه حدسي: الشحنة المستوية الموزعة"
+        "ar": "تشبيه حدسي: الشحنة المستوية الموزعة",
+        "en": "Intuitive Model: Charge Delocalization Shield"
       },
       "prompt": {
         "tr": "Karboksilatta negatif yük 2 oksijen arasında paylaşılırken, tetrazolda 4 azot atomuna yayılarak zardan süzülmeyi kolaylaştırır.",
-        "ar": "بينما تنحصر شحنة الكربوكسيل بين ذرتي أكسجين، تتوزع في التترازول على 4 ذرات نتروجين مما يخفف الدرع المائي ويسهل عبور الغشاء."
+        "ar": "بينما تنحصر شحنة الكربوكسيل بين ذرتي أكسجين، تتوزع في التترازول على 4 ذرات نتروجين مما يخفف الدرع المائي ويسهل عبور الغشاء.",
+        "en": "In carboxylic acid, negative charge is concentrated between two oxygens. In tetrazole, the charge delocalizes over 5 ring atoms, boosting lipophilicity."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Elektronik ve Sterik Örtüşme",
-        "ar": "التطابق الفراغي والإلكتروني"
+        "ar": "التطابق الفراغي والإلكتروني",
+        "en": "Visual Comparison: -COOH vs 5-Tetrazolyl"
       },
       "prompt": {
         "tr": "Tetrazol anyonu düzlemseldir ve hacmi karboksilattan yaklaşık 10 kat daha lipofiliktir. Reseptör cebindeki pozitif arjinin ile kusursuz tuz köprüsü kurar.",
-        "ar": "أنيون التترازول مستوٍ وأكثر قابلية للذوبان الدهني بـ 10 أضعاف مقارنة بالكربوكسيل، ويشكل جسراً ملحياً متقناً مع أرجينين المستقبِل."
+        "ar": "أنيون التترازول مستوٍ وأكثر قابلية للذوبان الدهني بـ 10 أضعاف مقارنة بالكربوكسيل، ويشكل جسراً ملحياً متقناً مع أرجينين المستقبِل.",
+        "en": "Compare planar geometries, electrostatic potential surface maps, and hydrogen-bonding acceptor/donor vectors of both groups."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Modül: Structure Identifier",
-        "ar": "محاكي تفاعلي: محدد البنى الجزيئية"
+        "ar": "محاكي تفاعلي: محدد البنى الجزيئية",
+        "en": "Interactive Artifact: LogP / LogD Bioisostere Switch"
       },
       "prompt": {
         "tr": "Karboksilik asit içeren moleküle tetrazol ve diğer non-klasik izosterleri takarak logP ve membran akış hızındaki 10 kat artışı test edin.",
-        "ar": "استبدل الكربوكسيل بـ tetrazol ومتشابهات غير كلاسيكية واختبر ارتفاع logP ونفوذية الغشاء بعشرة أضعاف."
+        "ar": "استبدل الكربوكسيل بـ tetrazol ومتشابهات غير كلاسيكية واختبر ارتفاع logP ونفوذية الغشاء بعشرة أضعاف.",
+        "en": "Toggle between -COOH and -Tetrazole on losartan core. Compare logP, membrane permeability flux, and metabolic glucuronidation susceptibility."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "StructureIdentifier",
@@ -292,11 +322,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Metabolik Kararlılık",
-        "ar": "استكشاف موجه: الاستقرار الأيضي"
+        "ar": "استكشاف موجه: الاستقرار الأيضي",
+        "en": "Guided Discovery: Metabolic Glucuronide Stability"
       },
       "prompt": {
         "tr": "Karboksilik asitler glukuronidasyonla hızla atılırken, tetrazol halkasının metabolik ömrü neden çok daha uzundur?",
-        "ar": "بينما تطرح الأحماض الكربوكسيلية سريعاً بالاقتران الجلوكوروني، لماذا تمتلك حلقة tetrazol عمراً حيوياً أطول بكثير؟"
+        "ar": "بينما تطرح الأحماض الكربوكسيلية سريعاً بالاقتران الجلوكوروني، لماذا تمتلك حلقة tetrazol عمراً حيوياً أطول بكثير؟",
+        "en": "Acyl glucuronides of carboxylic acids undergo spontaneous hydrolysis and covalent protein adduct formation. Tetrazoles resist this completely."
       },
       "predictThenReveal": true,
       "config": {
@@ -314,16 +346,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -332,7 +367,8 @@
             "id": "opt-mc32-3",
             "text": {
               "tr": "Tetrazol UGT enzimlerine karşı sterik ve elektronik olarak çok daha dirençlidir.",
-              "ar": "حلقة التترازول أكثر مقاومة إنزيمياً لإنزيمات UGT فراغياً وإلكترونياً."
+              "ar": "حلقة التترازول أكثر مقاومة إنزيمياً لإنزيمات UGT فراغياً وإلكترونياً.",
+              "en": "Trans-diethylstilbestrol mimics estradiol's phenolic oxygen distance (12.1 Å)."
             },
             "isCorrect": true
           },
@@ -340,7 +376,8 @@
             "id": "opt-mc32-4",
             "text": {
               "tr": "Tetrazol kana hiç geçmez.",
-              "ar": "التترازول لا يصل إلى الدوران الدموي أصلاً."
+              "ar": "التترازول لا يصل إلى الدوران الدموي أصلاً.",
+              "en": "Cis-diethylstilbestrol is the active drug."
             },
             "isCorrect": false
           }
@@ -353,11 +390,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Klasik Olmayan Biyoizosterizm Tanımı",
-        "ar": "تعريف التشابه الحيوي غير الكلاسيكي"
+        "ar": "تعريف التشابه الحيوي غير الكلاسيكي",
+        "en": "Formal Definition: Non-Classical Bioisosterism"
       },
       "prompt": {
         "tr": "Grimm kurallarına uymayan ancak benzer biyolojik ve elektronik profil sergileyen fonksiyonel gruplara klasik olmayan biyoizoster denir.",
-        "ar": "تسمى المجموعات التي لا تخضع لقواعد Grimm ولكنها تحاكي نفس السلوك الإلكتروني والحيوي بالمتشابهات الحيوية غير الكلاسيكية."
+        "ar": "تسمى المجموعات التي لا تخضع لقواعد Grimm ولكنها تحاكي نفس السلوك الإلكتروني والحيوي بالمتشابهات الحيوية غير الكلاسيكية.",
+        "en": "Non-classical bioisosteres produce similar biological effects by mimicking spatial arrangement or electronic properties without identical atom count."
       },
       "predictThenReveal": false,
       "config": {},
@@ -369,16 +408,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -388,11 +430,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Lipofilisite ve logP",
-        "ar": "فحص المفهوم: المحبة الدهنية وقيمة logP"
+        "ar": "فحص المفهوم: المحبة الدهنية وقيمة logP",
+        "en": "Concept Check: Additional Acid Bioisosteres"
       },
       "prompt": {
         "tr": "Karboksilik asitten tetrazole geçildiğinde ilacın logP değerinde yaklaşık ne kadarlık bir artış gözlenir?",
-        "ar": "عند الانتقال من الكربوكسيل إلى التترازول، كم تبلغ الزيادة التقريبية في قيمة logP؟"
+        "ar": "عند الانتقال من الكربوكسيل إلى التترازول، كم تبلغ الزيادة التقريبية في قيمة logP؟",
+        "en": "Which of the following functional groups also serves as an effective non-classical bioisostere for a carboxylic acid: Hydroxamic acid or Ester?"
       },
       "predictThenReveal": true,
       "config": {
@@ -410,16 +454,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -428,7 +475,8 @@
             "id": "opt-mc32-5",
             "text": {
               "tr": "~ +1.0 birim (10 kat daha yüksek lipofilisite).",
-              "ar": "حوالي +1.0 وحدة (زيادة النفاذية الدهنية بمقدار 10 أضعاف)."
+              "ar": "حوالي +1.0 وحدة (زيادة النفاذية الدهنية بمقدار 10 أضعاف).",
+              "en": "Restricted rotation around a carbon-carbon double bond or cyclic ring."
             },
             "isCorrect": true
           },
@@ -436,7 +484,8 @@
             "id": "opt-mc32-6",
             "text": {
               "tr": "Değişmez.",
-              "ar": "لا تتغير القيمة مطلقاً."
+              "ar": "لا تتغير القيمة مطلقاً.",
+              "en": "Free rotation around single bonds."
             },
             "isCorrect": false
           }
@@ -449,11 +498,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Vaka: Losartan ve Kandesartan",
-        "ar": "حالة سريرية: Losartan و Candesartan"
+        "ar": "حالة سريرية: Losartan و Candesartan",
+        "en": "Application: Angiotensin Receptor Blockers (ARBs)"
       },
       "prompt": {
         "tr": "Tüm sartan sınıfı antihipertansifler (losartan, valsartan, irbesartan, kandesartan) neden moleküler yapılarında tetrazol taşırlar?",
-        "ar": "لماذا تشترك جميع أدوية فئة Sartan الخافضة لضغط الدم في احتوائها على حلقة tetrazol بهيكلها؟"
+        "ar": "لماذا تشترك جميع أدوية فئة Sartan الخافضة لضغط الدم في احتوائها على حلقة tetrazol بهيكلها؟",
+        "en": "Identify why valsartan, candesartan, and irbesartan all incorporate tetrazole rings instead of simple aliphatic carboxylic acids."
       },
       "predictThenReveal": true,
       "config": {
@@ -471,16 +522,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -489,7 +543,8 @@
             "id": "opt-mc32-7",
             "text": {
               "tr": "AT1 reseptöründeki bazik cebi bağlamak ve yüksek oral biyoyararlanım sağlamak için.",
-              "ar": "لربط الجيب القاعدي في مستقبِل AT1 مع ضمان توافر حيوي فموي مرتفع."
+              "ar": "لربط الجيب القاعدي في مستقبِل AT1 مع ضمان توافر حيوي فموي مرتفع.",
+              "en": "Synthesize a rigid conformationally restricted analogue."
             },
             "isCorrect": true
           },
@@ -497,7 +552,8 @@
             "id": "opt-mc32-8",
             "text": {
               "tr": "Yalnızca boyar madde olsun diye.",
-              "ar": "لمجرد إعطاء لون صبغي للمستحضر."
+              "ar": "لمجرد إعطاء لون صبغي للمستحضر.",
+              "en": "Add flexible alkyl chains."
             },
             "isCorrect": false
           }
@@ -510,11 +566,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Henderson-Hasselbalch ve İyonlaşma",
-        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والتأين"
+        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والتأين",
+        "en": "Retrieval: Henderson-Hasselbalch Equation"
       },
       "prompt": {
         "tr": "Modül 1 de gördüğümüz gibi pKa sı 4.8 olan tetrazol, pH 7.4 kanda yüzde kaç oranında iyonize haldedir?",
-        "ar": "كما تعلمنا في الوحدة 1، كم تبلغ نسبة تأين التترازول ذي pKa = 4.8 في دم الإنسان عند pH 7.4؟"
+        "ar": "كما تعلمنا في الوحدة 1، كم تبلغ نسبة تأين التترازول ذي pKa = 4.8 في دم الإنسان عند pH 7.4؟",
+        "en": "Using pH = pKa + log([A-]/[HA]), calculate the ratio of ionized to unionized tetrazole (pKa = 4.9) at physiological blood pH 7.4."
       },
       "predictThenReveal": false,
       "config": {},
@@ -526,16 +584,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -545,11 +606,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Stereokimya ve Konformasyon (Modül 4)",
-        "ar": "ربط مفاهيمي: الكيمياء الفراغية والتشكيلات (الوحدة 4)"
+        "ar": "ربط مفاهيمي: الكيمياء الفراغية والتشكيلات (الوحدة 4)",
+        "en": "Forward Connection: Conformational Rigidity (Module 4)"
       },
       "prompt": {
         "tr": "Biyoizosterik gruplar kadar molekülün uzaysal konformasyonu da reseptör bağını tayin eder. Modül 4 te Pfeiffer kuralını keşfedeceğiz.",
-        "ar": "بقدر أهمية المتشابهات الحيوية، فإن التشكيل الفراغي للجزيء يحكم ارتباطه. في الوحدة 4 سنكتشف قاعدة Pfeiffer."
+        "ar": "بقدر أهمية المتشابهات الحيوية، فإن التشكيل الفراغي للجزيء يحكم ارتباطه. في الوحدة 4 سنكتشف قاعدة Pfeiffer.",
+        "en": "In Module 4, we examine how locking flexible bonds into rigid aromatic rings increases binding affinity by minimizing entropic penalty."
       },
       "predictThenReveal": false,
       "config": {},
@@ -561,16 +624,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -580,11 +646,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Tetrazol Biyoizosterizmi",
-        "ar": "اختبار الإتقان: التشابه الحيوي للتترازول"
+        "ar": "اختبار الإتقان: التشابه الحيوي للتترازول",
+        "en": "Mastery Assessment: Tetrazole Bioisosteric Rationale"
       },
       "prompt": {
         "tr": "Tetrazolün karboksilik asit yerine tercih edilmesinin en kritik çift yönlü kazanımı nedir?",
-        "ar": "ما هو المكسب الثنائي الحاسم لاختيار التترازول كبديل لحمض الكربوكسيل؟"
+        "ar": "ما هو المكسب الثنائي الحاسم لاختيار التترازول كبديل لحمض الكربوكسيل؟",
+        "en": "What is the primary pharmacokinetic superiority of tetrazole over carboxylic acid in oral cardiovascular therapeutics?"
       },
       "predictThenReveal": true,
       "config": {
@@ -602,16 +670,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -620,7 +691,8 @@
             "id": "opt-mc32-9",
             "text": {
               "tr": "Benzer pKa ve anyonik bağ gücünü korurken, 10 kat daha yüksek lipofilisite ve metabolik direnç sağlaması.",
-              "ar": "الحفاظ على نفس pKa والربط الأيوني مع مضاعفة المحبة الدهنية والمقاومة الأيضية بعشر مرات."
+              "ar": "الحفاظ على نفس pKa والربط الأيوني مع مضاعفة المحبة الدهنية والمقاومة الأيضية بعشر مرات.",
+              "en": "Diastereomers possess different interatomic distances and dipole moments."
             },
             "isCorrect": true
           },
@@ -628,7 +700,8 @@
             "id": "opt-mc32-10",
             "text": {
               "tr": "Molekülü tamamen inert yapması.",
-              "ar": "جعل الجزيء خاملاً بيولوجياً بالكامل."
+              "ar": "جعل الجزيء خاملاً بيولوجياً بالكامل.",
+              "en": "Diastereomers are always mirror images."
             },
             "isCorrect": false
           }

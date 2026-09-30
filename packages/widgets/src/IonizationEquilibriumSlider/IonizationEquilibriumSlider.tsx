@@ -23,23 +23,24 @@ interface PresetCompound {
   id: string;
   nameTr: string;
   nameAr: string;
+  nameEn: string;
   type: 'acid' | 'base';
   pKa: number;
 }
 
 const PRESETS: PresetCompound[] = [
-  { id: 'aspirin', nameTr: 'Aspirin (Asetilsalisilik Asit)', nameAr: 'Aspirin (حمض أسيتيل ساليسيليك)', type: 'acid', pKa: 3.5 },
-  { id: 'ibuprofen', nameTr: 'İbuprofen', nameAr: 'İbuprofen (إيبوبروفين)', type: 'acid', pKa: 4.4 },
-  { id: 'diazepam', nameTr: 'Diazepam', nameAr: 'Diazepam (ديازيبام)', type: 'base', pKa: 3.4 },
-  { id: 'propranolol', nameTr: 'Propranolol', nameAr: 'Propranolol (بروبرانولول)', type: 'base', pKa: 9.5 },
-  { id: 'custom', nameTr: 'Özel Bileşik', nameAr: 'مركب مخصص', type: 'acid', pKa: 4.5 },
+  { id: 'aspirin', nameTr: 'Aspirin (Asetilsalisilik Asit)', nameAr: 'Aspirin (حمض أسيتيل ساليسيليك)', nameEn: 'Aspirin (Acetylsalicylic Acid)', type: 'acid', pKa: 3.5 },
+  { id: 'ibuprofen', nameTr: 'İbuprofen', nameAr: 'İbuprofen (إيبوبروفين)', nameEn: 'Ibuprofen', type: 'acid', pKa: 4.4 },
+  { id: 'diazepam', nameTr: 'Diazepam', nameAr: 'Diazepam (ديازيبام)', nameEn: 'Diazepam', type: 'base', pKa: 3.4 },
+  { id: 'propranolol', nameTr: 'Propranolol', nameAr: 'Propranolol (بروبرانولول)', nameEn: 'Propranolol', type: 'base', pKa: 9.5 },
+  { id: 'custom', nameTr: 'Özel Bileşik', nameAr: 'مركب مخصص', nameEn: 'Custom Compound', type: 'acid', pKa: 4.5 },
 ];
 
 export const BIOLOGICAL_COMPARTMENTS = [
-  { id: 'stomach', nameTr: 'Mide', nameAr: 'المعدة', pH: 1.5, icon: '🫁' },
-  { id: 'duodenum', nameTr: 'Duedonum', nameAr: 'الاثني عشر', pH: 6.0, icon: '🔄' },
-  { id: 'plasma', nameTr: 'Plazma (Kan)', nameAr: 'بلازما الدم', pH: 7.4, icon: '🩸' },
-  { id: 'urine', nameTr: 'İdrar', nameAr: 'البول', pH: 5.5, icon: '🧪' },
+  { id: 'stomach', nameTr: 'Mide', nameAr: 'المعدة', nameEn: 'Stomach', pH: 1.5, icon: '🫁' },
+  { id: 'duodenum', nameTr: 'Duedonum', nameAr: 'الاثني عشر', nameEn: 'Duodenum', pH: 6.0, icon: '🔄' },
+  { id: 'plasma', nameTr: 'Plazma (Kan)', nameAr: 'بلازما الدم', nameEn: 'Blood Plasma', pH: 7.4, icon: '🩸' },
+  { id: 'urine', nameTr: 'İdrar', nameAr: 'البول', nameEn: 'Urine', pH: 5.5, icon: '🧪' },
 ] as const;
 
 export function calculateIonization(pH: number, pKa: number, type: 'acid' | 'base') {
@@ -48,9 +49,6 @@ export function calculateIonization(pH: number, pKa: number, type: 'acid' | 'bas
   let unIonizedPct: number;
 
   if (type === 'acid') {
-    // For Weak Acid: pH = pKa + log([A-]/[HA])
-    // [A-]/[HA] = 10^(pH - pKa) = 10^delta
-    // % ionized [A-] = 100 / (1 + 10^(-delta))
     if (delta >= 10) {
       ionizedPct = 100;
       unIonizedPct = 0;
@@ -62,10 +60,6 @@ export function calculateIonization(pH: number, pKa: number, type: 'acid' | 'bas
       unIonizedPct = 100 - ionizedPct;
     }
   } else {
-    // For Weak Base: pH = pKa + log([B]/[BH+])
-    // [B]/[BH+] = 10^(pH - pKa) = 10^delta
-    // % un-ionized [B] = 100 / (1 + 10^(-delta))
-    // % ionized [BH+] = 100 / (1 + 10^delta)
     if (delta >= 10) {
       ionizedPct = 0;
       unIonizedPct = 100;
@@ -95,8 +89,9 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
   className,
 }) => {
   const disabled = readOnly || propDisabled;
-  const activeLocale = propLocale || config?.locale || 'tr';
+  const activeLocale: 'tr' | 'ar' | 'en' = propLocale || (config?.locale as any) || 'tr';
   const isAr = activeLocale === 'ar';
+  const isEn = activeLocale === 'en';
 
   const [pKa, setPka] = useState<number>(
     initialState?.pKa ?? config?.defaultPka ?? 3.5
@@ -157,15 +152,18 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
     const calc = calculateIonization(comp.pH, pKa, drugType);
     let statusTextTr = 'Yüksek Geçirgenlik (Emilim Yüksek)';
     let statusTextAr = 'نفاذية عالية (امتصاص مرتفع)';
+    let statusTextEn = 'High Permeability (Rapid Absorption)';
     let statusColor = 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500';
 
     if (calc.unIonizedPct < 10) {
       statusTextTr = 'İyon Tuzağı (Membrandan Geçemez)';
       statusTextAr = 'احتباس أيوني (لا ينفذ عبر الغشاء)';
+      statusTextEn = 'Ion Trapping (Cannot Cross Membrane)';
       statusColor = 'text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border-amber-500';
     } else if (calc.unIonizedPct < 50) {
       statusTextTr = 'Orta Geçirgenlik (Kısmi Emilim)';
       statusTextAr = 'نفاذية متوسطة (امتصاص جزئي)';
+      statusTextEn = 'Moderate Permeability (Partial Absorption)';
       statusColor = 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/40 border-blue-500';
     }
 
@@ -173,11 +171,106 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       ...comp,
       unIonizedPct: calc.unIonizedPct,
       ionizedPct: calc.ionizedPct,
-      statusTextTr,
-      statusTextAr,
+      statusText: isEn ? statusTextEn : isAr ? statusTextAr : statusTextTr,
       statusColor,
     };
   });
+
+  const getPresetName = (preset: PresetCompound) => {
+    if (isEn) return preset.nameEn;
+    if (isAr) return preset.nameAr;
+    return preset.nameTr;
+  };
+
+  const labels = {
+    tr: {
+      badge: 'İyonizasyon Dengesi Simülatörü',
+      title: 'İyonizasyon Dengesi ve Membran Geçirgenliği Simülatörü',
+      prompt: 'Henderson-Hasselbalch eşitliğini incelemek için pH ve pKa değerlerini ayarlayın; iyonize ve non-iyonize türlerin biyolojik dağılımını gözlemleyin.',
+      presets: 'Model Bileşikler:',
+      compType: 'Bileşik Türü:',
+      acid: 'Zayıf Asit',
+      base: 'Zayıf Baz',
+      pka: 'İyonizasyon Sabiti (pKa)',
+      ph: 'Ortam pH Değeri',
+      unionized: 'İyonize Olmamış',
+      ionized: 'İyonize',
+      equilibrium: 'pH = pKa: %50 / %50 Dengesi',
+      membraneTitle: 'Lipit Çift Tabaka Difüzyon Modeli:',
+      passiveActive: '🟢 Pasif Difüzyon Etkin',
+      ionicRepelled: '🔴 İyonik Yansıma Hakim',
+      repulsion: 'Elektrostatik İtme',
+      gradientsTitle: 'Biyolojik pH Gradyanlarında Dağılım:',
+      gradientsSub: 'pH 1.5 | pH 6.0 | pH 7.4 | pH 5.5',
+      nonIonLabel: 'Non-İyon',
+      ionLabel: 'İyon',
+    },
+    ar: {
+      badge: 'محاكي التوازن الأيوني',
+      title: 'محاكاة توازن التأين والنفاذية الغشائية',
+      prompt: 'تحكم في قيم pH و pKa لدراسة توازن Henderson-Hasselbalch ومعدلات النفاذية عبر الأغشية الحيوية.',
+      presets: 'المركبات النموذجية:',
+      compType: 'طبيعة المركب:',
+      acid: 'حمض ضعيف (Zayıf Asit)',
+      base: 'قاعدة ضعيفة (Zayıf Baz)',
+      pka: 'ثابت التأين (pKa)',
+      ph: 'الأس الهيدروجيني للوسط (pH)',
+      unionized: 'غير متأين',
+      ionized: 'متأين',
+      equilibrium: 'pH = pKa: توازن 50% / 50%',
+      membraneTitle: 'نموذج النفاذية عبر الطبقة الشحمية الثنائية:',
+      passiveActive: '🟢 انتشار بسيط فعّال',
+      ionicRepelled: '🔴 انعكاس شاردي مهيمن',
+      repulsion: 'تنافر إلكتروستاتيكي',
+      gradientsTitle: 'التوزيع عبر تدرجات pH الحيوية:',
+      gradientsSub: 'pH 1.5 | pH 6.0 | pH 7.4 | pH 5.5',
+      nonIonLabel: 'غير متأين',
+      ionLabel: 'متأين',
+    },
+    en: {
+      badge: 'Ionization Equilibrium Simulator',
+      title: 'Ionization Equilibrium & Membrane Permeability Simulator',
+      prompt: 'Adjust pH and pKa values to explore the Henderson-Hasselbalch equilibrium; observe the biological partition of ionized vs un-ionized species.',
+      presets: 'Model Compounds:',
+      compType: 'Compound Nature:',
+      acid: 'Weak Acid',
+      base: 'Weak Base',
+      pka: 'Ionization Constant (pKa)',
+      ph: 'Environmental pH',
+      unionized: 'Un-ionized',
+      ionized: 'Ionized',
+      equilibrium: 'pH = pKa: 50% / 50% Equilibrium',
+      membraneTitle: 'Lipid Bilayer Diffusion Model:',
+      passiveActive: '🟢 Passive Diffusion Active',
+      ionicRepelled: '🔴 Ionic Reflection Dominant',
+      repulsion: 'Electrostatic Repulsion',
+      gradientsTitle: 'Distribution Across Physiological pH Gradients:',
+      gradientsSub: 'pH 1.5 | pH 6.0 | pH 7.4 | pH 5.5',
+      nonIonLabel: 'Un-ionized',
+      ionLabel: 'Ionized',
+    },
+  }[activeLocale];
+
+  const assumptions = {
+    tr: [
+      'Seyreltik sulu biyofazda aktivite katsayısı γ ≈ 1.0 (ideal çözelti)',
+      'Yalnızca iyonize olmamış (nötr) moleküler türler lipit çift tabakadan pasif difüzyonla geçer (pH Bölme Hipotezi)',
+      'İyonik türler elektriksel çift tabaka tarafından itilerek elektrostatik bariyere uğrar',
+      'Aktif taşıyıcılar ve parasellüler transport bu modelde ihmal edilmiştir',
+    ],
+    ar: [
+      'معامل الفاعلية γ ≈ 1.0 في الحيز المائي المخفف (محلول مثالي)',
+      'فقط الجزيئات غير المتأينة (المحايدة) تعبر الطبقة الشحمية الثنائية عبر الانتشار البسيط (فرضية تجزئة pH)',
+      'الجزيئات المشحونة تتنافر مع رؤوس الدهون الفسفورية القطبية مما يشكل حاجزاً إلكتروستاتيكياً',
+      'تم إهمال النواقل النشطة والانتشار عبر الوصلات الخلوية في هذا النموذج التعليمي',
+    ],
+    en: [
+      'Activity coefficient γ ≈ 1.0 in dilute aqueous biophase (ideal solution)',
+      'Only un-ionized (neutral) species cross lipid bilayers via passive transcellular diffusion (pH Partition Hypothesis)',
+      'Charged ionic species encounter an electrostatic barrier at the polar head groups',
+      'Active transporters and paracellular transport are neglected in this foundational model',
+    ],
+  }[activeLocale];
 
   return (
     <Card
@@ -192,7 +285,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <StickerBadge variant="orange" size="sm">
-              {isAr ? 'محاكي التوازن الأيوني' : 'İyonizasyon Dengesi Simülatörü'}
+              {labels.badge}
             </StickerBadge>
             <TechnicalTermBadge term="Henderson-Hasselbalch" />
           </div>
@@ -204,21 +297,18 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
         </div>
 
         <h3 className="font-display font-bold text-base sm:text-lg">
-          {config?.title || (isAr ? 'محاكاة توازن التأين والنفاذية الغشائية' : 'İyonizasyon Dengesi ve Membran Geçirgenliği Simülatörü')}
+          {config?.title || labels.title}
         </h3>
 
         <p className="text-xs font-body text-gray-700 dark:text-gray-300">
-          {config?.prompt ||
-            (isAr
-              ? 'تحكم في قيم pH و pKa لدراسة توازن Henderson-Hasselbalch ومعدلات النفاذية عبر الأغشية الحيوية.'
-              : 'Henderson-Hasselbalch eşitliğini incelemek için pH ve pKa değerlerini ayarlayın; iyonize ve non-iyonize türlerin biyolojik dağılımını gözlemleyin.')}
+          {config?.prompt || labels.prompt}
         </p>
       </div>
 
       {/* Preset Molecules Selector */}
       <div className="flex flex-col gap-1.5 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <span className="text-[11px] font-mono font-bold uppercase text-gray-700 dark:text-slate-300">
-          {isAr ? 'المركبات النموذجية:' : 'Model Bileşikler:'}
+          {labels.presets}
         </span>
         <div className="flex flex-wrap gap-2">
           {PRESETS.map((preset) => {
@@ -230,13 +320,13 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
                 disabled={disabled}
                 onClick={() => handlePresetSelect(preset)}
                 className={clsx(
-                  'px-2.5 py-1 text-xs font-mono font-bold border-2 border-black dark:border-slate-700 transition-all',
+                  'px-2.5 py-1 text-xs font-mono font-bold border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
                   isSelected
                     ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000] scale-102'
                     : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
                 )}
               >
-                {isAr ? preset.nameAr : preset.nameTr}
+                {getPresetName(preset)}
                 {preset.id !== 'custom' && ` (pKa ${preset.pKa})`}
               </button>
             );
@@ -248,7 +338,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-bold uppercase">
-            {isAr ? 'طبيعة المركب:' : 'Bileşik Türü:'}
+            {labels.compType}
           </span>
           <div className="flex items-center gap-1.5">
             <button
@@ -256,32 +346,32 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
               disabled={disabled}
               onClick={() => handleTypeToggle('acid')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
                 drugType === 'acid'
                   ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]'
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isAr ? 'Zayıf Asit (حمض ضعيف)' : 'Zayıf Asit (Weak Acid)'}
+              {labels.acid}
             </button>
             <button
               type="button"
               disabled={disabled}
               onClick={() => handleTypeToggle('base')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
                 drugType === 'base'
                   ? 'bg-[#6BCB77] text-black shadow-[2px_2px_0px_#000000]'
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isAr ? 'Zayıf Baz (قاعدة ضعيفة)' : 'Zayıf Baz (Weak Base)'}
+              {labels.base}
             </button>
           </div>
         </div>
 
         <div className="flex items-center gap-2 text-xs font-mono" dir="ltr">
-          <span className="font-bold text-amber-600 dark:text-amber-400">Δ = pH - pKa:</span>
+          <span className="font-bold text-amber-800 dark:text-amber-400">Δ = pH - pKa:</span>
           <span className="px-2 py-0.5 bg-gray-100 dark:bg-slate-800 border border-black/30 dark:border-slate-600 font-bold">
             {(pH - pKa >= 0 ? '+' : '') + (pH - pKa).toFixed(2)}
           </span>
@@ -291,7 +381,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       {/* Sliders for pKa and pH */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <Slider
-          label={isAr ? 'ثابت التأين (pKa)' : 'İyonizasyon Sabiti (pKa)'}
+          label={labels.pka}
           value={pKa}
           min={1.0}
           max={12.0}
@@ -300,7 +390,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
           disabled={disabled}
         />
         <Slider
-          label={isAr ? 'الأس الهيدروجيني للوسط (pH)' : 'Ortam pH Değeri'}
+          label={labels.ph}
           value={pH}
           min={1.0}
           max={14.0}
@@ -318,16 +408,12 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
         <div className="flex items-center justify-between text-xs font-mono font-bold">
           <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400">
             <span className="w-3.5 h-3.5 bg-emerald-500 border border-black inline-block" />
-            {isAr
-              ? `Non-İyonize [${drugType === 'acid' ? 'HA' : 'B'}]: ${unIonizedPct.toFixed(1)}%`
-              : `İyonize Olmamış [${drugType === 'acid' ? 'HA' : 'B'}]: ${unIonizedPct.toFixed(1)}%`}
+            {`${labels.unionized} [${drugType === 'acid' ? 'HA' : 'B'}]: ${unIonizedPct.toFixed(1)}%`}
           </span>
 
           <span className="flex items-center gap-1.5 text-blue-700 dark:text-blue-400">
             <span className="w-3.5 h-3.5 bg-blue-500 border border-black inline-block" />
-            {isAr
-              ? `İyonize [${drugType === 'acid' ? 'A⁻' : 'BH⁺'}]: ${ionizedPct.toFixed(1)}%`
-              : `İyonize [${drugType === 'acid' ? 'A⁻' : 'BH⁺'}]: ${ionizedPct.toFixed(1)}%`}
+            {`${labels.ionized} [${drugType === 'acid' ? 'A⁻' : 'BH⁺'}]: ${ionizedPct.toFixed(1)}%`}
           </span>
         </div>
 
@@ -358,7 +444,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
 
         {/* Equivalence Milestone Indicator */}
         <div className="flex items-center justify-between text-[11px] font-mono text-gray-600 dark:text-slate-400 pt-1 border-t border-black/10 dark:border-slate-800">
-          <span>pH = pKa: 50% / 50% Dengesi</span>
+          <span>{labels.equilibrium}</span>
           <span>
             {drugType === 'acid'
               ? `log([A⁻]/[HA]) = ${(pH - pKa).toFixed(2)}`
@@ -374,28 +460,33 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       >
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
-            {isAr ? 'Lipit Çift Tabaka Membran Geçiş Modeli:' : 'Lipit Çift Tabaka Difüzyon Modeli:'}
+            {labels.membraneTitle}
           </span>
           <span className="text-[11px] font-mono text-gray-500 dark:text-slate-400">
-            {unIonizedPct >= 50 ? '🟢 Pasif Difüzyon Etkin' : '🔴 İyonik Yansıma Hakim'}
+            {unIonizedPct >= 50 ? labels.passiveActive : labels.ionicRepelled}
           </span>
         </div>
 
         <svg
           viewBox="0 0 500 160"
-          className="w-full h-auto select-none border-2 border-black dark:border-slate-700 bg-[#F8FAFC] dark:bg-[#0B0F17]"
+          className="w-full h-auto select-none bg-[#F8FAFC] dark:bg-[#0B0F17] border-2 border-black dark:border-slate-700"
           role="img"
-          aria-label="Lipid bilayer membrane diffusion cross-section"
+          aria-label="Lipid bilayer membrane model diagram"
         >
-          {/* Compartment Labels */}
-          <text x="70" y="22" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
-            Donor (Sulu Faz)
+          {/* Header Zones */}
+          <rect x="0" y="0" width="180" height="30" fill="#E2E8F0" className="dark:fill-slate-800" />
+          <text x="90" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
+            {isEn ? 'Donor Aqueous (GI Lumen)' : isAr ? 'الوسط المائي المانح (تجويف الأنبوب)' : 'Verici Sulu Faz (Lümen)'}
           </text>
-          <text x="250" y="22" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="#F59E0B">
-            Lipit Çift Tabaka
+
+          <rect x="180" y="0" width="140" height="30" fill="#FEF3C7" className="dark:fill-amber-950/60" />
+          <text x="250" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="#D97706">
+            {isEn ? 'Lipid Bilayer Membrane' : isAr ? 'الغشاء الشحمي الثنائي' : 'Lipit Çift Tabaka'}
           </text>
-          <text x="430" y="22" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
-            Alıcı (Sulu Faz)
+
+          <rect x="320" y="0" width="180" height="30" fill="#E2E8F0" className="dark:fill-slate-800" />
+          <text x="410" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
+            {isEn ? 'Acceptor Aqueous (Capillary Blood)' : isAr ? 'الوسط المستقبل (الدوران الدموي)' : 'Alıcı Sulu Faz (Plazma)'}
           </text>
 
           {/* Left Aqueous Zone */}
@@ -428,7 +519,6 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
           {/* Un-ionized Permeable Particles Crossing */}
           {unIonizedPct > 5 && (
             <g>
-              {/* Particle 1 passing through */}
               <circle cx="100" cy="65" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
               <text x="100" y="68" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'HA' : 'B'}
@@ -438,7 +528,6 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
               <circle cx="395" cy="65" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
               <polygon points="405,65 397,61 397,69" fill="#10B981" />
 
-              {/* Particle 2 passing */}
               <circle cx="60" cy="115" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
               <text x="60" y="118" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'HA' : 'B'}
@@ -457,11 +546,10 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
               <text x="120" y="98" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'A⁻' : 'BH⁺'}
               </text>
-              {/* Repulsion Arc bouncing off lipid head */}
               <path d="M 130 95 Q 185 95 180 80 Q 170 70 120 75" fill="none" stroke="#EF4444" strokeWidth="2" strokeDasharray="3 2" />
               <polygon points="115,75 125,71 123,79" fill="#EF4444" />
               <text x="150" y="112" fontSize="8" fontFamily="monospace" fill="#EF4444" fontWeight="bold">
-                Elektrostatik İtme
+                {labels.repulsion}
               </text>
             </g>
           )}
@@ -472,82 +560,81 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       <div className="space-y-2">
         <div className="flex items-center justify-between">
           <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-slate-300">
-            {isAr ? 'التوزيع عبر تدرجات pH الحيوية:' : 'Biyolojik pH Gradyanlarında Dağılım:'}
+            {labels.gradientsTitle}
           </h4>
           <span className="text-[11px] font-mono text-gray-500 dark:text-slate-400">
-            {isAr ? 'Stomach 1.5 | Duodenum 6.0 | Plasma 7.4 | Urine 5.5' : 'Mide 1.5 | Duedonum 6.0 | Plazma 7.4 | İdrar 5.5'}
+            {labels.gradientsSub}
           </span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {bioGradients.map((bg) => (
-            <div
-              key={bg.id}
-              className="p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 flex flex-col gap-1.5 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]"
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold flex items-center gap-1">
-                  <span>{bg.icon}</span>
-                  <span>{isAr ? bg.nameAr : bg.nameTr}</span>
-                </span>
-                <span className="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-[#FFD93D] border border-black text-black">
-                  pH {bg.pH}
-                </span>
-              </div>
-
-              {/* Mini visual ratio bar */}
+          {bioGradients.map((bg) => {
+            const compName = isEn ? bg.nameEn : isAr ? bg.nameAr : bg.nameTr;
+            return (
               <div
-                className="w-full h-3 border border-black dark:border-slate-700 flex bg-gray-200 dark:bg-slate-800 overflow-hidden"
-                dir="ltr"
+                key={bg.id}
+                className="p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 flex flex-col gap-1.5 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]"
               >
-                <div
-                  style={{ width: `${bg.unIonizedPct}%` }}
-                  className="bg-emerald-500 h-full"
-                  title={`Un-ionized: ${bg.unIonizedPct.toFixed(1)}%`}
-                />
-                <div
-                  style={{ width: `${bg.ionizedPct}%` }}
-                  className="bg-blue-500 h-full"
-                  title={`Ionized: ${bg.ionizedPct.toFixed(1)}%`}
-                />
-              </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono font-bold flex items-center gap-1">
+                    <span>{bg.icon}</span>
+                    <span>{compName}</span>
+                  </span>
+                  <span className="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-[#FFD93D] border border-black text-black">
+                    pH {bg.pH}
+                  </span>
+                </div>
 
-              <div className="flex justify-between text-[11px] font-mono" dir="ltr">
-                <span className="text-emerald-700 dark:text-emerald-400 font-bold">
-                  {bg.unIonizedPct.toFixed(1)}% Non-İyon
-                </span>
-                <span className="text-blue-700 dark:text-blue-400">
-                  {bg.ionizedPct.toFixed(1)}% İyon
-                </span>
-              </div>
+                {/* Mini visual ratio bar */}
+                <div
+                  className="w-full h-3 border border-black dark:border-slate-700 flex bg-gray-200 dark:bg-slate-800 overflow-hidden"
+                  dir="ltr"
+                >
+                  <div
+                    style={{ width: `${bg.unIonizedPct}%` }}
+                    className="bg-emerald-500 h-full"
+                    title={`Un-ionized: ${bg.unIonizedPct.toFixed(1)}%`}
+                  />
+                  <div
+                    style={{ width: `${bg.ionizedPct}%` }}
+                    className="bg-blue-500 h-full"
+                    title={`Ionized: ${bg.ionizedPct.toFixed(1)}%`}
+                  />
+                </div>
 
-              <div
-                className={clsx(
-                  'text-[10px] font-mono font-bold p-1 border text-center mt-auto',
-                  bg.statusColor
-                )}
-              >
-                {isAr ? bg.statusTextAr : bg.statusTextTr}
+                <div className="flex justify-between text-[11px] font-mono" dir="ltr">
+                  <span className="text-emerald-700 dark:text-emerald-400 font-bold">
+                    {bg.unIonizedPct.toFixed(1)}% {labels.nonIonLabel}
+                  </span>
+                  <span className="text-blue-700 dark:text-blue-400">
+                    {bg.ionizedPct.toFixed(1)}% {labels.ionLabel}
+                  </span>
+                </div>
+
+                <div
+                  className={clsx(
+                    'text-[10px] font-mono font-bold p-1 border text-center mt-auto',
+                    bg.statusColor
+                  )}
+                >
+                  {bg.statusText}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       {/* Model Illustration Notice */}
       <ModelIllustrationNotice
+        locale={activeLocale}
         equation={
           drugType === 'acid'
             ? 'pH = pKa + log([A⁻] / [HA])  =>  % İyonize = 100 / (1 + 10^(pKa - pH))'
             : 'pH = pKa + log([B] / [BH⁺])  =>  % İyonize = 100 / (1 + 10^(pH - pKa))'
         }
         sourceReference="Foye's Principles of Medicinal Chemistry (8th ed.) & Katzung Basic and Clinical Pharmacology (15th ed.)"
-        assumptions={[
-          'Seyreltik sulu biyofazda aktivite katsayısı γ ≈ 1.0 (ideal çözelti)',
-          'Yalnızca iyonize olmamış (nötr) moleküler türler lipit çift tabakadan pasif difüzyonla geçer (pH Bölme Hipotezi)',
-          'İyonik türler elektriksel çift tabaka tarafından itilerek elektrostatik bariyere uğrar',
-          'Aktif taşıyıcılar ve parasellüler transport bu modelde ihmal edilmiştir',
-        ]}
+        assumptions={assumptions}
       />
     </Card>
   );

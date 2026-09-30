@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-02",
   "title": {
     "tr": "Kademeli Doz-Yanıt Eğrileri ve İntrinsik Etkinlik",
-    "ar": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية"
+    "ar": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية",
+    "en": "Graded Dose-Response Curves & Intrinsic Efficacy"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Agonistlerin etki gücü (EC50) ile intrinsik etkinlik (Emax) kavramlarını ayırmak ve yedek reseptör teorisini kavramak.",
-    "ar": "التمييز بين قوة الدواء (EC50) والفعالية الذاتية (Emax) وفهم نظرية المستقبِلات الاحتياطية."
+    "ar": "التمييز بين قوة الدواء (EC50) والفعالية الذاتية (Emax) وفهم نظرية المستقبِلات الاحتياطية.",
+    "en": "Determine EC50 potency, Emax intrinsic efficacy, and differentiate full agonists from partial agonists."
   },
   "misconceptions": [
     {
       "tr": "Daha güçlü (potensi yüksek) bir ilacın her zaman daha büyük bir maksimum biyolojik etki (Emax) üreteceği yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن الدواء الأكثر قوة (potency) يحقق حتماً استجابة حيوية أعظمية (Emax) أكبر."
+      "ar": "الاعتقاد الخاطئ بأن الدواء الأكثر قوة (potency) يحقق حتماً استجابة حيوية أعظمية (Emax) أكبر.",
+      "en": "A drug with higher potency (lower EC50) always produces a greater maximal clinical effect."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Graded Dose-Response Relationships and Spare Receptors",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Yarış Arabası ve Yük Treni",
-        "ar": "سيارة السباق وقطار البضائع"
+        "ar": "سيارة السباق وقطار البضائع",
+        "en": "The Morphine vs Buprenorphine Ceiling Paradox"
       },
       "prompt": {
         "tr": "Fentanil morfinden 100 kat daha az dozla ağrıyı keser; buprenorfin ise morfinden daha sıkı bağlanmasına rağmen solunumu asla durdurmaz. Neden?",
-        "ar": "يسكن Fentanyl الألم بجرعة أقل بـ 100 ضعف من المورفين؛ بينما يرتبط Buprenorphine أشد دون أن يثبط التنفس كلياً. لماذا؟"
+        "ar": "يسكن Fentanyl الألم بجرعة أقل بـ 100 ضعف من المورفين؛ بينما يرتبط Buprenorphine أشد دون أن يثبط التنفس كلياً. لماذا؟",
+        "en": "Why can morphine cause fatal respiratory depression at high doses, whereas buprenorphine reaches a safety ceiling regardless of dose escalation?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -99,16 +104,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -118,11 +126,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Potens mi Etkinlik mi?",
-        "ar": "توقع: القوة أم الفعالية؟"
+        "ar": "توقع: القوة أم الفعالية؟",
+        "en": "Prediction: Potency vs Efficacy"
       },
       "prompt": {
         "tr": "Daha düşük dozda (daha küçük EC50) etki gösteren bir ilaç mutlaka daha yüksek bir maksimum yanıta (Emax) ulaşır mı?",
-        "ar": "هل الدواء الذي يعمل بجرعة أقل (EC50 أصغر) يحقق بالضرورة استجابة قصوى أعظم (Emax)؟"
+        "ar": "هل الدواء الذي يعمل بجرعة أقل (EC50 أصغر) يحقق بالضرورة استجابة قصوى أعظم (Emax)؟",
+        "en": "Drug X has EC50 = 1 nM with Emax = 50%. Drug Y has EC50 = 100 nM with Emax = 100%. Which drug provides superior maximal pain relief?"
       },
       "predictThenReveal": true,
       "config": {
@@ -140,16 +150,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -158,7 +171,8 @@
             "id": "opt-ph21-1",
             "text": {
               "tr": "Hayır, potens yatay eksendedir; Emax ise intrinsik etkinliğe bağlı dikey tavandır.",
-              "ar": "لا، فالقوة على المحور الأفقي بينما يمثل Emax السقف الرأسي للفعالية الذاتية."
+              "ar": "لا، فالقوة على المحور الأفقي بينما يمثل Emax السقف الرأسي للفعالية الذاتية.",
+              "en": "Drug Y provides greater pain relief because its intrinsic efficacy (Emax) is 100%."
             },
             "isCorrect": true
           },
@@ -166,7 +180,8 @@
             "id": "opt-ph21-2",
             "text": {
               "tr": "Evet, potensi yüksek olan her zaman daha etkilidir.",
-              "ar": "نعم، فالأكثر قوة هو دائماً الأكثر فعالية مطلقة."
+              "ar": "نعم، فالأكثر قوة هو دائماً الأكثر فعالية مطلقة.",
+              "en": "Drug X is superior because its EC50 is lower."
             },
             "isCorrect": false
           }
@@ -179,11 +194,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Gaz Pedalı vs Tavan Hızı",
-        "ar": "تشبيه حدسي: دواسة الوقود مقابل السرعة القصوى"
+        "ar": "تشبيه حدسي: دواسة الوقود مقابل السرعة القصوى",
+        "en": "Intuitive Analogy: Light Dimmer Switch vs Key Turn"
       },
       "prompt": {
         "tr": "Spor araba hafifçe basınca hızlanır (yüksek potens), ama bir kamyon daha ağır gitse de 50 ton yük taşır (yüksek efikasite).",
-        "ar": "تتسارع سيارة السباق بأدنى ضغطة وقود (قوة عالية)، لكن شاحنة البضائع تنقل حمولة 50 طناً رغم بطئها (فعالية عالية)."
+        "ar": "تتسارع سيارة السباق بأدنى ضغطة وقود (قوة عالية)، لكن شاحنة البضائع تنقل حمولة 50 طناً رغم بطئها (فعالية عالية).",
+        "en": "Potency determines how easily the switch turns on (EC50); intrinsic efficacy determines how brightly the bulb glows at maximum setting (Emax)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -195,16 +212,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -214,11 +234,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Yarı-Logaritmik Sigmoidal Eğri",
-        "ar": "المنحنى اللوغاريتمي السيني"
+        "ar": "المنحنى اللوغاريتمي السيني",
+        "en": "Logarithmic Dose-Response Sigmoid Curve"
       },
       "prompt": {
         "tr": "Doz logaritmik eksende çizildiğinde eğri S şeklini alır. Orta nokta EC50 yi (potens), plato yüksekliği ise Emax ı (etkinlik) verir.",
-        "ar": "برسم الجرعة لوغاريتمياً يتشكل منحنى سيني S. تمثل نقطة المنتصف EC50 (القوة)، بينما يعطي ارتفاع السقف Emax (الفعالية)."
+        "ar": "برسم الجرعة لوغاريتمياً يتشكل منحنى سيني S. تمثل نقطة المنتصف EC50 (القوة)، بينما يعطي ارتفاع السقف Emax (الفعالية).",
+        "en": "Plotting response against log[Dose] transforms a rectangular hyperbola into a symmetrical sigmoidal curve spanning the 10-90% linear dynamic range."
       },
       "predictThenReveal": false,
       "config": {},
@@ -234,16 +256,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -253,11 +278,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülatör: Dose-Response Curve Modulator",
-        "ar": "محاكي تفاعلي: معدل منحنى الجرعة والاستجابة"
+        "ar": "محاكي تفاعلي: معدل منحنى الجرعة والاستجابة",
+        "en": "Interactive Simulator: DoseResponseCurve Modulator"
       },
       "prompt": {
         "tr": "Agonist konsantrasyonunu değiştirin. Parsiyel agonist (alpha = 0.5) seçerek eğri tavanının nasıl çöktüğünü gözlemleyin.",
-        "ar": "عدل تركيز المشبه. اختر مشبهاً جزئياً (alpha = 0.5) ولاحظ كيف يهبط سقف المنحنى رأسياً."
+        "ar": "عدل تركيز المشبه. اختر مشبهاً جزئياً (alpha = 0.5) ولاحظ كيف يهبط سقف المنحنى رأسياً.",
+        "en": "Adjust EC50 and Emax sliders to observe sigmoid curve horizontal shifts (potency) and vertical compressions (efficacy)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -273,16 +300,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "DoseResponseCurve",
@@ -290,7 +320,7 @@
         "type": "DoseResponseCurve",
         "config": {
           "mode": "agonist_intrinsic_efficacy",
-          "baselineEC50": 1e-7,
+          "baselineEC50": 1e-07,
           "spareReceptorsPercent": 0
         }
       }
@@ -301,11 +331,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Yedek Reseptörlerin Gücü",
-        "ar": "استكشاف موجه: قوة المستقبِلات الاحتياطية"
+        "ar": "استكشاف موجه: قوة المستقبِلات الاحتياطية",
+        "en": "Guided Discovery: Partial Agonist Acting as Antagonist"
       },
       "prompt": {
         "tr": "Simülatörde yedek reseptör sürgüsünü %80 e getirin. Maksimum yanıta ulaşmak için reseptörlerin ne kadarını doldurmak yetti?",
-        "ar": "اضبط زالق المستقبِلات الاحتياطية على 80%. كم نسبة إشغال المستقبلات الكافية لبلوغ الاستجابة القصوى التامة؟"
+        "ar": "اضبط زالق المستقبِلات الاحتياطية على 80%. كم نسبة إشغال المستقبلات الكافية لبلوغ الاستجابة القصوى التامة؟",
+        "en": "Observe what happens when a partial agonist (Emax = 40%) is administered in the presence of a saturated full agonist (Emax = 100%)."
       },
       "predictThenReveal": true,
       "config": {
@@ -323,16 +355,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -341,7 +376,8 @@
             "id": "opt-ph21-3",
             "text": {
               "tr": "Yalnızca %20 dolulukla %100 doku yanıtı alındı; EC50 sola kayarak potens arttı.",
-              "ar": "كفى إشغال 20% فقط لتحقيق 100% من الاستجابة؛ وانزاح EC50 يساراً بازدياد القوة."
+              "ar": "كفى إشغال 20% فقط لتحقيق 100% من الاستجابة؛ وانزاح EC50 يساراً بازدياد القوة.",
+              "en": "The partial agonist competes with the full agonist and reduces overall response from 100% to 40%."
             },
             "isCorrect": true
           },
@@ -349,7 +385,8 @@
             "id": "opt-ph21-4",
             "text": {
               "tr": "Hala %100 doluluk gerekir.",
-              "ar": "ما زال يتطلب إشغال 100% بالكامل."
+              "ar": "ما زال يتطلب إشغال 100% بالكامل.",
+              "en": "Response increases to 140%."
             },
             "isCorrect": false
           }
@@ -362,11 +399,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Stephenson ve Furchgott Reseptör Teorisi",
-        "ar": "نظرية Stephenson و Furchgott للمستقبلات"
+        "ar": "نظرية Stephenson و Furchgott للمستقبلات",
+        "en": "Formal Classification: Agonist Spectra"
       },
       "prompt": {
         "tr": "Yanıt = f(S * [L] / ([L] + Kd)). İntrinsik etkinlik (e) doku faktörüyle çarpılarak stimülüsü üretir. Parsiyel agonistte e düşüktür.",
-        "ar": "الاستجابة = f(S * [L] / ([L] + Kd)). تضرب الفعالية الذاتية بعامل التضخيم النسيجي لتوليد المنبه الخلوي."
+        "ar": "الاستجابة = f(S * [L] / ([L] + Kd)). تضرب الفعالية الذاتية بعامل التضخيم النسيجي لتوليد المنبه الخلوي.",
+        "en": "Full agonists (intrinsic activity α = 1), partial agonists (0 < α < 1), neutral antagonists (α = 0), and inverse agonists (α < 0)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -378,16 +417,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -397,11 +439,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Parsiyel Agonistin Çift Karakteri",
-        "ar": "فحص المفهوم: ازدواجية المشبه الجزئي"
+        "ar": "فحص المفهوم: ازدواجية المشبه الجزئي",
+        "en": "Concept Check: Spare Receptors and EC50 vs Kd"
       },
       "prompt": {
         "tr": "Ortamda yüksek doz tam agonist (morfin) varken parsiyel agonist (buprenorfin) eklenirse ne olur?",
-        "ar": "بوجود تركيز عالٍ من مشبه تام (Morphine)، ماذا يحدث عند إضافة مشبه جزئي (Buprenorphine)؟"
+        "ar": "بوجود تركيز عالٍ من مشبه تام (Morphine)، ماذا يحدث عند إضافة مشبه جزئي (Buprenorphine)؟",
+        "en": "In tissues with spare receptors, maximal biological response (Emax) is achieved at concentrations lower than receptor Kd. Why?"
       },
       "predictThenReveal": true,
       "config": {
@@ -419,16 +463,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -437,7 +484,8 @@
             "id": "opt-ph21-5",
             "text": {
               "tr": "Reseptörleri kaparak tam agonisti kovar ve yanıtı düşürerek antagonist gibi davranır.",
-              "ar": "يزاحم المشبه التام على المستقبلات ويهبط بالاستجابة متصرفاً كمناهض (antagonist)."
+              "ar": "يزاحم المشبه التام على المستقبلات ويهبط بالاستجابة متصرفاً كمناهض (antagonist).",
+              "en": "Amplification in downstream signal transduction achieves Emax at low receptor occupancy."
             },
             "isCorrect": true
           },
@@ -445,7 +493,8 @@
             "id": "opt-ph21-6",
             "text": {
               "tr": "Etki ikiye katlanır.",
-              "ar": "يتضاعف التأثير إلى الضعف."
+              "ar": "يتضاعف التأثير إلى الضعف.",
+              "en": "Receptors are permanently destroyed."
             },
             "isCorrect": false
           }
@@ -458,11 +507,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Uygulama: Opioid Yoksunluk Tedavisi",
-        "ar": "تطبيق سريري: علاج الإدمان على الأفيونات"
+        "ar": "تطبيق سريري: علاج الإدمان على الأفيونات",
+        "en": "Clinical Case: Buprenorphine in Opioid Addiction"
       },
       "prompt": {
         "tr": "Buprenorfin eroin bağımlılığında neden tercih edilir? Yüksek afiniteyle krizi önlerken sub-maksimal efikasiteyle solunumu korur.",
-        "ar": "لماذا يفضل Buprenorphine في علاج إدمان الهيروين؟ يمنع أعراض الانسحاب بألفته العالية ويحمي التنفس بفعاليته الجزئية."
+        "ar": "لماذا يفضل Buprenorphine في علاج إدمان الهيروين؟ يمنع أعراض الانسحاب بألفته العالية ويحمي التنفس بفعاليته الجزئية.",
+        "en": "Why does buprenorphine precipitate withdrawal symptoms if given immediately after heroin in opioid-dependent individuals?"
       },
       "predictThenReveal": true,
       "config": {
@@ -480,16 +531,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -498,7 +552,8 @@
             "id": "opt-ph21-7",
             "text": {
               "tr": "Tavan etkisi (ceiling effect) sayesinde ölümcül solunum depresyonu yapmaz.",
-              "ar": "بفضل تأثير السقف (ceiling effect) يمنع حدوث تثبيط تنفسي مميت."
+              "ar": "بفضل تأثير السقف (ceiling effect) يمنع حدوث تثبيط تنفسي مميت.",
+              "en": "Buprenorphine displaces morphine from mu-receptors but provides lower intrinsic efficacy."
             },
             "isCorrect": true
           },
@@ -506,7 +561,8 @@
             "id": "opt-ph21-8",
             "text": {
               "tr": "Vücuttan 5 dakikada atıldığı için.",
-              "ar": "لأنه يطرح من الجسم خلال 5 دقائق."
+              "ar": "لأنه يطرح من الجسم خلال 5 دقائق.",
+              "en": "Buprenorphine produces massive overdose euphoria."
             },
             "isCorrect": false
           }
@@ -519,11 +575,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Kd Ayrışma Sabiti",
-        "ar": "استرجاع معرفي: ثابت التفكك Kd"
+        "ar": "استرجاع معرفي: ثابت التفكك Kd",
+        "en": "Retrieval: Mass Action and Kd"
       },
       "prompt": {
         "tr": "Modül 1 de gördüğümüz gibi reseptörlerin yarısının bağlandığı serbest ligand konsantrasyonuna ne ad veriliyordu?",
-        "ar": "كما رأينا في الوحدة 1، ما هو تركيز الربيط الحر الذي يشغل نصف المستقبِلات تماماً؟"
+        "ar": "كما رأينا في الوحدة 1، ما هو تركيز الربيط الحر الذي يشغل نصف المستقبِلات تماماً؟",
+        "en": "How does EC50 (effective concentration for 50% maximal response) relate to Kd (concentration for 50% receptor binding)?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -535,16 +593,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -554,11 +615,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Reseptör Antagonizmi ve Blokaj (Ders 4)",
-        "ar": "ربط مفاهيمي: مناهضة المستقبِلات والحصار (الدرس 4)"
+        "ar": "ربط مفاهيمي: مناهضة المستقبِلات والحصار (الدرس 4)",
+        "en": "Connection: Receptor Antagonism (Lesson 4)"
       },
       "prompt": {
         "tr": "Agonistlerin yanıtını sıfırlayan veya eğriyi sağa kaydıran antagonistleri bir sonraki derste Schild analiziyle öğreneceğiz.",
-        "ar": "في الدرس القادم، سنتعلم كيف تصفر المناهضات (antagonist) الاستجابة أو تزيح المنحنى يميناً عبر تحليل Schild."
+        "ar": "في الدرس القادم، سنتعلم كيف تصفر المناهضات (antagonist) الاستجابة أو تزيح المنحنى يميناً عبر تحليل Schild.",
+        "en": "Now that we understand agonist activation, what happens when antagonist molecules block receptor access without activating signal transduction?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -570,16 +633,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -589,11 +655,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Potens ve Efikasite Ayrımı",
-        "ar": "اختبار الإتقان: التفريق بين القوة والفعالية"
+        "ar": "اختبار الإتقان: التفريق بين القوة والفعالية",
+        "en": "Mastery Assessment: Potency and Efficacy Criteria"
       },
       "prompt": {
         "tr": "Doz-yanıt eğrisinde ilacın sol veya sağda yer alması neyi, eğrinin ulaştığı maksimum tavan yüksekliği neyi gösterir?",
-        "ar": "في منحنى الجرعة والاستجابة، ماذا يمثل تموضع المنحنى يميناً أو يساراً، وماذا يمثل ارتفاع سقفه الأعظمي؟"
+        "ar": "في منحنى الجرعة والاستجابة، ماذا يمثل تموضع المنحنى يميناً أو يساراً، وماذا يمثل ارتفاع سقفه الأعظمي؟",
+        "en": "Which graphic parameter of a log concentration-response curve directly reflects pharmacological intrinsic efficacy?"
       },
       "predictThenReveal": true,
       "config": {
@@ -611,16 +679,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -629,7 +700,8 @@
             "id": "opt-ph21-9",
             "text": {
               "tr": "Yatay konum potenstir (EC50); dikey tavan efikasitedir (Emax).",
-              "ar": "الموقع الأفقي يمثل القوة (EC50)؛ والسقف الرأسي يمثل الفعالية (Emax)."
+              "ar": "الموقع الأفقي يمثل القوة (EC50)؛ والسقف الرأسي يمثل الفعالية (Emax).",
+              "en": "The vertical height of the curve plateau (Emax)."
             },
             "isCorrect": true
           },
@@ -637,7 +709,8 @@
             "id": "opt-ph21-10",
             "text": {
               "tr": "Her ikisi de potenstir.",
-              "ar": "كلاهما يعبران عن القوة فقط."
+              "ar": "كلاهما يعبران عن القوة فقط.",
+              "en": "The left-to-right position of the curve (EC50)."
             },
             "isCorrect": false
           }

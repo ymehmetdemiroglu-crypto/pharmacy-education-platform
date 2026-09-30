@@ -9,7 +9,7 @@ export const membranePartitionStandardDemo: MembranePartitionConfig = {
   defaultCompoundType: 'acid',
   locale: 'tr',
   source: {
-    file: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf',
+    file: 'Farmasötik Kimya 1-Giriş.pdf',
     page: 25,
   },
   explanation: 'Fizyolojik pH 7.4 ortamında zayıf asitlerin logD değeri iyonlaşma nedeniyle logP değerinden belirgin ölçüde düşüktür; bu durum pasif transselüler difüzyonu sınırlar.',

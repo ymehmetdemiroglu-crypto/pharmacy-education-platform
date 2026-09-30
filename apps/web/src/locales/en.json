@@ -339,5 +339,22 @@
       "chooseAnswer": "Select an option:",
       "submit": "Verify Answer"
     }
+  },
+  "interactiveJourney": {
+    "phaseExplore": "1. Explore & Understand",
+    "phaseMissions": "2. Guided Missions",
+    "phaseQuiz": "3. Concept Quiz & Mastery",
+    "simulationLab": "Biophysical Simulation Lab",
+    "exploreSubtitle": "Freely manipulate parameters to discover molecular membrane and receptor behavior.",
+    "clinicalPresets": "Clinical & Experimental Presets",
+    "liveHud": "Live Biophysical State HUD",
+    "howItWorks": "How Does the Molecular Mechanism Work?",
+    "startMissions": "Start Guided Missions 🎯",
+    "advanceToQuiz": "Advance to Concept Quiz 📝",
+    "missionCompleted": "Mission Accomplished! (+25 XP)",
+    "missionPending": "Adjust parameters to achieve the target objective.",
+    "allMissionsDone": "All Guided Missions Completed! Excellent Work 🏆",
+    "academicSources": "Academic References & University Course Materials"
   }
 }
+

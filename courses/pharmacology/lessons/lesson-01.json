@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-01",
   "title": {
     "tr": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi",
-    "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة"
+    "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة",
+    "en": "Macromolecular Drug Targets & Mass-Action Equilibrium"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Kütle etkisi kanununu kullanarak ilaç-reseptör bağlanma dengesini, Kd ayrışma sabitini ve doluluk fraksiyonunu hesaplamak.",
-    "ar": "حساب توازن ارتباط الدواء بالمستقبل وثابت التفكك Kd ونسبة الإشغال باستخدام قانون فعل الكتلة."
+    "ar": "حساب توازن ارتباط الدواء بالمستقبل وثابت التفكك Kd ونسبة الإشغال باستخدام قانون فعل الكتلة.",
+    "en": "Calculate drug-receptor binding equilibrium, dissociation constant Kd, and fractional occupancy theta using the law of mass action."
   },
   "misconceptions": [
     {
       "tr": "Kd değerinin yüksek olmasının ilacın hedefine daha sıkı bağlandığı anlamına geldiği yanılgısı (düşük Kd = yüksek afinite).",
-      "ar": "الظن الخاطئ بأن ارتفاع قيمة Kd يعني ارتباطاً أقوى بالهدف (انخفاض Kd = ألفة أعلى)."
+      "ar": "الظن الخاطئ بأن ارتفاع قيمة Kd يعني ارتباطاً أقوى بالهدف (انخفاض Kd = ألفة أعلى).",
+      "en": "High Kd value implies stronger target binding (actually, lower Kd indicates higher affinity)."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Drug-Receptor Interactions and Mass Action Kinetics",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -70,7 +73,8 @@
     },
     "ar": {
       "title": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة"
-    }
+    },
+    "en": "{'title': 'Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi'}"
   },
   "steps": [
     {
@@ -79,11 +83,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Milyarlarca Hücrede Tek Bir Molekülü Bulmak",
-        "ar": "إيجاد جزيء واحد بين مليارات الخلايا"
+        "ar": "إيجاد جزيء واحد بين مليارات الخلايا",
+        "en": "Finding One Molecule Among Trillions of Cells"
       },
       "prompt": {
         "tr": "Dolaşımdaki ilaç molekülleri trilyonlarca protein arasından nasıl kendi hedef reseptörünü seçip tam aranan kilide oturur?",
-        "ar": "كيف تنتقي جزيئات الدواء في الدورة الدموية مستقبِلها الهدف (reseptör) من بين تريليونات البروتينات وتستقر في قفله الخاص؟"
+        "ar": "كيف تنتقي جزيئات الدواء في الدورة الدموية مستقبِلها الهدف (reseptör) من بين تريليونات البروتينات وتستقر في قفله الخاص؟",
+        "en": "How do circulating drug molecules locate their specific target receptor among trillions of host proteins and fit into their designated pocket?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +101,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +123,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Serbest Ligand Derişimi [L] = Kd Olduğunda",
-        "ar": "توقع: عندما يكون تركيز الربيط [L] مساوياً لـ Kd"
+        "ar": "توقع: عندما يكون تركيز الربيط [L] مساوياً لـ Kd",
+        "en": "Prediction: Free Ligand Concentration [L] Equals Kd"
       },
       "prompt": {
         "tr": "Ortamdaki serbest ilaç derişimi ilacın Kd ayrışma sabitine eşit olduğunda reseptörlerin ne kadarı dolmuştur?",
-        "ar": "عندما يتساوى تركيز الدواء الحر في الوسط مع ثابت التفكك Kd، كم تبلغ نسبة إشغال المستقبِلات؟"
+        "ar": "عندما يتساوى تركيز الدواء الحر في الوسط مع ثابت التفكك Kd، كم تبلغ نسبة إشغال المستقبِلات؟",
+        "en": "When the free drug concentration in the biophase equals the dissociation constant Kd, what percentage of receptors is occupied?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +147,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +168,8 @@
             "id": "opt-ph11-1",
             "text": {
               "tr": "Tam olarak %50 si doludur.",
-              "ar": "50% منها تماماً."
+              "ar": "50% منها تماماً.",
+              "en": "Exactly 50% of the receptors are occupied."
             },
             "isCorrect": true
           },
@@ -162,7 +177,8 @@
             "id": "opt-ph11-2",
             "text": {
               "tr": "%100 ü doludur.",
-              "ar": "100% منها ممتلئة بالكامل."
+              "ar": "100% منها ممتلئة بالكامل.",
+              "en": "100% of the receptors are saturated."
             },
             "isCorrect": false
           }
@@ -175,11 +191,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Sandalye Kapmaca Oyunu",
-        "ar": "تشبيه حدسي: لعبة الكراسي الموسيقية"
+        "ar": "تشبيه حدسي: لعبة الكراسي الموسيقية",
+        "en": "Intuitive Analogy: Musical Chairs and Binding Tendency"
       },
       "prompt": {
         "tr": "Odada 100 sandalye (reseptör) ve koşuşturan çocuklar (ligand) var. Çocuk sayısı arttıkça boş sandalye kalma olasılığı hızla sıfıra yaklaşır.",
-        "ar": "في الغرفة 100 مقعد (reseptör) وأطفال يركضون (ligand). مع تزايد عدد الأطفال تقترب احتمالية بقاء مقعد شاغر من الصفر."
+        "ar": "في الغرفة 100 مقعد (reseptör) وأطفال يركضون (ligand). مع تزايد عدد الأطفال تقترب احتمالية بقاء مقعد شاغر من الصفر.",
+        "en": "Consider receptors as chairs and ligands as participants. Kd represents the concentration where exactly half the chairs remain occupied at equilibrium."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +209,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +231,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Doygunluk Bağlanma İzotermi",
-        "ar": "منحنى التشبع المتساوي للارتباط"
+        "ar": "منحنى التشبع المتساوي للارتباط",
+        "en": "Receptor Occupancy (Theta) Isotherm Curve"
       },
       "prompt": {
         "tr": "Bağlanma grafiği dikdörtgen hiperbol şeklindedir. Düşük konsantrasyonda dik yükselir, yüksek konsantrasyonda Bmax tavanına asimptotik olarak doyar.",
-        "ar": "يأخذ منحنى الارتباط شكل قطع زائد. يرتفع حاداً بالتركيز المنخفض، ثم يستقر أفقياً عند سقف الإشغال الأعظمي Bmax."
+        "ar": "يأخذ منحنى الارتباط شكل قطع زائد. يرتفع حاداً بالتركيز المنخفض، ثم يستقر أفقياً عند سقف الإشغال الأعظمي Bmax.",
+        "en": "The fractional occupancy curve theta = [L] / ([L] + Kd) displays a classic hyperbolic relationship between concentration and bound receptor fraction."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +249,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +271,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Model: Receptor-Ligand Matcher (Kd)",
-        "ar": "نموذج تفاعلي: مطابق الربيط والمستقبل (Kd)"
+        "ar": "نموذج تفاعلي: مطابق الربيط والمستقبل (Kd)",
+        "en": "Interactive Matcher: Receptor-Ligand Equilibrium"
       },
       "prompt": {
         "tr": "Ligand konsantrasyonunu 1 nM den 100 uM ye artırarak dinamik bağlanma-ayrışma kinetiğini ve fraksiyonel doluluğu (Theta) izleyin.",
-        "ar": "ارفع تركيز الربيط من 1 nM إلى 100 uM لمراقبة حركية الارتباط والانفصال ونسبة إشغال المستقبلات (Theta)."
+        "ar": "ارفع تركيز الربيط من 1 nM إلى 100 uM لمراقبة حركية الارتباط والانفصال ونسبة إشغال المستقبلات (Theta).",
+        "en": "Modulate ligand concentration [L] against target receptors to observe real-time Kd shifts and fractional occupancy saturation."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +293,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -293,11 +324,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: 9 Katı Kuralı",
-        "ar": "استكشاف موجه: قاعدة التسعة أضعاف"
+        "ar": "استكشاف موجه: قاعدة التسعة أضعاف",
+        "en": "Guided Discovery: Low vs High Kd Affinity"
       },
       "prompt": {
         "tr": "Reseptör doluluğunu %10 dan %90 a çıkarmak için serbest ilaç derişimini kaç kat artırmak gerekir?",
-        "ar": "لرفع نسبة إشغال المستقبل من 10% إلى 90%، كم ضعفاً يجب زيادة تركيز الدواء الحر؟"
+        "ar": "لرفع نسبة إشغال المستقبل من 10% إلى 90%، كم ضعفاً يجب زيادة تركيز الدواء الحر؟",
+        "en": "Compare Drug A (Kd = 1 nM) and Drug B (Kd = 100 µM). Notice why nanomolar affinity requires 100,000-fold less drug to achieve 50% target occupancy."
       },
       "predictThenReveal": true,
       "config": {
@@ -315,16 +348,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -333,7 +369,8 @@
             "id": "opt-ph11-3",
             "text": {
               "tr": "Tam 81 kat (0.11 Kd den 9 Kd ye).",
-              "ar": "81 ضعفاً تماماً (من 0.11 Kd إلى 9 Kd)."
+              "ar": "81 ضعفاً تماماً (من 0.11 Kd إلى 9 Kd).",
+              "en": "Drug A (Kd = 1 nM) binds 100,000 times more tightly than Drug B (Kd = 100 µM)."
             },
             "isCorrect": true
           },
@@ -341,7 +378,8 @@
             "id": "opt-ph11-4",
             "text": {
               "tr": "9 kat.",
-              "ar": "9 أضعاف فقط."
+              "ar": "9 أضعاف فقط.",
+              "en": "Drug B binds more tightly because its Kd number is bigger."
             },
             "isCorrect": false
           }
@@ -354,11 +392,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Kütle Etkisi ve Clark Reseptör Teorisi",
-        "ar": "قانون فعل الكتلة ونظرية Clark للمستقبلات"
+        "ar": "قانون فعل الكتلة ونظرية Clark للمستقبلات",
+        "en": "Formal Formulation: The Law of Mass Action"
       },
       "prompt": {
         "tr": "A.J. Clark (1933): Yanıt doğrudan reseptör doluluğuyla orantılıdır: E / Emax = [L] / ([L] + Kd). Kd = koff / kon oranıdır.",
-        "ar": "A.J. Clark (1933): تتناسب الاستجابة طردياً مع نسبة الإشغال: E / Emax = [L] / ([L] + Kd). يمثل Kd نسبة ثابت الانفصال koff إلى kon."
+        "ar": "A.J. Clark (1933): تتناسب الاستجابة طردياً مع نسبة الإشغال: E / Emax = [L] / ([L] + Kd). يمثل Kd نسبة ثابت الانفصال koff إلى kon.",
+        "en": "At equilibrium: Kon * [L] * [R] = Koff * [LR]. The equilibrium dissociation constant Kd = Koff / Kon = [L] * [R] / [LR]."
       },
       "predictThenReveal": false,
       "config": {},
@@ -374,16 +414,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -393,11 +436,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Kd ve İlaç Etki Gücü",
-        "ar": "فحص المفهوم: Kd وقوة الدواء"
+        "ar": "فحص المفهوم: Kd وقوة الدواء",
+        "en": "Kavram Denetimi: Kd ve İlaç Etki Gücü"
       },
       "prompt": {
         "tr": "İlaç A nın Kd si 0.1 nM, İlaç B nin Kd si 100 nM dir. Hangisi reseptörüne daha yüksek afiniteyle bağlanır?",
-        "ar": "الدواء A يمتلك Kd = 0.1 nM، والدواء B يمتلك Kd = 100 nM. أيهما يرتبط بألفة أعلى بمستقبله (reseptör)؟"
+        "ar": "الدواء A يمتلك Kd = 0.1 nM، والدواء B يمتلك Kd = 100 nM. أيهما يرتبط بألفة أعلى بمستقبله (reseptör)؟",
+        "en": "İlaç A nın Kd si 0.1 nM, İlaç B nin Kd si 100 nM dir. Hangisi reseptörüne daha yüksek afiniteyle bağlanır?"
       },
       "predictThenReveal": true,
       "config": {
@@ -415,16 +460,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -433,7 +481,8 @@
             "id": "opt-ph11-5",
             "text": {
               "tr": "İlaç A; küçük Kd daha sıkı bağlanma ve 1000 kat yüksek afinite demektir.",
-              "ar": "الدواء A؛ لأن صغر Kd يعني ارتباطاً أشد وألفة أعلى بـ 1000 ضعف."
+              "ar": "الدواء A؛ لأن صغر Kd يعني ارتباطاً أشد وألفة أعلى بـ 1000 ضعف.",
+              "en": "İlaç A; küçük Kd daha sıkı bağlanma ve 1000 kat yüksek afinite demektir."
             },
             "isCorrect": true
           },
@@ -441,7 +490,8 @@
             "id": "opt-ph11-6",
             "text": {
               "tr": "İlaç B; büyük Kd daha güçlüdür.",
-              "ar": "الدواء B؛ لأن كبر Kd يمنح قوة أكبر."
+              "ar": "الدواء B؛ لأن كبر Kd يمنح قوة أكبر.",
+              "en": "İlaç B; büyük Kd daha güçlüdür."
             },
             "isCorrect": false
           }
@@ -454,11 +504,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Karar: Hedef Doluluk Oranı",
-        "ar": "قرار سريري: نسبة الإشغال المستهدفة"
+        "ar": "قرار سريري: نسبة الإشغال المستهدفة",
+        "en": "Clinical Case: Beta-Blocker Target Engagement"
       },
       "prompt": {
         "tr": "Bir monoklonal antikor tümör reseptörünü bloke edecektir. Hedefin %99 unu sürekli kilitli tutmak için plazma konsantrasyonu kaç Kd olmalıdır?",
-        "ar": "جسم مضاد وحيد النسيلة يستهدف مستقبلاً ورمياً. لإبقاء 99% من الهدف مقفلاً، كم يجب أن يكون تركيزه بالبلازما نسبة إلى Kd؟"
+        "ar": "جسم مضاد وحيد النسيلة يستهدف مستقبلاً ورمياً. لإبقاء 99% من الهدف مقفلاً، كم يجب أن يكون تركيزه بالبلازما نسبة إلى Kd؟",
+        "en": "A patient receives atenolol (Kd = 10 nM). Serum measurements show free concentration [L] = 90 nM. What percentage of cardiac beta-1 receptors is bound?"
       },
       "predictThenReveal": true,
       "config": {
@@ -476,16 +528,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -494,7 +549,8 @@
             "id": "opt-ph11-7",
             "text": {
               "tr": "En az 99 x Kd düzeyinde tutulmalıdır.",
-              "ar": "يجب الحفاظ عليه عند 99 x Kd على الأقل."
+              "ar": "يجب الحفاظ عليه عند 99 x Kd على الأقل.",
+              "en": "90% of cardiac beta-1 receptors are occupied (90 / (90 + 10) = 0.90)."
             },
             "isCorrect": true
           },
@@ -502,7 +558,8 @@
             "id": "opt-ph11-8",
             "text": {
               "tr": "1 x Kd yeterlidir.",
-              "ar": "1 x Kd كافية تماماً."
+              "ar": "1 x Kd كافية تماماً.",
+              "en": "Only 10% are occupied."
             },
             "isCorrect": false
           }
@@ -515,11 +572,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Gibbs Enerjisi ve Kd",
-        "ar": "استرجاع معرفي: طاقة غيبس وثابت Kd"
+        "ar": "استرجاع معرفي: طاقة غيبس وثابت Kd",
+        "en": "Retrieval: Thermodynamic Activity vs Affinity"
       },
       "prompt": {
         "tr": "Kimya dersinde gördüğümüz gibi bağlanma serbest enerjisi Delta G ile Kd ayrışma sabiti arasındaki logaritmik ilişki nasıldı?",
-        "ar": "كما رأينا في مساق الكيمياء، كيف ترتبط طاقة الارتباط الحرة Delta G لوغاريتمياً مع ثابت التفكك Kd؟"
+        "ar": "كما رأينا في مساق الكيمياء، كيف ترتبط طاقة الارتباط الحرة Delta G لوغاريتمياً مع ثابت التفكك Kd؟",
+        "en": "How does specific receptor affinity (governed by Kd) differ from non-specific membrane perturbation governed by Ferguson's principle?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -531,16 +590,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -550,11 +612,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Non-Kovalent Kuvvetler ve Afinite (Ders 2)",
-        "ar": "ربط مفاهيمي: القوى غير التساهمية والألفة (الدرس 2)"
+        "ar": "ربط مفاهيمي: القوى غير التساهمية والألفة (الدرس 2)",
+        "en": "Connection: Non-Covalent Forces in Binding (Lesson 2)"
       },
       "prompt": {
         "tr": "Kd değerini mikromolardan pikomolara çeken kimyasal bağ kuvvetlerini bir sonraki derste moleküler detaylarıyla inceleyeceğiz.",
-        "ar": "سنستكشف في الدرس القادم قوى الروابط الكيميائية التي تهبط بقيمة Kd من الميكرومولار إلى البيكومولار."
+        "ar": "سنستكشف في الدرس القادم قوى الروابط الكيميائية التي تهبط بقيمة Kd من الميكرومولار إلى البيكومولار.",
+        "en": "Once a ligand approaches a receptor pocket, which specific reversible non-covalent forces hold it in place?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -566,16 +630,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -585,11 +652,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Kütle Etkisi ve Denge",
-        "ar": "اختبار الإتقان: قانون فعل الكتلة والتوازن"
+        "ar": "اختبار الإتقان: قانون فعل الكتلة والتوازن",
+        "en": "Mastery Assessment: Kd and Receptor Occupancy"
       },
       "prompt": {
         "tr": "Kd ayrışma sabiti 10 nM olan bir reseptörde serbest ilaç derişimi 90 nM ye ulaştığında reseptör doluluk yüzdesi tam olarak kaçtır?",
-        "ar": "في مستقبِل يمتلك Kd = 10 nM، عندما يصل تركيز الدواء الحر إلى 90 nM، كم تبلغ النسبة المئوية لإشغال المستقبِلات بدقة؟"
+        "ar": "في مستقبِل يمتلك Kd = 10 nM، عندما يصل تركيز الدواء الحر إلى 90 nM، كم تبلغ النسبة المئوية لإشغال المستقبِلات بدقة؟",
+        "en": "Which thermodynamic parameter inversely correlates with drug-receptor binding affinity under mass-action equilibrium?"
       },
       "predictThenReveal": true,
       "config": {
@@ -607,16 +676,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -625,7 +697,8 @@
             "id": "opt-ph11-9",
             "text": {
               "tr": "%90 doluluk (90 / (90 + 10) = 0.90).",
-              "ar": "إشغال 90% (90 / (90 + 10) = 0.90)."
+              "ar": "إشغال 90% (90 / (90 + 10) = 0.90).",
+              "en": "The equilibrium dissociation constant Kd."
             },
             "isCorrect": true
           },
@@ -633,7 +706,8 @@
             "id": "opt-ph11-10",
             "text": {
               "tr": "%50 doluluk.",
-              "ar": "إشغال 50% فقط."
+              "ar": "إشغال 50% فقط.",
+              "en": "The total volume of distribution."
             },
             "isCorrect": false
           }

@@ -10,7 +10,7 @@ export const ionizationEquilibriumStandardDemo: IonizationEquilibriumConfig = {
   locale: 'tr',
   showBioGradients: true,
   source: {
-    file: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf',
+    file: 'Farmasötik Kimya 1-Giriş.pdf',
     page: 21,
   },
   explanation: 'Zayıf asitler düşük pH (mide) ortamında iyonize olmayarak membranlardan hızla emilirken, plazmada (pH 7.4) iyonize olarak kanda tutulurlar.',

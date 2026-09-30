@@ -4,18 +4,21 @@
   "moduleId": "mc-mod-02",
   "title": {
     "tr": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma",
-    "ar": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط"
+    "ar": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط",
+    "en": "Optical Chirality & Easson-Stedman 3-Point Binding"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Easson-Stedman 3-noktalı bağlanma modelini kullanarak enantiyomerlerin reseptör afinitelerindeki dramatik farkları açıklamak.",
-    "ar": "تفسير الفروق الشاسعة في ألفة المصاوغات المرآوية نحو (reseptör) باستخدام نموذج Easson-Stedman ثلاثي النقاط."
+    "ar": "تفسير الفروق الشاسعة في ألفة المصاوغات المرآوية نحو (reseptör) باستخدام نموذج Easson-Stedman ثلاثي النقاط.",
+    "en": "Explain the stereochemical rationale for enantiomeric potency differences using the Easson-Stedman 3-point attachment hypothesis."
   },
   "misconceptions": [
     {
       "tr": "İki enantiyomerin biyolojik hedeflerde aynı güce sahip olduğu yanılgısı.",
-      "ar": "الظن الخاطئ بأن المصاوغين المرآويين يمتلكان نفس التأثير في الأهداف البيولوجية."
+      "ar": "الظن الخاطئ بأن المصاوغين المرآويين يمتلكان نفس التأثير في الأهداف البيولوجية.",
+      "en": "Enantiomers have identical pharmacological and toxicological properties in vivo."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Stereochemistry and Easson-Stedman Model",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Sağ El ve Sol El Eldiveni",
-        "ar": "قفاز اليد اليمنى واليسرى"
+        "ar": "قفاز اليد اليمنى واليسرى",
+        "en": "The Thalidomide Lesson: Mirror Molecules"
       },
       "prompt": {
         "tr": "Sağ eliniz sol eldivene neden sığmaz? Moleküler düzeyde kiral reseptörler de yalnızca doğru el anatomisindeki enantiyomeri kabul eder.",
-        "ar": "لماذا لا تناسب اليد اليمنى قفاز اليد اليسرى؟ جزيئياً، تقبل مستقبلات الجسم (reseptör) فقط المصاوغ ذو الهندسة الفراغية المطابقة."
+        "ar": "لماذا لا تناسب اليد اليمنى قفاز اليد اليسرى؟ جزيئياً، تقبل مستقبلات الجسم (reseptör) فقط المصاوغ ذو الهندسة الفراغية المطابقة.",
+        "en": "How can two molecules with identical atoms, bond lengths, and functional groups display curative sedation versus catastrophic teratogenicity?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Üç Noktalı Uyum",
-        "ar": "توقع: التطابق ثلاثي النقاط"
+        "ar": "توقع: التطابق ثلاثي النقاط",
+        "en": "Prediction: 3-Point vs 2-Point Contact"
       },
       "prompt": {
         "tr": "Epinefrinin kiral karbonundaki -OH grubu ters yöne döndüğünde reseptör afinitesi nasıl değişir?",
-        "ar": "عندما تدور مجموعة -OH في كربون epinefrin الكيرالي للجهة المعاكسة، كيف تتأثر ألفة الارتباط بالمستقبل؟"
+        "ar": "عندما تدور مجموعة -OH في كربون epinefrin الكيرالي للجهة المعاكسة، كيف تتأثر ألفة الارتباط بالمستقبل؟",
+        "en": "If (R)-epinephrine forms 3 contacts with the adrenoceptor while (S)-epinephrine forms only 2, by what magnitude will their affinities diverge?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-mc22-1",
             "text": {
               "tr": "Değişmez, aynı kimyasal formüle sahiptir.",
-              "ar": "لا تتغير، فالصيغة الكيميائية متطابقة."
+              "ar": "لا تتغير، فالصيغة الكيميائية متطابقة.",
+              "en": "Hydrogen bond donor."
             },
             "isCorrect": false
           },
@@ -162,7 +176,8 @@
             "id": "opt-mc22-2",
             "text": {
               "tr": "Afinite 100 kattan fazla düşer çünkü 3. bağlanma noktası kaybedilir.",
-              "ar": "تنخفض الألفة بأكثر من 100 ضعف لفقدان نقطة الارتباط الثالثة."
+              "ar": "تنخفض الألفة بأكثر من 100 ضعف لفقدان نقطة الارتباط الثالثة.",
+              "en": "Pure covalent anchor."
             },
             "isCorrect": true
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Üç Delikli Priz",
-        "ar": "تشبيه حدسي: قابس الكهرباء ثلاثي المآخذ"
+        "ar": "تشبيه حدسي: قابس الكهرباء ثلاثي المآخذ",
+        "en": "Intuitive Model: Left Hand, Right Glove"
       },
       "prompt": {
         "tr": "Topraklı 3 lü prizi ancak doğru yönde takabilirsiniz; ters çevirirseniz pimler yuvalarla eşleşmez.",
-        "ar": "لا يمكن إدخال القابس ثلاثي الشعب إلا بالاتجاه الصحيح؛ قلبه بزاوية معاكسة يجعل الشعب تصطدم بالفراغ."
+        "ar": "لا يمكن إدخال القابس ثلاثي الشعب إلا بالاتجاه الصحيح؛ قلبه بزاوية معاكسة يجعل الشعب تصطدم بالفراغ.",
+        "en": "A right hand fits comfortably into a right-handed leather glove. Forcing a left hand into the same glove misaligns every contact point."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Easson-Stedman Mekanizma Diyagramı",
-        "ar": "مخطط آلية Easson-Stedman"
+        "ar": "مخطط آلية Easson-Stedman",
+        "en": "Visual Mechanism: Easson-Stedman Model"
       },
       "prompt": {
         "tr": "Reseptör cebinde 3 bölge vardır: Anyonik bölge, aromatik cep ve hidrojen bağı donörü. (R) enantiyomeri her 3 bölgeye aynı anda oturur.",
-        "ar": "في جيب المستقبِل 3 مناطق: منطقة أنيونية، جيب عطري، ومانح هيدروجيني. يطابق النمط (R) المناطق الثلاث في آن واحد."
+        "ar": "في جيب المستقبِل 3 مناطق: منطقة أنيونية، جيب عطري، ومانح هيدروجيني. يطابق النمط (R) المناطق الثلاث في آن واحد.",
+        "en": "Three pharmacophore groups (aromatic ring, beta-hydroxyl, protonated amine) must simultaneously dock with complementary receptor pockets."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülatör: Receptor-Ligand Matcher",
-        "ar": "محاكي تفاعلي: مطابق الربيط والمستقبل"
+        "ar": "محاكي تفاعلي: مطابق الربيط والمستقبل",
+        "en": "Interactive Artifact: Chiral Receptor Docking"
       },
       "prompt": {
         "tr": "Epinefrinin (R) ve (S) izomerlerini reseptör cebine sürükleyin. 3 temas noktasının yeşil yandığını ve bağlanma serbest enerjisini gözlemleyin.",
-        "ar": "اسحب المصاوغين (R) و (S) إلى جيب المستقبِل ولاحظ إضاءة نقاط التماس الثلاث الخضراء وطاقة الارتباط الناتجة."
+        "ar": "اسحب المصاوغين (R) و (S) إلى جيب المستقبِل ولاحظ إضاءة نقاط التماس الثلاث الخضراء وطاقة الارتباط الناتجة.",
+        "en": "Rotate the chiral center. Observe how inverting configuration from (R) to (S) points the critical hydroxyl outward into empty space."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -295,11 +325,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Distomerin Boşluğa Bakışı",
-        "ar": "استكشاف موجه: توجه المصاوغ الخامل للفراغ"
+        "ar": "استكشاف موجه: توجه المصاوغ الخامل للفراغ",
+        "en": "Guided Discovery: Pfeiffer's Rule Dynamics"
       },
       "prompt": {
         "tr": "Simülatörde (S) izomerini yerleştirdiğinizde -OH grubunun nereye baktığını gözlemleyin. Hangi bağ koptu?",
-        "ar": "عند وضع المصاوغ (S) في المحاكي، إلى أين تتجه مجموعة -OH وما هي الرابطة التي انقطعت؟"
+        "ar": "عند وضع المصاوغ (S) في المحاكي، إلى أين تتجه مجموعة -OH وما هي الرابطة التي انقطعت؟",
+        "en": "Notice that as intrinsic affinity of the active eutomer increases, the enantiomeric potency ratio (eutomer/distomer) widens dramatically."
       },
       "predictThenReveal": true,
       "config": {
@@ -317,16 +349,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -335,7 +370,8 @@
             "id": "opt-mc22-3",
             "text": {
               "tr": "-OH grubu reseptör cebinden dışarı, boşluğa yönelir; kritik hidrojen bağı kurulamaz.",
-              "ar": "تتجه -OH خارج الجيب نحو الفراغ؛ فتفشل في تشكيل الرابطة الهيدروجينية الحاسمة."
+              "ar": "تتجه -OH خارج الجيب نحو الفراغ؛ فتفشل في تشكيل الرابطة الهيدروجينية الحاسمة.",
+              "en": "The phenolic hydroxyl group (Ar-OH)."
             },
             "isCorrect": true
           },
@@ -343,7 +379,8 @@
             "id": "opt-mc22-4",
             "text": {
               "tr": "İyonik bağ kopar.",
-              "ar": "تنقطع الرابطة الأيونية."
+              "ar": "تنقطع الرابطة الأيونية.",
+              "en": "The inert methyl group."
             },
             "isCorrect": false
           }
@@ -356,11 +393,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Easson-Stedman Modeli ve Termodinamik Kanıt",
-        "ar": "نموذج Easson-Stedman والبرهان الديناميكي"
+        "ar": "نموذج Easson-Stedman والبرهان الديناميكي",
+        "en": "Formal Formulation: Pfeiffer's Rule & Free Energy"
       },
       "prompt": {
         "tr": "Delta G(ötomer) - Delta G(distomer) = Delta G(üçüncü bağ) farkını verir. Bu enerji farkı genellikle 3-4 kcal/mol olup afiniteyi 300 kat değiştirir.",
-        "ar": "فارق الطاقة بين المصاوغ النشط (ötomer) والخامل يساوي طاقة الرابطة الثالثة (3-4 kcal/mol) مسبباً فجوة ألفة تفوق 300 ضعف."
+        "ar": "فارق الطاقة بين المصاوغ النشط (ötomer) والخامل يساوي طاقة الرابطة الثالثة (3-4 kcal/mol) مسبباً فجوة ألفة تفوق 300 ضعف.",
+        "en": "Pfeiffer's Rule states that stereospecificity is greater in high-potency drugs because binding pocket complementarity is more stringent."
       },
       "predictThenReveal": false,
       "config": {},
@@ -376,16 +415,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -395,11 +437,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Ödismik Oran",
-        "ar": "فحص المفهوم: النسبة الإيوديزمية"
+        "ar": "فحص المفهوم: النسبة الإيوديزمية",
+        "en": "Concept Check: Distomer Toxicity"
       },
       "prompt": {
         "tr": "Ötomerin afinitesinin distomerin afinitesine oranına ne ad verilir?",
-        "ar": "ماذا يسمى حاصل قسمة ألفة المصاوغ الفعال (ötomer) على ألفة المصاوغ الخامل (distomer)؟"
+        "ar": "ماذا يسمى حاصل قسمة ألفة المصاوغ الفعال (ötomer) على ألفة المصاوغ الخامل (distomer)؟",
+        "en": "In ketamine anesthesia, which enantiomer carries higher risk of emergence delirium and dysphoric psychotomimetic side effects?"
       },
       "predictThenReveal": true,
       "config": {
@@ -417,16 +461,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -435,7 +482,8 @@
             "id": "opt-mc22-5",
             "text": {
               "tr": "Ödismik Oran (Eudismic Ratio).",
-              "ar": "النسبة الإيوديزمية (Eudismic Ratio)."
+              "ar": "النسبة الإيوديزمية (Eudismic Ratio).",
+              "en": "A salt bridge (ionic interaction) with anionic Aspartate or Glutamate."
             },
             "isCorrect": true
           },
@@ -443,7 +491,8 @@
             "id": "opt-mc22-6",
             "text": {
               "tr": "Partisyon katsayısı.",
-              "ar": "معامل التوزع."
+              "ar": "معامل التوزع.",
+              "en": "A covalent disulfide bridge."
             },
             "isCorrect": false
           }
@@ -456,11 +505,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Karar: Rasemat mı Saf Enantiyomer mi?",
-        "ar": "قرار سريري: الخليط الراسيمي أم المصاوغ النقي؟"
+        "ar": "قرار سريري: الخليط الراسيمي أم المصاوغ النقي؟",
+        "en": "Application: Chiral Switch Strategy"
       },
       "prompt": {
         "tr": "Talidomid faciasında (R) izomeri sedatif iken (S) izomeri teratojendir. Ancak in vivo epimerizasyon nedeniyle saf (R) verilse bile ne olur?",
-        "ar": "في كارثة الثاليدوميد، المصاوغ (R) مهدئ و (S) مشوه للأجنة. لكن بسبب الانقلاب الحيوي in vivo، ماذا يحدث حتى لو أعطي (R) نقياً؟"
+        "ar": "في كارثة الثاليدوميد، المصاوغ (R) مهدئ و (S) مشوه للأجنة. لكن بسبب الانقلاب الحيوي in vivo، ماذا يحدث حتى لو أعطي (R) نقياً؟",
+        "en": "Why did developing esomeprazole (single S-enantiomer) from racemic omeprazole offer clinical advantages in metabolic predictability?"
       },
       "predictThenReveal": true,
       "config": {
@@ -478,16 +529,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -496,7 +550,8 @@
             "id": "opt-mc22-7",
             "text": {
               "tr": "Vücutta hızla rasemize olarak (S) izomerine dönüşür ve toksisite devam eder.",
-              "ar": "يتحول حيوياً في الجسم إلى راسيمي وينتج المصاوغ (S) المشوه مجدداً."
+              "ar": "يتحول حيوياً في الجسم إلى راسيمي وينتج المصاوغ (S) المشوه مجدداً.",
+              "en": "Introduce an electron-withdrawing fluoro group to block CYP hydroxylation."
             },
             "isCorrect": true
           },
@@ -504,7 +559,8 @@
             "id": "opt-mc22-8",
             "text": {
               "tr": "Asla değişmez.",
-              "ar": "لا يتغير أبداً في الدوران الدموي."
+              "ar": "لا يتغير أبداً في الدوران الدموي.",
+              "en": "Remove all nitrogen atoms."
             },
             "isCorrect": false
           }
@@ -517,11 +573,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Hidrojen Bağı Gücü",
-        "ar": "استرجاع معرفي: طاقة الرابطة الهيدروجينية"
+        "ar": "استرجاع معرفي: طاقة الرابطة الهيدروجينية",
+        "en": "Retrieval: Intermolecular Forces Review"
       },
       "prompt": {
         "tr": "Önceki derste öğrendiğimiz gibi tek bir hidrojen bağının kopması bağlanma afinitesini kabaca kaç kat düşürür?",
-        "ar": "كما تعلمنا في الدرس السابق، كم ضعفاً تنخفض ألفة الارتباط تقريباً عند فقدان رابطة هيدروجينية واحدة؟"
+        "ar": "كما تعلمنا في الدرس السابق، كم ضعفاً تنخفض ألفة الارتباط تقريباً عند فقدان رابطة هيدروجينية واحدة؟",
+        "en": "Which specific non-covalent bond is lost when (S)-epinephrine's beta-hydroxyl fails to contact the receptor's Ser residue?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -533,16 +591,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -552,11 +613,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Biyoizosterizm ve Akılcı Tasarım (Modül 3)",
-        "ar": "ربط مفاهيمي: التشابه الحيوي والتصميم الرشيد (الوحدة 3)"
+        "ar": "ربط مفاهيمي: التشابه الحيوي والتصميم الرشيد (الوحدة 3)",
+        "en": "Forward Connection: Bioisosteric Replacement (Module 3)"
       },
       "prompt": {
         "tr": "Reseptörle bu etkileşimleri kuran gruplar benzer elektronik gruplarla değiştirilebilir. Modül 3 te Grimm hidrit yer değiştirme kuralını öğreneceğiz.",
-        "ar": "يمكن استبدال المجموعات المرتبطة بمجموعات متشابهة إلكترونياً. في الوحدة 3، سنتعلم قاعدة إزاحة هيدريد Grimm."
+        "ar": "يمكن استبدال المجموعات المرتبطة بمجموعات متشابهة إلكترونياً. في الوحدة 3، سنتعلم قاعدة إزاحة هيدريد Grimm.",
+        "en": "In Module 3, we discover how medicinal chemists replace entire functional groups with isosteric mimics while maintaining chirality."
       },
       "predictThenReveal": false,
       "config": {},
@@ -568,16 +631,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -587,11 +653,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Easson-Stedman Kuralı",
-        "ar": "اختبار الإتقان: قاعدة Easson-Stedman"
+        "ar": "اختبار الإتقان: قاعدة Easson-Stedman",
+        "en": "Mastery Assessment: Stereochemical Bioactivity"
       },
       "prompt": {
         "tr": "Easson-Stedman modeline göre kiral bir ligandın reseptöre yüksek afiniteyle bağlanması için gereken asgari temas noktası sayısı kaçtır?",
-        "ar": "وفق نموذج Easson-Stedman، ما هو الحد الأدنى لعدد نقاط التماس الفراغية اللازمة للألفة العالية نحو (reseptör)؟"
+        "ar": "وفق نموذج Easson-Stedman، ما هو الحد الأدنى لعدد نقاط التماس الفراغية اللازمة للألفة العالية نحو (reseptör)؟",
+        "en": "What molecular circumstance allows two enantiomers of a drug to produce virtually identical biological responses?"
       },
       "predictThenReveal": true,
       "config": {
@@ -609,16 +677,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -627,7 +698,8 @@
             "id": "opt-mc22-9",
             "text": {
               "tr": "En az 3 spesifik nokta.",
-              "ar": "3 نقاط نوعية على الأقل."
+              "ar": "3 نقاط نوعية على الأقل.",
+              "en": "Ionic > Hydrogen Bonding > Dipole-Dipole > Van der Waals."
             },
             "isCorrect": true
           },
@@ -635,7 +707,8 @@
             "id": "opt-mc22-10",
             "text": {
               "tr": "1 nokta yeterlidir.",
-              "ar": "نقطة واحدة كافية."
+              "ar": "نقطة واحدة كافية.",
+              "en": "Van der Waals > Ionic."
             },
             "isCorrect": false
           }

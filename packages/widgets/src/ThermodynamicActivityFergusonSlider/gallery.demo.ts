@@ -9,7 +9,7 @@ export const thermodynamicActivityFergusonStandardDemo: ThermodynamicActivityFer
     defaultAgent: 'ether',
     locale: 'tr',
     source: {
-      file: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf',
+      file: 'Farmasötik Kimya 1-Giriş.pdf',
       page: 19,
     },
     explanation:

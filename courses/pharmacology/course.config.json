@@ -6,7 +6,10 @@
   "accentColor": "#6BCB77",
   "sourcePath": "materials/pharmacology",
   "defaultLocale": "tr",
-  "supportedLocales": ["tr", "ar"],
+  "supportedLocales": [
+    "tr",
+    "ar"
+  ],
   "freePreviewLessonCount": 2,
   "modules": [
     {
@@ -15,7 +18,8 @@
       "title": "Module 1: Drug-Receptor Interactions & Binding Forces",
       "titleLocalized": {
         "tr": "Modül 1: İlaç-Reseptör Etkileşimleri ve Bağlanma Kuvvetleri",
-        "ar": "الوحدة 1: تفاعلات الدواء والمستقبِل وقوى الارتباط"
+        "ar": "الوحدة 1: تفاعلات الدواء والمستقبِل وقوى الارتباط",
+        "en": "Modül 1: İlaç-Reseptör Etkileşimleri ve Bağlanma Kuvvetleri"
       },
       "sourceDecks": [
         "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf"
@@ -28,13 +32,17 @@
           "free": true,
           "title": {
             "tr": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi",
-            "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة"
+            "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة",
+            "en": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi"
           },
           "description": {
             "tr": "Kütle etkisi kanunu, Kd ayrışma sabiti ve reseptör doluluk fraksiyonu.",
-            "ar": "قانون فعل الكتلة، ثابت التفكك Kd ونسبة إشغال المستقبِلات."
+            "ar": "قانون فعل الكتلة، ثابت التفكك Kd ونسبة إشغال المستقبِلات.",
+            "en": "Kütle etkisi kanunu, Kd ayrışma sabiti ve reseptör doluluk fraksiyonu."
           },
-          "prerequisiteLessonIds": ["mc-mod1-les1"],
+          "prerequisiteLessonIds": [
+            "mc-mod1-les1"
+          ],
           "interactiveArtifact": "ReceptorLigandMatcher",
           "estimatedMinutes": 18
         },
@@ -45,13 +53,18 @@
           "free": true,
           "title": {
             "tr": "Tersinir Non-Kovalent Kuvvetler ve Bağlanma İlgisi",
-            "ar": "القوى غير التساهمية العكوسة وألفة الارتباط"
+            "ar": "القوى غير التساهمية العكوسة وألفة الارتباط",
+            "en": "Tersinir Non-Kovalent Kuvvetler ve Bağlanma İlgisi"
           },
           "description": {
             "tr": "Çok noktalı bağlanma termodinamiği ve afinite hesaplamaları.",
-            "ar": "ديناميكا الارتباط متعدد النقاط وحسابات الألفة الدوائية."
+            "ar": "ديناميكا الارتباط متعدد النقاط وحسابات الألفة الدوائية.",
+            "en": "Çok noktalı bağlanma termodinamiği ve afinite hesaplamaları."
           },
-          "prerequisiteLessonIds": ["pharm-mod1-les1", "mc-mod2-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod1-les1",
+            "mc-mod2-les1"
+          ],
           "interactiveArtifact": "ReceptorLigandMatcher",
           "estimatedMinutes": 20
         }
@@ -63,7 +76,8 @@
       "title": "Module 2: Pharmacodynamics & Quantitative Dose-Response",
       "titleLocalized": {
         "tr": "Modül 2: Farmakodinami ve Kantitatif Doz-Yanıt İlişkileri",
-        "ar": "الوحدة 2: الديناميكا الدوائية والعلاقة الكمية بين الجرعة والاستجابة"
+        "ar": "الوحدة 2: الديناميكا الدوائية والعلاقة الكمية بين الجرعة والاستجابة",
+        "en": "Modül 2: Farmakodinami ve Kantitatif Doz-Yanıt İlişkileri"
       },
       "sourceDecks": [
         "Farmakodinami-Doz Yanıt.pdf"
@@ -76,13 +90,18 @@
           "free": true,
           "title": {
             "tr": "Kademeli Doz-Yanıt Eğrileri ve İntrinsik Etkinlik",
-            "ar": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية"
+            "ar": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية",
+            "en": "Kademeli Doz-Yanıt Eğrileri ve İntrinsik Etkinlik"
           },
           "description": {
             "tr": "EC50, Emax, tam agonistler, parsiyel agonistler ve yedek reseptör kavramı.",
-            "ar": "EC50، Emax، المشبهات التامة والجزئية ومفهوم المستقبِلات الاحتياطية."
+            "ar": "EC50، Emax، المشبهات التامة والجزئية ومفهوم المستقبِلات الاحتياطية.",
+            "en": "EC50, Emax, tam agonistler, parsiyel agonistler ve yedek reseptör kavramı."
           },
-          "prerequisiteLessonIds": ["pharm-mod1-les1", "mc-mod2-les2"],
+          "prerequisiteLessonIds": [
+            "pharm-mod1-les1",
+            "mc-mod2-les2"
+          ],
           "interactiveArtifact": "DoseResponseCurve",
           "estimatedMinutes": 22
         },
@@ -93,13 +112,17 @@
           "free": true,
           "title": {
             "tr": "Reseptör Antagonizmi: Yarışmalı ve Yarışmasız Blokaj",
-            "ar": "مناهضة المستقبِلات: الحصار التنافسي وغير التنافسي"
+            "ar": "مناهضة المستقبِلات: الحصار التنافسي وغير التنافسي",
+            "en": "Reseptör Antagonizmi: Yarışmalı ve Yarışmasız Blokaj"
           },
           "description": {
             "tr": "Schild analizi, eğrinin sağa kayması ve aşılamaz maksimum depresyon.",
-            "ar": "تحليل Schild، إزاحة المنحنى لليمين والهبوط غير القابل للتجاوز."
+            "ar": "تحليل Schild، إزاحة المنحنى لليمين والهبوط غير القابل للتجاوز.",
+            "en": "Schild analizi, eğrinin sağa kayması ve aşılamaz maksimum depresyon."
           },
-          "prerequisiteLessonIds": ["pharm-mod2-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod2-les1"
+          ],
           "interactiveArtifact": "DoseResponseCurve",
           "estimatedMinutes": 20
         }
@@ -111,7 +134,8 @@
       "title": "Module 3: Pharmacokinetics: Absorption, Distribution, Metabolism & Elimination",
       "titleLocalized": {
         "tr": "Modül 3: Farmakokinetik: Emilim, Dağılım, Metabolizma ve Eliminasyon (ADME)",
-        "ar": "الوحدة 3: حركية الدواء: الامتصاص، التوزع، الاستقلاب والإطراح (ADME)"
+        "ar": "الوحدة 3: حركية الدواء: الامتصاص، التوزع، الاستقلاب والإطراح (ADME)",
+        "en": "Modül 3: Farmakokinetik: Emilim, Dağılım, Metabolizma ve Eliminasyon (ADME)"
       },
       "sourceDecks": [
         "İlaç metabolizması-2026.pdf"
@@ -124,13 +148,17 @@
           "free": true,
           "title": {
             "tr": "Tek Kompartmanlı Farmakokinetik: Klerens ve Yarılanma Ömrü",
-            "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف"
+            "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف",
+            "en": "Tek Kompartmanlı Farmakokinetik: Klerens ve Yarılanma Ömrü"
           },
           "description": {
             "tr": "Dağılım hacmi (Vd), toplam vücut klerensi ve eliminasyon yarılanma ömrü.",
-            "ar": "حجم التوزع (Vd)، التصفية الكلية للجسم وعمر النصف الإطراحي."
+            "ar": "حجم التوزع (Vd)، التصفية الكلية للجسم وعمر النصف الإطراحي.",
+            "en": "Dağılım hacmi (Vd), toplam vücut klerensi ve eliminasyon yarılanma ömrü."
           },
-          "prerequisiteLessonIds": ["mc-mod1-les1"],
+          "prerequisiteLessonIds": [
+            "mc-mod1-les1"
+          ],
           "interactiveArtifact": "PkSimulator",
           "estimatedMinutes": 25
         },
@@ -141,13 +169,18 @@
           "free": true,
           "title": {
             "tr": "Biyoyararlanım, İlk Geçiş Eliminasyonu ve EAA Analizi",
-            "ar": "التوافر الحيوي، تأثير المرور الأول وتحليل AUC"
+            "ar": "التوافر الحيوي، تأثير المرور الأول وتحليل AUC",
+            "en": "Biyoyararlanım, İlk Geçiş Eliminasyonu ve EAA Analizi"
           },
           "description": {
             "tr": "Oral biyoyararlanım fraksiyonu F, hepatik ekstraksiyon ve plazma konsantrasyon-zaman alanı.",
-            "ar": "كسر التوافر الحيوي الفموي F، الاستخلاص الكبدي والمساحة تحت المنحنى AUC."
+            "ar": "كسر التوافر الحيوي الفموي F، الاستخلاص الكبدي والمساحة تحت المنحنى AUC.",
+            "en": "Oral biyoyararlanım fraksiyonu F, hepatik ekstraksiyon ve plazma konsantrasyon-zaman alanı."
           },
-          "prerequisiteLessonIds": ["pharm-mod3-les1", "mc-mod5-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod3-les1",
+            "mc-mod5-les1"
+          ],
           "interactiveArtifact": "PkSimulator",
           "estimatedMinutes": 20
         }
@@ -159,7 +192,8 @@
       "title": "Module 4: Autonomic Nervous System & Neurotransmission",
       "titleLocalized": {
         "tr": "Modül 4: Otonom Sinir Sistemi ve Nörotransmisyon",
-        "ar": "الوحدة 4: الجهاز العصبي الذاتي والنقل العصبي"
+        "ar": "الوحدة 4: الجهاز العصبي الذاتي والنقل العصبي",
+        "en": "Modül 4: Otonom Sinir Sistemi ve Nörotransmisyon"
       },
       "sourceDecks": [
         "Otonom Sinir Sistemi.pdf"
@@ -172,13 +206,17 @@
           "free": true,
           "title": {
             "tr": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri",
-            "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية"
+            "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية",
+            "en": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri"
           },
           "description": {
             "tr": "Alfa ve beta adrenerjik reseptör sinyal iletimi ve katekolamin yanıtları.",
-            "ar": "تأشير المستقبِلات الأدرينالينية ألفا وبيتا واستجابات الكاتيكولامينات."
+            "ar": "تأشير المستقبِلات الأدرينالينية ألفا وبيتا واستجابات الكاتيكولامينات.",
+            "en": "Alfa ve beta adrenerjik reseptör sinyal iletimi ve katekolamin yanıtları."
           },
-          "prerequisiteLessonIds": ["pharm-mod1-les2"],
+          "prerequisiteLessonIds": [
+            "pharm-mod1-les2"
+          ],
           "interactiveArtifact": "ReceptorLigandMatcher",
           "estimatedMinutes": 22
         },
@@ -189,13 +227,17 @@
           "free": true,
           "title": {
             "tr": "Kolinerjik Transmisyon ve Muskarinik Reseptör Modülasyonu",
-            "ar": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية"
+            "ar": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية",
+            "en": "Kolinerjik Transmisyon ve Muskarinik Reseptör Modülasyonu"
           },
           "description": {
             "tr": "Asetilkolin sentezi, muskarinik ve nikotinik reseptör agonist ve antagonistleri.",
-            "ar": "اصطناع الأسيتيل كولين، ومناهضات ومشبهات المستقبِلات الموسكارينية والنيكوتينية."
+            "ar": "اصطناع الأسيتيل كولين، ومناهضات ومشبهات المستقبِلات الموسكارينية والنيكوتينية.",
+            "en": "Asetilkolin sentezi, muskarinik ve nikotinik reseptör agonist ve antagonistleri."
           },
-          "prerequisiteLessonIds": ["pharm-mod4-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod4-les1"
+          ],
           "interactiveArtifact": "ReceptorLigandMatcher",
           "estimatedMinutes": 20
         }
@@ -207,7 +249,8 @@
       "title": "Module 5: Cardiovascular & Renal Pharmacology",
       "titleLocalized": {
         "tr": "Modül 5: Kardiyovasküler ve Renal Farmakoloji",
-        "ar": "الوحدة 5: علم أدوية الجهاز القلبي الوعائي والكلى"
+        "ar": "الوحدة 5: علم أدوية الجهاز القلبي الوعائي والكلى",
+        "en": "Modül 5: Kardiyovasküler ve Renal Farmakoloji"
       },
       "sourceDecks": [
         "Kardiyovasküler Sistem.pdf"
@@ -220,13 +263,18 @@
           "free": true,
           "title": {
             "tr": "Renin-Anjiyotensin-Aldosteron Sistemi (RAAS) İnhibisyonu",
-            "ar": "تثبيط مسار الرينين-أنجيوتنسين-ألدوستيرون (RAAS)"
+            "ar": "تثبيط مسار الرينين-أنجيوتنسين-ألدوستيرون (RAAS)",
+            "en": "Renin-Anjiyotensin-Aldosteron Sistemi (RAAS) İnhibisyonu"
           },
           "description": {
             "tr": "ADE inhibitörleri, ARB blokerleri ve kardiyovasküler hemodinamik düzenleme.",
-            "ar": "مثبطات ACE، حاصرات ARB والتنظيم الديناميكي الدموي القلبي الوعائي."
+            "ar": "مثبطات ACE، حاصرات ARB والتنظيم الديناميكي الدموي القلبي الوعائي.",
+            "en": "ADE inhibitörleri, ARB blokerleri ve kardiyovasküler hemodinamik düzenleme."
           },
-          "prerequisiteLessonIds": ["pharm-mod2-les2", "mc-mod3-les2"],
+          "prerequisiteLessonIds": [
+            "pharm-mod2-les2",
+            "mc-mod3-les2"
+          ],
           "interactiveArtifact": "DoseResponseCurve",
           "estimatedMinutes": 25
         },
@@ -237,13 +285,17 @@
           "free": true,
           "title": {
             "tr": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması",
-            "ar": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية"
+            "ar": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية",
+            "en": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması"
           },
           "description": {
             "tr": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron segmentlerindeki etkileri.",
-            "ar": "تأثير مدرات البول العروية والثيازيدية والحافظة للبوتاسيوم في أجزاء الكليون."
+            "ar": "تأثير مدرات البول العروية والثيازيدية والحافظة للبوتاسيوم في أجزاء الكليون.",
+            "en": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron segmentlerindeki etkileri."
           },
-          "prerequisiteLessonIds": ["pharm-mod5-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod5-les1"
+          ],
           "interactiveArtifact": "IonizationEquilibriumSlider",
           "estimatedMinutes": 20
         }
@@ -255,7 +307,8 @@
       "title": "Module 6: Central Nervous System & Neuropharmacology",
       "titleLocalized": {
         "tr": "Modül 6: Merkezi Sinir Sistemi ve Nörofarmakoloji",
-        "ar": "الوحدة 6: الجهاز العصبي المركزي وعلم الأدوية العصبية"
+        "ar": "الوحدة 6: الجهاز العصبي المركزي وعلم الأدوية العصبية",
+        "en": "Modül 6: Merkezi Sinir Sistemi ve Nörofarmakoloji"
       },
       "sourceDecks": [
         "Santral Sinir Sistemi.pdf"
@@ -268,13 +321,18 @@
           "free": true,
           "title": {
             "tr": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler",
-            "ar": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية"
+            "ar": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية",
+            "en": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler"
           },
           "description": {
             "tr": "GABA-A klorür kanal kompleksi ve benzodiyazepin allosterik bağlanma mekanizması.",
-            "ar": "معقد قناة الكلوريد GABA-A وآلية الارتباط التفارغي للبنزوديازيبينات."
+            "ar": "معقد قناة الكلوريد GABA-A وآلية الارتباط التفارغي للبنزوديازيبينات.",
+            "en": "GABA-A klorür kanal kompleksi ve benzodiyazepin allosterik bağlanma mekanizması."
           },
-          "prerequisiteLessonIds": ["pharm-mod4-les1", "mc-mod1-les1"],
+          "prerequisiteLessonIds": [
+            "pharm-mod4-les1",
+            "mc-mod1-les1"
+          ],
           "interactiveArtifact": "DoseResponseCurve",
           "estimatedMinutes": 22
         },
@@ -285,13 +343,18 @@
           "free": true,
           "title": {
             "tr": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri",
-            "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان"
+            "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان",
+            "en": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri"
           },
           "description": {
             "tr": "Mezolimbik ve nigrostriatal D2 reseptör blokajı ve ekstrapiramidal semptomlar.",
-            "ar": "حصار مستقبِلات D2 في المسارين الحافي والأسود المخطط والأعراض خارج الهرمية."
+            "ar": "حصار مستقبِلات D2 في المسارين الحافي والأسود المخطط والأعراض خارج الهرمية.",
+            "en": "Mezolimbik ve nigrostriatal D2 reseptör blokajı ve ekstrapiramidal semptomlar."
           },
-          "prerequisiteLessonIds": ["pharm-mod6-les1", "pharm-mod2-les2"],
+          "prerequisiteLessonIds": [
+            "pharm-mod6-les1",
+            "pharm-mod2-les2"
+          ],
           "interactiveArtifact": "ReceptorLigandMatcher",
           "estimatedMinutes": 24
         }

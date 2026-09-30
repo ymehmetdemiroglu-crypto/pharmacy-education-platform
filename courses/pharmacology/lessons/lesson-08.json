@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-04",
   "title": {
     "tr": "Kolinerjik Transmisyon ve Muskarinik Reseptör Modülasyonu",
-    "ar": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية"
+    "ar": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية",
+    "en": "Cholinergic Transmission & Muscarinic Receptor Modulation"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Asetilkolin sentezi, kolinesteraz yıkımı, muskarinik (M1-M5) GPCR lar ve nikotinik iyon kanallarının farmakolojisini kavramak.",
-    "ar": "فهم اصطناع الأسيتيل كولين وإماهته بإنزيم الكولينستراز وفارماكولوجيا مستقبلات GPCR الموسكارينية والقنوات النيكوتينية."
+    "ar": "فهم اصطناع الأسيتيل كولين وإماهته بإنزيم الكولينستراز وفارماكولوجيا مستقبلات GPCR الموسكارينية والقنوات النيكوتينية.",
+    "en": "Master acetylcholine synthesis, cholinesterase degradation, muscarinic (M1-M5) GPCR signaling, and nicotinic ion channels."
   },
   "misconceptions": [
     {
       "tr": "Asetilkolinin yalnızca parasempatik sisteme özgü olduğu yanılgısı (tüm otonom ganglionlarda ve nöromusküler kavşakta nikotiniktir).",
-      "ar": "الاعتقاد الخاطئ بأن الأسيتيل كولين خاص بنظير الودي فقط (هو الناقل في العقد الذاتية كافة والوصل العضلي العصبي)."
+      "ar": "الاعتقاد الخاطئ بأن الأسيتيل كولين خاص بنظير الودي فقط (هو الناقل في العقد الذاتية كافة والوصل العضلي العصبي).",
+      "en": "Atropine stimulates muscarinic receptors to accelerate heart rate."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Cholinergic Neurotransmission, Muscarinic Receptors, and Anticholinergics",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Ölümcül Mantar ve Güzel Kadın Otu",
-        "ar": "الفطر القاتل ونبتة ست الحسن"
+        "ar": "الفطر القاتل ونبتة ست الحسن",
+        "en": "Deadly Mushroom and Beautiful Lady (Belladonna)"
       },
       "prompt": {
         "tr": "Amanita muscaria mantarını yiyen biri ter içinde boğulurken, Atropa belladonna (güzelavrat otu) yiyen birinin ağzı neden çöl gibi kurur?",
-        "ar": "بينما يغرق متناول فطر Amanita بالإفرازات والعرق، لماذا يجف فم متناول نبتة ست الحسن (Belladonna) كالصحراء؟"
+        "ar": "بينما يغرق متناول فطر Amanita بالإفرازات والعرق، لماذا يجف فم متناول نبتة ست الحسن (Belladonna) كالصحراء؟",
+        "en": "Ingestion of Amanita muscaria causes profuse salivation and bradycardia, while Belladonna (atropine) produces dry mouth and mydriasis. Why?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Atropin Kalp Hızını Ne Yapar?",
-        "ar": "توقع: ماذا يفعل Atropine بسرعة القلب؟"
+        "ar": "توقع: ماذا يفعل Atropine بسرعة القلب؟",
+        "en": "Prediction: What Does Atropine Do to Heart Rate?"
       },
       "prompt": {
         "tr": "Vagus sinirinin kalbi frenleyen M2 muskarinik reseptörleri atropin ile bloke edilirse kalp atım hızı ne olur?",
-        "ar": "عند حظر مستقبلات M2 التي تكبح نبض القلب بواسطة Atropine، ماذا يحدث لمعدل ضربات القلب؟"
+        "ar": "عند حظر مستقبلات M2 التي تكبح نبض القلب بواسطة Atropine، ماذا يحدث لمعدل ضربات القلب؟",
+        "en": "Atropine is a competitive antagonist at cardiac M2 muscarinic receptors. By blocking vagal acetylcholine, what happens to heart rate?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph42-1",
             "text": {
               "tr": "Fren boşalır ve kalp hızı aniden fırlar (taşikardi).",
-              "ar": "يفلت الكابح وتتسارع ضربات القلب فجأة (تسرع القلب)."
+              "ar": "يفلت الكابح وتتسارع ضربات القلب فجأة (تسرع القلب).",
+              "en": "Vagal parasympathetic brake is lifted, resulting in accelerated heart rate (tachycardia)."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph42-2",
             "text": {
               "tr": "Kalp tamamen durur.",
-              "ar": "يتوقف القلب عن النبض تماماً."
+              "ar": "يتوقف القلب عن النبض تماماً.",
+              "en": "Heart rate drops to zero immediately."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Dinlen ve Sindir (Rest & Digest)",
-        "ar": "تشبيه حدسي: الراحة والهضم (Rest & Digest)"
+        "ar": "تشبيه حدسي: الراحة والهضم (Rest & Digest)",
+        "en": "Intuitive Analogy: Rest and Digest (SLUDGE)"
       },
       "prompt": {
         "tr": "Parasempatik sistem yemekten sonraki huzurdur: Tükürük akar, bağırsaklar çalışır, göz bebekleri küçülür, kalp yavaşlar.",
-        "ar": "الجهاز نظير الودي هو حالة السكون بعد الطعام: يسيل اللعاب، تنشط الأمعاء، تتضيق الحدقة، ويهدأ نبض القلب."
+        "ar": "الجهاز نظير الودي هو حالة السكون بعد الطعام: يسيل اللعاب، تنشط الأمعاء، تتضيق الحدقة، ويهدأ نبض القلب.",
+        "en": "Parasympathetic muscarinic activation mediates: Salivation, Lacrimation, Urination, Defecation, Gastrointestinal upset, and Emesis."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Muskarinik Reseptör Haritası (M1 - M5)",
-        "ar": "خارطة المستقبلات الموسكارينية (M1 - M5)"
+        "ar": "خارطة المستقبلات الموسكارينية (M1 - M5)",
+        "en": "Muscarinic Receptor Subtypes Map (M1 to M5)"
       },
       "prompt": {
         "tr": "Tek sayılı reseptörler (M1, M3, M5) Gq kenetlidir (salgılar ve düz kas kasılması). Çift sayılı reseptörler (M2, M4) Gi kenetlidir (kalp inhibisyonu).",
-        "ar": "المستقبلات الفردية (M1, M3, M5) مقترنة بـ Gq (الإفرازات وتقلص العضلات). المستقبلات الزوجية (M2, M4) مقترنة بـ Gi (تثبيط القلب)."
+        "ar": "المستقبلات الفردية (M1, M3, M5) مقترنة بـ Gq (الإفرازات وتقلص العضلات). المستقبلات الزوجية (M2, M4) مقترنة بـ Gi (تثبيط القلب).",
+        "en": "Odd numbers (M1, M3, M5) couple to Gq (IP3/DAG). Even numbers (M2, M4) couple to Gi (inhibits adenylate cyclase, opens GIRK K+ channels)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Modül: Receptor-Ligand Matcher (Kolinerjik)",
-        "ar": "محاكي تفاعلي: مطابق المستقبلات الكولينية"
+        "ar": "محاكي تفاعلي: مطابق المستقبلات الكولينية",
+        "en": "Interactive Matcher: Cholinergic Receptors & Drugs"
       },
       "prompt": {
         "tr": "Asetilkolin, pilokarpin ve atropini muskarinik ve nikotinik reseptörlere bağlayarak Gq, Gi ve Na+ iyon akımlarını simüle edin.",
-        "ar": "اربط الأسيتيل كولين والبيلوكاربين والأتروبين بالمستقبلات الموسكارينية والنيكوتينية ولاحظ تدفقات شوارد Na+ وتأشير Gq/Gi."
+        "ar": "اربط الأسيتيل كولين والبيلوكاربين والأتروبين بالمستقبلات الموسكارينية والنيكوتينية ولاحظ تدفقات شوارد Na+ وتأشير Gq/Gi.",
+        "en": "Match pilocarpine, bethanechol, atropine, ipratropium, and physostigmine to their specific muscarinic and nicotinic targets."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -296,11 +326,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Organofosfat Zehirlenmesi",
-        "ar": "استكشاف موجه: التسمم بالمبيدات الفوسفورية"
+        "ar": "استكشاف موجه: التسمم بالمبيدات الفوسفورية",
+        "en": "Guided Discovery: Organophosphate Poisoning"
       },
       "prompt": {
         "tr": "Tarım ilacı organofosfat asetilkolinesteraz enzimini kovalent bağla kilitlerse vücutta ne birikir ve hangi kriz doğar?",
-        "ar": "عندما تعطل المبيدات الفوسفورية إنزيم AChE تساهمياً، ما الذي يتراكم في المشابك وما هي الأزمة الناتجة؟"
+        "ar": "عندما تعطل المبيدات الفوسفورية إنزيم AChE تساهمياً، ما الذي يتراكم في المشابك وما هي الأزمة الناتجة؟",
+        "en": "Observe how covalent acetylcholinesterase inhibition by sarin or parathion causes catastrophic acetylcholine flood at all cholinergic synapses."
       },
       "predictThenReveal": true,
       "config": {
@@ -318,16 +350,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -336,7 +371,8 @@
             "id": "opt-ph42-3",
             "text": {
               "tr": "Asetilkolin sel gibi birikir; aşırı tükürük, bronkospazm, bradikardi ve felçle kolinerjik kriz doğar.",
-              "ar": "يتراكم الأسيتيل كولين كالسيل مسبباً أزمة كولينية: إفرازات مفرطة، تشنج قصبي، بطء قلب وشلل عضلي."
+              "ar": "يتراكم الأسيتيل كولين كالسيل مسبباً أزمة كولينية: إفرازات مفرطة، تشنج قصبي، بطء قلب وشلل عضلي.",
+              "en": "Acetylcholine flood causes profuse salivation, bronchospasm, bradycardia, and muscle fasciculations."
             },
             "isCorrect": true
           },
@@ -344,7 +380,8 @@
             "id": "opt-ph42-4",
             "text": {
               "tr": "Asetilkolin tamamen tükenir.",
-              "ar": "ينضب الأسيتيل كولين كلياً."
+              "ar": "ينضب الأسيتيل كولين كلياً.",
+              "en": "Acetylcholine is completely destroyed."
             },
             "isCorrect": false
           }
@@ -357,11 +394,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Nikotinik vs Muskarinik Reseptör Mimarisi",
-        "ar": "بنية المستقبلات النيكوتينية مقابل الموسكارينية"
+        "ar": "بنية المستقبلات النيكوتينية مقابل الموسكارينية",
+        "en": "Formal Comparison: Nicotinic vs Muscarinic Architecture"
       },
       "prompt": {
         "tr": "Muskarinikler 7-transmembran GPCR dır. Nikotinikler ise 5 alt birimli pentamerik ligand kapılı iyon kanallarıdır (hızlı milisaniyelik Na+ akımı).",
-        "ar": "الموسكارينية مستقبلات GPCR سباعية الغشاء، بينما النيكوتينية قنوات أيونية خماسية الوحدات تبوب بالربيط وتمرر شوارد Na+ بلمح البصر."
+        "ar": "الموسكارينية مستقبلات GPCR سباعية الغشاء، بينما النيكوتينية قنوات أيونية خماسية الوحدات تبوب بالربيط وتمرر شوارد Na+ بلمح البصر.",
+        "en": "Nicotinic receptors are pentameric ligand-gated ion channels (fast, Na+ influx). Muscarinic receptors are 7-transmembrane GPCRs (slow, second messengers)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -373,16 +412,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -392,11 +434,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Antikolinerjik Yan Etkiler",
-        "ar": "فحص المفهوم: الآثار الجانبية المضادة للكولين"
+        "ar": "فحص المفهوم: الآثار الجانبية المضادة للكولين",
+        "en": "Concept Check: Anticholinergic Side Effect Profile"
       },
       "prompt": {
         "tr": "Atropin benzeri bir antikolinerjik ilaç alan hastada hangi klasik belirtiler görülür?",
-        "ar": "ما الأعراض الكلاسيكية التي تظهر على مريض يتناول دواءً مضاداً للكولين شبيهاً بـ Atropine؟"
+        "ar": "ما الأعراض الكلاسيكية التي تظهر على مريض يتناول دواءً مضاداً للكولين شبيهاً بـ Atropine؟",
+        "en": "Which symptom triad characterizes systemic muscarinic receptor blockade: 'Blind as a bat, dry as a bone, mad as a hatter'?"
       },
       "predictThenReveal": true,
       "config": {
@@ -414,16 +458,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -432,7 +479,8 @@
             "id": "opt-ph42-5",
             "text": {
               "tr": "Ağız kuruluğu, midriyazis (göz bebeği büyümesi), kabızlık ve idrar retansiyonu.",
-              "ar": "جفاف الفم، اتساع حدقة العين (midriyazis)، إمساك واحتباس بولي."
+              "ar": "جفاف الفم، اتساع حدقة العين (midriyazis)، إمساك واحتباس بولي.",
+              "en": "Dry mouth, mydriasis (dilated pupils), blurred vision, constipation, and urinary retention."
             },
             "isCorrect": true
           },
@@ -440,7 +488,8 @@
             "id": "opt-ph42-6",
             "text": {
               "tr": "Aşırı ishal ve terleme.",
-              "ar": "إسهال شديد وتعرق غزير."
+              "ar": "إسهال شديد وتعرق غزير.",
+              "en": "Excessive diarrhea and hyperhidrosis."
             },
             "isCorrect": false
           }
@@ -453,11 +502,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Uygulama: Göz Dibi Muayenesinde Midriyazis",
-        "ar": "تطبيق سريري: توسيع الحدقة لفحص قاع العين"
+        "ar": "تطبيق سريري: توسيع الحدقة لفحص قاع العين",
+        "en": "Clinical Application: Mydriasis for Fundus Examination"
       },
       "prompt": {
         "tr": "Göz doktorları göz dibini incelemek için neden tropikamid damlatır? Pupilla sfinkterindeki M3 reseptörlerini bloke ederek midriyazis yapar.",
-        "ar": "لماذا يقطر طبيب العيون دواء Tropicamide؟ لحظر مستقبلات M3 في عاصرة القزحية مما يوسع الحدقة للفحص."
+        "ar": "لماذا يقطر طبيب العيون دواء Tropicamide؟ لحظر مستقبلات M3 في عاصرة القزحية مما يوسع الحدقة للفحص.",
+        "en": "Why are short-acting antimuscarinics (tropicamide) preferred over atropine for routine ophthalmologic retinal examination?"
       },
       "predictThenReveal": true,
       "config": {
@@ -475,16 +526,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -493,7 +547,8 @@
             "id": "opt-ph42-7",
             "text": {
               "tr": "Silyer kası ve sfinkteri felç ederek göz bebeğini genişletir.",
-              "ar": "لأنه يشل العضلة الهدبية والعاصرة مما يوسع الحدقة بشكل مؤقت."
+              "ar": "لأنه يشل العضلة الهدبية والعاصرة مما يوسع الحدقة بشكل مؤقت.",
+              "en": "Paralyzes the pupillary sphincter muscle and ciliary body to produce mydriasis and cycloplegia."
             },
             "isCorrect": true
           },
@@ -501,7 +556,8 @@
             "id": "opt-ph42-8",
             "text": {
               "tr": "Göz içi tansiyonunu artırmak için.",
-              "ar": "لرفع ضغط العين الداخلي."
+              "ar": "لرفع ضغط العين الداخلي.",
+              "en": "Constricts pupils into pinpoint miosis."
             },
             "isCorrect": false
           }
@@ -514,11 +570,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Konformasyonel İzomerizm ve Asetilkolin",
-        "ar": "استرجاع معرفي: التماكب التشكلي والأسيتيل كولين"
+        "ar": "استرجاع معرفي: التماكب التشكلي والأسيتيل كولين",
+        "en": "Retrieval: Conformational Isomerism of Acetylcholine"
       },
       "prompt": {
         "tr": "Medchem Modül 4 te gördüğümüz gibi asetilkolin muskarinik reseptöre anti, nikotinik reseptöre syn konformasyonda bağlanıyordu. Bu ne tür izomerizmdi?",
-        "ar": "كما رأينا في مساق الكيمياء، يرتبط الأسيتيل كولين بالموسكاريني بشكل anti وبالنيكوتيني بـ syn. ما نوع هذا التماكب؟"
+        "ar": "كما رأينا في مساق الكيمياء، يرتبط الأسيتيل كولين بالموسكاريني بشكل anti وبالنيكوتيني بـ syn. ما نوع هذا التماكب؟",
+        "en": "Recall Course A Lesson 7: What conformational geometry enables acetylcholine to bind nicotinic vs muscarinic receptor states?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -530,16 +588,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -549,11 +610,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Kardiyovasküler ve Renal Farmakoloji (Modül 5)",
-        "ar": "ربط مفاهيمي: أدوية القلب والكلى (الوحدة 5)"
+        "ar": "ربط مفاهيمي: أدوية القلب والكلى (الوحدة 5)",
+        "en": "Connection: Cardiovascular & Renal Pharmacology (Module 5)"
       },
       "prompt": {
         "tr": "Otonom sistemi tamamladık! Modül 5 te vücudun sıvı ve kan basıncı kontrol mekanizması olan RAAS sistemini ve antihipertansifleri inceleyeceğiz.",
-        "ar": "أتممنا الجهاز الذاتي! في الوحدة 5، سنستكشف نظام RAAS المتحكم بالسوائل وضغط الدم ومضادات ارتفاع الضغط."
+        "ar": "أتممنا الجهاز الذاتي! في الوحدة 5، سنستكشف نظام RAAS المتحكم بالسوائل وضغط الدم ومضادات ارتفاع الضغط.",
+        "en": "Autonomic nerves modulate blood pressure, but how does the renin-angiotensin-aldosterone hormonal axis govern chronic vascular tone?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -565,16 +628,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -584,11 +650,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Muskarinik Reseptörler",
-        "ar": "اختبار الإتقان: المستقبلات الموسكارينية"
+        "ar": "اختبار الإتقان: المستقبلات الموسكارينية",
+        "en": "Mastery Assessment: Muscarinic Signaling"
       },
       "prompt": {
         "tr": "Tükürük salgısını, bronş kasılmasını ve bağırsak peristaltizmini artıran primer Gq-kenetli muskarinik reseptör hangisidir?",
-        "ar": "ما هو المستقبِل الموسكاريني الأساسي المقترن بـ Gq المسؤول عن زيادة إفراز اللعاب وتقلص القصبات وحركة الأمعاء؟"
+        "ar": "ما هو المستقبِل الموسكاريني الأساسي المقترن بـ Gq المسؤول عن زيادة إفراز اللعاب وتقلص القصبات وحركة الأمعاء؟",
+        "en": "Which muscarinic receptor subtype couples to Gi proteins on cardiac sinoatrial node tissue to slow heart rate?"
       },
       "predictThenReveal": true,
       "config": {
@@ -606,16 +674,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -624,7 +695,8 @@
             "id": "opt-ph42-9",
             "text": {
               "tr": "M3 muskarinik reseptör.",
-              "ar": "مستقبِل M3 الموسكاريني."
+              "ar": "مستقبِل M3 الموسكاريني.",
+              "en": "Cardiac M2 muscarinic receptors (couple to Gi to open GIRK K+ channels)."
             },
             "isCorrect": true
           },
@@ -632,7 +704,8 @@
             "id": "opt-ph42-10",
             "text": {
               "tr": "M2 reseptör.",
-              "ar": "مستقبِل M2."
+              "ar": "مستقبِل M2.",
+              "en": "Smooth muscle M3 receptors."
             },
             "isCorrect": false
           }

@@ -44,9 +44,21 @@ export function makeStep(id, stage, stageIndex, title, prompt, predictThenReveal
           { term: 'reseptör', arContext: 'المستقبِل الحيوي' }
         ],
     hints: extra.hints || [
-      { tr: 'Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.', ar: 'تلميح المستوى الأول: انظر في المفهوم الجوهري.' },
-      { tr: 'İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.', ar: 'تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي.' },
-      { tr: 'Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.', ar: 'تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة.' }
+      {
+        tr: 'Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.',
+        ar: 'تلميح المستوى الأول: انظر في المفهوم الجوهري.',
+        en: 'Tier 1 Hint: Consider the foundational concept.'
+      },
+      {
+        tr: 'İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.',
+        ar: 'تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي.',
+        en: 'Tier 2 Hint: Recall the molecular interaction mechanism.'
+      },
+      {
+        tr: 'Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.',
+        ar: 'تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة.',
+        en: 'Tier 3 Hint: Directly apply the relevant pharmacological rule.'
+      }
     ]
   };
 

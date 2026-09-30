@@ -9,10 +9,13 @@ export type DoseResponseCurveProps = BaseWidgetProps<DoseResponseCurveConfig, { 
 
 export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
   config,
+  locale = 'tr',
   onAttempt,
   disabled = false,
   className,
 }) => {
+  const isAr = locale === 'ar';
+  const isEn = locale === 'en';
   const [activeMode, setActiveMode] = useState<string>(config.modes[0] || 'agonist');
   const [logEc50, setLogEc50] = useState<number>(-7); // 10^-7 M = 100 nM
   const [emax, setEmax] = useState<number>(config.defaultEmax || 100);
@@ -224,6 +227,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
 
       {/* Model Illustration Notice (Rule 6) */}
       <ModelIllustrationNotice
+        locale={locale}
         equation="E = (E_max * [D]^n) / (EC_50^n + [D]^n)"
         sourceReference="Katzung Basic & Clinical Pharmacology, Chapter 2 (Drug Receptors & Pharmacodynamics)"
         assumptions={[

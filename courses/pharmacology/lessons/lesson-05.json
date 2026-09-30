@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-03",
   "title": {
     "tr": "Tek Kompartmanlı Farmakokinetik: Klerens ve Yarılanma Ömrü",
-    "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف"
+    "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف",
+    "en": "One-Compartment Pharmacokinetics: Clearance & Half-Life"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Tek kompartmanlı modelde dağılım hacmi (Vd), klerens (CL) ve eliminasyon yarılanma ömrü (t1/2) arasındaki matematiksel ilişkiyi yönetmek.",
-    "ar": "إتقان العلاقة الرياضية بين حجم التوزع (Vd) والتصفية (CL) وعمر النصف الإطراحي (t1/2) في نموذج الحجيرة الواحدة."
+    "ar": "إتقان العلاقة الرياضية بين حجم التوزع (Vd) والتصفية (CL) وعمر النصف الإطراحي (t1/2) في نموذج الحجيرة الواحدة.",
+    "en": "Calculate clearance (Cl), volume of distribution (Vd), elimination rate constant (ke), and elimination half-life (t1/2)."
   },
   "misconceptions": [
     {
       "tr": "İnfüzyon hızını artırmanın kararlı duruma (steady-state) ulaşma süresini kısalttığı yanılgısı (kararlı duruma ulaşma süresi yalnızca t1/2 ye bağlıdır).",
-      "ar": "الظن الخاطئ بأن تسريع معدل التسريب يقلل الزمن اللازم لبلوغ الحالة المستقرة (الزمن محكوم حصراً بـ t1/2)."
+      "ar": "الظن الخاطئ بأن تسريع معدل التسريب يقلل الزمن اللازم لبلوغ الحالة المستقرة (الزمن محكوم حصراً بـ t1/2).",
+      "en": "Doubling a drug dose doubles its elimination half-life."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Pharmacokinetics: Volume of Distribution, Clearance, and Half-Life",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Vücuttan Büyük Bir Hacim Mümkün mü?",
-        "ar": "هل يمكن لحجم الدواء أن يتجاوز حجم الجسم؟"
+        "ar": "هل يمكن لحجم الدواء أن يتجاوز حجم الجسم؟",
+        "en": "Why Renal Failure Turns Safe Doses Toxic"
       },
       "prompt": {
         "tr": "70 kg lık bir insanın vücut suyu 42 litredir. Peki klorokinin dağılım hacmi (Vd) nasıl 15.000 litre çıkabilir?",
-        "ar": "يبلغ ماء جسم الإنسان بوزن 70 كغ حوالي 42 لتراً. كيف يمكن لحجم توزع Chloroquine أن يبلغ 15,000 لتر؟"
+        "ar": "يبلغ ماء جسم الإنسان بوزن 70 كغ حوالي 42 لتراً. كيف يمكن لحجم توزع Chloroquine أن يبلغ 15,000 لتر؟",
+        "en": "A standard antibiotic dose causes severe ototoxicity in a hemodialysis patient. Which fundamental pharmacokinetic parameter failed?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Yarılanma Ömrünü Kim Belirler?",
-        "ar": "توقع: ما الذي يحدد عمر النصف؟"
+        "ar": "توقع: ما الذي يحدد عمر النصف؟",
+        "en": "Prediction: Dose and Half-Life in First-Order Kinetics"
       },
       "prompt": {
         "tr": "Bir ilacın klerensi (CL) yarıya düşer, dağılım hacmi (Vd) ise iki katına çıkarsa eliminasyon yarılanma ömrü (t1/2) ne olur?",
-        "ar": "إذا انخفضت تصفية دواء (CL) إلى النصف وتضاعف حجم توقعه (Vd)، فماذا يحدث لعمر النصف الإطراحي (t1/2)؟"
+        "ar": "إذا انخفضت تصفية دواء (CL) إلى النصف وتضاعف حجم توقعه (Vd)، فماذا يحدث لعمر النصف الإطراحي (t1/2)؟",
+        "en": "Under standard first-order elimination kinetics, if you double the administered dose from 100 mg to 200 mg, what happens to t1/2?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph31-1",
             "text": {
               "tr": "Tam 4 kat uzar (t1/2 = 0.693 x Vd / CL).",
-              "ar": "يتضاعف 4 مرات تماماً (t1/2 = 0.693 x Vd / CL)."
+              "ar": "يتضاعف 4 مرات تماماً (t1/2 = 0.693 x Vd / CL).",
+              "en": "Half-life remains unchanged under first-order kinetics."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph31-2",
             "text": {
               "tr": "Değişmez.",
-              "ar": "يبقى ثابتاً دون تغيير."
+              "ar": "يبقى ثابتاً دون تغيير.",
+              "en": "Half-life doubles automatically."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Delikli Havuz ve Sünger",
-        "ar": "تشبيه حدسي: الحوض المثقوب والإسفنج"
+        "ar": "تشبيه حدسي: الحوض المثقوب والإسفنج",
+        "en": "Intuitive Analogy: The Water Tank with a Drain"
       },
       "prompt": {
         "tr": "Vd suyu çeken süngerlerin büyüklüğüdür; CL havuzun tahliye deliğidir. Sünger büyük ve delik küçükse suyun boşalması saatler sürer.",
-        "ar": "حجم Vd هو إسفنج يمتص الماء من الحوض؛ والتصفية CL ثقب التصريف. إذا كبر الإسفنج وضاق الثقب يستغرق التفريغ ساعات طويلة."
+        "ar": "حجم Vd هو إسفنج يمتص الماء من الحوض؛ والتصفية CL ثقب التصريف. إذا كبر الإسفنج وضاق الثقب يستغرق التفريغ ساعات طويلة.",
+        "en": "Clearance is the diameter of the drainage pipe (L/h). Volume of distribution is tank size (L). Together they dictate the water drain rate."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Plazma Konsantrasyon-Zaman Eğrisi",
-        "ar": "منحنى تركيز البلازما مقابل الزمن"
+        "ar": "منحنى تركيز البلازما مقابل الزمن",
+        "en": "Concentration-Time Decay Profile"
       },
       "prompt": {
         "tr": "IV bolus sonrası konsantrasyon üstel olarak düşer: C(t) = C0 * e^(-ke * t). Yarı-logaritmik grafikte eğim -ke yi verir.",
-        "ar": "بعد الحقن الوريدي يهبط التركيز أسياً: C(t) = C0 * e^(-ke * t). يعطي ميل المنحنى شبه اللوغاريتمي معدل الإطراح -ke."
+        "ar": "بعد الحقن الوريدي يهبط التركيز أسياً: C(t) = C0 * e^(-ke * t). يعطي ميل المنحنى شبه اللوغاريتمي معدل الإطراح -ke.",
+        "en": "Semilogarithmic plotting of plasma concentration vs time yields a straight line with slope -ke / 2.303 and y-intercept C0 = Dose / Vd."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülatör: One-Compartment PK Simulator",
-        "ar": "محاكي تفاعلي: حركية نموذج الحجيرة الواحدة"
+        "ar": "محاكي تفاعلي: حركية نموذج الحجيرة الواحدة",
+        "en": "Interactive Simulator: PkSimulator (One-Compartment)"
       },
       "prompt": {
         "tr": "Doz, Vd ve klerens değerlerini değiştirin. Tekrarlayan dozlarda ilacın plazmada 4-5 yarı ömürde kararlı duruma (Css) ulaşmasını simüle edin.",
-        "ar": "عدل قيم الجرعة و Vd والتصفية. راقب وصول الدواء للحالة المستقرة (Css) خلال 4-5 أعمار نصف بالجرعات المتكررة."
+        "ar": "عدل قيم الجرعة و Vd والتصفية. راقب وصول الدواء للحالة المستقرة (Css) خلال 4-5 أعمار نصف بالجرعات المتكررة.",
+        "en": "Vary clearance (Cl) and volume of distribution (Vd) to observe real-time plasma decay slopes and steady-state accumulation."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "PkSimulator",
@@ -294,11 +324,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: İnfüzyon Hızı ve Css",
-        "ar": "استكشاف موجه: سرعة التسريب وحالة Css"
+        "ar": "استكشاف موجه: سرعة التسريب وحالة Css",
+        "en": "Guided Discovery: The t1/2 = 0.693 * Vd / Cl Relationship"
       },
       "prompt": {
         "tr": "Simülatörde IV infüzyon hızını 2 katına çıkarın. Kararlı durum konsantrasyonu ve kararlı duruma ulaşma süresi nasıl değişti?",
-        "ar": "ضاعف معدل التسريب الوريدي. كيف تغير تركيز الحالة المستقرة (Css) والزمن اللازم لبلوغها؟"
+        "ar": "ضاعف معدل التسريب الوريدي. كيف تغير تركيز الحالة المستقرة (Css) والزمن اللازم لبلوغها؟",
+        "en": "Notice how expanding Vd extends half-life without changing organ elimination capacity (Cl), delaying drug washout."
       },
       "predictThenReveal": true,
       "config": {
@@ -316,16 +348,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -334,7 +369,8 @@
             "id": "opt-ph31-3",
             "text": {
               "tr": "Css iki katına çıktı, ancak kararlı duruma ulaşma süresi kesinlikle değişmedi (yine 4-5 t1/2).",
-              "ar": "تضاعف تركيز Css للضعف، لكن زمن الوصول للحالة المستقرة لم يتغير إطلاقاً (4-5 t1/2)."
+              "ar": "تضاعف تركيز Css للضعف، لكن زمن الوصول للحالة المستقرة لم يتغير إطلاقاً (4-5 t1/2).",
+              "en": "Steady-state concentration (Css) doubled, but time to reach steady state remained unchanged."
             },
             "isCorrect": true
           },
@@ -342,7 +378,8 @@
             "id": "opt-ph31-4",
             "text": {
               "tr": "Kararlı duruma 2 kat daha hızlı ulaşıldı.",
-              "ar": "وصل للحالة المستقرة بأسرع بمرتين."
+              "ar": "وصل للحالة المستقرة بأسرع بمرتين.",
+              "en": "Steady state was reached twice as fast."
             },
             "isCorrect": false
           }
@@ -355,11 +392,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Temel Farmakokinetik Formüller",
-        "ar": "القوانين الحركية الأساسية"
+        "ar": "القوانين الحركية الأساسية",
+        "en": "Formal Equations: First-Order Elimination"
       },
       "prompt": {
         "tr": "CL = ke * Vd. t1/2 = 0.693 / ke = 0.693 * Vd / CL. Kararlı durum Css = İnfüzyon Hızı / CL.",
-        "ar": "التصفية CL = ke * Vd. عمر النصف t1/2 = 0.693 * Vd / CL. تركيز الحالة المستقرة Css = معدل التسريب / CL."
+        "ar": "التصفية CL = ke * Vd. عمر النصف t1/2 = 0.693 * Vd / CL. تركيز الحالة المستقرة Css = معدل التسريب / CL.",
+        "en": "Ct = C0 * e^(-ke * t). Clearance: Cl = ke * Vd = Rate of elimination / C. Half-life: t1/2 = ln(2) / ke = 0.693 * Vd / Cl."
       },
       "predictThenReveal": false,
       "config": {},
@@ -371,16 +410,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -390,11 +432,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Yarılanma Sayısı Kuralı",
-        "ar": "فحص المفهوم: قاعدة تضاعف أعمار النصف"
+        "ar": "فحص المفهوم: قاعدة تضاعف أعمار النصف",
+        "en": "Concept Check: The 5 Half-Lives Washout Rule"
       },
       "prompt": {
         "tr": "Tek bir IV doz verilen ilacın vücuttan %93.75 oranında temizlenmesi için kaç yarılanma ömrü geçmelidir?",
-        "ar": "للتخلص من 93.75% من جرعة دواء وريدية وحيدة، كم عمر نصف يجب أن ينقضي؟"
+        "ar": "للتخلص من 93.75% من جرعة دواء وريدية وحيدة، كم عمر نصف يجب أن ينقضي؟",
+        "en": "What percentage of a drug is eliminated from the body after 5 elimination half-lives (t = 5 * t1/2)?"
       },
       "predictThenReveal": true,
       "config": {
@@ -412,16 +456,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -430,7 +477,8 @@
             "id": "opt-ph31-5",
             "text": {
               "tr": "Tam 4 yarılanma ömrü (kalan: %50 -> %25 -> %12.5 -> %6.25).",
-              "ar": "4 أعمار نصف تماماً (المتبقي: 50% -> 25% -> 12.5% -> 6.25%)."
+              "ar": "4 أعمار نصف تماماً (المتبقي: 50% -> 25% -> 12.5% -> 6.25%).",
+              "en": "Approximately 97% of the drug has been eliminated (leaving < 3.125%)."
             },
             "isCorrect": true
           },
@@ -438,7 +486,8 @@
             "id": "opt-ph31-6",
             "text": {
               "tr": "1 yarılanma ömrü.",
-              "ar": "عمر نصف واحد."
+              "ar": "عمر نصف واحد.",
+              "en": "Only 50% has been eliminated."
             },
             "isCorrect": false
           }
@@ -451,11 +500,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Karar: Yükleme Dozu İhtiyacı",
-        "ar": "قرار سريري: الحاجة إلى جرعة التحميل"
+        "ar": "قرار سريري: الحاجة إلى جرعة التحميل",
+        "en": "Clinical Decision: Loading Dose Requirement"
       },
       "prompt": {
         "tr": "Yarılanma ömrü 5 gün olan amiodaron ile acil aritmi tedavisinde neden yükleme dozu (loading dose) verilir?",
-        "ar": "في علاج اضطرابات النظم الحادة بدواء Amiodarone ذي t1/2 = 5 أيام، لماذا تعطى جرعة تحميل (loading dose)؟"
+        "ar": "في علاج اضطرابات النظم الحادة بدواء Amiodarone ذي t1/2 = 5 أيام، لماذا تعطى جرعة تحميل (loading dose)؟",
+        "en": "A patient with septic shock requires immediate therapeutic plasma concentration (10 mg/L). Vd = 50 L. Calculate required IV loading dose."
       },
       "predictThenReveal": true,
       "config": {
@@ -473,16 +524,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -491,7 +545,8 @@
             "id": "opt-ph31-7",
             "text": {
               "tr": "Normal idame dozuyla kararlı duruma ulaşmak 25 gün süreceğinden, terapötik seviyeye hemen ulaşmak için.",
-              "ar": "لأن بلوغ الحالة المستقرة يستغرق 25 يوماً بالجرعة العادية، فللوصول الفوري للتركيز العلاجي."
+              "ar": "لأن بلوغ الحالة المستقرة يستغرق 25 يوماً بالجرعة العادية، فللوصول الفوري للتركيز العلاجي.",
+              "en": "Loading dose = Target Concentration * Vd = 10 mg/L * 50 L = 500 mg."
             },
             "isCorrect": true
           },
@@ -499,7 +554,8 @@
             "id": "opt-ph31-8",
             "text": {
               "tr": "Böbrekleri temizlemek için.",
-              "ar": "لتنشيط وظائف الكلى."
+              "ar": "لتنشيط وظائف الكلى.",
+              "en": "Administer a standard maintenance dose of 50 mg."
             },
             "isCorrect": false
           }
@@ -512,11 +568,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Faz I ve II Metabolizma",
-        "ar": "استرجاع معرفي: استقلاب المرحلتين الأولى والثانية"
+        "ar": "استرجاع معرفي: استقلاب المرحلتين الأولى والثانية",
+        "en": "Retrieval: Phase I and II Metabolism"
       },
       "prompt": {
         "tr": "Medchem dersinde öğrendiğimiz gibi karaciğerde klerensi sağlayan temel Faz I ve Faz II enzim sistemleri nelerdi?",
-        "ar": "كما تعلمنا في مساق الكيمياء، ما هي المنظومات الإنزيمية الأساسية المسؤولة عن التصفية الكبدية بالمرحلتين 1 و 2؟"
+        "ar": "كما تعلمنا في مساق الكيمياء، ما هي المنظومات الإنزيمية الأساسية المسؤولة عن التصفية الكبدية بالمرحلتين 1 و 2؟",
+        "en": "Recall Course A Module 5: How does hepatic CYP oxidation contribute to total systemic body clearance (Cl)?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -528,16 +586,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -547,11 +608,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Biyoyararlanım ve İlk Geçiş Etkisi (Ders 6)",
-        "ar": "ربط مفاهيمي: التوافر الحيوي وتأثير المرور الأول (الدرس 6)"
+        "ar": "ربط مفاهيمي: التوافر الحيوي وتأثير المرور الأول (الدرس 6)",
+        "en": "Connection: Bioavailability & First-Pass Effect (Lesson 6)"
       },
       "prompt": {
         "tr": "İlacı damardan değil ağızdan verdiğimizde kana ne kadarı ulaşır? Bir sonraki derste biyoyararlanım (F) ve EAA analizini öğreneceğiz.",
-        "ar": "عند إعطاء الدواء فموياً بدلاً من الوريد، كم يصل منه للدم؟ في الدرس القادم، سنتعلم التوافر الحيوي (F) وتحليل AUC."
+        "ar": "عند إعطاء الدواء فموياً بدلاً من الوريد، كم يصل منه للدم؟ في الدرس القادم، سنتعلم التوافر الحيوي (F) وتحليل AUC.",
+        "en": "IV administration delivers 100% of dose to systemic circulation, but what happens when a drug is taken orally?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -563,16 +626,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -582,11 +648,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Farmakokinetik Parametreler",
-        "ar": "اختبار الإتقan: المعاملات الحركية"
+        "ar": "اختبار الإتقan: المعاملات الحركية",
+        "en": "Mastery Assessment: Pharmacokinetic Parameters"
       },
       "prompt": {
         "tr": "Bir ilacın dağılım hacmi 70 Litre ve klerensi 7 L/saat ise eliminasyon yarılanma ömrü yaklaşık kaç saattir?",
-        "ar": "إذا كان حجم توزع دواء 70 لتراً وتصفيته 7 لتر/ساعة، فكم يبلغ عمر نصفه الإطراحي تقريباً؟"
+        "ar": "إذا كان حجم توزع دواء 70 لتراً وتصفيته 7 لتر/ساعة، فكم يبلغ عمر نصفه الإطراحي تقريباً؟",
+        "en": "If systemic clearance drops by 50% while Vd remains unchanged, what is the exact effect on elimination half-life?"
       },
       "predictThenReveal": true,
       "config": {
@@ -604,16 +672,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -622,7 +693,8 @@
             "id": "opt-ph31-9",
             "text": {
               "tr": "Yaklaşık 7 saat (0.693 x 70 / 7 ≈ 6.93 saat).",
-              "ar": "حوالي 7 ساعات (0.693 x 70 / 7 ≈ 6.93 ساعات)."
+              "ar": "حوالي 7 ساعات (0.693 x 70 / 7 ≈ 6.93 ساعات).",
+              "en": "t1/2 doubles from 4 hours to 8 hours."
             },
             "isCorrect": true
           },
@@ -630,7 +702,8 @@
             "id": "opt-ph31-10",
             "text": {
               "tr": "70 saat.",
-              "ar": "70 ساعة."
+              "ar": "70 ساعة.",
+              "en": "Half-life drops to 2 hours."
             },
             "isCorrect": false
           }

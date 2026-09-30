@@ -123,6 +123,8 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
   return (
     <aside
       aria-label={copy.ariaLabel}
+      role="region"
+      data-testid="trial-banner"
       className={clsx(
         'w-full py-2.5 px-4 sm:px-6 border-b-3 border-black dark:border-slate-700 select-none',
         'flex flex-col sm:flex-row items-center justify-between gap-3',

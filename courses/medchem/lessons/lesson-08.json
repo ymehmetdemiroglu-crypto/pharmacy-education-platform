@@ -4,18 +4,21 @@
   "moduleId": "mc-mod-04",
   "title": {
     "tr": "Konformasyonel İzomerizm: Rijit ve Esnek İskeletler",
-    "ar": "التماكب التشكلي: الهياكل الجاسئة والمرنة"
+    "ar": "التماكب التشكلي: الهياكل الجاسئة والمرنة",
+    "en": "Conformational Isomerism: Rigid & Flexible Scaffolds"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "İlaç iskeletini rijit hale getirerek biyoaktif konformasyonu dondurmayı ve bağlanma entropi cezasını düşürmeyi öğrenmek.",
-    "ar": "تعلم استراتيجيات تجسئة الهيكل الدوائي لتثبيت التشكيل الحيوي الفعال وخفض ضريبة الإنتروبيا عند الارتباط."
+    "ar": "تعلم استراتيجيات تجسئة الهيكل الدوائي لتثبيت التشكيل الحيوي الفعال وخفض ضريبة الإنتروبيا عند الارتباط.",
+    "en": "Design conformationally constrained drug scaffolds to eliminate entropic penalties and achieve target-selective binding."
   },
   "misconceptions": [
     {
       "tr": "Molekülün çözeltideki en kararlı (en düşük enerjili) konformasyonunun her zaman reseptöre bağlanan konformasyon olduğu yanılgısı.",
-      "ar": "الظن الخاطئ بأن التشكيل الأكثر استقراراً في المحلول هو دائماً التشكيل الذي يرتبط بالمستقبِل."
+      "ar": "الظن الخاطئ بأن التشكيل الأكثر استقراراً في المحلول هو دائماً التشكيل الذي يرتبط بالمستقبِل.",
+      "en": "A flexible drug is always superior because it can adapt to multiple receptor shapes."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Conformational Isomerism & Rigidification Strategies",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Asetilkolinin İki Yüzü",
-        "ar": "وجها الأسيتيل كولين"
+        "ar": "وجها الأسيتيل كولين",
+        "en": "Acetylcholine's Double Life: Muscarinic or Nicotinic?"
       },
       "prompt": {
         "tr": "Asetilkolin tek bir moleküldür fakat hem kalp muskarinik reseptörünü hem nöromusküler nikotinik reseptörü nasıl uyarır?",
-        "ar": "الأسيتيل كولين جزيء واحد، لكن كيف ينشط كلاً من مستقبلات القلب الموسكارينية ومستقبلات العضلات النيكوتينية؟"
+        "ar": "الأسيتيل كولين جزيء واحد، لكن كيف ينشط كلاً من مستقبلات القلب الموسكارينية ومستقبلات العضلات النيكوتينية؟",
+        "en": "How can tiny, flexible acetylcholine activate both muscarinic GPCRs and nicotinic ion channels with high affinity and distinct pharmacophores?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Serbest Dönmenin Bedeli",
-        "ar": "توقع: ضريبة الدوران الحر"
+        "ar": "توقع: ضريبة الدوران الحر",
+        "en": "Prediction: Entropic Cost of Free Rotation"
       },
       "prompt": {
         "tr": "10 serbest dönen tek bağı olan esnek bir molekül reseptöre bağlandığında termodinamik olarak ne kaybeder?",
-        "ar": "عندما يرتبط جزيء مرن يمتلك 10 روابط أحادية حرة الدوران بمستقبله، ماذا يخسر ديناميكياً؟"
+        "ar": "عندما يرتبط جزيء مرن يمتلك 10 روابط أحادية حرة الدوران بمستقبله، ماذا يخسر ديناميكياً؟",
+        "en": "When a ligand with 8 freely rotating single bonds freezes into a single binding pose, how does this affect binding free energy (ΔG)?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-mc42-1",
             "text": {
               "tr": "Büyük miktarda konformasyonel entropi kaybeder ve bu afiniteyi düşürür.",
-              "ar": "يفقد قدراً كبيراً من الإنتروبيا التشكيلية مما يضعف طاقة الارتباط الكلية."
+              "ar": "يفقد قدراً كبيراً من الإنتروبيا التشكيلية مما يضعف طاقة الارتباط الكلية.",
+              "en": "Biological activity is drastically reduced or lost completely."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-mc42-2",
             "text": {
               "tr": "Kütlesini kaybeder.",
-              "ar": "يفقد كتلته الجزيئية."
+              "ar": "يفقد كتلته الجزيئية.",
+              "en": "Potency increases tenfold automatically."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Dans Eden İp vs Döküm Anahtar",
-        "ar": "تشبيه حدسي: الحبل الراقص مقابل المفتاح المصبوب"
+        "ar": "تشبيه حدسي: الحبل الراقص مقابل المفتاح المصبوب",
+        "en": "Intuitive Model: Spaghetti vs Pretzel"
       },
       "prompt": {
         "tr": "Rüzgarda savrulan esnek bir ipi anahtar deliğine sokamazsınız; fakat döküm çelik bir anahtar doğrudan yuvaya oturur.",
-        "ar": "لا يمكنك إدخال حبل يتمايل في الرياح داخل قفل، بينما ينزلق المفتاح الفولاذي الصلب مباشرة إلى مجراه."
+        "ar": "لا يمكنك إدخال حبل يتمايل في الرياح داخل قفل، بينما ينزلق المفتاح الفولاذي الصلب مباشرة إلى مجراه.",
+        "en": "Boiled flexible spaghetti flails in all directions, losing heat and energy to coil up. A crispy pretzel is pre-shaped to slot instantly into a toaster."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Newman İzdüşümü ve Torsiyonel Açılar",
-        "ar": "إسقاط Newman وزوايا الالتواء"
+        "ar": "إسقاط Newman وزوايا الالتواء",
+        "en": "Visual Diagram: Torsion Angles (Gauche vs Anti)"
       },
       "prompt": {
         "tr": "Tek bağ etrafında dönme syn, gauche ve anti rotamerlerini üretir. Enerji bariyerleri oda sıcaklığında saniyede milyonlarca kez aşılır.",
-        "ar": "يولد الدوران حول الرابطة الأحادية أشكال syn و gauche و anti. يتم تجاوز حواجز الطاقة ملايين المرات في الثانية."
+        "ar": "يولد الدوران حول الرابطة الأحادية أشكال syn و gauche و anti. يتم تجاوز حواجز الطاقة ملايين المرات في الثانية.",
+        "en": "Examine acetylcholine's N-C-C-O torsion angle: synclinal (gauche, 60°) fits muscarinic receptors; antiperiplanar (trans, 180°) fits nicotinic."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Laboratuvar: SAR Explorer (Konformasyon)",
-        "ar": "المختبر التفاعلي: مستكشف SAR (التشكيل)"
+        "ar": "المختبر التفاعلي: مستكشف SAR (التشكيل)",
+        "en": "Interactive Artifact: Scaffold Rigidity Engine"
       },
       "prompt": {
         "tr": "Esnek zincire çift bağ veya halka katarak molekülü sabitleyin. Entropi cezasının nasıl sıfırlandığını ve afinitenin nasıl fırladığını gözlemleyin.",
-        "ar": "أضف رابطة مضاعفة أو حلقة لتثبيت السلسلة المرنة ولاحظ كيف تتلاشى ضريبة الإنتروبيا وتتضاعف الألفة."
+        "ar": "أضف رابطة مضاعفة أو حلقة لتثبيت السلسلة المرنة ولاحظ كيف تتلاشى ضريبة الإنتروبيا وتتضاعف الألفة.",
+        "en": "Incorporate cyclopropane rings and double bonds into flexible neurotransmitters. Measure conformational entropy loss and subtype selectivity."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "SarExplorer",
@@ -292,11 +322,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Halka Kapatma Stratejisi",
-        "ar": "استكشاف موجه: استراتيجية إغلاق الحلقة"
+        "ar": "استكشاف موجه: استراتيجية إغلاق الحلقة",
+        "en": "Guided Discovery: Cyclopropane Constraint (Muscarine)"
       },
       "prompt": {
         "tr": "Histamin molekülü esnekken H1 ve H2 reseptörlerini ayıramaz. Siklopropan halkasıyla biyoaktif konformasyon kilitlendiğinde seçicilik nasıl değişir?",
-        "ar": "يكون الهستامين المرن عاجزاً عن التمييز بين مستقبلات H1 و H2. عندما يقفل تشكيله بحلقة سيكلوبروبان، كيف تتغير الانتقائية؟"
+        "ar": "يكون الهستامين المرن عاجزاً عن التمييز بين مستقبلات H1 و H2. عندما يقفل تشكيله بحلقة سيكلوبروبان، كيف تتغير الانتقائية؟",
+        "en": "Notice how trans-ACTM (cyclopropane analogue) selectively activates muscarinic receptors while failing to trigger nicotinic ganglionic firing."
       },
       "predictThenReveal": true,
       "config": {
@@ -314,16 +346,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -332,7 +367,8 @@
             "id": "opt-mc42-3",
             "text": {
               "tr": "Yalnızca bir reseptör alt tipine seçici hale gelirken diğer reseptöre bağlanamaz.",
-              "ar": "يصبح انتقائياً لنمط فرعي واحد فقط بينما يعجز عن الارتباط بالمستقبل الآخر."
+              "ar": "يصبح انتقائياً لنمط فرعي واحد فقط بينما يعجز عن الارتباط بالمستقبل الآخر.",
+              "en": "The distance between aromatic ring and terminal basic nitrogen (≈ 5.1 Å)."
             },
             "isCorrect": true
           },
@@ -340,7 +376,8 @@
             "id": "opt-mc42-4",
             "text": {
               "tr": "Her iki reseptörü de 100 kat daha güçlü uyarır.",
-              "ar": "ينشط كلا المستقبلين بقوة أكبر بـ 100 ضعف."
+              "ar": "ينشط كلا المستقبلين بقوة أكبر بـ 100 ضعف.",
+              "en": "The overall molecular weight alone."
             },
             "isCorrect": false
           }
@@ -353,11 +390,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Biyoaktif Konformasyon ve Entropi Optimizasyonu",
-        "ar": "التشكيل الحيوي وتحسين الإنتروبيا"
+        "ar": "التشكيل الحيوي وتحسين الإنتروبيا",
+        "en": "Formal Thermodynamics: Conformational Entropy"
       },
       "prompt": {
         "tr": "Biyoaktif konformasyon en düşük enerjili konformasyon olmak zorunda değildir. Önceden organize edilmiş rijit ligandlar minimum entropi kaybıyla bağlanır.",
-        "ar": "ليس بالضرورة أن يكون التشكيل الفعال هو الأدنى طاقة في المحلول. الربيطات الجاسئة مسبقة التنظيم ترتبط بأدنى خسارة إنتروبية."
+        "ar": "ليس بالضرورة أن يكون التشكيل الفعال هو الأدنى طاقة في المحلول. الربيطات الجاسئة مسبقة التنظيم ترتبط بأدنى خسارة إنتروبية.",
+        "en": "ΔG_bind = ΔH - TΔS. Freezing each rotatable bond costs ≈ 0.5 - 0.7 kcal/mol in entropy (-TΔS > 0). Rigidification saves this penalty."
       },
       "predictThenReveal": false,
       "config": {},
@@ -369,16 +408,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -388,11 +430,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Dondurulan Rotasyon Başına Kazanç",
-        "ar": "فحص المفهوم: المكسب لكل دورة مقيدة"
+        "ar": "فحص المفهوم: المكسب لكل دورة مقيدة",
+        "en": "Concept Check: Bioactive vs Ground State"
       },
       "prompt": {
         "tr": "Rasyonel tasarımda tek bir bağın dönmesini dondurmak afiniteye ortalama ne kadar katkı sağlar?",
-        "ar": "في التصميم الرشيد، كم تضيف تقريباً إعاقة دوران رابطة أحادية واحدة إلى طاقة الارتباط الحرة؟"
+        "ar": "في التصميم الرشيد، كم تضيف تقريباً إعاقة دوران رابطة أحادية واحدة إلى طاقة الارتباط الحرة؟",
+        "en": "True or False: The bound bioactive conformation of a drug may be 2-3 kcal/mol higher in energy than its lowest energy conformer in aqueous solution."
       },
       "predictThenReveal": true,
       "config": {
@@ -410,16 +454,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -428,7 +475,8 @@
             "id": "opt-mc42-5",
             "text": {
               "tr": "~0.5 - 0.8 kcal/mol serbest enerji avantajı (yaklaşık 3 kat afinite artışı).",
-              "ar": "حوالي 0.5 - 0.8 kcal/mol كأفضلية طاقة حرة (مضاعفة الألفة بنحو 3 أضعاف)."
+              "ar": "حوالي 0.5 - 0.8 kcal/mol كأفضلية طاقة حرة (مضاعفة الألفة بنحو 3 أضعاف).",
+              "en": "Bulky N-alkyl substituents (e.g., isopropyl, tert-butyl)."
             },
             "isCorrect": true
           },
@@ -436,7 +484,8 @@
             "id": "opt-mc42-6",
             "text": {
               "tr": "Sıfır katkı.",
-              "ar": "صفر مساهمة."
+              "ar": "صفر مساهمة.",
+              "en": "A primary amine without substituents."
             },
             "isCorrect": false
           }
@@ -449,11 +498,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik İlaç Tasarımı: Morfin ve Esnek Opioidler",
-        "ar": "تصميم سريري: المورفين والأفيونات المرنة"
+        "ar": "تصميم سريري: المورفين والأفيونات المرنة",
+        "en": "Application: Chlorpromazine vs Promethazine"
       },
       "prompt": {
         "tr": "Morfin rijit 5 halkalı sert bir iskelete sahipken, meperidin ve fentanil esnektir. Morfinin mu reseptörüne yüksek seçiciliği bu rijitlikten kaynaklanır.",
-        "ar": "يمتلك المورفين هيكلاً صلباً خماسي الحلقات بينما الفنتانيل مرن. تنبع انتقائية المورفين الفائقة لمستقبلات mu من هذه الجساءة."
+        "ar": "يمتلك المورفين هيكلاً صلباً خماسي الحلقات بينما الفنتانيل مرن. تنبع انتقائية المورفين الفائقة لمستقبلات mu من هذه الجساءة.",
+        "en": "Analyze how bending the phenothiazine ring system alters dopamine D2 antagonism versus histamine H1 sedation profiles."
       },
       "predictThenReveal": true,
       "config": {
@@ -471,16 +522,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -489,7 +543,8 @@
             "id": "opt-mc42-7",
             "text": {
               "tr": "Rijit fenantren iskeleti morfinin farmakoforunu tek bir kusursuz konformasyonda tutar.",
-              "ar": "هيكل الفينانثرين الجاسئ يثبت فارماكوفور المورفين في تشكيل فراغي متقن واحد."
+              "ar": "هيكل الفينانثرين الجاسئ يثبت فارماكوفور المورفين في تشكيل فراغي متقن واحد.",
+              "en": "Incorporate a bulky N-tert-butyl group to confer selective beta-2 bronchodilation."
             },
             "isCorrect": true
           },
@@ -497,7 +552,8 @@
             "id": "opt-mc42-8",
             "text": {
               "tr": "Morfinde kiral merkez yoktur.",
-              "ar": "المورفين يفتقر للمراكز الكيرالية."
+              "ar": "المورفين يفتقر للمراكز الكيرالية.",
+              "en": "Remove all aromatic substituents."
             },
             "isCorrect": false
           }
@@ -510,11 +566,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Pfeiffer Kuralı ve Seçicilik",
-        "ar": "استرجاع معرفي: قاعدة Pfeiffer والانتقائية"
+        "ar": "استرجاع معرفي: قاعدة Pfeiffer والانتقائية",
+        "en": "Retrieval: Van der Waals Contacts"
       },
       "prompt": {
         "tr": "Bir önceki derste öğrendiğimiz gibi ligandın hedef afinitesi arttıkça enantiyomerler arasındaki ödismik oran nasıl değişiyordu?",
-        "ar": "كما تعلمنا في الدرس السابق، كيف تتغير النسبة الإيوديزمية بين المصاوغات مع زيادة ألفة الربيط نحو هدفه؟"
+        "ar": "كما تعلمنا في الدرس السابق، كيف تتغير النسبة الإيوديزمية بين المصاوغات مع زيادة ألفة الربيط نحو هدفه؟",
+        "en": "How does conformational locking improve steric complementarity with the hydrophobic binding pocket walls?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -526,16 +584,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -545,11 +606,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: İlaç Metabolizması ve Biyotransformasyon (Modül 5)",
-        "ar": "ربط مفاهيمي: استقلاب الأدوية والتحول الحيوي (الوحدة 5)"
+        "ar": "ربط مفاهيمي: استقلاب الأدوية والتحول الحيوي (الوحدة 5)",
+        "en": "Forward Connection: Phase I Drug Metabolism (Module 5)"
       },
       "prompt": {
         "tr": "Reseptörüne bağlanan ilaç görevini bitirdikten sonra vücuttan nasıl temizlenir? Modül 5 te Sitokrom P450 hidroksilasyon mekanizmalarını inceleyeceğiz.",
-        "ar": "بعد أداء وظيفته، كيف يطرح الدواء من الجسم؟ في الوحدة 5، سنستكشف آليات الأكسدة بواسطة إنزيمات CYP450."
+        "ar": "بعد أداء وظيفته، كيف يطرح الدواء من الجسم؟ في الوحدة 5، سنستكشف آليات الأكسدة بواسطة إنزيمات CYP450.",
+        "en": "In Module 5, we discover how rigid aromatic rings and steric hindrance protect drug scaffolds from Cytochrome P450 oxidation."
       },
       "predictThenReveal": false,
       "config": {},
@@ -561,16 +624,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -580,11 +646,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Konformasyonel Kısıtlama",
-        "ar": "اختبار الإتقان: تقييد التشكيل الفراغي"
+        "ar": "اختبار الإتقان: تقييد التشكيل الفراغي",
+        "en": "Mastery Assessment: Conformational Restriction Tactics"
       },
       "prompt": {
         "tr": "Esnek bir ilaç kurşun bileşiğini optimize ederken halka oluşturarak rijitlik kazandırmanın sağladığı iki temel avantaj nedir?",
-        "ar": "ما الميزتان الأساسيتان لإكساب المركب الطليعي المرن جساءة تشكيلية عبر بناء حلقة؟"
+        "ar": "ما الميزتان الأساسيتان لإكساب المركب الطليعي المرن جساءة تشكيلية عبر بناء حلقة؟",
+        "en": "Which synthetic strategy constitutes an authentic conformational restriction method to improve receptor selectivity?"
       },
       "predictThenReveal": true,
       "config": {
@@ -602,16 +670,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -620,7 +691,8 @@
             "id": "opt-mc42-9",
             "text": {
               "tr": "Bağlanma entropi cezasını düşürerek afiniteyi artırmak ve diğer reseptörleri engelleyerek seçicilik kazanmak.",
-              "ar": "خفض ضريبة الإنتروبيا لرفع الألفة، ومنع الارتباط بالمستقبلات الأخرى لضمان الانتقائية."
+              "ar": "خفض ضريبة الإنتروبيا لرفع الألفة، ومنع الارتباط بالمستقبلات الأخرى لضمان الانتقائية.",
+              "en": "Spatial orientation of critical pharmacophore features complementary to the receptor."
             },
             "isCorrect": true
           },
@@ -628,7 +700,8 @@
             "id": "opt-mc42-10",
             "text": {
               "tr": "İlacı suda tamamen çözünmez kılmak.",
-              "ar": "جعل الدواء غير قابل للذوبان في الماء مطلقاً."
+              "ar": "جعل الدواء غير قابل للذوبان في الماء مطلقاً.",
+              "en": "Absolute molecular weight alone."
             },
             "isCorrect": false
           }

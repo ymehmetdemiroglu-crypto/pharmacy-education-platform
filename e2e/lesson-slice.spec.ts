@@ -19,7 +19,7 @@ test.beforeAll(() => {
 });
 
 test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gating E2E', () => {
-  test('executes end-to-end Lesson 1 flow, axe scan on all 10 steps, hints, and paywall gating', async ({
+  test('executes end-to-end Lesson 1 flow, axe scan on all 12 steps, hints, and paywall gating', async ({
     page,
   }, testInfo) => {
     const prefix = testInfo.project.name;
@@ -62,16 +62,40 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     };
 
     // -------------------------------------------------------------
-    // 1. Lesson 1 Initial Load & Step 1 Hook
+    // 1. Lesson 1 Initial Load & Phase 1 Biophysical Simulation Lab
     // -------------------------------------------------------------
     await page.goto('/courses/medchem/lessons/1');
     await page.waitForLoadState('networkidle');
 
-    // Verify title and hook
+    // Ensure English locale for Lesson 1 flow assertions
+    const enButton = page.getByRole('button', { name: 'EN', exact: true });
+    if (await enButton.isVisible()) {
+      await enButton.click();
+    }
+
+    // Verify Title and 3-Phase Navigation Bar
     await expect(page.getByText('Thermodynamic Activity & The Ferguson Principle')).toBeVisible();
+    await expect(page.getByRole('button', { name: /Explore & Understand|Keşfet ve Anla/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Guided Missions|Uygulamalı Görevler/i })).toBeVisible();
+    await expect(page.getByRole('button', { name: /Concept Quiz|Kavram Testi/i })).toBeVisible();
+
+    // Verify Phase 1: Biophysical Simulation Lab
+    await expect(page.getByText(/Biophysical Simulation Lab/i)).toBeVisible();
+    await expect(page.getByText(/Clinical & Faculty Presets|Hazır Ayarlar/i)).toBeVisible();
+    await expect(page.getByText(/Live Biophysical Status HUD|Durum Monitörü/i)).toBeVisible();
+
+    // Transition to Phase 3: Concept Quiz & 12-Stage Mastery Progression
+    await page.getByRole('button', { name: /Concept Quiz|Kavram Testi/i }).click();
+    await page.waitForLoadState('networkidle');
+
+    // -------------------------------------------------------------
+    // Step 1: Hook Clinical Vignette
+    // -------------------------------------------------------------
     await expect(page.getByText('Two Drugs, Vastly Different Quantities')).toBeVisible();
-    await expect(page.getByText('Agent A: Diethyl Ether (Anesthetic)')).toBeVisible();
-    await expect(page.getByText('Agent B: Propranolol (Beta-Blocker)')).toBeVisible();
+    await expect(page.getByText(/Agent A:|Madde A:/i)).toBeVisible();
+    await expect(page.getByText('Diethyl Ether').first()).toBeVisible();
+    await expect(page.getByText(/Agent B:|Madde B:/i)).toBeVisible();
+    await expect(page.getByText('Propranolol').first()).toBeVisible();
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-01-hook.png`),
@@ -80,10 +104,10 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await runAxeAudit('Step 1 Hook');
 
     // -------------------------------------------------------------
-    // 2. Advance to Step 2 (Predict-Then-Reveal: Relative Saturation)
+    // Step 2: Prediction: Anesthesia at Equal Saturation
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 2/i }).click();
-    await expect(page.getByRole('heading', { name: 'Thermodynamic Activity of Vapors' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Prediction: Anesthesia at Equal Saturation' })).toBeVisible();
 
     // Verify Advance is disabled prior to prediction commit
     await expect(page.getByRole('button', { name: /Continue to Step 3/i })).toBeDisabled();
@@ -118,7 +142,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     // Test Wrong Answer Prediction (Diagnostic Misconception Feedback)
     await page
-      .getByRole('radio', { name: /a drops to 0, because saturated vapors cannot dissolve into membranes/i })
+      .getByRole('radio', { name: /They exhibit completely different effects based on differing chemical structures/i })
       .click();
     await expect(page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i })).toBeEnabled();
 
@@ -126,7 +150,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
     await expect(
-      page.getByText(/Saturation maximizes escaping tendency; it does not stop dissolution/i)
+      page.getByText(/According to Ferguson's principle, thermodynamic activity governs biological depression/i)
     ).toBeVisible();
 
     await page.screenshot({
@@ -135,132 +159,121 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await runAxeAudit('Step 2 Predict Wrong');
 
     // -------------------------------------------------------------
-    // 3. Step 3 (Predict: The Non-Specific Activity Threshold)
+    // Step 3: Intuitive Model: Escaping Tendency from Membrane
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 3/i }).click();
-    await expect(page.getByRole('heading', { name: 'The Non-Specific Activity Threshold' })).toBeVisible();
-
-    // Select correct hypothesis
-    await page.getByRole('radio', { name: /High relative saturation/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
-    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
-    await expect(page.getByText(/Non-specific depressants act within a high relative saturation range/i)).toBeVisible();
-
+    await expect(page.getByRole('heading', { name: 'Intuitive Model: Escaping Tendency from Membrane' })).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-03-predict-revealed.png`),
     });
-    await runAxeAudit('Step 3 Predict Revealed');
+    await runAxeAudit('Step 3 Intuition');
 
     // -------------------------------------------------------------
-    // 4. Step 4 (Predict: Exobiophase to Endobiophase Equilibrium)
+    // Step 4: Visualization: Lipid Bilayer Expansion
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 4/i }).click();
-    await expect(page.getByRole('heading', { name: 'Exobiophase to Endobiophase Equilibrium' })).toBeVisible();
-
-    // Select correct hypothesis
-    await page
-      .getByRole('radio', { name: /Equal: thermodynamic activity a is identical in both phases at equilibrium/i })
-      .click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
-    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Visualization: Lipid Bilayer Expansion' })).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-04-predict-revealed.png`),
     });
-    await runAxeAudit('Step 4 Equilibrium');
+    await runAxeAudit('Step 4 Visualization');
 
     // -------------------------------------------------------------
-    // 5. Step 5 (Mid-Lesson Concept Checkpoint)
+    // Step 5: Interactive Simulation: Ferguson Slider
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 5/i }).click();
-    await expect(page.getByRole('heading', { name: 'Classify Mystery Compounds' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Interactive Simulation: Ferguson Slider' })).toBeVisible();
     await page.evaluate(() => window.scrollTo(0, 0));
-
-    // Select correct option and commit answer
-    await page
-      .getByRole('radio', {
-        name: /Compound X: Active at a = 0.15; activity persists despite replacing alkyl branches with rings/i,
-      })
-      .click();
-    await page.getByRole('button', { name: /Check Answer/i }).click();
-    await expect(page.getByText(/Correct! High thermodynamic activity/i)).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-05-checkpoint.png`),
     });
-    await runAxeAudit('Step 5 Checkpoint');
+    await runAxeAudit('Step 5 Interactive Artifact');
 
     // -------------------------------------------------------------
-    // 6. Steps 6 to 9 (Structural Specificity & Faded Calculation)
+    // Step 6: Guided Discovery: Nitrous Oxide vs Chloroform
     // -------------------------------------------------------------
-    // Step 6: Core Structural Sensitivity
     await page.getByRole('button', { name: /Continue to Step 6/i }).click();
-    await expect(page.getByRole('heading', { name: 'Core Structural Sensitivity' })).toBeVisible();
-
-    // Select correct hypothesis
+    await expect(page.getByRole('heading', { name: 'Guided Discovery: Nitrous Oxide vs Chloroform' })).toBeVisible();
     await page
-      .getByRole('radio', { name: /Biological activity is drastically reduced or completely abolished/i })
+      .getByRole('radio', { name: /In the same narrow relative saturation window for both gases/i })
       .click();
     await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(page.getByText(/The relative saturation rule is independent of chemical structure/i)).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-06-predict-revealed.png`),
     });
-    await runAxeAudit('Step 6 Sensitivity');
+    await runAxeAudit('Step 6 Guided Discovery');
 
-    // Step 7: Chemical Diversity in Anesthesia
+    // -------------------------------------------------------------
+    // Step 7: Formal Formulation: Ferguson's Principle
+    // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 7/i }).click();
-    await expect(page.getByRole('heading', { name: 'Chemical Diversity in Anesthesia' })).toBeVisible();
-
-    // Select correct hypothesis
-    await page
-      .getByRole('radio', {
-        name: /They act non-specifically by physically accumulating into lipid membranes/i,
-      })
-      .click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
-    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: "Formal Formulation: Ferguson's Principle" })).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-07-predict-revealed.png`),
     });
-    await runAxeAudit('Step 7 Chemical Diversity');
+    await runAxeAudit('Step 7 Formal Principle');
 
-    // Step 8: Differentiating Affinity from Saturation
+    // -------------------------------------------------------------
+    // Step 8: Concept Check: Classifying Mystery Compounds
+    // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 8/i }).click();
-    await expect(page.getByRole('heading', { name: 'Differentiating Affinity from Saturation' })).toBeVisible();
-
-    // Select correct hypothesis
+    await expect(page.getByRole('heading', { name: 'Concept Check: Classifying Mystery Compounds' })).toBeVisible();
     await page
-      .getByRole('radio', {
-        name: /Drug A is structurally specific \(high-affinity receptor ligand\); Drug B is structurally non-specific/i,
-      })
+      .getByRole('radio', { name: /Compound Y is structurally specific because it acts at extreme dilution/i })
       .click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+    await page.getByRole('button', { name: /Check Answer|Commit Hypothesis/i }).click();
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-08-predict-revealed.png`),
     });
-    await runAxeAudit('Step 8 Differentiating Affinity');
+    await runAxeAudit('Step 8 Concept Check');
 
-    // Step 9: Calculate Thermodynamic Activity (Faded Calculation)
+    // -------------------------------------------------------------
+    // Step 9: Application: Volatile Inhalation Dose Calculation
+    // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 9/i }).click();
-    await expect(page.getByRole('heading', { name: 'Calculate Thermodynamic Activity' })).toBeVisible();
-
-    // Select correct calculation
+    await expect(page.getByRole('heading', { name: 'Application: Volatile Inhalation Dose Calculation' })).toBeVisible();
     await page
-      .getByRole('radio', { name: /a = 0\.05 \(5% relative saturation\)/i })
+      .getByRole('radio', { name: /a = 0\.05; falls within the surgical anesthesia window/i })
       .click();
     await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await expect(page.getByText(/a = Pt \/ P0 = 10 \/ 200 = 0\.05/i).first()).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-09-predict-revealed.png`),
     });
-    await runAxeAudit('Step 9 Calculation');
+    await runAxeAudit('Step 9 Application');
 
     // -------------------------------------------------------------
-    // 7. Step 10 (Recap, Progress Persistence & Leitner Enqueue)
+    // Step 10: Retrieval: Raoult's Law from General Chemistry
     // -------------------------------------------------------------
     await page.getByRole('button', { name: /Continue to Step 10/i }).click();
-    await expect(page.getByText('Lesson 1 Mastered!')).toBeVisible();
-    await expect(page.getByText('+50 XP Earned')).toBeVisible();
+    await expect(page.getByRole('heading', { name: "Retrieval: Raoult's Law from General Chemistry" })).toBeVisible();
+    await runAxeAudit('Step 10 Retrieval');
+
+    // -------------------------------------------------------------
+    // Step 11: Connection: Solubility and Ionization (Lesson 2)
+    // -------------------------------------------------------------
+    await page.getByRole('button', { name: /Continue to Step 11/i }).click();
+    await expect(page.getByRole('heading', { name: 'Connection: Solubility and Ionization' })).toBeVisible();
+    await runAxeAudit('Step 11 Connection');
+
+    // -------------------------------------------------------------
+    // Step 12: Mastery Assessment & Flashcard Enqueue
+    // -------------------------------------------------------------
+    await page.getByRole('button', { name: /Continue to Step 12/i }).click();
+    await expect(page.getByRole('heading', { name: 'Mastery Assessment: Ferguson Principle Summary' })).toBeVisible();
+    await page
+      .getByRole('radio', { name: /Their relative thermodynamic saturation in the biophase, independent of chemical structure/i })
+      .click();
+    await page.getByRole('button', { name: /Check Answer|Commit Hypothesis/i }).click();
+    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+
+    // Verify Lesson Mastered UI and XP Award
+    await expect(page.getByRole('heading', { name: /Lesson Mastered!|Ders Başarıyla Tamamlandı!/i })).toBeVisible();
+    await expect(page.getByText('+50 XP', { exact: true })).toBeVisible();
     await expect(page.getByText(/Enqueued Leitner Spaced Review Cards/i)).toBeVisible();
     await expect(page.getByText(/Box 1 \(Interval: 1 Day\)/i).first()).toBeVisible();
 
@@ -270,7 +283,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
       path: path.join(SCREENSHOT_DIR, `${prefix}-step-10-recap-complete.png`),
       fullPage: true,
     });
-    await runAxeAudit('Step 10 Mastered');
+    await runAxeAudit('Step 12 Mastered');
 
     // Verify ZERO remote Firestore writes occurred for unauthenticated guest
     expect(remoteFirestoreWrites).toEqual([]);
@@ -291,7 +304,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     // -------------------------------------------------------------
     // 8. Citations Accordion Verification
     // -------------------------------------------------------------
-    await page.getByRole('button', { name: /Academic Sources & Textbook Verification/i }).click();
+    await page.getByRole('button', { name: /Academic Sources & Textbook Verification|Akademik Kaynaklar/i }).click();
     await expect(page.getByText(/Foye's Principles of Medicinal Chemistry/i)).toBeVisible();
     await expect(page.getByText(/^References:/i)).toBeVisible();
 
@@ -305,7 +318,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.goto('/courses/medchem/lessons/3');
     await page.waitForLoadState('networkidle');
 
-    await expect(page.getByText('Unlock Lesson 3: The Partition Coefficient')).toBeVisible();
+    await expect(page.getByText('Unlock Full Course Modules & Lab Tools')).toBeVisible();
     // PaywallModal opens automatically on locked lessons
     await expect(page.getByRole('dialog')).toBeVisible();
     await expect(page.getByRole('radio', { name: /Semester Pass|Dönemlik Paket|باقة الفصل الدراسي/i })).toBeVisible();
@@ -325,7 +338,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('Escape');
     await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
-    await page.getByRole('button', { name: /View Student Passes/i }).first().click();
+    await page.getByRole('button', { name: /View Student Passes|Öğrenci Aboneliklerini İncele|عرض الاشتراكات الطلابية/i }).first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-dark.png`),
@@ -336,7 +349,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await page.keyboard.press('Escape');
     await page.getByRole('button', { name: 'AR', exact: true }).click();
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    await page.getByRole('button', { name: /View Student Passes/i }).first().click();
+    await page.getByRole('button', { name: /View Student Passes|Öğrenci Aboneliklerini İncele|عرض الاشتراكات الطلابية/i }).first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-dark-rtl-ar.png`),
@@ -369,147 +382,149 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     expect(failedRequests).toEqual([]);
   });
 
-  test('verifies keyboard-only completion through all 10 steps and reduced-motion fallback', async ({
+  test('verifies keyboard-only completion through all 12 steps and reduced-motion fallback', async ({
     page,
   }, testInfo) => {
     // Emulate reduced motion
     await page.emulateMedia({ reducedMotion: 'reduce' });
 
-    // Ensure clean state starting from Step 1
-    await page.goto('/courses/medchem/lessons/1');
+    // Clean state starting at Lesson 1 in Quiz mode
+    await page.goto('/courses/medchem/lessons/1?phase=quiz');
     await page.evaluate(() => localStorage.clear());
     await page.reload();
     await page.waitForLoadState('networkidle');
 
+    // Ensure English locale for keyboard assertions
+    const enButton = page.getByRole('button', { name: 'EN', exact: true });
+    if (await enButton.isVisible()) {
+      await enButton.click();
+    }
+
     // -------------------------------------------------------------
     // Step 1: Hook Clinical Vignette -> ArrowRight
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 1 of 10')).toBeVisible();
+    await expect(page.getByText('Step 1 of 12')).toBeVisible();
     await expect(
       page.getByRole('heading', { level: 2, name: 'Two Drugs, Vastly Different Quantities' })
     ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // -------------------------------------------------------------
-    // Step 2: Predict Thermodynamic Activity of Vapors
+    // Step 2: Prediction: Anesthesia at Equal Saturation
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 2 of 10')).toBeVisible();
+    await expect(page.getByText('Step 2 of 12')).toBeVisible();
     await expect(
-      page.getByRole('heading', { level: 2, name: 'Thermodynamic Activity of Vapors' })
+      page.getByRole('heading', { level: 2, name: 'Prediction: Anesthesia at Equal Saturation' })
     ).toBeVisible();
-    await page.keyboard.press('2');
+    await page.keyboard.press('3');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified|Hypothesis Confirmed/i)).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // -------------------------------------------------------------
-    // Step 3: Predict The Non-Specific Activity Threshold
+    // Step 3: Intuitive Model: Escaping Tendency from Membrane
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 3 of 10')).toBeVisible();
+    await expect(page.getByText('Step 3 of 12')).toBeVisible();
     await expect(
-      page.getByRole('heading', { level: 2, name: 'The Non-Specific Activity Threshold' })
+      page.getByRole('heading', { level: 2, name: 'Intuitive Model: Escaping Tendency from Membrane' })
+    ).toBeVisible();
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 4: Visualization: Lipid Bilayer Expansion
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 4 of 12')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Visualization: Lipid Bilayer Expansion' })
+    ).toBeVisible();
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 5: Interactive Simulation: Ferguson Slider
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 5 of 12')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Interactive Simulation: Ferguson Slider' })
+    ).toBeVisible();
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 6: Guided Discovery: Nitrous Oxide vs Chloroform
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 6 of 12')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Guided Discovery: Nitrous Oxide vs Chloroform' })
     ).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 7: Formal Formulation: Ferguson's Principle
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 7 of 12')).toBeVisible();
     await expect(
-      page.getByText(/Non-specific depressants act within a high relative saturation range/i)
+      page.getByRole('heading', { level: 2, name: "Formal Formulation: Ferguson's Principle" })
     ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // -------------------------------------------------------------
-    // Step 4: Predict Exobiophase to Endobiophase Equilibrium
+    // Step 8: Concept Check: Classifying Mystery Compounds
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 4 of 10')).toBeVisible();
+    await expect(page.getByText('Step 8 of 12')).toBeVisible();
     await expect(
-      page.getByRole('heading', { level: 2, name: 'Exobiophase to Endobiophase Equilibrium' })
-    ).toBeVisible();
-    await page.keyboard.press('3');
-    await page.keyboard.press('Enter');
-    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
-    await expect(
-      page.getByText(/Chemical potential and thermodynamic activity a are identical across all phases/i)
-    ).toBeVisible();
-    await page.keyboard.press('ArrowRight');
-
-    // -------------------------------------------------------------
-    // Step 5: Checkpoint Classify Mystery Compounds
-    // -------------------------------------------------------------
-    await expect(page.getByText('Step 5 of 10')).toBeVisible();
-    await expect(
-      page.getByRole('heading', { level: 2, name: 'Classify Mystery Compounds' })
-    ).toBeVisible();
-    await page.keyboard.press('2');
-    await page.keyboard.press('Enter');
-    await expect(page.getByText(/Correct! High thermodynamic activity/i)).toBeVisible();
-    await page.keyboard.press('ArrowRight');
-
-    // -------------------------------------------------------------
-    // Step 6: Predict Core Structural Sensitivity
-    // -------------------------------------------------------------
-    await expect(page.getByText('Step 6 of 10')).toBeVisible();
-    await expect(
-      page.getByRole('heading', { level: 2, name: 'Core Structural Sensitivity' })
+      page.getByRole('heading', { level: 2, name: 'Concept Check: Classifying Mystery Compounds' })
     ).toBeVisible();
     await page.keyboard.press('1');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
-    await expect(
-      page.getByText(/Activity drops sharply or converts into antagonism when key binding groups are altered/i)
-    ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // -------------------------------------------------------------
-    // Step 7: Predict Chemical Diversity in Anesthesia
+    // Step 9: Application: Volatile Inhalation Dose Calculation
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 7 of 10')).toBeVisible();
+    await expect(page.getByText('Step 9 of 12')).toBeVisible();
     await expect(
-      page.getByRole('heading', { level: 2, name: 'Chemical Diversity in Anesthesia' })
-    ).toBeVisible();
-    await page.keyboard.press('3');
-    await page.keyboard.press('Enter');
-    await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
-    await expect(
-      page.getByText(/Non-specific depressants produce equal biological effects at equal thermodynamic activities/i)
-    ).toBeVisible();
-    await page.keyboard.press('ArrowRight');
-
-    // -------------------------------------------------------------
-    // Step 8: Predict Differentiating Affinity from Saturation
-    // -------------------------------------------------------------
-    await expect(page.getByText('Step 8 of 10')).toBeVisible();
-    await expect(
-      page.getByRole('heading', { level: 2, name: 'Differentiating Affinity from Saturation' })
+      page.getByRole('heading', { level: 2, name: 'Application: Volatile Inhalation Dose Calculation' })
     ).toBeVisible();
     await page.keyboard.press('2');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 10: Retrieval: Raoult's Law from General Chemistry
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 10 of 12')).toBeVisible();
     await expect(
-      page.getByText(/Drug A is structurally specific \(low thermodynamic activity\); Drug B is structurally non-specific/i)
+      page.getByRole('heading', { level: 2, name: "Retrieval: Raoult's Law from General Chemistry" })
     ).toBeVisible();
     await page.keyboard.press('ArrowRight');
 
     // -------------------------------------------------------------
-    // Step 9: Faded Calculation Calculate Thermodynamic Activity
+    // Step 11: Connection: Solubility and Ionization
     // -------------------------------------------------------------
-    await expect(page.getByText('Step 9 of 10')).toBeVisible();
+    await expect(page.getByText('Step 11 of 12')).toBeVisible();
     await expect(
-      page.getByRole('heading', { level: 2, name: 'Calculate Thermodynamic Activity' })
+      page.getByRole('heading', { level: 2, name: 'Connection: Solubility and Ionization' })
     ).toBeVisible();
-    await page.keyboard.press('3');
+    await page.keyboard.press('ArrowRight');
+
+    // -------------------------------------------------------------
+    // Step 12: Mastery Assessment: Ferguson Principle Summary
+    // -------------------------------------------------------------
+    await expect(page.getByText('Step 12 of 12')).toBeVisible();
+    await expect(
+      page.getByRole('heading', { level: 2, name: 'Mastery Assessment: Ferguson Principle Summary' })
+    ).toBeVisible();
+    await page.keyboard.press('2');
     await page.keyboard.press('Enter');
     await expect(page.getByText(/Hypothesis Confirmed/i)).toBeVisible();
-    await expect(
-      page.getByText(/a = 10 \/ 200 = 0\.05|5% of its saturation limit/i)
-    ).toBeVisible();
-    await page.keyboard.press('ArrowRight');
 
-    // -------------------------------------------------------------
-    // Step 10: Lesson 1 Recap Mastered & XP Celebration
-    // -------------------------------------------------------------
-    await expect(page.getByText('Step 10 of 10')).toBeVisible();
-    await expect(page.getByText('Lesson 1 Mastered!')).toBeVisible();
-    await expect(page.getByText('+50 XP Earned')).toBeVisible();
+    // Verify Mastered State
+    await expect(page.getByRole('heading', { name: /Lesson Mastered!|Ders Başarıyla Tamamlandı!/i })).toBeVisible();
+    await expect(page.getByText('+50 XP', { exact: true })).toBeVisible();
     await expect(page.getByText(/Enqueued Leitner Spaced Review Cards/i)).toBeVisible();
 
     await page.screenshot({
@@ -534,7 +549,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
           completedLessonIds: ['mc-mod1-les1'],
           currentModuleId: 'mc-mod-01',
           currentLessonId: 'mc-mod1-les1',
-          currentStepIndex: 9,
+          currentStepIndex: 11,
           streakDays: 1,
           lastStreakDate: '2026-09-29',
           totalXP: 50,
@@ -555,7 +570,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
           {
             id: 'card-2',
             front: 'Ferguson rule for structurally non-specific drugs:',
-            back: 'They achieve cellular effect at roughly equal thermodynamic activities (a = [pending-human-review]).',
+            back: 'They achieve cellular effect at roughly equal thermodynamic activities.',
             box: 1,
             nextDueDate: '2026-09-30T00:00:00.000Z',
             intervalDays: 1,
@@ -584,7 +599,11 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     // 4. Trial activated: Dialog closes and trial banner appears
     await expect(page.getByRole('dialog')).not.toBeVisible();
-    await expect(page.getByLabel(/Account Plan Status|Hesap Planı Durumu|حالة خطة الحساب/i)).toBeVisible();
+    await expect(
+      page.getByTestId('trial-banner')
+        .or(page.getByRole('region', { name: /Account Plan Status|Hesap Planı Durumu|حالة خطة الحساب/i }))
+        .or(page.locator('aside[aria-label]'))
+    ).toBeVisible();
     await expect(page.getByText(/7 days remaining|7 gün kaldı|متبقي 7 أيام/i).first()).toBeVisible();
 
     await page.screenshot({
@@ -639,20 +658,20 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
           'pharmacy_progress_medchem',
           JSON.stringify({
             courseId: 'medchem',
-            completedLessonIds: idx === 9 ? ['mc-mod1-les1'] : [],
+            completedLessonIds: idx >= 11 ? ['mc-mod1-les1'] : [],
             currentLessonId: 'mc-mod1-les1',
             currentStepIndex: idx,
-            totalXP: idx === 9 ? 50 : 20,
+            totalXP: idx >= 11 ? 50 : 20,
           })
         );
       }, stepIdx);
-      await page.reload();
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
       await page.screenshot({ path: path.join(SCREENSHOT_DIR, screenshotName) });
     };
 
     // 1. Dark Mode Walkthrough
-    await page.goto('/courses/medchem/lessons/1');
+    await page.goto('/courses/medchem/lessons/1?phase=quiz');
     await page.waitForLoadState('networkidle');
     await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
@@ -660,10 +679,10 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     await setStepAndScreenshot(1, `${prefix}-step-02-dark.png`);
     await setStepAndScreenshot(4, `${prefix}-step-05-dark.png`);
-    await setStepAndScreenshot(9, `${prefix}-step-10-dark.png`);
+    await setStepAndScreenshot(11, `${prefix}-step-10-dark.png`);
 
     // 2. Turkish (TR) Walkthrough
-    await page.goto('/courses/medchem/lessons/1');
+    await page.goto('/courses/medchem/lessons/1?phase=quiz');
     await page.waitForLoadState('networkidle');
     await page.getByRole('button', { name: 'TR', exact: true }).click();
     await expect(page.getByText(/Termodinamik Aktivite ve Ferguson İlkesi/i)).toBeVisible();
@@ -671,22 +690,22 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     await setStepAndScreenshot(1, `${prefix}-step-02-tr.png`);
     await setStepAndScreenshot(4, `${prefix}-step-05-tr.png`);
-    await setStepAndScreenshot(9, `${prefix}-step-10-tr.png`);
+    await setStepAndScreenshot(11, `${prefix}-step-10-tr.png`);
 
     // 3. Arabic (AR RTL) Walkthrough
-    await page.goto('/courses/medchem/lessons/1');
+    await page.goto('/courses/medchem/lessons/1?phase=quiz');
     await page.waitForLoadState('networkidle');
     await page.getByRole('button', { name: 'AR', exact: true }).click();
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    await expect(page.getByText(/النشاط الديناميكي الحراري ومبدأ فيرجسون/i)).toBeVisible();
+    await expect(page.getByText(/النشاط الديناميكي الحراري ومبدأ (فيرجسون|Ferguson)/i)).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-01-ar.png`) });
 
     await setStepAndScreenshot(1, `${prefix}-step-02-ar.png`);
     await setStepAndScreenshot(4, `${prefix}-step-05-ar.png`);
-    await setStepAndScreenshot(9, `${prefix}-step-10-ar.png`);
+    await setStepAndScreenshot(11, `${prefix}-step-10-ar.png`);
   });
 
-  test('captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 3-9)', async ({
+  test('captures diagnostic misconception feedback and axe audits on incorrect predictions (Steps 2, 6, 8, 9, 12)', async ({
     page,
   }, testInfo) => {
     const prefix = testInfo.project.name;
@@ -708,9 +727,10 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     };
 
     const goToStep = async (stepIndex: number) => {
-      await page.goto('/courses/medchem/lessons/1');
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
       await page.evaluate((idx) => {
+        localStorage.setItem('pharmacy_locale', 'en');
         localStorage.setItem(
           'pharmacy_progress_medchem',
           JSON.stringify({
@@ -722,64 +742,63 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
           })
         );
       }, stepIndex);
-      await page.reload();
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
     };
 
-    // Step 3: Wrong prediction
-    await goToStep(2);
-    await page.getByRole('radio', { name: /a < 0\.0001/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+    // Step 2: Prediction wrong distractor
+    await goToStep(1);
+    await page.getByRole('radio', { name: /They exhibit completely different effects based on differing chemical structures/i }).click();
+    const commitBtn2 = page.getByRole('button', { name: /Commit Hypothesis|Check Answer/i });
+    await expect(commitBtn2).toBeEnabled();
+    await commitBtn2.click();
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-03-predict-wrong.png`) });
-    await runAxeAudit('Step 3 Predict Wrong');
+    await expect(page.getByText(/According to Ferguson's principle/i)).toBeVisible();
+    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-02-predict-wrong.png`) });
+    await runAxeAudit('Step 2 Predict Wrong');
 
-    // Step 4: Wrong prediction
-    await goToStep(3);
-    await page.getByRole('radio', { name: /Much higher in blood/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
-    await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-04-predict-wrong.png`) });
-    await runAxeAudit('Step 4 Predict Wrong');
-
-    // Step 5: Wrong distractor
-    await goToStep(4);
-    await page.getByRole('radio', { name: /Compound Y/i }).click();
-    await page.getByRole('button', { name: /Check Answer/i }).click();
-    await expect(page.getByText(/Extreme stereoselectivity/i)).toBeVisible();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-05-checkpoint-wrong.png`) });
-    await runAxeAudit('Step 5 Checkpoint Wrong');
-
-    // Step 6: Wrong prediction
+    // Step 6: Guided Discovery wrong distractor
     await goToStep(5);
-    await page.getByRole('radio', { name: /Activity increases invariably/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+    await page.getByRole('radio', { name: /At completely different activity values due to differing molecular weights/i }).click();
+    const commitBtn6 = page.getByRole('button', { name: /Commit Hypothesis|Check Answer/i });
+    await expect(commitBtn6).toBeEnabled();
+    await commitBtn6.click();
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
+    await expect(page.getByText(/Even with different molecular weights/i)).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-06-predict-wrong.png`) });
     await runAxeAudit('Step 6 Predict Wrong');
 
-    // Step 7: Wrong prediction
-    await goToStep(6);
-    await page.getByRole('radio', { name: /All three bind the identical/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
-    await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
-    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-07-predict-wrong.png`) });
-    await runAxeAudit('Step 7 Predict Wrong');
-
-    // Step 8: Wrong prediction
+    // Step 8: Concept Check wrong distractor
     await goToStep(7);
-    await page.getByRole('radio', { name: /Drug B is more potent/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+    await page.getByRole('radio', { name: /Compound X is structurally specific because its effective dose is larger/i }).click();
+    const commitBtn8 = page.getByRole('button', { name: /Commit Hypothesis|Check Answer/i });
+    await expect(commitBtn8).toBeEnabled();
+    await commitBtn8.click();
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
+    await expect(page.getByText(/High saturation requirements define structurally non-specific/i)).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-08-predict-wrong.png`) });
-    await runAxeAudit('Step 8 Predict Wrong');
+    await runAxeAudit('Step 8 Concept Check Wrong');
 
-    // Step 9: Wrong calculation
+    // Step 9: Application wrong calculation
     await goToStep(8);
-    await page.getByRole('radio', { name: /a = 20\.0/i }).click();
-    await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+    await page.getByRole('radio', { name: /a = 20\.0; represents a fatal massive overdose/i }).click();
+    const commitBtn9 = page.getByRole('button', { name: /Commit Hypothesis|Check Answer/i });
+    await expect(commitBtn9).toBeEnabled();
+    await commitBtn9.click();
     await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
+    await expect(page.getByText(/relative saturation cannot exceed standard limits/i)).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-09-predict-wrong.png`) });
     await runAxeAudit('Step 9 Predict Wrong');
+
+    // Step 12: Mastery check wrong distractor
+    await goToStep(11);
+    await page.getByRole('radio', { name: /Their chemical core structures and ability to form specific covalent bonds/i }).click();
+    const commitBtn12 = page.getByRole('button', { name: /Commit Hypothesis|Check Answer/i });
+    await expect(commitBtn12).toBeEnabled();
+    await commitBtn12.click();
+    await expect(page.getByText(/Diagnostic Feedback: Misconception Identified/i)).toBeVisible();
+    await expect(page.getByText(/Non-specific drugs do not form stereospecific covalent bonds/i)).toBeVisible();
+    await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-12-predict-wrong.png`) });
+    await runAxeAudit('Step 12 Mastery Check Wrong');
   });
 });

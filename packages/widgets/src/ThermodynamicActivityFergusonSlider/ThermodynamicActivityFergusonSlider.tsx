@@ -26,6 +26,7 @@ export interface FergusonAgent {
   id: string;
   nameTr: string;
   nameAr: string;
+  nameEn?: string;
   mode: 'vapor' | 'solution';
   saturationValue: number;
   unit: string;
@@ -37,6 +38,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'ether',
     nameTr: 'Dietil Eter',
     nameAr: 'ثنائي إيثيل الإيثر (Dietil Eter)',
+    nameEn: 'Diethyl Ether',
     mode: 'vapor',
     saturationValue: 440,
     unit: 'mmHg',
@@ -46,6 +48,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'chloroform',
     nameTr: 'Kloroform',
     nameAr: 'كلوروفورم (Kloroform)',
+    nameEn: 'Chloroform',
     mode: 'vapor',
     saturationValue: 160,
     unit: 'mmHg',
@@ -55,6 +58,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'halothane',
     nameTr: 'Halotan',
     nameAr: 'هالوثان (Halotan)',
+    nameEn: 'Halothane',
     mode: 'vapor',
     saturationValue: 243,
     unit: 'mmHg',
@@ -64,6 +68,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'n2o',
     nameTr: 'Azot Protoksit (N₂O)',
     nameAr: 'أكسيد النيتروز (N₂O)',
+    nameEn: 'Nitrous Oxide (N₂O)',
     mode: 'vapor',
     saturationValue: 39000,
     unit: 'mmHg',
@@ -73,6 +78,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'butanol',
     nameTr: '1-Bütanol',
     nameAr: '1-بيوتانول (1-Bütanol)',
+    nameEn: '1-Butanol',
     mode: 'solution',
     saturationValue: 1000,
     unit: 'mM',
@@ -82,6 +88,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'octanol',
     nameTr: '1-Oktanol',
     nameAr: '1-أوكتانol (1-Oktanol)',
+    nameEn: '1-Octanol',
     mode: 'solution',
     saturationValue: 4.0,
     unit: 'mM',
@@ -91,6 +98,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
     id: 'dodecanol',
     nameTr: '1-Dodekanol (Kesilme Örneği)',
     nameAr: '1-دوديكانول (مثال الانقطاع)',
+    nameEn: '1-Dodecanol (Cutoff Example)',
     mode: 'solution',
     saturationValue: 0.02,
     unit: 'mM',
@@ -133,16 +141,20 @@ export function calculateFergusonActivity(
 export function getFergusonBiologicalStatus(activity: number): {
   stageTr: string;
   stageAr: string;
+  stageEn?: string;
   descriptionTr: string;
   descriptionAr: string;
+  descriptionEn?: string;
   severity: 'normal' | 'sedation' | 'surgical' | 'deep' | 'toxic' | 'cutoff';
 } {
   if (activity <= 0.0) {
     return {
       stageTr: 'Bilinç Açık (Etki Yok)',
       stageAr: 'واعي (لا يوجد تأثير بيولوجي)',
+      stageEn: 'Full Consciousness (No Effect)',
       descriptionTr: 'Sistemik depresyon gözlenmez; nöronal membran dinlenim durumundadır.',
       descriptionAr: 'لا يلاحظ تثبيط جهازي؛ الغشاء العصبي في حالة راحة.',
+      descriptionEn: 'No systemic depression observed; neuronal membrane is at resting state.',
       severity: 'normal',
     };
   }
@@ -150,8 +162,10 @@ export function getFergusonBiologicalStatus(activity: number): {
     return {
       stageTr: 'Bilinç Açık / Subklinik Etki',
       stageAr: 'واعي / تأثير تحت سريري',
+      stageEn: 'Full Consciousness / Subclinical Effect',
       descriptionTr: 'Aktivite anestetik eşiğin altındadır; klinik sedasyon oluşmaz.',
       descriptionAr: 'النشاط تحت العتبة التخديرية؛ لا يحدث تخدير سريري.',
+      descriptionEn: 'Activity is below anesthetic threshold; no clinical sedation occurs.',
       severity: 'normal',
     };
   }
@@ -159,8 +173,10 @@ export function getFergusonBiologicalStatus(activity: number): {
     return {
       stageTr: 'Hafif Sedasyon',
       stageAr: 'تخدير خفيف (Sedasyon)',
+      stageEn: 'Mild Sedation',
       descriptionTr: 'Hafif anksiyoliz ve psikomotor yavaşlama başlar.',
       descriptionAr: 'يبدأ تخفيف القلق وتباطؤ الحركة النفسية.',
+      descriptionEn: 'Mild anxiolysis and psychomotor slowing begin.',
       severity: 'sedation',
     };
   }
@@ -168,8 +184,10 @@ export function getFergusonBiologicalStatus(activity: number): {
     return {
       stageTr: 'Cerrahi Anestezi (Ferguson Penceresi)',
       stageAr: 'تخدير جراحي (نافذة فيرغسون المتساوية)',
+      stageEn: 'Surgical Anesthesia (Ferguson Window)',
       descriptionTr: 'Optimal cerrahi anestezi aralığı (a ≈ 0.02-0.05). Tüm yapısal olmayan ajanlar bu aralıkta eşit anestezi oluşturur.',
       descriptionAr: 'النطاق المثالي للتخدير الجراحي (a ≈ 0.02-0.05). تنتج جميع المواد غير النوعية تخديراً متساوياً عند هذا النشاط.',
+      descriptionEn: 'Optimal surgical anesthesia window (a ≈ 0.02-0.05). All structurally non-specific agents produce equal anesthesia in this window.',
       severity: 'surgical',
     };
   }
@@ -177,8 +195,10 @@ export function getFergusonBiologicalStatus(activity: number): {
     return {
       stageTr: 'Derin Anestezi / Medüller Baskılanma',
       stageAr: 'تخدير عميق / تثبيط نخاعي',
+      stageEn: 'Deep Anesthesia / Medullary Depression',
       descriptionTr: 'Derin santral sinir sistemi depresyonu; refleksler ve otonom yanıtlar kaybolur.',
       descriptionAr: 'تثبيط عميق للجهاز العصبي المركزي؛ فقدان المنعكسات.',
+      descriptionEn: 'Deep central nervous system depression; reflexes and autonomic responses diminish.',
       severity: 'deep',
     };
   }
@@ -186,16 +206,20 @@ export function getFergusonBiologicalStatus(activity: number): {
     return {
       stageTr: 'Ölümcül Kardiyorespiratuvar Kollaps',
       stageAr: 'انهيار قلبي تنفسي قاتل',
+      stageEn: 'Fatal Cardiorespiratory Collapse',
       descriptionTr: 'Solunum merkezi felci ve geri dönüşsüz kardiyovasküler arrest riski.',
       descriptionAr: 'شلل المركز التنفسي وخطر توقف القلب والأوعية الدموية غير القابل للعكس.',
+      descriptionEn: 'Respiratory center paralysis and irreversible cardiovascular arrest risk.',
       severity: 'toxic',
     };
   }
   return {
     stageTr: 'Ferguson Kesilme Olgusu (Faz Doygunluğu / Çökelti)',
     stageAr: 'ظاهرة انقطاع فيرغسون (تشبع الطور / ترسب)',
+    stageEn: 'Ferguson Cutoff Phenomenon (Phase Saturation / Precipitate)',
     descriptionTr: 'a > 1.0 durumu termodinamik dengede sürdürülemez. Faz ayrışması ve çökelti oluşur; biyolojik aktivite artışı durur.',
     descriptionAr: 'لا يمكن الحفاظ على حالة a > 1.0 في التوازن الديناميكي الحراري. ينفصل الطور ويترسب الدواء؛ يتوقف تصاعد النشاط الحيوي.',
+    descriptionEn: 'a > 1.0 cannot be maintained at thermodynamic equilibrium. Phase separation and precipitation occur; biological activity plateaus.',
     severity: 'cutoff',
   };
 }
@@ -215,6 +239,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
   const disabled = readOnly || propDisabled;
   const activeLocale = propLocale || config?.locale || 'tr';
   const isAr = activeLocale === 'ar';
+  const isEn = activeLocale === 'en';
 
   const [mode, setMode] = useState<'vapor' | 'solution'>(
     initialState?.mode ?? config?.defaultMode ?? 'vapor'
@@ -302,28 +327,32 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <StickerBadge variant="orange" size="sm">
-              {isAr ? 'محاكي مبدأ فيرغسون' : 'Ferguson Prensibi Simülatörü'}
+              {isEn ? 'Ferguson Principle Simulator' : isAr ? 'محاكي مبدأ فيرغسون' : 'Ferguson Prensibi Simülatörü'}
             </StickerBadge>
             <TechnicalTermBadge term="Ferguson Prensibi" />
             <TechnicalTermBadge term="Termodinamik Aktivite (a)" />
           </div>
           {config?.source && (
             <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400" dir="ltr">
-              Source: {config.source.file} (p. {config.source.page})
+              Source: {config.source.file?.replace(/Farmasötik ve Medisinal Kimya/g, 'Farmasötik Kimya').replace(/Medisinal Kimya/g, 'Farmasötik Kimya')} (p. {config.source.page})
             </span>
           )}
         </div>
 
         <h3 className="font-display font-bold text-base sm:text-lg">
           {config?.title ||
-            (isAr
+            (isEn
+              ? 'Thermodynamic Activity & Ferguson Principle Simulator'
+              : isAr
               ? 'محاكاة النشاط الديناميكي الحراري وظاهرة الانقطاع (مبدأ فيرغسون)'
               : 'Termodinamik Aktivite & Ferguson Kesilme Olgusu Simülatörü')}
         </h3>
 
         <p className="text-xs font-body text-gray-700 dark:text-gray-300">
           {config?.prompt ||
-            (isAr
+            (isEn
+              ? 'Investigate structurally non-specific bioactivity, the Ferguson iso-activity surgical window (a ≈ 0.02-0.05), and phase saturation cutoff.'
+              : isAr
               ? 'استكشف كيف تنتج المواد غير النوعية التخدير عند نشاط ديناميكي حراري متساوٍ (a ≈ 0.02-0.05) ولاحظ ظاهرة الانقطاع عند a > 1.0.'
               : 'Yapısal olmayan biyoaktiviteyi, Ferguson izo-aktivite cerrahi anestezi penceresini (a ≈ 0.02-0.05) ve faz doygunluğu kesilme olgusunu inceleyin.')}
         </p>
@@ -333,7 +362,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
-            {isAr ? 'طور المحاكاة:' : 'Faz Türü:'}
+            {isEn ? 'Phase Type:' : isAr ? 'طور المحاكاة:' : 'Faz Türü:'}
           </span>
           <div className="flex items-center gap-1.5">
             <button
@@ -347,7 +376,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isAr ? 'Buhar Fazı (طور البخار: a = Pt/P0)' : 'Buhar Fazı (Vapor: a = Pt/P0)'}
+              {isEn ? 'Vapor Phase (Buhar Fazı: a = Pt/P0)' : isAr ? 'Buhar Fazı (طور البخار: a = Pt/P0)' : 'Buhar Fazı (Vapor: a = Pt/P0)'}
             </button>
             <button
               type="button"
@@ -360,7 +389,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isAr ? 'Çözelti Fazı (طور المحلول: a = St/S0)' : 'Çözelti Fazı (Solution: a = St/S0)'}
+              {isEn ? 'Solution Phase (Çözelti Fazı: a = St/S0)' : isAr ? 'Çözelti Fazı (طور المحلول: a = St/S0)' : 'Çözelti Fazı (Solution: a = St/S0)'}
             </button>
           </div>
         </div>
@@ -376,7 +405,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       {/* Preset Agent Selector */}
       <div className="flex flex-col gap-1.5 p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <span className="text-[11px] font-mono font-bold uppercase text-gray-700 dark:text-slate-300">
-          {isAr ? 'المركبات النموذجية:' : 'Model Ajanlar:'}
+          {isEn ? 'Model Agents:' : isAr ? 'المركبات النموذجية:' : 'Model Ajanlar:'}
         </span>
         <div className="flex flex-wrap gap-2">
           {FERGUSON_AGENTS.filter((a) => a.mode === mode).map((agent) => {
@@ -394,7 +423,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                     : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
                 )}
               >
-                {isAr ? agent.nameAr : agent.nameTr}
+                {isEn ? (agent.nameEn || agent.nameTr) : isAr ? agent.nameAr : agent.nameTr}
               </button>
             );
           })}
@@ -406,9 +435,13 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         <Slider
           label={
             mode === 'vapor'
-              ? isAr
+              ? isEn
+                ? 'Applied Partial Vapor Pressure (Pt)'
+                : isAr
                 ? 'الضغط الجزئي الفعلي (Pt)'
                 : 'Uygulanan Kısmi Buhar Basıncı (Pt)'
+              : isEn
+              ? 'Applied Solution Concentration (St)'
               : isAr
               ? 'التركيز المولي الفعلي (St)'
               : 'Uygulanan Çözelti Konsantrasyonu (St)'
@@ -431,7 +464,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         <div className="flex items-center justify-between text-xs font-mono font-bold">
           <span>
             Thermodynamic Activity (a = {mode === 'vapor' ? 'Pt/P₀' : 'St/S₀'}):{' '}
-            <strong className="text-sm font-bold text-amber-600 dark:text-amber-400">
+            <strong className="text-sm font-bold text-amber-800 dark:text-amber-400">
               {calc.activity.toFixed(3)}
             </strong>
           </span>
@@ -508,7 +541,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             <span className="flex items-center gap-1">
               <span className="w-2.5 h-2.5 bg-emerald-400 border border-black inline-block" /> Bilinç (0-0.02)
             </span>
-            <span className="flex items-center gap-1 font-bold text-amber-600 dark:text-amber-400">
+            <span className="flex items-center gap-1 font-bold text-amber-800 dark:text-amber-400">
               <span className="w-2.5 h-2.5 bg-[#FFD93D] border border-black inline-block" /> Ferguson Anestezi (0.02-0.05)
             </span>
             <span className="flex items-center gap-1">
@@ -539,14 +572,14 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       >
         <div className="flex items-center justify-between">
           <span className="text-xs font-mono font-bold uppercase tracking-wider">
-            {isAr ? 'الحالة الحيوية والسريرية:' : 'Biyolojik ve Klinik Durum:'}
+            {isEn ? 'Biological & Clinical Status:' : isAr ? 'الحالة الحيوية والسريرية:' : 'Biyolojik ve Klinik Durum:'}
           </span>
           <span className="text-xs font-mono font-bold">
-            {isAr ? biologicalStatus.stageAr : biologicalStatus.stageTr}
+            {isEn ? (biologicalStatus.stageEn || biologicalStatus.stageTr) : isAr ? biologicalStatus.stageAr : biologicalStatus.stageTr}
           </span>
         </div>
         <p className="text-xs font-body text-gray-700 dark:text-slate-300">
-          {isAr ? biologicalStatus.descriptionAr : biologicalStatus.descriptionTr}
+          {isEn ? (biologicalStatus.descriptionEn || biologicalStatus.descriptionTr) : isAr ? biologicalStatus.descriptionAr : biologicalStatus.descriptionTr}
         </p>
       </div>
 
@@ -559,7 +592,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
           <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
             Nöronal Membran Hacimsel Genleşmesi (ΔV/V Modeli):
           </span>
-          <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
+          <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-400">
             ΔV/V = +{calc.membraneVolumeExpansion}%
           </span>
         </div>
@@ -664,6 +697,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
 
       {/* Model Illustration Notice */}
       <ModelIllustrationNotice
+        locale={activeLocale as 'tr' | 'ar' | 'en'}
         equation={
           mode === 'vapor'
             ? 'a = Pt / P₀   (Buhar Fazı Termodinamik Aktivite Eşitliği)'

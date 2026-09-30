@@ -24,15 +24,16 @@ export interface Substituent {
   id: string;
   nameTr: string;
   nameAr: string;
+  nameEn?: string;
   formula: string;
   pi: number;
 }
 
 export const HANSCH_SUBSTITUENTS: Substituent[] = [
-  { id: 'methyl', nameTr: 'Metil (-CH₃)', nameAr: 'ميثيل (-CH₃)', formula: '-CH₃', pi: 0.52 },
-  { id: 'chloro', nameTr: 'Kloro (-Cl)', nameAr: 'كلورو (-Cl)', formula: '-Cl', pi: 0.71 },
-  { id: 'hydroxy', nameTr: 'Hidroksil (-OH)', nameAr: 'هيدروكسيل (-OH)', formula: '-OH', pi: -0.67 },
-  { id: 'carboxy', nameTr: 'Karboksil (-COOH)', nameAr: 'كاربوكسيل (-COOH)', formula: '-COOH', pi: -0.32 },
+  { id: 'methyl', nameTr: 'Metil (-CH₃)', nameAr: 'ميثيل (-CH₃)', nameEn: 'Methyl (-CH₃)', formula: '-CH₃', pi: 0.52 },
+  { id: 'chloro', nameTr: 'Kloro (-Cl)', nameAr: 'كلورو (-Cl)', nameEn: 'Chloro (-Cl)', formula: '-Cl', pi: 0.71 },
+  { id: 'hydroxy', nameTr: 'Hidroksil (-OH)', nameAr: 'هيدروكسيل (-OH)', nameEn: 'Hydroxyl (-OH)', formula: '-OH', pi: -0.67 },
+  { id: 'carboxy', nameTr: 'Karboksil (-COOH)', nameAr: 'كاربوكسيل (-COOH)', nameEn: 'Carboxyl (-COOH)', formula: '-COOH', pi: -0.32 },
 ];
 
 export function calculateLogD(
@@ -104,6 +105,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
   const disabled = readOnly || propDisabled;
   const activeLocale = propLocale || config?.locale || 'tr';
   const isAr = activeLocale === 'ar';
+  const isEn = activeLocale === 'en';
 
   const [baseLogP, setBaseLogP] = useState<number>(
     initialState?.logP ?? config?.defaultLogP ?? 2.5
@@ -336,7 +338,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
                   <span
                     className={clsx(
                       'block text-[10px]',
-                      sub.pi > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-blue-600 dark:text-blue-400'
+                      sub.pi > 0 ? 'text-amber-800 dark:text-amber-400' : 'text-blue-600 dark:text-blue-400'
                     )}
                   >
                     π = {sub.pi > 0 ? `+${sub.pi}` : sub.pi}
@@ -423,7 +425,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
             <span className="w-3.5 h-3.5 bg-blue-500 border border-black inline-block" />
             Sulu Faz (Aqueous): {aqueousCount} Molekül
           </span>
-          <span className="flex items-center gap-1.5 text-amber-600 dark:text-amber-400">
+          <span className="flex items-center gap-1.5 text-amber-800 dark:text-amber-400">
             <span className="w-3.5 h-3.5 bg-amber-500 border border-black inline-block" />
             Lipit Çift Tabaka Çekirdeği: {lipidCount} Molekül
           </span>
@@ -536,7 +538,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
             <span className="text-[10px] text-gray-600 dark:text-slate-400 block uppercase">
               {isAr ? 'معامل التوزيع (logD)' : 'Fizyolojik logD'}
             </span>
-            <strong className="text-sm font-bold text-amber-600 dark:text-amber-400">
+            <strong className="text-sm font-bold text-amber-800 dark:text-amber-400">
               {calculatedLogD.toFixed(2)}
             </strong>
           </div>
@@ -561,7 +563,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
                   ? 'text-emerald-600 dark:text-emerald-400'
                   : bbbStatus.level === 'moderate'
                   ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-amber-600 dark:text-amber-400'
+                  : 'text-amber-800 dark:text-amber-400'
               )}
             >
               {isAr ? bbbStatus.statusAr : bbbStatus.statusTr}
@@ -572,6 +574,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
 
       {/* Model Illustration Notice */}
       <ModelIllustrationNotice
+        locale={activeLocale as 'tr' | 'ar' | 'en'}
         equation={
           compoundType === 'acid'
             ? 'logD = logP - log10(1 + 10^(pH - pKa))   [Asidik İyonlaşma Modeli]'

@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-04",
   "title": {
     "tr": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri",
-    "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية"
+    "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية",
+    "en": "Autonomic Nervous System: Adrenergic Neurotransmission & Receptor Subtypes"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Adrenerjik alfa-1, beta-1 ve beta-2 reseptörlerinin sinyal iletim yolaklarını ve hedef dokulardaki sempatik yanıtları eşleştirmek.",
-    "ar": "ربط مسارات التأشير الخلوي لمستقبلات alpha-1 و beta-1 و beta-2 والاستجابات الودية في الأنسجة المستهدفة."
+    "ar": "ربط مسارات التأشير الخلوي لمستقبلات alpha-1 و beta-1 و beta-2 والاستجابات الودية في الأنسجة المستهدفة.",
+    "en": "Map adrenergic alpha-1, beta-1, and beta-2 receptor signal transduction pathways to organ-specific sympathetic responses."
   },
   "misconceptions": [
     {
       "tr": "Tüm sempatik reseptörlerin aynı hücresel sinyali (örneğin cAMP artışı) ürettiği yanılgısı (alfa-1 Gq ile IP3/DAG, beta-1 Gs ile cAMP üretir).",
-      "ar": "الظن الخاطئ بأن جميع المستقبلات الودية تنتج نفس الإشارة (alpha-1 تعمل عبر Gq و IP3، بينما beta-1 عبر Gs و cAMP)."
+      "ar": "الظن الخاطئ بأن جميع المستقبلات الودية تنتج نفس الإشارة (alpha-1 تعمل عبر Gq و IP3، بينما beta-1 عبر Gs و cAMP).",
+      "en": "Non-selective beta blockers are completely safe in asthmatic patients."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Adrenergic Neurotransmission and Receptor Subtypes",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Savaş ya da Kaç: Bir Molekül, Zıt Etkiler",
-        "ar": "الكر أو الفر: جزيء واحد وتأثيرات متضادة"
+        "ar": "الكر أو الفر: جزيء واحد وتأثيرات متضادة",
+        "en": "Fight or Flight: One Molecule, Divergent Effects"
       },
       "prompt": {
         "tr": "Korkan bir insanın kalbi delicesine çarpıp kas damarları genişlerken, derisi neden bembeyaz kesilir ve bağırsakları durur?",
-        "ar": "عند الخوف، بينما ينبض القلب بشدة وتتسع أوعية العضلات، لماذا يشحب لون الجلد ويتوقف نشاط الأمعاء؟"
+        "ar": "عند الخوف، بينما ينبض القلب بشدة وتتسع أوعية العضلات، لماذا يشحب لون الجلد ويتوقف نشاط الأمعاء؟",
+        "en": "How can adrenaline powerfully stimulate cardiac contractility while simultaneously dilating bronchial airways and constricting skin arterioles?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Beta-2 Reseptör Uyarısı",
-        "ar": "توقع: تنشيط مستقبلات Beta-2"
+        "ar": "توقع: تنشيط مستقبلات Beta-2",
+        "en": "Prediction: Beta-2 Receptor Stimulation"
       },
       "prompt": {
         "tr": "Akciğer bronş düz kaslarındaki beta-2 reseptörleri uyarıldığında ne olur?",
-        "ar": "عند تنشيط مستقبلات beta-2 في العضلات الملساء للقصبات الهوائية، ماذا يحدث؟"
+        "ar": "عند تنشيط مستقبلات beta-2 في العضلات الملساء للقصبات الهوائية، ماذا يحدث؟",
+        "en": "Stimulation of beta-2 adrenergic receptors on bronchial smooth muscle produces which intracellular second messenger response?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph41-1",
             "text": {
               "tr": "cAMP artar, hücre içi kalsiyum düşer ve bronşlar genişler (bronkodilasyon).",
-              "ar": "يرتفع cAMP وينخفض الكالسيوم الداخلي فتسترخي القصبات وتتسع (bronkodilasyon)."
+              "ar": "يرتفع cAMP وينخفض الكالسيوم الداخلي فتسترخي القصبات وتتسع (bronkodilasyon).",
+              "en": "cAMP rises, intracellular calcium falls, producing bronchial smooth muscle relaxation (bronchodilation)."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph41-2",
             "text": {
               "tr": "Bronşlar spazmla tıkanır.",
-              "ar": "تنقبض القصبات وتنسد بالتشنج."
+              "ar": "تنقبض القصبات وتنسد بالتشنج.",
+              "en": "Bronchial airways constrict into severe spasm."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: 1 Kalp, 2 Akciğer Kuralı",
-        "ar": "تشبيه حدسي: قاعدة قلب واحد ورئتان اثنتان"
+        "ar": "تشبيه حدسي: قاعدة قلب واحد ورئتان اثنتان",
+        "en": "Intuitive Analogy: The 1 Heart, 2 Lungs Rule"
       },
       "prompt": {
         "tr": "Hatırlama tüyosu: İnsanın 1 kalbi vardır -> Beta-1 kalptedir. İnsanın 2 akciğeri vardır -> Beta-2 akciğerdedir.",
-        "ar": "قاعدة التذكر الشهيرة: للإنسان قلب واحد -> Beta-1 في القلب؛ وللإنسان رئتان اثنتان -> Beta-2 في الرئتين."
+        "ar": "قاعدة التذكر الشهيرة: للإنسان قلب واحد -> Beta-1 في القلب؛ وللإنسان رئتان اثنتان -> Beta-2 في الرئتين.",
+        "en": "Beta-1 predominantly on the 1 heart (tachycardia, contractility). Beta-2 predominantly on the 2 lungs (bronchodilation, vasodilation in muscle)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "İkincil Haberciler: Gq vs Gs",
-        "ar": "المرسال الثاني: مقارنة Gq مع Gs"
+        "ar": "المرسال الثاني: مقارنة Gq مع Gs",
+        "en": "Second Messenger Cascades: Gq vs Gs vs Gi"
       },
       "prompt": {
         "tr": "Alfa-1 -> Gq -> Fosfolipaz C -> IP3 + DAG -> Kalsiyum fırlar -> Kasılma. Beta-1/2 -> Gs -> Adenilat Siklaz -> cAMP -> PKA aktivasyonu.",
-        "ar": "مسار Alpha-1: بروتين Gq ينشط PLC ويزيد الكالسيوم للانقباض. مسار Beta-1/2: بروتين Gs ينشط AC ويزيد cAMP."
+        "ar": "مسار Alpha-1: بروتين Gq ينشط PLC ويزيد الكالسيوم للانقباض. مسار Beta-1/2: بروتين Gs ينشط AC ويزيد cAMP.",
+        "en": "Alpha-1 couples to Gq (PLC -> IP3/DAG -> Ca2+). Beta-1/2 couple to Gs (Adenylate cyclase -> cAMP -> PKA). Alpha-2 couples to Gi (inhibits cAMP)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Eşleştirici: Adrenerjik Reseptör Eşleştirici",
-        "ar": "مطابق تفاعلي: مواءمة المستقبلات الأدرينالينية"
+        "ar": "مطابق تفاعلي: مواءمة المستقبلات الأدرينالينية",
+        "en": "Interactive Matcher: Adrenergic Receptor Targets"
       },
       "prompt": {
         "tr": "Katekolamin ligandlarını (adrenalin, noradrenalin, salbutamol) alfa-1, beta-1 ve beta-2 cepleriyle eşleştirip fizyolojik yanıtları test edin.",
-        "ar": "طابق مركبات الكاتيكولامين (Adrenaline، Noradrenaline، Salbutamol) مع جيوب alpha-1 و beta-1 و beta-2 واختبر الاستجابة."
+        "ar": "طابق مركبات الكاتيكولامين (Adrenaline، Noradrenaline، Salbutamol) مع جيوب alpha-1 و beta-1 و beta-2 واختبر الاستجابة.",
+        "en": "Match selective agonists and antagonists (phenylephrine, clonidine, dobutamine, salbutamol) with adrenergic receptor subtypes."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -296,11 +326,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Seçici Olmayan Beta Bloker Riski",
-        "ar": "استكشاف موجه: خطر حاصرات بيتا غير الانتقائية"
+        "ar": "استكشاف موجه: خطر حاصرات بيتا غير الانتقائية",
+        "en": "Guided Discovery: Non-Selective Beta-Blocker Hazard"
       },
       "prompt": {
         "tr": "Astımlı bir hipertansiyon hastasına seçici olmayan beta bloker propranolol verilirse ne olur?",
-        "ar": "إذا أعطي مريض ضغط مصاب بالربو حاصر بيتا غير انتقائي مثل Propranolol، فماذا يحدث؟"
+        "ar": "إذا أعطي مريض ضغط مصاب بالربو حاصر بيتا غير انتقائي مثل Propranolol، فماذا يحدث؟",
+        "en": "Notice why administering propranolol (non-selective beta-1/beta-2 blocker) causes life-threatening bronchospasm in asthma patients."
       },
       "predictThenReveal": true,
       "config": {
@@ -318,16 +350,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -336,7 +371,8 @@
             "id": "opt-ph41-3",
             "text": {
               "tr": "Beta-2 reseptörleri de bloke olur ve ölümcül bronkospazm (astım krizi) tetiklenir.",
-              "ar": "تحظر مستقبلات beta-2 أيضاً مما يثير تشنجاً قصبياً مميتاً (نوبة ربو حادة)."
+              "ar": "تحظر مستقبلات beta-2 أيضاً مما يثير تشنجاً قصبياً مميتاً (نوبة ربو حادة).",
+              "en": "Propranolol blocks beta-2 receptors, triggering life-threatening bronchospasm in reactive airways."
             },
             "isCorrect": true
           },
@@ -344,7 +380,8 @@
             "id": "opt-ph41-4",
             "text": {
               "tr": "Astımı tamamen iyileşir.",
-              "ar": "يشفى الربو لديه تماماً."
+              "ar": "يشفى الربو لديه تماماً.",
+              "en": "Propranolol cures asthmatic symptoms."
             },
             "isCorrect": false
           }
@@ -357,11 +394,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Adrenerjik Reseptörlerin Sınıflandırılması",
-        "ar": "التصنيف الصيدلاني للمستقبلات الأدرينالينية"
+        "ar": "التصنيف الصيدلاني للمستقبلات الأدرينالينية",
+        "en": "Formal Classification of Adrenergic Receptors"
       },
       "prompt": {
         "tr": "Ahlquist (1948): Alfa (damar büzüşmesi, midriyazis) ve Beta (kalp uyarımı, bronkodilasyon). Lands (1967): Beta-1 ve Beta-2 alt tipleri.",
-        "ar": "تصنيف Ahlquist و Lands: مستقبلات Alpha لانقباض الأوعية، Beta-1 لتنبيه القلب، و Beta-2 لتوسيع القصبات والأوعية العضلية."
+        "ar": "تصنيف Ahlquist و Lands: مستقبلات Alpha لانقباض الأوعية، Beta-1 لتنبيه القلب، و Beta-2 لتوسيع القصبات والأوعية العضلية.",
+        "en": "Sympathetic receptor distribution, G-protein coupling mechanisms, physiological target tissues, and clinical therapeutic indications."
       },
       "predictThenReveal": false,
       "config": {},
@@ -373,16 +412,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -392,11 +434,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Alfa-2 Presinaptik Otoreseptör",
-        "ar": "فحص المفهوم: المستقبل التلقائي قبيل المشبكي Alpha-2"
+        "ar": "فحص المفهوم: المستقبل التلقائي قبيل المشبكي Alpha-2",
+        "en": "Concept Check: Alpha-2 Presynaptic Autoreceptor"
       },
       "prompt": {
         "tr": "Presinaptik sinir ucunda bulunan alfa-2 reseptörü uyarıldığında noradrenalin salınımına ne olur?",
-        "ar": "عند تنشيط مستقبلات alpha-2 قبيل المشبكية على النهاية العصبية، ماذا يحدث لتحرر النورأدرينالين؟"
+        "ar": "عند تنشيط مستقبلات alpha-2 قبيل المشبكية على النهاية العصبية، ماذا يحدث لتحرر النورأدرينالين؟",
+        "en": "Clonidine stimulates presynaptic alpha-2 receptors in the vasomotor center. What is its effect on peripheral norepinephrine release?"
       },
       "predictThenReveal": true,
       "config": {
@@ -414,16 +458,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -432,7 +479,8 @@
             "id": "opt-ph41-5",
             "text": {
               "tr": "Gi kenetlidir; negatif geri bildirimle noradrenalin salınımını durdurur.",
-              "ar": "مقترنة بـ Gi؛ وتوقف تحرر النورأدرينالين عبر التلقيم الراجع السلبي."
+              "ar": "مقترنة بـ Gi؛ وتوقف تحرر النورأدرينالين عبر التلقيم الراجع السلبي.",
+              "en": "Coupled to Gi; provides negative feedback inhibition to shut down norepinephrine release."
             },
             "isCorrect": true
           },
@@ -440,7 +488,8 @@
             "id": "opt-ph41-6",
             "text": {
               "tr": "Salınımı 10 kat artırır.",
-              "ar": "تزيد التحرر بعشرة أضعاف."
+              "ar": "تزيد التحرر بعشرة أضعاف.",
+              "en": "Increases norepinephrine release 10-fold."
             },
             "isCorrect": false
           }
@@ -453,11 +502,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Acil: Anafilaktik Şokta Adrenalin",
-        "ar": "طوارئ سريرية: الأدرينالين في الصدمة التأقية"
+        "ar": "طوارئ سريرية: الأدرينالين في الصدمة التأقية",
+        "en": "Clinical Emergency: Epinephrine in Anaphylactic Shock"
       },
       "prompt": {
         "tr": "Anafilakside adrenalin neden hayat kurtarıcıdır? Alfa-1 ile çöken tansiyonu fırlatır, Beta-2 ile tıkanan soluk borusunu açar.",
-        "ar": "لماذا ينقذ Adrenaline حياة مريض الصدمة التأقية؟ يرفع الضغط المنهار عبر alpha-1، ويفتح مجرى الهواء المختنق عبر beta-2."
+        "ar": "لماذا ينقذ Adrenaline حياة مريض الصدمة التأقية؟ يرفع الضغط المنهار عبر alpha-1، ويفتح مجرى الهواء المختنق عبر beta-2.",
+        "en": "Explain why adrenaline is the drug of choice in anaphylaxis: reversing hypotension via alpha-1, bronchodilation via beta-2, and cardiac output via beta-1."
       },
       "predictThenReveal": true,
       "config": {
@@ -475,16 +526,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -493,7 +547,8 @@
             "id": "opt-ph41-7",
             "text": {
               "tr": "Hem alfa hem beta reseptörleri güçlüce uyararak çoklu fizyolojik kurtarma sağlar.",
-              "ar": "لأنه ينشط كلاً من مستقبلات ألفا وبيتا بقوة محققاً إنقاذاً فسيولوجياً شاملاً."
+              "ar": "لأنه ينشط كلاً من مستقبلات ألفا وبيتا بقوة محققاً إنقاذاً فسيولوجياً شاملاً.",
+              "en": "Simultaneously reverses hypotension (alpha-1), bronchoconstriction (beta-2), and cardiac depression (beta-1)."
             },
             "isCorrect": true
           },
@@ -501,7 +556,8 @@
             "id": "opt-ph41-8",
             "text": {
               "tr": "Yalnızca ağrıyı keser.",
-              "ar": "لأنه يسكن الألم فقط."
+              "ar": "لأنه يسكن الألم فقط.",
+              "en": "Only relieves localized pain."
             },
             "isCorrect": false
           }
@@ -514,11 +570,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Easson-Stedman ve Epinefrin",
-        "ar": "استرجاع معرفي: Easson-Stedman والأدرينالين"
+        "ar": "استرجاع معرفي: Easson-Stedman والأدرينالين",
+        "en": "Retrieval: Easson-Stedman Hypothesis & Epinephrine"
       },
       "prompt": {
         "tr": "Medchem Modül 2 de gördüğümüz gibi (R)-adrenalinin beta reseptörüne sıkı tutunmasını sağlayan 3. fonksiyonel kulp neydi?",
-        "ar": "كما رأينا في مساق الكيمياء، ما هو المقبض الوظيفي الثالث الذي يثبت (R)-adrenaline بقوة على مستقبلات بيتا؟"
+        "ar": "كما رأينا في مساق الكيمياء، ما هو المقبض الوظيفي الثالث الذي يثبت (R)-adrenaline بقوة على مستقبلات بيتا؟",
+        "en": "Recall Course A Lesson 8: Why is (R)-epinephrine 100 times more potent than (S)-epinephrine at adrenergic receptors?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -530,16 +588,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -549,11 +610,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Kolinerjik Sistem ve Asetilkolin (Ders 8)",
-        "ar": "ربط مفاهيمي: الجهاز الكوليني والأسيتيل كولين (الدرس 8)"
+        "ar": "ربط مفاهيمي: الجهاز الكوليني والأسيتيل كولين (الدرس 8)",
+        "en": "Connection: Cholinergic System & Acetylcholine (Lesson 8)"
       },
       "prompt": {
         "tr": "Sempatik sistemin dengeli zıddı parasempatik sistemdir. Bir sonraki derste muskarinik ve nikotinik kolinerjik iletimi inceleyeceğiz.",
-        "ar": "النظير الموازن للجهاز الودي هو الجهاز نظير الودي. في الدرس القادم، سنستكشف النقل الكوليني الموسكاريني والنيكوتيني."
+        "ar": "النظير الموازن للجهاز الودي هو الجهاز نظير الودي. في الدرس القادم، سنستكشف النقل الكوليني الموسكاريني والنيكوتيني.",
+        "en": "Sympathetic tone accelerates heart rate and dilates pupils; what neurotransmitter mediates the counterbalancing parasympathetic brake?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -565,16 +628,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -584,11 +650,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Adrenerjik Eşleştirme",
-        "ar": "اختبار الإتقان: مواءمة المستقبلات الأدرينالينية"
+        "ar": "اختبار الإتقان: مواءمة المستقبلات الأدرينالينية",
+        "en": "Mastery Assessment: Adrenergic Signaling"
       },
       "prompt": {
         "tr": "Kalpte atım hızını ve kasılma gücünü artıran primer sempatik reseptör hangisidir?",
-        "ar": "ما هو المستقبِل الودي الأساسي المسؤول عن زيادة سرعة وقوة انقباض القلب؟"
+        "ar": "ما هو المستقبِل الودي الأساسي المسؤول عن زيادة سرعة وقوة انقباض القلب؟",
+        "en": "Which adrenergic receptor subtype couples to Gq proteins to stimulate intracellular calcium release and smooth muscle contraction?"
       },
       "predictThenReveal": true,
       "config": {
@@ -606,16 +674,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -624,7 +695,8 @@
             "id": "opt-ph41-9",
             "text": {
               "tr": "Beta-1 adrenerjik reseptör (Gs kenetli).",
-              "ar": "مستقبِل Beta-1 الأدريناليني (المقترن بـ Gs)."
+              "ar": "مستقبِل Beta-1 الأدريناليني (المقترن بـ Gs).",
+              "en": "Alpha-1 adrenergic receptor (couples to Gq to activate PLC and release IP3/DAG)."
             },
             "isCorrect": true
           },
@@ -632,7 +704,8 @@
             "id": "opt-ph41-10",
             "text": {
               "tr": "Alfa-1 reseptör.",
-              "ar": "مستقبِل Alpha-1."
+              "ar": "مستقبِل Alpha-1.",
+              "en": "Beta-2 receptor (couples to Gi)."
             },
             "isCorrect": false
           }

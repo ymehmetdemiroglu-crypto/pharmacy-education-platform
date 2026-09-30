@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-01",
   "title": {
     "tr": "Tersinir Non-Kovalent Kuvvetler ve Bağlanma İlgisi",
-    "ar": "القوى غير التساهمية العكوسة وألفة الارتباط"
+    "ar": "القوى غير التساهمية العكوسة وألفة الارتباط",
+    "en": "Reversible Non-Covalent Forces & Binding Affinity"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "İlaç-reseptör kompleksinin tersinir ayrışma kinetiğini ve non-kovalent bağ enerjisi toplamlarını analiz etmek.",
-    "ar": "تحليل حركية التفكك العكوس لمعقد الدواء والمستقبل ومجموع طاقات الروابط غير التساهمية."
+    "ar": "تحليل حركية التفكك العكوس لمعقد الدواء والمستقبل ومجموع طاقات الروابط غير التساهمية.",
+    "en": "Distinguish ionic, hydrogen, hydrophobic, and van der Waals interactions governing drug-receptor complex stability."
   },
   "misconceptions": [
     {
       "tr": "Tersinir bir ilacın reseptörde sonsuza kadar kilitli kalacağı yanılgısı (ayrışma oranı koff ile sürekli dinamik yenilenir).",
-      "ar": "الظن الخاطئ بأن الدواء العكوس يبقى مرتبطاً للأبد (يتجدد الارتباط بحركية مستمرة تحكمها koff)."
+      "ar": "الظن الخاطئ بأن الدواء العكوس يبقى مرتبطاً للأبد (يتجدد الارتباط بحركية مستمرة تحكمها koff).",
+      "en": "Covalent bonding is the standard mechanism for all therapeutic drugs."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Binding Affinity & Thermodynamic Free Energy",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Neden İlaç Etkisi Sonunda Biter?",
-        "ar": "لماذا ينتهي مفعول الدواء حتماً؟"
+        "ar": "لماذا ينتهي مفعول الدواء حتماً؟",
+        "en": "Why Most Drugs Do Not Form Permanent Covalent Bonds"
       },
       "prompt": {
         "tr": "Bir tansiyon hapı içtiğinizde etkisi 24 saat sonra neden kaybolur? Moleküler düzeyde ilacı reseptörden söken termal fırtına nedir?",
-        "ar": "عند تناول خافض للضغط، لماذا يزول تأثيره بعد 24 ساعة؟ ما العاصفة الحرارية الجزيئية التي تفك الدواء عن (reseptör)؟"
+        "ar": "عند تناول خافض للضغط، لماذا يزول تأثيره بعد 24 ساعة؟ ما العاصفة الحرارية الجزيئية التي تفك الدواء عن (reseptör)؟",
+        "en": "Why do the vast majority of therapeutic drugs bind targets reversibly rather than forming irreversible covalent bonds?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Sıcaklık ve Ayrışma Hızı",
-        "ar": "توقع: الحرارة وسرعة التفكك"
+        "ar": "توقع: الحرارة وسرعة التفكك",
+        "en": "Prediction: Energy Hierarchy of Non-Covalent Bonds"
       },
       "prompt": {
         "tr": "Non-kovalent bağlarla tutunan bir ligandın reseptörden kopma hızı (koff) vücut sıcaklığındaki termal çalkantıyla nasıl değişir?",
-        "ar": "كيف تتأثر سرعة انفصال الدواء (koff) المرتبط بروابط غير تساهمية بالاضطراب الحراري عند درجة حرارة الجسم؟"
+        "ar": "كيف تتأثر سرعة انفصال الدواء (koff) المرتبط بروابط غير تساهمية بالاضطراب الحراري عند درجة حرارة الجسم؟",
+        "en": "Which non-covalent intermolecular force contributes the greatest binding enthalpy (strength per bond) in physiological solution?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph12-1",
             "text": {
               "tr": "Termal enerji bağları sürekli titreştirerek ilacı belirli bir yarı ömürle reseptörden koparır.",
-              "ar": "تهز الطاقة الحرارية الروابط باستمرار لتفصل الدواء عن المستقبل وفق عمر نصف محدد."
+              "ar": "تهز الطاقة الحرارية الروابط باستمرار لتفصل الدواء عن المستقبل وفق عمر نصف محدد.",
+              "en": "Electrostatic ionic bonds (salt bridges)."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph12-2",
             "text": {
               "tr": "Sıcaklık kovalent bağa dönüştürür.",
-              "ar": "تحول الحرارة الرابطة إلى تساهمية دائمة."
+              "ar": "تحول الحرارة الرابطة إلى تساهمية دائمة.",
+              "en": "Van der Waals dispersion forces."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Model: Mıknatıs ve Titreşen Masa",
-        "ar": "تشبيه حدسي: المغناطيس والطاولة المهتزة"
+        "ar": "تشبيه حدسي: المغناطيس والطاولة المهتزة",
+        "en": "Intuitive Analogy: Velcro and Molecular Magnets"
       },
       "prompt": {
         "tr": "Titreşen bir masadaki küçük mıknatıslar yapışır, bir süre durur ve sarsıntıyla fırlar. İşte koff bu titreşimin ilacı sökme hızıdır.",
-        "ar": "مغانط صغيرة على طاولة تهتز: تلتصق للحظات ثم تفلتها الهزات. سرعة koff هي معدل إفلات الجزيء نتيجة هذا الاضطراب."
+        "ar": "مغانط صغيرة على طاولة تهتز: تلتصق للحظات ثم تفلتها الهزات. سرعة koff هي معدل إفلات الجزيء نتيجة هذا الاضطراب.",
+        "en": "A single hook-and-loop fiber is weak, but hundreds combined create immense tensile grip. Multiple non-covalent bonds create tight, reversible binding."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Rezidans Süresi (Residence Time)",
-        "ar": "زمن المكوث على المستقبل (Residence Time)"
+        "ar": "زمن المكوث على المستقبل (Residence Time)",
+        "en": "Spatial Map of Intermolecular Forces"
       },
       "prompt": {
         "tr": "Ligand-reseptör kompleksinin ortalama yaşam süresi tau = 1 / koff ile tanımlanır. Uzun rezidans süresi, ilacın kanda azalsa bile etkisini sürdürmesini sağlar.",
-        "ar": "يعرف متوسط عمر معقد الدواء والمستقبل بـ tau = 1 / koff. زمن المكوث الطويل يبقي التأثير حتى بعد انخفاض الدواء بالدم."
+        "ar": "يعرف متوسط عمر معقد الدواء والمستقبل بـ tau = 1 / koff. زمن المكوث الطويل يبقي التأثير حتى بعد انخفاض الدواء بالدم.",
+        "en": "Receptor binding pockets integrate electrostatic ionic bonds (40-110 kcal/mol), hydrogen bonds (2-10 kcal/mol), and van der Waals forces (0.5-1 kcal/mol)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülasyon: Koff ve İlaç Rezidansı",
-        "ar": "محاكاة تفاعلية: سرعة koff ومكوث الدواء"
+        "ar": "محاكاة تفاعلية: سرعة koff ومكوث الدواء",
+        "en": "Interactive Matcher: Non-Covalent Bond Assembly"
       },
       "prompt": {
         "tr": "Farklı koff değerlerine sahip iki ilacı karşılaştırın. İlacı yıkadıktan sonra reseptör doluluğunun zamana karşı sönümlenmesini izleyin.",
-        "ar": "قارن بين دوائين بمعدلي koff مختلفين. راقب اضمحلال إشغال المستقبِلات مع الزمن بعد غسل الدواء من الوسط."
+        "ar": "قارن بين دوائين بمعدلي koff مختلفين. راقب اضمحلال إشغال المستقبِلات مع الزمن بعد غسل الدواء من الوسط.",
+        "en": "Align pharmacological functional groups with receptor amino acid residues to construct high-affinity binding pockets."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -295,11 +325,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Yavaş Koff ve Uzun Etki",
-        "ar": "استكشاف موجه: بطء الانفصال وطول المفعول"
+        "ar": "استكشاف موجه: بطء الانفصال وطول المفعول",
+        "en": "Guided Discovery: Water Desolvation Entropy Gain"
       },
       "prompt": {
         "tr": "Tiotropium bronkodilatör ilacı M3 muskarinik reseptöründen 30 saatten uzun sürede ayrışır (yavaş koff). Bu ilaca hangi klinik üstünlüğü kazandırır?",
-        "ar": "ينفصل دواء Tiotropium الموسع للقصبات عن مستقبلات M3 خلال أكثر من 30 ساعة. ما الميزة السريرية التي يمنحها هذا البطء؟"
+        "ar": "ينفصل دواء Tiotropium الموسع للقصبات عن مستقبلات M3 خلال أكثر من 30 ساعة. ما الميزة السريرية التي يمنحها هذا البطء؟",
+        "en": "Observe how hydrophobic burial releases ordered water molecules into bulk solvent, providing a massive favorable entropic drive (+ΔS)."
       },
       "predictThenReveal": true,
       "config": {
@@ -317,16 +349,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -335,7 +370,8 @@
             "id": "opt-ph12-3",
             "text": {
               "tr": "Plazmadan hızla temizlense bile günde tek doz kullanım konforu sağlar.",
-              "ar": "يوفر راحة الاستخدام بجرعة واحدة يومياً حتى لو زال الدواء سريعاً من البلازما."
+              "ar": "يوفر راحة الاستخدام بجرعة واحدة يومياً حتى لو زال الدواء سريعاً من البلازما.",
+              "en": "Release of ordered water molecules increases solvent entropy (+ΔS)."
             },
             "isCorrect": true
           },
@@ -343,7 +379,8 @@
             "id": "opt-ph12-4",
             "text": {
               "tr": "İlacın hiç etki etmemesini sağlar.",
-              "ar": "يجعل الدواء عديم الفعالية."
+              "ar": "يجعل الدواء عديم الفعالية.",
+              "en": "Water molecules freeze into ice."
             },
             "isCorrect": false
           }
@@ -356,11 +393,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Bağlanma Kinetiği: Kd = koff / kon",
-        "ar": "حركية الارتباط: معادلة Kd = koff / kon"
+        "ar": "حركية الارتباط: معادلة Kd = koff / kon",
+        "en": "Formal Thermodynamics: Gibbs Free Energy of Binding"
       },
       "prompt": {
         "tr": "Ayrışma sabiti iki hız sabitinin oranıdır: Kd = koff / kon. Yüksek afinite genellikle çok yavaş ayrışma hızından (küçük koff) kaynaklanır.",
-        "ar": "ثابت التفكك هو حاصل قسمة معدلي السرعة: Kd = koff / kon. تنبع الألفة العالية غالباً من بطء شديد في معدل الانفصال (koff صغير)."
+        "ar": "ثابت التفكك هو حاصل قسمة معدلي السرعة: Kd = koff / kon. تنبع الألفة العالية غالباً من بطء شديد في معدل الانفصال (koff صغير).",
+        "en": "Overall binding free energy: ΔG = ΔH - TΔS = -RT ln(Ka) = RT ln(Kd). Each 1.4 kcal/mol reduction in ΔG improves Kd by a factor of 10."
       },
       "predictThenReveal": false,
       "config": {},
@@ -372,16 +411,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -391,11 +433,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Tersinir ve Geri Dönüşsüz Farkı",
-        "ar": "فحص المفهوم: الفارق بين العكوس وغير العكوس"
+        "ar": "فحص المفهوم: الفارق بين العكوس وغير العكوس",
+        "en": "Concept Check: Aspirin vs Reversible NSAIDs"
       },
       "prompt": {
         "tr": "Non-kovalent bağlarla bağlanan çok güçlü (sub-pikomolar) bir ilaç, kovalent bağ oluşturan bir ilaçla aynı mıdır?",
-        "ar": "هل الدواء فائق القوة المرتبط بروابط غير تساهمية متطابق تماماً مع الدواء المشكل لرابطة تساهمية دائمة؟"
+        "ar": "هل الدواء فائق القوة المرتبط بروابط غير تساهمية متطابق تماماً مع الدواء المشكل لرابطة تساهمية دائمة؟",
+        "en": "Aspirin permanently acetylates Ser-529 on COX-1. How does this covalent mechanism differ pharmacologically from ibuprofen?"
       },
       "predictThenReveal": true,
       "config": {
@@ -413,16 +457,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -431,7 +478,8 @@
             "id": "opt-ph12-5",
             "text": {
               "tr": "Hayır, ne kadar sıkı tutunsa da non-kovalent bağlar eninde sonunda termodinamik olarak ayrışır.",
-              "ar": "لا، فمهما بلغت قوة الروابط غير التساهمية فإنها تنفصل حتماً تحت تأثير الديناميكا الحرارية."
+              "ar": "لا، فمهما بلغت قوة الروابط غير التساهمية فإنها تنفصل حتماً تحت تأثير الديناميكا الحرارية.",
+              "en": "Aspirin covalently acetylates COX, requiring new protein synthesis for recovery."
             },
             "isCorrect": true
           },
@@ -439,7 +487,8 @@
             "id": "opt-ph12-6",
             "text": {
               "tr": "Evet, hiçbir fark yoktur.",
-              "ar": "نعم، لا يوجد أي فارق على الإطلاق."
+              "ar": "نعم، لا يوجد أي فارق على الإطلاق.",
+              "en": "Aspirin binds reversibly via weak van der Waals forces."
             },
             "isCorrect": false
           }
@@ -452,11 +501,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Seçim: Kısa Etkili vs Uzun Etkili Antihistaminikler",
-        "ar": "مقارنة سريرية: مضادات الهيستامين قصيرة وطويلة المفعول"
+        "ar": "مقارنة سريرية: مضادات الهيستامين قصيرة وطويلة المفعول",
+        "en": "Application: Designing a High-Affinity Ligand"
       },
       "prompt": {
         "tr": "H1 reseptöründen hızlı ayrışan klorfeniramin günde 4 kez alınırken, yavaş ayrışan setirizin günde tek doz verilir. Bu fark nereden doğar?",
-        "ar": "بينما يؤخذ Chlorpheniramine سريع الانفصال 4 مرات يومياً، يعطى Cetirizine بطيء الانفصال بجرعة واحدة. من أين ينبع هذا الفارق؟"
+        "ar": "بينما يؤخذ Chlorpheniramine سريع الانفصال 4 مرات يومياً، يعطى Cetirizine بطيء الانفصال بجرعة واحدة. من أين ينبع هذا الفارق؟",
+        "en": "Adding a single complementary hydrogen bond donor increases binding affinity roughly 5- to 10-fold. By how much does this lower required clinical dose?"
       },
       "predictThenReveal": true,
       "config": {
@@ -474,16 +525,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -492,7 +546,8 @@
             "id": "opt-ph12-7",
             "text": {
               "tr": "Setirizinin H1 reseptöründeki daha uzun rezidans süresinden (daha yavaş koff).",
-              "ar": "من طول زمن مكوث Cetirizine على مستقبلات H1 (بطء معدل koff)."
+              "ar": "من طول زمن مكوث Cetirizine على مستقبلات H1 (بطء معدل koff).",
+              "en": "The required clinical dose can be reduced roughly 5- to 10-fold."
             },
             "isCorrect": true
           },
@@ -500,7 +555,8 @@
             "id": "opt-ph12-8",
             "text": {
               "tr": "Setirizinin kovalent bağ yapmasından.",
-              "ar": "من تشكيل السيتريزين روابط تساهمية."
+              "ar": "من تشكيل السيتريزين روابط تساهمية.",
+              "en": "Dose must be multiplied by 10."
             },
             "isCorrect": false
           }
@@ -513,11 +569,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Easson-Stedman 3 Nokta Kuralı",
-        "ar": "استرجاع معرفي: قاعدة Easson-Stedman الثلاثية"
+        "ar": "استرجاع معرفي: قاعدة Easson-Stedman الثلاثية",
+        "en": "Retrieval: Ionization and Salt Bridges"
       },
       "prompt": {
         "tr": "Farmasötik Kimya kursunda öğrendiğimiz gibi enantiyomerlerin reseptöre afinitesini belirleyen 3 noktalı bağlanma kuralı kime aitti?",
-        "ar": "كما تعلمنا في مساق الكيمياء، إلى من تنسب قاعدة الارتباط ثلاثي النقاط التي تحكم ألفة المصاوغات المرآوية نحو (reseptör)؟"
+        "ar": "كما تعلمنا في مساق الكيمياء، إلى من تنسب قاعدة الارتباط ثلاثي النقاط التي تحكم ألفة المصاوغات المرآوية نحو (reseptör)؟",
+        "en": "Recall Lesson 2 from MedChem: which physiological pH condition ensures an amine drug forms a salt bridge with Aspartate-113?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -529,16 +587,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -548,11 +609,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Doz-Yanıt Eğrileri ve Etkinlik (Modül 2)",
-        "ar": "ربط مفاهيمي: منحنيات الجرعة والاستجابة (الوحدة 2)"
+        "ar": "ربط مفاهيمي: منحنيات الجرعة والاستجابة (الوحدة 2)",
+        "en": "Connection: Graded Dose-Response Curves (Lesson 3)"
       },
       "prompt": {
         "tr": "Reseptöre bağlanmak yalnızca ilk adımdır; peki bu bağlanma hücrede nasıl bir biyolojik yanıt üretir? Modül 2 de agonistleri inceleyeceğiz.",
-        "ar": "الارتباط بالمستقبل مجرد خطوة أولى؛ كيف يترجم هذا الارتباط إلى استجابة خلوية؟ في الوحدة 2، سنستكشف المشبهات (agonist)."
+        "ar": "الارتباط بالمستقبل مجرد خطوة أولى؛ كيف يترجم هذا الارتباط إلى استجابة خلوية؟ في الوحدة 2، سنستكشف المشبهات (agonist).",
+        "en": "Once a drug occupies receptor binding sites, how does receptor occupancy translate into physiological cellular response?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -564,16 +627,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -583,11 +649,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Kinetik ve Afinite",
-        "ar": "اختبار الإتقان: الحركية والألفة"
+        "ar": "اختبار الإتقان: الحركية والألفة",
+        "en": "Mastery Assessment: Bond Thermodynamics"
       },
       "prompt": {
         "tr": "Bir ilacın reseptörde kalış süresini (rezidans zamanı) maksimize etmek isteyen bir farmakolog hangi parametreyi küçültmelidir?",
-        "ar": "لتعظيم زمن بقاء ومكوث الدواء على المستقبِل، أي معامل حركي يجب على عالم الأدوية تقليله؟"
+        "ar": "لتعظيم زمن بقاء ومكوث الدواء على المستقبِل، أي معامل حركي يجب على عالم الأدوية تقليله؟",
+        "en": "Which non-covalent force provides the greatest distance-dependent attraction (1/r) to guide incoming ligands toward receptor active sites?"
       },
       "predictThenReveal": true,
       "config": {
@@ -605,16 +673,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -623,7 +694,8 @@
             "id": "opt-ph12-9",
             "text": {
               "tr": "Ayrışma hız sabitini (koff).",
-              "ar": "ثابت سرعة الانفصال (koff)."
+              "ar": "ثابت سرعة الانفصال (koff).",
+              "en": "Ionic charge-charge interaction (distance dependence 1/r)."
             },
             "isCorrect": true
           },
@@ -631,7 +703,8 @@
             "id": "opt-ph12-10",
             "text": {
               "tr": "Bağlanma hız sabitini (kon).",
-              "ar": "ثابت سرعة الارتباط (kon)."
+              "ar": "ثابت سرعة الارتباط (kon).",
+              "en": "Induced dipole interaction (1/r^6)."
             },
             "isCorrect": false
           }

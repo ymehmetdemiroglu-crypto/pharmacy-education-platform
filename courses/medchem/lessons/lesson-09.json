@@ -4,18 +4,21 @@
   "moduleId": "mc-mod-05",
   "title": {
     "tr": "Faz I Fonksiyonelleşme: Sitokrom P450 Hidroksilasyon Mekanizmaları",
-    "ar": "المرحلة الأولى من التحول الحيوي: آليات هدرلة CYP450"
+    "ar": "المرحلة الأولى من التحول الحيوي: آليات هدرلة CYP450",
+    "en": "Phase I Functionalization: Cytochrome P450 Hydroxylation Mechanisms"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Sitokrom P450 katalitik döngüsünü ve alifatik/aromatik hidroksilasyon mekanizmalarını analiz etmek.",
-    "ar": "تحليل الدورة التحفيزية لإنزيمات CYP450 وآليات الهدرلة الأليفاتية والعطرية للأدوية."
+    "ar": "تحليل الدورة التحفيزية لإنزيمات CYP450 وآليات الهدرلة الأليفاتية والعطرية للأدوية.",
+    "en": "Delineate Cytochrome P450 catalytic oxygenation mechanisms and predict vulnerable sites of aromatic, aliphatic, and benzylic metabolism."
   },
   "misconceptions": [
     {
       "tr": "Metabolizmanın her zaman bir ilacı tamamen etkisiz hale getirdiği yanılgısı (ön-ilaçlar ve toksik metabolitler vardır).",
-      "ar": "الاعتقاد الخاطئ بأن الاستقلاب يعطل فعالية الدواء دائماً (توجد أدوية طليعية ومستقلبات سامة)."
+      "ar": "الاعتقاد الخاطئ بأن الاستقلاب يعطل فعالية الدواء دائماً (توجد أدوية طليعية ومستقلبات سامة).",
+      "en": "Phase I metabolism always detoxifies drugs and renders them pharmacologically inert."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Cytochrome P450 Mechanisms & Phase I Biotransformation",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Yağlı İlaçların Vücuttan Kaçışı",
-        "ar": "هروب الأدوية الدهنية من الجسم"
+        "ar": "هروب الأدوية الدهنية من الجسم",
+        "en": "The Paracetamol Danger: Hepatotoxic Quinone Imine"
       },
       "prompt": {
         "tr": "Böbrekler yalnızca suda çözünen polar molekülleri atabilir. Vücut aşırı lipofil bir ilacı idrarla atabilmek için ilk önce ne yapar?",
-        "ar": "تطرح الكلى فقط الجزيئات القطبية المنحلة بالماء. ماذا يفعل الجسم أولاً ليتمكن من طرح دواء فائق الدهنية في البول؟"
+        "ar": "تطرح الكلى فقط الجزيئات القطبية المنحلة بالماء. ماذا يفعل الجسم أولاً ليتمكن من طرح دواء فائق الدهنية في البول؟",
+        "en": "Why does a therapeutic 500 mg dose of paracetamol clear harmlessly, while an overdose generates fatal centrilobular liver necrosis?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Moleküle Saplanan Kanca",
-        "ar": "توقع: زرع الخطاف الجزيئي"
+        "ar": "توقع: زرع الخطاف الجزيئي",
+        "en": "Prediction: Most Vulnerable Oxidation Site"
       },
       "prompt": {
         "tr": "Faz I reaksiyonlarının temel kimyasal amacı ilacı doğrudan tamamen suda çözünür yapmak mıdır?",
-        "ar": "هل الهدف الكيميائي الأساسي لتفاعلات المرحلة الأولى هو جعل الدواء منحلاً بالماء تماماً وبشكل مباشر؟"
+        "ar": "هل الهدف الكيميائي الأساسي لتفاعلات المرحلة الأولى هو جعل الدواء منحلاً بالماء تماماً وبشكل مباشر؟",
+        "en": "On a molecule containing an aromatic ring, a benzylic CH2, and an unactivated terminal CH3, where does CYP450 attack fastest?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-mc51-1",
             "text": {
               "tr": "Hayır, asıl amaç moleküle polar bir fonksiyonel kulp (-OH, -NH2, -COOH) takarak Faz II ye hazırlamaktır.",
-              "ar": "لا، بل الهدف زرع مقبض وظيفي قطبي (-OH، -NH2، -COOH) لتهيئة الجزيء للمرحلة الثانية."
+              "ar": "لا، بل الهدف زرع مقبض وظيفي قطبي (-OH، -NH2، -COOH) لتهيئة الجزيء للمرحلة الثانية.",
+              "en": "Conversion into more polar, water-soluble metabolites for renal excretion."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-mc51-2",
             "text": {
               "tr": "Evet, tek bir Faz I reaksiyonu ilacı hemen tamamen hidrofilik yapar.",
-              "ar": "نعم، فتفاعل واحد من المرحلة الأولى يحول الدواء فوراً إلى مفرط الانحلال بالماء."
+              "ar": "نعم، فتفاعل واحد من المرحلة الأولى يحول الدواء فوراً إلى مفرط الانحلال بالماء.",
+              "en": "Making drugs more lipophilic for fat storage."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Pürüzsüz Topa Kulp Takmak",
-        "ar": "تشبيه حدسي: تثبيت مقبض على كرة ملساء"
+        "ar": "تشبيه حدسي: تثبيت مقبض على كرة ملساء",
+        "en": "Intuitive Model: Molecular Blowtorch"
       },
       "prompt": {
         "tr": "Pürüzsüz kaygan bir mermer topu iple bağlayamazsınız; önce üzerine bir kanca vidası (-OH) takmalı, sonra devasa bir halat (glukuronid) bağlamalısınız.",
-        "ar": "لا يمكنك ربط كرة رخامية ملساء؛ يجب أولاً تثبيت برغي خطافي (-OH) لربط حبل الإخراج الضخم به لاحقاً."
+        "ar": "لا يمكنك ربط كرة رخامية ملساء؛ يجب أولاً تثبيت برغي خطافي (-OH) لربط حبل الإخراج الضخم به لاحقاً.",
+        "en": "CYP450 is a controlled molecular blowtorch: its iron-oxo heme core (Compound I) rips a hydrogen atom from inert C-H bonds to insert oxygen."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "CYP450 Katalitik Hem Döngüsü",
-        "ar": "دورة الهيم التحفيزية في CYP450"
+        "ar": "دورة الهيم التحفيزية في CYP450",
+        "en": "Visual Catalytic Cycle: P450 Electron Cascade"
       },
       "prompt": {
         "tr": "Hekzakodine Fe(III) substratı bağlar -> 1e- ile Fe(II) ye indirgenir -> O2 bağlar -> ikinci elektronla demir-oksen radikali C-H bağını oksitler.",
-        "ar": "يرتبط الحديد Fe(III) بالدواء -> يختزل بإلكترون إلى Fe(II) -> يربط الأكسجين -> يولد جذر الحديد-أوكسين عالي الطاقة لهدرلة رابطة C-H."
+        "ar": "يرتبط الحديد Fe(III) بالدواء -> يختزل بإلكترون إلى Fe(II) -> يربط الأكسجين -> يولد جذر الحديد-أوكسين عالي الطاقة لهدرلة رابطة C-H.",
+        "en": "Trace Fe3+ substrate binding -> 1st electron reduction -> O2 binding -> 2nd electron -> O-O cleavage -> [Fe(IV)=O] radical rebound."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülatör: Metabolism Map",
-        "ar": "محاكي تفاعلي: خارطة الاستقلاب"
+        "ar": "محاكي تفاعلي: خارطة الاستقلاب",
+        "en": "Interactive Artifact: Metabolism Map"
       },
       "prompt": {
         "tr": "İlaç substratını seçin; alifatik zincirde omega ve omega-1 hidroksilasyon ürünlerini, aromatik halkada epoksit ara ürünlerini harita üzerinde izleyin.",
-        "ar": "اختر الجزيء الدوائي وراقب على الخارطة التفاعلية نواتج الهدرلة في موقعي omega و omega-1 وتشكل الإيبوكسيد في الحلقات العطرية."
+        "ar": "اختر الجزيء الدوائي وراقب على الخارطة التفاعلية نواتج الهدرلة في موقعي omega و omega-1 وتشكل الإيبوكسيد في الحلقات العطرية.",
+        "en": "Highlight metabolic soft spots on drug molecules. Test benzylic hydroxylation, N-dealkylation, and aromatic epoxide formation in real-time."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "MetabolismMap",
@@ -295,11 +325,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Aromatic Epoxidation ve Toksisite",
-        "ar": "استكشاف موجه: الإيبوكسيد العطري والسمية"
+        "ar": "استكشاف موجه: الإيبوكسيد العطري والسمية",
+        "en": "Guided Discovery: NIH Shift & Epoxide Intermediates"
       },
       "prompt": {
         "tr": "Aromatik halka oksitlendiğinde oluşan aren oksit ara ürünü epoksit hidrolaz enzimiyle nötralize edilmezse ne olur?",
-        "ar": "عند أكسدة الحلقة العطرية لتشكيل Aren oxide، ماذا يحدث إذا لم يحله إنزيم Epoxide hydrolase فوراً؟"
+        "ar": "عند أكسدة الحلقة العطرية لتشكيل Aren oxide، ماذا يحدث إذا لم يحله إنزيم Epoxide hydrolase فوراً؟",
+        "en": "Observe aromatic hydroxylation: CYP forms an arene oxide intermediate, followed by hydride migration (NIH shift) to avoid reactive toxicity."
       },
       "predictThenReveal": true,
       "config": {
@@ -317,16 +349,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -335,7 +370,8 @@
             "id": "opt-mc51-3",
             "text": {
               "tr": "Hücresel DNA ve proteinlere kovalent bağlanarak hepatotoksisite ve mutajenite yaratır.",
-              "ar": "يرتبط تساهمياً بالبروتينات والـ DNA الخلوي مسبباً سمية كبدية وطفرات جينية."
+              "ar": "يرتبط تساهمياً بالبروتينات والـ DNA الخلوي مسبباً سمية كبدية وطفرات جينية.",
+              "en": "Cytochrome P450 monooxygenases (CYP3A4, CYP2D6)."
             },
             "isCorrect": true
           },
@@ -343,7 +379,8 @@
             "id": "opt-mc51-4",
             "text": {
               "tr": "Zararsız gaz olarak akciğerden uçar.",
-              "ar": "يتطاير كغاز غير ضار عبر الرئتين."
+              "ar": "يتطاير كغاز غير ضار عبر الرئتين.",
+              "en": "Hemoglobin in red blood cells."
             },
             "isCorrect": false
           }
@@ -356,11 +393,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Kimyasal Mekanizma: Radikal Geri Tepmesi (Radical Rebound)",
-        "ar": "الآلية الكيميائية: الارتداد الجذري (Radical Rebound)"
+        "ar": "الآلية الكيميائية: الارتداد الجذري (Radical Rebound)",
+        "en": "Formal Principles: CYP Superfamily Genetics"
       },
       "prompt": {
         "tr": "[Fe(IV)=O] türü C-H bağından hidrojen radikali kopararak [Fe(IV)-OH] ve karbon radikali üretir. Ardından -OH hızla karbona transfer olur.",
-        "ar": "ينتزع مركب [Fe(IV)=O] جذراً هيدروجينياً ليشكل جذر كربوني و [Fe(IV)-OH]، ثم ترتد مجموعة -OH بسرعة فائقة لترتبط بالكربون."
+        "ar": "ينتزع مركب [Fe(IV)=O] جذراً هيدروجينياً ليشكل جذر كربوني و [Fe(IV)-OH]، ثم ترتد مجموعة -OH بسرعة فائقة لترتبط بالكربون.",
+        "en": "CYP3A4, CYP2D6, and CYP2C9 handle >75% of clinical drugs. Functionalization installs polar handles (-OH, -NH2, -COOH) for Phase II conjugation."
       },
       "predictThenReveal": false,
       "config": {},
@@ -372,16 +411,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -391,11 +433,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: CYP İzoenzimleri",
-        "ar": "فحص المفهوم: عائلات إنزيمات CYP"
+        "ar": "فحص المفهوم: عائلات إنزيمات CYP",
+        "en": "Concept Check: Prodrug Bioactivation"
       },
       "prompt": {
         "tr": "İnsan karaciğerinde klinik ilaçların yarısından fazlasının Faz I oksidasyonundan sorumlu baskın izoenzim hangisidir?",
-        "ar": "ما هو النظير الإنزيمي الكبدي السائد المسؤول عن أكسدة أكثر من نصف الأدوية السريرية في المرحلة الأولى؟"
+        "ar": "ما هو النظير الإنزيمي الكبدي السائد المسؤول عن أكسدة أكثر من نصف الأدوية السريرية في المرحلة الأولى؟",
+        "en": "Which anticancer alkylating agent requires CYP2B6/3A4 4-hydroxylation in hepatic microsomes to generate active phosphoramide mustard?"
       },
       "predictThenReveal": true,
       "config": {
@@ -413,16 +457,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -431,7 +478,8 @@
             "id": "opt-mc51-5",
             "text": {
               "tr": "CYP3A4.",
-              "ar": "إنزيم CYP3A4."
+              "ar": "إنزيم CYP3A4.",
+              "en": "An active drug is metabolized into an inactive excretable metabolite."
             },
             "isCorrect": true
           },
@@ -439,7 +487,8 @@
             "id": "opt-mc51-6",
             "text": {
               "tr": "CYP1A1.",
-              "ar": "إنزيم CYP1A1."
+              "ar": "إنزيم CYP1A1.",
+              "en": "Metabolism always produces active toxins."
             },
             "isCorrect": false
           }
@@ -452,11 +501,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik İlaç Etkileşimi: Greyfurt Suyu ve Felodipin",
-        "ar": "تفاعل سريري: عصير الغريب فروت و Felodipine"
+        "ar": "تفاعل سريري: عصير الغريب فروت و Felodipine",
+        "en": "Application: NAPQI Neutralization with N-Acetylcysteine"
       },
       "prompt": {
         "tr": "Greyfurt suyundaki furanokumarinler bağırsak CYP3A4 enzimini intihar inhibisyonuyla yok eder. Felodipin içildiğinde ne olur?",
-        "ar": "تثبط مركبات الفورانوكومارين في الغريب فروت إنزيم CYP3A4 المعوي نهائياً. ماذا يحدث عند تناول Felodipine؟"
+        "ar": "تثبط مركبات الفورانوكومارين في الغريب فروت إنزيم CYP3A4 المعوي نهائياً. ماذا يحدث عند تناول Felodipine؟",
+        "en": "Why is IV N-acetylcysteine (NAC) the specific antidote for paracetamol poisoning, and what endogenous molecule does it replenish?"
       },
       "predictThenReveal": true,
       "config": {
@@ -474,16 +525,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -492,7 +546,8 @@
             "id": "opt-mc51-7",
             "text": {
               "tr": "İlk geçiş metabolizması çöker, felodipin kan düzeyi tehlikeli biçimde fırlar ve tansiyon düşer.",
-              "ar": "ينهار استقلاب المرور الأول، وتتضاعف مستويات الدواء في الدم بشكل خطر مسببة هبوط ضغط حاد."
+              "ar": "ينهار استقلاب المرور الأول، وتتضاعف مستويات الدواء في الدم بشكل خطر مسببة هبوط ضغط حاد.",
+              "en": "İlk geçiş metabolizması çöker, felodipin kan düzeyi tehlikeli biçimde fırlar ve tansiyon düşer."
             },
             "isCorrect": true
           },
@@ -500,7 +555,8 @@
             "id": "opt-mc51-8",
             "text": {
               "tr": "İlaç hiç emilmez.",
-              "ar": "لا يمتص الدواء نهائياً."
+              "ar": "لا يمتص الدواء نهائياً.",
+              "en": "İlaç hiç emilmez."
             },
             "isCorrect": false
           }
@@ -513,11 +569,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Polarite ve Membran Difüzyonu",
-        "ar": "استرجاع معرفي: القطبية والانتشار الغشائي"
+        "ar": "استرجاع معرفي: القطبية والانتشار الغشائي",
+        "en": "Retrieval: Classical Bioisosteric Blockers"
       },
       "prompt": {
         "tr": "Modül 1 de gördüğümüz gibi polar hidroksil (-OH) grubunun takılması ilacın lipid membranlardan geri emilimini nasıl etkiler?",
-        "ar": "كما تعلمنا في الوحدة 1، كيف يؤثر إدخال مجموعة هيدروكسيل (-OH) قطبية على إعادة امتصاص الدواء عبر الأغشية الدهنية؟"
+        "ar": "كما تعلمنا في الوحدة 1، كيف يؤثر إدخال مجموعة هيدروكسيل (-OH) قطبية على إعادة امتصاص الدواء عبر الأغشية الدهنية؟",
+        "en": "Recall from Lesson 5: which halogen atom is strategically installed at the para-position of a phenyl ring to block CYP oxidation?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -529,16 +587,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -548,11 +609,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Faz II Konjugasyonu (Ders 10)",
-        "ar": "ربط مفاهيمي: اقتران المرحلة الثانية (الدرس 10)"
+        "ar": "ربط مفاهيمي: اقتران المرحلة الثانية (الدرس 10)",
+        "en": "Forward Connection: Phase II Conjugation Pathways (Lesson 10)"
       },
       "prompt": {
         "tr": "Faz I ile açılan bu -OH kulpuna bir sonraki derste devasa ve yüksek oranda polar glukuronik asit bağlanacaktır.",
-        "ar": "المقبض القطبي (-OH) الناتج من المرحلة الأولى سيرتبط في الدرس القادم بجزيء جلوكورونيك فائق القطبية."
+        "ar": "المقبض القطبي (-OH) الناتج من المرحلة الأولى سيرتبط في الدرس القادم بجزيء جلوكورونيك فائق القطبية.",
+        "en": "Next, we examine how the polar handles created by CYP450 are conjugated with glucuronic acid and sulfate for total renal excretion."
       },
       "predictThenReveal": false,
       "config": {},
@@ -564,16 +627,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -583,11 +649,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Faz I Oksidasyon Mekanizması",
-        "ar": "اختبار الإتقان: آلية أكسدة المرحلة الأولى"
+        "ar": "اختبار الإتقان: آلية أكسدة المرحلة الأولى",
+        "en": "Mastery Assessment: Metabolic Soft Spot Ranking"
       },
       "prompt": {
         "tr": "Sitokrom P450 monooksijenaz döngüsünde 1 molekül O2 nin akıbeti nedir?",
-        "ar": "في دورة CYP450 أحادية الأكسجين، ما هو مصير جزيء الأكسجين O2 المستهلك؟"
+        "ar": "في دورة CYP450 أحادية الأكسجين، ما هو مصير جزيء الأكسجين O2 المستهلك؟",
+        "en": "Rank C-H bond activation energies and P450 oxidation susceptibility: Allylic/Benzylic, Tertiary aliphatic, Secondary, Primary."
       },
       "predictThenReveal": true,
       "config": {
@@ -605,16 +673,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -623,7 +694,8 @@
             "id": "opt-mc51-9",
             "text": {
               "tr": "1 oksijen atomu substrata takılır, diğeri 2 elektron ve 2 proton alarak suya indirgenir.",
-              "ar": "تدمج ذرة أكسجين واحدة في الدواء، بينما تختزل الذرة الأخرى بإلكترونين وبروتونين إلى ماء."
+              "ar": "تدمج ذرة أكسجين واحدة في الدواء، بينما تختزل الذرة الأخرى بإلكترونين وبروتونين إلى ماء.",
+              "en": "1 oksijen atomu substrata takılır, diğeri 2 elektron ve 2 proton alarak suya indirgenir."
             },
             "isCorrect": true
           },
@@ -631,7 +703,8 @@
             "id": "opt-mc51-10",
             "text": {
               "tr": "Her iki atom da substrata takılır.",
-              "ar": "تدمج ذرتا الأكسجين معاً في ركيزة الدواء."
+              "ar": "تدمج ذرتا الأكسجين معاً في ركيزة الدواء.",
+              "en": "Her iki atom da substrata takılır."
             },
             "isCorrect": false
           }

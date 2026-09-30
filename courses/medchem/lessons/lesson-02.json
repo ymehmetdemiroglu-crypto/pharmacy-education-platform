@@ -4,22 +4,26 @@
   "moduleId": "mc-mod-01",
   "title": {
     "tr": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti",
-    "ar": "الذوبانية، التأين وثابت العزل الكهربائي"
+    "ar": "الذوبانية، التأين وثابت العزل الكهربائي",
+    "en": "Solubility, Ionization & Dielectric Constant"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Henderson-Hasselbalch bağıntısıyla ilaç iyonizasyonunu hesaplayıp membran geçişini öngörmek.",
-    "ar": "حساب درجة التأين (iyonizasyon) عبر علاقة Henderson-Hasselbalch والتنبؤ بنفوذية الأغشية."
+    "ar": "حساب درجة التأين (iyonizasyon) عبر علاقة Henderson-Hasselbalch والتنبؤ بنفوذية الأغشية.",
+    "en": "Calculate drug ionization fraction using the Henderson-Hasselbalch equation and predict membrane permeation across biological barriers."
   },
   "misconceptions": [
     {
       "tr": "Asitlerin her zaman yüklü, bazların ise nötr olduğu yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن الأحماض مشحونة دائماً بينما القواعد محايدة."
+      "ar": "الاعتقاد الخاطئ بأن الأحماض مشحونة دائماً بينما القواعد محايدة.",
+      "en": "Acids are always charged, whereas bases are always neutral."
     },
     {
       "tr": "İyonize türlerin biyolojik zarlardan pasif difüzyonla kolayca geçebileceği varsayımı.",
-      "ar": "الافتراض الخاطئ بأن الأنواع المتأينة تعبر الأغشية البيولوجية بالانتشار البسيط بسهولة."
+      "ar": "الافتراض الخاطئ بأن الأنواع المتأينة تعبر الأغشية البيولوجية بالانتشار البسيط بسهولة.",
+      "en": "Ionized species can readily cross lipid bilayers via passive diffusion."
     }
   ],
   "sources": [
@@ -36,7 +40,7 @@
       "topic": "Ionization, pKa, and Solubility",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -83,11 +87,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Mide mi Bağırsak mı?",
-        "ar": "المعدة أم الأمعاء؟"
+        "ar": "المعدة أم الأمعاء؟",
+        "en": "Stomach or Intestine?"
       },
       "prompt": {
         "tr": "Aspirin (pKa = 3.5) asidik midede (pH 1.5) mi, yoksa bazik ince bağırsakta (pH 6.5) mı daha hızlı zardan geçer?",
-        "ar": "هل يمتص Aspirin ذو (pKa = 3.5) أسرع عبر غشاء المعدة الحامضية (pH 1.5) أم الأمعاء الدقيقة (pH 6.5)؟"
+        "ar": "هل يمتص Aspirin ذو (pKa = 3.5) أسرع عبر غشاء المعدة الحامضية (pH 1.5) أم الأمعاء الدقيقة (pH 6.5)؟",
+        "en": "Does aspirin (pKa = 3.5) cross biological membranes faster across the acidic gastric mucosa (pH 1.5) or basic intestinal lumen (pH 6.5)?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -103,16 +109,19 @@
       ],
       "hints": [
         {
-          "tr": "Yalnızca yüksüz moleküller lipit zardan pasif geçer.",
-          "ar": "فقط الجزيئات غير المشحونة تعبر الغشاء الدهني بسهولة."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Asit kendi asidik ortamında yüksüz kalır.",
-          "ar": "الحمض يبقى غير مشحون في وسطه الحامضي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Midede iyonize olmayan oran çok yüksektir.",
-          "ar": "في المعدة تكون النسبة غير المتأينة مرتفعة جداً."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -122,11 +131,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Asit Ortamda Yük Durumu",
-        "ar": "توقع: حالة الشحنة في الوسط الحامضي"
+        "ar": "توقع: حالة الشحنة في الوسط الحامضي",
+        "en": "Prediction: Charge State in Acidic Medium"
       },
       "prompt": {
         "tr": "Zayıf bir asit olan aspirin pH 1.5 midede hangi oranda iyonize olur?",
-        "ar": "كم تكون نسبة تأين aspirin كحمض ضعيف في بيئة المعدة ذات pH 1.5؟"
+        "ar": "كم تكون نسبة تأين aspirin كحمض ضعيف في بيئة المعدة ذات pH 1.5؟",
+        "en": "What percentage of weak acid aspirin is ionized in the gastric lumen at pH 1.5?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
@@ -135,24 +146,28 @@
             "id": "opt-2-1",
             "text": {
               "tr": "%99 dan fazla iyonize (A-).",
-              "ar": "أكثر من 99% متأين (A-)."
+              "ar": "أكثر من 99% متأين (A-).",
+              "en": "More than 99% ionized (A-)."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
               "tr": "Asidik ortam asidin iyonlaşmasını baskılar.",
-              "ar": "الوسط الحامضي يثبط تأين الحمض الضعيف."
+              "ar": "الوسط الحامضي يثبط تأين الحمض الضعيف.",
+              "en": "Correct! Since pH (7.4) is well above pKa (3.5), the weak acid is overwhelmingly deprotonated and ionized."
             }
           },
           {
             "id": "opt-2-2",
             "text": {
               "tr": "%99 dan fazla iyonize olmamış (HA).",
-              "ar": "أكثر من 99% غير متأين (HA)."
+              "ar": "أكثر من 99% غير متأين (HA).",
+              "en": "More than 99% unionized (HA)."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
               "tr": "Doğru! pH < pKa durumunda zayıf asit protonlanmış nötr HA formundadır.",
-              "ar": "صحيح! عندما يكون pH أقل من pKa يتواجد الحمض بشكله المتعادل غير المشحون."
+              "ar": "صحيح! عندما يكون pH أقل من pKa يتواجد الحمض بشكله المتعادل غير المشحون.",
+              "en": "When pH exceeds pKa, weak acids dissociate into charged conjugate bases."
             }
           }
         ]
@@ -181,16 +196,19 @@
       ],
       "hints": [
         {
-          "tr": "pH ile pKa arasındaki 2 birimlik farka bakın.",
-          "ar": "انظر إلى الفارق البالغ وحدتين بين pH و pKa."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Negatif fark nötr formu artırır.",
-          "ar": "الفارق السالب يزيد الشكل المحايد."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "10^(-2) oranı %1 iyonize demektir.",
-          "ar": "نسبة 10^(-2) تعني 1% فقط متأين."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -200,11 +218,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Su Zırhı ve Yağ Kapısı",
-        "ar": "تشبيه حدسي: درع الماء وبوابة الزيت"
+        "ar": "تشبيه حدسي: درع الماء وبوابة الزيت",
+        "en": "Intuitive Analogy: Water Shield & Lipid Gate"
       },
       "prompt": {
         "tr": "Yüklü iyonlar çevrelerine kalın bir su kalkanı sararak yağlı zara yaklaşamaz. Nötr molekül ise bu kalkanı taşımadığından zardan rahatça süzülür.",
-        "ar": "تحاط الأيونات المشحونة بدرع ماء كثيف يمنعها من عبور الغشاء الدهني، بينما تنفذ الجزيئات المحايدة الخالية من الشحنة بسهولة."
+        "ar": "تحاط الأيونات المشحونة بدرع ماء كثيف يمنعها من عبور الغشاء الدهني، بينما تنفذ الجزيئات المحايدة الخالية من الشحنة بسهولة.",
+        "en": "Charged ions surround themselves with a dense hydration shell, unable to enter greasy lipid bilayers. Neutral molecules slip through easily."
       },
       "predictThenReveal": false,
       "config": {},
@@ -216,16 +236,19 @@
       ],
       "hints": [
         {
-          "tr": "Yük taşıyan molekül suyu çeker.",
-          "ar": "الجزيء المشحون يجذب جزيئات الماء بقوة."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Yağ fazı yüklü tanecikleri iter.",
-          "ar": "الطور الدهني يطرد الشحنات الكهروستاتيكية."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Nötr tür zardan kolay geçer.",
-          "ar": "الشكل المحايد يعبر بسهولة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -235,11 +258,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Mekanizma Şeması: İyon Tuzağı",
-        "ar": "مخطط الآلية: الحصار الأيوني"
+        "ar": "مخطط الآلية: الحصار الأيوني",
+        "en": "Mechanism Diagram: Ion Trapping"
       },
       "prompt": {
         "tr": "Nötr molekül zarı geçtikten sonra bazik kanda (pH 7.4) iyonlaşırsa kapana kısılır. Buna iyon tuzağı (ion trapping) denir.",
-        "ar": "عندما ينفذ الجزيء المتعادل إلى الدم ذي pH 7.4 يتأين ويصبح عاجزاً عن العودة، وهي ظاهرة الحصار الأيوني (iyon tuzağı)."
+        "ar": "عندما ينفذ الجزيء المتعادل إلى الدم ذي pH 7.4 يتأين ويصبح عاجزاً عن العودة، وهي ظاهرة الحصار الأيوني (iyon tuzağı).",
+        "en": "Once neutral molecules diffuse into blood (pH 7.4), they ionize into charged species and cannot return. This is ion trapping."
       },
       "predictThenReveal": false,
       "config": {},
@@ -251,16 +276,19 @@
       ],
       "hints": [
         {
-          "tr": "Zar iki tarafındaki pH farkı akışı yönlendirir.",
-          "ar": "فارق درجة الحموضة بين جانبي الغشاء يوجه التدفق."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Kanda iyonize olan molekül geri kaçamaz.",
-          "ar": "الجزيء المتأين في الدم يتعذر عليه الرجوع."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Bu durum emilimi ve birikimi artırır.",
-          "ar": "هذا يعزز الامتصاص والتراكم الحيوي."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -270,11 +298,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Simülatör: İyonizasyon Sürgüsü",
-        "ar": "محاكي تفاعلي: زالق توازن التأين"
+        "ar": "محاكي تفاعلي: زالق توازن التأين",
+        "en": "Interactive Simulator: Ionization Slider"
       },
       "prompt": {
         "tr": "pH sürgüsünü 1.0 den 8.0 e kaydırarak aspirinin ve propranololün iyonize oranlarındaki dramatik değişimi ve zar geçirgenliğini test edin.",
-        "ar": "حرك زالق pH من 1.0 إلى 8.0 لاختبار التغير الجذري في تأين ونفوذية aspirin و propranolol عبر الغشاء."
+        "ar": "حرك زالق pH من 1.0 إلى 8.0 لاختبار التغير الجذري في تأين ونفوذية aspirin و propranolol عبر الغشاء.",
+        "en": "Sweep the pH slider between 1.0 and 8.0 to observe the dramatic shift in aspirin and propranolol ionization and membrane flux."
       },
       "predictThenReveal": false,
       "widgetType": "IonizationEquilibriumSlider",
@@ -296,16 +326,19 @@
       ],
       "hints": [
         {
-          "tr": "pH 3.5 noktasında iyonize oran %50 dir.",
-          "ar": "عند pH 3.5 تكون نسبة التأين 50% تماماً."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "pH 7.4 te aspirin %99.9 iyonizedir.",
-          "ar": "عند pH 7.4 يتأين الأسبرين بنسبة 99.9%."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Zar geçirgenliği nötr fraksiyonla paraleldir.",
-          "ar": "نفوذية الغشاء تتناسب طردياً مع الكسر غير المتأين."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -315,11 +348,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Bazik İlaçların Emilimi",
-        "ar": "استكشاف موجه: امتصاص الأدوية القاعدية"
+        "ar": "استكشاف موجه: امتصاص الأدوية القاعدية",
+        "en": "Guided Discovery: Basic Drug Absorption"
       },
       "prompt": {
         "tr": "Simülatörde zayıf baz olan propranololu (pKa = 9.5) seçin. pH 1.5 midede propranolol hangi formdadır ve emilebilir mi?",
-        "ar": "اختر propranolol القاعدي (pKa = 9.5). في المعدة ذات pH 1.5، بأي شكل يتواجد وهل يستطيع العبور؟"
+        "ar": "اختر propranolol القاعدي (pKa = 9.5). في المعدة ذات pH 1.5، بأي شكل يتواجد وهل يستطيع العبور؟",
+        "en": "Select weak base propranolol (pKa = 9.5). In the stomach at pH 1.5, what fraction is protonated (BH+) and can it be absorbed?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
@@ -328,24 +363,28 @@
             "id": "opt-disc2-1",
             "text": {
               "tr": "%99.99 protonlanmış yüklü (BH+) formdadır; mideden emilemez.",
-              "ar": "أكثر من 99.99% بروتوني مشحون (BH+)؛ ولا يعبر الغشاء من المعدة."
+              "ar": "أكثر من 99.99% بروتوني مشحون (BH+)؛ ولا يعبر الغشاء من المعدة.",
+              "en": "Over 99.99% protonated charged (BH+) form; cannot permeate gastric membranes."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
               "tr": "Kesinlikle! Zayıf bazlar asidik midede tamamen protonlanarak iyon tuzağına düşer.",
-              "ar": "بالتأكيد! القواعد الضعيفة تتأين بالكامل في المعدة الحامضية ولا تعبر."
+              "ar": "بالتأكيد! القواعد الضعيفة تتأين بالكامل في المعدة الحامضية ولا تعبر.",
+              "en": "Correct! In the acidic stomach (pH 1.5), basic amine drugs are protonated into charged cations that cannot cross lipid bilayers."
             }
           },
           {
             "id": "opt-disc2-2",
             "text": {
               "tr": "Nötr B formundadır ve mideden çok hızlı emilir.",
-              "ar": "بشكله المتعادل B ويمتص بسرعة فائقة من المعدة."
+              "ar": "بشكله المتعادل B ويمتص بسرعة فائقة من المعدة.",
+              "en": "In neutral B form and rapidly absorbed through gastric mucosa."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
               "tr": "Bazlar asidik ortamda proton alarak pozitif yük kazanırlar.",
-              "ar": "القواعد تكتسب بروتوناً وتصبح مشحونة إيجابياً في الوسط الحامضي."
+              "ar": "القواعد تكتسب بروتوناً وتصبح مشحونة إيجابياً في الوسط الحامضي.",
+              "en": "Basic drugs exist predominantly in charged cation form in highly acidic environments."
             }
           }
         ]
@@ -378,16 +417,19 @@
       ],
       "hints": [
         {
-          "tr": "Bazlar asit ortamda proton (H+) yakalar.",
-          "ar": "القواعد تلتقط البروتون في الوسط الحامضي."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Yüklü BH+ membran yağını geçemez.",
-          "ar": "المركب المشحون BH+ لا يعبر دهون الغشاء."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Emilim için bağırsaktaki yüksek pH beklenmelidir.",
-          "ar": "يتطلب الامتصاص وصول الدواء للوسط المعوي الأعلى pH."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -397,11 +439,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Formal İlkeler: Henderson-Hasselbalch Denklemleri",
-        "ar": "المبادئ الرسمية: معادلات Henderson-Hasselbalch"
+        "ar": "المبادئ الرسمية: معادلات Henderson-Hasselbalch",
+        "en": "Formal Principles: Henderson-Hasselbalch Equations"
       },
       "prompt": {
         "tr": "Zayıf asitler için pH = pKa + log([A-]/[HA]), zayıf bazlar için pH = pKa + log([B]/[BH+]) geçerlidir. İyonlaşma dielektrik sabitine de bağlıdır.",
-        "ar": "للأحماض: pH = pKa + log([A-]/[HA])، وللقواعد: pH = pKa + log([B]/[BH+]). يعتمد التأين أيضاً على ثابت العزل الكهربائي."
+        "ar": "للأحماض: pH = pKa + log([A-]/[HA])، وللقواعد: pH = pKa + log([B]/[BH+]). يعتمد التأين أيضاً على ثابت العزل الكهربائي.",
+        "en": "For weak acids: pH = pKa + log([A-]/[HA]). For weak bases: pH = pKa + log([B]/[BH+]). Ionization is also governed by medium dielectric constant."
       },
       "predictThenReveal": false,
       "config": {
@@ -415,16 +459,19 @@
       ],
       "hints": [
         {
-          "tr": "Suyun dielektrik sabiti yüksektir (80).",
-          "ar": "ثابت عزل الماء مرتفع (حوالي 80)."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Lipid zarın dielektrik sabiti düşüktür (2-4).",
-          "ar": "ثابت عزل الغشاء الدهني منخفض جداً (2-4)."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Düşük sabitte yükler birbirini aşırı çeker.",
-          "ar": "في الوسط منخفض العزل تتضاعف قوى الجذب الكهروستاتيكي."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -434,11 +481,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: İdrar Alkalileştirme",
-        "ar": "فحص المفهوم: قلونة البول السريرية"
+        "ar": "فحص المفهوم: قلونة البول السريرية",
+        "en": "Concept Check: Urinary Alkalinization"
       },
       "prompt": {
         "tr": "Fenobarbital (zayıf asit, pKa = 7.4) zehirlenmesinde sodyum bikarbonat verilerek idrar pH sı 8.0 e çıkarılır. Atılım nasıl değişir?",
-        "ar": "في التسمم بـ Fenobarbital (حمض ضعيف، pKa = 7.4)، يعطى بيكربونات الصوديوم لرفع pH البول إلى 8.0. كيف يتأثر الإطراح؟"
+        "ar": "في التسمم بـ Fenobarbital (حمض ضعيف، pKa = 7.4)، يعطى بيكربونات الصوديوم لرفع pH البول إلى 8.0. كيف يتأثر الإطراح؟",
+        "en": "In phenobarbital toxicity (weak acid, pKa = 7.4), IV sodium bicarbonate raises urine pH to 8.0. How does renal clearance change?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
@@ -447,24 +496,28 @@
             "id": "opt-chk2-1",
             "text": {
               "tr": "İdrarda iyonize fenobarbital artar, tübülden geri emilemez ve atılım kat kat hızlanır.",
-              "ar": "يزداد تأين الدواء في البول، فيتعذر ارتشافه كلوياً ويتسارع إطراحه أضعافاً."
+              "ar": "يزداد تأين الدواء في البول، فيتعذر ارتشافه كلوياً ويتسارع إطراحه أضعافاً.",
+              "en": "50% ionized, 50% unionized."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
               "tr": "Kusursuz! Alkalileştirme ilacı tübüler lümende hapseder (renal iyon tuzağı).",
-              "ar": "ممتاز! القلونة تحبس الدواء في لمعة الأنابيب الكلوية (حصار أيوني)."
+              "ar": "ممتاز! القلونة تحبس الدواء في لمعة الأنابيب الكلوية (حصار أيوني).",
+              "en": "Correct! When pH equals pKa, [A-] equals [HA] exactly according to Henderson-Hasselbalch."
             }
           },
           {
             "id": "opt-chk2-2",
             "text": {
               "tr": "Nötrleşen fenobarbital kana hızla geri döner.",
-              "ar": "يتعادل الدواء ويعود إلى الدم بسرعة."
+              "ar": "يتعادل الدواء ويعود إلى الدم بسرعة.",
+              "en": "100% ionized."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
               "tr": "pH pKa dan büyük olduğunda asitler iyonlaşır, nötrleşmez.",
-              "ar": "عندما يتجاوز pH قيمة pKa يتأين الحمض ولا يتعادل."
+              "ar": "عندما يتجاوز pH قيمة pKa يتأين الحمض ولا يتعادل.",
+              "en": "Full ionization requires pH to be at least 2 units away from pKa."
             }
           }
         ]
@@ -493,16 +546,19 @@
       ],
       "hints": [
         {
-          "tr": "Bazik idrarda asit iyonize olur mu?",
-          "ar": "هل يتأين الحمض في البول القلوي؟"
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İyonize tür zardan geri emilebilir mi?",
-          "ar": "هل يعاد امتصاص النوع المتأين عبر الغشاء؟"
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Geri emilemeyen madde idrarla dışarı atılır.",
-          "ar": "المادة غير المرتشفة تطرح مع البول حتماً."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -512,11 +568,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Karar: Lokal Anestezik Enjeksiyonu",
-        "ar": "قرار سريري: حقن المخدر الموضعي"
+        "ar": "قرار سريري: حقن المخدر الموضعي",
+        "en": "Clinical Decision: Local Anesthetic Injection"
       },
       "prompt": {
         "tr": "İltihaplı ve asidik (pH 5.0) bir apse dokusuna zayıf baz olan lidokain (pKa = 7.9) enjekte edildiğinde anestezi neden başarısız olur?",
-        "ar": "عند حقن Lidocaine القاعدي (pKa = 7.9) في نسيج خراج ملتهب حامضي (pH 5.0)، لماذا يفشل التخدير الموضعي؟"
+        "ar": "عند حقن Lidocaine القاعدي (pKa = 7.9) في نسيج خراج ملتهب حامضي (pH 5.0)، لماذا يفشل التخدير الموضعي؟",
+        "en": "Why does lidocaine injection (weak base, pKa = 7.9) fail to achieve anesthesia when injected into acidic, inflamed abscess tissue (pH 5.0)?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
@@ -525,24 +583,28 @@
             "id": "opt-app2-1",
             "text": {
               "tr": "Lidokain asit dokuda tamamen iyonlaşarak sinir kılıfı lipid zarını geçemez.",
-              "ar": "يتأين Lidocaine بالكامل في الوسط الحامضي فيعجز عن عبور غمد العصب الدهني."
+              "ar": "يتأين Lidocaine بالكامل في الوسط الحامضي فيعجز عن عبور غمد العصب الدهني.",
+              "en": "Alkalinize urine with sodium bicarbonate to trap ionized salicylate (A-)."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
               "tr": "Doğru! Sinir hücresine giremeyen lidokain sodyum kanallarını içeriden bloke edemez.",
-              "ar": "صحيح! لتعذر دخوله الخلية العصبية يعجز عن حظر قنوات الصوديوم من الداخل."
+              "ar": "صحيح! لتعذر دخوله الخلية العصبية يعجز عن حظر قنوات الصوديوم من الداخل.",
+              "en": "Correct! Ion trapping forces salicylic acid into its charged water-soluble form, preventing renal tubular reabsorption."
             }
           },
           {
             "id": "opt-app2-2",
             "text": {
               "tr": "İltihap lidokaini parçalar.",
-              "ar": "يقوم الالتهاب بتفكيك جزيء الليدوكائين كيميائياً."
+              "ar": "يقوم الالتهاب بتفكيك جزيء الليدوكائين كيميائياً.",
+              "en": "Acidify urine with ammonium chloride."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
               "tr": "Sorun kimyasal yıkım değil, iyonizasyon kaynaklı membran geçirgenlik kaybıdır.",
-              "ar": "الخلل ليس تفككاً كيميائياً بل فقدان النفوذية بسبب التأين."
+              "ar": "الخلل ليس تفككاً كيميائياً بل فقدان النفوذية بسبب التأين.",
+              "en": "Acidifying urine would convert salicylate back to neutral HA, causing reabsorption into blood."
             }
           }
         ]
@@ -571,16 +633,19 @@
       ],
       "hints": [
         {
-          "tr": "Lidokain bir zayıf bazdır.",
-          "ar": "الليدوكائين قاعدة ضعيفة."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Asit dokuda proton yakalar.",
-          "ar": "يلتقط بروتوناً في النسيج الحامضي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Yüklü form sinir hücresi içine giremez.",
-          "ar": "الشكل المشحون لا يدخل الخلية العصبية."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -590,11 +655,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Doygunluk ve Termodinamik Aktivite",
-        "ar": "استرجاع معرفي: التشبع والنشاط الديناميكي"
+        "ar": "استرجاع معرفي: التشبع والنشاط الديناميكي",
+        "en": "Retrieval: Saturation & Thermodynamic Activity"
       },
       "prompt": {
         "tr": "Ders 1 de öğrendiğimiz gibi, yapısal olarak özgül olmayan bir ilacın kanda zarlara kaçmasını sağlayan termodinamik büyüklük nedir?",
-        "ar": "كما تعلمنا في الدرس 1، ما هو المقدار الديناميكي الحراري الذي يدفع الدواء غير النوعي للهروب من الدم إلى الأغشية؟"
+        "ar": "كما تعلمنا في الدرس 1، ما هو المقدار الديناميكي الحراري الذي يدفع الدواء غير النوعي للهروب من الدم إلى الأغشية؟",
+        "en": "As learned in Lesson 1, what thermodynamic property drives non-specific drug molecules from blood into cellular lipid bilayers?"
       },
       "predictThenReveal": false,
       "config": {
@@ -608,16 +675,19 @@
       ],
       "hints": [
         {
-          "tr": "Ferguson ilkesinin temel parametresi.",
-          "ar": "المعامل الأساسي لمبدأ فيرجسون."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "a harfiyle sembolize edilir.",
-          "ar": "يرمز له بالحرف a."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Bağıl doygunluk (Pt / P0 veya St / S0).",
-          "ar": "التشبع النسبي للطور."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -627,11 +697,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Fonksiyonel Gruplar ve Bağlar (Modül 2)",
-        "ar": "ربط مفاهيمي: المجموعات الوظيفية والروابط (الوحدة 2)"
+        "ar": "ربط مفاهيمي: المجموعات الوظيفية والروابط (الوحدة 2)",
+        "en": "Forward Connection: Functional Groups & Bonds (Module 2)"
       },
       "prompt": {
         "tr": "İlacın iyonlaşması elektrik yükü yaratır. Modül 2 de bu yüklerin reseptör amino asitleriyle nasıl güçlü iyonik bağlar kurduğunu göreceğiz.",
-        "ar": "يولد تأين الدواء شحنات كهربائية. في الوحدة 2، سنستكشف كيف تشكل هذه الشحنات روابط أيونية وثيقة مع الأحماض الأمينية في (reseptör)."
+        "ar": "يولد تأين الدواء شحنات كهربائية. في الوحدة 2، سنستكشف كيف تشكل هذه الشحنات روابط أيونية وثيقة مع الأحماض الأمينية في (reseptör).",
+        "en": "Ionization generates formal electrostatic charges. In Module 2, we explore how these charges form powerful ionic bonds with receptor residues."
       },
       "predictThenReveal": false,
       "config": {
@@ -645,16 +717,19 @@
       ],
       "hints": [
         {
-          "tr": "Zıt yükler birbirini elektrostatik olarak çeker.",
-          "ar": "تتجاذب الشحنات المتضادة كهروستاتيكياً."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İyonik bağlar en yüksek enerjili non-kovalent bağlardır.",
-          "ar": "الروابط الأيونية هي الأعلى طاقة بين الروابط غير التساهمية."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Bir sonraki derste bağlanma enerjilerini hesaplayacağız.",
-          "ar": "في الدرس القادم سنحسب طاقات الارتباط."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -664,11 +739,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: İyonizasyon ve Membran Geçişi",
-        "ar": "اختبار الإتقان: التأين ونفوذية الأغشية"
+        "ar": "اختبار الإتقان: التأين ونفوذية الأغشية",
+        "en": "Mastery Assessment: Ionization & Membrane Permeation"
       },
       "prompt": {
         "tr": "Bir zayıf asit ilacın lipid membranlardan pasif difüzyon hızını maksimize etmek için ortam pH sı pKa ya göre nerede olmalıdır?",
-        "ar": "لتعظيم سرعة الانتشار البسيط لحمض ضعيف عبر الأغشية الدهنية، أين يجب أن تكون درجة حموضة الوسط مقارنة بـ pKa؟"
+        "ar": "لتعظيم سرعة الانتشار البسيط لحمض ضعيف عبر الأغشية الدهنية، أين يجب أن تكون درجة حموضة الوسط مقارنة بـ pKa؟",
+        "en": "To maximize passive lipid membrane permeation of a weak acid drug, how must ambient pH compare to the drug's pKa?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
@@ -677,24 +754,28 @@
             "id": "opt-mst2-1",
             "text": {
               "tr": "pH < pKa olmalıdır; böylece asit protonlanmış nötr HA formuna geçer ve zardan hızla süzülür.",
-              "ar": "يجب أن يكون pH < pKa؛ ليتواجد الحمض بشكله المحايد HA ويعبر الغشاء بسرعة."
+              "ar": "يجب أن يكون pH < pKa؛ ليتواجد الحمض بشكله المحايد HA ويعبر الغشاء بسرعة.",
+              "en": "Only unionized (neutral) species freely permeate biological membranes via passive diffusion."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
               "tr": "Tebrikler! İyonizasyon ve membran geçirgenliği prensiplerini tam olarak kavradınız. +50 XP.",
-              "ar": "تهانينا! لقد أتقنت تماماً مبادئ التأين ونفوذية الأغشية البيولوجية. +50 XP."
+              "ar": "تهانينا! لقد أتقنت تماماً مبادئ التأين ونفوذية الأغشية البيولوجية. +50 XP.",
+              "en": "Correct! The pH-partition hypothesis dictates that lipid membranes are permeable primarily to neutral lipophilic molecules."
             }
           },
           {
             "id": "opt-mst2-2",
             "text": {
               "tr": "pH > pKa olmalıdır; böylece molekül negatif yük kazanarak zarı çeker.",
-              "ar": "يجب أن يكون pH > pKa؛ ليكتسب الجزيء شحنة سالبة تجذب الغشاء."
+              "ar": "يجب أن يكون pH > pKa؛ ليكتسب الجزيء شحنة سالبة تجذب الغشاء.",
+              "en": "Only charged ions cross membranes through passive lipid diffusion."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
               "tr": "Yüklü türler hidrasyon kalkanı nedeniyle zardan geçemezler.",
-              "ar": "الأنواع المشحونة تعجز عن عبور الغشاء بسبب غلاف الإماهة المائي."
+              "ar": "الأنواع المشحونة تعجز عن عبور الغشاء بسبب غلاف الإماهة المائي.",
+              "en": "Ions are surrounded by a hydration shell and cannot passively cross hydrophobic lipid interiors."
             }
           }
         ]
@@ -723,16 +804,19 @@
       ],
       "hints": [
         {
-          "tr": "Nötr tür zardan geçer.",
-          "ar": "الشكل المتعادل هو الذي ينفذ عبر الغشاء."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "Asit ne zaman nötr kalır?",
-          "ar": "متى يبقى الحمض الضعيف غير متأين؟"
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "pH < pKa durumunda protonunu korur.",
-          "ar": "عندما يكون pH أقل من pKa يحتفظ ببروتونه."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     }

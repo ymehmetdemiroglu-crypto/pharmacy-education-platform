@@ -11,7 +11,7 @@ import { useAuth } from '@pharmacy/platform';
 import { useTranslation } from './context/TranslationContext';
 
 export const App: React.FC = () => {
-  const { user } = useAuth();
+  const { user, startTrial } = useAuth();
   const { t } = useTranslation();
   const [paywallOpen, setPaywallOpen] = useState(false);
 
@@ -81,7 +81,10 @@ export const App: React.FC = () => {
         isOpen={paywallOpen}
         onClose={() => setPaywallOpen(false)}
         onSelectPlan={() => setPaywallOpen(false)}
-        onStartTrial={() => setPaywallOpen(false)}
+        onStartTrial={async () => {
+          await startTrial();
+          setPaywallOpen(false);
+        }}
       />
     </div>
   );

@@ -15,12 +15,13 @@ export interface WidgetEventHandlers<T = any> {
 
 export interface BaseWidgetProps<C, A = any> extends WidgetEventHandlers<A> {
   config: C;
+  locale?: 'tr' | 'ar' | 'en';
   className?: string;
   disabled?: boolean;
 }
 
 export interface BaseSimulationWidgetProps {
-  locale?: 'tr' | 'ar';
+  locale?: 'tr' | 'ar' | 'en';
   readOnly?: boolean;
   initialState?: Record<string, any>;
   onStateChange?: (state: Record<string, any>) => void;

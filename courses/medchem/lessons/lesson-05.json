@@ -4,18 +4,21 @@
   "moduleId": "mc-mod-03",
   "title": {
     "tr": "Klasik Biyoizosterizm ve Grimm Hidrit Yer Değiştirme",
-    "ar": "التشابه الحيوي الكلاسيكي وإزاحة هيدريد Grimm"
+    "ar": "التشابه الحيوي الكلاسيكي وإزاحة هيدريد Grimm",
+    "en": "Classical Bioisosterism & Grimm Hydride Displacement"
   },
   "order": 1,
   "access": "free",
   "objective": {
     "tr": "Grimm hidrit yer değiştirme kuralı ve klasik izosterizm prensipleriyle öncü bileşikleri optimize etmek.",
-    "ar": "تحسين المركبات الطليعية باستخدام قاعدة إزاحة هيدريد Grimm ومبادئ التشابه الحيوي الكلاسيكي."
+    "ar": "تحسين المركبات الطليعية باستخدام قاعدة إزاحة هيدريد Grimm ومبادئ التشابه الحيوي الكلاسيكي.",
+    "en": "Apply Grimm's Hydride Displacement Law and classical bioisosteric replacements to optimize drug metabolic stability and potency."
   },
   "misconceptions": [
     {
       "tr": "Yalnızca aynı element atomlarının birbirinin yerine geçebileceği düşüncesi.",
-      "ar": "الظن الخاطئ بأن ذرات نفس العنصر فقط هي التي يمكن أن تحل محل بعضها."
+      "ar": "الظن الخاطئ بأن ذرات نفس العنصر فقط هي التي يمكن أن تحل محل بعضها.",
+      "en": "Bioisosteres must possess the same chemical elements."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Classical Bioisosterism & Grimm Hydride Displacement",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Flor ile Hidrojenin Gizemli Değişimi",
-        "ar": "التبادل الغامض بين الفلور والهيدروجين"
+        "ar": "التبادل الغامض بين الفلور والهيدروجين",
+        "en": "Metabolic Camouflage: Uracil vs 5-FU"
       },
       "prompt": {
         "tr": "Urasil molekülüne tek bir flor atomu eklendiğinde neden öldürücü bir antikanser ilacı olan 5-Fluorourasil e dönüşür?",
-        "ar": "عند إضافة ذرة فلور واحدة إلى Uracil، لماذا يتحول فجأة إلى دواء قاتل للسرطان هو 5-Fluorouracil؟"
+        "ar": "عند إضافة ذرة فلور واحدة إلى Uracil، لماذا يتحول فجأة إلى دواء قاتل للسرطان هو 5-Fluorouracil؟",
+        "en": "Why does substituting a tiny hydrogen with fluorine turn nutrient uracil into the lethal anticancer weapon 5-Fluorouracil (5-FU)?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: Grimm Kuralı ile Eşdeğerlik",
-        "ar": "توقع: التكافؤ عبر قاعدة Grimm"
+        "ar": "توقع: التكافؤ عبر قاعدة Grimm",
+        "en": "Prediction: Grimm Hydride Displacement"
       },
       "prompt": {
         "tr": "Grimm hidrit yer değiştirme kuralına göre -CH3 grubu hangi tek değerlikli heteroatomla elektronik izosterdir?",
-        "ar": "وفق قاعدة إزاحة هيدريد Grimm، مع أي ذرة غير متجانسة أحادية التكافؤ يتشابه -CH3 إلكترونياً؟"
+        "ar": "وفق قاعدة إزاحة هيدريد Grimm، مع أي ذرة غير متجانسة أحادية التكافؤ يتشابه -CH3 إلكترونياً؟",
+        "en": "According to Grimm's Law, adding hydrogen to an element mimics the valence electron configuration of the element to its right. What mimics -OH?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-mc31-1",
             "text": {
               "tr": "-OH, -NH2 ve -F (hepsi 7 değerlik elektronu eşdeğeridir).",
-              "ar": "-OH و -NH2 و -F (جميعها متكافئة بـ 7 إلكترونات تكافؤ)."
+              "ar": "-OH و -NH2 و -F (جميعها متكافئة بـ 7 إلكترونات تكافؤ).",
+              "en": "The dextrorotatory S-(+) enantiomer exhibits higher pharmacological potency."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-mc31-2",
             "text": {
               "tr": "Yalnızca -Br ile.",
-              "ar": "فقط مع -Br."
+              "ar": "فقط مع -Br.",
+              "en": "Both enantiomers possess identical biological potency."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Truva Atı Prensibi",
-        "ar": "تشبيه حدسي: مبدأ حصان طروادة"
+        "ar": "تشبيه حدسي: مبدأ حصان طروادة",
+        "en": "Intuitive Model: Molecular Stunt Doubles"
       },
       "prompt": {
         "tr": "Enzim bir molekülü tanıdık bir alt birim sanarak aktif bölgesine alır, ancak sahte parça reaksiyonu kilitler.",
-        "ar": "يخدع الإنزيم بالبنية الشبيهة فيدخلها إلى موقعه الفعال، لكن الذرة البديلة تعطل التفاعل الحيوي تماماً."
+        "ar": "يخدع الإنزيم بالبنية الشبيهة فيدخلها إلى موقعه الفعال، لكن الذرة البديلة تعطل التفاعل الحيوي تماماً.",
+        "en": "Like an actor's stunt double wearing the same costume, bioisosteres share shape, electron density, and size, fooling receptor proteins."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Grimm Tablosu ve Valans Elektronları",
-        "ar": "جدول Grimm وإلكترونات التكافؤ"
+        "ar": "جدول Grimm وإلكترونات التكافؤ",
+        "en": "Visual Diagram: Classical Isostere Groups"
       },
       "prompt": {
         "tr": "Grimm sütunlarında her hidrit eklemesi değerlik elektronunu 1 artırır: C(4) -> CH(5) -> CH2(6) -> CH3(7).",
-        "ar": "في أعمدة Grimm، إضافة كل هيدريد تزيد إلكترون تكافؤ افتراضي: C(4) -> CH(5) -> CH2(6) -> CH3(7)."
+        "ar": "في أعمدة Grimm، إضافة كل هيدريد تزيد إلكترون تكافؤ افتراضي: C(4) -> CH(5) -> CH2(6) -> CH3(7).",
+        "en": "Univalent (-CH3, -NH2, -OH, -F, -Cl), Bivalent (-CH2-, -NH-, -O-, -S-), and Ring equivalents (benzene vs pyridine vs thiophene)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Atölye: Structure Identifier",
-        "ar": "ورشة تفاعلية: محدد البنى الكيميائية"
+        "ar": "ورشة تفاعلية: محدد البنى الكيميائية",
+        "en": "Interactive Artifact: Structure Identifier"
       },
       "prompt": {
         "tr": "Monovalan, divalent ve ring-equivalent klasik izoster çiftlerini eşleştirin ve biyoizosterik optimizasyon skorunu izleyin.",
-        "ar": "طابق أزواج المتشابهات الكلاسيكية الأحادية والثنائية وحلقات التكافؤ لمتابعة معدل التحسين الحيوي."
+        "ar": "طابق أزواج المتشابهات الكلاسيكية الأحادية والثنائية وحلقات التكافؤ لمتابعة معدل التحسين الحيوي.",
+        "en": "Swap functional groups across a lead scaffold. Observe changes in Van der Waals volume, polar surface area, and metabolic liability."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "StructureIdentifier",
@@ -292,11 +322,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Divalent İzosterler",
-        "ar": "استكشاف موجه: المتشابهات ثنائية التكافؤ"
+        "ar": "استكشاف موجه: المتشابهات ثنائية التكافؤ",
+        "en": "Guided Discovery: Ring Equivalents in Antihistamines"
       },
       "prompt": {
         "tr": "Bir köprü grubunda -CH2- yerine -O- veya -S- yerleştirildiğinde molekülün geometrisi ve polaritesi nasıl değişir?",
-        "ar": "عند استبدال -CH2- في جسر جزيئي بـ -O- أو -S-، كيف تتغير هندسة الجزيء وقطبيته؟"
+        "ar": "عند استبدال -CH2- في جسر جزيئي بـ -O- أو -S-، كيف تتغير هندسة الجزيء وقطبيته؟",
+        "en": "Replace a phenyl ring with 2-thienyl or 2-pyridyl. Notice how receptor affinity is maintained while aqueous solubility improves."
       },
       "predictThenReveal": true,
       "config": {
@@ -314,16 +346,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -332,7 +367,8 @@
             "id": "opt-mc31-3",
             "text": {
               "tr": "Bağ açısı korunur ancak hidrojen bağı alma kabiliyeti ve polarite kazanılır.",
-              "ar": "تحفظ زاوية الرابطة مع اكتساب قطبية وقدرة على قبول الروابط الهيدروجينية."
+              "ar": "تحفظ زاوية الرابطة مع اكتساب قطبية وقدرة على قبول الروابط الهيدروجينية.",
+              "en": "The Eudismic Ratio (potency of eutomer divided by distomer)."
             },
             "isCorrect": true
           },
@@ -340,7 +376,8 @@
             "id": "opt-mc31-4",
             "text": {
               "tr": "Molekül anında parçalanır.",
-              "ar": "يتفكك الجزيء فوراً."
+              "ar": "يتفكك الجزيء فوراً.",
+              "en": "The partition coefficient logP."
             },
             "isCorrect": false
           }
@@ -353,11 +390,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Friedman ve Langmuir Biyoizosterizm İlkeleri",
-        "ar": "مبادئ Friedman و Langmuir للتشابه الحيوي"
+        "ar": "مبادئ Friedman و Langmuir للتشابه الحيوي",
+        "en": "Formal Formulation: Erlenmeyer & Friedman Isosteres"
       },
       "prompt": {
         "tr": "Klasik izosterler aynı dış kabuk elektron sayısına ve benzer sterik hacme sahip gruplardır. Hedef protein geometrisini bozmadan özellikleri ince ayarlar.",
-        "ar": "المتشابهات الكلاسيكية تمتلك نفس إلكترونات التكافؤ وحجماً فراغياً متقارباً، مما يتيح ضبط الخصائص دون تشويه التوافق مع (reseptör)."
+        "ar": "المتشابهات الكلاسيكية تمتلك نفس إلكترونات التكافؤ وحجماً فراغياً متقارباً، مما يتيح ضبط الخصائص دون تشويه التوافق مع (reseptör).",
+        "en": "Friedman defined bioisosteres as compounds whose structural resemblance creates similar biological activity despite chemical divergence."
       },
       "predictThenReveal": false,
       "config": {},
@@ -369,16 +408,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -388,11 +430,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Flor Atomunun Boyutu",
-        "ar": "فحص المفهوم: الحجم الفراغي لذرة الفلور"
+        "ar": "فحص المفهوم: الحجم الفراغي لذرة الفلور",
+        "en": "Concept Check: Suicide Inhibition of Thymidylate Synthase"
       },
       "prompt": {
         "tr": "Flor atomu van der Waals yarıçapı açısından (1.47 Å) hangi atoma en yakındır?",
-        "ar": "من حيث نصف قطر van der Waals (1.47 Å)، إلى أي ذرة يعتبر الفلور الأقرب حجماً؟"
+        "ar": "من حيث نصف قطر van der Waals (1.47 Å)، إلى أي ذرة يعتبر الفلور الأقرب حجماً؟",
+        "en": "In 5-FU, why cannot thymidylate synthase complete its catalytic cycle after attacking the C6 position of the fluorinated pyrimidine?"
       },
       "predictThenReveal": true,
       "config": {
@@ -410,16 +454,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -428,7 +475,8 @@
             "id": "opt-mc31-5",
             "text": {
               "tr": "Hidrojen atomuna (1.20 Å).",
-              "ar": "ذرة الهيدروجين (1.20 Å)."
+              "ar": "ذرة الهيدروجين (1.20 Å).",
+              "en": "Higher affinity enantiomer is the eutomer; lower affinity is the distomer."
             },
             "isCorrect": true
           },
@@ -436,7 +484,8 @@
             "id": "opt-mc31-6",
             "text": {
               "tr": "İyot atomuna (2.15 Å).",
-              "ar": "ذرة اليود (2.15 Å)."
+              "ar": "ذرة اليود (2.15 Å).",
+              "en": "Distomer always has higher affinity."
             },
             "isCorrect": false
           }
@@ -449,11 +498,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Uygulama: 5-FU Antikanser Tasarımı",
-        "ar": "تطبيق سريري: تصميم 5-FU المضاد للسرطان"
+        "ar": "تطبيق سريري: تصميم 5-FU المضاد للسرطان",
+        "en": "Application: Blocking Aromatic Hydroxylation"
       },
       "prompt": {
         "tr": "Timidilat sentaz enzimi 5-FU yu doğal substrat urasil sanarak bağlar; fakat C-F bağı koparılamadığı için enzim intihar inhibisyonuyla kilitlenir.",
-        "ar": "يرتبط إنزيم Thymidylate synthase بـ 5-FU كبديل طبيعي لـ Uracil، لكن عجز الإنزيم عن كسر رابطة C-F يعطله نهائياً."
+        "ar": "يرتبط إنزيم Thymidylate synthase بـ 5-FU كبديل طبيعي لـ Uracil، لكن عجز الإنزيم عن كسر رابطة C-F يعطله نهائياً.",
+        "en": "Para-position aromatic rings often suffer rapid CYP oxidation to phenols. What univalent classical isostere is installed to block metabolism?"
       },
       "predictThenReveal": true,
       "config": {
@@ -471,16 +522,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -489,7 +543,8 @@
             "id": "opt-mc31-7",
             "text": {
               "tr": "Bu bir intihar substratı (suicide substrate) biyoizosterik tasarımıdır.",
-              "ar": "هذا تصميم تشابه حيوي كركيزة انتحارية (suicide substrate)."
+              "ar": "هذا تصميم تشابه حيوي كركيزة انتحارية (suicide substrate).",
+              "en": "The (R)-enantiomer racemizes in vivo into the teratogenic (S)-enantiomer."
             },
             "isCorrect": true
           },
@@ -497,7 +552,8 @@
             "id": "opt-mc31-8",
             "text": {
               "tr": "Rastgele bir toksisitedir.",
-              "ar": "سمية عشوائية غير موجهة."
+              "ar": "سمية عشوائية غير موجهة.",
+              "en": "Enantiomers never convert in vivo."
             },
             "isCorrect": false
           }
@@ -510,11 +566,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Easson-Stedman ve Farmakofor",
-        "ar": "استرجاع معرفي: Easson-Stedman والفارماكوفور"
+        "ar": "استرجاع معرفي: Easson-Stedman والفارماكوفور",
+        "en": "Retrieval: Van der Waals Radii"
       },
       "prompt": {
         "tr": "Önceki derste gördüğümüz gibi farmakoforik temas noktalarının uzaysal konumu izosterik değişimlerde neden korunmalıdır?",
-        "ar": "كما رأينا سابقاً، لماذا يجب الحفاظ على التموضع الفراغي لنقاط التماس الفارماكوفورية عند استبدال المتشابهات الحيوية؟"
+        "ar": "كما رأينا سابقاً، لماذا يجب الحفاظ على التموضع الفراغي لنقاط التماس الفارماكوفورية عند استبدال المتشابهات الحيوية؟",
+        "en": "How does the Van der Waals radius of fluorine (1.47 Å) compare to hydrogen (1.20 Å) and oxygen (1.52 Å)?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -526,16 +584,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -545,11 +606,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Klasik Olmayan Biyoizosterler (Ders 6)",
-        "ar": "ربط مفاهيمي: المتشابهات غير الكلاسيكية (الدرس 6)"
+        "ar": "ربط مفاهيمي: المتشابهات غير الكلاسيكية (الدرس 6)",
+        "en": "Forward Connection: Non-Classical Bioisosteres (Lesson 6)"
       },
       "prompt": {
         "tr": "Klasik izosterler aynı valans elektronuna sahiptir; ancak klasik olmayan izosterler tamamen farklı atom sayılarıyla aynı etkiyi taklit eder.",
-        "ar": "تمتلك المتشابهات الكلاسيكية نفس إلكترونات التكافؤ، بينما تحاكي المتشابهات غير الكلاسيكية نفس التأثير بعدد ذرات مختلف تماماً."
+        "ar": "تمتلك المتشابهات الكلاسيكية نفس إلكترونات التكافؤ، بينما تحاكي المتشابهات غير الكلاسيكية نفس التأثير بعدد ذرات مختلف تماماً.",
+        "en": "Next, we explore non-classical isosteres like tetrazoles, which mimic carboxylic acids despite completely different geometries."
       },
       "predictThenReveal": false,
       "config": {},
@@ -561,16 +624,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -580,11 +646,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Grimm Kuralı",
-        "ar": "اختبار الإتقان: قاعدة Grimm"
+        "ar": "اختبار الإتقان: قاعدة Grimm",
+        "en": "Mastery Assessment: Classical Isosteric Strategy"
       },
       "prompt": {
         "tr": "Grimm hidrit kuralına göre -CH= grubunun klasik izoster karşılığı hangisidir?",
-        "ar": "وفق قاعدة إزاحة هيدريد Grimm، ما هو النظير المتشابه كلاسيكياً لمجموعة -CH=؟"
+        "ar": "وفق قاعدة إزاحة هيدريد Grimm، ما هو النظير المتشابه كلاسيكياً لمجموعة -CH=؟",
+        "en": "Which substitution represents a valid univalent classical bioisosteric replacement under Erlenmeyer's expanded valence rules?"
       },
       "predictThenReveal": true,
       "config": {
@@ -602,16 +670,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -620,7 +691,8 @@
             "id": "opt-mc31-9",
             "text": {
               "tr": "-N= piridin/benzen halka eşdeğerliği.",
-              "ar": "مجموعة -N= في تكافؤ حلقتي البنزين والبيريدين."
+              "ar": "مجموعة -N= في تكافؤ حلقتي البنزين والبيريدين.",
+              "en": "Three-point contact hypothesis (Easson-Stedman model)."
             },
             "isCorrect": true
           },
@@ -628,7 +700,8 @@
             "id": "opt-mc31-10",
             "text": {
               "tr": "-CH3.",
-              "ar": "مجموعة -CH3."
+              "ar": "مجموعة -CH3.",
+              "en": "Single-point electrostatic attraction."
             },
             "isCorrect": false
           }

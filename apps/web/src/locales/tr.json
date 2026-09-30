@@ -339,5 +339,22 @@
       "chooseAnswer": "Bir seçenek belirleyin:",
       "submit": "Cevabı Doğrula"
     }
+  },
+  "interactiveJourney": {
+    "phaseExplore": "1. Keşfet ve Anla",
+    "phaseMissions": "2. Uygulamalı Görevler",
+    "phaseQuiz": "3. Kavram Testi & Ustalık",
+    "simulationLab": "Biyofiziksel Simülasyon Laboratuvarı",
+    "exploreSubtitle": "Parametreleri serbestçe değiştirin, moleküllerin membran ve reseptör davranışını keşfedin.",
+    "clinicalPresets": "Klinik & Deneysel Önayarlar",
+    "liveHud": "Canlı Biyofiziksel Durum Göstergesi",
+    "howItWorks": "Moleküler Mekanizma Nasıl Çalışır?",
+    "startMissions": "Uygulamalı Görevlere Başla 🎯",
+    "advanceToQuiz": "Kavram Testine Geç 📝",
+    "missionCompleted": "Görev Başarıyla Tamamlandı! (+25 XP)",
+    "missionPending": "Görevi tamamlamak için parametreleri ayarlayın.",
+    "allMissionsDone": "Tüm Uygulamalı Görevler Tamamlandı! Harika İş 🏆",
+    "academicSources": "Akademik Kaynaklar ve Üniversite Ders Materyalleri"
   }
 }
+

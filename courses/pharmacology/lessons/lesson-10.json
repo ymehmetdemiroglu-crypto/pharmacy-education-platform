@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-05",
   "title": {
     "tr": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması",
-    "ar": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية"
+    "ar": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية",
+    "en": "Diuretic Mechanisms & Tubular Electrolyte Transport"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron taşıyıcıları üzerindeki moleküler mekanizmalarını ve elektrolit profillerini analiz etmek.",
-    "ar": "تحليل الآليات الجزيئية لمدرات البول العروية والثيازيدية والحافظة للبوتاسيوم على نواقل الكليون ومظهر الشوارد."
+    "ar": "تحليل الآليات الجزيئية لمدرات البول العروية والثيازيدية والحافظة للبوتاسيوم على نواقل الكليون ومظهر الشوارد.",
+    "en": "Analyze loop, thiazide, and potassium-sparing diuretics across nephron segments and electrolyte clearance profiles."
   },
   "misconceptions": [
     {
       "tr": "Tüm diüretiklerin potasyum kaybettirdiği yanılgısı (spironolakton ve amilorid potasyum tutucudur).",
-      "ar": "الاعتقاد الخاطئ بأن جميع مدرات البول تطرح البوتاسيوم (سبيرونولاكتون وأميلوريد حافظان للبوتاسيوم)."
+      "ar": "الاعتقاد الخاطئ بأن جميع مدرات البول تطرح البوتاسيوم (سبيرونولاكتون وأميلوريد حافظان للبوتاسيوم).",
+      "en": "Loop diuretics promote calcium retention in the same manner as thiazide diuretics."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Diuretics: Tubular Transport and Electrolyte Excretion",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Akciğer Ödemini 15 Dakikada Boşaltmak",
-        "ar": "تصريف الوذمة الرئوية في 15 دقيقة"
+        "ar": "تصريف الوذمة الرئوية في 15 دقيقة",
+        "en": "Relieving Pulmonary Edema in 15 Minutes"
       },
       "prompt": {
         "tr": "Nefes alamayan kalp yetmezliği hastasına damardan furosemid sıkıldığında, dakikalar içinde litrelerce idrar çıkışı nasıl tetiklenir?",
-        "ar": "عند حقن Furosemide وريدياً لمريض قصور قلب يختنق بالوذمة الرئوية، كيف يخرج لترات من البول في دقائق معدودة؟"
+        "ar": "عند حقن Furosemide وريدياً لمريض قصور قلب يختنق بالوذمة الرئوية، كيف يخرج لترات من البول في دقائق معدودة؟",
+        "en": "Why can an intravenous bolus of furosemide relieve suffocating acute pulmonary edema within minutes, even before major diuresis begins?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: En Güçlü Diüretik Segmenti",
-        "ar": "توقع: الجزء الأقوى لإدرار البول"
+        "ar": "توقع: الجزء الأقوى لإدرار البول",
+        "en": "Prediction: Most Powerful Diuretic Segment"
       },
       "prompt": {
         "tr": "Filtre edilen sodyumun yaklaşık %25 inin geri emildiği Henle kulpu bloke edilirse ne kadar idrar çıkışı olur?",
-        "ar": "عند حظر عروة Henle المسؤولة عن ارتشاف نحو 25% من الصوديوم، ما حجم الإدرار المتوقع؟"
+        "ar": "عند حظر عروة Henle المسؤولة عن ارتشاف نحو 25% من الصوديوم، ما حجم الإدرار المتوقع؟",
+        "en": "Which segment of the human nephron reabsorbs 25% of filtered sodium, making its blockers the most efficacious 'high-ceiling' diuretics?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph52-1",
             "text": {
               "tr": "Masif ve hızlı idrar çıkışı (yüksek tavanlı diüretik etki).",
-              "ar": "إدرار هائل وسريع للبول (تأثير المدر عالي السقف)."
+              "ar": "إدرار هائل وسريع للبول (تأثير المدر عالي السقف).",
+              "en": "Thick ascending limb of the loop of Henle (reabsorbs 25% of filtered Na+)."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph52-2",
             "text": {
               "tr": "İdrar tamamen kesilir.",
-              "ar": "ينقطع البول تماماً."
+              "ar": "ينقطع البول تماماً.",
+              "en": "Distal convoluted tubule."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Analoji: Su Nereye, Tuz Oraya",
-        "ar": "تشبيه حدسي: أينما ذهب الملح تبعه الماء"
+        "ar": "تشبيه حدسي: أينما ذهب الملح تبعه الماء",
+        "en": "Intuitive Analogy: Where Salt Goes, Water Follows"
       },
       "prompt": {
         "tr": "Böbreğin altın kuralı: Su tuzun arkasından koşar. Tübülde sodyumu hapsederseniz, su osmozla mecburen idrarda kalır.",
-        "ar": "القاعدة الذهبية في الكلى: الماء يتبع الملح دوماً. إذا حبست الصوديوم في الأنبوب، سيبقى الماء معه حتماً بالحلولية."
+        "ar": "القاعدة الذهبية في الكلى: الماء يتبع الملح دوماً. إذا حبست الصوديوم في الأنبوب، سيبقى الماء معه حتماً بالحلولية.",
+        "en": "Water moves obligatorily along osmotic gradients. Blocking sodium transporters traps salt in the tubule lumen, dragging water out into urine."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Nefron Boyunca Taşıyıcı Anatomisi",
-        "ar": "تشريح النواقل على طول أجزاء الكليون"
+        "ar": "تشريح النواقل على طول أجزاء الكليون",
+        "en": "Nephron Transporter Anatomy Across Segments"
       },
       "prompt": {
         "tr": "Henle çıkan kalın kol: NKCC2 (Furosemid hedefi). Distal tübül: NCC (Tiyazid hedefi). Toplayıcı kanal: ENaC ve Aldosteron (Spironolakton hedefi).",
-        "ar": "عروة Henle: ناقل NKCC2 (هدف Furosemide). الأنبوب القاصي: ناقل NCC (هدف Thiazide). القناة الجامعة: قنوات ENaC والألدوستيرون."
+        "ar": "عروة Henle: ناقل NKCC2 (هدف Furosemide). الأنبوب القاصي: ناقل NCC (هدف Thiazide). القناة الجامعة: قنوات ENaC والألدوستيرون.",
+        "en": "Proximal tubule (CA inhibitors) -> Thick ascending limb (NKCC2 / Loop) -> Distal convoluted tubule (NCCT / Thiazides) -> Collecting duct (ENaC / K+-sparing)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Laboratuvar: İyonizasyon ve Tübüler Taşınma",
-        "ar": "المختبر التفاعلي: التأين والنقل النبيبي"
+        "ar": "المختبر التفاعلي: التأين والنقل النبيبي",
+        "en": "Interactive Simulator: Ionization & Tubular Transport"
       },
       "prompt": {
         "tr": "Furosemid, hidroklorotiyazid ve spironolaktonu nefron segmentlerine yerleştirin; sodyum, potasyum ve kalsiyum atılım profillerini izleyin.",
-        "ar": "ضع Furosemide و Thiazide و Spironolactone في أجزاء الكليون وراقب إطراح شوارد الصوديوم والبوتاسيوم والكالسيوم."
+        "ar": "ضع Furosemide و Thiazide و Spironolactone في أجزاء الكليون وراقب إطراح شوارد الصوديوم والبوتاسيوم والكالسيوم.",
+        "en": "Select nephron segments to observe electrolyte clearance (Na+, K+, Cl-, Ca2+, HCO3-) under furosemide, hydrochlorothiazide, and spironolactone."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "IonizationEquilibriumSlider",
@@ -293,11 +323,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Hipokalemi Paradoksu",
-        "ar": "استكشاف موجه: مفارقة نقص بوتاسيوم الدم"
+        "ar": "استكشاف موجه: مفارقة نقص بوتاسيوم الدم",
+        "en": "Guided Discovery: The Hypokalemia Paradox"
       },
       "prompt": {
         "tr": "Furosemid distal tübüle devasa sodyum akıtır. Toplayıcı kanallara ulaşan aşırı sodyum potasyum atılımını neden fırlatır?",
-        "ar": "يضخ Furosemide كميات صوديوم هائلة للقناة الجامعة. لماذا يسبب تدفق الصوديوم المفرط طرد البوتاسيوم بكثافة؟"
+        "ar": "يضخ Furosemide كميات صوديوم هائلة للقناة الجامعة. لماذا يسبب تدفق الصوديوم المفرط طرد البوتاسيوم بكثافة؟",
+        "en": "Observe why blocking sodium reabsorption upstream floods the collecting tubule with Na+, triggering excessive aldosterone-driven K+ and H+ secretion."
       },
       "predictThenReveal": true,
       "config": {
@@ -315,16 +347,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -333,7 +368,8 @@
             "id": "opt-ph52-3",
             "text": {
               "tr": "Aşırı sodyum geri emilirken lümeni negatifleştirir ve potasyum elektriksel çekimle idrara kaçar.",
-              "ar": "ارتشاف الصوديوم المفرط يشحن اللمعة بالسالب فيسحب البوتاسيوم كهربائياً للبول (نقص بوتاسيوم)."
+              "ar": "ارتشاف الصوديوم المفرط يشحن اللمعة بالسالب فيسحب البوتاسيوم كهربائياً للبول (نقص بوتاسيوم).",
+              "en": "Increased Na+ delivery to collecting tubules triggers aldosterone-mediated K+ and H+ wasting into urine."
             },
             "isCorrect": true
           },
@@ -341,7 +377,8 @@
             "id": "opt-ph52-4",
             "text": {
               "tr": "Potasyumu doğrudan böbrek yok eder.",
-              "ar": "لأن الكلى تحطم البوتاسيوم كيميائياً."
+              "ar": "لأن الكلى تحطم البوتاسيوم كيميائياً.",
+              "en": "The kidneys directly degrade potassium."
             },
             "isCorrect": false
           }
@@ -354,11 +391,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "Elektrolit ve Asit-Baz Profilleri",
-        "ar": "توازن الشوارد والحمض والأساس"
+        "ar": "توازن الشوارد والحمض والأساس",
+        "en": "Formal Comparison: Electrolyte & Acid-Base Signatures"
       },
       "prompt": {
         "tr": "Kıvrım: Na+, K+, Cl-, Ca2+, Mg2+ atar (hipokalsemi riski). Tiyazid: Na+, K+, Cl- atar fakat Ca2+ tutar (hiperkalsemi yapabilir).",
-        "ar": "مدرات العروة: تطرح Na+ و K+ و Ca2+ (خطر نقص الكالسيوم). الثيازيدات: تطرح Na+ و K+ لكنها تحبس Ca2+ بالجسم."
+        "ar": "مدرات العروة: تطرح Na+ و K+ و Ca2+ (خطر نقص الكالسيوم). الثيازيدات: تطرح Na+ و K+ لكنها تحبس Ca2+ بالجسم.",
+        "en": "Loop diuretics: Ca2+ wasting, hypokalemic metabolic alkalosis. Thiazides: Ca2+ sparing (hypercalcemia), hypokalemic metabolic alkalosis."
       },
       "predictThenReveal": false,
       "config": {},
@@ -374,16 +413,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -393,11 +435,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Osteoporozlu Hipertansiyon Hastası",
-        "ar": "فحص المفهوم: مريض ضغط مصاب بهشاشة العظام"
+        "ar": "فحص المفهوم: مريض ضغط مصاب بهشاشة العظام",
+        "en": "Concept Check: Hypertensive Patient with Osteoporosis"
       },
       "prompt": {
         "tr": "Kemik erimesi (osteoporoz) olan bir hipertansiyon hastasında furosemid yerine neden tiyazid tercih edilir?",
-        "ar": "في مريض ضغط يعاني من هشاشة العظام، لماذا يفضل مدر Thiazide على Furosemide؟"
+        "ar": "في مريض ضغط يعاني من هشاشة العظام، لماذا يفضل مدر Thiazide على Furosemide؟",
+        "en": "Why are thiazide diuretics uniquely advantageous for hypertensive patients with concurrent osteoporosis?"
       },
       "predictThenReveal": true,
       "config": {
@@ -415,16 +459,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -433,7 +480,8 @@
             "id": "opt-ph52-5",
             "text": {
               "tr": "Tiyazidler kalsiyumun idrarla atılımını azaltarak kemikleri korur.",
-              "ar": "لأن الثيازيدات تقلل طرح الكالسيوم البولي مما يحمي العظام من التآكل."
+              "ar": "لأن الثيازيدات تقلل طرح الكالسيوم البولي مما يحمي العظام من التآكل.",
+              "en": "Thiazides enhance distal renal tubular calcium reabsorption, preserving bone mineral density."
             },
             "isCorrect": true
           },
@@ -441,7 +489,8 @@
             "id": "opt-ph52-6",
             "text": {
               "tr": "Tiyazid kalsiyumu idrarla atar.",
-              "ar": "لأن الثيازيد يطرح الكالسيوم بالبول."
+              "ar": "لأن الثيازيد يطرح الكالسيوم بالبول.",
+              "en": "Thiazides excrete high amounts of calcium."
             },
             "isCorrect": false
           }
@@ -454,11 +503,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Kombinasyon Sanatı: Tiyazid + Spironolakton",
-        "ar": "فن المشاركة الدوائية: Thiazide + Spironolactone"
+        "ar": "فن المشاركة الدوائية: Thiazide + Spironolactone",
+        "en": "Combination Art: Thiazide Plus Spironolactone"
       },
       "prompt": {
         "tr": "Tiyazid diüretiğinin yanına spironolakton eklenmesi neden mükemmel bir farmakolojik dengedir?",
-        "ar": "لماذا تعتبر إضافة Spironolactone إلى مدر Thiazide توازناً فارماكولوجياً متقناً؟"
+        "ar": "لماذا تعتبر إضافة Spironolactone إلى مدر Thiazide توازناً فارماكولوجياً متقناً؟",
+        "en": "Why is spironolactone or amiloride frequently co-prescribed with hydrochlorothiazide in essential hypertension?"
       },
       "predictThenReveal": true,
       "config": {
@@ -476,16 +527,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -494,7 +548,8 @@
             "id": "opt-ph52-7",
             "text": {
               "tr": "Tiyazidin attırdığı potasyumu spironolakton tutarak serum potasyumunu dengede tutar.",
-              "ar": "لأن سبيرونولاكتون يحبس البوتاسيوم فيعوض النقص الذي يحدثه الثيازيد ويحفظ التوازن."
+              "ar": "لأن سبيرونولاكتون يحبس البوتاسيوم فيعوض النقص الذي يحدثه الثيازيد ويحفظ التوازن.",
+              "en": "Spironolactone retains potassium, neutralizing thiazide-induced hypokalemia."
             },
             "isCorrect": true
           },
@@ -502,7 +557,8 @@
             "id": "opt-ph52-8",
             "text": {
               "tr": "Birbirlerinin etkisini sıfırlarlar.",
-              "ar": "لأنهما يبطلان مفعول بعضهما."
+              "ar": "لأنهما يبطلان مفعول بعضهما.",
+              "en": "They cancel out each other's diuretic action."
             },
             "isCorrect": false
           }
@@ -515,11 +571,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Henderson-Hasselbalch ve İyon Tuzağı",
-        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والحصار الأيوني"
+        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والحصار الأيوني",
+        "en": "Retrieval: Henderson-Hasselbalch and Ion Trapping"
       },
       "prompt": {
         "tr": "Modül 1 de gördüğümüz gibi zayıf asit ilaçların böbrekten atılımını hızlandırmak için idrar nasıl modifiye ediliyordu?",
-        "ar": "كما تعلمنا في الوحدة 1، كيف كنا نعدل pH البول لتسريع إطراح الأدوية الحامضية الضعيفة؟"
+        "ar": "كما تعلمنا في الوحدة 1، كيف كنا نعدل pH البول لتسريع إطراح الأدوية الحامضية الضعيفة؟",
+        "en": "Recall Course A Lesson 2: How can alkalinizing urine with sodium bicarbonate accelerate the excretion of weakly acidic drugs like aspirin?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -531,16 +589,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -550,11 +611,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "İleri Bağlantı: Merkezi Sinir Sistemi ve Nörofarmakoloji (Modül 6)",
-        "ar": "ربط مفاهيمي: الجهاز العصبي المركزي (الوحدة 6)"
+        "ar": "ربط مفاهيمي: الجهاز العصبي المركزي (الوحدة 6)",
+        "en": "Connection: Central Nervous System Neuropharmacology (Module 6)"
       },
       "prompt": {
         "tr": "Kardiyovasküler sistemden sonra beynin derinliklerine iniyoruz: Modül 6 da GABA ve Dopamin yolaklarını keşfedeceğiz.",
-        "ar": "بعد القلب والكلى ننطلق لأعماق الدماغ: في الوحدة 6، سنستكشف مسارات GABA والدوبامين العصبية."
+        "ar": "بعد القلب والكلى ننطلق لأعماق الدماغ: في الوحدة 6، سنستكشف مسارات GABA والدوبامين العصبية.",
+        "en": "Renal electrolyte transporters regulate peripheral fluid balance, but how do neuronal chloride channels regulate central nervous inhibition?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -566,16 +629,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -585,11 +651,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Ustalık Sınavı: Diüretik Hedefleri",
-        "ar": "اختبار الإتقان: أهداف مدرات البول"
+        "ar": "اختبار الإتقان: أهداف مدرات البول",
+        "en": "Mastery Assessment: Diuretic Transport Targets"
       },
       "prompt": {
         "tr": "Furosemid gibi kıvrım diüretiklerinin nefrondaki primer moleküler hedefi hangi taşıyıcı sistemdir?",
-        "ar": "ما هو الهدف الجزيئي الأساسي لمدرات البول العروية مثل Furosemide في الكليون؟"
+        "ar": "ما هو الهدف الجزيئي الأساسي لمدرات البول العروية مثل Furosemide في الكليون؟",
+        "en": "Which molecular transporter in the thick ascending limb of the loop of Henle is selectively inhibited by furosemide?"
       },
       "predictThenReveal": true,
       "config": {
@@ -607,16 +675,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -625,7 +696,8 @@
             "id": "opt-ph52-9",
             "text": {
               "tr": "Henle kulpu çıkan kalın kolundaki luminal Na+/K+/2Cl- (NKCC2) kotransportörü.",
-              "ar": "ناقل Na+/K+/2Cl- (NKCC2) اللمعي في الطرف الصاعد الثخين لعروة Henle."
+              "ar": "ناقل Na+/K+/2Cl- (NKCC2) اللمعي في الطرف الصاعد الثخين لعروة Henle.",
+              "en": "Na+/K+/2Cl- (NKCC2) cotransporter in the thick ascending limb."
             },
             "isCorrect": true
           },
@@ -633,7 +705,8 @@
             "id": "opt-ph52-10",
             "text": {
               "tr": "Proksimal tübül glukoz taşıyıcısı.",
-              "ar": "ناقل الجلوكوز في الأنبوب القريب."
+              "ar": "ناقل الجلوكوز في الأنبوب القريب.",
+              "en": "Proximal tubular SGLT2 transporter."
             },
             "isCorrect": false
           }

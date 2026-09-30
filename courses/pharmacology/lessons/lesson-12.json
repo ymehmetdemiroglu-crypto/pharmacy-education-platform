@@ -4,18 +4,21 @@
   "moduleId": "ph-mod-06",
   "title": {
     "tr": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri",
-    "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان"
+    "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان",
+    "en": "Dopaminergic Pathways & Antipsychotic Receptor Profiles"
   },
   "order": 2,
   "access": "free",
   "objective": {
     "tr": "Dört merkezi dopaminerjik yolağı, D2 reseptör blokaj eşiğini (%65-80) ve atipik antipsikotiklerin 5-HT2A/D2 dengesini kavramak.",
-    "ar": "إتقان المسارات الدوبامينية المركزية الأربعة، وعتبة حظر D2 (65-80%)، وتوازن 5-HT2A/D2 لمضادات الذهان غير النمطية."
+    "ar": "إتقان المسارات الدوبامينية المركزية الأربعة، وعتبة حظر D2 (65-80%)، وتوازن 5-HT2A/D2 لمضادات الذهان غير النمطية.",
+    "en": "Analyze four central dopaminergic pathways, the 65-80% D2 occupancy therapeutic window, and atypical 5-HT2A/D2 balance."
   },
   "misconceptions": [
     {
       "tr": "D2 reseptörünü ne kadar çok bloke edersek antipsikotik etkinin o kadar iyi olacağı yanılgısı (%80 in üzerinde şiddetli parkinson benzeri ekstrapiramidal semptomlar çıkar).",
-      "ar": "الظن الخاطئ بأن زيادة حظر D2 تحسن الفعالية دوماً (تجاوز 80% يفجر أعراضاً خارج هرمية شلل-رعاشية حادة)."
+      "ar": "الظن الخاطئ بأن زيادة حظر D2 تحسن الفعالية دوماً (تجاوز 80% يفجر أعراضاً خارج هرمية شلل-رعاشية حادة).",
+      "en": "Higher D2 receptor occupancy (>80%) provides superior antipsychotic efficacy without extrapyramidal symptoms."
     }
   ],
   "sources": [
@@ -32,7 +35,7 @@
       "topic": "Dopaminergic Pathways and Antipsychotic Receptor Profiles",
       "chapter": "unverified",
       "page": "unverified",
-      "status": "pending-human-review"
+      "status": "unverified"
     }
   ],
   "spacedReviewCards": [
@@ -79,11 +82,13 @@
       "stageIndex": 1,
       "title": {
         "tr": "Halüsinasyonları Sustururken Bedeni Kilitlemek",
-        "ar": "إسكات الهلاوس وتصلب الجسد"
+        "ar": "إسكات الهلاوس وتصلب الجسد",
+        "en": "Quieting Hallucinations While Freezing the Body"
       },
       "prompt": {
         "tr": "Şizofreni hastasının hezeyanlarını dindiren haloperidol, neden aynı zamanda hastanın kaslarını kurşun boru gibi kaskatı kilitler?",
-        "ar": "دواء Haloperidol الذي يسكت هلاوس الفصام، لماذا يقفل عضلات المريض في الوقت ذاته كتصلب أنابيب الرصاص؟"
+        "ar": "دواء Haloperidol الذي يسكت هلاوس الفصام، لماذا يقفل عضلات المريض في الوقت ذاته كتصلب أنابيب الرصاص؟",
+        "en": "Why did first-generation antipsychotics like haloperidol silence psychotic voices while locking patients in Parkinsonian rigidity and tremor?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -95,16 +100,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -114,11 +122,13 @@
       "stageIndex": 2,
       "title": {
         "tr": "Tahmin: İdeal Blokaj Yüzdesi",
-        "ar": "توقع: نسبة الإشغال المثالية"
+        "ar": "توقع: نسبة الإشغال المثالية",
+        "en": "Prediction: The Ideal D2 Receptor Occupancy Window"
       },
       "prompt": {
         "tr": "Pozitron Emisyon Tomografisinde (PET) antipsikotik ilacın beyindeki D2 reseptör doluluğu %85 e çıktığında ne olur?",
-        "ar": "عندما يرتفع إشغال مضاد الذهان لمستقبلات D2 في تصوير PET إلى 85%، ماذا يحدث للمريض؟"
+        "ar": "عندما يرتفع إشغال مضاد الذهان لمستقبلات D2 في تصوير PET إلى 85%، ماذا يحدث للمريض؟",
+        "en": "What percentage of striatal D2 dopamine receptors must be occupied by an antipsychotic to achieve efficacy while avoiding extrapyramidal symptoms?"
       },
       "predictThenReveal": true,
       "config": {
@@ -136,16 +146,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -154,7 +167,8 @@
             "id": "opt-ph62-1",
             "text": {
               "tr": "Şiddetli ekstrapiramidal semptomlar (EPS: akut distoni, parkinsonizm) başlar.",
-              "ar": "تتفجر أعراض خارج هرمية حادة (EPS: خلل توتر، متلازمة باركنسون الدوائية)."
+              "ar": "تتفجر أعراض خارج هرمية حادة (EPS: خلل توتر، متلازمة باركنسون الدوائية).",
+              "en": "Severe extrapyramidal symptoms (EPS: acute dystonia, parkinsonism, akathisia)."
             },
             "isCorrect": true
           },
@@ -162,7 +176,8 @@
             "id": "opt-ph62-2",
             "text": {
               "tr": "Hasta tamamen iyileşir ve yan etki sıfırlanır.",
-              "ar": "يشفى المريض تماماً وتتلاشى الآثار الجانبية."
+              "ar": "يشفى المريض تماماً وتتلاشى الآثار الجانبية.",
+              "en": "Zero side effects and complete recovery."
             },
             "isCorrect": false
           }
@@ -175,11 +190,13 @@
       "stageIndex": 3,
       "title": {
         "tr": "Sezgisel Model: 4 Farklı Odaya Açılan Tek Şalter",
-        "ar": "تشبيه حدسي: مفتاح واحد يتحكم بأربع غرف متباينة"
+        "ar": "تشبيه حدسي: مفتاح واحد يتحكم بأربع غرف متباينة",
+        "en": "Intuitive Model: One Switch Controlling Four Distinct Rooms"
       },
       "prompt": {
         "tr": "D2 blokerini aldığınızda 4 odaya birden girer: 1. Deliryumu söndürür, 2. Motor hareketleri kilitler, 3. Prolaktini artırır, 4. Duyguları köreltir.",
-        "ar": "مضاد D2 مفتاح يطفئ 4 غرف معاً: 1. يسكت الهذيان، 2. يقفل الحركة الحركية، 3. يرفع هرمون الحليب، 4. يبلد المشاعر."
+        "ar": "مضاد D2 مفتاح يطفئ 4 غرف معاً: 1. يسكت الهذيان، 2. يقفل الحركة الحركية، 3. يرفع هرمون الحليب، 4. يبلد المشاعر.",
+        "en": "Blocking dopamine in the mesolimbic room calms psychosis; blocking it in the nigrostriatal room causes parkinsonism; in tuberoinfundibular causes hyperprolactinemia."
       },
       "predictThenReveal": false,
       "config": {},
@@ -191,16 +208,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -210,11 +230,13 @@
       "stageIndex": 4,
       "title": {
         "tr": "Dört Dopaminerjik Yolak Haritası",
-        "ar": "خارطة المسارات الدوبامينية الأربعة"
+        "ar": "خارطة المسارات الدوبامينية الأربعة",
+        "en": "Map of the Four Central Dopamine Pathways"
       },
       "prompt": {
         "tr": "1. Mezolimbik (pozitif semptomlar), 2. Mezokortikal (negatif semptomlar), 3. Nigrostriatal (motor kontrol / EPS), 4. Tuberoinfundibuler (prolaktin baskısı).",
-        "ar": "1. الحافي (الأعراض الإيجابية)، 2. القشري (الأعراض السلبية)، 3. المخطط (التحكم الحركي/EPS)، 4. القمعي (كبح البرولاكتين)."
+        "ar": "1. الحافي (الأعراض الإيجابية)، 2. القشري (الأعراض السلبية)، 3. المخطط (التحكم الحركي/EPS)، 4. القمعي (كبح البرولاكتين).",
+        "en": "1. Mesolimbic (positive symptoms). 2. Mesocortical (negative/cognitive symptoms). 3. Nigrostriatal (motor control). 4. Tuberoinfundibular (prolactin regulation)."
       },
       "predictThenReveal": false,
       "config": {},
@@ -226,16 +248,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -245,11 +270,13 @@
       "stageIndex": 5,
       "title": {
         "tr": "İnteraktif Atölye: Receptor-Ligand Matcher (D2/5-HT2A)",
-        "ar": "ورشة تفاعلية: مطابق مستقبلات D2 و 5-HT2A"
+        "ar": "ورشة تفاعلية: مطابق مستقبلات D2 و 5-HT2A",
+        "en": "Interactive Workshop: Receptor Matcher (D2 / 5-HT2A)"
       },
       "prompt": {
         "tr": "Haloperidol ve olanzapini test edin. D2 doluluğunu %65-80 penceresine ayarlayın; 5-HT2A blokajının motor fonksiyonu nasıl kurtardığını gözlemleyin.",
-        "ar": "قارن Haloperidol مع Olanzapine. اضبط إشغال D2 في نافذة 65-80% وشاهد كيف ينقذ حظر 5-HT2A الوظائف الحركية."
+        "ar": "قارن Haloperidol مع Olanzapine. اضبط إشغال D2 في نافذة 65-80% وشاهد كيف ينقذ حظر 5-HT2A الوظائف الحركية.",
+        "en": "Compare typical (haloperidol) vs atypical antipsychotics (clozapine, risperidone, olanzapine) across D2 and 5-HT2A receptor affinities."
       },
       "predictThenReveal": false,
       "config": {},
@@ -265,16 +292,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "widgetType": "ReceptorLigandMatcher",
@@ -295,11 +325,13 @@
       "stageIndex": 6,
       "title": {
         "tr": "Rehberli Keşif: Atipiklerin 5-HT2A Kurtarma Mekanizması",
-        "ar": "استكشاف موجه: آلية إنقاذ 5-HT2A في مضادات الذهان غير النمطية"
+        "ar": "استكشاف موجه: آلية إنقاذ 5-HT2A في مضادات الذهان غير النمطية",
+        "en": "Guided Discovery: The 5-HT2A Rescue Mechanism"
       },
       "prompt": {
         "tr": "Serotonin nigrostriatal yolda dopamin salınımını frenler. İkinci kuşak antipsikotik 5-HT2A yı bloke ettiğinde striatumda ne olur?",
-        "ar": "يكبح السيروتونين تحرر الدوبامين حركياً. عندما يحظر مضاد الذهان غير النمطي 5-HT2A، ماذا يحدث في الجسم المخطط؟"
+        "ar": "يكبح السيروتونين تحرر الدوبامين حركياً. عندما يحظر مضاد الذهان غير النمطي 5-HT2A، ماذا يحدث في الجسم المخطط؟",
+        "en": "Observe how serotonin 5-HT2A antagonism disinhibits dopamine release specifically in the nigrostriatal pathway, mitigating motor side effects."
       },
       "predictThenReveal": true,
       "config": {
@@ -317,16 +349,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -335,7 +370,8 @@
             "id": "opt-ph62-3",
             "text": {
               "tr": "Fren kalkar; striatumda lokal dopamin salınarak D2 blokajı dengelenir ve EPS önlenir.",
-              "ar": "يزول الكبح؛ فيتحرر الدوبامين محلياً ليعادل حظر D2 ويحمي المريض من أعراض EPS."
+              "ar": "يزول الكبح؛ فيتحرر الدوبامين محلياً ليعادل حظر D2 ويحمي المريض من أعراض EPS.",
+              "en": "5-HT2A blockade disinhibits dopamine release specifically in the nigrostriatal tract, relieving motor block."
             },
             "isCorrect": true
           },
@@ -343,7 +379,8 @@
             "id": "opt-ph62-4",
             "text": {
               "tr": "Hasta komaya girer.",
-              "ar": "يدخل المريض في غيبوبة."
+              "ar": "يدخل المريض في غيبوبة.",
+              "en": "5-HT2A blockade causes immediate catatonia."
             },
             "isCorrect": false
           }
@@ -356,11 +393,13 @@
       "stageIndex": 7,
       "title": {
         "tr": "PET Doluluk Penceresi ve Reseptör Kinetiği",
-        "ar": "نافذة الإشغال في تصوير PET وحركية المستقبل"
+        "ar": "نافذة الإشغال في تصوير PET وحركية المستقبل",
+        "en": "Formal Neuropharmacology: PET D2 Occupancy Window"
       },
       "prompt": {
         "tr": "Kapak D2 doluluk kuralı: <%65 yanıtsız, %65-80 optimal klinik yanıt, >%80 EPS riski. Hızlı dissosiasyon (koff) sergileyen ilaçlar (ketiapin) güvenlidir.",
-        "ar": "قاعدة إشغال D2: أقل من 65% غير فعال، 65-80% نافذة مثالية، أكثر من 80% خطر EPS. الانفصال السريع (koff) يمنح أماناً إضافياً."
+        "ar": "قاعدة إشغال D2: أقل من 65% غير فعال، 65-80% نافذة مثالية، أكثر من 80% خطر EPS. الانفصال السريع (koff) يمنح أماناً إضافياً.",
+        "en": "Antipsychotic therapeutic efficacy requires 65% to 80% striatal D2 receptor occupancy. Exceeding 80% sharply escalates extrapyramidal motor toxicity."
       },
       "predictThenReveal": false,
       "config": {},
@@ -372,16 +411,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -391,11 +433,13 @@
       "stageIndex": 8,
       "title": {
         "tr": "Kavram Denetimi: Tuberoinfundibuler Yol ve Prolaktin",
-        "ar": "فحص المفهوم: المسار القمعي وهرمون البرولاكتين"
+        "ar": "فحص المفهوم: المسار القمعي وهرمون البرولاكتين",
+        "en": "Concept Check: Tuberoinfundibular Pathway & Prolactin"
       },
       "prompt": {
         "tr": "Dopamin hipofizde prolaktin salınımını doğal olarak baskılar. D2 blokerleri bu yolu kilitlediğinde ne gelişir?",
-        "ar": "يكبح الدوبامين إفراز هرمون الحليب (البرولاكتين). عند حظر مستقبلات D2 في هذا المسار، ماذا يظهر؟"
+        "ar": "يكبح الدوبامين إفراز هرمون الحليب (البرولاكتين). عند حظر مستقبلات D2 في هذا المسار، ماذا يظهر؟",
+        "en": "Dopamine functions physiologically as Prolactin-Inhibiting Factor. What clinical complication arises from chronic D2 blockade in this pathway?"
       },
       "predictThenReveal": true,
       "config": {
@@ -413,16 +457,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -431,7 +478,8 @@
             "id": "opt-ph62-5",
             "text": {
               "tr": "Hiperprolaktinemi, galaktore (memeden süt gelmesi) ve jinekomasti.",
-              "ar": "فرط برولاكتين الدم، ثر اللبن (galaktore) وتثدي الرجال."
+              "ar": "فرط برولاكتين الدم، ثر اللبن (galaktore) وتثدي الرجال.",
+              "en": "Hyperprolactinemia, galactorrhea, and gynecomastia."
             },
             "isCorrect": true
           },
@@ -439,7 +487,8 @@
             "id": "opt-ph62-6",
             "text": {
               "tr": "Kan şekeri sıfırlanır.",
-              "ar": "يهبط سكر الدم للصفر."
+              "ar": "يهبط سكر الدم للصفر.",
+              "en": "Complete loss of prolactin secretion."
             },
             "isCorrect": false
           }
@@ -452,11 +501,13 @@
       "stageIndex": 9,
       "title": {
         "tr": "Klinik Karar: Tipikten Atipiğe Geçiş",
-        "ar": "قرار سريري: التحول من النمطي إلى غير النمطي"
+        "ar": "قرار سريري: التحول من النمطي إلى غير النمطي",
+        "en": "Clinical Decision: Transitioning from Typical to Atypical"
       },
       "prompt": {
         "tr": "Haloperidol kullanırken ellerinde titreme ve boyun distonisi (EPS) başlayan genç şizofreni hastasında tedavi nasıl revize edilmelidir?",
-        "ar": "مريض فصام بدأ يعاني من رعاش وتشنج عنقي حاد (EPS) بسبب Haloperidol، كيف يعدل علاجه؟"
+        "ar": "مريض فصام بدأ يعاني من رعاش وتشنج عنقي حاد (EPS) بسبب Haloperidol، كيف يعدل علاجه؟",
+        "en": "A patient with schizophrenia develops acute dystonia on haloperidol. Why does switching to quetiapine or aripiprazole relieve motor symptoms?"
       },
       "predictThenReveal": true,
       "config": {
@@ -474,16 +525,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -492,7 +546,8 @@
             "id": "opt-ph62-7",
             "text": {
               "tr": "Düşük EPS riskli ikinci kuşak atipik antipsikotiğe (örneğin aripiprazol veya olanzapin) geçilmelidir.",
-              "ar": "التحول إلى مضاد ذهان غير نمطي من الجيل الثاني منخفض خطر EPS مثل Aripiprazole أو Olanzapine."
+              "ar": "التحول إلى مضاد ذهان غير نمطي من الجيل الثاني منخفض خطر EPS مثل Aripiprazole أو Olanzapine.",
+              "en": "Switch to a second-generation atypical antipsychotic (e.g., aripiprazole, quetiapine) with lower EPS liability."
             },
             "isCorrect": true
           },
@@ -500,7 +555,8 @@
             "id": "opt-ph62-8",
             "text": {
               "tr": "Haloperidol dozu artırılmalıdır.",
-              "ar": "زيادة جرعة الهالوبيريدول."
+              "ar": "زيادة جرعة الهالوبيريدول.",
+              "en": "Double the haloperidol dose."
             },
             "isCorrect": false
           }
@@ -513,11 +569,13 @@
       "stageIndex": 10,
       "title": {
         "tr": "Geri Çağırma: Tersinir Kinetik ve Koff",
-        "ar": "استرجاع معرفي: الحركية العكوسة ومعدل koff"
+        "ar": "استرجاع معرفي: الحركية العكوسة ومعدل koff",
+        "en": "Retrieval: Reversible Kinetics and Fast Koff"
       },
       "prompt": {
         "tr": "Modül 1 de gördüğümüz gibi ilacın reseptörden hızla ayrışmasını ifade eden kinetik parametre neydi?",
-        "ar": "كما رأينا في الوحدة 1، ما هو المعامل الحركي الذي يعبر عن سرعة انفصال الدواء عن المستقبِل؟"
+        "ar": "كما رأينا في الوحدة 1، ما هو المعامل الحركي الذي يعبر عن سرعة انفصال الدواء عن المستقبِل؟",
+        "en": "Recall Lesson 1: How does rapid unbinding kinetics (fast Koff) explain why clozapine rarely induces tardive dyskinesia?"
       },
       "predictThenReveal": false,
       "config": {},
@@ -529,16 +587,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -548,11 +609,13 @@
       "stageIndex": 11,
       "title": {
         "tr": "Büyük Final: 22 Derslik Müfredatın Tamamlanışı",
-        "ar": "الختام الكبير: إتمام منهاج الـ 22 درساً"
+        "ar": "الختام الكبير: إتمام منهاج الـ 22 درساً",
+        "en": "Grand Finale: Completing the 22-Lesson Curriculum"
       },
       "prompt": {
         "tr": "Tebrikler! Farmasötik Kimya ve Farmakoloji müfredatının 22 temel dersini tamamladınız. Artık ilaçların kimyasını ve canlıdaki kaderini biliyorsunuz.",
-        "ar": "تهانينا الحارة! لقد أتممت بنجاح الدروس الـ 22 المجانية عبر مساقي Farmasötik Kimya و Farmakoloji."
+        "ar": "تهانينا الحارة! لقد أتممت بنجاح الدروس الـ 22 المجانية عبر مساقي Farmasötik Kimya و Farmakoloji.",
+        "en": "Reflect on how physical chemistry, stereochemistry, bioisosterism, pharmacokinetics, and receptor pharmacology unite in rational drug design."
       },
       "predictThenReveal": false,
       "config": {},
@@ -564,16 +627,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ]
     },
@@ -583,11 +649,13 @@
       "stageIndex": 12,
       "title": {
         "tr": "Müfredat Ustalık Sınavı: D2 Terapötik Pencere",
-        "ar": "اختبار الإتقان الختامي للمنهاج: نافذة D2 العلاجية"
+        "ar": "اختبار الإتقان الختامي للمنهاج: نافذة D2 العلاجية",
+        "en": "Curriculum Mastery Assessment: The D2 Therapeutic Window"
       },
       "prompt": {
         "tr": "Antipsikotik etkinin sağlandığı fakat ekstrapiramidal motor yan etkilerin (EPS) henüz başlamadığı optimal D2 doluluk aralığı nedir?",
-        "ar": "ما هو النطاق المثالي لإشغال مستقبلات D2 الذي يضمن الفعالية المضادة للذهان دون إثارة أعراض EPS الحركية؟"
+        "ar": "ما هو النطاق المثالي لإشغال مستقبلات D2 الذي يضمن الفعالية المضادة للذهان دون إثارة أعراض EPS الحركية؟",
+        "en": "What is the validated striatal D2 dopamine receptor occupancy window that provides maximal antipsychotic efficacy with minimal motor side effects?"
       },
       "predictThenReveal": true,
       "config": {
@@ -605,16 +673,19 @@
       ],
       "hints": [
         {
-          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
+          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
         },
         {
-          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
+          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
         },
         {
-          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
+          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
         }
       ],
       "conceptCheck": {
@@ -623,7 +694,8 @@
             "id": "opt-ph62-9",
             "text": {
               "tr": "%65 ila %80 D2 reseptör doluluğu.",
-              "ar": "إشغال يتراوح بين 65% و 80% لمستقبلات D2."
+              "ar": "إشغال يتراوح بين 65% و 80% لمستقبلات D2.",
+              "en": "65% to 80% striatal D2 dopamine receptor occupancy."
             },
             "isCorrect": true
           },
@@ -631,7 +703,8 @@
             "id": "opt-ph62-10",
             "text": {
               "tr": "%100 doluluk.",
-              "ar": "إشغال 100% بالكامل."
+              "ar": "إشغال 100% بالكامل.",
+              "en": "100% receptor occupancy."
             },
             "isCorrect": false
           }

@@ -12,6 +12,7 @@ export type PkSimulatorProps = BaseWidgetProps<
 
 export const PkSimulator: React.FC<PkSimulatorProps> = ({
   config,
+  locale = 'tr',
   onAttempt: _onAttempt,
   disabled = false,
   className,
@@ -273,6 +274,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
 
       {/* Model Illustration Notice (Rule 6) */}
       <ModelIllustrationNotice
+        locale={locale}
         equation="Cp(t) = (D / Vd) * e^(-(CL/Vd)*t)   [IV Bolus 1-Compartment]"
         sourceReference="Rowland and Tozer's Clinical Pharmacokinetics and Pharmacodynamics (4th ed.)"
         assumptions={[
