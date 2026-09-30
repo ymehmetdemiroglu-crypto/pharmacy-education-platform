@@ -1,4 +1,9 @@
-// apps/web/src/data/interactiveLessons.ts
+import os
+
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+TARGET_TS = os.path.join(REPO_ROOT, 'apps', 'web', 'src', 'data', 'interactiveLessons.ts')
+
+content = '''// apps/web/src/data/interactiveLessons.ts
 // Comprehensive 22-Lesson Interactive Biophysical & Pharmacological Simulation Labs
 // Grounded in Marmara University Faculty of Pharmacy Curricula:
 // - Course A: ECZ 335 Farmasötik Kimya-1 (Prof. Dr. Bedia Kaymakçıoğlu)
@@ -78,7 +83,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'المركبات غير النوعية بنيوياً (مثل المخدرات العامة) لا ترتبط بمستقبلات، بل يعتمد تأثيرها على درجة تشبعها النسبي في الطور الحيوي (النشاط الديناميكي الحراري).',
         en: 'Structurally non-specific compounds (general anesthetics) do not bind receptors. Their biological depression depends on their relative thermodynamic saturation (a).',
       },
-      coreFormula: 'a = \\frac{P_t}{P_0} = \\frac{S_t}{S_0}',
+      coreFormula: 'a = \\\\frac{P_t}{P_0} = \\\\frac{S_t}{S_0}',
       takeaways: [
         {
           title: { tr: '1. Bağıl Doygunluk Kuralı', ar: '1. قاعدة التشبع النسبي', en: '1. Relative Saturation Rule' },
@@ -264,7 +269,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'الأغشية الحيوية ذات طبيعة دهنية؛ تعبرها الجزيئات غير المتأينة (المتعادلة) بالانتشار السلبي، بينما الجزيئات المتأينة تبقى في الطور المائي.',
         en: 'Biological membranes are hydrophobic lipid bilayers. Passive transcellular permeation requires molecules to exist in their un-ionized (neutral) state.',
       },
-      coreFormula: 'pH = pK_a + \\log\\frac{[A^-]}{[HA]}',
+      coreFormula: 'pH = pK_a + \\\\log\\\\frac{[A^-]}{[HA]}',
       takeaways: [
         {
           title: { tr: '1. Mide ve Bağırsak Ayrımı', ar: '1. التمييز بين المعدة والأمعاء', en: '1. Gastric vs Intestinal Partitioning' },
@@ -420,7 +425,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تقاس ألفة الدواء للدهون بمعامل توزع الأوكتانول/الماء (logP). للأدوية المتأينة عند pH الفسيولوجي يعبر عن التوزع الحقيقي بواسطة logD.',
         en: 'Drug lipophilicity is measured via 1-octanol/water partition (logP). For ionizable drugs at physiological pH, effective partition is defined by logD.',
       },
-      coreFormula: '\\log D = \\log P - \\log(1 + 10^{pH - pK_a})',
+      coreFormula: '\\\\log D = \\\\log P - \\\\log(1 + 10^{pH - pK_a})',
       takeaways: [
         {
           title: { tr: '1. Hansch Sübstitüent Sabiti (π)', ar: '1. ثابت هانش للمستبدلات (π)', en: '1. Hansch Substituent Constant (π)' },
@@ -531,7 +536,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'المتماثلات الحيوية (Bioisosteres) هي ذرات أو مجموعات تمتلك خواص فيزيائية وكيميائية متقاربة وتنتج استجابة حيوية متماثلة (مثل استبدال الكربوكسيل بالتترازول).',
         en: 'Bioisosteres are chemical groups with similar electronic or steric properties that produce equivalent biological activity (e.g. carboxylic acid vs tetrazole).',
       },
-      coreFormula: '-\text{COOH} \\iff -\text{Tetrazole} \\quad (\text{Klasik Olmayan Biyoizoster})',
+      coreFormula: '-\\text{COOH} \\\\iff -\\text{Tetrazole} \\\\quad (\\text{Klasik Olmayan Biyoizoster})',
       takeaways: [
         {
           title: { tr: '1. Karboksilik Asit - Tetrazol Eşdeğerliği', ar: '1. تكافؤ حمض الكربوكسيل والتترازول', en: '1. Carboxylic Acid - Tetrazole Equivalence' },
@@ -624,7 +629,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تحدد المجموعات الوظيفية تفاعلية الدواء وارتباطه بالمستقبلات عبر تأثيرات إلكترونية وحجمية. ثابت هاميت (σ) يقيس قوة سحب أو منح الإلكترونات.',
         en: 'Functional groups dictate drug reactivity and receptor fit through induction, resonance, and steric bulk quantified by Hammett σ constants.',
       },
-      coreFormula: '\\log \\frac{K}{K_0} = \\rho \\sigma \\quad (\text{Hammett Denklemi})',
+      coreFormula: '\\\\log \\\\frac{K}{K_0} = \\\\rho \\\\sigma \\\\quad (\\text{Hammett Denklemi})',
       takeaways: [
         {
           title: { tr: '1. Elektron Çeken Gruplar (-NO2, -CF3)', ar: '1. المجموعات الساحبة للإلكترونات', en: '1. Electron-Withdrawing Groups' },
@@ -709,7 +714,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'ترتبط جزيئات الدواء بالبروتينات بروابط تساهمية غير عكوسة (قوية 40-100 kcal/mol) أو غير تساهمية عكوسة (أيونية، هيدروجينية 1-10 kcal/mol).',
         en: 'Drugs bind biological targets via irreversible covalent bonds (40-100 kcal/mol) or reversible non-covalent forces (ionic, H-bonds, van der Waals).',
       },
-      coreFormula: '\\Delta G = \\Delta H - T\\Delta S = -RT \\ln K_d',
+      coreFormula: '\\\\Delta G = \\\\Delta H - T\\\\Delta S = -RT \\\\ln K_d',
       takeaways: [
         {
           title: { tr: '1. İyonik Tuz Köprüsü (Tersinir Çapa)', ar: '1. الجسر الأيوني الملحي', en: '1. Ionic Salt Bridge Anchor' },
@@ -798,15 +803,15 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
     howItWorks: {
       title: {
         tr: 'Optik İzomeri ve Pfeiffer Kuralı Nasıl Çalışır?',
-        ar: "كيف يعمل التماكب البصري وقاعدة بفيفر (Pfeiffer's Rule)؟",
-        en: "How Does Optical Isomerism & Pfeiffer's Rule Work?",
+        ar: 'كيف يعمل التماكب البصري وقاعدة بفيفر (Pfeiffer\'s Rule)؟',
+        en: 'How Does Optical Isomerism & Pfeiffer\'s Rule Work?',
       },
       summary: {
         tr: 'Reseptörler kiral proteinlerdir. Kiral bir merkeze sahip ilaçların enantiyomerlerinden farmakolojik olarak daha aktif olanına ötomer (eutomer), daha az aktif veya toksik olanına distomer denir.',
         ar: 'المستقبلات جزيئات كيرالية؛ يسمى المصاوغ الضوئي الفعال ötomer بينما يسمى المصاوغ الخامل أو السام distomer.',
         en: 'Receptors are chiral macromolecular pockets. The pharmacologically active enantiomer is the eutomer, while the less active or toxic counterpart is the distomer.',
       },
-      coreFormula: '\\text{Ödismik Oran (Eudismic Ratio)} = \\frac{\\text{Afinite}_{\\text{ötomer}}}{\\text{Afinite}_{\\text{distomer}}}',
+      coreFormula: '\\\\text{Ödismik Oran (Eudismic Ratio)} = \\\\frac{\\\\text{Afinite}_{\\\\text{ötomer}}}{\\\\text{Afinite}_{\\\\text{distomer}}}',
       takeaways: [
         {
           title: { tr: '1. Ogston Üç Noktadan Bağlanma Modeli', ar: '1. نموذج أوغستون للارتباط بثلاث نقاط', en: '1. Ogston 3-Point Interaction Model' },
@@ -817,7 +822,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
           },
         },
         {
-          title: { tr: '2. Pfeiffer Kuralı', ar: "2. قاعدة بفيفر (Pfeiffer's Rule)", en: "2. Pfeiffer's Rule" },
+          title: { tr: '2. Pfeiffer Kuralı', ar: '2. قاعدة بفيفر (Pfeiffer\'s Rule)', en: '2. Pfeiffer\'s Rule' },
           body: {
             tr: 'Bir ilacın reseptöre afinitesi ne kadar yüksekse (daha düşük dozda etkiliyse), ödismik oranı (enantiyomerler arası afinite farkı) o kadar büyüktür.',
             ar: 'كلما زادت ألفة الدواء للمستقبل، كان الفرق في الفعالية بين المصاوغين (النسبة الإيوديزمية) أكبر.',
@@ -891,7 +896,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تمنع الروابط الثنائية أو الحلقات الدوران الحر للجزيء، مما ينشئ مصاوغات هندسية (Cis/Trans) تختلف في المسافات بين المجموعات الفعالة.',
         en: 'Double bonds or ring systems restrict rotation, producing cis/trans geometric isomers with radically different interatomic distances.',
       },
-      coreFormula: '\\text{Dietilstilbestrol (DES): } \\text{trans-DES (Aktif, 14.5 \\AA)} \\gg \\text{cis-DES (İnaktif)}',
+      coreFormula: '\\\\text{Dietilstilbestrol (DES): } \\\\text{trans-DES (Aktif, 14.5 \\\\AA)} \\\\gg \\\\text{cis-DES (İnaktif)}',
       takeaways: [
         {
           title: { tr: '1. Dietilstilbestrol (trans-DES Üstünlüğü)', ar: '1. ثنائي إيثيل ستيلبوستيرول (أفضلية trans)', en: '1. Diethylstilbestrol (trans-DES Potency)' },
@@ -976,7 +981,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تفاعلات المرحلة الأولى (Phase 1) تدخل أو تكشف مجموعات قطبية (-OH, -NH2) في جزيء الدواء لزيادة ذوبانيته بالماء وتحضيره للمرحلة الثانية.',
         en: 'Phase 1 functionalization introduces or unmasks polar reactive groups (-OH, -NH2) via CYP450 monooxygenases, facilitating Phase 2 conjugation.',
       },
-      coreFormula: '\\text{RH} + \\text{O}_2 + \\text{NADPH} + \\text{H}^+ \\xrightarrow{\\text{CYP450}} \\text{ROH} + \\text{H}_2\\text{O} + \\text{NADP}^+',
+      coreFormula: '\\\\text{RH} + \\\\text{O}_2 + \\\\text{NADPH} + \\\\text{H}^+ \\\\xrightarrow{\\\\text{CYP450}} \\\\text{ROH} + \\\\text{H}_2\\\\text{O} + \\\\text{NADP}^+',
       takeaways: [
         {
           title: { tr: '1. CYP3A4 ve CYP2D6 Baskınlığı', ar: '1. هيمنة إنزيمات CYP3A4 وCYP2D6', en: '1. Dominance of CYP3A4 and CYP2D6' },
@@ -1033,7 +1038,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         locale === 'tr'
           ? 'Moleküle reaktif oksijen katılarak polarite yükseltildi ve Faz 2 konjugasyon alanı açıldı.'
           : locale === 'ar'
-          ? 'تم إدخال ذرة أكسجين نشطة وزادت القطبية للتحضير للمرحلة الثانية.'
+          ? 'تم إدخال ذرة أكسجين نشطة وزادت القطبية للتحضير للمرحلة الثانية.',
           : 'Substrate monooxygenated; polar functional handle installed for Phase 2 transferases.',
     }),
   },
@@ -1061,7 +1066,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تفاعلات المرحلة الثانية تضيف جزيئات قطبية داخلية المنشأ (حمض الغلوكورونيك، الكبريتات، الجلوتاثيون) لتحويل المركب إلى شكل عالي الذوبانية بالماء ليطرح بالبول.',
         en: 'Phase 2 transferases conjugate endogenous hydrophilic cofactors (glucuronic acid, sulfate, GSH) yielding polar excretable metabolites.',
       },
-      coreFormula: '\\text{Parasetamol} \\xrightarrow{\\text{CYP2E1}} \\text{NAPQI (Toksik)} \\xrightarrow{\\text{GSH}} \\text{Merkaptürik Asit (Güvenli İtrah)}',
+      coreFormula: '\\\\text{Parasetamol} \\\\xrightarrow{\\\\text{CYP2E1}} \\\\text{NAPQI (Toksik)} \\\\xrightarrow{\\\\text{GSH}} \\\\text{Merkaptürik Asit (Güvenli İtrah)}',
       takeaways: [
         {
           title: { tr: '1. Parasetamol Toksisitesi ve NAPQI', ar: '1. سمية الباراسيتامول ومركب NAPQI', en: '1. Paracetamol Toxicity & NAPQI' },
@@ -1150,7 +1155,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تتبع استجابة المستقبل لتركيز الدواء منحنى لوغاريتمي سينياً. تمثل EC50 التركيز الذي ينتج 50% من الاستجابة العظمى وتدل على قوة الدواء (Potency).',
         en: 'As agonist concentration increases, biological response follows a sigmoidal semi-logarithmic curve. EC50 defines the concentration producing 50% Emax (potency).',
       },
-      coreFormula: 'E = \\frac{E_{\\max} [A]^n}{EC_{50}^n + [A]^n} \\quad (\text{Hill Denklemi})',
+      coreFormula: 'E = \\\\frac{E_{\\\\max} [A]^n}{EC_{50}^n + [A]^n} \\\\quad (\\text{Hill Denklemi})',
       takeaways: [
         {
           title: { tr: '1. Potens (EC50) vs Efikasi (Emax)', ar: '1. القوة (Potency) مقابل الفعالية القصوى (Efficacy)', en: '1. Potency (EC50) vs Efficacy (Emax)' },
@@ -1250,7 +1255,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'المتضادات التنافسية تزاحم الناهض على نفس الجيب وتزيح المنحنى لليمين دون خفض Emax. بينما المتضادات غير التنافسية تخفض Emax بشكل دائم.',
         en: 'Competitive antagonists compete for the same orthosteric site, causing parallel rightward shifts without reducing Emax. Non-competitive antagonists depress Emax.',
       },
-      coreFormula: "\\frac{[A']}{[A]} - 1 = \\frac{[B]}{K_B} \\quad (\\text{Schild Denklemi})",
+      coreFormula: '\\\\frac{[A\']}{[A]} - 1 = \\\\frac{[B]}{K_B} \\\\quad (\\text{Schild Denklemi})',
       takeaways: [
         {
           title: { tr: '1. Kompetitif Antagonizma Aşılabilir (Surmountable)', ar: '1. التضاد التنافسي يمكن تجاوزه بزيادة الجرعة', en: '1. Competitive Blockade is Surmountable' },
@@ -1347,7 +1352,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'المؤشر العلاجي (TI = TD50 / ED50) يقيس أمان الدواء. الأدوية ذات المؤشر الضيق (مثل الوارفارين والديجوكسين TI < 2) تتطلب مراقبة مستمرة للتركيز في الدم.',
         en: 'Therapeutic Index (TI = TD50 / ED50) quantifies drug safety. Narrow therapeutic index drugs (digoxin, warfarin, lithium; TI < 2) require routine therapeutic drug monitoring (TDM).',
       },
-      coreFormula: 'TI = \\frac{TD_{50}}{ED_{50}} \\quad \\text{ve} \\quad \\text{Güvenlik Sınırı} = \\frac{TD_1 - ED_{99}}{ED_{99}} \\times 100',
+      coreFormula: 'TI = \\\\frac{TD_{50}}{ED_{50}} \\\\quad \\\\text{ve} \\\\quad \\\\text{Güvenlik Sınırı} = \\\\frac{TD_1 - ED_{99}}{ED_{99}} \\\\times 100',
       takeaways: [
         {
           title: { tr: '1. Geniş vs Dar Terapötik İndeks', ar: '1. مؤشر علاجي واسع مقابل ضيق', en: '1. Wide vs Narrow Therapeutic Window' },
@@ -1428,7 +1433,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'تنقسم المستقبلات لـ 4 عائلات رئيسية: قنوات أيونية (أجزاء من الثانية)، مستقبلات مقترنة ببروتين G (ثواني)، مستقبلات مرتبطة بإنزيمات (ساعات)، ومستقبلات نووية (أيام).',
         en: 'Receptors span 4 superfamilies: ionotropic channels (milliseconds), GPCRs (seconds), kinase-linked (hours), and nuclear receptors (days).',
       },
-      coreFormula: 'G_s \\implies \\text{Adenilat Siklaz} \\uparrow \\implies \\text{cAMP} \\uparrow \\implies \\text{PKA Aktivasyonu}',
+      coreFormula: 'G_s \\\\implies \\\\text{Adenilat Siklaz} \\\\uparrow \\\\implies \\\\text{cAMP} \\\\uparrow \\\\implies \\\\text{PKA Aktivasyonu}',
       takeaways: [
         {
           title: { tr: '1. Gs vs Gi vs Gq Eksenleri', ar: '1. محاور Gs و Gi و Gq', en: '1. Gs, Gi, and Gq Divergence' },
@@ -1501,7 +1506,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'التوافر الحيوي (F) هو النسبة المئوية من الجرعة المعطاة التي تصل إلى الدورة الدموية الجهازية دون تغير (IV = 100%).',
         en: 'Bioavailability (F) is the fraction of administered dose reaching systemic circulation unchanged (IV = 1.0; oral < 1.0 due to first-pass metabolism).',
       },
-      coreFormula: 'F = \\frac{AUC_{\\text{oral}} \\times \\text{Doz}_{\\text{IV}}}{AUC_{\\text{IV}} \\times \\text{Doz}_{\\text{oral}}}',
+      coreFormula: 'F = \\\\frac{AUC_{\\\\text{oral}} \\\\times \\\\text{Doz}_{\\\\text{IV}}}{AUC_{\\\\text{IV}} \\\\times \\\\text{Doz}_{\\\\text{oral}}}',
       takeaways: [
         {
           title: { tr: '1. Cmax ve Tmax Dinamiği', ar: '1. ديناميكية Cmax و Tmax', en: '1. Peak Concentration (Cmax) & Time (Tmax)' },
@@ -1585,7 +1590,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'طريقة الإعطاء تحدد سرعة بدء التأثير وتجاوز أيض الكبد الأول (مثل النتروغليسرين تحت اللسان لعلاج الذبحة).',
         en: 'The route of administration dictates onset kinetics and presystemic clearance. Sublingual route bypasses portal circulation directly into SVC.',
       },
-      coreFormula: 'T_{\\max} = \\frac{\\ln(k_a / k_{el})}{k_a - k_{el}}',
+      coreFormula: 'T_{\\\\max} = \\\\frac{\\\\ln(k_a / k_{el})}{k_a - k_{el}}',
       takeaways: [
         {
           title: { tr: '1. Dil Altı Nitrogliserin (Acil Angina)', ar: '1. النتروغليسرين تحت اللسان للذبحة الصدرية', en: '1. Sublingual Nitroglycerin Emergency' },
@@ -1658,7 +1663,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'حجم التوزع (Vd) يعبر عن مدى انتشار الدواء بالأنسجة مقارنة بالدم. Vd المرتفع يعني تركز الدواء بالأنسجة والدهون، بينما Vd المنخفض يعني بقاءه في البلازما.',
         en: 'Apparent Volume of Distribution (Vd) relates total drug body payload to measured plasma concentration.',
       },
-      coreFormula: 'V_d = \\frac{\\text{Doz}}{C_0} = V_p + V_t \\times \\frac{f_u}{f_{ut}}',
+      coreFormula: 'V_d = \\\\frac{\\\\text{Doz}}{C_0} = V_p + V_t \\\\times \\\\frac{f_u}{f_{ut}}',
       takeaways: [
         {
           title: { tr: '1. Serbest İlaç Hipotezi (Free Drug)', ar: '1. فرضية الدواء الحر الفعال', en: '1. Free Drug Hypothesis' },
@@ -1734,7 +1739,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'الشعيرات الدماغية محكمة بروابط سادة وتفتقر للثقوب. لنفوذ الدواء للدماغ يشترط أن يكون ذو مساحة سطحية قطبية منخفضة (PSA < 90 Å²) وألفة دهنية كافية.',
         en: 'Brain capillaries feature tight junctions devoid of fenestrations. CNS penetration requires low polar surface area (PSA < 90 Å²) and logP 1.5 - 3.5.',
       },
-      coreFormula: '\\text{KBB Penetrasyonu} \\propto \\frac{\\log P}{\\sqrt{MW} \\times PSA} \\quad (\text{Lipinski CNS Kuralı})',
+      coreFormula: '\\\\text{KBB Penetrasyonu} \\\\propto \\\\frac{\\\\log P}{\\\\sqrt{MW} \\\\times PSA} \\\\quad (\\text{Lipinski CNS Kuralı})',
       takeaways: [
         {
           title: { tr: '1. P-Glikoprotein Efluks Pompası', ar: '1. مضخة الطرد P-glycoprotein', en: '1. P-glycoprotein Efflux Pump' },
@@ -1807,7 +1812,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'التصفية (CL) هي حجم البلازما الذي ينقى تماماً من الدواء في وحدة الزمن. ونصف العمر (t1/2) هو الزمن اللازم لانخفاض تركيز الدواء إلى النصف.',
         en: 'Clearance (CL) is the volume of plasma completely cleared of drug per unit time. Half-life (t1/2) is governed by the ratio of Vd to CL.',
       },
-      coreFormula: 't_{1/2} = \\frac{0.693 \\times V_d}{CL}',
+      coreFormula: 't_{1/2} = \\\\frac{0.693 \\\\times V_d}{CL}',
       takeaways: [
         {
           title: { tr: '1. Birinci Derece Eliminasyon', ar: '1. حركية الإطراح من الرتبة الأولى', en: '1. First-Order Elimination' },
@@ -1885,7 +1890,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'عند تكرار الجرعات بانتظام يتساوى معدل دخول الدواء مع معدل طرحه لنصل إلى الحالة المستقرة (Css). يتطلب الوصول إليها زمناً يعادل 4-5 أنصاف أعمار.',
         en: 'Steady-state (Css) is achieved when dosing rate equals elimination rate, reached after 4 to 5 elimination half-lives.',
       },
-      coreFormula: 'C_{ss} = \\frac{F \\times \\text{Doz}}{CL \\times \\tau} \\quad \\text{ve Yükleme Dozu} = C_{ss} \\times V_d',
+      coreFormula: 'C_{ss} = \\\\frac{F \\\\times \\\\text{Doz}}{CL \\\\times \\\\tau} \\\\quad \\\\text{ve Yükleme Dozu} = C_{ss} \\\\times V_d',
       takeaways: [
         {
           title: { tr: '1. Yükleme Dozu (Loading Dose)', ar: '1. الجرعة التحميلية (Loading Dose)', en: '1. Loading Dose Rationale' },
@@ -1958,7 +1963,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'معدل الاستخلاص الكبدي (ER) يحدد نسبة الدواء المنقاة في عبور واحد عبر الكبد. الأدوية ذات ER العالي (> 0.7) تعتمد تصفيتها على تدفق دم الكبد وتتعرض لأيض عبور أول شديد.',
         en: 'Hepatic Extraction Ratio (ER) defines the fraction of drug removed during a single transhepatic passage. High ER (> 0.7) drugs are blood-flow limited.',
       },
-      coreFormula: 'ER = \\frac{C_{\\text{in}} - C_{\\text{out}}}{C_{\\text{in}}} \\quad \\text{ve} \\quad CL_H = Q \\times ER',
+      coreFormula: 'ER = \\\\frac{C_{\\\\text{in}} - C_{\\\\text{out}}}{C_{\\\\text{in}}} \\\\quad \\\\text{ve} \\\\quad CL_H = Q \\\\times ER',
       takeaways: [
         {
           title: { tr: '1. Akıma Bağımlı vs Kapasiteye Bağımlı', ar: '1. تصفية معتمدة على التدفق مقابل الإنزيمات', en: '1. Flow-Limited vs Capacity-Limited' },
@@ -2034,7 +2039,7 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
         ar: 'التصفية الكلوية هي محصلة 3 عمليات: الترشيح الكبيبي + الإفراز الأنبوبي الفعال - إعادة الامتصاص السلبي.',
         en: 'Renal clearance represents the net algebraic sum of Glomerular Filtration + Tubular Secretion - Tubular Reabsorption.',
       },
-      coreFormula: 'CL_R = \\frac{\\text{GFR} \\times f_u + \\text{Sekresyon} - \\text{Geri Emilim}}{C_p}',
+      coreFormula: 'CL_R = \\\\frac{\\\\text{GFR} \\\\times f_u + \\\\text{Sekresyon} - \\\\text{Geri Emilim}}{C_p}',
       takeaways: [
         {
           title: { tr: '1. Tübüler Sekresyon (Aktif Pompalama)', ar: '1. الإفراز الأنبوبي النشط', en: '1. Active Tubular Secretion' },
@@ -2086,11 +2091,16 @@ export const INTERACTIVE_LESSONS: Record<string, InteractiveLessonMeta> = {
 };
 
 export function getLessonInteractiveData(lessonId: string): InteractiveLessonMeta {
-  const meta = INTERACTIVE_LESSONS[lessonId];
-  if (meta) {
-    return meta;
+  if (INTERACTIVE_LESSONS[lessonId]) {
+    return INTERACTIVE_LESSONS[lessonId];
   }
 
   // Fallback for unexpected IDs
-  return INTERACTIVE_LESSONS['mc-mod1-les1']!;
+  return INTERACTIVE_LESSONS['mc-mod1-les1'];
 }
+'''
+
+with open(TARGET_TS, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print(f"Successfully generated all 22 interactive lessons in {TARGET_TS}")
