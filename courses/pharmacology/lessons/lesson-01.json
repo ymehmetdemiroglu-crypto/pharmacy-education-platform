@@ -1,0 +1,644 @@
+{
+  "id": "pharm-mod1-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-01",
+  "title": {
+    "tr": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi",
+    "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Kütle etkisi kanununu kullanarak ilaç-reseptör bağlanma dengesini, Kd ayrışma sabitini ve doluluk fraksiyonunu hesaplamak.",
+    "ar": "حساب توازن ارتباط الدواء بالمستقبل وثابت التفكك Kd ونسبة الإشغال باستخدام قانون فعل الكتلة."
+  },
+  "misconceptions": [
+    {
+      "tr": "Kd değerinin yüksek olmasının ilacın hedefine daha sıkı bağlandığı anlamına geldiği yanılgısı (düşük Kd = yüksek afinite).",
+      "ar": "الظن الخاطئ بأن ارتفاع قيمة Kd يعني ارتباطاً أقوى بالهدف (انخفاض Kd = ألفة أعلى)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 6
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH01-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Drug-Receptor Interactions and Mass Action Kinetics",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod1-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Kd Ayrışma Sabiti Tanımı",
+      "prompt": "Kd ayrışma sabiti ligand konsantrasyonu cinsinden neyi ifade eder?",
+      "answer": "Reseptörlerin tam olarak yüzde 50 sinin bağlandığı (yarı doluluk) serbest ligand derişimidir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod1-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Reseptör Doluluk Formülü (Theta)",
+      "prompt": "Fraksiyonel reseptör doluluğu (theta) ligand [L] ve Kd cinsinden nasıl hesaplanır?",
+      "answer": "Theta = [L] / ([L] + Kd).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod1-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Afinite ve Kd İlişkisi",
+      "prompt": "Bir ilacın Kd si 10^-9 M (nM), diğerininki 10^-6 M (uM) ise hangisi daha güçlü bağlanır?",
+      "answer": "nM düzeyindeki ilaç 1000 kat daha yüksek afiniteye sahiptir; küçük Kd daha sıkı bağlanma demektir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi"
+    },
+    "ar": {
+      "title": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod1-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Milyarlarca Hücrede Tek Bir Molekülü Bulmak",
+        "ar": "إيجاد جزيء واحد بين مليارات الخلايا"
+      },
+      "prompt": {
+        "tr": "Dolaşımdaki ilaç molekülleri trilyonlarca protein arasından nasıl kendi hedef reseptörünü seçip tam aranan kilide oturur?",
+        "ar": "كيف تنتقي جزيئات الدواء في الدورة الدموية مستقبِلها الهدف (reseptör) من بين تريليونات البروتينات وتستقر في قفله الخاص؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الدوائي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod1-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Serbest Ligand Derişimi [L] = Kd Olduğunda",
+        "ar": "توقع: عندما يكون تركيز الربيط [L] مساوياً لـ Kd"
+      },
+      "prompt": {
+        "tr": "Ortamdaki serbest ilaç derişimi ilacın Kd ayrışma sabitine eşit olduğunda reseptörlerin ne kadarı dolmuştur?",
+        "ar": "عندما يتساوى تركيز الدواء الحر في الوسط مع ثابت التفكك Kd، كم تبلغ نسبة إشغال المستقبِلات؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "[L] = Kd olduğunda Theta = Kd / (Kd + Kd) = 0.50 (%50 doluluk)."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph11-1",
+            "text": {
+              "tr": "Tam olarak %50 si doludur.",
+              "ar": "50% منها تماماً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph11-2",
+            "text": {
+              "tr": "%100 ü doludur.",
+              "ar": "100% منها ممتلئة بالكامل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod1-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Sandalye Kapmaca Oyunu",
+        "ar": "تشبيه حدسي: لعبة الكراسي الموسيقية"
+      },
+      "prompt": {
+        "tr": "Odada 100 sandalye (reseptör) ve koşuşturan çocuklar (ligand) var. Çocuk sayısı arttıkça boş sandalye kalma olasılığı hızla sıfıra yaklaşır.",
+        "ar": "في الغرفة 100 مقعد (reseptör) وأطفال يركضون (ligand). مع تزايد عدد الأطفال تقترب احتمالية بقاء مقعد شاغر من الصفر."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kütle etkisi",
+          "arContext": "فعل الكتلة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod1-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Doygunluk Bağlanma İzotermi",
+        "ar": "منحنى التشبع المتساوي للارتباط"
+      },
+      "prompt": {
+        "tr": "Bağlanma grafiği dikdörtgen hiperbol şeklindedir. Düşük konsantrasyonda dik yükselir, yüksek konsantrasyonda Bmax tavanına asimptotik olarak doyar.",
+        "ar": "يأخذ منحنى الارتباط شكل قطع زائد. يرتفع حاداً بالتركيز المنخفض، ثم يستقر أفقياً عند سقف الإشغال الأعظمي Bmax."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Bmax",
+          "arContext": "السعة القصوى للارتباط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod1-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Model: Receptor-Ligand Matcher (Kd)",
+        "ar": "نموذج تفاعلي: مطابق الربيط والمستقبل (Kd)"
+      },
+      "prompt": {
+        "tr": "Ligand konsantrasyonunu 1 nM den 100 uM ye artırarak dinamik bağlanma-ayrışma kinetiğini ve fraksiyonel doluluğu (Theta) izleyin.",
+        "ar": "ارفع تركيز الربيط من 1 nM إلى 100 uM لمراقبة حركية الارتباط والانفصال ونسبة إشغال المستقبلات (Theta)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "mode": "mass_action_equilibrium",
+          "targetKd": 10,
+          "concentrationUnit": "nM"
+        }
+      }
+    },
+    {
+      "id": "pharm-mod1-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: 9 Katı Kuralı",
+        "ar": "استكشاف موجه: قاعدة التسعة أضعاف"
+      },
+      "prompt": {
+        "tr": "Reseptör doluluğunu %10 dan %90 a çıkarmak için serbest ilaç derişimini kaç kat artırmak gerekir?",
+        "ar": "لرفع نسبة إشغال المستقبل من 10% إلى 90%، كم ضعفاً يجب زيادة تركيز الدواء الحر؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kütle etkisi kanunu gereği %10 dan %90 doluluğa geçiş tam 81 kat konsantrasyon artışı ister."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph11-3",
+            "text": {
+              "tr": "Tam 81 kat (0.11 Kd den 9 Kd ye).",
+              "ar": "81 ضعفاً تماماً (من 0.11 Kd إلى 9 Kd)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph11-4",
+            "text": {
+              "tr": "9 kat.",
+              "ar": "9 أضعاف فقط."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod1-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Kütle Etkisi ve Clark Reseptör Teorisi",
+        "ar": "قانون فعل الكتلة ونظرية Clark للمستقبلات"
+      },
+      "prompt": {
+        "tr": "A.J. Clark (1933): Yanıt doğrudan reseptör doluluğuyla orantılıdır: E / Emax = [L] / ([L] + Kd). Kd = koff / kon oranıdır.",
+        "ar": "A.J. Clark (1933): تتناسب الاستجابة طردياً مع نسبة الإشغال: E / Emax = [L] / ([L] + Kd). يمثل Kd نسبة ثابت الانفصال koff إلى kon."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Clark teorisi",
+          "arContext": "نظرية Clark"
+        },
+        {
+          "term": "Kd ayrışma sabiti",
+          "arContext": "ثابت التفكك Kd"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Kd ve İlaç Etki Gücü",
+        "ar": "فحص المفهوم: Kd وقوة الدواء"
+      },
+      "prompt": {
+        "tr": "İlaç A nın Kd si 0.1 nM, İlaç B nin Kd si 100 nM dir. Hangisi reseptörüne daha yüksek afiniteyle bağlanır?",
+        "ar": "الدواء A يمتلك Kd = 0.1 nM، والدواء B يمتلك Kd = 100 nM. أيهما يرتبط بألفة أعلى بمستقبله (reseptör)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kd derişim birimidir; ne kadar küçükse ilacın reseptörü doyurması o kadar kolaydır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph11-5",
+            "text": {
+              "tr": "İlaç A; küçük Kd daha sıkı bağlanma ve 1000 kat yüksek afinite demektir.",
+              "ar": "الدواء A؛ لأن صغر Kd يعني ارتباطاً أشد وألفة أعلى بـ 1000 ضعف."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph11-6",
+            "text": {
+              "tr": "İlaç B; büyük Kd daha güçlüdür.",
+              "ar": "الدواء B؛ لأن كبر Kd يمنح قوة أكبر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod1-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Hedef Doluluk Oranı",
+        "ar": "قرار سريري: نسبة الإشغال المستهدفة"
+      },
+      "prompt": {
+        "tr": "Bir monoklonal antikor tümör reseptörünü bloke edecektir. Hedefin %99 unu sürekli kilitli tutmak için plazma konsantrasyonu kaç Kd olmalıdır?",
+        "ar": "جسم مضاد وحيد النسيلة يستهدف مستقبلاً ورمياً. لإبقاء 99% من الهدف مقفلاً، كم يجب أن يكون تركيزه بالبلازما نسبة إلى Kd؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Theta = 99 / (99 + 1) = 0.99. Yüksek hedef baskılama için plazma düzeyi Kd yi katlamalıdır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph11-7",
+            "text": {
+              "tr": "En az 99 x Kd düzeyinde tutulmalıdır.",
+              "ar": "يجب الحفاظ عليه عند 99 x Kd على الأقل."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph11-8",
+            "text": {
+              "tr": "1 x Kd yeterlidir.",
+              "ar": "1 x Kd كافية تماماً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod1-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Gibbs Enerjisi ve Kd",
+        "ar": "استرجاع معرفي: طاقة غيبس وثابت Kd"
+      },
+      "prompt": {
+        "tr": "Kimya dersinde gördüğümüz gibi bağlanma serbest enerjisi Delta G ile Kd ayrışma sabiti arasındaki logaritmik ilişki nasıldı?",
+        "ar": "كما رأينا في مساق الكيمياء، كيف ترتبط طاقة الارتباط الحرة Delta G لوغاريتمياً مع ثابت التفكك Kd؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Delta G",
+          "arContext": "طاقة الارتباط الحرة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod1-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Non-Kovalent Kuvvetler ve Afinite (Ders 2)",
+        "ar": "ربط مفاهيمي: القوى غير التساهمية والألفة (الدرس 2)"
+      },
+      "prompt": {
+        "tr": "Kd değerini mikromolardan pikomolara çeken kimyasal bağ kuvvetlerini bir sonraki derste moleküler detaylarıyla inceleyeceğiz.",
+        "ar": "سنستكشف في الدرس القادم قوى الروابط الكيميائية التي تهبط بقيمة Kd من الميكرومولار إلى البيكومولار."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "bağlanma ilgisi",
+          "arContext": "ألفة الارتباط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod1-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Kütle Etkisi ve Denge",
+        "ar": "اختبار الإتقان: قانون فعل الكتلة والتوازن"
+      },
+      "prompt": {
+        "tr": "Kd ayrışma sabiti 10 nM olan bir reseptörde serbest ilaç derişimi 90 nM ye ulaştığında reseptör doluluk yüzdesi tam olarak kaçtır?",
+        "ar": "في مستقبِل يمتلك Kd = 10 nM، عندما يصل تركيز الدواء الحر إلى 90 nM، كم تبلغ النسبة المئوية لإشغال المستقبِلات بدقة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tebrikler! Kütle etkisi ve Kd dengesini ustalıkla çözdünüz. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph11-9",
+            "text": {
+              "tr": "%90 doluluk (90 / (90 + 10) = 0.90).",
+              "ar": "إشغال 90% (90 / (90 + 10) = 0.90)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph11-10",
+            "text": {
+              "tr": "%50 doluluk.",
+              "ar": "إشغال 50% فقط."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

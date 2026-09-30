@@ -1,0 +1,640 @@
+{
+  "id": "pharm-mod6-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-06",
+  "title": {
+    "tr": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler",
+    "ar": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "GABA-A klorür kanalı üzerinde benzodiyazepin ve barbitüratların allosterik mekanizmalarını ve güvenlik profillerini ayırt etmek.",
+    "ar": "التمييز بين الآليات التفارغية للبنزوديازيبينات والباربيتورات على قناة كلوريد GABA-A وملفات أمانها."
+  },
+  "misconceptions": [
+    {
+      "tr": "Benzodiyazepinlerin GABA yokluğunda da klorür kanalını doğrudan açabileceği yanılgısı (yalnızca GABA varlığında açılma frekansını artırırlar).",
+      "ar": "الاعتقاد الخاطئ بأن البنزوديازيبينات تفتح قناة الكلوريد بمفردها غيابياً دون الحاجة لوجود GABA (هي تزيد تواتر الفتح فقط)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Santral Sinir Sistemi.pdf",
+      "page": 6
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH11-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "GABAergic Neurotransmission and Benzodiazepine Pharmacology",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod6-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Benzodiyazepin Mekanizması",
+      "prompt": "Benzodiyazepinler GABA-A klorür kanalının açılma frekansını mı, yoksa açık kalma süresini mi artırır?",
+      "answer": "Açılma frekansını (Frekans = Fren) artırır; doğrudan kanal açamazlar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Barbitürat Tehlikesi",
+      "prompt": "Barbitüratlar yüksek dozda neden ölümcül solunum depresyonu yapar?",
+      "answer": "Kanalın açık kalma süresini artırır ve yüksek dozda GABA olmadan kanalı doğrudan açabilirler.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Flumazenil Antidotu",
+      "prompt": "Benzodiyazepin aşırı dozunda allosterik bölgeyi yarışmalı bloke eden spesifik antidot nedir?",
+      "answer": "Flumazenil spesifik yarışmalı antagonisttir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler"
+    },
+    "ar": {
+      "title": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod6-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Beynin Ana Fren Pedalı",
+        "ar": "كابح الدماغ الأساسي"
+      },
+      "prompt": {
+        "tr": "Şiddetli panik krizindeki bir insana damardan diazepam yapıldığında 30 saniye içinde fırtına nasıl yerini derin bir dinginliğe bırakır?",
+        "ar": "عند حقن مريض نوبة الهلع الحادة بـ Diazepam وريدياً، كيف تهدأ العاصفة الدماغية في 30 ثانية لتحل سكينة تامة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "GABA-A reseptörü",
+          "arContext": "مستقبِل GABA-A"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Tek Başına Benzodiyazepin",
+        "ar": "توقع: البنزوديازيبين بمفرده"
+      },
+      "prompt": {
+        "tr": "Ortamda hiç GABA nörotransmitteri yokken yüksek doz benzodiyazepin klorür kanalını açabilir mi?",
+        "ar": "في غياب الناقل العصبي GABA تماماً، هل يستطيع تركيز عالٍ من البنزوديازيبين فتح قناة الكلوريد بمفرده؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Benzodiyazepinler doğrudan agonist değildir; yalnızca GABA nın etkisini amplifiye ederler."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph61-1",
+            "text": {
+              "tr": "Hayır, pozitif allosterik modülatördür; kanalın açılması için mutlaka GABA bağlanmalıdır.",
+              "ar": "لا، فهو معدل تفارغي إيجابي؛ ويلزم حتماً وجود GABA لتنفتح القناة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph61-2",
+            "text": {
+              "tr": "Evet, GABA dan bağımsız açar.",
+              "ar": "نعم، يفتح القناة بمعزل عن GABA."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Kapının Menteşesini Yağlamak",
+        "ar": "تشبيه حدسي: تزييت مفصلات الباب"
+      },
+      "prompt": {
+        "tr": "GABA kapıyı iten eldir; benzodiyazepin ise menteşeleri yağlar. El itmezse kapı açılmaz, ancak el ittiğinde kapı sonuna kadar defalarca açılır.",
+        "ar": "GABA هو اليد التي تدفع الباب، والبنزوديازيبين زيت المفصلات. إن لم تدفع اليد لا يفتح الباب، لكن بوجودها يفتح بسهولة متكررة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "allosterik modülasyon",
+          "arContext": "التعديل التفارغي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "GABA-A Pentamerik Klorür Kanal Kompleksi",
+        "ar": "معقد قناة الكلوريد الخماسية GABA-A"
+      },
+      "prompt": {
+        "tr": "2 alfa, 2 beta ve 1 gama alt birimi merkezde Cl- poru oluşturur. GABA alfa/beta arayüzüne, benzodiyazepin ise alfa/gama arayüzüne bağlanır.",
+        "ar": "تتألف القناة من وحدات 2 alfa و 2 beta و 1 gamma حول مسرى Cl-. يرتبط GABA بين alfa/beta، بينما يرتبط البنزوديازيبين بين alfa/gamma."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "klorür kanalı",
+          "arContext": "قناة الكلوريد"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Dose-Response Modulator (Allosterik Kayma)",
+        "ar": "محاكي تفاعلي: معدل الجرعة والاستجابة (الإزاحة التفارغية)"
+      },
+      "prompt": {
+        "tr": "GABA doz-yanıt eğrisine diazepam ekleyin. Eğrinin sola kayışını (potens artışı) ve klorür akımındaki amplifikasyonu gözlemleyin.",
+        "ar": "أضف Diazepam إلى منحنى جرعة GABA. راقب إزاحة المنحنى لليسار (تضاعف القوة) وتضخيم تدفق شوارد الكلوريد السالبة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "mode": "allosteric_potentiation",
+          "modulator": "benzodiazepine",
+          "leftShiftFactor": 10
+        }
+      }
+    },
+    {
+      "id": "pharm-mod6-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Benzodiyazepin vs Barbitürat Güvenliği",
+        "ar": "استكشاف موجه: أمان البنزوديازيبين مقابل الباربيتورات"
+      },
+      "prompt": {
+        "tr": "Barbitüratlar (fenobarbital) yüksek dozda GABA olmadan da klorür kanalını açık tutabilir. Bu fark neden ölümcüldür?",
+        "ar": "تستطيع الباربيتورات بالجرعة العالية فتح قناة الكلوريد حتى بغياب GABA. لماذا يجعلها هذا خطرة ومميتة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Benzodiyazepinler GABA bağımlı tavan etkileri sayesinde çok daha güvenlidir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph61-3",
+            "text": {
+              "tr": "Tavan etkisi yoktur; medulladaki solunum merkezini tamamen susturarak ölüme yol açar.",
+              "ar": "لغياب تأثير السقف الآمن؛ فتثبط مركز التنفس في البصلة السيسائية حتى الموت."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph61-4",
+            "text": {
+              "tr": "Barbitüratlar daha güvenlidir.",
+              "ar": "الباربيتورات أكثر أماناً بكثير."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Hiperpolarizasyon ve Nöronal İnhibisyon",
+        "ar": "فرط الاستقطاب والتثبيط العصبي"
+      },
+      "prompt": {
+        "tr": "Cl- iyonları hücre içine aktığında dinlenim zar potansiyeli -70 mV den -85 mV a düşer (hiperpolarizasyon). Nöron aksiyon potansiyeli üretemez.",
+        "ar": "بدخول شوارد Cl- يهبط جهد الغشاء من -70 mV إلى -85 mV (فرط استقطاب). يعجز العصبون عن توليد جهد فعل مستثار."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "hiperpolarizasyon",
+          "arContext": "فرط الاستقطاب (Hyperpolarization)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Frekans mı Süre mi?",
+        "ar": "فحص المفهوم: التواتر أم مدة الفتح؟"
+      },
+      "prompt": {
+        "tr": "Benzodiyazepinler ve barbitüratların klorür kanalı kinetiğindeki temel farkı nedir?",
+        "ar": "ما الفارق الحركي الجوهري بين البنزوديازيبينات والباربيتورات على قناة الكلوريد؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Formül: Benzo = Frekans (Fren), Barbi = Süre (Duration)."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph61-5",
+            "text": {
+              "tr": "Benzodiyazepinler kanalın açılma frekansını artırır; Barbitüratlar açık kalma süresini uzatır.",
+              "ar": "البنزوديازيبين يزيد تواتر الفتح (Frequency)؛ بينما الباربيتورات تطيل مدة الفتح (Duration)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph61-6",
+            "text": {
+              "tr": "Hiçbir kinetik fark yoktur.",
+              "ar": "لا يوجد أي فارق حركي بينهما."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Antidot: Flumazenil ile Kurtarma",
+        "ar": "تطبيق سريري: الإنقاذ بترياق Flumazenil"
+      },
+      "prompt": {
+        "tr": "Aşırı doz diazepam ile komaya giren hastaya IV flumazenil verildiğinde hasta neden dakikalar içinde uyanır?",
+        "ar": "عند إعطاء Flumazenil وريدياً لمريض دخل في غيبوبة بجرعة مفرطة من Diazepam، لماذا يستيقظ في دقائق؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Flumazenil benzodiyazepin zehirlenmesinin saf yarışmalı nötr antagonistidir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph61-7",
+            "text": {
+              "tr": "Flumazenil allosterik cebi yarışmalı bloke ederek diazepamı kovar fakat kanala dokunmaz.",
+              "ar": "يحظر Flumazenil الجيب التفارغي تنافسياً فيطرد Diazepam دون التأثير السلبي على القناة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph61-8",
+            "text": {
+              "tr": "Klorür kanallarını parçalar.",
+              "ar": "يحطم قنوات الكلوريد نهائياً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Reseptör Antagonizmi Tipleri",
+        "ar": "استرجاع معرفي: أنماط مناهضة المستقبِلات"
+      },
+      "prompt": {
+        "tr": "Modül 2 de gördüğümüz gibi aynı bağlanma cebine oturup doza bağlı yarışan ligandlara ne ad veriyorduk?",
+        "ar": "كما رأينا في الوحدة 2، ماذا نسمي الربيطات التي تتنافس على نفس جيب الارتباط وتنزاح بزيادة الجرعة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "yarışmalı antagonist",
+          "arContext": "المناهض التنافسي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Dopaminerjik Yolaklar ve Antipsikotikler (Ders 12)",
+        "ar": "ربط مفاهيمي: المسارات الدوبامينية ومضادات الذهان (الدرس 12)"
+      },
+      "prompt": {
+        "tr": "GABA beynin ana inhibitörüdür. Platformun 22. ve son dersinde motivasyon ve psikozun yöneticisi olan Dopamin yolaklarını inceleyeceğiz.",
+        "ar": "ناقل GABA كابح الدماغ الأساسي. في الدرس الـ 22 والأخير، سنستكشف مسارات الدوبامين الحاكمة للدوافع والذهان."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "dopaminerjik yolak",
+          "arContext": "المسار الدوباميني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: GABA-A ve Pozitif Modülasyon",
+        "ar": "اختبار الإتقان: مستقبِل GABA-A والتعديل الإيجابي"
+      },
+      "prompt": {
+        "tr": "Benzodiyazepinlerin GABA-A reseptörü üzerindeki moleküler etki mekanizması en doğru şekilde nasıl tanımlanır?",
+        "ar": "كيف تعرف الآلية الجزيئية للبنزوديازيبينات على مستقبِل GABA-A بأعلى دقة علمية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph61-9",
+            "text": {
+              "tr": "GABA varlığında klorür kanalının açılma frekansını artıran pozitif allosterik modülatör.",
+              "ar": "معدل تفارغي إيجابي يزيد تواتر فتح قناة الكلوريد بوجود ناقل GABA حصراً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph61-10",
+            "text": {
+              "tr": "Klorür kanalını bloke eden antagonist.",
+              "ar": "مناهض يغلق قنوات الكلوريد."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -7,7 +7,7 @@ import { StickerBadge } from '../StickerBadge/StickerBadge';
 
 import { ThemeContext } from '../../theme/ThemeProvider';
 
-export type Currency = 'USD' | 'TRY' | 'SAR';
+export type Currency = 'TRY';
 export type PlanType = 'monthly' | 'semester' | 'annual';
 
 export interface PaywallModalProps {
@@ -26,20 +26,10 @@ interface PriceData {
 }
 
 const pricingTable: Record<Currency, PriceData> = {
-  USD: {
-    single: { monthly: 14, semester: 49, annual: 89 },
-    bundle: { monthly: 19, semester: 69, annual: 129 },
-    symbol: '$',
-  },
   TRY: {
     single: { monthly: 250, semester: 850, annual: 1450 },
     bundle: { monthly: 350, semester: 1150, annual: 2100 },
     symbol: '₺',
-  },
-  SAR: {
-    single: { monthly: 55, semester: 190, annual: 340 },
-    bundle: { monthly: 75, semester: 265, annual: 490 },
-    symbol: 'SAR ',
   },
 };
 
@@ -137,10 +127,10 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               </div>
               <p className="hidden sm:block text-[11px] text-gray-700 dark:text-slate-300">
                 {themeLocale === 'tr'
-                  ? 'Kredi kartı gerekmeden 55 modülün tümünü ve gelişmiş ipuçlarını deneyimleyin.'
+                  ? 'Kredi kartı gerekmeden 11 modülün tümünü ve gelişmiş ipuçlarını deneyimleyin.'
                   : themeLocale === 'ar'
-                  ? 'استكشف جميع الوحدات الـ 55 والتلميحات المتقدمة دون الحاجة لبطاقة ائتمان.'
-                  : 'Experience all 55 modules, advanced hints & AI explanations with zero credit card commitment.'}
+                  ? 'استكشف جميع الوحدات الـ 11 والتلميحات المتقدمة دون الحاجة لبطاقة ائتمان.'
+                  : 'Experience all 11 modules, advanced hints & AI explanations with zero credit card commitment.'}
               </p>
             </div>
             <Button
@@ -211,9 +201,9 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B]',
               selectedPlan === 'monthly'
-                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D] dark:ring-[#F59E0B]'
                 : 'bg-gray-50 dark:bg-[#0B0F17] hover:bg-white'
             )}
           >
@@ -248,14 +238,14 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#131B2A] focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative bg-[#FFFDF7] dark:bg-[#131B2A] focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B]',
               selectedPlan === 'semester'
                 ? 'shadow-neo sm:shadow-neo-lg dark:shadow-neo-dark-lg ring-2 sm:ring-3 ring-black dark:ring-amber-500 scale-[1.01] sm:scale-[1.02] z-10'
                 : 'hover:bg-white'
             )}
           >
-            <div className="absolute -top-2 left-1 sm:-top-3 sm:left-3">
-              <StickerBadge variant="green" size="sm" className="scale-75 sm:scale-100 origin-top-left px-1 py-0 text-[9px] sm:text-xs">
+            <div className="absolute -top-2 start-1 sm:-top-3 sm:start-3">
+              <StickerBadge variant="green" size="sm" className="scale-75 sm:scale-100 origin-top-left rtl:origin-top-right px-1 py-0 text-[9px] sm:text-xs">
                 {themeLocale === 'tr' ? 'Popüler' : themeLocale === 'ar' ? 'شائع' : 'Most Popular'}
               </StickerBadge>
             </div>
@@ -290,14 +280,14 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
               }
             }}
             className={clsx(
-              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D]',
+              'p-2 sm:p-3.5 border-2 sm:border-3 border-black dark:border-slate-700 cursor-pointer transition-all duration-150 relative focus:outline-none focus:ring-2 sm:focus:ring-3 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B]',
               selectedPlan === 'annual'
-                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D]'
+                ? 'bg-white dark:bg-[#1E293B] shadow-neo sm:shadow-neo dark:shadow-neo-dark ring-2 ring-[#FFD93D] dark:ring-[#F59E0B]'
                 : 'bg-gray-50 dark:bg-[#0B0F17] hover:bg-white'
             )}
           >
-            <div className="absolute -top-2 left-1 sm:-top-3 sm:left-3">
-              <StickerBadge variant="yellow" size="sm" className="scale-75 sm:scale-100 origin-top-left px-1 py-0 text-[9px] sm:text-xs">
+            <div className="absolute -top-2 start-1 sm:-top-3 sm:start-3">
+              <StickerBadge variant="yellow" size="sm" className="scale-75 sm:scale-100 origin-top-left rtl:origin-top-right px-1 py-0 text-[9px] sm:text-xs">
                 {themeLocale === 'tr' ? 'Değer' : themeLocale === 'ar' ? 'أفضل' : 'Best Value'}
               </StickerBadge>
             </div>
@@ -326,10 +316,10 @@ export const PaywallModal: React.FC<PaywallModalProps> = ({
             <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 stroke-[3]" />
             <span>
               {themeLocale === 'tr'
-                ? '55 interaktif modül ve bileşenin tümü'
+                ? '11 interaktif modül ve bileşenin tümü'
                 : themeLocale === 'ar'
-                ? 'جميع الوحدات التفاعلية الـ 55 والأدوات'
-                : 'All 55 interactive modules & widgets'}
+                ? 'جميع الوحدات التفاعلية الـ 11 والأدوات'
+                : 'All 11 interactive modules & widgets'}
             </span>
           </div>
           <div className="flex items-center gap-1.5">

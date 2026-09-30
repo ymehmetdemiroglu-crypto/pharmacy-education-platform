@@ -8,8 +8,11 @@ import { LessonPage } from './pages/LessonPage';
 import { TrialBanner, PaywallModal } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
 
+import { useTranslation } from './context/TranslationContext';
+
 export const App: React.FC = () => {
   const { user } = useAuth();
+  const { t } = useTranslation();
   const [paywallOpen, setPaywallOpen] = useState(false);
 
   const calculateDaysRemaining = () => {
@@ -44,6 +47,10 @@ export const App: React.FC = () => {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
           <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
+          <Route path="/courses/pharmacology/lessons/:lessonId" element={<LessonPage />} />
+          <Route path="/courses/pharmacology/lessons" element={<Navigate to="/courses/pharmacology/lessons/1" replace />} />
+          <Route path="/courses/:courseId/lessons/:lessonId" element={<LessonPage />} />
+          <Route path="/courses/:courseId/lessons" element={<Navigate to="/catalog" replace />} />
           <Route path="*" element={<Navigate to="/gallery" replace />} />
         </Routes>
       </main>
@@ -51,19 +58,19 @@ export const App: React.FC = () => {
       {/* Neo-Brutalist Footer */}
       <footer className="border-t-3 border-black dark:border-slate-700 bg-white dark:bg-[#131B2A] py-8 px-4 sm:px-6 text-black dark:text-slate-100">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
-          <div className="flex flex-col gap-1 text-center sm:text-left">
+          <div className="flex flex-col gap-1 text-center sm:text-start">
             <span className="font-bold uppercase tracking-wider">
-              PharmLearn Education Platform
+              {t('footer.platformName')}
             </span>
             <span className="text-gray-700 dark:text-slate-300">
-              Commercial-grade interactive learning for Medicinal Chemistry & Pharmacology
+              {t('footer.tagline')}
             </span>
           </div>
 
-          <div className="text-center sm:text-right text-gray-700 dark:text-slate-300">
-            <p>100% Originally Authored Curriculum • Native Vector SMILES</p>
+          <div className="text-center sm:text-end text-gray-700 dark:text-slate-300">
+            <p>{t('footer.curriculumBadge')}</p>
             <p className="text-[11px] text-gray-600 dark:text-slate-400 mt-0.5">
-              Source slide references cited for academic verifiability.
+              {t('footer.slideCitation')}
             </p>
           </div>
         </div>

@@ -50,4 +50,7 @@ export interface SpacedReviewCard {
   nextReviewDue: string;
   reviewCount: number;
   lapseCount: number;
+  stability?: number | undefined;
+  retrievability?: number | undefined;
+  misconceptionId?: string | undefined;
 }

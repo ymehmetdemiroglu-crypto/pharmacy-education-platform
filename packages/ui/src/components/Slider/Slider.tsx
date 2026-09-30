@@ -74,7 +74,7 @@ export const Slider: React.FC<SliderProps> = ({
           className={clsx(
             'w-full h-3 bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none appearance-none cursor-pointer',
             'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]',
-            'focus:outline-none focus:ring-2 focus:ring-[#FFD93D]',
+            'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B]',
             // Custom thumb styling
             '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6',
             '[&::-webkit-slider-thumb]:bg-[#FFD93D] [&::-webkit-slider-thumb]:border-3 [&::-webkit-slider-thumb]:border-black',

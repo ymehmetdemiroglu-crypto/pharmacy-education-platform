@@ -77,7 +77,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
           {config.title}: {config.drugName} to {config.receptorName}
         </h3>
         <p className="text-xs font-body text-gray-700 dark:text-gray-300">
-          {config.prompt} (Select a drug group on the left, then click its complementary receptor residue on the right).
+          {config.prompt} (Select a drug group from the ligand list, then click its complementary receptor residue in the binding pocket list).
         </p>
       </div>
 
@@ -101,7 +101,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   onClick={() => handleSelectPair(pair.id)}
                   className={clsx(
                     'p-3 border-2 border-black dark:border-slate-700 cursor-pointer transition-all flex flex-col gap-1',
-                    isSelected && 'ring-2 ring-[#FFD93D] bg-[#FFF8E7] dark:bg-[#1E293B] shadow-neo-sm translate-x-1',
+                    isSelected && 'ring-2 ring-[#FFD93D] bg-[#FFF8E7] dark:bg-[#1E293B] shadow-neo-sm ltr:translate-x-1 rtl:-translate-x-1',
                     !isSelected && 'bg-white dark:bg-[#131B2A] hover:bg-gray-50 dark:hover:bg-slate-800 text-black dark:text-slate-100',
                     isSubmitted && isCorrect && 'border-[#6BCB77] dark:border-emerald-600 bg-[#EBFBEE] dark:bg-[#072518] text-black dark:text-emerald-200',
                     isSubmitted && !isCorrect && 'border-[#FF6B9D] dark:border-rose-600 bg-[#FFF0F5] dark:bg-[#2A0E18] text-black dark:text-rose-200'
@@ -140,7 +140,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   disabled={disabled || isSubmitted || !selectedPairId}
                   onClick={() => handleSelectResidue(res.id)}
                   className={clsx(
-                    'w-full p-2.5 border-2 border-black dark:border-slate-700 text-left transition-all flex items-center justify-between',
+                    'w-full p-2.5 border-2 border-black dark:border-slate-700 text-start transition-all flex items-center justify-between',
                     selectedPairId && 'hover:bg-[#FFD93D] hover:text-black cursor-pointer shadow-sm',
                     isUsed ? 'bg-gray-100 dark:bg-[#1E293B] border-dashed text-gray-700 dark:text-slate-300' : 'bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
                     (!selectedPairId || isSubmitted) && 'cursor-default'

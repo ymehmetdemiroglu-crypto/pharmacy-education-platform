@@ -5,39 +5,33 @@ import type { LessonData } from '@pharmacy/platform';
  * Free of internal audit tokens, unverified notes, or developer review tags.
  */
 export const clientLesson01: LessonData = {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "id": "mc-mod1-les1",
   "courseId": "medchem",
   "moduleId": "mc-mod-01",
-  "title": "Thermodynamic Activity & The Ferguson Principle",
+  "title": {
+    "tr": "Termodinamik Aktivite ve Ferguson İlkesi",
+    "ar": "النشاط الديناميكي الحراري ومبدأ Ferguson"
+  },
   "order": 1,
   "access": "free",
-  "objective": "Differentiate structurally specific from structurally non-specific drugs using thermodynamic activity thresholds.",
+  "objective": {
+    "tr": "Yapısal olarak özgül olmayan ilaçların etki mekanizmasını termodinamik aktivite ve doygunluk dengesiyle açıklamak.",
+    "ar": "توضيح آلية التأثير غير النوعي بنيوياً للأدوية عبر النشاط الديناميكي الحراري (termodinamik aktivite) وتوازن التشبع."
+  },
   "misconceptions": [
-    "All drugs bind specific stereoselective receptor pockets.",
-    "Lower effective dose always indicates higher intrinsic toxicity.",
-    "Structurally non-specific drugs lack biological activity."
+    {
+      "tr": "Tüm ilaçların spesifik bir protein reseptörüne kilit-anahtar uyumuyla bağlandığı yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن جميع الأدوية تتطلب ارتباطاً نوعياً مع (reseptör) بروتيني نوعي."
+    },
+    {
+      "tr": "Kimyasal olarak farklı genel anesteziklerin farklı biyofazik mekanizmalarla etki ettiği varsayımı.",
+      "ar": "الافتراض الخاطئ بأن المخدرات العامة المختلفة كيميائياً تعمل بآليات (biyofaz) مستقلة."
+    }
   ],
   "sources": [
     {
       "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
       "page": 17
-    },
-    {
-      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-      "page": 18
-    },
-    {
-      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-      "page": 19
-    },
-    {
-      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-      "page": 20
-    },
-    {
-      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-      "page": 23
     }
   ],
   "citations": [
@@ -45,18 +39,18 @@ export const clientLesson01: LessonData = {
       "id": "cit-ref-01",
       "book": "Foye's Principles of Medicinal Chemistry",
       "edition": "8th ed.",
-      "topic": "Thermodynamic Activity and Ferguson's Principle"
+      "topic": "Thermodynamic Activity & Ferguson Principle"
     },
     {
       "id": "cit-ref-02",
       "book": "An Introduction to Medicinal Chemistry",
-      "edition": "6th ed.",
+      "edition": "6th ed., Patrick",
       "topic": "Ferguson's Principle of Non-Specific Action"
     },
     {
       "id": "cit-ref-03",
       "book": "The Practice of Medicinal Chemistry",
-      "edition": "4th ed.",
+      "edition": "4th ed., Wermuth",
       "topic": "Physicochemical Properties and Biological Activity"
     }
   ],
@@ -64,523 +58,764 @@ export const clientLesson01: LessonData = {
     {
       "cardId": "mc-mod1-les1-card1",
       "courseId": "medchem",
-      "drugOrConcept": "Ferguson Saturation Threshold",
-      "prompt": "What is the relative thermodynamic saturation range (a = Pt/P0 or St/S0) defining structurally non-specific drug action?",
-      "answer": "High relative saturation threshold (substantial fraction of saturation equilibrium)",
+      "drugOrConcept": "Ferguson İlkesi ve Doygunluk",
+      "prompt": "What is the relative thermodynamic saturation range defining non-specific drugs?",
+      "answer": "Yapısal olarak özgül olmayan bileşikler yüksek bağıl doygunlukta (a ≈ 0.03-0.05) etki gösterir.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les1-card2",
       "courseId": "medchem",
-      "drugOrConcept": "Chemical Structure Alteration",
-      "prompt": "How does altering the chemical core affect structurally specific vs structurally non-specific drugs?",
-      "answer": "Structurally specific drugs lose potency or abolish activity completely; structurally non-specific drugs retain similar biological effect but alter pharmacokinetic properties.",
+      "drugOrConcept": "Termodinamik Aktivite Denklemi",
+      "prompt": "Gaz fazındaki bileşikler için termodinamik aktivite nasıl formüle edilir?",
+      "answer": "Kısmi buhar basıncının doygun buhar basıncına oranı: a = Pt / P0.",
       "box": 1,
-      "intervalDays": 1,
-      "status": "verified"
+      "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les1-card3",
       "courseId": "medchem",
-      "drugOrConcept": "Clinical Classification",
-      "prompt": "Classify inhalation anesthetics (halothane, nitrous oxide) vs stereoselective beta-blockers (propranolol) according to Ferguson's principle.",
-      "answer": "Inhalation anesthetics are structurally non-specific (physical membrane depression at high relative saturation); beta-blockers are structurally specific (3D receptor binding at low thermodynamic activity).",
+      "drugOrConcept": "Özgül ve Özgül Olmayan Etki Ayrımı",
+      "prompt": "Bir ilacın termodinamik aktivitesi a < 0.001 ise hangi etki mekanizması beklenir?",
+      "answer": "Stereo-spesifik reseptör bağlanması ile karakterize yapısal olarak özgül etki.",
       "box": 1,
-      "intervalDays": 1,
-      "status": "verified"
+      "intervalDays": 1
     }
   ],
   "translations": {
     "tr": {
-      "title": "Termodinamik Aktivite ve Ferguson İlkesi",
-      "objective": "Termodinamik aktivite eşiklerini kullanarak yapısal olarak özgül olan ve özgül olmayan ilaçları ayırt etmek."
+      "title": "Termodinamik Aktivite ve Ferguson İlkesi"
     },
     "ar": {
-      "title": "النشاط الديناميكي الحراري ومبدأ فيرجسون",
-      "objective": "التمييز بين الأدوية النوعية وغير النوعية بنيوياً باستخدام عتبات النشاط الديناميكي الحراري."
+      "title": "النشاط الديناميكي الحراري ومبدأ Ferguson"
     }
   },
   "steps": [
     {
-      "id": "step-1",
-      "type": "clinical_vignette",
-      "title": "Two Drugs, Vastly Different Quantities",
-      "prompt": "Why does general anesthesia with ether require tens of grams, while beta-blocker propranolol acts at tiny milligram doses?",
+      "id": "mc-mod1-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Klinik Çelişki: Gramlar ve Mikrogramlar",
+        "ar": "المفارقة السريرية: غرامات مقابل ميكروغرامات"
+      },
+      "prompt": {
+        "tr": "Dietil eter ile cerrahi anestezi onlarca gram gerektirirken, propranolol miligramlarla etki eder. Bu devasa doz farkının kökeni nedir?",
+        "ar": "يتطلب التخدير بـ Diethyl Ether عشرات الغرامات، بينما يعمل Propranolol بالمليغرامات. ما أصل هذا الفارق الهائل في الجرعة؟"
+      },
       "predictThenReveal": false,
-      "widgetType": "vignette",
       "config": {
         "drugA": {
           "name": "Diethyl Ether",
-          "dose": "Tens of grams (high molar concentration)",
-          "target": "Cellular lipid membranes (physical volume alteration)"
+          "dose": "Tens of grams (high molar concentration)"
         },
         "drugB": {
           "name": "Propranolol",
-          "dose": "Milligrams (micromolar to nanomolar)",
-          "target": "Beta-adrenergic receptor pocket (stereoselective binding)"
+          "dose": "Milligrams (micromolar to nanomolar)"
         }
       },
-      "hints": [
-        "Think about where each drug molecule travels and whether it requires a specific lock-and-key receptor binding site.",
-        "Ether alters physical properties of membranes; propranolol targets high-affinity cell surface adrenergic receptors.",
-        "Large molar quantities reflect non-specific physical accumulation; nanomolar affinity allows minute doses to trigger physiological responses."
-      ],
-      "feedback": {
-        "correct": "Exactly! Some drugs require bulk physical saturation of membranes, whereas others selectively target high-affinity cellular receptors.",
-        "incorrect": "Consider whether both drugs act on specific receptors, or if one relies on physical presence."
-      },
-      "sources": [
+      "technicalTerms": [
         {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 17
+          "term": "termodinamik aktivite",
+          "arContext": "النشاط الديناميكي الحراري"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الدوائي النوعي"
         }
       ],
-      "verified": false
+      "hints": [
+        {
+          "tr": "Moleküllerin etki ettiği biyolojik hedeflerin niteliğini düşünün.",
+          "ar": "فكر في طبيعة الأهداف البيولوجية التي تؤثر عليها الجزيئات."
+        },
+        {
+          "tr": "Bir madde zarı fiziksel olarak bozar, diğeri tek bir reseptöre bağlanır.",
+          "ar": "مادة تعطل الغشاء فيزيائياً، والأخرى ترتبط بمستقبِل مفرد."
+        },
+        {
+          "tr": "Spesifik olmayan etki yüksek doygunluk gerektirir.",
+          "ar": "التأثير غير النوعي يتطلب تشبعاً عالياً."
+        }
+      ]
     },
     {
-      "id": "step-2",
-      "type": "predict_reveal",
-      "title": "Thermodynamic Activity of Vapors",
-      "prompt": "Ferguson related biological activity to relative saturation: a = Pt / P0. If vapor pressure Pt approaches saturation P0, what happens to thermodynamic activity a?",
+      "id": "mc-mod1-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Eşit Doygunlukta Anestezi",
+        "ar": "توقع: التخدير عند التساوي في التشبع"
+      },
+      "prompt": {
+        "tr": "Farklı kimyasal yapılardaki gazlar aynı bağıl doygunluğa (Pt / P0) ulaştığında anestezi derinliği nasıl değişir?",
+        "ar": "عندما تصل غازات متباينة كيميائياً لنفس نسبة التشبع النسبي (Pt / P0)، كيف يتغير عمق التخدير؟"
+      },
       "predictThenReveal": true,
-      "widgetType": "predict_reveal",
-      "config": {
-        "formula": "a = P_t / P_0",
+      "conceptCheck": {
         "options": [
-          {
-            "id": "opt-2",
-            "label": "a drops to 0, because saturated vapors cannot dissolve into membranes.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Saturation maximizes escaping tendency; it does not stop dissolution."
-          },
-          {
-            "id": "opt-1",
-            "label": "a approaches unity (complete saturation), maximizing physical escaping tendency into biophase tissues.",
-            "isCorrect": true
-          },
-          {
-            "id": "opt-3",
-            "label": "a remains completely unaffected by partial vapor pressure.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Thermodynamic activity is directly proportional to partial vapor pressure."
-          }
-        ],
-        "revealedOutcome": "a = Pt / P0 approaches unity. Thermodynamic activity reaches maximum escaping tendency.",
-        "explanation": "As partial pressure Pt nears saturated vapor pressure P0, chemical potential reaches its peak, driving drug molecules into cell biophases."
-      },
-      "hints": [
-        "Review the ratio a = Pt / P0 as the numerator approaches the denominator.",
-        "When Pt = P0, the ratio equals unity, signifying complete thermodynamic saturation.",
-        "Thermodynamic activity a scales from 0 to 1; equal activity produces equal biological effect regardless of chemical structure."
-      ],
-      "feedback": {
-        "correct": "Correct! As Pt approaches P0, relative saturation a approaches unity, driving drug partition into biophase membranes.",
-        "incorrect": "Remember that thermodynamic activity is defined as the ratio Pt / P0, scaling directly with vapor pressure toward unity."
-      },
-      "sources": [
-        {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 18
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-3",
-      "type": "predict_reveal",
-      "title": "The Non-Specific Activity Threshold",
-      "prompt": "Structurally non-specific drugs produce biological depression only at high thermodynamic activity. Predict the relative saturation range where general anesthesia occurs.",
-      "predictThenReveal": true,
-      "widgetType": "predict_reveal",
-      "config": {
-        "options": [
-          {
-            "id": "opt-1",
-            "label": "High relative saturation (substantial saturation needed to alter membranes)",
-            "isCorrect": true
-          },
-          {
-            "id": "opt-2",
-            "label": "a < 0.0001 (Extreme dilution suffices for non-specific physical action)",
-            "isCorrect": false,
-            "misconceptionFeedback": "Extreme dilution (a < 0.001) only works for structurally specific receptor ligands."
-          },
-          {
-            "id": "opt-3",
-            "label": "a > 10.0 (Requires supersaturated physical states impossible in physiology)",
-            "isCorrect": false,
-            "misconceptionFeedback": "Thermodynamic activity at standard equilibrium does not exceed unity."
-          }
-        ],
-        "revealedOutcome": "Non-specific depressants act within a high relative saturation range, requiring substantial physical accumulation.",
-        "explanation": "Without specific receptor binding, drugs must achieve 1% to 100% of their saturation limit to alter biophase membrane fluidity."
-      },
-      "hints": [
-        "Non-specific drugs need a substantial fraction of their maximum solubility or vapor pressure.",
-        "Ferguson observed diverse depressants induce anesthesia at substantial relative saturation.",
-        "Because action depends on physical presence rather than receptor affinity, high thermodynamic activity is obligatory."
-      ],
-      "feedback": {
-        "correct": "Accurate! Non-specific agents require high relative saturation to physically perturb membranes.",
-        "incorrect": "Non-specific drugs do not possess high-affinity receptor targets, so they require substantial relative saturation."
-      },
-      "sources": [
-        {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 18
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-4",
-      "type": "predict_reveal",
-      "title": "Exobiophase to Endobiophase Equilibrium",
-      "prompt": "Ferguson posited dynamic equilibrium between exobiophase (blood) and endobiophase (membrane). At equilibrium, how does thermodynamic activity in blood compare to the target membrane?",
-      "predictThenReveal": true,
-      "widgetType": "predict_reveal",
-      "config": {
-        "phases": [
-          "Exobiophase (Extracellular/Blood)",
-          "Endobiophase (Cellular Membrane)"
-        ],
-        "options": [
-          {
-            "id": "opt-2",
-            "label": "Much higher in blood because blood volume exceeds membrane volume.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Volume does not dictate chemical potential; thermodynamic activity equalizes across phases."
-          },
-          {
-            "id": "opt-3",
-            "label": "Zero in membrane because lipids repel volatile compounds.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Volatile anesthetics are lipophilic and readily partition into lipid bilayers."
-          },
-          {
-            "id": "opt-1",
-            "label": "Equal: thermodynamic activity a is identical in both phases at equilibrium.",
-            "isCorrect": true
-          }
-        ],
-        "revealedOutcome": "Chemical potential and thermodynamic activity a are identical across all phases in dynamic equilibrium.",
-        "explanation": "Though molar concentrations differ across phases, chemical potential equalizes at equilibrium, so measuring blood activity directly reflects membrane biophase activity."
-      },
-      "hints": [
-        "Recall the thermodynamic definition of phase equilibrium.",
-        "At chemical equilibrium, partial molar free energy (chemical potential) equalizes across phases.",
-        "Since chemical potential is uniform across phases at equilibrium, thermodynamic activity in the exobiophase equals that in the endobiophase."
-      ],
-      "feedback": {
-        "correct": "Spot on! At thermodynamic equilibrium, chemical potential and activity are identical across both phases.",
-        "incorrect": "At dynamic equilibrium, thermodynamic activity is equal across phases, even when molar concentrations differ."
-      },
-      "sources": [
-        {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 18
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-5",
-      "type": "concept_checkpoint",
-      "title": "Classify Mystery Compounds",
-      "prompt": "Four experimental compounds were tested for sedative action. Which compound exhibits characteristics of a structurally non-specific agent?",
-      "predictThenReveal": false,
-      "widgetType": "multiple_choice",
-      "config": {
-        "options": [
-          {
-            "id": "opt-b",
-            "text": "Compound Y: Active at a = 0.00005; (R)-enantiomer is 500-fold more potent than (S)-enantiomer.",
-            "isCorrect": false,
-            "distractorRationale": "Extreme stereoselectivity and nanomolar potency indicate a structurally specific receptor agonist."
-          },
           {
             "id": "opt-a",
-            "text": "Compound X: Active at a = 0.15; activity persists despite replacing alkyl branches with rings.",
-            "isCorrect": true,
-            "distractorRationale": "Correct! High thermodynamic activity (a = 0.15) and broad structural tolerance identify non-specific action."
+            "text": {
+              "tr": "Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.",
+              "ar": "تظهر تأثيرات متباينة تماماً تبعاً لاختلاف بنيتها."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Ferguson ilkesine göre kimyasal yapı değil, termodinamik aktivite belirleyicidir.",
+              "ar": "وفق مبدأ Ferguson، النشاط الديناميكي الحراري هو الحاكم وليس البنية."
+            }
+          },
+          {
+            "id": "opt-b",
+            "text": {
+              "tr": "Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.",
+              "ar": "الجزيئات ذات الوزن الجزيئي الصغير فقط تحدث تخديراً."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Molekül ağırlığı tek başına anestezi gücünü tayin etmez.",
+              "ar": "الوزن الجزيئي وحده لا يحدد القوة التخديرية."
+            }
           },
           {
             "id": "opt-c",
-            "text": "Compound Z: Acts at nanomolar concentration; blocked competitively by a selective antagonist.",
-            "isCorrect": false,
-            "distractorRationale": "Competitive antagonism at nanomolar concentrations signifies specific receptor binding."
-          },
-          {
-            "id": "opt-d",
-            "text": "Compound W: Tiny chemical modification abolishes all sedative activity completely.",
-            "isCorrect": false,
-            "distractorRationale": "High sensitivity to subtle structural changes is the defining hallmark of structurally specific drugs."
+            "text": {
+              "tr": "Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.",
+              "ar": "تحدث نفس درجة التخدير تقريباً بغض النظر عن البنية الكيميائية."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Bağıl doygunluk eşit olduğunda biyofazdaki termodinamik kaçma eğilimi eşittir.",
+              "ar": "صحيح! عند تساوي التشبع، يكون ميل الهروب الديناميكي متساوياً."
+            }
           }
-        ],
-        "explanation": "Compound X requires high thermodynamic activity (a = 0.15) and tolerates structural alterations without losing sedative action, classic hallmarks of non-specific agents."
+        ]
       },
-      "hints": [
-        "Look for high thermodynamic activity and tolerance to structural alteration.",
-        "Structurally specific drugs exhibit stereoselectivity and nanomolar potency (a < 0.001); non-specific drugs act via bulk physical presence.",
-        "Compound X acts at a = 0.15 and retains effect across diverse scaffolds, identifying it as structurally non-specific."
-      ],
-      "feedback": {
-        "correct": "Brilliant! Compound X operates at high thermodynamic saturation (a = 0.15) and tolerates scaffold changes, typical of non-specific drugs.",
-        "incorrect": "Look for the compound acting at high thermodynamic activity whose effect is insensitive to structural changes."
-      },
-      "sources": [
-        {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 19
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-6",
-      "type": "predict_reveal",
-      "title": "Core Structural Sensitivity",
-      "prompt": "In structurally specific drugs like adrenergic agonists, what typically happens when you invert a stereocenter or replace a key hydrogen-bonding group?",
-      "predictThenReveal": true,
-      "widgetType": "predict_reveal",
       "config": {
         "options": [
           {
-            "id": "opt-1",
-            "label": "Biological activity is drastically reduced or completely abolished.",
-            "isCorrect": true
+            "id": "opt-a",
+            "text": "Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.",
+            "isCorrect": false
           },
           {
-            "id": "opt-2",
-            "label": "Activity increases invariably because all changes enhance membrane fluidity.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Membrane fluidity changes occur with non-specific drugs, not receptor-targeted stereospecific ligands."
+            "id": "opt-b",
+            "text": "Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.",
+            "isCorrect": false
           },
           {
-            "id": "opt-3",
-            "label": "No effect whatsoever, because receptors adapt flexibly to any substituent.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Receptor binding sites have rigid 3D geometries that require precise molecular complementarity."
-          }
-        ],
-        "revealedOutcome": "Activity drops sharply or converts into antagonism when key binding groups are altered.",
-        "explanation": "Structurally specific drugs depend on 3D spatial complementarity with receptor amino acids. Minor changes destroy binding affinity."
-      },
-      "hints": [
-        "Consider how lock-and-key receptor binding responds to geometric distortions.",
-        "Receptor binding requires complementary hydrogen bonds, ionic pairs, and hydrophobic fits.",
-        "Altering a chiral center or essential pharmacophore group eliminates binding interactions, reducing affinity by orders of magnitude."
-      ],
-      "feedback": {
-        "correct": "Exactly! In structurally specific drugs, even subtle modifications like enantiomeric inversion can abolish biological activity.",
-        "incorrect": "Receptors demand precise 3D spatial fit; modifying pharmacophore elements severely impairs binding affinity."
-      },
-      "sources": [
-        {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 20
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-7",
-      "type": "predict_reveal",
-      "title": "Chemical Diversity in Anesthesia",
-      "prompt": "Nitrous oxide (N2O), diethyl ether, and chloroform produce similar general anesthesia despite having completely different structures. Why?",
-      "predictThenReveal": true,
-      "widgetType": "predict_reveal",
-      "config": {
-        "compounds": [
-          "N2O (Nitrous Oxide)",
-          "CH3-CH2-O-CH2-CH3 (Diethyl Ether)",
-          "CHCl3 (Chloroform)"
-        ],
-        "options": [
-          {
-            "id": "opt-2",
-            "label": "All three bind the identical single stereoselective allosteric receptor pocket.",
-            "isCorrect": false,
-            "misconceptionFeedback": "These structurally disparate molecules do not fit into one identical stereospecific receptor pocket."
-          },
-          {
-            "id": "opt-3",
-            "label": "They all metabolize in vivo into the identical active chemical intermediate.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Inhalation anesthetics are mostly excreted unchanged and do not form a shared active metabolite."
-          },
-          {
-            "id": "opt-1",
-            "label": "They act non-specifically by physically accumulating into lipid membranes at comparable thermodynamic activities.",
+            "id": "opt-c",
+            "text": "Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.",
             "isCorrect": true
           }
         ],
-        "revealedOutcome": "Non-specific depressants produce equal biological effects at equal thermodynamic activities, independent of structure.",
-        "explanation": "When thermodynamic activity a reaches a threshold saturation, membrane lipids undergo physical volume expansion, impairing neuronal ion conduction regardless of chemical structure."
+        "revealedOutcome": "Tüm uçucu anestezikler a = Pt / P0 ≈ 0.03-0.05 aralığında cerrahi anestezi oluşturur.",
+        "explanation": "Ferguson ilkesine göre yapısal olarak özgül olmayan maddeler eşit bağıl doygunlukta eşit biyolojik yanıt verir."
       },
-      "hints": [
-        "Think about Ferguson's core deduction: biological effect tracks thermodynamic saturation, not chemical structure.",
-        "Molecules with disparate chemical structures produce similar CNS depression when they attain similar thermodynamic activity.",
-        "Non-specific anesthetics partition into hydrophobic membrane bilayers, inducing physical disorder once thermodynamic threshold is crossed."
-      ],
-      "feedback": {
-        "correct": "Spot on! Ferguson showed that chemically diverse depressants act similarly because they achieve comparable thermodynamic saturation.",
-        "incorrect": "These diverse agents do not bind a single lock-and-key receptor; their shared action arises from physical membrane saturation."
-      },
-      "sources": [
+      "technicalTerms": [
         {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 23
-        }
-      ],
-      "verified": false
-    },
-    {
-      "id": "step-8",
-      "type": "predict_reveal",
-      "title": "Differentiating Affinity from Saturation",
-      "prompt": "Drug A acts at a = 0.00001 (10 µg dose). Drug B acts at a = 0.20 (500 mg dose). How do their mechanisms classify?",
-      "predictThenReveal": true,
-      "widgetType": "predict_reveal",
-      "config": {
-        "comparison": {
-          "drugA": {
-            "a": 0.00001,
-            "dose": "10 µg"
-          },
-          "drugB": {
-            "a": 0.2,
-            "dose": "500 mg"
-          }
+          "term": "Ferguson ilkesi",
+          "arContext": "مبدأ Ferguson"
         },
-        "options": [
-          {
-            "id": "opt-2",
-            "label": "Drug B is more potent because its thermodynamic activity is much higher.",
-            "isCorrect": false,
-            "misconceptionFeedback": "Higher thermodynamic activity requirement means lower potency/affinity, not higher."
-          },
-          {
-            "id": "opt-1",
-            "label": "Drug A is structurally specific (high-affinity receptor ligand); Drug B is structurally non-specific (bulk physical depressant).",
-            "isCorrect": true
-          },
-          {
-            "id": "opt-3",
-            "label": "Both drugs act on identical receptors through different allosteric states.",
-            "isCorrect": false,
-            "misconceptionFeedback": "A four orders of magnitude difference in thermodynamic activity reflects fundamentally different mechanism classes."
-          }
-        ],
-        "revealedOutcome": "Drug A is structurally specific (low thermodynamic activity); Drug B is structurally non-specific (high relative saturation).",
-        "explanation": "A low thermodynamic activity requirement reflects high-affinity stereospecific binding. A high thermodynamic activity requirement indicates physical membrane accumulation."
-      },
-      "hints": [
-        "Compare the thermodynamic activities to the Ferguson cutoff (low thermodynamic activity vs high relative saturation).",
-        "Structurally specific drugs act at very low thermodynamic activity because receptor affinity concentrates their biological effect.",
-        "Drug A acts at a = 10^-5 (specific receptor target); Drug B requires a = 0.20 (20% saturation, non-specific action)."
-      ],
-      "feedback": {
-        "correct": "Correct! Low thermodynamic activity (a = 10^-5) denotes specific receptor affinity; high activity (a = 0.20) denotes non-specific physical action.",
-        "incorrect": "Review the Ferguson cutoffs: low thermodynamic activity identifies structurally specific drugs, whereas high relative saturation indicates non-specific physical depressants."
-      },
-      "sources": [
         {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 20
+          "term": "bağıl doygunluk",
+          "arContext": "التشبع النسبي"
         }
       ],
-      "verified": false
-    },
-    {
-      "id": "step-9",
-      "type": "worked_example_fading",
-      "title": "Calculate Thermodynamic Activity",
-      "prompt": "A volatile hypnotic has saturated vapor pressure P0 = 200 mmHg. Inhalation anesthesia occurs at partial pressure Pt = 10 mmHg. Calculate thermodynamic activity a = Pt / P0.",
-      "predictThenReveal": true,
-      "widgetType": "faded_calculation",
-      "config": {
-        "given": {
-          "P0": "200 mmHg",
-          "Pt": "10 mmHg",
-          "formula": "a = Pt / P0"
+      "hints": [
+        {
+          "tr": "Termodinamik aktivite fazlar arası dengeyi temsil eder.",
+          "ar": "يمثل النشاط الديناميكي الحراري التوازن بين الأطوار."
         },
-        "options": [
-          {
-            "id": "opt-2",
-            "label": "a = 20.0 (Inverting the numerator and denominator)",
-            "isCorrect": false,
-            "misconceptionFeedback": "Thermodynamic activity is Pt / P0, not P0 / Pt."
-          },
-          {
-            "id": "opt-3",
-            "label": "a = 0.0005 (Dividing by extra power of ten)",
-            "isCorrect": false,
-            "misconceptionFeedback": "10 / 200 = 1 / 20 = 0.05, not 0.0005."
-          },
-          {
-            "id": "opt-1",
-            "label": "a = 0.05 (5% relative saturation)",
-            "isCorrect": true
-          }
-        ],
-        "revealedOutcome": "a = 10 / 200 = 0.05. The agent achieves anesthesia at 5% of its saturation limit.",
-        "explanation": "Using a = Pt / P0: 10 / 200 = 0.05. The calculated value represents 5% relative saturation."
-      },
-      "hints": [
-        "Divide partial vapor pressure Pt by saturated vapor pressure P0.",
-        "Calculate: a = 10 mmHg / 200 mmHg = 1 / 20.",
-        "1 / 20 = 0.05, representing 5% relative saturation."
-      ],
-      "feedback": {
-        "correct": "Outstanding! 10 / 200 gives a = 0.05 (5% relative saturation).",
-        "incorrect": "Calculate 10 divided by 200. The result is 0.05 (5% relative saturation)."
-      },
-      "sources": [
         {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 18
+          "tr": "Biyofazdaki kaçma eğilimini göz önüne alın.",
+          "ar": "ضع في اعتبارك ميل الهروب في الطور الحيوي."
+        },
+        {
+          "tr": "Pt / P0 oranı eşit olduğunda zardaki yoğunlaşma eşittir.",
+          "ar": "عند تساوي نسبة Pt / P0 يتساوى التركيز في الغشاء."
         }
-      ],
-      "verified": false
+      ]
     },
     {
-      "id": "step-10",
-      "type": "recap",
-      "title": "Synthesis & Spaced Review",
-      "prompt": "You have mastered Ferguson's Principle! Structurally specific drugs act at low thermodynamic activity via receptors; non-specific drugs require high relative saturation through membrane saturation. 3 review cards added to Box 1.",
+      "id": "mc-mod1-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: Zardan Kaçma Eğilimi",
+        "ar": "النموذج الحدسي: ميل الهروب من الغشاء"
+      },
+      "prompt": {
+        "tr": "Bir sıvıyı buharlaşmaya zorlayan iç basınç gibi, çözücüdeki moleküller de doymuşluk arttıkça zarlara itilir. Doygunluk yükseldikçe ne olur?",
+        "ar": "كما يدفع الضغط الداخلي السائل للتبخر، تندفع الجزيئات نحو الأغشية مع اقتراب التشبع. ماذا يحدث عند زيادة التشبع؟"
+      },
       "predictThenReveal": false,
-      "widgetType": "recap_summary",
       "config": {
-        "keyTakeaways": [
-          "Structurally Specific Drugs: Act at low thermodynamic activity (a < 0.001) via stereoselective 3D receptor fit.",
-          "Structurally Non-Specific Drugs: Act at high relative saturation through bulk physical membrane alteration.",
-          "Equal Thermodynamic Activity = Equal Biological Effect across structurally diverse non-specific agents."
-        ],
-        "reviewCardsEnqueued": [
-          "Ferguson Saturation Threshold",
-          "Chemical Structure Alteration",
-          "Clinical Classification"
-        ],
-        "xpAwarded": 50
+        "analogy": "Crowded room escaping tendency"
       },
-      "hints": [
-        "Review the contrast: receptor complementarity at low activity vs physical saturation.",
-        "Remember that non-specific action is independent of chemical structure and sensitive to thermodynamic activity.",
-        "Your review cards will reappear tomorrow to reinforce long-term memory via Leitner spacing."
-      ],
-      "feedback": {
-        "correct": "Congratulations on completing Lesson 1! 50 XP awarded and 3 cards added to your spaced review queue.",
-        "incorrect": "Review the summary cards to consolidate your understanding of Ferguson's principle."
-      },
-      "sources": [
+      "technicalTerms": [
         {
-          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
-          "page": 19
+          "term": "kaçma eğilimi",
+          "arContext": "ميل الهروب الجزيئي"
+        },
+        {
+          "term": "biyofaz",
+          "arContext": "الطور الحيوي الغشائي"
         }
       ],
-      "verified": false
+      "hints": [
+        {
+          "tr": "Molekül kendi fazında sıkıştıkça hücre zarına kaçar.",
+          "ar": "كلما انحصر الجزيء في طوره هرب إلى غشاء الخلية."
+        },
+        {
+          "tr": "Zar lipidlerine yerleşen moleküller zarı genişletir.",
+          "ar": "الجزيئات المستقرة في دهون الغشاء تؤدي لتمدده."
+        },
+        {
+          "tr": "Bu durum iyon kanallarının iletimini bloke eder.",
+          "ar": "هذا يغلق القنوات الأيونية ميكانيكياً."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Görselleştirme: Lipid Çift Katmanının Genişlemesi",
+        "ar": "التوضيح البصري: تمدد طبقة الدهون الثنائية"
+      },
+      "prompt": {
+        "tr": "Termodinamik aktivite a arttıkça lipid çift katmanına yerleşen moleküller membran hacmini genişletir (Delta V). Bu durum nöronal iletimi durdurur.",
+        "ar": "مع ارتفاع النشاط termodinamik aktivite تتكدس الجزيئات في الطبقة الثنائية وتحدث تمدداً حجمياً يعطل السيالة العصبية."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "diagram": "membrane_expansion_svg"
+      },
+      "technicalTerms": [
+        {
+          "term": "lipid çift katmanı",
+          "arContext": "طبقة الدهون الثنائية"
+        },
+        {
+          "term": "membran hacmi",
+          "arContext": "حجم الغشاء الخلوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Zar kalınlaşması iyon kanallarına baskı uygular.",
+          "ar": "سماكة الغشاء تضغط على القنوات الأيونية."
+        },
+        {
+          "tr": "Sodyum geçişi durunca aksiyon potansiyeli kaybolur.",
+          "ar": "يتوقف جهد الفعل بتعطل شوارد الصوديوم."
+        },
+        {
+          "tr": "Kritik hacim hipotezi anestezinin fiziksel temelidir.",
+          "ar": "فرضية الحجم الحرج هي أساس التخدير الفيزيائي."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülasyon: Ferguson Slider",
+        "ar": "المحاكاة التفاعلية: زالق Ferguson"
+      },
+      "prompt": {
+        "tr": "Kısmi buhar basıncını artırarak termodinamik aktiviteyi (a) ve membran hacim genişlemesini gözlemleyin. Anestezi eşiği hangi değerdedir?",
+        "ar": "قم بزيادة الضغط الجزئي لملاحظة النشاط الديناميكي وتمدد الغشاء. عند أي قيمة يقع عتبة التخدير الجراحي؟"
+      },
+      "predictThenReveal": false,
+      "widgetType": "ThermodynamicActivityFergusonSlider",
+      "widget": {
+        "type": "ThermodynamicActivityFergusonSlider",
+        "config": {
+          "compound": "diethyl_ether",
+          "p0": 440,
+          "pt": 15,
+          "anestheticThreshold": 0.03
+        }
+      },
+      "config": {
+        "defaultAgent": "diethyl_ether",
+        "initialPt": 15
+      },
+      "technicalTerms": [
+        {
+          "term": "kısmi buhar basıncı",
+          "arContext": "الضغط الجزئي للبخار"
+        },
+        {
+          "term": "anestezi eşiği",
+          "arContext": "عتبة التخدير"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Kısmi basıncı artırarak anestezi eşiğini belirleyin.",
+          "ar": "قم بزيادة الضغط الجزئي لتحديد عتبة التخدير."
+        },
+        {
+          "tr": "a = Pt / P0 oranını kontrol edin.",
+          "ar": "تحقق من النسبة a = Pt / P0."
+        },
+        {
+          "tr": "a değeri 0.03 ile 0.05 arasına ulaştığında anestezi başlar.",
+          "ar": "يبدأ التخدير عندما تصل قيمة a بين 0.03 و 0.05."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Nitrojen Suboksit vs Kloroform",
+        "ar": "استكشاف موجه: أكسيد النيتروز مقابل الكلوروفورم"
+      },
+      "prompt": {
+        "tr": "Simülatörde kloroform ve N2O gazlarını karşılaştırın. Kaynama noktaları ve P0 değerleri çok farklı olsa da anestezi hangi a değerinde gerçekleşir?",
+        "ar": "قارن بين الكلوروفورم و N2O. رغم اختلاف درجات الغليان و P0، عند أي قيمة a يحدث التخدير المشترك؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-disc-1",
+            "text": {
+              "tr": "Her iki gaz için de aynı dar aralıkta: a ≈ 0.03-0.05.",
+              "ar": "لكلا الغازين في نفس النطاق الضيق: a ≈ 0.03-0.05."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika! Bağıl doygunluk kuralı kimyasal yapıdan bağımsızdır.",
+              "ar": "ممتاز! قاعدة التشبع النسبي مستقلة عن التركيب الكيميائي."
+            }
+          },
+          {
+            "id": "opt-disc-2",
+            "text": {
+              "tr": "Farklı moleküler ağırlıklar nedeniyle tamamen farklı a değerlerinde.",
+              "ar": "عند قيم a متباينة تماماً بسبب اختلاف الأوزان الجزيئية."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Molekül ağırlığı farklı olsa bile termodinamik aktivite aralığı aynıdır.",
+              "ar": "رغم اختلاف الوزن، نطاق النشاط الديناميكي يبقى ثابتاً."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-disc-1",
+            "text": "Her iki gaz için de a ≈ 0.03-0.05 aralığında.",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-disc-2",
+            "text": "Farklı a değerlerinde.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Her iki molekül de a ≈ 0.03-0.05 seviyesinde anestezi oluşturur.",
+        "explanation": "Kimyasal yapı ne olursa olsun, membran lipid fazındaki doygunluk oranı aynı etkiyi yaratır."
+      },
+      "technicalTerms": [
+        {
+          "term": "bağıl doygunluk oranı",
+          "arContext": "نسبة التشبع النسبي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "N2O gazının P0 değeri çok yüksektir.",
+          "ar": "قيمة P0 لغاز N2O مرتفعة جداً."
+        },
+        {
+          "tr": "Kloroformun P0 değeri düşüktür.",
+          "ar": "قيمة P0 للكلوروفورم منخفضة."
+        },
+        {
+          "tr": "Pt / P0 oranı her ikisinde de 0.03-0.05 düzeyindedir.",
+          "ar": "نسبة Pt / P0 في كليهما بين 0.03-0.05."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Formal Formülasyon: Ferguson Yasası",
+        "ar": "الصياغة الرياضية: قانون Ferguson"
+      },
+      "prompt": {
+        "tr": "Termodinamik aktivite gaz fazında a = Pt / P0, çözeltide ise a = St / S0 olarak tanımlanır. Bu oran kimyasal potansiyelin doğrudan göstergesidir.",
+        "ar": "يعرف النشاط بـ a = Pt / P0 للغازات و a = St / S0 للمحاليل. هذه النسبة هي المقياس المباشر للكمون الكيميائي."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "formula": "a = \\frac{P_t}{P_0} \\approx \\frac{S_t}{S_0}",
+        "cutoff": "high relative saturation non-specific; a < 0.001 specific"
+      },
+      "technicalTerms": [
+        {
+          "term": "kimyasal potansiyel",
+          "arContext": "الكمون الكيميائي"
+        },
+        {
+          "term": "çözünürlük doygunluğu",
+          "arContext": "تشبع الذوبانية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Pt: ortamdaki kısmi basınç, P0: doymuş buhar basıncı.",
+          "ar": "Pt: الضغط الجزئي، P0: ضغط البخار المشبع."
+        },
+        {
+          "tr": "St: çözelti konsantrasyonu, S0: doymuşluk çözünürlüğü.",
+          "ar": "St: التركيز في المحلول، S0: الذوبانية عند التشبع."
+        },
+        {
+          "tr": "a değeri unity değerine yaklaştıkça sistem doygunluğa ulaşır.",
+          "ar": "كلما اقتربت a من حد التشبع الأقصى اقترب النظام من الامتلاء التام."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Gizemli Bileşiklerin Sınıflandırılması",
+        "ar": "فحص المفهوم: تصنيف المركبات المجهولة"
+      },
+      "prompt": {
+        "tr": "Bileşik X 500 mg dozda a = 0.20 aktiviteyle; Bileşik Y 10 ug dozda a = 0.00001 aktiviteyle etki ediyor. Hangisi yapısal olarak özgüldür?",
+        "ar": "مركب X بجرعة 500 mg يمتلك نشاط a = 0.20، ومركب Y بجرعة 10 ug يمتلك نشاط a = 0.00001. أيهما نوعي بنيوياً؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-chk-1",
+            "text": {
+              "tr": "Bileşik Y yapısal olarak özgüldür çünkü aşırı seyreltik doygunlukta (a < 0.001) etki eder.",
+              "ar": "المركب Y نوعي بنيوياً لأنه يؤثر عند تشبع متناهي الصغر (a < 0.001)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! a < 0.001 olması spesifik reseptör bağlanmasının kesin kanıtıdır. Arada 4 orders of magnitude fark vardır.",
+              "ar": "صحيح! a < 0.001 برهان على الارتباط بمستقبِل نوعي (reseptör)."
+            }
+          },
+          {
+            "id": "opt-chk-2",
+            "text": {
+              "tr": "Bileşik X yapısal olarak özgüldür çünkü dozu daha büyüktür.",
+              "ar": "المركب X نوعي بنيوياً لأن جرعته أكبر."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Büyük doz ve yüksek a (0.20) yapısal olarak özgül olmayan fiziksel etkiyi gösterir.",
+              "ar": "الجرعة الكبيرة و a العالية تدل على تأثير فيزيائي غير نوعي."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-chk-1",
+            "text": "Bileşik Y özgüldür (a < 0.001).",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-chk-2",
+            "text": "Bileşik X özgüldür.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Bileşik Y reseptör aracılı özgül bir ilaçtır.",
+        "explanation": "Bileşik Y ile Bileşik X arasında termodinamik aktivite açısından 4 orders of magnitude büyüklük farkı mevcuttur."
+      },
+      "technicalTerms": [
+        {
+          "term": "yapısal olarak özgül",
+          "arContext": "نوعي بنيوياً"
+        },
+        {
+          "term": "reseptör aracılı",
+          "arContext": "بواسطة المستقبِل"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "a < 0.001 eşiğini hatırlayın.",
+          "ar": "تذكر عتبة a < 0.001."
+        },
+        {
+          "tr": "Bileşik Y aşırı düşük doygunlukta etki gösteriyor.",
+          "ar": "المركب Y يعمل عند تشبع بالغ الانخفاض."
+        },
+        {
+          "tr": "Düşük termodinamik aktivite yüksek reseptör ilgisini kanıtlar.",
+          "ar": "النشاط الديناميكي المنخفض يثبت ألفة المستقبِل العالية."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Uygulama: Soluma Anesteziğinde Doz Hesabı",
+        "ar": "تطبيق سريري: حساب جرعة المخدر الاستنشاقي"
+      },
+      "prompt": {
+        "tr": "Doygun buhar basıncı P0 = 200 mmHg olan yeni bir anestezik gaz için Pt = 10 mmHg uygulandığında a değeri ve etki durumu nedir?",
+        "ar": "مخدر غازي جديد يمتلك P0 = 200 mmHg، عند تطبيق Pt = 10 mmHg ما هي قيمة a والحالة التخديرية الناتجة؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-app-1",
+            "text": {
+              "tr": "a = 20.0; ölümcül doz aşımıdır.",
+              "ar": "a = 20.0؛ جرعة مفرطة قاتلة."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Pt / P0 oranı unity sınırından büyük olamaz, bölme yönüne dikkat edin.",
+              "ar": "لا يمكن أن تتجاوز نسبة Pt / P0 حد التشبع الأقصى."
+            }
+          },
+          {
+            "id": "opt-app-2",
+            "text": {
+              "tr": "a = 0.05 (5% doygunluk); cerrahi anestezi aralığındadır.",
+              "ar": "a = 0.05 (تشبع 5%)؛ يقع ضمن نطاق التخدير الجراحي."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru: a = 10 / 200 = 0.05. Bu değer tam anestezi penceresindedir.",
+              "ar": "صحيح: a = 10 / 200 = 0.05، وهي ضمن نافذة التخدير الجراحي."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-app-1",
+            "text": "a = 20.0; ölümcül aşırı doz.",
+            "isCorrect": false
+          },
+          {
+            "id": "opt-app-2",
+            "text": "a = 0.05; cerrahi anestezi aralığındadır.",
+            "isCorrect": true
+          }
+        ],
+        "revealedOutcome": "a = Pt / P0 = 10 / 200 = 0.05 (5% bağıl doygunluk). Cerrahi anestezi başarıyla sağlanır.",
+        "explanation": "Hesaplanan 0.05 değeri Ferguson un belirlediği 0.03-0.05 anestezi aralığına tam uyar."
+      },
+      "technicalTerms": [
+        {
+          "term": "cerrahi anestezi",
+          "arContext": "التخدير الجراحي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Formülü uygulayın: a = Pt / P0.",
+          "ar": "طبق القانون: a = Pt / P0."
+        },
+        {
+          "tr": "10 bölü 200 işlemini yapın.",
+          "ar": "اقسم 10 على 200."
+        },
+        {
+          "tr": "Sonuç 0.05 tir ve anestezi aralığındadır.",
+          "ar": "النتيجة 0.05 وتقع ضمن نطاق التخدير."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Genel Kimyadan Raoult Yasası",
+        "ar": "استرجاع معرفي: قانون Raoult من الكيمياء العامة"
+      },
+      "prompt": {
+        "tr": "İdeal çözeltilerde kısmi buhar basıncı ile mol kesri arasındaki ilişkiyi kuran temel termodinamik yasa hangisidir?",
+        "ar": "ما هو القانون الديناميكي الحراري الأساسي الذي يربط بين الضغط الجزئي والكسر المولي في المحاليل المثالية؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "targetConcept": "Raoult Yasası"
+      },
+      "technicalTerms": [
+        {
+          "term": "Raoult yasası",
+          "arContext": "قانون Raoult"
+        },
+        {
+          "term": "mol kesri",
+          "arContext": "الكسر المولي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Buhar basıncı düşmesi yasasını hatırlayın.",
+          "ar": "تذكر قانون انخفاض ضغط البخار."
+        },
+        {
+          "tr": "Fransız kimyacı François-Marie Raoult un adıyla anılır.",
+          "ar": "منسوب إلى الكيميائي الفرنسي Raoult."
+        },
+        {
+          "tr": "Ferguson ilkesi Raoult yasasının biyolojik uyarlamasıdır.",
+          "ar": "مبدأ Ferguson هو تطبيق بيولوجي لقانون Raoult."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Çözünürlük ve İyonizasyon (Ders 2)",
+        "ar": "ربط مفاهيمي: الذوبانية والتأين (الدرس 2)"
+      },
+      "prompt": {
+        "tr": "Termodinamik aktivite ilaç molekülünün sudan kaçıp zara sığınmasını açıklar. Bir sonraki derste bu kaçışı belirleyen iyonizasyon dengesini inceleyeceğiz.",
+        "ar": "يفسر النشاط الديناميكي هروب الجزيء من الماء للغشاء. في الدرس القادم، سندرس توازن التأين (iyonizasyon) الذي يتحكم بهذا العبور."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "nextLesson": "mc-mod1-les2"
+      },
+      "technicalTerms": [
+        {
+          "term": "iyonizasyon dengesi",
+          "arContext": "توازن التأين"
+        },
+        {
+          "term": "membran geçişi",
+          "arContext": "عبور الأغشية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "İyonlaşmış moleküller suda kalır.",
+          "ar": "الجزيئات المتأينة تبقى في الطور المائي."
+        },
+        {
+          "tr": "İyonlaşmamış moleküller lipid zara geçer.",
+          "ar": "الجزيئات غير المتأينة تعبر الغشاء الدهني."
+        },
+        {
+          "tr": "Henderson-Hasselbalch denklemi bu oranı yönetir.",
+          "ar": "معادلة Henderson-Hasselbalch تحكم هذه النسبة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Ferguson İlkesi Özeti",
+        "ar": "اختبار الإتقان: ملخص مبدأ Ferguson"
+      },
+      "prompt": {
+        "tr": "Ferguson ilkesinin temel kuralını tek bir cümleyle özetleyin: Yapısal olarak özgül olmayan maddelerin biyolojik etkisi neye bağlıdır?",
+        "ar": "لخص مبدأ Ferguson بجملة واحدة: على ماذا يعتمد التأثير البيولوجي للمركبات غير النوعية بنيوياً؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mst-1",
+            "text": {
+              "tr": "Kimyasal yapılarına ve spesifik kovalent bağ oluşturma güçlerine.",
+              "ar": "على بنيتها الكيميائية وقدرتها على تشكيل روابط تساهمية نوعية."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yapısal olarak özgül olmayan bileşikler spesifik bağ yapmazlar.",
+              "ar": "المركبات غير النوعية بنيوياً لا تشكل روابط نوعية."
+            }
+          },
+          {
+            "id": "opt-mst-2",
+            "text": {
+              "tr": "Kimyasal yapıdan bağımsız olarak, biyofazdaki bağıl doygunluklarına (termodinamik aktivitelerine).",
+              "ar": "على تشبعها النسبي في الطور الحيوي (termodinamik aktivite) بمعزل عن بنيتها."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler! Dersi ustalıkla tamamladınız. +50 XP kazandınız.",
+              "ar": "تهانينا! لقد أتقنت الدرس بنجاح. حصلت على +50 XP."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-mst-1",
+            "text": "Kimyasal yapıya bağlıdır.",
+            "isCorrect": false
+          },
+          {
+            "id": "opt-mst-2",
+            "text": "Biyofazdaki bağıl doygunluğa (termodinamik aktiviteye) bağlıdır.",
+            "isCorrect": true
+          }
+        ],
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards Leitner Box 1 e 1-day aralıkla eklendi. +50 XP.",
+        "explanation": "Tebrikler, Ferguson ilkesi ve termodinamik aktivite kavramını tam anlamıyla kavradınız."
+      },
+      "technicalTerms": [
+        {
+          "term": "termodinamik aktivite",
+          "arContext": "النشاط الديناميكي الحراري"
+        },
+        {
+          "term": "biyofaz",
+          "arContext": "الطور الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Kimyasal yapı mı yoksa faz dengesi mi?",
+          "ar": "هل البنية الكيميائية أم توازن الأطوار؟"
+        },
+        {
+          "tr": "Doygunluk oranı anahtar kavramdır.",
+          "ar": "نسبة التشبع هي المفهوم المحوري."
+        },
+        {
+          "tr": "Eşit termodinamik aktivite eşit biyolojik yanıt üretir.",
+          "ar": "النشاط الديناميكي المتساوي يولد استجابة متساوية."
+        }
+      ]
     }
   ]
 } as unknown as LessonData;

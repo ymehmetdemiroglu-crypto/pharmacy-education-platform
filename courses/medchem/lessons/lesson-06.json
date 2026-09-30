@@ -1,0 +1,639 @@
+{
+  "id": "mc-mod3-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-03",
+  "title": {
+    "tr": "Klasik Olmayan Biyoizosterler: Karboksilik Asit ve Tetrazol",
+    "ar": "المتشابهات الحيوية غير الكلاسيكية: حمض الكربوكسيل والتترازول"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Karboksilat ve tetrazol biyoizosterizmini inceleyerek asidik planar yük dağılımı ve lipofilisite optimizasyonunu kavramak.",
+    "ar": "فهم التشابه الحيوي بين الكربوكسيل والتترازول لتحسين التوزيع المستوي للشحنة الحامضية والنفاذية الدهنية."
+  },
+  "misconceptions": [
+    {
+      "tr": "5 üyeli bir halkanın tek bir karboksilik asit grubuyla eşdeğer olamayacağı yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن حلقة خماسية لا يمكن أن تكون مكافئة حيوياً لمجموعة كربوكسيل بسيطة."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Biyoizosterizm.pdf",
+      "page": 18
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC06-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Non-Classical Bioisosteres: Carboxylic Acid & Tetrazole",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod3-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Tetrazol ve Karboksilik Asit pKa Uyumu",
+      "prompt": "Tetrazol halkasının asidik pKa değeri karboksilik asitle nasıl kıyaslanır?",
+      "answer": "Tetrazol pKa sı ~4.5-4.9 dur ve karboksilik asitle (pKa ~4.2-4.8) neredeyse birebir örtüşür.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod3-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Tetrazolün Biyoyararlanım Avantajı",
+      "prompt": "Karboksilik asit yerine tetrazol halkası koymak oral biyoyararlanımı neden katlar?",
+      "answer": "Tetrazolün logP si yaklaşık 1 birim daha yüksektir ve zarlardan 10 kat daha hızlı geçer.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod3-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Losartan Tasarımı",
+      "prompt": "Losartan molekülünde hangi fonksiyonel grup tetrazol ile biyoizosterik olarak değiştirilmiştir?",
+      "answer": "Anjiyotensin reseptörünü bloke eden peptid antagonistin karboksilat grubu.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Klasik Olmayan Biyoizosterler: Karboksilik Asit ve Tetrazol"
+    },
+    "ar": {
+      "title": "المتشابهات الحيوية غير الكلاسيكية: حمض الكربوكسيل والتترازول"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod3-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Losartanın Doğuştan Sırrı",
+        "ar": "سر ولادة دواء Losartan"
+      },
+      "prompt": {
+        "tr": "İlk anjiyotensin antagonistleri bağırsaktan hiç emilmezken, losartan bir karboksilik asidi tetrazol halkasıyla değiştirerek nasıl milyar dolarlık ilaca dönüştü?",
+        "ar": "بينما عجزت مضادات أنجيوتنسين الأولى عن الامتصاص الفموي، كيف تحول Losartan إلى دواء ملياري باستبدال الكربوكسيل بحلقة tetrazol؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "tetrazol halkası",
+          "arContext": "حلقة التترازول"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Yük Dağılımı ve pKa",
+        "ar": "توقع: توزيع الشحنة و pKa"
+      },
+      "prompt": {
+        "tr": "5 üyeli aromatik tetrazol halkası fizyolojik pH 7.4 te negatif yük taşır mı?",
+        "ar": "هل تحمل حلقة tetrazol العطرية الخماسية شحنة سالبة عند pH 7.4 الفسيولوجي؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tetrazol fizyolojik pH ta karboksilat gibi deprotone olarak anyon oluşturur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc32-1",
+            "text": {
+              "tr": "Evet, pKa sı ~4.8 dir ve rezonansla yük 4 azot atomu üzerine yayılır.",
+              "ar": "نعم، فقيمة pKa تقارب 4.8 وتتوزع الشحنة بالرنين على ذرات النتروجين الأربع."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc32-2",
+            "text": {
+              "tr": "Hayır, tüm aromatik halkalar nötrdür.",
+              "ar": "لا، فجميع الحلقات العطرية محايدة كهربائياً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: Genişletilmiş Düzlemsel Yük",
+        "ar": "تشبيه حدسي: الشحنة المستوية الموزعة"
+      },
+      "prompt": {
+        "tr": "Karboksilatta negatif yük 2 oksijen arasında paylaşılırken, tetrazolda 4 azot atomuna yayılarak zardan süzülmeyi kolaylaştırır.",
+        "ar": "بينما تنحصر شحنة الكربوكسيل بين ذرتي أكسجين، تتوزع في التترازول على 4 ذرات نتروجين مما يخفف الدرع المائي ويسهل عبور الغشاء."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "delokalizasyon",
+          "arContext": "تشتت الشحنة بالرنين"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Elektronik ve Sterik Örtüşme",
+        "ar": "التطابق الفراغي والإلكتروني"
+      },
+      "prompt": {
+        "tr": "Tetrazol anyonu düzlemseldir ve hacmi karboksilattan yaklaşık 10 kat daha lipofiliktir. Reseptör cebindeki pozitif arjinin ile kusursuz tuz köprüsü kurar.",
+        "ar": "أنيون التترازول مستوٍ وأكثر قابلية للذوبان الدهني بـ 10 أضعاف مقارنة بالكربوكسيل، ويشكل جسراً ملحياً متقناً مع أرجينين المستقبِل."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "tuz köprüsü",
+          "arContext": "الجسر الملحي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Modül: Structure Identifier",
+        "ar": "محاكي تفاعلي: محدد البنى الجزيئية"
+      },
+      "prompt": {
+        "tr": "Karboksilik asit içeren moleküle tetrazol ve diğer non-klasik izosterleri takarak logP ve membran akış hızındaki 10 kat artışı test edin.",
+        "ar": "استبدل الكربوكسيل بـ tetrazol ومتشابهات غير كلاسيكية واختبر ارتفاع logP ونفوذية الغشاء بعشرة أضعاف."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "StructureIdentifier",
+      "widget": {
+        "type": "StructureIdentifier",
+        "config": {
+          "mode": "nonclassical_isosteres",
+          "leadMolecule": "candesartan_core"
+        }
+      }
+    },
+    {
+      "id": "mc-mod3-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Metabolik Kararlılık",
+        "ar": "استكشاف موجه: الاستقرار الأيضي"
+      },
+      "prompt": {
+        "tr": "Karboksilik asitler glukuronidasyonla hızla atılırken, tetrazol halkasının metabolik ömrü neden çok daha uzundur?",
+        "ar": "بينما تطرح الأحماض الكربوكسيلية سريعاً بالاقتران الجلوكوروني، لماذا تمتلك حلقة tetrazol عمراً حيوياً أطول بكثير؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tetrazol halkası metabolik kararlılığı artırarak ilacın günde tek doza inmesini sağlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc32-3",
+            "text": {
+              "tr": "Tetrazol UGT enzimlerine karşı sterik ve elektronik olarak çok daha dirençlidir.",
+              "ar": "حلقة التترازول أكثر مقاومة إنزيمياً لإنزيمات UGT فراغياً وإلكترونياً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc32-4",
+            "text": {
+              "tr": "Tetrazol kana hiç geçmez.",
+              "ar": "التترازول لا يصل إلى الدوران الدموي أصلاً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Klasik Olmayan Biyoizosterizm Tanımı",
+        "ar": "تعريف التشابه الحيوي غير الكلاسيكي"
+      },
+      "prompt": {
+        "tr": "Grimm kurallarına uymayan ancak benzer biyolojik ve elektronik profil sergileyen fonksiyonel gruplara klasik olmayan biyoizoster denir.",
+        "ar": "تسمى المجموعات التي لا تخضع لقواعد Grimm ولكنها تحاكي نفس السلوك الإلكتروني والحيوي بالمتشابهات الحيوية غير الكلاسيكية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "klasik olmayan izoster",
+          "arContext": "المتشابه غير الكلاسيكي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Lipofilisite ve logP",
+        "ar": "فحص المفهوم: المحبة الدهنية وقيمة logP"
+      },
+      "prompt": {
+        "tr": "Karboksilik asitten tetrazole geçildiğinde ilacın logP değerinde yaklaşık ne kadarlık bir artış gözlenir?",
+        "ar": "عند الانتقال من الكربوكسيل إلى التترازول، كم تبلغ الزيادة التقريبية في قيمة logP؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tetrazol daha lipofilik olduğundan oral yoldan mükemmel emilir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc32-5",
+            "text": {
+              "tr": "~ +1.0 birim (10 kat daha yüksek lipofilisite).",
+              "ar": "حوالي +1.0 وحدة (زيادة النفاذية الدهنية بمقدار 10 أضعاف)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc32-6",
+            "text": {
+              "tr": "Değişmez.",
+              "ar": "لا تتغير القيمة مطلقاً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Vaka: Losartan ve Kandesartan",
+        "ar": "حالة سريرية: Losartan و Candesartan"
+      },
+      "prompt": {
+        "tr": "Tüm sartan sınıfı antihipertansifler (losartan, valsartan, irbesartan, kandesartan) neden moleküler yapılarında tetrazol taşırlar?",
+        "ar": "لماذا تشترك جميع أدوية فئة Sartan الخافضة لضغط الدم في احتوائها على حلقة tetrazol بهيكلها؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Sartanların başarısı tetrazol biyoizosterizminin modern tıptaki zaferidir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc32-7",
+            "text": {
+              "tr": "AT1 reseptöründeki bazik cebi bağlamak ve yüksek oral biyoyararlanım sağlamak için.",
+              "ar": "لربط الجيب القاعدي في مستقبِل AT1 مع ضمان توافر حيوي فموي مرتفع."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc32-8",
+            "text": {
+              "tr": "Yalnızca boyar madde olsun diye.",
+              "ar": "لمجرد إعطاء لون صبغي للمستحضر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Henderson-Hasselbalch ve İyonlaşma",
+        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والتأين"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi pKa sı 4.8 olan tetrazol, pH 7.4 kanda yüzde kaç oranında iyonize haldedir?",
+        "ar": "كما تعلمنا في الوحدة 1، كم تبلغ نسبة تأين التترازول ذي pKa = 4.8 في دم الإنسان عند pH 7.4؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "iyonize fraksiyon",
+          "arContext": "الكسر المتأين"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Stereokimya ve Konformasyon (Modül 4)",
+        "ar": "ربط مفاهيمي: الكيمياء الفراغية والتشكيلات (الوحدة 4)"
+      },
+      "prompt": {
+        "tr": "Biyoizosterik gruplar kadar molekülün uzaysal konformasyonu da reseptör bağını tayin eder. Modül 4 te Pfeiffer kuralını keşfedeceğiz.",
+        "ar": "بقدر أهمية المتشابهات الحيوية، فإن التشكيل الفراغي للجزيء يحكم ارتباطه. في الوحدة 4 سنكتشف قاعدة Pfeiffer."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "stereokimya",
+          "arContext": "الكيمياء الفراغية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Tetrazol Biyoizosterizmi",
+        "ar": "اختبار الإتقان: التشابه الحيوي للتترازول"
+      },
+      "prompt": {
+        "tr": "Tetrazolün karboksilik asit yerine tercih edilmesinin en kritik çift yönlü kazanımı nedir?",
+        "ar": "ما هو المكسب الثنائي الحاسم لاختيار التترازول كبديل لحمض الكربوكسيل؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Modül 3 tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc32-9",
+            "text": {
+              "tr": "Benzer pKa ve anyonik bağ gücünü korurken, 10 kat daha yüksek lipofilisite ve metabolik direnç sağlaması.",
+              "ar": "الحفاظ على نفس pKa والربط الأيوني مع مضاعفة المحبة الدهنية والمقاومة الأيضية بعشر مرات."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc32-10",
+            "text": {
+              "tr": "Molekülü tamamen inert yapması.",
+              "ar": "جعل الجزيء خاملاً بيولوجياً بالكامل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

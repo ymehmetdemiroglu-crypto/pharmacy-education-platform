@@ -56,7 +56,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       >
         <div
           className={clsx(
-            'h-full border-r-3 border-black dark:border-slate-700 transition-all duration-300 ease-neo',
+            'h-full border-r-3 rtl:border-r-0 rtl:border-l-3 border-black dark:border-slate-700 transition-all duration-300 ease-neo',
             colorMap[variant]
           )}
           style={{ width: `${percentage}%` }}

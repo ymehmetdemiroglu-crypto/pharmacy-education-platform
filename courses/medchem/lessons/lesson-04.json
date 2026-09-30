@@ -1,0 +1,646 @@
+{
+  "id": "mc-mod2-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-02",
+  "title": {
+    "tr": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma",
+    "ar": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Easson-Stedman 3-noktalı bağlanma modelini kullanarak enantiyomerlerin reseptör afinitelerindeki dramatik farkları açıklamak.",
+    "ar": "تفسير الفروق الشاسعة في ألفة المصاوغات المرآوية نحو (reseptör) باستخدام نموذج Easson-Stedman ثلاثي النقاط."
+  },
+  "misconceptions": [
+    {
+      "tr": "İki enantiyomerin biyolojik hedeflerde aynı güce sahip olduğu yanılgısı.",
+      "ar": "الظن الخاطئ بأن المصاوغين المرآويين يمتلكان نفس التأثير في الأهداف البيولوجية."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 8
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC04-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Stereochemistry and Easson-Stedman Model",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod2-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Easson-Stedman Hipotezi",
+      "prompt": "Easson-Stedman modeline göre güçlü biyolojik etki için ligand reseptöre en az kaç noktadan temas etmelidir?",
+      "answer": "En az 3 spesifik farmakoforik noktadan asimetrik temas kurmalıdır.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Epinefrin Enantiyomerleri",
+      "prompt": "(R)-(-)-epinefrin neden (S)-(+)-epinefrinden yüzlerce kat daha aktiftir?",
+      "answer": "(R) izomerinin beta-hidroksil grubu reseptöre bağlanırken, (S) izomerinde bu grup boşluğa bakar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Ötomer ve Distomer Tanımı",
+      "prompt": "Bir kiral ilaç çiftinde yüksek afiniteli ve düşük afiniteli izomerler nasıl adlandırılır?",
+      "answer": "Yüksek afiniteli aktif izomer Ötomer (Eutomer), düşük afiniteli izomer Distomer dir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma"
+    },
+    "ar": {
+      "title": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod2-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Sağ El ve Sol El Eldiveni",
+        "ar": "قفاز اليد اليمنى واليسرى"
+      },
+      "prompt": {
+        "tr": "Sağ eliniz sol eldivene neden sığmaz? Moleküler düzeyde kiral reseptörler de yalnızca doğru el anatomisindeki enantiyomeri kabul eder.",
+        "ar": "لماذا لا تناسب اليد اليمنى قفاز اليد اليسرى؟ جزيئياً، تقبل مستقبلات الجسم (reseptör) فقط المصاوغ ذو الهندسة الفراغية المطابقة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kiralite",
+          "arContext": "الكيرالية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Üç Noktalı Uyum",
+        "ar": "توقع: التطابق ثلاثي النقاط"
+      },
+      "prompt": {
+        "tr": "Epinefrinin kiral karbonundaki -OH grubu ters yöne döndüğünde reseptör afinitesi nasıl değişir?",
+        "ar": "عندما تدور مجموعة -OH في كربون epinefrin الكيرالي للجهة المعاكسة، كيف تتأثر ألفة الارتباط بالمستقبل؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "(R)-(-)-epinefrin (S)-(+) izomerinden tam 300 kat daha güçlüdür."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc22-1",
+            "text": {
+              "tr": "Değişmez, aynı kimyasal formüle sahiptir.",
+              "ar": "لا تتغير، فالصيغة الكيميائية متطابقة."
+            },
+            "isCorrect": false
+          },
+          {
+            "id": "opt-mc22-2",
+            "text": {
+              "tr": "Afinite 100 kattan fazla düşer çünkü 3. bağlanma noktası kaybedilir.",
+              "ar": "تنخفض الألفة بأكثر من 100 ضعف لفقدان نقطة الارتباط الثالثة."
+            },
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Üç Delikli Priz",
+        "ar": "تشبيه حدسي: قابس الكهرباء ثلاثي المآخذ"
+      },
+      "prompt": {
+        "tr": "Topraklı 3 lü prizi ancak doğru yönde takabilirsiniz; ters çevirirseniz pimler yuvalarla eşleşmez.",
+        "ar": "لا يمكن إدخال القابس ثلاثي الشعب إلا بالاتجاه الصحيح؛ قلبه بزاوية معاكسة يجعل الشعب تصطدم بالفراغ."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "üç noktalı bağlanma",
+          "arContext": "الارتباط ثلاثي النقاط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Easson-Stedman Mekanizma Diyagramı",
+        "ar": "مخطط آلية Easson-Stedman"
+      },
+      "prompt": {
+        "tr": "Reseptör cebinde 3 bölge vardır: Anyonik bölge, aromatik cep ve hidrojen bağı donörü. (R) enantiyomeri her 3 bölgeye aynı anda oturur.",
+        "ar": "في جيب المستقبِل 3 مناطق: منطقة أنيونية، جيب عطري، ومانح هيدروجيني. يطابق النمط (R) المناطق الثلاث في آن واحد."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "farmakofor",
+          "arContext": "الفارماكوفور"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Receptor-Ligand Matcher",
+        "ar": "محاكي تفاعلي: مطابق الربيط والمستقبل"
+      },
+      "prompt": {
+        "tr": "Epinefrinin (R) ve (S) izomerlerini reseptör cebine sürükleyin. 3 temas noktasının yeşil yandığını ve bağlanma serbest enerjisini gözlemleyin.",
+        "ar": "اسحب المصاوغين (R) و (S) إلى جيب المستقبِل ولاحظ إضاءة نقاط التماس الثلاث الخضراء وطاقة الارتباط الناتجة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "targetPocket": "beta_adrenergic",
+          "ligandPairs": [
+            "R_epinephrine",
+            "S_epinephrine"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mc-mod2-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Distomerin Boşluğa Bakışı",
+        "ar": "استكشاف موجه: توجه المصاوغ الخامل للفراغ"
+      },
+      "prompt": {
+        "tr": "Simülatörde (S) izomerini yerleştirdiğinizde -OH grubunun nereye baktığını gözlemleyin. Hangi bağ koptu?",
+        "ar": "عند وضع المصاوغ (S) في المحاكي، إلى أين تتجه مجموعة -OH وما هي الرابطة التي انقطعت؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Distomerde hidrojen bağı donörü boşluğa baktığı için enerji katkısı sıfırlanır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc22-3",
+            "text": {
+              "tr": "-OH grubu reseptör cebinden dışarı, boşluğa yönelir; kritik hidrojen bağı kurulamaz.",
+              "ar": "تتجه -OH خارج الجيب نحو الفراغ؛ فتفشل في تشكيل الرابطة الهيدروجينية الحاسمة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc22-4",
+            "text": {
+              "tr": "İyonik bağ kopar.",
+              "ar": "تنقطع الرابطة الأيونية."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Easson-Stedman Modeli ve Termodinamik Kanıt",
+        "ar": "نموذج Easson-Stedman والبرهان الديناميكي"
+      },
+      "prompt": {
+        "tr": "Delta G(ötomer) - Delta G(distomer) = Delta G(üçüncü bağ) farkını verir. Bu enerji farkı genellikle 3-4 kcal/mol olup afiniteyi 300 kat değiştirir.",
+        "ar": "فارق الطاقة بين المصاوغ النشط (ötomer) والخامل يساوي طاقة الرابطة الثالثة (3-4 kcal/mol) مسبباً فجوة ألفة تفوق 300 ضعف."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ötomer",
+          "arContext": "المصاوغ الفعال (Eutomer)"
+        },
+        {
+          "term": "distomer",
+          "arContext": "المصاوغ الخامل (Distomer)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Ödismik Oran",
+        "ar": "فحص المفهوم: النسبة الإيوديزمية"
+      },
+      "prompt": {
+        "tr": "Ötomerin afinitesinin distomerin afinitesine oranına ne ad verilir?",
+        "ar": "ماذا يسمى حاصل قسمة ألفة المصاوغ الفعال (ötomer) على ألفة المصاوغ الخامل (distomer)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ödismik oran kiral ilacın stereoseçicilik derecesini gösterir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc22-5",
+            "text": {
+              "tr": "Ödismik Oran (Eudismic Ratio).",
+              "ar": "النسبة الإيوديزمية (Eudismic Ratio)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc22-6",
+            "text": {
+              "tr": "Partisyon katsayısı.",
+              "ar": "معامل التوزع."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Rasemat mı Saf Enantiyomer mi?",
+        "ar": "قرار سريري: الخليط الراسيمي أم المصاوغ النقي؟"
+      },
+      "prompt": {
+        "tr": "Talidomid faciasında (R) izomeri sedatif iken (S) izomeri teratojendir. Ancak in vivo epimerizasyon nedeniyle saf (R) verilse bile ne olur?",
+        "ar": "في كارثة الثاليدوميد، المصاوغ (R) مهدئ و (S) مشوه للأجنة. لكن بسبب الانقلاب الحيوي in vivo، ماذا يحدث حتى لو أعطي (R) نقياً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kiral anahtarlama kararı molekülün in vivo kiral stabilitesine bağlıdır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc22-7",
+            "text": {
+              "tr": "Vücutta hızla rasemize olarak (S) izomerine dönüşür ve toksisite devam eder.",
+              "ar": "يتحول حيوياً في الجسم إلى راسيمي وينتج المصاوغ (S) المشوه مجدداً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc22-8",
+            "text": {
+              "tr": "Asla değişmez.",
+              "ar": "لا يتغير أبداً في الدوران الدموي."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Hidrojen Bağı Gücü",
+        "ar": "استرجاع معرفي: طاقة الرابطة الهيدروجينية"
+      },
+      "prompt": {
+        "tr": "Önceki derste öğrendiğimiz gibi tek bir hidrojen bağının kopması bağlanma afinitesini kabaca kaç kat düşürür?",
+        "ar": "كما تعلمنا في الدرس السابق، كم ضعفاً تنخفض ألفة الارتباط تقريباً عند فقدان رابطة هيدروجينية واحدة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "hidrojen bağı",
+          "arContext": "الرابطة الهيدروجينية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Biyoizosterizm ve Akılcı Tasarım (Modül 3)",
+        "ar": "ربط مفاهيمي: التشابه الحيوي والتصميم الرشيد (الوحدة 3)"
+      },
+      "prompt": {
+        "tr": "Reseptörle bu etkileşimleri kuran gruplar benzer elektronik gruplarla değiştirilebilir. Modül 3 te Grimm hidrit yer değiştirme kuralını öğreneceğiz.",
+        "ar": "يمكن استبدال المجموعات المرتبطة بمجموعات متشابهة إلكترونياً. في الوحدة 3، سنتعلم قاعدة إزاحة هيدريد Grimm."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "biyoizosterizm",
+          "arContext": "التشابه الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Easson-Stedman Kuralı",
+        "ar": "اختبار الإتقان: قاعدة Easson-Stedman"
+      },
+      "prompt": {
+        "tr": "Easson-Stedman modeline göre kiral bir ligandın reseptöre yüksek afiniteyle bağlanması için gereken asgari temas noktası sayısı kaçtır?",
+        "ar": "وفق نموذج Easson-Stedman، ما هو الحد الأدنى لعدد نقاط التماس الفراغية اللازمة للألفة العالية نحو (reseptör)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Modül 2 tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc22-9",
+            "text": {
+              "tr": "En az 3 spesifik nokta.",
+              "ar": "3 نقاط نوعية على الأقل."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc22-10",
+            "text": {
+              "tr": "1 nokta yeterlidir.",
+              "ar": "نقطة واحدة كافية."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

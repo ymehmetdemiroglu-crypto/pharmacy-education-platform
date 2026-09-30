@@ -12,8 +12,8 @@ import {
   SkeletonLoader,
   TrialBanner,
   PaywallModal,
-  useTheme,
 } from '@pharmacy/ui';
+import { useTranslation } from '../context/TranslationContext';
 import {
   PredictThenReveal,
   predictThenRevealStandardDemo,
@@ -33,11 +33,17 @@ import {
   receptorLigandMatcherStandardDemo,
   MetabolismMap,
   metabolismMapStandardDemo,
+  IonizationEquilibriumSlider,
+  ionizationEquilibriumStandardDemo,
+  MembranePartitionSimulator,
+  membranePartitionStandardDemo,
+  ThermodynamicActivityFergusonSlider,
+  thermodynamicActivityFergusonStandardDemo,
 } from '@pharmacy/widgets';
 import { BookOpen, Sparkles } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
-  const { locale } = useTheme();
+  const { t } = useTranslation();
   const [sliderVal, setSliderVal] = useState(50);
   const [toggleVal, setToggleVal] = useState(true);
   const [inputVal, setInputVal] = useState('7.4');
@@ -45,34 +51,11 @@ export const GalleryPage: React.FC = () => {
   const [isPaywallOpen, setIsPaywallOpen] = useState(false);
   const [activeWidgetTab, setActiveWidgetTab] = useState<string>('sar');
 
-  const copy = {
-    en: {
-      heroTitle: 'Pharmacy Interactive Gallery',
-      heroDesc: 'A comprehensive, battle-tested suite of accessible Neo-Brutalist UI components and domain-specific interactive pharmacy widgets designed for active, learn-by-doing education.',
-      badgeGallery: 'Design System & Component Gallery',
-      paywallBtn: 'Open Paywall & Pass Modal',
-    },
-    tr: {
-      heroTitle: 'Eczacılık Etkileşimli Galerisi',
-      heroDesc: 'Aktif ve uygulayarak öğrenme odaklı, erişilebilir Neo-Brutalist kullanıcı arayüzü bileşenleri ve eczacılık alanına özel etkileşimli modüller koleksiyonu.',
-      badgeGallery: 'Tasarım Sistemi ve Bileşen Galerisi',
-      paywallBtn: 'Abonelik ve Ödeme Penceresini Aç',
-    },
-    ar: {
-      heroTitle: 'معرض الصيدلة التفاعلي',
-      heroDesc: 'مجموعة شاملة ومثبتة من مكونات واجهة المستخدم ذات الطراز النيو-بروتالي والأدوات التفاعلية الصيدلانية المصممة للتعلم بالممارسة الفعالة.',
-      badgeGallery: 'نظام التصميم ومعرض المكونات',
-      paywallBtn: 'فتح نافذة الاشتراك والاشتراكات الأكاديمية',
-    },
-  }[locale] || {
-    heroTitle: 'Pharmacy Interactive Gallery',
-    heroDesc: 'A comprehensive, battle-tested suite of accessible Neo-Brutalist UI components and domain-specific interactive pharmacy widgets designed for active, learn-by-doing education.',
-    badgeGallery: 'Design System & Component Gallery',
-    paywallBtn: 'Open Paywall & Pass Modal',
-  };
-
   const widgets = [
     { id: 'sar', name: 'SAR Explorer', component: <SarExplorer config={sarExplorerStandardDemo} /> },
+    { id: 'ionization', name: 'Ionization Equilibrium', component: <IonizationEquilibriumSlider config={ionizationEquilibriumStandardDemo} /> },
+    { id: 'membrane-partition', name: 'Membrane Partition (logD)', component: <MembranePartitionSimulator config={membranePartitionStandardDemo} /> },
+    { id: 'ferguson', name: 'Ferguson Activity Slider', component: <ThermodynamicActivityFergusonSlider config={thermodynamicActivityFergusonStandardDemo} /> },
     { id: 'structure', name: 'Structure Identifier', component: <StructureIdentifier config={structureIdentifierStandardDemo} /> },
     { id: 'dose-response', name: 'Dose-Response Curve', component: <DoseResponseCurve config={doseResponseCurveStandardDemo} /> },
     { id: 'pk', name: 'PK Simulator', component: <PkSimulator config={pkSimulatorStandardDemo} /> },
@@ -89,19 +72,19 @@ export const GalleryPage: React.FC = () => {
       <section className="bg-[#FFF8E7] dark:bg-[#0B0F17] border-b-3 border-black dark:border-slate-700 py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <StickerBadge variant="black" size="sm">{copy.badgeGallery}</StickerBadge>
-            <StickerBadge variant="green" size="sm">Commercial Grade</StickerBadge>
-            <StickerBadge variant="yellow" size="sm">Neo-Brutalist</StickerBadge>
+            <StickerBadge variant="black" size="sm">{t('gallery.badgeGallery')}</StickerBadge>
+            <StickerBadge variant="green" size="sm">{t('gallery.commercialGrade')}</StickerBadge>
+            <StickerBadge variant="yellow" size="sm">{t('gallery.neoBrutalist')}</StickerBadge>
           </div>
           <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-slate-100">
-            {copy.heroTitle}
+            {t('gallery.heroTitle')}
           </h1>
           <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
-            {copy.heroDesc}
+            {t('gallery.heroDesc')}
           </p>
           <div className="pt-2 flex flex-wrap gap-3">
             <Button variant="primary" onClick={() => setIsPaywallOpen(true)} leftIcon={<Sparkles className="w-4 h-4" />}>
-              {copy.paywallBtn}
+              {t('gallery.paywallBtn')}
             </Button>
           </div>
         </div>

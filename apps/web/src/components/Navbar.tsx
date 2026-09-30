@@ -4,46 +4,25 @@ import { useTheme } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
 import { Button, StickerBadge } from '@pharmacy/ui';
 import { Sun, Moon, Sparkles, BookOpen, Layers, CreditCard, LogIn, User } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 import { AuthModal } from './AuthModal';
 
 export const Navbar: React.FC = () => {
-  const { theme, toggleTheme, locale, setLocale } = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const { locale, setLocale, t } = useTranslation();
   const { user, startTrial, logout } = useAuth();
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const location = useLocation();
 
-  const handleLocaleChange = (newLocale: 'en' | 'tr' | 'ar') => {
+  const handleLocaleChange = (newLocale: 'tr' | 'ar' | 'en') => {
     setLocale(newLocale);
   };
 
-  const getNavLabel = (key: 'gallery' | 'courses' | 'pricing') => {
-    if (locale === 'tr') {
-      if (key === 'gallery') return 'Galeri';
-      if (key === 'courses') return 'Dersler';
-      if (key === 'pricing') return 'Fiyatlandırma';
-    }
-    if (locale === 'ar') {
-      if (key === 'gallery') return 'المعرض';
-      if (key === 'courses') return 'المقررات';
-      if (key === 'pricing') return 'الأسعار';
-    }
-    if (key === 'gallery') return 'Gallery';
-    if (key === 'courses') return 'Courses';
-    return 'Pricing';
-  };
-
   const navLinks = [
-    { to: '/gallery', label: getNavLabel('gallery'), icon: Layers },
-    { to: '/catalog', label: getNavLabel('courses'), icon: BookOpen },
-    { to: '/pricing', label: getNavLabel('pricing'), icon: CreditCard },
+    { to: '/gallery', label: t('navbar.gallery'), icon: Layers },
+    { to: '/catalog', label: t('navbar.courses'), icon: BookOpen },
+    { to: '/pricing', label: t('navbar.pricing'), icon: CreditCard },
   ];
-
-  const brandSubtitle =
-    locale === 'tr'
-      ? 'Farmasötik Kimya ve Farmakoloji'
-      : locale === 'ar'
-      ? 'الكيمياء الدوائية وعلم الأدوية'
-      : 'MedChem & Pharmacology';
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white dark:bg-[#131B2A] border-b-3 border-black dark:border-slate-700 shadow-[0_4px_0_0_#000000] dark:shadow-[0_4px_0_0_#030712]">
@@ -58,10 +37,10 @@ export const Navbar: React.FC = () => {
           </div>
           <div className="flex flex-col">
             <span className="font-display font-black text-base sm:text-lg uppercase tracking-tight text-black dark:text-slate-100 leading-none">
-              PharmLearn
+              {t('navbar.brandName')}
             </span>
             <span className="text-[10px] font-mono text-gray-600 dark:text-slate-400 uppercase tracking-wider">
-              {brandSubtitle}
+              {t('navbar.brandSubtitle')}
             </span>
           </div>
         </Link>
@@ -90,31 +69,31 @@ export const Navbar: React.FC = () => {
 
         {/* Controls: Locales, Theme, Trial Action */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Locale Picker */}
+          {/* Multilingual Locale Picker (TR default primary, AR RTL, EN) */}
           <div className="flex items-center border-2 border-black dark:border-slate-700 text-xs font-mono font-bold">
             <button
               type="button"
-              onClick={() => handleLocaleChange('en')}
-              className={`px-2 py-1 ${locale === 'en' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
-              title="English"
-            >
-              EN
-            </button>
-            <button
-              type="button"
               onClick={() => handleLocaleChange('tr')}
-              className={`px-2 py-1 border-l border-r border-black dark:border-slate-700 ${locale === 'tr' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
-              title="Türkçe"
+              className={`px-2.5 py-1 ${locale === 'tr' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              title="Türkçe (Varsayılan)"
             >
               TR
             </button>
             <button
               type="button"
               onClick={() => handleLocaleChange('ar')}
-              className={`px-2 py-1 ${locale === 'ar' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'ar' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
               title="العربية (RTL)"
             >
               AR
+            </button>
+            <button
+              type="button"
+              onClick={() => handleLocaleChange('en')}
+              className={`px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'en' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              title="English"
+            >
+              EN
             </button>
           </div>
 
@@ -122,7 +101,7 @@ export const Navbar: React.FC = () => {
           <button
             type="button"
             onClick={toggleTheme}
-            aria-label="Toggle dark mode"
+            aria-label={t('navbar.toggleTheme')}
             className="p-1.5 border-2 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#1E293B] shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] active:translate-x-0.5 active:translate-y-0.5 transition-transform"
           >
             {theme === 'dark' ? (
@@ -135,11 +114,11 @@ export const Navbar: React.FC = () => {
           {/* User / Trial badge */}
           {user?.plan === 'trial' ? (
             <StickerBadge variant="yellow" size="sm" className="inline-flex">
-              {locale === 'tr' ? 'Deneme Aktif' : locale === 'ar' ? 'تجربة نشطة' : 'Trial Active'}
+              {t('navbar.trialActive')}
             </StickerBadge>
           ) : user?.plan === 'premium' ? (
             <StickerBadge variant="green" size="sm" className="inline-flex">
-              {locale === 'tr' ? 'Abonelik Aktif' : locale === 'ar' ? 'مشترك' : 'Pass Holder'}
+              {t('navbar.passActive')}
             </StickerBadge>
           ) : (
             <Button
@@ -149,7 +128,7 @@ export const Navbar: React.FC = () => {
               className="hidden sm:inline-flex"
               leftIcon={<Sparkles className="w-3.5 h-3.5" />}
             >
-              {locale === 'tr' ? 'Ücretsiz Deneme' : locale === 'ar' ? 'تجربة مجانية' : 'Free Trial'}
+              {t('navbar.freeTrial')}
             </Button>
           )}
 
@@ -168,7 +147,7 @@ export const Navbar: React.FC = () => {
                 onClick={logout}
                 className="text-xs py-1 px-2 border-2 border-black dark:border-slate-700 hover:bg-rose-100 dark:hover:bg-rose-950/40"
               >
-                {locale === 'tr' ? 'Çıkış' : locale === 'ar' ? 'خروج' : 'Logout'}
+                {t('navbar.logout')}
               </Button>
             </div>
           ) : (
@@ -179,7 +158,7 @@ export const Navbar: React.FC = () => {
               className="text-xs py-1 px-2 sm:px-3 border-2 border-black dark:border-slate-700"
               leftIcon={<LogIn className="w-3.5 h-3.5" />}
             >
-              {locale === 'tr' ? 'Giriş Yap' : locale === 'ar' ? 'تسجيل الدخول' : 'Log In'}
+              {t('navbar.login')}
             </Button>
           )}
         </div>

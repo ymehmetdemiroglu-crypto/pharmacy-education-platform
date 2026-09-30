@@ -47,7 +47,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
         <div className="mt-2 pt-2 border-t border-black/20 dark:border-slate-700 space-y-1.5 text-[11px]">
           <div>
             <span className="font-bold text-gray-700 dark:text-slate-300">Governing Equation: </span>
-            <code className="bg-black/5 dark:bg-[#1E293B] px-1 py-0.5 font-mono text-black dark:text-amber-300 border border-black/20 dark:border-slate-700">
+            <code className="bg-black/5 dark:bg-[#1E293B] px-1 py-0.5 font-mono text-black dark:text-amber-300 border border-black/20 dark:border-slate-700" dir="ltr">
               {equation}
             </code>
           </div>

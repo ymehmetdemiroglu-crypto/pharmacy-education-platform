@@ -1,0 +1,653 @@
+{
+  "id": "pharm-mod2-les2",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-02",
+  "title": {
+    "tr": "Reseptör Antagonizmi: Yarışmalı ve Yarışmasız Blokaj",
+    "ar": "مناهضة المستقبِلات: الحصار التنافسي وغير التنافسي"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Yarışmalı (kompetitif) ve yarışmasız (non-kompetitif) antagonistlerin eğri üzerindeki etkilerini Schild denklemiyle ayırt etmek.",
+    "ar": "التمييز بين الحصار التنافسي وغير التنافسي على منحنى الاستجابة باستخدام معادلة Schild."
+  },
+  "misconceptions": [
+    {
+      "tr": "Yarışmasız (non-kompetitif) blokajın daha fazla agonist verilerek aşılabileceği yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بإمكانية تجاوز الحصار غير التنافسي بمجرد زيادة جرعة المشبه."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Farmakodinami-Doz Yanıt.pdf",
+      "page": 28
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH04-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Receptor Antagonism: Competitive, Noncompetitive, and Schild Analysis",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod2-les2-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Yarışmalı Antagonist Belirtisi",
+      "prompt": "Yarışmalı (kompetitif) bir antagonist doz-yanıt eğrisinde ne tür bir değişim yaratır?",
+      "answer": "Emax ı değiştirmeden eğriyi paralel olarak sağa kaydırır (görünür EC50 artar).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod2-les2-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Yarışmasız Antagonist Belirtisi",
+      "prompt": "Yarışmasız (non-kompetitif) veya geri dönüşsüz antagonist eğride ne yapar?",
+      "answer": "Maksimum yanıtı (Emax) aşılmaz biçimde aşağı bastırır (depresyon).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod2-les2-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Schild Denklemi ve Eğim",
+      "prompt": "Gerçek bir yarışmalı antagonistin Schild grafiğindeki doğrusunun eğimi tam olarak kaçtır?",
+      "answer": "Eğim tam olarak 1.0 dir; x-kesişimi -log(Kb) afinitesini verir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Reseptör Antagonizmi: Yarışmalı ve Yarışmasız Blokaj"
+    },
+    "ar": {
+      "title": "مناهضة المستقبِلات: الحصار التنافسي وغير التنافسي"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod2-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Nalokson Mucizesi",
+        "ar": "معجزة الترياق Naloxone"
+      },
+      "prompt": {
+        "tr": "Aşırı doz morfinden nefesi durmuş komadaki bir hasta, tek bir nalokson enjeksiyonuyla 60 saniyede nasıl ayağa fırlar?",
+        "ar": "مريض في غيبوبة توقف تنفسه بجرعة مفرطة من المورفين، كيف يستيقظ في 60 ثانية بحقنة Naloxone واحدة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "antagonist",
+          "arContext": "المناهض (Antagonist)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Yarışmalı Engel Aşılabilir mi?",
+        "ar": "توقع: هل يمكن تجاوز الحصار التنافسي؟"
+      },
+      "prompt": {
+        "tr": "Ortamda yarışmalı bir antagonist varken agonist dozunu yeterince artırırsak eski maksimum yanıta (%100 Emax) ulaşabilir miyiz?",
+        "ar": "بوجود مناهض تنافسي، إذا رفعنا جرعة المشبه بشكل كافٍ، هل يمكن الوصول لنفس الاستجابة القصوى (100% Emax)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Yarışmalı antagonistler aynı cebi paylaşır; agonisti artırmak antagonisti kovar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph22-1",
+            "text": {
+              "tr": "Evet, yarışmalı blokaj agonist konsantrasyonu artırılarak tamamen aşılabilir (surmountable).",
+              "ar": "نعم، فالحصار التنافسي يمكن تجاوزه بالكامل بزيادة تركيز المشبه (surmountable)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph22-2",
+            "text": {
+              "tr": "Hayır, tavan asla aşılamaz.",
+              "ar": "لا، فالسقف لا يمكن بلوغه مطلقاً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Kırık Anahtar vs Kapıyı Kaynatmak",
+        "ar": "تشبيه حدسي: مفتاح مكسور مقابل لحام الباب"
+      },
+      "prompt": {
+        "tr": "Yarışmalı blokaj deliğe takılan yabancı anahtardır, iterek çıkarabilirsiniz. Yarışmasız blokaj ise kapıyı kaynakla kilitlemektir; anahtar artık faydasızdır.",
+        "ar": "الحصار التنافسي مفتاح غريب في القفل يمكنك دفعه للخارج. الحصار غير التنافسي لحام الباب بالحديد؛ المفتاح أصبح بلا فائدة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "yarışmalı blokaj",
+          "arContext": "الحصار التنافسي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Eğrinin Sağa Kayması vs Tavan Depresyonu",
+        "ar": "إزاحة المنحنى يميناً مقابل هبوط السقف"
+      },
+      "prompt": {
+        "tr": "Yarışmalı antagonist eğriyi sağa kaydırır (paralel sağa kayma). Yarışmasız antagonist ise eğri tavanını aşağı çökertir (Emax depresyonu).",
+        "ar": "المناهض التنافسي يزيح المنحنى يميناً بشكل موازٍ، بينما يخفض المناهض غير التنافسي سقف المنحنى رأسياً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "sağa kayma",
+          "arContext": "الإزاحة لليمين"
+        },
+        {
+          "term": "Emax depresyonu",
+          "arContext": "هبوط Emax"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Dose-Response Modulator (Antagonizm)",
+        "ar": "محاكي تفاعلي: معدل الجرعة والاستجابة (المناهضة)"
+      },
+      "prompt": {
+        "tr": "Yarışmalı antagonist dozunu artırarak sağa paralel kaymayı izleyin. Ardından non-kompetitif modu açarak tavanın çöküşünü test edin.",
+        "ar": "ارفع جرعة المناهض التنافسي لمشاهدة الإزاحة المتوازية لليمين، ثم بدل للنمط غير التنافسي لمراقبة انهيار سقف الاستجابة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "mode": "antagonist_comparison",
+          "antagonistType": "competitive",
+          "antagonistConcentrations": [
+            0,
+            1e-8,
+            1e-7,
+            0.000001
+          ]
+        }
+      }
+    },
+    {
+      "id": "pharm-mod2-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Schild Denklem Eğim Analizi",
+        "ar": "استكشاف موجه: تحليل ميل معادلة Schild"
+      },
+      "prompt": {
+        "tr": "Simülatörde Schild çekmecesini açın. log(Doz Oranı - 1) grafiğinde eğimin tam olarak 1.0 olması neyi kanıtlar?",
+        "ar": "افتح درج Schild في المحاكي. ما الذي يثبته كون ميل الخط البياني مساوياً لـ 1.0 تماماً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Schild eğiminin 1.0 olması yarışmalı tek bölgeli bağlanmanın matematiksel kanıtıdır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph22-3",
+            "text": {
+              "tr": "Antagonistin tek bir reseptör bölgesine 1:1 oranında yarışmalı bağlandığını.",
+              "ar": "ارتباط المناهض بموقع مستقبلي واحد بنسبة تنافسية نقية 1:1."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph22-4",
+            "text": {
+              "tr": "İlacın zehirli olduğunu.",
+              "ar": "أن الدواء سام وغير فعال."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Gaddum ve Schild Eşitlikleri",
+        "ar": "معادلتا Gaddum و Schild"
+      },
+      "prompt": {
+        "tr": "Doz Oranı (DR) = 1 + [B] / Kb. log(DR - 1) = log[B] - log(Kb). X-kesişimi pA2 = -log(Kb) antagonist afinitesini verir.",
+        "ar": "نسبة الجرعة DR = 1 + [B] / Kb. تمثل نقطة تقاطع المحور السيني pA2 = -log(Kb) الألفة الدقيقة للمناهض."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Schild analizi",
+          "arContext": "تحليل Schild"
+        },
+        {
+          "term": "pA2",
+          "arContext": "معامل pA2"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Geri Dönüşsüz Kovalent İnhibisyon",
+        "ar": "فحص المفهوم: التثبيط التساهمي غير العكوس"
+      },
+      "prompt": {
+        "tr": "Aspirin siklooksijenaz-1 (COX-1) enzimini kovalent olarak asetiller. Trombositlerde bu inhibisyon ne zaman sonlanır?",
+        "ar": "يؤستل Aspirin إنزيم COX-1 برابطة تساهمية. متى ينتهي هذا التثبيط في الصفيحات الدموية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kovalent antagonizma yeni reseptör/enzim sentezlenene kadar kalıcıdır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph22-5",
+            "text": {
+              "tr": "Trombositler çekirdeksiz olduğundan yeni enzim üretemez; trombositin 8-10 günlük ömrü bitene kadar sürer.",
+              "ar": "بما أن الصفيحات عديمة النواة فلا تصنع إنزيماً جديداً؛ ويستمر التثبيط طوال عمر الصفيحة (8-10 أيام)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph22-6",
+            "text": {
+              "tr": "2 saat sonra ilaç yıkanınca biter.",
+              "ar": "ينتهي بعد ساعتين بزوال الدواء من الدم."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Feokromositomada Fenoksibenzamin",
+        "ar": "قرار سريري: Phenoxybenzamine في ورم القواتم"
+      },
+      "prompt": {
+        "tr": "Adrenalin fırtınası üreten feokromositoma ameliyatında neden yarışmalı prazosin yerine kovalent fenoksibenzamin tercih edilir?",
+        "ar": "في جراحة ورم القواتم المفرز للأدرينالين، لماذا يفضل Phenoxybenzamine التساهمي على Prazosin التنافسي؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Geri dönüşsüz antagonistler aşırı agonist dalgalanmalarına karşı kesin koruma sağlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph22-7",
+            "text": {
+              "tr": "Tümörden fırlayan devasa katekolamin dalgaları kovalent kilitlenmiş reseptörü aşamaz.",
+              "ar": "لأن أمواج الكاتيكولامينات العاتية المفاجئة تعجز عن إزاحة الحصار التساهمي المقفل."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph22-8",
+            "text": {
+              "tr": "Fenoksibenzamin daha ucuzdur.",
+              "ar": "لأن الفينوكسي بنزامين أرخص ثمناً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Tam Agonist ve Parsiyel Agonist",
+        "ar": "استرجاع معرفي: المشبه التام والجزئي"
+      },
+      "prompt": {
+        "tr": "Bir önceki derste gördüğümüz gibi intrinsik etkinliği sıfır olan bir ligand hangi temel farmakolojik sınıfa girer?",
+        "ar": "كما رأينا في الدرس السابق، إلى أي فئة فارماكولوجية ينتمي الربيط الذي يمتلك فعالية ذاتية مساوية للصفر تماماً؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "saf antagonist",
+          "arContext": "المناهض الصرف"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Farmakokinetik ve Klerens (Modül 3)",
+        "ar": "ربط مفاهيمي: حركية الدواء والتصفية (الوحدة 3)"
+      },
+      "prompt": {
+        "tr": "İlacın reseptördeki dinamiklerini tamamladık. Peki ilacın kandaki konsantrasyonu zamanla nasıl azalır? Modül 3 te farmakokinetiği (ADME) başlatıyoruz.",
+        "ar": "أكملنا ديناميكا الدواء على المستقبل. كيف يتغير تركيز الدواء في الدم مع الزمن؟ في الوحدة 3، ننطلق في حركية الدواء (ADME)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "farmakokinetik",
+          "arContext": "حركية الدواء (ADME)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Antagonizma Tipleri",
+        "ar": "اختبار الإتقان: أنماط المناهضة"
+      },
+      "prompt": {
+        "tr": "Bir antagonist eklendiğinde agonist eğrisi paralel olarak sağa kayıyor fakat maksimum yanıt (Emax) değişmiyorsa bu hangi tür blokajdır?",
+        "ar": "عند إضافة مناهض، إذا انزاح منحنى المشبه يميناً بشكل متوازٍ دون أي هبوط في Emax، فما هو نمط هذا الحصار؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Modül 2 tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph22-9",
+            "text": {
+              "tr": "Tersinir yarışmalı (kompetitif) antagonizma.",
+              "ar": "مناهضة تنافسية عكوسة (Competitive)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph22-10",
+            "text": {
+              "tr": "Yarışmasız geri dönüşsüz antagonizma.",
+              "ar": "مناهضة غير تنافسية دائمة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

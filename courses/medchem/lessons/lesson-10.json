@@ -1,0 +1,644 @@
+{
+  "id": "mc-mod5-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-05",
+  "title": {
+    "tr": "Faz II Konjugasyonu: Glukuronidasyon ve Sülfat Yolakları",
+    "ar": "المرحلة الثانية: مسارات الاقتران بالجلوكورونيد والكبريتات"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "UGT ve SULT enzim yolaklarını, kofaktör kinetiklerini ve polar konjugatların atılım mekanizmalarını karşılaştırmak.",
+    "ar": "مقارنة مسارات إنزيمات UGT و SULT وحركية العوامل المساعدة وآليات إطراح المشتقات المقترنة القطبية."
+  },
+  "misconceptions": [
+    {
+      "tr": "Glukuronidasyon ve sülfasyonun eşit kapasiteye sahip olduğu yanılgısı (glukuronidasyon yüksek kapasiteli, sülfasyon düşük kapasitelidir).",
+      "ar": "الاعتقاد الخاطئ بأن سعة الجلوكورونيد والكبريتات متساوية (الجلوكورونيد عالي السعة والكبريتات منخفض السعة)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 26
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC10-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Phase II Conjugation: Glucuronidation and Sulfation",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod5-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Glukuronidasyon Kofaktörü",
+      "prompt": "UGT enzimlerinin kullandığı aktif glukuronik asit donörü kofaktör nedir?",
+      "answer": "UDP-glukuronik asit (UDPGA).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Sülfatlama Kofaktörü",
+      "prompt": "Sülfotransferaz (SULT) enzimlerinin kullandığı aktif sülfat donörü molekül nedir?",
+      "answer": "3'-Fosfoadenozin-5'-fosfosülfat (PAPS).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Parasetamol Doz Aşımı ve Glutatyon",
+      "prompt": "Parasetamol aşırı dozda alındığında UGT ve SULT doyunca hangi toksik metabolit birikir ve hangi kofaktör tükenir?",
+      "answer": "NAPQI toksik metaboliti birikir; koruyucu Glutatyon (GSH) tükenerek karaciğer nekrozu oluşur.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Faz II Konjugasyonu: Glukuronidasyon ve Sülfat Yolakları"
+    },
+    "ar": {
+      "title": "المرحلة الثانية: مسارات الاقتران بالجلوكورونيد والكبريتات"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod5-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Parasetamolün İki Kaderi",
+        "ar": "مصيران لدواء الباراسيتامول"
+      },
+      "prompt": {
+        "tr": "Terapötik dozda güvenle atılan parasetamol, yüksek dozda alındığında neden aniden ölümcül bir karaciğer zehirine dönüşür?",
+        "ar": "بينما يطرح Paracetamol بأمان بالجرعة العلاجية، لماذا يتحول فجأة عند الجرعة الزائدة إلى سم كبدي قاتل؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "konjugasyon kapasitesi",
+          "arContext": "سعة الاقتران الاستقلابي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Yüksek Kapasite vs Yüksek Afinite",
+        "ar": "توقع: السعة العالية مقابل الألفة العالية"
+      },
+      "prompt": {
+        "tr": "Düşük doz parasetamolde sülfasyon mu yoksa glukuronidasyon mu daha baskındır?",
+        "ar": "عند الجرعات المنخفضة من paracetamol، أيهما يكون المسار السائد: الكبريتات أم الجلوكورونيد؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Düşük dozda yüksek afiniteli SULT devrededir; doz arttıkça PAPS tükenir ve UGT devralır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc52-1",
+            "text": {
+              "tr": "Sülfasyon baskındır çünkü SULT yüksek afiniteye (düşük Km) sahiptir.",
+              "ar": "الكبريتات هي السائدة لامتلاك إنزيمات SULT ألفة عالية جداً (Km منخفض)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc52-2",
+            "text": {
+              "tr": "İkisi de çalışmaz.",
+              "ar": "كلا المسارين لا يعمل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Küçük Çöp Arabası ve Büyük Kamyon",
+        "ar": "تشبيه حدسي: سيارة النفايات الصغيرة وشاحنة التفريغ الضخمة"
+      },
+      "prompt": {
+        "tr": "Sülfasyon çevik ama küçük bir arabadır, hemen dolar (düşük kapasite). Glukuronidasyon dev bir kamyondur, tonlarca atık taşır (yüksek kapasite).",
+        "ar": "مسار الكبريتات كسيارة سريعة ممتلئة دوماً بسعة محدودة، بينما الجلوكورونيد كشاحنة عملاقة بسعة غير محدودة تقريباً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "glukuronidasyon",
+          "arContext": "الاقتران بالجلوكورونيد"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Konjugasyon Kimyası ve Kofaktörler",
+        "ar": "كيمياء الاقتران والعوامل المساعدة"
+      },
+      "prompt": {
+        "tr": "UGT enzimi UDP-glukuronik asitten glukuronil grubunu SN2 ile substratın -OH grubuna aktarır; alfa bağ beta konfigürasyonuna döner.",
+        "ar": "ينقل إنزيم UGT مجموعة الجلوكورونيل عبر تفاعل SN2 إلى -OH الدواء، فينقلب الارتباط من alfa إلى beta."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "UDP-glukuronik asit",
+          "arContext": "UDP-glucuronic acid"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Metabolism Map (Faz II)",
+        "ar": "محاكي تفاعلي: خارطة الاستقلاب (المرحلة الثانية)"
+      },
+      "prompt": {
+        "tr": "Parasetamol dozunu 500 mg dan 5000 mg a çıkarın. PAPS ve GSH kofaktörlerinin tükenişini ve toksik NAPQI birikimini simüle edin.",
+        "ar": "ارفع جرعة paracetamol من 500 mg إلى 5000 mg وشاهد نضوب PAPS و GSH وتراكم مادة NAPQI السامة على الخارطة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "MetabolismMap",
+      "widget": {
+        "type": "MetabolismMap",
+        "config": {
+          "substrate": "paracetamol",
+          "phase": "phase_2_saturation",
+          "initialDoseMg": 500
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Glutatyon Koruma Kalkanı",
+        "ar": "استكشاف موجه: درع حماية الجلوتاثيون"
+      },
+      "prompt": {
+        "tr": "Simülatörde parasetamol dozu toksik eşiği aştığında CYP2E1 tarafından üretilen NAPQI ye karşı karaciğeri ne korur?",
+        "ar": "عند تجاوز عتبة التسمم، ما الذي يحمي الكبد من سمية NAPQI الناتجة عن CYP2E1؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "GSH depoları yüzde 70 in altına indiğinde NAPQI karaciğer hücrelerini nekroza uğratır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc52-3",
+            "text": {
+              "tr": "Glutatyon (GSH) nükleofilik tiyol grubuyla NAPQI yi yakalayarak merkaptürik aside dönüştürür.",
+              "ar": "الجلوتاثيون (GSH) عبر مجموعة الثيول النكليوفيلية يمسك بـ NAPQI ويحوله لمشتق حمض المركبتوريك."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc52-4",
+            "text": {
+              "tr": "Su molekülleri.",
+              "ar": "جزيئات الماء البسيطة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "UGT ve SULT Kinetik Karşılaştırması",
+        "ar": "المقارنة الحركية بين UGT و SULT"
+      },
+      "prompt": {
+        "tr": "SULT: Düşük Km (yüksek afinite), düşük Vmax (kofaktör PAPS sentezi sınırlı). UGT: Yüksek Km, devasa Vmax (glikojen deposu sayesinde bol UDPGA).",
+        "ar": "مسار SULT: ألفة عالية وسعة منخفضة لنضوب PAPS. مسار UGT: ألفة معتدلة وسعة استقلابية هائلة بفضل وفرة مخزون الجليكوجين."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Vmax",
+          "arContext": "السرعة القصوى للتفاعل"
+        },
+        {
+          "term": "Km",
+          "arContext": "ثابت مايكليس"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Glukuronidlerin Fizikokimyasal Durumu",
+        "ar": "فحص المفهوم: الحالة الفيزيوكيميائية للمقترنات"
+      },
+      "prompt": {
+        "tr": "Bir ilaca glukuronik asit bağlanması moleküle hangi fizikokimyasal özelliği kazandırır?",
+        "ar": "ما الخاصية الفيزيوكيميائية الحاسمة التي يكتسبها الدواء عند ارتباط حمض الجلوكورونيك به؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Glukuronidler böbrekten tübüler salgıyla ve safradan hızla dışarı atılır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc52-5",
+            "text": {
+              "tr": "Karboksilat ve çoklu hidroksiller sayesinde fizyolojik pH ta tamamen iyonize ve aşırı hidrofilik hale gelir.",
+              "ar": "يصبح متأيناً بالكامل وشديد الانحلال بالماء عند pH الفسيولوجي بفضل الكربوكسيل والهيدروكسيلات المتعددة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc52-6",
+            "text": {
+              "tr": "Yağda çözünürlüğü artar.",
+              "ar": "تزداد ذوبانيته في الدهون."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Antidot: N-Asetilsistein (NAC)",
+        "ar": "الترياق السريري: N-Acetylcysteine (NAC)"
+      },
+      "prompt": {
+        "tr": "Parasetamol zehirlenmesinde ilk 8 saatte verilen N-asetilsistein (NAC) hayatı nasıl kurtarır?",
+        "ar": "كيف ينقذ إعطاء N-acetylcysteine (NAC) خلال الساعات الـ 8 الأولى حياة مريض التسمم بالباراسيتامول؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "NAC parasetamol hepatotoksisitesinin mekanizmaya dayalı altın standart antidotudur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc52-7",
+            "text": {
+              "tr": "Hücre içi glutatyon (GSH) sentezi için sistein sağlayarak tükenen koruyucu kalkanı yeniden doldurur.",
+              "ar": "يوفر السيستين لاصطناع الجلوتاثيون (GSH) داخلياً ويعيد بناء درع الحماية المستنفد."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc52-8",
+            "text": {
+              "tr": "Mideyi yıkar.",
+              "ar": "يغسل المعدة ميكانيكياً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Faz I Hidroksilasyon",
+        "ar": "استرجاع معرفي: هدرلة المرحلة الأولى"
+      },
+      "prompt": {
+        "tr": "Bir önceki derste gördüğümüz gibi Faz I metabolizmasında substrata oksijen atomunu aktaran enzim kompleksi neydi?",
+        "ar": "كما تعلمنا في الدرس السابق، ما هو المعقد الإنزيمي المسؤول عن إدخال ذرة الأكسجين في ركيزة الدواء بالمرحلة الأولى؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "sitokrom P450",
+          "arContext": "إنزيمات CYP450"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "Ders Sonu Köprüsü: Farmakoloji Kursu Başlıyor",
+        "ar": "جسر نهاية المساق: انطلاق مساق Farmakoloji"
+      },
+      "prompt": {
+        "tr": "Farmasötik Kimya derslerini başarıyla tamamladınız! Bu kimyasal ilkelerin canlı sistemlerdeki doz-yanıt ve ADME dinamiklerini Farmakoloji kursunda göreceğiz.",
+        "ar": "تهانينا على إتمام مساق Farmasötik Kimya! سنرى هذه المبادئ الكيميائية في الأنظمة الحية ضمن مساق Farmakoloji."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "farmakoloji",
+          "arContext": "علم الأدوية (Farmakoloji)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Kurs A Ustalık Sınavı: Faz II Metabolizması",
+        "ar": "اختبار الإتقان النهائي لمساق الكيمياء: استقلاب المرحلة الثانية"
+      },
+      "prompt": {
+        "tr": "Vücutta ilaçların detoksifikasyonunda en yüksek kapasiteye sahip Faz II konjugasyon yolağı hangisidir?",
+        "ar": "ما هو مسار اقتران المرحلة الثانية الذي يمتلك السعة الاستقلابية الأعلى لإزالة سمية الأدوية في الجسم؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Farmasötik Kimya Kursunun 10 dersi başarıyla tamamlandı! +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc52-9",
+            "text": {
+              "tr": "Glukuronidasyon (UGT yolağı).",
+              "ar": "الاقتران بالجلوكورونيد (مسار إنزيمات UGT)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc52-10",
+            "text": {
+              "tr": "Metilasyon yolağı.",
+              "ar": "مسار الميثلة (Methylation)."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

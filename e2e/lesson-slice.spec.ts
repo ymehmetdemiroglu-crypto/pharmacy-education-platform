@@ -308,7 +308,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await expect(page.getByText('Unlock Lesson 3: The Partition Coefficient')).toBeVisible();
     // PaywallModal opens automatically on locked lessons
     await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByRole('radio', { name: /Semester Pass/i })).toBeVisible();
+    await expect(page.getByRole('radio', { name: /Semester Pass|Dönemlik Paket|باقة الفصل الدراسي/i })).toBeVisible();
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-lesson-03-paywall-light-en.png`),
@@ -323,7 +323,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     // Test Paywall in Dark Mode
     await page.keyboard.press('Escape');
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.getByRole('button', { name: /View Student Passes/i }).first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
@@ -361,7 +361,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     // Reset to English Light for next tests
     await page.getByRole('button', { name: 'EN', exact: true }).click();
     if (await page.locator('html').evaluate((el) => el.classList.contains('dark'))) {
-      await page.getByRole('button', { name: /toggle dark mode/i }).click();
+      await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     }
 
     // Assert zero console errors & zero failed network requests
@@ -580,12 +580,12 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     await expect(page.getByRole('dialog')).toBeVisible();
 
     // 3. Click "Start 7-Day Free Trial"
-    await page.getByRole('dialog').getByRole('button', { name: /Start Free Trial/i }).click();
+    await page.getByRole('dialog').getByRole('button', { name: /Start Free Trial|Ücretsiz Denemeyi Başlat|بدء التجربة المجانية/i }).click();
 
     // 4. Trial activated: Dialog closes and trial banner appears
     await expect(page.getByRole('dialog')).not.toBeVisible();
-    await expect(page.getByLabel('Account Plan Status')).toBeVisible();
-    await expect(page.getByText(/7 days remaining/i).first()).toBeVisible();
+    await expect(page.getByLabel(/Account Plan Status|Hesap Planı Durumu|حالة خطة الحساب/i)).toBeVisible();
+    await expect(page.getByText(/7 days remaining|7 gün kaldı|متبقي 7 أيام/i).first()).toBeVisible();
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-trial-started-ui.png`),
@@ -608,7 +608,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
 
     // 6. Verify downgraded to Free & Lesson 3 locked again
     await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByText(/Your 7-day trial has ended|TRIAL EXPIRED/i).first()).toBeVisible();
+    await expect(page.getByText(/Your 7-day trial has ended|TRIAL EXPIRED|7 günlük deneme süreniz sona erdi|انتهت فترتك التجريبية/i).first()).toBeVisible();
 
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-trial-expired-downgrade.png`),
@@ -654,7 +654,7 @@ test.describe('Phase 3: Vertical Slice A — Interactive Lesson 1 & Freemium Gat
     // 1. Dark Mode Walkthrough
     await page.goto('/courses/medchem/lessons/1');
     await page.waitForLoadState('networkidle');
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-step-01-dark.png`) });
 

@@ -31,7 +31,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
               'w-full px-3.5 py-2.5 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100 font-mono text-sm',
               'border-3 border-black dark:border-slate-700 rounded-none',
               'shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712]',
-              'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] focus:shadow-[6px_6px_0px_#000000] dark:focus:shadow-[6px_6px_0px_#030712]',
+              'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B] focus:shadow-[6px_6px_0px_#000000] dark:focus:shadow-[6px_6px_0px_#030712]',
               'transition-all duration-150',
               error && 'border-[#FF6B9D] focus:ring-[#FF6B9D]',
               disabled && 'bg-gray-200 dark:bg-gray-800 text-gray-400 border-gray-400 shadow-none cursor-not-allowed',

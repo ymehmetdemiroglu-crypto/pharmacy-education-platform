@@ -1,0 +1,643 @@
+{
+  "id": "pharm-mod4-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-04",
+  "title": {
+    "tr": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri",
+    "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Adrenerjik alfa-1, beta-1 ve beta-2 reseptörlerinin sinyal iletim yolaklarını ve hedef dokulardaki sempatik yanıtları eşleştirmek.",
+    "ar": "ربط مسارات التأشير الخلوي لمستقبلات alpha-1 و beta-1 و beta-2 والاستجابات الودية في الأنسجة المستهدفة."
+  },
+  "misconceptions": [
+    {
+      "tr": "Tüm sempatik reseptörlerin aynı hücresel sinyali (örneğin cAMP artışı) ürettiği yanılgısı (alfa-1 Gq ile IP3/DAG, beta-1 Gs ile cAMP üretir).",
+      "ar": "الظن الخاطئ بأن جميع المستقبلات الودية تنتج نفس الإشارة (alpha-1 تعمل عبر Gq و IP3، بينما beta-1 عبر Gs و cAMP)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Otonom Sinir Sistemi.pdf",
+      "page": 14
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH07-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Adrenergic Neurotransmission and Receptor Subtypes",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod4-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Alfa-1 Reseptör Sinyali",
+      "prompt": "Alfa-1 adrenerjik reseptör hangi G-proteini ile kenetlidir ve damarlarda ne yapar?",
+      "answer": "Gq proteini ile PLC aktivasyonu ve IP3/Ca2+ artışı yaparak vazokonstriksiyon (damar büzüşmesi) sağlar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Beta-1 ve Beta-2 Ayrımı",
+      "prompt": "Beta-1 reseptörleri esasen hangi organda, Beta-2 reseptörleri hangi organda bulunur?",
+      "answer": "Beta-1 kalpte (hız ve kasılma artışı); Beta-2 bronş düz kasında (bronkodilasyon / gevşeme).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Salbutamol Seçiciliği",
+      "prompt": "Astım krizinde kullanılan salbutamol neden kalbi yormadan nefes açar?",
+      "answer": "Beta-2 reseptörlerine seçici agonisttir; kalp beta-1 reseptörlerini minimal düzeyde uyarır.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri"
+    },
+    "ar": {
+      "title": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod4-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Savaş ya da Kaç: Bir Molekül, Zıt Etkiler",
+        "ar": "الكر أو الفر: جزيء واحد وتأثيرات متضادة"
+      },
+      "prompt": {
+        "tr": "Korkan bir insanın kalbi delicesine çarpıp kas damarları genişlerken, derisi neden bembeyaz kesilir ve bağırsakları durur?",
+        "ar": "عند الخوف، بينما ينبض القلب بشدة وتتسع أوعية العضلات، لماذا يشحب لون الجلد ويتوقف نشاط الأمعاء؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "sempatik sistem",
+          "arContext": "الجهاز العصبي الودي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Beta-2 Reseptör Uyarısı",
+        "ar": "توقع: تنشيط مستقبلات Beta-2"
+      },
+      "prompt": {
+        "tr": "Akciğer bronş düz kaslarındaki beta-2 reseptörleri uyarıldığında ne olur?",
+        "ar": "عند تنشيط مستقبلات beta-2 في العضلات الملساء للقصبات الهوائية، ماذا يحدث؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Beta-2 Gs kenetlidir; cAMP artışı düz kaslarda gevşeme (bronkodilasyon) yaratır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph41-1",
+            "text": {
+              "tr": "cAMP artar, hücre içi kalsiyum düşer ve bronşlar genişler (bronkodilasyon).",
+              "ar": "يرتفع cAMP وينخفض الكالسيوم الداخلي فتسترخي القصبات وتتسع (bronkodilasyon)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph41-2",
+            "text": {
+              "tr": "Bronşlar spazmla tıkanır.",
+              "ar": "تنقبض القصبات وتنسد بالتشنج."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod4-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: 1 Kalp, 2 Akciğer Kuralı",
+        "ar": "تشبيه حدسي: قاعدة قلب واحد ورئتان اثنتان"
+      },
+      "prompt": {
+        "tr": "Hatırlama tüyosu: İnsanın 1 kalbi vardır -> Beta-1 kalptedir. İnsanın 2 akciğeri vardır -> Beta-2 akciğerdedir.",
+        "ar": "قاعدة التذكر الشهيرة: للإنسان قلب واحد -> Beta-1 في القلب؛ وللإنسان رئتان اثنتان -> Beta-2 في الرئتين."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "reseptör alt tipleri",
+          "arContext": "الأنماط الفرعية للمستقبلات"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "İkincil Haberciler: Gq vs Gs",
+        "ar": "المرسال الثاني: مقارنة Gq مع Gs"
+      },
+      "prompt": {
+        "tr": "Alfa-1 -> Gq -> Fosfolipaz C -> IP3 + DAG -> Kalsiyum fırlar -> Kasılma. Beta-1/2 -> Gs -> Adenilat Siklaz -> cAMP -> PKA aktivasyonu.",
+        "ar": "مسار Alpha-1: بروتين Gq ينشط PLC ويزيد الكالسيوم للانقباض. مسار Beta-1/2: بروتين Gs ينشط AC ويزيد cAMP."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ikincil haberci",
+          "arContext": "المرسال الخلوي الثاني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Eşleştirici: Adrenerjik Reseptör Eşleştirici",
+        "ar": "مطابق تفاعلي: مواءمة المستقبلات الأدرينالينية"
+      },
+      "prompt": {
+        "tr": "Katekolamin ligandlarını (adrenalin, noradrenalin, salbutamol) alfa-1, beta-1 ve beta-2 cepleriyle eşleştirip fizyolojik yanıtları test edin.",
+        "ar": "طابق مركبات الكاتيكولامين (Adrenaline، Noradrenaline، Salbutamol) مع جيوب alpha-1 و beta-1 و beta-2 واختبر الاستجابة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "mode": "adrenergic_subtypes",
+          "receptors": [
+            "alpha1_vasoconstriction",
+            "beta1_cardiac",
+            "beta2_bronchodilation"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pharm-mod4-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Seçici Olmayan Beta Bloker Riski",
+        "ar": "استكشاف موجه: خطر حاصرات بيتا غير الانتقائية"
+      },
+      "prompt": {
+        "tr": "Astımlı bir hipertansiyon hastasına seçici olmayan beta bloker propranolol verilirse ne olur?",
+        "ar": "إذا أعطي مريض ضغط مصاب بالربو حاصر بيتا غير انتقائي مثل Propranolol، فماذا يحدث؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Astımlı hastalarda yalnızca kardiyoseçici beta-1 blokerler (metoprolol) kullanılabilir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph41-3",
+            "text": {
+              "tr": "Beta-2 reseptörleri de bloke olur ve ölümcül bronkospazm (astım krizi) tetiklenir.",
+              "ar": "تحظر مستقبلات beta-2 أيضاً مما يثير تشنجاً قصبياً مميتاً (نوبة ربو حادة)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph41-4",
+            "text": {
+              "tr": "Astımı tamamen iyileşir.",
+              "ar": "يشفى الربو لديه تماماً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod4-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Adrenerjik Reseptörlerin Sınıflandırılması",
+        "ar": "التصنيف الصيدلاني للمستقبلات الأدرينالينية"
+      },
+      "prompt": {
+        "tr": "Ahlquist (1948): Alfa (damar büzüşmesi, midriyazis) ve Beta (kalp uyarımı, bronkodilasyon). Lands (1967): Beta-1 ve Beta-2 alt tipleri.",
+        "ar": "تصنيف Ahlquist و Lands: مستقبلات Alpha لانقباض الأوعية، Beta-1 لتنبيه القلب، و Beta-2 لتوسيع القصبات والأوعية العضلية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "adrenerjik transmisyon",
+          "arContext": "النقل العصبي الأدريناليني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Alfa-2 Presinaptik Otoreseptör",
+        "ar": "فحص المفهوم: المستقبل التلقائي قبيل المشبكي Alpha-2"
+      },
+      "prompt": {
+        "tr": "Presinaptik sinir ucunda bulunan alfa-2 reseptörü uyarıldığında noradrenalin salınımına ne olur?",
+        "ar": "عند تنشيط مستقبلات alpha-2 قبيل المشبكية على النهاية العصبية، ماذا يحدث لتحرر النورأدرينالين؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Alfa-2 otoreseptörleri sempatik fren mekanizmasıdır (klonidin etki mekanizması)."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph41-5",
+            "text": {
+              "tr": "Gi kenetlidir; negatif geri bildirimle noradrenalin salınımını durdurur.",
+              "ar": "مقترنة بـ Gi؛ وتوقف تحرر النورأدرينالين عبر التلقيم الراجع السلبي."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph41-6",
+            "text": {
+              "tr": "Salınımı 10 kat artırır.",
+              "ar": "تزيد التحرر بعشرة أضعاف."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod4-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Acil: Anafilaktik Şokta Adrenalin",
+        "ar": "طوارئ سريرية: الأدرينالين في الصدمة التأقية"
+      },
+      "prompt": {
+        "tr": "Anafilakside adrenalin neden hayat kurtarıcıdır? Alfa-1 ile çöken tansiyonu fırlatır, Beta-2 ile tıkanan soluk borusunu açar.",
+        "ar": "لماذا ينقذ Adrenaline حياة مريض الصدمة التأقية؟ يرفع الضغط المنهار عبر alpha-1، ويفتح مجرى الهواء المختنق عبر beta-2."
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Adrenalin anafilaksideki patolojilerin tam fizyolojik antagonistidir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph41-7",
+            "text": {
+              "tr": "Hem alfa hem beta reseptörleri güçlüce uyararak çoklu fizyolojik kurtarma sağlar.",
+              "ar": "لأنه ينشط كلاً من مستقبلات ألفا وبيتا بقوة محققاً إنقاذاً فسيولوجياً شاملاً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph41-8",
+            "text": {
+              "tr": "Yalnızca ağrıyı keser.",
+              "ar": "لأنه يسكن الألم فقط."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod4-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Easson-Stedman ve Epinefrin",
+        "ar": "استرجاع معرفي: Easson-Stedman والأدرينالين"
+      },
+      "prompt": {
+        "tr": "Medchem Modül 2 de gördüğümüz gibi (R)-adrenalinin beta reseptörüne sıkı tutunmasını sağlayan 3. fonksiyonel kulp neydi?",
+        "ar": "كما رأينا في مساق الكيمياء، ما هو المقبض الوظيفي الثالث الذي يثبت (R)-adrenaline بقوة على مستقبلات بيتا؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "beta-hidroksil grubu",
+          "arContext": "مجموعة بيتا-هيدروكسيل"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Kolinerjik Sistem ve Asetilkolin (Ders 8)",
+        "ar": "ربط مفاهيمي: الجهاز الكوليني والأسيتيل كولين (الدرس 8)"
+      },
+      "prompt": {
+        "tr": "Sempatik sistemin dengeli zıddı parasempatik sistemdir. Bir sonraki derste muskarinik ve nikotinik kolinerjik iletimi inceleyeceğiz.",
+        "ar": "النظير الموازن للجهاز الودي هو الجهاز نظير الودي. في الدرس القادم، سنستكشف النقل الكوليني الموسكاريني والنيكوتيني."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kolinerjik sistem",
+          "arContext": "الجهاز العصبي الكوليني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Adrenerjik Eşleştirme",
+        "ar": "اختبار الإتقان: مواءمة المستقبلات الأدرينالينية"
+      },
+      "prompt": {
+        "tr": "Kalpte atım hızını ve kasılma gücünü artıran primer sempatik reseptör hangisidir?",
+        "ar": "ما هو المستقبِل الودي الأساسي المسؤول عن زيادة سرعة وقوة انقباض القلب؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph41-9",
+            "text": {
+              "tr": "Beta-1 adrenerjik reseptör (Gs kenetli).",
+              "ar": "مستقبِل Beta-1 الأدريناليني (المقترن بـ Gs)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph41-10",
+            "text": {
+              "tr": "Alfa-1 reseptör.",
+              "ar": "مستقبِل Alpha-1."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

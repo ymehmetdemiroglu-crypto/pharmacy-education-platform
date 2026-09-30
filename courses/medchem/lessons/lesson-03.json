@@ -1,0 +1,647 @@
+{
+  "id": "mc-mod2-les1",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-02",
+  "title": {
+    "tr": "Fonksiyonel Gruplar ve Moleküller Arası Bağlar",
+    "ar": "المجموعات الوظيفية والروابط بين الجزيئات"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "İlaç-reseptör kompleksini bir arada tutan kovalent olmayan bağların enerjilerini ve SAR katkılarını analiz etmek.",
+    "ar": "تحليل طاقات الروابط غير التساهمية ومساهمات SAR التي تحافظ على تماسك معقد الدواء والمستقبِل."
+  },
+  "misconceptions": [
+    {
+      "tr": "Kovalent olmayan bağların ilacın reseptöre sıkıca tutunması için çok zayıf olduğu yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الروابط غير التساهمية أضعف من أن تثبت الدواء على المستقبِل بقوة."
+    },
+    {
+      "tr": "Hidrofobik etkileşimlerin bir çekme kuvvetinden kaynaklandığı düşüncesi.",
+      "ar": "الظن الخاطئ بأن التأثير الكاره للماء ينشأ من قوة تجاذب ذاتية بين السلاسل الكربونية."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Fonksiyonel gruplar.pdf",
+      "page": 12
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC03-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Intermolecular Forces & Drug-Receptor Interactions",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod2-les1-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "İyonik Bağ Enerjisi",
+      "prompt": "İlaç-reseptör etkileşiminde iyonik bağın ortalama serbest enerji katkısı nedir?",
+      "answer": "Yaklaşık -5 ila -10 kcal/mol arasında en güçlü kovalent olmayan bağ enerjisidir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les1-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Hidrojen Bağı Enerjisi",
+      "prompt": "Klasik bir hidrojen bağının serbest enerjiye katkısı ne kadardır?",
+      "answer": "Yaklaşık -2 ila -5 kcal/mol düzeyindedir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les1-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Hidrofobik Etkinin Termodinamik Temeli",
+      "prompt": "Hidrofobik grupların bir araya gelmesi hangi termodinamik parametreyle sürüklenir?",
+      "answer": "Su moleküllerinin serbest kalması sonucu artan entropi (+Delta S) ile sürüklenir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Fonksiyonel Gruplar ve Moleküller Arası Bağlar"
+    },
+    "ar": {
+      "title": "المجموعات الوظيفية والروابط بين الجزيئات"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod2-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Neden Kovalent Bağ Değil?",
+        "ar": "لماذا ليست روابط تساهمية؟"
+      },
+      "prompt": {
+        "tr": "Çoğu ilaç neden hedefine kopmayan kovalent bağlarla değil de zayıf kovalent olmayan bağlarla bağlanmayı tercih eder?",
+        "ar": "لماذا تفضل معظم الأدوية الارتباط بأهدافها عبر روابط ضعيفة غير تساهمية بدلاً من الروابط التساهمية الدائمة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "non-kovalent bağ",
+          "arContext": "الرابطة غير التساهمية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Bağların Toplamsal Gücü",
+        "ar": "توقع: القوة التراكمية للروابط"
+      },
+      "prompt": {
+        "tr": "Tek bir iyonik bağ, iki hidrojen bağı ve üç van der Waals teması bir araya geldiğinde ne olur?",
+        "ar": "عندما تجتمع رابطة أيونية واحدة مع رابطتين هيدروجينيتين وثلاث نقاط تلامس van der Waals، ماذا يحدث؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Bireysel zayıf bağlar toplanarak devasa bir afinite ve seçicilik üretir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc21-1",
+            "text": {
+              "tr": "Zayıf kalır ve ligand hemen ayrışır.",
+              "ar": "يبقى الارتباط ضعيفاً وينفصل الربيط فوراً."
+            },
+            "isCorrect": false
+          },
+          {
+            "id": "opt-mc21-2",
+            "text": {
+              "tr": "Enerjiler toplanarak nanomolar afiniteli son derece kararlı bir kompleks oluşturur.",
+              "ar": "تتراكم الطاقات لتشكل معقداً شديد الاستقرار بألفة في نطاق النانومولار."
+            },
+            "isCorrect": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: Cırt Cırt (Velcro) Prensibi",
+        "ar": "نموذج حدسي: مبدأ أشرطة الفيلكرو"
+      },
+      "prompt": {
+        "tr": "Tek bir plastik kanca hiçbir şeyi tutamaz; ancak binlerce minik kanca birleştiğinde güçlü bir yükü taşır.",
+        "ar": "خيط بلاستيكي واحد من الفيلكرو لا يمسك شيئاً، لكن تكاتف مئات الخيوط الصغيرة معاً يولد قوة إمساك هائلة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kooperatif bağlanma",
+          "arContext": "الارتباط التعاوني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Etkileşim Ağları ve Bağ Mesafeleri",
+        "ar": "شبكات التفاعل والمسافات البينية"
+      },
+      "prompt": {
+        "tr": "İyonik bağlar 2.5-4.0 Å, hidrojen bağları 2.7-3.2 Å mesafede etkilidir. Mesafe 1 Å uzadığında kuvvet hızla çöker.",
+        "ar": "تعمل الروابط الأيونية عند مسافة 2.5-4.0 Å والهيدروجينية عند 2.7-3.2 Å. أي تباعد بمقدار 1 Å يضعف القوة سريعاً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "bağ mesafesi",
+          "arContext": "مسافة الرابطة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Laboratuvar: SAR Explorer",
+        "ar": "المختبر التفاعلي: مستكشف SAR"
+      },
+      "prompt": {
+        "tr": "İlaç iskeletine sırasıyla amino, hidroksil ve fenil grupları ekleyerek toplam serbest bağlanma enerjisindeki (Delta G) artışı ölçün.",
+        "ar": "أضف مجموعات الأمين والهيدروكسيل والفينيل إلى الهيكل الدوائي لقياس الزيادة في طاقة الارتباط الحرة (Delta G)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "SarExplorer",
+      "widget": {
+        "type": "SarExplorer",
+        "config": {
+          "baseMolecule": "phenylethylamine",
+          "targetPocket": "adrenergic_beta1"
+        }
+      }
+    },
+    {
+      "id": "mc-mod2-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Hidroksil Grubunun Katkısı",
+        "ar": "استكشاف موجه: مساهمة مجموعة الهيدروكسيل"
+      },
+      "prompt": {
+        "tr": "Benzen halkasına fenolik bir -OH grubu eklendiğinde bağlanma enerjisi yaklaşık ne kadar artar?",
+        "ar": "عند إضافة مجموعة -OH فينولية إلى حلقة البنزين، كم تزداد طاقة الارتباط الحرة تقريباً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Fenolik -OH eklenmesi ilacın afinitesini yaklaşık 100 kat artırır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc21-3",
+            "text": {
+              "tr": "-3.0 ila -4.5 kcal/mol (hidrojen bağı katkısı).",
+              "ar": "حوالي -3.0 إلى -4.5 kcal/mol (مساهمة الرابطة الهيدروجينية)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc21-4",
+            "text": {
+              "tr": "-50 kcal/mol (kovalent bağ gücü).",
+              "ar": "حوالي -50 kcal/mol (قوة الرابطة التساهمية)."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Formal Termodinamik: Gibbs Serbest Enerjisi",
+        "ar": "الديناميكا الحرارية الرسمية: طاقة Gibbs الحرة"
+      },
+      "prompt": {
+        "tr": "Delta G = Delta H - T * Delta S denklemi bağlanmayı yönetir. Delta G negatifleştikçe ayrışma sabiti (Kd) küçülür ve afinite katlanır.",
+        "ar": "تحكم معادلة Delta G = Delta H - T * Delta S الارتباط. كلما ازدادت سلبية Delta G تناقص ثابت التفكك (Kd) وتضاعفت الألفة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Gibbs serbest enerjisi",
+          "arContext": "طاقة غيبس الحرة"
+        },
+        {
+          "term": "Kd",
+          "arContext": "ثابت التفكك"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Hidrofobik Etkinin İtici Gücü",
+        "ar": "فحص المفهوم: القوة الدافعة للتأثير الكاره للماء"
+      },
+      "prompt": {
+        "tr": "İki apolar alifatik zincir reseptör cebinde bir araya geldiğinde Gibbs enerjisindeki düşüşün temel kaynağı nedir?",
+        "ar": "عندما تتجمع سلسلتان أليفاتيتان في جيب (reseptör)، ما المصدر الأساسي لانخفاض طاقة غيبس الحرة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Hidrofobik etki entalpik değil, esasen entropik bir kazançtır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc21-5",
+            "text": {
+              "tr": "Apolar gruplar etrafındaki düzenli su kafeslerinin dağılmasıyla artan entropi (+Delta S).",
+              "ar": "تفكك أقفاص الماء المنظمة حول السلاسل مما يرفع الإنتروبيا (+Delta S)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc21-6",
+            "text": {
+              "tr": "Apolar gruplar arasındaki güçlü nükleer çekim.",
+              "ar": "التجاذب النووي القوي بين المجموعات غير القطبية."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Rasyonel İlaç Tasarımı: İmatinib Örneği",
+        "ar": "تصميم الدواء الرشيد: نموذج Imatinib"
+      },
+      "prompt": {
+        "tr": "Lösemi ilacı imatinib, kinaz hedefinde bir cepte ilave hidrojen bağı ve van der Waals etkileşimleri kurarak seçiciliğini nasıl kazanmıştır?",
+        "ar": "كيف اكتسب دواء Imatinib انتقائيته العالية لكيناز اللوكيميا عبر روابط هيدروجينية وتماسات van der Waals إضافية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "İmatinib in yüksek seçiciliği spesifik non-kovalent ağların kusursuz geometrisine dayanır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc21-7",
+            "text": {
+              "tr": "Aktif olmayan konformasyondaki spesifik amino asitlerle çoklu temas kurarak.",
+              "ar": "عبر تشكيل تماسات متعددة مع أحماض أمينية محددة في التشكيل غير النشط."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc21-8",
+            "text": {
+              "tr": "Hedefi tamamen kovalent bağla yakarak.",
+              "ar": "بحرق الهدف نهائياً برابطة تساهمية لا عكوسة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod2-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: İyonlaşmış Karboksilat",
+        "ar": "استرجاع معرفي: مجموعة الكربوكسيل المتأينة"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi aspirin fizyolojik pH 7.4 te hangi yüklü grubu oluşturarak iyonik bağa hazır hale gelir?",
+        "ar": "كما رأينا في الوحدة 1، ما هي المجموعة المشحونة التي يشكلها aspirin عند pH 7.4 الفسيولوجي لتكون جاهزة للرابطة الأيونية؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "karboksilat anyonu",
+          "arContext": "أنيون الكربوكسيل"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Kiral Geometri ve 3 Nokta Modeli",
+        "ar": "ربط مفاهيمي: الهندسة الكيرالية ونموذج النقاط الثلاث"
+      },
+      "prompt": {
+        "tr": "Bu fonksiyonel grupların uzaydaki 3 boyutlu dizilimi kiraliteyle belirlenir. Sıradaki derste Easson-Stedman 3-noktalı bağlanma kuralını keşfedeceğiz.",
+        "ar": "يتحدد التموضع الفراغي ثلاثي الأبعاد لهذه المجموعات بالكيرالية. في الدرس القادم سنكتشف نموذج Easson-Stedman ثلاثي النقاط."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kiralite",
+          "arContext": "الكيرالية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod2-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Non-Kovalent Ağların Gücü",
+        "ar": "اختبار الإتقان: قوة الشبكات غير التساهمية"
+      },
+      "prompt": {
+        "tr": "İlaç-reseptör bağlanmasında en yüksek enerjili ve en uzun menzilli non-kovalent etkileşim türü hangisidir?",
+        "ar": "ما هو نمط التفاعل غير التساهمي الأعلى طاقة والأطول مدى في ارتباط الدواء مع (reseptör)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tebrikler! Moleküller arası bağları başarıyla tamamladınız. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc21-9",
+            "text": {
+              "tr": "İyonik (elektrostatik) bağ.",
+              "ar": "الرابطة الأيونية (الكهروستاتيكية)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc21-10",
+            "text": {
+              "tr": "Dipol-dipol bağı.",
+              "ar": "رابطة ثنائي القطب."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

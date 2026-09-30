@@ -1,0 +1,648 @@
+{
+  "id": "pharm-mod2-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-02",
+  "title": {
+    "tr": "Kademeli Doz-Yanıt Eğrileri ve İntrinsik Etkinlik",
+    "ar": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Agonistlerin etki gücü (EC50) ile intrinsik etkinlik (Emax) kavramlarını ayırmak ve yedek reseptör teorisini kavramak.",
+    "ar": "التمييز بين قوة الدواء (EC50) والفعالية الذاتية (Emax) وفهم نظرية المستقبِلات الاحتياطية."
+  },
+  "misconceptions": [
+    {
+      "tr": "Daha güçlü (potensi yüksek) bir ilacın her zaman daha büyük bir maksimum biyolojik etki (Emax) üreteceği yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الدواء الأكثر قوة (potency) يحقق حتماً استجابة حيوية أعظمية (Emax) أكبر."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Farmakodinami-Doz Yanıt.pdf",
+      "page": 12
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH03-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Graded Dose-Response Relationships and Spare Receptors",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod2-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Potens vs Efikasite",
+      "prompt": "Bir ilacın potensi EC50 ile, efikasitesi (maksimum etkinliği) hangi parametreyle ölçülür?",
+      "answer": "Potens EC50 (eğrinin yatay konumu), efikasite Emax (eğrinin dikey tavanı) ile ölçülür.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod2-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Parsiyel Agonist Tanımı",
+      "prompt": "Tüm reseptörleri doldursa bile tam agonist kadar maksimum yanıt üretemeyen ilaca ne ad verilir?",
+      "answer": "Parsiyel agonist (kısmi agonist; intrinsik aktivitesi 0 < alpha < 1).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod2-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Yedek Reseptör (Spare Receptor)",
+      "prompt": "Bir dokuda maksimum yanıt için reseptörlerin yalnızca %10 u yetiyorsa kalan %90 a ne ad verilir?",
+      "answer": "Yedek reseptörler (Receptor Reserve). Bu dokularda EC50 değeri Kd den belirgin küçüktür.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Kademeli Doz-Yanıt Eğrileri ve İntrinsik Etkinlik"
+    },
+    "ar": {
+      "title": "منحنيات الجرعة والاستجابة التدرجية والفعالية الذاتية"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod2-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Yarış Arabası ve Yük Treni",
+        "ar": "سيارة السباق وقطار البضائع"
+      },
+      "prompt": {
+        "tr": "Fentanil morfinden 100 kat daha az dozla ağrıyı keser; buprenorfin ise morfinden daha sıkı bağlanmasına rağmen solunumu asla durdurmaz. Neden?",
+        "ar": "يسكن Fentanyl الألم بجرعة أقل بـ 100 ضعف من المورفين؛ بينما يرتبط Buprenorphine أشد دون أن يثبط التنفس كلياً. لماذا؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "potens",
+          "arContext": "القوة الدوائية"
+        },
+        {
+          "term": "efikasite",
+          "arContext": "الفعالية القصوى"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Potens mi Etkinlik mi?",
+        "ar": "توقع: القوة أم الفعالية؟"
+      },
+      "prompt": {
+        "tr": "Daha düşük dozda (daha küçük EC50) etki gösteren bir ilaç mutlaka daha yüksek bir maksimum yanıta (Emax) ulaşır mı?",
+        "ar": "هل الدواء الذي يعمل بجرعة أقل (EC50 أصغر) يحقق بالضرورة استجابة قصوى أعظم (Emax)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Potens (EC50) ve Efikasite (Emax) tamamen bağımsız farmakolojik özelliklerdir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph21-1",
+            "text": {
+              "tr": "Hayır, potens yatay eksendedir; Emax ise intrinsik etkinliğe bağlı dikey tavandır.",
+              "ar": "لا، فالقوة على المحور الأفقي بينما يمثل Emax السقف الرأسي للفعالية الذاتية."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph21-2",
+            "text": {
+              "tr": "Evet, potensi yüksek olan her zaman daha etkilidir.",
+              "ar": "نعم، فالأكثر قوة هو دائماً الأكثر فعالية مطلقة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Gaz Pedalı vs Tavan Hızı",
+        "ar": "تشبيه حدسي: دواسة الوقود مقابل السرعة القصوى"
+      },
+      "prompt": {
+        "tr": "Spor araba hafifçe basınca hızlanır (yüksek potens), ama bir kamyon daha ağır gitse de 50 ton yük taşır (yüksek efikasite).",
+        "ar": "تتسارع سيارة السباق بأدنى ضغطة وقود (قوة عالية)، لكن شاحنة البضائع تنقل حمولة 50 طناً رغم بطئها (فعالية عالية)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "intrinsik etkinlik",
+          "arContext": "الفعالية الذاتية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Yarı-Logaritmik Sigmoidal Eğri",
+        "ar": "المنحنى اللوغاريتمي السيني"
+      },
+      "prompt": {
+        "tr": "Doz logaritmik eksende çizildiğinde eğri S şeklini alır. Orta nokta EC50 yi (potens), plato yüksekliği ise Emax ı (etkinlik) verir.",
+        "ar": "برسم الجرعة لوغاريتمياً يتشكل منحنى سيني S. تمثل نقطة المنتصف EC50 (القوة)، بينما يعطي ارتفاع السقف Emax (الفعالية)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "EC50",
+          "arContext": "التركيز الفعال النصفي EC50"
+        },
+        {
+          "term": "Emax",
+          "arContext": "الاستجابة القصوى Emax"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Dose-Response Curve Modulator",
+        "ar": "محاكي تفاعلي: معدل منحنى الجرعة والاستجابة"
+      },
+      "prompt": {
+        "tr": "Agonist konsantrasyonunu değiştirin. Parsiyel agonist (alpha = 0.5) seçerek eğri tavanının nasıl çöktüğünü gözlemleyin.",
+        "ar": "عدل تركيز المشبه. اختر مشبهاً جزئياً (alpha = 0.5) ولاحظ كيف يهبط سقف المنحنى رأسياً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "mode": "agonist_intrinsic_efficacy",
+          "baselineEC50": 1e-7,
+          "spareReceptorsPercent": 0
+        }
+      }
+    },
+    {
+      "id": "pharm-mod2-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Yedek Reseptörlerin Gücü",
+        "ar": "استكشاف موجه: قوة المستقبِلات الاحتياطية"
+      },
+      "prompt": {
+        "tr": "Simülatörde yedek reseptör sürgüsünü %80 e getirin. Maksimum yanıta ulaşmak için reseptörlerin ne kadarını doldurmak yetti?",
+        "ar": "اضبط زالق المستقبِلات الاحتياطية على 80%. كم نسبة إشغال المستقبلات الكافية لبلوغ الاستجابة القصوى التامة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Yedek reseptörler hücre içi sinyal amplifikasyonu sağlayarak sistemi aşırı duyarlı kılar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph21-3",
+            "text": {
+              "tr": "Yalnızca %20 dolulukla %100 doku yanıtı alındı; EC50 sola kayarak potens arttı.",
+              "ar": "كفى إشغال 20% فقط لتحقيق 100% من الاستجابة؛ وانزاح EC50 يساراً بازدياد القوة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph21-4",
+            "text": {
+              "tr": "Hala %100 doluluk gerekir.",
+              "ar": "ما زال يتطلب إشغال 100% بالكامل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Stephenson ve Furchgott Reseptör Teorisi",
+        "ar": "نظرية Stephenson و Furchgott للمستقبلات"
+      },
+      "prompt": {
+        "tr": "Yanıt = f(S * [L] / ([L] + Kd)). İntrinsik etkinlik (e) doku faktörüyle çarpılarak stimülüsü üretir. Parsiyel agonistte e düşüktür.",
+        "ar": "الاستجابة = f(S * [L] / ([L] + Kd)). تضرب الفعالية الذاتية بعامل التضخيم النسيجي لتوليد المنبه الخلوي."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "yedek reseptör",
+          "arContext": "المستقبِلات الاحتياطية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Parsiyel Agonistin Çift Karakteri",
+        "ar": "فحص المفهوم: ازدواجية المشبه الجزئي"
+      },
+      "prompt": {
+        "tr": "Ortamda yüksek doz tam agonist (morfin) varken parsiyel agonist (buprenorfin) eklenirse ne olur?",
+        "ar": "بوجود تركيز عالٍ من مشبه تام (Morphine)، ماذا يحدث عند إضافة مشبه جزئي (Buprenorphine)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Parsiyel agonistler tam agonistin yanında yarışmalı antagonist gibi davranırlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph21-5",
+            "text": {
+              "tr": "Reseptörleri kaparak tam agonisti kovar ve yanıtı düşürerek antagonist gibi davranır.",
+              "ar": "يزاحم المشبه التام على المستقبلات ويهبط بالاستجابة متصرفاً كمناهض (antagonist)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph21-6",
+            "text": {
+              "tr": "Etki ikiye katlanır.",
+              "ar": "يتضاعف التأثير إلى الضعف."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Uygulama: Opioid Yoksunluk Tedavisi",
+        "ar": "تطبيق سريري: علاج الإدمان على الأفيونات"
+      },
+      "prompt": {
+        "tr": "Buprenorfin eroin bağımlılığında neden tercih edilir? Yüksek afiniteyle krizi önlerken sub-maksimal efikasiteyle solunumu korur.",
+        "ar": "لماذا يفضل Buprenorphine في علاج إدمان الهيروين؟ يمنع أعراض الانسحاب بألفته العالية ويحمي التنفس بفعاليته الجزئية."
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Parsiyel agonizma geniş bir terapötik güvenlik penceresi sunar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph21-7",
+            "text": {
+              "tr": "Tavan etkisi (ceiling effect) sayesinde ölümcül solunum depresyonu yapmaz.",
+              "ar": "بفضل تأثير السقف (ceiling effect) يمنع حدوث تثبيط تنفسي مميت."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph21-8",
+            "text": {
+              "tr": "Vücuttan 5 dakikada atıldığı için.",
+              "ar": "لأنه يطرح من الجسم خلال 5 دقائق."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod2-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Kd Ayrışma Sabiti",
+        "ar": "استرجاع معرفي: ثابت التفكك Kd"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi reseptörlerin yarısının bağlandığı serbest ligand konsantrasyonuna ne ad veriliyordu?",
+        "ar": "كما رأينا في الوحدة 1، ما هو تركيز الربيط الحر الذي يشغل نصف المستقبِلات تماماً؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Kd sabiti",
+          "arContext": "ثابت Kd"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Reseptör Antagonizmi ve Blokaj (Ders 4)",
+        "ar": "ربط مفاهيمي: مناهضة المستقبِلات والحصار (الدرس 4)"
+      },
+      "prompt": {
+        "tr": "Agonistlerin yanıtını sıfırlayan veya eğriyi sağa kaydıran antagonistleri bir sonraki derste Schild analiziyle öğreneceğiz.",
+        "ar": "في الدرس القادم، سنتعلم كيف تصفر المناهضات (antagonist) الاستجابة أو تزيح المنحنى يميناً عبر تحليل Schild."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "antagonist",
+          "arContext": "المناهض (Antagonist)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod2-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Potens ve Efikasite Ayrımı",
+        "ar": "اختبار الإتقان: التفريق بين القوة والفعالية"
+      },
+      "prompt": {
+        "tr": "Doz-yanıt eğrisinde ilacın sol veya sağda yer alması neyi, eğrinin ulaştığı maksimum tavan yüksekliği neyi gösterir?",
+        "ar": "في منحنى الجرعة والاستجابة، ماذا يمثل تموضع المنحنى يميناً أو يساراً، وماذا يمثل ارتفاع سقفه الأعظمي؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph21-9",
+            "text": {
+              "tr": "Yatay konum potenstir (EC50); dikey tavan efikasitedir (Emax).",
+              "ar": "الموقع الأفقي يمثل القوة (EC50)؛ والسقف الرأسي يمثل الفعالية (Emax)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph21-10",
+            "text": {
+              "tr": "Her ikisi de potenstir.",
+              "ar": "كلاهما يعبران عن القوة فقط."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -35,7 +35,7 @@ test.describe('Motion Verification & Jank Budget Suite (A2 Protocol)', () => {
       expect(buttonStyle.transform).toBe('none');
 
       // 2. Open Paywall Modal and verify no slide/scale transform occurred
-      await page.getByRole('button', { name: /open paywall/i }).first().click();
+      await page.getByRole('button', { name: /open paywall|abonelik ve ödeme|aç|فتح نافذة الاشتراك/i }).first().click();
       await expect(page.getByRole('dialog')).toBeVisible();
 
       const modalContentTransform = await page.getByRole('dialog').evaluate((el) => {
@@ -189,15 +189,15 @@ test.describe('Motion Verification & Jank Budget Suite (A2 Protocol)', () => {
       });
 
       // Advance through first 4 steps and verify smooth transition
-      await page.getByRole('button', { name: /Continue to Step 2/i }).click();
+      await page.getByRole('button', { name: /Continue to Step 2|Adım 2'e Devam Et|المتابعة إلى الخطوة 2/i }).click();
       await page.waitForTimeout(500);
 
-      await page.getByRole('radio', { name: /approaches unity|drops to zero|High relative saturation/i }).first().click();
+      await page.getByRole('radio').first().click();
       await page.waitForTimeout(300);
-      await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome/i }).click();
+      await page.getByRole('button', { name: /Commit Hypothesis & Reveal Outcome|Hipotezi Onayla ve Sonucu Gör|تأكيد الفرضية وكشف النتيجة/i }).click();
       await page.waitForTimeout(500);
 
-      await page.getByRole('button', { name: /Continue to Step 3/i }).click();
+      await page.getByRole('button', { name: /Continue to Step 3|Adım 3'e Devam Et|المتابعة إلى الخطوة 3/i }).click();
       await page.waitForTimeout(500);
 
       const metrics = await page.evaluate(() => {

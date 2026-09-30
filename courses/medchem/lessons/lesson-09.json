@@ -1,0 +1,642 @@
+{
+  "id": "mc-mod5-les1",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-05",
+  "title": {
+    "tr": "Faz I Fonksiyonelleşme: Sitokrom P450 Hidroksilasyon Mekanizmaları",
+    "ar": "المرحلة الأولى من التحول الحيوي: آليات هدرلة CYP450"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Sitokrom P450 katalitik döngüsünü ve alifatik/aromatik hidroksilasyon mekanizmalarını analiz etmek.",
+    "ar": "تحليل الدورة التحفيزية لإنزيمات CYP450 وآليات الهدرلة الأليفاتية والعطرية للأدوية."
+  },
+  "misconceptions": [
+    {
+      "tr": "Metabolizmanın her zaman bir ilacı tamamen etkisiz hale getirdiği yanılgısı (ön-ilaçlar ve toksik metabolitler vardır).",
+      "ar": "الاعتقاد الخاطئ بأن الاستقلاب يعطل فعالية الدواء دائماً (توجد أدوية طليعية ومستقلبات سامة)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 8
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC09-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Cytochrome P450 Mechanisms & Phase I Biotransformation",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod5-les1-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "CYP450 Katalitik Reaktifi",
+      "prompt": "CYP450 döngüsünde substratın C-H bağından hidrojen koparan yüksek enerjili reaktif ara ürün nedir?",
+      "answer": "Hem demiri-oksen kompleksi: [Fe(IV)=O, porfirin radikal katyonu] türevidir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les1-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Alifatik Hidroksilasyon Bölgeleri",
+      "prompt": "Alkil yan zincirlerinde CYP450 genellikle hangi karbonları öncelikle hidroksiller?",
+      "answer": "En uçtaki omega ve sondan bir önceki (omega-1) karbon atomlarını.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les1-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Aren Oksit ve Epoksit Hidrolaz",
+      "prompt": "Aromatik halka hidroksilasyonunda oluşan reaktif epoksit ara ürün hangi enzimle dihidrodiollere dönüştürülür?",
+      "answer": "Epoksit hidrolaz enzimi toksik aren oksitleri zararsız trans-dihidrodiollere hidroliz eder.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Faz I Fonksiyonelleşme: Sitokrom P450 Hidroksilasyon Mekanizmaları"
+    },
+    "ar": {
+      "title": "المرحلة الأولى من التحول الحيوي: آليات هدرلة CYP450"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod5-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Yağlı İlaçların Vücuttan Kaçışı",
+        "ar": "هروب الأدوية الدهنية من الجسم"
+      },
+      "prompt": {
+        "tr": "Böbrekler yalnızca suda çözünen polar molekülleri atabilir. Vücut aşırı lipofil bir ilacı idrarla atabilmek için ilk önce ne yapar?",
+        "ar": "تطرح الكلى فقط الجزيئات القطبية المنحلة بالماء. ماذا يفعل الجسم أولاً ليتمكن من طرح دواء فائق الدهنية في البول؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Faz I metabolizması",
+          "arContext": "المرحلة الأولى من الاستقلاب"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Moleküle Saplanan Kanca",
+        "ar": "توقع: زرع الخطاف الجزيئي"
+      },
+      "prompt": {
+        "tr": "Faz I reaksiyonlarının temel kimyasal amacı ilacı doğrudan tamamen suda çözünür yapmak mıdır?",
+        "ar": "هل الهدف الكيميائي الأساسي لتفاعلات المرحلة الأولى هو جعل الدواء منحلاً بالماء تماماً وبشكل مباشر؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Faz I fonksiyonelleşme reaksiyonudur; moleküle reaktif ve polar bir kanca takar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc51-1",
+            "text": {
+              "tr": "Hayır, asıl amaç moleküle polar bir fonksiyonel kulp (-OH, -NH2, -COOH) takarak Faz II ye hazırlamaktır.",
+              "ar": "لا، بل الهدف زرع مقبض وظيفي قطبي (-OH، -NH2، -COOH) لتهيئة الجزيء للمرحلة الثانية."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc51-2",
+            "text": {
+              "tr": "Evet, tek bir Faz I reaksiyonu ilacı hemen tamamen hidrofilik yapar.",
+              "ar": "نعم، فتفاعل واحد من المرحلة الأولى يحول الدواء فوراً إلى مفرط الانحلال بالماء."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Pürüzsüz Topa Kulp Takmak",
+        "ar": "تشبيه حدسي: تثبيت مقبض على كرة ملساء"
+      },
+      "prompt": {
+        "tr": "Pürüzsüz kaygan bir mermer topu iple bağlayamazsınız; önce üzerine bir kanca vidası (-OH) takmalı, sonra devasa bir halat (glukuronid) bağlamalısınız.",
+        "ar": "لا يمكنك ربط كرة رخامية ملساء؛ يجب أولاً تثبيت برغي خطافي (-OH) لربط حبل الإخراج الضخم به لاحقاً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "fonksiyonelleşme",
+          "arContext": "إدخال المجموعات الوظيفية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "CYP450 Katalitik Hem Döngüsü",
+        "ar": "دورة الهيم التحفيزية في CYP450"
+      },
+      "prompt": {
+        "tr": "Hekzakodine Fe(III) substratı bağlar -> 1e- ile Fe(II) ye indirgenir -> O2 bağlar -> ikinci elektronla demir-oksen radikali C-H bağını oksitler.",
+        "ar": "يرتبط الحديد Fe(III) بالدواء -> يختزل بإلكترون إلى Fe(II) -> يربط الأكسجين -> يولد جذر الحديد-أوكسين عالي الطاقة لهدرلة رابطة C-H."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "CYP450 katalitik döngüsü",
+          "arContext": "الدورة التحفيزية لـ CYP450"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Metabolism Map",
+        "ar": "محاكي تفاعلي: خارطة الاستقلاب"
+      },
+      "prompt": {
+        "tr": "İlaç substratını seçin; alifatik zincirde omega ve omega-1 hidroksilasyon ürünlerini, aromatik halkada epoksit ara ürünlerini harita üzerinde izleyin.",
+        "ar": "اختر الجزيء الدوائي وراقب على الخارطة التفاعلية نواتج الهدرلة في موقعي omega و omega-1 وتشكل الإيبوكسيد في الحلقات العطرية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "MetabolismMap",
+      "widget": {
+        "type": "MetabolismMap",
+        "config": {
+          "substrate": "diazepam",
+          "enzymes": [
+            "CYP3A4",
+            "CYP2C19"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Aromatic Epoxidation ve Toksisite",
+        "ar": "استكشاف موجه: الإيبوكسيد العطري والسمية"
+      },
+      "prompt": {
+        "tr": "Aromatik halka oksitlendiğinde oluşan aren oksit ara ürünü epoksit hidrolaz enzimiyle nötralize edilmezse ne olur?",
+        "ar": "عند أكسدة الحلقة العطرية لتشكيل Aren oxide، ماذا يحدث إذا لم يحله إنزيم Epoxide hydrolase فوراً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Reaktif epoksitler hücresel makromoleküllere saldırarak doku nekrozu yapabilir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc51-3",
+            "text": {
+              "tr": "Hücresel DNA ve proteinlere kovalent bağlanarak hepatotoksisite ve mutajenite yaratır.",
+              "ar": "يرتبط تساهمياً بالبروتينات والـ DNA الخلوي مسبباً سمية كبدية وطفرات جينية."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc51-4",
+            "text": {
+              "tr": "Zararsız gaz olarak akciğerden uçar.",
+              "ar": "يتطاير كغاز غير ضار عبر الرئتين."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Kimyasal Mekanizma: Radikal Geri Tepmesi (Radical Rebound)",
+        "ar": "الآلية الكيميائية: الارتداد الجذري (Radical Rebound)"
+      },
+      "prompt": {
+        "tr": "[Fe(IV)=O] türü C-H bağından hidrojen radikali kopararak [Fe(IV)-OH] ve karbon radikali üretir. Ardından -OH hızla karbona transfer olur.",
+        "ar": "ينتزع مركب [Fe(IV)=O] جذراً هيدروجينياً ليشكل جذر كربوني و [Fe(IV)-OH]، ثم ترتد مجموعة -OH بسرعة فائقة لترتبط بالكربون."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "radikal geri tepmesi",
+          "arContext": "الارتداد الجذري (Radical Rebound)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: CYP İzoenzimleri",
+        "ar": "فحص المفهوم: عائلات إنزيمات CYP"
+      },
+      "prompt": {
+        "tr": "İnsan karaciğerinde klinik ilaçların yarısından fazlasının Faz I oksidasyonundan sorumlu baskın izoenzim hangisidir?",
+        "ar": "ما هو النظير الإنزيمي الكبدي السائد المسؤول عن أكسدة أكثر من نصف الأدوية السريرية في المرحلة الأولى؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "CYP3A4 geniş aktif bölgesiyle en çok ilacı metabolize eden enzimdir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc51-5",
+            "text": {
+              "tr": "CYP3A4.",
+              "ar": "إنزيم CYP3A4."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc51-6",
+            "text": {
+              "tr": "CYP1A1.",
+              "ar": "إنزيم CYP1A1."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik İlaç Etkileşimi: Greyfurt Suyu ve Felodipin",
+        "ar": "تفاعل سريري: عصير الغريب فروت و Felodipine"
+      },
+      "prompt": {
+        "tr": "Greyfurt suyundaki furanokumarinler bağırsak CYP3A4 enzimini intihar inhibisyonuyla yok eder. Felodipin içildiğinde ne olur?",
+        "ar": "تثبط مركبات الفورانوكومارين في الغريب فروت إنزيم CYP3A4 المعوي نهائياً. ماذا يحدث عند تناول Felodipine؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "CYP3A4 inhibisyonu toksik doz aşımı tablosu yaratır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc51-7",
+            "text": {
+              "tr": "İlk geçiş metabolizması çöker, felodipin kan düzeyi tehlikeli biçimde fırlar ve tansiyon düşer.",
+              "ar": "ينهار استقلاب المرور الأول، وتتضاعف مستويات الدواء في الدم بشكل خطر مسببة هبوط ضغط حاد."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc51-8",
+            "text": {
+              "tr": "İlaç hiç emilmez.",
+              "ar": "لا يمتص الدواء نهائياً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod5-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Polarite ve Membran Difüzyonu",
+        "ar": "استرجاع معرفي: القطبية والانتشار الغشائي"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi polar hidroksil (-OH) grubunun takılması ilacın lipid membranlardan geri emilimini nasıl etkiler?",
+        "ar": "كما تعلمنا في الوحدة 1، كيف يؤثر إدخال مجموعة هيدروكسيل (-OH) قطبية على إعادة امتصاص الدواء عبر الأغشية الدهنية؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "polarite artışı",
+          "arContext": "زيادة القطبية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Faz II Konjugasyonu (Ders 10)",
+        "ar": "ربط مفاهيمي: اقتران المرحلة الثانية (الدرس 10)"
+      },
+      "prompt": {
+        "tr": "Faz I ile açılan bu -OH kulpuna bir sonraki derste devasa ve yüksek oranda polar glukuronik asit bağlanacaktır.",
+        "ar": "المقبض القطبي (-OH) الناتج من المرحلة الأولى سيرتبط في الدرس القادم بجزيء جلوكورونيك فائق القطبية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Faz II konjugasyonu",
+          "arContext": "اقتران المرحلة الثانية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Faz I Oksidasyon Mekanizması",
+        "ar": "اختبار الإتقان: آلية أكسدة المرحلة الأولى"
+      },
+      "prompt": {
+        "tr": "Sitokrom P450 monooksijenaz döngüsünde 1 molekül O2 nin akıbeti nedir?",
+        "ar": "في دورة CYP450 أحادية الأكسجين، ما هو مصير جزيء الأكسجين O2 المستهلك؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc51-9",
+            "text": {
+              "tr": "1 oksijen atomu substrata takılır, diğeri 2 elektron ve 2 proton alarak suya indirgenir.",
+              "ar": "تدمج ذرة أكسجين واحدة في الدواء، بينما تختزل الذرة الأخرى بإلكترونين وبروتونين إلى ماء."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc51-10",
+            "text": {
+              "tr": "Her iki atom da substrata takılır.",
+              "ar": "تدمج ذرتا الأكسجين معاً في ركيزة الدواء."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

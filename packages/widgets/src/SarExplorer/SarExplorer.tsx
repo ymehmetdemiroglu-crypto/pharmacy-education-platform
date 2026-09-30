@@ -119,7 +119,7 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
       </div>
 
       {/* Dynamic Property Readout Box */}
-      <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark text-center">
+      <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark text-center" dir="ltr">
         <div>
           <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">LogP (Lipophilicity)</span>
           <span className="font-mono font-bold text-lg text-black dark:text-slate-100">

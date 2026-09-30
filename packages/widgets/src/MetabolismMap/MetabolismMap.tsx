@@ -59,7 +59,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       </div>
 
       {/* Interactive Molecule & Metabolic Sites Diagram */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex flex-col items-center">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex flex-col items-center" dir="ltr">
         <svg
           viewBox="0 0 400 200"
           className="w-full max-w-md h-auto select-none"

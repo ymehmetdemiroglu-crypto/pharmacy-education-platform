@@ -1,0 +1,740 @@
+{
+  "id": "mc-mod1-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-01",
+  "title": {
+    "tr": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti",
+    "ar": "الذوبانية، التأين وثابت العزل الكهربائي"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Henderson-Hasselbalch bağıntısıyla ilaç iyonizasyonunu hesaplayıp membran geçişini öngörmek.",
+    "ar": "حساب درجة التأين (iyonizasyon) عبر علاقة Henderson-Hasselbalch والتنبؤ بنفوذية الأغشية."
+  },
+  "misconceptions": [
+    {
+      "tr": "Asitlerin her zaman yüklü, bazların ise nötr olduğu yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الأحماض مشحونة دائماً بينما القواعد محايدة."
+    },
+    {
+      "tr": "İyonize türlerin biyolojik zarlardan pasif difüzyonla kolayca geçebileceği varsayımı.",
+      "ar": "الافتراض الخاطئ بأن الأنواع المتأينة تعبر الأغشية البيولوجية بالانتشار البسيط بسهولة."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 5
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC02-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Ionization, pKa, and Solubility",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod1-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Henderson-Hasselbalch Asit Formülü",
+      "prompt": "Zayıf asitler için iyonize fraksiyon yüzdesi formülü nedir?",
+      "answer": "% İyonize = 100 / (1 + 10^(pKa - pH)).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod1-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "pH Eşit pKa Durumu",
+      "prompt": "Ortam pH değeri ilacın pKa değerine eşit olduğunda iyonize oran ne olur?",
+      "answer": "Tam olarak %50 iyonize, %50 iyonize olmamış molekül dengededir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod1-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "İyon Tuzağı Mekanizması",
+      "prompt": "Aspirin zehirlenmesinde idrar alkalileştirildiğinde atılım neden hızlanır?",
+      "answer": "Bazik idrarda aspirin iyonize (A-) forma dönüşür, tübüler zardan geri emilemeyip atılır.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti"
+    },
+    "ar": {
+      "title": "الذوبانية، التأين وثابت العزل الكهربائي"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod1-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Mide mi Bağırsak mı?",
+        "ar": "المعدة أم الأمعاء؟"
+      },
+      "prompt": {
+        "tr": "Aspirin (pKa = 3.5) asidik midede (pH 1.5) mi, yoksa bazik ince bağırsakta (pH 6.5) mı daha hızlı zardan geçer?",
+        "ar": "هل يمتص Aspirin ذو (pKa = 3.5) أسرع عبر غشاء المعدة الحامضية (pH 1.5) أم الأمعاء الدقيقة (pH 6.5)؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "iyonizasyon",
+          "arContext": "التأين"
+        },
+        {
+          "term": "pKa",
+          "arContext": "ثابت التفكك الحامضي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Yalnızca yüksüz moleküller lipit zardan pasif geçer.",
+          "ar": "فقط الجزيئات غير المشحونة تعبر الغشاء الدهني بسهولة."
+        },
+        {
+          "tr": "Asit kendi asidik ortamında yüksüz kalır.",
+          "ar": "الحمض يبقى غير مشحون في وسطه الحامضي."
+        },
+        {
+          "tr": "Midede iyonize olmayan oran çok yüksektir.",
+          "ar": "في المعدة تكون النسبة غير المتأينة مرتفعة جداً."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Asit Ortamda Yük Durumu",
+        "ar": "توقع: حالة الشحنة في الوسط الحامضي"
+      },
+      "prompt": {
+        "tr": "Zayıf bir asit olan aspirin pH 1.5 midede hangi oranda iyonize olur?",
+        "ar": "كم تكون نسبة تأين aspirin كحمض ضعيف في بيئة المعدة ذات pH 1.5؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2-1",
+            "text": {
+              "tr": "%99 dan fazla iyonize (A-).",
+              "ar": "أكثر من 99% متأين (A-)."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Asidik ortam asidin iyonlaşmasını baskılar.",
+              "ar": "الوسط الحامضي يثبط تأين الحمض الضعيف."
+            }
+          },
+          {
+            "id": "opt-2-2",
+            "text": {
+              "tr": "%99 dan fazla iyonize olmamış (HA).",
+              "ar": "أكثر من 99% غير متأين (HA)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! pH < pKa durumunda zayıf asit protonlanmış nötr HA formundadır.",
+              "ar": "صحيح! عندما يكون pH أقل من pKa يتواجد الحمض بشكله المتعادل غير المشحون."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-2-1",
+            "text": "%99 dan fazla iyonize (A-).",
+            "isCorrect": false
+          },
+          {
+            "id": "opt-2-2",
+            "text": "%99 dan fazla iyonize olmamış (HA).",
+            "isCorrect": true
+          }
+        ],
+        "revealedOutcome": "Midede aspirin %99 oranında yüksüz HA formundadır.",
+        "explanation": "pH = 1.5 ve pKa = 3.5 olduğunda pH - pKa = -2 dir. Bu da 100 kat nötr tür fazlalığı demektir."
+      },
+      "technicalTerms": [
+        {
+          "term": "Henderson-Hasselbalch",
+          "arContext": "معادلة Henderson-Hasselbalch"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "pH ile pKa arasındaki 2 birimlik farka bakın.",
+          "ar": "انظر إلى الفارق البالغ وحدتين بين pH و pKa."
+        },
+        {
+          "tr": "Negatif fark nötr formu artırır.",
+          "ar": "الفارق السالب يزيد الشكل المحايد."
+        },
+        {
+          "tr": "10^(-2) oranı %1 iyonize demektir.",
+          "ar": "نسبة 10^(-2) تعني 1% فقط متأين."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Su Zırhı ve Yağ Kapısı",
+        "ar": "تشبيه حدسي: درع الماء وبوابة الزيت"
+      },
+      "prompt": {
+        "tr": "Yüklü iyonlar çevrelerine kalın bir su kalkanı sararak yağlı zara yaklaşamaz. Nötr molekül ise bu kalkanı taşımadığından zardan rahatça süzülür.",
+        "ar": "تحاط الأيونات المشحونة بدرع ماء كثيف يمنعها من عبور الغشاء الدهني، بينما تنفذ الجزيئات المحايدة الخالية من الشحنة بسهولة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "hidrasyon kabuğu",
+          "arContext": "غلاف الإماهة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Yük taşıyan molekül suyu çeker.",
+          "ar": "الجزيء المشحون يجذب جزيئات الماء بقوة."
+        },
+        {
+          "tr": "Yağ fazı yüklü tanecikleri iter.",
+          "ar": "الطور الدهني يطرد الشحنات الكهروستاتيكية."
+        },
+        {
+          "tr": "Nötr tür zardan kolay geçer.",
+          "ar": "الشكل المحايد يعبر بسهولة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Mekanizma Şeması: İyon Tuzağı",
+        "ar": "مخطط الآلية: الحصار الأيوني"
+      },
+      "prompt": {
+        "tr": "Nötr molekül zarı geçtikten sonra bazik kanda (pH 7.4) iyonlaşırsa kapana kısılır. Buna iyon tuzağı (ion trapping) denir.",
+        "ar": "عندما ينفذ الجزيء المتعادل إلى الدم ذي pH 7.4 يتأين ويصبح عاجزاً عن العودة، وهي ظاهرة الحصار الأيوني (iyon tuzağı)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "iyon tuzağı",
+          "arContext": "الحصار الأيوني"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Zar iki tarafındaki pH farkı akışı yönlendirir.",
+          "ar": "فارق درجة الحموضة بين جانبي الغشاء يوجه التدفق."
+        },
+        {
+          "tr": "Kanda iyonize olan molekül geri kaçamaz.",
+          "ar": "الجزيء المتأين في الدم يتعذر عليه الرجوع."
+        },
+        {
+          "tr": "Bu durum emilimi ve birikimi artırır.",
+          "ar": "هذا يعزز الامتصاص والتراكم الحيوي."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: İyonizasyon Sürgüsü",
+        "ar": "محاكي تفاعلي: زالق توازن التأين"
+      },
+      "prompt": {
+        "tr": "pH sürgüsünü 1.0 den 8.0 e kaydırarak aspirinin ve propranololün iyonize oranlarındaki dramatik değişimi ve zar geçirgenliğini test edin.",
+        "ar": "حرك زالق pH من 1.0 إلى 8.0 لاختبار التغير الجذري في تأين ونفوذية aspirin و propranolol عبر الغشاء."
+      },
+      "predictThenReveal": false,
+      "widgetType": "IonizationEquilibriumSlider",
+      "widget": {
+        "type": "IonizationEquilibriumSlider",
+        "config": {
+          "molecule": "aspirin",
+          "pKa": 3.5,
+          "moleculeType": "acid",
+          "initialPh": 7.4
+        }
+      },
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Henderson-Hasselbalch dengesi",
+          "arContext": "توازن Henderson-Hasselbalch"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "pH 3.5 noktasında iyonize oran %50 dir.",
+          "ar": "عند pH 3.5 تكون نسبة التأين 50% تماماً."
+        },
+        {
+          "tr": "pH 7.4 te aspirin %99.9 iyonizedir.",
+          "ar": "عند pH 7.4 يتأين الأسبرين بنسبة 99.9%."
+        },
+        {
+          "tr": "Zar geçirgenliği nötr fraksiyonla paraleldir.",
+          "ar": "نفوذية الغشاء تتناسب طردياً مع الكسر غير المتأين."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Bazik İlaçların Emilimi",
+        "ar": "استكشاف موجه: امتصاص الأدوية القاعدية"
+      },
+      "prompt": {
+        "tr": "Simülatörde zayıf baz olan propranololu (pKa = 9.5) seçin. pH 1.5 midede propranolol hangi formdadır ve emilebilir mi?",
+        "ar": "اختر propranolol القاعدي (pKa = 9.5). في المعدة ذات pH 1.5، بأي شكل يتواجد وهل يستطيع العبور؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-disc2-1",
+            "text": {
+              "tr": "%99.99 protonlanmış yüklü (BH+) formdadır; mideden emilemez.",
+              "ar": "أكثر من 99.99% بروتوني مشحون (BH+)؛ ولا يعبر الغشاء من المعدة."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle! Zayıf bazlar asidik midede tamamen protonlanarak iyon tuzağına düşer.",
+              "ar": "بالتأكيد! القواعد الضعيفة تتأين بالكامل في المعدة الحامضية ولا تعبر."
+            }
+          },
+          {
+            "id": "opt-disc2-2",
+            "text": {
+              "tr": "Nötr B formundadır ve mideden çok hızlı emilir.",
+              "ar": "بشكله المتعادل B ويمتص بسرعة فائقة من المعدة."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Bazlar asidik ortamda proton alarak pozitif yük kazanırlar.",
+              "ar": "القواعد تكتسب بروتوناً وتصبح مشحونة إيجابياً في الوسط الحامضي."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-disc2-1",
+            "text": "%99.99 yüklü formdadır; emilemez.",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-disc2-2",
+            "text": "Nötrdür ve emilir.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Propranolol midede tamamen iyonizedir ve mideden emilmez.",
+        "explanation": "Bazik ilaçlar ince bağırsakta pH yükseldikçe nötr hale geçerek emilirler."
+      },
+      "technicalTerms": [
+        {
+          "term": "zayıf baz",
+          "arContext": "قاعدة ضعيفة"
+        },
+        {
+          "term": "protonlanma",
+          "arContext": "البرتنة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Bazlar asit ortamda proton (H+) yakalar.",
+          "ar": "القواعد تلتقط البروتون في الوسط الحامضي."
+        },
+        {
+          "tr": "Yüklü BH+ membran yağını geçemez.",
+          "ar": "المركب المشحون BH+ لا يعبر دهون الغشاء."
+        },
+        {
+          "tr": "Emilim için bağırsaktaki yüksek pH beklenmelidir.",
+          "ar": "يتطلب الامتصاص وصول الدواء للوسط المعوي الأعلى pH."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Formal İlkeler: Henderson-Hasselbalch Denklemleri",
+        "ar": "المبادئ الرسمية: معادلات Henderson-Hasselbalch"
+      },
+      "prompt": {
+        "tr": "Zayıf asitler için pH = pKa + log([A-]/[HA]), zayıf bazlar için pH = pKa + log([B]/[BH+]) geçerlidir. İyonlaşma dielektrik sabitine de bağlıdır.",
+        "ar": "للأحماض: pH = pKa + log([A-]/[HA])، وللقواعد: pH = pKa + log([B]/[BH+]). يعتمد التأين أيضاً على ثابت العزل الكهربائي."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "formula": "pH = pK_a + \\log\\frac{[\\text{Baz}]}{[\\text{Asit}]}"
+      },
+      "technicalTerms": [
+        {
+          "term": "dielektrik sabiti",
+          "arContext": "ثابت العزل الكهربائي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Suyun dielektrik sabiti yüksektir (80).",
+          "ar": "ثابت عزل الماء مرتفع (حوالي 80)."
+        },
+        {
+          "tr": "Lipid zarın dielektrik sabiti düşüktür (2-4).",
+          "ar": "ثابت عزل الغشاء الدهني منخفض جداً (2-4)."
+        },
+        {
+          "tr": "Düşük sabitte yükler birbirini aşırı çeker.",
+          "ar": "في الوسط منخفض العزل تتضاعف قوى الجذب الكهروستاتيكي."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: İdrar Alkalileştirme",
+        "ar": "فحص المفهوم: قلونة البول السريرية"
+      },
+      "prompt": {
+        "tr": "Fenobarbital (zayıf asit, pKa = 7.4) zehirlenmesinde sodyum bikarbonat verilerek idrar pH sı 8.0 e çıkarılır. Atılım nasıl değişir?",
+        "ar": "في التسمم بـ Fenobarbital (حمض ضعيف، pKa = 7.4)، يعطى بيكربونات الصوديوم لرفع pH البول إلى 8.0. كيف يتأثر الإطراح؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-chk2-1",
+            "text": {
+              "tr": "İdrarda iyonize fenobarbital artar, tübülden geri emilemez ve atılım kat kat hızlanır.",
+              "ar": "يزداد تأين الدواء في البول، فيتعذر ارتشافه كلوياً ويتسارع إطراحه أضعافاً."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz! Alkalileştirme ilacı tübüler lümende hapseder (renal iyon tuzağı).",
+              "ar": "ممتاز! القلونة تحبس الدواء في لمعة الأنابيب الكلوية (حصار أيوني)."
+            }
+          },
+          {
+            "id": "opt-chk2-2",
+            "text": {
+              "tr": "Nötrleşen fenobarbital kana hızla geri döner.",
+              "ar": "يتعادل الدواء ويعود إلى الدم بسرعة."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "pH pKa dan büyük olduğunda asitler iyonlaşır, nötrleşmez.",
+              "ar": "عندما يتجاوز pH قيمة pKa يتأين الحمض ولا يتعادل."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-chk2-1",
+            "text": "Atılım hızlanır.",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-chk2-2",
+            "text": "Kana geri döner.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Fenobarbital renal tübülde hapsedilerek hızla idrarla atılır.",
+        "explanation": "pH > pKa olduğundan asit molekülleri proton kaybederek A- haline geçer ve membrandan kana dönemez."
+      },
+      "technicalTerms": [
+        {
+          "term": "renal tübüler atılım",
+          "arContext": "الإطراح النبيبي الكلوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Bazik idrarda asit iyonize olur mu?",
+          "ar": "هل يتأين الحمض في البول القلوي؟"
+        },
+        {
+          "tr": "İyonize tür zardan geri emilebilir mi?",
+          "ar": "هل يعاد امتصاص النوع المتأين عبر الغشاء؟"
+        },
+        {
+          "tr": "Geri emilemeyen madde idrarla dışarı atılır.",
+          "ar": "المادة غير المرتشفة تطرح مع البول حتماً."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Lokal Anestezik Enjeksiyonu",
+        "ar": "قرار سريري: حقن المخدر الموضعي"
+      },
+      "prompt": {
+        "tr": "İltihaplı ve asidik (pH 5.0) bir apse dokusuna zayıf baz olan lidokain (pKa = 7.9) enjekte edildiğinde anestezi neden başarısız olur?",
+        "ar": "عند حقن Lidocaine القاعدي (pKa = 7.9) في نسيج خراج ملتهب حامضي (pH 5.0)، لماذا يفشل التخدير الموضعي؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-app2-1",
+            "text": {
+              "tr": "Lidokain asit dokuda tamamen iyonlaşarak sinir kılıfı lipid zarını geçemez.",
+              "ar": "يتأين Lidocaine بالكامل في الوسط الحامضي فيعجز عن عبور غمد العصب الدهني."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Sinir hücresine giremeyen lidokain sodyum kanallarını içeriden bloke edemez.",
+              "ar": "صحيح! لتعذر دخوله الخلية العصبية يعجز عن حظر قنوات الصوديوم من الداخل."
+            }
+          },
+          {
+            "id": "opt-app2-2",
+            "text": {
+              "tr": "İltihap lidokaini parçalar.",
+              "ar": "يقوم الالتهاب بتفكيك جزيء الليدوكائين كيميائياً."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Sorun kimyasal yıkım değil, iyonizasyon kaynaklı membran geçirgenlik kaybıdır.",
+              "ar": "الخلل ليس تفككاً كيميائياً بل فقدان النفوذية بسبب التأين."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-app2-1",
+            "text": "İyonlaşarak sinir zarını geçemez.",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-app2-2",
+            "text": "İltihap ilacı yıkar.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Lidokain asidik dokuda iyonize kalarak sinir hücresi içine difüze olamaz.",
+        "explanation": "pH 5.0 ve pKa 7.9 farkı ilacın %99.9 unu yüklü formda tutar ve akson membranından geçişi önler."
+      },
+      "technicalTerms": [
+        {
+          "term": "lokal anestezik",
+          "arContext": "مخدر موضعي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Lidokain bir zayıf bazdır.",
+          "ar": "الليدوكائين قاعدة ضعيفة."
+        },
+        {
+          "tr": "Asit dokuda proton yakalar.",
+          "ar": "يلتقط بروتوناً في النسيج الحامضي."
+        },
+        {
+          "tr": "Yüklü form sinir hücresi içine giremez.",
+          "ar": "الشكل المشحون لا يدخل الخلية العصبية."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Doygunluk ve Termodinamik Aktivite",
+        "ar": "استرجاع معرفي: التشبع والنشاط الديناميكي"
+      },
+      "prompt": {
+        "tr": "Ders 1 de öğrendiğimiz gibi, yapısal olarak özgül olmayan bir ilacın kanda zarlara kaçmasını sağlayan termodinamik büyüklük nedir?",
+        "ar": "كما تعلمنا في الدرس 1، ما هو المقدار الديناميكي الحراري الذي يدفع الدواء غير النوعي للهروب من الدم إلى الأغشية؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "targetConcept": "termodinamik aktivite"
+      },
+      "technicalTerms": [
+        {
+          "term": "termodinamik aktivite",
+          "arContext": "النشاط الديناميكي الحراري"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Ferguson ilkesinin temel parametresi.",
+          "ar": "المعامل الأساسي لمبدأ فيرجسون."
+        },
+        {
+          "tr": "a harfiyle sembolize edilir.",
+          "ar": "يرمز له بالحرف a."
+        },
+        {
+          "tr": "Bağıl doygunluk (Pt / P0 veya St / S0).",
+          "ar": "التشبع النسبي للطور."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Fonksiyonel Gruplar ve Bağlar (Modül 2)",
+        "ar": "ربط مفاهيمي: المجموعات الوظيفية والروابط (الوحدة 2)"
+      },
+      "prompt": {
+        "tr": "İlacın iyonlaşması elektrik yükü yaratır. Modül 2 de bu yüklerin reseptör amino asitleriyle nasıl güçlü iyonik bağlar kurduğunu göreceğiz.",
+        "ar": "يولد تأين الدواء شحنات كهربائية. في الوحدة 2، سنستكشف كيف تشكل هذه الشحنات روابط أيونية وثيقة مع الأحماض الأمينية في (reseptör)."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "nextModule": "mc-mod-02"
+      },
+      "technicalTerms": [
+        {
+          "term": "iyonik bağ",
+          "arContext": "الرابطة الأيونية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Zıt yükler birbirini elektrostatik olarak çeker.",
+          "ar": "تتجاذب الشحنات المتضادة كهروستاتيكياً."
+        },
+        {
+          "tr": "İyonik bağlar en yüksek enerjili non-kovalent bağlardır.",
+          "ar": "الروابط الأيونية هي الأعلى طاقة بين الروابط غير التساهمية."
+        },
+        {
+          "tr": "Bir sonraki derste bağlanma enerjilerini hesaplayacağız.",
+          "ar": "في الدرس القادم سنحسب طاقات الارتباط."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: İyonizasyon ve Membran Geçişi",
+        "ar": "اختبار الإتقان: التأين ونفوذية الأغشية"
+      },
+      "prompt": {
+        "tr": "Bir zayıf asit ilacın lipid membranlardan pasif difüzyon hızını maksimize etmek için ortam pH sı pKa ya göre nerede olmalıdır?",
+        "ar": "لتعظيم سرعة الانتشار البسيط لحمض ضعيف عبر الأغشية الدهنية، أين يجب أن تكون درجة حموضة الوسط مقارنة بـ pKa؟"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mst2-1",
+            "text": {
+              "tr": "pH < pKa olmalıdır; böylece asit protonlanmış nötr HA formuna geçer ve zardan hızla süzülür.",
+              "ar": "يجب أن يكون pH < pKa؛ ليتواجد الحمض بشكله المحايد HA ويعبر الغشاء بسرعة."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler! İyonizasyon ve membran geçirgenliği prensiplerini tam olarak kavradınız. +50 XP.",
+              "ar": "تهانينا! لقد أتقنت تماماً مبادئ التأين ونفوذية الأغشية البيولوجية. +50 XP."
+            }
+          },
+          {
+            "id": "opt-mst2-2",
+            "text": {
+              "tr": "pH > pKa olmalıdır; böylece molekül negatif yük kazanarak zarı çeker.",
+              "ar": "يجب أن يكون pH > pKa؛ ليكتسب الجزيء شحنة سالبة تجذب الغشاء."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yüklü türler hidrasyon kalkanı nedeniyle zardan geçemezler.",
+              "ar": "الأنواع المشحونة تعجز عن عبور الغشاء بسبب غلاف الإماهة المائي."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-mst2-1",
+            "text": "pH < pKa olmalıdır.",
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mst2-2",
+            "text": "pH > pKa olmalıdır.",
+            "isCorrect": false
+          }
+        ],
+        "revealedOutcome": "Modül 1 tamamlandı! 3 review cards Leitner Box 1 e eklendi. +50 XP.",
+        "explanation": "pH < pKa durumunda nötr form baskındır ve zardan geçiş maksimumdur."
+      },
+      "technicalTerms": [
+        {
+          "term": "pasif difüzyon",
+          "arContext": "الانتشار السلبي البسيط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Nötr tür zardan geçer.",
+          "ar": "الشكل المتعادل هو الذي ينفذ عبر الغشاء."
+        },
+        {
+          "tr": "Asit ne zaman nötr kalır?",
+          "ar": "متى يبقى الحمض الضعيف غير متأين؟"
+        },
+        {
+          "tr": "pH < pKa durumunda protonunu korur.",
+          "ar": "عندما يكون pH أقل من pKa يحتفظ ببروتونه."
+        }
+      ]
+    }
+  ]
+}

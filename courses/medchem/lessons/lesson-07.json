@@ -1,0 +1,642 @@
+{
+  "id": "mc-mod4-les1",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-04",
+  "title": {
+    "tr": "Ötomerler, Distomerler ve Pfeiffer Kuralı",
+    "ar": "المصاوغات النشطة والمصاوغات الخاملة وقاعدة Pfeiffer"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Pfeiffer kuralını uygulayarak yüksek afiniteli ligandlarda ödismik oran artışını ve stereoseçiciliği öngörmek.",
+    "ar": "تطبيق قاعدة Pfeiffer للتنبؤ بارتفاع النسبة الإيوديزمية والانتقائية الفراغية في الربيطات عالية الألفة."
+  },
+  "misconceptions": [
+    {
+      "tr": "Distomerin her zaman biyolojik olarak tamamen etkisiz bir seyirci olduğu yanılgısı.",
+      "ar": "الظن الخاطئ بأن المصاوغ الخامل (distomer) عديم الفعالية والسمية تماماً دائماً."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 22
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC07-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Eutomers, Distomers and Pfeiffer's Rule",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod4-les1-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Pfeiffer Kuralı Tanımı",
+      "prompt": "Pfeiffer kuralına göre ötomerin afinitesi arttıkça ödismik oran nasıl değişir?",
+      "answer": "Ötomerin reseptör afinitesi arttıkça iki enantiyomer arasındaki ödismik oran (seçicilik) katlanarak artar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Distomer Toksisitesi",
+      "prompt": "Distomerin zararlı olduğu klasik ilaç örneği hangisidir?",
+      "answer": "Talidomid: (R) ötomeri sedatif iken (S) distomeri teratojenik ve embriyotoksiktir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Kiral Anahtarlama (Chiral Switch)",
+      "prompt": "Rasemik bir ilacın patent süresi biterken saf ötomerinin geliştirilmesine ne ad verilir?",
+      "answer": "Kiral Anahtarlama (Chiral Switch) rasyonel ilaç geliştirme stratejisi.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Ötomerler, Distomerler ve Pfeiffer Kuralı"
+    },
+    "ar": {
+      "title": "المصاوغات النشطة والمصاوغات الخاملة وقاعدة Pfeiffer"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod4-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Aynı Formül, Biri İlaç Biri Zehir",
+        "ar": "نفس الصيغة، أحدهما دواء والآخر سم"
+      },
+      "prompt": {
+        "tr": "Dekstrometorfan öksürük şurubuyken, enantiyomeri levometorfan bağımlılık yapan güçlü bir opioid narkotiktir. Neden?",
+        "ar": "بينما Dextromethorphan شراب للسعال، فإن مصاوغه المرآوي Levomethorphan مخدر أفيوني مسبب للإدمان. لماذا؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "enantiyomer",
+          "arContext": "المصاوغ المرآوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Afinite Arttıkça Seçicilik",
+        "ar": "توقع: الانتقائية مع زيادة الألفة"
+      },
+      "prompt": {
+        "tr": "Bir ilacın reseptörüne afinitesi nanomolar seviyeye çıktığında, iki enantiyomeri arasındaki güç farkı ne olur?",
+        "ar": "عندما ترتفع ألفة دواء نحو مستقبله إلى مستوى النانومولار، ماذا يحدث للفارق في القوة بين مصاوغيه المرآويين؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Pfeiffer kuralı gereğince afinite arttıkça ödismik oran dramatik biçimde yükselir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc41-1",
+            "text": {
+              "tr": "Fark büyür; yüksek afinite çok daha katı stereoseçicilik (yüksek ödismik oran) gerektirir.",
+              "ar": "يتسع الفارق؛ فالألفة العالية تتطلب تطابقاً فراغياً أشد صرامة (نسبة إيوديزمية أعلى)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc41-2",
+            "text": {
+              "tr": "Fark küçülür ve sıfırlanır.",
+              "ar": "يتلاشى الفارق ويصل للصفر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod4-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Maymuncuk ve Kasa Kilidi",
+        "ar": "تشبيه حدسي: المفتاح العمومي وقفل الخزنة"
+      },
+      "prompt": {
+        "tr": "Gevşek bir asma kilit yamuk anahtarla da açılabilir; ancak yüksek güvenlikli bir banka kasası mikrometre hassasiyetinde kusursuz anahtar ister.",
+        "ar": "القفل البسيط قد يفتح بمفتاح غير دقيق، لكن قفل الخزنة البنكية الحساسة يتطلب مفتاحاً بالغ الدقة بمحاذاة الميكرومتر."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Pfeiffer kuralı",
+          "arContext": "قاعدة Pfeiffer"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Pfeiffer Korelasyon Grafiği",
+        "ar": "مخطط ارتباط Pfeiffer البياني"
+      },
+      "prompt": {
+        "tr": "Grafikte log(Ödismik Oran) ile -log(Kd) arasında pozitif doğrusal ilişki vardır. Afinite arttıkça eğri dikleşir.",
+        "ar": "يظهر المخطط علاقة خطية موجبة بين log(النسبة الإيوديزمية) و -log(Kd). كلما ازدادت الألفة يزداد انحدار المنحنى."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ödismik oran",
+          "arContext": "النسبة الإيوديزمية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Laboratuvar: Receptor-Ligand Matcher",
+        "ar": "المختبر التفاعلي: مطابق الربيط والمستقبل"
+      },
+      "prompt": {
+        "tr": "Farklı afinitelerdeki ligand çiftlerini reseptöre takın ve Pfeiffer kuralının ödismik oranı nasıl büyüttüğünü deneyimleyin.",
+        "ar": "اربط أزواج الربيطات متباينة الألفة بالمستقبل ولاحظ كيف تضاعف قاعدة Pfeiffer النسبة الإيوديزمية عملياً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "mode": "pfeiffer_analysis",
+          "receptors": [
+            "muscarinic_m1",
+            "adrenergic_alpha1"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mc-mod4-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Düşük Afiniteli Ligandlar",
+        "ar": "استكشاف موجه: الربيطات منخفضة الألفة"
+      },
+      "prompt": {
+        "tr": "Mikromolar afiniteye sahip zayıf bir ligandda iki enantiyomer arasındaki ödismik oran neden 1 e yakındır?",
+        "ar": "لماذا تقترب النسبة الإيوديزمية بين المصاوغين من 1 في الربيطات الضعيفة ذات الألفة الميكرومولارية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Düşük afiniteli ilaçlarda stereoseçicilik düşüktür; Pfeiffer kuralı doğrulanır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc41-3",
+            "text": {
+              "tr": "Bağlanma gevşektir ve katı 3-noktalı stereokimyasal kısıtlama uygulanmaz.",
+              "ar": "لأن الارتباط فضفاض ولا يخضع لقيود فراغية ثلاثية النقاط صارمة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc41-4",
+            "text": {
+              "tr": "Moleküller kiralliklerini kaybederler.",
+              "ar": "لأن الجزيئات تفقد خاصية الكيرالية."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod4-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Formal Pfeiffer Kuralı ve Termodinamik Temel",
+        "ar": "قاعدة Pfeiffer الرسمية والأساس الديناميكي"
+      },
+      "prompt": {
+        "tr": "Carl Pfeiffer (1956): Bir ilacın dozu azaldıkça (etki gücü arttıkça) optik izomerler arasındaki farmakolojik etkinlik farkı büyür.",
+        "ar": "Carl Pfeiffer (1956): كلما انخفضت جرعة الدواء (ازدادت قوته) اتسعت الفجوة الفارماكولوجية بين مصاوغيه الضوئيين."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "stereoseçicilik",
+          "arContext": "الانتقائية الفراغية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Distomerin Akıbeti",
+        "ar": "فحص المفهوم: مصير المصاوغ الخامل"
+      },
+      "prompt": {
+        "tr": "Distomer hedefine bağlanmasa bile hastada istenmeyen etki yaratabilir mi?",
+        "ar": "حتى لو لم يرتبط المصاوغ الخامل (distomer) بالهدف، هل يمكن أن يسبب آثاراً غير مرغوبة للمريض؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Distomer safsızlık gibi davranarak yan etkilere yol açabilir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc41-5",
+            "text": {
+              "tr": "Evet, farklı reseptörleri etkileyebilir veya metabolik yük ve toksisite oluşturabilir.",
+              "ar": "نعم، فقد يرتبط بمستقبلات أخرى مسبباً سمية وعبئاً استقلابياً غير مرغوب."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc41-6",
+            "text": {
+              "tr": "Hayır, distomer vücutta tamamen görünmezdir.",
+              "ar": "لا، فالمصاوغ الخامل خفي تماماً في الجسم."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod4-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Kiral Anahtarlama: Omeprazol den Esomeprazole",
+        "ar": "التحول الكيرالي: من Omeprazole إلى Esomeprazole"
+      },
+      "prompt": {
+        "tr": "Rasemik omeprazol yerine saf (S)-enantiyomeri esomeprazolün piyasaya sürülmesi hangi temel klinik avantajı sağlamıştır?",
+        "ar": "ما الميزة السريرية الأساسية التي حققها تسويق المصاوغ النقي Esomeprazole بدلاً من Omeprazole الراسيمي؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kiral anahtarlama farmakokinetik değişkenliği azaltarak klinik başarı sağlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc41-7",
+            "text": {
+              "tr": "Daha öngörülebilir metabolizma, daha yüksek plazma konsantrasyonu ve üstün asit baskılama.",
+              "ar": "استقلاب كبدي أكثر قابلية للتنبؤ وتراكيز بلازمية أعلى وتثبيط حامضي متفوق."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc41-8",
+            "text": {
+              "tr": "Hiçbir fark yaratmamıştır.",
+              "ar": "لم يحقق أي فارق سريري."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod4-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Easson-Stedman 3-Nokta Modeli",
+        "ar": "استرجاع معرفي: نموذج Easson-Stedman ثلاثي النقاط"
+      },
+      "prompt": {
+        "tr": "Ötomerin distomere göre üstün afinite sergilemesinin 3 boyutlu geometrik nedeni neydi?",
+        "ar": "ما هو السبب الفراغي الهندسي لتفوق ألفة المصاوغ الفعال (ötomer) مقارنة بالمصاوغ الخامل؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "üç noktalı bağlanma",
+          "arContext": "الارتباط ثلاثي النقاط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Konformasyonel Esneklik ve Rijitlik (Ders 8)",
+        "ar": "ربط مفاهيمي: المرونة والجساءة التشكيلية (الدرس 8)"
+      },
+      "prompt": {
+        "tr": "Konfigürasyon (enantiyomerler) kadar tek bağların dönmesiyle oluşan konformasyonlar da hedef bağlanmasını belirler. Sıradaki derste rijit iskeletleri işleyeceğiz.",
+        "ar": "بقدر أهمية المصاوغات، يحدد دوران الروابط التشكيل المفضل للمستقبل. في الدرس القادم سندرس الهياكل الجاسئة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "konformasyon",
+          "arContext": "التشكيل الفراغي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod4-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Pfeiffer Kuralı Özeti",
+        "ar": "اختبار الإتقان: ملخص قاعدة Pfeiffer"
+      },
+      "prompt": {
+        "tr": "Pfeiffer kuralına göre son derece güçlü (örneğin sub-nanomolar) bir reseptör agonistinde ödismik oran nasıl beklenir?",
+        "ar": "وفق قاعدة Pfeiffer، كيف يتوقع أن تكون النسبة الإيوديزمية لمشبه مستقبلي فائق القوة (sub-nanomolar)؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc41-9",
+            "text": {
+              "tr": "Çok yüksek (yüzlerce hatta binlerce kat stereoseçici).",
+              "ar": "مرتفعة جداً (انتقائية فراغية بمئات أو آلاف الأضعاف)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc41-10",
+            "text": {
+              "tr": "Bire eşit.",
+              "ar": "مساوية للواحد تماماً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -52,14 +52,14 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
     // 3. Dark + RTL (Arabic) on Gallery
     await page.getByRole('button', { name: 'AR', exact: true }).click();
     await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.screenshot({
       path: path.join(SCREENSHOT_DIR, `${prefix}-gallery-dark-rtl-ar.png`),
     });
 
     // Revert to English and Light Mode for matrix captures
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await page.getByRole('button', { name: 'EN', exact: true }).click();
     await expect(page.locator('html')).toHaveAttribute('dir', 'ltr');
 
@@ -171,7 +171,7 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
 
     // Dark + RTL Paywall Modal
     await page.getByRole('button', { name: 'AR', exact: true }).click();
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await page.getByRole('button', { name: /فتح نافذة الاشتراك/i }).first().click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-paywall-modal-dark-rtl.png`) });
@@ -179,7 +179,7 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
     await expect(page.getByRole('dialog')).not.toBeVisible();
 
     // Revert to EN Light
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await page.getByRole('button', { name: 'EN', exact: true }).click();
 
     // 7. Catalog Page (EN, TR, Dark+RTL)
@@ -192,13 +192,13 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-catalog-tr.png`), fullPage: true });
 
     await page.getByRole('button', { name: 'AR', exact: true }).click();
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.waitForTimeout(250);
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-catalog-dark-rtl-ar.png`), fullPage: true });
 
     // Revert to EN Light
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).not.toHaveClass(/dark/);
     await page.getByRole('button', { name: 'EN', exact: true }).click();
     await page.waitForTimeout(200);
@@ -213,7 +213,7 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-pricing-tr.png`), fullPage: true });
 
     await page.getByRole('button', { name: 'AR', exact: true }).click();
-    await page.getByRole('button', { name: /toggle dark mode/i }).click();
+    await page.getByRole('button', { name: /toggle dark mode|toggle theme|temayı değiştir|تبديل المظهر/i }).click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await page.waitForTimeout(250);
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, `${prefix}-pricing-dark-rtl-ar.png`), fullPage: true });

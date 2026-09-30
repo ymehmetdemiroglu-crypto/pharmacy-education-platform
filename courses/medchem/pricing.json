@@ -1,9 +1,9 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "courseId": "medchem",
-  "courseTitle": "Medicinal Chemistry",
+  "courseTitle": "Farmasötik Kimya",
   "version": "2.0.0",
-  "currencyDefault": "USD",
+  "currencyDefault": "TRY",
   "gateway": "dodo_payments",
   "freemium": {
     "moduleScope": "first_2_lessons_of_every_module",
@@ -39,21 +39,9 @@
         "bundleSemesterUSD": 69.00,
         "bundleAnnualUSD": 129.00,
         "localizedPricing": {
-          "USD": {
-            "single": { "monthly": 14.00, "semester": 49.00, "annual": 89.00 },
-            "bundle": { "monthly": 19.00, "semester": 69.00, "annual": 129.00 }
-          },
           "TRY": {
             "single": { "monthly": 250.00, "semester": 850.00, "annual": 1450.00 },
             "bundle": { "monthly": 350.00, "semester": 1150.00, "annual": 2100.00 }
-          },
-          "SAR": {
-            "single": { "monthly": 55.00, "semester": 190.00, "annual": 340.00 },
-            "bundle": { "monthly": 75.00, "semester": 265.00, "annual": 490.00 }
-          },
-          "EUR": {
-            "single": { "monthly": 13.00, "semester": 45.00, "annual": 82.00 },
-            "bundle": { "monthly": 18.00, "semester": 64.00, "annual": 119.00 }
           }
         }
       },
@@ -66,21 +54,9 @@
         "bundleSemesterUSD": 59.99,
         "bundleAnnualUSD": 99.99,
         "localizedPricing": {
-          "USD": {
-            "single": { "monthly": 9.99, "semester": 39.99, "annual": 69.99 },
-            "bundle": { "monthly": 14.99, "semester": 59.99, "annual": 99.99 }
-          },
           "TRY": {
             "single": { "monthly": 180.00, "semester": 690.00, "annual": 1150.00 },
             "bundle": { "monthly": 270.00, "semester": 990.00, "annual": 1650.00 }
-          },
-          "SAR": {
-            "single": { "monthly": 39.00, "semester": 150.00, "annual": 265.00 },
-            "bundle": { "monthly": 59.00, "semester": 225.00, "annual": 375.00 }
-          },
-          "EUR": {
-            "single": { "monthly": 9.50, "semester": 37.00, "annual": 65.00 },
-            "bundle": { "monthly": 14.00, "semester": 55.00, "annual": 92.00 }
           }
         }
       },
@@ -93,21 +69,9 @@
         "bundleSemesterUSD": 79.00,
         "bundleAnnualUSD": 149.00,
         "localizedPricing": {
-          "USD": {
-            "single": { "monthly": 16.00, "semester": 59.00, "annual": 109.00 },
-            "bundle": { "monthly": 22.00, "semester": 79.00, "annual": 149.00 }
-          },
           "TRY": {
             "single": { "monthly": 290.00, "semester": 990.00, "annual": 1750.00 },
             "bundle": { "monthly": 390.00, "semester": 1350.00, "annual": 2450.00 }
-          },
-          "SAR": {
-            "single": { "monthly": 60.00, "semester": 220.00, "annual": 410.00 },
-            "bundle": { "monthly": 85.00, "semester": 295.00, "annual": 560.00 }
-          },
-          "EUR": {
-            "single": { "monthly": 15.00, "semester": 55.00, "annual": 99.00 },
-            "bundle": { "monthly": 20.00, "semester": 74.00, "annual": 139.00 }
           }
         }
       }
@@ -126,10 +90,7 @@
       "recurring": true,
       "basePriceUSD": 14.00,
       "localizedPrices": {
-        "USD": { "amount": 14.00, "symbol": "$" },
-        "TRY": { "amount": 250.00, "symbol": "₺" },
-        "SAR": { "amount": 55.00, "symbol": "SAR" },
-        "EUR": { "amount": 13.00, "symbol": "€" }
+        "TRY": { "amount": 250.00, "symbol": "₺" }
       },
       "name": "Medicinal Chemistry — Monthly",
       "description": "Full access to all Medicinal Chemistry modules, SAR visualizers, and bioisostere editors with month-to-month flexibility."
@@ -143,10 +104,7 @@
       "basePriceUSD": 49.00,
       "effectiveMonthlyUSD": 8.17,
       "localizedPrices": {
-        "USD": { "amount": 49.00, "symbol": "$" },
-        "TRY": { "amount": 850.00, "symbol": "₺" },
-        "SAR": { "amount": 190.00, "symbol": "SAR" },
-        "EUR": { "amount": 45.00, "symbol": "€" }
+        "TRY": { "amount": 850.00, "symbol": "₺" }
       },
       "badge": "Best for University Semester",
       "name": "Medicinal Chemistry — Semester Pass (6 Months)",
@@ -161,10 +119,7 @@
       "basePriceUSD": 89.00,
       "effectiveMonthlyUSD": 7.42,
       "localizedPrices": {
-        "USD": { "amount": 89.00, "symbol": "$" },
-        "TRY": { "amount": 1450.00, "symbol": "₺" },
-        "SAR": { "amount": 340.00, "symbol": "SAR" },
-        "EUR": { "amount": 82.00, "symbol": "€" }
+        "TRY": { "amount": 1450.00, "symbol": "₺" }
       },
       "badge": "Save 47%",
       "name": "Medicinal Chemistry — Annual Pass",
@@ -177,10 +132,7 @@
       "recurring": true,
       "basePriceUSD": 19.00,
       "localizedPrices": {
-        "USD": { "amount": 19.00, "symbol": "$" },
-        "TRY": { "amount": 350.00, "symbol": "₺" },
-        "SAR": { "amount": 75.00, "symbol": "SAR" },
-        "EUR": { "amount": 18.00, "symbol": "€" }
+        "TRY": { "amount": 350.00, "symbol": "₺" }
       },
       "name": "All-Access Dual Pass — Monthly",
       "description": "Complete access to BOTH Medicinal Chemistry and Pharmacology with cross-course bridge cards."
@@ -194,10 +146,7 @@
       "basePriceUSD": 69.00,
       "effectiveMonthlyUSD": 11.50,
       "localizedPrices": {
-        "USD": { "amount": 69.00, "symbol": "$" },
-        "TRY": { "amount": 1150.00, "symbol": "₺" },
-        "SAR": { "amount": 265.00, "symbol": "SAR" },
-        "EUR": { "amount": 64.00, "symbol": "€" }
+        "TRY": { "amount": 1150.00, "symbol": "₺" }
       },
       "badge": "Popular for Dual Courses",
       "name": "All-Access Dual Pass — Semester (6 Months)",
@@ -212,10 +161,7 @@
       "basePriceUSD": 129.00,
       "effectiveMonthlyUSD": 10.75,
       "localizedPrices": {
-        "USD": { "amount": 129.00, "symbol": "$" },
-        "TRY": { "amount": 2100.00, "symbol": "₺" },
-        "SAR": { "amount": 490.00, "symbol": "SAR" },
-        "EUR": { "amount": 119.00, "symbol": "€" }
+        "TRY": { "amount": 2100.00, "symbol": "₺" }
       },
       "badge": "Ultimate Licensure Pack",
       "name": "All-Access Dual Pass — Annual",

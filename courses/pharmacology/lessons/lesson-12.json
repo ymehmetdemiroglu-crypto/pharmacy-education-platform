@@ -1,0 +1,642 @@
+{
+  "id": "pharm-mod6-les2",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-06",
+  "title": {
+    "tr": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri",
+    "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Dört merkezi dopaminerjik yolağı, D2 reseptör blokaj eşiğini (%65-80) ve atipik antipsikotiklerin 5-HT2A/D2 dengesini kavramak.",
+    "ar": "إتقان المسارات الدوبامينية المركزية الأربعة، وعتبة حظر D2 (65-80%)، وتوازن 5-HT2A/D2 لمضادات الذهان غير النمطية."
+  },
+  "misconceptions": [
+    {
+      "tr": "D2 reseptörünü ne kadar çok bloke edersek antipsikotik etkinin o kadar iyi olacağı yanılgısı (%80 in üzerinde şiddetli parkinson benzeri ekstrapiramidal semptomlar çıkar).",
+      "ar": "الظن الخاطئ بأن زيادة حظر D2 تحسن الفعالية دوماً (تجاوز 80% يفجر أعراضاً خارج هرمية شلل-رعاشية حادة)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Santral Sinir Sistemi.pdf",
+      "page": 22
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH12-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Dopaminergic Pathways and Antipsychotic Receptor Profiles",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod6-les2-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Terapötik D2 Blokaj Penceresi",
+      "prompt": "Antipsikotik etkinlik ve ekstrapiramidal güvenliğin sağlandığı D2 reseptör doluluk penceresi nedir?",
+      "answer": "%65 ila %80 doluluk aralığıdır. %65 in altında etki yetersiz, %80 in üstünde EPS gelişir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les2-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Dört Dopamin Yolağı",
+      "prompt": "Antipsikotik etkinin görüldüğü ve ekstrapiramidal yan etkinin (EPS) çıktığı iki yolak hangileridir?",
+      "answer": "Antipsikotik etki Mezolimbik yolakta; motor yan etki (EPS) Nigrostriatal yolakta görülür.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les2-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Atipik Antipsikotik Sırrı",
+      "prompt": "İkinci kuşak atipik antipsikotikler (olanzapin, klozapin) neden daha az ekstrapiramidal yan etki yapar?",
+      "answer": "Güçlü 5-HT2A serotonin blokajı nigrostriatal yolda dopamin salınımını serbest bırakarak EPS yi önler.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri"
+    },
+    "ar": {
+      "title": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod6-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Halüsinasyonları Sustururken Bedeni Kilitlemek",
+        "ar": "إسكات الهلاوس وتصلب الجسد"
+      },
+      "prompt": {
+        "tr": "Şizofreni hastasının hezeyanlarını dindiren haloperidol, neden aynı zamanda hastanın kaslarını kurşun boru gibi kaskatı kilitler?",
+        "ar": "دواء Haloperidol الذي يسكت هلاوس الفصام، لماذا يقفل عضلات المريض في الوقت ذاته كتصلب أنابيب الرصاص؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "D2 reseptör blokajı",
+          "arContext": "حظر مستقبِلات D2"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: İdeal Blokaj Yüzdesi",
+        "ar": "توقع: نسبة الإشغال المثالية"
+      },
+      "prompt": {
+        "tr": "Pozitron Emisyon Tomografisinde (PET) antipsikotik ilacın beyindeki D2 reseptör doluluğu %85 e çıktığında ne olur?",
+        "ar": "عندما يرتفع إشغال مضاد الذهان لمستقبلات D2 في تصوير PET إلى 85%، ماذا يحدث للمريض؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "%65-80 arası terapötik penceredir; %80 in üzeri kaçınılmaz motor blokaj yaratır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph62-1",
+            "text": {
+              "tr": "Şiddetli ekstrapiramidal semptomlar (EPS: akut distoni, parkinsonizm) başlar.",
+              "ar": "تتفجر أعراض خارج هرمية حادة (EPS: خلل توتر، متلازمة باركنسون الدوائية)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph62-2",
+            "text": {
+              "tr": "Hasta tamamen iyileşir ve yan etki sıfırlanır.",
+              "ar": "يشفى المريض تماماً وتتلاشى الآثار الجانبية."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: 4 Farklı Odaya Açılan Tek Şalter",
+        "ar": "تشبيه حدسي: مفتاح واحد يتحكم بأربع غرف متباينة"
+      },
+      "prompt": {
+        "tr": "D2 blokerini aldığınızda 4 odaya birden girer: 1. Deliryumu söndürür, 2. Motor hareketleri kilitler, 3. Prolaktini artırır, 4. Duyguları köreltir.",
+        "ar": "مضاد D2 مفتاح يطفئ 4 غرف معاً: 1. يسكت الهذيان، 2. يقفل الحركة الحركية، 3. يرفع هرمون الحليب، 4. يبلد المشاعر."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ekstrapiramidal semptom",
+          "arContext": "الأعراض خارج الهرمية (EPS)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Dört Dopaminerjik Yolak Haritası",
+        "ar": "خارطة المسارات الدوبامينية الأربعة"
+      },
+      "prompt": {
+        "tr": "1. Mezolimbik (pozitif semptomlar), 2. Mezokortikal (negatif semptomlar), 3. Nigrostriatal (motor kontrol / EPS), 4. Tuberoinfundibuler (prolaktin baskısı).",
+        "ar": "1. الحافي (الأعراض الإيجابية)، 2. القشري (الأعراض السلبية)، 3. المخطط (التحكم الحركي/EPS)، 4. القمعي (كبح البرولاكتين)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "nigrostriatal yolak",
+          "arContext": "المسار الأسود المخطط"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Atölye: Receptor-Ligand Matcher (D2/5-HT2A)",
+        "ar": "ورشة تفاعلية: مطابق مستقبلات D2 و 5-HT2A"
+      },
+      "prompt": {
+        "tr": "Haloperidol ve olanzapini test edin. D2 doluluğunu %65-80 penceresine ayarlayın; 5-HT2A blokajının motor fonksiyonu nasıl kurtardığını gözlemleyin.",
+        "ar": "قارن Haloperidol مع Olanzapine. اضبط إشغال D2 في نافذة 65-80% وشاهد كيف ينقذ حظر 5-HT2A الوظائف الحركية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "mode": "antipsychotic_profiling",
+          "receptors": [
+            "d2_striatal",
+            "5ht2a_cortical"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pharm-mod6-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Atipiklerin 5-HT2A Kurtarma Mekanizması",
+        "ar": "استكشاف موجه: آلية إنقاذ 5-HT2A في مضادات الذهان غير النمطية"
+      },
+      "prompt": {
+        "tr": "Serotonin nigrostriatal yolda dopamin salınımını frenler. İkinci kuşak antipsikotik 5-HT2A yı bloke ettiğinde striatumda ne olur?",
+        "ar": "يكبح السيروتونين تحرر الدوبامين حركياً. عندما يحظر مضاد الذهان غير النمطي 5-HT2A، ماذا يحدث في الجسم المخطط؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "5-HT2A antagonizması motor yolda dopamini kurtarır; atipik antipsikotiklerin sırrı budur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph62-3",
+            "text": {
+              "tr": "Fren kalkar; striatumda lokal dopamin salınarak D2 blokajı dengelenir ve EPS önlenir.",
+              "ar": "يزول الكبح؛ فيتحرر الدوبامين محلياً ليعادل حظر D2 ويحمي المريض من أعراض EPS."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph62-4",
+            "text": {
+              "tr": "Hasta komaya girer.",
+              "ar": "يدخل المريض في غيبوبة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "PET Doluluk Penceresi ve Reseptör Kinetiği",
+        "ar": "نافذة الإشغال في تصوير PET وحركية المستقبل"
+      },
+      "prompt": {
+        "tr": "Kapak D2 doluluk kuralı: <%65 yanıtsız, %65-80 optimal klinik yanıt, >%80 EPS riski. Hızlı dissosiasyon (koff) sergileyen ilaçlar (ketiapin) güvenlidir.",
+        "ar": "قاعدة إشغال D2: أقل من 65% غير فعال، 65-80% نافذة مثالية، أكثر من 80% خطر EPS. الانفصال السريع (koff) يمنح أماناً إضافياً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "PET doluluk penceresi",
+          "arContext": "نافذة الإشغال في PET"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Tuberoinfundibuler Yol ve Prolaktin",
+        "ar": "فحص المفهوم: المسار القمعي وهرمون البرولاكتين"
+      },
+      "prompt": {
+        "tr": "Dopamin hipofizde prolaktin salınımını doğal olarak baskılar. D2 blokerleri bu yolu kilitlediğinde ne gelişir?",
+        "ar": "يكبح الدوبامين إفراز هرمون الحليب (البرولاكتين). عند حظر مستقبلات D2 في هذا المسار، ماذا يظهر؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tuberoinfundibuler blokaj hiperprolaktinemi yan etkisinden sorumludur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph62-5",
+            "text": {
+              "tr": "Hiperprolaktinemi, galaktore (memeden süt gelmesi) ve jinekomasti.",
+              "ar": "فرط برولاكتين الدم، ثر اللبن (galaktore) وتثدي الرجال."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph62-6",
+            "text": {
+              "tr": "Kan şekeri sıfırlanır.",
+              "ar": "يهبط سكر الدم للصفر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Tipikten Atipiğe Geçiş",
+        "ar": "قرار سريري: التحول من النمطي إلى غير النمطي"
+      },
+      "prompt": {
+        "tr": "Haloperidol kullanırken ellerinde titreme ve boyun distonisi (EPS) başlayan genç şizofreni hastasında tedavi nasıl revize edilmelidir?",
+        "ar": "مريض فصام بدأ يعاني من رعاش وتشنج عنقي حاد (EPS) بسبب Haloperidol، كيف يعدل علاجه؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Atipik antipsikotikler yaşam kalitesini ve motor güvenliği korur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph62-7",
+            "text": {
+              "tr": "Düşük EPS riskli ikinci kuşak atipik antipsikotiğe (örneğin aripiprazol veya olanzapin) geçilmelidir.",
+              "ar": "التحول إلى مضاد ذهان غير نمطي من الجيل الثاني منخفض خطر EPS مثل Aripiprazole أو Olanzapine."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph62-8",
+            "text": {
+              "tr": "Haloperidol dozu artırılmalıdır.",
+              "ar": "زيادة جرعة الهالوبيريدول."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod6-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Tersinir Kinetik ve Koff",
+        "ar": "استرجاع معرفي: الحركية العكوسة ومعدل koff"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi ilacın reseptörden hızla ayrışmasını ifade eden kinetik parametre neydi?",
+        "ar": "كما رأينا في الوحدة 1، ما هو المعامل الحركي الذي يعبر عن سرعة انفصال الدواء عن المستقبِل؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "koff ayrışma hızı",
+          "arContext": "معدل الانفصال koff"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "Büyük Final: 22 Derslik Müfredatın Tamamlanışı",
+        "ar": "الختام الكبير: إتمام منهاج الـ 22 درساً"
+      },
+      "prompt": {
+        "tr": "Tebrikler! Farmasötik Kimya ve Farmakoloji müfredatının 22 temel dersini tamamladınız. Artık ilaçların kimyasını ve canlıdaki kaderini biliyorsunuz.",
+        "ar": "تهانينا الحارة! لقد أتممت بنجاح الدروس الـ 22 المجانية عبر مساقي Farmasötik Kimya و Farmakoloji."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "konsept ustalığı",
+          "arContext": "إتقان المفاهيم"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Müfredat Ustalık Sınavı: D2 Terapötik Pencere",
+        "ar": "اختبار الإتقان الختامي للمنهاج: نافذة D2 العلاجية"
+      },
+      "prompt": {
+        "tr": "Antipsikotik etkinin sağlandığı fakat ekstrapiramidal motor yan etkilerin (EPS) henüz başlamadığı optimal D2 doluluk aralığı nedir?",
+        "ar": "ما هو النطاق المثالي لإشغال مستقبلات D2 الذي يضمن الفعالية المضادة للذهان دون إثارة أعراض EPS الحركية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "22 Derslik Müfredat Başarıyla Tamamlandı! Büyük Ustalık Rozeti Kazanıldı! +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph62-9",
+            "text": {
+              "tr": "%65 ila %80 D2 reseptör doluluğu.",
+              "ar": "إشغال يتراوح بين 65% و 80% لمستقبلات D2."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph62-10",
+            "text": {
+              "tr": "%100 doluluk.",
+              "ar": "إشغال 100% بالكامل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

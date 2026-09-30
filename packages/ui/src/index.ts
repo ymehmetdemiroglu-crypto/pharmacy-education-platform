@@ -13,3 +13,4 @@ export * from './components/EmptyState/EmptyState';
 export * from './components/SkeletonLoader/SkeletonLoader';
 export * from './components/TrialBanner/TrialBanner';
 export * from './components/PaywallModal/PaywallModal';
+export * from './components/TechnicalTermBadge/TechnicalTermBadge';

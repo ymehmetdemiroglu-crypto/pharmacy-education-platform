@@ -1,0 +1,640 @@
+{
+  "id": "pharm-mod5-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-05",
+  "title": {
+    "tr": "Renin-Anjiyotensin-Aldosteron Sistemi (RAAS) İnhibisyonu",
+    "ar": "تثبيط مسار الرينين-أنجيوتنسين-ألدوستيرون (RAAS)"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "ADE inhibitörleri ve ARB lerin etki mekanizmalarını, hemodinamik sonuçlarını ve bradikinin kaynaklı yan etkilerini ayırt etmek.",
+    "ar": "التمييز بين آليات عمل مثبطات ACE وحاصرات ARB وعواقبها الديناميكية الدموية وتأثيرات البراديكينين."
+  },
+  "misconceptions": [
+    {
+      "tr": "ARB lerin de ADE inhibitörleri gibi kuru öksürük yaptığı yanılgısı (öksürük bradikinin birikiminden kaynaklanır ve sadece ADE inhibitörlerinde görülür).",
+      "ar": "الاعتقاد الخاطئ بأن حاصرات ARB تسبب السعال الجاف كـ ACE (السعال ينجم عن تراكم البراديكينين وخاص بمثبطات ACE)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Kardiyovasküler Sistem.pdf",
+      "page": 8
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH09-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Renin-Angiotensin System: ACE Inhibitors and Angiotensin Receptor Blockers",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod5-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "ADE İnhibitörü ve Kuru Öksürük",
+      "prompt": "ADE inhibitörlerinin (enalapril, kaptopril) en karakteristik yan etkisi olan kuru öksürüğün sebebi nedir?",
+      "answer": "ADE enziminin aynı zamanda bradikinini parçalayan kininaz II olması; inhibe olunca akciğerde bradikinin birikir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod5-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "ARB Üstünlüğü",
+      "prompt": "ARB ler (losartan, valsartan) neden kuru öksürük yapmaz?",
+      "answer": "Doğrudan AT1 reseptörünü bloke ederler; ADE enzimine ve bradikinin yıkımına dokunmazlar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod5-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Renal Koruma Mekanizması",
+      "prompt": "ADE inhibitörleri diyabetik nefropatide böbrek hasarını nasıl yavaşlatır?",
+      "answer": "Efferent arteriyolü genişleterek intraglomerüler filtrasyon basıncını ve proteinüriyi düşürür.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Renin-Anjiyotensin-Aldosteron Sistemi (RAAS) İnhibisyonu"
+    },
+    "ar": {
+      "title": "تثبيط مسار الرينين-أنجيوتنسين-ألدوستيرون (RAAS)"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod5-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Brezilya Yılan Zehrinden Tansiyon İlacına",
+        "ar": "من سم أفعى البرازيل إلى دواء لضغط الدم"
+      },
+      "prompt": {
+        "tr": "Brezilya çukur engereğinin soktuğu kurbanların tansiyonu neden sıfıra inip şoka giriyordu? Bu zehir modern tansiyon ilaçlarını nasıl doğurdu?",
+        "ar": "لماذا ينهار ضغط دم ضحايا أفعى الحفر البرازيلية إلى الصفر؟ وكيف ولد هذا السم أدوية الضغط الحديثة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ADE inhibitörü",
+          "arContext": "مثبط إنزيم ACE"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Anjiyotensin II Blokajı",
+        "ar": "توقع: حظر أنجيوتنسين II"
+      },
+      "prompt": {
+        "tr": "Vücudun en güçlü damar büzücüsü olan anjiyotensin II üretimi durdurulduğunda sistemik vasküler direnç ne olur?",
+        "ar": "عند وقف اصطناع أنجيوتنسين II الأقوى في تقبيض الأوعية بالجسم، ماذا يحدث للمقاومة الوعائية الكلية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Anjiyotensin II blokajı hem vazokonstriksiyonu hem aldosteron salınımını durdurur."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph51-1",
+            "text": {
+              "tr": "Damarlar hızla gevşer ve arteriyel kan basıncı belirgin şekilde düşer.",
+              "ar": "تسترخي الأوعية الدموية سريعاً وينخفض ضغط الدم الشرياني بوضوح."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph51-2",
+            "text": {
+              "tr": "Tansiyon fırlar.",
+              "ar": "يرتفع الضغط بشكل حاد."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Bahçe Hortumu ve Musluk",
+        "ar": "تشبيه حدسي: خرطوم الحديقة والصنبور"
+      },
+      "prompt": {
+        "tr": "Anjiyotensin hortumun ucunu sıkar (damar büzüşmesi), aldosteron ise musluğu açıp su basar (tuz-su tutulumu). RAAS blokerleri ikisini birden gevşetir.",
+        "ar": "أنجيوتنسين يضغط فوهة الخرطوم (تضييق الأوعية) وألدوستيرون يضخ الماء (احتباس الملح والماء). أدوية RAAS ترخي الطرفين معاً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "aldosteron",
+          "arContext": "هرمون الألدوستيرون"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "RAAS Biyokimyasal Yolağı",
+        "ar": "مسار RAAS الكيميائي الحيوي"
+      },
+      "prompt": {
+        "tr": "Anjiyotensinojen -> (Renin) -> Anjiyotensin I -> (ADE) -> Anjiyotensin II -> AT1 reseptörü (Vazokonstriksiyon + Aldosteron salınımı).",
+        "ar": "أنجيوتنسينوجين -> (Renin) -> أنجيوتنسين I -> (ACE) -> أنجيوتنسين II -> مستقبِل AT1 (انقباض وعائي + إفراز ألدوستيرون)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "anjiyotensin II",
+          "arContext": "أنجيوتنسين II"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Dose-Response Modulator (RAAS)",
+        "ar": "محاكي تفاعلي: معدل الجرعة والاستجابة (مسار RAAS)"
+      },
+      "prompt": {
+        "tr": "Enalapril veya losartan ekleyin. Anjiyotensin konsantrasyon-yanıt eğrisinin sağa ve aşağı kayışını, kan basıncı düşüşünü izleyin.",
+        "ar": "أضف دواء Enalapril أو Losartan وراقب إزاحة منحنى استجابة الأنجيوتنسين وهبوط ضغط الدم الناتج."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "mode": "raas_antihypertensive",
+          "drugClass": "ace_vs_arb",
+          "baselinePressure": 160
+        }
+      }
+    },
+    {
+      "id": "pharm-mod5-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Öksürüğün Biyokimyasal Nedeni",
+        "ar": "استكشاف موجه: السبب الكيميائي للسعال الجاف"
+      },
+      "prompt": {
+        "tr": "ADE enzimi anjiyotensin I i çevirirken aynı zamanda hangi damar genişletici peptidi parçalar?",
+        "ar": "يقوم إنزيم ACE بتحويل أنجيوتنسين I وفي نفس الوقت يهدم أي ببتيد موسع للأوعية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "ADE = Kininaz II. İnhibe edilince biriken bradikinin bronşları irrite eder."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph51-3",
+            "text": {
+              "tr": "Bradikinin; parçalanamayınca akciğerde birikerek inatçı kuru öksürük yapar.",
+              "ar": "البراديكينين؛ وعند تثبيط الإنزيم يتراكم في الرئة مسبباً سعالاً جافاً عنيداً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph51-4",
+            "text": {
+              "tr": "İnsülin.",
+              "ar": "هرمون الإنسولين."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "ADE İnhibitörleri vs ARB ler Karşılaştırması",
+        "ar": "مقارنة بين مثبطات ACE وحاصرات ARB"
+      },
+      "prompt": {
+        "tr": "ADE İnhibitörleri (ramipril, kaptopril): Ang II sentezini önler + Bradikinin artar. ARB ler (losartan, valsartan): Yalnızca AT1 i bloke eder, öksürük yapmaz.",
+        "ar": "مثبطات ACE تمنع اصطناع Ang II وتزيد البراديكينين. حاصرات ARB تحظر مستقبِل AT1 فقط دون أن تلمس البراديكينين فتتجنب السعال."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ARB (anjiyotensin reseptör blokörü)",
+          "arContext": "حاصرات مستقبلات الأنجيوتنسين (ARB)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Hiperkalemi Riski",
+        "ar": "فحص المفهوم: خطر فرط بوتاسيوم الدم"
+      },
+      "prompt": {
+        "tr": "RAAS blokerleri aldosteron salınımını baskıladığında serum potasyum seviyesi nasıl değişir?",
+        "ar": "عندما تثبط أدوية RAAS إفراز الألدوستيرون، كيف يتأثر مستوى بوتاسيوم المصل؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Aldosteron potasyum attırır; baskılanınca kanda potasyum birikir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph51-5",
+            "text": {
+              "tr": "Potasyum böbrekten atılamaz ve kanda yükselir (hiperkalemi riski).",
+              "ar": "يتعذر إطراح البوتاسيوم كلوياً فيرتفع بالدم (خطر فرط البوتاسيوم)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph51-6",
+            "text": {
+              "tr": "Potasyum tamamen sıfırlanır.",
+              "ar": "يهبط البوتاسيوم إلى الصفر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Öksüren Hipertansiyon Hastası",
+        "ar": "قرار سريري: مريض ضغط يعاني من السعال"
+      },
+      "prompt": {
+        "tr": "Ramipril kullanırken geceleri uyutmayan kuru öksürük gelişen hipertansiyon hastasında ilaç nasıl değiştirilmelidir?",
+        "ar": "مريض ضغط يعالج بـ Ramipril وأصيب بسعال جاف يمنعه من النوم ليلاً، كيف يعدل العلاج؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "ARB ler ADE inhibitörü öksürüğünde birinci basamak alternatiftir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph51-7",
+            "text": {
+              "tr": "Ramipril kesilip yerine bir ARB (örneğin valsartan veya losartan) başlanmalıdır.",
+              "ar": "يوقف Ramipril ويستبدل بحاصر ARB مثل Valsartan أو Losartan."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph51-8",
+            "text": {
+              "tr": "Doz iki katına çıkarılmalıdır.",
+              "ar": "تضاعف جرعة الراميبريل إلى الضعف."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Tetrazol ve Losartan Tasarımı",
+        "ar": "استرجاع معرفي: حلقة التترازول وتصميم Losartan"
+      },
+      "prompt": {
+        "tr": "Medchem Modül 3 te gördüğümüz gibi losartan molekülünde karboksilik asit yerine konan klasik olmayan biyoizoster halka neydi?",
+        "ar": "كما رأينا في مساق الكيمياء، ما هي الحلقة غير الكلاسيكية التي استبدل بها الكربوكسيل في Losartan؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "tetrazol biyoizosteri",
+          "arContext": "متشابه التترازول الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Diüretikler ve Nefron Segmentleri (Ders 10)",
+        "ar": "ربط مفاهيمي: مدرات البول وأجزاء الكليون (الدرس 10)"
+      },
+      "prompt": {
+        "tr": "Aldosteronun böbrek tübüllerindeki su ve tuz tutma mekanizmasını, bir sonraki derste diüretik ilaçları incelerken tam olarak çözeceğiz.",
+        "ar": "سنستكشف في الدرس القادم آليات احتباس الماء والملح عبر أنابيب الكلى بتفصيل دقيق عند دراسة مدرات البول."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "diüretik mekanizması",
+          "arContext": "آلية الإدرار"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: RAAS İnhibisyonu",
+        "ar": "اختبار الإتقان: تثبيط مسار RAAS"
+      },
+      "prompt": {
+        "tr": "ADE inhibitörleri ile ARB ler arasındaki en belirgin klinik farmakolojik fark nedir?",
+        "ar": "ما الفارق الفارماكولوجي السريري الأكثر وضوحاً بين مثبطات ACE وحاصرات ARB؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph51-9",
+            "text": {
+              "tr": "ADE inhibitörleri bradikinin biriktirerek öksürük yapar; ARB ler bradikinine dokunmaz ve öksürük yapmaz.",
+              "ar": "مثبطات ACE تراكم البراديكينين مسببة السعال؛ بينما لا تؤثر حاصرات ARB على البراديكينين ولا تسبب سعالاً."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph51-10",
+            "text": {
+              "tr": "ARB ler tansiyonu hiç düşürmez.",
+              "ar": "حاصرات ARB لا تخفض ضغط الدم مطلقاً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

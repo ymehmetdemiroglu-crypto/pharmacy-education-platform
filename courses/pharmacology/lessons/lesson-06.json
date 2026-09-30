@@ -1,0 +1,641 @@
+{
+  "id": "pharm-mod3-les2",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-03",
+  "title": {
+    "tr": "Biyoyararlanım, İlk Geçiş Eliminasyonu ve EAA Analizi",
+    "ar": "التوافر الحيوي، تأثير المرور الأول وتحليل AUC"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Oral biyoyararlanım fraksiyonunu (F), Eğri Altındaki Alan (EAA/AUC) oranlarını ve ilk geçiş hepatik ekstraksiyonunu hesaplamak.",
+    "ar": "حساب كسر التوافر الحيوي الفموي (F) ونسب المساحة تحت المنحنى (AUC) واستخلاص المرور الأول الكبدي."
+  },
+  "misconceptions": [
+    {
+      "tr": "Ağızdan alınan 500 mg ilacın tamamının sistemik dolaşıma ulaştığı yanılgısı (karaciğer ve bağırsak ilk geçişi dozu budar).",
+      "ar": "الظن الخاطئ بأن كامل جرعة 500 mg الفموية تصل إلى الدورة الدموية العامة دون استخلاص كبدي ومعوي."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 48
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH06-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Bioavailability, First-Pass Metabolism, and AUC Integration",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod3-les2-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Mutlak Biyoyararlanım Formülü (F)",
+      "prompt": "Oral mutlak biyoyararlanım fraksiyonu F nasıl hesaplanır?",
+      "answer": "F = (EAA_oral x Doz_IV) / (EAA_IV x Doz_oral).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod3-les2-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Hepatik Ekstraksiyon Oranı (EH)",
+      "prompt": "Karaciğer ekstraksiyon oranı EH = 0.80 olan bir ilacın karaciğerden kurtulan oranı (FH) nedir?",
+      "answer": "FH = 1 - EH = 1 - 0.80 = 0.20 (%20 si dolaşıma geçer).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod3-les2-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "İlk Geçişi Aşma Yolları",
+      "prompt": "Hepatik ilk geçiş metabolizmasını baypas eden parenteral dışı uygulama yolları nelerdir?",
+      "answer": "Sublingual (dil altı), rektal (kısmen) ve transdermal uygulama yolları.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Biyoyararlanım, İlk Geçiş Eliminasyonu ve EAA Analizi"
+    },
+    "ar": {
+      "title": "التوافر الحيوي، تأثير المرور الأول وتحليل AUC"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod3-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Nitrogliserin Neden Yutulmaz?",
+        "ar": "لماذا لا يبتلع مريض الذبحة قرص النتروغليسرين؟"
+      },
+      "prompt": {
+        "tr": "Kalp krizinde nitrogliserin yutulursa hiçbir işe yaramazken, dil altına konduğunda 2 dakikada göğüs ağrısını nasıl dindirir?",
+        "ar": "عند ابتلاع النتروغليسرين يفقد فعاليته تماماً، بينما يزيل ألم الصدر خلال دقيقتين تحت اللسان. ما سر ذلك؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ilk geçiş etkisi",
+          "arContext": "تأثير المرور الأول"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Karaciğerin Vergi Kesintisi",
+        "ar": "توقع: ضريبة التصفية الكبدية"
+      },
+      "prompt": {
+        "tr": "Ağızdan emilen bir ilaç kalbe ve beyne gitmeden önce zorunlu olarak hangi organdan geçmek zorundadır?",
+        "ar": "قبل أن يصل الدواء الممتص فموياً إلى القلب والدماغ، ما هو العضو الإلزامي الذي يعبره أولاً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tüm bağırsak kanı portal venle karaciğere akar; ilk geçiş metabolizması burada gerçekleşir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph32-1",
+            "text": {
+              "tr": "Vena porta yoluyla doğrudan karaciğerden geçer.",
+              "ar": "يعبر مباشرة إلى الكبد عبر الوريد البابي البابي."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph32-2",
+            "text": {
+              "tr": "Doğrudan böbreğe gider.",
+              "ar": "ينتقل مباشرة إلى الكليتين."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod3-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: Gümrük Kapısı Prensibi",
+        "ar": "تشبيه حدسي: بوابة الجمارك الإلزامية"
+      },
+      "prompt": {
+        "tr": "Bağırsaktan giren her molekül karaciğer gümrük kapısından geçer. Karaciğer enzimleri molekülün %90 ına el koyabilir (yüksek ekstraksiyon).",
+        "ar": "كل جزيء يعبر من الأمعاء يخضع لتفتيش جمركي كبدي صارم. قد تصادر الإنزيمات 90% من الجرعة فوراً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "hepatik ekstraksiyon",
+          "arContext": "الاستخلاص الكبدي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "EAA (Eğri Altındaki Alan / AUC) Entegrasyonu",
+        "ar": "تكامل المساحة تحت المنحنى (AUC)"
+      },
+      "prompt": {
+        "tr": "Plazma konsantrasyon-zaman grafiğinin altındaki alan (EAA), vücuda giren toplam aktif ilaç miktarının doğrudan ölçüsüdür.",
+        "ar": "تمثل المساحة تحت منحنى التركيز والزمن (AUC) المقياس الدقيق لكمية الدواء النشط الكلية الواصلة للدورة العامة."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "EAA (AUC)",
+          "arContext": "المساحة تحت المنحنى AUC"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: PkSimulator (Biyoyararlanım)",
+        "ar": "محاكي تفاعلي: محاكي الحركية (التوافر الحيوي)"
+      },
+      "prompt": {
+        "tr": "Aynı dozdaki ilacı IV ve Oral olarak verin. Oral emilim hızını ve EAA oranını karşılaştırarak biyoyararlanım F fraksiyonunu hesaplayın.",
+        "ar": "أعطِ نفس الجرعة وريدياً وفموياً. قارن سرعة الامتصاص ومساحة AUC لحساب كسر التوافر الحيوي F."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "PkSimulator",
+      "widget": {
+        "type": "PkSimulator",
+        "config": {
+          "model": "oral_vs_iv_comparison",
+          "doseMg": 100,
+          "oralFractionF": 0.6,
+          "absorptionKa": 1.2
+        }
+      }
+    },
+    {
+      "id": "pharm-mod3-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Dil Altı Uygulamanın Üstünlüğü",
+        "ar": "استكشاف موجه: ميزة الإعطاء تحت اللسان"
+      },
+      "prompt": {
+        "tr": "Nitrogliserin dil altına konduğunda emilen moleküller vena kava superior ile doğrudan kalbe akar. Karaciğer ilk geçişine ne oldu?",
+        "ar": "عند وضع النتروغليسرين تحت اللسان يمتص للوريد الأجوف العلوي نحو القلب مباشرة. ماذا حدث للمرور الكبدي الأول؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Sublingual yol karaciğer portal dolaşımını atlatarak anında sistemik etki sağlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph32-3",
+            "text": {
+              "tr": "İlk geçiş metabolizması tamamen baypas edildi ve biyoyararlanım fırladı.",
+              "ar": "تم تجاوز استقلاب المرور الأول بالكامل وقفز التوافر الحيوي للذروة."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph32-4",
+            "text": {
+              "tr": "Daha fazla yıkıldı.",
+              "ar": "تعرض الدواء لهدم استقلابي أكبر."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod3-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Biyoyararlanım ve Klerens Eşitlikleri",
+        "ar": "معادلات التوافر الحيوي والتصفية"
+      },
+      "prompt": {
+        "tr": "F = (EAA_oral / EAA_IV) * (Doz_IV / Doz_oral). Karaciğer ekstraksiyonu EH = (Cin - Cout) / Cin. FH = 1 - EH.",
+        "ar": "التوافر الحيوي F = (AUC_oral / AUC_IV) * (Doz_IV / Doz_oral). الاستخلاص الكبدي EH = (Cin - Cout) / Cin."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "mutlak biyoyararlanım",
+          "arContext": "التوافر الحيوي المطلق"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Oral Doz Ayarlaması",
+        "ar": "فحص المفهوم: تعديل الجرعة الفموية"
+      },
+      "prompt": {
+        "tr": "Bir ilacın IV dozu 10 mg ve oral biyoyararlanımı F = 0.20 (%20) ise, aynı etki için oral yoldan kaç mg verilmelidir?",
+        "ar": "إذا كانت الجرعة الوريدية 10 mg والتوافر الحيوي الفموي F = 0.20 (20%)، فكم ملغ يجب إعطاؤه فموياً لنفس الأثر؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Oral doz = IV Doz / F formülüyle eşit biyoyararlanım sağlanır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph32-5",
+            "text": {
+              "tr": "Tam 50 mg (10 mg / 0.20 = 50 mg).",
+              "ar": "50 mg تماماً (10 mg / 0.20 = 50 mg)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph32-6",
+            "text": {
+              "tr": "2 mg.",
+              "ar": "2 mg فقط."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod3-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Uygulama: Morfin Oral ve IV Doz Farkı",
+        "ar": "تطبيق سريري: الفارق بين جرعتي المورفين الفموية والوريدية"
+      },
+      "prompt": {
+        "tr": "Morfinin oral biyoyararlanımı yaklaşık %25 tir. Hastanede 10 mg IV morfinle ağrısı dinen hastaya taburculukta neden 40 mg oral tablet yazılır?",
+        "ar": "يبلغ التوافر الحيوي الفموي للمورفين حوالي 25%. لماذا يكتب للطبيب 40 mg فموياً للمريض الذي كفته 10 mg وريدياً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "İlk geçiş metabolizması oral dozaj formlarının dozunu katlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph32-7",
+            "text": {
+              "tr": "40 mg ın ancak %25 i (10 mg) karaciğerden sağ çıkarak kana ulaşır.",
+              "ar": "لأن 25% فقط من الـ 40 mg (أي 10 mg) تنجو من الكبد لتصل إلى الدم."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph32-8",
+            "text": {
+              "tr": "Doktor hata yapmıştır.",
+              "ar": "لأن الطبيب أخطأ في الحساب."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod3-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Klerens ve Yarılanma Ömrü",
+        "ar": "استرجاع معرفي: التصفية وعمر النصف"
+      },
+      "prompt": {
+        "tr": "Bir önceki derste gördüğümüz gibi vücuda giren ilacın kandan temizlenme hızını ifade eden hacimsel parametre neydi?",
+        "ar": "كما رأينا في الدرس السابق، ما هو المعامل الحجمي الذي يحدد سرعة تنقية الدواء من الدم؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "sistemik klerens",
+          "arContext": "التصفية الكلية للجسم"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Otonom Sinir Sistemi ve Reseptörler (Modül 4)",
+        "ar": "ربط مفاهيمي: الجهاز العصبي الذاتي والمستقبلات (الوحدة 4)"
+      },
+      "prompt": {
+        "tr": "Genel farmakoloji prensiplerini tamamladık! Şimdi organ sistemlerine geçiyoruz: Modül 4 te sempatik ve parasempatik iletimi keşfedeceğiz.",
+        "ar": "أتممنا المبادئ العامة لعلم الأدوية! ننتقل الآن إلى أجهزة الجسم: في الوحدة 4، سنستكشف النقل العصبي الودي ونظير الودي."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "otonom sinir sistemi",
+          "arContext": "الجهاز العصبي الذاتي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Biyoyararlanım ve İlk Geçiş",
+        "ar": "اختبار الإتقان: التوافر الحيوي والمرور الأول"
+      },
+      "prompt": {
+        "tr": "Bir ilacın IV EAA sı 100 mg*saat/L, eşit dozda oral EAA sı ise 40 mg*saat/L bulunmuştur. Bu ilacın oral biyoyararlanımı yüzde kaçtır?",
+        "ar": "لدواء معين، بلغت AUC الوريدية 100، بينما بلغت AUC الفموية لنفس الجرعة 40. كم تبلغ النسبة المئوية لتوافره الحيوي الفموي؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Modül 3 tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph32-9",
+            "text": {
+              "tr": "%40 biyoyararlanım (F = 40 / 100 = 0.40).",
+              "ar": "توافر حيوي 40% (F = 40 / 100 = 0.40)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph32-10",
+            "text": {
+              "tr": "%100.",
+              "ar": "100% بالكامل."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

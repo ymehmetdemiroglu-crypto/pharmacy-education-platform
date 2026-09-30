@@ -2,7 +2,7 @@
 EXTENDED CLAIM SCANNER MUTATION AUDIT LOG (H4 VERIFICATION)
 Target Script: scripts/claim-inventory.mjs
 Master Lesson: courses/medchem/lessons/lesson-01.json
-Timestamp: 2026-09-29T18:34:49.252Z
+Timestamp: 2026-09-30T12:46:19.998Z
 ================================================================
 
 ----------------------------------------------------------------
@@ -12,14 +12,14 @@ Exit Code: 1
 Observed Error Output:
 ================================================================
 PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
-Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+Lesson: [object Object] (mc-mod1-les1)
 ================================================================
 
 [PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
 
 Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
-- Total String Nodes Audited: 249
-- Recognized Number/Unit Matches Mapped to Registry: 104
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
 - Undeclared Numeric or Factual Hits: 1
 
 [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
@@ -34,14 +34,14 @@ Exit Code: 1
 Observed Error Output:
 ================================================================
 PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
-Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+Lesson: [object Object] (mc-mod1-les1)
 ================================================================
 
 [PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
 
 Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
-- Total String Nodes Audited: 249
-- Recognized Number/Unit Matches Mapped to Registry: 104
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
 - Undeclared Numeric or Factual Hits: 1
 
 [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
@@ -56,14 +56,14 @@ Exit Code: 1
 Observed Error Output:
 ================================================================
 PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
-Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+Lesson: [object Object] (mc-mod1-les1)
 ================================================================
 
 [PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
 
 Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
-- Total String Nodes Audited: 249
-- Recognized Number/Unit Matches Mapped to Registry: 103
+- Total String Nodes Audited: 312
+- Recognized Number/Unit Matches Mapped to Registry: 102
 - Undeclared Numeric or Factual Hits: 1
 
 [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
@@ -78,14 +78,14 @@ Exit Code: 1
 Observed Error Output:
 ================================================================
 PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
-Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+Lesson: [object Object] (mc-mod1-les1)
 ================================================================
 
 [PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
 
 Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
-- Total String Nodes Audited: 249
-- Recognized Number/Unit Matches Mapped to Registry: 104
+- Total String Nodes Audited: 312
+- Recognized Number/Unit Matches Mapped to Registry: 102
 - Undeclared Numeric or Factual Hits: 1
 
 [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
@@ -100,14 +100,14 @@ Exit Code: 1
 Observed Error Output:
 ================================================================
 PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
-Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+Lesson: [object Object] (mc-mod1-les1)
 ================================================================
 
 [PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
 
 Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
-- Total String Nodes Audited: 249
-- Recognized Number/Unit Matches Mapped to Registry: 103
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
 - Undeclared Numeric or Factual Hits: 1
 
 [FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:

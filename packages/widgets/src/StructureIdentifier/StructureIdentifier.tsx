@@ -73,12 +73,12 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       <div className="flex flex-wrap items-center justify-between gap-2 p-2 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-mono">
         <span>Molecule: <strong>{config.moleculeName}</strong></span>
         <span className="truncate max-w-xs" title={config.smiles}>
-          SMILES: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700">{config.smiles}</code>
+          SMILES: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700" dir="ltr">{config.smiles}</code>
         </span>
       </div>
 
       {/* Interactive Molecule SVG Canvas */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex items-center justify-center relative overflow-hidden">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex items-center justify-center relative overflow-hidden" dir="ltr">
         <svg
           viewBox="0 0 400 240"
           className="w-full max-w-md h-auto select-none"

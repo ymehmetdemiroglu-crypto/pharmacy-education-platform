@@ -108,7 +108,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
       </div>
 
       {/* SVG Canvas Curve */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3">
+      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3" dir="ltr">
         <svg
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"

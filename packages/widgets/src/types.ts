@@ -18,3 +18,11 @@ export interface BaseWidgetProps<C, A = any> extends WidgetEventHandlers<A> {
   className?: string;
   disabled?: boolean;
 }
+
+export interface BaseSimulationWidgetProps {
+  locale?: 'tr' | 'ar';
+  readOnly?: boolean;
+  initialState?: Record<string, any>;
+  onStateChange?: (state: Record<string, any>) => void;
+  onPredict?: (hypothesis: any) => void;
+}

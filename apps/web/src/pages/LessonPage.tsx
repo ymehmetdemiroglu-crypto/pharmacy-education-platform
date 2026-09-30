@@ -8,6 +8,7 @@ import {
   StepDots,
   HintDrawer,
   PaywallModal,
+  TechnicalTermBadge,
   useTheme,
 } from '@pharmacy/ui';
 import {
@@ -41,18 +42,118 @@ import {
   Check,
 } from 'lucide-react';
 import { lessonsMap, lesson01 } from '../data/lessons';
+import {
+  ThermodynamicActivityFergusonSlider,
+  thermodynamicActivityFergusonStandardDemo,
+  IonizationEquilibriumSlider,
+  ionizationEquilibriumStandardDemo,
+  SarExplorer,
+  sarExplorerStandardDemo,
+  ReceptorLigandMatcher,
+  receptorLigandMatcherStandardDemo,
+  StructureIdentifier,
+  structureIdentifierStandardDemo,
+  MetabolismMap,
+  metabolismMapStandardDemo,
+  DoseResponseCurve,
+  doseResponseCurveStandardDemo,
+  PkSimulator,
+  pkSimulatorStandardDemo,
+  MembranePartitionSimulator,
+  membranePartitionStandardDemo,
+} from '@pharmacy/widgets';
+
+function getLocalizedText(
+  value: string | { tr: string; ar: string } | undefined,
+  currentLocale: string
+): string {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (typeof value === 'object') {
+    if (currentLocale === 'ar' && value.ar) return value.ar;
+    return value.tr || value.ar || '';
+  }
+  return String(value);
+}
+
+function getDefaultWidgetType(lessonId: string): string {
+  if (lessonId === 'mc-mod1-les1') return 'ThermodynamicActivityFergusonSlider';
+  if (lessonId === 'mc-mod1-les2') return 'IonizationEquilibriumSlider';
+  if (lessonId.startsWith('mc-mod2') || lessonId === 'mc-mod4-les2') return 'SarExplorer';
+  if (lessonId.startsWith('mc-mod3')) return 'StructureIdentifier';
+  if (lessonId === 'mc-mod4-les1' || lessonId.startsWith('pharm-mod1') || lessonId.startsWith('pharm-mod4')) return 'ReceptorLigandMatcher';
+  if (lessonId.startsWith('pharm-mod2')) return 'DoseResponseCurve';
+  if (lessonId.startsWith('pharm-mod3')) return 'PkSimulator';
+  if (lessonId.startsWith('mc-mod5') || lessonId.startsWith('pharm-mod5') || lessonId.startsWith('pharm-mod6')) return 'MetabolismMap';
+  return 'ThermodynamicActivityFergusonSlider';
+}
+
+function renderInteractiveWidget(widgetType: string | undefined, config: any) {
+  switch (widgetType) {
+    case 'ThermodynamicActivityFergusonSlider':
+      return <ThermodynamicActivityFergusonSlider config={config || thermodynamicActivityFergusonStandardDemo} />;
+    case 'IonizationEquilibriumSlider':
+      return <IonizationEquilibriumSlider config={config || ionizationEquilibriumStandardDemo} />;
+    case 'SarExplorer':
+      return <SarExplorer config={config || sarExplorerStandardDemo} />;
+    case 'ReceptorLigandMatcher':
+      return <ReceptorLigandMatcher config={config || receptorLigandMatcherStandardDemo} />;
+    case 'StructureIdentifier':
+      return <StructureIdentifier config={config || structureIdentifierStandardDemo} />;
+    case 'MetabolismMap':
+      return <MetabolismMap config={config || metabolismMapStandardDemo} />;
+    case 'DoseResponseCurve':
+      return <DoseResponseCurve config={config || doseResponseCurveStandardDemo} />;
+    case 'PkSimulator':
+      return <PkSimulator config={config || pkSimulatorStandardDemo} />;
+    case 'MembranePartitionSimulator':
+      return <MembranePartitionSimulator config={config || membranePartitionStandardDemo} />;
+    default:
+      return null;
+  }
+}
+
+const STAGE_META: Record<string, { tr: string; ar: string; variant: 'blue' | 'yellow' | 'green' | 'orange' }> = {
+  hook: { tr: '1. Klinik / Biyokimyasal Kanca', ar: '1. لغز سريري / حيوي (Hook)', variant: 'blue' },
+  question: { tr: '2. Tahmin Hipotezi', ar: '2. فرضية التوقع (Question)', variant: 'yellow' },
+  intuition: { tr: '3. Fiziksel Sezgi ve Analoji', ar: '3. الحدس الفيزيائي والتشبيه (Intuition)', variant: 'orange' },
+  visual_explanation: { tr: '4. Görsel Mekanizma', ar: '4. التوضيح البصري (Visual)', variant: 'blue' },
+  interactive_artifact: { tr: '5. İnteraktif Simülasyon', ar: '5. المحاكاة التفاعلية (Interactive)', variant: 'green' },
+  guided_discovery: { tr: '6. Rehberli Keşif', ar: '6. الاستكشاف الموجه (Discovery)', variant: 'yellow' },
+  formal_explanation: { tr: '7. Formal Bilimsel İlke', ar: '7. الصياغة العلمية (Formal)', variant: 'blue' },
+  concept_check: { tr: '8. Kavram Denetimi', ar: '8. فحص المفهوم (Concept Check)', variant: 'yellow' },
+  application: { tr: '9. Klinik / Tasarım Uygulaması', ar: '9. التطبيق العملي (Application)', variant: 'blue' },
+  retrieval: { tr: '10. Aralıklı Hatırlama', ar: '10. استرجاع متباعد (Retrieval)', variant: 'orange' },
+  connection: { tr: '11. İleri Bağlantı', ar: '11. الربط المفاهيمي (Connection)', variant: 'blue' },
+  mastery_check: { tr: '12. Ustalık Sınavı', ar: '12. اختبار الإتقان (Mastery)', variant: 'green' },
+};
 
 export const LessonPage: React.FC = () => {
-  const { lessonId = '1' } = useParams<{ lessonId: string }>();
+  const { lessonId = '1', courseId: routeCourseId } = useParams<{ lessonId: string; courseId?: string }>();
   const { locale } = useTheme();
   const { user, entitlements, startTrial } = useAuth();
 
-  const lesson: LessonData = (lessonId && lessonsMap[lessonId]) ? lessonsMap[lessonId]! : lesson01;
-  const lessonTitle = (locale !== 'en' && lesson.translations?.[locale]?.title) || lesson.title;
-  const isFreePreviewLesson = lessonId === '1' || lessonId === '2' || lessonId === 'mc-mod1-les1' || lessonId === 'mc-mod1-les2';
+  const isPharmPath =
+    typeof window !== 'undefined' &&
+    (window.location.pathname.includes('/pharmacology') || lessonId.startsWith('pharm'));
+  const inferredCourseId = (routeCourseId || (isPharmPath ? 'pharmacology' : 'medchem')) as 'medchem' | 'pharmacology';
+
+  const lookupKey = lessonsMap[lessonId]
+    ? lessonId
+    : lessonsMap[`${inferredCourseId}-${lessonId}`]
+    ? `${inferredCourseId}-${lessonId}`
+    : lessonId;
+
+  const lesson: LessonData = lessonsMap[lookupKey] || lesson01;
+  const courseId = (lesson.courseId as 'medchem' | 'pharmacology') || inferredCourseId;
+  const lessonTitle =
+    (locale !== 'en' && (lesson.translations as any)?.[locale]?.title) ||
+    getLocalizedText(lesson.title, locale);
+  const isFreePreviewLesson =
+    lessonId !== '3' && lessonId !== 'mc-mod1-les3' && (lesson.access === 'free' || lesson.order <= 2);
 
   // Check course access
-  const hasAccess = hasCourseAccess(user, entitlements, 'medchem', {
+  const hasAccess = hasCourseAccess(user, entitlements, courseId, {
     isFreePreview: isFreePreviewLesson,
   });
 
@@ -60,11 +161,11 @@ export const LessonPage: React.FC = () => {
     user?.plan === 'trial' ||
     user?.plan === 'premium' ||
     entitlements.some(
-      (e) => (e.courseId === 'medchem' || e.courseId === 'dual_bundle') && e.status === 'active'
+      (e) => (e.courseId === courseId || e.courseId === 'dual_bundle') && e.status === 'active'
     );
 
   // Local progress & review cards state
-  const [progress, setProgress] = useState(() => loadLocalProgress('medchem'));
+  const [progress, setProgress] = useState(() => loadLocalProgress(courseId));
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [stepInteractions, setStepInteractions] = useState<
     Record<number, { selectedId?: string; isRevealed?: boolean; isCorrect?: boolean }>
@@ -82,7 +183,7 @@ export const LessonPage: React.FC = () => {
 
   // Load saved step index from progress if valid
   useEffect(() => {
-    const savedProgress = loadLocalProgress('medchem');
+    const savedProgress = loadLocalProgress(courseId);
     setProgress(savedProgress);
     if (
       savedProgress &&
@@ -90,9 +191,9 @@ export const LessonPage: React.FC = () => {
       typeof savedProgress.currentStepIndex === 'number' &&
       savedProgress.currentStepIndex > 0
     ) {
-      setCurrentStepIndex(Math.min(savedProgress.currentStepIndex, (lesson.steps?.length || 10) - 1));
+      setCurrentStepIndex(Math.min(savedProgress.currentStepIndex, (lesson.steps?.length || 12) - 1));
     }
-  }, [lessonId, lesson]);
+  }, [lessonId, lesson, courseId]);
 
   const currentStep: LessonStep | undefined = lesson?.steps[currentStepIndex];
   const isPredictStep = Boolean(currentStep?.predictThenReveal);
@@ -139,21 +240,21 @@ export const LessonPage: React.FC = () => {
       setProgress(updatedProgress);
       saveLocalProgress(updatedProgress);
 
-      const existingCards = loadLocalReviewCards('medchem');
+      const existingCards = loadLocalReviewCards(courseId);
       const updatedCards = enqueueReviewCards(existingCards, lesson.spacedReviewCards, new Date());
-      saveLocalReviewCards('medchem', updatedCards);
+      saveLocalReviewCards(courseId, updatedCards);
 
       setLessonCompleted(true);
     }
-  }, [lessonCompleted, progress, lesson]);
+  }, [lessonCompleted, progress, lesson, courseId]);
 
   const persistStepProgress = useCallback(
     (stepIdx: number) => {
       setProgress((prev) => {
         const base: UserProgress = prev || {
-          courseId: 'medchem',
+          courseId,
           completedLessonIds: [],
-          currentModuleId: 'mc-mod-01',
+          currentModuleId: lesson.moduleId || (courseId === 'pharmacology' ? 'pharm-mod-01' : 'mc-mod-01'),
           currentLessonId: lesson.id,
           currentStepIndex: stepIdx,
           streakDays: 0,
@@ -166,7 +267,7 @@ export const LessonPage: React.FC = () => {
         return updated;
       });
     },
-    [lesson.id]
+    [lesson.id, lesson.moduleId, courseId]
   );
 
   const handleNextStep = useCallback(() => {
@@ -325,9 +426,18 @@ export const LessonPage: React.FC = () => {
   const hasOptions = options.length > 0;
   const canProceed =
     (!hasOptions && !isPredictStep) ||
+    currentStep.stage === 'interactive_artifact' ||
+    currentStep.stage === 'visual_explanation' ||
+    currentStep.stage === 'intuition' ||
+    currentStep.stage === 'hook' ||
+    currentStep.stage === 'formal_explanation' ||
+    currentStep.stage === 'connection' ||
+    currentStep.stage === 'retrieval' ||
     currentInteraction.isRevealed ||
     currentStepIndex === 0 ||
     currentStepIndex === totalSteps - 1;
+
+  const stageMeta = currentStep.stage ? STAGE_META[currentStep.stage] : undefined;
 
   const t = {
     catalog: locale === 'tr' ? 'Katalog' : locale === 'ar' ? 'المقررات' : 'Catalog',
@@ -368,7 +478,7 @@ export const LessonPage: React.FC = () => {
             </Link>
             <span className="text-gray-400">•</span>
             <StickerBadge variant="blue" size="sm">
-              MedChem • Mod 01
+              {courseId === 'pharmacology' ? 'Farmakoloji' : 'Farmasötik Kimya'} • {lesson.moduleId || 'Mod 01'}
             </StickerBadge>
             <StickerBadge variant="green" size="sm">
               {t.freeForever}
@@ -433,10 +543,22 @@ export const LessonPage: React.FC = () => {
         <div className="space-y-2 border-b-2 border-black/15 dark:border-slate-700 pb-4">
           <div className="flex items-center justify-between">
             <StickerBadge
-              variant={isPredictStep ? 'yellow' : currentStepIndex === totalSteps - 1 ? 'green' : 'blue'}
+              variant={
+                stageMeta
+                  ? stageMeta.variant
+                  : isPredictStep
+                  ? 'yellow'
+                  : currentStepIndex === totalSteps - 1
+                  ? 'green'
+                  : 'blue'
+              }
               size="sm"
             >
-              {isPredictStep
+              {stageMeta
+                ? locale === 'ar'
+                  ? stageMeta.ar
+                  : stageMeta.tr
+                : isPredictStep
                 ? t.predictThenReveal
                 : currentStepIndex === totalSteps - 1
                 ? t.lessonRecap
@@ -448,44 +570,98 @@ export const LessonPage: React.FC = () => {
           </div>
 
           <h2 className="font-display font-black text-xl sm:text-2xl uppercase tracking-tight text-black dark:text-slate-100">
-            {currentStep.title}
+            {getLocalizedText(currentStep.title, locale)}
           </h2>
 
           {/* Strict 40-word prompt */}
-          <p
-            className="font-body text-base sm:text-lg font-semibold text-black dark:text-slate-100 leading-relaxed"
-            dir={locale === 'ar' ? 'ltr' : undefined}
-          >
-            {currentStep.prompt}
+          <p className="font-body text-base sm:text-lg font-semibold text-black dark:text-slate-100 leading-relaxed">
+            {getLocalizedText(currentStep.prompt, locale)}
           </p>
+
+          {/* Canonical Technical Terms */}
+          {Array.isArray(currentStep.technicalTerms) && currentStep.technicalTerms.length > 0 && (
+            <div className="flex flex-wrap items-center gap-1.5 pt-2">
+              <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider">
+                {locale === 'ar' ? 'المصطلحات المركزية:' : 'Anahtar Terimler:'}
+              </span>
+              {currentStep.technicalTerms.map((tt: any, idx: number) => {
+                const termStr = typeof tt === 'string' ? tt : tt.term || tt.tr || '';
+                return <TechnicalTermBadge key={idx} term={termStr} category="pharmacology" />;
+              })}
+            </div>
+          )}
         </div>
 
         {/* STEP-SPECIFIC WIDGET BODIES */}
 
-        {/* Step 1: Hook Comparison Vignette */}
-        {currentStepIndex === 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2" dir={locale === 'ar' ? 'ltr' : undefined}>
-            <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-left">
-              <span className="text-xs font-mono font-bold uppercase text-blue-700 dark:text-blue-400">
-                Agent A: Diethyl Ether (Anesthetic)
-              </span>
+        {/* Step 1: Hook Comparison Vignette (Lesson 1 or lessons with drugA/drugB) */}
+        {currentStepIndex === 0 && (Boolean(currentStep.config?.drugA) || lesson.id === 'mc-mod1-les1') && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-start">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-mono font-bold uppercase text-blue-700 dark:text-blue-400">
+                  {locale === 'ar' ? 'المادة أ:' : locale === 'tr' ? 'Madde A:' : 'Agent A:'}
+                </span>
+                <TechnicalTermBadge term="Diethyl Ether" category="chemical" />
+                <span className="text-xs font-mono text-gray-600 dark:text-gray-400">
+                  ({locale === 'ar' ? 'مخدر عام' : locale === 'tr' ? 'Anestezik' : 'Anesthetic'})
+                </span>
+              </div>
               <div className="text-xs font-mono space-y-1">
-                <p><strong>Clinical Dose:</strong> ~20–50 grams (high molar concentration in blood)</p>
-                <p><strong>Target:</strong> Membrane lipids / physical disorder</p>
-                <p><strong>Thermodynamic Activity:</strong> <span className="font-bold text-amber-700 dark:text-amber-300">a ≈ 0.03–0.05 (High Saturation)</span></p>
+                <p><strong>{locale === 'ar' ? 'الجرعة السريرية:' : locale === 'tr' ? 'Klinik Doz:' : 'Clinical Dose:'}</strong> ~20–50 grams (high molar concentration in blood)</p>
+                <p><strong>{locale === 'ar' ? 'الهدف:' : locale === 'tr' ? 'Hedef:' : 'Target:'}</strong> Membrane lipids / physical disorder</p>
+                <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحراري:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-amber-700 dark:text-amber-300">a ≈ 0.03–0.05 (High Saturation)</span></p>
               </div>
             </div>
 
-            <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-left">
-              <span className="text-xs font-mono font-bold uppercase text-emerald-700 dark:text-emerald-400">
-                Agent B: Propranolol (Beta-Blocker)
-              </span>
+            <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-start">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-700 dark:text-emerald-400">
+                  {locale === 'ar' ? 'المادة ب:' : locale === 'tr' ? 'Madde B:' : 'Agent B:'}
+                </span>
+                <TechnicalTermBadge term="Propranolol" category="chemical" />
+                <span className="text-xs font-mono text-gray-600 dark:text-gray-400">
+                  ({locale === 'ar' ? 'حاصر بيتا' : locale === 'tr' ? 'Beta-Blokör' : 'Beta-Blocker'})
+                </span>
+              </div>
               <div className="text-xs font-mono space-y-1">
-                <p><strong>Clinical Dose:</strong> 10–40 milligrams (nanomolar concentration)</p>
-                <p><strong>Target:</strong> Stereoselective β1/β2 receptor pocket</p>
-                <p><strong>Thermodynamic Activity:</strong> <span className="font-bold text-emerald-700 dark:text-emerald-300">a &lt; 0.0001 (Extreme Dilution)</span></p>
+                <p><strong>{locale === 'ar' ? 'الجرعة السريرية:' : locale === 'tr' ? 'Klinik Doz:' : 'Clinical Dose:'}</strong> 10–40 milligrams (nanomolar concentration)</p>
+                <p><strong>{locale === 'ar' ? 'الهدف:' : locale === 'tr' ? 'Hedef:' : 'Target:'}</strong> Stereoselective β1/β2 receptor pocket</p>
+                <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحراري:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-emerald-700 dark:text-emerald-300">a &lt; 0.0001 (Extreme Dilution)</span></p>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Step 5 / Interactive Artifact Widget */}
+        {(currentStep.stage === 'interactive_artifact' ||
+          Boolean(currentStep.widgetType) ||
+          Boolean((currentStep as any).widget) ||
+          (currentStepIndex === 4 && totalSteps >= 12)) && (
+          <div className="pt-2">
+            {renderInteractiveWidget(
+              currentStep.widgetType ||
+                (currentStep as any).widget?.type ||
+                getDefaultWidgetType(lesson.id),
+              (currentStep as any).widget?.config || currentStep.config
+            )}
+          </div>
+        )}
+
+        {/* Formal Formula Callout (Stage 7) */}
+        {currentStep.stage === 'formal_explanation' && Boolean(currentStep.config?.formula) && (
+          <div className="p-4 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 font-mono text-center text-sm sm:text-base font-bold text-blue-700 dark:text-blue-400">
+            {String(currentStep.config.formula)}
+          </div>
+        )}
+
+        {/* Retrieval Target Concept Callout (Stage 10) */}
+        {currentStep.stage === 'retrieval' && Boolean(currentStep.config?.targetConcept) && (
+          <div className="p-4 bg-purple-50 dark:bg-purple-950/20 border-2 border-black dark:border-slate-700 flex items-center justify-between">
+            <span className="text-xs font-mono font-bold uppercase text-purple-800 dark:text-purple-300">
+              {locale === 'ar' ? 'المفهوم المستهدف:' : 'Hedef Kavram:'}
+            </span>
+            <TechnicalTermBadge term={String(currentStep.config.targetConcept)} category="pharmacology" />
           </div>
         )}
 
@@ -530,9 +706,9 @@ export const LessonPage: React.FC = () => {
                         (e.currentTarget.parentElement?.children[prevIdx] as HTMLElement)?.focus();
                       }
                     }}
-                    className={`w-full text-left p-3.5 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm sm:text-base transition-all duration-150 flex items-center justify-between ${
+                    className={`w-full text-start p-3.5 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm sm:text-base transition-all duration-150 flex items-center justify-between ${
                       isSelected
-                        ? 'bg-[#FFD93D] text-black shadow-neo-sm font-bold translate-x-1 ring-2 ring-black'
+                        ? 'bg-[#FFD93D] text-black shadow-neo-sm font-bold ltr:translate-x-1 rtl:-translate-x-1 ring-2 ring-black'
                         : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800'
                     } ${isRevealed ? 'cursor-default' : 'cursor-pointer'}`}
                   >
@@ -540,10 +716,10 @@ export const LessonPage: React.FC = () => {
                       <span className="w-6 h-6 border-2 border-black dark:border-slate-700 flex items-center justify-center font-mono text-xs font-bold shrink-0 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100">
                         {String.fromCharCode(65 + idx)}
                       </span>
-                      <span dir={locale === 'ar' ? 'ltr' : undefined}>{optText}</span>
+                      <span>{optText}</span>
                     </div>
                     {isSelected && (
-                      <span className="text-xs font-mono font-bold uppercase px-2 py-0.5 bg-black text-white ml-2 shrink-0">
+                      <span className="text-xs font-mono font-bold uppercase px-2 py-0.5 bg-black text-white ms-2 shrink-0">
                         {locale === 'tr' ? 'Seçildi' : locale === 'ar' ? 'محدد' : 'Selected'}
                       </span>
                     )}
@@ -597,7 +773,6 @@ export const LessonPage: React.FC = () => {
                         ? 'bg-[#E8F5E9] dark:bg-[#064E3B]/40 text-emerald-950 dark:text-emerald-100'
                         : 'bg-[#FFE4E6] dark:bg-[#4C0519]/40 text-black dark:text-rose-200'
                     }`}
-                    dir={locale === 'ar' ? 'ltr' : undefined}
                   >
                     <strong>
                       {selectedOpt.isCorrect
@@ -613,11 +788,11 @@ export const LessonPage: React.FC = () => {
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                     {locale === 'tr' ? 'Bilimsel Çıkarım:' : locale === 'ar' ? 'الاستنتاج العلمي:' : 'Scientific Deduction:'}
                   </span>
-                  <p className="font-body text-sm sm:text-base font-bold text-black dark:text-slate-100" dir={locale === 'ar' ? 'ltr' : undefined}>
+                  <p className="font-body text-sm sm:text-base font-bold text-black dark:text-slate-100">
                     {(currentStep.config.revealedOutcome as string) || (currentStep.config.explanation as string)}
                   </p>
                   {Boolean(currentStep.config.explanation && currentStep.config.revealedOutcome) && (
-                    <p className="font-body text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed pt-1" dir={locale === 'ar' ? 'ltr' : undefined}>
+                    <p className="font-body text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed pt-1">
                       {currentStep.config.explanation as string}
                     </p>
                   )}
@@ -702,7 +877,11 @@ export const LessonPage: React.FC = () => {
         {/* 3-Tier Hint Ladder */}
         <div className="pt-2">
           <HintDrawer
-            hints={currentStep.hints}
+            hints={
+              Array.isArray(currentStep?.hints)
+                ? currentStep.hints.map((h) => getLocalizedText(h, locale))
+                : []
+            }
             isPremiumOrTrial={isPremiumOrTrial}
             onUpgradeClick={() => setIsPaywallOpen(true)}
           />
@@ -792,7 +971,7 @@ export const LessonPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setSourcesOpen(!sourcesOpen)}
-          className="w-full p-3 flex items-center justify-between text-left hover:bg-black/5 dark:hover:bg-slate-800 transition-colors"
+          className="w-full p-3 flex items-center justify-between text-start hover:bg-black/5 dark:hover:bg-slate-800 transition-colors"
         >
           <div className="flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
@@ -815,7 +994,7 @@ export const LessonPage: React.FC = () => {
                   : 'References:'}
               </span>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-800 dark:text-gray-200">
-                {lesson.citations.map((c: StepCitation) => (
+                {(lesson.citations || []).map((c: StepCitation) => (
                   <li key={c.id}>
                     <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot;
                     {import.meta.env.DEV && (
@@ -835,7 +1014,7 @@ export const LessonPage: React.FC = () => {
                   Internal Lecture Materials Provenance:
                 </span>
                 <p className="text-gray-800 dark:text-gray-200">
-                  Source Slides: <code>Farmasötik ve Medisinal Kimya 1-Giriş.pdf</code> (Slides 17–23).
+                  Source Slides: <code>Farmasötik Kimya 1-Giriş.pdf</code> (Slides 17–23).
                   Recreated natively via Neo-Brutalist vector components; zero university slide images embedded.
                   Logged in <code>docs/asset-log.md</code> under <code>mc-asset-004</code>.
                 </p>

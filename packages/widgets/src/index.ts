@@ -36,3 +36,15 @@ export * from './ReceptorLigandMatcher/gallery.demo';
 export * from './MetabolismMap/schema';
 export * from './MetabolismMap/MetabolismMap';
 export * from './MetabolismMap/gallery.demo';
+
+export * from './IonizationEquilibriumSlider/schema';
+export * from './IonizationEquilibriumSlider/IonizationEquilibriumSlider';
+export * from './IonizationEquilibriumSlider/gallery.demo';
+
+export * from './MembranePartitionSimulator/schema';
+export * from './MembranePartitionSimulator/MembranePartitionSimulator';
+export * from './MembranePartitionSimulator/gallery.demo';
+
+export * from './ThermodynamicActivityFergusonSlider/schema';
+export * from './ThermodynamicActivityFergusonSlider/ThermodynamicActivityFergusonSlider';
+export * from './ThermodynamicActivityFergusonSlider/gallery.demo';

@@ -1,0 +1,644 @@
+{
+  "id": "pharm-mod5-les2",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-05",
+  "title": {
+    "tr": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması",
+    "ar": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron taşıyıcıları üzerindeki moleküler mekanizmalarını ve elektrolit profillerini analiz etmek.",
+    "ar": "تحليل الآليات الجزيئية لمدرات البول العروية والثيازيدية والحافظة للبوتاسيوم على نواقل الكليون ومظهر الشوارد."
+  },
+  "misconceptions": [
+    {
+      "tr": "Tüm diüretiklerin potasyum kaybettirdiği yanılgısı (spironolakton ve amilorid potasyum tutucudur).",
+      "ar": "الاعتقاد الخاطئ بأن جميع مدرات البول تطرح البوتاسيوم (سبيرونولاكتون وأميلوريد حافظان للبوتاسيوم)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Kardiyovasküler Sistem.pdf",
+      "page": 24
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH10-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Diuretics: Tubular Transport and Electrolyte Excretion",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod5-les2-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Kıvrım Diüretikleri Hedefi",
+      "prompt": "Furosemid Henle kulpunun çıkan kalın kolunda hangi taşıyıcı proteini bloke eder?",
+      "answer": "Na+/K+/2Cl- (NKCC2) kotransportörünü bloke eder; en güçlü natriüretik diüretiktir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod5-les2-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Tiyazid Hedefi",
+      "prompt": "Hidroklorotiyazid distal kıvrımlı tübülde hangi taşıyıcıyı inhibe eder?",
+      "answer": "Na+/Cl- (NCC) kotransportörünü inhibe eder.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod5-les2-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Potasyum Tutucu Mekanizma",
+      "prompt": "Spironolakton toplayıcı kanallarda hangi reseptörü bloke ederek potasyum tutar?",
+      "answer": "Aldosteron intraselüler mineralokortikoid reseptörünü bloke eder.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması"
+    },
+    "ar": {
+      "title": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod5-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Akciğer Ödemini 15 Dakikada Boşaltmak",
+        "ar": "تصريف الوذمة الرئوية في 15 دقيقة"
+      },
+      "prompt": {
+        "tr": "Nefes alamayan kalp yetmezliği hastasına damardan furosemid sıkıldığında, dakikalar içinde litrelerce idrar çıkışı nasıl tetiklenir?",
+        "ar": "عند حقن Furosemide وريدياً لمريض قصور قلب يختنق بالوذمة الرئوية، كيف يخرج لترات من البول في دقائق معدودة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "kıvrım diüretiği",
+          "arContext": "مدر البول العروي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: En Güçlü Diüretik Segmenti",
+        "ar": "توقع: الجزء الأقوى لإدرار البول"
+      },
+      "prompt": {
+        "tr": "Filtre edilen sodyumun yaklaşık %25 inin geri emildiği Henle kulpu bloke edilirse ne kadar idrar çıkışı olur?",
+        "ar": "عند حظر عروة Henle المسؤولة عن ارتشاف نحو 25% من الصوديوم، ما حجم الإدرار المتوقع؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Furosemid NKCC2 yi kilitleyerek en güçlü diüretik yanıtı üretir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph52-1",
+            "text": {
+              "tr": "Masif ve hızlı idrar çıkışı (yüksek tavanlı diüretik etki).",
+              "ar": "إدرار هائل وسريع للبول (تأثير المدر عالي السقف)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph52-2",
+            "text": {
+              "tr": "İdrar tamamen kesilir.",
+              "ar": "ينقطع البول تماماً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Su Nereye, Tuz Oraya",
+        "ar": "تشبيه حدسي: أينما ذهب الملح تبعه الماء"
+      },
+      "prompt": {
+        "tr": "Böbreğin altın kuralı: Su tuzun arkasından koşar. Tübülde sodyumu hapsederseniz, su osmozla mecburen idrarda kalır.",
+        "ar": "القاعدة الذهبية في الكلى: الماء يتبع الملح دوماً. إذا حبست الصوديوم في الأنبوب، سيبقى الماء معه حتماً بالحلولية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "ozmotik çekim",
+          "arContext": "السحب الحلولي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Nefron Boyunca Taşıyıcı Anatomisi",
+        "ar": "تشريح النواقل على طول أجزاء الكليون"
+      },
+      "prompt": {
+        "tr": "Henle çıkan kalın kol: NKCC2 (Furosemid hedefi). Distal tübül: NCC (Tiyazid hedefi). Toplayıcı kanal: ENaC ve Aldosteron (Spironolakton hedefi).",
+        "ar": "عروة Henle: ناقل NKCC2 (هدف Furosemide). الأنبوب القاصي: ناقل NCC (هدف Thiazide). القناة الجامعة: قنوات ENaC والألدوستيرون."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "NKCC2 kotransportörü",
+          "arContext": "ناقل NKCC2"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Laboratuvar: İyonizasyon ve Tübüler Taşınma",
+        "ar": "المختبر التفاعلي: التأين والنقل النبيبي"
+      },
+      "prompt": {
+        "tr": "Furosemid, hidroklorotiyazid ve spironolaktonu nefron segmentlerine yerleştirin; sodyum, potasyum ve kalsiyum atılım profillerini izleyin.",
+        "ar": "ضع Furosemide و Thiazide و Spironolactone في أجزاء الكليون وراقب إطراح شوارد الصوديوم والبوتاسيوم والكالسيوم."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "IonizationEquilibriumSlider",
+      "widget": {
+        "type": "IonizationEquilibriumSlider",
+        "config": {
+          "mode": "nephron_transporters",
+          "segment": "loop_of_henle",
+          "drug": "furosemide"
+        }
+      }
+    },
+    {
+      "id": "pharm-mod5-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Hipokalemi Paradoksu",
+        "ar": "استكشاف موجه: مفارقة نقص بوتاسيوم الدم"
+      },
+      "prompt": {
+        "tr": "Furosemid distal tübüle devasa sodyum akıtır. Toplayıcı kanallara ulaşan aşırı sodyum potasyum atılımını neden fırlatır?",
+        "ar": "يضخ Furosemide كميات صوديوم هائلة للقناة الجامعة. لماذا يسبب تدفق الصوديوم المفرط طرد البوتاسيوم بكثافة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Kıvrım ve tiyazid diüretikleri hipokalemi (düşük potasyum) riski taşır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph52-3",
+            "text": {
+              "tr": "Aşırı sodyum geri emilirken lümeni negatifleştirir ve potasyum elektriksel çekimle idrara kaçar.",
+              "ar": "ارتشاف الصوديوم المفرط يشحن اللمعة بالسالب فيسحب البوتاسيوم كهربائياً للبول (نقص بوتاسيوم)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph52-4",
+            "text": {
+              "tr": "Potasyumu doğrudan böbrek yok eder.",
+              "ar": "لأن الكلى تحطم البوتاسيوم كيميائياً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Elektrolit ve Asit-Baz Profilleri",
+        "ar": "توازن الشوارد والحمض والأساس"
+      },
+      "prompt": {
+        "tr": "Kıvrım: Na+, K+, Cl-, Ca2+, Mg2+ atar (hipokalsemi riski). Tiyazid: Na+, K+, Cl- atar fakat Ca2+ tutar (hiperkalsemi yapabilir).",
+        "ar": "مدرات العروة: تطرح Na+ و K+ و Ca2+ (خطر نقص الكالسيوم). الثيازيدات: تطرح Na+ و K+ لكنها تحبس Ca2+ بالجسم."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "hipokalemi",
+          "arContext": "نقص بوتاسيوم الدم"
+        },
+        {
+          "term": "kalsiyum tutulumu",
+          "arContext": "احتباس الكالسيوم"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Osteoporozlu Hipertansiyon Hastası",
+        "ar": "فحص المفهوم: مريض ضغط مصاب بهشاشة العظام"
+      },
+      "prompt": {
+        "tr": "Kemik erimesi (osteoporoz) olan bir hipertansiyon hastasında furosemid yerine neden tiyazid tercih edilir?",
+        "ar": "في مريض ضغط يعاني من هشاشة العظام، لماذا يفضل مدر Thiazide على Furosemide؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tiyazidlerin renal kalsiyum tutucu etkisi osteoporozda ek fayda sağlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph52-5",
+            "text": {
+              "tr": "Tiyazidler kalsiyumun idrarla atılımını azaltarak kemikleri korur.",
+              "ar": "لأن الثيازيدات تقلل طرح الكالسيوم البولي مما يحمي العظام من التآكل."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph52-6",
+            "text": {
+              "tr": "Tiyazid kalsiyumu idrarla atar.",
+              "ar": "لأن الثيازيد يطرح الكالسيوم بالبول."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Kombinasyon Sanatı: Tiyazid + Spironolakton",
+        "ar": "فن المشاركة الدوائية: Thiazide + Spironolactone"
+      },
+      "prompt": {
+        "tr": "Tiyazid diüretiğinin yanına spironolakton eklenmesi neden mükemmel bir farmakolojik dengedir?",
+        "ar": "لماذا تعتبر إضافة Spironolactone إلى مدر Thiazide توازناً فارماكولوجياً متقناً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Potasyum tutucu kombinasyonlar aritmi riskini minimize eder."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph52-7",
+            "text": {
+              "tr": "Tiyazidin attırdığı potasyumu spironolakton tutarak serum potasyumunu dengede tutar.",
+              "ar": "لأن سبيرونولاكتون يحبس البوتاسيوم فيعوض النقص الذي يحدثه الثيازيد ويحفظ التوازن."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph52-8",
+            "text": {
+              "tr": "Birbirlerinin etkisini sıfırlarlar.",
+              "ar": "لأنهما يبطلان مفعول بعضهما."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "pharm-mod5-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Henderson-Hasselbalch ve İyon Tuzağı",
+        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والحصار الأيوني"
+      },
+      "prompt": {
+        "tr": "Modül 1 de gördüğümüz gibi zayıf asit ilaçların böbrekten atılımını hızlandırmak için idrar nasıl modifiye ediliyordu?",
+        "ar": "كما تعلمنا في الوحدة 1، كيف كنا نعدل pH البول لتسريع إطراح الأدوية الحامضية الضعيفة؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "idrar alkalileştirme",
+          "arContext": "قلونة البول"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Merkezi Sinir Sistemi ve Nörofarmakoloji (Modül 6)",
+        "ar": "ربط مفاهيمي: الجهاز العصبي المركزي (الوحدة 6)"
+      },
+      "prompt": {
+        "tr": "Kardiyovasküler sistemden sonra beynin derinliklerine iniyoruz: Modül 6 da GABA ve Dopamin yolaklarını keşfedeceğiz.",
+        "ar": "بعد القلب والكلى ننطلق لأعماق الدماغ: في الوحدة 6، سنستكشف مسارات GABA والدوبامين العصبية."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "merkezi sinir sistemi",
+          "arContext": "الجهاز العصبي المركزي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Diüretik Hedefleri",
+        "ar": "اختبار الإتقان: أهداف مدرات البول"
+      },
+      "prompt": {
+        "tr": "Furosemid gibi kıvrım diüretiklerinin nefrondaki primer moleküler hedefi hangi taşıyıcı sistemdir?",
+        "ar": "ما هو الهدف الجزيئي الأساسي لمدرات البول العروية مثل Furosemide في الكليون؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Modül 5 tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-ph52-9",
+            "text": {
+              "tr": "Henle kulpu çıkan kalın kolundaki luminal Na+/K+/2Cl- (NKCC2) kotransportörü.",
+              "ar": "ناقل Na+/K+/2Cl- (NKCC2) اللمعي في الطرف الصاعد الثخين لعروة Henle."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-ph52-10",
+            "text": {
+              "tr": "Proksimal tübül glukoz taşıyıcısı.",
+              "ar": "ناقل الجلوكوز في الأنبوب القريب."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,639 @@
+{
+  "id": "mc-mod3-les1",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-03",
+  "title": {
+    "tr": "Klasik Biyoizosterizm ve Grimm Hidrit Yer Değiştirme",
+    "ar": "التشابه الحيوي الكلاسيكي وإزاحة هيدريد Grimm"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Grimm hidrit yer değiştirme kuralı ve klasik izosterizm prensipleriyle öncü bileşikleri optimize etmek.",
+    "ar": "تحسين المركبات الطليعية باستخدام قاعدة إزاحة هيدريد Grimm ومبادئ التشابه الحيوي الكلاسيكي."
+  },
+  "misconceptions": [
+    {
+      "tr": "Yalnızca aynı element atomlarının birbirinin yerine geçebileceği düşüncesi.",
+      "ar": "الظن الخاطئ بأن ذرات نفس العنصر فقط هي التي يمكن أن تحل محل بعضها."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Biyoizosterizm.pdf",
+      "page": 4
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC05-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Classical Bioisosterism & Grimm Hydride Displacement",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "pending-human-review"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod3-les1-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Grimm Hidrit Yer Değiştirme Yasası",
+      "prompt": "Grimm hidrit kuralına göre bir atoma bir hidrojen eklendiğinde hangi grubun elektronik özelliklerini kazanır?",
+      "answer": "Periyodik tabloda bir sağındaki grubun değerlik elektronu kabuk özelliklerini kazanır.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod3-les1-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Monovalan İzosterler",
+      "prompt": "-CH3, -NH2, -OH, -F ve -Cl grupları neden klasik monovalan izosterlerdir?",
+      "answer": "Hepsi dış kabuklarında aynı sayıda (7 adet) değerlik elektronu taşırlar ve tek bağ yaparlar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod3-les1-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Biyoizosterik Değişimin Amacı",
+      "prompt": "Bir öncü bileşikte izosterik değişim yapmanın temel rasyonel gerekçesi nedir?",
+      "answer": "Biyolojik hedef ilgisini korurken metabolik stabiliteyi ve biyoyararlanımı artırmak.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Klasik Biyoizosterizm ve Grimm Hidrit Yer Değiştirme"
+    },
+    "ar": {
+      "title": "التشابه الحيوي الكلاسيكي وإزاحة هيدريد Grimm"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod3-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Flor ile Hidrojenin Gizemli Değişimi",
+        "ar": "التبادل الغامض بين الفلور والهيدروجين"
+      },
+      "prompt": {
+        "tr": "Urasil molekülüne tek bir flor atomu eklendiğinde neden öldürücü bir antikanser ilacı olan 5-Fluorourasil e dönüşür?",
+        "ar": "عند إضافة ذرة فلور واحدة إلى Uracil، لماذا يتحول فجأة إلى دواء قاتل للسرطان هو 5-Fluorouracil؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "biyoizoster",
+          "arContext": "المتشابه الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Grimm Kuralı ile Eşdeğerlik",
+        "ar": "توقع: التكافؤ عبر قاعدة Grimm"
+      },
+      "prompt": {
+        "tr": "Grimm hidrit yer değiştirme kuralına göre -CH3 grubu hangi tek değerlikli heteroatomla elektronik izosterdir?",
+        "ar": "وفق قاعدة إزاحة هيدريد Grimm، مع أي ذرة غير متجانسة أحادية التكافؤ يتشابه -CH3 إلكترونياً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "C+H3 = N+H2 = O+H = F: Hepsi 7 değerlik elektronuyla aynı valans kabuğunu paylaşır."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc31-1",
+            "text": {
+              "tr": "-OH, -NH2 ve -F (hepsi 7 değerlik elektronu eşdeğeridir).",
+              "ar": "-OH و -NH2 و -F (جميعها متكافئة بـ 7 إلكترونات تكافؤ)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc31-2",
+            "text": {
+              "tr": "Yalnızca -Br ile.",
+              "ar": "فقط مع -Br."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Truva Atı Prensibi",
+        "ar": "تشبيه حدسي: مبدأ حصان طروادة"
+      },
+      "prompt": {
+        "tr": "Enzim bir molekülü tanıdık bir alt birim sanarak aktif bölgesine alır, ancak sahte parça reaksiyonu kilitler.",
+        "ar": "يخدع الإنزيم بالبنية الشبيهة فيدخلها إلى موقعه الفعال، لكن الذرة البديلة تعطل التفاعل الحيوي تماماً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "enzim inhibisyonu",
+          "arContext": "تثبيط الإنزيم"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Grimm Tablosu ve Valans Elektronları",
+        "ar": "جدول Grimm وإلكترونات التكافؤ"
+      },
+      "prompt": {
+        "tr": "Grimm sütunlarında her hidrit eklemesi değerlik elektronunu 1 artırır: C(4) -> CH(5) -> CH2(6) -> CH3(7).",
+        "ar": "في أعمدة Grimm، إضافة كل هيدريد تزيد إلكترون تكافؤ افتراضي: C(4) -> CH(5) -> CH2(6) -> CH3(7)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "değerlik elektronu",
+          "arContext": "إلكترون التكافؤ"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Atölye: Structure Identifier",
+        "ar": "ورشة تفاعلية: محدد البنى الكيميائية"
+      },
+      "prompt": {
+        "tr": "Monovalan, divalent ve ring-equivalent klasik izoster çiftlerini eşleştirin ve biyoizosterik optimizasyon skorunu izleyin.",
+        "ar": "طابق أزواج المتشابهات الكلاسيكية الأحادية والثنائية وحلقات التكافؤ لمتابعة معدل التحسين الحيوي."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "widgetType": "StructureIdentifier",
+      "widget": {
+        "type": "StructureIdentifier",
+        "config": {
+          "mode": "classical_isosteres",
+          "targetClass": "grimm_hydride"
+        }
+      }
+    },
+    {
+      "id": "mc-mod3-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Divalent İzosterler",
+        "ar": "استكشاف موجه: المتشابهات ثنائية التكافؤ"
+      },
+      "prompt": {
+        "tr": "Bir köprü grubunda -CH2- yerine -O- veya -S- yerleştirildiğinde molekülün geometrisi ve polaritesi nasıl değişir?",
+        "ar": "عند استبدال -CH2- في جسر جزيئي بـ -O- أو -S-، كيف تتغير هندسة الجزيء وقطبيته؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "-CH2-, -O-, -NH-, -S- klasik divalent izosterlerdir ve bağ geometrisini korurlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc31-3",
+            "text": {
+              "tr": "Bağ açısı korunur ancak hidrojen bağı alma kabiliyeti ve polarite kazanılır.",
+              "ar": "تحفظ زاوية الرابطة مع اكتساب قطبية وقدرة على قبول الروابط الهيدروجينية."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc31-4",
+            "text": {
+              "tr": "Molekül anında parçalanır.",
+              "ar": "يتفكك الجزيء فوراً."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Friedman ve Langmuir Biyoizosterizm İlkeleri",
+        "ar": "مبادئ Friedman و Langmuir للتشابه الحيوي"
+      },
+      "prompt": {
+        "tr": "Klasik izosterler aynı dış kabuk elektron sayısına ve benzer sterik hacme sahip gruplardır. Hedef protein geometrisini bozmadan özellikleri ince ayarlar.",
+        "ar": "المتشابهات الكلاسيكية تمتلك نفس إلكترونات التكافؤ وحجماً فراغياً متقارباً، مما يتيح ضبط الخصائص دون تشويه التوافق مع (reseptör)."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "klasik biyoizoster",
+          "arContext": "المتشابه الحيوي الكلاسيكي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Flor Atomunun Boyutu",
+        "ar": "فحص المفهوم: الحجم الفراغي لذرة الفلور"
+      },
+      "prompt": {
+        "tr": "Flor atomu van der Waals yarıçapı açısından (1.47 Å) hangi atoma en yakındır?",
+        "ar": "من حيث نصف قطر van der Waals (1.47 Å)، إلى أي ذرة يعتبر الفلور الأقرب حجماً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Flor hidrojenin mükemmel sterik izosteridir ancak aşırı elektronegatiftir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc31-5",
+            "text": {
+              "tr": "Hidrojen atomuna (1.20 Å).",
+              "ar": "ذرة الهيدروجين (1.20 Å)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc31-6",
+            "text": {
+              "tr": "İyot atomuna (2.15 Å).",
+              "ar": "ذرة اليود (2.15 Å)."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Uygulama: 5-FU Antikanser Tasarımı",
+        "ar": "تطبيق سريري: تصميم 5-FU المضاد للسرطان"
+      },
+      "prompt": {
+        "tr": "Timidilat sentaz enzimi 5-FU yu doğal substrat urasil sanarak bağlar; fakat C-F bağı koparılamadığı için enzim intihar inhibisyonuyla kilitlenir.",
+        "ar": "يرتبط إنزيم Thymidylate synthase بـ 5-FU كبديل طبيعي لـ Uracil، لكن عجز الإنزيم عن كسر رابطة C-F يعطله نهائياً."
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Biyoizosterik değişim mekanizma tabanlı enzim blokajının en zarif örneğidir."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc31-7",
+            "text": {
+              "tr": "Bu bir intihar substratı (suicide substrate) biyoizosterik tasarımıdır.",
+              "ar": "هذا تصميم تشابه حيوي كركيزة انتحارية (suicide substrate)."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc31-8",
+            "text": {
+              "tr": "Rastgele bir toksisitedir.",
+              "ar": "سمية عشوائية غير موجهة."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-mod3-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Easson-Stedman ve Farmakofor",
+        "ar": "استرجاع معرفي: Easson-Stedman والفارماكوفور"
+      },
+      "prompt": {
+        "tr": "Önceki derste gördüğümüz gibi farmakoforik temas noktalarının uzaysal konumu izosterik değişimlerde neden korunmalıdır?",
+        "ar": "كما رأينا سابقاً، لماذا يجب الحفاظ على التموضع الفراغي لنقاط التماس الفارماكوفورية عند استبدال المتشابهات الحيوية؟"
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "farmakoforik geometri",
+          "arContext": "الهندسة الفارماكوفورية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Klasik Olmayan Biyoizosterler (Ders 6)",
+        "ar": "ربط مفاهيمي: المتشابهات غير الكلاسيكية (الدرس 6)"
+      },
+      "prompt": {
+        "tr": "Klasik izosterler aynı valans elektronuna sahiptir; ancak klasik olmayan izosterler tamamen farklı atom sayılarıyla aynı etkiyi taklit eder.",
+        "ar": "تمتلك المتشابهات الكلاسيكية نفس إلكترونات التكافؤ، بينما تحاكي المتشابهات غير الكلاسيكية نفس التأثير بعدد ذرات مختلف تماماً."
+      },
+      "predictThenReveal": false,
+      "config": {},
+      "technicalTerms": [
+        {
+          "term": "klasik olmayan biyoizoster",
+          "arContext": "المتشابه غير الكلاسيكي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ]
+    },
+    {
+      "id": "mc-mod3-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Grimm Kuralı",
+        "ar": "اختبار الإتقان: قاعدة Grimm"
+      },
+      "prompt": {
+        "tr": "Grimm hidrit kuralına göre -CH= grubunun klasik izoster karşılığı hangisidir?",
+        "ar": "وفق قاعدة إزاحة هيدريد Grimm، ما هو النظير المتشابه كلاسيكياً لمجموعة -CH=؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Birinci seviye ipucu: Temel kavramı göz önünde bulundurun.",
+          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري."
+        },
+        {
+          "tr": "İkinci seviye ipucu: Moleküler etkileşim mekanizmasını hatırlayın.",
+          "ar": "تلميح المستوى الثاني: تذكر آلية التفاعل الجزيئي."
+        },
+        {
+          "tr": "Üçüncü seviye ipucu: İlgili farmakolojik kuralı doğrudan uygulayın.",
+          "ar": "تلميح المستوى الثالث: طبق القاعدة الدوائية المعنية مباشرة."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-mc31-9",
+            "text": {
+              "tr": "-N= piridin/benzen halka eşdeğerliği.",
+              "ar": "مجموعة -N= في تكافؤ حلقتي البنزين والبيريدين."
+            },
+            "isCorrect": true
+          },
+          {
+            "id": "opt-mc31-10",
+            "text": {
+              "tr": "-CH3.",
+              "ar": "مجموعة -CH3."
+            },
+            "isCorrect": false
+          }
+        ]
+      }
+    }
+  ]
+}

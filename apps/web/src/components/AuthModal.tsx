@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Button, Input, useTheme } from '@pharmacy/ui';
+import { Modal, Button, Input } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
 import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap } from 'lucide-react';
+import { useTranslation } from '../context/TranslationContext';
 
 export interface AuthModalProps {
   isOpen: boolean;
@@ -50,7 +51,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   defaultTab = 'login',
   onSuccess,
 }) => {
-  const { locale } = useTheme();
+  const { t } = useTranslation();
   const { signInGuest, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
 
   const [tab, setTab] = useState<'login' | 'signup'>(defaultTab);
@@ -82,13 +83,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!loginEmail.trim() || !loginPassword.trim()) {
-      setError(
-        locale === 'tr'
-          ? 'Lütfen e-posta ve şifrenizi giriniz.'
-          : locale === 'ar'
-          ? 'يرجى إدخال البريد الإلكتروني وكلمة المرور.'
-          : 'Please enter your email and password.'
-      );
+      setError(t('modals.auth.loginRequired'));
       return;
     }
 
@@ -102,13 +97,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         signInGuest();
       }
 
-      setSuccessMessage(
-        locale === 'tr'
-          ? 'Giriş başarılı! Hoş geldiniz.'
-          : locale === 'ar'
-          ? 'تم تسجيل الدخول بنجاح!'
-          : 'Logged in successfully! Welcome.'
-      );
+      setSuccessMessage(t('modals.auth.loginSuccess'));
 
       setTimeout(() => {
         setIsSubmitting(false);
@@ -116,14 +105,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         if (onSuccess) onSuccess();
       }, 600);
     } catch (err: any) {
-      setError(
-        err?.message ||
-          (locale === 'tr'
-            ? 'Giriş yapılamadı. Bilgilerinizi kontrol ediniz.'
-            : locale === 'ar'
-            ? 'فشل تسجيل الدخول. تحقق من البيانات.'
-            : 'Login failed. Please check your credentials.')
-      );
+      setError(err?.message || t('modals.auth.loginFailed'));
       setIsSubmitting(false);
     }
   };
@@ -131,24 +113,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleSignupSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName.trim() || !signupEmail.trim() || !signupPassword.trim()) {
-      setError(
-        locale === 'tr'
-          ? 'Lütfen tüm alanları doldurunuz.'
-          : locale === 'ar'
-          ? 'يرجى ملء جميع الحقول المطلوبة.'
-          : 'Please fill in all required fields.'
-      );
+      setError(t('modals.auth.fillAllFields'));
       return;
     }
 
     if (signupPassword.length < 6) {
-      setError(
-        locale === 'tr'
-          ? 'Şifreniz en az 6 karakter olmalıdır.'
-          : locale === 'ar'
-          ? 'يجب أن تتكون كلمة المرور من 6 أحرف على الأقل.'
-          : 'Password must be at least 6 characters.'
-      );
+      setError(t('modals.auth.passwordMinLength'));
       return;
     }
 
@@ -167,13 +137,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         signInGuest();
       }
 
-      setSuccessMessage(
-        locale === 'tr'
-          ? `Kayıt başarılı! ${faculty} eczacılık ailesine hoş geldiniz.`
-          : locale === 'ar'
-          ? 'تم إنشاء الحساب بنجاح! مرحباً بك.'
-          : 'Registration successful! Welcome to the platform.'
-      );
+      setSuccessMessage(t('modals.auth.welcomeRegistration', { faculty: faculty || '' }));
 
       setTimeout(() => {
         setIsSubmitting(false);
@@ -181,14 +145,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         if (onSuccess) onSuccess();
       }, 700);
     } catch (err: any) {
-      setError(
-        err?.message ||
-          (locale === 'tr'
-            ? 'Kayıt oluşturulamadı. Lütfen tekrar deneyiniz.'
-            : locale === 'ar'
-            ? 'تعذر إنشاء الحساب. يرجى المحاولة لاحقاً.'
-            : 'Registration failed. Please try again.')
-      );
+      setError(err?.message || t('modals.auth.signupFailed'));
       setIsSubmitting(false);
     }
   };
@@ -204,13 +161,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         signInGuest();
       }
 
-      setSuccessMessage(
-        locale === 'tr'
-          ? 'Google ile giriş başarılı!'
-          : locale === 'ar'
-          ? 'تم تسجيل الدخول عبر Google بنجاح!'
-          : 'Signed in with Google successfully!'
-      );
+      setSuccessMessage(t('modals.auth.googleSuccess'));
 
       setTimeout(() => {
         setIsSubmitting(false);
@@ -218,23 +169,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         if (onSuccess) onSuccess();
       }, 600);
     } catch (err: any) {
-      setError(err?.message || 'Google Auth Error');
+      setError(err?.message || t('modals.auth.googleError'));
       setIsSubmitting(false);
     }
   };
 
-  const modalTitle =
-    tab === 'login'
-      ? locale === 'tr'
-        ? 'Öğrenci Girişi'
-        : locale === 'ar'
-        ? 'تسجيل دخول الطالب'
-        : 'Student Log In'
-      : locale === 'tr'
-      ? 'Öğrenci Kaydı'
-      : locale === 'ar'
-      ? 'إنشاء حساب طالب'
-      : 'Student Registration';
+  const modalTitle = tab === 'login' ? t('modals.auth.loginTitle') : t('modals.auth.signupTitle');
 
   return (
     <Modal
@@ -256,7 +196,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             }`}
           >
             <LogIn className="w-4 h-4" />
-            <span>{locale === 'tr' ? 'Giriş Yap' : locale === 'ar' ? 'تسجيل الدخول' : 'Log In'}</span>
+            <span>{t('modals.auth.loginTab')}</span>
           </button>
           <button
             type="button"
@@ -268,7 +208,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             }`}
           >
             <UserPlus className="w-4 h-4" />
-            <span>{locale === 'tr' ? 'Kayıt Ol' : locale === 'ar' ? 'إنشاء حساب' : 'Sign Up'}</span>
+            <span>{t('modals.auth.signupTab')}</span>
           </button>
         </div>
 
@@ -291,9 +231,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {tab === 'login' && (
           <form onSubmit={handleLoginSubmit} className="space-y-4">
             <Input
-              label={locale === 'tr' ? 'E-posta Adresi' : locale === 'ar' ? 'البريد الإلكتروني' : 'Email Address'}
+              label={t('modals.auth.email')}
               type="email"
-              placeholder="ogrenci@istanbul.edu.tr"
+              placeholder={t('modals.auth.emailPlaceholder')}
               value={loginEmail}
               onChange={(e) => setLoginEmail(e.target.value)}
               disabled={isSubmitting}
@@ -301,9 +241,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             />
 
             <Input
-              label={locale === 'tr' ? 'Şifre' : locale === 'ar' ? 'كلمة المرور' : 'Password'}
+              label={t('modals.auth.password')}
               type="password"
-              placeholder="••••••••"
+              placeholder={t('modals.auth.passwordPlaceholder')}
               value={loginPassword}
               onChange={(e) => setLoginPassword(e.target.value)}
               disabled={isSubmitting}
@@ -318,14 +258,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               isLoading={isSubmitting}
               leftIcon={<LogIn className="w-4 h-4" />}
             >
-              {locale === 'tr' ? 'Giriş Yap' : locale === 'ar' ? 'تسجيل الدخول' : 'Log In'}
+              {t('modals.auth.submitLogin')}
             </Button>
 
             {/* Neo-brutalist Divider */}
             <div className="relative flex py-1 items-center">
               <div className="flex-grow border-t-2 border-black/20 dark:border-slate-700"></div>
               <span className="flex-shrink mx-3 font-mono text-[11px] font-bold text-gray-500 uppercase">
-                {locale === 'tr' ? 'veya' : locale === 'ar' ? 'أو' : 'or'}
+                {t('modals.auth.orText')}
               </span>
               <div className="flex-grow border-t-2 border-black/20 dark:border-slate-700"></div>
             </div>
@@ -339,11 +279,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               onClick={handleGoogleAuth}
               leftIcon={<GoogleIcon className="w-4 h-4" />}
             >
-              {locale === 'tr'
-                ? 'Google ile Devam Et'
-                : locale === 'ar'
-                ? 'المتابعة مع Google'
-                : 'Continue with Google'}
+              {t('modals.auth.googleContinue')}
             </Button>
           </form>
         )}
@@ -352,9 +288,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {tab === 'signup' && (
           <form onSubmit={handleSignupSubmit} className="space-y-3.5">
             <Input
-              label={locale === 'tr' ? 'Ad Soyad' : locale === 'ar' ? 'الاسم الكامل' : 'Full Name'}
+              label={t('modals.auth.fullName')}
               type="text"
-              placeholder="Yahya..."
+              placeholder={t('modals.auth.fullNamePlaceholder')}
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               disabled={isSubmitting}
@@ -362,9 +298,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             />
 
             <Input
-              label={locale === 'tr' ? 'E-posta Adresi' : locale === 'ar' ? 'البريد الإلكتروني' : 'Email Address'}
+              label={t('modals.auth.email')}
               type="email"
-              placeholder="ogrenci@istanbul.edu.tr"
+              placeholder={t('modals.auth.emailPlaceholder')}
               value={signupEmail}
               onChange={(e) => setSignupEmail(e.target.value)}
               disabled={isSubmitting}
@@ -372,9 +308,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             />
 
             <Input
-              label={locale === 'tr' ? 'Şifre' : locale === 'ar' ? 'كلمة المرور' : 'Password'}
+              label={t('modals.auth.password')}
               type="password"
-              placeholder="En az 6 karakter"
+              placeholder={t('modals.auth.passwordPlaceholder')}
               value={signupPassword}
               onChange={(e) => setSignupPassword(e.target.value)}
               disabled={isSubmitting}
@@ -388,20 +324,14 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100 flex items-center gap-1.5"
               >
                 <GraduationCap className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-                <span>
-                  {locale === 'tr'
-                    ? 'Eczacılık Fakültesi'
-                    : locale === 'ar'
-                    ? 'كلية الصيدلة'
-                    : 'Faculty of Pharmacy'}
-                </span>
+                <span>{t('modals.auth.faculty')}</span>
               </label>
               <select
                 id="faculty-select"
                 value={faculty}
                 onChange={(e) => setFaculty(e.target.value)}
                 disabled={isSubmitting}
-                className="w-full px-3.5 py-2.5 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100 font-mono text-sm border-3 border-black dark:border-slate-700 rounded-none shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712] focus:outline-none focus:ring-2 focus:ring-[#FFD93D] transition-all duration-150"
+                className="w-full px-3.5 py-2.5 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100 font-mono text-sm border-3 border-black dark:border-slate-700 rounded-none shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712] focus:outline-none focus:ring-2 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B] transition-all duration-150"
               >
                 {PHARMACY_FACULTIES.map((fac) => (
                   <option key={fac} value={fac} className="bg-white dark:bg-[#131B2A] text-black dark:text-slate-100">
@@ -414,13 +344,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             {/* Free lessons guarantee note */}
             <div className="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-2 text-[11px] font-mono text-emerald-800 dark:text-emerald-300">
               <Sparkles className="w-4 h-4 shrink-0 text-emerald-600" />
-              <span>
-                {locale === 'tr'
-                  ? 'Kayıt olduğunuzda 22 ders hemen ücretsiz erişiminize açılır!'
-                  : locale === 'ar'
-                  ? 'عند التسجيل يفتح لك 22 درساً مجاناً على الفور!'
-                  : 'Register now to immediately unlock 22 free lessons across all modules!'}
-              </span>
+              <span>{t('modals.auth.unlock22Lessons')}</span>
             </div>
 
             <Button
@@ -431,11 +355,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               isLoading={isSubmitting}
               leftIcon={<UserPlus className="w-4 h-4" />}
             >
-              {locale === 'tr'
-                ? 'Kayıt Ol ve Başla'
-                : locale === 'ar'
-                ? 'إنشاء الحساب والبدء'
-                : 'Sign Up & Get Started'}
+              {t('modals.auth.signupAndStart')}
             </Button>
           </form>
         )}

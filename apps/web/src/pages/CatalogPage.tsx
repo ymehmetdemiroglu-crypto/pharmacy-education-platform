@@ -1,160 +1,59 @@
 import React from 'react';
-import { Card, Button, StickerBadge, useTheme } from '@pharmacy/ui';
+import { Card, Button, StickerBadge } from '@pharmacy/ui';
 import { Layers, Clock, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../context/TranslationContext';
 
 export const CatalogPage: React.FC = () => {
-  const { locale } = useTheme();
+  const { locale, t } = useTranslation();
 
   const copy = {
-    en: {
-      heroTitle: 'Pharmacy Course Catalog',
-      heroDesc: 'Two distinct, rigorous university-level courses engineered specifically for pharmacy students. Every module starts with two free interactive lessons to guarantee deep conceptual grasp before committing.',
-      freemiumBadge: 'Permanent Freemium',
-      freeLessonsBadge: 'Lessons 1 & 2 Free Forever',
-      medchemTitle: 'Course A: Medicinal Chemistry',
-      medchemTagline: 'Structure-Activity Relationships, Bioisosterism & Drug Design',
-      medchemDesc: 'Master the chemical logic behind pharmaceutical action. Discover how functional group modifications, ionization, lipophilicity, and bioisosteres dictate receptor binding and drug metabolism.',
-      medchemExam: 'NAPLEX (Area 1) • EUS Pharmacy Licensure • SPLE',
-      pharmTitle: 'Course B: Pharmacology',
-      pharmTagline: 'Receptor Dynamics, Signal Transduction & Pharmacokinetics',
-      pharmDesc: 'Explore the mathematical and physiological principles governing drug response. Model agonist efficacy, competitive antagonism, GPCR signaling cascades, and one-compartment PK in real-time.',
-      pharmExam: 'NAPLEX (Area 2 & 3) • EUS Clinical Pharmacology • SPLE',
-      modulesCountLabel: (count: number, lessons: number) => `${count} Modules (${lessons} Lessons)`,
-      hoursLabel: (hours: number) => `~${hours} Hours`,
-      examAlignmentLabel: 'Exam Alignment:',
-      curriculumTitle: 'Course Curriculum Modules',
-      moduleNumber: (num: number) => `Module 0${num}`,
-      freeLessonsTag: '2 Lessons Free',
-      noCreditCard: 'No credit card required to start free lessons',
-      startFreeLessonBtn: 'Start Free Lesson 1',
-      exploreWidgetsBtn: 'Explore Widgets',
-      viewPassesBtn: 'View Student Passes',
-      medchemModules: [
-        'Physicochemical Determinants of Drug Action',
-        'Molecular Stereochemistry & 3D Receptor Complementarity',
-        'Functional Groups, Ionization & Chemical Scaffolds',
-        'Classical & Non-Classical Bioisosterism',
-        'Drug Biotransformation & Enzymatic Pathways',
-      ],
-      pharmModules: [
-        'Receptor Dynamics & Molecular Forces',
-        'Pharmacodynamics: Concentration-Effect Dynamics',
-        'Pharmacokinetics & In Vivo Biotransformation',
-        'Autonomic Nervous System Pharmacology',
-        'Cardiovascular & Renal Therapeutics',
-        'Central Nervous System Pharmacology',
-      ],
-    },
-    tr: {
-      heroTitle: 'Eczacılık Ders Kataloğu',
-      heroDesc: 'Eczacılık fakültesi öğrencileri için özel olarak tasarlanmış iki kapsamlı ve etkileşimli ders. Her modül, kavramları derinlemesine öğrenmeniz için ilk iki dersi kalıcı olarak tamamen ücretsiz sunar.',
-      freemiumBadge: 'Kalıcı Ücretsiz Erişim',
-      freeLessonsBadge: 'Her Modülde 1. ve 2. Ders Kalıcı Olarak Ücretsiz',
-      medchemTitle: 'Ders A: Farmasötik Kimya',
-      medchemTagline: 'Yapı-Etki İlişkileri (SAR), Biyoizosterizm ve İlaç Tasarımı',
-      medchemDesc: 'Farmasötik etkinin ardındaki kimyasal mantığı ve moleküler mekanizmaları derinlemesine kavrayın. Fonksiyonel grup modifikasyonlarının, iyonizasyon dengelerinin, lipofilitenin ve biyoizosterik yer değiştirmelerin reseptör bağlanması ve ilaç metabolizmasını nasıl yönlendirdiğini interaktif modellerle analiz edin.',
-      medchemExam: 'EUS Eczacılıkta Uzmanlık Sınavı • NAPLEX • SPLE',
-      pharmTitle: 'Ders B: Farmakoloji',
-      pharmTagline: 'Reseptör Dinamikleri, Sinyal İletimi ve Farmakokinetik (ADME)',
-      pharmDesc: 'İlaç-organizma etkileşimlerini yöneten matematiksel, hücresel ve fizyolojik ilkeleri keşfedin. Agonist etkinliği, yarışmalı ve yarışmasız antagonizma, GPCR sinyal iletim kaskadları ile tek kompartmanlı farmakokinetik modelleri gerçek zamanlı parametrelerle simüle edin.',
-      pharmExam: 'EUS Klinik Eczacılık & Farmakoloji • NAPLEX • SPLE',
-      modulesCountLabel: (count: number, lessons: number) => `${count} Modül (${lessons} Ders)`,
-      hoursLabel: (hours: number) => `~${hours} Saat`,
-      examAlignmentLabel: 'Sınav Uyumu:',
-      curriculumTitle: 'Ders Müfredat Modülleri',
-      moduleNumber: (num: number) => `Modül 0${num}`,
-      freeLessonsTag: '2 Ders Ücretsiz',
-      noCreditCard: 'Ücretsiz derslere başlamak için kredi kartı gerekmez',
-      startFreeLessonBtn: 'Ücretsiz 1. Derse Başla',
-      exploreWidgetsBtn: 'Etkileşimli Araçları İncele',
-      viewPassesBtn: 'Öğrenci Aboneliklerini İncele',
-      medchemModules: [
-        'İlaç Etkisinin Fizikokimyasal Esasları',
-        'Moleküler Stereokimya ve 3B Reseptör Uyumu',
-        'Fonksiyonel Gruplar, İyonizasyon ve Kimyasal İskeletler',
-        'Klasik ve Non-Klasik Biyoizosterizm',
-        'İlaç Biyotransformasyonu ve Enzimatik Yolaklar',
-      ],
-      pharmModules: [
-        'Reseptör Dinamikleri ve Moleküler Kuvvetler',
-        'Farmakodinami: Konsantrasyon-Etki Dinamikleri',
-        'Farmakokinetik (ADME) ve İn Vivo Biyotransformasyon',
-        'Otonom Sinir Sistemi Farmakolojisi',
-        'Kardiyovasküler ve Renal Terapötikler',
-        'Merkezi Sinir Sistemi Farmakolojisi',
-      ],
-    },
-    ar: {
-      heroTitle: 'دليل المقررات الصيدلانية',
-      heroDesc: 'مقرران جامعيان تفاعليان ومتقنان صُمما خصيصاً لطلاب كليات الصيدلة. يبدأ كل موديول بدرسين مجانيين بالكامل لضمان استيعاب المفاهيم الأساسية.',
-      freemiumBadge: 'نموذج مجاني دائم',
-      freeLessonsBadge: 'الدرس 1 و 2 مجاناً في كل موديول',
-      medchemTitle: 'المقرر أ: الكيمياء الدوائية',
-      medchemTagline: 'علاقات البنية بالفعالية الحيوية (SAR) والتصميم الدوائي',
-      medchemDesc: 'أتقن المنطق الكيميائي وراء الفعل الصيدلاني. اكتشف كيف تحدد تعديلات المجموعات الوظيفية والتأين والألفة للدهون والمتماثلات الحيوية الارتباط بالمستقبلات واستقلاب الدواء.',
-      medchemExam: 'امتحان مزاولة المهنة الصيدلانية SPLE • EUS • NAPLEX',
-      pharmTitle: 'المقرر ب: علم الأدوية (الفارماكولوجي)',
-      pharmTagline: 'ديناميكا المستقبلات ونقل الإشارة والحركية الدوائية (ADME)',
-      pharmDesc: 'استكشف المبادئ الرياضية والفسيولوجية التي تحكم الاستجابة الدوائية. نمذجة فعالية المحاكي والتعاكس التنافسي وشلالات إشارات مستقبلات GPCR وحركية الدواء في الوقت الفعلي.',
-      pharmExam: 'علم الأدوية السريري SPLE • EUS • NAPLEX',
-      modulesCountLabel: (count: number, lessons: number) => `${count} موديولات (${lessons} درساً)`,
-      hoursLabel: (hours: number) => `~${hours} ساعة`,
-      examAlignmentLabel: 'التوافق مع الاختبارات الترخيصية:',
-      curriculumTitle: 'موديولات المنهج الدراسي',
-      moduleNumber: (num: number) => `موديول 0${num}`,
-      freeLessonsTag: 'درسان مجاناً',
-      noCreditCard: 'لا يلزم إدخال بطاقة ائتمان لبدء الدروس المجانية',
-      startFreeLessonBtn: 'ابدأ الدرس 1 المجاني',
-      exploreWidgetsBtn: 'استكشف الأدوات التفاعلية',
-      viewPassesBtn: 'عرض الاشتراكات الطلابية',
-      medchemModules: [
-        'المحددات الفيزيوكيميائية للفعل الدوائي',
-        'الكيمياء الفراغية الجزيئية والتكامل ثلاثي الأبعاد مع المستقبل',
-        'المجموعات الوظيفية والتأين والهياكل الكيميائية',
-        'التماثل الحيوي الكلاسيكي وغير الكلاسيكي',
-        'التحول الحيوي الدوائي والمسارات الإنزيمية',
-      ],
-      pharmModules: [
-        'ديناميكا المستقبلات والقوى الجزيئية',
-        'الديناميكا الدوائية: علاقة التركيز بالتأثير',
-        'الحركية الدوائية (ADME) والتحول الحيوي في الجسم الحي',
-        'علم أدوية الجهاز العصبي الذاتي',
-        'علاجات الجهاز القلبي الوعائي والكلى',
-        'علم أدوية الجهاز العصبي المركزي',
-      ],
-    },
-  }[locale] || {
-    heroTitle: 'Eczacılık Ders Kataloğu',
-    heroDesc: 'Eczacılık fakültesi öğrencileri için özel olarak tasarlanmış iki kapsamlı ve etkileşimli ders. Her modül, kavramları derinlemesine öğrenmeniz için ilk iki dersi kalıcı olarak tamamen ücretsiz sunar.',
-    freemiumBadge: 'Kalıcı Ücretsiz Erişim',
-    freeLessonsBadge: 'Her Modülde 1. ve 2. Ders Kalıcı Olarak Ücretsiz',
-    medchemTitle: 'Ders A: Farmasötik Kimya',
-    medchemTagline: 'Yapı-Etki İlişkileri (SAR), Biyoizosterizm ve İlaç Tasarımı',
-    medchemDesc: 'Farmasötik etkinin ardındaki kimyasal mantığı ve moleküler mekanizmaları derinlemesine kavrayın. Fonksiyonel grup modifikasyonlarının, iyonizasyon dengelerinin, lipofilitenin ve biyoizosterik yer değiştirmelerin reseptör bağlanması ve ilaç metabolizmasını nasıl yönlendirdiğini interaktif modellerle analiz edin.',
-    medchemExam: 'EUS Eczacılıkta Uzmanlık Sınavı • NAPLEX • SPLE',
-    pharmTitle: 'Ders B: Farmakoloji',
-    pharmTagline: 'Reseptör Dinamikleri, Sinyal İletimi ve Farmakokinetik (ADME)',
-    pharmDesc: 'İlaç-organizma etkileşimlerini yöneten matematiksel, hücresel ve fizyolojik ilkeleri keşfedin. Agonist etkinliği, yarışmalı ve yarışmasız antagonizma, GPCR sinyal iletim kaskadları ile tek kompartmanlı farmakokinetik modelleri gerçek zamanlı parametrelerle simüle edin.',
-    pharmExam: 'EUS Klinik Eczacılık & Farmakoloji • NAPLEX • SPLE',
-    modulesCountLabel: (count: number, lessons: number) => `${count} Modül (${lessons} Ders)`,
-    hoursLabel: (hours: number) => `~${hours} Saat`,
-    examAlignmentLabel: 'Sınav Uyumu:',
-    curriculumTitle: 'Ders Müfredat Modülleri',
-    moduleNumber: (num: number) => `Modül 0${num}`,
-    freeLessonsTag: '2 Ders Ücretsiz',
-    noCreditCard: 'Ücretsiz derslere başlamak için kredi kartı gerekmez',
-    startFreeLessonBtn: 'Ücretsiz 1. Derse Başla',
-    exploreWidgetsBtn: 'Etkileşimli Araçları İncele',
-    viewPassesBtn: 'Öğrenci Aboneliklerini İncele',
-    medchemModules: [
+    heroTitle: t('catalog.heroTitle'),
+    heroDesc: t('catalog.heroDesc'),
+    freemiumBadge: t('catalog.freemiumBadge'),
+    freeLessonsBadge: t('catalog.freeLessonsBadge'),
+    medchemTitle: t('catalog.medchemTitle'),
+    medchemTagline: t('catalog.medchemTagline'),
+    medchemDesc: t('catalog.medchemDesc'),
+    medchemExam: t('catalog.medchemExam'),
+    pharmTitle: t('catalog.pharmTitle'),
+    pharmTagline: t('catalog.pharmTagline'),
+    pharmDesc: t('catalog.pharmDesc'),
+    pharmExam: t('catalog.pharmExam'),
+    modulesCountLabel: (count: number, lessons: number) =>
+      t('catalog.modulesCount', { count, lessons }),
+    hoursLabel: (hours: number) =>
+      t('catalog.estimatedHours', { hours }),
+    examAlignmentLabel: t('catalog.examAlignment'),
+    curriculumTitle: t('catalog.curriculumTitle'),
+    moduleNumber: (num: number) =>
+      t('catalog.moduleNumber', { num }),
+    freeLessonsTag: t('catalog.freeLessonsTag'),
+    noCreditCard: t('catalog.noCreditCard'),
+    startFreeLessonBtn: t('catalog.startFreeLesson'),
+    exploreWidgetsBtn: t('catalog.exploreWidgets'),
+    viewPassesBtn: t('catalog.viewPasses'),
+    medchemModules: locale === 'ar' ? [
+      'المحددات الفيزيوكيميائية للفعل الدوائي',
+      'الكيمياء الفراغية الجزيئية والتكامل ثلاثي الأبعاد مع المستقبل',
+      'المجموعات الوظيفية والتأين والهياكل الكيميائية',
+      'التماثل الحيوي الكلاسيكي وغير الكلاسيكي',
+      'التحول الحيوي الدوائي والمسارات الإنزيمية',
+    ] : [
       'İlaç Etkisinin Fizikokimyasal Esasları',
       'Moleküler Stereokimya ve 3B Reseptör Uyumu',
       'Fonksiyonel Gruplar, İyonizasyon ve Kimyasal İskeletler',
       'Klasik ve Non-Klasik Biyoizosterizm',
       'İlaç Biyotransformasyonu ve Enzimatik Yolaklar',
     ],
-    pharmModules: [
+    pharmModules: locale === 'ar' ? [
+      'ديناميكا المستقبلات والقوى الجزيئية',
+      'الديناميكا الدوائية: علاقة التركيز بالتأثير',
+      'الحركية الدوائية (ADME) والتحول الحيوي في الجسم الحي',
+      'علم أدوية الجهاز العصبي الذاتي',
+      'علاجات الجهاز القلبي الوعائي والكلى',
+      'علم أدوية الجهاز العصبي المركزي',
+    ] : [
       'Reseptör Dinamikleri ve Moleküler Kuvvetler',
       'Farmakodinami: Konsantrasyon-Etki Dinamikleri',
       'Farmakokinetik (ADME) ve İn Vivo Biyotransformasyon',
@@ -304,13 +203,11 @@ export const CatalogPage: React.FC = () => {
                 {copy.noCreditCard}
               </span>
               <div className="flex flex-wrap gap-3">
-                {course.id === 'medchem' && (
-                  <Link to="/courses/medchem/lessons/1">
-                    <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4 rtl:rotate-180" />}>
-                      {copy.startFreeLessonBtn}
-                    </Button>
-                  </Link>
-                )}
+                <Link to={`/courses/${course.id}/lessons/1`}>
+                  <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4 rtl:rotate-180" />}>
+                    {copy.startFreeLessonBtn}
+                  </Button>
+                </Link>
                 <Link to="/gallery">
                   <Button variant="secondary" size="md">
                     {copy.exploreWidgetsBtn}
