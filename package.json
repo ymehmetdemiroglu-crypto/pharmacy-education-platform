@@ -15,7 +15,9 @@
     "test:bundle": "node scripts/test-prod-bundle.mjs",
     "claim-inventory": "node scripts/claim-inventory.mjs",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
-    "emulators": "firebase emulators:start --only firestore,auth,functions"
+    "emulators": "firebase emulators:start --only firestore,auth,functions",
+    "deploy:staging": "firebase use staging && firebase deploy --only functions,firestore:rules",
+    "deploy:prod": "pnpm run build && firebase use production && firebase deploy --only functions,firestore:rules,hosting"
   },
   "devDependencies": {
     "@firebase/rules-unit-testing": "^3.0.4",

@@ -170,3 +170,46 @@ If any unforeseen issue occurs during live operation:
 ### Data Integrity Guarantee
 - Entitlement checks derive access purely from Firestore `expiresAt` timestamps.
 - Any legitimate users who purchased prior to rollback will **retain complete access** until their `currentPeriodEnd` timestamp naturally lapses, preventing customer service disruption.
+
+---
+
+## 9. Operational Infrastructure: Environments, Backups & Alerts
+
+### Environment Separation
+| Environment | Firebase Project | Dodo Mode | Base URL | Usage |
+|---|---|---|---|---|
+| **Local / Dev** | Emulators (`localhost`) | `DODO_ENV=test` | `http://localhost:5173` | Local development & unit tests |
+| **Staging / Test** | `pharmacy-platform-staging` | `DODO_ENV=test` | `https://staging.domain.com` | Automated CI/CD & manual QA |
+| **Production** | `pharmacy-platform-prod` | `DODO_ENV=live` | `https://pharmacy.domain.com` | Live students & real billing |
+
+### Deploy Scripts
+Convenience scripts are provided in root `package.json`:
+```powershell
+# Deploy rules and functions to staging
+pnpm run deploy:staging
+
+# Deploy to production with build check
+pnpm run deploy:prod
+```
+
+### Google Cloud Budget Alerts
+To avoid unexpected billing surges:
+1. In Google Cloud Console, navigate to **Billing** > **Budgets & alerts**.
+2. Create budget `pharmacy-prod-budget` targeting project `pharmacy-platform-prod`.
+3. Set alert thresholds at **50%**, **90%**, and **100%** of monthly budget (e.g., $50/mo), with email notifications to engineering leads.
+
+### Automated Firestore Backups
+Set up automated daily backups via Google Cloud Scheduled Export:
+```powershell
+# Create backup storage bucket
+gcloud storage buckets create gs://pharmacy-prod-firestore-backups --location=us-central1
+
+# Create daily Cloud Scheduler job (03:00 UTC)
+gcloud scheduler jobs create http firestore-daily-backup `
+  --schedule="0 3 * * *" `
+  --uri="https://firestore.googleapis.com/v1/projects/pharmacy-platform-prod/databases/(default):exportDocuments" `
+  --http-method=POST `
+  --oauth-service-account-email="firestore-backup@pharmacy-platform-prod.iam.gserviceaccount.com" `
+  --message-body='{"outputUriPrefix":"gs://pharmacy-prod-firestore-backups"}'
+```
+
