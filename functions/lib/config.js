@@ -124,4 +124,15 @@ export function resolveProductId(courseId, planId, env) {
     }
     return env === 'live' ? config.liveProductId : config.testProductId;
 }
+/**
+ * Reverse resolves a product ID into courseId and planId.
+ */
+export function reverseResolveProductId(productId) {
+    for (const item of Object.values(PRODUCT_CATALOG)) {
+        if (item.testProductId === productId || item.liveProductId === productId) {
+            return { courseId: item.courseId, planId: item.planId };
+        }
+    }
+    return null;
+}
 //# sourceMappingURL=config.js.map

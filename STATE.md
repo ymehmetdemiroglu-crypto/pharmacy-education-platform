@@ -23,8 +23,8 @@
 | **Task 0** | Audit synthesis, state initialization (`STATE.md`, `PROD_GAPS.md`, `PAYMENTS_NOTES.md`), pre-commit secret scan, `.gitignore` update. | None | **DONE** |
 | **Task 1** | Install & configure dependencies in `functions/` (`dodopayments`, `zod`, `standardwebhooks`). Create centralized environment config (`config.ts`). | Task 0 | **DONE** |
 | **Task 2** | Implement Server Endpoints with Zod validation: `createCheckoutSession`, `createCustomerPortalSession`, `cancelSubscription`, `changeSubscriptionPlan`. | Task 1 | **DONE** |
-| **Task 3** | Implement Production Standard Webhook Handler with raw body verification, idempotency locking, and 8 event handlers. | Task 2 | **NEXT** |
-| **Task 4** | Harden Entitlements, Grace Period (`past_due`), and Firestore Security Rules. | Task 3 | **TODO** |
+| **Task 3** | Implement Production Standard Webhook Handler with raw body verification, idempotency locking, and 8 event handlers. | Task 2 | **DONE** |
+| **Task 4** | Harden Entitlements, Grace Period (`past_due`), and Firestore Security Rules. | Task 3 | **NEXT** |
 | **Task 5** | Implement Compliance: Account Deletion (`deleteUserAccount`) and Legal Policy views. | Task 4 | **TODO** |
 | **Task 6** | End-to-End Test Suite & Verification Matrix with mocked SDK and live test scripts. | Task 5 | **TODO** |
 | **Task 7** | Generate `TEST_REPORT.md`, `GO_LIVE.md`, and 5-Minute Verification Script. Final Secret Scan & DoD. | Task 6 | **TODO** |

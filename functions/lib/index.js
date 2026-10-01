@@ -2,7 +2,6 @@ import { onCall, HttpsError, onRequest } from 'firebase-functions/v2/https';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 import { getApps, initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
-import crypto from 'crypto';
 if (getApps().length === 0) {
     initializeApp();
 }
@@ -91,7 +90,8 @@ export const startFreeTrial = onCall(async (request) => {
     }
 });
 import { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, } from './payments.js';
-export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, };
+import { processDodoWebhook } from './webhook.js';
+export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, };
 /**
  * createCheckoutSession:
  * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.
@@ -133,135 +133,13 @@ export const changeSubscriptionPlan = onCall(async (request) => {
     return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
 });
 /**
- * processDodoWebhook:
- * Pure handler function validating HMAC signatures and applying idempotent entitlement updates.
- * Exported for testing directly against live Firestore emulators.
- */
-export async function processDodoWebhook(firestoreDb, req, res, secretOverride) {
-    const signature = req.headers['x-dodo-signature'];
-    const webhookSecret = secretOverride || process.env.DODO_WEBHOOK_SECRET;
-    // SEC-P0-03: Webhook secret must be explicitly configured; fail closed in production
-    if (!webhookSecret && process.env.NODE_ENV === 'production') {
-        res.status(500).send('Webhook signing secret not configured');
-        return;
-    }
-    const effectiveSecret = webhookSecret || 'emulator_secret_for_local_dev_only';
-    // SEC-P0-01: Signature is strictly mandatory
-    if (!signature) {
-        res.status(401).send('Missing x-dodo-signature header');
-        return;
-    }
-    // SEC-P1-01 & SEC-P0-02: Use raw buffer and timing-safe equality comparison
-    const rawBody = req.rawBody || Buffer.from(JSON.stringify(req.body));
-    const computedHmac = crypto
-        .createHmac('sha256', effectiveSecret)
-        .update(rawBody)
-        .digest('hex');
-    const sigBuffer = Buffer.from(signature, 'utf8');
-    const hmacBuffer = Buffer.from(computedHmac, 'utf8');
-    if (sigBuffer.length !== hmacBuffer.length || !crypto.timingSafeEqual(sigBuffer, hmacBuffer)) {
-        res.status(401).send('Invalid webhook signature');
-        return;
-    }
-    const event = req.body;
-    const eventId = event?.id || `evt_${Date.now()}`;
-    const eventRef = firestoreDb.collection('webhook_events').doc(eventId);
-    // SEC-P1-02: Atomic idempotency lock via create() or transaction
-    try {
-        if (typeof eventRef.create === 'function') {
-            await eventRef.create({
-                eventId,
-                gateway: 'dodo_payments',
-                eventType: event?.type || 'unknown',
-                receivedAt: new Date(),
-                status: 'processing',
-                rawPayload: event,
-            });
-        }
-        else {
-            await firestoreDb.runTransaction(async (transaction) => {
-                const existing = await transaction.get(eventRef);
-                if (existing.exists) {
-                    throw new Error('ALREADY_EXISTS');
-                }
-                transaction.set(eventRef, {
-                    eventId,
-                    gateway: 'dodo_payments',
-                    eventType: event?.type || 'unknown',
-                    receivedAt: new Date(),
-                    status: 'processing',
-                    rawPayload: event,
-                });
-            });
-        }
-    }
-    catch (err) {
-        // If document already exists (code 6 / ALREADY_EXISTS), idempotency succeeded
-        res.status(200).send({ received: true, status: 'already_processed' });
-        return;
-    }
-    // SEC-P0-04: Route state updates authoritatively by event type
-    const eventType = event?.type;
-    const customerId = event?.data?.customer?.metadata?.userId || event?.data?.metadata?.userId;
-    const courseId = event?.data?.metadata?.courseId || 'dual_bundle';
-    const planId = event?.data?.metadata?.planId || 'semester_pass';
-    if (customerId) {
-        const userRef = firestoreDb.collection('users').doc(customerId);
-        const entitlementRef = userRef.collection('entitlements').doc(courseId);
-        const now = new Date();
-        if (eventType === 'payment.succeeded' || eventType === 'subscription.active') {
-            const durationDays = planId.includes('annual') ? 365 : planId.includes('semester') ? 180 : 30;
-            const expiresAt = new Date(now.getTime() + durationDays * 24 * 60 * 60 * 1000);
-            await userRef.update({
-                plan: 'premium',
-                lastActiveAt: now,
-            });
-            await entitlementRef.set({
-                courseId,
-                entitlementId: `ent-${eventId}`,
-                plan: 'premium',
-                status: 'active',
-                planId,
-                entitlements: ['all_lessons', 'advanced_hints', 'ai_feedback', 'cross_device_sync', 'certificates'],
-                billingCycle: durationDays === 365 ? 'annual' : durationDays === 180 ? 'semester' : 'monthly',
-                currency: event?.data?.currency || 'USD',
-                amountPaid: event?.data?.amount || 49,
-                paymentGateway: 'dodo_payments',
-                gatewaySubscriptionId: event?.data?.subscription_id || null,
-                gatewayOrderId: event?.data?.order_id || null,
-                startedAt: now,
-                expiresAt,
-                autoRenew: true,
-                revokedAt: null,
-            });
-        }
-        else if (eventType === 'refund.created' ||
-            eventType === 'payment.failed' ||
-            eventType === 'subscription.cancelled') {
-            await userRef.update({
-                plan: 'free',
-                lastActiveAt: now,
-            });
-            await entitlementRef.set({
-                status: eventType === 'refund.created' ? 'refunded' : 'expired',
-                revokedAt: now,
-                autoRenew: false,
-            }, { merge: true });
-        }
-        await eventRef.update({
-            status: 'success',
-            processedAt: new Date(),
-        });
-    }
-    res.status(200).send({ received: true, status: 'processed' });
-}
-/**
  * handleDodoWebhook:
- * Validates HMAC signature with constant-time comparison, guarantees event idempotency in /webhook_events,
- * and updates user entitlements upon successful payment, subscription renewal, or refund.
+ * Validates Standard Webhooks signatures on the raw request body, guarantees event
+ * idempotency in /webhook_events, ensures out-of-order delivery protection, and authoritatively
+ * mutates user entitlements upon payment and subscription lifecycle transitions.
  */
 export const handleDodoWebhook = onRequest(async (req, res) => {
-    return processDodoWebhook(defaultDb, req, res);
+    return await processDodoWebhook(defaultDb, req, res);
 });
 /**
  * executeCleanupExpiredTrials:

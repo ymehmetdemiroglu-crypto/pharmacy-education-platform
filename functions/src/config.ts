@@ -153,3 +153,15 @@ export function resolveProductId(courseId: string, planId: string, env: DodoEnvi
   }
   return env === 'live' ? config.liveProductId : config.testProductId;
 }
+
+/**
+ * Reverse resolves a product ID into courseId and planId.
+ */
+export function reverseResolveProductId(productId: string): { courseId: string; planId: string } | null {
+  for (const item of Object.values(PRODUCT_CATALOG)) {
+    if (item.testProductId === productId || item.liveProductId === productId) {
+      return { courseId: item.courseId, planId: item.planId };
+    }
+  }
+  return null;
+}
