@@ -102,42 +102,62 @@ export const startFreeTrial = onCall(async (request) => {
   }
 });
 
+import {
+  executeCreateCheckoutSession,
+  executeCreateCustomerPortalSession,
+  executeCancelSubscription,
+  executeChangeSubscriptionPlan,
+} from './payments.js';
+
+export {
+  executeCreateCheckoutSession,
+  executeCreateCustomerPortalSession,
+  executeCancelSubscription,
+  executeChangeSubscriptionPlan,
+};
+
 /**
  * createCheckoutSession:
- * Validates inputs and generates Dodo Payments checkout session with student PPP pricing.
+ * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.
  */
 export const createCheckoutSession = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
+  return await executeCreateCheckoutSession(defaultDb, request.auth.uid, request.data);
+});
 
-  const { courseId, planId, currency } = request.data as {
-    courseId: string;
-    planId: string;
-    currency: string;
-  };
-
-  const allowedCourses = ['medchem', 'pharmacology', 'dual_bundle'];
-  const allowedPlans = ['monthly', 'semester_pass', 'annual'];
-
-  if (!courseId || !allowedCourses.includes(courseId)) {
-    throw new HttpsError('invalid-argument', `Invalid courseId. Allowed: ${allowedCourses.join(', ')}`);
+/**
+ * createCustomerPortalSession:
+ * Validates inputs and generates 24h Customer Portal session URL.
+ */
+export const createCustomerPortalSession = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
+  return await executeCreateCustomerPortalSession(defaultDb, request.auth.uid, request.data);
+});
 
-  if (!planId || !allowedPlans.includes(planId)) {
-    throw new HttpsError('invalid-argument', `Invalid planId. Allowed: ${allowedPlans.join(', ')}`);
+/**
+ * cancelSubscription:
+ * Immediately cancels or schedules period-end cancellation for recurring subscriptions.
+ */
+export const cancelSubscription = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
+  return await executeCancelSubscription(defaultDb, request.auth.uid, request.data);
+});
 
-  const validCurrency = ['USD', 'TRY', 'SAR'].includes(currency) ? currency : 'USD';
-
-  // Generate stub Dodo checkout session URL with metadata for webhook verification
-  const sessionId = `dodo_cs_${crypto.randomBytes(12).toString('hex')}`;
-  const checkoutUrl = `https://checkout.dodopayments.com/pay/${sessionId}?customer_id=${request.auth.uid}&course=${courseId}&plan=${planId}&currency=${validCurrency}`;
-
-  return {
-    sessionId,
-    checkoutUrl,
-  };
+/**
+ * changeSubscriptionPlan:
+ * Upgrades or downgrades subscription plan with specified proration mode.
+ */
+export const changeSubscriptionPlan = onCall(async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'User must be authenticated.');
+  }
+  return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
 });
 
 /**
