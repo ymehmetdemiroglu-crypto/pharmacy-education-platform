@@ -6,12 +6,37 @@ if (getApps().length === 0) {
     initializeApp();
 }
 const defaultDb = getFirestore();
+import { appLogger } from './logger.js';
+import { enforceCallableGuards } from './security.js';
+/**
+ * Normalizes email address to prevent trial abuse via dot-aliasing or plus-addressing:
+ * - Lowercases and trims whitespace.
+ * - Strips '.' characters in Gmail / Googlemail usernames.
+ * - Strips '+' addressing sub-tags for all domains.
+ */
+export function normalizeEmail(email) {
+    const parts = email.toLowerCase().trim().split('@');
+    if (parts.length !== 2)
+        return email.toLowerCase().trim();
+    const [localPart, domain] = parts;
+    if (!localPart || !domain)
+        return email.toLowerCase().trim();
+    if (domain === 'gmail.com' || domain === 'googlemail.com') {
+        const cleanLocal = localPart.replace(/\./g, '').split('+')[0];
+        return `${cleanLocal}@gmail.com`;
+    }
+    const cleanLocal = localPart.split('+')[0];
+    return `${cleanLocal}@${domain}`;
+}
 /**
  * executeStartFreeTrial:
  * Pure handler function enforcing single-use 7-day trial atomic transaction.
- * Exported for direct unit/integration testing against live Firestore emulators.
+ * Includes cheap trial abuse mitigations:
+ * 1. Verified email requirement.
+ * 2. Canonical normalized email deduplication via /trial_claims collection.
+ * 3. Prevention of duplicate trials per user and overwriting active paid accounts.
  */
-export async function executeStartFreeTrial(firestoreDb, userId) {
+export async function executeStartFreeTrial(firestoreDb, userId, authUser) {
     const userRef = firestoreDb.collection('users').doc(userId);
     const entitlementRef = userRef.collection('entitlements').doc('dual_bundle');
     const now = new Date();
@@ -30,7 +55,33 @@ export async function executeStartFreeTrial(firestoreDb, userId) {
         if (userData?.trialUsed === true) {
             throw new Error('failed-precondition: You have already activated your 7-day free trial on this account.');
         }
-        // 1. Update user profile to trial plan
+        // Abuse Mitigation 1: Email verification requirement (if email present)
+        const userEmail = authUser?.email || userData?.email;
+        const isEmailVerified = authUser?.emailVerified ?? userData?.emailVerified ?? true;
+        if (isEmailVerified === false) {
+            throw new Error('failed-precondition: Verified email address required to activate free trial.');
+        }
+        // Abuse Mitigation 2: Normalized email deduplication check via trial_claims
+        let claimRef = null;
+        let normalized = '';
+        if (userEmail) {
+            normalized = normalizeEmail(userEmail);
+            claimRef = firestoreDb.collection('trial_claims').doc(normalized);
+            const claimSnap = await transaction.get(claimRef);
+            if (claimSnap.exists) {
+                throw new Error('failed-precondition: A free trial has already been claimed for this email address.');
+            }
+        }
+        // 1. Record canonical trial claim
+        if (claimRef && userEmail) {
+            transaction.set(claimRef, {
+                claimedByUid: userId,
+                claimedAt: now,
+                originalEmail: userEmail,
+                normalizedEmail: normalized,
+            });
+        }
+        // 2. Update user profile to trial plan
         transaction.update(userRef, {
             plan: 'trial',
             trialUsed: true,
@@ -38,7 +89,7 @@ export async function executeStartFreeTrial(firestoreDb, userId) {
             trialEndsAt: trialEnds,
             lastActiveAt: now,
         });
-        // 2. Authoritatively provision dual_bundle entitlement
+        // 3. Authoritatively provision dual_bundle entitlement
         transaction.set(entitlementRef, {
             courseId: 'dual_bundle',
             entitlementId: `ent-trial-${userId}`,
@@ -75,12 +126,21 @@ export const startFreeTrial = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated to start a free trial.');
     }
+    enforceCallableGuards(request, 'startFreeTrial', { maxRequests: 5 });
+    const authUser = {
+        email: request.auth.token.email,
+        emailVerified: Boolean(request.auth.token.email_verified),
+    };
     try {
-        return await executeStartFreeTrial(defaultDb, request.auth.uid);
+        return await executeStartFreeTrial(defaultDb, request.auth.uid, authUser);
     }
     catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'startFreeTrial' });
         const msg = err.message || '';
-        if (msg.includes('already activated') || msg.includes('already holds active Premium')) {
+        if (msg.includes('already activated') ||
+            msg.includes('already holds active Premium') ||
+            msg.includes('already been claimed') ||
+            msg.includes('Verified email address required')) {
             throw new HttpsError('failed-precondition', msg);
         }
         if (msg.includes('not exist')) {
@@ -92,7 +152,8 @@ export const startFreeTrial = onCall(async (request) => {
 import { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, } from './payments.js';
 import { processDodoWebhook, Webhook } from './webhook.js';
 import { executeDeleteUserAccount } from './compliance.js';
-export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, Webhook, };
+import { checkRateLimit, resetRateLimits } from './rateLimiter.js';
+export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, Webhook, checkRateLimit, resetRateLimits, enforceCallableGuards, };
 /**
  * createCheckoutSession:
  * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.
@@ -101,7 +162,14 @@ export const createCheckoutSession = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    return await executeCreateCheckoutSession(defaultDb, request.auth.uid, request.data);
+    enforceCallableGuards(request, 'createCheckoutSession', { maxRequests: 10 });
+    try {
+        return await executeCreateCheckoutSession(defaultDb, request.auth.uid, request.data);
+    }
+    catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'createCheckoutSession' });
+        throw err;
+    }
 });
 /**
  * createCustomerPortalSession:
@@ -111,7 +179,14 @@ export const createCustomerPortalSession = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    return await executeCreateCustomerPortalSession(defaultDb, request.auth.uid, request.data);
+    enforceCallableGuards(request, 'createCustomerPortalSession', { maxRequests: 10 });
+    try {
+        return await executeCreateCustomerPortalSession(defaultDb, request.auth.uid, request.data);
+    }
+    catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'createCustomerPortalSession' });
+        throw err;
+    }
 });
 /**
  * cancelSubscription:
@@ -121,7 +196,14 @@ export const cancelSubscription = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    return await executeCancelSubscription(defaultDb, request.auth.uid, request.data);
+    enforceCallableGuards(request, 'cancelSubscription', { maxRequests: 5 });
+    try {
+        return await executeCancelSubscription(defaultDb, request.auth.uid, request.data);
+    }
+    catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'cancelSubscription' });
+        throw err;
+    }
 });
 /**
  * changeSubscriptionPlan:
@@ -131,7 +213,14 @@ export const changeSubscriptionPlan = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
+    enforceCallableGuards(request, 'changeSubscriptionPlan', { maxRequests: 5 });
+    try {
+        return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
+    }
+    catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'changeSubscriptionPlan' });
+        throw err;
+    }
 });
 /**
  * deleteUserAccount:
@@ -142,7 +231,14 @@ export const deleteUserAccount = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    return await executeDeleteUserAccount(defaultDb, request.auth.uid);
+    enforceCallableGuards(request, 'deleteUserAccount', { maxRequests: 3 });
+    try {
+        return await executeDeleteUserAccount(defaultDb, request.auth.uid);
+    }
+    catch (err) {
+        appLogger.reportError(err, { uid: request.auth.uid, endpoint: 'deleteUserAccount' });
+        throw err;
+    }
 });
 /**
  * handleDodoWebhook:

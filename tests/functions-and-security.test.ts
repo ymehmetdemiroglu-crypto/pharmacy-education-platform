@@ -18,6 +18,10 @@ import {
   executeChangeSubscriptionPlan,
   executeDeleteUserAccount,
   Webhook,
+  normalizeEmail,
+  checkRateLimit,
+  resetRateLimits,
+  enforceCallableGuards,
 } from '../functions/src/index';
 
 let testEnv: RulesTestEnvironment;
@@ -175,6 +179,105 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
           trialUsed: false,
         })
       );
+    });
+
+    it('normalizes email addresses correctly to defeat alias abuse (dots, plus-tags, casing)', () => {
+      expect(normalizeEmail('John.Doe+trial@gmail.com')).toBe('johndoe@gmail.com');
+      expect(normalizeEmail('Jane.Smith.99@googlemail.com')).toBe('janesmith99@gmail.com');
+      expect(normalizeEmail('student+extra@marmara.edu.tr')).toBe('student@marmara.edu.tr');
+      expect(normalizeEmail('   PHARMACIST@YAHOO.COM  ')).toBe('pharmacist@yahoo.com');
+    });
+
+    it('rejects free trial activation if email is not verified', async () => {
+      const userId = 'unverified-email-user';
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({
+          uid: userId,
+          email: 'unverified@pharmacy.internal',
+          emailVerified: false,
+          roles: ['student'],
+          plan: 'free',
+          trialUsed: false,
+        });
+
+        await expect(
+          executeStartFreeTrial(db, userId, { email: 'unverified@pharmacy.internal', emailVerified: false })
+        ).rejects.toThrow('Verified email address required to activate free trial.');
+      });
+    });
+
+    it('prevents trial abuse across duplicate accounts using email aliases (+tags or dots)', async () => {
+      const user1 = 'student-alias-account-1';
+      const user2 = 'student-alias-account-2';
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+
+        // User 1 signs up with base email
+        await db.collection('users').doc(user1).set({
+          uid: user1,
+          email: 'chemist.student@gmail.com',
+          emailVerified: true,
+          plan: 'free',
+          trialUsed: false,
+        });
+
+        const res1 = await executeStartFreeTrial(db, user1, {
+          email: 'chemist.student@gmail.com',
+          emailVerified: true,
+        });
+        expect(res1.success).toBe(true);
+
+        // User 2 creates a new account using Gmail +alias trick
+        await db.collection('users').doc(user2).set({
+          uid: user2,
+          email: 'chemiststudent+freebie@gmail.com',
+          emailVerified: true,
+          plan: 'free',
+          trialUsed: false,
+        });
+
+        // Attempting to claim a second trial with alias must be rejected
+        await expect(
+          executeStartFreeTrial(db, user2, {
+            email: 'chemiststudent+freebie@gmail.com',
+            emailVerified: true,
+          })
+        ).rejects.toThrow('A free trial has already been claimed for this email address.');
+      });
+    });
+
+    it('enforces sliding-window rate limiting on callable endpoints', () => {
+      resetRateLimits();
+      const testKey = 'test_rate_limit_user';
+
+      // 5 allowed requests
+      for (let i = 0; i < 5; i++) {
+        const res = checkRateLimit(testKey, 5, 60000);
+        expect(res.allowed).toBe(true);
+      }
+
+      // 6th request rejected
+      const rejected = checkRateLimit(testKey, 5, 60000);
+      expect(rejected.allowed).toBe(false);
+      expect(rejected.remaining).toBe(0);
+    });
+
+    it('enforces App Check verification guard when configured', () => {
+      const unverifiedReq = { auth: { uid: 'user_123' }, app: undefined };
+      const verifiedReq = { auth: { uid: 'user_123' }, app: { appId: 'app_123' } };
+
+      // Rejects unverified request when requireAppCheck: true
+      expect(() => {
+        enforceCallableGuards(unverifiedReq, 'testEndpoint', { requireAppCheck: true });
+      }).toThrow('The function must be called from an App Check verified app.');
+
+      // Accepts verified request
+      expect(() => {
+        enforceCallableGuards(verifiedReq, 'testEndpoint', { requireAppCheck: true });
+      }).not.toThrow();
     });
 
     it('rejects startFreeTrial callable path when unauthenticated (no auth)', async () => {
@@ -1309,6 +1412,72 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
       const clientDb = testEnv.authenticatedContext(userId).firestore();
       const stepRef = clientDb.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01');
       await assertFails(stepRef.get());
+    });
+
+    it('Scenario: Subscription paused suspends access; unpaused restores active access', async () => {
+      const userId = 'student-e2e-pause';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'premium' });
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          status: 'active',
+          expiresAt: new Date(Date.now() + 86400000),
+        });
+
+        // 1. Subscription paused
+        await dispatchWebhook(db, 'subscription.paused', 'evt_e2e_pause_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          subscription_id: 'sub_pause_123',
+        });
+
+        const userDoc1 = await db.collection('users').doc(userId).get();
+        expect(userDoc1.data()?.plan).toBe('free');
+        const entDoc1 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc1.data()?.status).toBe('paused');
+
+        // 2. Subscription unpaused / resumed
+        await dispatchWebhook(db, 'subscription.unpaused', 'evt_e2e_unpause_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          subscription_id: 'sub_pause_123',
+        });
+
+        const userDoc2 = await db.collection('users').doc(userId).get();
+        expect(userDoc2.data()?.plan).toBe('premium');
+        const entDoc2 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc2.data()?.status).toBe('active');
+      });
+    });
+
+    it('Scenario: Dispute opened marks status disputed; dispute won restores active status', async () => {
+      const userId = 'student-e2e-dispute';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'premium' });
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          status: 'active',
+          expiresAt: new Date(Date.now() + 86400000),
+        });
+
+        // 1. Dispute opened
+        await dispatchWebhook(db, 'dispute.opened', 'evt_e2e_disp_open_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          payment_id: 'pay_disputed_123',
+        });
+
+        const entDoc1 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc1.data()?.status).toBe('disputed');
+        expect(entDoc1.data()?.disputeStatus).toBe('opened');
+
+        // 2. Dispute won
+        await dispatchWebhook(db, 'dispute.won', 'evt_e2e_disp_won_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          payment_id: 'pay_disputed_123',
+        });
+
+        const entDoc2 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc2.data()?.status).toBe('active');
+        expect(entDoc2.data()?.disputeStatus).toBe('won');
+      });
     });
   });
 });

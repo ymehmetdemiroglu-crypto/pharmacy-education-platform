@@ -72,5 +72,20 @@ export const appLogger = {
             context: sanitizePii(context),
         }));
     },
+    reportError: (err, context) => {
+        const errorEvent = {
+            timestamp: new Date().toISOString(),
+            severity: 'ERROR',
+            message: err?.message || String(err),
+            context: sanitizePii(context),
+            '@type': 'type.googleapis.com/google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent',
+            serviceContext: {
+                service: 'pharmacy-education-backend',
+                version: process.env.K_REVISION || '1.0.0',
+            },
+            stack_trace: err?.stack || undefined,
+        };
+        console.error(JSON.stringify(errorEvent));
+    },
 };
 //# sourceMappingURL=logger.js.map

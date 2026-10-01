@@ -426,11 +426,147 @@ export async function processDodoWebhook(
       break;
     }
 
-    case 'payment.failed': {
+    case 'payment.failed':
+    case 'payment.cancelled': {
       await entitlementRef.set(
         {
-          lastPaymentError: 'payment_failed',
+          lastPaymentError: eventType,
           lastPaymentErrorAt: now,
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'subscription.failed': {
+      await userRef.set(
+        {
+          plan: 'free',
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+
+      await entitlementRef.set(
+        {
+          status: 'failed',
+          autoRenew: false,
+          revokedAt: now,
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'subscription.paused': {
+      await userRef.set(
+        {
+          plan: 'free',
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+
+      await entitlementRef.set(
+        {
+          status: 'paused',
+          autoRenew: false,
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'subscription.unpaused': {
+      await userRef.set(
+        {
+          plan: 'premium',
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+
+      await entitlementRef.set(
+        {
+          status: 'active',
+          autoRenew: true,
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'subscription.updated': {
+      await entitlementRef.set(
+        {
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+          ...(eventData?.current_period_end ? { currentPeriodEnd: new Date(eventData.current_period_end), expiresAt: new Date(eventData.current_period_end) } : {}),
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'refund.failed': {
+      appLogger.warn(`Refund attempt failed for payment ${eventData?.payment_id}`, { eventId });
+      await entitlementRef.set(
+        {
+          lastRefundError: 'refund_failed',
+          lastRefundErrorAt: now,
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'dispute.opened': {
+      appLogger.warn(`Payment dispute opened for payment ${eventData?.payment_id}`, { eventId });
+      await entitlementRef.set(
+        {
+          disputeStatus: 'opened',
+          status: 'disputed',
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'dispute.won': {
+      appLogger.info(`Payment dispute resolved in merchant favor`, { eventId });
+      await entitlementRef.set(
+        {
+          disputeStatus: 'won',
+          status: 'active',
+          lastEventTimestamp: eventTimestamp,
+          updatedAt: now,
+        },
+        { merge: true }
+      );
+      break;
+    }
+
+    case 'dispute.lost': {
+      appLogger.warn(`Payment dispute lost`, { eventId });
+      await userRef.set({ plan: 'free', updatedAt: now }, { merge: true });
+      await entitlementRef.set(
+        {
+          disputeStatus: 'lost',
+          status: 'revoked',
+          autoRenew: false,
+          revokedAt: now,
           lastEventTimestamp: eventTimestamp,
           updatedAt: now,
         },

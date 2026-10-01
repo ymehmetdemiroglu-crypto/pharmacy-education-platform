@@ -250,6 +250,11 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Trial claims: Deduplication locking against multi-account abuse (Server-side admin only)
+    match /trial_claims/{claimId} {
+      allow read, write: if false;
+    }
+
     // Orders: User can read only their own orders; writes are strictly server-only
     match /orders/{orderId} {
       allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
