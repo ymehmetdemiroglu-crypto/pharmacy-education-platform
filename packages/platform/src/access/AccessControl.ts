@@ -23,13 +23,23 @@ export function hasCourseAccess(
 
   const checkTime = options.now || new Date();
 
-  // 3. Check active entitlement for the course or dual_bundle
-  const activeEntitlement = entitlements.find(
-    (e) =>
-      (e.courseId === courseId || e.courseId === 'dual_bundle') &&
-      e.status === 'active' &&
-      new Date(e.expiresAt) > checkTime
-  );
+  // 3. Check active entitlement for the course or dual_bundle (active or within past_due grace period)
+  const activeEntitlement = entitlements.find((e) => {
+    if (e.courseId !== courseId && e.courseId !== 'dual_bundle') {
+      return false;
+    }
+    if (e.status === 'active' && new Date(e.expiresAt) > checkTime) {
+      return true;
+    }
+    if (
+      e.status === 'past_due' &&
+      e.gracePeriodEndsAt &&
+      new Date(e.gracePeriodEndsAt) > checkTime
+    ) {
+      return true;
+    }
+    return false;
+  });
 
   if (activeEntitlement) {
     return true;

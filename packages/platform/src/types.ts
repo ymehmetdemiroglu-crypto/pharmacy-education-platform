@@ -19,11 +19,13 @@ export interface CourseEntitlement {
   courseId: 'medchem' | 'pharmacology' | 'dual_bundle';
   entitlementId: string;
   plan: 'trial' | 'premium';
-  status: 'active' | 'expired' | 'canceled' | 'revoked' | 'past_due';
+  status: 'active' | 'expired' | 'canceled' | 'revoked' | 'past_due' | 'refunded' | 'on_hold';
   planId: string;
   startedAt: string; // ISO
   expiresAt: string; // ISO
   autoRenew: boolean;
+  gracePeriodEndsAt?: string | null;
+  currentPeriodEnd?: string | null;
 }
 
 export interface UserProgress {

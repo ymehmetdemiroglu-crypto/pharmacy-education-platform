@@ -80,6 +80,42 @@ describe('AccessControl Engine', () => {
     ).toBe(false);
   });
 
+  it('grants access when subscription is past_due but within grace period', () => {
+    const pastDueGraceEntitlement: CourseEntitlement = {
+      courseId: 'medchem',
+      entitlementId: 'ent-grace',
+      plan: 'premium',
+      status: 'past_due',
+      planId: 'monthly',
+      startedAt: new Date(Date.now() - 35 * 24 * 60 * 60 * 1000).toISOString(),
+      expiresAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
+      gracePeriodEndsAt: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+      autoRenew: true,
+    };
+
+    expect(
+      hasCourseAccess(baseUser, [pastDueGraceEntitlement], 'medchem', { isFreePreview: false })
+    ).toBe(true);
+  });
+
+  it('denies access when past_due grace period has elapsed', () => {
+    const pastDueExpiredEntitlement: CourseEntitlement = {
+      courseId: 'medchem',
+      entitlementId: 'ent-grace-expired',
+      plan: 'premium',
+      status: 'past_due',
+      planId: 'monthly',
+      startedAt: new Date(Date.now() - 40 * 24 * 60 * 60 * 1000).toISOString(),
+      expiresAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString(),
+      gracePeriodEndsAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
+      autoRenew: true,
+    };
+
+    expect(
+      hasCourseAccess(baseUser, [pastDueExpiredEntitlement], 'medchem', { isFreePreview: false })
+    ).toBe(false);
+  });
+
   it('calculates remaining trial days accurately', () => {
     const futureDate = new Date(Date.now() + 4.5 * 24 * 60 * 60 * 1000).toISOString();
     expect(calculateTrialDaysRemaining(futureDate)).toBe(5);

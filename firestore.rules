@@ -158,19 +158,24 @@ service cloud.firestore {
       return isAuthenticated() && request.auth.uid == userId;
     }
 
+    // Helper to evaluate active status or past_due with active grace period
+    function isEntitlementValid(entData) {
+      return (entData.status == 'active' && entData.expiresAt > request.time) ||
+             (entData.status == 'past_due' && 'gracePeriodEndsAt' in entData && entData.gracePeriodEndsAt > request.time);
+    }
+
     // Server-authoritative entitlement check:
     // Returns true if user possesses an active entitlement (trial or premium) whose expiresAt > request.time
+    // OR a past_due entitlement within its grace period (gracePeriodEndsAt > request.time)
     // for either the specific course or the dual_bundle.
     function hasCourseAccess(courseId) {
       return isAuthenticated() && (
         (
           exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)) &&
-          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.status == 'active' &&
-          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data.expiresAt > request.time
+          isEntitlementValid(get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data)
         ) || (
           exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle) &&
-          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.status == 'active' &&
-          get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data.expiresAt > request.time
+          isEntitlementValid(get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data)
         )
       );
     }

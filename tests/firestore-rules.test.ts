@@ -479,5 +479,95 @@ describe('Firestore Security Rules Testing', () => {
         .set({ title: 'Hacked Step' })
     );
   });
+
+  it('allows access to paid step when user has past_due entitlement within grace period', async () => {
+    const userId = 'student-grace-active';
+    const futureGrace = new Date(Date.now() + 5 * 24 * 60 * 60 * 1000);
+    const pastExpires = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000);
+
+    await testEnv.withSecurityRulesDisabled(async (context) => {
+      const db = context.firestore();
+      await db
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-03')
+        .collection('steps')
+        .doc('step-01')
+        .set({
+          stepId: 'step-01',
+          isFreePreview: false,
+          title: 'SAR Deep Dive',
+        });
+
+      await db
+        .collection('users')
+        .doc(userId)
+        .collection('entitlements')
+        .doc('medchem')
+        .set({
+          courseId: 'medchem',
+          status: 'past_due',
+          expiresAt: pastExpires,
+          gracePeriodEndsAt: futureGrace,
+        });
+    });
+
+    const clientDb = testEnv.authenticatedContext(userId).firestore();
+    const stepRef = clientDb
+      .collection('courses')
+      .doc('medchem')
+      .collection('lessons')
+      .doc('lesson-03')
+      .collection('steps')
+      .doc('step-01');
+
+    await assertSucceeds(stepRef.get());
+  });
+
+  it('denies access to paid step when past_due grace period has expired', async () => {
+    const userId = 'student-grace-expired';
+    const pastGrace = new Date(Date.now() - 1 * 24 * 60 * 60 * 1000);
+    const pastExpires = new Date(Date.now() - 8 * 24 * 60 * 60 * 1000);
+
+    await testEnv.withSecurityRulesDisabled(async (context) => {
+      const db = context.firestore();
+      await db
+        .collection('courses')
+        .doc('medchem')
+        .collection('lessons')
+        .doc('lesson-03')
+        .collection('steps')
+        .doc('step-01')
+        .set({
+          stepId: 'step-01',
+          isFreePreview: false,
+          title: 'SAR Deep Dive',
+        });
+
+      await db
+        .collection('users')
+        .doc(userId)
+        .collection('entitlements')
+        .doc('medchem')
+        .set({
+          courseId: 'medchem',
+          status: 'past_due',
+          expiresAt: pastExpires,
+          gracePeriodEndsAt: pastGrace,
+        });
+    });
+
+    const clientDb = testEnv.authenticatedContext(userId).firestore();
+    const stepRef = clientDb
+      .collection('courses')
+      .doc('medchem')
+      .collection('lessons')
+      .doc('lesson-03')
+      .collection('steps')
+      .doc('step-01');
+
+    await assertFails(stepRef.get());
+  });
 });
 
