@@ -50,6 +50,8 @@ desktop.ini
 # Temporary / scratch
 tmp/
 *.tmp
+.agents/
+.scratch/
 
 # Source materials & raw extractions (Private reference only - IP Gate)
 materials/
