@@ -126,7 +126,7 @@ export const startFreeTrial = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated to start a free trial.');
     }
-    enforceCallableGuards(request, 'startFreeTrial', { maxRequests: 5 });
+    await enforceCallableGuards(request, 'startFreeTrial', defaultDb, { maxRequests: 5 });
     const authUser = {
         email: request.auth.token.email,
         emailVerified: Boolean(request.auth.token.email_verified),
@@ -152,8 +152,8 @@ export const startFreeTrial = onCall(async (request) => {
 import { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, } from './payments.js';
 import { processDodoWebhook, Webhook } from './webhook.js';
 import { executeDeleteUserAccount } from './compliance.js';
-import { checkRateLimit, resetRateLimits } from './rateLimiter.js';
-export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, Webhook, checkRateLimit, resetRateLimits, enforceCallableGuards, };
+import { checkRateLimit, resetRateLimits, checkFirestoreRateLimit, cleanupExpiredRateLimits, } from './rateLimiter.js';
+export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, Webhook, checkRateLimit, resetRateLimits, checkFirestoreRateLimit, cleanupExpiredRateLimits, enforceCallableGuards, };
 /**
  * createCheckoutSession:
  * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.
@@ -162,7 +162,7 @@ export const createCheckoutSession = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    enforceCallableGuards(request, 'createCheckoutSession', { maxRequests: 10 });
+    await enforceCallableGuards(request, 'createCheckoutSession', defaultDb, { maxRequests: 10 });
     try {
         return await executeCreateCheckoutSession(defaultDb, request.auth.uid, request.data);
     }
@@ -179,7 +179,7 @@ export const createCustomerPortalSession = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    enforceCallableGuards(request, 'createCustomerPortalSession', { maxRequests: 10 });
+    await enforceCallableGuards(request, 'createCustomerPortalSession', defaultDb, { maxRequests: 10 });
     try {
         return await executeCreateCustomerPortalSession(defaultDb, request.auth.uid, request.data);
     }
@@ -196,7 +196,7 @@ export const cancelSubscription = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    enforceCallableGuards(request, 'cancelSubscription', { maxRequests: 5 });
+    await enforceCallableGuards(request, 'cancelSubscription', defaultDb, { maxRequests: 5 });
     try {
         return await executeCancelSubscription(defaultDb, request.auth.uid, request.data);
     }
@@ -213,7 +213,7 @@ export const changeSubscriptionPlan = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    enforceCallableGuards(request, 'changeSubscriptionPlan', { maxRequests: 5 });
+    await enforceCallableGuards(request, 'changeSubscriptionPlan', defaultDb, { maxRequests: 5 });
     try {
         return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
     }
@@ -231,7 +231,7 @@ export const deleteUserAccount = onCall(async (request) => {
     if (!request.auth) {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
-    enforceCallableGuards(request, 'deleteUserAccount', { maxRequests: 3 });
+    await enforceCallableGuards(request, 'deleteUserAccount', defaultDb, { maxRequests: 3 });
     try {
         return await executeDeleteUserAccount(defaultDb, request.auth.uid);
     }
@@ -288,5 +288,12 @@ export async function executeCleanupExpiredTrials(firestoreDb, nowTime = new Dat
  */
 export const cleanupExpiredTrials = onSchedule('every 24 hours', async () => {
     await executeCleanupExpiredTrials(defaultDb);
+});
+/**
+ * cleanupRateLimits:
+ * Scheduled hourly cron to purge expired rate limit counters.
+ */
+export const cleanupRateLimits = onSchedule('every 1 hours', async () => {
+    await cleanupExpiredRateLimits(defaultDb);
 });
 //# sourceMappingURL=index.js.map

@@ -255,6 +255,11 @@ service cloud.firestore {
       allow read, write: if false;
     }
 
+    // Rate limits: Atomic transactional counters (Server-side admin only)
+    match /rate_limits/{limitId} {
+      allow read, write: if false;
+    }
+
     // Orders: User can read only their own orders; writes are strictly server-only
     match /orders/{orderId} {
       allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;

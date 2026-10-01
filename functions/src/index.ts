@@ -149,7 +149,7 @@ export const startFreeTrial = onCall(async (request) => {
     throw new HttpsError('unauthenticated', 'User must be authenticated to start a free trial.');
   }
 
-  enforceCallableGuards(request, 'startFreeTrial', { maxRequests: 5 });
+  await enforceCallableGuards(request, 'startFreeTrial', defaultDb, { maxRequests: 5 });
 
   const authUser = {
     email: request.auth.token.email,
@@ -185,7 +185,12 @@ import {
 import { processDodoWebhook, Webhook } from './webhook.js';
 import { executeDeleteUserAccount } from './compliance.js';
 
-import { checkRateLimit, resetRateLimits } from './rateLimiter.js';
+import {
+  checkRateLimit,
+  resetRateLimits,
+  checkFirestoreRateLimit,
+  cleanupExpiredRateLimits,
+} from './rateLimiter.js';
 
 export {
   executeCreateCheckoutSession,
@@ -197,6 +202,8 @@ export {
   Webhook,
   checkRateLimit,
   resetRateLimits,
+  checkFirestoreRateLimit,
+  cleanupExpiredRateLimits,
   enforceCallableGuards,
 };
 
@@ -208,7 +215,7 @@ export const createCheckoutSession = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
-  enforceCallableGuards(request, 'createCheckoutSession', { maxRequests: 10 });
+  await enforceCallableGuards(request, 'createCheckoutSession', defaultDb, { maxRequests: 10 });
   try {
     return await executeCreateCheckoutSession(defaultDb, request.auth.uid, request.data);
   } catch (err: any) {
@@ -225,7 +232,7 @@ export const createCustomerPortalSession = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
-  enforceCallableGuards(request, 'createCustomerPortalSession', { maxRequests: 10 });
+  await enforceCallableGuards(request, 'createCustomerPortalSession', defaultDb, { maxRequests: 10 });
   try {
     return await executeCreateCustomerPortalSession(defaultDb, request.auth.uid, request.data);
   } catch (err: any) {
@@ -242,7 +249,7 @@ export const cancelSubscription = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
-  enforceCallableGuards(request, 'cancelSubscription', { maxRequests: 5 });
+  await enforceCallableGuards(request, 'cancelSubscription', defaultDb, { maxRequests: 5 });
   try {
     return await executeCancelSubscription(defaultDb, request.auth.uid, request.data);
   } catch (err: any) {
@@ -259,7 +266,7 @@ export const changeSubscriptionPlan = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
-  enforceCallableGuards(request, 'changeSubscriptionPlan', { maxRequests: 5 });
+  await enforceCallableGuards(request, 'changeSubscriptionPlan', defaultDb, { maxRequests: 5 });
   try {
     return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
   } catch (err: any) {
@@ -277,7 +284,7 @@ export const deleteUserAccount = onCall(async (request) => {
   if (!request.auth) {
     throw new HttpsError('unauthenticated', 'User must be authenticated.');
   }
-  enforceCallableGuards(request, 'deleteUserAccount', { maxRequests: 3 });
+  await enforceCallableGuards(request, 'deleteUserAccount', defaultDb, { maxRequests: 3 });
   try {
     return await executeDeleteUserAccount(defaultDb, request.auth.uid);
   } catch (err: any) {
@@ -345,3 +352,12 @@ export async function executeCleanupExpiredTrials(firestoreDb: any, nowTime: Dat
 export const cleanupExpiredTrials = onSchedule('every 24 hours', async () => {
   await executeCleanupExpiredTrials(defaultDb);
 });
+
+/**
+ * cleanupRateLimits:
+ * Scheduled hourly cron to purge expired rate limit counters.
+ */
+export const cleanupRateLimits = onSchedule('every 1 hours', async () => {
+  await cleanupExpiredRateLimits(defaultDb);
+});
+

@@ -13,15 +13,18 @@ All payment, webhook, entitlement security, and compliance flows were verified a
 1. **Offline Emulated Integration Suite**: Executes within the Firebase Firestore Emulator and Node.js testing environment with mocked Dodo Payments SDK and cryptographic HMAC signatures.
 2. **Monorepo Package Test Suite**: Runs all unit, component, and curriculum authoring tests across all workspace packages (`platform`, `ui`, `widgets`, `web`).
 
-| Suite / Scenario | Tests Executed | Passed | Failed | Status |
-|---|---|---|---|---|
-| **Firestore Rules & Backend Callables** | 49 | 49 | 0 | **PASS** |
-| **Monorepo Packages (`npm test`)** | 166 | 166 | 0 | **PASS** |
-| **Standard Webhooks Security (HMAC / Idempotency / Ordering)** | 8 | 8 | 0 | **PASS** |
-| **E2E Payment Lifecycle Scenarios** | 7 | 7 | 0 | **PASS** |
-| **5-Minute Backend Verification Script** | 15 | 15 | 0 | **PASS** |
-| **Pre-Commit Secret Scanner** | Working tree + git log | 0 leaks | 0 | **PASS** |
-| **Total Test Count** | **245** | **245** | **0** | **100% PASS** |
+| Suite / Package | Test Files | Tests Executed | Passed | Failed | Status |
+|---|---|---|---|---|---|
+| **Firestore Security Rules** (`tests/firestore-rules.test.ts`) | 1 | 14 | 14 | 0 | **PASS** |
+| **Backend Functions & Security** (`tests/functions-and-security.test.ts`) | 1 | 41 | 41 | 0 | **PASS** |
+| **Trial Emulator Lifecycle** (`tests/trial-emulator-lifecycle.test.ts`) | 1 | 1 | 1 | 0 | **PASS** |
+| **Platform Package** (`packages/platform`) | 7 | 71 | 71 | 0 | **PASS** |
+| **UI Component Package** (`packages/ui`) | 15 | 35 | 35 | 0 | **PASS** |
+| **Interactive Widgets Package** (`packages/widgets`) | 12 | 54 | 54 | 0 | **PASS** |
+| **Web Application** (`apps/web`) | 1 | 6 | 6 | 0 | **PASS** |
+| **Total Automated Vitest Tests** | **38 files** | **222** | **222** | **0** | **100% PASS** |
+| **Backend Integrity Script** (`scripts/verify-payments-5min.mjs`) | 1 | 15 checks | 15 | 0 | **PASS** |
+| **Pre-Commit Secret Scanner** (`scripts/secret-scan.mjs`) | Multi-tree scan | 0 leaks in worktree | 0 | 0 | **PASS** |
 
 ---
 

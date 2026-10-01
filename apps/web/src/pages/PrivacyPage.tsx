@@ -8,13 +8,13 @@ export const PrivacyPage: React.FC = () => {
     <div className="py-12 px-4 sm:px-6 max-w-4xl mx-auto">
       <div className="mb-8">
         <Link to="/pricing">
-          <Button variant="outline" size="sm" className="mb-4">
+          <Button variant="ghost" size="sm" className="mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Platform
           </Button>
         </Link>
         <div className="flex items-center gap-3 mb-2">
-          <StickerBadge variant="neutral">KVKK / GDPR / GİZLİLİK</StickerBadge>
+          <StickerBadge variant="outline">KVKK / GDPR / GİZLİLİK</StickerBadge>
           <span className="text-xs font-mono text-gray-500">Effective: October 2026</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-black uppercase tracking-tight flex items-center gap-3">

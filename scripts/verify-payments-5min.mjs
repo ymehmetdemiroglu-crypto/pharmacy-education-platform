@@ -78,7 +78,7 @@ assert(
 // ----------------------------------------------------------------------
 console.log(`\n${INFO} 2. Testing Standard Webhooks Signature & Anti-Tamper Engine...`);
 
-const dummyWhKey = ['whsec', 'MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'].join('_');
+const dummyWhKey = `whsec_${crypto.randomBytes(24).toString('base64')}`;
 const wh = new Webhook(dummyWhKey);
 
 const samplePayload = JSON.stringify({

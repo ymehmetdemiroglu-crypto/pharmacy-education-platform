@@ -265,19 +265,19 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
       expect(rejected.remaining).toBe(0);
     });
 
-    it('enforces App Check verification guard when configured', () => {
+    it('enforces App Check verification guard when configured', async () => {
       const unverifiedReq = { auth: { uid: 'user_123' }, app: undefined };
       const verifiedReq = { auth: { uid: 'user_123' }, app: { appId: 'app_123' } };
 
       // Rejects unverified request when requireAppCheck: true
-      expect(() => {
-        enforceCallableGuards(unverifiedReq, 'testEndpoint', { requireAppCheck: true });
-      }).toThrow('The function must be called from an App Check verified app.');
+      await expect(
+        enforceCallableGuards(unverifiedReq, 'testEndpoint', { requireAppCheck: true })
+      ).rejects.toThrow('The function must be called from an App Check verified app.');
 
       // Accepts verified request
-      expect(() => {
-        enforceCallableGuards(verifiedReq, 'testEndpoint', { requireAppCheck: true });
-      }).not.toThrow();
+      await expect(
+        enforceCallableGuards(verifiedReq, 'testEndpoint', { requireAppCheck: true })
+      ).resolves.not.toThrow();
     });
 
     it('rejects startFreeTrial callable path when unauthenticated (no auth)', async () => {
@@ -1091,8 +1091,8 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
   // Test 8: Standard Webhooks Verification Suite
   // -------------------------------------------------------------
   describe('Standard Webhooks Verification Suite', () => {
-    // Standard test secret for webhook verification
-    const stdSecret = ['whsec', 'MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'].join('_');
+    // Standard test secret for webhook verification generated at runtime
+    const stdSecret = `whsec_${crypto.randomBytes(24).toString('base64')}`;
     const whSigner = new Webhook(stdSecret);
 
     function createMockRes() {
@@ -1242,7 +1242,7 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
   // Test 9: Complete Payment Lifecycle E2E Scenarios
   // -------------------------------------------------------------
   describe('Dodo Payment Lifecycle E2E Scenarios (Emulated Firestore & State Assertions)', () => {
-    const stdSecret = ['whsec', 'MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'].join('_');
+    const stdSecret = `whsec_${crypto.randomBytes(24).toString('base64')}`;
     const whSigner = new Webhook(stdSecret);
 
     function createMockRes() {
