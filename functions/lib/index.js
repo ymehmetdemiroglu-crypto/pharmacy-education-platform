@@ -90,9 +90,9 @@ export const startFreeTrial = onCall(async (request) => {
     }
 });
 import { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, } from './payments.js';
-import { processDodoWebhook } from './webhook.js';
+import { processDodoWebhook, Webhook } from './webhook.js';
 import { executeDeleteUserAccount } from './compliance.js';
-export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, };
+export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, Webhook, };
 /**
  * createCheckoutSession:
  * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.

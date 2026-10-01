@@ -4,6 +4,8 @@ import DodoPayments from 'dodopayments';
 import { Webhook } from 'standardwebhooks';
 import crypto from 'crypto';
 
+export { Webhook };
+
 export interface WebhookRequest {
   headers: Record<string, string | string[] | undefined>;
   body: any;

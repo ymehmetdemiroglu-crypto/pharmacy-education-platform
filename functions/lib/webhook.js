@@ -2,6 +2,7 @@ import { getAppConfig, reverseResolveProductId } from './config.js';
 import { appLogger } from './logger.js';
 import { Webhook } from 'standardwebhooks';
 import crypto from 'crypto';
+export { Webhook };
 /**
  * processDodoWebhook:
  * Authoritative Standard Webhooks handler for Dodo Payments.

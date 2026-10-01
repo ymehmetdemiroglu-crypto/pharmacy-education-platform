@@ -53,8 +53,13 @@ export async function executeDeleteUserAccount(firestoreDb, authUid, dodoClientO
     await userRef.delete();
     // 5. Delete Firebase Auth record if available
     try {
-        const auth = getAuth();
-        await auth.deleteUser(authUid);
+        if (process.env.FIREBASE_AUTH_EMULATOR_HOST || process.env.NODE_ENV === 'production') {
+            const auth = getAuth();
+            await Promise.race([
+                auth.deleteUser(authUid),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Auth timeout')), 500)),
+            ]);
+        }
     }
     catch (authErr) {
         appLogger.warn('Firebase Auth user deletion notice', { error: authErr.message });

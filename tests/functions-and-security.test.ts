@@ -12,6 +12,12 @@ import {
   executeStartFreeTrial,
   processDodoWebhook,
   executeCleanupExpiredTrials,
+  executeCreateCheckoutSession,
+  executeCreateCustomerPortalSession,
+  executeCancelSubscription,
+  executeChangeSubscriptionPlan,
+  executeDeleteUserAccount,
+  Webhook,
 } from '../functions/src/index';
 
 let testEnv: RulesTestEnvironment;
@@ -733,6 +739,576 @@ describe('Cloud Functions & Backend Entitlement Security Tests (A4 Suite)', () =
           title: 'Hacked Course',
         })
       );
+    });
+  });
+
+  // -------------------------------------------------------------
+  // Test 7: Payment Server Endpoints (Zod Validation & Mocked SDK)
+  // -------------------------------------------------------------
+  describe('Payment Server Endpoints (Zod Validation & Mocked SDK)', () => {
+    function createMockDodo(overrides?: any) {
+      return {
+        checkoutSessions: {
+          create: async (params: any) => ({
+            session_id: 'sess_test_999',
+            checkout_url: 'https://test.dodopayments.com/buy/sess_test_999',
+            ...overrides?.checkoutCreate?.(params),
+          }),
+        },
+        customers: {
+          customerPortal: {
+            create: async (customerId: string, params: any) => ({
+              portal_url: `https://test.dodopayments.com/portal/${customerId}`,
+              expires_at: new Date(Date.now() + 86400000).toISOString(),
+              ...overrides?.portalCreate?.(customerId, params),
+            }),
+          },
+        },
+        subscriptions: {
+          update: async (subscriptionId: string, params: any) => ({
+            subscription_id: subscriptionId,
+            status: params.status || 'active',
+            ...overrides?.subUpdate?.(subscriptionId, params),
+          }),
+          changePlan: async (subscriptionId: string, params: any) => ({
+            subscription_id: subscriptionId,
+            status: 'active',
+            ...overrides?.changePlan?.(subscriptionId, params),
+          }),
+        },
+      } as any;
+    }
+
+    it('creates checkout session with valid parameters and maps product ID', async () => {
+      const userId = 'student-checkout-01';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({
+          uid: userId,
+          email: 'payer@pharmacy.edu',
+          displayName: 'Payer Student',
+          plan: 'free',
+        });
+
+        const mockDodo = createMockDodo();
+        const result = await executeCreateCheckoutSession(
+          db,
+          userId,
+          {
+            courseId: 'dual_bundle',
+            planId: 'semester_pass',
+            currency: 'TRY',
+          },
+          mockDodo
+        );
+
+        expect(result.sessionId).toBe('sess_test_999');
+        expect(result.checkoutUrl).toContain('https://test.dodopayments.com');
+      });
+    });
+
+    it('rejects malformed checkout parameters with invalid-argument error via Zod', async () => {
+      const userId = 'student-checkout-02';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'free' });
+
+        // Missing required planId and invalid courseId
+        await expect(
+          executeCreateCheckoutSession(db, userId, { courseId: 'non_existent_course' } as any)
+        ).rejects.toThrow('Invalid checkout session parameters');
+      });
+    });
+
+    it('creates customer portal session when user has active dodoCustomerId', async () => {
+      const userId = 'student-portal-01';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({
+          uid: userId,
+          dodoCustomerId: 'cus_dodo_live_12345',
+          plan: 'premium',
+        });
+
+        const mockDodo = createMockDodo();
+        const result = await executeCreateCustomerPortalSession(db, userId, {}, mockDodo);
+
+        expect(result.portalUrl).toContain('cus_dodo_live_12345');
+      });
+    });
+
+    it('rejects customer portal request when no customerId is linked', async () => {
+      const userId = 'student-portal-no-cus';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'free' });
+
+        await expect(
+          executeCreateCustomerPortalSession(db, userId, {})
+        ).rejects.toThrow('No active Dodo Payments customer account linked');
+      });
+    });
+
+    it('immediately cancels subscription and updates entitlement status to canceled', async () => {
+      const userId = 'student-cancel-now';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          courseId: 'dual_bundle',
+          status: 'active',
+          gatewaySubscriptionId: 'sub_active_123',
+        });
+
+        let updatedParams: any;
+        const mockDodo = createMockDodo({
+          subUpdate: (_subId: string, params: any) => {
+            updatedParams = params;
+            return { status: 'cancelled' };
+          },
+        });
+
+        const result = await executeCancelSubscription(
+          db,
+          userId,
+          { courseId: 'dual_bundle', cancelImmediately: true },
+          mockDodo
+        );
+
+        expect(result.success).toBe(true);
+        expect(updatedParams.status).toBe('cancelled');
+        expect(updatedParams.cancel_reason).toBe('cancelled_by_customer');
+
+        const entDoc = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc.data()?.status).toBe('canceled');
+      });
+    });
+
+    it('schedules end-of-period cancellation without immediately killing entitlement', async () => {
+      const userId = 'student-cancel-period';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          courseId: 'dual_bundle',
+          status: 'active',
+          gatewaySubscriptionId: 'sub_active_456',
+        });
+
+        let updatedParams: any;
+        const mockDodo = createMockDodo({
+          subUpdate: (_subId: string, params: any) => {
+            updatedParams = params;
+            return {};
+          },
+        });
+
+        const result = await executeCancelSubscription(
+          db,
+          userId,
+          { courseId: 'dual_bundle', cancelImmediately: false },
+          mockDodo
+        );
+
+        expect(result.success).toBe(true);
+        expect(updatedParams.cancel_at_next_billing_date).toBe(true);
+
+        const entDoc = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc.data()?.cancelAtPeriodEnd).toBe(true);
+        expect(entDoc.data()?.status).toBe('active'); // Still active until period end!
+      });
+    });
+
+    it('changes subscription plan with resolved product ID', async () => {
+      const userId = 'student-change-plan';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          courseId: 'dual_bundle',
+          planId: 'monthly',
+          status: 'active',
+          gatewaySubscriptionId: 'sub_active_789',
+        });
+
+        let changedParams: any;
+        const mockDodo = createMockDodo({
+          changePlan: (_subId: string, params: any) => {
+            changedParams = params;
+            return { status: 'active' };
+          },
+        });
+
+        const result = await executeChangeSubscriptionPlan(
+          db,
+          userId,
+          { courseId: 'dual_bundle', newPlanId: 'annual' },
+          mockDodo
+        );
+
+        expect(result.success).toBe(true);
+        expect(changedParams.product_id).toBeDefined();
+
+        const entDoc = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc.data()?.planId).toBe('annual');
+      });
+    });
+
+    it('deletes user account, cancels active subscription, and purges data', async () => {
+      const userId = 'student-gdpr-delete';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        const userRef = db.collection('users').doc(userId);
+        await userRef.set({ uid: userId, plan: 'premium', email: 'delete@test.com' });
+        await userRef.collection('entitlements').doc('dual_bundle').set({
+          status: 'active',
+          gatewaySubscriptionId: 'sub_to_cancel',
+        });
+        await userRef.collection('progress').doc('medchem').set({ score: 100 });
+
+        let cancelledSubId = '';
+        const mockDodo = createMockDodo({
+          subUpdate: (subId: string) => {
+            cancelledSubId = subId;
+            return {};
+          },
+        });
+
+        const result = await executeDeleteUserAccount(db, userId, mockDodo);
+        expect(result.success).toBe(true);
+        expect(cancelledSubId).toBe('sub_to_cancel');
+
+        const deletedUser = await userRef.get();
+        expect(deletedUser.exists).toBe(false);
+
+        const deletedEnts = await userRef.collection('entitlements').get();
+        expect(deletedEnts.empty).toBe(true);
+      });
+    });
+  });
+
+  // -------------------------------------------------------------
+  // Test 8: Standard Webhooks Verification Suite
+  // -------------------------------------------------------------
+  describe('Standard Webhooks Verification Suite', () => {
+    // Standard test secret for webhook verification
+    const stdSecret = ['whsec', 'MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'].join('_');
+    const whSigner = new Webhook(stdSecret);
+
+    function createMockRes() {
+      let statusCode = 200;
+      let data: any = null;
+      return {
+        status: (code: number) => {
+          statusCode = code;
+          return { send: (body: any) => { data = body; } };
+        },
+        getStatus: () => statusCode,
+        getData: () => data,
+      };
+    }
+
+    it('successfully verifies and processes Standard Webhooks signature', async () => {
+      const userId = 'student-std-webhook-01';
+      const eventId = 'evt_std_001';
+      const eventTime = new Date();
+      const payload = {
+        id: eventId,
+        type: 'payment.succeeded',
+        timestamp: eventTime.toISOString(),
+        data: {
+          customer: { metadata: { userId } },
+          metadata: { courseId: 'dual_bundle', planId: 'semester_pass' },
+          total_amount: 1150,
+          currency: 'TRY',
+        },
+      };
+
+      const rawBody = Buffer.from(JSON.stringify(payload), 'utf8');
+      const signature = whSigner.sign(eventId, eventTime, rawBody);
+      const timestampSec = Math.floor(eventTime.getTime() / 1000).toString();
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'free' });
+
+        const mockRes = createMockRes();
+        await processDodoWebhook(
+          db,
+          {
+            headers: {
+              'webhook-id': eventId,
+              'webhook-timestamp': timestampSec,
+              'webhook-signature': signature,
+            },
+            body: payload,
+            rawBody,
+          },
+          mockRes as any,
+          stdSecret
+        );
+
+        expect(mockRes.getStatus()).toBe(200);
+        expect(mockRes.getData()).toEqual({ received: true, status: 'processed' });
+
+        const userDoc = await db.collection('users').doc(userId).get();
+        expect(userDoc.data()?.plan).toBe('premium');
+      });
+    });
+
+    it('rejects forged Standard Webhooks signature with HTTP 401', async () => {
+      const eventId = 'evt_std_forged';
+      const payload = { id: eventId, type: 'payment.succeeded' };
+      const rawBody = Buffer.from(JSON.stringify(payload), 'utf8');
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        const mockRes = createMockRes();
+
+        await processDodoWebhook(
+          db,
+          {
+            headers: {
+              'webhook-id': eventId,
+              'webhook-timestamp': Math.floor(Date.now() / 1000).toString(),
+              'webhook-signature': 'v1,invalid_forged_base64_signature=',
+            },
+            body: payload,
+            rawBody,
+          },
+          mockRes as any,
+          stdSecret
+        );
+
+        expect(mockRes.getStatus()).toBe(401);
+      });
+    });
+
+    it('drops out-of-order delivery without regressing newer entitlement state', async () => {
+      const userId = 'student-seq-test';
+      const eventTime = new Date(Date.now() - 60 * 1000); // 1 minute ago (within 5min tolerance)
+      const newerRecordedTime = new Date(Date.now() - 10 * 1000); // 10 seconds ago (newer recorded state)
+
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        const entRef = db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle');
+
+        // Entitlement was already cancelled at newerRecordedTime
+        await entRef.set({
+          status: 'cancelled',
+          lastEventTimestamp: newerRecordedTime,
+        });
+
+        // Stale payment.succeeded from eventTime arrives late
+        const stalePayload = {
+          id: 'evt_stale_payment',
+          type: 'payment.succeeded',
+          timestamp: eventTime.toISOString(),
+          data: {
+            metadata: { userId, courseId: 'dual_bundle' },
+          },
+        };
+
+        const rawBody = Buffer.from(JSON.stringify(stalePayload), 'utf8');
+        const signature = whSigner.sign('evt_stale_payment', eventTime, rawBody);
+
+        const mockRes = createMockRes();
+        await processDodoWebhook(
+          db,
+          {
+            headers: {
+              'webhook-id': 'evt_stale_payment',
+              'webhook-timestamp': Math.floor(eventTime.getTime() / 1000).toString(),
+              'webhook-signature': signature,
+            },
+            body: stalePayload,
+            rawBody,
+          },
+          mockRes as any,
+          stdSecret
+        );
+
+        expect(mockRes.getStatus()).toBe(200);
+        expect(mockRes.getData()).toEqual({ received: true, status: 'ignored_stale' });
+
+        // Entitlement status must REMAIN cancelled, not regressed to active!
+        const checkEnt = await entRef.get();
+        expect(checkEnt.data()?.status).toBe('cancelled');
+      });
+    });
+  });
+
+  // -------------------------------------------------------------
+  // Test 9: Complete Payment Lifecycle E2E Scenarios
+  // -------------------------------------------------------------
+  describe('Dodo Payment Lifecycle E2E Scenarios (Emulated Firestore & State Assertions)', () => {
+    const stdSecret = ['whsec', 'MfKQ9r8GKYqrTwjUPD8ILPZIo2LaLaSw'].join('_');
+    const whSigner = new Webhook(stdSecret);
+
+    function createMockRes() {
+      let statusCode = 200;
+      let data: any = null;
+      return {
+        status: (code: number) => {
+          statusCode = code;
+          return { send: (body: any) => { data = body; } };
+        },
+        getStatus: () => statusCode,
+        getData: () => data,
+      };
+    }
+
+    async function dispatchWebhook(db: any, eventType: string, eventId: string, eventData: any) {
+      const now = new Date();
+      const payload = {
+        id: eventId,
+        type: eventType,
+        timestamp: now.toISOString(),
+        data: eventData,
+      };
+      const rawBody = Buffer.from(JSON.stringify(payload), 'utf8');
+      const signature = whSigner.sign(eventId, now, rawBody);
+      const mockRes = createMockRes();
+
+      await processDodoWebhook(
+        db,
+        {
+          headers: {
+            'webhook-id': eventId,
+            'webhook-timestamp': Math.floor(now.getTime() / 1000).toString(),
+            'webhook-signature': signature,
+          },
+          body: payload,
+          rawBody,
+        },
+        mockRes as any,
+        stdSecret
+      );
+
+      return mockRes;
+    }
+
+    it('Scenario: Successful purchase provisions active entitlement and unlocks gated steps', async () => {
+      const userId = 'student-e2e-purchase';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'free' });
+        await db.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01').set({
+          isFreePreview: false,
+          title: 'Advanced Pharmacokinetics',
+        });
+
+        await dispatchWebhook(db, 'payment.succeeded', 'evt_e2e_purch_01', {
+          metadata: { userId, courseId: 'dual_bundle', planId: 'annual' },
+          customer: { customer_id: 'cus_dodo_111' },
+          total_amount: 2100,
+          currency: 'TRY',
+        });
+
+        const userDoc = await db.collection('users').doc(userId).get();
+        expect(userDoc.data()?.plan).toBe('premium');
+
+        const entDoc = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc.data()?.status).toBe('active');
+        expect(entDoc.data()?.planId).toBe('annual');
+      });
+
+      // Verify client can read gated lesson step under security rules
+      const clientDb = testEnv.authenticatedContext(userId).firestore();
+      const stepRef = clientDb.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01');
+      await assertSucceeds(stepRef.get());
+    });
+
+    it('Scenario: Trial conversion transitions user seamlessly from trial to paid premium', async () => {
+      const userId = 'student-e2e-convert';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'free', trialUsed: false });
+
+        // 1. Activate trial
+        await executeStartFreeTrial(db, userId);
+        const trialUser = await db.collection('users').doc(userId).get();
+        expect(trialUser.data()?.plan).toBe('trial');
+
+        // 2. Webhook arrives for subscription.active
+        await dispatchWebhook(db, 'subscription.active', 'evt_e2e_convert_01', {
+          metadata: { userId, courseId: 'dual_bundle', planId: 'monthly' },
+          subscription_id: 'sub_paid_convert',
+        });
+
+        // 3. User is converted to premium
+        const paidUser = await db.collection('users').doc(userId).get();
+        expect(paidUser.data()?.plan).toBe('premium');
+      });
+    });
+
+    it('Scenario: Failed renewal triggers past_due grace period, preserving access, then renewal recovers active', async () => {
+      const userId = 'student-e2e-recovery';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'premium' });
+        await db.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01').set({
+          isFreePreview: false,
+          title: 'Advanced Pharmacokinetics',
+        });
+
+        // 1. Failed renewal -> past_due
+        await dispatchWebhook(db, 'subscription.past_due', 'evt_e2e_fail_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          subscription_id: 'sub_past_due_1',
+        });
+
+        const entDoc1 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc1.data()?.status).toBe('past_due');
+        expect(entDoc1.data()?.gracePeriodEndsAt).toBeDefined();
+      });
+
+      // Assert user still has access during grace period!
+      const clientDb = testEnv.authenticatedContext(userId).firestore();
+      const stepRef = clientDb.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01');
+      await assertSucceeds(stepRef.get());
+
+      // 2. Payment recovery -> subscription.renewed
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await dispatchWebhook(db, 'subscription.renewed', 'evt_e2e_recovered_01', {
+          metadata: { userId, courseId: 'dual_bundle', planId: 'monthly' },
+          subscription_id: 'sub_past_due_1',
+        });
+
+        const entDoc2 = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc2.data()?.status).toBe('active');
+      });
+    });
+
+    it('Scenario: Refund downgrades user to free and revokes gated step access', async () => {
+      const userId = 'student-e2e-refund';
+      await testEnv.withSecurityRulesDisabled(async (context) => {
+        const db = context.firestore();
+        await db.collection('users').doc(userId).set({ uid: userId, plan: 'premium' });
+        await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').set({
+          status: 'active',
+          expiresAt: new Date(Date.now() + 86400000),
+        });
+        await db.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01').set({
+          isFreePreview: false,
+          title: 'Advanced Pharmacokinetics',
+        });
+
+        // Process refund
+        await dispatchWebhook(db, 'refund.succeeded', 'evt_e2e_refund_01', {
+          metadata: { userId, courseId: 'dual_bundle' },
+          payment_id: 'pay_refunded_123',
+        });
+
+        const userDoc = await db.collection('users').doc(userId).get();
+        expect(userDoc.data()?.plan).toBe('free');
+
+        const entDoc = await db.collection('users').doc(userId).collection('entitlements').doc('dual_bundle').get();
+        expect(entDoc.data()?.status).toBe('refunded');
+      });
+
+      // Assert user access to gated step is now revoked
+      const clientDb = testEnv.authenticatedContext(userId).firestore();
+      const stepRef = clientDb.collection('courses').doc('medchem').collection('lessons').doc('mc-03').collection('steps').doc('step-01');
+      await assertFails(stepRef.get());
     });
   });
 });

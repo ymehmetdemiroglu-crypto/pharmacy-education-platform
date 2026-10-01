@@ -108,7 +108,7 @@ import {
   executeCancelSubscription,
   executeChangeSubscriptionPlan,
 } from './payments.js';
-import { processDodoWebhook } from './webhook.js';
+import { processDodoWebhook, Webhook } from './webhook.js';
 import { executeDeleteUserAccount } from './compliance.js';
 
 export {
@@ -118,6 +118,7 @@ export {
   executeChangeSubscriptionPlan,
   processDodoWebhook,
   executeDeleteUserAccount,
+  Webhook,
 };
 
 /**

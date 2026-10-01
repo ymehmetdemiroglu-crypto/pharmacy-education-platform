@@ -37,5 +37,5 @@
 | ID | Title | Evidence (File:Line) | Impact / Risk | Resolution | Status |
 |---|---|---|---|---|---|
 | **GAP-P2-01** | Structured Logging & PII Sanitization | `functions/src/index.ts` | Logs could leak customer email, card brand, or sensitive metadata. | Implement structured logger redacting customer PII. | **CLOSED** |
-| **GAP-P2-02** | Offline Mocked Unit Tests & Live Guard | `tests/functions-and-security.test.ts` | Tests must run offline cleanly via emulators without requiring live Dodo secrets. | Configure unit/integration tests with mocked SDK by default; live calls behind `RUN_LIVE=1`. | **OPEN** |
+| **GAP-P2-02** | Offline Mocked Unit Tests & Live Guard | `tests/functions-and-security.test.ts` | Tests must run offline cleanly via emulators without requiring live Dodo secrets. | Configure unit/integration tests with mocked SDK by default; live calls behind `RUN_LIVE=1`. | **CLOSED** |
 | **GAP-P2-03** | Operational Runbook: Go-Live & Rollback Checklist | None | Live rollout requires precise product ID mappings, dashboard webhooks, and test-card verification. | Create `GO_LIVE.md` with step-by-step instructions. | **OPEN** |
