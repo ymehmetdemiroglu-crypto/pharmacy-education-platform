@@ -21,8 +21,8 @@
 | Step | Task Description | Dependencies | Status |
 |---|---|---|---|
 | **Task 0** | Audit synthesis, state initialization (`STATE.md`, `PROD_GAPS.md`, `PAYMENTS_NOTES.md`), pre-commit secret scan, `.gitignore` update. | None | **DONE** |
-| **Task 1** | Install & configure dependencies in `functions/` (`dodopayments`, `zod`, `standardwebhooks`). Create centralized environment config (`config.ts`). | Task 0 | **NEXT** |
-| **Task 2** | Implement Server Endpoints with Zod validation: `createCheckoutSession`, `createCustomerPortalSession`, `cancelSubscription`, `changeSubscriptionPlan`. | Task 1 | **TODO** |
+| **Task 1** | Install & configure dependencies in `functions/` (`dodopayments`, `zod`, `standardwebhooks`). Create centralized environment config (`config.ts`). | Task 0 | **DONE** |
+| **Task 2** | Implement Server Endpoints with Zod validation: `createCheckoutSession`, `createCustomerPortalSession`, `cancelSubscription`, `changeSubscriptionPlan`. | Task 1 | **NEXT** |
 | **Task 3** | Implement Production Standard Webhook Handler with raw body verification, idempotency locking, and 8 event handlers. | Task 2 | **TODO** |
 | **Task 4** | Harden Entitlements, Grace Period (`past_due`), and Firestore Security Rules. | Task 3 | **TODO** |
 | **Task 5** | Implement Compliance: Account Deletion (`deleteUserAccount`) and Legal Policy views. | Task 4 | **TODO** |

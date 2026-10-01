@@ -16,7 +16,7 @@
 | **GAP-P0-03** | Invalid Webhook Signature Verification | `functions/src/index.ts:154-183` | Incompatible with Dodo Payments Standard Webhooks protocol (`webhook-id`, `webhook-timestamp`, `webhook-signature`). Insecure. | Use `client.webhooks.unwrap()` with raw body Buffer and `DODO_PAYMENTS_WEBHOOK_KEY`. | **OPEN** |
 | **GAP-P0-04** | Missing Critical Webhook Events & Wrong Names | `functions/src/index.ts:223-278` | Listens to non-existent `refund.created` instead of `refund.succeeded`. Missing `subscription.renewed`, `on_hold`, `past_due`, `plan_changed`, `expired`. | Authoritatively handle all 8 lifecycle events with idempotency and state transitions. | **OPEN** |
 | **GAP-P0-05** | Missing Zod Input Validation & Error Handling | `functions/src/index.ts:114-130` | Malformed inputs cause unhandled exceptions or cryptic path errors (`/payments/undefined`). | Add strict Zod schemas for all callables with typed error returns. | **OPEN** |
-| **GAP-P0-06** | Single-Switch Environment Architecture (`DODO_ENV`) | `functions/src/index.ts` | No centralized configuration mapping test vs live keys, base URLs, product IDs, and webhook secrets. | Implement `config.ts` where `DODO_ENV=test\|live` dynamically selects keys and product maps with zero code changes. | **OPEN** |
+| **GAP-P0-06** | Single-Switch Environment Architecture (`DODO_ENV`) | `functions/src/config.ts:1-125` | No centralized configuration mapping test vs live keys, base URLs, product IDs, and webhook secrets. | Implement `config.ts` where `DODO_ENV=test\|live` dynamically selects keys and product maps with zero code changes. | **CLOSED** |
 
 ---
 
