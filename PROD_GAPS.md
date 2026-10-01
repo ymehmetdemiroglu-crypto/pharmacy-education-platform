@@ -27,8 +27,8 @@
 | **GAP-P1-01** | Past-Due Grace Period & Entitlement Derived Access | `firestore.rules:164-176`, `packages/platform/src/access/AccessControl.ts:27-36` | Users whose renewal is temporarily past-due lose instant access without grace period. | Update rules and platform access helper to support `past_due` grace period (e.g. 7 days). | **CLOSED** |
 | **GAP-P1-02** | 7-Day No-Card Trial Enforcement | `functions/src/index.ts:17-78` | Ensure robust trial provisioning without card requirement, verified abuse-resistant by Firestore transaction. | Audit and harden single-use trial logic across both courses. | **CLOSED** |
 | **GAP-P1-03** | Out-of-Order Webhook Delivery & Idempotency Locking | `functions/src/index.ts:187-220` | Rapid out-of-order events (e.g. renewal then cancel) could overwrite with stale state. | Implement event timestamp checking and atomic idempotency in `webhook_events`. | **CLOSED** |
-| **GAP-P1-04** | Compliance: Account Deletion & Subscription Cleanup | Missing in `functions/src/index.ts` | Required by GDPR/KVKK and Dodo live merchant approval. User deletion must cancel active subscriptions. | Implement `deleteUserAccount` callable that cancels active Dodo subscriptions and cleans Firestore. | **OPEN** |
-| **GAP-P1-05** | Public Legal Compliance Pages | `apps/web/src/pages/` | Dodo Payments requires active Terms of Service, Privacy Policy, and Refund Policy links. | Verify/create legal policy views in `apps/web`. | **OPEN** |
+| **GAP-P1-04** | Compliance: Account Deletion & Subscription Cleanup | Missing in `functions/src/index.ts` | Required by GDPR/KVKK and Dodo live merchant approval. User deletion must cancel active subscriptions. | Implement `deleteUserAccount` callable that cancels active Dodo subscriptions and cleans Firestore. | **CLOSED** |
+| **GAP-P1-05** | Public Legal Compliance Pages | `apps/web/src/pages/` | Dodo Payments requires active Terms of Service, Privacy Policy, and Refund Policy links. | Verify/create legal policy views in `apps/web`. | **CLOSED** |
 
 ---
 

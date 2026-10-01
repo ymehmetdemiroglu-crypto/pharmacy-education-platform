@@ -91,7 +91,8 @@ export const startFreeTrial = onCall(async (request) => {
 });
 import { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, } from './payments.js';
 import { processDodoWebhook } from './webhook.js';
-export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, };
+import { executeDeleteUserAccount } from './compliance.js';
+export { executeCreateCheckoutSession, executeCreateCustomerPortalSession, executeCancelSubscription, executeChangeSubscriptionPlan, processDodoWebhook, executeDeleteUserAccount, };
 /**
  * createCheckoutSession:
  * Validates inputs with Zod and generates Dodo Payments checkout session using official SDK.
@@ -131,6 +132,17 @@ export const changeSubscriptionPlan = onCall(async (request) => {
         throw new HttpsError('unauthenticated', 'User must be authenticated.');
     }
     return await executeChangeSubscriptionPlan(defaultDb, request.auth.uid, request.data);
+});
+/**
+ * deleteUserAccount:
+ * GDPR & KVKK compliant account deletion callable.
+ * Authoritatively cancels active Dodo Payments subscriptions and purges all user data.
+ */
+export const deleteUserAccount = onCall(async (request) => {
+    if (!request.auth) {
+        throw new HttpsError('unauthenticated', 'User must be authenticated.');
+    }
+    return await executeDeleteUserAccount(defaultDb, request.auth.uid);
 });
 /**
  * handleDodoWebhook:

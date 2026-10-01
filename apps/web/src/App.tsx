@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { GalleryPage } from './pages/GalleryPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { PricingPage } from './pages/PricingPage';
 import { LessonPage } from './pages/LessonPage';
+import { TermsPage } from './pages/TermsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
+import { RefundPage } from './pages/RefundPage';
 import { TrialBanner, PaywallModal } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
 
@@ -45,6 +48,9 @@ export const App: React.FC = () => {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/catalog" element={<CatalogPage />} />
           <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/refund" element={<RefundPage />} />
           <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
           <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
           <Route path="/courses/pharmacology/lessons/:lessonId" element={<LessonPage />} />
@@ -65,6 +71,17 @@ export const App: React.FC = () => {
             <span className="text-gray-700 dark:text-slate-300">
               {t('footer.tagline')}
             </span>
+            <div className="flex flex-wrap gap-4 mt-2 text-[11px] font-mono">
+              <Link to="/terms" className="hover:underline font-bold text-[#FF5722]">
+                Terms of Service
+              </Link>
+              <Link to="/privacy" className="hover:underline font-bold text-[#00BCD4]">
+                Privacy &amp; KVKK / GDPR
+              </Link>
+              <Link to="/refund" className="hover:underline font-bold text-[#4CAF50]">
+                Refund Policy
+              </Link>
+            </div>
           </div>
 
           <div className="text-center sm:text-end text-gray-700 dark:text-slate-300">
