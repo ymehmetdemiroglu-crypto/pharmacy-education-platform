@@ -651,7 +651,7 @@ export const LessonPage: React.FC = () => {
             </Link>
             <span className="text-gray-400">•</span>
             <StickerBadge variant="blue" size="sm">
-              {courseId === 'pharmacology' ? 'Farmakoloji' : 'Farmasötik Kimya'} • {lesson.moduleId || 'Mod 01'}
+              {courseId === 'pharmacology' ? (locale === 'en' ? 'Pharmacology' : 'Farmakoloji') : (locale === 'en' ? 'Medicinal Chemistry' : 'Farmasötik Kimya')} • {lesson.moduleId || 'Mod 01'}
             </StickerBadge>
             <StickerBadge variant="green" size="sm">
               {t.freeForever}
@@ -902,7 +902,7 @@ export const LessonPage: React.FC = () => {
                   🎯 {t.phase2Missions}
                 </StickerBadge>
                 <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
-                  +{missionXPAwarded} XP Kazanıldı
+                  +{missionXPAwarded} {locale === 'tr' ? 'XP Kazanıldı' : locale === 'ar' ? 'نقطة خبرة مكتسبة' : 'XP Earned'}
                 </span>
               </div>
               <h2 className="font-display font-black text-xl sm:text-2xl uppercase tracking-tight">
@@ -1096,7 +1096,7 @@ export const LessonPage: React.FC = () => {
                 {Array.isArray(currentStep.technicalTerms) && currentStep.technicalTerms.length > 0 && (
                   <div className="flex flex-wrap items-center gap-1.5 pt-2">
                     <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider">
-                      {locale === 'ar' ? 'المصطلحات المركزية:' : 'Anahtar Terimler:'}
+                      {locale === 'ar' ? 'المصطلحات المركزية:' : locale === 'en' ? 'Key Terms:' : 'Anahtar Terimler:'}
                     </span>
                     {currentStep.technicalTerms.map((tt: any, idx: number) => {
                       const termStr = typeof tt === 'string' ? tt : tt.term || tt.tr || '';
@@ -1174,7 +1174,7 @@ export const LessonPage: React.FC = () => {
               {currentStep.stage === 'retrieval' && Boolean(currentStep.config?.targetConcept) && (
                 <div className="p-4 bg-purple-50 dark:bg-purple-950/20 border-2 border-black dark:border-slate-700 flex items-center justify-between">
                   <span className="text-xs font-mono font-bold uppercase text-purple-800 dark:text-purple-300">
-                    {locale === 'ar' ? 'المفهوم المستهدف:' : 'Hedef Kavram:'}
+                    {locale === 'ar' ? 'المفهوم المستهدف:' : locale === 'en' ? 'Target Concept:' : 'Hedef Kavram:'}
                   </span>
                   <TechnicalTermBadge term={String(currentStep.config.targetConcept)} category="pharmacology" />
                 </div>

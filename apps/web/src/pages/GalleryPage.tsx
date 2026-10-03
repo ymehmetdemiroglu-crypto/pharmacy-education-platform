@@ -43,7 +43,7 @@ import {
 import { BookOpen, Sparkles } from 'lucide-react';
 
 export const GalleryPage: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
   const [sliderVal, setSliderVal] = useState(50);
   const [toggleVal, setToggleVal] = useState(true);
   const [inputVal, setInputVal] = useState('7.4');
@@ -53,12 +53,12 @@ export const GalleryPage: React.FC = () => {
 
   const widgets = [
     { id: 'sar', name: 'SAR Explorer', component: <SarExplorer config={sarExplorerStandardDemo} /> },
-    { id: 'ionization', name: 'Ionization Equilibrium', component: <IonizationEquilibriumSlider config={ionizationEquilibriumStandardDemo} /> },
-    { id: 'membrane-partition', name: 'Membrane Partition (logD)', component: <MembranePartitionSimulator config={membranePartitionStandardDemo} /> },
-    { id: 'ferguson', name: 'Ferguson Activity Slider', component: <ThermodynamicActivityFergusonSlider config={thermodynamicActivityFergusonStandardDemo} /> },
+    { id: 'ionization', name: 'Ionization Equilibrium', component: <IonizationEquilibriumSlider config={ionizationEquilibriumStandardDemo} locale={locale} /> },
+    { id: 'membrane-partition', name: 'Membrane Partition (logD)', component: <MembranePartitionSimulator config={membranePartitionStandardDemo} locale={locale} /> },
+    { id: 'ferguson', name: 'Ferguson Activity Slider', component: <ThermodynamicActivityFergusonSlider config={thermodynamicActivityFergusonStandardDemo} locale={locale} /> },
     { id: 'structure', name: 'Structure Identifier', component: <StructureIdentifier config={structureIdentifierStandardDemo} /> },
-    { id: 'dose-response', name: 'Dose-Response Curve', component: <DoseResponseCurve config={doseResponseCurveStandardDemo} /> },
-    { id: 'pk', name: 'PK Simulator', component: <PkSimulator config={pkSimulatorStandardDemo} /> },
+    { id: 'dose-response', name: 'Dose-Response Curve', component: <DoseResponseCurve config={doseResponseCurveStandardDemo} locale={locale} /> },
+    { id: 'pk', name: 'PK Simulator', component: <PkSimulator config={pkSimulatorStandardDemo} locale={locale} /> },
     { id: 'predict', name: 'Predict-Then-Reveal', component: <PredictThenReveal config={predictThenRevealStandardDemo} /> },
     { id: 'mcq', name: 'Multiple Choice (MCQ)', component: <MultipleChoice config={mcqStandardDemo} /> },
     { id: 'matcher', name: 'Receptor Matcher', component: <ReceptorLigandMatcher config={receptorLigandMatcherStandardDemo} /> },
@@ -93,8 +93,8 @@ export const GalleryPage: React.FC = () => {
       {/* Trial Banners Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-4">
         <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
-          <h2 className="font-display font-black text-xl uppercase tracking-tight">1. Trial & Plan Banners</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-400">Header banners displaying student subscription and trial state.</p>
+          <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionBanners')}</h2>
+          <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionBannersDesc')}</p>
         </div>
         <div data-testid="section-trial-banners" className="space-y-3">
           <div data-testid="banner-free-preview">
@@ -113,10 +113,10 @@ export const GalleryPage: React.FC = () => {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
         <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 className="font-display font-black text-xl uppercase tracking-tight">2. Interactive Pharmacy Widgets</h2>
-            <p className="text-xs text-gray-600 dark:text-gray-400">Data-driven, accessible widgets with Zod configuration and event emission.</p>
+            <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionWidgets')}</h2>
+            <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionWidgetsDesc')}</p>
           </div>
-          <StickerBadge variant="orange" size="sm">9 Dedicated Widgets</StickerBadge>
+          <StickerBadge variant="orange" size="sm">{t('gallery.dedicatedWidgets')}</StickerBadge>
         </div>
 
         {/* Widget Selector Pills */}
@@ -146,45 +146,45 @@ export const GalleryPage: React.FC = () => {
       {/* Core UI Components Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
         <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
-          <h2 className="font-display font-black text-xl uppercase tracking-tight">3. Neo-Brutalist UI Primitives</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-400">Tactile, high-contrast building blocks adhering to 3px borders and 6px shadows.</p>
+          <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionPrimitives')}</h2>
+          <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionPrimitivesDesc')}</p>
         </div>
 
         {/* Buttons Grid with State Matrix */}
         <div data-testid="section-buttons" className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Buttons & State Matrix (Default, Hover, Focus, Disabled, Loading)</h3>
+          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionButtons')}</h3>
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="primary" data-testid="btn-default">Default (Primary)</Button>
-            <Button variant="secondary" data-testid="btn-secondary">Secondary</Button>
-            <Button variant="success" data-testid="btn-success">Success</Button>
-            <Button variant="danger" data-testid="btn-danger">Danger</Button>
-            <Button variant="medchem">MedChem</Button>
-            <Button variant="pharm">Pharm</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="primary" disabled data-testid="btn-disabled">Disabled State</Button>
-            <Button variant="primary" isLoading data-testid="btn-loading">Loading State</Button>
+            <Button variant="primary" data-testid="btn-default">{t('gallery.buttons.default')}</Button>
+            <Button variant="secondary" data-testid="btn-secondary">{t('gallery.buttons.secondary')}</Button>
+            <Button variant="success" data-testid="btn-success">{t('gallery.buttons.success')}</Button>
+            <Button variant="danger" data-testid="btn-danger">{t('gallery.buttons.danger')}</Button>
+            <Button variant="medchem">{t('gallery.buttons.medchem')}</Button>
+            <Button variant="pharm">{t('gallery.buttons.pharm')}</Button>
+            <Button variant="ghost">{t('gallery.buttons.ghost')}</Button>
+            <Button variant="primary" disabled data-testid="btn-disabled">{t('gallery.buttons.disabled')}</Button>
+            <Button variant="primary" isLoading data-testid="btn-loading">{t('gallery.buttons.loading')}</Button>
           </div>
         </div>
 
         {/* Cards Grid */}
         <div className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Cards & Surface Containers (Default, Highlight, Misconception, Success)</h3>
+          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionCards')}</h3>
           <div data-testid="section-cards" className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <Card variant="default" data-testid="card-default">
-              <h4 className="font-display font-bold text-sm uppercase">Default Card</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">3px black border, 6px hard shadow.</p>
+              <h4 className="font-display font-bold text-sm uppercase">{t('gallery.cards.defaultTitle')}</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{t('gallery.cards.defaultDesc')}</p>
             </Card>
             <Card variant="highlight" data-testid="card-highlight">
-              <h4 className="font-display font-bold text-sm uppercase">Highlight Card</h4>
-              <p className="text-xs text-black dark:text-amber-200 mt-1">Yellow surface for key rules and checkpoints.</p>
+              <h4 className="font-display font-bold text-sm uppercase">{t('gallery.cards.highlightTitle')}</h4>
+              <p className="text-xs text-black dark:text-amber-200 mt-1">{t('gallery.cards.highlightDesc')}</p>
             </Card>
             <Card variant="misconception" data-testid="card-misconception">
-              <h4 className="font-display font-bold text-sm uppercase text-rose-800 dark:text-rose-200">Misconception Card</h4>
-              <p className="text-xs text-rose-700 dark:text-rose-300 mt-1">Targeted feedback on cognitive traps.</p>
+              <h4 className="font-display font-bold text-sm uppercase text-rose-800 dark:text-rose-200">{t('gallery.cards.misconceptionTitle')}</h4>
+              <p className="text-xs text-rose-700 dark:text-rose-300 mt-1">{t('gallery.cards.misconceptionDesc')}</p>
             </Card>
             <Card variant="success" data-testid="card-success">
-              <h4 className="font-display font-bold text-sm uppercase text-emerald-800 dark:text-emerald-200">Success Card</h4>
-              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-1">Positive reinforcement & mastery verified.</p>
+              <h4 className="font-display font-bold text-sm uppercase text-emerald-800 dark:text-emerald-200">{t('gallery.cards.successTitle')}</h4>
+              <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-1">{t('gallery.cards.successDesc')}</p>
             </Card>
           </div>
         </div>
@@ -192,7 +192,7 @@ export const GalleryPage: React.FC = () => {
         {/* StepDots & ProgressBars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div data-testid="section-steppers" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">StepDots Stepper (Default, Active, Completed)</h3>
+            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionSteppers')}</h3>
             <div className="space-y-3">
               <StepDots
                 totalSteps={6}
@@ -202,7 +202,9 @@ export const GalleryPage: React.FC = () => {
                 data-testid="stepdots-interactive"
               />
               <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
-                <span className="text-[11px] font-mono text-gray-700 dark:text-gray-300 block mb-1">Completed State:</span>
+                <span className="text-[11px] font-mono text-gray-700 dark:text-gray-300 block mb-1">
+                  {locale === 'tr' ? 'Tamamlanmış Durum:' : locale === 'ar' ? 'حالة الاكتمال:' : 'Completed State:'}
+                </span>
                 <StepDots
                   totalSteps={5}
                   currentStepIndex={4}
@@ -211,15 +213,33 @@ export const GalleryPage: React.FC = () => {
                 />
               </div>
             </div>
-            <p className="text-[11px] font-mono text-gray-700 dark:text-gray-300">Click a dot to change active step.</p>
+            <p className="text-[11px] font-mono text-gray-700 dark:text-gray-300">
+              {locale === 'tr' ? 'Aktif adımı değiştirmek için bir noktaya tıklayın.' : locale === 'ar' ? 'انقر على النقطة لتغيير الخطوة النشطة.' : 'Click a dot to change active step.'}
+            </p>
           </div>
 
           <div data-testid="section-progress" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">Progress Bars (In-Progress, Completed, Small)</h3>
+            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionProgress')}</h3>
             <div className="space-y-3">
-              <ProgressBar value={68} label="Course Progress (In Progress)" variant="green" data-testid="progress-in-progress" />
-              <ProgressBar value={100} label="Module Mastery (Completed)" variant="green" data-testid="progress-completed" />
-              <ProgressBar value={40} label="Diagnostic Accuracy (Small)" variant="yellow" size="sm" data-testid="progress-small" />
+              <ProgressBar
+                value={68}
+                label={locale === 'tr' ? 'Ders İlerlemesi (Devam Ediyor)' : locale === 'ar' ? 'تقدم المسار (قيد الإنجاز)' : 'Course Progress (In Progress)'}
+                variant="green"
+                data-testid="progress-in-progress"
+              />
+              <ProgressBar
+                value={100}
+                label={locale === 'tr' ? 'Modül Ustalığı (Tamamlandı)' : locale === 'ar' ? 'إتقان الموديول (مكتمل)' : 'Module Mastery (Completed)'}
+                variant="green"
+                data-testid="progress-completed"
+              />
+              <ProgressBar
+                value={40}
+                label={locale === 'tr' ? 'Tanısal Doğruluk (Küçük)' : locale === 'ar' ? 'الدقة التشخيصية (صغير)' : 'Diagnostic Accuracy (Small)'}
+                variant="yellow"
+                size="sm"
+                data-testid="progress-small"
+              />
             </div>
           </div>
         </div>
@@ -227,26 +247,26 @@ export const GalleryPage: React.FC = () => {
         {/* Form Controls: Input, Slider, Toggle across all states */}
         <div className="space-y-4">
           <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">
-            Form Controls State Matrix (Default, Focus, Error, Disabled)
+            {t('gallery.sectionFormControls')}
           </h3>
           <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
             <div className="space-y-4">
               <Input
-                label="Physiological pH (Default)"
+                label={t('gallery.formControls.phLabel')}
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
-                helperText="Standard buffer range 7.35–7.45"
+                helperText={t('gallery.formControls.phHelper')}
                 data-testid="input-default"
               />
               <Input
-                label="Acid Dissociation Constant (Error State)"
+                label={t('gallery.formControls.pkaLabel')}
                 value="99.9"
-                error="Value exceeds valid aqueous pKa spectrum (-2 to 16)"
+                error={t('gallery.formControls.pkaError')}
                 data-testid="input-error"
                 readOnly
               />
               <Input
-                label="Avogadro Constant (Disabled State)"
+                label={t('gallery.formControls.avogadroLabel')}
                 value="6.022e23 mol⁻¹"
                 disabled
                 data-testid="input-disabled"
@@ -255,7 +275,7 @@ export const GalleryPage: React.FC = () => {
 
             <div className="space-y-6">
               <Slider
-                label="Drug Concentration (Default)"
+                label={t('gallery.formControls.concLabel')}
                 value={sliderVal}
                 min={0}
                 max={100}
@@ -264,7 +284,7 @@ export const GalleryPage: React.FC = () => {
                 data-testid="slider-default"
               />
               <Slider
-                label="Receptor Density (Disabled State)"
+                label={t('gallery.formControls.receptorLabel')}
                 value={25}
                 min={0}
                 max={100}
@@ -277,19 +297,19 @@ export const GalleryPage: React.FC = () => {
 
             <div className="flex flex-col justify-center space-y-4">
               <Toggle
-                label="Real-Time Simulation (Default / Checked)"
+                label={t('gallery.formControls.simToggle')}
                 checked={toggleVal}
                 onChange={setToggleVal}
                 data-testid="toggle-checked"
               />
               <Toggle
-                label="Subcellular Compartmentalization (Unchecked)"
+                label={t('gallery.formControls.compToggle')}
                 checked={false}
                 onChange={() => {}}
                 data-testid="toggle-unchecked"
               />
               <Toggle
-                label="Allosteric Cooperative Binding (Disabled)"
+                label={t('gallery.formControls.allostericToggle')}
                 checked={true}
                 disabled
                 onChange={() => {}}
@@ -304,9 +324,9 @@ export const GalleryPage: React.FC = () => {
           <div data-testid="state-empty">
             <EmptyState
               icon={<BookOpen className="w-8 h-8" />}
-              title="Review Queue Empty"
-              description="You have cleared all active Leitner spaced review cards for today. Keep up the high retention!"
-              actionLabel="Start New Module"
+              title={t('gallery.emptyReviewTitle')}
+              description={t('gallery.emptyReviewDesc')}
+              actionLabel={t('gallery.emptyReviewAction')}
               onAction={() => alert('Navigating to next module!')}
             />
           </div>
@@ -315,7 +335,9 @@ export const GalleryPage: React.FC = () => {
             data-testid="state-loading"
             className="space-y-4 p-6 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex flex-col justify-center"
           >
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">Skeleton Loaders (Loading State — Zero CLS)</span>
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">
+              {t('gallery.skeletonTitle')}
+            </span>
             <SkeletonLoader height="h-8" />
             <SkeletonLoader height="h-16" />
             <SkeletonLoader height="h-10" />
@@ -329,7 +351,7 @@ export const GalleryPage: React.FC = () => {
         onClose={() => setIsPaywallOpen(false)}
         canStartTrial={true}
         onStartTrial={() => {
-          alert('7-Day Free Trial Activated!');
+          alert(t('pricing.trialActivatedAlert'));
           setIsPaywallOpen(false);
         }}
         onSelectPlan={(plan, curr, isBundle) => {

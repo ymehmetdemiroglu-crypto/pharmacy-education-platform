@@ -3,6 +3,7 @@ import { Card, Button, StickerBadge } from '@pharmacy/ui';
 import { Check, Sparkles, ArrowRight, Zap, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { useAuth } from '@pharmacy/platform';
 import { useTranslation } from '../context/TranslationContext';
+import { dictionaries } from '../locales';
 import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/firebase';
 
 export const PricingPage: React.FC = () => {
@@ -33,9 +34,7 @@ export const PricingPage: React.FC = () => {
     } catch (err: any) {
       console.error('Checkout error:', err);
       setErrorMessage(
-        locale === 'tr'
-          ? `Ödeme ekranına yönlendirilemedi: ${err.message || 'Lütfen tekrar deneyin.'}`
-          : `تعذر الانتقال إلى شاشة الدفع: ${err.message || 'يرجى المحاولة مرة أخرى.'}`
+        t('pricing.checkoutRedirectError', { error: err.message || (locale === 'tr' ? 'Lütfen tekrar deneyin.' : locale === 'ar' ? 'يرجى المحاولة مرة أخرى.' : 'Please try again.') })
       );
     } finally {
       setLoadingPlan(null);
@@ -48,11 +47,7 @@ export const PricingPage: React.FC = () => {
       setErrorMessage(null);
       const res = await callStartFreeTrial();
       if (res?.data?.success) {
-        alert(
-          locale === 'tr'
-            ? '7 Günlük Ücretsiz Deneme Başlatıldı!'
-            : 'تم تفعيل التجربة المجانية لمدة 7 أيام!'
-        );
+        alert(t('pricing.trialActivatedAlert'));
         window.location.reload();
         return;
       }
@@ -62,17 +57,9 @@ export const PricingPage: React.FC = () => {
 
     const localSuccess = await startTrial();
     if (localSuccess) {
-      alert(
-        locale === 'tr'
-          ? '7 Günlük Ücretsiz Deneme Başlatıldı!'
-          : 'تم تفعيل التجربة المجانية لمدة 7 أيام!'
-      );
+      alert(t('pricing.trialActivatedAlert'));
     } else {
-      alert(
-        locale === 'tr'
-          ? 'Deneme sürümü zaten kullanılmış veya aktif.'
-          : 'تم استخدام النسخة التجريبية بالفعل أو أنها نشطة حالياً.'
-      );
+      alert(t('pricing.trialAlreadyClaimedAlert'));
     }
     setLoadingPlan(null);
   };
@@ -118,40 +105,8 @@ export const PricingPage: React.FC = () => {
     trialBannerTitle: t('pricing.trialBannerTitle'),
     trialBannerDesc: t('pricing.trialBannerDesc'),
     trialBannerCta: t('pricing.trialBannerCta'),
-    currencyBadge: locale === 'ar' ? '₺ TRY تسعير بالليرة التركية' : '₺ TRY Fiyatlandırma',
-    features: {
-      monthly: locale === 'ar' ? [
-        'وصول كامل إلى جميع الدروس والموديولات',
-        'أدوات المحاكاة التفاعلية المتقدمة',
-        'تلميحات خطوات الحل للمستويين 2 و 3',
-      ] : [
-        'Tüm ders ve modüllere tam erişim',
-        'İnteraktif simülasyon araçları',
-        '2. ve 3. Aşama ipucu çözümleri',
-      ],
-      semester: locale === 'ar' ? [
-        '6 أشهر كاملة من الوصول دون انقطاع',
-        'طابور التكرار المتباعد بنظام Leitner',
-        'مزامنة تقدم الدراسة عبر جميع الأجهزة',
-        'اختبارات تشخيصية لجدارة الكفاءة الصيدلانية',
-      ] : [
-        '6 tam ay kesintisiz erişim',
-        'Leitner aralıklı tekrar kuyruğu',
-        'Cihazlar arası ilerleme eşitleme',
-        'Eczacılık yeterlilik ön testleri',
-      ],
-      annual: locale === 'ar' ? [
-        'سنة كاملة من التحديثات والموديولات الجديدة',
-        'أولوية الوصول إلى محاكاة المواد الفعالة الجديدة',
-        'شهادة رسمية لإتمام المقررات الصيدلانية',
-        'أرشيف تدريبي شامل لاختبارات التراخيص و EUS',
-      ] : [
-        '12 ay boyunca tüm güncellemeler ve yeni modüller',
-        'Öncelikli yeni etken madde ve mekanizma simülasyonları',
-        'Resmi ders tamamlama sertifikası',
-        'Kapsamlı lisanslama ve EUS hazırlık arşivi',
-      ],
-    },
+    currencyBadge: t('pricing.currencyBadge'),
+    features: (dictionaries[locale] || dictionaries.tr).pricing.features,
   };
 
   const active = isBundle ? prices.bundle : prices.single;

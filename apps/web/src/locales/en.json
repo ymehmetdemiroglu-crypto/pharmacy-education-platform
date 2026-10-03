@@ -32,7 +32,11 @@
     "platformName": "PharmLearn Education Platform",
     "tagline": "Commercial-Grade Interactive Mastery in Pharmaceutical Chemistry & Pharmacology",
     "curriculumBadge": "100% Original Curriculum • Native Vector SMILES",
-    "slideCitation": "University lecture slide citations cited for academic auditability."
+    "slideCitation": "University lecture slide citations cited for academic auditability.",
+    "terms": "Terms of Service",
+    "privacy": "Privacy & KVKK / GDPR",
+    "refund": "Refund Policy",
+    "settings": "Settings"
   },
   "catalog": {
     "heroTitle": "Pharmacy Course Catalog",
@@ -126,22 +130,26 @@
     "features": {
       "monthly": [
         "Full access to all lessons and modules",
-        "Interactive simulation tools",
-        "Stage 2 and Stage 3 hint ladders"
+        "Advanced interactive simulation widgets",
+        "Tier 2 & 3 scaffolded hint ladders"
       ],
       "semester": [
-        "6 full months of continuous access",
-        "Leitner spaced repetition queue",
-        "Cross-device progress synchronization",
-        "Pharmacy licensing practice pre-tests"
+        "6 full months of uninterrupted access",
+        "Leitner 5-box spaced review engine",
+        "Cross-device study progress synchronization",
+        "Pharmacy competency diagnostic pre-tests"
       ],
       "annual": [
-        "12 months of all updates and new modules",
-        "Priority access to new drug simulations",
+        "12 full months of all updates and new modules",
+        "Priority access to new active compound simulations",
         "Official course completion certificate",
-        "Comprehensive board exam prep archive"
+        "Comprehensive licensing and board exam preparation archive"
       ]
-    }
+    },
+    "currencyBadge": "₺ TRY Turkish Lira Pricing",
+    "checkoutRedirectError": "Unable to redirect to checkout: {error}",
+    "trialActivatedAlert": "7-Day Free Trial Activated!",
+    "trialAlreadyClaimedAlert": "Trial pass has already been claimed or is currently active."
   },
   "profile": {
     "title": "Student Profile",
@@ -189,7 +197,8 @@
       "signupFailed": "Registration failed. Please try again.",
       "googleSuccess": "Signed in with Google successfully!",
       "googleError": "Google sign-in error.",
-      "unlock22Lessons": "Register now to immediately unlock 22 free lessons across all modules!"
+      "unlock22Lessons": "Register now to immediately unlock 22 free lessons across all modules!",
+      "googleNotConfigured": "Google sign-in is not yet enabled in the backend (please enable Google provider in Supabase Dashboard > Authentication > Providers > Google)."
     },
     "paywall": {
       "title": "Unlock Complete Pharmacy Mastery",
@@ -356,6 +365,99 @@
     "missionPending": "Adjust parameters to achieve the target objective.",
     "allMissionsDone": "All Guided Missions Completed! Excellent Work 🏆",
     "academicSources": "Academic References & University Course Materials"
+  },
+  "settings": {
+    "headerTitle": "Account & Subscription Settings",
+    "headerDesc": "Student profile, Dodo Payments billing management, and privacy controls",
+    "profileCardTitle": "Student Profile",
+    "studentName": "Pharmacy Student",
+    "faculty": "Faculty:",
+    "country": "Country:",
+    "billingTitle": "Billing & Subscriptions",
+    "billingDesc": "View invoices, update payment methods, or modify your subscription plan via the Dodo Payments customer portal.",
+    "openPortal": "Open Customer Portal (Dodo)",
+    "pricingPlans": "Pricing & Plans",
+    "deleteTitle": "Delete Account & Privacy Data (KVKK / GDPR)",
+    "deleteDesc": "Deleting your account cancels active subscriptions and permanently wipes all study progress and spaced review flashcards. This action cannot be undone.",
+    "deleteBtn": "Permanently Delete Account",
+    "confirmTitle": "Confirm Account Deletion",
+    "confirmPrompt": "Please type DELETE into the input box below to confirm:",
+    "cancel": "Cancel",
+    "confirmDelete": "Confirm Delete",
+    "typeDeleteToConfirm": "Please type DELETE to confirm.",
+    "deleteSuccessAlert": "Your account and all personal data have been permanently deleted in compliance with KVKK/GDPR.",
+    "deleteFailedAlert": "Account deletion failed: {error}",
+    "portalError": "Customer billing portal could not be opened: {error}"
+  },
+  "review": {
+    "title": "Spaced Review Queue",
+    "desc": "Long-term retention powered by 5-box Leitner spaced repetition engine",
+    "medchemCourse": "Medicinal Chemistry",
+    "pharmCourse": "Pharmacology",
+    "dueCards": "Due Cards:",
+    "boxLabel": "Box {box}",
+    "boxShort": "B{box}:{count}",
+    "showAnswer": "Show Answer",
+    "answerLabel": "Answer:",
+    "hardBtn": "Hard (Box 1)",
+    "goodBtn": "Good (+1 Box)",
+    "allCaughtUpTitle": "All Caught Up!",
+    "allCaughtUpDesc": "No flashcards are due for review right now. Complete new lessons to automatically enqueue fresh review targets.",
+    "exploreLessonsBtn": "Explore Lessons"
+  },
+  "legal": {
+    "terms": {
+      "badge": "LEGAL / TERMS",
+      "effectiveDate": "Effective: October 2026",
+      "title": "Terms of Service",
+      "subtitle": "Please read these terms carefully before accessing the Pharmacy Education Platform.",
+      "backBtn": "Back to Platform",
+      "sec1Title": "1. Agreement to Terms",
+      "sec1Body": "By creating an account, beginning a free trial, or purchasing a subscription, you agree to be bound by these Terms of Service. If you do not agree, do not access or use our services.",
+      "sec2Title": "2. Educational Disclaimer",
+      "sec2Body": "The platform provides simulated educational modules, pharmacokinetic models, and medicinal chemistry visualizations designed for pharmacy students. It is strictly an educational tool and does not constitute medical advice or clinical guidelines.",
+      "sec3Title": "3. Permanent Freemium & 7-Day Cardless Trial",
+      "sec3Body": "Lessons 1 and 2 of every curriculum module remain permanently accessible without charge. Eligible users may activate a single 7-day cardless free trial. Accounts revert to free status with 100% progress preserved upon expiration.",
+      "sec4Title": "4. Payment Processing & Merchant of Record",
+      "sec4Body": "Payment processing, invoicing, and tax collection are handled by Dodo Payments Inc. as Merchant of Record. By subscribing, you authorize charges according to your chosen billing cycle.",
+      "sec5Title": "5. Subscriptions, Renewals & Cancellations",
+      "sec5Body": "Subscriptions renew automatically at the end of each billing cycle unless cancelled prior to renewal. You may cancel anytime via the Customer Portal, effective at period end.",
+      "sec6Title": "6. Account Deletion & Data Rights (KVKK / GDPR)",
+      "sec6Body": "In compliance with Turkish Personal Data Protection Law (KVKK No. 6698) and EU GDPR, users may permanently delete accounts at any time, cancelling subscriptions and purging personal records."
+    },
+    "privacy": {
+      "badge": "KVKK / GDPR / PRIVACY",
+      "effectiveDate": "Effective: October 2026",
+      "title": "Privacy & Data Protection Policy",
+      "subtitle": "Compliance Notice under Turkish Law No. 6698 (KVKK) and EU General Data Protection Regulation (GDPR).",
+      "backBtn": "Back to Platform",
+      "sec1Title": "1. Data Controller",
+      "sec1Body": "Pharmacy Education Platform operates as the Data Controller under Law No. 6698 (KVKK) and Regulation (EU) 2016/679 (GDPR), committed to safeguarding student data and fundamental privacy rights.",
+      "sec2Title": "2. Personal Data We Collect",
+      "sec2Body": "Identity and contact details (name, email, university, locale), learning progress (completed lessons, scores, Leitner memory states), and entitlement tiers. We never store credit card numbers on our servers; transactions are processed by Dodo Payments.",
+      "sec3Title": "3. Third-Party Sub-Processors",
+      "sec3Body": "We partner with verified sub-processors adhering to SOC 2 and ISO 27001 standards: Supabase and Cloudflare (hosting, encrypted database, auth) and Dodo Payments Inc. (payment processing, tax compliance).",
+      "sec4Title": "4. Your Rights (KVKK Article 11 & GDPR Articles 15-22)",
+      "sec4Body": "Students hold the right to access data processing info, correct inaccuracies, request permanent destruction of personal data, and execute self-service account deletion directly from the platform interface.",
+      "sec5Title": "5. Data Deletion Procedure",
+      "sec5Body": "When account deletion is triggered, our backend cancels active recurring subscriptions via Dodo Payments and permanently purges user profile, progress history, and entitlement records."
+    },
+    "refund": {
+      "badge": "GUARANTEE / REFUND POLICY",
+      "effectiveDate": "Effective: October 2026",
+      "title": "Refund Policy",
+      "subtitle": "Transparent, student-friendly refund terms powered by Dodo Payments.",
+      "backBtn": "Back to Platform",
+      "sec1Title": "1. 14-Day Satisfaction Guarantee",
+      "sec1Body": "We want you to feel confident in your pharmacy studies. If you purchase any subscription and are not completely satisfied, you are entitled to a 100% full refund within 14 days of purchase, no questions asked.",
+      "sec2Title": "2. Cardless Trial Risk-Free Period",
+      "sec2Body": "Our 7-day free trial requires no credit card upfront. You cannot be charged accidentally upon trial expiration. Billing only occurs if you explicitly choose to subscribe.",
+      "sec3Title": "3. How to Request a Refund",
+      "sec3Body": "You may request a refund either via self-service through your Dodo Payments Customer Portal link or by contacting our support team with your account email and transaction ID.",
+      "sec4Title": "4. Processing & Disbursement",
+      "sec4Body": "Once approved, refunds are processed immediately by Dodo Payments Inc. and returned directly to your original payment method, appearing on your statement within 5 to 10 business days.",
+      "sec5Title": "5. Effect on Account Access & Learning Progress",
+      "sec5Body": "When a refund is completed, your account returns to the Free plan. 100% of your completed lessons, quiz scores, and Leitner flashcards remain permanently preserved."
+    }
   }
 }
-

@@ -198,7 +198,13 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
                     )}
                   </div>
                 ) : (
-                  <p className="text-xs italic text-gray-400">Click &quot;Next Tier&quot; to reveal</p>
+                  <p className="text-xs italic text-gray-400">
+                    {locale === 'tr'
+                      ? 'Görüntülemek için "Sonraki Seviye"ye tıklayın'
+                      : locale === 'ar'
+                      ? 'انقر على "المستوى التالي" لكشف التلميح'
+                      : 'Click "Next Tier" to reveal'}
+                  </p>
                 )}
               </div>
             );

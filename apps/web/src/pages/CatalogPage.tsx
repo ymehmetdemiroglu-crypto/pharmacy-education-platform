@@ -39,6 +39,12 @@ export const CatalogPage: React.FC = () => {
       'المجموعات الوظيفية والتأين والهياكل الكيميائية',
       'التماثل الحيوي الكلاسيكي وغير الكلاسيكي',
       'التحول الحيوي الدوائي والمسارات الإنزيمية',
+    ] : locale === 'en' ? [
+      'Physicochemical Basis of Drug Action',
+      'Molecular Stereochemistry & 3D Receptor Fit',
+      'Functional Groups, Ionization & Chemical Scaffolds',
+      'Classical & Non-Classical Bioisosterism',
+      'Drug Biotransformation & Enzymatic Pathways',
     ] : [
       'İlaç Etkisinin Fizikokimyasal Esasları',
       'Moleküler Stereokimya ve 3B Reseptör Uyumu',
@@ -53,6 +59,13 @@ export const CatalogPage: React.FC = () => {
       'علم أدوية الجهاز العصبي الذاتي',
       'علاجات الجهاز القلبي الوعائي والكلى',
       'علم أدوية الجهاز العصبي المركزي',
+    ] : locale === 'en' ? [
+      'Receptor Dynamics & Molecular Forces',
+      'Pharmacodynamics: Concentration-Effect Dynamics',
+      'Pharmacokinetics (ADME) & In Vivo Biotransformation',
+      'Autonomic Nervous System Pharmacology',
+      'Cardiovascular & Renal Therapeutics',
+      'Central Nervous System Pharmacology',
     ] : [
       'Reseptör Dinamikleri ve Moleküler Kuvvetler',
       'Farmakodinami: Konsantrasyon-Etki Dinamikleri',

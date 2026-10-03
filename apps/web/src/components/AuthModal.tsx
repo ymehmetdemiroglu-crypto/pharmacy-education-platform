@@ -169,7 +169,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         if (onSuccess) onSuccess();
       }, 600);
     } catch (err: any) {
-      setError(err?.message || t('modals.auth.googleError'));
+      const msg = err?.message || '';
+      if (msg.includes('provider is not enabled') || msg.includes('validation_failed') || msg.includes('Unsupported provider')) {
+        setError(t('modals.auth.googleNotConfigured'));
+      } else {
+        setError(err?.message || t('modals.auth.googleError'));
+      }
       setIsSubmitting(false);
     }
   };

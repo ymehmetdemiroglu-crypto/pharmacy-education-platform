@@ -32,7 +32,11 @@
     "platformName": "PharmLearn Education Platform",
     "tagline": "Ticari Düzeyde İnteraktif Eczacılık Öğrenme Platformu",
     "curriculumBadge": "%100 Özgün Yazılmış Müfredat • Yerel Vektörel SMILES",
-    "slideCitation": "Akademik doğrulanabilirlik için üniversite ders slaytı referansları belirtilmiştir."
+    "slideCitation": "Akademik doğrulanabilirlik için üniversite ders slaytı referansları belirtilmiştir.",
+    "terms": "Kullanım Koşulları",
+    "privacy": "Gizlilik & KVKK / GDPR",
+    "refund": "İade Politikası",
+    "settings": "Ayarlar"
   },
   "catalog": {
     "heroTitle": "Eczacılık Ders Kataloğu",
@@ -141,7 +145,11 @@
         "Resmi ders tamamlama sertifikası",
         "Kapsamlı lisanslama ve EUS hazırlık arşivi"
       ]
-    }
+    },
+    "currencyBadge": "₺ TRY Fiyatlandırma",
+    "checkoutRedirectError": "Ödeme ekranına yönlendirilemedi: {error}",
+    "trialActivatedAlert": "7 Günlük Ücretsiz Deneme Başlatıldı!",
+    "trialAlreadyClaimedAlert": "Deneme sürümü zaten kullanılmış veya aktif."
   },
   "profile": {
     "title": "Öğrenci Profili",
@@ -189,7 +197,8 @@
       "signupFailed": "Kayıt oluşturulamadı. Lütfen tekrar deneyiniz.",
       "googleSuccess": "Google ile giriş başarılı!",
       "googleError": "Google ile giriş hatası.",
-      "unlock22Lessons": "Kayıt olduğunuzda 22 ders hemen ücretsiz erişiminize açılır!"
+      "unlock22Lessons": "Kayıt olduğunuzda 22 ders hemen ücretsiz erişiminize açılır!",
+      "googleNotConfigured": "Google ile giriş henüz backend üzerinde yapılandırılmamış (Supabase Dashboard > Authentication > Providers > Google alanından Client ID ve Secret bilgilerini girerek etkinleştirin)."
     },
     "paywall": {
       "title": "Tüm Eczacılık Müfredatını Aç",
@@ -356,6 +365,99 @@
     "missionPending": "Görevi tamamlamak için parametreleri ayarlayın.",
     "allMissionsDone": "Tüm Uygulamalı Görevler Tamamlandı! Harika İş 🏆",
     "academicSources": "Akademik Kaynaklar ve Üniversite Ders Materyalleri"
+  },
+  "settings": {
+    "headerTitle": "Hesap & Abonelik Ayarları",
+    "headerDesc": "Öğrenci profili, Dodo Payments abonelik yönetimi ve KVKK veri hakları",
+    "profileCardTitle": "Öğrenci Profili",
+    "studentName": "Öğrenci",
+    "faculty": "Fakülte:",
+    "country": "Ülke:",
+    "billingTitle": "Abonelik & Ödeme Yönetimi",
+    "billingDesc": "Faturalarınızı görüntüleyin, kart bilgilerinizi güncelleyin veya planınızı self-servis Dodo Payments müşteri portalından değiştirin.",
+    "openPortal": "Müşteri Portalını Aç (Dodo)",
+    "pricingPlans": "Fiyatlandırma & Planlar",
+    "deleteTitle": "KVKK / GDPR: Hesabı ve Verileri Sil",
+    "deleteDesc": "Hesabınızı sildiğinizde; aktif abonelikleriniz iptal edilir, tüm öğrenme ilerlemeniz ve aralıklı tekrar kartlarınız kalıcı olarak silinir. Bu işlem geri alınamaz.",
+    "deleteBtn": "Hesabımı Kalıcı Olarak Sil",
+    "confirmTitle": "Hesap Silme Onayı",
+    "confirmPrompt": "Onaylamak için lütfen aşağıdaki kutuya DELETE yazın:",
+    "cancel": "Vazgeç",
+    "confirmDelete": "Onayla ve Sil",
+    "typeDeleteToConfirm": "Lütfen onaylamak için DELETE yazın.",
+    "deleteSuccessAlert": "Hesabınız ve tüm kişisel verileriniz KVKK/GDPR kapsamında başarıyla silindi.",
+    "deleteFailedAlert": "Hesap silme başarısız oldu: {error}",
+    "portalError": "Müşteri paneli açılamadı: {error}"
+  },
+  "review": {
+    "title": "Aralıklı Tekrar Kuyruğu",
+    "desc": "Leitner 5 kutulu hafıza algoritması ile kalıcı ezberleme ve kavram pekiştirme",
+    "medchemCourse": "Farmasötik Kimya",
+    "pharmCourse": "Farmakoloji",
+    "dueCards": "Bekleyen Kart:",
+    "boxLabel": "Kutu {box}",
+    "boxShort": "K{box}:{count}",
+    "showAnswer": "Cevabı Göster",
+    "answerLabel": "Cevap:",
+    "hardBtn": "Zor (Kutu 1)",
+    "goodBtn": "Biliyorum (+1 Kutu)",
+    "allCaughtUpTitle": "Tebrikler! Kuyruk Tamamlandı",
+    "allCaughtUpDesc": "Şu anda tekrar edilmesi gereken kartınız bulunmuyor. Yeni dersleri tamamladıkça hafıza kartlarınız otomatik olarak buraya eklenecektir.",
+    "exploreLessonsBtn": "Dersleri Keşfet"
+  },
+  "legal": {
+    "terms": {
+      "badge": "LEGAL / ŞARTLAR",
+      "effectiveDate": "Yürürlük: Ekim 2026",
+      "title": "Kullanım Koşulları (Terms of Service)",
+      "subtitle": "Lütfen Eczacılık Eğitim Platformunu kullanmadan önce bu koşulları dikkatlice okuyunuz.",
+      "backBtn": "Platforma Geri Dön",
+      "sec1Title": "1. Koşulların Kabulü",
+      "sec1Body": "Bir hesap oluşturarak, ücretsiz deneme başlatarak veya bir abonelik satın alarak bu Kullanım Koşullarını kabul etmiş olursunuz. Koşulları kabul etmiyorsanız lütfen hizmetlerimizi kullanmayınız.",
+      "sec2Title": "2. Eğitim Feragatnamesi",
+      "sec2Body": "Platform, lisans ve lisansüstü eczacılık öğrencileri için özel olarak tasarlanmış simüle edilmiş eğitim modülleri, farmakokinetik modeller ve farmasötik kimya görselleştirmeleri sunar. Tamamen bir eğitim aracı olup tıbbi tavsiye, klinik kılavuz veya reçete talimatı niteliği taşımaz.",
+      "sec3Title": "3. Kalıcı Freemium ve Kredi Kartsız 7 Günlük Deneme",
+      "sec3Body": "Her müfredat modülünün 1. ve 2. dersleri kalıcı olarak ücretsizdir. Uygun kullanıcılar tek seferlik 7 günlük kredi kartsız ücretsiz deneme başlatabilir. Deneme bitiminde hesaplar tüm ilerlemeleri korunarak otomatik olarak ücretsiz plana geçer.",
+      "sec4Title": "4. Ödeme İşleme ve Kayıtlı Satıcı (Merchant of Record)",
+      "sec4Body": "Ödeme işleme, faturalandırma ve vergi tahsilatı ödeme ortağımız Dodo Payments Inc. tarafından yürütülür. Ücretli bir plana abone olarak seçtiğiniz fatura dönemine göre ödeme yönteminizden tahsilat yapılmasını yetkilendirmiş olursunuz.",
+      "sec5Title": "5. Abonelikler, Yenilemeler ve İptaller",
+      "sec5Body": "Abonelikler yenileme tarihinden önce iptal edilmediği sürece her fatura döneminin sonunda otomatik yenilenir. Müşteri portalından istediğiniz an iptal edebilirsiniz; iptaller mevcut dönemin sonunda geçerli olur.",
+      "sec6Title": "6. Hesap Silme ve Veri Hakları (KVKK / GDPR)",
+      "sec6Body": "6698 sayılı KVKK ve AB GDPR uyarınca kullanıcılar diledikleri zaman hesaplarını kalıcı olarak silebilirler. Silme işlemi tüm aktif abonelikleri iptal eder ve kişisel verileri veritabanlarımızdan kalıcı olarak temizler."
+    },
+    "privacy": {
+      "badge": "KVKK / GDPR / GİZLİLİK",
+      "effectiveDate": "Yürürlük: Ekim 2026",
+      "title": "Gizlilik & Kişisel Verilerin Korunması Politikası",
+      "subtitle": "6698 Sayılı KVKK ve AB Genel Veri Koruma Tüzüğü (GDPR) Kapsamında Aydınlatma Metni.",
+      "backBtn": "Platforma Geri Dön",
+      "sec1Title": "1. Veri Sorumlusu",
+      "sec1Body": "Eczacılık Eğitim Platformu, 6698 sayılı KVKK ve (AB) 2016/679 sayılı GDPR uyarınca Veri Sorumlusu sıfatıyla hareket eder. Öğrenci verilerinin güvenliğini sağlamayı ve temel hak ve özgürlükleri korumayı taahhüt ederiz.",
+      "sec2Title": "2. Toplanan Kişisel Veriler",
+      "sec2Body": "Kimlik ve İletişim (ad, e-posta, fakülte, tercih edilen dil), Öğrenme İlerlemesi (tamamlanan dersler, test skorları, Leitner tekrar kutuları), Abonelik ve Yetki Bilgileri. Kredi kartı bilgileri sunucularımızda ASLA saklanmaz; tüm işlemler Dodo Payments Inc. tarafından yürütülür.",
+      "sec3Title": "3. Üçüncü Taraf Veri İşleyiciler",
+      "sec3Body": "SOC 2 ve ISO 27001 güvenlik standartlarına uygun alt işlemcilerle çalışmaktayız: Supabase / Cloudflare (güvenli kimlik doğrulama, veritabanı ve hosting), Dodo Payments Inc. (ödeme işleme, faturalandırma ve vergi uyumu).",
+      "sec4Title": "4. Kullanıcı Hakları (KVKK Madde 11 & GDPR Maddeler 15-22)",
+      "sec4Body": "Kişisel verilerinizin işlenip işlenmediğini öğrenme, yanlış verileri düzeltme, silinmesini veya yok edilmesini talep etme ve platform arayüzünden doğrudan self-servis hesap silme hakkına sahipsiniz.",
+      "sec5Title": "5. Hesap ve Veri Silme Prosedürü",
+      "sec5Body": "Hesap silme talebinde bulunduğunuzda, arka plan servislerimiz Dodo Payments üzerindeki tüm aktif abonelikleri derhal iptal eder ve profil, ilerleme ve yetki kayıtlarınızı kalıcı olarak temizler."
+    },
+    "refund": {
+      "badge": "GÜVENCE / İADE POLİTİKASI",
+      "effectiveDate": "Yürürlük: Ekim 2026",
+      "title": "İade Politikası (Refund Policy)",
+      "subtitle": "Dodo Payments güvencesiyle öğrenci dostu, şeffaf iade koşulları.",
+      "backBtn": "Platforma Geri Dön",
+      "sec1Title": "1. 14 Günlük Koşulsuz Cayma Hakkı",
+      "sec1Body": "Eğitiminizden emin olmanızı istiyoruz. Aylık, dönemlik veya yıllık paket satın alımlarınızda, ilk 14 gün içerisinde herhangi bir gerekçe göstermeksizin %100 tam iade hakkına sahipsiniz.",
+      "sec2Title": "2. Kartsız Deneme ile Risksiz Başlangıç",
+      "sec2Body": "7 günlük ücretsiz denememiz için kredi kartı gerekmez. Deneme süreniz dolduğunda siz onay vermediğiniz sürece kesinlikle herhangi bir ücret yansıtılmaz.",
+      "sec3Title": "3. İade Talebi Nasıl Yapılır?",
+      "sec3Body": "İade talebinizi iki şekilde iletebilirsiniz: 1) Fatura e-postanızdaki veya profilinizdeki Dodo Payments Müşteri Portalı linkinden self-servis olarak, 2) Destek ekibimize hesap e-postanızı belirterek.",
+      "sec4Title": "4. İade İşlemi ve Hesaba Geçiş Süresi",
+      "sec4Body": "Onaylanan iadeler Dodo Payments Inc. tarafından anında işleme konur ve doğrudan orijinal ödeme yönteminize aktarılır. Bankanıza bağlı olarak 5 ila 10 iş günü içinde hesabınıza yansır.",
+      "sec5Title": "5. İade Sonrası İlerleme Durumu",
+      "sec5Body": "İade tamamlandığında hesabınız ücretsiz plana döner. Tamamladığınız derslerin, test puanlarınızın ve Leitner aralıklı tekrar kartlarınızın %100'ü güvenle saklanmaya devam eder."
+    }
   }
 }
-

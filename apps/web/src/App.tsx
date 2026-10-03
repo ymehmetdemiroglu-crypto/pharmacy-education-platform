@@ -92,16 +92,16 @@ export const App: React.FC = () => {
             </span>
             <div className="flex flex-wrap gap-4 mt-2 text-[11px] font-mono">
               <Link to="/terms" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
-                Terms of Service
+                {t('footer.terms')}
               </Link>
               <Link to="/privacy" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
-                Privacy &amp; KVKK / GDPR
+                {t('footer.privacy')}
               </Link>
               <Link to="/refund" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
-                Refund Policy
+                {t('footer.refund')}
               </Link>
               <Link to="/settings" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
-                Settings
+                {t('footer.settings')}
               </Link>
             </div>
           </div>

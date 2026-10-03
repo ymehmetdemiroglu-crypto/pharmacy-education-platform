@@ -378,30 +378,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setLoading(true);
     try {
       const redirectOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://optimusrufus.com';
-      const { error } = await supabase.auth.signInWithOAuth({
+      const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: redirectOrigin,
         },
       });
-      if (error) throw error;
+      if (error) {
+        throw error;
+      }
+      if (data?.url && typeof window !== 'undefined') {
+        window.location.href = data.url;
+      }
     } catch (err: any) {
-      console.warn('[Supabase Google Auth]:', err?.message);
-      // Fallback for local testing
-      const googleUser: UserProfile = {
-        userId: 'g-user-' + Math.random().toString(36).substring(2, 9),
-        email: 'student@istanbul.edu.tr',
-        displayName: 'Ecz. Öğrencisi',
-        university: 'İstanbul Üniversitesi',
-        plan: 'free',
-        trialUsed: false,
-        trialStartedAt: null,
-        trialEndsAt: null,
-        preferredLanguage: 'tr',
-        createdAt: new Date().toISOString(),
-        lastActiveAt: new Date().toISOString(),
-      };
-      setUser(googleUser);
+      console.error('[Supabase Google Auth Error]:', err?.message);
+      throw err;
     } finally {
       setLoading(false);
     }
