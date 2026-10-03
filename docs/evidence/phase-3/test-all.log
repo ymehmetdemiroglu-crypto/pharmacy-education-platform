@@ -1,0 +1,59 @@
+$ pnpm -r --workspace-concurrency=1 run test
+Scope: 5 of 6 workspace projects
+$ vitest run
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/platform[39m
+
+ [32mظ£ô[39m src/curriculum/lesson01.test.ts [2m([22m[2m19 tests[22m[2m)[22m[32m 67[2mms[22m[39m
+ [32mظ£ô[39m src/progress/ProgressStore.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32mظ£ô[39m src/spaced_repetition/LeitnerEngine.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32mظ£ô[39m src/access/AccessControl.test.ts [2m([22m[2m6 tests[22m[2m)[22m[32m 2[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+[2m      Tests [22m [1m[32m34 passed[39m[22m[90m (34)[39m
+[2m   Start at [22m 18:46:46
+[2m   Duration [22m 1.25s[2m (transform 292ms, setup 0ms, collect 431ms, tests 75ms, environment 0ms, prepare 299ms)[22m
+
+$ vitest run
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/ui[39m
+
+ [32mظ£ô[39m src/components/HintDrawer/HintDrawer.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 256[2mms[22m[39m
+ [32mظ£ô[39m src/components/PaywallModal/PaywallModal.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 158[2mms[22m[39m
+ [32mظ£ô[39m src/components/StepDots/StepDots.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32mظ£ô[39m src/components/Button/Button.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32mظ£ô[39m src/components/TrialBanner/TrialBanner.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 22[2mms[22m[39m
+ [32mظ£ô[39m src/components/Slider/Slider.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 23[2mms[22m[39m
+ [32mظ£ô[39m src/components/Modal/Modal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 19[2mms[22m[39m
+ [32mظ£ô[39m src/components/EmptyState/EmptyState.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32mظ£ô[39m src/components/Toggle/Toggle.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32mظ£ô[39m src/components/Input/Input.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 9[2mms[22m[39m
+ [32mظ£ô[39m src/components/ProgressBar/ProgressBar.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 10[2mms[22m[39m
+ [32mظ£ô[39m src/components/SkeletonLoader/SkeletonLoader.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32mظ£ô[39m src/components/Card/Card.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32mظ£ô[39m src/components/StickerBadge/StickerBadge.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 3[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m14 passed[39m[22m[90m (14)[39m
+[2m      Tests [22m [1m[32m27 passed[39m[22m[90m (27)[39m
+[2m   Start at [22m 18:46:51
+[2m   Duration [22m 7.10s[2m (transform 621ms, setup 806ms, collect 3.61s, tests 607ms, environment 1.41s, prepare 254ms)[22m
+
+$ vitest run
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90mC:/Users/hp/.gemini/antigravity/worktrees/valiant-raman/pharmacy_education_platform_setup/packages/widgets[39m
+
+ [32mظ£ô[39m src/DoseResponseCurve/DoseResponseCurve.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 270[2mms[22m[39m
+ [32mظ£ô[39m src/SarExplorer/SarExplorer.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 131[2mms[22m[39m
+ [32mظ£ô[39m src/ReceptorLigandMatcher/ReceptorLigandMatcher.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 111[2mms[22m[39m
+ [32mظ£ô[39m src/StructureIdentifier/StructureIdentifier.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 64[2mms[22m[39m
+ [32mظ£ô[39m src/PkSimulator/PkSimulator.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 79[2mms[22m[39m
+ [32mظ£ô[39m src/MetabolismMap/MetabolismMap.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 42[2mms[22m[39m
+ [32mظ£ô[39m src/PredictThenReveal/PredictThenReveal.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 60[2mms[22m[39m
+ [32mظ£ô[39m src/MultipleChoice/MultipleChoice.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[32m 52[2mms[22m[39m
+ [32mظ£ô[39m src/HintLadder/HintLadder.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 12[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m9 passed[39m[22m[90m (9)[39m
+[2m      Tests [22m [1m[32m19 passed[39m[22m[90m (19)[39m
+[2m   Start at [22m 18:47:00
+[2m   Duration [22m 7.75s[2m (transform 855ms, setup 877ms, collect 3.81s, tests 820ms, environment 1.48s, prepare 284ms)[22m
+

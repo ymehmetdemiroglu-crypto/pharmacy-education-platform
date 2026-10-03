@@ -1,0 +1,453 @@
+{
+  "courseId": "medchem",
+  "courseTitle": "Medicinal Chemistry",
+  "version": "1.0.0",
+  "nodeCount": 26,
+  "edgeCount": 26,
+  "nodes": [
+    {
+      "id": "mc_api_definition",
+      "name": "Active Pharmaceutical Ingredient (API)",
+      "definition": "The chemically defined biological entity responsible for physiological alteration, therapeutic efficacy, or diagnostic utility in a pharmaceutical dosage form.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "mc_ferguson_principle",
+      "name": "Ferguson Principle",
+      "definition": "A thermodynamic law stating that the biological potency of structurally non-specific drugs is governed by their relative saturation in the biophase rather than chemical binding specificity.",
+      "category": "equation",
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "mc_struct_specific_drugs",
+      "name": "Structurally Specific Drugs",
+      "definition": "Therapeutic agents whose biological response depends upon exact 3D spatial complementarity, electrostatic interaction, and stereochemical fit with a targeted macromolecular receptor or enzyme active site.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "mc_struct_nonspecific_drugs",
+      "name": "Structurally Non-Specific Drugs",
+      "definition": "Molecules that elicit pharmacologic action primarily through collective physicochemical perturbations (such as membrane fluidization or vapor pressure accumulation) without high-affinity receptor binding.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "mc_aqueous_solubility",
+      "name": "Aqueous Solubility & Dissolution",
+      "definition": "The thermodynamic equilibrium concentration of a solute dissolved in water, fundamentally limiting drug dissolution rate and systemic gastrointestinal absorption.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "mc_partition_coefficient",
+      "name": "Partition Coefficient (P and log P)",
+      "definition": "The ratio of unionized drug concentrations distributed between an organic lipid phase (1-octanol) and an aqueous phase at thermodynamic equilibrium, quantifying lipophilicity.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "mc_hansch_pi_constant",
+      "name": "Hansch Substituent Constant (pi)",
+      "definition": "A linear free-energy parameter measuring the differential lipophilic contribution of a chemical substituent relative to hydrogen on an aromatic or aliphatic scaffold.",
+      "category": "equation",
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "mc_lipinski_rule_of_5",
+      "name": "Lipinski's Rule of Five",
+      "definition": "A set of four physicochemical cutoff heuristics (MW <= 500, log P <= 5, HBD <= 5, HBA <= 10) predictive of poor oral absorption or membrane permeability.",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 27
+        }
+      ]
+    },
+    {
+      "id": "mc_functional_groups_acidity_basicity",
+      "name": "Functional Group Ionization & pKa",
+      "definition": "The quantitative acid dissociation constant determining the equilibrium fraction of ionized versus neutral drug species across gastrointestinal and physiological pH environments.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "mc_amines_basicity",
+      "name": "Amine Protonation & Pharmacophore Binding",
+      "definition": "The ability of primary, secondary, and tertiary amines to undergo protonation at physiological pH 7.4, enabling essential electrostatic bonds with anionic receptor carboxylates.",
+      "category": "structure",
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "mc_carboxylic_acids",
+      "name": "Carboxylic Acid Functional Group",
+      "definition": "An acidic pharmacophoric moiety (pKa 3-5) that exists primarily as an anion at pH 7.4, forming ionic contacts or undergoing Phase II acyl glucuronidation.",
+      "category": "structure",
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "mc_heterocyclic_scaffolds",
+      "name": "Heterocyclic Drug Scaffolds",
+      "definition": "Aromatic or saturated ring systems containing nitrogen, oxygen, or sulfur that rigidify pharmacophore geometry and serve as hydrogen bond donors or acceptors.",
+      "category": "structure",
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 32
+        }
+      ]
+    },
+    {
+      "id": "mc_geometric_isomerism",
+      "name": "Geometric (Cis/Trans, E/Z) Isomerism",
+      "definition": "Diastereomeric configuration resulting from restricted rotation about double bonds or cycloalkanes, causing distinct interatomic distances between pharmacophore groups.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "mc_optical_chirality",
+      "name": "Optical Isomerism & Enantiomers",
+      "definition": "Molecules bearing chiral centers lacking internal symmetry planes that form non-superimposable mirror images exhibiting identical physical constants but opposite optical rotation.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "mc_three_point_attachment",
+      "name": "Easson-Stedman Three-Point Attachment Model",
+      "definition": "The biological stereoselectivity hypothesis stating that high-affinity receptor activation requires minimum three simultaneous, complementary spatial contacts between ligand and binding pocket.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "mc_eutomer_distomer",
+      "name": "Eutomer, Distomer & Eudismic Ratio",
+      "definition": "The therapeutic classification of the higher-affinity active enantiomer (eutomer) versus the lower-affinity/inactive/toxic antipode (distomer), whose affinity ratio represents the eudismic ratio.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "mc_thalidomide_teratogenicity",
+      "name": "Thalidomide Stereochemical Toxicity Case",
+      "definition": "A historical case demonstrating that while (R)-thalidomide exerts hypnotic efficacy, (S)-thalidomide causes severe teratogenic phocomelia, complicated by rapid in vivo metabolic racemization.",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 30
+        }
+      ]
+    },
+    {
+      "id": "mc_conformational_isomerism",
+      "name": "Conformational Isomerism & Dynamic Receptor Selection",
+      "definition": "Interconvertible spatial arrangements generated by rotation around single sigma bonds, allowing flexible endogenous transmitters (acetylcholine, histamine) to selectively activate distinct receptor subtypes.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 39
+        }
+      ]
+    },
+    {
+      "id": "mc_classical_bioisosteres",
+      "name": "Classical Bioisosterism",
+      "definition": "Structural replacement using atoms or groups sharing identical outer electronic configurations and valence electrons (Grimm hydride displacement and Erlenmeyer rules) to maintain biological activity.",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "Biyoizosterizm.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "mc_nonclassical_bioisosteres",
+      "name": "Non-Classical Bioisosterism",
+      "definition": "Substitutions of groups with differing electronic topologies and atom counts that produce analogous biological outcomes by mimicking spatial geometry, electronic density, or pKa (e.g. tetrazole for carboxylate).",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "Biyoizosterizm.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "mc_tetrazole_carboxylate_isostere",
+      "name": "Tetrazole-Carboxylate Bioisosteric Replacement",
+      "definition": "Replacement of an ionizable carboxylic acid group with a planar, lipophilic 1H-tetrazole ring (pKa ~4.5-4.9), markedly enhancing oral bioavailability and metabolic stability against glucuronidation.",
+      "category": "structure",
+      "sources": [
+        {
+          "file": "Biyoizosterizm.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "mc_phase_1_oxidation",
+      "name": "Phase I CYP450 Functionalization Oxidation",
+      "definition": "Hepatic microsomal mixed-function oxidase catalytic reactions that introduce or unmask reactive polar functional groups (-OH, -NH2, -SH) via cytochrome P450 enzymes.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "mc_aromatic_hydroxylation_arene_oxide",
+      "name": "Aromatic Hydroxylation & Arene Oxide Intermediates",
+      "definition": "Electrophilic oxidation of aromatic drug rings generating transient, reactive arene oxides that either isomerize to phenols via NIH shift, hydrate via epoxide hydrolase, or conjugate with glutathione.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "mc_phase_2_glucuronidation",
+      "name": "Phase II Glucuronic Acid Conjugation",
+      "definition": "The principal human conjugation pathway mediated by UDP-glucuronosyltransferases (UGT), transferring glucuronic acid from UDPGA to nucleophilic oxygens, nitrogens, or sulfurs to generate excretable hydrophilic glucuronides.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 33
+        }
+      ]
+    },
+    {
+      "id": "mc_acetylation_polymorphism",
+      "name": "N-Acetylation & Genetic Polymorphism",
+      "definition": "Phase II transfer of an acetyl moiety from Acetyl-CoA to primary aromatic amines via NAT2, exhibiting trimodal human genetic polymorphism that stratifies patients into rapid and slow acetylator phenotypes.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 40
+        }
+      ]
+    },
+    {
+      "id": "mc_glutathione_detoxification",
+      "name": "Glutathione Conjugation & Mercapturic Acid Pathway",
+      "definition": "Protective nucleophilic scavenging of electrophilic toxic drug metabolites (e.g. NAPQI) by the cellular tripeptide glutathione (GSH) via GST, subsequently processed into urinary mercapturic acids.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 35
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "mc_api_definition",
+      "target": "mc_struct_specific_drugs",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_api_definition",
+      "target": "mc_struct_nonspecific_drugs",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_ferguson_principle",
+      "target": "mc_struct_nonspecific_drugs",
+      "relation": "enhances"
+    },
+    {
+      "source": "mc_struct_specific_drugs",
+      "target": "mc_struct_nonspecific_drugs",
+      "relation": "contrasts-with"
+    },
+    {
+      "source": "mc_aqueous_solubility",
+      "target": "mc_partition_coefficient",
+      "relation": "related"
+    },
+    {
+      "source": "mc_partition_coefficient",
+      "target": "mc_hansch_pi_constant",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_partition_coefficient",
+      "target": "mc_lipinski_rule_of_5",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_hansch_pi_constant",
+      "target": "mc_lipinski_rule_of_5",
+      "relation": "enhances"
+    },
+    {
+      "source": "mc_functional_groups_acidity_basicity",
+      "target": "mc_amines_basicity",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_functional_groups_acidity_basicity",
+      "target": "mc_carboxylic_acids",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_functional_groups_acidity_basicity",
+      "target": "mc_aqueous_solubility",
+      "relation": "related"
+    },
+    {
+      "source": "mc_heterocyclic_scaffolds",
+      "target": "mc_classical_bioisosteres",
+      "relation": "related"
+    },
+    {
+      "source": "mc_geometric_isomerism",
+      "target": "mc_optical_chirality",
+      "relation": "related"
+    },
+    {
+      "source": "mc_optical_chirality",
+      "target": "mc_three_point_attachment",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_three_point_attachment",
+      "target": "mc_eutomer_distomer",
+      "relation": "enhances"
+    },
+    {
+      "source": "mc_eutomer_distomer",
+      "target": "mc_thalidomide_teratogenicity",
+      "relation": "related"
+    },
+    {
+      "source": "mc_optical_chirality",
+      "target": "mc_conformational_isomerism",
+      "relation": "contrasts-with"
+    },
+    {
+      "source": "mc_classical_bioisosteres",
+      "target": "mc_nonclassical_bioisosteres",
+      "relation": "contrasts-with"
+    },
+    {
+      "source": "mc_carboxylic_acids",
+      "target": "mc_tetrazole_carboxylate_isostere",
+      "relation": "related"
+    },
+    {
+      "source": "mc_nonclassical_bioisosteres",
+      "target": "mc_tetrazole_carboxylate_isostere",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_struct_specific_drugs",
+      "target": "mc_phase_1_oxidation",
+      "relation": "related"
+    },
+    {
+      "source": "mc_phase_1_oxidation",
+      "target": "mc_aromatic_hydroxylation_arene_oxide",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_phase_1_oxidation",
+      "target": "mc_phase_2_glucuronidation",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "mc_carboxylic_acids",
+      "target": "mc_phase_2_glucuronidation",
+      "relation": "related"
+    },
+    {
+      "source": "mc_amines_basicity",
+      "target": "mc_acetylation_polymorphism",
+      "relation": "related"
+    },
+    {
+      "source": "mc_aromatic_hydroxylation_arene_oxide",
+      "target": "mc_glutathione_detoxification",
+      "relation": "prerequisite"
+    }
+  ]
+}

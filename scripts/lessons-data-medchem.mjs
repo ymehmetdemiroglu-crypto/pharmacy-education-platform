@@ -1,0 +1,585 @@
+/**
+ * scripts/lessons-data-medchem.mjs
+ * 
+ * Master pedagogical blueprints for the 10 free lessons in Course A: Farmasötik Kimya.
+ * Covers Modules 1 through 5 (2 lessons per module).
+ * Strictly complies with the 12-stage concept mastery anatomy, prompt <= 40 words,
+ * Turkish academic terminology, and the Special Arabic Rule.
+ */
+
+export const medchemLessons = [
+  // =========================================================================
+  // MODULE 1: Giriş ve Fizikokimyasal İlkeler
+  // =========================================================================
+
+  // Lesson 1: Termodinamik Aktivite ve Ferguson İlkesi
+  {
+    id: 'mc-mod1-les1',
+    courseId: 'medchem',
+    moduleId: 'mc-mod-01',
+    title: {
+      tr: 'Termodinamik Aktivite ve Ferguson İlkesi',
+      ar: 'النشاط الديناميكي الحراري ومبدأ Ferguson'
+    },
+    order: 1,
+    access: 'free',
+    objective: {
+      tr: 'Yapısal olarak özgül olmayan ilaçların etki mekanizmasını termodinamik aktivite ve doygunluk dengesiyle açıklamak.',
+      ar: 'توضيح آلية التأثير غير النوعي بنيوياً للأدوية عبر النشاط الديناميكي الحراري (termodinamik aktivite) وتوازن التشبع.'
+    },
+    misconceptions: [
+      {
+        tr: 'Tüm ilaçların spesifik bir protein reseptörüne kilit-anahtar uyumuyla bağlandığı yanılgısı.',
+        ar: 'الاعتقاد الخاطئ بأن جميع الأدوية تتطلب ارتباطاً نوعياً مع (reseptör) بروتيني نوعي.'
+      },
+      {
+        tr: 'Kimyasal olarak farklı genel anesteziklerin farklı biyofazik mekanizmalarla etki ettiği varsayımı.',
+        ar: 'الافتراض الخاطئ بأن المخدرات العامة المختلفة كيميائياً تعمل بآليات (biyofaz) مستقلة.'
+      }
+    ],
+    sources: [
+      { file: 'Farmasötik ve Medisinal Kimya 1-Giriş.pdf', page: 17 }
+    ],
+    citations: [
+      {
+        id: 'CIT-01',
+        book: "Foye's Principles of Medicinal Chemistry",
+        edition: '8th ed.',
+        topic: 'Thermodynamic Activity & Ferguson Principle',
+        chapter: 'unverified',
+        page: 'unverified',
+        status: 'unverified'
+      },
+      {
+        id: 'CIT-02',
+        book: 'An Introduction to Medicinal Chemistry',
+        edition: '6th ed., Patrick',
+        topic: "Ferguson's Principle of Non-Specific Action",
+        chapter: 'unverified',
+        page: 'unverified',
+        status: 'unverified'
+      },
+      {
+        id: 'CIT-03',
+        book: 'The Practice of Medicinal Chemistry',
+        edition: '4th ed., Wermuth',
+        topic: 'Physicochemical Properties and Biological Activity',
+        chapter: 'unverified',
+        page: 'unverified',
+        status: 'unverified'
+      }
+    ],
+    numericClaims: [
+      {
+        id: 'NUM-MC01-01',
+        parameter: 'Non-Specific Thermodynamic Saturation Threshold',
+        value: 'pending-human-review',
+        status: 'pending-human-review',
+        referencePassage: 'Qualitative high relative saturation threshold retained.'
+      },
+      {
+        id: 'NUM-MC01-02',
+        parameter: 'Specific Drug Thermodynamic Activity Cutoff',
+        value: 'a < 0.001 (10^-5 to 10^-3)',
+        status: 'pending-human-review'
+      },
+      {
+        id: 'NUM-MC01-03',
+        parameter: 'Vapor Pressure Ratio for Ether Anesthesia',
+        value: 'Pt / P0 ≈ 0.03-0.05 (3%-5% relative saturation)',
+        status: 'pending-human-review'
+      },
+      {
+        id: 'NUM-MC01-04',
+        parameter: 'Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms',
+        value: '10^4 (4 orders of magnitude)',
+        status: 'pending-human-review'
+      }
+    ],
+    spacedReviewCards: [
+      {
+        cardId: 'mc-mod1-les1-card1',
+        courseId: 'medchem',
+        drugOrConcept: 'Ferguson İlkesi ve Doygunluk',
+        prompt: 'What is the relative thermodynamic saturation range defining non-specific drugs?',
+        answer: 'Yapısal olarak özgül olmayan bileşikler yüksek bağıl doygunlukta (a ≈ 0.03-0.05) etki gösterir.',
+        box: 1,
+        intervalDays: 1,
+        status: 'pending-human-review'
+      },
+      {
+        cardId: 'mc-mod1-les1-card2',
+        courseId: 'medchem',
+        drugOrConcept: 'Termodinamik Aktivite Denklemi',
+        prompt: 'Gaz fazındaki bileşikler için termodinamik aktivite nasıl formüle edilir?',
+        answer: 'Kısmi buhar basıncının doygun buhar basıncına oranı: a = Pt / P0.',
+        box: 1,
+        intervalDays: 1
+      },
+      {
+        cardId: 'mc-mod1-les1-card3',
+        courseId: 'medchem',
+        drugOrConcept: 'Özgül ve Özgül Olmayan Etki Ayrımı',
+        prompt: 'Bir ilacın termodinamik aktivitesi a < 0.001 ise hangi etki mekanizması beklenir?',
+        answer: 'Stereo-spesifik reseptör bağlanması ile karakterize yapısal olarak özgül etki.',
+        box: 1,
+        intervalDays: 1
+      }
+    ],
+    translations: {
+      tr: { title: 'Termodinamik Aktivite ve Ferguson İlkesi' },
+      ar: { title: 'النشاط الديناميكي الحراري ومبدأ Ferguson' }
+    },
+    steps: [
+      // 1. Hook
+      {
+        id: 'mc-mod1-les1-step-01',
+        stage: 'hook',
+        stageIndex: 1,
+        title: {
+          tr: 'Klinik Çelişki: Gramlar ve Mikrogramlar',
+          ar: 'المفارقة السريرية: غرامات مقابل ميكروغرامات'
+        },
+        prompt: {
+          tr: 'Dietil eter ile cerrahi anestezi onlarca gram gerektirirken, propranolol miligramlarla etki eder. Bu devasa doz farkının kökeni nedir?',
+          ar: 'يتطلب التخدير بـ Diethyl Ether عشرات الغرامات، بينما يعمل Propranolol بالمليغرامات. ما أصل هذا الفارق الهائل في الجرعة؟'
+        },
+        predictThenReveal: false,
+        config: {
+          drugA: { name: 'Diethyl Ether', dose: 'Tens of grams (high molar concentration)' },
+          drugB: { name: 'Propranolol', dose: 'Milligrams (micromolar to nanomolar)' }
+        },
+        technicalTerms: [
+          { term: 'termodinamik aktivite', arContext: 'النشاط الديناميكي الحراري' },
+          { term: 'reseptör', arContext: 'المستقبِل الدوائي النوعي' }
+        ],
+        hints: [
+          { tr: 'Moleküllerin etki ettiği biyolojik hedeflerin niteliğini düşünün.', ar: 'فكر في طبيعة الأهداف البيولوجية التي تؤثر عليها الجزيئات.' },
+          { tr: 'Bir madde zarı fiziksel olarak bozar, diğeri tek bir reseptöre bağlanır.', ar: 'مادة تعطل الغشاء فيزيائياً، والأخرى ترتبط بمستقبِل مفرد.' },
+          { tr: 'Spesifik olmayan etki yüksek doygunluk gerektirir.', ar: 'التأثير غير النوعي يتطلب تشبعاً عالياً.' }
+        ]
+      },
+      // 2. Question
+      {
+        id: 'mc-mod1-les1-step-02',
+        stage: 'question',
+        stageIndex: 2,
+        title: {
+          tr: 'Tahmin: Eşit Doygunlukta Anestezi',
+          ar: 'توقع: التخدير عند التساوي في التشبع'
+        },
+        prompt: {
+          tr: 'Farklı kimyasal yapılardaki gazlar aynı bağıl doygunluğa (Pt / P0) ulaştığında anestezi derinliği nasıl değişir?',
+          ar: 'عندما تصل غازات متباينة كيميائياً لنفس نسبة التشبع النسبي (Pt / P0)، كيف يتغير عمق التخدير؟'
+        },
+        predictThenReveal: true,
+        conceptCheck: {
+          options: [
+            {
+              id: 'opt-a',
+              text: { tr: 'Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.', ar: 'تظهر تأثيرات متباينة تماماً تبعاً لاختلاف بنيتها.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Ferguson ilkesine göre kimyasal yapı değil, termodinamik aktivite belirleyicidir.', ar: 'وفق مبدأ Ferguson، النشاط الديناميكي الحراري هو الحاكم وليس البنية.' }
+            },
+            {
+              id: 'opt-b',
+              text: { tr: 'Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.', ar: 'الجزيئات ذات الوزن الجزيئي الصغير فقط تحدث تخديراً.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Molekül ağırlığı tek başına anestezi gücünü tayin etmez.', ar: 'الوزن الجزيئي وحده لا يحدد القوة التخديرية.' }
+            },
+            {
+              id: 'opt-c',
+              text: { tr: 'Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.', ar: 'تحدث نفس درجة التخدير تقريباً بغض النظر عن البنية الكيميائية.' },
+              isCorrect: true,
+              misconceptionFeedback: { tr: 'Doğru! Bağıl doygunluk eşit olduğunda biyofazdaki termodinamik kaçma eğilimi eşittir.', ar: 'صحيح! عند تساوي التشبع، يكون ميل الهروب الديناميكي متساوياً.' }
+            }
+          ]
+        },
+        config: {
+          options: [
+            { id: 'opt-a', text: 'Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.', isCorrect: false },
+            { id: 'opt-b', text: 'Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.', isCorrect: false },
+            { id: 'opt-c', text: 'Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.', isCorrect: true }
+          ],
+          revealedOutcome: 'Tüm uçucu anestezikler a = Pt / P0 ≈ 0.03-0.05 aralığında cerrahi anestezi oluşturur.',
+          explanation: 'Ferguson ilkesine göre yapısal olarak özgül olmayan maddeler eşit bağıl doygunlukta eşit biyolojik yanıt verir.'
+        },
+        technicalTerms: [
+          { term: 'Ferguson ilkesi', arContext: 'مبدأ Ferguson' },
+          { term: 'bağıl doygunluk', arContext: 'التشبع النسبي' }
+        ],
+        hints: [
+          { tr: 'Termodinamik aktivite fazlar arası dengeyi temsil eder.', ar: 'يمثل النشاط الديناميكي الحراري التوازن بين الأطوار.' },
+          { tr: 'Biyofazdaki kaçma eğilimini göz önüne alın.', ar: 'ضع في اعتبارك ميل الهروب في الطور الحيوي.' },
+          { tr: 'Pt / P0 oranı eşit olduğunda zardaki yoğunlaşma eşittir.', ar: 'عند تساوي نسبة Pt / P0 يتساوى التركيز في الغشاء.' }
+        ]
+      },
+      // 3. Intuition
+      {
+        id: 'mc-mod1-les1-step-03',
+        stage: 'intuition',
+        stageIndex: 3,
+        title: {
+          tr: 'Sezgisel Model: Zardan Kaçma Eğilimi',
+          ar: 'النموذج الحدسي: ميل الهروب من الغشاء'
+        },
+        prompt: {
+          tr: 'Bir sıvıyı buharlaşmaya zorlayan iç basınç gibi, çözücüdeki moleküller de doymuşluk arttıkça zarlara itilir. Doygunluk yükseldikçe ne olur?',
+          ar: 'كما يدفع الضغط الداخلي السائل للتبخر، تندفع الجزيئات نحو الأغشية مع اقتراب التشبع. ماذا يحدث عند زيادة التشبع؟'
+        },
+        predictThenReveal: false,
+        config: {
+          analogy: 'Crowded room escaping tendency'
+        },
+        technicalTerms: [
+          { term: 'kaçma eğilimi', arContext: 'ميل الهروب الجزيئي' },
+          { term: 'biyofaz', arContext: 'الطور الحيوي الغشائي' }
+        ],
+        hints: [
+          { tr: 'Molekül kendi fazında sıkıştıkça hücre zarına kaçar.', ar: 'كلما انحصر الجزيء في طوره هرب إلى غشاء الخلية.' },
+          { tr: 'Zar lipidlerine yerleşen moleküller zarı genişletir.', ar: 'الجزيئات المستقرة في دهون الغشاء تؤدي لتمدده.' },
+          { tr: 'Bu durum iyon kanallarının iletimini bloke eder.', ar: 'هذا يغلق القنوات الأيونية ميكانيكياً.' }
+        ]
+      },
+      // 4. Visual Explanation
+      {
+        id: 'mc-mod1-les1-step-04',
+        stage: 'visual_explanation',
+        stageIndex: 4,
+        title: {
+          tr: 'Görselleştirme: Lipid Çift Katmanının Genişlemesi',
+          ar: 'التوضيح البصري: تمدد طبقة الدهون الثنائية'
+        },
+        prompt: {
+          tr: 'Termodinamik aktivite a arttıkça lipid çift katmanına yerleşen moleküller membran hacmini genişletir (Delta V). Bu durum nöronal iletimi durdurur.',
+          ar: 'مع ارتفاع النشاط termodinamik aktivite تتكدس الجزيئات في الطبقة الثنائية وتحدث تمدداً حجمياً يعطل السيالة العصبية.'
+        },
+        predictThenReveal: false,
+        config: {
+          diagram: 'membrane_expansion_svg'
+        },
+        technicalTerms: [
+          { term: 'lipid çift katmanı', arContext: 'طبقة الدهون الثنائية' },
+          { term: 'membran hacmi', arContext: 'حجم الغشاء الخلوي' }
+        ],
+        hints: [
+          { tr: 'Zar kalınlaşması iyon kanallarına baskı uygular.', ar: 'سماكة الغشاء تضغط على القنوات الأيونية.' },
+          { tr: 'Sodyum geçişi durunca aksiyon potansiyeli kaybolur.', ar: 'يتوقف جهد الفعل بتعطل شوارد الصوديوم.' },
+          { tr: 'Kritik hacim hipotezi anestezinin fiziksel temelidir.', ar: 'فرضية الحجم الحرج هي أساس التخدير الفيزيائي.' }
+        ]
+      },
+      // 5. Interactive Artifact
+      {
+        id: 'mc-mod1-les1-step-05',
+        stage: 'interactive_artifact',
+        stageIndex: 5,
+        title: {
+          tr: 'İnteraktif Simülasyon: Ferguson Slider',
+          ar: 'المحاكاة التفاعلية: زالق Ferguson'
+        },
+        prompt: {
+          tr: 'Kısmi buhar basıncını artırarak termodinamik aktiviteyi (a) ve membran hacim genişlemesini gözlemleyin. Anestezi eşiği hangi değerdedir?',
+          ar: 'قم بزيادة الضغط الجزئي لملاحظة النشاط الديناميكي وتمدد الغشاء. عند أي قيمة يقع عتبة التخدير الجراحي؟'
+        },
+        predictThenReveal: false,
+        widgetType: 'ThermodynamicActivityFergusonSlider',
+        widget: {
+          type: 'ThermodynamicActivityFergusonSlider',
+          config: {
+            compound: 'diethyl_ether',
+            p0: 440,
+            pt: 15,
+            anestheticThreshold: 0.03
+          }
+        },
+        config: {
+          defaultAgent: 'diethyl_ether',
+          initialPt: 15
+        },
+        technicalTerms: [
+          { term: 'kısmi buhar basıncı', arContext: 'الضغط الجزئي للبخار' },
+          { term: 'anestezi eşiği', arContext: 'عتبة التخدير' }
+        ],
+        hints: [
+          { tr: 'Kısmi basıncı artırarak anestezi eşiğini belirleyin.', ar: 'قم بزيادة الضغط الجزئي لتحديد عتبة التخدير.' },
+          { tr: 'a = Pt / P0 oranını kontrol edin.', ar: 'تحقق من النسبة a = Pt / P0.' },
+          { tr: 'a değeri 0.03 ile 0.05 arasına ulaştığında anestezi başlar.', ar: 'يبدأ التخدير عندما تصل قيمة a بين 0.03 و 0.05.' }
+        ]
+      },
+      // 6. Guided Discovery
+      {
+        id: 'mc-mod1-les1-step-06',
+        stage: 'guided_discovery',
+        stageIndex: 6,
+        title: {
+          tr: 'Rehberli Keşif: Nitrojen Suboksit vs Kloroform',
+          ar: 'استكشاف موجه: أكسيد النيتروز مقابل الكلوروفورم'
+        },
+        prompt: {
+          tr: 'Simülatörde kloroform ve N2O gazlarını karşılaştırın. Kaynama noktaları ve P0 değerleri çok farklı olsa da anestezi hangi a değerinde gerçekleşir?',
+          ar: 'قارن بين الكلوروفورم و N2O. رغم اختلاف درجات الغليان و P0، عند أي قيمة a يحدث التخدير المشترك؟'
+        },
+        predictThenReveal: true,
+        conceptCheck: {
+          options: [
+            {
+              id: 'opt-disc-1',
+              text: { tr: 'Her iki gaz için de aynı dar aralıkta: a ≈ 0.03-0.05.', ar: 'لكلا الغازين في نفس النطاق الضيق: a ≈ 0.03-0.05.' },
+              isCorrect: true,
+              misconceptionFeedback: { tr: 'Harika! Bağıl doygunluk kuralı kimyasal yapıdan bağımsızdır.', ar: 'ممتاز! قاعدة التشبع النسبي مستقلة عن التركيب الكيميائي.' }
+            },
+            {
+              id: 'opt-disc-2',
+              text: { tr: 'Farklı moleküler ağırlıklar nedeniyle tamamen farklı a değerlerinde.', ar: 'عند قيم a متباينة تماماً بسبب اختلاف الأوزان الجزيئية.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Molekül ağırlığı farklı olsa bile termodinamik aktivite aralığı aynıdır.', ar: 'رغم اختلاف الوزن، نطاق النشاط الديناميكي يبقى ثابتاً.' }
+            }
+          ]
+        },
+        config: {
+          options: [
+            { id: 'opt-disc-1', text: 'Her iki gaz için de a ≈ 0.03-0.05 aralığında.', isCorrect: true },
+            { id: 'opt-disc-2', text: 'Farklı a değerlerinde.', isCorrect: false }
+          ],
+          revealedOutcome: 'Her iki molekül de a ≈ 0.03-0.05 seviyesinde anestezi oluşturur.',
+          explanation: 'Kimyasal yapı ne olursa olsun, membran lipid fazındaki doygunluk oranı aynı etkiyi yaratır.'
+        },
+        technicalTerms: [
+          { term: 'bağıl doygunluk oranı', arContext: 'نسبة التشبع النسبي' }
+        ],
+        hints: [
+          { tr: 'N2O gazının P0 değeri çok yüksektir.', ar: 'قيمة P0 لغاز N2O مرتفعة جداً.' },
+          { tr: 'Kloroformun P0 değeri düşüktür.', ar: 'قيمة P0 للكلوروفورم منخفضة.' },
+          { tr: 'Pt / P0 oranı her ikisinde de 0.03-0.05 düzeyindedir.', ar: 'نسبة Pt / P0 في كليهما بين 0.03-0.05.' }
+        ]
+      },
+      // 7. Formal Explanation
+      {
+        id: 'mc-mod1-les1-step-07',
+        stage: 'formal_explanation',
+        stageIndex: 7,
+        title: {
+          tr: 'Formal Formülasyon: Ferguson Yasası',
+          ar: 'الصياغة الرياضية: قانون Ferguson'
+        },
+        prompt: {
+          tr: 'Termodinamik aktivite gaz fazında a = Pt / P0, çözeltide ise a = St / S0 olarak tanımlanır. Bu oran kimyasal potansiyelin doğrudan göstergesidir.',
+          ar: 'يعرف النشاط بـ a = Pt / P0 للغازات و a = St / S0 للمحاليل. هذه النسبة هي المقياس المباشر للكمون الكيميائي.'
+        },
+        predictThenReveal: false,
+        config: {
+          formula: 'a = \\frac{P_t}{P_0} \\approx \\frac{S_t}{S_0}',
+          cutoff: 'high relative saturation non-specific; a < 0.001 specific'
+        },
+        technicalTerms: [
+          { term: 'kimyasal potansiyel', arContext: 'الكمون الكيميائي' },
+          { term: 'çözünürlük doygunluğu', arContext: 'تشبع الذوبانية' }
+        ],
+        hints: [
+          { tr: 'Pt: ortamdaki kısmi basınç, P0: doymuş buhar basıncı.', ar: 'Pt: الضغط الجزئي، P0: ضغط البخار المشبع.' },
+          { tr: 'St: çözelti konsantrasyonu, S0: doymuşluk çözünürlüğü.', ar: 'St: التركيز في المحلول، S0: الذوبانية عند التشبع.' },
+          { tr: 'a değeri unity değerine yaklaştıkça sistem doygunluğa ulaşır.', ar: 'كلما اقتربت a من حد التشبع الأقصى اقترب النظام من الامتلاء التام.' }
+        ]
+      },
+      // 8. Concept Check
+      {
+        id: 'mc-mod1-les1-step-08',
+        stage: 'concept_check',
+        stageIndex: 8,
+        title: {
+          tr: 'Kavram Denetimi: Gizemli Bileşiklerin Sınıflandırılması',
+          ar: 'فحص المفهوم: تصنيف المركبات المجهولة'
+        },
+        prompt: {
+          tr: 'Bileşik X 500 mg dozda a = 0.20 aktiviteyle; Bileşik Y 10 ug dozda a = 0.00001 aktiviteyle etki ediyor. Hangisi yapısal olarak özgüldür?',
+          ar: 'مركب X بجرعة 500 mg يمتلك نشاط a = 0.20، ومركب Y بجرعة 10 ug يمتلك نشاط a = 0.00001. أيهما نوعي بنيوياً؟'
+        },
+        predictThenReveal: true,
+        conceptCheck: {
+          options: [
+            {
+              id: 'opt-chk-1',
+              text: { tr: 'Bileşik Y yapısal olarak özgüldür çünkü aşırı seyreltik doygunlukta (a < 0.001) etki eder.', ar: 'المركب Y نوعي بنيوياً لأنه يؤثر عند تشبع متناهي الصغر (a < 0.001).' },
+              isCorrect: true,
+              misconceptionFeedback: { tr: 'Doğru! a < 0.001 olması spesifik reseptör bağlanmasının kesin kanıtıdır. Arada 4 orders of magnitude fark vardır.', ar: 'صحيح! a < 0.001 برهان على الارتباط بمستقبِل نوعي (reseptör).' }
+            },
+            {
+              id: 'opt-chk-2',
+              text: { tr: 'Bileşik X yapısal olarak özgüldür çünkü dozu daha büyüktür.', ar: 'المركب X نوعي بنيوياً لأن جرعته أكبر.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Büyük doz ve yüksek a (0.20) yapısal olarak özgül olmayan fiziksel etkiyi gösterir.', ar: 'الجرعة الكبيرة و a العالية تدل على تأثير فيزيائي غير نوعي.' }
+            }
+          ]
+        },
+        config: {
+          options: [
+            { id: 'opt-chk-1', text: 'Bileşik Y özgüldür (a < 0.001).', isCorrect: true },
+            { id: 'opt-chk-2', text: 'Bileşik X özgüldür.', isCorrect: false }
+          ],
+          revealedOutcome: 'Bileşik Y reseptör aracılı özgül bir ilaçtır.',
+          explanation: 'Bileşik Y ile Bileşik X arasında termodinamik aktivite açısından 4 orders of magnitude büyüklük farkı mevcuttur.'
+        },
+        technicalTerms: [
+          { term: 'yapısal olarak özgül', arContext: 'نوعي بنيوياً' },
+          { term: 'reseptör aracılı', arContext: 'بواسطة المستقبِل' }
+        ],
+        hints: [
+          { tr: 'a < 0.001 eşiğini hatırlayın.', ar: 'تذكر عتبة a < 0.001.' },
+          { tr: 'Bileşik Y aşırı düşük doygunlukta etki gösteriyor.', ar: 'المركب Y يعمل عند تشبع بالغ الانخفاض.' },
+          { tr: 'Düşük termodinamik aktivite yüksek reseptör ilgisini kanıtlar.', ar: 'النشاط الديناميكي المنخفض يثبت ألفة المستقبِل العالية.' }
+        ]
+      },
+      // 9. Application
+      {
+        id: 'mc-mod1-les1-step-09',
+        stage: 'application',
+        stageIndex: 9,
+        title: {
+          tr: 'Uygulama: Soluma Anesteziğinde Doz Hesabı',
+          ar: 'تطبيق سريري: حساب جرعة المخدر الاستنشاقي'
+        },
+        prompt: {
+          tr: 'Doygun buhar basıncı P0 = 200 mmHg olan yeni bir anestezik gaz için Pt = 10 mmHg uygulandığında a değeri ve etki durumu nedir?',
+          ar: 'مخدر غازي جديد يمتلك P0 = 200 mmHg، عند تطبيق Pt = 10 mmHg ما هي قيمة a والحالة التخديرية الناتجة؟'
+        },
+        predictThenReveal: true,
+        conceptCheck: {
+          options: [
+            {
+              id: 'opt-app-1',
+              text: { tr: 'a = 20.0; ölümcül doz aşımıdır.', ar: 'a = 20.0؛ جرعة مفرطة قاتلة.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Pt / P0 oranı unity sınırından büyük olamaz, bölme yönüne dikkat edin.', ar: 'لا يمكن أن تتجاوز نسبة Pt / P0 حد التشبع الأقصى.' }
+            },
+            {
+              id: 'opt-app-2',
+              text: { tr: 'a = 0.05 (5% doygunluk); cerrahi anestezi aralığındadır.', ar: 'a = 0.05 (تشبع 5%)؛ يقع ضمن نطاق التخدير الجراحي.' },
+              isCorrect: true,
+              misconceptionFeedback: { tr: 'Doğru: a = 10 / 200 = 0.05. Bu değer tam anestezi penceresindedir.', ar: 'صحيح: a = 10 / 200 = 0.05، وهي ضمن نافذة التخدير الجراحي.' }
+            }
+          ]
+        },
+        config: {
+          options: [
+            { id: 'opt-app-1', text: 'a = 20.0; ölümcül aşırı doz.', isCorrect: false },
+            { id: 'opt-app-2', text: 'a = 0.05; cerrahi anestezi aralığındadır.', isCorrect: true }
+          ],
+          revealedOutcome: 'a = Pt / P0 = 10 / 200 = 0.05 (5% bağıl doygunluk). Cerrahi anestezi başarıyla sağlanır.',
+          explanation: 'Hesaplanan 0.05 değeri Ferguson un belirlediği 0.03-0.05 anestezi aralığına tam uyar.'
+        },
+        technicalTerms: [
+          { term: 'cerrahi anestezi', arContext: 'التخدير الجراحي' }
+        ],
+        hints: [
+          { tr: 'Formülü uygulayın: a = Pt / P0.', ar: 'طبق القانون: a = Pt / P0.' },
+          { tr: '10 bölü 200 işlemini yapın.', ar: 'اقسم 10 على 200.' },
+          { tr: 'Sonuç 0.05 tir ve anestezi aralığındadır.', ar: 'النتيجة 0.05 وتقع ضمن نطاق التخدير.' }
+        ]
+      },
+      // 10. Retrieval
+      {
+        id: 'mc-mod1-les1-step-10',
+        stage: 'retrieval',
+        stageIndex: 10,
+        title: {
+          tr: 'Geri Çağırma: Genel Kimyadan Raoult Yasası',
+          ar: 'استرجاع معرفي: قانون Raoult من الكيمياء العامة'
+        },
+        prompt: {
+          tr: 'İdeal çözeltilerde kısmi buhar basıncı ile mol kesri arasındaki ilişkiyi kuran temel termodinamik yasa hangisidir?',
+          ar: 'ما هو القانون الديناميكي الحراري الأساسي الذي يربط بين الضغط الجزئي والكسر المولي في المحاليل المثالية؟'
+        },
+        predictThenReveal: false,
+        config: {
+          targetConcept: 'Raoult Yasası'
+        },
+        technicalTerms: [
+          { term: 'Raoult yasası', arContext: 'قانون Raoult' },
+          { term: 'mol kesri', arContext: 'الكسر المولي' }
+        ],
+        hints: [
+          { tr: 'Buhar basıncı düşmesi yasasını hatırlayın.', ar: 'تذكر قانون انخفاض ضغط البخار.' },
+          { tr: 'Fransız kimyacı François-Marie Raoult un adıyla anılır.', ar: 'منسوب إلى الكيميائي الفرنسي Raoult.' },
+          { tr: 'Ferguson ilkesi Raoult yasasının biyolojik uyarlamasıdır.', ar: 'مبدأ Ferguson هو تطبيق بيولوجي لقانون Raoult.' }
+        ]
+      },
+      // 11. Connection
+      {
+        id: 'mc-mod1-les1-step-11',
+        stage: 'connection',
+        stageIndex: 11,
+        title: {
+          tr: 'İleri Bağlantı: Çözünürlük ve İyonizasyon (Ders 2)',
+          ar: 'ربط مفاهيمي: الذوبانية والتأين (الدرس 2)'
+        },
+        prompt: {
+          tr: 'Termodinamik aktivite ilaç molekülünün sudan kaçıp zara sığınmasını açıklar. Bir sonraki derste bu kaçışı belirleyen iyonizasyon dengesini inceleyeceğiz.',
+          ar: 'يفسر النشاط الديناميكي هروب الجزيء من الماء للغشاء. في الدرس القادم، سندرس توازن التأين (iyonizasyon) الذي يتحكم بهذا العبور.'
+        },
+        predictThenReveal: false,
+        config: {
+          nextLesson: 'mc-mod1-les2'
+        },
+        technicalTerms: [
+          { term: 'iyonizasyon dengesi', arContext: 'توازن التأين' },
+          { term: 'membran geçişi', arContext: 'عبور الأغشية' }
+        ],
+        hints: [
+          { tr: 'İyonlaşmış moleküller suda kalır.', ar: 'الجزيئات المتأينة تبقى في الطور المائي.' },
+          { tr: 'İyonlaşmamış moleküller lipid zara geçer.', ar: 'الجزيئات غير المتأينة تعبر الغشاء الدهني.' },
+          { tr: 'Henderson-Hasselbalch denklemi bu oranı yönetir.', ar: 'معادلة Henderson-Hasselbalch تحكم هذه النسبة.' }
+        ]
+      },
+      // 12. Mastery Check
+      {
+        id: 'mc-mod1-les1-step-12',
+        stage: 'mastery_check',
+        stageIndex: 12,
+        title: {
+          tr: 'Ustalık Sınavı: Ferguson İlkesi Özeti',
+          ar: 'اختبار الإتقان: ملخص مبدأ Ferguson'
+        },
+        prompt: {
+          tr: 'Ferguson ilkesinin temel kuralını tek bir cümleyle özetleyin: Yapısal olarak özgül olmayan maddelerin biyolojik etkisi neye bağlıdır?',
+          ar: 'لخص مبدأ Ferguson بجملة واحدة: على ماذا يعتمد التأثير البيولوجي للمركبات غير النوعية بنيوياً؟'
+        },
+        predictThenReveal: true,
+        conceptCheck: {
+          options: [
+            {
+              id: 'opt-mst-1',
+              text: { tr: 'Kimyasal yapılarına ve spesifik kovalent bağ oluşturma güçlerine.', ar: 'على بنيتها الكيميائية وقدرتها على تشكيل روابط تساهمية نوعية.' },
+              isCorrect: false,
+              misconceptionFeedback: { tr: 'Yapısal olarak özgül olmayan bileşikler spesifik bağ yapmazlar.', ar: 'المركبات غير النوعية بنيوياً لا تشكل روابط نوعية.' }
+            },
+            {
+              id: 'opt-mst-2',
+              text: { tr: 'Kimyasal yapıdan bağımsız olarak, biyofazdaki bağıl doygunluklarına (termodinamik aktivitelerine).', ar: 'على تشبعها النسبي في الطور الحيوي (termodinamik aktivite) بمعزل عن بنيتها.' },
+              isCorrect: true,
+              misconceptionFeedback: { tr: 'Tebrikler! Dersi ustalıkla tamamladınız. +50 XP kazandınız.', ar: 'تهانينا! لقد أتقنت الدرس بنجاح. حصلت على +50 XP.' }
+            }
+          ]
+        },
+        config: {
+          options: [
+            { id: 'opt-mst-1', text: 'Kimyasal yapıya bağlıdır.', isCorrect: false },
+            { id: 'opt-mst-2', text: 'Biyofazdaki bağıl doygunluğa (termodinamik aktiviteye) bağlıdır.', isCorrect: true }
+          ],
+          revealedOutcome: 'Ders başarıyla tamamlandı! 3 review cards Leitner Box 1 e 1-day aralıkla eklendi. +50 XP.',
+          explanation: 'Tebrikler, Ferguson ilkesi ve termodinamik aktivite kavramını tam anlamıyla kavradınız.'
+        },
+        technicalTerms: [
+          { term: 'termodinamik aktivite', arContext: 'النشاط الديناميكي الحراري' },
+          { term: 'biyofaz', arContext: 'الطور الحيوي' }
+        ],
+        hints: [
+          { tr: 'Kimyasal yapı mı yoksa faz dengesi mi?', ar: 'هل البنية الكيميائية أم توازن الأطوار؟' },
+          { tr: 'Doygunluk oranı anahtar kavramdır.', ar: 'نسبة التشبع هي المفهوم المحوري.' },
+          { tr: 'Eşit termodinamik aktivite eşit biyolojik yanıt üretir.', ar: 'النشاط الديناميكي المتساوي يولد استجابة متساوية.' }
+        ]
+      }
+    ]
+  }
+];
+
+console.log('Medchem Lesson 1 authored.');

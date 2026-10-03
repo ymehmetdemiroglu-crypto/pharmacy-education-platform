@@ -1,0 +1,23 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
+
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    react(),
+  ],
+  build: {
+    emptyOutDir: false,
+  },
+  resolve: {
+    alias: {
+      '@pharmacy/ui': path.resolve(__dirname, '../../packages/ui/src'),
+      '@pharmacy/widgets': path.resolve(__dirname, '../../packages/widgets/src'),
+      '@pharmacy/platform': path.resolve(__dirname, '../../packages/platform/src'),
+    },
+  },
+  server: {
+    port: 3000,
+    host: true,
+  },
+}));

@@ -1,0 +1,2007 @@
+{
+  "id": "pharm-mod4-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-04",
+  "title": {
+    "tr": "Otonom Sinir Sistemi: Adrenerjik Nörotransmisyon ve Reseptör Alt Tipleri",
+    "ar": "الجهاز العصبي الذاتي: النقل العصبي الأدريناليني والأنماط الفرعية للمستقبلات",
+    "en": "Autonomic Nervous System: Adrenergic Neurotransmission & Receptor Subtypes"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Adrenerjik alfa-1, alfa-2, beta-1 ve beta-2 reseptörlerinin sinyal iletim yolaklarını, Dale vazomotor tersinme fenomenini ve feokromositoma kriz yönetimini yönetmek.",
+    "ar": "إتقان مسارات تأشير المستقبلات الأدرينالينية alpha-1 و alpha-2 و beta-1 و beta-2، وظاهرة انعكاس ديل الوعائي، والتدبير العلاجي لأزمة ورم القواتم.",
+    "en": "Master adrenergic alpha-1, alpha-2, beta-1, and beta-2 receptor signaling cascades, Dale's vasomotor reversal phenomenon, and pheochromocytoma crisis management."
+  },
+  "misconceptions": [
+    {
+      "tr": "Tüm sempatik reseptörlerin aynı hücresel sinyali (cAMP artışı) ürettiği yanılgısı (alfa-1 Gq ile IP3/DAG/Ca2+ üretirken, alfa-2 Gi ile cAMP'yi düşürür, beta reseptörleri Gs ile cAMP'yi artırır).",
+      "ar": "الظن الخاطئ بأن جميع المستقبلات الودية تنتج نفس الإشارة الخلوية (alpha-1 تعمل عبر Gq و IP3/Ca2+، و alpha-2 عبر Gi لخفض cAMP، بينما مستقبلات بيتا تعمل عبر Gs لرفع cAMP).",
+      "en": "The misconception that all adrenergic receptors elicit uniform cellular signals (alpha-1 couples to Gq/IP3/Ca2+, alpha-2 couples to Gi/lowering cAMP, and beta receptors couple to Gs/cAMP)."
+    },
+    {
+      "tr": "Feokromositoma krizinde taşikardiyi önlemek için önce beta-bloker verilmesi gerektiği yanılgısı (önce beta-bloker verilirse vazodilatör beta-2 bloke olur, devasa katekolamin yükü alfa-1'i tek başına uyararak ölümcül hipertansif krize yol açar).",
+      "ar": "الاعتقاد الخاطئ بإمكانية إعطاء حاصرات بيتا قبل حاصرات ألفا في ورم القواتم (حصر بيتا أولاً يلغي التوسع الوعائي عبر beta-2، فيتفرد التحفيز الألفاوي مسبباً نوبة فرط ضغط قاتلة).",
+      "en": "The fatal belief that beta-blockers should precede alpha-blockers in pheochromocytoma (blocking beta-2 first leaves massive alpha-1 vasoconstriction unopposed, precipitating lethal hypertensive crisis)."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Otonom Sinir Sistemi.pdf",
+      "page": 14
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-KATZUNG-CH09-P130",
+      "book": "Katzung's Basic & Clinical Pharmacology",
+      "edition": "15th ed.",
+      "topic": "Adrenoceptor Agonists & Sympathomimetic Drugs",
+      "chapter": "Chapter 9: Adrenoceptor Agonists & Sympathomimetic Drugs",
+      "page": "pp. 130-148",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-GG-CH08-P160",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Adrenergic Agonists and Antagonists",
+      "chapter": "Chapter 8: Adrenergic Agonists and Antagonists",
+      "page": "pp. 160-185",
+      "status": "verified"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod4-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Alfa-1 Reseptör Sinyali ve Damar Yanıtı",
+      "prompt": "Alfa-1 adrenerjik reseptör hangi G-proteini ile kenetlidir ve damar düz kasında hangi ikinci ulak yolağını aktive eder?",
+      "answer": "Gq proteini ile kenetlidir; Fosfolipaz C (PLC) aktivasyonu ile IP3 ve DAG üreterek hücre içi serbest Ca2+ derişimini artırır ve vazokonstriksiyon yapar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Dale Vazomotor Adrenalin Tersinmesi",
+      "prompt": "Alfa-bloker (fentolamin) verildikten sonra adrenalin enjekte edildiğinde kan basıncı neden yükselmek yerine düşer?",
+      "answer": "Fentolamin presör alfa-1 vazokonstriksiyonunu felç eder; adrenalinin damar düz kasındaki beta-2 reseptörlerini uyarması vazodilatasyona ve tansiyon düşüşüne yol açar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Presinaptik Alfa-2 Otoreseptörü",
+      "prompt": "Presinaptik adrenerjik sinir ucundaki alfa-2 otoreseptörünün fizyolojik görevi ve kenetli olduğu G-proteini nedir?",
+      "answer": "Gi proteini ile kenetlidir; adenilat siklazı inhibe ederek ve kalsiyum girişini kapatarak veziküler noradrenalin salıverilmesini otoregülatuvar olarak durdurur.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les1-card4",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Feokromositomada Blokaj Sırası Kuralı",
+      "prompt": "Feokromositomalı bir hastada neden ASLA alfa-blokerden önce tek başına beta-bloker verilmez?",
+      "answer": "Beta-2 vazodilatasyonu bloke edildiğinde, dolaşımdaki devasa katekolaminler damar alfa-1 reseptörlerini engelsiz uyarır ve ölümcül hipertansif krize neden olur.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "steps": [
+    {
+      "id": "pharm-mod4-les1-step1",
+      "order": 1,
+      "stageIndex": 1,
+      "stage": "hook",
+      "type": "predict_reveal",
+      "title": {
+        "tr": "Klinik Paradoks: Dale'in Vazomotor Epinefrin Tersinmesi",
+        "ar": "المفارقة السريرية: انعكاس ديل الحركي الوعائي للإبينفرين",
+        "en": "Clinical Paradox: Dale's Vasomotor Epinephrine Reversal"
+      },
+      "predictThenReveal": true,
+      "prompt": {
+        "tr": "Epinefrin normalde tansiyonu yükseltir. Ancak alfa-bloker fentolamin ile önceden tedavi edilen bir hayvanda, epinefrin neden kan basıncında ani bir DÜŞÜŞE yol açar?",
+        "ar": "يرفع الإبينفرين عادة ضغط الدم. ولكن في حيوان عولج مسبقاً بحاصر ألفا فينتولامين، لماذا يسبب الإبينفرين هبوطاً حاداً في ضغط الدم؟",
+        "en": "Epinephrine normally elevates blood pressure. But in an animal pretreated with the alpha-blocker phentolamine, why does epinephrine trigger a precipitous blood pressure DROP?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Epinefrin fentolamin varlığında neden vazodilatasyon ve hipotansiyon yapar?",
+          "ar": "لماذا يحدث الإبينفرين توسعاً وعائياً وهبوطاً في الضغط بوجود الفينتولامين؟",
+          "en": "Why does epinephrine trigger vasodilation and hypotension in the presence of phentolamine?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s1-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Alfa-1 vazokonstriksiyonu bloke edilir; iskelet kası damarlarındaki engellenmemiş beta-2 aktivasyonu belirgin vazodilatasyon ve hipotansiyon oluşturur.",
+              "ar": "تُحصر مستقبلات ألفا-1 المضيقة للأوعية، فيؤدي تفعيل بيتا-2 دون معارضة في الأوعية العضلية إلى توسع وعائي شديد وهبوط ضغط.",
+              "en": "Alpha-1 vasoconstriction is blocked; unopposed beta-2 receptor activation in skeletal muscle vascular beds produces pronounced vasodilation and hypotension."
+            },
+            "feedback": {
+              "tr": "Doğru. Dale vazomotor tersinmesi, alfa-blokajın beta-2 vazodilatasyonunu açığa çıkarmasıyla oluşur.",
+              "ar": "صحيح. يحدث انعكاس ديل الوعائي لأن حصر ألفا يكشف التوسع الوعائي المتواسط بـ بيتا-2.",
+              "en": "Correct. Dale's vasomotor reversal occurs because alpha-blockade unmasks potent beta-2 mediated arteriolar dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s1-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fentolamin vagal refleks yaylarını uyararak epinefrinin kardiyak etkisini şiddetli bradikardiye ve vasküler kollapsa dönüştürür.",
+              "ar": "يحفز الفينتولامين المنعكس المبهمي، محولاً تأثير الإبينفرين القلبي إلى تباطؤ نبض شديد وانهيار وعائي.",
+              "en": "Phentolamine stimulates vagal reflex arcs, converting epinephrine's cardiac action into profound bradycardia and vascular collapse."
+            },
+            "feedback": {
+              "tr": "Yanlış. Fentolamin vagal bradikardi yapmaz; kardiyak beta-1 uyarımı devam eder ancak toplam periferik direnç beta-2 ile çöker.",
+              "ar": "غير صحيح. لا يسبب الفينتولامين بطء قلب مبهمياً؛ يبقى تنبيه بيتا-1 القلبي قائماً بينما تنهار المقاومة بـ بيتا-2.",
+              "en": "Incorrect. Phentolamine does not cause vagal bradycardia; cardiac beta-1 stimulation remains intact, but peripheral resistance plummets via beta-2 dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fentolamin beta-1 reseptörlerine geçerek kardiyak debiyi yarışmalı şekilde bloke eder ve sistolik arteriyel basıncı sıfırlar.",
+              "ar": "يعبر الفينتولامين لمستقبلات بيتا-1 ويحصر النتاج القلبي تنافسياً، ملغياً الضغط الشرياني الانقباضي.",
+              "en": "Phentolamine crosses to beta-1 receptors and competitively blocks cardiac output, eliminating systolic arterial pressure."
+            },
+            "feedback": {
+              "tr": "Yanlış. Fentolamin alfa reseptörlerine selektiftir; kardiyak beta-1 reseptörlerine ihmal edilebilir afinite gösterir.",
+              "ar": "غير صحيح. الفينتولامين انتقائي لمستقبلات ألفا وله ألفة ضئيلة جداً تجاه مستقبلات بيتا-1 القلبية.",
+              "en": "Incorrect. Phentolamine is selective for alpha adrenoceptors and has negligible affinity for cardiac beta-1 receptors."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Dale Vazomotor Tersinmesi",
+          "arContext": "انعكاس ديل الوعائي (Dale's Vasomotor Reversal)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Epinefrinin aynı anda bağlandığı iki zıt vasküler adrenerjik reseptör alt tipini düşünün.",
+          "ar": "فكر في النمطين الفرعيين المتعاكسين لمستقبلات الأوعية اللذين يرتبط بهما الإبينفرين في وقت واحد.",
+          "en": "Think about the two opposing vascular adrenoceptor subtypes epinephrine binds simultaneously."
+        },
+        {
+          "tier": 2,
+          "tr": "Alfa-1 arteriyol büzülmesini, beta-2 ise arteriyol gevşemesini yönetir. Fentolaminden sonra hangi alt tip açıkta kalır?",
+          "ar": "يتوسط ألفا-1 التضيق الوعائي بينما يتوسط بيتا-2 الارتخاء. أي نمط فرعي يبقى غير محصور بعد الفينتولامين؟",
+          "en": "Alpha-1 mediates arteriolar constriction, while beta-2 mediates arteriolar relaxation. Which subtype remains unblocked?"
+        },
+        {
+          "tier": 3,
+          "tr": "Fentolamin alfa-1 reseptörlerini bloke eder; epinefrinin iskelet kası damarlarındaki beta-2 etkisi engelsiz vazodilatasyon ve hipotansiyon yapar.",
+          "ar": "يحصر الفينتولامين مستقبلات ألفا-1؛ فيؤدي تأثير الإبينفرين غير المقيد على مستقبلات بيتا-2 العضلية إلى توسع وعائي وهبوط ضغط.",
+          "en": "Phentolamine blocks vasoconstrictor alpha-1 receptors; unopposed beta-2 receptor activation in skeletal muscle vascular beds produces pronounced vasodilation and hypotension."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s1-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Alfa-1 vazokonstriksiyonu bloke edilir; iskelet kası damarlarındaki engellenmemiş beta-2 aktivasyonu belirgin vazodilatasyon ve hipotansiyon oluşturur.",
+              "ar": "تُحصر مستقبلات ألفا-1 المضيقة للأوعية، فيؤدي تفعيل بيتا-2 دون معارضة في الأوعية العضلية إلى توسع وعائي شديد وهبوط ضغط.",
+              "en": "Alpha-1 vasoconstriction is blocked; unopposed beta-2 receptor activation in skeletal muscle vascular beds produces pronounced vasodilation and hypotension."
+            },
+            "feedback": {
+              "tr": "Doğru. Dale vazomotor tersinmesi, alfa-blokajın beta-2 vazodilatasyonunu açığa çıkarmasıyla oluşur.",
+              "ar": "صحيح. يحدث انعكاس ديل الوعائي لأن حصر ألفا يكشف التوسع الوعائي المتواسط بـ بيتا-2.",
+              "en": "Correct. Dale's vasomotor reversal occurs because alpha-blockade unmasks potent beta-2 mediated arteriolar dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s1-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fentolamin vagal refleks yaylarını uyararak epinefrinin kardiyak etkisini şiddetli bradikardiye ve vasküler kollapsa dönüştürür.",
+              "ar": "يحفز الفينتولامين المنعكس المبهمي، محولاً تأثير الإبينفرين القلبي إلى تباطؤ نبض شديد وانهيار وعائي.",
+              "en": "Phentolamine stimulates vagal reflex arcs, converting epinephrine's cardiac action into profound bradycardia and vascular collapse."
+            },
+            "feedback": {
+              "tr": "Yanlış. Fentolamin vagal bradikardi yapmaz; kardiyak beta-1 uyarımı devam eder ancak toplam periferik direnç beta-2 ile çöker.",
+              "ar": "غير صحيح. لا يسبب الفينتولامين بطء قلب مبهمياً؛ يبقى تنبيه بيتا-1 القلبي قائماً بينما تنهار المقاومة بـ بيتا-2.",
+              "en": "Incorrect. Phentolamine does not cause vagal bradycardia; cardiac beta-1 stimulation remains intact, but peripheral resistance plummets via beta-2 dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fentolamin beta-1 reseptörlerine geçerek kardiyak debiyi yarışmalı şekilde bloke eder ve sistolik arteriyel basıncı sıfırlar.",
+              "ar": "يعبر الفينتولامين لمستقبلات بيتا-1 ويحصر النتاج القلبي تنافسياً، ملغياً الضغط الشرياني الانقباضي.",
+              "en": "Phentolamine crosses to beta-1 receptors and competitively blocks cardiac output, eliminating systolic arterial pressure."
+            },
+            "feedback": {
+              "tr": "Yanlış. Fentolamin alfa reseptörlerine selektiftir; kardiyak beta-1 reseptörlerine ihmal edilebilir afinite gösterir.",
+              "ar": "غير صحيح. الفينتولامين انتقائي لمستقبلات ألفا وله ألفة ضئيلة جداً تجاه مستقبلات بيتا-1 القلبية.",
+              "en": "Incorrect. Phentolamine is selective for alpha adrenoceptors and has negligible affinity for cardiac beta-1 receptors."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Epinefrin normalde tansiyonu yükseltir. Ancak alfa-bloker fentolamin ile önceden tedavi edilen bir hayvanda, epinefrin neden kan basıncında ani bir DÜŞÜŞE yol açar?",
+          "ar": "يرفع الإبينفرين عادة ضغط الدم. ولكن في حيوان عولج مسبقاً بحاصر ألفا فينتولامين، لماذا يسبب الإبينفرين هبوطاً حاداً في ضغط الدم؟",
+          "en": "Epinephrine normally elevates blood pressure. But in an animal pretreated with the alpha-blocker phentolamine, why does epinephrine trigger a precipitous blood pressure DROP?"
+        },
+        "title": {
+          "tr": "Klinik Paradoks: Dale'in Vazomotor Epinefrin Tersinmesi",
+          "ar": "المفارقة السريرية: انعكاس ديل الحركي الوعائي للإبينفرين",
+          "en": "Clinical Paradox: Dale's Vasomotor Epinephrine Reversal"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step2",
+      "order": 2,
+      "stageIndex": 2,
+      "stage": "question",
+      "type": "question",
+      "title": {
+        "tr": "Kavramsal Soru: Zıt Yanıtların Kökeni",
+        "ar": "سؤال مفاهيمي: أصل الاستجابات المتعاكسة",
+        "en": "Conceptual Question: The Origin of Opposing Responses"
+      },
+      "prompt": {
+        "tr": "Aynı epinefrin molekülü, cilt arteriyollerinde yoğun kasılmaya yol açarken iskelet kası damarlarında ve hava yollarında nasıl belirgin gevşeme sağlar?",
+        "ar": "كيف يمكن لجزيء الإبينفرين نفسه أن يحدث تضيقاً شديداً في شريانات الجلد بينما يسبب ارتخاءً عميقاً في شريانات العضلات والشعب الهوائية؟",
+        "en": "How can the exact same epinephrine molecule trigger intense constriction in skin arterioles while causing profound relaxation in muscle arterioles and airways?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Aynı epinefrin molekülü farklı dokularda zıt etkilere nasıl yol açar?",
+          "ar": "كيف يسبب جزيء الإبينفرين نفسه تأثيرات متعاكسة في أنسجة مختلفة؟",
+          "en": "How does the exact same epinephrine molecule mediate opposing effects across different tissues?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Cilt arteriyolleri ağırlıklı olarak alfa-1 (Gq kenetli) ifade ederken, kas arteriyolleri ve bronşiyoller beta-2 (Gs kenetli) reseptörler taşır.",
+              "ar": "تعبر شريانات الجلد غالباً عن مستقبلات ألفا-1 (المقترنة بـ Gq)، بينما تعبر شريانات العضلات والشعب عن بيتا-2 (المقترنة بـ Gs).",
+              "en": "Skin arterioles express predominantly alpha-1 receptors (Gq-coupled), whereas skeletal muscle arterioles and bronchioles express beta-2 receptors (Gs-coupled)."
+            },
+            "feedback": {
+              "tr": "Doğru. Dokuya özgü reseptör dağılımı yanıtı belirler: alfa-1 kasılma, beta-2 gevşeme oluşturur.",
+              "ar": "صحيح. يحدد التوزع النسيجي للمستقبلات نوع الاستجابة: ألفا-1 يسبب التضيق، وبيتا-2 يسبب الارتخاء.",
+              "en": "Correct. Tissue-specific receptor distribution dictates the response: alpha-1 causes constriction, while beta-2 induces relaxation."
+            }
+          },
+          {
+            "id": "opt-l7-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kutanöz monoamin oksidaz epinefrini uyarıcı bir metabolite yıkarken, kas COMT enzimi onu gevşetici bir metabolite dönüştürür.",
+              "ar": "يستقلب أوكسيداز أحادي الأمين الجلدي الإبينفرين لمستقلب منبه، بينما يحوله COMT في العضلات لمستقلب مرخٍ.",
+              "en": "Cutaneous monoamine oxidase metabolizes epinephrine into an excitatory metabolite, while muscle COMT converts it into an inhibitory one."
+            },
+            "feedback": {
+              "tr": "Yanlış. Epinefrin yüzey reseptörlerine intakt etki eder; MAO veya COMT metabolitleri agonist etki göstermez.",
+              "ar": "غير صحيح. يؤثر الإبينفرين سليماً على المستقبلات السطحية؛ ولا تمتلك نواتج MAO أو COMT فعالية تنبيهية.",
+              "en": "Incorrect. Epinephrine acts intact on cell-surface receptors; neither MAO nor COMT metabolites possess significant adrenoceptor agonist activity."
+            }
+          },
+          {
+            "id": "opt-l7-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Cilt, iskelet kasından daha yüksek arteryel epinefrin konsantrasyonu alarak vazokonstriktör eşiği aşar.",
+              "ar": "يصل إلى الجلد تركيز شرياني من الإبينفرين أعلى من العضلات، متجاوزاً عتبة التضيق الوعائي.",
+              "en": "Skin receives higher arterial epinephrine concentrations than skeletal muscle, overwhelming vasoconstrictor thresholds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Her iki doku da eşit arteryel ilaç konsantrasyonu alır; fark reseptör alt tip yoğunluğundan kaynaklanır.",
+              "ar": "غير صحيح. يتلقى كلا النسيجين تركيزاً شريانياً متطابقاً؛ ويعود الفارق حصراً لكثافة الأنماط الفرعية للمستقبلات.",
+              "en": "Incorrect. Both tissues receive identical arterial drug concentrations; the divergence stems entirely from receptor subtype density."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Reseptör Heterojenitesi",
+          "arContext": "تغاير المستقبلات (Receptor Heterogeneity)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Dolaşımdaki ligand aynıdır. Hedef doku membranlarında ne farklıdır?",
+          "ar": "الربيطة الجائلة متطابقة. ما الذي يختلف بين أغشية الأنسجة المستهدفة؟",
+          "en": "The circulating ligand is identical. What differs between the target tissue membranes?"
+        },
+        {
+          "tier": 2,
+          "tr": "Kutanöz ve iskelet kası damar yataklarında hangi reseptör alt tipleri ve G-protein yolakları baskındır?",
+          "ar": "ما هي الأنماط الفرعية للمستقبلات ومسارات بروتين G السائدة في الأوعية الجلدية مقابل العضلية؟",
+          "en": "Consider which adrenoceptor subtypes and G-protein pathways predominate in cutaneous versus skeletal muscle beds."
+        },
+        {
+          "tier": 3,
+          "tr": "Cilt damarları alfa-1 (Gq) ifade ederken, kas damarları ve bronşlar beta-2 (Gs) reseptörleri taşır; bu da zıt yanıtlara yol açar.",
+          "ar": "تعبر أوعية الجلد عن ألفا-1 (Gq)، بينما تحمل أوعية العضلات والشعب مستقبلات بيتا-2 (Gs)، مما يولد استجابات متعاكسة.",
+          "en": "Cutaneous vessels express predominantly alpha-1 (Gq-coupled), whereas skeletal muscle vessels and airways express beta-2 (Gs-coupled) receptors."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Cilt arteriyolleri ağırlıklı olarak alfa-1 (Gq kenetli) ifade ederken, kas arteriyolleri ve bronşiyoller beta-2 (Gs kenetli) reseptörler taşır.",
+              "ar": "تعبر شريانات الجلد غالباً عن مستقبلات ألفا-1 (المقترنة بـ Gq)، بينما تعبر شريانات العضلات والشعب عن بيتا-2 (المقترنة بـ Gs).",
+              "en": "Skin arterioles express predominantly alpha-1 receptors (Gq-coupled), whereas skeletal muscle arterioles and bronchioles express beta-2 receptors (Gs-coupled)."
+            },
+            "feedback": {
+              "tr": "Doğru. Dokuya özgü reseptör dağılımı yanıtı belirler: alfa-1 kasılma, beta-2 gevşeme oluşturur.",
+              "ar": "صحيح. يحدد التوزع النسيجي للمستقبلات نوع الاستجابة: ألفا-1 يسبب التضيق، وبيتا-2 يسبب الارتخاء.",
+              "en": "Correct. Tissue-specific receptor distribution dictates the response: alpha-1 causes constriction, while beta-2 induces relaxation."
+            }
+          },
+          {
+            "id": "opt-l7-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kutanöz monoamin oksidaz epinefrini uyarıcı bir metabolite yıkarken, kas COMT enzimi onu gevşetici bir metabolite dönüştürür.",
+              "ar": "يستقلب أوكسيداز أحادي الأمين الجلدي الإبينفرين لمستقلب منبه، بينما يحوله COMT في العضلات لمستقلب مرخٍ.",
+              "en": "Cutaneous monoamine oxidase metabolizes epinephrine into an excitatory metabolite, while muscle COMT converts it into an inhibitory one."
+            },
+            "feedback": {
+              "tr": "Yanlış. Epinefrin yüzey reseptörlerine intakt etki eder; MAO veya COMT metabolitleri agonist etki göstermez.",
+              "ar": "غير صحيح. يؤثر الإبينفرين سليماً على المستقبلات السطحية؛ ولا تمتلك نواتج MAO أو COMT فعالية تنبيهية.",
+              "en": "Incorrect. Epinephrine acts intact on cell-surface receptors; neither MAO nor COMT metabolites possess significant adrenoceptor agonist activity."
+            }
+          },
+          {
+            "id": "opt-l7-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Cilt, iskelet kasından daha yüksek arteryel epinefrin konsantrasyonu alarak vazokonstriktör eşiği aşar.",
+              "ar": "يصل إلى الجلد تركيز شرياني من الإبينفرين أعلى من العضلات، متجاوزاً عتبة التضيق الوعائي.",
+              "en": "Skin receives higher arterial epinephrine concentrations than skeletal muscle, overwhelming vasoconstrictor thresholds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Her iki doku da eşit arteryel ilaç konsantrasyonu alır; fark reseptör alt tip yoğunluğundan kaynaklanır.",
+              "ar": "غير صحيح. يتلقى كلا النسيجين تركيزاً شريانياً متطابقاً؛ ويعود الفارق حصراً لكثافة الأنماط الفرعية للمستقبلات.",
+              "en": "Incorrect. Both tissues receive identical arterial drug concentrations; the divergence stems entirely from receptor subtype density."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Aynı epinefrin molekülü, cilt arteriyollerinde yoğun kasılmaya yol açarken iskelet kası damarlarında ve hava yollarında nasıl belirgin gevşeme sağlar?",
+          "ar": "كيف يمكن لجزيء الإبينفرين نفسه أن يحدث تضيقاً شديداً في شريانات الجلد بينما يسبب ارتخاءً عميقاً في شريانات العضلات والشعب الهوائية؟",
+          "en": "How can the exact same epinephrine molecule trigger intense constriction in skin arterioles while causing profound relaxation in muscle arterioles and airways?"
+        },
+        "title": {
+          "tr": "Kavramsal Soru: Zıt Yanıtların Kökeni",
+          "ar": "سؤال مفاهيمي: أصل الاستجابات المتعاكسة",
+          "en": "Conceptual Question: The Origin of Opposing Responses"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step3",
+      "order": 3,
+      "stageIndex": 3,
+      "stage": "intuition",
+      "type": "intuition",
+      "title": {
+        "tr": "Fiziksel Sezgi: Savaş ya da Kaç Güç Dağıtıcısı",
+        "ar": "الحدس الفيزيائي: موجه طاقة الكر والفر",
+        "en": "Physical Intuition: The Fight-or-Flight Power Router"
+      },
+      "prompt": {
+        "tr": "Akut savaş-ya-da-kaç sempatik deşarjında, farklı adrenerjik reseptör aktivasyonları kan akışını hayati organlara nasıl optimize eder?",
+        "ar": "أثناء التنبيه الودي الحاد (الكر أو الفر)، كيف يحسن التفعيل المتمايز للمستقبلات الأدرينالينية تدفق الدم للأعضاء الحيوية؟",
+        "en": "During acute fight-or-flight sympathetic discharge, how does differential adrenoceptor activation optimize blood delivery to vital organs?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Sempatik deşarj sırasında kan akışı vücutta nasıl yeniden dağıtılır?",
+          "ar": "كيف يُعاد توزيع تدفق الدم في الجسم أثناء التنبيه الودي الحاد؟",
+          "en": "How is blood flow redistributed during acute sympathetic fight-or-flight activation?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s3-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Alfa-1 visseral ve mukozal damarları daraltır; debiyi beta-2 ile genişleyen iskelet kası damarlarına ve beta-1 ile uyarılan miyokarda yönlendirir.",
+              "ar": "يضيق ألفا-1 أوعية الأحشاء والغشاء المخاطي، موجهاً النتاج القلبي نحو عضلات هيكلية موسعة بـ بيتا-2 وميوكارديوم منشط بـ بيتا-1.",
+              "en": "Alpha-1 vasoconstricts splanchnic and mucosal vessels, shunting cardiac output toward beta-2 dilated skeletal muscle beds and beta-1 stimulated myocardium."
+            },
+            "feedback": {
+              "tr": "Doğru. Alfa-1 acil olmayan yatakları daraltırken, beta-2 çalışan iskelet kası damarlarını genişletir.",
+              "ar": "صحيح. يضيق ألفا-1 الأوعية غير الحيوية، بينما يوسع بيتا-2 أوعية العضلات الهيكلية النشطة.",
+              "en": "Correct. Alpha-1 clamps non-essential vascular beds while beta-2 dilates exercising skeletal muscle beds."
+            }
+          },
+          {
+            "id": "opt-l7-s3-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1 koroner ve serebral dolaşımı daraltarak toplam kan hacmini yalnızca periferik iskelet kasına yönlendirir.",
+              "ar": "يضيق ألفا-1 الدوران التاجي والمخي، معيداً توجيه كامل حجم الدم حصرياً نحو العضلات الهيكلية المحيطية.",
+              "en": "Alpha-1 vasoconstricts coronary and cerebral circulation, redirecting total blood volume exclusively toward peripheral skeletal muscle."
+            },
+            "feedback": {
+              "tr": "Yanlış. Koroner ve serebral damarlar vazokonstriksiyondan korunur; lokal otoregülasyon ve beta-2 ile genişler.",
+              "ar": "غير صحيح. يُحمى الدوران التاجي والدماغي من التضيق؛ حيث يتوسعان بالتنظيم الذاتي الموضعي و بيتا-2.",
+              "en": "Incorrect. Coronary and cerebral vessels are preserved from vasoconstriction; local autoregulation and beta-2 maintain perfusion."
+            }
+          },
+          {
+            "id": "opt-l7-s3-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Sempatik uyarım, sistemik arteriyel direnci maksimize etmek için tüm vücuttaki damar yataklarını homojen biçimde büzer.",
+              "ar": "يسبب التنبيه الودي تضيقاً متجانساً في جميع الأوعية عبر كامل الجسم لتعظيم المقاومة الشريانية الجهازية.",
+              "en": "Sympathetic stimulation uniformly constricts all vascular beds across the entire body to maximize systemic arterial resistance."
+            },
+            "feedback": {
+              "tr": "Yanlış. Homojen büzülme kas iskemisine yol açar; sempatik sistem reseptör dağılımı sayesinde kanı seçici olarak yönlendirir.",
+              "ar": "غير صحيح. التضيق المتجانس يسبب إقفاراً عضلياً؛ يعيد الجهاز الودي توجيه الدم انتقائياً بفضل تباين المستقبلات.",
+              "en": "Incorrect. Uniform constriction would cause muscle ischemia; sympathetic outflow selectively redistributes blood flow."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Savaş ya da Kaç Yanıtı",
+          "arContext": "استجابة الكر والفر (Fight-or-Flight Response)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Yoğun efor sırasında kanın nereye acil aktarılması gerektiğini ve nerede feda edilebileceğini düşünün.",
+          "ar": "فكر في الأعضاء التي تتطلب دماً عاجلاً أثناء الجهد العنيف وتلك التي يمكن الاستغناء عنها مؤقتاً.",
+          "en": "Think about where blood is desperately needed during high-stress exertion versus where it can be spared."
+        },
+        {
+          "tier": 2,
+          "tr": "Sindirim ve cilt kanlanması kısıtlanabilir; çalışan iskelet kasları ve kalp ise yüksek oksijene ihtiyaç duyar.",
+          "ar": "يمكن تقليص التروية الجلدية والهضمية؛ بينما تتطلب العضلات الهيكلية العاملة والقلب تدفقاً هائلاً.",
+          "en": "Digestion and skin perfusion can be temporarily sacrificed; skeletal muscles and the heart demand immense oxygen delivery."
+        },
+        {
+          "tier": 3,
+          "tr": "Alfa-1 viseral damarları büzerek kanı azaltır; beta-2 ise kas damarlarını genişleterek kanı çalışan kaslara yönlendirir.",
+          "ar": "يضيق ألفا-1 أوعية الأحشاء حابساً الدم؛ بينما يوسع بيتا-2 أوعية العضلات موجهاً التدفق للأعضاء الحيوية.",
+          "en": "Alpha-1 clamps visceral and cutaneous vessels, shunting perfusion to beta-2 dilated skeletal muscle beds and beta-1 myocardium."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s3-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Alfa-1 visseral ve mukozal damarları daraltır; debiyi beta-2 ile genişleyen iskelet kası damarlarına ve beta-1 ile uyarılan miyokarda yönlendirir.",
+              "ar": "يضيق ألفا-1 أوعية الأحشاء والغشاء المخاطي، موجهاً النتاج القلبي نحو عضلات هيكلية موسعة بـ بيتا-2 وميوكارديوم منشط بـ بيتا-1.",
+              "en": "Alpha-1 vasoconstricts splanchnic and mucosal vessels, shunting cardiac output toward beta-2 dilated skeletal muscle beds and beta-1 stimulated myocardium."
+            },
+            "feedback": {
+              "tr": "Doğru. Alfa-1 acil olmayan yatakları daraltırken, beta-2 çalışan iskelet kası damarlarını genişletir.",
+              "ar": "صحيح. يضيق ألفا-1 الأوعية غير الحيوية، بينما يوسع بيتا-2 أوعية العضلات الهيكلية النشطة.",
+              "en": "Correct. Alpha-1 clamps non-essential vascular beds while beta-2 dilates exercising skeletal muscle beds."
+            }
+          },
+          {
+            "id": "opt-l7-s3-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1 koroner ve serebral dolaşımı daraltarak toplam kan hacmini yalnızca periferik iskelet kasına yönlendirir.",
+              "ar": "يضيق ألفا-1 الدوران التاجي والمخي، معيداً توجيه كامل حجم الدم حصرياً نحو العضلات الهيكلية المحيطية.",
+              "en": "Alpha-1 vasoconstricts coronary and cerebral circulation, redirecting total blood volume exclusively toward peripheral skeletal muscle."
+            },
+            "feedback": {
+              "tr": "Yanlış. Koroner ve serebral damarlar vazokonstriksiyondan korunur; lokal otoregülasyon ve beta-2 ile genişler.",
+              "ar": "غير صحيح. يُحمى الدوران التاجي والدماغي من التضيق؛ حيث يتوسعان بالتنظيم الذاتي الموضعي و بيتا-2.",
+              "en": "Incorrect. Coronary and cerebral vessels are preserved from vasoconstriction; local autoregulation and beta-2 maintain perfusion."
+            }
+          },
+          {
+            "id": "opt-l7-s3-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Sempatik uyarım, sistemik arteriyel direnci maksimize etmek için tüm vücuttaki damar yataklarını homojen biçimde büzer.",
+              "ar": "يسبب التنبيه الودي تضيقاً متجانساً في جميع الأوعية عبر كامل الجسم لتعظيم المقاومة الشريانية الجهازية.",
+              "en": "Sympathetic stimulation uniformly constricts all vascular beds across the entire body to maximize systemic arterial resistance."
+            },
+            "feedback": {
+              "tr": "Yanlış. Homojen büzülme kas iskemisine yol açar; sempatik sistem reseptör dağılımı sayesinde kanı seçici olarak yönlendirir.",
+              "ar": "غير صحيح. التضيق المتجانس يسبب إقفاراً عضلياً؛ يعيد الجهاز الودي توجيه الدم انتقائياً بفضل تباين المستقبلات.",
+              "en": "Incorrect. Uniform constriction would cause muscle ischemia; sympathetic outflow selectively redistributes blood flow."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Akut savaş-ya-da-kaç sempatik deşarjında, farklı adrenerjik reseptör aktivasyonları kan akışını hayati organlara nasıl optimize eder?",
+          "ar": "أثناء التنبيه الودي الحاد (الكر أو الفر)، كيف يحسن التفعيل المتمايز للمستقبلات الأدرينالينية تدفق الدم للأعضاء الحيوية؟",
+          "en": "During acute fight-or-flight sympathetic discharge, how does differential adrenoceptor activation optimize blood delivery to vital organs?"
+        },
+        "title": {
+          "tr": "Fiziksel Sezgi: Savaş ya da Kaç Güç Dağıtıcısı",
+          "ar": "الحدس الفيزيائي: موجه طاقة الكر والفر",
+          "en": "Physical Intuition: The Fight-or-Flight Power Router"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step4",
+      "order": 4,
+      "stageIndex": 4,
+      "stage": "visual_explanation",
+      "type": "visual_explanation",
+      "title": {
+        "tr": "Görsel Açıklama: Gq ve Gs İkinci Haberci Çatallanması",
+        "ar": "شرح مرئي: تشعب المرسال الثاني بين Gq و Gs",
+        "en": "Visual Explanation: Gq vs Gs Second Messenger Bifurcation"
+      },
+      "prompt": {
+        "tr": "İkinci haberci haritasını inceleyin: Alfa-1 Gq'ya, Beta-1 ve Beta-2 ise Gs'ye kenetlenir. PKA miyokard ve düz kasta nasıl zıt mekanik etkiler üretir?",
+        "ar": "افحص خريطة المرسال الثاني: يقترن ألفا-1 بـ Gq، بينما يقترن بيتا-1 وبيتا-2 بـ Gs. كيف ينتج PKA تأثيرات ميكانيكية متعاكسة في العضلة القلبية والملساء؟",
+        "en": "Examine the second messenger map: Alpha-1 couples to Gq, whereas Beta-1 and Beta-2 couple to Gs. How does PKA produce opposite mechanical effects in myocardium versus smooth muscle?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "PKA miyokard ve damar düz kasında neden zıt mekanik yanıtlara yol açar?",
+          "ar": "لماذا يسبب PKA استجابات ميكانيكية متعاكسة بين العضلة القلبية والملساء؟",
+          "en": "Why does PKA mediate opposite mechanical responses in myocardium versus smooth muscle?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Kardiyak miyositlerde PKA L-tipi Ca2+ kanallarını fosforiller (kasılmayı artırır); düz kasta ise MLCK'yi fosforilleyip inhibe ederek gevşeme sağlar.",
+              "ar": "في الخلايا القلبية، يفسفر PKA قنوات الكالسيوم L (معززاً الانقباض)؛ وفي العضلة الملساء، يفسفر ويثبط MLCK (محدثاً الارتخاء).",
+              "en": "In cardiac myocytes, PKA phosphorylates L-type Ca2+ channels (enhancing contraction); in smooth muscle, PKA phosphorylates and inhibits MLCK (producing relaxation)."
+            },
+            "feedback": {
+              "tr": "Doğru. PKA dokuya özgü substratları hedefler: kalpte kalsiyum girişini artırır, düz kasta MLCK'yi inaktive eder.",
+              "ar": "صحيح. يستهدف PKA ركائز نسيجية نوعية: يزيد دخول الكالسيوم في القلب، ويثبط MLCK في العضلة الملساء.",
+              "en": "Correct. PKA phosphorylation has tissue-specific substrates: activates cardiac calcium entry, but inactivates smooth muscle MLCK."
+            }
+          },
+          {
+            "id": "opt-l7-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hem kardiyak hem düz kasta PKA, aktini doğrudan fosforilleyerek filamentleri çapraz bağlar ve aktif kasılmaya zorlar.",
+              "ar": "في كل من العضلة القلبية والملساء، يفسفر PKA الأكتين مباشرة لربط الخيوط وفرض انقباض نشط.",
+              "en": "In both cardiac and smooth muscle, PKA directly phosphorylates actin to cross-link filaments and force active contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Düz kas kasılması kalsiyum-kalmodulin ile MLCK aktivasyonuna bakar; PKA MLCK'yi inhibe ederek gevşetir.",
+              "ar": "غير صحيح. يتطلب انقباض العضلة الملساء تفعيل MLCK عبر الكالسيوم؛ وفسفرة PKA تثبط MLCK مسببة الارتخاء.",
+              "en": "Incorrect. Smooth muscle contraction requires MLCK activation by calcium-calmodulin; PKA phosphorylation inhibits MLCK, causing relaxation."
+            }
+          },
+          {
+            "id": "opt-l7-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak hücrelerde Gs troponini doğrudan aktive eder; damar düz kasında ise Gs voltaj kapılı sodyum kanallarını doğrudan açar.",
+              "ar": "في الخلايا القلبية، ينشط Gs التروponin مباشرة؛ وفي العضلة الملساء الوعائية، يفتح Gs قنوات الصوديوم المبوبة بالجهد مباشرة.",
+              "en": "In cardiac cells, Gs activates troponin directly; in vascular smooth muscle, Gs directly opens voltage-gated sodium channels."
+            },
+            "feedback": {
+              "tr": "Yanlış. Gs adenilat siklaz ve cAMP/PKA üzerinden etki eder; troponin veya sodyum kanallarına doğrudan bağlanmaz.",
+              "ar": "غير صحيح. يعمل Gs عبر محلقة الأدينيلات و cAMP/PKA؛ ولا يرتبط مباشرة بالتروبونين أو قنوات الصوديوم.",
+              "en": "Incorrect. Gs acts through adenylyl cyclase and cAMP/PKA; it does not directly bind troponin or sodium channels."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Miyozin Hafif Zincir Kinazı",
+          "arContext": "كيناز سلسلة الميوزين الخفيفة (Myosin Light-Chain Kinase (MLCK))"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Her iki dokuda da cAMP artar ve PKA aktive olur. PKA her birinde hangi aşağı akış molekülünü fosforiller?",
+          "ar": "في كلا النسيجين يرتفع cAMP ويتفعل PKA. ما هو الجزيء المستهدف الذي يفسفره PKA في كل منهما؟",
+          "en": "Both tissues experience rising cAMP and active PKA. What downstream substrate does PKA phosphorylate in each?"
+        },
+        {
+          "tier": 2,
+          "tr": "Kalp kasılması kalsiyum girişine bağlıdır; düz kas tonusu ise Miyozin Hafif Zincir Kinazına (MLCK) bağlıdır.",
+          "ar": "يعتمد انقباض القلب على دخول الكالسيوم؛ بينما تعتمد مقوية العضلة الملساء على كيناز سلاسل الميوزين الخفيفة (MLCK).",
+          "en": "Look at the contractile machinery: myocardium requires calcium influx, whereas smooth muscle tone depends on MLCK."
+        },
+        {
+          "tier": 3,
+          "tr": "PKA miyositlerde L-tipi Ca2+ kanallarını fosforilleyerek kasılmayı artırır; düz kasta ise MLCK'yi inaktive ederek gevşeme sağlar.",
+          "ar": "يفسفر PKA قنوات الكالسيوم L في القلب معززاً الانقباض، لكنه يفسفر ويثبط MLCK في العضلات الملساء محدثاً الارتخاء.",
+          "en": "PKA enhances L-type Ca2+ channel opening in cardiomyocytes, but phosphorylates and inhibits MLCK in smooth muscle, causing relaxation."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Kardiyak miyositlerde PKA L-tipi Ca2+ kanallarını fosforiller (kasılmayı artırır); düz kasta ise MLCK'yi fosforilleyip inhibe ederek gevşeme sağlar.",
+              "ar": "في الخلايا القلبية، يفسفر PKA قنوات الكالسيوم L (معززاً الانقباض)؛ وفي العضلة الملساء، يفسفر ويثبط MLCK (محدثاً الارتخاء).",
+              "en": "In cardiac myocytes, PKA phosphorylates L-type Ca2+ channels (enhancing contraction); in smooth muscle, PKA phosphorylates and inhibits MLCK (producing relaxation)."
+            },
+            "feedback": {
+              "tr": "Doğru. PKA dokuya özgü substratları hedefler: kalpte kalsiyum girişini artırır, düz kasta MLCK'yi inaktive eder.",
+              "ar": "صحيح. يستهدف PKA ركائز نسيجية نوعية: يزيد دخول الكالسيوم في القلب، ويثبط MLCK في العضلة الملساء.",
+              "en": "Correct. PKA phosphorylation has tissue-specific substrates: activates cardiac calcium entry, but inactivates smooth muscle MLCK."
+            }
+          },
+          {
+            "id": "opt-l7-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hem kardiyak hem düz kasta PKA, aktini doğrudan fosforilleyerek filamentleri çapraz bağlar ve aktif kasılmaya zorlar.",
+              "ar": "في كل من العضلة القلبية والملساء، يفسفر PKA الأكتين مباشرة لربط الخيوط وفرض انقباض نشط.",
+              "en": "In both cardiac and smooth muscle, PKA directly phosphorylates actin to cross-link filaments and force active contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Düz kas kasılması kalsiyum-kalmodulin ile MLCK aktivasyonuna bakar; PKA MLCK'yi inhibe ederek gevşetir.",
+              "ar": "غير صحيح. يتطلب انقباض العضلة الملساء تفعيل MLCK عبر الكالسيوم؛ وفسفرة PKA تثبط MLCK مسببة الارتخاء.",
+              "en": "Incorrect. Smooth muscle contraction requires MLCK activation by calcium-calmodulin; PKA phosphorylation inhibits MLCK, causing relaxation."
+            }
+          },
+          {
+            "id": "opt-l7-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak hücrelerde Gs troponini doğrudan aktive eder; damar düz kasında ise Gs voltaj kapılı sodyum kanallarını doğrudan açar.",
+              "ar": "في الخلايا القلبية، ينشط Gs التروponin مباشرة؛ وفي العضلة الملساء الوعائية، يفتح Gs قنوات الصوديوم المبوبة بالجهد مباشرة.",
+              "en": "In cardiac cells, Gs activates troponin directly; in vascular smooth muscle, Gs directly opens voltage-gated sodium channels."
+            },
+            "feedback": {
+              "tr": "Yanlış. Gs adenilat siklaz ve cAMP/PKA üzerinden etki eder; troponin veya sodyum kanallarına doğrudan bağlanmaz.",
+              "ar": "غير صحيح. يعمل Gs عبر محلقة الأدينيلات و cAMP/PKA؛ ولا يرتبط مباشرة بالتروبونين أو قنوات الصوديوم.",
+              "en": "Incorrect. Gs acts through adenylyl cyclase and cAMP/PKA; it does not directly bind troponin or sodium channels."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "İkinci haberci haritasını inceleyin: Alfa-1 Gq'ya, Beta-1 ve Beta-2 ise Gs'ye kenetlenir. PKA miyokard ve düz kasta nasıl zıt mekanik etkiler üretir?",
+          "ar": "افحص خريطة المرسال الثاني: يقترن ألفا-1 بـ Gq، بينما يقترن بيتا-1 وبيتا-2 بـ Gs. كيف ينتج PKA تأثيرات ميكانيكية متعاكسة في العضلة القلبية والملساء؟",
+          "en": "Examine the second messenger map: Alpha-1 couples to Gq, whereas Beta-1 and Beta-2 couple to Gs. How does PKA produce opposite mechanical effects in myocardium versus smooth muscle?"
+        },
+        "title": {
+          "tr": "Görsel Açıklama: Gq ve Gs İkinci Haberci Çatallanması",
+          "ar": "شرح مرئي: تشعب المرسال الثاني بين Gq و Gs",
+          "en": "Visual Explanation: Gq vs Gs Second Messenger Bifurcation"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 12
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step5",
+      "order": 5,
+      "stageIndex": 5,
+      "stage": "interactive_artifact",
+      "type": "interactive_artifact",
+      "title": {
+        "tr": "İnteraktif Deney: Adrenalin-Beta Reseptör Kenetlenmesi",
+        "ar": "تجربة تفاعلية: تطابق الأدرينالين مع جيب مستقبل بيتا",
+        "en": "Interactive Experiment: Epinephrine-Beta Receptor Docking"
+      },
+      "prompt": {
+        "tr": "Adrenalinin amin, katekol ve beta-hidroksil gruplarını beta-adrenerjik reseptör aktif cebindeki Asp113, Ser204, Phe290 ve Asn293 kalıntılarıyla eşleştirin.",
+        "ar": "طابق مجموعات الأمين والكاتيكول وهيدروكسيل بيتا للأدرينالين مع ثمالات Asp113 و Ser204 و Phe290 و Asn293 في جيب مستقبل بيتا.",
+        "en": "Dock epinephrine into the beta-adrenergic pocket by matching its amine, catechol, and beta-OH to Asp113, Ser204, Phe290, and Asn293 residues."
+      },
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "title": "Adrenalin - Beta-2 Adrenerjik Reseptör Kenetlenmesi",
+          "prompt": "Adrenalinin fonksiyonel gruplarını beta-2 reseptör cebindeki tamamlayıcı amino asitlerle eşleştirin.",
+          "drugName": "Adrenalin (Epinephrine)",
+          "receptorName": "Beta-2 Adrenerjik GPCR",
+          "pairs": [
+            {
+              "id": "pair-1",
+              "drugGroup": "Protonlanmış Sekonder Amin (-NH2+CH3)",
+              "correctResidueId": "res-asp113",
+              "bondType": "ionic",
+              "energyKcalMol": "-8 to -12 kcal/mol",
+              "explanation": "Protonlanmış katyonik amin, TM3 heliksindeki Asp113 karboksilat anyonu ile zorunlu elektrostatik tuz köprüsü kurar."
+            },
+            {
+              "id": "pair-2",
+              "drugGroup": "Katekol Fenolik Hidroksilleri (meta & para -OH)",
+              "correctResidueId": "res-ser204",
+              "bondType": "h_bond",
+              "energyKcalMol": "-4 to -7 kcal/mol",
+              "explanation": "Katekol hidroksilleri TM5 heliksindeki Ser204 ve Ser207 kalıntılarıyla kilit hidrojen bağları oluşturarak reseptörü aktive eder."
+            },
+            {
+              "id": "pair-3",
+              "drugGroup": "Katekol Aromatik Benzen Halkası",
+              "correctResidueId": "res-phe290",
+              "bondType": "pi_pi",
+              "energyKcalMol": "-2 to -4 kcal/mol",
+              "explanation": "Katekol benzen halkası TM6'daki Phe290 aromatik yan zinciriyle pi-pi istiflenme etkileşimi kurar."
+            },
+            {
+              "id": "pair-4",
+              "drugGroup": "Kiral (R)-Beta-Hidroksil Grubu",
+              "correctResidueId": "res-asn293",
+              "bondType": "h_bond",
+              "energyKcalMol": "-3 to -5 kcal/mol",
+              "explanation": "Easson-Stedman hipotezine göre kiral beta-OH grubu TM6'daki Asn293 ile spesifik hidrojen bağı kurarak yüksek afinite sağlar."
+            }
+          ],
+          "residues": [
+            {
+              "id": "res-asp113",
+              "residueName": "Asp113 (TM3)",
+              "description": "Negatif yüklü aspartat karboksilat grubu; adrenerjik ligantların protonlanmış aminiyle tuz köprüsü oluşturur."
+            },
+            {
+              "id": "res-ser204",
+              "residueName": "Ser204 / Ser207 (TM5)",
+              "description": "Polar serin hidroksil kalıntıları; katekol halkasının hidroksil gruplarıyla hidrojen bağı yapar."
+            },
+            {
+              "id": "res-phe290",
+              "residueName": "Phe290 (TM6)",
+              "description": "Hidrofobik fenilalanin aromatik halkası; katekol benzen halkasıyla pi-pi istiflenme temasındadır."
+            },
+            {
+              "id": "res-asn293",
+              "residueName": "Asn293 (TM6)",
+              "description": "Polar asparajin yan zinciri; kiral R-(-) enantiomerinin beta-OH grubuyla hidrojen bağı kurar."
+            },
+            {
+              "id": "res-val114",
+              "residueName": "Val114 (TM3)",
+              "description": "Alifatik apolar valin kalıntısı; ligandın alkil yan zinciriyle temas eden hidrofobik çevre."
+            }
+          ],
+          "source": {
+            "file": "Otonom Sinir Sistemi.pdf",
+            "page": 14
+          }
+        }
+      },
+      "config": {
+        "title": "Adrenalin - Beta-2 Adrenerjik Reseptör Kenetlenmesi",
+        "prompt": "Adrenalinin fonksiyonel gruplarını beta-2 reseptör cebindeki tamamlayıcı amino asitlerle eşleştirin.",
+        "drugName": "Adrenalin (Epinephrine)",
+        "receptorName": "Beta-2 Adrenerjik GPCR",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "drugGroup": "Protonlanmış Sekonder Amin (-NH2+CH3)",
+            "correctResidueId": "res-asp113",
+            "bondType": "ionic",
+            "energyKcalMol": "-8 to -12 kcal/mol",
+            "explanation": "Protonlanmış katyonik amin, TM3 heliksindeki Asp113 karboksilat anyonu ile zorunlu elektrostatik tuz köprüsü kurar."
+          },
+          {
+            "id": "pair-2",
+            "drugGroup": "Katekol Fenolik Hidroksilleri (meta & para -OH)",
+            "correctResidueId": "res-ser204",
+            "bondType": "h_bond",
+            "energyKcalMol": "-4 to -7 kcal/mol",
+            "explanation": "Katekol hidroksilleri TM5 heliksindeki Ser204 ve Ser207 kalıntılarıyla kilit hidrojen bağları oluşturarak reseptörü aktive eder."
+          },
+          {
+            "id": "pair-3",
+            "drugGroup": "Katekol Aromatik Benzen Halkası",
+            "correctResidueId": "res-phe290",
+            "bondType": "pi_pi",
+            "energyKcalMol": "-2 to -4 kcal/mol",
+            "explanation": "Katekol benzen halkası TM6'daki Phe290 aromatik yan zinciriyle pi-pi istiflenme etkileşimi kurar."
+          },
+          {
+            "id": "pair-4",
+            "drugGroup": "Kiral (R)-Beta-Hidroksil Grubu",
+            "correctResidueId": "res-asn293",
+            "bondType": "h_bond",
+            "energyKcalMol": "-3 to -5 kcal/mol",
+            "explanation": "Easson-Stedman hipotezine göre kiral beta-OH grubu TM6'daki Asn293 ile spesifik hidrojen bağı kurarak yüksek afinite sağlar."
+          }
+        ],
+        "residues": [
+          {
+            "id": "res-asp113",
+            "residueName": "Asp113 (TM3)",
+            "description": "Negatif yüklü aspartat karboksilat grubu; adrenerjik ligantların protonlanmış aminiyle tuz köprüsü oluşturur."
+          },
+          {
+            "id": "res-ser204",
+            "residueName": "Ser204 / Ser207 (TM5)",
+            "description": "Polar serin hidroksil kalıntıları; katekol halkasının hidroksil gruplarıyla hidrojen bağı yapar."
+          },
+          {
+            "id": "res-phe290",
+            "residueName": "Phe290 (TM6)",
+            "description": "Hidrofobik fenilalanin aromatik halkası; katekol benzen halkasıyla pi-pi istiflenme temasındadır."
+          },
+          {
+            "id": "res-asn293",
+            "residueName": "Asn293 (TM6)",
+            "description": "Polar asparajin yan zinciri; kiral R-(-) enantiomerinin beta-OH grubuyla hidrojen bağı kurar."
+          },
+          {
+            "id": "res-val114",
+            "residueName": "Val114 (TM3)",
+            "description": "Alifatik apolar valin kalıntısı; ligandın alkil yan zinciriyle temas eden hidrofobik çevre."
+          }
+        ],
+        "source": {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 14
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "Easson-Stedman Hipotezi",
+          "arContext": "فرضية إيسون-ستيدمان (Easson-Stedman Hypothesis)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Epinefrinin pozitif yüklü amin grubunu, katekol halkasını ve kiral hidroksilini inceleyin.",
+          "ar": "افحص مجموعة الأمين الموجبة وحلقة الكاتيكول والهيدروكسيل الفراغي في الإبينفرين.",
+          "en": "Examine epinephrine's positively charged amine, catechol ring, and chiral beta-hydroxyl group."
+        },
+        {
+          "tier": 2,
+          "tr": "Asp113 iyonik bağ için negatif karboksilat sağlar; Ser204 katekol ile H-bağı yapar; Phe290 aromatik istiflenme kurar.",
+          "ar": "يوفر Asp113 كربوكسيلات سالبة للرابط الأيوني؛ ويشكل Ser204 رابطاً هيدروجينياً؛ بينما يتيح Phe290 تكدساً عطرياً.",
+          "en": "Asp113 provides a carboxylate for ionic bonding; Ser204 H-bonds with catechol; Phe290 forms pi-stacking."
+        },
+        {
+          "tier": 3,
+          "tr": "Protonlanmış amini Asp113'e (iyonik), katekol OH'yi Ser204'e (H-bağı), aromatik halkayı Phe290'a (pi-pi) ve beta-OH'yi Asn293'e (H-bağı) kenetleyin.",
+          "ar": "اربط الأمين البروتوني بـ Asp113 (أيوني)، وهيدروكسيل الكاتيكول بـ Ser204 (هيدروجيني)، والحلقة بـ Phe290 (باي-باي)، وبيتا-OH بـ Asn293.",
+          "en": "Match protonated amine to Asp113 (ionic), catechol meta-OH to Ser204 (H-bond), aromatic ring to Phe290 (pi-pi), and beta-OH to Asn293 (H-bond)."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step6",
+      "order": 6,
+      "stageIndex": 6,
+      "stage": "guided_discovery",
+      "type": "guided_discovery",
+      "title": {
+        "tr": "Rehberli Keşif: Presinaptik Alfa-2 Otoreseptör Freni",
+        "ar": "استكشاف موجه: كابح مستقبل ألفا-2 الذاتي قبل المشبكي",
+        "en": "Guided Discovery: Presynaptic Alpha-2 Autoreceptor Brake"
+      },
+      "prompt": {
+        "tr": "Sempatik sinaptik aralıkta biriken noradrenalin, hangi fizyolojik otoreseptör mekanizmasıyla aşırı nörotransmiter salınımını durdurur?",
+        "ar": "عندما يتراكم النورإبينفرين في الشق المشبكي الودي، ما هي آلية المستقبل الذاتي الفسيولوجية التي توقف التحرر المفرط للناقل؟",
+        "en": "When exocytosed norepinephrine accumulates in the sympathetic synaptic cleft, what physiological autoreceptor mechanism halts excessive neurotransmitter release?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Presinaptik alfa-2 otoreseptörleri noradrenalin salınımını nasıl inhibe eder?",
+          "ar": "كيف تثبط مستقبلات ألفا-2 الذاتية قبل المشبكية تحرر النورإبينفرين؟",
+          "en": "How do presynaptic alpha-2 autoreceptors inhibit further norepinephrine release?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s6-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Presinaptik alfa-2 reseptörleri Gi'ye kenetlenir, adenilat siklazı inhibe eder ve N-tipi Ca2+ kanallarını kapatarak vezikül ekzositozunu durdurur.",
+              "ar": "تقترن مستقبلات ألفا-2 قبل المشبكية بـ Gi، مثبطة محلقة الأدينيلات ومغلقة قنوات الكالسيوم N لوقف اندماج الحويصلات.",
+              "en": "Presynaptic alpha-2 receptors couple to Gi, inhibiting adenylyl cyclase and closing N-type Ca2+ channels to block vesicle exocytosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Presinaptik alfa-2 reseptörleri fizyolojik bir negatif geri bildirim frenidir: Gi kalsiyum girişini keserek ekzositozu bitirir.",
+              "ar": "صحيح. تعمل مستقبلات ألفا-2 قبل المشبكية ككابح تلقيم راجع سلبي: يقطع Gi دخول الكالسيوم منهياً الإفراز الحويصلي.",
+              "en": "Correct. Presynaptic alpha-2 receptors act as a physiological negative feedback brake: Gi lowers cAMP and halts Ca2+ influx."
+            }
+          },
+          {
+            "id": "opt-l7-s6-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Postsinaptik alfa-2 reseptörleri beta-arrestini çağırarak tüm postsinaptik adrenerjik reseptörleri hücre içine alır ve yanıtı sonlandırır.",
+              "ar": "تستدعي مستقبلات ألفا-2 بعد المشبكية بيتا-أريستين لبلعمة جميع المستقبلات بعد المشبكية، منهية الاستجابة.",
+              "en": "Postsynaptic alpha-2 receptors recruit beta-arrestin to internalize all postsynaptic adrenoceptors, ending the response."
+            },
+            "feedback": {
+              "tr": "Yanlış. Salınımın negatif geri bildirim kontrolü postsinaptik reseptör internalizasyonuyla değil, presinaptik otoreseptörlerle sağlanır.",
+              "ar": "غير صحيح. يحدث التلقيم الراجع السلبي المانع للتحرر على النهاية قبل المشبكية عبر مستقبلات ذاتية لا عبر البلعمة بعد المشبكية.",
+              "en": "Incorrect. Negative feedback regulation of release occurs on the presynaptic terminal via autoreceptors, not via postsynaptic internalization."
+            }
+          },
+          {
+            "id": "opt-l7-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-2 presinaptik kalsiyum kanallarını etkilemeksizin, geri alımı hızlandırmak için noradrenalin taşıyıcısını (NET) uyarır.",
+              "ar": "يحفز ألفا-2 ناقل النورإبينفرين (NET) لتسريع إعادة الالتقاط، دون التأثير على قنوات الكالسيوم قبل المشبكية.",
+              "en": "Alpha-2 stimulates the norepinephrine transporter (NET) to accelerate reuptake, without affecting presynaptic calcium channels."
+            },
+            "feedback": {
+              "tr": "Yanlış. NET sodyum bağımlı bir taşıyıcıdır; alfa-2 ise spesifik olarak voltaj kapılı kalsiyum kanallarını kapatarak ekzositozu durdurur.",
+              "ar": "غير صحيح. ناقل NET يعتمد على الصوديوم مستقلاً عن تأشير Gi؛ يغلق ألفا-2 قنوات الكالسيوم المعتمدة على الفولتية ليوقف الإفراز.",
+              "en": "Incorrect. NET is a secondary active sodium-dependent symporter; alpha-2 specifically closes voltage-gated calcium channels."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Presinaptik Otoreseptör",
+          "arContext": "المستقبل الذاتي قبل المشبكي (Presynaptic Autoreceptor)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Hedef dokuda değil, presinaptik sinir ucunda bulunan adrenerjik reseptör alt tipini düşünün.",
+          "ar": "فكر في النمط الفرعي للمستقبلات الأدرينالينية الموجود على النهاية العصبية قبل المشبكية لا النسيج الهدف.",
+          "en": "Think about which adrenoceptor subtype is located on the presynaptic nerve ending rather than the target tissue."
+        },
+        {
+          "tier": 2,
+          "tr": "Bu reseptör inhibitör G-proteinine (Gi) kenetlenir. Vezikül füzyonu için hangi iyon girişi şarttır?",
+          "ar": "يقترن هذا المستقبل ببروتين G التثبيطي (Gi). ما هو التدفق الأيوني الإلزامي لاندماج الحويصلات؟",
+          "en": "This receptor couples to an inhibitory G-protein (Gi). What ion influx is mandatory for vesicle fusion?"
+        },
+        {
+          "tier": 3,
+          "tr": "Presinaptik alfa-2 reseptörleri Gi'ye kenetlenir, cAMP'yi düşürür ve N-tipi kalsiyum kanallarını kapatarak ekzositozu durdurur.",
+          "ar": "تقترن مستقبلات ألفا-2 قبل المشبكية بـ Gi، خافضة cAMP ومغلقة قنوات الكالسيوم N لوقف اندماج الحويصلات وإفرازها.",
+          "en": "Presynaptic alpha-2 receptors couple to Gi, reducing cAMP and blocking N-type calcium channels to halt exocytosis."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s6-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Presinaptik alfa-2 reseptörleri Gi'ye kenetlenir, adenilat siklazı inhibe eder ve N-tipi Ca2+ kanallarını kapatarak vezikül ekzositozunu durdurur.",
+              "ar": "تقترن مستقبلات ألفا-2 قبل المشبكية بـ Gi، مثبطة محلقة الأدينيلات ومغلقة قنوات الكالسيوم N لوقف اندماج الحويصلات.",
+              "en": "Presynaptic alpha-2 receptors couple to Gi, inhibiting adenylyl cyclase and closing N-type Ca2+ channels to block vesicle exocytosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Presinaptik alfa-2 reseptörleri fizyolojik bir negatif geri bildirim frenidir: Gi kalsiyum girişini keserek ekzositozu bitirir.",
+              "ar": "صحيح. تعمل مستقبلات ألفا-2 قبل المشبكية ككابح تلقيم راجع سلبي: يقطع Gi دخول الكالسيوم منهياً الإفراز الحويصلي.",
+              "en": "Correct. Presynaptic alpha-2 receptors act as a physiological negative feedback brake: Gi lowers cAMP and halts Ca2+ influx."
+            }
+          },
+          {
+            "id": "opt-l7-s6-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Postsinaptik alfa-2 reseptörleri beta-arrestini çağırarak tüm postsinaptik adrenerjik reseptörleri hücre içine alır ve yanıtı sonlandırır.",
+              "ar": "تستدعي مستقبلات ألفا-2 بعد المشبكية بيتا-أريستين لبلعمة جميع المستقبلات بعد المشبكية، منهية الاستجابة.",
+              "en": "Postsynaptic alpha-2 receptors recruit beta-arrestin to internalize all postsynaptic adrenoceptors, ending the response."
+            },
+            "feedback": {
+              "tr": "Yanlış. Salınımın negatif geri bildirim kontrolü postsinaptik reseptör internalizasyonuyla değil, presinaptik otoreseptörlerle sağlanır.",
+              "ar": "غير صحيح. يحدث التلقيم الراجع السلبي المانع للتحرر على النهاية قبل المشبكية عبر مستقبلات ذاتية لا عبر البلعمة بعد المشبكية.",
+              "en": "Incorrect. Negative feedback regulation of release occurs on the presynaptic terminal via autoreceptors, not via postsynaptic internalization."
+            }
+          },
+          {
+            "id": "opt-l7-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-2 presinaptik kalsiyum kanallarını etkilemeksizin, geri alımı hızlandırmak için noradrenalin taşıyıcısını (NET) uyarır.",
+              "ar": "يحفز ألفا-2 ناقل النورإبينفرين (NET) لتسريع إعادة الالتقاط، دون التأثير على قنوات الكالسيوم قبل المشبكية.",
+              "en": "Alpha-2 stimulates the norepinephrine transporter (NET) to accelerate reuptake, without affecting presynaptic calcium channels."
+            },
+            "feedback": {
+              "tr": "Yanlış. NET sodyum bağımlı bir taşıyıcıdır; alfa-2 ise spesifik olarak voltaj kapılı kalsiyum kanallarını kapatarak ekzositozu durdurur.",
+              "ar": "غير صحيح. ناقل NET يعتمد على الصوديوم مستقلاً عن تأشير Gi؛ يغلق ألفا-2 قنوات الكالسيوم المعتمدة على الفولتية ليوقف الإفراز.",
+              "en": "Incorrect. NET is a secondary active sodium-dependent symporter; alpha-2 specifically closes voltage-gated calcium channels."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Sempatik sinaptik aralıkta biriken noradrenalin, hangi fizyolojik otoreseptör mekanizmasıyla aşırı nörotransmiter salınımını durdurur?",
+          "ar": "عندما يتراكم النورإبينفرين في الشق المشبكي الودي، ما هي آلية المستقبل الذاتي الفسيولوجية التي توقف التحرر المفرط للناقل؟",
+          "en": "When exocytosed norepinephrine accumulates in the sympathetic synaptic cleft, what physiological autoreceptor mechanism halts excessive neurotransmitter release?"
+        },
+        "title": {
+          "tr": "Rehberli Keşif: Presinaptik Alfa-2 Otoreseptör Freni",
+          "ar": "استكشاف موجه: كابح مستقبل ألفا-2 الذاتي قبل المشبكي",
+          "en": "Guided Discovery: Presynaptic Alpha-2 Autoreceptor Brake"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step7",
+      "order": 7,
+      "stageIndex": 7,
+      "stage": "formal_explanation",
+      "type": "formal_explanation",
+      "title": {
+        "tr": "Biçimsel Açıklama: Kanonik Adrenerjik Reseptör Sınıflandırması",
+        "ar": "شرح رسمي: التصنيف المعياري للمستقبلات الأدرينالينية",
+        "en": "Formal Explanation: Canonical Adrenoceptor Classification"
+      },
+      "prompt": {
+        "tr": "Kanonik adrenerjik reseptör tablosunu inceleyin. Hangi eşleştirme bir reseptör alt tipini, primer G-proteinini ve klinik fizyolojik etkisini doğru gösterir?",
+        "ar": "راجع جدول المستقبلات الأدرينالينية. أي اقتران يربط بدقة بين نمط المستقبل، وبروتينه المقترن G، وتأثيره الفسيولوجي السريري؟",
+        "en": "Review the canonical adrenoceptor table. Which pairing correctly maps an adrenoceptor subtype to its primary G-protein transducer and clinical physiological action?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Hangi adrenerjik reseptör eşleştirmesi G-proteini ve fizyolojik etkisiyle tamamen doğrudur?",
+          "ar": "أي اقتران للمستقبلات الأدرينالينية صحيح تماماً مع بروتين G وتأثيره الفسيولوجي؟",
+          "en": "Which adrenoceptor pairing is fully accurate regarding its G-protein and physiological response?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Beta-1 (Gs): Kardiyak inotropi/kronotropiyi artırır ve renal jukstaglomerüler hücrelerden renin salınımını tetikler.",
+              "ar": "بيتا-1 (Gs): يزيد قلوصية وسرعة القلب ويحفز تحرر الرينين من الخلايا المجاورة للكبيبات الكلوية.",
+              "en": "Beta-1 (Gs): Increases cardiac inotropy/chronotropy and triggers renin release from renal juxtaglomerular cells."
+            },
+            "feedback": {
+              "tr": "Doğru. Beta-1 miyokard ve böbrek jukstaglomerüler aparatında Gs ile cAMP'yi artırarak kasılmayı ve renin salgısını uyarır.",
+              "ar": "صحيح. يقترن بيتا-1 بـ Gs في القلب والكلى لزيادة cAMP وتحفيز القلوصية وإفراز الرينين.",
+              "en": "Correct. Beta-1 couples to Gs in myocardium and juxtaglomerular apparatus, elevating cAMP to boost contractility and renin release."
+            }
+          },
+          {
+            "id": "opt-l7-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1 (Gi): Damar tonusunu inhibe ederek bronş dilatasyonuna ve sistemik postural hipotansiyona yol açar.",
+              "ar": "ألفا-1 (Gi): يثبط المقوية الوعائية، مسبباً توسعاً شُعبياً وهبوط ضغط انتصابي جهازي.",
+              "en": "Alpha-1 (Gi): Inhibits vascular tone, causing bronchial dilation and systemic postural hypotension."
+            },
+            "feedback": {
+              "tr": "Yanlış. Alfa-1 Gi'ye değil Gq'ya kenetlenir ve damar düz kasını kuvvetle kasarak tansiyonu yükseltir.",
+              "ar": "غير صحيح. يقترن ألفا-1 بـ Gq (وليس Gi) ويسبب تضيقاً وعائياً عاتياً رافعاً ضغط الدم.",
+              "en": "Incorrect. Alpha-1 couples to Gq (not Gi) and causes intense vascular smooth muscle constriction, raising blood pressure."
+            }
+          },
+          {
+            "id": "opt-l7-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Beta-2 (Gq): Fosfolipaz C'yi aktive ederek hava yolu düz kas kasılmasına ve astım krizine yol açar.",
+              "ar": "بيتا-2 (Gq): ينشط فوسفوليباز C ليحفز انقباض العضلات الملساء في المسالك التنفسية وتفاقم الربو.",
+              "en": "Beta-2 (Gq): Activates phospholipase C to trigger airway smooth muscle contraction and asthma exacerbation."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-2 Gs'ye kenetlenir ve cAMP'yi artırarak bronş düz kasını gevşetir; bu nedenle beta-2 agonistleri astımda kullanılır.",
+              "ar": "غير صحيح. يقترن بيتا-2 بـ Gs رافعاً cAMP ليرخي عضلات الشعب الملساء، ولهذا تستخدم منبهات بيتا-2 لعلاج الربو.",
+              "en": "Incorrect. Beta-2 couples to Gs (not Gq); it increases cAMP to relax airway smooth muscle, which is why agonists treat asthma."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Pozitif İnotropi",
+          "arContext": "تعزيز التقلص العضلي القلبي (Positive Inotropy)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "G-protein eşleşme kuralını hatırlayın: alfa-1 (Gq), alfa-2 (Gi), beta-1/2/3 (Gs).",
+          "ar": "تذكر قاعدة اقتران بروتينات G: ألفا-1 (Gq)، ألفا-2 (Gi)، وبيتا-1/2/3 (Gs).",
+          "en": "Remember the G-protein pairing mnemonic: alpha-1 (Gq), alpha-2 (Gi), beta-1/2/3 (Gs)."
+        },
+        {
+          "tier": 2,
+          "tr": "Beta-1 reseptörleri kalpte ve böbrekte bulunur; Gs üzerinden cAMP artışı yaratır.",
+          "ar": "توجد مستقبلات بيتا-1 في القلب والكلية؛ وتحدث زيادة في cAMP عبر بروتين Gs.",
+          "en": "Beta-1 receptors reside in the heart and kidneys; they elevate cAMP via Gs."
+        },
+        {
+          "tier": 3,
+          "tr": "Beta-1 Gs'ye kenetlenir; miyokardiyal inotropi/kronotropiyi artırır ve jukstaglomerüler hücrelerden renin salınımını uyarır.",
+          "ar": "يقترن بيتا-1 بـ Gs؛ معززاً قلوصية وسرعة القلب ومحفزاً تحرر الرينين من الخلايا المجاورة للكبيبات الكلوية.",
+          "en": "Beta-1 (Gs): Increases cardiac inotropy/chronotropy and triggers renin release from renal juxtaglomerular cells."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Beta-1 (Gs): Kardiyak inotropi/kronotropiyi artırır ve renal jukstaglomerüler hücrelerden renin salınımını tetikler.",
+              "ar": "بيتا-1 (Gs): يزيد قلوصية وسرعة القلب ويحفز تحرر الرينين من الخلايا المجاورة للكبيبات الكلوية.",
+              "en": "Beta-1 (Gs): Increases cardiac inotropy/chronotropy and triggers renin release from renal juxtaglomerular cells."
+            },
+            "feedback": {
+              "tr": "Doğru. Beta-1 miyokard ve böbrek jukstaglomerüler aparatında Gs ile cAMP'yi artırarak kasılmayı ve renin salgısını uyarır.",
+              "ar": "صحيح. يقترن بيتا-1 بـ Gs في القلب والكلى لزيادة cAMP وتحفيز القلوصية وإفراز الرينين.",
+              "en": "Correct. Beta-1 couples to Gs in myocardium and juxtaglomerular apparatus, elevating cAMP to boost contractility and renin release."
+            }
+          },
+          {
+            "id": "opt-l7-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1 (Gi): Damar tonusunu inhibe ederek bronş dilatasyonuna ve sistemik postural hipotansiyona yol açar.",
+              "ar": "ألفا-1 (Gi): يثبط المقوية الوعائية، مسبباً توسعاً شُعبياً وهبوط ضغط انتصابي جهازي.",
+              "en": "Alpha-1 (Gi): Inhibits vascular tone, causing bronchial dilation and systemic postural hypotension."
+            },
+            "feedback": {
+              "tr": "Yanlış. Alfa-1 Gi'ye değil Gq'ya kenetlenir ve damar düz kasını kuvvetle kasarak tansiyonu yükseltir.",
+              "ar": "غير صحيح. يقترن ألفا-1 بـ Gq (وليس Gi) ويسبب تضيقاً وعائياً عاتياً رافعاً ضغط الدم.",
+              "en": "Incorrect. Alpha-1 couples to Gq (not Gi) and causes intense vascular smooth muscle constriction, raising blood pressure."
+            }
+          },
+          {
+            "id": "opt-l7-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Beta-2 (Gq): Fosfolipaz C'yi aktive ederek hava yolu düz kas kasılmasına ve astım krizine yol açar.",
+              "ar": "بيتا-2 (Gq): ينشط فوسفوليباز C ليحفز انقباض العضلات الملساء في المسالك التنفسية وتفاقم الربو.",
+              "en": "Beta-2 (Gq): Activates phospholipase C to trigger airway smooth muscle contraction and asthma exacerbation."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-2 Gs'ye kenetlenir ve cAMP'yi artırarak bronş düz kasını gevşetir; bu nedenle beta-2 agonistleri astımda kullanılır.",
+              "ar": "غير صحيح. يقترن بيتا-2 بـ Gs رافعاً cAMP ليرخي عضلات الشعب الملساء، ولهذا تستخدم منبهات بيتا-2 لعلاج الربو.",
+              "en": "Incorrect. Beta-2 couples to Gs (not Gq); it increases cAMP to relax airway smooth muscle, which is why agonists treat asthma."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Kanonik adrenerjik reseptör tablosunu inceleyin. Hangi eşleştirme bir reseptör alt tipini, primer G-proteinini ve klinik fizyolojik etkisini doğru gösterir?",
+          "ar": "راجع جدول المستقبلات الأدرينالينية. أي اقتران يربط بدقة بين نمط المستقبل، وبروتينه المقترن G، وتأثيره الفسيولوجي السريري؟",
+          "en": "Review the canonical adrenoceptor table. Which pairing correctly maps an adrenoceptor subtype to its primary G-protein transducer and clinical physiological action?"
+        },
+        "title": {
+          "tr": "Biçimsel Açıklama: Kanonik Adrenerjik Reseptör Sınıflandırması",
+          "ar": "شرح رسمي: التصنيف المعياري للمستقبلات الأدرينالينية",
+          "en": "Formal Explanation: Canonical Adrenoceptor Classification"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step8",
+      "order": 8,
+      "stageIndex": 8,
+      "stage": "concept_check",
+      "type": "concept_check",
+      "title": {
+        "tr": "Kavram Kontrolü: Astımlı Hastalarda Propranolol Tehlikesi",
+        "ar": "تحقق مفاهيمي: خطر البروبرانولول على مرضى الربو",
+        "en": "Concept Check: Propranolol Hazard in Asthmatic Patients"
+      },
+      "prompt": {
+        "tr": "Bir astım hastasına non-selektif beta-bloker propranolol verilirse, hangi moleküler olay yaşamı tehdit eden bronkospazmı tetikler?",
+        "ar": "إذا تلقى مريض ربو حاصر بيتا غير الانتقائي بروبرانولول، ما هو الحدث الجزيئي الدقيق الذي يثير تشنجاً قصبياً مهدداً للحياة؟",
+        "en": "If an asthmatic patient receives the non-selective beta-blocker propranolol, what precise molecular event precipitates life-threatening bronchospasm?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Propranolol astım hastalarında neden ölümcül bronkospazma yol açabilir?",
+          "ar": "لماذا يمكن أن يسبب البروبرانولول تشنجاً قصبياً قاتلاً لدى مرضى الربو؟",
+          "en": "Why can propranolol trigger fatal bronchospasm in patients with asthma?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s8-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Propranolol hava yolu beta-2 reseptörlerini yarışmalı bloke eder, bazal cAMP'yi düşürür ve koruyucu bronkodilatör tonusu ortadan kaldırır.",
+              "ar": "يحصر البروبرانولول تنافسياً مستقبلات بيتا-2 الشعبية، خافضاً cAMP القاعدي ومزيلاً مقوية التوسع القصبي الحامية.",
+              "en": "Propranolol competitively blocks airway beta-2 receptors, decreasing basal cAMP and removing the protective bronchodilatory tone."
+            },
+            "feedback": {
+              "tr": "Doğru. Non-selektif beta-blokerler hava yolundaki beta-2 reseptörlerini bloke ederek sempatik bronkodilatasyon güvencesini yıkar.",
+              "ar": "صحيح. تحصر حاصرات بيتا غير الانتقائية مستقبلات بيتا-2 التنفسية، مدمرة صمام الأمان الموسع للشعب.",
+              "en": "Correct. Non-selective beta-blockers block airway beta-2 receptors, abolishing bronchodilatory tone."
+            }
+          },
+          {
+            "id": "opt-l7-s8-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol bronş bezlerindeki muskarinik M3 reseptörlerinde doğrudan agonist gibi davranarak aşırı mukus salgısını tetikler.",
+              "ar": "يعمل البروبرانولول كمنبه مباشر لمستقبلات M3 الموسكارينية في الغدد الشعبية، محفزاً فرط الإفراز المخاطي.",
+              "en": "Propranolol acts as a direct agonist at muscarinic M3 receptors on bronchial glands, stimulating mucus hypersecretion."
+            },
+            "feedback": {
+              "tr": "Yanlış. Propranololün muskarinik reseptörlerde agonist afinitesi yoktur; spazm beta-2 gevşeme tonusunun kaybından doğar.",
+              "ar": "غير صحيح. ليس للبروبرانولول ألفة تنبيهية للمستقبلات الموسكارينية؛ ينجم التشنج عن فقدان مقوية الارتخاء بـ بيتا-2.",
+              "en": "Incorrect. Propranolol has no agonist affinity for muscarinic receptors; bronchospasm is caused by loss of beta-2 mediated dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol, normalde hava yolunda histamin salınımını baskılayan bronşiyal beta-1 reseptörlerini selektif olarak bloke eder.",
+              "ar": "يحصر البروبرانولول انتقائياً مستقبلات بيتا-1 الشعبية التي تثبط عادة تحرر الهيستامين في القصبات.",
+              "en": "Propranolol selectively blocks bronchial beta-1 receptors, which normally suppress airway histamine release."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hava yolu düz kası esas olarak beta-2 ifade eder, beta-1 değil. Bu nedenle kardiyoselektif beta-1 blokerler tercih edilir.",
+              "ar": "غير صحيح. تعبر العضلات الملساء التنفسية غالباً عن بيتا-2 وليس بيتا-1؛ ولهذا تفضل حاصرات بيتا-1 القلبية النوعية.",
+              "en": "Incorrect. Airway smooth muscle predominantly expresses beta-2, not beta-1. Cardioselective beta-1 blockers are preferred to spare airways."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Bronkokonstriksiyon",
+          "arContext": "تشنج القصبات (Bronchoconstriction)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Propranolol non-selektif bir antagonisttir. İnsan hava yolu düz kasında hangi beta alt tipi baskındır?",
+          "ar": "البروبرانولول حاصر غير انتقائي. أي نمط فرعي لبيتا يسود في العضلات الملساء للمسالك التنفسية؟",
+          "en": "Propranolol is a non-selective antagonist. Which beta subtype dominates in human airway smooth muscle?"
+        },
+        {
+          "tier": 2,
+          "tr": "Hava yolu düz kası, bazal kolinerjik tonusa karşı gevşek kalabilmek için beta-2 (Gs/cAMP) sinyaline güvenir.",
+          "ar": "تعتمد العضلات الملساء التنفسية على تأشير بيتا-2 (Gs/cAMP) لتبقى مرتخية في وجه المقوية الكولينية.",
+          "en": "Airway smooth muscle depends on beta-2 signaling (via Gs and cAMP) to stay relaxed against baseline cholinergic tone."
+        },
+        {
+          "tier": 3,
+          "tr": "Bronşiyal beta-2 reseptörlerinin bloke edilmesi hücre içi cAMP'yi düşürür, PKA'yı kapatır ve engelsiz bronkokonstriksiyona yol açar.",
+          "ar": "يحصر البروبرانولول مستقبلات بيتا-2 الشعبية، خافضاً cAMP ومثبطاً PKA، مما يسمح بحدوث تضيق قصبي غير معارض.",
+          "en": "Blocking bronchial beta-2 receptors drops intracellular cAMP, inactivates PKA, and permits unopposed bronchoconstriction."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s8-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Propranolol hava yolu beta-2 reseptörlerini yarışmalı bloke eder, bazal cAMP'yi düşürür ve koruyucu bronkodilatör tonusu ortadan kaldırır.",
+              "ar": "يحصر البروبرانولول تنافسياً مستقبلات بيتا-2 الشعبية، خافضاً cAMP القاعدي ومزيلاً مقوية التوسع القصبي الحامية.",
+              "en": "Propranolol competitively blocks airway beta-2 receptors, decreasing basal cAMP and removing the protective bronchodilatory tone."
+            },
+            "feedback": {
+              "tr": "Doğru. Non-selektif beta-blokerler hava yolundaki beta-2 reseptörlerini bloke ederek sempatik bronkodilatasyon güvencesini yıkar.",
+              "ar": "صحيح. تحصر حاصرات بيتا غير الانتقائية مستقبلات بيتا-2 التنفسية، مدمرة صمام الأمان الموسع للشعب.",
+              "en": "Correct. Non-selective beta-blockers block airway beta-2 receptors, abolishing bronchodilatory tone."
+            }
+          },
+          {
+            "id": "opt-l7-s8-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol bronş bezlerindeki muskarinik M3 reseptörlerinde doğrudan agonist gibi davranarak aşırı mukus salgısını tetikler.",
+              "ar": "يعمل البروبرانولول كمنبه مباشر لمستقبلات M3 الموسكارينية في الغدد الشعبية، محفزاً فرط الإفراز المخاطي.",
+              "en": "Propranolol acts as a direct agonist at muscarinic M3 receptors on bronchial glands, stimulating mucus hypersecretion."
+            },
+            "feedback": {
+              "tr": "Yanlış. Propranololün muskarinik reseptörlerde agonist afinitesi yoktur; spazm beta-2 gevşeme tonusunun kaybından doğar.",
+              "ar": "غير صحيح. ليس للبروبرانولول ألفة تنبيهية للمستقبلات الموسكارينية؛ ينجم التشنج عن فقدان مقوية الارتخاء بـ بيتا-2.",
+              "en": "Incorrect. Propranolol has no agonist affinity for muscarinic receptors; bronchospasm is caused by loss of beta-2 mediated dilation."
+            }
+          },
+          {
+            "id": "opt-l7-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol, normalde hava yolunda histamin salınımını baskılayan bronşiyal beta-1 reseptörlerini selektif olarak bloke eder.",
+              "ar": "يحصر البروبرانولول انتقائياً مستقبلات بيتا-1 الشعبية التي تثبط عادة تحرر الهيستامين في القصبات.",
+              "en": "Propranolol selectively blocks bronchial beta-1 receptors, which normally suppress airway histamine release."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hava yolu düz kası esas olarak beta-2 ifade eder, beta-1 değil. Bu nedenle kardiyoselektif beta-1 blokerler tercih edilir.",
+              "ar": "غير صحيح. تعبر العضلات الملساء التنفسية غالباً عن بيتا-2 وليس بيتا-1؛ ولهذا تفضل حاصرات بيتا-1 القلبية النوعية.",
+              "en": "Incorrect. Airway smooth muscle predominantly expresses beta-2, not beta-1. Cardioselective beta-1 blockers are preferred to spare airways."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Bir astım hastasına non-selektif beta-bloker propranolol verilirse, hangi moleküler olay yaşamı tehdit eden bronkospazmı tetikler?",
+          "ar": "إذا تلقى مريض ربو حاصر بيتا غير الانتقائي بروبرانولول، ما هو الحدث الجزيئي الدقيق الذي يثير تشنجاً قصبياً مهدداً للحياة؟",
+          "en": "If an asthmatic patient receives the non-selective beta-blocker propranolol, what precise molecular event precipitates life-threatening bronchospasm?"
+        },
+        "title": {
+          "tr": "Kavram Kontrolü: Astımlı Hastalarda Propranolol Tehlikesi",
+          "ar": "تحقق مفاهيمي: خطر البروبرانولول على مرضى الربو",
+          "en": "Concept Check: Propranolol Hazard in Asthmatic Patients"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 16
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step9",
+      "order": 9,
+      "stageIndex": 9,
+      "stage": "application",
+      "type": "clinical_vignette",
+      "title": {
+        "tr": "Klinik Vaka: Feokromositomada Blokaj Sıralaması",
+        "ar": "حالة سريرية: تسلسل الحصر في ورم القواتم",
+        "en": "Clinical Vignette: Sequencing Blockade in Pheochromocytoma"
+      },
+      "prompt": {
+        "tr": "Feokromositoma hastasında sinüs taşikardisi gelişir. Bir asistan alfa-blokaj sağlamadan ÖNCE IV propranolol uygular. Tansiyon neden aniden 260/150 mmHg'ye fırlar?",
+        "ar": "مريض ورم القواتم أصيب بتسرع قلب جيبي. أعطى الطبيب بروبرانولول وريدياً قبل تثبيت حصر ألفا. لماذا قفز ضغط الدم فجأة إلى 260/150 مم زئبق؟",
+        "en": "A pheochromocytoma patient develops sinus tachycardia. A resident administers IV propranolol BEFORE establishing alpha-blockade. Why does BP surge to 260/150 mmHg?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Feokromositomada alfa-blokaj öncesi beta-bloker verilmesi neden hipertansif krize yol açar?",
+          "ar": "لماذا يؤدي إعطاء حاصر بيتا قبل حصر ألفا في ورم القواتم إلى أزمة فرط ضغط دموي؟",
+          "en": "Why does administering a beta-blocker prior to alpha-blockade precipitate a hypertensive crisis in pheochromocytoma?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s9-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Beta-2 vazodilatasyonunun bloke edilmesi, dolaşımdaki katekolaminlerin damar alfa-1 reseptörlerini tamamen engelsiz uyarmasına yol açarak feci vazokonstriksiyonu tetikler.",
+              "ar": "إلغاء توسع بيتا-2 يترك الكاتيكولامينات الجائلة تنبه مستقبلات ألفا-1 الوعائية دون أي معارضة، مسببة تضيقاً وعائياً كارثياً.",
+              "en": "Blocking beta-2 vasodilation leaves circulating catecholamines to stimulate vascular alpha-1 receptors completely unopposed, triggering catastrophic vasoconstriction."
+            },
+            "feedback": {
+              "tr": "Doğru. Ölümcül feokromositoma tuzağı: beta bloker beta-2 gevşemesini siler ve devasa tümör katekolaminleri alfa-1'i tek başına kasarak krize sokar.",
+              "ar": "صحيح. فخ ورم القواتم القاتل: يزيل حاصر بيتا صمام أمان التوسع الوعائي، مما يتيح لكوكبة الكاتيكولامينات إحداث تضيق وعائي ألفا-1 عاتٍ دون معارضة.",
+              "en": "Correct. The lethal pheochromocytoma trap: beta-blockers remove the beta-2 vasodilatory buffer, allowing catecholamines to drive unmitigated alpha-1 vasoconstriction."
+            }
+          },
+          {
+            "id": "opt-l7-s9-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol tümör membranını geçerek tirozin hidroksilazı doğrudan uyarır ve saniyeler içinde katekolamin sentezini iki katına çıkarır.",
+              "ar": "يعبر البروبرانولول غشاء الورم ليحفز تيروزين هيدروكسيلاز مباشرة، مضاعفاً اصطناع الكاتيكولامينات خلال ثوانٍ.",
+              "en": "Propranolol crosses the tumor membrane to directly stimulate tyrosine hydroxylase, doubling catecholamine synthesis within seconds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Propranolol tirozin hidroksilazı uyarmaz; kriz tamamen hemodinamiktir ve beta-2 tamponunun kaybından kaynaklanır.",
+              "ar": "غير صحيح. لا يحفز البروبرانولول اصطناع الكاتيكولامينات؛ بل الأزمة ديناميكية دموية بحتة ناجمة عن حصر توسع بيتا-2.",
+              "en": "Incorrect. Propranolol does not stimulate tyrosine hydroxylase; the surge is purely hemodynamic due to unmasked vascular alpha-1 constriction."
+            }
+          },
+          {
+            "id": "opt-l7-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol kaynaklı bradikardi, sempatik sinirleri aşırı seviyede ateşleyen şiddetli bir baroreseptör refleksini tetikler.",
+              "ar": "يؤدي بطء القلب الناجم عن البروبرانولول إلى إطلاق منعكس مستقبِلات الضغط الشديد الذي ينشط الأعصاب الودية إلى أقصى حد.",
+              "en": "Propranolol-induced bradycardia triggers an intense baroreceptor reflex that fires sympathetic nerves to extreme levels."
+            },
+            "feedback": {
+              "tr": "Yanlış. Baroreseptör refleksi tansiyon düşüşünde ateşlenir; burada dolaşımdaki katekolaminler zaten doymuştur ve beta-2 tamponu yok olmuştur.",
+              "ar": "غير صحيح. يستجيب منعكس الضغط لتغيرات الضغط الشرياني وليس معدل النبض؛ والأزمة ناتجة عن فقدان التوسع الوعائي بـ بيتا-2.",
+              "en": "Incorrect. The baroreceptor reflex responds to arterial pressure drops; the crisis stems entirely from losing beta-2 vasodilation."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Karşılanmamış Alfa Uyarımı",
+          "arContext": "تحفيز ألفا غير المعارض (Unopposed Alpha Stimulation)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Feokromositoma tedavisinin temel kuralını hatırlayın: Alfa blokaj daima Beta blokajdan ÖNCE gelmelidir ('Önce A, Sonra B').",
+          "ar": "تذكر القاعدة الذهبية في علاج ورم القواتم: يجب أن يسبق حصر ألفا دائماً حصر بيتا ('A قبل B').",
+          "en": "Remember the cardinal rule of pheochromocytoma management: Alpha blockade MUST always precede Beta blockade ('A before B')."
+        },
+        {
+          "tier": 2,
+          "tr": "Dolaşımdaki epinefrin hem alfa-1 (büzücü) hem beta-2 (genişletici) uyarır. Yalnızca beta-2'yi silerseniz ne olur?",
+          "ar": "ينبه الإبينفرين كلاً من ألفا-1 (مضيق) وبيتا-2 (موسع). ماذا يحدث للمقاومة عندما تلغي مكون بيتا-2 فقط؟",
+          "en": "Epinephrine stimulates both alpha-1 (vasoconstriction) and beta-2 (vasodilation). What happens when you remove only the beta-2 component?"
+        },
+        {
+          "tier": 3,
+          "tr": "Beta-2 vazodilatasyonunun ortadan kalkması, aşırı dolaşan katekolaminlerin damar alfa-1 reseptörlerini tamamen engelsiz uyarmasına yol açar.",
+          "ar": "إلغاء توسع بيتا-2 الوعائي يترك فيض الكاتيكولامينات الجائلة ينبه مستقبلات ألفا-1 الوعائية دون معارضة، مسبباً أزمة فرط ضغط عاتية.",
+          "en": "Eliminating beta-2 vasodilation unmasks massive, unopposed alpha-1 vascular constriction from circulating catecholamines, triggering a hypertensive emergency."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s9-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Beta-2 vazodilatasyonunun bloke edilmesi, dolaşımdaki katekolaminlerin damar alfa-1 reseptörlerini tamamen engelsiz uyarmasına yol açarak feci vazokonstriksiyonu tetikler.",
+              "ar": "إلغاء توسع بيتا-2 يترك الكاتيكولامينات الجائلة تنبه مستقبلات ألفا-1 الوعائية دون أي معارضة، مسببة تضيقاً وعائياً كارثياً.",
+              "en": "Blocking beta-2 vasodilation leaves circulating catecholamines to stimulate vascular alpha-1 receptors completely unopposed, triggering catastrophic vasoconstriction."
+            },
+            "feedback": {
+              "tr": "Doğru. Ölümcül feokromositoma tuzağı: beta bloker beta-2 gevşemesini siler ve devasa tümör katekolaminleri alfa-1'i tek başına kasarak krize sokar.",
+              "ar": "صحيح. فخ ورم القواتم القاتل: يزيل حاصر بيتا صمام أمان التوسع الوعائي، مما يتيح لكوكبة الكاتيكولامينات إحداث تضيق وعائي ألفا-1 عاتٍ دون معارضة.",
+              "en": "Correct. The lethal pheochromocytoma trap: beta-blockers remove the beta-2 vasodilatory buffer, allowing catecholamines to drive unmitigated alpha-1 vasoconstriction."
+            }
+          },
+          {
+            "id": "opt-l7-s9-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol tümör membranını geçerek tirozin hidroksilazı doğrudan uyarır ve saniyeler içinde katekolamin sentezini iki katına çıkarır.",
+              "ar": "يعبر البروبرانولول غشاء الورم ليحفز تيروزين هيدروكسيلاز مباشرة، مضاعفاً اصطناع الكاتيكولامينات خلال ثوانٍ.",
+              "en": "Propranolol crosses the tumor membrane to directly stimulate tyrosine hydroxylase, doubling catecholamine synthesis within seconds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Propranolol tirozin hidroksilazı uyarmaz; kriz tamamen hemodinamiktir ve beta-2 tamponunun kaybından kaynaklanır.",
+              "ar": "غير صحيح. لا يحفز البروبرانولول اصطناع الكاتيكولامينات؛ بل الأزمة ديناميكية دموية بحتة ناجمة عن حصر توسع بيتا-2.",
+              "en": "Incorrect. Propranolol does not stimulate tyrosine hydroxylase; the surge is purely hemodynamic due to unmasked vascular alpha-1 constriction."
+            }
+          },
+          {
+            "id": "opt-l7-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Propranolol kaynaklı bradikardi, sempatik sinirleri aşırı seviyede ateşleyen şiddetli bir baroreseptör refleksini tetikler.",
+              "ar": "يؤدي بطء القلب الناجم عن البروبرانولول إلى إطلاق منعكس مستقبِلات الضغط الشديد الذي ينشط الأعصاب الودية إلى أقصى حد.",
+              "en": "Propranolol-induced bradycardia triggers an intense baroreceptor reflex that fires sympathetic nerves to extreme levels."
+            },
+            "feedback": {
+              "tr": "Yanlış. Baroreseptör refleksi tansiyon düşüşünde ateşlenir; burada dolaşımdaki katekolaminler zaten doymuştur ve beta-2 tamponu yok olmuştur.",
+              "ar": "غير صحيح. يستجيب منعكس الضغط لتغيرات الضغط الشرياني وليس معدل النبض؛ والأزمة ناتجة عن فقدان التوسع الوعائي بـ بيتا-2.",
+              "en": "Incorrect. The baroreceptor reflex responds to arterial pressure drops; the crisis stems entirely from losing beta-2 vasodilation."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Feokromositoma hastasında sinüs taşikardisi gelişir. Bir asistan alfa-blokaj sağlamadan ÖNCE IV propranolol uygular. Tansiyon neden aniden 260/150 mmHg'ye fırlar?",
+          "ar": "مريض ورم القواتم أصيب بتسرع قلب جيبي. أعطى الطبيب بروبرانولول وريدياً قبل تثبيت حصر ألفا. لماذا قفز ضغط الدم فجأة إلى 260/150 مم زئبق؟",
+          "en": "A pheochromocytoma patient develops sinus tachycardia. A resident administers IV propranolol BEFORE establishing alpha-blockade. Why does BP surge to 260/150 mmHg?"
+        },
+        "title": {
+          "tr": "Klinik Vaka: Feokromositomada Blokaj Sıralaması",
+          "ar": "حالة سريرية: تسلسل الحصر في ورم القواتم",
+          "en": "Clinical Vignette: Sequencing Blockade in Pheochromocytoma"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 17
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step10",
+      "order": 10,
+      "stageIndex": 10,
+      "stage": "retrieval",
+      "type": "retrieval",
+      "title": {
+        "tr": "Geri Çağırma: Alfa-1 Sinyal Kaskadı",
+        "ar": "استرجاع: شلال تأشير ألفا-1",
+        "en": "Retrieval: Alpha-1 Signaling Cascade"
+      },
+      "prompt": {
+        "tr": "Hangi ikinci haberci dizisi, alfa-1 adrenerjik reseptör aktivasyonunu takiben vazokonstriksiyonu tetikleyen moleküler kaskadı doğru sıralar?",
+        "ar": "أي تسلسل للمرسال الثاني يوضح بدقة الشلال الجزيئي المحفز للتضيق الوعائي عقب تفعيل مستقبل ألفا-1 الأدريناليني؟",
+        "en": "Which second messenger sequence correctly outlines the molecular cascade triggering vasoconstriction following alpha-1 adrenergic receptor activation?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Alfa-1 vazokonstriksiyonunun hücre içi iletim basamakları hangisidir?",
+          "ar": "ما هي المراحل الخلوية لتأشير التضيق الوعائي عبر مستقبلات ألفا-1؟",
+          "en": "What is the intracellular signaling sequence mediating alpha-1 vasoconstriction?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s10-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Gq aktivasyonu -> Fosfolipaz C (PLC) -> IP3 ve DAG -> IP3 kapılı ER Ca2+ salınımı -> Ca2+-kalmodulin MLCK'yi aktive eder -> Kasılma.",
+              "ar": "تفعيل Gq -> فوسفوليباز C -> تشكل IP3 وDAG -> تحرر Ca2+ من الشبكة الإندوبلازمية عبر IP3 -> كالمديولين ينشط MLCK -> انقباض.",
+              "en": "Gq activation -> Phospholipase C (PLC) -> IP3 and DAG -> IP3-gated ER Ca2+ release -> Ca2+-calmodulin activates MLCK -> Contraction."
+            },
+            "feedback": {
+              "tr": "Doğru. Alfa-1 Gq ile PLC-beta'yı aktive eder, açığa çıkan IP3 kalsiyumu salarak kalmodulin ve MLCK ile kasılmayı başlatır.",
+              "ar": "صحيح. يقترن ألفا-1 بـ Gq لتنشيط PLC-بيتا، حيث يحرر IP3 الكالسيوم ليفعل الكالموديولين و MLCK مسبباً الانقباض.",
+              "en": "Correct. Alpha-1 couples to Gq to activate PLC-beta, generating IP3 to release calcium and stimulate MLCK via calmodulin."
+            }
+          },
+          {
+            "id": "opt-l7-s10-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Gs aktivasyonu -> Adenilat siklaz -> cAMP artışı -> Protein Kinaz A aktivasyonu -> Troponin fosforilasyonu -> Kasılma.",
+              "ar": "تفعيل Gs -> محلقة الأدينيلات -> ارتفاع cAMP -> تنشيط بروتين كيناز A -> فسفرة التروponin -> انقباض.",
+              "en": "Gs activation -> Adenylyl cyclase -> cAMP elevation -> Protein Kinase A activation -> Phosphorylation of troponin -> Contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Gs/cAMP/PKA düz kasta kasılma değil gevşeme yapar; ayrıca damar düz kasında troponin bulunmaz, kalmodulin bulunur.",
+              "ar": "غير صحيح. مسار Gs/cAMP/PKA يسبب الارتخاء في العضلة الملساء وليس الانقباض؛ كما تفتقر العضلة الملساء للتروبونين.",
+              "en": "Incorrect. Gs/cAMP/PKA produces smooth muscle relaxation (by inhibiting MLCK); smooth muscle lacks troponin, utilizing calmodulin instead."
+            }
+          },
+          {
+            "id": "opt-l7-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Gi aktivasyonu -> Çözünür guanilat siklaz -> cGMP artışı -> Protein Kinaz G -> Miyozin defosforilasyonu -> Vazokonstriksiyon.",
+              "ar": "تفعيل Gi -> محلقة الغوانيلات الذوابة -> تدفق cGMP -> بروتين كيناز G -> نزع فسفرة الميوزين -> تضيق وعائي.",
+              "en": "Gi activation -> Soluble guanylyl cyclase -> cGMP surge -> Protein Kinase G -> Dephosphorylation of myosin -> Vasoconstriction."
+            },
+            "feedback": {
+              "tr": "Yanlış. cGMP/PKG yolağı (NO ile uyarılır) vazokonstriksiyon değil vazodilatasyon yapar.",
+              "ar": "غير صحيح. يسبب مسار cGMP/PKG (المحفز بأكسيد النيتريك) توسعاً وعائياً وليس تضيقاً.",
+              "en": "Incorrect. The cGMP/PKG pathway causes vasodilation, not vasoconstriction. Alpha-1 signals through Gq and IP3/Ca2+."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Fosfolipaz C",
+          "arContext": "فوسفوليباز C (Phospholipase C (PLC))"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Alfa-1 reseptörleri heterotrimerik Gq proteinine kenetlenir.",
+          "ar": "تقترن مستقبلات ألفا-1 ببروتين Gq ثلاثي الوحدات المغايرة.",
+          "en": "Alpha-1 receptors couple to the Gq heterotrimeric G-protein."
+        },
+        {
+          "tier": 2,
+          "tr": "Gq proteini membrana bağlı hangi enzimi uyararak PIP2'yi iki haberciye (IP3 ve DAG) böler?",
+          "ar": "ما هو الإنزيم الغشائي الذي ينشطه Gq ليشطر PIP2 إلى مرسالين (IP3 و DAG)؟",
+          "en": "What membrane-bound enzyme does Gq stimulate to cleave PIP2 into IP3 and DAG?"
+        },
+        {
+          "tier": 3,
+          "tr": "Gq Fosfolipaz C'yi (PLC) aktive eder, IP3 endoplazmik retikulumdan Ca2+ salar, Ca2+-kalmodulin MLCK'yi aktive ederek kasılma yapar.",
+          "ar": "ينشط Gq إنزيم فوسفوليباز C مشكلاً IP3 الذي يحرر الكالسيوم؛ وينشط مركب الكالسيوم-كالموديولين إنزيم MLCK ليحدث الانقباض.",
+          "en": "Gq activates Phospholipase C (PLC), producing IP3 (mobilizing ER Ca2+) and DAG; calcium-calmodulin activates MLCK to contract smooth muscle."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s10-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Gq aktivasyonu -> Fosfolipaz C (PLC) -> IP3 ve DAG -> IP3 kapılı ER Ca2+ salınımı -> Ca2+-kalmodulin MLCK'yi aktive eder -> Kasılma.",
+              "ar": "تفعيل Gq -> فوسفوليباز C -> تشكل IP3 وDAG -> تحرر Ca2+ من الشبكة الإندوبلازمية عبر IP3 -> كالمديولين ينشط MLCK -> انقباض.",
+              "en": "Gq activation -> Phospholipase C (PLC) -> IP3 and DAG -> IP3-gated ER Ca2+ release -> Ca2+-calmodulin activates MLCK -> Contraction."
+            },
+            "feedback": {
+              "tr": "Doğru. Alfa-1 Gq ile PLC-beta'yı aktive eder, açığa çıkan IP3 kalsiyumu salarak kalmodulin ve MLCK ile kasılmayı başlatır.",
+              "ar": "صحيح. يقترن ألفا-1 بـ Gq لتنشيط PLC-بيتا، حيث يحرر IP3 الكالسيوم ليفعل الكالموديولين و MLCK مسبباً الانقباض.",
+              "en": "Correct. Alpha-1 couples to Gq to activate PLC-beta, generating IP3 to release calcium and stimulate MLCK via calmodulin."
+            }
+          },
+          {
+            "id": "opt-l7-s10-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Gs aktivasyonu -> Adenilat siklaz -> cAMP artışı -> Protein Kinaz A aktivasyonu -> Troponin fosforilasyonu -> Kasılma.",
+              "ar": "تفعيل Gs -> محلقة الأدينيلات -> ارتفاع cAMP -> تنشيط بروتين كيناز A -> فسفرة التروponin -> انقباض.",
+              "en": "Gs activation -> Adenylyl cyclase -> cAMP elevation -> Protein Kinase A activation -> Phosphorylation of troponin -> Contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Gs/cAMP/PKA düz kasta kasılma değil gevşeme yapar; ayrıca damar düz kasında troponin bulunmaz, kalmodulin bulunur.",
+              "ar": "غير صحيح. مسار Gs/cAMP/PKA يسبب الارتخاء في العضلة الملساء وليس الانقباض؛ كما تفتقر العضلة الملساء للتروبونين.",
+              "en": "Incorrect. Gs/cAMP/PKA produces smooth muscle relaxation (by inhibiting MLCK); smooth muscle lacks troponin, utilizing calmodulin instead."
+            }
+          },
+          {
+            "id": "opt-l7-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Gi aktivasyonu -> Çözünür guanilat siklaz -> cGMP artışı -> Protein Kinaz G -> Miyozin defosforilasyonu -> Vazokonstriksiyon.",
+              "ar": "تفعيل Gi -> محلقة الغوانيلات الذوابة -> تدفق cGMP -> بروتين كيناز G -> نزع فسفرة الميوزين -> تضيق وعائي.",
+              "en": "Gi activation -> Soluble guanylyl cyclase -> cGMP surge -> Protein Kinase G -> Dephosphorylation of myosin -> Vasoconstriction."
+            },
+            "feedback": {
+              "tr": "Yanlış. cGMP/PKG yolağı (NO ile uyarılır) vazokonstriksiyon değil vazodilatasyon yapar.",
+              "ar": "غير صحيح. يسبب مسار cGMP/PKG (المحفز بأكسيد النيتريك) توسعاً وعائياً وليس تضيقاً.",
+              "en": "Incorrect. The cGMP/PKG pathway causes vasodilation, not vasoconstriction. Alpha-1 signals through Gq and IP3/Ca2+."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Hangi ikinci haberci dizisi, alfa-1 adrenerjik reseptör aktivasyonunu takiben vazokonstriksiyonu tetikleyen moleküler kaskadı doğru sıralar?",
+          "ar": "أي تسلسل للمرسال الثاني يوضح بدقة الشلال الجزيئي المحفز للتضيق الوعائي عقب تفعيل مستقبل ألفا-1 الأدريناليني؟",
+          "en": "Which second messenger sequence correctly outlines the molecular cascade triggering vasoconstriction following alpha-1 adrenergic receptor activation?"
+        },
+        "title": {
+          "tr": "Geri Çağırma: Alfa-1 Sinyal Kaskadı",
+          "ar": "استرجاع: شلال تأشير ألفا-1",
+          "en": "Retrieval: Alpha-1 Signaling Cascade"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step11",
+      "order": 11,
+      "stageIndex": 11,
+      "stage": "connection",
+      "type": "connection",
+      "title": {
+        "tr": "Bütünsel Bağlantı: Renal Beta-1 ve RAAS Entegrasyonu",
+        "ar": "ترابط شمولي: تكامل بيتا-1 الكلوي مع نظام RAAS",
+        "en": "Holistic Connection: Renal Beta-1 & RAAS Integration"
+      },
+      "prompt": {
+        "tr": "Böbrek beta-1 adrenerjik reseptörleri, akut sempatik aktivasyonu kan basıncının uzun vadeli endokrin kontrolüne doğrudan nasıl bağlar?",
+        "ar": "كيف تربط مستقبلات بيتا-1 الأدرينالينية الكلوية مباشرة بين التنشيط الودي الحاد والتنظيم الصماوي طويل الأمد لضغط الدم؟",
+        "en": "How do renal beta-1 adrenoceptors directly link acute sympathetic nervous activation to long-term endocrine regulation of blood pressure?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Renal beta-1 reseptörleri sempatik sistemi RAAS yolağına nasıl entegre eder?",
+          "ar": "كيف تدمج مستقبلات بيتا-1 الكلوية الجهاز الودي بشلال RAAS؟",
+          "en": "How do renal beta-1 receptors integrate sympathetic activation into the RAAS cascade?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Jukstaglomerüler hücrelerdeki beta-1 uyarımı renin salınımını tetikler; RAAS kaskadı anjiyotensin II ve aldosteron üreterek basıncı artırır.",
+              "ar": "يحفز تنبيه بيتا-1 في الخلايا المجاورة للكبيبات تحرر الرينين، منشطاً شلال RAAS لإنتاج أنجيوتنسين II والألدوستيرون.",
+              "en": "Beta-1 stimulation on juxtaglomerular cells triggers renin release, driving the RAAS cascade to produce angiotensin II and aldosterone."
+            },
+            "feedback": {
+              "tr": "Doğru. Renal jukstaglomerüler hücreler beta-1 taşır; sempatik uyarım cAMP'yi artırıp renin salarak RAAS eksenini devreye sokar.",
+              "ar": "صحيح. تحمل الخلايا المجاورة للكبيبات مستقبلات بيتا-1؛ ينشط التنبيه الودي cAMP مفرزاً الرينين ومفعلاً محور RAAS.",
+              "en": "Correct. Renal juxtaglomerular cells express beta-1 receptors; sympathetic stimulation increases cAMP, releasing renin and activating RAAS."
+            }
+          },
+          {
+            "id": "opt-l7-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Böbrek beta-1 reseptörleri, hormonal kaskadlardan bağımsız olarak proksimal tübül sodyum kanallarını doğrudan açar ve sodyumu geri emer.",
+              "ar": "تفتح مستقبلات بيتا-1 الكلوية قنوات الصوديوم في الأنابيب القريبة مباشرة، معيدة امتصاص الصوديوم بمعزل عن الهرمونات.",
+              "en": "Renal beta-1 receptors directly open proximal tubular sodium channels, reabsorbing sodium independently of hormonal cascades."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-1 reseptörleri tübüler iyon kanallarını doğrudan açmaz; aldosteron üretimini tetikleyen enzimatik renin salınımını yönetir.",
+              "ar": "غير صحيح. لا تفتح مستقبلات بيتا-1 قنوات الأنابيب مباشرة؛ بل تتحكم بإفراز الرينين الذي يحفز الألدوستيرون لاحقاً.",
+              "en": "Incorrect. Beta-1 receptors on juxtaglomerular cells control the enzymatic release of renin, which hormonally drives aldosterone downstream."
+            }
+          },
+          {
+            "id": "opt-l7-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Böbrek beta-1 reseptörleri afferent arteriyolleri kasarak GFR'yi sıfırlar ve idrar üretimini tamamen durdurur.",
+              "ar": "تضيق مستقبلات بيتا-1 الكلوية الشريانات الواردة لإيقاف الترشيح الكبيبي وإلغاء إنتاج البول كلياً.",
+              "en": "Renal beta-1 receptors vasoconstrict afferent arterioles to shut down GFR and eliminate urine production entirely."
+            },
+            "feedback": {
+              "tr": "Yanlış. Afferent arteriyol büzülmesi vasküler alfa-1 reseptörleri (Gq) ile olur, beta-1 ile değil.",
+              "ar": "غير صحيح. يتوسط التضيق الشرياني الوارد مستقبلات ألفا-1 الوعائية (Gq) وليس بيتا-1.",
+              "en": "Incorrect. Renal afferent arteriolar vasoconstriction is mediated by vascular alpha-1 receptors (Gq), not beta-1."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Renin-Anjiyotensin Sistemi",
+          "arContext": "نظام الرينين-أنجيوتنسين (Renin-Angiotensin-Aldosterone System (RAAS))"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Renal glomerülün afferent arteriyol duvarında bulunan özelleşmiş hücreleri düşünün.",
+          "ar": "فكر في الخلايا المتخصصة الموجودة في جدار الشريان الوارد للكبيبة الكلوية.",
+          "en": "Think about the specialized sensory cells situated in the afferent arteriolar wall of the renal glomerulus."
+        },
+        {
+          "tier": 2,
+          "tr": "Bu jukstaglomerüler hücreler, anjiyotensinojen kaskadını başlatan proteolitik bir enzimi (renin) sentezler ve depolar.",
+          "ar": "تصنع وتخزن هذه الخلايا المجاورة للكبيبات إنزيماً حالاً للبروتين (الرينين) يطلق شلال الأنجيوتنسينوجين.",
+          "en": "These juxtaglomerular cells store and secrete an aspartic protease enzyme (renin) that initiates the angiotensinogen cascade."
+        },
+        {
+          "tier": 3,
+          "tr": "Jukstaglomerüler beta-1 reseptörleri Gs/cAMP sinyaliyle kana renin salınmasını sağlar; renin RAAS yolağını aktive ederek tansiyonu yükseltir.",
+          "ar": "تحفز مستقبلات بيتا-1 المجاورة للكبيبات عبر Gs/cAMP إفراز الرينين في الدم؛ مما ينشط محور RAAS لرفع الضغط وحبس الحجم.",
+          "en": "Juxtaglomerular beta-1 receptors activate Gs/cAMP signaling, triggering the secretion of renin to drive the RAAS pathway."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Jukstaglomerüler hücrelerdeki beta-1 uyarımı renin salınımını tetikler; RAAS kaskadı anjiyotensin II ve aldosteron üreterek basıncı artırır.",
+              "ar": "يحفز تنبيه بيتا-1 في الخلايا المجاورة للكبيبات تحرر الرينين، منشطاً شلال RAAS لإنتاج أنجيوتنسين II والألدوستيرون.",
+              "en": "Beta-1 stimulation on juxtaglomerular cells triggers renin release, driving the RAAS cascade to produce angiotensin II and aldosterone."
+            },
+            "feedback": {
+              "tr": "Doğru. Renal jukstaglomerüler hücreler beta-1 taşır; sempatik uyarım cAMP'yi artırıp renin salarak RAAS eksenini devreye sokar.",
+              "ar": "صحيح. تحمل الخلايا المجاورة للكبيبات مستقبلات بيتا-1؛ ينشط التنبيه الودي cAMP مفرزاً الرينين ومفعلاً محور RAAS.",
+              "en": "Correct. Renal juxtaglomerular cells express beta-1 receptors; sympathetic stimulation increases cAMP, releasing renin and activating RAAS."
+            }
+          },
+          {
+            "id": "opt-l7-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Böbrek beta-1 reseptörleri, hormonal kaskadlardan bağımsız olarak proksimal tübül sodyum kanallarını doğrudan açar ve sodyumu geri emer.",
+              "ar": "تفتح مستقبلات بيتا-1 الكلوية قنوات الصوديوم في الأنابيب القريبة مباشرة، معيدة امتصاص الصوديوم بمعزل عن الهرمونات.",
+              "en": "Renal beta-1 receptors directly open proximal tubular sodium channels, reabsorbing sodium independently of hormonal cascades."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-1 reseptörleri tübüler iyon kanallarını doğrudan açmaz; aldosteron üretimini tetikleyen enzimatik renin salınımını yönetir.",
+              "ar": "غير صحيح. لا تفتح مستقبلات بيتا-1 قنوات الأنابيب مباشرة؛ بل تتحكم بإفراز الرينين الذي يحفز الألدوستيرون لاحقاً.",
+              "en": "Incorrect. Beta-1 receptors on juxtaglomerular cells control the enzymatic release of renin, which hormonally drives aldosterone downstream."
+            }
+          },
+          {
+            "id": "opt-l7-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Böbrek beta-1 reseptörleri afferent arteriyolleri kasarak GFR'yi sıfırlar ve idrar üretimini tamamen durdurur.",
+              "ar": "تضيق مستقبلات بيتا-1 الكلوية الشريانات الواردة لإيقاف الترشيح الكبيبي وإلغاء إنتاج البول كلياً.",
+              "en": "Renal beta-1 receptors vasoconstrict afferent arterioles to shut down GFR and eliminate urine production entirely."
+            },
+            "feedback": {
+              "tr": "Yanlış. Afferent arteriyol büzülmesi vasküler alfa-1 reseptörleri (Gq) ile olur, beta-1 ile değil.",
+              "ar": "غير صحيح. يتوسط التضيق الشرياني الوارد مستقبلات ألفا-1 الوعائية (Gq) وليس بيتا-1.",
+              "en": "Incorrect. Renal afferent arteriolar vasoconstriction is mediated by vascular alpha-1 receptors (Gq), not beta-1."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Böbrek beta-1 adrenerjik reseptörleri, akut sempatik aktivasyonu kan basıncının uzun vadeli endokrin kontrolüne doğrudan nasıl bağlar?",
+          "ar": "كيف تربط مستقبلات بيتا-1 الأدرينالينية الكلوية مباشرة بين التنشيط الودي الحاد والتنظيم الصماوي طويل الأمد لضغط الدم؟",
+          "en": "How do renal beta-1 adrenoceptors directly link acute sympathetic nervous activation to long-term endocrine regulation of blood pressure?"
+        },
+        "title": {
+          "tr": "Bütünsel Bağlantı: Renal Beta-1 ve RAAS Entegrasyonu",
+          "ar": "ترابط شمولي: تكامل بيتا-1 الكلوي مع نظام RAAS",
+          "en": "Holistic Connection: Renal Beta-1 & RAAS Integration"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step12",
+      "order": 12,
+      "stageIndex": 12,
+      "stage": "mastery_check",
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Katekolamin İlaç Profilleme",
+        "ar": "اختبار الإتقان: التنميط الدوائي للكاتيكولامينات",
+        "en": "Mastery Check: Catecholamine Drug Profiling"
+      },
+      "prompt": {
+        "tr": "Üç bilinmeyen adrenerjik agonist değerlendiriliyor: A maddesi refleks bradikardiyle saf vazokonstriksiyon yapar; B maddesi minimal vasküler etkiyle inotropiyi artırır; C maddesi bronkodilatasyon ve taşikardi yapar. Reseptör profillerini belirleyin.",
+        "ar": "ثلاثة منبهات أدرينالينية مجهولة: المادة A تسبب تضيقاً وعائياً صرفاً مع بطء قلب انعكاسي؛ المادة B تزيد القلوصية دون تغير وعائي؛ المادة C تحدث توسعاً قصبياً وتسرع قلب. حدد انتقائيتها.",
+        "en": "Three unknown adrenergic agonists are evaluated: Agent A causes pure vasoconstriction with reflex bradycardia; Agent B increases inotropy with minimal vascular change; Agent C induces bronchodilation and tachycardia. Identify their receptor selectivity profiles."
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "A, B ve C maddelerinin adrenerjik reseptör seçicilik profilleri hangisinde doğru verilmiştir?",
+          "ar": "ما هي الملامح الصحيحة لانتقائية المستقبلات الأدرينالينية للمواد A و B و C؟",
+          "en": "Which mapping accurately describes the receptor selectivity profiles of Agents A, B, and C?"
+        },
+        "options": [
+          {
+            "id": "opt-l7-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "A Maddesi: Selektif Alfa-1 agonisti (Fenilefrin); B Maddesi: Selektif Beta-1 agonisti (Dobutamin); C Maddesi: Non-selektif Beta-1/Beta-2 agonisti (İzoproterenol).",
+              "ar": "المادة A: منبه ألفا-1 انتقائي (فينيل إفرين)؛ المادة B: منبه بيتا-1 انتقائي (دوبوتامين)؛ المادة C: منبه بيتا-1/بيتا-2 غير انتقائي (إيزوبروتيرينول).",
+              "en": "Agent A: Selective Alpha-1 agonist (e.g., Phenylephrine); Agent B: Selective Beta-1 agonist (e.g., Dobutamine); Agent C: Non-selective Beta-1/Beta-2 agonist (e.g., Isoproterenol)."
+            },
+            "feedback": {
+              "tr": "Doğru! Fenilefrin alfa-1 ile vazokonstriksiyon ve barorefleks bradikardi yapar; Dobutamin kardiyak beta-1'i seçer; İzoproterenol hem beta-1 hem beta-2'yi uyarır.",
+              "ar": "صحيح! فينيل إفرين يحدث تضيقاً وعائياً وبطء قلب انعكاسياً؛ دوبوتامين ينتقي بيتا-1 القلبي؛ إيزوبروتيرينول ينبه كلاً من بيتا-1 وبيتا-2.",
+              "en": "Correct! Agent A triggers alpha-1 vasoconstriction (reflex bradycardia); Agent B stimulates myocardial beta-1; Agent C stimulates both beta-2 and beta-1."
+            }
+          },
+          {
+            "id": "opt-l7-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "A Maddesi: Alfa-2 agonisti (Klonidin); B Maddesi: Beta-2 agonisti (Albuterol); C Maddesi: Non-selektif Alfa/Beta agonisti (Epinefrin).",
+              "ar": "المادة A: منبه ألفا-2 (كلونيدين)؛ المادة B: منبه بيتا-2 (ألبوتيرول)؛ المادة C: منبه ألفا/بيتا غير انتقائي (إبينفرين).",
+              "en": "Agent A: Alpha-2 agonist (Clonidine); Agent B: Beta-2 agonist (Albuterol); Agent C: Non-selective Alpha/Beta agonist (Epinephrine)."
+            },
+            "feedback": {
+              "tr": "Yanlış. Klonidin santral sempatolitik etkiyle tansiyonu düşürür, akut periferik vazokonstriksiyon yapmaz. Albuterol ise beta-2 selektiftir.",
+              "ar": "غير صحيح. يخفض الكلونيدين الضغط بتثبيط التنبيه الودي المركزي ولا يسبب تضيقاً محيطياً حاداً. ألبوتيرول انتقائي لـ بيتا-2.",
+              "en": "Incorrect. Clonidine lowers pressure via central sympathetic outflow reduction. Albuterol is beta-2 selective and relaxes smooth muscle rather than augmenting inotropy."
+            }
+          },
+          {
+            "id": "opt-l7-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "A Maddesi: Selektif Beta-2 agonisti; B Maddesi: Non-selektif Alfa-bloker; C Maddesi: Selektif Alfa-1 agonisti.",
+              "ar": "المادة A: منبه بيتا-2 انتقائي؛ المادة B: حاصر ألفا غير انتقائي؛ المادة C: منبه ألفا-1 انتقائي.",
+              "en": "Agent A: Selective Beta-2 agonist; Agent B: Non-selective Alpha-blocker; Agent C: Selective Alpha-1 agonist."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-2 agonisti vazokonstriksiyon değil vazodilatasyon ve hipotansiyon yapar. Fenilefrin alfa-1 ile basıncı artırıp vagal deşarjı tetikler.",
+              "ar": "غير صحيح. يحدث منبه بيتا-2 توسعاً وعائياً وهبوط ضغط وليس تضيقاً وعائياً. الفينيل إفرين يرفع الضغط محفزاً تفريغ المبهم الانعكاسي.",
+              "en": "Incorrect. A beta-2 agonist produces vasodilation and hypotension, not vasoconstriction with reflex bradycardia."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Selektif Adrenerjik Profil",
+          "arContext": "التوصيف الأدريناليني الانتقائي (Selective Adrenergic Profile)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Hemodinamiği analiz edin: yoğun vazokonstriksiyon kan basıncını yükseltir ve karotis sinüsü baroreseptörlerini uyarır.",
+          "ar": "حلل الديناميكا الدموية: التضيق الوعائي العاتي يرفع الضغط الشرياني الوسطي، مما ينشط مستقبِلات الضغط السباتية.",
+          "en": "Analyze the hemodynamics: intense vasoconstriction raises mean arterial pressure, firing carotid sinus baroreceptors."
+        },
+        {
+          "tier": 2,
+          "tr": "A maddesi Gq vasküler reseptörlerini (alfa-1); B maddesi miyokardiyal Gs reseptörlerini (beta-1); C maddesi ise hava yolu ve kalp Gs reseptörlerini uyarır.",
+          "ar": "تنبه المادة A مستقبلات Gq الوعائية (ألفا-1)؛ والمادة B مستقبلات Gs القلبية (بيتا-1)؛ والمادة C مستقبلات Gs في الشعب والقلب.",
+          "en": "Agent A stimulates Gq vascular receptors (alpha-1); Agent B stimulates myocardial Gs receptors (beta-1); Agent C stimulates both airway and cardiac Gs receptors."
+        },
+        {
+          "tier": 3,
+          "tr": "Fenilefrin (Alfa-1) saf vazokonstriksiyon ve refleks bradikardi yapar; Dobutamin (Beta-1) kasılmayı artırır; İzoproterenol (Beta-1+Beta-2) bronkodilatasyon ve taşikardi yapar.",
+          "ar": "فينيل إفرين (ألفا-1) يسبب تضيقاً وعائياً مع بطء قلب انعكاسي؛ دوبوتامين (بيتا-1) يعزز القلوصية؛ إيزوبروتيرينول (بيتا-1 + بيتا-2) يوسع الشعب ويسرع القلب.",
+          "en": "Agent A: Alpha-1 selective (Phenylephrine); Agent B: Beta-1 selective (Dobutamine); Agent C: Non-selective Beta-1/Beta-2 agonist (Isoproterenol)."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l7-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "A Maddesi: Selektif Alfa-1 agonisti (Fenilefrin); B Maddesi: Selektif Beta-1 agonisti (Dobutamin); C Maddesi: Non-selektif Beta-1/Beta-2 agonisti (İzoproterenol).",
+              "ar": "المادة A: منبه ألفا-1 انتقائي (فينيل إفرين)؛ المادة B: منبه بيتا-1 انتقائي (دوبوتامين)؛ المادة C: منبه بيتا-1/بيتا-2 غير انتقائي (إيزوبروتيرينول).",
+              "en": "Agent A: Selective Alpha-1 agonist (e.g., Phenylephrine); Agent B: Selective Beta-1 agonist (e.g., Dobutamine); Agent C: Non-selective Beta-1/Beta-2 agonist (e.g., Isoproterenol)."
+            },
+            "feedback": {
+              "tr": "Doğru! Fenilefrin alfa-1 ile vazokonstriksiyon ve barorefleks bradikardi yapar; Dobutamin kardiyak beta-1'i seçer; İzoproterenol hem beta-1 hem beta-2'yi uyarır.",
+              "ar": "صحيح! فينيل إفرين يحدث تضيقاً وعائياً وبطء قلب انعكاسياً؛ دوبوتامين ينتقي بيتا-1 القلبي؛ إيزوبروتيرينول ينبه كلاً من بيتا-1 وبيتا-2.",
+              "en": "Correct! Agent A triggers alpha-1 vasoconstriction (reflex bradycardia); Agent B stimulates myocardial beta-1; Agent C stimulates both beta-2 and beta-1."
+            }
+          },
+          {
+            "id": "opt-l7-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "A Maddesi: Alfa-2 agonisti (Klonidin); B Maddesi: Beta-2 agonisti (Albuterol); C Maddesi: Non-selektif Alfa/Beta agonisti (Epinefrin).",
+              "ar": "المادة A: منبه ألفا-2 (كلونيدين)؛ المادة B: منبه بيتا-2 (ألبوتيرول)؛ المادة C: منبه ألفا/بيتا غير انتقائي (إبينفرين).",
+              "en": "Agent A: Alpha-2 agonist (Clonidine); Agent B: Beta-2 agonist (Albuterol); Agent C: Non-selective Alpha/Beta agonist (Epinephrine)."
+            },
+            "feedback": {
+              "tr": "Yanlış. Klonidin santral sempatolitik etkiyle tansiyonu düşürür, akut periferik vazokonstriksiyon yapmaz. Albuterol ise beta-2 selektiftir.",
+              "ar": "غير صحيح. يخفض الكلونيدين الضغط بتثبيط التنبيه الودي المركزي ولا يسبب تضيقاً محيطياً حاداً. ألبوتيرول انتقائي لـ بيتا-2.",
+              "en": "Incorrect. Clonidine lowers pressure via central sympathetic outflow reduction. Albuterol is beta-2 selective and relaxes smooth muscle rather than augmenting inotropy."
+            }
+          },
+          {
+            "id": "opt-l7-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "A Maddesi: Selektif Beta-2 agonisti; B Maddesi: Non-selektif Alfa-bloker; C Maddesi: Selektif Alfa-1 agonisti.",
+              "ar": "المادة A: منبه بيتا-2 انتقائي؛ المادة B: حاصر ألفا غير انتقائي؛ المادة C: منبه ألفا-1 انتقائي.",
+              "en": "Agent A: Selective Beta-2 agonist; Agent B: Non-selective Alpha-blocker; Agent C: Selective Alpha-1 agonist."
+            },
+            "feedback": {
+              "tr": "Yanlış. Beta-2 agonisti vazokonstriksiyon değil vazodilatasyon ve hipotansiyon yapar. Fenilefrin alfa-1 ile basıncı artırıp vagal deşarjı tetikler.",
+              "ar": "غير صحيح. يحدث منبه بيتا-2 توسعاً وعائياً وهبوط ضغط وليس تضيقاً وعائياً. الفينيل إفرين يرفع الضغط محفزاً تفريغ المبهم الانعكاسي.",
+              "en": "Incorrect. A beta-2 agonist produces vasodilation and hypotension, not vasoconstriction with reflex bradycardia."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Üç bilinmeyen adrenerjik agonist değerlendiriliyor: A maddesi refleks bradikardiyle saf vazokonstriksiyon yapar; B maddesi minimal vasküler etkiyle inotropiyi artırır; C maddesi bronkodilatasyon ve taşikardi yapar. Reseptör profillerini belirleyin.",
+          "ar": "ثلاثة منبهات أدرينالينية مجهولة: المادة A تسبب تضيقاً وعائياً صرفاً مع بطء قلب انعكاسي؛ المادة B تزيد القلوصية دون تغير وعائي؛ المادة C تحدث توسعاً قصبياً وتسرع قلب. حدد انتقائيتها.",
+          "en": "Three unknown adrenergic agonists are evaluated: Agent A causes pure vasoconstriction with reflex bradycardia; Agent B increases inotropy with minimal vascular change; Agent C induces bronchodilation and tachycardia. Identify their receptor selectivity profiles."
+        },
+        "title": {
+          "tr": "Ustalık Sınavı: Katekolamin İlaç Profilleme",
+          "ar": "اختبار الإتقان: التنميط الدوائي للكاتيكولامينات",
+          "en": "Mastery Check: Catecholamine Drug Profiling"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 20
+        }
+      ]
+    }
+  ]
+}

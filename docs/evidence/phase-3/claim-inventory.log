@@ -1,0 +1,44 @@
+$ node scripts/claim-inventory.mjs
+================================================================
+PHARMACY EDUCATION PLATFORM ظ¤ STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: Thermodynamic Activity & The Ferguson Principle (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps and review flashcards for numbers, units, and empirical claims...
+- Total String Nodes Audited: 241
+- Recognized Number/Unit Matches Mapped to Registry: 99
+- Undeclared Numeric or Factual Hits: 0
+
+[PASS] 100% of numbers, units, and empirical statements strictly map to the declared Claim Registry.
+
+| Claim ID | Category | Claim / Parameter | Value / Representation | Location | Status | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `CIT-01` | Textbook Reference | Foye's Principles of Medicinal Chemistry (8th ed.) | `Thermodynamic Activity & Ferguson Principle` | lesson.citations[0] | **pending-human-review** | Chapter/page marked unverified pending physical copy review (E1 policy). |
+| `CIT-02` | Textbook Reference | An Introduction to Medicinal Chemistry (6th ed., Patrick) | `Ferguson's Principle of Non-Specific Action` | lesson.citations[1] | **pending-human-review** | Chapter/page marked unverified pending physical copy review (E1 policy). |
+| `CIT-03` | Textbook Reference | The Practice of Medicinal Chemistry (4th ed., Wermuth) | `Physicochemical Properties and Biological Activity` | lesson.citations[2] | **pending-human-review** | Chapter/page marked unverified pending physical copy review (E1 policy). |
+| `PROV-01` | Lecture Provenance | Farmas├╢tik ve Medisinal Kimya 1-Giri┼ا.pdf (Slides 17-23) | `Original source slide deck (Private Reference Only)` | lesson.sources | **cited** | Recreated natively in vector SVGs and React widgets. 0 verbatim runs >= 8 words. |
+| `NUM-MC01-01` | Empirical Threshold | Non-Specific Thermodynamic Saturation Threshold | `High relative saturation window (pending-human-review status in data)` | Steps 2, 3, 7, 8, 10; Card 1 | **pending-human-review** | Logged in docs/needs-human-review.md. Numeric cutoff placeholder in data until confirmed. |
+| `NUM-MC01-02` | Empirical Threshold | Specific Drug Thermodynamic Activity Cutoff | `a < 0.001 (micromolar/nanomolar receptor affinity)` | Step 8, Step 10; NUM-MC01-02 | **pending-human-review** | Distinguishes stereospecific receptor affinity from non-specific bulk physical action. |
+| `NUM-MC01-03` | Empirical Constant | Vapor Pressure Ratio for Diethyl Ether Anesthesia | `Pt / P0 ظëê 0.03-0.05` | Step 1, Step 9; NUM-MC01-03 | **pending-human-review** | Minimum alveolar concentration ratio for surgical ether anesthesia. |
+| `NUM-MC01-04` | Empirical Divergence | Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms | `10^4 (4 orders of magnitude difference)` | Step 8 (misconceptionFeedback); NUM-MC01-04 | **pending-human-review** | Reflects 10^-5 (receptor agonist) vs 10^-1 (membrane saturation) mechanism classes. |
+| `ILLUS-01` | Clinical Dosing / Model | Diethyl Ether Illustrative Quantity | `~20ظô50 grams (high molar concentration in blood)` | Step 1 (config.drugA.dose) | **pending-human-review** | Hook comparison. Inhalation dosing wording ("tens of grams" vs % MAC) pending owner verification. |
+| `ILLUS-02` | Clinical Dosing / Model | Propranolol Illustrative Quantity | `10ظô40 milligrams (nanomolar concentration)` | Step 1 (config.drugB.dose) | **pending-human-review** | Hook comparison. Receptor ligand dosing wording pending owner confirmation. |
+| `ILLUS-03` | Illustrative Example | Hypothetical Compound X (Checkpoint) | `a = 0.15 with broad scaffold tolerance` | Step 5 (config.options[1]) | **illustrative-example** | Purely hypothetical diagnostic test case testing recognition of non-specific profile. |
+| `ILLUS-04` | Illustrative Example | Hypothetical Compound Y (Checkpoint) | `a = 0.00005, 500-fold enantiomeric potency difference` | Step 5 (config.options[0]) | **illustrative-example** | Purely hypothetical diagnostic test case testing recognition of stereospecific receptor ligand. |
+| `ILLUS-05` | Illustrative Example | Faded Calculation Given Values | `P0 = 200 mmHg, Pt = 10 mmHg` | Step 9 (config.given) | **illustrative-example** | Hypothetical problem parameters for thermodynamic activity calculation. |
+| `ILLUS-06` | Illustrative Example | Calculated Thermodynamic Activity Value | `a = Pt / P0 = 10 / 200 = 0.05 (5% relative saturation)` | Step 9 (options, revealedOutcome, explanation) | **illustrative-example** | Pure arithmetic division with no range claim. |
+| `ILLUS-07` | Model Dosing Contrast | Step 8 Drug A vs Drug B Contrast Dosing | `Drug A: a = 0.00001 (10 ┬╡g); Drug B: a = 0.20 (500 mg)` | Step 8 (config.comparison) | **pending-human-review** | Illustrative contrast teaching distinction between potency and saturation; doses pending owner review. |
+| `GAMIF-01` | Gamification / System Metric | Completion Experience Points Award | `50 XP` | Step 10 (config.xpAwarded) | **illustrative-example** | Platform gamification token calibrated for bite-sized lesson completion. |
+| `SPACED-01` | Gamification / System Metric | Spaced Repetition Enrollment & Interval | `3 review cards enqueued to Leitner Box 1 (1-day interval)` | Step 10; lesson.spacedReviewCards | **illustrative-example** | Initial Leitner queue parameters for long-term retention. |
+
+----------------------------------------------------------------
+INVENTORY AUDIT SUMMARY:
+- Total Structured Claims Cataloged: 17
+- 'cited' (Directly Traced Sources): 1
+- 'pending-human-review' (Owner Sign-off Required): 10
+- 'illustrative-example' (Pedagogical Calculations / Gamification): 6
+[PASS] Step 8's '4 orders of magnitude' (NUM-MC01-04) verified in claim inventory.
+================================================================
+

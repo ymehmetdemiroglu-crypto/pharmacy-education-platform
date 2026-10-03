@@ -1,0 +1,2046 @@
+{
+  "id": "pharm-mod6-les1",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-06",
+  "title": {
+    "tr": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler",
+    "ar": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية",
+    "en": "GABAergic Neurotransmission & Positive Allosteric Modulators"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "GABA-A klorür kanalı üzerinde benzodiyazepin ve barbitüratların allosterik mekanizmalarını ve güvenlik profillerini ayırt etmek.",
+    "ar": "التمييز بين الآليات التفارغية للبنزوديازيبينات والباربيتورات على قناة كلوريد GABA-A وملفات أمانها.",
+    "en": "Differentiate allosteric mechanisms and safety profiles of benzodiazepines versus barbiturates on GABA-A chloride channels."
+  },
+  "misconceptions": [
+    {
+      "tr": "Benzodiyazepinlerin GABA yokluğunda da klorür kanalını doğrudan açabileceği yanılgısı (yalnızca GABA varlığında açılma frekansını artırırlar).",
+      "ar": "الاعتقاد الخاطئ بأن البنزوديازيبينات تفتح قناة الكلوريد بمفردها غيابياً دون الحاجة لوجود GABA (هي تزيد تواتر الفتح فقط).",
+      "en": "Benzodiazepines open chloride channels in the total absence of GABA."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Santral Sinir Sistemi.pdf",
+      "page": 6
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH11-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "GABAergic Neurotransmission and Benzodiazepine Pharmacology",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "unverified"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod6-les1-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Benzodiyazepin Mekanizması",
+      "prompt": "Benzodiyazepinler GABA-A klorür kanalının açılma frekansını mı, yoksa açık kalma süresini mi artırır?",
+      "answer": "Açılma frekansını (Frekans = Fren) artırır; doğrudan kanal açamazlar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les1-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Barbitürat Tehlikesi",
+      "prompt": "Barbitüratlar yüksek dozda neden ölümcül solunum depresyonu yapar?",
+      "answer": "Kanalın açık kalma süresini artırır ve yüksek dozda GABA olmadan kanalı doğrudan açabilirler.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les1-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Flumazenil Antidotu",
+      "prompt": "Benzodiyazepin aşırı dozunda allosterik bölgeyi yarışmalı bloke eden spesifik antidot nedir?",
+      "answer": "Flumazenil spesifik yarışmalı antagonisttir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "GABAerjik Nörotransmisyon ve Pozitif Allosterik Modülatörler"
+    },
+    "ar": {
+      "title": "النقل العصبي عبر GABA والمعدلات التفارغية الإيجابية"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod6-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Beynin Ana Fren Pedalı",
+        "ar": "كابح الدماغ الأساسي",
+        "en": "The Brain's Master Brake Pedal"
+      },
+      "prompt": {
+        "en": "A patient ingesting 40 diazepam tablets awakens safely, yet taking 10 phenobarbital tablets causes fatal respiratory arrest. Why do benzodiazepines have an insurmountable safety ceiling while barbiturates kill in overdose?",
+        "tr": "40 tablet diyazepam alan hasta güvenle uyanırken, 10 tablet fenobarbital alan hasta solunum arrestinden ölür. Benzodiyazepinler aşılmaz bir güvenlik tavanına sahipken barbitüratlar neden ölümcüldür?",
+        "ar": "يستيقظ مريض ابتلع 40 قرص ديازيبام بأمان، بينما 10 أقراص فينوباربيتال تسبب توقفاً تنفسياً مميتاً. لماذا تمتلك البنزوديازيبينات سقف أمان منيعاً بينما تقتل الباربيتورات؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "options": [
+          {
+            "id": "opt_pam_vs_pore",
+            "text": {
+              "en": "Benzodiazepines are pure allosteric modulators requiring endogenous GABA, whereas barbiturates directly gate the chloride pore at high concentrations.",
+              "tr": "Benzodiyazepinler endojen GABA'ya muhtaç saf allosterik modülatörlerdir; barbitüratlar ise yüksek dozda klorür kanalını doğrudan açarlar.",
+              "ar": "البنزوديازيبينات معدلات تفارغية نقية تتطلب GABA داخلياً، بينما تفتح الباربيتورات قناة الكلوريد مباشرة عند التراكيز العالية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs only increase GABA gating frequency and cannot open the pore alone. High-dose barbiturates directly gate chloride influx without GABA.",
+              "tr": "Doğru! BZD'ler sadece GABA varlığında açılma frekansını artırır. Barbitüratlar ise GABA olmadan da kanalı açarak solunumu durdurur.",
+              "ar": "صحيح! تزيد البنزوديازيبينات تردد الفتح بوجود GABA فقط، بينما تفتح الباربيتورات القناة مباشرة دون الحاجة لـ GABA مسببة شللاً تنفسياً."
+            }
+          },
+          {
+            "id": "opt_hepatic_saturation",
+            "text": {
+              "en": "Diazepam undergoes saturable hepatic first-pass metabolism that limits toxic systemic drug delivery to medullary respiratory centers.",
+              "tr": "Diyazepam, medüller solunum merkezlerine toksik ilaç ulaşımını sınırlayan doymuş hepatik ilk geçiş metabolizmasına uğrar.",
+              "ar": "يخضع الديازيبام لاستقلاب كبدي أولي مشبع يحد من وصول الدواء السام إلى مراكز التنفس النخاعية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Diazepam has high systemic bioavailability; its safety ceiling is purely pharmacodynamic (GABA dependence), not pharmacokinetic clearance saturation.",
+              "tr": "Yanlış. Diyazepamın güvenliği farmakokinetik klirens satürasyonundan değil, tamamen GABA'ya bağımlı farmakodinamik tavandan kaynaklanır.",
+              "ar": "غير صحيح. سلامة الديازيبام تنبع من آلية ديناميكية دوائية (الاعتماد الإجباري على GABA) وليس من تشبع الاستقلاب الكبدي."
+            }
+          },
+          {
+            "id": "opt_receptor_endocytosis",
+            "text": {
+              "en": "High-dose benzodiazepines trigger immediate clathrin-mediated endocytosis of GABA-A receptors, desensitizing neurons to further depression.",
+              "tr": "Yüksek doz benzodiyazepinler GABA-A reseptörlerinin klatrin aracılı endositozunu tetikleyerek nöronları depresyona karşı duyarsızlaştırır.",
+              "ar": "تحفز الجرعات العالية من البنزوديازيبين بلعمة فورية لمستقبلات GABA-A مما يزيل حساسية الخلايا العصبية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Acute receptor endocytosis does not occur in minutes during overdose. Tolerance and uncoupling require days to weeks of chronic exposure.",
+              "tr": "Yanlış. Reseptör endositozu akut aşırı dozda dakikalar içinde oluşmaz; tolerans ve reseptör kopması kronik maruziyet gerektirir.",
+              "ar": "غير صحيح. لا تحدث بلعمة المستقبلات الحادة خلال دقائق من الجرعة المفرطة؛ بل تتطلب تحملاً واستخداماً مزمناً لأسابيع."
+            }
+          },
+          {
+            "id": "opt_gaba_depletion",
+            "text": {
+              "en": "Benzodiazepines deplete vesicular GABA stores, self-limiting their own inhibitory action once endogenous neurotransmitter runs out.",
+              "tr": "Benzodiyazepinler veziküler GABA depolarını tüketerek, endojen nörotransmitter bittiğinde kendi inhibitör etkilerini sonlandırırlar.",
+              "ar": "تستنفد البنزوديازيبينات مخازن GABA الحويصلية، مما يحد من تأثيرها المثبط تلقائياً عند نفاذ الناقل."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Benzodiazepines do not stimulate vesicular release or exhaust GABA stores. They allosterically enhance postsynaptic responsiveness to GABA.",
+              "tr": "Yanlış. Benzodiyazepinler veziküler GABA salınımını veya tükenmesini tetiklemez; sadece postsinaptik reseptörün GABA'ya yanıtını artırırlar.",
+              "ar": "غير صحيح. لا تستنزف البنزوديازيبينات حويصلات GABA، بل تعزز استجابة المستقبل البعد مشبكي للناقل الموجود تفارغياً."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "GABA-A reseptörü",
+          "arContext": "مستقبِل GABA-A"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Biri kapıyı çalmak için ev sahibine (GABA) muhtaçtır; diğeri ise ev sahibini beklemeden kapıyı kırıp içeri girer.",
+          "ar": "أحدهما يحتاج لصاحب البيت (GABA) ليفتح الباب؛ والآخر يكسر الباب ويقتحم دون انتظار أحد.",
+          "en": "One drug obligatorily requires endogenous GABA; the other can directly crowbar the door open without any host."
+        },
+        {
+          "tier": 2,
+          "tr": "Benzodiyazepinler tek başlarına kanalı açamazlar; sadece GABA'nın yaptığı açılmayı frekans düzeyinde kolaylaştırırlar.",
+          "ar": "تعجز البنزوديازيبينات عن فتح القناة بمفردها؛ بل تسهل الفتح الذي يحدثه GABA بزيادة تردده فقط.",
+          "en": "Benzodiazepines cannot gate the channel alone; they purely augment opening frequency in response to GABA."
+        },
+        {
+          "tier": 3,
+          "tr": "Barbitüratlar yüksek dozda doğrudan kanal açıcıdır (GABA-mimetik); bu da kontrolsüz solunum durmasına yol açar.",
+          "ar": "أما الباربيتورات فتفتح القناة مباشرة عند التراكيز المرتفعة مسببة توقفاً تاماً لمركز التنفس النخاعي.",
+          "en": "Barbiturates directly gate chloride channels at high doses without GABA, triggering fatal medullary respiratory arrest."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_pam_vs_pore",
+            "text": {
+              "en": "Benzodiazepines are pure allosteric modulators requiring endogenous GABA, whereas barbiturates directly gate the chloride pore at high concentrations.",
+              "tr": "Benzodiyazepinler endojen GABA'ya muhtaç saf allosterik modülatörlerdir; barbitüratlar ise yüksek dozda klorür kanalını doğrudan açarlar.",
+              "ar": "البنزوديازيبينات معدلات تفارغية نقية تتطلب GABA داخلياً، بينما تفتح الباربيتورات قناة الكلوريد مباشرة عند التراكيز العالية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs only increase GABA gating frequency and cannot open the pore alone. High-dose barbiturates directly gate chloride influx without GABA.",
+              "tr": "Doğru! BZD'ler sadece GABA varlığında açılma frekansını artırır. Barbitüratlar ise GABA olmadan da kanalı açarak solunumu durdurur.",
+              "ar": "صحيح! تزيد البنزوديازيبينات تردد الفتح بوجود GABA فقط، بينما تفتح الباربيتورات القناة مباشرة دون الحاجة لـ GABA مسببة شللاً تنفسياً."
+            }
+          },
+          {
+            "id": "opt_hepatic_saturation",
+            "text": {
+              "en": "Diazepam undergoes saturable hepatic first-pass metabolism that limits toxic systemic drug delivery to medullary respiratory centers.",
+              "tr": "Diyazepam, medüller solunum merkezlerine toksik ilaç ulaşımını sınırlayan doymuş hepatik ilk geçiş metabolizmasına uğrar.",
+              "ar": "يخضع الديازيبام لاستقلاب كبدي أولي مشبع يحد من وصول الدواء السام إلى مراكز التنفس النخاعية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Diazepam has high systemic bioavailability; its safety ceiling is purely pharmacodynamic (GABA dependence), not pharmacokinetic clearance saturation.",
+              "tr": "Yanlış. Diyazepamın güvenliği farmakokinetik klirens satürasyonundan değil, tamamen GABA'ya bağımlı farmakodinamik tavandan kaynaklanır.",
+              "ar": "غير صحيح. سلامة الديازيبام تنبع من آلية ديناميكية دوائية (الاعتماد الإجباري على GABA) وليس من تشبع الاستقلاب الكبدي."
+            }
+          },
+          {
+            "id": "opt_receptor_endocytosis",
+            "text": {
+              "en": "High-dose benzodiazepines trigger immediate clathrin-mediated endocytosis of GABA-A receptors, desensitizing neurons to further depression.",
+              "tr": "Yüksek doz benzodiyazepinler GABA-A reseptörlerinin klatrin aracılı endositozunu tetikleyerek nöronları depresyona karşı duyarsızlaştırır.",
+              "ar": "تحفز الجرعات العالية من البنزوديازيبين بلعمة فورية لمستقبلات GABA-A مما يزيل حساسية الخلايا العصبية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Acute receptor endocytosis does not occur in minutes during overdose. Tolerance and uncoupling require days to weeks of chronic exposure.",
+              "tr": "Yanlış. Reseptör endositozu akut aşırı dozda dakikalar içinde oluşmaz; tolerans ve reseptör kopması kronik maruziyet gerektirir.",
+              "ar": "غير صحيح. لا تحدث بلعمة المستقبلات الحادة خلال دقائق من الجرعة المفرطة؛ بل تتطلب تحملاً واستخداماً مزمناً لأسابيع."
+            }
+          },
+          {
+            "id": "opt_gaba_depletion",
+            "text": {
+              "en": "Benzodiazepines deplete vesicular GABA stores, self-limiting their own inhibitory action once endogenous neurotransmitter runs out.",
+              "tr": "Benzodiyazepinler veziküler GABA depolarını tüketerek, endojen nörotransmitter bittiğinde kendi inhibitör etkilerini sonlandırırlar.",
+              "ar": "تستنفد البنزوديازيبينات مخازن GABA الحويصلية، مما يحد من تأثيرها المثبط تلقائياً عند نفاذ الناقل."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Benzodiazepines do not stimulate vesicular release or exhaust GABA stores. They allosterically enhance postsynaptic responsiveness to GABA.",
+              "tr": "Yanlış. Benzodiyazepinler veziküler GABA salınımını veya tükenmesini tetiklemez; sadece postsinaptik reseptörün GABA'ya yanıtını artırırlar.",
+              "ar": "غير صحيح. لا تستنزف البنزوديازيبينات حويصلات GABA، بل تعزز استجابة المستقبل البعد مشبكي للناقل الموجود تفارغياً."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: Tek Başına Benzodiyazepin",
+        "ar": "توقع: البنزوديازيبين بمفرده",
+        "en": "Prediction: Benzodiazepine in the Absence of GABA"
+      },
+      "prompt": {
+        "en": "Can a ligand at the GABA-A receptor gate the chloride channel in the complete absence of GABA? How do benzodiazepines and barbiturates behave under this condition?",
+        "tr": "GABA-A reseptöründeki bir ligand, ortamda hiç GABA yokken klorür kanalını açabilir mi? Benzodiyazepinler ve barbitüratlar bu kuralda nasıl ayrışır?",
+        "ar": "هل يمكن لربيطة عند مستقبل GABA-A أن تفتح قناة الكلوريد في الغياب التام لـ GABA؟ كيف يفترق سلوك البنزوديازيبينات والباربيتورات؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Benzodiyazepinler doğrudan agonist değildir; yalnızca GABA nın etkisini amplifiye ederler.",
+        "options": [
+          {
+            "id": "opt_direct_gating_diff",
+            "text": {
+              "en": "Diazepam produces zero chloride conductance without GABA, whereas barbiturates at anesthetic concentrations directly gate the open pore.",
+              "tr": "Diyazepam ortamda GABA yokken sıfır klorür iletimi sağlar; barbitüratlar ise anestezik dozlarda kanalı doğrudan açarlar.",
+              "ar": "لا ينتج الديازيبام أي توصيل للكلوريد بغياب GABA، بينما تفتح الباربيتورات القناة مباشرة بتراكيزها التخديرية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs lack intrinsic efficacy to open the pore alone. Barbiturates possess direct GABA-mimetic gating capability at high doses.",
+              "tr": "Doğru! BZD'ler tek başlarına kanalı açacak intrensek etkiye sahip değildir; barbitüratlar ise yüksek dozda doğrudan kanal açıcıdır.",
+              "ar": "صحيح! تفتقر البنزوديازيبينات للقدرة على فتح القناة بمفردها، بينما تمتلك الباربيتورات تأثيراً محاكياً مباشراً لـ GABA."
+            }
+          },
+          {
+            "id": "opt_both_orthosteric",
+            "text": {
+              "en": "Both drugs act as orthosteric agonists that open the channel identically, differing solely in their dissociation equilibrium constants (Kd).",
+              "tr": "Her iki ilaç da kanalı aynı şekilde açan ortosterik agonistlerdir, yalnızca ayrışma denge sabitleri (Kd) farklıdır.",
+              "ar": "كلا الدواءين ناهضان متماثلان في الموقع الأصلي يفتحان القناة، والاختلاف الوحيد بينهما هو ثابت التفكك (Kd)."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Neither drug binds the orthosteric GABA pocket. They bind distinct allosteric sites, but barbiturates can directly gate the pore.",
+              "tr": "Yanlış. İki ilaç da ortosterik GABA cebine bağlanmaz. Farklı allosterik bölgelere bağlanırlar ancak barbitüratlar doğrudan gözenek açabilir.",
+              "ar": "غير صحيح. لا يرتبط أي منهما بموقع GABA الأصلي، بل يرتبطان بمواقع تفارغية متمايزة، وتنفرد الباربيتورات بفتح القناة مباشرة."
+            }
+          },
+          {
+            "id": "opt_pore_block_misconception",
+            "text": {
+              "en": "Barbiturates block the channel lumen while benzodiazepines allow inward chloride flow only when phosphorylated by protein kinase A.",
+              "tr": "Barbitüratlar kanal lümenini tıkar; benzodiyazepinler ise sadece protein kinaz A ile fosforillendiğinde klorür girişine izin verir.",
+              "ar": "تسد الباربيتورات لمعة القناة بينما تسمح البنزوديازيبينات بدخول الكلوريد فقط عند فسفرتها ببروتين كيناز A."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates enhance and gate chloride influx rather than blocking it (picrotoxin blocks the pore lumen).",
+              "tr": "Yanlış. Barbitüratlar kanalı tıkamaz, klorür akışını açarlar (kanal lümenini tıkayan pikrotoksindir).",
+              "ar": "غير صحيح. تعزز الباربيتورات تدفق الكلوريد ولا تسده (البيكروتوكسين هو من يسد لمعة القناة)."
+            }
+          },
+          {
+            "id": "opt_covalent_locking",
+            "text": {
+              "en": "Both drugs require GABA, but barbiturates form an irreversible covalent adduct with the pore that prevents channel closure.",
+              "tr": "Her iki ilaç da GABA gerektirir, ancak barbitüratlar gözenek ile kovalent bağ kurarak kanalın kapanmasını kalıcı olarak engeller.",
+              "ar": "يتطلب كلاهما GABA، لكن الباربيتورات تشكل رابطة تساهمية غير عكوسة تمنع انغلاق القناة نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturate binding is non-covalent and reversible. Their danger lies in direct GABA-independent pore gating at high doses.",
+              "tr": "Yanlış. Barbitürat bağlanması kovalent değil tersinirdir. Tehlikeleri, yüksek dozda GABA'dan bağımsız doğrudan kanal açabilmeleridir.",
+              "ar": "غير صحيح. ارتباط الباربيتورات غير تساهمي وعكوس؛ مكمن الخطر هو فتحها المباشر للقناة دون الحاجة لـ GABA."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "İki ilacın intrensek etkinliklerini ortamda hiç transmitter yokken karşılaştırın.",
+          "ar": "قارن الفاعلية الذاتية لكلا الدواءين في غياب تام للناقل العصبي الداخلي.",
+          "en": "Compare the intrinsic gating efficacy of both drug classes when neurotransmitter is completely absent."
+        },
+        {
+          "tier": 2,
+          "tr": "Pozitif allosterik modülatörler ortosterik agonist olmadan klor akışı sağlayamazlar.",
+          "ar": "تعجز المعدلات التفارغية الإيجابية عن تمرير الكلوريد دون ارتباط ناهض أصلي بالمستقبل.",
+          "en": "Positive allosteric modulators cannot elicit ion flux without orthosteric agonist receptor occupancy."
+        },
+        {
+          "tier": 3,
+          "tr": "Diyazepam sıfır klor iletir; yüksek doz barbitürat ise GABA olmadan da kanalı açarak iletkenlik üretir.",
+          "ar": "يمرر الديازيبام صفراً من الكلوريد؛ بينما تفتح الباربيتورات العالية القناة مباشرة لتوليد تيار كلسيومي دون GABA.",
+          "en": "Diazepam produces zero chloride conductance; high-dose barbiturates directly gate the channel without GABA."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_direct_gating_diff",
+            "text": {
+              "en": "Diazepam produces zero chloride conductance without GABA, whereas barbiturates at anesthetic concentrations directly gate the open pore.",
+              "tr": "Diyazepam ortamda GABA yokken sıfır klorür iletimi sağlar; barbitüratlar ise anestezik dozlarda kanalı doğrudan açarlar.",
+              "ar": "لا ينتج الديازيبام أي توصيل للكلوريد بغياب GABA، بينما تفتح الباربيتورات القناة مباشرة بتراكيزها التخديرية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs lack intrinsic efficacy to open the pore alone. Barbiturates possess direct GABA-mimetic gating capability at high doses.",
+              "tr": "Doğru! BZD'ler tek başlarına kanalı açacak intrensek etkiye sahip değildir; barbitüratlar ise yüksek dozda doğrudan kanal açıcıdır.",
+              "ar": "صحيح! تفتقر البنزوديازيبينات للقدرة على فتح القناة بمفردها، بينما تمتلك الباربيتورات تأثيراً محاكياً مباشراً لـ GABA."
+            }
+          },
+          {
+            "id": "opt_both_orthosteric",
+            "text": {
+              "en": "Both drugs act as orthosteric agonists that open the channel identically, differing solely in their dissociation equilibrium constants (Kd).",
+              "tr": "Her iki ilaç da kanalı aynı şekilde açan ortosterik agonistlerdir, yalnızca ayrışma denge sabitleri (Kd) farklıdır.",
+              "ar": "كلا الدواءين ناهضان متماثلان في الموقع الأصلي يفتحان القناة، والاختلاف الوحيد بينهما هو ثابت التفكك (Kd)."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Neither drug binds the orthosteric GABA pocket. They bind distinct allosteric sites, but barbiturates can directly gate the pore.",
+              "tr": "Yanlış. İki ilaç da ortosterik GABA cebine bağlanmaz. Farklı allosterik bölgelere bağlanırlar ancak barbitüratlar doğrudan gözenek açabilir.",
+              "ar": "غير صحيح. لا يرتبط أي منهما بموقع GABA الأصلي، بل يرتبطان بمواقع تفارغية متمايزة، وتنفرد الباربيتورات بفتح القناة مباشرة."
+            }
+          },
+          {
+            "id": "opt_pore_block_misconception",
+            "text": {
+              "en": "Barbiturates block the channel lumen while benzodiazepines allow inward chloride flow only when phosphorylated by protein kinase A.",
+              "tr": "Barbitüratlar kanal lümenini tıkar; benzodiyazepinler ise sadece protein kinaz A ile fosforillendiğinde klorür girişine izin verir.",
+              "ar": "تسد الباربيتورات لمعة القناة بينما تسمح البنزوديازيبينات بدخول الكلوريد فقط عند فسفرتها ببروتين كيناز A."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates enhance and gate chloride influx rather than blocking it (picrotoxin blocks the pore lumen).",
+              "tr": "Yanlış. Barbitüratlar kanalı tıkamaz, klorür akışını açarlar (kanal lümenini tıkayan pikrotoksindir).",
+              "ar": "غير صحيح. تعزز الباربيتورات تدفق الكلوريد ولا تسده (البيكروتوكسين هو من يسد لمعة القناة)."
+            }
+          },
+          {
+            "id": "opt_covalent_locking",
+            "text": {
+              "en": "Both drugs require GABA, but barbiturates form an irreversible covalent adduct with the pore that prevents channel closure.",
+              "tr": "Her iki ilaç da GABA gerektirir, ancak barbitüratlar gözenek ile kovalent bağ kurarak kanalın kapanmasını kalıcı olarak engeller.",
+              "ar": "يتطلب كلاهما GABA، لكن الباربيتورات تشكل رابطة تساهمية غير عكوسة تمنع انغلاق القناة نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturate binding is non-covalent and reversible. Their danger lies in direct GABA-independent pore gating at high doses.",
+              "tr": "Yanlış. Barbitürat bağlanması kovalent değil tersinirdir. Tehlikeleri, yüksek dozda GABA'dan bağımsız doğrudan kanal açabilmeleridir.",
+              "ar": "غير صحيح. ارتباط الباربيتورات غير تساهمي وعكوس؛ مكمن الخطر هو فتحها المباشر للقناة دون الحاجة لـ GABA."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Analoji: Kapının Menteşesini Yağlamak",
+        "ar": "تشبيه حدسي: تزييت مفصلات الباب",
+        "en": "Intuitive Analogy: Oiling the Door Hinges"
+      },
+      "prompt": {
+        "en": "Picture the chloride channel as a bank vault: GABA is the key. Benzodiazepines oil the hinges so the key turns easily. What do barbiturates do at high doses?",
+        "tr": "Klorür kanalını bir banka kasası, GABA'yı da anahtar olarak hayal edin. Benzodiyazepin menteşeyi yağlar. Yüksek doz barbitüratlar ne yapar?",
+        "ar": "تخيل قناة الكلوريد كخزنة بنك وGABA كمفتاحها. تزيت البنزوديازيبينات المفصلات ليدور المفتاح بسهولة. ماذا تفعل الباربيتورات بالجرعات العالية؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_crowbar_analogy",
+            "text": {
+              "en": "Barbiturates crowbar the vault door wide open, forcing chloride influx continuously even if the GABA key is completely absent.",
+              "tr": "Barbitüratlar kasa kapısını levye ile kırarak, GABA anahtarı hiç olmasa bile içeriye sürekli klorür akışı sağlarlar.",
+              "ar": "تخلع الباربيتورات باب الخزنة عنوة، مما يدفق الكلوريد باستمرار حتى وإن غاب مفتاح GABA تماماً."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Barbiturates prolong channel open duration and directly force the pore open at anesthetic concentrations without GABA.",
+              "tr": "Doğru! Barbitüratlar açık kalma süresini uzatır ve yüksek dozda GABA olmadan da kapıyı kırıp klorür akışı başlatırlar.",
+              "ar": "صحيح! تطيل الباربيتورات مدة بقاء القناة مفتوحة وتجبرها على الانفتاح دون GABA عند التراكيز التخديرية."
+            }
+          },
+          {
+            "id": "opt_conductance_increase",
+            "text": {
+              "en": "Barbiturates widen the physical diameter of the chloride filter, multiplying single-channel conductance five-fold without altering gating time.",
+              "tr": "Barbitüratlar klorür filtresinin çapını genişleterek, açılma süresini değiştirmeden tek kanal iletkenliğini beş katına çıkarır.",
+              "ar": "توسع الباربيتورات القطر الفيزيائي لمرشح الكلوريد مضاعفة توصيل القناة المفردة 5 أضعاف دون تغيير زمن الفتح."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates alter gating kinetics (open duration and direct opening) rather than increasing the physical diameter or single-channel conductance.",
+              "tr": "Yanlış. Barbitüratlar kanal çapını veya tekil iletkenliği artırmaz; açılma kinetiğini (süresini ve doğrudan açılmayı) değiştirir.",
+              "ar": "غير صحيح. تعدل الباربيتورات حركية الفتح (إطالة زمن الانفتاح والفتح المباشر) ولا توسع القطر الفيزيائي للقناة."
+            }
+          },
+          {
+            "id": "opt_kinetic_inversion",
+            "text": {
+              "en": "Barbiturates purely increase opening frequency while benzodiazepines prolong single-channel burst open duration.",
+              "tr": "Barbitüratlar sadece açılma frekansını artırırken, benzodiyazepinler tek kanal patlama süresini uzatırlar.",
+              "ar": "تزيد الباربيتورات تردد الفتح فقط، بينما تطيل البنزوديازيبينات مدة بقاء القناة مفتوحة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Classic pharmacological rule: Benzodiazepines increase opening FREQUENCY; Barbiturates prolong opening DURATION.",
+              "tr": "Yanlış. Klasik farmakoloji kuralı: Benzodiyazepinler açılma FREKANSINI artırır, Barbitüratlar ise açık kalma SÜRESİNİ uzatır.",
+              "ar": "غير صحيح. القاعدة الدوائية الشهيرة: تزيد البنزوديازيبينات تردد الفتح، بينما تطيل الباربيتورات زمن الانفتاح."
+            }
+          },
+          {
+            "id": "opt_destroy_hinges",
+            "text": {
+              "en": "Barbiturates weld the vault door shut, preventing chloride ions from entering the neuron and producing osmotic lysis.",
+              "tr": "Barbitüratlar kasa kapısını kaynakla kapatır, klorür girişini engelleyerek nöronun ozmotik lizisine yol açar.",
+              "ar": "تلحم الباربيتورات باب الخزنة مغلقاً مما يمنع دخول الكلوريد ويؤدي إلى انحلال الخلية تناضحياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates open the door and increase inhibitory chloride influx; they never seal or weld it shut.",
+              "tr": "Yanlış. Barbitüratlar kapıyı kaynaklamaz, aksine açarak aşırı inhibitör klorür girişine ve solunum arrestine yol açarlar.",
+              "ar": "غير صحيح. تفتح الباربيتورات القناة وتدفق الكلوريد المثبط؛ ولا توصد الباب أو تغلقه أبداً."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "allosterik modülasyon",
+          "arContext": "التعديل التفارغي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Anahtar (GABA) olmadan yağlanmış menteşe tek başına kapıyı açabilir mi? Asla.",
+          "ar": "هل يمكن للمفصل المزيت أن يفتح الباب من تلقاء نفسه دون إدارة المفتاح؟ مستحيل.",
+          "en": "Can oiled hinges swing the vault door open without someone turning the key? Never."
+        },
+        {
+          "tier": 2,
+          "tr": "Kapıyı levye ile kıran barbitürat ise anahtara ihtiyaç duymaz; içeri sel gibi klorür akar.",
+          "ar": "أما من يخلع الباب (الباربيتورات) فلا يحتاج مفتاحاً؛ فيتدفق الكلوريد كالسيل دون مفتاح.",
+          "en": "A crowbar (barbiturate) ignores the key entirely, letting a flood of chloride rush into the neuron."
+        },
+        {
+          "tier": 3,
+          "tr": "Bu yüzden benzodiyazepin güvenlidir: GABA yoksa kasa kapısı sıkıca kilitli kalır!",
+          "ar": "لهذا السبب تعد البنزوديازيبينات آمنة: ففي غياب GABA يظل باب الخزنة موصداً بإحكام!",
+          "en": "This is why benzodiazepines are safe: without GABA, the vault remains securely locked!"
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_crowbar_analogy",
+            "text": {
+              "en": "Barbiturates crowbar the vault door wide open, forcing chloride influx continuously even if the GABA key is completely absent.",
+              "tr": "Barbitüratlar kasa kapısını levye ile kırarak, GABA anahtarı hiç olmasa bile içeriye sürekli klorür akışı sağlarlar.",
+              "ar": "تخلع الباربيتورات باب الخزنة عنوة، مما يدفق الكلوريد باستمرار حتى وإن غاب مفتاح GABA تماماً."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Barbiturates prolong channel open duration and directly force the pore open at anesthetic concentrations without GABA.",
+              "tr": "Doğru! Barbitüratlar açık kalma süresini uzatır ve yüksek dozda GABA olmadan da kapıyı kırıp klorür akışı başlatırlar.",
+              "ar": "صحيح! تطيل الباربيتورات مدة بقاء القناة مفتوحة وتجبرها على الانفتاح دون GABA عند التراكيز التخديرية."
+            }
+          },
+          {
+            "id": "opt_conductance_increase",
+            "text": {
+              "en": "Barbiturates widen the physical diameter of the chloride filter, multiplying single-channel conductance five-fold without altering gating time.",
+              "tr": "Barbitüratlar klorür filtresinin çapını genişleterek, açılma süresini değiştirmeden tek kanal iletkenliğini beş katına çıkarır.",
+              "ar": "توسع الباربيتورات القطر الفيزيائي لمرشح الكلوريد مضاعفة توصيل القناة المفردة 5 أضعاف دون تغيير زمن الفتح."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates alter gating kinetics (open duration and direct opening) rather than increasing the physical diameter or single-channel conductance.",
+              "tr": "Yanlış. Barbitüratlar kanal çapını veya tekil iletkenliği artırmaz; açılma kinetiğini (süresini ve doğrudan açılmayı) değiştirir.",
+              "ar": "غير صحيح. تعدل الباربيتورات حركية الفتح (إطالة زمن الانفتاح والفتح المباشر) ولا توسع القطر الفيزيائي للقناة."
+            }
+          },
+          {
+            "id": "opt_kinetic_inversion",
+            "text": {
+              "en": "Barbiturates purely increase opening frequency while benzodiazepines prolong single-channel burst open duration.",
+              "tr": "Barbitüratlar sadece açılma frekansını artırırken, benzodiyazepinler tek kanal patlama süresini uzatırlar.",
+              "ar": "تزيد الباربيتورات تردد الفتح فقط، بينما تطيل البنزوديازيبينات مدة بقاء القناة مفتوحة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Classic pharmacological rule: Benzodiazepines increase opening FREQUENCY; Barbiturates prolong opening DURATION.",
+              "tr": "Yanlış. Klasik farmakoloji kuralı: Benzodiyazepinler açılma FREKANSINI artırır, Barbitüratlar ise açık kalma SÜRESİNİ uzatır.",
+              "ar": "غير صحيح. القاعدة الدوائية الشهيرة: تزيد البنزوديازيبينات تردد الفتح، بينما تطيل الباربيتورات زمن الانفتاح."
+            }
+          },
+          {
+            "id": "opt_destroy_hinges",
+            "text": {
+              "en": "Barbiturates weld the vault door shut, preventing chloride ions from entering the neuron and producing osmotic lysis.",
+              "tr": "Barbitüratlar kasa kapısını kaynakla kapatır, klorür girişini engelleyerek nöronun ozmotik lizisine yol açar.",
+              "ar": "تلحم الباربيتورات باب الخزنة مغلقاً مما يمنع دخول الكلوريد ويؤدي إلى انحلال الخلية تناضحياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturates open the door and increase inhibitory chloride influx; they never seal or weld it shut.",
+              "tr": "Yanlış. Barbitüratlar kapıyı kaynaklamaz, aksine açarak aşırı inhibitör klorür girişine ve solunum arrestine yol açarlar.",
+              "ar": "غير صحيح. تفتح الباربيتورات القناة وتدفق الكلوريد المثبط؛ ولا توصد الباب أو تغلقه أبداً."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "GABA-A Pentamerik Klorür Kanal Kompleksi",
+        "ar": "معقد قناة الكلوريد الخماسية GABA-A",
+        "en": "GABA-A Pentameric Chloride Channel Complex"
+      },
+      "prompt": {
+        "en": "The GABA-A receptor is a pentameric ($2\\alpha 2\\beta 1\\gamma$) chloride channel. Where do GABA and benzodiazepines bind, and what biophysical membrane event silences the neuron?",
+        "tr": "GABA-A reseptörü pentamerik ($2\\alpha 2\\beta 1\\gamma$) bir klorür kanalıdır. GABA ve benzodiyazepinler nereye bağlanır ve hangi biyofiziksel olay nöronu susturur?",
+        "ar": "مستقبل GABA-A قناة كلوريد خماسية الوحدات ($2\\alpha 2\\beta 1\\gamma$). أين يرتبط GABA والبنزوديازيبين، وما الحدث الحيوي الفيزيائي الذي يسكت العصبون؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_pentamer_architecture",
+            "text": {
+              "en": "GABA binds at alpha/beta interfaces; benzodiazepines bind at the alpha/gamma interface. Influxing Cl- hyperpolarizes membrane potential from -70 to -85 mV.",
+              "tr": "GABA alfa/beta arayüzüne, benzodiyazepin alfa/gama arayüzüne bağlanır. Klor girişi zar potansiyelini -70'ten -85 mV'a hiperpolarize eder.",
+              "ar": "يرتبط GABA بأسطح التماس ألفا/بيتا، والبنزوديازيبين بسطح ألفا/غاما. يدفق الكلوريد لفرط استقطاب الغشاء من -70 إلى -85 ميلي فولت."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Two GABA molecules bind between alpha and beta subunits. BZDs bind between alpha and gamma, enhancing Cl- influx and hyperpolarization.",
+              "tr": "Doğru! GABA alfa/beta arasına, BZD ise alfa/gama arayüzüne bağlanır. Klor girişi zarı hiperpolarize ederek nöronda IPSP oluşturur.",
+              "ar": "صحيح! يرتبط جزيئا GABA بين ألفا وبيتا، ويرتبط البنزوديازيبين بين ألفا وغاما معززاً فرط الاستقطاب وتثبيط العصبون."
+            }
+          },
+          {
+            "id": "opt_orthosteric_competition",
+            "text": {
+              "en": "Benzodiazepines compete directly with GABA at both alpha/beta interfaces, acting as partial agonists that displace endogenous neurotransmitter.",
+              "tr": "Benzodiyazepinler her iki alfa/beta arayüzünde GABA ile doğrudan yarışarak endojen nörotransmitterin yerini alan parsiyel agonistlerdir.",
+              "ar": "تنافس البنزوديازيبينات GABA مباشرة عند سطحي ألفا/بيتا، كناهضات جزئية تزيح الناقل العصبي الداخلي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Benzodiazepines bind allosterically at the alpha/gamma interface, not the orthosteric alpha/beta GABA binding pocket.",
+              "tr": "Yanlış. Benzodiyazepinler ortosterik alfa/beta cebine değil, allosterik alfa/gama arayüzüne bağlanırlar.",
+              "ar": "غير صحيح. ترتبط البنزوديازيبينات تفارغياً عند سطح التماس ألفا/غاما وليس في جيب GABA الأصلي بين ألفا وبيتا."
+            }
+          },
+          {
+            "id": "opt_pore_lumen_binding",
+            "text": {
+              "en": "Benzodiazepines bind inside the central pore lumen to physically pull the channel walls outward and enlarge the water-filled diameter.",
+              "tr": "Benzodiyazepinler merkezi kanal lümenine bağlanarak kanal duvarlarını fiziksel olarak çeker ve klorür çapını genişletir.",
+              "ar": "ترتبط البنزوديازيبينات داخل لمعة القناة المركزية لتسحب جدرانها فيزيائياً وتوسع قطرها المائي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Channel lumen blockers like picrotoxin bind inside the pore. Benzodiazepines bind the extracellular domain at the alpha/gamma interface.",
+              "tr": "Yanlış. Kanal lümenine pikrotoksin gibi kanal blokörleri bağlanır; benzodiyazepinler ekstraselüler alfa/gama arayüzüne bağlanır.",
+              "ar": "غير صحيح. ترتبط حاصرات اللمعة (مثل البيكروتوكسين) داخل القناة، بينما يرتبط البنزوديازيبين بالنطاق الخارجي عند ألفا/غاما."
+            }
+          },
+          {
+            "id": "opt_depolarization_confusion",
+            "text": {
+              "en": "Chloride influx depolarizes the neuronal membrane from -70 to 0 mV, provoking rapid inactivation of voltage-gated sodium channels.",
+              "tr": "Klorür girişi nöron zarını -70'ten 0 mV'a depolarize ederek voltaj kapılı sodyum kanallarını hızla inaktive eder.",
+              "ar": "يؤدي دخول الكلوريد إلى نزع استقطاب الغشاء من -70 إلى 0 ميلي فولت مما يعطل قنوات الصوديوم."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Anion (Cl-) influx drives the resting membrane potential more negative (hyperpolarization, -70 to -85 mV), moving it away from threshold.",
+              "tr": "Yanlış. Negatif klorür iyonlarının girişi zarı depolarize etmez; hiperpolarize ederek (-85 mV) aksiyon potansiyeli eşiğinden uzaklaştırır.",
+              "ar": "غير صحيح. تدفق أنيونات الكلوريد السالبة يفرط استقطاب الغشاء نحو مزيد من السلبية (-85 ميلي فولت) مبعداً إياه عن عتبة التنبيه."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "klorür kanalı",
+          "arContext": "قناة الكلوريد"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "GABA-A reseptörü beş alt birimden oluşan heteropentamerik bir anyon kanalıdır.",
+          "ar": "مستقبل GABA-A قناة أنيونية خماسية خلوية متغايرة الوحدات.",
+          "en": "The GABA-A receptor is a heteropentameric anion pore composed of five distinct protein subunits."
+        },
+        {
+          "tier": 2,
+          "tr": "GABA molekülleri alfa/beta arasına, benzodiyazepinler ise alfa/gama arayüzüne kenetlenir.",
+          "ar": "ترتبط جزيئات GABA بين ألفا وبيتا، بينما تستقر البنزوديازيبينات عند سطح التماس بين ألفا وغاما.",
+          "en": "GABA binds at the two alpha/beta interfaces; benzodiazepines nestle at the alpha/gamma interface."
+        },
+        {
+          "tier": 3,
+          "tr": "İçeri giren Cl- iyonları zarı -70'ten -85 mV'a hiperpolarize ederek aksiyon potansiyelini susturur.",
+          "ar": "تدفق أيونات الكلوريد يفرط استقطاب الغشاء من -70 إلى -85 ميلي فولت مسكتاً جهود الفعل العصبية.",
+          "en": "Influxing Cl- hyperpolarizes membrane potential from -70 to -85 mV, establishing a silencing IPSP."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_pentamer_architecture",
+            "text": {
+              "en": "GABA binds at alpha/beta interfaces; benzodiazepines bind at the alpha/gamma interface. Influxing Cl- hyperpolarizes membrane potential from -70 to -85 mV.",
+              "tr": "GABA alfa/beta arayüzüne, benzodiyazepin alfa/gama arayüzüne bağlanır. Klor girişi zar potansiyelini -70'ten -85 mV'a hiperpolarize eder.",
+              "ar": "يرتبط GABA بأسطح التماس ألفا/بيتا، والبنزوديازيبين بسطح ألفا/غاما. يدفق الكلوريد لفرط استقطاب الغشاء من -70 إلى -85 ميلي فولت."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Two GABA molecules bind between alpha and beta subunits. BZDs bind between alpha and gamma, enhancing Cl- influx and hyperpolarization.",
+              "tr": "Doğru! GABA alfa/beta arasına, BZD ise alfa/gama arayüzüne bağlanır. Klor girişi zarı hiperpolarize ederek nöronda IPSP oluşturur.",
+              "ar": "صحيح! يرتبط جزيئا GABA بين ألفا وبيتا، ويرتبط البنزوديازيبين بين ألفا وغاما معززاً فرط الاستقطاب وتثبيط العصبون."
+            }
+          },
+          {
+            "id": "opt_orthosteric_competition",
+            "text": {
+              "en": "Benzodiazepines compete directly with GABA at both alpha/beta interfaces, acting as partial agonists that displace endogenous neurotransmitter.",
+              "tr": "Benzodiyazepinler her iki alfa/beta arayüzünde GABA ile doğrudan yarışarak endojen nörotransmitterin yerini alan parsiyel agonistlerdir.",
+              "ar": "تنافس البنزوديازيبينات GABA مباشرة عند سطحي ألفا/بيتا، كناهضات جزئية تزيح الناقل العصبي الداخلي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Benzodiazepines bind allosterically at the alpha/gamma interface, not the orthosteric alpha/beta GABA binding pocket.",
+              "tr": "Yanlış. Benzodiyazepinler ortosterik alfa/beta cebine değil, allosterik alfa/gama arayüzüne bağlanırlar.",
+              "ar": "غير صحيح. ترتبط البنزوديازيبينات تفارغياً عند سطح التماس ألفا/غاما وليس في جيب GABA الأصلي بين ألفا وبيتا."
+            }
+          },
+          {
+            "id": "opt_pore_lumen_binding",
+            "text": {
+              "en": "Benzodiazepines bind inside the central pore lumen to physically pull the channel walls outward and enlarge the water-filled diameter.",
+              "tr": "Benzodiyazepinler merkezi kanal lümenine bağlanarak kanal duvarlarını fiziksel olarak çeker ve klorür çapını genişletir.",
+              "ar": "ترتبط البنزوديازيبينات داخل لمعة القناة المركزية لتسحب جدرانها فيزيائياً وتوسع قطرها المائي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Channel lumen blockers like picrotoxin bind inside the pore. Benzodiazepines bind the extracellular domain at the alpha/gamma interface.",
+              "tr": "Yanlış. Kanal lümenine pikrotoksin gibi kanal blokörleri bağlanır; benzodiyazepinler ekstraselüler alfa/gama arayüzüne bağlanır.",
+              "ar": "غير صحيح. ترتبط حاصرات اللمعة (مثل البيكروتوكسين) داخل القناة، بينما يرتبط البنزوديازيبين بالنطاق الخارجي عند ألفا/غاما."
+            }
+          },
+          {
+            "id": "opt_depolarization_confusion",
+            "text": {
+              "en": "Chloride influx depolarizes the neuronal membrane from -70 to 0 mV, provoking rapid inactivation of voltage-gated sodium channels.",
+              "tr": "Klorür girişi nöron zarını -70'ten 0 mV'a depolarize ederek voltaj kapılı sodyum kanallarını hızla inaktive eder.",
+              "ar": "يؤدي دخول الكلوريد إلى نزع استقطاب الغشاء من -70 إلى 0 ميلي فولت مما يعطل قنوات الصوديوم."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Anion (Cl-) influx drives the resting membrane potential more negative (hyperpolarization, -70 to -85 mV), moving it away from threshold.",
+              "tr": "Yanlış. Negatif klorür iyonlarının girişi zarı depolarize etmez; hiperpolarize ederek (-85 mV) aksiyon potansiyeli eşiğinden uzaklaştırır.",
+              "ar": "غير صحيح. تدفق أنيونات الكلوريد السالبة يفرط استقطاب الغشاء نحو مزيد من السلبية (-85 ميلي فولت) مبعداً إياه عن عتبة التنبيه."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Dose-Response Modulator (Allosterik Kayma)",
+        "ar": "محاكي تفاعلي: معدل الجرعة والاستجابة (الإزاحة التفارغية)",
+        "en": "Interactive Simulator: DoseResponse Modulator (Allosteric Shift)"
+      },
+      "prompt": {
+        "en": "Observe the GABA concentration-response curve: add diazepam to witness the leftward shift, then add flumazenil to restore baseline.",
+        "tr": "Konsantrasyon-yanıt eğrisini izleyin: sola kaymayı görmek için diyazepam ekleyin, ardından başlangıç çizgisine dönmek için flumazenil verin.",
+        "ar": "راقب منحنى التركيز والاستجابة لـ GABA: أضف الديازيبام لمشاهدة الإزاحة نحو اليسار، ثم أضف الفلومازينيل لاستعادة خط الأساس."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "title": "GABA-A Konsantrasyon-Yanıt ve Allosterik Modülasyon",
+        "prompt": "GABA konsantrasyonunu artırın; diazepam ekleyerek sola kaymayı ve flumazenil ile nötrleşmeyi izleyin.",
+        "defaultEc50": 10,
+        "defaultEmax": 100,
+        "defaultHillSlope": 1,
+        "modes": [
+          "agonist",
+          "competitive_antagonist",
+          "partial_agonist"
+        ],
+        "source": {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 6
+        },
+        "explanation": "Diazepam pozitif allosterik modülatör (PAM) olarak GABA'nın afinitesini artırır ve eğriyi sola kaydırır (EC50 10 uM'den 1 uM'ye düşer). Flumazenil ise BZD bölgesinde yarışmalı nötral antagonist olarak etkiyi sıfırlar."
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Eğrinin sağa mı sola mı kaydığını ve Emax tavanının değişip değişmediğini inceleyin.",
+          "ar": "لاحظ هل ينزاح المنحنى يميناً أم يساراً، وما إذا كان سقف Emax يتغير أم يثبت.",
+          "en": "Observe whether the curve shifts left or right, and note if the maximal efficacy ceiling changes."
+        },
+        {
+          "tier": 2,
+          "tr": "Diyazepam GABA afinitesini artırarak EC50 değerini düşürür, ancak Emax değerini artıramaz.",
+          "ar": "يزيد الديازيبام ألفة GABA مخفضاً قيمة EC50، لكنه يعجز عن رفع Emax فوق سقفها الأصلي.",
+          "en": "Diazepam augments GABA affinity to lower EC50, but cannot elevate Emax above baseline."
+        },
+        {
+          "tier": 3,
+          "tr": "Flumazenil eklendiğinde diyazepam BZD bölgesinden sökülür ve eğri tam orijinal baseline hattına döner.",
+          "ar": "عند إضافة الفلومازينيل يُزاح الديازيبام من موقع البنزوديازيبين ويعود المنحنى لخط الأساس تماماً.",
+          "en": "Adding flumazenil displaces diazepam from the BZD pocket, snapping the curve back to baseline."
+        }
+      ],
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "title": "GABA-A Konsantrasyon-Yanıt ve Allosterik Modülasyon",
+          "prompt": "GABA konsantrasyonunu artırın; diazepam ekleyerek sola kaymayı ve flumazenil ile nötrleşmeyi izleyin.",
+          "defaultEc50": 10,
+          "defaultEmax": 100,
+          "defaultHillSlope": 1,
+          "modes": [
+            "agonist",
+            "competitive_antagonist",
+            "partial_agonist"
+          ],
+          "source": {
+            "file": "Santral Sinir Sistemi.pdf",
+            "page": 6
+          },
+          "explanation": "Diazepam pozitif allosterik modülatör (PAM) olarak GABA'nın afinitesini artırır ve eğriyi sola kaydırır (EC50 10 uM'den 1 uM'ye düşer). Flumazenil ise BZD bölgesinde yarışmalı nötral antagonist olarak etkiyi sıfırlar."
+        }
+      },
+      "conceptCheck": {
+        "options": []
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 5
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Benzodiyazepin vs Barbitürat Güvenliği",
+        "ar": "استكشاف موجه: أمان البنزوديازيبين مقابل الباربيتورات",
+        "en": "Guided Discovery: Benzodiazepine vs Barbiturate Safety"
+      },
+      "prompt": {
+        "en": "In the concentration-response curve, diazepam shifts the curve leftward (lowering EC50) without elevating baseline Emax. Why does this pharmacodynamic ceiling protect against fatal overdose?",
+        "tr": "Konsantrasyon-yanıt eğrisinde diyazepam EC50'yi düşürerek eğriyi sola kaydırır ancak Emax'ı artırmaz. Bu farmakodinamik tavan aşırı dozda neden hayat kurtarır?",
+        "ar": "يزيح الديازيبام منحنى التركيز والاستجابة يساراً (يخفض EC50) دون رفع Emax. لماذا يحمي هذا السقف الديناميكي الدوائي من الموت بالجرعة الزائدة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Benzodiyazepinler GABA bağımlı tavan etkileri sayesinde çok daha güvenlidir.",
+        "options": [
+          {
+            "id": "opt_gaba_ceiling_protects",
+            "text": {
+              "en": "Maximal inhibition is strictly limited by the finite amount of physiological GABA released, preventing uncontrolled hyperpolarization of respiratory pacemakers.",
+              "tr": "Maksimal inhibisyon sinapsa salınan fizyolojik GABA miktarı ile sınırlıdır; solunum merkezlerinin kontrolsüz baskılanması engellenir.",
+              "ar": "التثبيط الأعظمي مقيد بكمية GABA الفسيولوجية المفرزة، مما يمنع فرط الاستقطاب العشوائي لمراكز التنفس النخاعية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Because PAMs require GABA, once all endogenous GABA is bound, no further hyperpolarization can occur regardless of BZD dose.",
+              "tr": "Doğru! PAM'lar GABA'ya muhtaçtır; salınan tüm GABA bağlandığında BZD dozu ne kadar artarsa artsın daha fazla klorür girişi olamaz.",
+              "ar": "صحيح! نظراً لأن المعدلات التفارغية تتطلب GABA، فبمجرد ارتباط كل GABA المفرز لا يمكن حدوث مزيد من التثبيط مهما زادت جرعة البنزوديازيبين."
+            }
+          },
+          {
+            "id": "opt_full_agonist_confusion",
+            "text": {
+              "en": "Diazepam acts as an irreversible antagonist at high concentrations, automatically closing chloride channels when blood levels exceed therapeutic range.",
+              "tr": "Diyazepam yüksek konsantrasyonlarda irreversibl antagoniste dönüşerek, terapötik düzey aşıldığında klorür kanallarını otomatik kapatır.",
+              "ar": "يتحول الديازيبام لمناهض غير عكوس عند التراكيز العالية فيغلق قنوات الكلوريد تلقائياً عند تجاوز النطاق العلاجي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Diazepam remains a positive allosteric modulator at all doses; it never converts into an antagonist or channel blocker.",
+              "tr": "Yanlış. Diyazepam tüm dozlarda pozitif allosterik modülatör kalır; asla antagoniste veya kanal blokörüne dönüşmez.",
+              "ar": "غير صحيح. يظل الديازيبام معدلاً تفارغياً إيجابياً عند جميع الجرعات، ولا ينقلب لمناهض أو حاصِر للقناة أبداً."
+            }
+          },
+          {
+            "id": "opt_exceed_emax_belief",
+            "text": {
+              "en": "PAMs elevate Emax beyond 100% by recruiting voltage-gated potassium channels to assist in inhibitory hyperpolarization.",
+              "tr": "PAM'lar voltaj kapılı potasyum kanallarını da sürece dahil ederek Emax değerini %100'ün üzerine çıkarırlar.",
+              "ar": "ترفع المعدلات التفارغية Emax فوق 100% بتجنيد قنوات البوتاسيوم المعتمدة على الفولتية للمساعدة بالتثبيط."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. A pure PAM modulates only the receptor it binds; it does not recruit potassium channels or exceed the full agonist's maximal efficacy.",
+              "tr": "Yanlış. Saf bir PAM sadece kendi reseptörünü modüle eder; potasyum kanallarını aktive etmez veya Emax tavanını aşamaz.",
+              "ar": "غير صحيح. تعدل الربيطة التفارغية مستقبلها فقط، ولا تجند قنوات بوتاسيوم أو ترفع Emax فوق سقف الناقل الأصلي."
+            }
+          },
+          {
+            "id": "opt_renal_clearance_ceiling",
+            "text": {
+              "en": "The ceiling effect is an artifact caused by rapid glomerular filtration exceeding receptor binding saturation.",
+              "tr": "Tavan etkisi, glomerüler filtrasyon hızının reseptör bağlanma doygunluğunu aşmasından kaynaklanan bir farmakokinetik yanılsamadır.",
+              "ar": "تأثير السقف مجرد وهم حركي دوائي ناجم عن تجاوز معدل الترشيح الكبيبي لإشباع الارتباط بالمستقبلات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The safety ceiling is intrinsic to receptor pharmacodynamics (absence of direct pore gating), not renal clearance.",
+              "tr": "Yanlış. Güvenlik tavanı böbrek atılımından değil, doğrudan kanal açamama şeklindeki reseptör farmakodinamiğinden kaynaklanır.",
+              "ar": "غير صحيح. ينبع سقف الأمان من الديناميكا الدوائية للمستقبل وغياب الفتح المباشر للقناة، وليس من الإطراح الكلوي."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Reseptörün verebileceği en yüksek yanıtı kim belirler: allosterik modülatör mü, yoksa nörotransmitter mi?",
+          "ar": "من يحدد الاستجابة القصوى للمستقبل: المعدل التفارغي أم الناقل العصبي الفسيولوجي؟",
+          "en": "What defines the ceiling of inhibition: the allosteric modulator or the physiological neurotransmitter?"
+        },
+        {
+          "tier": 2,
+          "tr": "PAM sadece endojen GABA'nın etkinliğini artırır; sinapstaki tüm GABA bağlandığında etki doyar.",
+          "ar": "يضاعف PAM كفاءة GABA الداخلي فقط؛ وعند ارتباط كامل GABA ينتهي أي تأثير إضافي.",
+          "en": "A PAM purely amplifies endogenous GABA; once all released GABA is bound, effect saturates."
+        },
+        {
+          "tier": 3,
+          "tr": "Bu tavan, kontrolsüz aşırı hiperpolarizasyonu ve solunum merkezlerinin çökmesini önler.",
+          "ar": "يحمي هذا السقف الدوائي من فرط الاستقطاب العشوائي وانهيار مركز التنفس بالجرعات المفرطة.",
+          "en": "This ceiling prevents uncontrolled neuronal silencing and protects against fatal respiratory arrest."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_gaba_ceiling_protects",
+            "text": {
+              "en": "Maximal inhibition is strictly limited by the finite amount of physiological GABA released, preventing uncontrolled hyperpolarization of respiratory pacemakers.",
+              "tr": "Maksimal inhibisyon sinapsa salınan fizyolojik GABA miktarı ile sınırlıdır; solunum merkezlerinin kontrolsüz baskılanması engellenir.",
+              "ar": "التثبيط الأعظمي مقيد بكمية GABA الفسيولوجية المفرزة، مما يمنع فرط الاستقطاب العشوائي لمراكز التنفس النخاعية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Because PAMs require GABA, once all endogenous GABA is bound, no further hyperpolarization can occur regardless of BZD dose.",
+              "tr": "Doğru! PAM'lar GABA'ya muhtaçtır; salınan tüm GABA bağlandığında BZD dozu ne kadar artarsa artsın daha fazla klorür girişi olamaz.",
+              "ar": "صحيح! نظراً لأن المعدلات التفارغية تتطلب GABA، فبمجرد ارتباط كل GABA المفرز لا يمكن حدوث مزيد من التثبيط مهما زادت جرعة البنزوديازيبين."
+            }
+          },
+          {
+            "id": "opt_full_agonist_confusion",
+            "text": {
+              "en": "Diazepam acts as an irreversible antagonist at high concentrations, automatically closing chloride channels when blood levels exceed therapeutic range.",
+              "tr": "Diyazepam yüksek konsantrasyonlarda irreversibl antagoniste dönüşerek, terapötik düzey aşıldığında klorür kanallarını otomatik kapatır.",
+              "ar": "يتحول الديازيبام لمناهض غير عكوس عند التراكيز العالية فيغلق قنوات الكلوريد تلقائياً عند تجاوز النطاق العلاجي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Diazepam remains a positive allosteric modulator at all doses; it never converts into an antagonist or channel blocker.",
+              "tr": "Yanlış. Diyazepam tüm dozlarda pozitif allosterik modülatör kalır; asla antagoniste veya kanal blokörüne dönüşmez.",
+              "ar": "غير صحيح. يظل الديازيبام معدلاً تفارغياً إيجابياً عند جميع الجرعات، ولا ينقلب لمناهض أو حاصِر للقناة أبداً."
+            }
+          },
+          {
+            "id": "opt_exceed_emax_belief",
+            "text": {
+              "en": "PAMs elevate Emax beyond 100% by recruiting voltage-gated potassium channels to assist in inhibitory hyperpolarization.",
+              "tr": "PAM'lar voltaj kapılı potasyum kanallarını da sürece dahil ederek Emax değerini %100'ün üzerine çıkarırlar.",
+              "ar": "ترفع المعدلات التفارغية Emax فوق 100% بتجنيد قنوات البوتاسيوم المعتمدة على الفولتية للمساعدة بالتثبيط."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. A pure PAM modulates only the receptor it binds; it does not recruit potassium channels or exceed the full agonist's maximal efficacy.",
+              "tr": "Yanlış. Saf bir PAM sadece kendi reseptörünü modüle eder; potasyum kanallarını aktive etmez veya Emax tavanını aşamaz.",
+              "ar": "غير صحيح. تعدل الربيطة التفارغية مستقبلها فقط، ولا تجند قنوات بوتاسيوم أو ترفع Emax فوق سقف الناقل الأصلي."
+            }
+          },
+          {
+            "id": "opt_renal_clearance_ceiling",
+            "text": {
+              "en": "The ceiling effect is an artifact caused by rapid glomerular filtration exceeding receptor binding saturation.",
+              "tr": "Tavan etkisi, glomerüler filtrasyon hızının reseptör bağlanma doygunluğunu aşmasından kaynaklanan bir farmakokinetik yanılsamadır.",
+              "ar": "تأثير السقف مجرد وهم حركي دوائي ناجم عن تجاوز معدل الترشيح الكبيبي لإشباع الارتباط بالمستقبلات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The safety ceiling is intrinsic to receptor pharmacodynamics (absence of direct pore gating), not renal clearance.",
+              "tr": "Yanlış. Güvenlik tavanı böbrek atılımından değil, doğrudan kanal açamama şeklindeki reseptör farmakodinamiğinden kaynaklanır.",
+              "ar": "غير صحيح. ينبع سقف الأمان من الديناميكا الدوائية للمستقبل وغياب الفتح المباشر للقناة، وليس من الإطراح الكلوي."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 6
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Hiperpolarizasyon ve Nöronal İnhibisyon",
+        "ar": "فرط الاستقطاب والتثبيط العصبي",
+        "en": "Formal Electrophysiology: Hyperpolarization & Shunt Inhibition"
+      },
+      "prompt": {
+        "en": "How do the molecular gating mechanisms of benzodiazepines and barbiturates fundamentally differ, and how does flumazenil interact with this system?",
+        "tr": "Benzodiyazepinler ve barbitüratların moleküler kanal açma mekanizmaları nasıl ayrışır ve flumazenil bu sistemle nasıl etkileşir?",
+        "ar": "كيف تختلف آليات الفتح الجزيئي للبنزوديازيبينات والباربيتورات، وكيف يتفاعل الفلومازينيل مع هذا النظام؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_freq_dur_flumazenil",
+            "text": {
+              "en": "BZDs increase opening FREQUENCY; barbiturates prolong open DURATION and directly gate the pore. Flumazenil is a neutral antagonist at the BZD site.",
+              "tr": "BZD'ler açılma FREKANSINI artırır; barbitüratlar SÜREYİ uzatır ve doğrudan kanal açar. Flumazenil ise BZD bölgesinde nötral antagonisttir.",
+              "ar": "تزيد البنزوديازيبينات تردد الفتح؛ بينما تطيل الباربيتورات مدة الفتح وتفتح القناة مباشرة. الفلومازينيل مناهض محايد في موقع البنزوديازيبين."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs increase frequency (GABA-dependent); barbiturates prolong duration and directly gate pore. Flumazenil competitively blocks the BZD site.",
+              "tr": "Doğru! BZD frekansı artırır (GABA bağımlı), barbitürat süreyi uzatır ve doğrudan açar. Flumazenil BZD bölgesinde yarışmalı nötr antagonisttir.",
+              "ar": "صحيح! تزيد البنزوديازيبينات التردد، وتطيل الباربيتورات المدة وتفتح مباشرة. يعاكس الفلومازينيل موقع البنزوديازيبين تنافسياً."
+            }
+          },
+          {
+            "id": "opt_flumazenil_inverse",
+            "text": {
+              "en": "Flumazenil acts as a negative allosteric modulator (inverse agonist) that closes chloride channels below basal constitutive activity.",
+              "tr": "Flumazenil, klorür kanallarını bazal düzeyin altına kapatan bir negatif allosterik modülatördür (invers agonisttir).",
+              "ar": "يعمل الفلومازينيل كمعدل تفارغي سلبي (ناهض عكسي) يغلق قنوات الكلوريد لما دون النشاط التكويني الأساسي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a NEUTRAL competitive antagonist with zero intrinsic efficacy; beta-carbolines (e.g. DMCM) are the inverse agonists.",
+              "tr": "Yanlış. Flumazenil intrensek etkisi sıfır olan NÖTRAL antagonisttir; klorür akışını bazalin altına düşüren invers agonistler beta-karbolinlerdir.",
+              "ar": "غير صحيح. الفلومازينيل مناهض تنافسي محايد بلا فاعلية ذاتية؛ أما من يخفض تدفق الكلوريد دون الأساس (ناهض عكسي) فهي البيتاركاربينات."
+            }
+          },
+          {
+            "id": "opt_flumazenil_reverses_barbs",
+            "text": {
+              "en": "Flumazenil reverses barbiturate toxicity with high affinity by occupying the barbiturate-binding pocket inside the pore lumen.",
+              "tr": "Flumazenil, lümendeki barbitürat cebine yüksek afiniteyle bağlanarak barbitürat zehirlenmesini tamamen geri çevirir.",
+              "ar": "يعاكس الفلومازينيل سمية الباربيتورات بألفة عالية عبر احتلال جيب ارتباط الباربيتورات داخل لمعة القناة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil binds exclusively to the benzodiazepine site (alpha/gamma interface) and CANNOT reverse barbiturate toxicity.",
+              "tr": "Yanlış. Flumazenil sadece benzodiyazepin bölgesine bağlanır; barbitürat zehirlenmesini ASLA geri döndüremez.",
+              "ar": "غير صحيح. يرتبط الفلومازينيل حصرياً بموقع البنزوديازيبين (ألفا/غاما) ولا يعاكس إطلاقاً سمية الباربيتورات."
+            }
+          },
+          {
+            "id": "opt_enzymatic_degradation",
+            "text": {
+              "en": "Flumazenil acts as an enzyme that catalytically hydrolyzes the 1,4-diazepine ring of circulating benzodiazepines into inactive metabolites.",
+              "tr": "Flumazenil, kandaki benzodiyazepinlerin 1,4-diazepin halkasını hidroliz ederek inaktive eden bir enzimdir.",
+              "ar": "يعمل الفلومازينيل كإنزيم يحلمئ حلقة 1,4-ديازيبين في البنزوديازيبينات الدورية إلى نواتج استقلاب غير فعالة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a competitive receptor antagonist that binds reversibly to the GABA-A receptor, not an enzyme.",
+              "tr": "Yanlış. Flumazenil bir enzim değil, reseptöre tersinir bağlanan yarışmalı bir reseptör antagonistidir.",
+              "ar": "غير صحيح. الفلومازينيل ربيطة مناهضة تنافسية ترتبط بالمستقبل عكوسياً وليس إنزيماً مفككاً للدواء."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "hiperpolarizasyon",
+          "arContext": "فرط الاستقطاب (Hyperpolarization)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Kanal kinetiğinde 'açılma sıklığı' ile 'açık kalma süresi' arasındaki farkı hatırlayın.",
+          "ar": "تذكر الفرق الجوهري في حركية القنوات بين 'تردد مرات الفتح' و'مدة بقاء القناة مفتوحة'.",
+          "en": "Recall the key biophysical distinction between channel opening frequency and open burst duration."
+        },
+        {
+          "tier": 2,
+          "tr": "Benzodiyazepinler frekansı artırır; barbitüratlar ise süreyi uzatır ve doğrudan kanalı açar.",
+          "ar": "تزيد البنزوديازيبينات تردد الفتح؛ بينما تطيل الباربيتورات مدة الفتح وتفتح القناة مباشرة.",
+          "en": "Benzodiazepines increase opening frequency; barbiturates prolong open duration and directly gate the pore."
+        },
+        {
+          "tier": 3,
+          "tr": "Flumazenil BZD bölgesinde yarışmalı nötral antagonisttir; etkiyi sıfırlar ama kanalı tek başına kapatmaz.",
+          "ar": "الفلومازينيل مناهض تنافسي محايد؛ يعاكس تأثير البنزوديازيبين دون أن يثبط القناة بمفرده.",
+          "en": "Flumazenil is a neutral competitive antagonist; it resets BZD effect with zero intrinsic inverse efficacy."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_freq_dur_flumazenil",
+            "text": {
+              "en": "BZDs increase opening FREQUENCY; barbiturates prolong open DURATION and directly gate the pore. Flumazenil is a neutral antagonist at the BZD site.",
+              "tr": "BZD'ler açılma FREKANSINI artırır; barbitüratlar SÜREYİ uzatır ve doğrudan kanal açar. Flumazenil ise BZD bölgesinde nötral antagonisttir.",
+              "ar": "تزيد البنزوديازيبينات تردد الفتح؛ بينما تطيل الباربيتورات مدة الفتح وتفتح القناة مباشرة. الفلومازينيل مناهض محايد في موقع البنزوديازيبين."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! BZDs increase frequency (GABA-dependent); barbiturates prolong duration and directly gate pore. Flumazenil competitively blocks the BZD site.",
+              "tr": "Doğru! BZD frekansı artırır (GABA bağımlı), barbitürat süreyi uzatır ve doğrudan açar. Flumazenil BZD bölgesinde yarışmalı nötr antagonisttir.",
+              "ar": "صحيح! تزيد البنزوديازيبينات التردد، وتطيل الباربيتورات المدة وتفتح مباشرة. يعاكس الفلومازينيل موقع البنزوديازيبين تنافسياً."
+            }
+          },
+          {
+            "id": "opt_flumazenil_inverse",
+            "text": {
+              "en": "Flumazenil acts as a negative allosteric modulator (inverse agonist) that closes chloride channels below basal constitutive activity.",
+              "tr": "Flumazenil, klorür kanallarını bazal düzeyin altına kapatan bir negatif allosterik modülatördür (invers agonisttir).",
+              "ar": "يعمل الفلومازينيل كمعدل تفارغي سلبي (ناهض عكسي) يغلق قنوات الكلوريد لما دون النشاط التكويني الأساسي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a NEUTRAL competitive antagonist with zero intrinsic efficacy; beta-carbolines (e.g. DMCM) are the inverse agonists.",
+              "tr": "Yanlış. Flumazenil intrensek etkisi sıfır olan NÖTRAL antagonisttir; klorür akışını bazalin altına düşüren invers agonistler beta-karbolinlerdir.",
+              "ar": "غير صحيح. الفلومازينيل مناهض تنافسي محايد بلا فاعلية ذاتية؛ أما من يخفض تدفق الكلوريد دون الأساس (ناهض عكسي) فهي البيتاركاربينات."
+            }
+          },
+          {
+            "id": "opt_flumazenil_reverses_barbs",
+            "text": {
+              "en": "Flumazenil reverses barbiturate toxicity with high affinity by occupying the barbiturate-binding pocket inside the pore lumen.",
+              "tr": "Flumazenil, lümendeki barbitürat cebine yüksek afiniteyle bağlanarak barbitürat zehirlenmesini tamamen geri çevirir.",
+              "ar": "يعاكس الفلومازينيل سمية الباربيتورات بألفة عالية عبر احتلال جيب ارتباط الباربيتورات داخل لمعة القناة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil binds exclusively to the benzodiazepine site (alpha/gamma interface) and CANNOT reverse barbiturate toxicity.",
+              "tr": "Yanlış. Flumazenil sadece benzodiyazepin bölgesine bağlanır; barbitürat zehirlenmesini ASLA geri döndüremez.",
+              "ar": "غير صحيح. يرتبط الفلومازينيل حصرياً بموقع البنزوديازيبين (ألفا/غاما) ولا يعاكس إطلاقاً سمية الباربيتورات."
+            }
+          },
+          {
+            "id": "opt_enzymatic_degradation",
+            "text": {
+              "en": "Flumazenil acts as an enzyme that catalytically hydrolyzes the 1,4-diazepine ring of circulating benzodiazepines into inactive metabolites.",
+              "tr": "Flumazenil, kandaki benzodiyazepinlerin 1,4-diazepin halkasını hidroliz ederek inaktive eden bir enzimdir.",
+              "ar": "يعمل الفلومازينيل كإنزيم يحلمئ حلقة 1,4-ديازيبين في البنزوديازيبينات الدورية إلى نواتج استقلاب غير فعالة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a competitive receptor antagonist that binds reversibly to the GABA-A receptor, not an enzyme.",
+              "tr": "Yanlış. Flumazenil bir enzim değil, reseptöre tersinir bağlanan yarışmalı bir reseptör antagonistidir.",
+              "ar": "غير صحيح. الفلومازينيل ربيطة مناهضة تنافسية ترتبط بالمستقبل عكوسياً وليس إنزيماً مفككاً للدواء."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 7
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Frekans mı Süre mi?",
+        "ar": "فحص المفهوم: التواتر أم مدة الفتح؟",
+        "en": "Concept Check: Frequency vs Duration of Channel Opening"
+      },
+      "prompt": {
+        "en": "Why is administering flumazenil strictly contraindicated in an unconscious overdose patient suspected of mixed tricyclic antidepressant (TCA) and benzodiazepine ingestion?",
+        "tr": "Bilinçsiz bir aşırı doz hastasında trisiklik antidepresan (TSA) ve benzodiyazepin karma alımı şüphesinde flumazenil uygulanması neden kesinlikle kontrendikedir?",
+        "ar": "لماذا يُمنع إعطاء الفلومازينيل منعاً باتاً لمريض فاقد الوعي يُشتبه بتناوله جرعة مفرطة مختلطة من مضادات الاكتئاب ثلاثية الحلقات والبنزوديازيبين؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Formül: Benzo = Frekans (Fren), Barbi = Süre (Duration).",
+        "options": [
+          {
+            "id": "opt_tca_unmask_seizure",
+            "text": {
+              "en": "Removing the anticonvulsant BZD tone unmasks TCA-induced sodium channel and GABA blockade, triggering intractable status epilepticus and lethal arrhythmias.",
+              "tr": "BZD'nin koruyucu antikonvülsan etkisinin kalkması, TSA'nın sodyum ve GABA blokajını açığa çıkararak dirençli status epileptikus ve ölümcül aritmiye yol açar.",
+              "ar": "تجريد الحماية المضادة للاختلاج للبنزوديازيبين يكشف حظر قنوات الصوديوم وGABA بواسطة TCA، مفجراً حالة صرعية معندة واضطرابات نظم قاتلة."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! TCAs lower seizure threshold. The co-ingested BZD protects against seizures. Flumazenil strips this shield, precipitating fatal status epilepticus.",
+              "tr": "Doğru! TSA'lar nöbet eşiğini düşürür. BZD nöbeti baskılar; flumazenil verilince koruyucu kalkan kalkar ve ölümcül status epileptikus patlak verir.",
+              "ar": "صحيح! تخفض TCA عتبة التشنج بينما يحمي البنزوديازيبين المريض؛ فإذا أزيل هذا الدرع بالفلومازينيل اشتعل الصرع واضطراب النظم المميت."
+            }
+          },
+          {
+            "id": "opt_tca_precipitation",
+            "text": {
+              "en": "Flumazenil reacts chemically with circulating amitriptyline to form insoluble microcrystals that embolize pulmonary capillaries.",
+              "tr": "Flumazenil, kandaki amitriptilin ile kimyasal reaksiyona girerek pulmoner kapillerleri tıkayan çözünmez mikrokristaller oluşturur.",
+              "ar": "يتفاعل الفلومازينيل كيميائياً مع الأميتريبتيلين في الدم مشكلاً بلورات دقيقة غير ذوابة تسد الشعيرات الرئوية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The danger is a pharmacodynamic loss of seizure protection, not physical chemical precipitation in the bloodstream.",
+              "tr": "Yanlış. Tehlike kanda kristal oluşumu değil, nöbeti baskılayan farmakodinamik kalkanın aniden yok olmasıdır.",
+              "ar": "غير صحيح. مكمن الخطر ديناميكي دوائي يتمثل في زوال الحماية من الاختلاج، وليس ترسيباً كيميائياً في مجرى الدم."
+            }
+          },
+          {
+            "id": "opt_tca_cyp_inhibition",
+            "text": {
+              "en": "Flumazenil potently inhibits hepatic CYP2D6, instantly doubling free circulating TCA concentrations within 60 seconds.",
+              "tr": "Flumazenil hepatik CYP2D6'yı güçlü şekilde inhibe ederek 60 saniye içinde serbest dolaşan TSA konsantrasyonunu iki katına çıkarır.",
+              "ar": "يثبط الفلومازينيل إنزيم CYP2D6 الكبدي بقوة مما يضاعف تراكيز TCA الحرة في الدوران خلال 60 ثانية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no clinically significant CYP inhibitory properties; the seizure storm is mediated at postsynaptic GABA-A receptors.",
+              "tr": "Yanlış. Flumazenil CYP enzimlerini inhibe etmez; nöbet fırtınası postsinaptik GABA-A reseptörlerinde korumanın kalkmasıyla oluşur.",
+              "ar": "غير صحيح. لا يمتلك الفلومازينيل خصائص تثبيط لـ CYP، بل تنفجر النوبات لزوال التثبيط عند مستقبلات GABA-A."
+            }
+          },
+          {
+            "id": "opt_direct_cardiac_beta",
+            "text": {
+              "en": "Flumazenil directly stimulates cardiac beta-1 adrenergic receptors, worsening TCA-induced anticholinergic sinus tachycardia.",
+              "tr": "Flumazenil kardiyak beta-1 adrenerjik reseptörleri doğrudan uyararak TSA'ya bağlı sinüs taşikardisini kötüleştirir.",
+              "ar": "يحفز الفلومازينيل مستقبلات بيتا-1 الأدرينالية القلبية مباشرة مما يفاقم تسرع القلب الجيبي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil does not bind or stimulate beta-1 adrenergic receptors; arrhythmias stem from TCA-mediated fast sodium channel blockade.",
+              "tr": "Yanlış. Flumazenil beta reseptörleri uyarmaz; aritmiler TSA'nın kardiyak sodyum kanallarını bloke etmesinden kaynaklanır.",
+              "ar": "غير صحيح. لا يحفز الفلومازينيل مستقبلات بيتا؛ بل تنجم اضطرابات النظم عن حصار TCA لقنوات الصوديوم القلبية السريعة."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Trisiklik antidepresanların (TSA) kalp ve beyindeki sodyum kanalları üzerindeki etkisini düşünün.",
+          "ar": "فكر في التأثير السام لمضادات الاكتئاب ثلاثية الحلقات (TCA) على قنوات الصوديوم القلبية والعصبية.",
+          "en": "Consider the cardiotoxic and proconvulsant effects of tricyclic antidepressants on sodium channels."
+        },
+        {
+          "tier": 2,
+          "tr": "Birlikte alınan benzodiyazepin, TSA'nın tetikleyeceği nöbetleri GABA üzerinden baskılayarak hastayı korur.",
+          "ar": "يعمل البنزوديازيبين المتناول مشاركةً كدرع واقٍ يخمد النوبات الصرعية المحرضة بواسطة TCA.",
+          "en": "The co-ingested benzodiazepine acts as a protective shield suppressing TCA-induced convulsions."
+        },
+        {
+          "tier": 3,
+          "tr": "Flumazenil verilirse koruyucu kalkan aniden kalkar; hasta durdurulamaz status epileptikusa ve aritmiye girer.",
+          "ar": "إذا أُعطي الفلومازينيل زال هذا الدرع الواقي فجأة، مفجراً حالة صرعية معندة واضطرابات بطينية قاتلة.",
+          "en": "Administering flumazenil strips away the anticonvulsant shield, precipitating refractory status epilepticus."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_tca_unmask_seizure",
+            "text": {
+              "en": "Removing the anticonvulsant BZD tone unmasks TCA-induced sodium channel and GABA blockade, triggering intractable status epilepticus and lethal arrhythmias.",
+              "tr": "BZD'nin koruyucu antikonvülsan etkisinin kalkması, TSA'nın sodyum ve GABA blokajını açığa çıkararak dirençli status epileptikus ve ölümcül aritmiye yol açar.",
+              "ar": "تجريد الحماية المضادة للاختلاج للبنزوديازيبين يكشف حظر قنوات الصوديوم وGABA بواسطة TCA، مفجراً حالة صرعية معندة واضطرابات نظم قاتلة."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! TCAs lower seizure threshold. The co-ingested BZD protects against seizures. Flumazenil strips this shield, precipitating fatal status epilepticus.",
+              "tr": "Doğru! TSA'lar nöbet eşiğini düşürür. BZD nöbeti baskılar; flumazenil verilince koruyucu kalkan kalkar ve ölümcül status epileptikus patlak verir.",
+              "ar": "صحيح! تخفض TCA عتبة التشنج بينما يحمي البنزوديازيبين المريض؛ فإذا أزيل هذا الدرع بالفلومازينيل اشتعل الصرع واضطراب النظم المميت."
+            }
+          },
+          {
+            "id": "opt_tca_precipitation",
+            "text": {
+              "en": "Flumazenil reacts chemically with circulating amitriptyline to form insoluble microcrystals that embolize pulmonary capillaries.",
+              "tr": "Flumazenil, kandaki amitriptilin ile kimyasal reaksiyona girerek pulmoner kapillerleri tıkayan çözünmez mikrokristaller oluşturur.",
+              "ar": "يتفاعل الفلومازينيل كيميائياً مع الأميتريبتيلين في الدم مشكلاً بلورات دقيقة غير ذوابة تسد الشعيرات الرئوية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The danger is a pharmacodynamic loss of seizure protection, not physical chemical precipitation in the bloodstream.",
+              "tr": "Yanlış. Tehlike kanda kristal oluşumu değil, nöbeti baskılayan farmakodinamik kalkanın aniden yok olmasıdır.",
+              "ar": "غير صحيح. مكمن الخطر ديناميكي دوائي يتمثل في زوال الحماية من الاختلاج، وليس ترسيباً كيميائياً في مجرى الدم."
+            }
+          },
+          {
+            "id": "opt_tca_cyp_inhibition",
+            "text": {
+              "en": "Flumazenil potently inhibits hepatic CYP2D6, instantly doubling free circulating TCA concentrations within 60 seconds.",
+              "tr": "Flumazenil hepatik CYP2D6'yı güçlü şekilde inhibe ederek 60 saniye içinde serbest dolaşan TSA konsantrasyonunu iki katına çıkarır.",
+              "ar": "يثبط الفلومازينيل إنزيم CYP2D6 الكبدي بقوة مما يضاعف تراكيز TCA الحرة في الدوران خلال 60 ثانية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no clinically significant CYP inhibitory properties; the seizure storm is mediated at postsynaptic GABA-A receptors.",
+              "tr": "Yanlış. Flumazenil CYP enzimlerini inhibe etmez; nöbet fırtınası postsinaptik GABA-A reseptörlerinde korumanın kalkmasıyla oluşur.",
+              "ar": "غير صحيح. لا يمتلك الفلومازينيل خصائص تثبيط لـ CYP، بل تنفجر النوبات لزوال التثبيط عند مستقبلات GABA-A."
+            }
+          },
+          {
+            "id": "opt_direct_cardiac_beta",
+            "text": {
+              "en": "Flumazenil directly stimulates cardiac beta-1 adrenergic receptors, worsening TCA-induced anticholinergic sinus tachycardia.",
+              "tr": "Flumazenil kardiyak beta-1 adrenerjik reseptörleri doğrudan uyararak TSA'ya bağlı sinüs taşikardisini kötüleştirir.",
+              "ar": "يحفز الفلومازينيل مستقبلات بيتا-1 الأدرينالية القلبية مباشرة مما يفاقم تسرع القلب الجيبي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil does not bind or stimulate beta-1 adrenergic receptors; arrhythmias stem from TCA-mediated fast sodium channel blockade.",
+              "tr": "Yanlış. Flumazenil beta reseptörleri uyarmaz; aritmiler TSA'nın kardiyak sodyum kanallarını bloke etmesinden kaynaklanır.",
+              "ar": "غير صحيح. لا يحفز الفلومازينيل مستقبلات بيتا؛ بل تنجم اضطرابات النظم عن حصار TCA لقنوات الصوديوم القلبية السريعة."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 8
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Antidot: Flumazenil ile Kurtarma",
+        "ar": "تطبيق سريري: الإنقاذ بترياق Flumazenil",
+        "en": "Clinical Antidote: Rescue with Flumazenil"
+      },
+      "prompt": {
+        "en": "A patient with long-term lorazepam dependence receives flumazenil for procedural sedation reversal and abruptly develops status epilepticus. What cellular mechanism precipitated this crisis?",
+        "tr": "Uzun süredir lorazepam bağımlısı olan hastaya sedasyonu geri çevirmek için flumazenil verilir ve hasta aniden status epileptikusa girer. Hangi hücresel mekanizma bu krizi tetikledi?",
+        "ar": "مريض يعتمد مزمناً على اللورازيبام يُعطى فلومازينيل لإلغاء التهدئة الجراحية فيصاب بصرع معند مفاجئ. ما الآلية الخلوية التي فجرت هذه الكارثة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Flumazenil benzodiyazepin zehirlenmesinin saf yarışmalı nötr antagonistidir.",
+        "options": [
+          {
+            "id": "opt_uncoupling_glutamate_storm",
+            "text": {
+              "en": "Chronic BZD exposure uncouples GABA-A receptors and upregulates glutamate; displacing BZDs abruptly removes basal inhibition, unleashing a glutamate storm.",
+              "tr": "Kronik BZD kullanımı GABA-A reseptörlerini desensitize eder ve glutamatı artırır; flumazenil korumayı aniden kaldırınca kontrolsüz glutamat fırtınası başlar.",
+              "ar": "يؤدي التعرض المزمن للبنزوديازيبين لفصل المستقبلات وزيادة الغلوتامات؛ إزاحتها فجأة تزيل التثبيط مفجرة عاصفة استثارة غلوتاماتية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Chronic BZDs cause receptor uncoupling and compensatory glutamatergic upregulation. Acute flumazenil precipitates catastrophic withdrawal seizures.",
+              "tr": "Doğru! Kronik kullanımda GABA tonusu körelmiş, glutamat artmıştır. Flumazenil verilince kalan son inhibisyon da kalkar ve nöbet patlar.",
+              "ar": "صحيح! يثبط الاستخدام المزمن كفاءة GABA ويرفع الغلوتامات تعويضياً؛ ويؤدي الفلومازينيل إلى إطلاق صرع انسحابي مهدد للحياة."
+            }
+          },
+          {
+            "id": "opt_receptor_destruction",
+            "text": {
+              "en": "Flumazenil acts as a protease that irreversibly degrades and cleaves the alpha-1 subunit of GABA-A receptors from the neuronal membrane.",
+              "tr": "Flumazenil, GABA-A reseptörlerinin alfa-1 alt birimini nöron zarından geri dönüşsüz şekilde koparan bir proteaz gibi davranır.",
+              "ar": "يعمل الفلومازينيل كإنزيم بروتياز يحطم ويقطع تحت وحدة ألفا-1 لمستقبلات GABA-A من الغشاء العصبي بشكل غير عكوس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a reversible competitive antagonist, not a protease; it does not cleave or destroy receptor proteins.",
+              "tr": "Yanlış. Flumazenil bir proteaz değildir, reseptörleri parçalamaz; sadece tersinir yarışmalı antagonisttir.",
+              "ar": "غير صحيح. الفلومازينيل مناهض تنافسي عكوس وليس إنزيماً محللاً للبروتين؛ ولا يحطم المستقبلات."
+            }
+          },
+          {
+            "id": "opt_hypocalcemia_seizure",
+            "text": {
+              "en": "Flumazenil triggers massive parathyroid hormone suppression, provoking profound hypocalcemia and hypocalcemic tetanic convulsions within minutes.",
+              "tr": "Flumazenil paratiroid hormonunu baskılayarak dakikalar içinde şiddetli hipokalsemi ve hipokalsemik tetani nöbetlerine neden olur.",
+              "ar": "يحفز الفلومازينيل تثبيطاً هائلاً لهرمون جارات الدرق مسبباً نقص كالسيوم حاداً ونوبات كزازية خلال دقائق."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no effect on calcium homeostasis or the parathyroid gland; seizures are purely neurochemical (loss of GABA inhibition).",
+              "tr": "Yanlış. Flumazenilin kalsiyum veya paratiroid üzerine etkisi yoktur; nöbet tamamen santral GABAerjik korumanın çökmesinden kaynaklanır.",
+              "ar": "غير صحيح. لا يؤثر الفلومازينيل على الكالسيوم أو الغدد الدريقية؛ بل تنجم النوبات عن زوال التثبيط العصبي الكيميائي."
+            }
+          },
+          {
+            "id": "opt_conversion_to_toxin",
+            "text": {
+              "en": "Flumazenil chemically converts remaining lorazepam molecules into strychnine, a glycine receptor antagonist that triggers spinal convulsions.",
+              "tr": "Flumazenil, ortamdaki lorazepamı glisin antagonisti olan striknine dönüştürerek spinal konvülsiyonlara yol açar.",
+              "ar": "يحول الفلومازينيل جزيئات اللورازيبام كيميائياً إلى ستريكنين، وهو مناهض لمستقبلات الغلايسين يسبب اختلاجات نخاعية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. This is chemically impossible. Withdrawal seizures stem from abrupt unmasking of hyperexcitable glutamate circuits.",
+              "tr": "Yanlış. Bu kimyasal olarak imkansızdır. Kriz, aşırı uyarılabilir glutamaterjik devrelerin aniden açığa çıkmasından kaynaklanır.",
+              "ar": "غير صحيح. هذا مستحيل كيميائياً. تنجم نوبات الانسحاب عن انكشاف مسارات الغلوتامات مفرطة الاستثارة."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Kronik sedatif kullanımında beynin geliştirdiği adaptif nöroplastik değişiklikleri hatırlayın.",
+          "ar": "تذكر التغيرات العصبية التكيفية التي يحدثها الدماغ بعد التعرض المزمن للمهدئات.",
+          "en": "Recall the homeostatic neuroadaptations the brain develops during long-term sedative exposure."
+        },
+        {
+          "tier": 2,
+          "tr": "GABA-A reseptörleri duyarsızlaşır ve uyarıcı glutamat devreleri (NMDA/AMPA) telafi amacıyla yukarı regüle olur.",
+          "ar": "تنخفض حساسية مستقبلات GABA وتتكاثر مسارات الغلوتامات الاستثارية (NMDA) تعويضياً.",
+          "en": "GABA-A receptors uncouple while excitatory glutamatergic NMDA/AMPA circuits upregulate compensatorily."
+        },
+        {
+          "tier": 3,
+          "tr": "Flumazenil kalan zayıf GABA tonusunu da aniden sıfırlayınca kontrolsüz bir glutamat fırtınası ve nöbet patlar.",
+          "ar": "عندما يزيل الفلومازينيل ما تبقى من تثبيط GABA فجأة، تنفجر عاصفة استثارة غلوتاماتية مسببة نوبات صرع.",
+          "en": "Flumazenil abruptly strips the remaining GABA tone, unleashing an unopposed glutamate storm and seizures."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_uncoupling_glutamate_storm",
+            "text": {
+              "en": "Chronic BZD exposure uncouples GABA-A receptors and upregulates glutamate; displacing BZDs abruptly removes basal inhibition, unleashing a glutamate storm.",
+              "tr": "Kronik BZD kullanımı GABA-A reseptörlerini desensitize eder ve glutamatı artırır; flumazenil korumayı aniden kaldırınca kontrolsüz glutamat fırtınası başlar.",
+              "ar": "يؤدي التعرض المزمن للبنزوديازيبين لفصل المستقبلات وزيادة الغلوتامات؛ إزاحتها فجأة تزيل التثبيط مفجرة عاصفة استثارة غلوتاماتية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Chronic BZDs cause receptor uncoupling and compensatory glutamatergic upregulation. Acute flumazenil precipitates catastrophic withdrawal seizures.",
+              "tr": "Doğru! Kronik kullanımda GABA tonusu körelmiş, glutamat artmıştır. Flumazenil verilince kalan son inhibisyon da kalkar ve nöbet patlar.",
+              "ar": "صحيح! يثبط الاستخدام المزمن كفاءة GABA ويرفع الغلوتامات تعويضياً؛ ويؤدي الفلومازينيل إلى إطلاق صرع انسحابي مهدد للحياة."
+            }
+          },
+          {
+            "id": "opt_receptor_destruction",
+            "text": {
+              "en": "Flumazenil acts as a protease that irreversibly degrades and cleaves the alpha-1 subunit of GABA-A receptors from the neuronal membrane.",
+              "tr": "Flumazenil, GABA-A reseptörlerinin alfa-1 alt birimini nöron zarından geri dönüşsüz şekilde koparan bir proteaz gibi davranır.",
+              "ar": "يعمل الفلومازينيل كإنزيم بروتياز يحطم ويقطع تحت وحدة ألفا-1 لمستقبلات GABA-A من الغشاء العصبي بشكل غير عكوس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil is a reversible competitive antagonist, not a protease; it does not cleave or destroy receptor proteins.",
+              "tr": "Yanlış. Flumazenil bir proteaz değildir, reseptörleri parçalamaz; sadece tersinir yarışmalı antagonisttir.",
+              "ar": "غير صحيح. الفلومازينيل مناهض تنافسي عكوس وليس إنزيماً محللاً للبروتين؛ ولا يحطم المستقبلات."
+            }
+          },
+          {
+            "id": "opt_hypocalcemia_seizure",
+            "text": {
+              "en": "Flumazenil triggers massive parathyroid hormone suppression, provoking profound hypocalcemia and hypocalcemic tetanic convulsions within minutes.",
+              "tr": "Flumazenil paratiroid hormonunu baskılayarak dakikalar içinde şiddetli hipokalsemi ve hipokalsemik tetani nöbetlerine neden olur.",
+              "ar": "يحفز الفلومازينيل تثبيطاً هائلاً لهرمون جارات الدرق مسبباً نقص كالسيوم حاداً ونوبات كزازية خلال دقائق."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no effect on calcium homeostasis or the parathyroid gland; seizures are purely neurochemical (loss of GABA inhibition).",
+              "tr": "Yanlış. Flumazenilin kalsiyum veya paratiroid üzerine etkisi yoktur; nöbet tamamen santral GABAerjik korumanın çökmesinden kaynaklanır.",
+              "ar": "غير صحيح. لا يؤثر الفلومازينيل على الكالسيوم أو الغدد الدريقية؛ بل تنجم النوبات عن زوال التثبيط العصبي الكيميائي."
+            }
+          },
+          {
+            "id": "opt_conversion_to_toxin",
+            "text": {
+              "en": "Flumazenil chemically converts remaining lorazepam molecules into strychnine, a glycine receptor antagonist that triggers spinal convulsions.",
+              "tr": "Flumazenil, ortamdaki lorazepamı glisin antagonisti olan striknine dönüştürerek spinal konvülsiyonlara yol açar.",
+              "ar": "يحول الفلومازينيل جزيئات اللورازيبام كيميائياً إلى ستريكنين، وهو مناهض لمستقبلات الغلايسين يسبب اختلاجات نخاعية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. This is chemically impossible. Withdrawal seizures stem from abrupt unmasking of hyperexcitable glutamate circuits.",
+              "tr": "Yanlış. Bu kimyasal olarak imkansızdır. Kriz, aşırı uyarılabilir glutamaterjik devrelerin aniden açığa çıkmasından kaynaklanır.",
+              "ar": "غير صحيح. هذا مستحيل كيميائياً. تنجم نوبات الانسحاب عن انكشاف مسارات الغلوتامات مفرطة الاستثارة."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Reseptör Antagonizmi Tipleri",
+        "ar": "استرجاع معرفي: أنماط مناهضة المستقبِلات",
+        "en": "Retrieval: Types of Receptor Antagonism"
+      },
+      "prompt": {
+        "en": "GABA-A alpha-1 subunits mediate sedation while alpha-2 and alpha-3 mediate anxiolysis and muscle relaxation. Why is zolpidem an effective hypnotic devoid of anxiolytic properties?",
+        "tr": "GABA-A alfa-1 alt birimi sedasyon sağlarken, alfa-2 ve alfa-3 anksiyoliz ve kas gevşemesi sağlar. Zolpidem neden anksiyolitik etkisi olmayan saf bir hipnotiktir?",
+        "ar": "تتوسط تحت وحدة ألفا-1 التهدئة، بينما تتوسط ألفا-2 وألفا-3 إزالة القلق وإرخاء العضلات. لماذا يعد الزولبيديم منوماً فعالاً بلا خصائص مزيلة للقلق؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_alpha1_selectivity",
+            "text": {
+              "en": "Zolpidem binds selectively to alpha-1-containing GABA-A receptors, inducing sleep while lacking meaningful affinity for alpha-2 and alpha-3 subunits.",
+              "tr": "Zolpidem sadece alfa-1 içeren GABA-A reseptörlerine seçici bağlanarak uyku verir; alfa-2 ve alfa-3 alt birimlerine afinitesi yok denecek kadar azdır.",
+              "ar": "يرتبط الزولبيديم انتقائياً بمستقبلات GABA-A الحاوية على ألفا-1 محدثاً النوم، بينما يفتقر للألفة تجاه تحت الوحدتين ألفا-2 وألفا-3."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! The 'Z-drugs' are subunit-selective PAMs targeted to alpha-1 for hypnosis, sparing alpha-2/alpha-3 (anxiolysis) and alpha-5 (cognition).",
+              "tr": "Doğru! Z-ilaçları alfa-1 alt birimine seçicidir; bu yüzden hipnotik etki gösterirken belirgin kas gevşetici veya anksiyolitik etki oluşturmazlar.",
+              "ar": "صحيح! أدوية Z معدلات انتقائية لتحت وحدة ألفا-1 المسؤولة عن النوم، مجنبةً ألفا-2 وألفا-3 المسؤولة عن إزالة القلق."
+            }
+          },
+          {
+            "id": "opt_melatonin_agonist",
+            "text": {
+              "en": "Zolpidem does not modulate GABA-A receptors, acting instead as a synthetic agonist at hypothalamic melatonin MT1 and MT2 GPCRs.",
+              "tr": "Zolpidem GABA-A reseptörlerini modüle etmez, hipotalamik melatonin MT1 ve MT2 GPCR reseptörlerinin sentetik agonistidir.",
+              "ar": "لا يعدل الزولبيديم مستقبلات GABA-A، بل يعمل كناهض تركيبي لمستقبلات الميلاتونين MT1 وMT2 في الوطاء."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Ramelteon targets melatonin MT1/MT2 receptors. Zolpidem is a selective GABA-A alpha-1 positive allosteric modulator.",
+              "tr": "Yanlış. Melatonin MT1/MT2 agonistleri ramelteondur. Zolpidem seçici bir GABA-A alfa-1 pozitif allosterik modülatörüdür.",
+              "ar": "غير صحيح. الراميلتيون هو ناهض مستقبلات الميلاتونين؛ أما الزولبيديم فهو معدل تفارغي إيجابي انتقائي لـ GABA-A ألفا-1."
+            }
+          },
+          {
+            "id": "opt_beta3_only",
+            "text": {
+              "en": "Zolpidem targets beta-3 subunits exclusively, bypassing alpha subunits entirely to activate chloride gating without sedation.",
+              "tr": "Zolpidem yalnızca beta-3 alt birimine bağlanır, alfa alt birimlerini tamamen atlayarak sedasyon olmadan klorür açar.",
+              "ar": "يستهدف الزولبيديم تحت وحدة بيتا-3 حصرياً متجاوزاً تحت وحدات ألفا ليفتح الكلوريد دون تهدئة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The benzodiazepine binding pocket resides at the alpha/gamma interface, and zolpidem's selectivity is determined by the alpha-1 subunit.",
+              "tr": "Yanlış. BZD bağlanma cebi alfa/gama arayüzündedir ve zolpidemin seçiciliğini belirleyen alfa-1 alt birimidir.",
+              "ar": "غير صحيح. يقع جيب الارتباط عند سطح التماس ألفا/غاما، وتتحدد انتقائية الزولبيديم بوجود تحت وحدة ألفا-1."
+            }
+          },
+          {
+            "id": "opt_identical_affinity_short_half_life",
+            "text": {
+              "en": "Zolpidem has identical affinity for all alpha subunits, but its extremely rapid 10-minute clearance prevents anxiolytic activation.",
+              "tr": "Zolpidem tüm alfa alt birimlerine eşit afinite gösterir, ancak 10 dakikalık aşırı hızlı klirensi anksiyolitik etkiyi önler.",
+              "ar": "يمتلك الزولبيديم ألفة متطابقة لجميع تحت وحدات ألفا، لكن إطراحه فائق السرعة خلال 10 دقائق يمنع إزالة القلق."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Zolpidem has a half-life of 2–3 hours and exhibits genuine molecular subtype selectivity for alpha-1 over alpha-2/alpha-3.",
+              "tr": "Yanlış. Zolpidemin yarı ömrü 2-3 saattir ve alfa-1 alt birimine karşı alfa-2/alfa-3'e kıyasla gerçek bir moleküler seçiciliği vardır.",
+              "ar": "غير صحيح. يمتلك الزولبيديم نصف عمر يبلغ ساعتين إلى 3 ساعات، وانتقائية جزيئية حقيقية لألفا-1 مقارنة بألفا-2 وألفا-3."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "yarışmalı antagonist",
+          "arContext": "المناهض التنافسي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "GABA-A reseptörünün alfa alt birim tiplerinin farklı farmakolojik etkilerden sorumlu olduğunu hatırlayın.",
+          "ar": "تذكر أن تحت وحدات ألفا المختلفة لمستقبل GABA-A مسؤولة عن تأثيرات دوائية متباينة.",
+          "en": "Recall that distinct GABA-A alpha subunit isoforms mediate segregated pharmacological actions."
+        },
+        {
+          "tier": 2,
+          "tr": "Alfa-1 sedasyon ve uyku sağlar; alfa-2 ve alfa-3 ise anksiyoliz ve kas gevşemesinden sorumludur.",
+          "ar": "تتوسط ألفا-1 التهدئة والنوم؛ بينما تتوسط ألفا-2 وألفا-3 إزالة القلق وإرخاء العضلات.",
+          "en": "Alpha-1 mediates sedation and hypnosis; alpha-2 and alpha-3 mediate anxiolysis and myorelaxation."
+        },
+        {
+          "tier": 3,
+          "tr": "Zolpidem sadece alfa-1'e seçici bağlanır; bu yüzden kas gevşetmeden veya kaygı gidermeden uyutur.",
+          "ar": "يرتبط الزولبيديم انتقائياً بألفا-1؛ لذلك يحث على النوم دون إرخاء العضلات أو تخفيف القلق سريرياً.",
+          "en": "Zolpidem selectively targets alpha-1; thus it acts as a pure hypnotic devoid of anxiolytic properties."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_alpha1_selectivity",
+            "text": {
+              "en": "Zolpidem binds selectively to alpha-1-containing GABA-A receptors, inducing sleep while lacking meaningful affinity for alpha-2 and alpha-3 subunits.",
+              "tr": "Zolpidem sadece alfa-1 içeren GABA-A reseptörlerine seçici bağlanarak uyku verir; alfa-2 ve alfa-3 alt birimlerine afinitesi yok denecek kadar azdır.",
+              "ar": "يرتبط الزولبيديم انتقائياً بمستقبلات GABA-A الحاوية على ألفا-1 محدثاً النوم، بينما يفتقر للألفة تجاه تحت الوحدتين ألفا-2 وألفا-3."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! The 'Z-drugs' are subunit-selective PAMs targeted to alpha-1 for hypnosis, sparing alpha-2/alpha-3 (anxiolysis) and alpha-5 (cognition).",
+              "tr": "Doğru! Z-ilaçları alfa-1 alt birimine seçicidir; bu yüzden hipnotik etki gösterirken belirgin kas gevşetici veya anksiyolitik etki oluşturmazlar.",
+              "ar": "صحيح! أدوية Z معدلات انتقائية لتحت وحدة ألفا-1 المسؤولة عن النوم، مجنبةً ألفا-2 وألفا-3 المسؤولة عن إزالة القلق."
+            }
+          },
+          {
+            "id": "opt_melatonin_agonist",
+            "text": {
+              "en": "Zolpidem does not modulate GABA-A receptors, acting instead as a synthetic agonist at hypothalamic melatonin MT1 and MT2 GPCRs.",
+              "tr": "Zolpidem GABA-A reseptörlerini modüle etmez, hipotalamik melatonin MT1 ve MT2 GPCR reseptörlerinin sentetik agonistidir.",
+              "ar": "لا يعدل الزولبيديم مستقبلات GABA-A، بل يعمل كناهض تركيبي لمستقبلات الميلاتونين MT1 وMT2 في الوطاء."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Ramelteon targets melatonin MT1/MT2 receptors. Zolpidem is a selective GABA-A alpha-1 positive allosteric modulator.",
+              "tr": "Yanlış. Melatonin MT1/MT2 agonistleri ramelteondur. Zolpidem seçici bir GABA-A alfa-1 pozitif allosterik modülatörüdür.",
+              "ar": "غير صحيح. الراميلتيون هو ناهض مستقبلات الميلاتونين؛ أما الزولبيديم فهو معدل تفارغي إيجابي انتقائي لـ GABA-A ألفا-1."
+            }
+          },
+          {
+            "id": "opt_beta3_only",
+            "text": {
+              "en": "Zolpidem targets beta-3 subunits exclusively, bypassing alpha subunits entirely to activate chloride gating without sedation.",
+              "tr": "Zolpidem yalnızca beta-3 alt birimine bağlanır, alfa alt birimlerini tamamen atlayarak sedasyon olmadan klorür açar.",
+              "ar": "يستهدف الزولبيديم تحت وحدة بيتا-3 حصرياً متجاوزاً تحت وحدات ألفا ليفتح الكلوريد دون تهدئة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The benzodiazepine binding pocket resides at the alpha/gamma interface, and zolpidem's selectivity is determined by the alpha-1 subunit.",
+              "tr": "Yanlış. BZD bağlanma cebi alfa/gama arayüzündedir ve zolpidemin seçiciliğini belirleyen alfa-1 alt birimidir.",
+              "ar": "غير صحيح. يقع جيب الارتباط عند سطح التماس ألفا/غاما، وتتحدد انتقائية الزولبيديم بوجود تحت وحدة ألفا-1."
+            }
+          },
+          {
+            "id": "opt_identical_affinity_short_half_life",
+            "text": {
+              "en": "Zolpidem has identical affinity for all alpha subunits, but its extremely rapid 10-minute clearance prevents anxiolytic activation.",
+              "tr": "Zolpidem tüm alfa alt birimlerine eşit afinite gösterir, ancak 10 dakikalık aşırı hızlı klirensi anksiyolitik etkiyi önler.",
+              "ar": "يمتلك الزولبيديم ألفة متطابقة لجميع تحت وحدات ألفا، لكن إطراحه فائق السرعة خلال 10 دقائق يمنع إزالة القلق."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Zolpidem has a half-life of 2–3 hours and exhibits genuine molecular subtype selectivity for alpha-1 over alpha-2/alpha-3.",
+              "tr": "Yanlış. Zolpidemin yarı ömrü 2-3 saattir ve alfa-1 alt birimine karşı alfa-2/alfa-3'e kıyasla gerçek bir moleküler seçiciliği vardır.",
+              "ar": "غير صحيح. يمتلك الزولبيديم نصف عمر يبلغ ساعتين إلى 3 ساعات، وانتقائية جزيئية حقيقية لألفا-1 مقارنة بألفا-2 وألفا-3."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 10
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Dopaminerjik Yolaklar ve Antipsikotikler (Ders 12)",
+        "ar": "ربط مفاهيمي: المسارات الدوبامينية ومضادات الذهان (الدرس 12)",
+        "en": "Connection: Dopaminergic Pathways & Antipsychotics (Lesson 12)"
+      },
+      "prompt": {
+        "en": "While ionotropic GABA-A chloride channels mediate rapid millisecond inhibition, dopamine D2 GPCRs modulate cellular signaling via Gi. How do these two signaling architectures contrast?",
+        "tr": "İyonotropik GABA-A klorür kanalları milisaniyelik hızlı inhibisyon yaparken, dopamin D2 GPCR reseptörleri Gi ile sinyal iletir. Bu iki yapı nasıl ayrışır?",
+        "ar": "بينما تتوسط قنوات GABA-A الأيونية تثبيطاً سريعاً بالأجزاء من الثانية، تعدل مستقبلات D2 المقترنة ببروتين Gi الإشارات الخلوية. كيف تتباين بنيتا الإشارات؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_ionotropic_vs_gpcr",
+            "text": {
+              "en": "GABA-A directly fluxes chloride to hyperpolarize the membrane; D2 inhibits adenylyl cyclase, lowers cAMP, and modulates downstream channels via G-protein second messengers.",
+              "tr": "GABA-A klorür geçirerek zarı doğrudan hiperpolarize eder; D2 adenilat siklazı inhibe eder, cAMP'yi düşürür ve G-proteini ile kanalları modüle eder.",
+              "ar": "يمرر GABA-A الكلوريد مباشرة لفرط استقطاب الغشاء؛ بينما يثبط D2 محلقة الأدينيلات، ويخفض cAMP، ويعدل القنوات عبر مرسال ثانٍ."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Ionotropic channels provide instant millisecond conductance changes; metabotropic GPCRs trigger slower, amplified second-messenger cascades.",
+              "tr": "Doğru! İyonotropik kanallar milisaniyede iyon akışı sağlar; metabotropik GPCR'ler ise hücre içi sinyal kaskadlarını kontrol eder.",
+              "ar": "صحيح! تحدث القنوات الأيونية تغيرات فورية بالتوصيل؛ بينما تفعل المستقبلات المرتبطة بالبروتين G شلالات أبطأ وأكثر تضخيماً."
+            }
+          },
+          {
+            "id": "opt_d2_is_ligand_gated",
+            "text": {
+              "en": "Dopamine D2 receptors are ligand-gated chloride channels with five transmembrane subunits identical to GABA-A pentamers.",
+              "tr": "Dopamin D2 reseptörleri, GABA-A pentamerleri ile tamamen aynı beş transmembran alt birime sahip ligand kapılı klorür kanallarıdır.",
+              "ar": "مستقبلات الدوبامين D2 قنوات كلوريد مبوبة بالربيطة خماسية الوحدات متطابقة تماماً مع بنية GABA-A."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dopamine D2 receptors are monomeric 7-transmembrane GPCRs, not ligand-gated pentameric ion channels.",
+              "tr": "Yanlış. Dopamin D2 reseptörleri iyon kanalı değil, 7 transmembranlı heptahelikal GPCR proteinleridir.",
+              "ar": "غير صحيح. مستقبلات الدوبامين D2 مستقبلات مقترنة بالبروتين G بـ 7 نطاقات عبر الغشاء وليست قنوات أيونية خماسية."
+            }
+          },
+          {
+            "id": "opt_gaba_a_is_gq",
+            "text": {
+              "en": "GABA-A is coupled to Gq proteins that stimulate phospholipase C to trigger rapid intracellular calcium release.",
+              "tr": "GABA-A, fosfolipaz C'yi uyararak hızlı hücre içi kalsiyum salınımını tetikleyen Gq proteinlerine kenetlidir.",
+              "ar": "يقترن GABA-A ببروتينات Gq التي تحفز فوسفوليباز C لإطلاق الكالسيوم داخل الخلوي بسرعة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. GABA-A is an ionotropic channel that fluxes chloride directly without any G-protein coupling.",
+              "tr": "Yanlış. GABA-A iyonotropik bir kanaldır; G-proteini kullanmaz, klorürü doğrudan içeri geçirir.",
+              "ar": "غير صحيح. مستقبل GABA-A قناة أيونية تمرر الكلوريد مباشرة دون أي اقتران ببروتين G."
+            }
+          },
+          {
+            "id": "opt_gpcr_faster_than_ion_channel",
+            "text": {
+              "en": "GPCR signaling occurs in microseconds, fundamentally faster than ion channels because second messengers bypass physical membrane barriers.",
+              "tr": "GPCR sinyalizasyonu mikrosaniyeler içinde gerçekleşir, ikincil haberciler zar engellerini aştığı için iyon kanallarından çok daha hızlıdır.",
+              "ar": "تحدث إشارات GPCR في أجزاء من المليون من الثانية وهي أسرع جوهرياً من القنوات الأيونية لتجاوزها حواجز الغشاء."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Ion channels open in milliseconds (<1 ms). GPCR cascades require biochemical steps (GDP-GTP exchange, cAMP) taking hundreds of milliseconds to seconds.",
+              "tr": "Yanlış. İyon kanalları milisaniyede açılır; GPCR kaskadları ise biyokimyasal adımlar gerektirdiğinden yüzlerce milisaniye sürer.",
+              "ar": "غير صحيح. تفتح القنوات الأيونية خلال أجزاء من الألف من الثانية، بينما تتطلب شلالات GPCR خطوات كيميائية تستغرق ثوانٍ."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "dopaminerjik yolak",
+          "arContext": "المسار الدوباميني"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "İyonotropik kanal ile metabotropik GPCR reseptörlerinin sinyal iletim hızını ve mekanizmasını karşılaştırın.",
+          "ar": "قارن سرعة وآلية نقل الإشارات بين القنوات الأيونية والمستقبلات الأيضية المقترنة بالبروتين G.",
+          "en": "Contrast the signaling speed and biochemical cascade of ionotropic channels versus metabotropic GPCRs."
+        },
+        {
+          "tier": 2,
+          "tr": "GABA-A doğrudan klor geçirerek milisaniyede zarı hiperpolarize eder.",
+          "ar": "يمرر GABA-A الكلوريد مباشرة لفرط استقطاب الغشاء خلال أجزاء من الألف من الثانية.",
+          "en": "GABA-A fluxes chloride directly to hyperpolarize the resting membrane within milliseconds."
+        },
+        {
+          "tier": 3,
+          "tr": "Dopamin D2 reseptörleri ise Gi kenetlidir; adenilat siklazı baskılayıp cAMP'yi düşürerek hücresel yanıtı modüle eder.",
+          "ar": "بينما تقترن مستقبلات D2 ببروتين Gi؛ فتثبط محلقة الأدينيلات وتخفض cAMP لتعديل وظيفة الخلية.",
+          "en": "Dopamine D2 GPCRs couple to Gi, inhibiting adenylyl cyclase and lowering cAMP over hundreds of milliseconds."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_ionotropic_vs_gpcr",
+            "text": {
+              "en": "GABA-A directly fluxes chloride to hyperpolarize the membrane; D2 inhibits adenylyl cyclase, lowers cAMP, and modulates downstream channels via G-protein second messengers.",
+              "tr": "GABA-A klorür geçirerek zarı doğrudan hiperpolarize eder; D2 adenilat siklazı inhibe eder, cAMP'yi düşürür ve G-proteini ile kanalları modüle eder.",
+              "ar": "يمرر GABA-A الكلوريد مباشرة لفرط استقطاب الغشاء؛ بينما يثبط D2 محلقة الأدينيلات، ويخفض cAMP، ويعدل القنوات عبر مرسال ثانٍ."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Ionotropic channels provide instant millisecond conductance changes; metabotropic GPCRs trigger slower, amplified second-messenger cascades.",
+              "tr": "Doğru! İyonotropik kanallar milisaniyede iyon akışı sağlar; metabotropik GPCR'ler ise hücre içi sinyal kaskadlarını kontrol eder.",
+              "ar": "صحيح! تحدث القنوات الأيونية تغيرات فورية بالتوصيل؛ بينما تفعل المستقبلات المرتبطة بالبروتين G شلالات أبطأ وأكثر تضخيماً."
+            }
+          },
+          {
+            "id": "opt_d2_is_ligand_gated",
+            "text": {
+              "en": "Dopamine D2 receptors are ligand-gated chloride channels with five transmembrane subunits identical to GABA-A pentamers.",
+              "tr": "Dopamin D2 reseptörleri, GABA-A pentamerleri ile tamamen aynı beş transmembran alt birime sahip ligand kapılı klorür kanallarıdır.",
+              "ar": "مستقبلات الدوبامين D2 قنوات كلوريد مبوبة بالربيطة خماسية الوحدات متطابقة تماماً مع بنية GABA-A."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dopamine D2 receptors are monomeric 7-transmembrane GPCRs, not ligand-gated pentameric ion channels.",
+              "tr": "Yanlış. Dopamin D2 reseptörleri iyon kanalı değil, 7 transmembranlı heptahelikal GPCR proteinleridir.",
+              "ar": "غير صحيح. مستقبلات الدوبامين D2 مستقبلات مقترنة بالبروتين G بـ 7 نطاقات عبر الغشاء وليست قنوات أيونية خماسية."
+            }
+          },
+          {
+            "id": "opt_gaba_a_is_gq",
+            "text": {
+              "en": "GABA-A is coupled to Gq proteins that stimulate phospholipase C to trigger rapid intracellular calcium release.",
+              "tr": "GABA-A, fosfolipaz C'yi uyararak hızlı hücre içi kalsiyum salınımını tetikleyen Gq proteinlerine kenetlidir.",
+              "ar": "يقترن GABA-A ببروتينات Gq التي تحفز فوسفوليباز C لإطلاق الكالسيوم داخل الخلوي بسرعة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. GABA-A is an ionotropic channel that fluxes chloride directly without any G-protein coupling.",
+              "tr": "Yanlış. GABA-A iyonotropik bir kanaldır; G-proteini kullanmaz, klorürü doğrudan içeri geçirir.",
+              "ar": "غير صحيح. مستقبل GABA-A قناة أيونية تمرر الكلوريد مباشرة دون أي اقتران ببروتين G."
+            }
+          },
+          {
+            "id": "opt_gpcr_faster_than_ion_channel",
+            "text": {
+              "en": "GPCR signaling occurs in microseconds, fundamentally faster than ion channels because second messengers bypass physical membrane barriers.",
+              "tr": "GPCR sinyalizasyonu mikrosaniyeler içinde gerçekleşir, ikincil haberciler zar engellerini aştığı için iyon kanallarından çok daha hızlıdır.",
+              "ar": "تحدث إشارات GPCR في أجزاء من المليون من الثانية وهي أسرع جوهرياً من القنوات الأيونية لتجاوزها حواجز الغشاء."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Ion channels open in milliseconds (<1 ms). GPCR cascades require biochemical steps (GDP-GTP exchange, cAMP) taking hundreds of milliseconds to seconds.",
+              "tr": "Yanlış. İyon kanalları milisaniyede açılır; GPCR kaskadları ise biyokimyasal adımlar gerektirdiğinden yüzlerce milisaniye sürer.",
+              "ar": "غير صحيح. تفتح القنوات الأيونية خلال أجزاء من الألف من الثانية، بينما تتطلب شلالات GPCR خطوات كيميائية تستغرق ثوانٍ."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: GABA-A ve Pozitif Modülasyon",
+        "ar": "اختبار الإتقان: مستقبِل GABA-A والتعديل الإيجابي",
+        "en": "Mastery Assessment: GABA-A Modulation"
+      },
+      "prompt": {
+        "en": "A comatose patient with suspected sedative overdose shows sinus tachycardia with QRS widening to 135 ms and terminal R wave in aVR. Why is IV flumazenil strictly contraindicated?",
+        "tr": "Sedatif aşırı doz şüphesi olan komadaki hastada sinüs taşikardisi, QRS'te 135 ms genişleme ve aVR'de terminal R dalgası saptanıyor. IV flumazenil neden kesinlikle kontrendikedir?",
+        "ar": "مريض بغيبوبة يُشتبه بتناوله مهدئات يظهر تسرع قلب جيبي، واتساع QRS إلى 135 ميلي ثانية وموجة R نهائية في aVR. لماذا يُمنع الفلومازينيل الوريدي منعاً باتاً؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP.",
+        "options": [
+          {
+            "id": "opt_tca_ecg_unmasking",
+            "text": {
+              "en": "The ECG reveals co-ingested TCA cardiotoxicity; flumazenil strips protective BZD anticonvulsant tone, unleashing refractory status epilepticus and lethal ventricular arrhythmias.",
+              "tr": "EKG eşlik eden TSA toksisitesini gösterir; flumazenil BZD'nin nöbet önleyici kalkanını kaldırarak dirençli status epileptikus ve ölümcül ventriküler aritmiyi tetikler.",
+              "ar": "يكشف التخطيط سمية قلبية مرافقة لمضادات الاكتئاب ثلاثية الحلقات؛ يجرد الفلومازينيل حماية البنزوديازيبين مفجراً حالة صرعية واضطرابات بطينية قاتلة."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Widened QRS (>100 ms) and prominent aVR R wave indicate TCA sodium channel blockade. BZDs suppress TCA seizures; flumazenil unleashes fatal convulsions.",
+              "tr": "Doğru! Geniş QRS (>100 ms) ve aVR'de R dalgası TSA sodyum kanal blokajını kanıtlar. BZD nöbeti baskılar; flumazenil verilirse ölümcül nöbet fırtınası başlar.",
+              "ar": "صحيح! يشير اتساع QRS وموجة R في aVR لحصار قنوات الصوديوم بواسطة TCA. يحمي البنزوديازيبين من النوبات؛ فإذا أزيل بالفلومازينيل حدثت الوفاة."
+            }
+          },
+          {
+            "id": "opt_pure_barbiturate_reversal",
+            "text": {
+              "en": "The ECG indicates acute phenobarbital poisoning where flumazenil acts as a paradoxical agonist, deepening medullary coma and provoking immediate asystole.",
+              "tr": "EKG, flumazenilin paradoksal agonist olarak komayı derinleştirdiği ve asistoli yaptığı akut fenobarbital zehirlenmesine işaret eder.",
+              "ar": "يشير التخطيط لتسمم حاد بالفينوباربيتال حيث يعمل الفلومازينيل كناهض متناقض معمقاً الغيبوبة ومسبباً توقف القلب."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturate toxicity does not typically cause QRS widening, and flumazenil does not bind the barbiturate site or cause asystole.",
+              "tr": "Yanlış. Barbitürat zehirlenmesi tipik QRS genişlemesi yapmaz ve flumazenil barbitürat bölgesine bağlanmaz.",
+              "ar": "غير صحيح. لا يسبب التسمم بالباربيتورات اتساع QRS نوعياً، كما لا يرتبط الفلومازينيل بموقع الباربيتورات إطلاقاً."
+            }
+          },
+          {
+            "id": "opt_mu_opioid_blockade",
+            "text": {
+              "en": "Flumazenil acts as a competitive antagonist at medullary mu-opioid receptors, precipitating severe pulmonary edema in patients with respiratory depression.",
+              "tr": "Flumazenil medüller mü-opioid reseptörlerinde yarışmalı antagonist gibi davranarak solunum depresyonlu hastada akut akciğer ödemi başlatır.",
+              "ar": "يعمل الفلومازينيل كمناهض تنافسي عند مستقبلات مو الأفيونية النخاعية مما يسبب وذمة رئوية حادة لدى مرضى التثبيط التنفسي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Naloxone, not flumazenil, antagonizes opioid mu receptors. Flumazenil is completely inactive at opioid receptors.",
+              "tr": "Yanlış. Opioid mü reseptörlerini bloke eden naloksandır. Flumazenil opioid reseptörlerine bağlanmaz.",
+              "ar": "غير صحيح. النالوكسون هو من يعاكس مستقبلات مو الأفيونية؛ بينما الفلومازينيل غير فعال تماماً عند المستقبلات الأفيونية."
+            }
+          },
+          {
+            "id": "opt_romk_hyperkalemia",
+            "text": {
+              "en": "Flumazenil directly blocks renal apical ROMK channels, driving serum potassium above 7.5 mEq/L and precipitating hyperkalemic ventricular arrest.",
+              "tr": "Flumazenil böbrek apikal ROMK kanallarını doğrudan bloke ederek serum potasyumunu 7.5 mEq/L üzerine çıkarır ve hiperkalemik arrest yapar.",
+              "ar": "يحظر الفلومازينيل قنوات ROMK الكلوية مباشرة رافعاً بوتاسيوم المصل فوق 7.5 ميلي مكافئ/لتر ومسبباً توقف القلب بفرط البوتاسيوم."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no renal ion channel interactions; the life-threatening danger is removing seizure suppression during TCA co-ingestion.",
+              "tr": "Yanlış. Flumazenil böbrek kanallarını etkilemez; ölümcül tehlike TSA alımında nöbet kalkanının kalkmasıdır.",
+              "ar": "غير صحيح. لا يؤثر الفلومازينيل على القنوات الكلوية؛ بل الخطر القاتل هو إزالة كبح التشنجات أثناء التسمم المشترك بـ TCA."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "EKG'deki QRS genişlemesi ve aVR'deki R dalgası hangi ölümcül ilaç zehirlenmesinin patognomonik bulgusudur?",
+          "ar": "اتساع مركب QRS وظهور موجة R في اشتقاق aVR علامتان فارقتان لأي تسمم دوائي مهدد للحياة؟",
+          "en": "What life-threatening drug toxicity is pathognomonically signaled by widened QRS and a tall terminal aVR R wave?"
+        },
+        {
+          "tier": 2,
+          "tr": "Bu bulgular trisiklik antidepresan (TSA) sodyum kanal blokajını gösterir; hastadaki BZD nöbeti baskılamaktadır.",
+          "ar": "تشير هذه التغيرات لحصار قنوات الصوديوم بمضادات الاكتئاب ثلاثية الحلقات؛ والبنزوديازيبين يكبح النوبات حالياً.",
+          "en": "These findings confirm TCA cardiac sodium channel blockade; the co-ingested BZD is suppressing seizures."
+        },
+        {
+          "tier": 3,
+          "tr": "Flumazenil koruyucu BZD kalkanını yıkar ve hastayı tedavi edilemez status epileptikus ile ventriküler fibrilasyona sokar.",
+          "ar": "إعطاء الفلومازينيل يسقط حماية البنزوديازيبين مفجراً حالة صرعية معندة ورجفاناً بطينياً مميتاً.",
+          "en": "Flumazenil destroys the protective BZD tone, precipitating intractable status epilepticus and lethal arrhythmias."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_tca_ecg_unmasking",
+            "text": {
+              "en": "The ECG reveals co-ingested TCA cardiotoxicity; flumazenil strips protective BZD anticonvulsant tone, unleashing refractory status epilepticus and lethal ventricular arrhythmias.",
+              "tr": "EKG eşlik eden TSA toksisitesini gösterir; flumazenil BZD'nin nöbet önleyici kalkanını kaldırarak dirençli status epileptikus ve ölümcül ventriküler aritmiyi tetikler.",
+              "ar": "يكشف التخطيط سمية قلبية مرافقة لمضادات الاكتئاب ثلاثية الحلقات؛ يجرد الفلومازينيل حماية البنزوديازيبين مفجراً حالة صرعية واضطرابات بطينية قاتلة."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Widened QRS (>100 ms) and prominent aVR R wave indicate TCA sodium channel blockade. BZDs suppress TCA seizures; flumazenil unleashes fatal convulsions.",
+              "tr": "Doğru! Geniş QRS (>100 ms) ve aVR'de R dalgası TSA sodyum kanal blokajını kanıtlar. BZD nöbeti baskılar; flumazenil verilirse ölümcül nöbet fırtınası başlar.",
+              "ar": "صحيح! يشير اتساع QRS وموجة R في aVR لحصار قنوات الصوديوم بواسطة TCA. يحمي البنزوديازيبين من النوبات؛ فإذا أزيل بالفلومازينيل حدثت الوفاة."
+            }
+          },
+          {
+            "id": "opt_pure_barbiturate_reversal",
+            "text": {
+              "en": "The ECG indicates acute phenobarbital poisoning where flumazenil acts as a paradoxical agonist, deepening medullary coma and provoking immediate asystole.",
+              "tr": "EKG, flumazenilin paradoksal agonist olarak komayı derinleştirdiği ve asistoli yaptığı akut fenobarbital zehirlenmesine işaret eder.",
+              "ar": "يشير التخطيط لتسمم حاد بالفينوباربيتال حيث يعمل الفلومازينيل كناهض متناقض معمقاً الغيبوبة ومسبباً توقف القلب."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Barbiturate toxicity does not typically cause QRS widening, and flumazenil does not bind the barbiturate site or cause asystole.",
+              "tr": "Yanlış. Barbitürat zehirlenmesi tipik QRS genişlemesi yapmaz ve flumazenil barbitürat bölgesine bağlanmaz.",
+              "ar": "غير صحيح. لا يسبب التسمم بالباربيتورات اتساع QRS نوعياً، كما لا يرتبط الفلومازينيل بموقع الباربيتورات إطلاقاً."
+            }
+          },
+          {
+            "id": "opt_mu_opioid_blockade",
+            "text": {
+              "en": "Flumazenil acts as a competitive antagonist at medullary mu-opioid receptors, precipitating severe pulmonary edema in patients with respiratory depression.",
+              "tr": "Flumazenil medüller mü-opioid reseptörlerinde yarışmalı antagonist gibi davranarak solunum depresyonlu hastada akut akciğer ödemi başlatır.",
+              "ar": "يعمل الفلومازينيل كمناهض تنافسي عند مستقبلات مو الأفيونية النخاعية مما يسبب وذمة رئوية حادة لدى مرضى التثبيط التنفسي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Naloxone, not flumazenil, antagonizes opioid mu receptors. Flumazenil is completely inactive at opioid receptors.",
+              "tr": "Yanlış. Opioid mü reseptörlerini bloke eden naloksandır. Flumazenil opioid reseptörlerine bağlanmaz.",
+              "ar": "غير صحيح. النالوكسون هو من يعاكس مستقبلات مو الأفيونية؛ بينما الفلومازينيل غير فعال تماماً عند المستقبلات الأفيونية."
+            }
+          },
+          {
+            "id": "opt_romk_hyperkalemia",
+            "text": {
+              "en": "Flumazenil directly blocks renal apical ROMK channels, driving serum potassium above 7.5 mEq/L and precipitating hyperkalemic ventricular arrest.",
+              "tr": "Flumazenil böbrek apikal ROMK kanallarını doğrudan bloke ederek serum potasyumunu 7.5 mEq/L üzerine çıkarır ve hiperkalemik arrest yapar.",
+              "ar": "يحظر الفلومازينيل قنوات ROMK الكلوية مباشرة رافعاً بوتاسيوم المصل فوق 7.5 ميلي مكافئ/لتر ومسبباً توقف القلب بفرط البوتاسيوم."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Flumazenil has no renal ion channel interactions; the life-threatening danger is removing seizure suppression during TCA co-ingestion.",
+              "tr": "Yanlış. Flumazenil böbrek kanallarını etkilemez; ölümcül tehlike TSA alımında nöbet kalkanının kalkmasıdır.",
+              "ar": "غير صحيح. لا يؤثر الفلومازينيل على القنوات الكلوية؛ بل الخطر القاتل هو إزالة كبح التشنجات أثناء التسمم المشترك بـ TCA."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1774 @@
+{
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
+  "id": "mc-mod5-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-05",
+  "title": {
+    "tr": "Faz II Konjugasyonu: Glukuronidasyon, Sülfasyon ve Glutatyon Detoksifikasyonu",
+    "ar": "المرحلة الثانية: مسارات الاقتران بالجلوكورونيد والكبريتات والجلوتاثيون",
+    "en": "Phase II Conjugation: Glucuronidation, Sulfation & Glutathione Pathways"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "UGT, SULT, NAT, GST transferaz enzimlerini, aktif kofaktörlerini (UDPGA, PAPS, Asetil-KoA, GSH), parasetamol hepatotoksisitesini ve metenamin üriner aktivasyonunu analiz etmek.",
+    "ar": "تحليل إنزيمات التحويل UGT و SULT و NAT و GST، وكواشفها المنشطة، وآلية سمية الباراسيتامول وترياق NAC، وتنشيط الميثينامين البولي.",
+    "en": "Analyze Phase II transferase mechanisms (UGT, SULT, NAT, GST), active cofactors (UDPGA, PAPS, Acetyl-CoA, GSH), paracetamol hepatotoxicity with NAC rescue, and urinary methenamine activation."
+  },
+  "description": {
+    "tr": "Faz II konjugasyon reaksiyonlarının enzim kinetiğini, kofaktör donörlerini, parasetamol hepatotoksisitesi mekanizmasını ve farmakogenetik asetilasyon polimorfizmini inceleme.",
+    "ar": "استقصاء حركية إنزيمات الاقتران في المرحلة الثانية، وكواشفها المانحة، وآلية سمية الباراسيتامول الكبدية والتباين الوراثي للأستلة.",
+    "en": "Examine Phase II conjugation kinetics, cofactor donors, paracetamol hepatotoxicity and antidote rescue mechanisms, and pharmacogenetic acetylation polymorphism."
+  },
+  "misconceptions": [
+    {
+      "tr": "Tüm Faz II konjugasyon reaksiyonlarının polariteyi ve suda çözünürlüğü mutlaka artırdığı yanılgısı (Asetilasyon polariteyi azaltır ve kristalüri yapar!).",
+      "ar": "الظن الخاطئ بأن جميع تفاعلات الاقتران تزيد من قطبية الدواء وذوبانيته (الأستلة تقلل القطبية وتسبب البيلة البلورية!).",
+      "en": "The misconception that all Phase II conjugations increase water solubility (Acetylation actually decreases polarity, causing sulfadiazine crystalluria!)."
+    },
+    {
+      "tr": "Parasetamol aşırı dozunda karaciğer hasarının parasetamolün kendisi tarafından oluşturulduğu düşüncesi (Gerçek toksin CYP2E1'in ürettiği elektrofil NAPQI'dir).",
+      "ar": "الاعتقاد الخاطئ بأن الباراسيتامول نفسه يدمر الكبد (السم الفعلي هو NAPQI الناتج عن CYP2E1 عند نفاد مخزون الجلوتاثيون).",
+      "en": "The misconception that paracetamol itself directly destroys hepatocytes, ignoring CYP2E1 bioactivation to the electrophilic NAPQI quinoneimine."
+    },
+    {
+      "tr": "Bütün Faz II transferaz enzimlerinin sitozolde bulunduğu düşüncesi (UGT enzimi mikrozomaldir, endoplazmik retikulum membranına gömülüdür).",
+      "ar": "الاعتقاد الخاطئ بوجود جميع إنزيمات الاقتران في السيتوزول (إنزيم UGT ميكروزومي مدمج في غشاء الشبكة الإندوبلازمية).",
+      "en": "The false assumption that all Phase II transferases reside in the cytosol, missing that UGT is an integral endoplasmic reticulum membrane enzyme."
+    }
+  ],
+  "sources": [
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 2
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 4
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 31
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 32
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 33
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 35
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 36
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 40
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 43
+    },
+    {
+      "file": "İlaç metabolizması-2026.pdf",
+      "page": 44
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC10-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Phase II Conjugation Pathways: Glucuronidation, Sulfation, Acetylation, and Glutathione",
+      "chapter": "Chapter 4: Drug Biotransformation",
+      "page": "135-168",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC10-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Conjugation Reactions, Mercapturic Acid Synthesis, and Paracetamol Hepatotoxicity",
+      "chapter": "Chapter 4: Metabolic Changes of Drugs and Related Organic Compounds",
+      "page": "150-185",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC10-01",
+      "parameter": "Paracetamol therapeutic dose metabolic pathway split",
+      "value": "60% Glucuronidation (UGT), 35% Sulfation (SULT), 5% CYP2E1 oxidation to NAPQI",
+      "status": "verified",
+      "referencePassage": "Slide 35: Therapeutic doses of acetaminophen are cleared predominantly by glucuronidation (~60%) and sulfation (~35%), with <5% forming NAPQI."
+    },
+    {
+      "id": "NUM-MC10-02",
+      "parameter": "Hepatic glutathione (GSH) critical depletion threshold",
+      "value": "Depletion > 70% (cellular GSH falls below 30% of normal reserves)",
+      "status": "verified",
+      "referencePassage": "Slide 36: When total hepatic GSH reserves fall below 30% of baseline, NAPQI binds covalently to vital hepatocyte proteins, initiating necrosis."
+    },
+    {
+      "id": "NUM-MC10-03",
+      "parameter": "NAT-2 slow acetylator prevalence in Caucasian/Turkish populations",
+      "value": "50% to 60% slow acetylators (vs 90-100% fast acetylators in Japanese/Inuit cohorts)",
+      "status": "verified",
+      "referencePassage": "Slide 40: Slow acetylators account for 50-60% of Turkish and European populations, conferring heightened risk of isoniazid neuropathy and lupus."
+    },
+    {
+      "id": "NUM-MC10-04",
+      "parameter": "Methenamine urinary activation pH threshold and formaldehyde yield",
+      "value": "Urine pH < 5.5 generates 6 formaldehyde molecules per hexamethylenetetramine cage",
+      "status": "verified",
+      "referencePassage": "Slide 44: Methenamine hydrolyzes non-enzymatically in acidic urine (pH < 5.5) to generate 6 molecules of formaldehyde, killing bacteria."
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod5-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Glukuronidasyon vs Sülfasyon Kinetiği",
+      "prompt": "Parasetamolün fenolik -OH grubu için yarışan UGT ve SULT enzimlerinin afinite ve kapasite farkı nedir?",
+      "answer": "SULT yüksek afiniteli / düşük kapasitelidir (terapötik düşük dozda etkindir, hızla doyar); UGT ise düşük afiniteli / yüksek kapasitelidir (büyük yükleri metabolize eder).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Asetilasyon İstisnası ve Kristalüri",
+      "prompt": "Faz II konjugasyonları genelde polariteyi artırırken, asetilasyon (NAT-2) neden sülfadiazin kristalürisine yol açar?",
+      "answer": "Asetilasyon bazik amino grubunu nötr amite çevirerek molekülün polaritesini ve iyonlaşmasını azaltır; N4-asetilsülfadiazin asidik idrarda çözünmeyip böbrek tübüllerinde çöker.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Parasetamol Hepatotoksisitesi ve NAC Antidotu",
+      "prompt": "Parasetamol aşırı dozunda karaciğer nekrozunu başlatan olay nedir ve N-asetilsistein (NAC) bunu nasıl önler?",
+      "answer": "SULT ve UGT doyunca CYP2E1 aşırı miktarda elektrofil NAPQI üretir; hepatik glutatyon (GSH) >%70 tükenince NAPQI proteinlere kovalent bağlanır. NAC, sistein havuzunu artırarak GSH sentezini yeniler.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card4",
+      "courseId": "medchem",
+      "drugOrConcept": "Merkaptürik Asit Sentez Yolu",
+      "prompt": "Toksik elektrofillere bağlanan glutatyon (GSH) idrarla atılacak merkaptürik aside nasıl dönüştürülür?",
+      "answer": "GSH konjugatından gamma-glutamiltranspeptidaz glutamatı, dipeptidaz ise glisini koparır; kalan sistein konjugatı NAT ile N-asetillenerek merkaptürik asit oluşturur.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod5-les2-card5",
+      "courseId": "medchem",
+      "drugOrConcept": "Metenamin Ön İlacı ve İdrar pH Şartı",
+      "prompt": "Metenamin (hekzametilentetramin) kanda stabilken idrarda bakterileri nasıl öldürür ve bunun ön şartı nedir?",
+      "answer": "Kanda ve pH 7.4'te inaktiftir; idrar pH'ı <5.5 (asidik) olduğunda kendiliğinden hidroliz olarak 6 formaldehit açığa çıkarır ve bakteriyel proteinleri denatüre eder.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Faz II Konjugasyonu: Glukuronidasyon, Sülfasyon ve Glutatyon Detoksifikasyonu"
+    },
+    "ar": {
+      "title": "المرحلة الثانية: مسارات الاقتران بالجلوكورونيد والكبريتات والجلوتاثيون"
+    },
+    "en": {
+      "title": "Phase II Conjugation: Glucuronidation, Sulfation & Glutathione Pathways"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod5-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "type": "predict_reveal",
+      "title": {
+        "tr": "Sessiz Zehirlenme: 15 Gram Parasetamol ve 48 Saatlik Uçurum",
+        "ar": "التسمم الصامت: 15 غراماً من الباراسيتامول وهاوية الـ 48 ساعة",
+        "en": "The Silent Overdose: 15 Grams of Paracetamol & The 48-Hour Cliff"
+      },
+      "prompt": {
+        "tr": "15 gram parasetamol yutan bir genç ilk 6 saatte tamamen sağlıklıdır; ne bulantı ne ağrı duyar. Ancak 48 saat sonra karaciğer enzimleri 10.000 U/L'ye fırlar ve fulminan nekroz başlar. Hangi koruyucu kalkan çökmüştür?",
+        "ar": "تناول مريض 15 غراماً من الباراسيتامول وبدا سليماً تماماً في الساعات الست الأولى. بعد 48 ساعة قفزت إنزيمات الكبد فوق 10,000 وحدة وبدأ التنخر الكبدي المميت. ما هو الدرع الواقي الذي انهار؟",
+        "en": "A patient ingests 15 grams of paracetamol and feels completely fine for the first 6 hours. Yet at 48 hours, liver transaminases exceed 10,000 U/L with fatal hepatic necrosis. What cellular defense shield collapsed?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": {
+              "tr": "Karaciğerdeki UGT ve SULT enzimleri doymuş, CYP2E1 toksik NAPQI üretmiş ve hücresel koruyucu glutatyon (GSH) rezervi tamamen tükenmiştir.",
+              "ar": "تشبعت إنزيمات UGT و SULT، فحول CYP2E1 الفائض إلى NAPQI السام ونفد مخزون الجلوتاثيون (GSH) الخلوي بالكامل.",
+              "en": "UGT and SULT conjugations became saturated, shunting paracetamol to CYP2E1 to generate toxic NAPQI which exhausted hepatic glutathione (GSH) reserves."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tam isabet! Slayt 35-36 mekanizması: Terapötik dozlarda parasetamolün %95'i glukuronidasyon ve sülfasyonla temizlenir. Aşırı dozda bu iki yol doyar; CYP2E1 devreye girerek elektrofilik NAPQI oluşturur. Hepatik glutatyon (GSH) rezervi >%70 tükendiğinde, NAPQI hepatosit proteinlerine kovalent bağlanıp hücre ölümünü başlatır.",
+              "ar": "إصابة دقيقة! الشريحة 35-36: في الجرعات العادية يُطرح 95% بالاقتران السليم. عند الجرعة الزائدة تتشبع هذه الإنزيمات، وينشط CYP2E1 منتجاً NAPQI السام. عند نفاد الجلوتاثيون (>70%)، يهاجم NAPQI بروتينات الكبد تساهمياً مسبباً الموت الخلوي.",
+              "en": "Exact hit! Slides 35-36 mechanism: Therapeutic paracetamol is cleared safely (>95%) by glucuronidation and sulfation. Overdose saturates these transferases, shunting the drug to CYP2E1 to produce electrophilic NAPQI. Once hepatic GSH falls below 30%, NAPQI covalently attacks mitochondrial proteins."
+            }
+          },
+          {
+            "id": "opt-1b",
+            "text": {
+              "tr": "Parasetamol doğrudan santral COX enzimlerini kalıcı olarak bloke etmiş; prostaglandin sentezinin sıfırlanmasıyla mide ve damar perfüzyonu çökmüştür.",
+              "ar": "قام الباراسيتامول بتثبيط إنزيمات COX المركزية بشكل دائم، مما أوقف البروستاغلاندين وسبب انهيار التروية الدموية.",
+              "en": "Paracetamol irreversibly blocks central and peripheral COX enzymes, obliterating prostaglandin synthesis and collapsing systemic perfusion."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "COX blokajı yanılgısı: Parasetamolün analjezik/antipiretik etkisi santral COX inhibisyonuna dayanır ancak bu mekanizma ölümcül değildir; hepatotoksisitenin tek nedeni CYP2E1 ile oluşan reaktif elektrofilik metabolit NAPQI'dir.",
+              "ar": "مغالطة تثبيط COX: التأثير المسكن يعتمد على تثبيط COX، لكن السمية الكبدية القاتلة تنشأ حصراً من تشكل المستقلب الإلكتروفيلي التفاعلي NAPQI بواسطة CYP2E1.",
+              "en": "COX inhibition fallacy: Analgesia stems from central COX inhibition, but lethal hepatotoxicity is strictly caused by the electrophilic reactive metabolite NAPQI generated by CYP2E1."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "Aşırı dozda ana parasetamol molekülü değişmeden hepatosit nükleusuna girerek doğrudan DNA zincirlerine interkale olup hücreleri öldürmüştür.",
+              "ar": "دخلت جزيئات الباراسيتامول السليمة دون استقلاب إلى نواة الخلايا الكبدية واندست مباشرة في شريط DNA مسببة الموت الخلوي.",
+              "en": "Intact unchanged paracetamol accumulates in hepatocyte nuclei and intercalates directly into genomic DNA to trigger acute cellular lysis."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Doğrudan intakt ilaç toksisitesi yanılgısı: Parasetamol molekülünün kendisi hepatotoksik veya DNA interkalatörü değildir; toksisite ancak ana ilacın CYP2E1 enzimiyle reaktif elektrofilik NAPQI'ye biyotransforme olmasıyla başlar.",
+              "ar": "مغالطة السمية المباشرة للدواء الأصلي: الباراسيتامول السليم غير سام بحد ذاته؛ السمية تتطلب التحول الحيوي عبر CYP2E1 إلى المركب الإلكتروفيلي NAPQI.",
+              "en": "Direct parent toxicity fallacy: Intact paracetamol is biologically inert to DNA; toxicity strictly requires enzymatic bioactivation by CYP2E1 into electrophilic NAPQI."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "glutatyon (GSH) tükenmesi",
+          "arContext": "استنزاف الجلوتاثيون (GSH depletion)"
+        },
+        {
+          "term": "N-asetil-p-benzokinonimin (NAPQI)",
+          "arContext": "المركب السام NAPQI"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Parasetamolün normal temizleme yolları (glukuronidasyon ve sülfasyon) aşırı dozda kapasitesini aşar.",
+          "ar": "تتجاوز الجرعة الزائدة الطاقة الاستيعابية لمسارات الاقتران الطبيعية (الجلوكورونيد والكبريتات).",
+          "en": "Excessive doses rapidly overwhelm the saturation capacity of primary conjugation pathways."
+        },
+        {
+          "tr": "CYP2E1 enzimi fazlalığı oksitleyerek reaktif bir kinonimin elektrofiline (NAPQI) çevirir.",
+          "ar": "يؤكسد CYP2E1 الفائض ليحوله إلى إلكتروفيل كينونيمين عالي السمية (NAPQI).",
+          "en": "Diverted substrate is oxidized by CYP2E1 into the electrophilic toxin NAPQI."
+        },
+        {
+          "tr": "Karaciğerdeki koruyucu tripeptit (glutatyon) bittiğinde NAPQI hücre proteinlerini yok etmeye başlar.",
+          "ar": "عندما ينفد ببتيد الجلوتاثيون الواقي بالكبد، يبدأ NAPQI بتدمير بروتينات الخلية.",
+          "en": "When protective glutathione reserves run out, NAPQI attacks vital hepatocyte proteins."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 35
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": "Karaciğerdeki UGT ve SULT enzimleri doymuş, CYP2E1 toksik NAPQI üretmiş ve hücresel koruyucu glutatyon (GSH) rezervi tamamen tükenmiştir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Tam isabet! Slayt 35-36 mekanizması: Terapötik dozlarda parasetamolün %95'i glukuronidasyon ve sülfasyonla temizlenir. Aşırı dozda bu iki yol doyar; CYP2E1 devreye girerek elektrofilik NAPQI oluşturur. Hepatik glutatyon (GSH) rezervi >%70 tükendiğinde, NAPQI hepatosit proteinlerine kovalent bağlanıp hücre ölümünü başlatır."
+          },
+          {
+            "id": "opt-1b",
+            "text": "Parasetamol doğrudan santral COX enzimlerini kalıcı olarak bloke etmiş; prostaglandin sentezinin sıfırlanmasıyla mide ve damar perfüzyonu çökmüştür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "COX blokajı yanılgısı: Parasetamolün analjezik/antipiretik etkisi santral COX inhibisyonuna dayanır ancak bu mekanizma ölümcül değildir; hepatotoksisitenin tek nedeni CYP2E1 ile oluşan reaktif elektrofilik metabolit NAPQI'dir."
+          },
+          {
+            "id": "opt-1c",
+            "text": "Aşırı dozda ana parasetamol molekülü değişmeden hepatosit nükleusuna girerek doğrudan DNA zincirlerine interkale olup hücreleri öldürmüştür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Doğrudan intakt ilaç toksisitesi yanılgısı: Parasetamol molekülünün kendisi hepatotoksik veya DNA interkalatörü değildir; toksisite ancak ana ilacın CYP2E1 enzimiyle reaktif elektrofilik NAPQI'ye biyotransforme olmasıyla başlar."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Karaciğerdeki UGT ve SULT enzimleri doymuş, CYP2E1 toksik NAPQI üretmiş ve hücresel koruyucu glutatyon (GSH) rezervi tamamen tükenmiştir.",
+          "ar": "تشبعت إنزيمات UGT و SULT، فحول CYP2E1 الفائض إلى NAPQI السام ونفد مخزون الجلوتاثيون (GSH) الخلوي بالكامل.",
+          "en": "UGT and SULT conjugations became saturated, shunting paracetamol to CYP2E1 to generate toxic NAPQI which exhausted hepatic glutathione (GSH) reserves."
+        },
+        "explanation": {
+          "tr": "Tam isabet! Slayt 35-36 mekanizması: Terapötik dozlarda parasetamolün %95'i glukuronidasyon ve sülfasyonla temizlenir. Aşırı dozda bu iki yol doyar; CYP2E1 devreye girerek elektrofilik NAPQI oluşturur. Hepatik glutatyon (GSH) rezervi >%70 tükendiğinde, NAPQI hepatosit proteinlerine kovalent bağlanıp hücre ölümünü başlatır.",
+          "ar": "إصابة دقيقة! الشريحة 35-36: في الجرعات العادية يُطرح 95% بالاقتران السليم. عند الجرعة الزائدة تتشبع هذه الإنزيمات، وينشط CYP2E1 منتجاً NAPQI السام. عند نفاد الجلوتاثيون (>70%)، يهاجم NAPQI بروتينات الكبد تساهمياً مسبباً الموت الخلوي.",
+          "en": "Exact hit! Slides 35-36 mechanism: Therapeutic paracetamol is cleared safely (>95%) by glucuronidation and sulfation. Overdose saturates these transferases, shunting the drug to CYP2E1 to produce electrophilic NAPQI. Once hepatic GSH falls below 30%, NAPQI covalently attacks mitochondrial proteins."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "type": "question",
+      "title": {
+        "tr": "Glukuronidasyon vs Sülfasyon: Hangi Yol Ne Zaman Kazanır?",
+        "ar": "الجلوكورونيد مقابل الكبريتات: من يحسم سباق الاستقلاب؟",
+        "en": "Glucuronidation vs. Sulfation: When Does Each Pathway Win?"
+      },
+      "prompt": {
+        "tr": "Parasetamolün tek bir fenolik -OH grubu vardır. Hem UGT hem SULT enzimleri bu grup için yarışır. Terapötik düşük dozda sülfasyon, yüksek dozda ise neden glukuronidasyon baskındır?",
+        "ar": "يمتلك الباراسيتامول مجموعة هيدروكسيل فينولية وحيدة تتنافس عليها إنزيمات UGT و SULT. لماذا تسود الكبرتة في الجرعات المنخفضة ويسود الجلوكورونيد في المرتفعة؟",
+        "en": "Paracetamol presents a single phenolic -OH. Both UGT and SULT compete for this exact locus. Why does sulfation dominate at low therapeutic doses, while glucuronidation takes over at higher doses?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": {
+              "tr": "SULT yüksek afiniteli/düşük kapasitelidir (PAPS kofaktörü hızla biter); UGT ise düşük afiniteli/yüksek kapasitelidir (büyük ilaç yüklerini taşır).",
+              "ar": "إنزيم SULT ذو ألفة عالية وسعة منخفضة (ينفد كاشف PAPS سريعاً)؛ بينما UGT ذو ألفة أقل وسعة هائلة لاستيعاب الجرعات الكبيرة.",
+              "en": "SULT exhibits high affinity but low capacity (PAPS cofactor depletes rapidly); UGT has lower affinity but enormous capacity to clear heavy drug loads."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel farmakokinetik kavrayış! Slayt 32-33 ve Foye prensibi: Sülfotransferazların Km değeri düşüktür (yüksek afinite), bu yüzden 500 mg'lık dozda sülfasyon (%35) çok etkindir. Ancak hücredeki PAPS kofaktör havuzu kısıtlıdır ve SULT hızla doygunluğa (Vmax) ulaşır. Mikrozomal UGT ise glikoz metabolizmasından beslenen devasa UDPGA havuzuna sahiptir ve yüksek dozları glukuronidasyon (%60) sırtlar.",
+              "ar": "فهم حركي دوائي رائع! الشريحة 32-33: يمتلك SULT قيمة Km منخفضة (شراهة عالية) فيعمل بكفاءة بالجرعات العادية، لكن مخزون كاشف PAPS محدود ويتشبع الإنزيم سريعاً. بالمقابل، يمتلك UGT سعة ضخمة مدعومة بمخزون UDPGA الوفير المشتق من الجلوكوز.",
+              "en": "Flawless pharmacokinetic insight! Slides 32-33: SULT possesses low Km (high affinity), efficiently sulfating paracetamol at therapeutic doses. However, PAPS pools are easily depleted. UGT exhibits high capacity fed by abundant glycogen-derived UDPGA, handling the bulk load."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Fenolik -OH grubu yüksek dozda sterik engele uğrar; SULT enzimi aromatik halkaları tanıyamaz hale gelirken UGT yalnızca alifatik zincirlere bağlanır.",
+              "ar": "تتعرض مجموعة الفينول لإعاقة فراغية بالجرعات العالية، فيعجز SULT عن تمييز الحلقات العطرية بينما يختص UGT بالسلاسل الأليفاتية.",
+              "en": "High drug concentrations induce steric hindrance at the phenolic ring, preventing SULT binding while UGT selectively targets aliphatic chains."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Substrat özgüllüğü yanılgısı: Hem SULT hem UGT fenolik -OH gruplarını mükemmel tanır; yolak baskınlığındaki değişim sterik engelden değil, enzimlerin Km değerleri ve hücre içi kofaktör (PAPS vs UDPGA) kapasitesinden kaynaklanır.",
+              "ar": "مغالطة نوعية الركيزة: يتعرف كلا الإنزيمين على الفينول بكفاءة؛ التبدل يعود لقيم Km وسعة المخزون الخلوي للمرافقات الإنزيمية (PAPS مقابل UDPGA).",
+              "en": "Substrate selectivity misconception: Both enzymes efficiently conjugate phenols; pathway shifting is driven by differential Km values and intracellular cofactor reserves (PAPS vs UDPGA)."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Sülfat konjugatları kanda kararsızdır; yüksek ilaç derişiminde kimyasal denge geri döner ve sülfatlar hızla hidroliz edilerek serbest ilaca dönüşür.",
+              "ar": "مركبات الكبريتات غير مستقرة بالدم؛ عند التراكيز العالية ينعكس التوازن الكيميائي وتتحلمه الكبريتات بسرعة محررة الدواء الأصلي.",
+              "en": "Sulfate conjugates are chemically unstable in circulation; elevated drug concentrations shift equilibrium toward spontaneous back-hydrolysis into parent paracetamol."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Geri hidroliz yanılgısı: Parasetamol sülfat kovalent bağlı son derece kararlı bir metabolittir ve kanda kendiliğinden hidroliz olmaz; düşük dozda baskın olmasının nedeni yüksek afinite (düşük Km), yüksek dozda doymasının nedeni ise kısıtlı PAPS havuzudur.",
+              "ar": "مغالطة الحلمهة العكسية: كبريتات الباراسيتامول مركب تساهمي مستقر للغاية لا يتحلمه في الدم؛ سيطرة المسار بالجرع المنخفضة سببها الألفة العالية ونفاذ PAPS لاحقاً.",
+              "en": "Reverse hydrolysis fallacy: Paracetamol sulfate is a highly stable covalent metabolite in plasma; saturation arises from stoichiometric depletion of PAPS cofactors."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Km ve Vmax enzim kinetiği",
+          "arContext": "حركية الإنزيمات Km و Vmax"
+        },
+        {
+          "term": "kofaktör doygunluğu",
+          "arContext": "تشبع الكواشف المانحة (cofactor saturation)"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Düşük dozda ilaca ilk sarılan enzim yüksek afiniteli olandır (Km değeri küçüktür).",
+          "ar": "في التراكيز المنخفضة، يرتبط الإنزيم صاحب الألفة الفائقة (قيمة Km صغيرة) أولاً.",
+          "en": "At low substrate concentrations, the high-affinity enzyme (lower Km) dominates."
+        },
+        {
+          "tr": "Sülfasyon kofaktörü PAPS hücrede sınırlı miktardadır ve hızla tükenir.",
+          "ar": "كاشف الكبرتة PAPS يتواجد بكميات خلوية محدودة ويتشبع سريعاً.",
+          "en": "The sulfate donor PAPS is present in limited stoichiometric supply in cytosol."
+        },
+        {
+          "tr": "Glukuronidasyon kofaktörü UDPGA glikozdan üretilir; kapasitesi sülfasyondan kat kat geniştir.",
+          "ar": "كاشف UDPGA مشتق من الجلوكوز ويمتلك سعة استيعابية تفوق الكبريتات بأضعاف.",
+          "en": "UDPGA is derived from abundant glycogen stores, providing immense glucuronidation capacity."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 32
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": "SULT yüksek afiniteli/düşük kapasitelidir (PAPS kofaktörü hızla biter); UGT ise düşük afiniteli/yüksek kapasitelidir (büyük ilaç yüklerini taşır).",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel farmakokinetik kavrayış! Slayt 32-33 ve Foye prensibi: Sülfotransferazların Km değeri düşüktür (yüksek afinite), bu yüzden 500 mg'lık dozda sülfasyon (%35) çok etkindir. Ancak hücredeki PAPS kofaktör havuzu kısıtlıdır ve SULT hızla doygunluğa (Vmax) ulaşır. Mikrozomal UGT ise glikoz metabolizmasından beslenen devasa UDPGA havuzuna sahiptir ve yüksek dozları glukuronidasyon (%60) sırtlar."
+          },
+          {
+            "id": "opt-2b",
+            "text": "Fenolik -OH grubu yüksek dozda sterik engele uğrar; SULT enzimi aromatik halkaları tanıyamaz hale gelirken UGT yalnızca alifatik zincirlere bağlanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Substrat özgüllüğü yanılgısı: Hem SULT hem UGT fenolik -OH gruplarını mükemmel tanır; yolak baskınlığındaki değişim sterik engelden değil, enzimlerin Km değerleri ve hücre içi kofaktör (PAPS vs UDPGA) kapasitesinden kaynaklanır."
+          },
+          {
+            "id": "opt-2c",
+            "text": "Sülfat konjugatları kanda kararsızdır; yüksek ilaç derişiminde kimyasal denge geri döner ve sülfatlar hızla hidroliz edilerek serbest ilaca dönüşür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Geri hidroliz yanılgısı: Parasetamol sülfat kovalent bağlı son derece kararlı bir metabolittir ve kanda kendiliğinden hidroliz olmaz; düşük dozda baskın olmasının nedeni yüksek afinite (düşük Km), yüksek dozda doymasının nedeni ise kısıtlı PAPS havuzudur."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "SULT yüksek afiniteli/düşük kapasitelidir (PAPS kofaktörü hızla biter); UGT ise düşük afiniteli/yüksek kapasitelidir (büyük ilaç yüklerini taşır).",
+          "ar": "إنزيم SULT ذو ألفة عالية وسعة منخفضة (ينفد كاشف PAPS سريعاً)؛ بينما UGT ذو ألفة أقل وسعة هائلة لاستيعاب الجرعات الكبيرة.",
+          "en": "SULT exhibits high affinity but low capacity (PAPS cofactor depletes rapidly); UGT has lower affinity but enormous capacity to clear heavy drug loads."
+        },
+        "explanation": {
+          "tr": "Mükemmel farmakokinetik kavrayış! Slayt 32-33 ve Foye prensibi: Sülfotransferazların Km değeri düşüktür (yüksek afinite), bu yüzden 500 mg'lık dozda sülfasyon (%35) çok etkindir. Ancak hücredeki PAPS kofaktör havuzu kısıtlıdır ve SULT hızla doygunluğa (Vmax) ulaşır. Mikrozomal UGT ise glikoz metabolizmasından beslenen devasa UDPGA havuzuna sahiptir ve yüksek dozları glukuronidasyon (%60) sırtlar.",
+          "ar": "فهم حركي دوائي رائع! الشريحة 32-33: يمتلك SULT قيمة Km منخفضة (شراهة عالية) فيعمل بكفاءة بالجرعات العادية، لكن مخزون كاشف PAPS محدود ويتشبع الإنزيم سريعاً. بالمقابل، يمتلك UGT سعة ضخمة مدعومة بمخزون UDPGA الوفير المشتق من الجلوكوز.",
+          "en": "Flawless pharmacokinetic insight! Slides 32-33: SULT possesses low Km (high affinity), efficiently sulfating paracetamol at therapeutic doses. However, PAPS pools are easily depleted. UGT exhibits high capacity fed by abundant glycogen-derived UDPGA, handling the bulk load."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "type": "intuition",
+      "title": {
+        "tr": "Sezgisel Model: Otoban Gişesi vs Konteyner Limanı",
+        "ar": "النموذج الحدسي: كشك المرور السريع مقابل الميناء التجاري العملاق",
+        "en": "Mental Model: The Express Tollbooth vs. The Mega Port"
+      },
+      "prompt": {
+        "tr": "SULT ve UGT enzimlerini anlamak için gişe modelini düşünün. SULT tek şeritli hızlı gişedir; UGT ise 20 kapılı devasa konteyner limanıdır. İlaç dozu arttığında trafikte ne yaşanır?",
+        "ar": "تخيل أن SULT كشك مرور سريع بممر واحد، بينما UGT ميناء تجاري بعشرين رصيفاً. ماذا يحدث لحركة المرور الاستقلابية عند تدفق شحنة أدوية ضخمة؟",
+        "en": "Picture SULT as a single-lane fast express tollbooth and UGT as a 20-berth container mega-port. What happens to metabolic traffic when a massive surge of drug molecules arrives?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "SULT tek şeridi hızla tıkanır ve doyuma ulaşır; kalan tüm trafik UGT'nin devasa limanına akar.",
+              "ar": "يختنق مسار SULT سريعاً ويصل لأقصى طاقته، فتتحول قوافل الجزيئات بأكملها إلى أرصفة UGT الضخمة.",
+              "en": "The single SULT lane jams and reaches full saturation; all remaining traffic is routed through UGT's massive deep-water terminal."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir zihinsel model! SULT enziminin PAPS rezervi azdır; 500 mg parasetamolde hızlıca çalışır ama 2-3 gramda tamamen kilitlenir. UGT ise karaciğer glikojen depolarından beslenen tükenmez UDPGA stoğuyla tüm trafiği sırtlar. Doz 10 gramı aştığında ise her iki gişe de çöker ve arabalar uçuruma (CYP2E1 toksik yoluna) yuvarlanır.",
+              "ar": "نموذج ذهني عبقري! ينفد كاشف PAPS في مسار SULT سريعاً عند زيادة الجرعة، فيتولى UGT العبء الأكبر بفضل فيض كواشف UDPGA. لكن عند تجاوز 10 غرامات، تنهار كل المنافذ وتهوي الجزيئات في هاوية CYP2E1 لتكوين السم NAPQI.",
+              "en": "Superb conceptual anchor! SULT's low PAPS capacity saturates at modest doses. UGT's massive UDPGA reservoir absorbs the bulk overflow. When intake exceeds 10 grams, even UGT saturates, forcing molecules down the catastrophic CYP2E1 shunt."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "Kapasite aşılınca karaciğer değişmemiş lipofilik ilacı hızla safra kanallarına pompalar ve enterohepatik döngüyle tüm ilaç feçesle atılır.",
+              "ar": "عند تجاوز السعة، يضخ الكبد الدواء غير المتغير إلى القنوات الصفراوية ليُطرح تماماً عبر الدوران المعوي الكبدي في البراز.",
+              "en": "Upon capacity overload, hepatocytes actively pump unconjugated lipophilic drug into bile canaliculi for complete elimination in feces via enterohepatic recirculation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Enterohepatik kaçış yanılgısı: Lipofilik ksenobiyotikler konjuge edilmeden safraya verimli bir şekilde atılamaz; safraya atılan metabolitler çoğunlukla polar glukuronitlerdir. Ana ilaç kanda dolaşmaya devam eder ve CYP2E1 ile oksitlenir.",
+              "ar": "مغالطة الطرح الصفراوي: لا يمكن طرح الأدوية المحبة للدهون في الصفراء دون اقتران قطبي؛ الدواء الحر غير المقترن يبقى في الدم ليتأكسد عبر CYP2E1.",
+              "en": "Biliary clearance misconception: Lipophilic xenobiotics cannot be efficiently eliminated in bile without polar conjugation; excess drug remains circulating and enters CYP2E1 oxidation."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Karaciğer enzimleri doyunca böbrek glomerülleri filtre etme kapasitesini 50 kat artırarak değişmemiş serbest ilacı hızla idrara süzer.",
+              "ar": "عند تشبع إنزيمات الكبد، تضاعف الكبيبات الكلوية سعة الترشيح 50 ضعفاً لتصفية الدواء الحر غير المتغير في البول بسرعة.",
+              "en": "Once hepatic enzymes saturate, glomerular filtration upregulates 50-fold to eliminate the excess lipophilic paracetamol unchanged directly in urine."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Böbrek kompanzasyonu yanılgısı: Parasetamol zayıf lipofiliktir ve böbrek tübüllerinden pasif olarak geri emilir; idrarla atılabilmesi için mutlaka Faz II enzimleri (özellikle UGT) tarafından polar bir konjugata çevrilmesi şarttır.",
+              "ar": "مغالطة التعويض الكلوي: الباراسيتامول محب للدهون جزئياً ويُعاد امتصاصه عبر الأنابيب الكلوية؛ التخلص منه في البول يتطلب حتماً تحويله لمشتق قطبي مقترن عبر UGT.",
+              "en": "Renal compensation fallacy: Unconjugated paracetamol is passively reabsorbed across renal tubules; rapid urinary clearance strictly requires conversion to polar Phase II conjugates."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "biyotransformasyon doygunluğu",
+          "arContext": "تشبع التحول الحيوي (biotransformation saturation)"
+        },
+        {
+          "term": "toksik şantlanma (pathway shunting)",
+          "arContext": "التحول نحو المسار السام"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Hızlı ama dar bir kapı yoğun yük altında ilk önce tıkanır.",
+          "ar": "البوابة السريعة الضيقة هي أول ما يختنق عند تدفق الحشود الكبيرة.",
+          "en": "A fast but narrow gateway is the first to become overwhelmed by a surge."
+        },
+        {
+          "tr": "Geniş liman (UGT) kapasitesi sayesinde aşırı yükü göğüsleyebilir.",
+          "ar": "الميناء الواسع (UGT) قادر على استيعاب الحمولات الضخمة بفضل سعته الفائقة.",
+          "en": "The high-capacity terminal (UGT) accommodates the bulk load."
+        },
+        {
+          "tr": "Kapasite aşıldığında metabolizma alternatif toksik yola (CYP) kayar.",
+          "ar": "عند فيضان الطاقة الاستيعابية، تنحرف الجزيئات للمسار السام البديل (CYP).",
+          "en": "When both safe outlets overflow, molecules are shunted to the toxic CYP pathway."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 32
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": "SULT tek şeridi hızla tıkanır ve doyuma ulaşır; kalan tüm trafik UGT'nin devasa limanına akar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika bir zihinsel model! SULT enziminin PAPS rezervi azdır; 500 mg parasetamolde hızlıca çalışır ama 2-3 gramda tamamen kilitlenir. UGT ise karaciğer glikojen depolarından beslenen tükenmez UDPGA stoğuyla tüm trafiği sırtlar. Doz 10 gramı aştığında ise her iki gişe de çöker ve arabalar uçuruma (CYP2E1 toksik yoluna) yuvarlanır."
+          },
+          {
+            "id": "opt-3b",
+            "text": "Kapasite aşılınca karaciğer değişmemiş lipofilik ilacı hızla safra kanallarına pompalar ve enterohepatik döngüyle tüm ilaç feçesle atılır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Enterohepatik kaçış yanılgısı: Lipofilik ksenobiyotikler konjuge edilmeden safraya verimli bir şekilde atılamaz; safraya atılan metabolitler çoğunlukla polar glukuronitlerdir. Ana ilaç kanda dolaşmaya devam eder ve CYP2E1 ile oksitlenir."
+          },
+          {
+            "id": "opt-3c",
+            "text": "Karaciğer enzimleri doyunca böbrek glomerülleri filtre etme kapasitesini 50 kat artırarak değişmemiş serbest ilacı hızla idrara süzer.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Böbrek kompanzasyonu yanılgısı: Parasetamol zayıf lipofiliktir ve böbrek tübüllerinden pasif olarak geri emilir; idrarla atılabilmesi için mutlaka Faz II enzimleri (özellikle UGT) tarafından polar bir konjugata çevrilmesi şarttır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "SULT tek şeridi hızla tıkanır ve doyuma ulaşır; kalan tüm trafik UGT'nin devasa limanına akar.",
+          "ar": "يختنق مسار SULT سريعاً ويصل لأقصى طاقته، فتتحول قوافل الجزيئات بأكملها إلى أرصفة UGT الضخمة.",
+          "en": "The single SULT lane jams and reaches full saturation; all remaining traffic is routed through UGT's massive deep-water terminal."
+        },
+        "explanation": {
+          "tr": "Harika bir zihinsel model! SULT enziminin PAPS rezervi azdır; 500 mg parasetamolde hızlıca çalışır ama 2-3 gramda tamamen kilitlenir. UGT ise karaciğer glikojen depolarından beslenen tükenmez UDPGA stoğuyla tüm trafiği sırtlar. Doz 10 gramı aştığında ise her iki gişe de çöker ve arabalar uçuruma (CYP2E1 toksik yoluna) yuvarlanır.",
+          "ar": "نموذج ذهني عبقري! ينفد كاشف PAPS في مسار SULT سريعاً عند زيادة الجرعة، فيتولى UGT العبء الأكبر بفضل فيض كواشف UDPGA. لكن عند تجاوز 10 غرامات، تنهار كل المنافذ وتهوي الجزيئات في هاوية CYP2E1 لتكوين السم NAPQI.",
+          "en": "Superb conceptual anchor! SULT's low PAPS capacity saturates at modest doses. UGT's massive UDPGA reservoir absorbs the bulk overflow. When intake exceeds 10 grams, even UGT saturates, forcing molecules down the catastrophic CYP2E1 shunt."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "type": "visual_explanation",
+      "title": {
+        "tr": "Asetilasyon Paradoksu: Sülfadiazin Neden Böbrekte Çöker?",
+        "ar": "مفارقة الأستلة: لماذا يترسب السلفاديازين في الكلى؟",
+        "en": "The Acetylation Paradox: Why Does Sulfadiazine Precipitate in Kidneys?"
+      },
+      "prompt": {
+        "tr": "Genel kural: 'Faz II konjugasyonları molekülü daha polar ve suda çözünür yapar.' Ancak sülfadiazin karaciğerde N4-asetillendiğinde böbrek tübüllerinde kristalüri (çökelme) yapar! Bu kural dışı çelişkinin kimyasal sebebi nedir?",
+        "ar": "القاعدة: تفاعلات المرحلة الثانية تزيد القطبية والذوبانية. لكن أستلة السلفاديازين تؤدي لترسبه بلورياً في الكلى! ما هو السبب الكيميائي لهذا الاستثناء؟",
+        "en": "General dogma states Phase II conjugation increases polarity and water solubility. Yet N4-acetylation of sulfadiazine precipitates in renal tubules as crystalluria! What chemical mechanism explains this paradox?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "Asetilasyon bazik primer amini nötr amite çevirir; iyonlaşma ve polarite azalır. Oluşan N4-asetil türevi asidik idrarda suda çözünmez ve çöker.",
+              "ar": "تحول الأستلة الأمين الأولي القاعدي إلى أميد حيادي، فتنقص القطبية والتأين؛ مما يجعل المستقلب غير ذؤوب في البول الحمضي فيترسب.",
+              "en": "Acetylation converts the basic primary amine into a neutral amide, decreasing polarity and ionization; the N4-acetyl metabolite is poorly soluble in acidic urine."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel kimyasal analiz! Slayt 2 ve 31'in en kritik sınav istisnası: Glukuronidasyon ve sülfasyon moleküle asidik iyonize gruplar takarken, N-asetilasyon (NAT-2) lipofilisiteyi artırır veya nötr bırakır. Sülfadiazin molekülündeki p-amino grubu asetillendiğinde çözünürlük dramatik şekilde düşer. Asidik idrarda kristalleşerek böbrek yetmezliği yapar (bu yüzden sülfonamidlerde bol su ve NaHCO3 verilir).",
+              "ar": "تحليل كيميائي استثنائي! الشريحة 2 و 31: بينما يضيف الجلوكورونيد شحنات قطبية، فإن الأستلة (NAT-2) تقلل القطبية والذوبانية المائية. مركب N4-acetylsulfadiazine يترسب كبلورات إبرية في النبيبات الكلوية مسبباً بيلة بلورية وقصوراً كلوياً، لذا يُعطى المريض بيكربونات الصوديوم لجعل البول قلوياً.",
+              "en": "Masterful chemical deduction! Slides 2 & 31 benchmark: Unlike glucuronidation, N-acetylation (NAT-2) masks the basic amine as a neutral lipophilic acetamide. N4-acetylsulfadiazine possesses drastically lower water solubility at acidic urine pH, forming sharp crystals that lacerate renal tubules unless alkalinized with NaHCO3."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "N4-Asetil türevi idrardaki kalsiyum ve magnezyum iyonlarını şelatlayarak çözünmeyen inorganik taş kompleksleri oluşturur.",
+              "ar": "يشلب مشتق N4-أسيتيل أيونات الكالسيوم والمغنيسيوم في البول مشكلاً معقدات حصوية غير قابلة للذوبان.",
+              "en": "The N4-acetyl derivative chelates urinary calcium and magnesium cations, precipitating insoluble inorganic mineral complexes."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Şelasyon ve taş tipi yanılgısı: Kristalüri bir kalsiyum taşı değildir; ilacın primer amin grubunun nötr amite dönüşmesiyle asidik idrarda çözünürlüğünü kaybetmesinden doğan doğrudan organik kristal çökmesidir.",
+              "ar": "مغالطة التشليب المعدني: البلورات ليست حصى كالسيوم؛ بل هي ترسب مباشر للمركب العضوي بعد فقدانه القطبية وتحول الأمين إلى أميد متعادل في بول حمضي.",
+              "en": "Cation chelation misconception: Crystalluria is not a mineral calcium stone; it is direct organic precipitation caused by converting a basic amine into a neutral, poorly soluble amide."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "Karaciğer enzimleri sülfonamid kükürdünü sülfona oksitler; bu sülfon türevi tübül epitelindeki proteinlerle kovalent çapraz bağ kurar.",
+              "ar": "تؤكسد إنزيمات الكبد كبريت السلفوناميد إلى سلفون؛ ويرتبط هذا المشتق تساهمياً مع بروتينات الظهارة النبيبية.",
+              "en": "Hepatic enzymes oxidize sulfonamide sulfur into an insoluble sulfone that covalently cross-links with tubular epithelial membrane proteins."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kükürt oksidasyonu yanılgısı: Kristalüriye yol açan metabolizma S-oksidasyon değil, para-amino grubunun NAT-2 ile N-asetilasyonudur; oluşan N4-asetilsülfadiazin asidik idrarda polaritesini kaybederek çöker.",
+              "ar": "مغالطة أكسدة الكبريت: المسؤول عن البلورات هو تفاعل N-أسيتيل عبر NAT-2 للأمين العطري وليس أكسدة الكبريت؛ حيث يفقد المشتق انحلاليته في البول الحمضي.",
+              "en": "Sulfur oxidation fallacy: Crystalluria is caused by NAT-2 N-acetylation of the aromatic amino group, not S-oxidation; the resulting N4-acetyl derivative loses solubility at acidic urine pH."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "kristalüri (crystalluria)",
+          "arContext": "البيلة البلورية (crystalluria)"
+        },
+        {
+          "term": "N-asetilasyon polarite istisnası",
+          "arContext": "استثناء انخفاض القطبية بالأستلة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Asetilasyon reaksiyonunda moleküle bir asetil grubu (-COCH3) takılır.",
+          "ar": "في تفاعل الأستلة تُضاف مجموعة أسيتيل كارهة للماء (-COCH3).",
+          "en": "Acetylation attaches a hydrophobic two-carbon acetyl group (-COCH3)."
+        },
+        {
+          "tr": "Bazik primer amin (-NH2) nötr bir amite (-NHCOCH3) dönüştüğünde iyonlaşma kabiliyeti kaybolur.",
+          "ar": "بتحول الأمين الأولي إلى أميد حيادي، تفقد الجزيئة قدرتها على التأين الحمضي.",
+          "en": "Converting a polar basic amine into a neutral amide destroys its ability to ionize."
+        },
+        {
+          "tr": "Polaritesi azalan metabolit asidik idrarda çözünemez ve tübüllerde kristalleşir.",
+          "ar": "يعجز المستقلب منخفض القطبية عن الذوبان في البول الحمضي فيترسب.",
+          "en": "The un-ionized, low-polarity metabolite precipitates out of solution in acidic urine."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": "Asetilasyon bazik primer amini nötr amite çevirir; iyonlaşma ve polarite azalır. Oluşan N4-asetil türevi asidik idrarda suda çözünmez ve çöker.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel kimyasal analiz! Slayt 2 ve 31'in en kritik sınav istisnası: Glukuronidasyon ve sülfasyon moleküle asidik iyonize gruplar takarken, N-asetilasyon (NAT-2) lipofilisiteyi artırır veya nötr bırakır. Sülfadiazin molekülündeki p-amino grubu asetillendiğinde çözünürlük dramatik şekilde düşer. Asidik idrarda kristalleşerek böbrek yetmezliği yapar (bu yüzden sülfonamidlerde bol su ve NaHCO3 verilir)."
+          },
+          {
+            "id": "opt-4b",
+            "text": "N4-Asetil türevi idrardaki kalsiyum ve magnezyum iyonlarını şelatlayarak çözünmeyen inorganik taş kompleksleri oluşturur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Şelasyon ve taş tipi yanılgısı: Kristalüri bir kalsiyum taşı değildir; ilacın primer amin grubunun nötr amite dönüşmesiyle asidik idrarda çözünürlüğünü kaybetmesinden doğan doğrudan organik kristal çökmesidir."
+          },
+          {
+            "id": "opt-4c",
+            "text": "Karaciğer enzimleri sülfonamid kükürdünü sülfona oksitler; bu sülfon türevi tübül epitelindeki proteinlerle kovalent çapraz bağ kurar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kükürt oksidasyonu yanılgısı: Kristalüriye yol açan metabolizma S-oksidasyon değil, para-amino grubunun NAT-2 ile N-asetilasyonudur; oluşan N4-asetilsülfadiazin asidik idrarda polaritesini kaybederek çöker."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Asetilasyon bazik primer amini nötr amite çevirir; iyonlaşma ve polarite azalır. Oluşan N4-asetil türevi asidik idrarda suda çözünmez ve çöker.",
+          "ar": "تحول الأستلة الأمين الأولي القاعدي إلى أميد حيادي، فتنقص القطبية والتأين؛ مما يجعل المستقلب غير ذؤوب في البول الحمضي فيترسب.",
+          "en": "Acetylation converts the basic primary amine into a neutral amide, decreasing polarity and ionization; the N4-acetyl metabolite is poorly soluble in acidic urine."
+        },
+        "explanation": {
+          "tr": "Mükemmel kimyasal analiz! Slayt 2 ve 31'in en kritik sınav istisnası: Glukuronidasyon ve sülfasyon moleküle asidik iyonize gruplar takarken, N-asetilasyon (NAT-2) lipofilisiteyi artırır veya nötr bırakır. Sülfadiazin molekülündeki p-amino grubu asetillendiğinde çözünürlük dramatik şekilde düşer. Asidik idrarda kristalleşerek böbrek yetmezliği yapar (bu yüzden sülfonamidlerde bol su ve NaHCO3 verilir).",
+          "ar": "تحليل كيميائي استثنائي! الشريحة 2 و 31: بينما يضيف الجلوكورونيد شحنات قطبية، فإن الأستلة (NAT-2) تقلل القطبية والذوبانية المائية. مركب N4-acetylsulfadiazine يترسب كبلورات إبرية في النبيبات الكلوية مسبباً بيلة بلورية وقصوراً كلوياً، لذا يُعطى المريض بيكربونات الصوديوم لجعل البول قلوياً.",
+          "en": "Masterful chemical deduction! Slides 2 & 31 benchmark: Unlike glucuronidation, N-acetylation (NAT-2) masks the basic amine as a neutral lipophilic acetamide. N4-acetylsulfadiazine possesses drastically lower water solubility at acidic urine pH, forming sharp crystals that lacerate renal tubules unless alkalinized with NaHCO3."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "type": "metabolism_map",
+      "widgetType": "MetabolismMap",
+      "title": {
+        "tr": "İnteraktif Metabolizma Haritası: Parasetamol Yolakları",
+        "ar": "خريطة الاستقلاب التفاعلية: مسارات الباراسيتامول",
+        "en": "Interactive Metabolism Map: Paracetamol Biotransformation Divergence"
+      },
+      "prompt": {
+        "tr": "Parasetamolün karaciğerdeki 4 temel metabolik yolağını inceleyin. Aşırı dozda ölümcül hepatotoksisiteye yol açan sitokrom P450 biyoaktivasyon bölgesini harita üzerinde belirleyin.",
+        "ar": "تفحص مسارات الباراسيتامول الأربعة في الكبد. حدد موقع التنشيط الحيوي عبر CYP450 المسؤول عن السمية الكبدية القاتلة عند الجرعة المفرطة.",
+        "en": "Explore the 4 primary hepatic pathways of paracetamol. Identify the cytochrome P450 bioactivation site responsible for generating the fatal hepatotoxic metabolite."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "drugName": "Paracetamol (Asetaminofen)",
+        "prompt": "Hepatotoksik kinonimin (NAPQI) oluşturan CYP2E1 biyoaktivasyon bölgesini seçin.",
+        "moleculeSvgDescription": "Parasetamol p-asetamidofenol iskeleti, fenolik -OH ve asetamid azotu",
+        "sites": [
+          {
+            "id": "site_glucuronidation",
+            "label": "4-O-Glukuronidasyon",
+            "x": 120,
+            "y": 50,
+            "enzyme": "UGT1A6 / UGT1A9",
+            "phase": "Phase II",
+            "reactionType": "O-Glukuroniltransferaz Konjugasyonu",
+            "metaboliteOutcome": "Majör güvenli yol (%60); yüksek oranda polar, suda çözünen glukuronit böbreklerle atılır.",
+            "toxicityFlag": "non_toxic",
+            "isTargetSite": false
+          },
+          {
+            "id": "site_sulfation",
+            "label": "4-O-Sülfasyon",
+            "x": 260,
+            "y": 50,
+            "enzyme": "SULT1A1 (PAPS donörü)",
+            "phase": "Phase II",
+            "reactionType": "Sülfotransferaz Konjugasyonu",
+            "metaboliteOutcome": "Sekonder güvenli yol (%35); yüksek afiniteli ancak düşük kapasiteli sülfat konjugatı idrarla atılır.",
+            "toxicityFlag": "non_toxic",
+            "isTargetSite": false
+          },
+          {
+            "id": "site_cyp2e1_napqi",
+            "label": "N-Oksidasyon / CYP2E1 (NAPQI)",
+            "x": 190,
+            "y": 140,
+            "enzyme": "CYP2E1 / CYP1A2",
+            "phase": "Phase I",
+            "reactionType": "N-Hidroksilasyon ve Spontan Dehidrasyon",
+            "metaboliteOutcome": "Son derece reaktif elektrofil N-asetil-p-benzokinonimin (NAPQI) üretir; glutatyon tükenince karaciğer nekrozu yapar.",
+            "toxicityFlag": "toxic",
+            "isTargetSite": true
+          },
+          {
+            "id": "site_glutathione",
+            "label": "Glutatyon (GSH) Detoksifikasyonu",
+            "x": 330,
+            "y": 140,
+            "enzyme": "Glutatyon S-Transferaz (GST)",
+            "phase": "Phase II",
+            "reactionType": "Glutatyon Konjugasyonu -> Merkaptürik Asit",
+            "metaboliteOutcome": "NAPQI elektrofilini tiyol (-SH) ile yakalar; merkaptürik asit türevi halinde idrarla zararsız atar.",
+            "toxicityFlag": "non_toxic",
+            "isTargetSite": false
+          }
+        ],
+        "source": {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 35
+        },
+        "explanation": "Terapötik dozda parasetamol %95 oranında UGT ve SULT ile temizlenir. %5'lik NAPQI ise glutatyon ile yakalanır. Aşırı dozda GSH tükenir ve serbest NAPQI hepatosit nekrozu başlatır."
+      },
+      "widget": {
+        "type": "MetabolismMap",
+        "config": {
+          "drugName": "Paracetamol (Asetaminofen)",
+          "prompt": "Hepatotoksik kinonimin (NAPQI) oluşturan CYP2E1 biyoaktivasyon bölgesini seçin.",
+          "moleculeSvgDescription": "Parasetamol p-asetamidofenol iskeleti, fenolik -OH ve asetamid azotu",
+          "sites": [
+            {
+              "id": "site_glucuronidation",
+              "label": "4-O-Glukuronidasyon",
+              "x": 120,
+              "y": 50,
+              "enzyme": "UGT1A6 / UGT1A9",
+              "phase": "Phase II",
+              "reactionType": "O-Glukuroniltransferaz Konjugasyonu",
+              "metaboliteOutcome": "Majör güvenli yol (%60); yüksek oranda polar, suda çözünen glukuronit böbreklerle atılır.",
+              "toxicityFlag": "non_toxic",
+              "isTargetSite": false
+            },
+            {
+              "id": "site_sulfation",
+              "label": "4-O-Sülfasyon",
+              "x": 260,
+              "y": 50,
+              "enzyme": "SULT1A1 (PAPS donörü)",
+              "phase": "Phase II",
+              "reactionType": "Sülfotransferaz Konjugasyonu",
+              "metaboliteOutcome": "Sekonder güvenli yol (%35); yüksek afiniteli ancak düşük kapasiteli sülfat konjugatı idrarla atılır.",
+              "toxicityFlag": "non_toxic",
+              "isTargetSite": false
+            },
+            {
+              "id": "site_cyp2e1_napqi",
+              "label": "N-Oksidasyon / CYP2E1 (NAPQI)",
+              "x": 190,
+              "y": 140,
+              "enzyme": "CYP2E1 / CYP1A2",
+              "phase": "Phase I",
+              "reactionType": "N-Hidroksilasyon ve Spontan Dehidrasyon",
+              "metaboliteOutcome": "Son derece reaktif elektrofil N-asetil-p-benzokinonimin (NAPQI) üretir; glutatyon tükenince karaciğer nekrozu yapar.",
+              "toxicityFlag": "toxic",
+              "isTargetSite": true
+            },
+            {
+              "id": "site_glutathione",
+              "label": "Glutatyon (GSH) Detoksifikasyonu",
+              "x": 330,
+              "y": 140,
+              "enzyme": "Glutatyon S-Transferaz (GST)",
+              "phase": "Phase II",
+              "reactionType": "Glutatyon Konjugasyonu -> Merkaptürik Asit",
+              "metaboliteOutcome": "NAPQI elektrofilini tiyol (-SH) ile yakalar; merkaptürik asit türevi halinde idrarla zararsız atar.",
+              "toxicityFlag": "non_toxic",
+              "isTargetSite": false
+            }
+          ],
+          "source": {
+            "file": "İlaç metabolizması-2026.pdf",
+            "page": 35
+          },
+          "explanation": "Terapötik dozda parasetamol %95 oranında UGT ve SULT ile temizlenir. %5'lik NAPQI ise glutatyon ile yakalanır. Aşırı dozda GSH tükenir ve serbest NAPQI hepatosit nekrozu başlatır."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "biyoaktivasyon toksisitesi",
+          "arContext": "سمية التنشيط الحيوي"
+        },
+        {
+          "term": "hepatosit nekrozu",
+          "arContext": "تنخر الخلايا الكبدية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Parasetamolün toksik metaboliti bir Faz I oksidasyon ürünüdür.",
+          "ar": "المستقلب السام للباراسيتامول هو ناتج أكسدة من المرحلة الأولى.",
+          "en": "The toxic metabolite of acetaminophen is produced by a Phase I oxidation."
+        },
+        {
+          "tr": "CYP2E1 enzimi asetamid azotunu N-hidroksiller ve su kaybederek kinonimin (NAPQI) oluşturur.",
+          "ar": "يهدرل CYP2E1 نيتروجين الأسيتاميد لتتشكل وسائط الكينونيمين (NAPQI).",
+          "en": "CYP2E1 hydroxylates the amide nitrogen to eliminate water, forging electrophilic NAPQI."
+        },
+        {
+          "tr": "Haritada kırmızı toksisite bayrağı taşıyan CYP2E1 bölgesi hedef metabolik alandır.",
+          "ar": "موقع CYP2E1 الذي يحمل علامة السمية الحمراء هو الهدف المطلوب على الخريطة.",
+          "en": "The CYP2E1 locus marked with the red toxicity flag is your target site."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 35
+        }
+      ]
+    },
+    {
+      "id": "mc-mod5-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "type": "guided_discovery",
+      "title": {
+        "tr": "Rehberli Keşif: Merkaptürik Asit Montaj Hattı",
+        "ar": "استكشاف موجه: خط إنتاج حمض الميركابتوريك",
+        "en": "Guided Discovery: The Mercapturic Acid Assembly Line"
+      },
+      "prompt": {
+        "tr": "Toksik bir elektrofil glutatyon (GSH: Glu-Cys-Gly) ile yakalandığında 3 amino asitlik devasa bir konjugat oluşur. Vücut bu iri molekülü idrarla atmak için adım adım nasıl budar?",
+        "ar": "عندما يقتنص الجلوتاثيون (GSH: Glu-Cys-Gly) جزيئاً ساماً، يتكون مركب ثلاثي الببتيد ضخم. كيف يقلم الجسم هذه الجزيئة خطوة بخطوة لطرحها بالبول؟",
+        "en": "When a toxic electrophile is trapped by glutathione (GSH: Glu-Cys-Gly), a bulky tripeptide adduct forms. How does the body systematically trim this conjugate for safe urinary clearance?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": {
+              "tr": "Önce glutamat (gGT) ardından glisin (dipeptidaz) koparılır; kalan sistein konjugatı NAT ile N-asetillenerek merkaptürik asit türevi halinde idrarla atılır.",
+              "ar": "يُفصل الجلوتامات بـ gGT ثم الجليسين بإنزيم ببتيداز؛ ويُؤستل السيسيتين المتبقي بـ NAT ليُطرح كحمض ميركابتوريك في البول.",
+              "en": "First glutamate is cleaved by gamma-GT, then glycine by a dipeptidase; the remaining cysteine adduct is N-acetylated by NAT into mercapturic acid for urine excretion."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harikulade biyokimyasal kavrayış! Slayt 36'daki merkaptürik asit yolu: 1. GST enzimi elektrofile GSH ekler. 2. Böbrek ve karaciğerde gama-glutamiltranspeptidaz (gGT) glutamatı koparır. 3. Dipeptidaz enzimi glisini koparır; geriye sistein-ilaç konjugatı kalır. 4. Mikrozomal NAT enzimi sistein aminini asetilleyerek N-asetilsistein (merkaptürik asit) türevine çevirir. Bu asidik ürün idrarla hızla temizlenir.",
+              "ar": "إدراك بيوكيميائي باهر! مسار حمض الميركابتوريك (الشريحة 36): يربط GST الجلوتاثيون أولاً. يفصل إنزيم gGT الجلوتامات، ثم يقص الببتيداز الجليسين ليبقى مركب السيستئين. وأخيراً يؤستل إنزيم NAT أمين السيستئين لينتج حمض الميركابتوريك الذؤوب والمعد للإطراح البولي السريع.",
+              "en": "Magnificent biochemical insight! Slide 36 assembly line: GST links GSH to the electrophile. Gamma-GT trims glutamate, and dipeptidase cleaves glycine, leaving a cysteine adduct. Finally, NAT N-acetylates the cysteine to forge mercapturic acid for rapid urinary clearance."
+            }
+          },
+          {
+            "id": "opt-6b",
+            "text": {
+              "tr": "Üç amino asitlik intakt GSH konjugatı hiç parçalanmadan glomerüllerden doğrudan süzülür; tübüler peptidazlara ihtiyaç duyulmaz.",
+              "ar": "يُرشح معقد GSH الثلاثي السليم بالكامل عبر الكبيبات الكلوية مباشرة دون الحاجة لأي إنزيمات ببتيداز نبيبية.",
+              "en": "The intact tripeptide GSH conjugate is filtered directly across glomeruli into urine without requiring tubular peptidolysis."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Budadan doğrudan atılım yanılgısı: GSH konjugatı 500 Da'dan büyük hantal bir yapıdır; proksimal tübüllerde gama-glutamiltranspeptidaz ve dipeptidaz ile glutamat ve glisin koparılıp amino asitler geri kazanılmadan idrarla atılamaz.",
+              "ar": "مغالطة الطرح المباشر: معقد GSH جزيء ضخم؛ تقوم إنزيمات gGT والديببتيداز النبيبية بنزع الجلوتامات والجليسين لإعادة تدويرهما قبل تكوين حمض الميركابتوريك.",
+              "en": "Direct excretion fallacy: GSH conjugates are large tripeptides; proximal tubule gGT and dipeptidases sequentially cleave glutamate and glycine to salvage amino acids prior to mercapturic acid excretion."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "Hücresel peptidazlar sistein kükürt-karbon (C-S) bağını kopararak ilacı intakt formda serbest bırakır ve ksenobiyotiği geri dönüştürür.",
+              "ar": "تكسر ببتيدازات الخلية رابطة الكبريت-كربون (C-S) لتحرر الدواء سليماً في العصارة الخلوية وتعيد تدويره.",
+              "en": "Intracellular peptidases cleave the cysteine-drug C-S bond, regenerating the parent xenobiotic intact for metabolic recycling."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "C-S klivajı yanılgısı: Ksenobiyotik ile sistein arasındaki C-S tiyoeter bağı son derece dayanıklıdır ve hidrolize uğramaz; molekül serbest ilaca dönüştürülmez, N-asetillenerek merkaptürik asit halinde elimine edilir.",
+              "ar": "مغالطة فك رابطة C-S: رابطة الثيوايثر بين الدواء والسيستين شديدة الاستقرار؛ لا يتحرر الدواء بل تتم أسيتلة السيستين ليطرح كحمض ميركابتوريك.",
+              "en": "C-S cleavage fallacy: The xenobiotic thioether bond is highly stable and not cleaved by peptidases; the cysteine conjugate is acetylated into mercapturic acid for terminal excretion."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "merkaptürik asit yolu",
+          "arContext": "مسار حمض الميركابتوريك (mercapturic acid pathway)"
+        },
+        {
+          "term": "gama-glutamiltranspeptidaz (gGT)",
+          "arContext": "إنزيم غاما-جلوتاميل ترانسببتيداز"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Glutatyon 3 amino asitten (Glutamat-Sistein-Glisin) oluşan bir tripeptittir.",
+          "ar": "الجلوتاثيون ببتيد ثلاثي مكون من جلوتامات وسيسيتين وجليسين.",
+          "en": "Glutathione is a tripeptide composed of Glutamate-Cysteine-Glycine."
+        },
+        {
+          "tr": "Uçlardaki glutamat ve glisin amino asitleri hidrolazlarla tek tek kesilir.",
+          "ar": "تُقص الأحماض الأمينية الطرفية (الجلوتامات والجليسين) بالإنزيمات تباعاً.",
+          "en": "Terminal glutamate and glycine residues are enzymatically clipped off."
+        },
+        {
+          "tr": "Kalan sistein konjugatı asetillenerek N-asetilsistein (merkaptürik asit) halinde idrara verilir.",
+          "ar": "يُؤستل السيستئين المتبقي ليشكل حمض الميركابتوريك الذي يُطرح بالبول.",
+          "en": "The residual cysteine adduct is N-acetylated into mercapturic acid for renal excretion."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 36
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": "Önce glutamat (gGT) ardından glisin (dipeptidaz) koparılır; kalan sistein konjugatı NAT ile N-asetillenerek merkaptürik asit türevi halinde idrarla atılır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harikulade biyokimyasal kavrayış! Slayt 36'daki merkaptürik asit yolu: 1. GST enzimi elektrofile GSH ekler. 2. Böbrek ve karaciğerde gama-glutamiltranspeptidaz (gGT) glutamatı koparır. 3. Dipeptidaz enzimi glisini koparır; geriye sistein-ilaç konjugatı kalır. 4. Mikrozomal NAT enzimi sistein aminini asetilleyerek N-asetilsistein (merkaptürik asit) türevine çevirir. Bu asidik ürün idrarla hızla temizlenir."
+          },
+          {
+            "id": "opt-6b",
+            "text": "Üç amino asitlik intakt GSH konjugatı hiç parçalanmadan glomerüllerden doğrudan süzülür; tübüler peptidazlara ihtiyaç duyulmaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Budadan doğrudan atılım yanılgısı: GSH konjugatı 500 Da'dan büyük hantal bir yapıdır; proksimal tübüllerde gama-glutamiltranspeptidaz ve dipeptidaz ile glutamat ve glisin koparılıp amino asitler geri kazanılmadan idrarla atılamaz."
+          },
+          {
+            "id": "opt-6c",
+            "text": "Hücresel peptidazlar sistein kükürt-karbon (C-S) bağını kopararak ilacı intakt formda serbest bırakır ve ksenobiyotiği geri dönüştürür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "C-S klivajı yanılgısı: Ksenobiyotik ile sistein arasındaki C-S tiyoeter bağı son derece dayanıklıdır ve hidrolize uğramaz; molekül serbest ilaca dönüştürülmez, N-asetillenerek merkaptürik asit halinde elimine edilir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Önce glutamat (gGT) ardından glisin (dipeptidaz) koparılır; kalan sistein konjugatı NAT ile N-asetillenerek merkaptürik asit türevi halinde idrarla atılır.",
+          "ar": "يُفصل الجلوتامات بـ gGT ثم الجليسين بإنزيم ببتيداز؛ ويُؤستل السيسيتين المتبقي بـ NAT ليُطرح كحمض ميركابتوريك في البول.",
+          "en": "First glutamate is cleaved by gamma-GT, then glycine by a dipeptidase; the remaining cysteine adduct is N-acetylated by NAT into mercapturic acid for urine excretion."
+        },
+        "explanation": {
+          "tr": "Harikulade biyokimyasal kavrayış! Slayt 36'daki merkaptürik asit yolu: 1. GST enzimi elektrofile GSH ekler. 2. Böbrek ve karaciğerde gama-glutamiltranspeptidaz (gGT) glutamatı koparır. 3. Dipeptidaz enzimi glisini koparır; geriye sistein-ilaç konjugatı kalır. 4. Mikrozomal NAT enzimi sistein aminini asetilleyerek N-asetilsistein (merkaptürik asit) türevine çevirir. Bu asidik ürün idrarla hızla temizlenir.",
+          "ar": "إدراك بيوكيميائي باهر! مسار حمض الميركابتوريك (الشريحة 36): يربط GST الجلوتاثيون أولاً. يفصل إنزيم gGT الجلوتامات، ثم يقص الببتيداز الجليسين ليبقى مركب السيستئين. وأخيراً يؤستل إنزيم NAT أمين السيستئين لينتج حمض الميركابتوريك الذؤوب والمعد للإطراح البولي السريع.",
+          "en": "Magnificent biochemical insight! Slide 36 assembly line: GST links GSH to the electrophile. Gamma-GT trims glutamate, and dipeptidase cleaves glycine, leaving a cysteine adduct. Finally, NAT N-acetylates the cysteine to forge mercapturic acid for rapid urinary clearance."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "type": "formal_explanation",
+      "title": {
+        "tr": "NAT-2 Farmakogenetiği: Hızlı vs Yavaş Asetilatörler",
+        "ar": "علم الوراثة الدوائي لـ NAT-2: المؤستلون السريعون مقابل البطيئين",
+        "en": "NAT-2 Pharmacogenetics: Fast vs. Slow Acetylator Phenotypes"
+      },
+      "prompt": {
+        "tr": "Tüberküloz ilacı izoniyazid kullanan hastaların %50-60'ında (yavaş asetilatörler) periferik nöropati riski tavan yaparken, hızlı asetilatörlerde tedavi başarısızlığı görülür. Bu genetik uçurumun nedeni nedir?",
+        "ar": "ترتفع خطورة الاعتلال العصبي لدى 50-60% من مرضى السل المعالجين بالإيزونيازيد (المؤستلون البطيئون)، بينما يفشل العلاج لدى السريعين. ما سبب هذا التباين الوراثي؟",
+        "en": "Among tuberculosis patients on isoniazid, 50-60% (slow acetylators) face severe peripheral neuropathy, whereas fast acetylators risk treatment failure. What biochemical mechanism drives this genetic divergence?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": {
+              "tr": "NAT-2 enzim polimorfizmi: Yavaş asetilatörlerde enzim düzeyi düşüktür; serbest izoniyazid kanda birikerek piridoksin (B6) eksikliği ve periferik nöropati yapar.",
+              "ar": "تباين جيني في NAT-2: يمتلك المؤستلون البطيئون إنزيماً قليل الكفاءة؛ فيتراكم الإيزونيازيد حراً ويستنزف فيتامين B6 مسبباً اعتلالاً عصبياً.",
+              "en": "NAT-2 polymorphism: Slow acetylators have defective enzyme levels; parent isoniazid accumulates, depleting pyridoxine (B6) and triggering peripheral neuropathy."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz farmakogenetik analiz! Slayt 40 verisi: N-Asetiltransferaz-2 (NAT-2) geni polimorfiktir. Türk ve Avrupa toplumlarının %50-60'ı yavaş asetilatördür. İzoniyazid yavaş inaktive olduğunda kanda yükselir, B6 vitaminini bağlayarak nöropatiye yol açar (veya hidralazinde ilaca bağlı SLE tablosu gelişir). Japonlarda ise %90 hızlı asetilatördür; standart doz hızla yıkılarak yetersiz kalır.",
+              "ar": "تحليل وراثي دوائي متقن! الشريحة 40: جين NAT-2 متباين وراثياً. 50-60% من مجتمعاتنا مؤستلون بطيئون، فيتراكم الإيزونيازيد ويستنزف فيتامين B6 مسبباً تلفاً عصبياً (أو ذئبة حمامية مع الهيدرالازين). أما لدى 90% من اليابانيين فالتخلص سريع جداً وقد يفشل العلاج.",
+              "en": "Superb pharmacogenetic analysis! Slide 40: NAT-2 polymorphism splits populations. In slow acetylators (50-60% of Caucasians), parent isoniazid accumulates to deplete pyridoxine (B6), triggering neurotoxicity or hydralazine-induced lupus (SLE). In fast acetylators, rapid clearance risks subtherapeutic failure."
+            }
+          },
+          {
+            "id": "opt-7b",
+            "text": {
+              "tr": "Hızlı asetilatörlerde intestinal P-glikoprotein (P-gp) aşırı eksprese edilmiştir; ilaç emilmeden feçesle dışarı atılır.",
+              "ar": "يفرط التعبير عن مضخات P-glycoprotein في أمعاء المفرزين السريعين، مما يطرح الدواء في البراز دون امتصاصه.",
+              "en": "Rapid acetylators overexpress intestinal P-glycoprotein (P-gp) efflux pumps, preventing drug absorption by expelling it directly into feces."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Efluks pompası yanılgısı: İzoniyazid emilimi hızlı ve tamdır; plazma konsantrasyonu farkı bağırsak taşınmasından değil, karaciğerdeki sitozolik NAT-2 enziminin genetik delesyon veya mutasyonlarından kaynaklanır.",
+              "ar": "مغالطة مضخات الطرد: امتصاص الإيزونيازيد تام وسريع؛ الفروق البلازمية تعود لطفرات جينية في إنزيم NAT-2 الكبدي العصاري وليس لـ P-glycoprotein.",
+              "en": "Efflux transporter fallacy: Isoniazid is rapidly and completely absorbed; phenotypic clearance divergence is strictly driven by allelic variants of hepatic cytosolic NAT-2."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "Hızlı asetilatörlerde CYP2E1 enzimi aşırı aktiftir; izoniyazid asetillenmek yerine mikrozomal hidroksilasyonla parçalanır.",
+              "ar": "يمتلك المفرزون السريعون نشاطاً مفرطاً لإنزيم CYP2E1؛ فيتفكك الإيزونيازيد بالأكسدة الميكروزومية بدلاً من الأسيتلة.",
+              "en": "Rapid acetylators express hyperactive CYP2E1 monooxygenases that rapidly clear isoniazid via Phase I aliphatic hydroxylation rather than acetylation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "CYP oksidasyonu yanılgısı: İzoniyazidin majör eliminasyon yolu Faz I oksidasyonu değil, Faz II N-asetilasyonudur (NAT-2). CYP aktivitesi fenotipik temizlenme hızını belirlemez.",
+              "ar": "مغالطة أكسدة CYP: المسار الإقصائي الرئيسي للإيزونيازيد هو الأسيتلة بإنزيم NAT-2 وليس أكسدة CYP؛ نشاط CYP لا يحدد هذا التباين الظاهري.",
+              "en": "CYP oxidation misconception: Isoniazid primary clearance is governed by NAT-2 acetylation of its hydrazine moiety, not microsomal CYP monooxygenation."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "NAT-2 enzim polimorfizmi",
+          "arContext": "التباين الوراثي لإنزيم NAT-2"
+        },
+        {
+          "term": "ilaca bağlı lupus sendromu (SLE)",
+          "arContext": "الذئبة الحمامية المحدثة بالأدوية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "İzoniyazid tüberküloz tedavisinde karaciğer NAT-2 enzimiyle inaktive edilir.",
+          "ar": "يُعطل دواء الإيزونيازيد كبدياً بواسطة إنزيم NAT-2.",
+          "en": "Isoniazid is inactivated in the liver by the polymorphic NAT-2 enzyme."
+        },
+        {
+          "tr": "Yavaş asetilatörlerde ilaç vücutta daha uzun süre kalır ve kanda birikir.",
+          "ar": "لدى المؤستلين البطيئين يمكث الدواء طويلاً ويتراكم بتراكيز مرتفعة.",
+          "en": "In slow acetylators, the parent drug is cleared slowly, accumulating to toxic levels."
+        },
+        {
+          "tr": "Biriken izoniyazid B6 vitaminini tüketerek periferik nöropatiye yol açar.",
+          "ar": "يستنزف الدواء المتراكم فيتامين B6 مؤدياً إلى تلف الأعصاب المحيطية.",
+          "en": "Accumulated isoniazid binds and depletes vitamin B6, triggering peripheral neuropathy."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 40
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": "NAT-2 enzim polimorfizmi: Yavaş asetilatörlerde enzim düzeyi düşüktür; serbest izoniyazid kanda birikerek piridoksin (B6) eksikliği ve periferik nöropati yapar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz farmakogenetik analiz! Slayt 40 verisi: N-Asetiltransferaz-2 (NAT-2) geni polimorfiktir. Türk ve Avrupa toplumlarının %50-60'ı yavaş asetilatördür. İzoniyazid yavaş inaktive olduğunda kanda yükselir, B6 vitaminini bağlayarak nöropatiye yol açar (veya hidralazinde ilaca bağlı SLE tablosu gelişir). Japonlarda ise %90 hızlı asetilatördür; standart doz hızla yıkılarak yetersiz kalır."
+          },
+          {
+            "id": "opt-7b",
+            "text": "Hızlı asetilatörlerde intestinal P-glikoprotein (P-gp) aşırı eksprese edilmiştir; ilaç emilmeden feçesle dışarı atılır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Efluks pompası yanılgısı: İzoniyazid emilimi hızlı ve tamdır; plazma konsantrasyonu farkı bağırsak taşınmasından değil, karaciğerdeki sitozolik NAT-2 enziminin genetik delesyon veya mutasyonlarından kaynaklanır."
+          },
+          {
+            "id": "opt-7c",
+            "text": "Hızlı asetilatörlerde CYP2E1 enzimi aşırı aktiftir; izoniyazid asetillenmek yerine mikrozomal hidroksilasyonla parçalanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "CYP oksidasyonu yanılgısı: İzoniyazidin majör eliminasyon yolu Faz I oksidasyonu değil, Faz II N-asetilasyonudur (NAT-2). CYP aktivitesi fenotipik temizlenme hızını belirlemez."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "NAT-2 enzim polimorfizmi: Yavaş asetilatörlerde enzim düzeyi düşüktür; serbest izoniyazid kanda birikerek piridoksin (B6) eksikliği ve periferik nöropati yapar.",
+          "ar": "تباين جيني في NAT-2: يمتلك المؤستلون البطيئون إنزيماً قليل الكفاءة؛ فيتراكم الإيزونيازيد حراً ويستنزف فيتامين B6 مسبباً اعتلالاً عصبياً.",
+          "en": "NAT-2 polymorphism: Slow acetylators have defective enzyme levels; parent isoniazid accumulates, depleting pyridoxine (B6) and triggering peripheral neuropathy."
+        },
+        "explanation": {
+          "tr": "Kusursuz farmakogenetik analiz! Slayt 40 verisi: N-Asetiltransferaz-2 (NAT-2) geni polimorfiktir. Türk ve Avrupa toplumlarının %50-60'ı yavaş asetilatördür. İzoniyazid yavaş inaktive olduğunda kanda yükselir, B6 vitaminini bağlayarak nöropatiye yol açar (veya hidralazinde ilaca bağlı SLE tablosu gelişir). Japonlarda ise %90 hızlı asetilatördür; standart doz hızla yıkılarak yetersiz kalır.",
+          "ar": "تحليل وراثي دوائي متقن! الشريحة 40: جين NAT-2 متباين وراثياً. 50-60% من مجتمعاتنا مؤستلون بطيئون، فيتراكم الإيزونيازيد ويستنزف فيتامين B6 مسبباً تلفاً عصبياً (أو ذئبة حمامية مع الهيدرالازين). أما لدى 90% من اليابانيين فالتخلص سريع جداً وقد يفشل العلاج.",
+          "en": "Superb pharmacogenetic analysis! Slide 40: NAT-2 polymorphism splits populations. In slow acetylators (50-60% of Caucasians), parent isoniazid accumulates to deplete pyridoxine (B6), triggering neurotoxicity or hydralazine-induced lupus (SLE). In fast acetylators, rapid clearance risks subtherapeutic failure."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "type": "concept_check",
+      "title": {
+        "tr": "Hücresel Yerleşim Tuzağı: Mikrozomal vs Sitozolik Enzimler",
+        "ar": "فخ التموضع الخلوي: الإنزيمات الميكروزومية مقابل السيتوزولية",
+        "en": "Cellular Localization Trap: Microsomal vs. Cytosolic Transferases"
+      },
+      "prompt": {
+        "tr": "Bir öğrenci sınavda 'Tüm Faz II transferaz enzimleri sitozolde çözünmüş halde bulunur' demiştir. Bu iddiayı çürüten ve endoplazmik retikuluma gömülü olan majör Faz II enzimi hangisidir?",
+        "ar": "ادعى طالب أن 'جميع إنزيمات المرحلة الثانية تسبح ذائبة في السيتوزول'. ما هو الإنزيم الرئيسي الذي يدحض هذا الادعاء لكونه مدمجاً في الشبكة الإندوبلازمية؟",
+        "en": "A student claims that 'all Phase II conjugation enzymes are dissolved in the soluble cytosol.' Which vital transferase refutes this claim by being embedded in the endoplasmic reticulum membrane?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "UDP-Glukuroniltransferaz (UGT); endoplazmik retikulum membranına gömülü mikrozomal bir enzimdir (SULT, NAT ve GST ise sitozoliktir).",
+              "ar": "إنزيم UGT (جلوكورونيل ترانسفيراز)؛ فهو إنزيم ميكروزومي مدمج في غشاء الشبكة الإندوبلازمية (بينما SULT و NAT و GST سيتوزولية).",
+              "en": "UDP-Glucuronosyltransferase (UGT); it is an integral membrane-bound microsomal enzyme (whereas SULT, NAT, and GST are cytosolic)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir sınav tuzağı yakalandı! Slayt 33 ve 38'in kritik ayrımı: Faz II enzimlerinin çoğu (SULT, NAT, GST, COMT) sitozoliktir. Ancak en yüksek kapasiteli Faz II enzimi olan UGT, endoplazmik retikulum membranına gömülüdür (mikrozomal fraksiyonda yer alır). Aktif bölgesi ER lümenine bakar; bu yüzden UDPGA kofaktörü membran taşıyıcılarıyla içeri alınır.",
+              "ar": "إمساك بارع بفخ امتحاني كلاسيكي! الشريحة 33 و 38: معظم إنزيمات الاقتران سيتوزولية، لكن إنزيم UGT صاحب السعة الكبرى ميكروزومي متغلغل في غشاء الشبكة الإندوبلازمية وموقعه التحفيزي يواجه جوف الشبكة.",
+              "en": "Classic exam trap mastered! Slides 33 & 38: While most Phase II transferases (SULT, NAT, GST) reside in soluble cytosol, the high-capacity UGT is an integral ER transmembrane protein whose catalytic site faces the luminal compartment."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "Sülfotransferaz (SULT); mitokondri iç zarında ATP sentaz ile kompleks halde bulunan mikrozomal bir enzimdir.",
+              "ar": "سلفوترانسفيراز (SULT)؛ إنزيم ميكروزومي مرتبط بإنزيم تصنيع ATP على الغشاء الداخلي للميتوكوندريا.",
+              "en": "Sulfotransferase (SULT); an integral membrane enzyme localized to the mitochondrial inner membrane alongside ATP synthase."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "SULT yerleşim yanılgısı: SULT enzimleri mitokondriyal veya membranöz değildir; hücre sitozolünde çözünmüş halde bulunurlar. Endoplazmik retikuluma gömülü tek majör Faz II enzimi UGT'dir.",
+              "ar": "مغالطة توضع SULT: إنزيمات SULT ذائبة في العصارة الخلوية وليست ميتوكوندرية؛ UGT هو الإنزيم الميكروزومي الوحيد المنغرس بالشبكة الإندوبلازمية.",
+              "en": "SULT localization misconception: SULT enzymes are soluble cytosolic proteins; UGT is the unique major Phase II transferase embedded in the endoplasmic reticulum."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Glutatyon S-transferaz (GST); nükleer por kompleksine ve çekirdek zarına kalıcı olarak gömülü bir enzimdir.",
+              "ar": "جلوتاثيون إس ترانسفيراز (GST)؛ إنزيم منغرس بشكل دائم في الغلاف النووي ومعقد المسام النووية.",
+              "en": "Glutathione S-transferase (GST); an integral membrane protein embedded within the outer nuclear envelope and pore complexes."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "GST hücresel yerleşim yanılgısı: GST'nin majör detoksifikasyon izoformları sitozolde serbestçe dağılmıştır (küçük bir mikrozomal alt tip hariç); ER lümeninde yerleşik olan ve yüksek kapasiteli Faz II konjugasyonunu yöneten enzim UGT'dir.",
+              "ar": "مغالطة توضع GST: تتواجد نظائر GST بشكل أساسي حرة في العصارة الخلوية؛ بينما UGT هو الإنزيم الرئيسي المنغرس في تجويف الشبكة الإندوبلازمية.",
+              "en": "GST compartmentalization fallacy: Canonical GST enzymes are soluble cytosolic transferases; UGT is the hallmark microsomal enzyme anchored in the ER membrane."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "mikrozomal UGT enzimi",
+          "arContext": "إنزيم UGT الميكروزومي"
+        },
+        {
+          "term": "sitozolik transferazlar",
+          "arContext": "إنزيمات التحويل السيتوزولية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Hücre kırıldığında endoplazmik retikulum parçaları mikrozom keseciklerini oluşturur.",
+          "ar": "عند تفتيت الخلية تشكل أجزاء الشبكة الإندوبلازمية حويصلات الميكروزوم.",
+          "en": "Centrifugation pellets endoplasmic reticulum fragments into the microsomal fraction."
+        },
+        {
+          "tr": "CYP450 gibi endoplazmik retikulum zarına gömülü olan tek Faz II enzimi glukuronidasyonu yapandır.",
+          "ar": "إنزيم المرحلة الثانية الوحيد المدمج في غشاء الشبكة الإندوبلازمية كـ CYP450 هو المسؤول عن الجلوكورونيد.",
+          "en": "The only Phase II transferase co-localized with CYP450 in the ER membrane is UGT."
+        },
+        {
+          "tr": "Doğru yanıt mikrozomal UDP-Glukuroniltransferaz (UGT) enzimidir.",
+          "ar": "الجواب الصحيح هو إنزيم UDP-Glucuronosyltransferase (UGT) الميكروزومي.",
+          "en": "The correct answer is microsomal UDP-Glucuronosyltransferase (UGT)."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 33
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": "UDP-Glukuroniltransferaz (UGT); endoplazmik retikulum membranına gömülü mikrozomal bir enzimdir (SULT, NAT ve GST ise sitozoliktir).",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika bir sınav tuzağı yakalandı! Slayt 33 ve 38'in kritik ayrımı: Faz II enzimlerinin çoğu (SULT, NAT, GST, COMT) sitozoliktir. Ancak en yüksek kapasiteli Faz II enzimi olan UGT, endoplazmik retikulum membranına gömülüdür (mikrozomal fraksiyonda yer alır). Aktif bölgesi ER lümenine bakar; bu yüzden UDPGA kofaktörü membran taşıyıcılarıyla içeri alınır."
+          },
+          {
+            "id": "opt-8b",
+            "text": "Sülfotransferaz (SULT); mitokondri iç zarında ATP sentaz ile kompleks halde bulunan mikrozomal bir enzimdir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "SULT yerleşim yanılgısı: SULT enzimleri mitokondriyal veya membranöz değildir; hücre sitozolünde çözünmüş halde bulunurlar. Endoplazmik retikuluma gömülü tek majör Faz II enzimi UGT'dir."
+          },
+          {
+            "id": "opt-8c",
+            "text": "Glutatyon S-transferaz (GST); nükleer por kompleksine ve çekirdek zarına kalıcı olarak gömülü bir enzimdir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "GST hücresel yerleşim yanılgısı: GST'nin majör detoksifikasyon izoformları sitozolde serbestçe dağılmıştır (küçük bir mikrozomal alt tip hariç); ER lümeninde yerleşik olan ve yüksek kapasiteli Faz II konjugasyonunu yöneten enzim UGT'dir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "UDP-Glukuroniltransferaz (UGT); endoplazmik retikulum membranına gömülü mikrozomal bir enzimdir (SULT, NAT ve GST ise sitozoliktir).",
+          "ar": "إنزيم UGT (جلوكورونيل ترانسفيراز)؛ فهو إنزيم ميكروزومي مدمج في غشاء الشبكة الإندوبلازمية (بينما SULT و NAT و GST سيتوزولية).",
+          "en": "UDP-Glucuronosyltransferase (UGT); it is an integral membrane-bound microsomal enzyme (whereas SULT, NAT, and GST are cytosolic)."
+        },
+        "explanation": {
+          "tr": "Harika bir sınav tuzağı yakalandı! Slayt 33 ve 38'in kritik ayrımı: Faz II enzimlerinin çoğu (SULT, NAT, GST, COMT) sitozoliktir. Ancak en yüksek kapasiteli Faz II enzimi olan UGT, endoplazmik retikulum membranına gömülüdür (mikrozomal fraksiyonda yer alır). Aktif bölgesi ER lümenine bakar; bu yüzden UDPGA kofaktörü membran taşıyıcılarıyla içeri alınır.",
+          "ar": "إمساك بارع بفخ امتحاني كلاسيكي! الشريحة 33 و 38: معظم إنزيمات الاقتران سيتوزولية، لكن إنزيم UGT صاحب السعة الكبرى ميكروزومي متغلغل في غشاء الشبكة الإندوبلازمية وموقعه التحفيزي يواجه جوف الشبكة.",
+          "en": "Classic exam trap mastered! Slides 33 & 38: While most Phase II transferases (SULT, NAT, GST) reside in soluble cytosol, the high-capacity UGT is an integral ER transmembrane protein whose catalytic site faces the luminal compartment."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "type": "clinical_vignette",
+      "title": {
+        "tr": "Klinik Vaka: N-Asetilsistein (NAC) ve Kritik Zaman Penceresi",
+        "ar": "حالة سريرية: ترياق N-أسيتيل سيستئين والنافذة الزمنية الحرجة",
+        "en": "Clinical Vignette: N-Acetylcysteine (NAC) & The Critical Antidote Window"
+      },
+      "prompt": {
+        "tr": "Parasetamol zehirlenmesinde antidot olan N-Asetilsistein (NAC) ilk 8-10 saat içinde başlandığında karaciğeri %100 kurtarırken, 24 saatten sonra neden yetersiz kalır? Biyokimyasal kurtarma mekanizması nedir?",
+        "ar": "ينقذ ترياق N-acetylcysteine (NAC) الكبد بنسبة 100% إذا أُعطي في الساعات 8-10 الأولى، لكن كفاءته تتلاشى بعد 24 ساعة. ما هي آلية الإنقاذ البيوكيميائية؟",
+        "en": "N-Acetylcysteine (NAC) prevents fatal liver damage if initiated within 8-10 hours of paracetamol overdose, yet loses efficacy after 24 hours. What is the biochemical rescue mechanism?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": {
+              "tr": "NAC serbest sistein sağlayarak tükenen glutatyon (GSH) sentezini hızla yeniler; ancak GSH >%70 tükendikten sonra NAPQI proteinlere kovalent bağlanıp geri dönüşsüz nekroz başlatmıştır.",
+              "ar": "يوفر NAC السيستئين ليعيد بناء الجلوتاثيون (GSH) المنهار؛ ولكن بعد نفاد 70% من GSH، يكون NAPQI قد ارتبط ببروتينات الخلية وبدأ التنخر غير العكوس.",
+              "en": "NAC supplies rate-limiting cysteine to rapidly replenish depleted glutathione (GSH); once GSH falls below 30%, NAPQI binds irreversibly to vital proteins, triggering irreversible necrosis."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz klinik toksikoloji! Slayt 36 verisi: Glutatyon sentezinde hız kısıtlayıcı amino asit L-sisteindir. NAC hücreye girerek sistein havuzunu doldurur ve GSH sentezini patlatır; ayrıca serbest tiyolüyle bizzat NAPQI'yi nötralize eder. Ancak ilk 8-10 saat aşılırsa NAPQI mitokondriyal proteinlere kovalent kilitlenir; artık GSH verilse dahi ölen hücreler diriltilemez.",
+              "ar": "تحليل سمومي سريري متكامل! الشريحة 36: السيستئين هو الحمض الأميني المحدد لسرعة بناء الجلوتاثيون. يزود NAC الخلايا بالسيستئين فيتضاعف بناء GSH ويقضي على سم NAPQI. بعد 8-10 ساعات، يكون NAPQI قد ارتبط بالميتوكوندريا وأحدث موتاً خلوياً محتوماً.",
+              "en": "Flawless clinical toxicology! Slide 36: Cysteine availability is the bottleneck for de novo glutathione synthesis. NAC recharges intracellular cysteine, driving rapid GSH restoration and directly scavenging NAPQI. Beyond the 8-10 hour window, irreversible covalent mitochondrial alkylation has already triggered cell death."
+            }
+          },
+          {
+            "id": "opt-9b",
+            "text": {
+              "tr": "NAC doğrudan CYP2E1 enziminin aktif bölgesine bağlanarak enzimi yarışmalı olarak inhibe eder ve parasetamolün oksidasyonunu durdurur.",
+              "ar": "يرتبط NAC مباشرة بالموقع الفعال لـ CYP2E1 ويثبطه تنافسياً ليوقف أكسدة الباراسيتامول تماماً.",
+              "en": "NAC binds directly to the CYP2E1 heme catalytic pocket, acting as a competitive inhibitor to arrest paracetamol oxidation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "CYP inhibisyonu yanılgısı: NAC bir CYP2E1 inhibitörü değildir; kofaktör öncülü (L-sistein donörü) olarak hücre içi glutatyon (GSH) havuzunu yeniler ve tiyol grubuyla serbest NAPQI'yi redükler.",
+              "ar": "مغالطة تثبيط CYP: لا يثبط NAC إنزيم CYP2E1؛ بل يعمل كمانح للسيستين لتجديد مخزون الجلوتاثيون (GSH) واختزال NAPQI كيميائياً بمجموعة الثيول.",
+              "en": "CYP inhibition misconception: NAC does not inhibit CYP2E1; it serves as a bioavailable L-cysteine precursor to replenish depleted glutathione (GSH) pools."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "NAC gastrointestinal kanalda aktif kömür gibi davranarak parasetamol moleküllerini bağlar ve sistemik emilimi engeller.",
+              "ar": "يعمل NAC في السبيل الهضمي كالفحم النشط مشلباً جزيئات الباراسيتامول لمنع امتصاصها الجهازي.",
+              "en": "NAC functions as an intestinal chelating resin analogous to activated charcoal, binding paracetamol lumenally to prevent absorption."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "İntestinal şelasyon yanılgısı: NAC bir gastrointestinal bağlayıcı değildir; sistemik olarak emilip hepatosite girerek sistein sağlayan ve tükenen glutatyonu yeniden sentezleten metabolik bir antidottur.",
+              "ar": "مغالطة الارتباط الهضمي: لا يعمل NAC كراتنج رابط في الأمعاء؛ بل يُمتص جهازياً ليدخل الكبد ويوفر السيستين اللازم لإعادة بناء الجلوتاثيون.",
+              "en": "Intestinal binding fallacy: NAC is not an adsorbative resin; it is systemically absorbed and converted intracellularly into cysteine to rescue hepatic GSH."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "N-asetilsistein (NAC) antidotu",
+          "arContext": "ترياق N-أسيتيل سيستئين (NAC)"
+        },
+        {
+          "term": "kovalent mitokondriyal hasar",
+          "arContext": "الضرر التساهمي للميتوكوندريا"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Hücrede glutatyon (GSH) sentezinin hızını sınırlayan bileşen sistein amino asididir.",
+          "ar": "العامل المحدد لسرعة تصنيع الجلوتاثيون هو وفرة حمض السيستئين الأميني.",
+          "en": "Cysteine availability is the rate-limiting bottleneck in cellular glutathione synthesis."
+        },
+        {
+          "tr": "N-Asetilsistein (NAC) vücuda bol miktarda sistein sağlayarak GSH fabrikasını çalıştırır.",
+          "ar": "يزود NAC الكبد بالسيستئين بوفرة ليعيد تشغيل مصنع الجلوتاثيون.",
+          "en": "NAC delivers bioavailable cysteine to rapidly reboot glutathione synthesis."
+        },
+        {
+          "tr": "İlk 8-10 saat içinde verilirse NAPQI proteinlere bağlanamadan GSH tarafından temizlenir.",
+          "ar": "إذا أُعطي خلال 8-10 ساعات، يقضي الجلوتاثيون على NAPQI قبل أن يربط بروتينات الكبد.",
+          "en": "Given within 8-10 hours, replenished GSH captures NAPQI before it irreversibly alkylates proteins."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 36
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": "NAC serbest sistein sağlayarak tükenen glutatyon (GSH) sentezini hızla yeniler; ancak GSH >%70 tükendikten sonra NAPQI proteinlere kovalent bağlanıp geri dönüşsüz nekroz başlatmıştır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz klinik toksikoloji! Slayt 36 verisi: Glutatyon sentezinde hız kısıtlayıcı amino asit L-sisteindir. NAC hücreye girerek sistein havuzunu doldurur ve GSH sentezini patlatır; ayrıca serbest tiyolüyle bizzat NAPQI'yi nötralize eder. Ancak ilk 8-10 saat aşılırsa NAPQI mitokondriyal proteinlere kovalent kilitlenir; artık GSH verilse dahi ölen hücreler diriltilemez."
+          },
+          {
+            "id": "opt-9b",
+            "text": "NAC doğrudan CYP2E1 enziminin aktif bölgesine bağlanarak enzimi yarışmalı olarak inhibe eder ve parasetamolün oksidasyonunu durdurur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "CYP inhibisyonu yanılgısı: NAC bir CYP2E1 inhibitörü değildir; kofaktör öncülü (L-sistein donörü) olarak hücre içi glutatyon (GSH) havuzunu yeniler ve tiyol grubuyla serbest NAPQI'yi redükler."
+          },
+          {
+            "id": "opt-9c",
+            "text": "NAC gastrointestinal kanalda aktif kömür gibi davranarak parasetamol moleküllerini bağlar ve sistemik emilimi engeller.",
+            "isCorrect": false,
+            "misconceptionFeedback": "İntestinal şelasyon yanılgısı: NAC bir gastrointestinal bağlayıcı değildir; sistemik olarak emilip hepatosite girerek sistein sağlayan ve tükenen glutatyonu yeniden sentezleten metabolik bir antidottur."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "NAC serbest sistein sağlayarak tükenen glutatyon (GSH) sentezini hızla yeniler; ancak GSH >%70 tükendikten sonra NAPQI proteinlere kovalent bağlanıp geri dönüşsüz nekroz başlatmıştır.",
+          "ar": "يوفر NAC السيستئين ليعيد بناء الجلوتاثيون (GSH) المنهار؛ ولكن بعد نفاد 70% من GSH، يكون NAPQI قد ارتبط ببروتينات الخلية وبدأ التنخر غير العكوس.",
+          "en": "NAC supplies rate-limiting cysteine to rapidly replenish depleted glutathione (GSH); once GSH falls below 30%, NAPQI binds irreversibly to vital proteins, triggering irreversible necrosis."
+        },
+        "explanation": {
+          "tr": "Kusursuz klinik toksikoloji! Slayt 36 verisi: Glutatyon sentezinde hız kısıtlayıcı amino asit L-sisteindir. NAC hücreye girerek sistein havuzunu doldurur ve GSH sentezini patlatır; ayrıca serbest tiyolüyle bizzat NAPQI'yi nötralize eder. Ancak ilk 8-10 saat aşılırsa NAPQI mitokondriyal proteinlere kovalent kilitlenir; artık GSH verilse dahi ölen hücreler diriltilemez.",
+          "ar": "تحليل سمومي سريري متكامل! الشريحة 36: السيستئين هو الحمض الأميني المحدد لسرعة بناء الجلوتاثيون. يزود NAC الخلايا بالسيستئين فيتضاعف بناء GSH ويقضي على سم NAPQI. بعد 8-10 ساعات، يكون NAPQI قد ارتبط بالميتوكوندريا وأحدث موتاً خلوياً محتوماً.",
+          "en": "Flawless clinical toxicology! Slide 36: Cysteine availability is the bottleneck for de novo glutathione synthesis. NAC recharges intracellular cysteine, driving rapid GSH restoration and directly scavenging NAPQI. Beyond the 8-10 hour window, irreversible covalent mitochondrial alkylation has already triggered cell death."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "type": "retrieval",
+      "title": {
+        "tr": "Aralıklı Hatırlama: Faz II Kofaktör Donörleri Eşleşmesi",
+        "ar": "استرجاع تباعدي: مطابقة كواشف الاقتران في المرحلة الثانية",
+        "en": "Spaced Retrieval: Matching Phase II Cofactor Donors"
+      },
+      "prompt": {
+        "tr": "Faz II transferaz enzimlerinin substratlarına polar grup takabilmesi için aktif donör kofaktörlere ihtiyacı vardır. UGT, SULT ve NAT enzimlerinin aktif kofaktörleri sırasıyla hangileridir?",
+        "ar": "تحتاج إنزيمات المرحلة الثانية إلى كواشف مانحة لتفعيل تفاعلات الاقتران. ما هي الكواشف النشطة لإنزيمات UGT و SULT و NAT على التوالي؟",
+        "en": "Phase II transferases require high-energy donor cofactors to transfer functional groups. What are the active cofactor donors for UGT, SULT, and NAT, respectively?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "UGT: UDPGA (Üridin difosfat glukuronik asit); SULT: PAPS (Fosfoadenozin-fosfosülfat); NAT: Asetil-KoA.",
+              "ar": "UGT: كاشف UDPGA؛ SULT: كاشف PAPS؛ NAT: كاشف أسيتيل-كوانزيم A (Acetyl-CoA).",
+              "en": "UGT: UDPGA (Uridine diphosphate glucuronic acid); SULT: PAPS (Phosphoadenosine-phosphosulfate); NAT: Acetyl-CoA."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz hafıza! Slayt 38 karşılaştırma tablosu: 1. UGT enzimi UDPGA kofaktöründen glukuronik asit aktarır. 2. SULT enzimi PAPS kofaktöründen sülfat aktarır. 3. NAT enzimi Asetil-KoA'dan asetil grubu aktarır. Bu kofaktör üçlüsü farmasötik kimyanın altın standart bilgisidir.",
+              "ar": "ذاكرة صيدلانية خارقة! جدول الشريحة 38: ينقل UGT الجلوكورونيد من UDPGA، وينقل SULT الكبريتات من PAPS، وينقل NAT الأسيتيل من Acetyl-CoA. هذه الثلاثية من أهم ركائز الكيمياء الصيدلانية.",
+              "en": "Flawless retrieval! Slide 38 comparative master table: UGT transfers glucuronic acid from UDPGA; SULT transfers sulfate from PAPS; NAT transfers acetyl from Acetyl-CoA. This cofactor triad is the bedrock of drug conjugation."
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "UGT: NADPH; SULT: ATP; NAT: Koenzim Q10 (Ubikinon).",
+              "ar": "UGT: NADPH؛ SULT: ATP؛ NAT: مرافق الإنزيم Q10.",
+              "en": "UGT: NADPH; SULT: ATP; NAT: Coenzyme Q10 (Ubiquinone)."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Redoks ve biyoenerji kofaktörü yanılgısı: NADPH Faz I CYP enzimlerinin elektron donörüdür; ATP genel enerji molekülüdür. Faz II transferazları nükleotit bağlı aktif transfer kofaktörleri (UDPGA, PAPS, Asetil-KoA) kullanır.",
+              "ar": "مغالطة مرافقات الأكسدة والإرجاع: NADPH مانح إلكترونات لـ CYP في المرحلة الأولى وATP طاقة عامة؛ إنزيمات المرحلة الثانية تتطلب مرافقات نقل مخصصة (UDPGA, PAPS, Asetil-KoA).",
+              "en": "Redox cofactor confusion: NADPH supplies electrons for Phase I CYPs; Phase II transferases require specialized activated nucleotide donors (UDPGA, PAPS, Acetyl-CoA)."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "UGT: Glutatyon (GSH); SULT: S-Adenozilmetiyonin (SAM); NAT: Glisin.",
+              "ar": "UGT: جلوتاثيون (GSH)؛ SULT: إس-أدينوزيل ميثيونين (SAM)؛ NAT: جليسين.",
+              "en": "UGT: Glutathione (GSH); SULT: S-Adenosylmethionine (SAM); NAT: Glycine."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Transferaz kofaktör eşleşme yanılgısı: Glutatyon GST'nin, SAM metiltransferazların (COMT), glisin ise açiltransferazın kofaktörüdür; UGT UDPGA, SULT PAPS, NAT ise Asetil-KoA gerektirir.",
+              "ar": "مغالطة خلط مرافقات النقل: الجلوتاثيون يخص GST، وSAM يخص COMT، والجليسين يخص ناقلات الأسيل؛ بينما تتطلب UGT/SULT/NAT كلاً من UDPGA وPAPS وأسيتيل-CoA.",
+              "en": "Transferase mismatched donor error: GSH belongs to GST, SAM belongs to methyltransferases (COMT), and glycine belongs to amino acid transferases, not UGT/SULT/NAT."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "UDPGA kofaktörü",
+          "arContext": "كاشف UDPGA المنشط"
+        },
+        {
+          "term": "PAPS aktif sülfat donörü",
+          "arContext": "كاشف PAPS المانح للكبريتات"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Glukuronik asit aktarımı için nükleozit difosfat şeker türevi gerekir (UDP-glukuronik asit).",
+          "ar": "يتطلب نقل الجلوكورونيد سكر نكليوتيدي ثنائي الفوسفات (UDP-glucuronic acid).",
+          "en": "Glucuronidation utilizes an activated uridine nucleotide sugar derivative."
+        },
+        {
+          "tr": "Sülfasyon adenozin nükleotidinde sülfat taşıyan PAPS molekülünden beslenir.",
+          "ar": "تتغذى الكبرتة من مركب PAPS المحتوي على نكليوتيد الأدينوزين الحامل للكبريتات.",
+          "en": "Sulfation transfers sulfate from the 3'-phosphoadenosine-5'-phosphosulfate cofactor."
+        },
+        {
+          "tr": "Asetilasyon hücresel enerji metabolizmasının ana taşıyıcısı Asetil-KoA ile yürür.",
+          "ar": "تعتمد الأستلة على الناقل الخلوي الشهير أسيتيل-كوانزيم A (Acetyl-CoA).",
+          "en": "Acetylation relies on the central cellular carrier Acetyl-CoA."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 38
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": "UGT: UDPGA (Üridin difosfat glukuronik asit); SULT: PAPS (Fosfoadenozin-fosfosülfat); NAT: Asetil-KoA.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz hafıza! Slayt 38 karşılaştırma tablosu: 1. UGT enzimi UDPGA kofaktöründen glukuronik asit aktarır. 2. SULT enzimi PAPS kofaktöründen sülfat aktarır. 3. NAT enzimi Asetil-KoA'dan asetil grubu aktarır. Bu kofaktör üçlüsü farmasötik kimyanın altın standart bilgisidir."
+          },
+          {
+            "id": "opt-10b",
+            "text": "UGT: NADPH; SULT: ATP; NAT: Koenzim Q10 (Ubikinon).",
+            "isCorrect": false,
+            "misconceptionFeedback": "Redoks ve biyoenerji kofaktörü yanılgısı: NADPH Faz I CYP enzimlerinin elektron donörüdür; ATP genel enerji molekülüdür. Faz II transferazları nükleotit bağlı aktif transfer kofaktörleri (UDPGA, PAPS, Asetil-KoA) kullanır."
+          },
+          {
+            "id": "opt-10c",
+            "text": "UGT: Glutatyon (GSH); SULT: S-Adenozilmetiyonin (SAM); NAT: Glisin.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Transferaz kofaktör eşleşme yanılgısı: Glutatyon GST'nin, SAM metiltransferazların (COMT), glisin ise açiltransferazın kofaktörüdür; UGT UDPGA, SULT PAPS, NAT ise Asetil-KoA gerektirir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "UGT: UDPGA (Üridin difosfat glukuronik asit); SULT: PAPS (Fosfoadenozin-fosfosülfat); NAT: Asetil-KoA.",
+          "ar": "UGT: كاشف UDPGA؛ SULT: كاشف PAPS؛ NAT: كاشف أسيتيل-كوانزيم A (Acetyl-CoA).",
+          "en": "UGT: UDPGA (Uridine diphosphate glucuronic acid); SULT: PAPS (Phosphoadenosine-phosphosulfate); NAT: Acetyl-CoA."
+        },
+        "explanation": {
+          "tr": "Kusursuz hafıza! Slayt 38 karşılaştırma tablosu: 1. UGT enzimi UDPGA kofaktöründen glukuronik asit aktarır. 2. SULT enzimi PAPS kofaktöründen sülfat aktarır. 3. NAT enzimi Asetil-KoA'dan asetil grubu aktarır. Bu kofaktör üçlüsü farmasötik kimyanın altın standart bilgisidir.",
+          "ar": "ذاكرة صيدلانية خارقة! جدول الشريحة 38: ينقل UGT الجلوكورونيد من UDPGA، وينقل SULT الكبريتات من PAPS، وينقل NAT الأسيتيل من Acetyl-CoA. هذه الثلاثية من أهم ركائز الكيمياء الصيدلانية.",
+          "en": "Flawless retrieval! Slide 38 comparative master table: UGT transfers glucuronic acid from UDPGA; SULT transfers sulfate from PAPS; NAT transfers acetyl from Acetyl-CoA. This cofactor triad is the bedrock of drug conjugation."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "type": "connection",
+      "title": {
+        "tr": "Geniş Bağlantı: İdrarda Biyoaktive Olan Ön İlaç (Metenamin)",
+        "ar": "آفاق متقدمة: طليعة دوائية تتنشط ذاتياً في البول (الميثينامين)",
+        "en": "Broader Connection: Spontaneous Urinary Activation of Methenamine"
+      },
+      "prompt": {
+        "tr": "Metenamin kanda ve pH 7.4'te tamamen inaktif bir kafes molekülüdür. Ancak idrar pH'ı 5.5'in altına düştüğünde hiçbir enzim olmadan neye parçalanır ve bakterileri nasıl yok eder?",
+        "ar": "الميثينامين جزيء قفصي خامل تماماً في الدم عند pH 7.4. عندما يهبط باهاء البول تحت 5.5، إلى ماذا يتفكك ذاتياً دون إنزيمات ليبيد البكتيريا؟",
+        "en": "Methenamine is an inert cage molecule circulating unchanged in blood at pH 7.4. When urine pH drops below 5.5, what does it non-enzymatically release to eliminate urinary pathogens?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "Asidik idrarda kendiliğinden hidroliz olarak 6 molekül formaldehit açığa çıkarır; formaldehit bakteriyel proteinleri denatüre eder ve direnç gelişemez.",
+              "ar": "يتحلل تلقائياً في البول الحمضي محرراً 6 جزيئات فورمالدهيد؛ الذي يخثر بروتينات البكتيريا دون أي قدرة منها على تطوير مقاومة.",
+              "en": "It undergoes spontaneous acid-catalyzed hydrolysis to release 6 molecules of formaldehyde, which denatures bacterial proteins with zero risk of resistance."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir ön-ilaç / metabonat örneği! Slayt 5 ve 44: Hekzametilentetramin (Metenamin) kanda kararlıdır ve toksik değildir. Böbreklerden süzüldükten sonra idrar asidikse (pH < 5.5), H+ iyonları kafes yapısını parçalar: 1 molekül metenaminden 6 formaldehit ve 4 amonyum oluşur. Formaldehit genel bir hücre zehiridir; bakteriler formaldehite karşı asla direnç geliştiremez (bu yüzden idrarı asitleştirmek için vitamin C veya metiyoninle kombine edilir).",
+              "ar": "مثال دوائي عبقري على المستقلبات التلقائية (Metabonates)! الشريحة 5 و 44: الميثينامين آمن بالدم. عند وصوله للبول الحمضي (pH < 5.5)، تفصم البروتونات الهيكل القفصي محررة 6 جزيئات فورمالدهيد و4 أمونيوم. يقتل الفورمالدهيد البكتيريا بتخثير بروتيناتها وتستحيل مقاومته جينياً.",
+              "en": "Brilliant prodrug / metabonate design! Slides 5 & 44: Hexamethylenetetramine (Methenamine) is non-toxic in systemic blood. At acidic urine pH (<5.5), ambient hydronium ions trigger non-enzymatic decomposition into 6 formaldehyde molecules and 4 ammonium ions. Formaldehyde cross-links bacterial proteins; bacteria cannot mutate resistance against formaldehyde."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Bakteriyel enzimler metenamin kafesini tanıyıp parçalayarak amonyak gazı üretir ve bakterileri aşırı alkali şokla yok eder.",
+              "ar": "تتعرف الإنزيمات البكتيرية على قفص الميثينامين وتفككه مولدة غاز الأمونيا الذي يقضي على البكتيريا بصدمة قلوية.",
+              "en": "Bacterial enzymes recognize and cleave the methenamine cage into ammonia gas, killing microorganisms via hyperalkaline osmotic shock."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Bakteriyel enzim parçalanması yanılgısı: Metenaminin aktivasyonu enzimatik değildir; asidik idrar ortamında (pH < 5.5) spontan kimyasal hidrolizle açığa çıkan formaldehit bakterileri denatüre eder.",
+              "ar": "مغالطة التفكك بالإنزيمات البكتيرية: تنشيط الميثينامين غير إنزيمي إطلاقاً؛ بل يحدث بحلمهة كيميائية تلقائية في بول حمضي (pH < 5.5) محرراً الفورمالدهايد القاتل.",
+              "en": "Bacterial enzymatic cleavage fallacy: Methenamine activation is strictly non-enzymatic; spontaneous chemical hydrolysis in acidic urine (pH < 5.5) generates bactericidal formaldehyde."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Alkali idrarda (pH > 8.0) metenamin hızla iyonize olur ve bakterilerin folik asit sentez pompalarını yarışmalı olarak kilitler.",
+              "ar": "يتأين الميثينامين في البول القلوي (pH > 8.0) ويثبط مضخات تصنيع حمض الفوليك البكتيرية تنافسياً.",
+              "en": "In alkaline urine (pH > 8.0), methenamine ionizes rapidly to competitively block bacterial folate synthesis uptake transporters."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Alkali ortam ve folat yanılgısı: Metenamin alkali idrarda tamamen kararlıdır ve formaldehit açığa çıkaramaz; aktivasyon için mutlaka asidik pH (< 5.5) şarttır ve etki mekanizması folat inhibisyonu değil formaldehit protein denatürasyonudur.",
+              "ar": "مغالطة الوسط القلوي: الميثينامين خامل في البول القلوي؛ يتطلب تنشيطه وسطاً حمضياً (pH < 5.5) وآليته هي تمسخ البروتين بالفورمالدهايد لا تثبيط الفولات.",
+              "en": "Alkaline activation misconception: Methenamine is chemically stable in alkaline urine and cannot release formaldehyde; it strictly requires an acidic pH (< 5.5)."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "metabonat (non-enzimatik dönüşüm)",
+          "arContext": "المستقلب التلقائي اللاتحفيزي (metabonate)"
+        },
+        {
+          "term": "üriner antiseptik biyoaktivasyonu",
+          "arContext": "تنشيط المطهرات البولية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Metenamin yapısında 4 azot atomu ve 6 adet metilen (-CH2-) köprüsü taşır.",
+          "ar": "يتكون الميثينامين من 4 ذرات نيتروجين و 6 جسور ميثيلين (-CH2-).",
+          "en": "Methenamine consists of 4 nitrogen atoms cross-linked by 6 methylene (-CH2-) bridges."
+        },
+        {
+          "tr": "Asidik ortamda (pH < 5.5) su ve protonlar metilen köprülerini aldehide çevirir.",
+          "ar": "في الوسط الحمضي (pH < 5.5) تفكك البروتونات والماء جسور الميثيلين إلى ألدهيد.",
+          "en": "Under acidic conditions (pH < 5.5), hydronium ions hydrolyze methylene bridges into aldehydes."
+        },
+        {
+          "tr": "Açığa çıkan formaldehit bakterilerin proteinlerini denatüre eden güçlü bir antiseptiktir.",
+          "ar": "الفورمالدهيد الناتج مطهر فعال يخثر بروتينات البكتيريا دون حدوث مقاومة.",
+          "en": "The liberated formaldehyde acts as a powerful non-specific antiseptic against urinary pathogens."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 44
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": "Asidik idrarda kendiliğinden hidroliz olarak 6 molekül formaldehit açığa çıkarır; formaldehit bakteriyel proteinleri denatüre eder ve direnç gelişemez.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika bir ön-ilaç / metabonat örneği! Slayt 5 ve 44: Hekzametilentetramin (Metenamin) kanda kararlıdır ve toksik değildir. Böbreklerden süzüldükten sonra idrar asidikse (pH < 5.5), H+ iyonları kafes yapısını parçalar: 1 molekül metenaminden 6 formaldehit ve 4 amonyum oluşur. Formaldehit genel bir hücre zehiridir; bakteriler formaldehite karşı asla direnç geliştiremez (bu yüzden idrarı asitleştirmek için vitamin C veya metiyoninle kombine edilir)."
+          },
+          {
+            "id": "opt-11b",
+            "text": "Bakteriyel enzimler metenamin kafesini tanıyıp parçalayarak amonyak gazı üretir ve bakterileri aşırı alkali şokla yok eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Bakteriyel enzim parçalanması yanılgısı: Metenaminin aktivasyonu enzimatik değildir; asidik idrar ortamında (pH < 5.5) spontan kimyasal hidrolizle açığa çıkan formaldehit bakterileri denatüre eder."
+          },
+          {
+            "id": "opt-11c",
+            "text": "Alkali idrarda (pH > 8.0) metenamin hızla iyonize olur ve bakterilerin folik asit sentez pompalarını yarışmalı olarak kilitler.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Alkali ortam ve folat yanılgısı: Metenamin alkali idrarda tamamen kararlıdır ve formaldehit açığa çıkaramaz; aktivasyon için mutlaka asidik pH (< 5.5) şarttır ve etki mekanizması folat inhibisyonu değil formaldehit protein denatürasyonudur."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Asidik idrarda kendiliğinden hidroliz olarak 6 molekül formaldehit açığa çıkarır; formaldehit bakteriyel proteinleri denatüre eder ve direnç gelişemez.",
+          "ar": "يتحلل تلقائياً في البول الحمضي محرراً 6 جزيئات فورمالدهيد؛ الذي يخثر بروتينات البكتيريا دون أي قدرة منها على تطوير مقاومة.",
+          "en": "It undergoes spontaneous acid-catalyzed hydrolysis to release 6 molecules of formaldehyde, which denatures bacterial proteins with zero risk of resistance."
+        },
+        "explanation": {
+          "tr": "Harika bir ön-ilaç / metabonat örneği! Slayt 5 ve 44: Hekzametilentetramin (Metenamin) kanda kararlıdır ve toksik değildir. Böbreklerden süzüldükten sonra idrar asidikse (pH < 5.5), H+ iyonları kafes yapısını parçalar: 1 molekül metenaminden 6 formaldehit ve 4 amonyum oluşur. Formaldehit genel bir hücre zehiridir; bakteriler formaldehite karşı asla direnç geliştiremez (bu yüzden idrarı asitleştirmek için vitamin C veya metiyoninle kombine edilir).",
+          "ar": "مثال دوائي عبقري على المستقلبات التلقائية (Metabonates)! الشريحة 5 و 44: الميثينامين آمن بالدم. عند وصوله للبول الحمضي (pH < 5.5)، تفصم البروتونات الهيكل القفصي محررة 6 جزيئات فورمالدهيد و4 أمونيوم. يقتل الفورمالدهيد البكتيريا بتخثير بروتيناتها وتستحيل مقاومته جينياً.",
+          "en": "Brilliant prodrug / metabonate design! Slides 5 & 44: Hexamethylenetetramine (Methenamine) is non-toxic in systemic blood. At acidic urine pH (<5.5), ambient hydronium ions trigger non-enzymatic decomposition into 6 formaldehyde molecules and 4 ammonium ions. Formaldehyde cross-links bacterial proteins; bacteria cannot mutate resistance against formaldehyde."
+        }
+      }
+    },
+    {
+      "id": "mc-mod5-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Parasetamol Toksisitesinin Stoikiometrik Dengesi",
+        "ar": "اختبار التمكن: الميزان الحسابي لسمية الباراسيتامول",
+        "en": "Mastery Check: Stoichiometric Balance of Paracetamol Hepatotoxicity"
+      },
+      "prompt": {
+        "tr": "Bir hasta 10 g (66 mmol) parasetamol yutar. SULT 10 mmol'de, UGT 40 mmol'de doyar. Kalan 16 mmol CYP2E1 ile 16 mmol NAPQI üretir. Karaciğer GSH rezervi 10 mmol olduğuna göre klinik sonuç ne olur?",
+        "ar": "تناول مريض 10 غرامات (66 مليمول) باراسيتامول. تشبع SULT عند 10، و UGT عند 40. حول CYP2E1 الباقي (16 مليمول) إلى NAPQI. إذا كان مخزون الكبد من GSH هو 10 مليمول، فما النتيجة؟",
+        "en": "A patient takes 10 g (66 mmol) of paracetamol. SULT saturates at 10 mmol, UGT at 40 mmol. The excess 16 mmol forms 16 mmol NAPQI via CYP2E1. If hepatic GSH pool is 10 mmol, what is the clinical outcome?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "Glutatyon %100 tükenir; arta kalan 6 mmol serbest NAPQI hepatosit proteinlerine kovalent bağlanarak fulminan karaciğer nekrozunu tetikler.",
+              "ar": "يستنفد الجلوتاثيون بنسبة 100%؛ ويرتبط الفائض (6 مليمول) من NAPQI ببروتينات الكبد تساهمياً مسبباً تنخراً كبدياً صاعقاً ومميتاً.",
+              "en": "Glutathione is 100% exhausted; the remaining 6 mmol of free NAPQI binds covalently to hepatocyte vital proteins, triggering fulminant hepatic necrosis."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz stoikiometrik ustalık! Hesaplama: 66 mmol parasetamolün 50 mmol'ü güvenli Faz II yollarıyla (10 mmol SULT + 40 mmol UGT) bağlanır. Doyum fazlası 16 mmol parasetamol CYP2E1 ile 16 mmol elektrofilik NAPQI üretir. Karaciğerdeki mevcut 10 mmol GSH bu toksinin 10 mmol'ünü nötralize eder ve GSH tamamen sıfırlanır (%100 tükenme). Kalan 6 mmol reaktif NAPQI, hücredeki mitokondriyal proteinlere kovalent bağlanarak saatler içinde masif hepatosit ölümüne yol açar. Acil NAC verilmezse tablo ölümcüldür.",
+              "ar": "تمكن كيميائي وحسابي باهر! الحساب: 50 مليمول تُعالج بـ UGT و SULT. الفائض (16 مليمول) يتحول إلى 16 مليمول من سم NAPQI. يستهلك هذا السم كامل رصيد الجلوتاثيون البالغ 10 مليمول (استنزاف 100%). الفائض المتبقي (6 مليمول) يهاجم بروتينات الميتوكوندريا تساهمياً ويحدث تنخراً كبدياً شاملاً يستوجب إعطاء NAC فوراً.",
+              "en": "Flawless stoichiometric mastery! Clear balance: 50 mmol is cleared safely via UGT (40 mmol) and SULT (10 mmol). The 16 mmol overflow is shunted to CYP2E1, generating 16 mmol of NAPQI. This instantly exhausts the entire 10 mmol hepatic GSH reserve (100% depletion). The leftover 6 mmol of unquenched NAPQI irreversibly alkylates essential hepatocyte proteins, initiating fulminant hepatic failure."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "16 mmol NAPQI hepatosit proteinlerine geri dönüşümlü bağlanır; CYP2E1 doyunca metabolit kendiliğinden kandan temizlenir ve nekroz önlenir.",
+              "ar": "يرتبط 16 ميليمول NAPQI ببروتينات الكبد عكوساً؛ وعند تشبع CYP2E1 يُطرح المستقلب تلقائياً من الدم دون حدوث نخر.",
+              "en": "The 16 mmol NAPQI binds hepatocyte proteins reversibly; once CYP2E1 saturates, excess metabolite clears spontaneously without causing necrosis."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Geri dönüşümlü bağlanma yanılgısı: NAPQI elektrofilik bir kinonimindir; proteinlerin nükleofilik sistein tiyollerine kovalent (geri dönüşsüz) bağlanarak mitokondriyi çökertir ve masif nekroz başlatır.",
+              "ar": "مغالطة الارتباط العكوس: NAPQI مركب كينون إلكتروفيلي يرتبط تساهمياً (بشكل غير عكوس) مع مجموعات الثيول في بروتينات الكبد، مما يسبب تنخراً خلوياً شاملاً.",
+              "en": "Reversible binding misconception: NAPQI is an electrophilic benzoquinoneimine that forms irreversible covalent bonds with mitochondrial protein thiols, driving fulminant hepatic necrosis."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "10 mmol glutatyon katalitik bir enzim gibi çalışıp 16 mmol NAPQI'nin tamamını sıfırlar; GSH tükenmesi yaşanmaz ve karaciğer korunur.",
+              "ar": "يعمل 10 ميليمول جلوتاثيون كإنزيم حفاز لإبطال مفعول كامل الـ 16 ميليمول NAPQI دون أي استنزاف لـ GSH.",
+              "en": "The 10 mmol glutathione functions as a catalytic enzyme to neutralize all 16 mmol NAPQI repeatedly without undergoing consumable depletion."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Katalitik glutatyon yanılgısı: GSH bir enzim değildir; NAPQI ile bire bir (1:1 stoikiometrik) tüketilen feda edilebilir bir tripeptittir. 10 mmol GSH bittiğinde kalan 6 mmol NAPQI hücreyi yok eder.",
+              "ar": "مغالطة الطبيعة الحفازة للجلوتاثيون: GSH ليس إنزيماً بل ركيزة ببتيدية تُستهلك بنسبة ستوكيومترية (1:1)؛ ونفاذ الـ 10 ميليمول يترك 6 ميليمول تدمر الخلايا.",
+              "en": "Catalytic glutathione misconception: GSH is a consumable tripeptide co-substrate consumed stoichiometrically 1:1; once depleted, excess electrophilic NAPQI devastates hepatocyte proteins."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "stoikiometrik toksisite dengesi",
+          "arContext": "الميزان الحسابي للسمية"
+        },
+        {
+          "term": "mitokondriyal protein arilasyonu",
+          "arContext": "ألكلة بروتينات الميتوكوندريا"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "66 mmol ilacın ne kadarının güvenli Faz II yollarıyla (SULT + UGT) temizlendiğini toplayın: 10 + 40 = 50 mmol.",
+          "ar": "اجمع الكمية المعالجة بالمسارات الآمنة (SULT + UGT): 10 + 40 = 50 مليمول.",
+          "en": "Sum the amount safely processed by SULT and UGT: 10 + 40 = 50 mmol."
+        },
+        {
+          "tr": "Geriye kalan miktar CYP2E1'e kayar: 66 - 50 = 16 mmol NAPQI.",
+          "ar": "المقدار الفائض ينحرف نحو CYP2E1: 66 - 50 = 16 مليمول NAPQI.",
+          "en": "The overflow shunts to CYP2E1: 66 - 50 = 16 mmol of reactive NAPQI."
+        },
+        {
+          "tr": "Karaciğerde 10 mmol GSH olduğuna göre 10 mmol NAPQI yakalanır; arta kalan 6 mmol serbest toksin karaciğeri yok eder.",
+          "ar": "يمتلك الكبد 10 مليمول GSH، فيتبقى 6 مليمول من السم الحر ليدمر خلايا الكبد.",
+          "en": "With only 10 mmol of GSH available, 6 mmol of unquenched NAPQI attacks cell proteins."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 35
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": "Glutatyon %100 tükenir; arta kalan 6 mmol serbest NAPQI hepatosit proteinlerine kovalent bağlanarak fulminan karaciğer nekrozunu tetikler.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz stoikiometrik ustalık! Hesaplama: 66 mmol parasetamolün 50 mmol'ü güvenli Faz II yollarıyla (10 mmol SULT + 40 mmol UGT) bağlanır. Doyum fazlası 16 mmol parasetamol CYP2E1 ile 16 mmol elektrofilik NAPQI üretir. Karaciğerdeki mevcut 10 mmol GSH bu toksinin 10 mmol'ünü nötralize eder ve GSH tamamen sıfırlanır (%100 tükenme). Kalan 6 mmol reaktif NAPQI, hücredeki mitokondriyal proteinlere kovalent bağlanarak saatler içinde masif hepatosit ölümüne yol açar. Acil NAC verilmezse tablo ölümcüldür."
+          },
+          {
+            "id": "opt-12b",
+            "text": "16 mmol NAPQI hepatosit proteinlerine geri dönüşümlü bağlanır; CYP2E1 doyunca metabolit kendiliğinden kandan temizlenir ve nekroz önlenir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Geri dönüşümlü bağlanma yanılgısı: NAPQI elektrofilik bir kinonimindir; proteinlerin nükleofilik sistein tiyollerine kovalent (geri dönüşsüz) bağlanarak mitokondriyi çökertir ve masif nekroz başlatır."
+          },
+          {
+            "id": "opt-12c",
+            "text": "10 mmol glutatyon katalitik bir enzim gibi çalışıp 16 mmol NAPQI'nin tamamını sıfırlar; GSH tükenmesi yaşanmaz ve karaciğer korunur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Katalitik glutatyon yanılgısı: GSH bir enzim değildir; NAPQI ile bire bir (1:1 stoikiometrik) tüketilen feda edilebilir bir tripeptittir. 10 mmol GSH bittiğinde kalan 6 mmol NAPQI hücreyi yok eder."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Glutatyon %100 tükenir; arta kalan 6 mmol serbest NAPQI hepatosit proteinlerine kovalent bağlanarak fulminan karaciğer nekrozunu tetikler.",
+          "ar": "يستنفد الجلوتاثيون بنسبة 100%؛ ويرتبط الفائض (6 مليمول) من NAPQI ببروتينات الكبد تساهمياً مسبباً تنخراً كبدياً صاعقاً ومميتاً.",
+          "en": "Glutathione is 100% exhausted; the remaining 6 mmol of free NAPQI binds covalently to hepatocyte vital proteins, triggering fulminant hepatic necrosis."
+        },
+        "explanation": {
+          "tr": "Kusursuz stoikiometrik ustalık! Hesaplama: 66 mmol parasetamolün 50 mmol'ü güvenli Faz II yollarıyla (10 mmol SULT + 40 mmol UGT) bağlanır. Doyum fazlası 16 mmol parasetamol CYP2E1 ile 16 mmol elektrofilik NAPQI üretir. Karaciğerdeki mevcut 10 mmol GSH bu toksinin 10 mmol'ünü nötralize eder ve GSH tamamen sıfırlanır (%100 tükenme). Kalan 6 mmol reaktif NAPQI, hücredeki mitokondriyal proteinlere kovalent bağlanarak saatler içinde masif hepatosit ölümüne yol açar. Acil NAC verilmezse tablo ölümcüldür.",
+          "ar": "تمكن كيميائي وحسابي باهر! الحساب: 50 مليمول تُعالج بـ UGT و SULT. الفائض (16 مليمول) يتحول إلى 16 مليمول من سم NAPQI. يستهلك هذا السم كامل رصيد الجلوتاثيون البالغ 10 مليمول (استنزاف 100%). الفائض المتبقي (6 مليمول) يهاجم بروتينات الميتوكوندريا تساهمياً ويحدث تنخراً كبدياً شاملاً يستوجب إعطاء NAC فوراً.",
+          "en": "Flawless stoichiometric mastery! Clear balance: 50 mmol is cleared safely via UGT (40 mmol) and SULT (10 mmol). The 16 mmol overflow is shunted to CYP2E1, generating 16 mmol of NAPQI. This instantly exhausts the entire 10 mmol hepatic GSH reserve (100% depletion). The leftover 6 mmol of unquenched NAPQI irreversibly alkylates essential hepatocyte proteins, initiating fulminant hepatic failure."
+        }
+      }
+    }
+  ]
+}

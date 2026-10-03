@@ -1,0 +1,269 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: /courses/{courseId}
+    // Document ID: courseId ('medchem' | 'pharmacology')
+    // Fields:
+    //   - courseId: string (required)
+    //   - title: string (required)
+    //   - slug: string (required)
+    //   - description: string (required)
+    //   - modulesCount: number
+    //   - totalLessons: number
+    //   - estimatedHours: number
+    //   - freeLessonsPerModule: number
+    //   - bannerAsset: string
+    //   - published: bool
+    //   - updatedAt: timestamp
+    //
+    // Collection: /courses/{courseId}/modules/{moduleId}
+    // Document ID: moduleId (e.g., 'mc-mod-01')
+    // Fields:
+    //   - moduleId: string (required)
+    //   - title: string (required)
+    //   - orderIndex: number
+    //   - summary: string
+    //   - learningObjectives: list of strings
+    //   - prerequisites: list of strings
+    //
+    // Collection: /courses/{courseId}/lessons/{lessonId}
+    // Document ID: lessonId (e.g., 'mc-les-01')
+    // Fields:
+    //   - lessonId: string (required)
+    //   - moduleId: string (required)
+    //   - orderIndexInModule: number (lessons 1 & 2 are free preview)
+    //   - title: string (required)
+    //   - summary: string
+    //   - isFreePreview: bool (true if orderIndexInModule <= 2)
+    //   - stepCount: number
+    //   - estimatedMinutes: number
+    //   - sources: list of maps
+    //   - published: bool
+    //
+    // Collection: /courses/{courseId}/lessons/{lessonId}/steps/{stepId}
+    // Document ID: stepId (e.g., 'step-01')
+    // Fields:
+    //   - stepId: string (required)
+    //   - orderIndex: number
+    //   - isFreePreview: bool (denormalized from lesson)
+    //   - pedagogicalType: string
+    //   - interactionType: string
+    //   - prompt: string
+    //   - widgetConfig: map
+    //   - correctAnswer: any
+    //   - misconceptionFeedback: map
+    //   - hints: list of strings
+    //   - explanation: string
+    //   - sources: list of maps
+    //
+    // Collection: /users/{userId}
+    // Document ID: userId (matches Firebase Auth UID)
+    // Fields:
+    //   - userId: string (matches request.auth.uid, immutable)
+    //   - email: string
+    //   - displayName: string
+    //   - plan: string ('free' | 'trial' | 'premium', server-managed)
+    //   - trialStartedAt: timestamp | null (server-managed)
+    //   - trialEndsAt: timestamp | null (server-managed)
+    //   - trialUsed: bool (server-managed)
+    //   - entitlements: list of strings (server-managed)
+    //   - preferredLanguage: string ('tr' | 'en')
+    //   - country: string
+    //   - createdAt: timestamp
+    //   - lastActiveAt: timestamp
+    //
+    // Collection: /users/{userId}/entitlements/{courseId}
+    // Document ID: courseId ('medchem' | 'pharmacology' | 'dual_bundle')
+    // Fields (server-only write via Admin SDK):
+    //   - courseId: string
+    //   - entitlementId: string
+    //   - plan: string ('trial' | 'premium')
+    //   - status: string ('active' | 'expired' | 'canceled' | 'revoked' | 'past_due')
+    //   - planId: string
+    //   - entitlements: list of strings
+    //   - billingCycle: string
+    //   - currency: string
+    //   - amountPaid: number
+    //   - paymentGateway: string
+    //   - gatewaySubscriptionId: string | null
+    //   - gatewayOrderId: string | null
+    //   - startedAt: timestamp
+    //   - expiresAt: timestamp
+    //   - autoRenew: bool
+    //   - revokedAt: timestamp | null
+    //
+    // Collection: /users/{userId}/progress/{courseId}
+    // Document ID: courseId ('medchem' | 'pharmacology')
+    // Fields:
+    //   - courseId: string
+    //   - completedLessonIds: list of strings (size < 500)
+    //   - currentModuleId: string
+    //   - currentLessonId: string
+    //   - currentStepIndex: number
+    //   - streakDays: number
+    //   - lastStreakDate: string
+    //   - totalXP: number
+    //   - accuracyRate: number
+    //   - updatedAt: timestamp
+    //
+    // Collection: /users/{userId}/spaced_repetition/{cardId}
+    // Document ID: cardId
+    // Fields:
+    //   - cardId: string
+    //   - courseId: string
+    //   - drugOrConcept: string
+    //   - box: number (1 to 5)
+    //   - intervalDays: number
+    //   - lastReviewedAt: timestamp
+    //   - nextReviewDue: timestamp
+    //   - reviewCount: number
+    //   - lapseCount: number
+    //   - history: list
+    //
+    // Collection: /webhook_events/{eventId}
+    // Document ID: eventId (server-only idempotency audit log)
+    //
+    // Collection: /orders/{orderId}
+    // Document ID: orderId (server-written order audit log, user-read-only)
+    // Fields:
+    //   - orderId: string
+    //   - userId: string (matches customer auth uid)
+    //   - courseId: string
+    //   - planId: string
+    //   - gateway: string
+    //   - currency: string
+    //   - amount: number
+    //   - taxAmount: number
+    //   - status: string
+    //   - createdAt: timestamp
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Check if the request is from an authenticated user
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if the authenticated user owns the document/path
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Helper to evaluate active status or past_due with active grace period
+    function isEntitlementValid(entData) {
+      return (entData.status == 'active' && entData.expiresAt > request.time) ||
+             (entData.status == 'past_due' && 'gracePeriodEndsAt' in entData && entData.gracePeriodEndsAt > request.time);
+    }
+
+    // Server-authoritative entitlement check:
+    // Returns true if user possesses an active entitlement (trial or premium) whose expiresAt > request.time
+    // OR a past_due entitlement within its grace period (gracePeriodEndsAt > request.time)
+    // for either the specific course or the dual_bundle.
+    function hasCourseAccess(courseId) {
+      return isAuthenticated() && (
+        (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)) &&
+          isEntitlementValid(get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/$(courseId)).data)
+        ) || (
+          exists(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle) &&
+          isEntitlementValid(get(/databases/$(database)/documents/users/$(request.auth.uid)/entitlements/dual_bundle).data)
+        )
+      );
+    }
+
+    // Courses & Modules: Public catalog view
+    match /courses/{courseId} {
+      allow read: if true;
+      allow write: if false; // Admin SDK only
+
+      match /modules/{moduleId} {
+        allow read: if true;
+        allow write: if false;
+      }
+
+      match /lessons/{lessonId} {
+        allow read: if true;
+        allow write: if false;
+
+        // Steps collection: GATED
+        // Permitted if step is in Lesson 1 or 2 of any module (isFreePreview == true)
+        // OR parent lesson is marked as free preview
+        // OR authenticated user holds active course or dual_bundle entitlement.
+        // Parent lesson lookup is guarded with exists() to prevent evaluation failures.
+        match /steps/{stepId} {
+          allow read: if resource.data.get('isFreePreview', false) == true ||
+                         (exists(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)) &&
+                          get(/databases/$(database)/documents/courses/$(courseId)/lessons/$(lessonId)).data.get('isFreePreview', false) == true) ||
+                         hasCourseAccess(courseId);
+          allow write: if false;
+        }
+      }
+    }
+
+    // User profile & personal learning subcollections
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      // On creation, client cannot grant self roles, plan, or trialUsed status.
+      // Baseline plan="free" and trialUsed=false flags are initialized authoritatively by onUserCreated Cloud Function.
+      allow create: if isOwner(userId) &&
+                       request.resource.data.userId == request.auth.uid &&
+                       !request.resource.data.keys().hasAny(['roles', 'isAdmin', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements', 'dodoCustomerId']);
+      // On update, sensitive entitlement fields can NEVER be modified by client
+      allow update: if isOwner(userId) &&
+                       !request.resource.data.diff(resource.data).affectedKeys().hasAny([
+                         'roles', 'isAdmin', 'userId', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements', 'dodoCustomerId'
+                       ]);
+      allow delete: if false;
+
+      // Entitlements: Client READ ONLY. Write restricted to Cloud Functions via Admin SDK
+      match /entitlements/{courseId} {
+        allow read: if isOwner(userId);
+        allow write: if false;
+      }
+
+      // Progress: User can update own learning state with bounded list size
+      match /progress/{courseId} {
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) &&
+          request.resource.data.completedLessonIds is list &&
+          request.resource.data.completedLessonIds.size() < 500;
+        allow delete: if false;
+      }
+
+      // Spaced Repetition: User can read and write own cards
+      match /spaced_repetition/{cardId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Webhook events: Complete client lockout (Admin SDK / HTTP webhook only)
+    match /webhook_events/{eventId} {
+      allow read, write: if false;
+    }
+
+    // Trial claims: Deduplication locking against multi-account abuse (Server-side admin only)
+    match /trial_claims/{claimId} {
+      allow read, write: if false;
+    }
+
+    // Rate limits: Atomic transactional counters (Server-side admin only)
+    match /rate_limits/{limitId} {
+      allow read, write: if false;
+    }
+
+    // Orders: User can read only their own orders; writes are strictly server-only
+    match /orders/{orderId} {
+      allow read: if isAuthenticated() && resource.data.userId == request.auth.uid;
+      allow write: if false;
+    }
+  }
+}

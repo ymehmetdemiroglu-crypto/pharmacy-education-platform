@@ -1,0 +1,1168 @@
+const fs = require('fs');
+const path = require('path');
+
+const lesson07 = {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
+  "id": "mc-mod4-les1",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-04",
+  "title": {
+    "tr": "Ötomerler, Distomerler ve Pfeiffer Kuralı",
+    "ar": "المصاوغات النشطة والمصاوغات الخاملة وقاعدة Pfeiffer",
+    "en": "Eutomers, Distomers & Pfeiffer's Rule"
+  },
+  "order": 1,
+  "access": "free",
+  "objective": {
+    "tr": "Pfeiffer kuralını ve Easson-Stedman modelini uygulayarak ötomer/distomer afinite uçurumlarını, eudismik oranları (ER) ve stereoselektif klinik toksisiteyi öngörmek.",
+    "ar": "تطبيق قاعدة Pfeiffer ونموذج Easson-Stedman للتنبؤ بفوارق الألفة بين المصاوغات، والنسب الإيوديزمية (ER)، والسمية السريرية الانتقائية فراغياً.",
+    "en": "Apply Pfeiffer's rule and the Easson-Stedman model to quantify eutomer/distomer affinity gaps, calculate eudismic ratios (ER), and predict stereoselective clinical toxicity."
+  },
+  "misconceptions": [
+    {
+      "tr": "Distomerin (düşük afiniteli enantiyomer) her zaman biyolojik olarak tamamen atıl ve zararsız bir seyirci olduğu yanılgısı.",
+      "ar": "الظن الخاطئ بأن المصاوغ الأضعف (distomer) عديم الفعالية والسمية تماماً دائماً ومجرد متفرج خامل.",
+      "en": "The misconception that the distomer is always an inert, harmless bystander in biological systems."
+    },
+    {
+      "tr": "Pfeiffer kuralının düşük afiniteli ve non-spesifik ilaçlarda da yüksek eudismik oranlar üreteceği varsayımı.",
+      "ar": "الافتراض الخاطئ بأن قاعدة Pfeiffer تنتج نسباً إيوديزمية هائلة حتى في الأدوية ضعيفة الألفة وغير النوعية.",
+      "en": "The assumption that Pfeiffer's rule yields massive eudismic ratios even for low-affinity, non-specific drugs."
+    },
+    {
+      "tr": "Saf ötomer geliştirmenin (kiral geçiş) in vivo rasemize olan moleküllerde dahi toksisiteyi tamamen çözeceği düşüncesi (talidomid yanılgısı).",
+      "ar": "الاعتقاد الخاطئ بأن عزل المصاوغ الفعال النقي يحل مشكلة السمية دوماً حتى في الجزيئات التي ترسمز حيوياً في بلازما الدم.",
+      "en": "The belief that developing a single enantiomer always solves toxicity, overlooking in vivo spontaneous racemization."
+    }
+  ],
+  "sources": [
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 23 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 24 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 25 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 26 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 27 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 28 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 29 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 30 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 31 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 32 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 33 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 35 }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC07-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Stereochemistry, Eutomers, Distomers, and Pfeiffer's Rule",
+      "chapter": "Chapter 2",
+      "page": "38-55",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC07-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Stereoselective Drug-Receptor Interactions and Eudismic Analysis",
+      "chapter": "Chapter 3",
+      "page": "65-85",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC07-01",
+      "parameter": "Muscarine eudismic ratio (ER) of (+)-muscarine over (-)-muscarine",
+      "value": "700-fold",
+      "status": "verified",
+      "referencePassage": "Slide 26: Natural (+)-(2S, 4R, 5S)-muscarine exhibits a 700-fold higher potency (ER = 700) over synthetic (-)-muscarine at muscarinic acetylcholine receptors."
+    },
+    {
+      "id": "NUM-MC07-02",
+      "parameter": "Epinephrine eudismic ratio (ER) of (R)-adrenaline over (S)-adrenaline",
+      "value": "45-fold",
+      "status": "verified",
+      "referencePassage": "Slide 25: (R)-adrenaline engages all 3 Easson-Stedman attachment points, displaying 45-fold higher potency (ER = 45) than (S)-adrenaline."
+    },
+    {
+      "id": "NUM-MC07-03",
+      "parameter": "Thalidomide in vivo racemization half-life via keto-enol tautomerism",
+      "value": "4-5 hours",
+      "status": "verified",
+      "referencePassage": "Slide 31: Thalidomide acidic chiral alpha-proton spontaneously deprotonates at physiological pH (7.4), racemizing into teratogenic S-isomer with t1/2 ≈ 4-5 hours."
+    },
+    {
+      "id": "NUM-MC07-04",
+      "parameter": "S(+)-ketamine (Esketamine) potency multiplier over R(-)-ketamine",
+      "value": "3-4 fold",
+      "status": "verified",
+      "referencePassage": "Slide 35: S(+)-ketamine (Esketamine) is 3-4 times more potent as an anesthetic and analgesic than R(-)-ketamine, with reduced emergence delirium."
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod4-les1-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Ötomer, Distomer ve Eudismik Oran",
+      "prompt": "Ötomer (Eutomer), Distomer ve Eudismik Oran (ER) nasıl tanımlanır?",
+      "answer": "Ötomer hedef reseptörde yüksek afiniteli aktif enantiyomer; distomer düşük afiniteli veya istenmeyen izomerdir. Eudismik Oran (ER) = Ötomer Potensi / Distomer Potensidir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Carl Pfeiffer Kuralı",
+      "prompt": "Carl Pfeiffer Kuralı (1956) afinite ile Eudismik Oran arasındaki ilişkiyi nasıl açıklar?",
+      "answer": "Bir ilacın reseptörüne afinitesi ne kadar yüksekse (dozu ne kadar düşükse), aktif ötomer ile distomer arasındaki güç farkı (ER) o derece katlanarak artar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Epinin Kanıtı",
+      "prompt": "Epinin (deoksiadrenalin) Easson-Stedman 3-nokta hipotezini nasıl kanıtlar?",
+      "answer": "Epinin kiral beta-OH grubundan tamamen yoksundur; afinitesi tam olarak beta-OH grubu cebin dışına bakan zayıf (S)-adrenalin düzeyindedir (2-nokta kenetlenmesi kanıtı).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card4",
+      "courseId": "medchem",
+      "drugOrConcept": "Pisenadol Enantiyomer Çifti",
+      "prompt": "Pisenadol (Picenadol) enantiyomer çiftinin benzersiz farmakolojik davranışı nedir?",
+      "answer": "(+)-Pisenadol güçlü bir mu-opioid reseptör agonisti (analjezik) iken, (-)-pisenadol mu-opioid reseptör antagonistidir (bloker); rasemat ise parsiyel agonisttir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les1-card5",
+      "courseId": "medchem",
+      "drugOrConcept": "Arzu Edilen Rasemat: Bupivakain",
+      "prompt": "Bupivakain neden 'arzu edilen rasemat' (desirable racemate) olarak klinikte tek izomerine tercih edilir?",
+      "answer": "R(+)-bupivakain güçlü lokal anestezik iken, S(-)-bupivakain lokal vazokonstrüksiyon yaparak ilacın dokuda kalış süresini uzatır ve sistemik kardiyotoksisiteyi azaltır.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Ötomerler, Distomerler ve Pfeiffer Kuralı"
+    },
+    "ar": {
+      "title": "المصاوغات النشطة والمصاوغات الخاملة وقاعدة Pfeiffer"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod4-les1-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "type": "predict_reveal",
+      "title": {
+        "tr": "Muskarin Paradoksu: 700 Katlık Afinite Uçurumu",
+        "ar": "مفارقة المسكارين: فارق الألفة بـ 700 ضعف",
+        "en": "The Muscarine Paradox: The 700-Fold Potency Cliff"
+      },
+      "prompt": {
+        "tr": "Doğal (+)-muskarin asetilkolin reseptörünü sentetik ayna görüntüsü (-)-muskarinden tam 700 kat daha güçlü uyarır. Genel anesteziklerde ise enantiyomerler eşit güçtedir. Neden bazı ilaçlarda enantiyomer farkı yüzlerce kat iken diğerlerinde sıfırdır?",
+        "ar": "ينبه (+)-muscarine الطبيعي مستقبل الأستيل كولين بقوة تفوق نظيره المرآوي (-)-muscarine بـ 700 ضعف! بينما تتساوى مصاوغات المخدرات العامة. لماذا يتسع فارق المصاوغات لمئات الأضعاف في أدوية وينعدم في أخرى؟",
+        "en": "Natural (+)-muscarine activates acetylcholine receptors 700-fold more potently than mirror (-)-muscarine. Yet volatile anesthetics show identical enantiomer potency. Why does enantiomeric difference explode to hundreds-fold for some drugs, but vanish to zero in others?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": {
+              "tr": "Yüksek afiniteli muskarin dar ve rijit bir cebe milimetrik 3-nokta uyumuyla oturur; genel anestezikler ise lipid membranda gevşek ve spesifik olmayan bağlar kurar.",
+              "ar": "يرسو المسكارين عالي الألفة في جيب ضيق بتطابق ثلاثي النقاط دقيق؛ بينما ترتبط المخدرات العامة برخاوة غير نوعية في الغشاء الدهني.",
+              "en": "High-affinity muscarine binds a narrow, rigid pocket demanding 3-point stereocomplementarity; volatile anesthetics act via loose, structurally non-specific membrane partitioning."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Muskarinik reseptör dar ve asimetrik bir 3D kilit-anahtar cebine sahiptir. (+)-Muskarin (ötomer) 3 temas noktasını kusursuz kilitlerken, (-)-muskarin (distomer) stereokimyasal uyumsuzluk yüzünden bu bağı kaybeder (ER = 700). Anestezikler ise gevşek bağlanır.",
+              "ar": "صحيح! يمتلك مستقبل المسكارين جيباً فراغياً ثلاثي الأبعاد شديد الدقة؛ يحقق (+)-muscarine تعشيقاً ثلاثي النقاط كاملاً بينما يفشل (-)-muscarine بفارق 700 ضعف. أما المخدرات العامة فترتبط برخاوة دون اشتراط تطابق كيرالي.",
+              "en": "Correct! Muscarinic receptors feature a rigid stereoselective pocket where (+)-muscarine docks via 3-point complementarity (ER = 700). General anesthetics act via loose, non-specific membrane partitioning where stereochemistry is tolerated."
+            }
+          },
+          {
+            "id": "opt-1b",
+            "text": {
+              "tr": "(-)-Muskarin aynadan geçerken radyoaktif ışıma yaparak tüm atomlarını anında parçalar.",
+              "ar": "يطلق (-)-muscarine إشعاعاً نووياً يحطم كافة ذراته فور انعكاسه في المرآة.",
+              "en": "(-)-Muscarine emits ionizing radiation that disintegrates its atoms upon mirror reflection."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Radyoaktif yıkım yanılgısı: Enantiyomerler kararlı kimyasal moleküllerdir; fark nükleer parçalanma değil reseptör aktif cebindeki 3 boyutlu uyumsuzluktur.",
+              "ar": "خطأ الإشعاع: المصاوغات جزيئات كيميائية مستقرة؛ الفارق يعود لعدم التطابق الفراغي داخل جيب المستقبل وليس للنشاط الإشعاعي.",
+              "en": "Radioactive decay misconception: Enantiomers are stable organic molecules; potency differences arise from 3D active site complementarity, not atomic transmutation."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "İnsan vücudunda yalnızca sağ elli molekülleri parçalayan devasa bir makas enzimi bulunur.",
+              "ar": "يمتلك جسم الإنسان مقصاً أنزيمياً عملاقاً يحطم الجزيئات يمينية التدوير حصراً.",
+              "en": "The human body possesses a giant scissor enzyme that hydrolyzes all dextrorotatory molecules."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Genel kiral makas yanılgısı: Vücutta tüm sağ elli molekülleri yıkan tek bir enzim yoktur; her reseptör ve enzim kendi spesifik cebine göre stereoseçicidir.",
+              "ar": "خطأ المقص الشامل: لا يوجد أنزيم عام يحطم كل مصاوغ يميني؛ بل يمتلك كل مستقبل وإنزيم جيباً خاصاً يحدد انتقائيته الفراغية.",
+              "en": "Universal scissor misconception: There is no universal stereospecific destructive enzyme; stereoselectivity is mediated pocket-by-pocket across unique macromolecular targets."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "ötomer (eutomer)", "arContext": "المصاوغ الفعال (eutomer)" },
+        { "term": "distomer", "arContext": "المصاوغ الأضعف (distomer)" },
+        { "term": "eudismik oran (ER)", "arContext": "النسبة الإيوديزمية (eudismic ratio)" }
+      ],
+      "hints": [
+        {
+          "tr": "İki molekülün hedef reseptör cebindeki 3 boyutlu kilit-anahtar uyumunu düşünün.",
+          "ar": "فكر في نموذج القفل والمفتاح ثلاثي الأبعاد داخل جيب المستقبل المستهدف.",
+          "en": "Consider the 3D lock-and-key complementarity inside the macromolecular binding pocket."
+        },
+        {
+          "tr": "Pfeiffer kuralına göre afinite arttıkça reseptör cebinin kiral seçiciliği aşırı artar.",
+          "ar": "وفق قاعدة Pfeiffer، كلما زادت الألفة زادت الانتقائية الفراغية لجيب المستقبل بشكل هائل.",
+          "en": "By Pfeiffer's rule, higher intrinsic affinity enforces rigorous pocket stereospecificity."
+        },
+        {
+          "tr": "Muskarin nanomolar seviyede rijit 3-nokta teması kurar; genel anestezikler ise hücresel membranlara gevşek ve spesifik olmayan şekilde dağılır.",
+          "ar": "يرتبط المسكارين بتعشيق نانومولي صلب ثلاثي النقاط؛ بينما تتوزع المخدرات العامة برخاوة غير نوعية في الأغشية.",
+          "en": "Muscarine demands tight 3-point stereochemical alignment, whereas volatile anesthetics act via loose, non-specific membrane partitioning."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 26 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "type": "question",
+      "title": {
+        "tr": "Aktif Soru: Distomer Daima Etkisiz Bir Seyirci midir?",
+        "ar": "سؤال تفاعلي: هل المصاوغ الخامل مجرد متفرج عديم الأثر؟",
+        "en": "Active Question: Is the Distomer Always an Inert Bystander?"
+      },
+      "prompt": {
+        "tr": "Kiral bir ilacın düşük afiniteli enantiyomeri (distomer) vücutta yalnızca etkisiz, pasif bir seyirci midir, yoksa bağımsız klinik ve toksikolojik etkilere yol açabilir mi?",
+        "ar": "هل يقتصر دور المصاوغ الأضعف (distomer) في الجسم على كونه متفرجاً خامل الشحنة، أم يمكن أن يحدث تأثيرات سريرية وسمية مستقلة بذاتها؟",
+        "en": "Is the low-affinity enantiomer (distomer) of a chiral drug merely an inert bystander in vivo, or can it exert independent pharmacological and toxicological actions?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": {
+              "tr": "Hayır; distomer hedef dışı reseptörlere bağlanarak bağımsız toksisite oluşturabilir (talidomid, prilokain) veya hedef reseptörde tam zıt antagonist etki gösterebilir (pisenadol).",
+              "ar": "كلا؛ يمكن للـ distomer أن يسبب سمية خطيرة بارتباطه بأهداف أخرى (ثاليدوميد، بريلوكائين) أو يناهض نفس المستقبل (بيسينادول).",
+              "en": "No; distomers can mediate severe off-target toxicity (thalidomide, prilocaine) or act as functional antagonists at the target receptor (picenadol)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika! Distomer biyolojik olarak masum değildir. Hedef reseptörde inaktif olsa bile karaciğerde toksik metabolit üretebilir (prilokain -> o-toluidin), teratojenik etki yapabilir (S-talidomid) veya zıt antagonist olabilir (pisenadol).",
+              "ar": "ممتاز! ليس distomer بريئاً بيولوجياً؛ إذ يمكن أن يتحول لمستقلب سام في الكبد (بريلوكائين)، أو يسبب تشوهاً جنينياً (ثاليدوميد)، أو يعاكس المستقبل كمضاد (بيسينادول).",
+              "en": "Brilliant! Distomers are pharmacologically active xenobiotics; they can generate toxic metabolites (prilocaine -> o-toluidine), induce teratogenesis (S-thalidomide), or act as opposing antagonists (picenadol)."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Evet; distomer tanımı gereği vücutta hiçbir biyomoleküle dokunamaz ve suda hemen buharlaşır.",
+              "ar": "نعم؛ بحكم تعريفه يعجز distomer عن لمس أي جزيء حيوي ويتبخر في الماء فوراً.",
+              "en": "Yes; by definition, distomers cannot interact with any biomolecules and immediately evaporate."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Mutlak atıllık yanılgısı: Distomerler kimyasal olarak aktiftir; diğer enzim ve reseptörlerle etkileşerek ciddi yan etkilere yol açabilir.",
+              "ar": "خطأ الخمول المطلق: جزيئات distomer نشطة كيميائياً وتتفاعل مع أنزيمات ومستقبلات أخرى مسببة سميات خطيرة.",
+              "en": "Absolute inertness misconception: Distomers are chemically identical isomers that interact with other off-target receptors and metabolic enzymes."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Evet; çünkü böbrekler düşük afiniteli izomerleri saniyeler içinde tespit edip yok eder.",
+              "ar": "نعم؛ لأن الكلى ترصد المصاوغات ضعيفة الألفة وتطرحها خلال أجزاء من الثانية.",
+              "en": "Yes; because the kidneys filter and destroy low-affinity enantiomers within microseconds."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Böbrek seçicilik yanılgısı: Glomerüler filtrasyon stereoseçici değildir; molekül ağırlığı ve proteine bağlanmaya bakar.",
+              "ar": "خطأ الانتقائية الكلوية: الترشيح الكبيبي غير انتقائي فراغياً؛ ويعتمد على الوزن الجزيئي والارتباط البروتيني.",
+              "en": "Renal stereoselection misconception: Glomerular filtration is non-stereoselective, driven by molecular size and plasma protein binding."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "distomer toksisitesi", "arContext": "سمية المصاوغ الخامل (distomer toxicity)" },
+        { "term": "hedef dışı etki", "arContext": "التأثير خارج الهدف (off-target effect)" }
+      ],
+      "hints": [
+        {
+          "tr": "Talidomid faciasını ve prilokain kaynaklı methemoglobinemiyi düşünün.",
+          "ar": "تذكر كارثة الثاليدوميد المشوهة وميتهيموغلوبين الدم الناجم عن البريلوكائين.",
+          "en": "Think of the thalidomide phocomelia catastrophe and prilocaine-induced cyanosis."
+        },
+        {
+          "tr": "Bir izomer ana reseptörde zayıf bağlansa bile başka bir enzimin aktif bölgesine mükemmel oturabilir.",
+          "ar": "حتى لو ارتبط المصاوغ بضعف بالمستقبل الرئيسي، فقد يلائم جيب أنزيم آخر بإحكام مسبباً كارثة.",
+          "en": "Even if an isomer binds weakly to the therapeutic receptor, it may fit an off-target enzyme or receptor perfectly."
+        },
+        {
+          "tr": "Distomerler inaktif olabileceği gibi toksik (talidomid), metabolik yük (prilokain) veya hedef reseptörde antagonist (pisenadol) olabilir.",
+          "ar": "قد يكون distomer خاملاً، أو ساماً (ثاليدوميد)، أو مولداً لمستقلب خطير (بريلوكائين)، أو مضاداً معطِلاً (بيسينادول).",
+          "en": "Distomers can manifest as inert ballast, toxic culprits (thalidomide), precursor to toxic metabolites (prilocaine), or opposing antagonists (picenadol)."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 29 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "type": "intuition",
+      "title": {
+        "tr": "Sezgisel Model: Kasa Kilidi vs Bahçe Kapısı Mandalı",
+        "ar": "النموذج الحسي: قفل الخزنة المصرفية مقابل مزلاج الباب",
+        "en": "Intuitive Mental Model: Bank Vault vs Screen Door Latch"
+      },
+      "prompt": {
+        "tr": "Yüksek güvenlikli bir banka kasası milimetrik bir anahtar dişi ister; anahtardaki tek bir kusur kilidi açmaz. Gevşek bir bahçe mandalını ise herhangi bir tel açabilir. Bu model Pfeiffer kuralını nasıl açıklar?",
+        "ar": "يتطلب قفل الخزنة المصرفية تطابقاً ميكرونياً؛ وخطأ واحد يمنع الفتح. بينما يفتح مزلاج الباب الرخو بأي سلك. كيف يفسر هذا النموذج قاعدة Pfeiffer؟",
+        "en": "A high-security bank vault requires microscopic key alignment; a single notch error blocks opening. But a loose garden latch opens with any bent wire. How does this explain Pfeiffer's rule?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "Yüksek afiniteli ilaçlar dar cebi kusursuz doldurmalıdır (enantiyomer hatası affedilmez, ER fırlar); zayıf ilaçlar ise gevşek bağlanır, kiral hataları tolere eder (ER bire yaklaşır).",
+              "ar": "تتطلب الأدوية عالية الألفة تطابقاً ميكرونياً ضيقاً يرفع ER؛ بينما ترتبط الأدوية الضعيفة برخاوة تتسامح مع العيوب الكيرالية مقتربة من 1.",
+              "en": "High-affinity drugs demand strict complementary fit (zero chiral tolerance, ER explodes); low-affinity drugs bind loosely, tolerating stereochemical mismatch (ER -> 1)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir zihinsel model! Carl Pfeiffer 1956'da bunu keşfetmiştir: Pikomolar/nanomolar afiniteye sahip ilaçlar reseptör cebini milimetrik doldurur; distomerdeki tek bir temas kaybı afiniteyi yüzlerce kat düşürür. Mikromolar ilaçlar ise gevşek tutunur ve kiral hatayı tolere eder.",
+              "ar": "نموذج ذهني رائع! أثبت كارل فايفر (1956): تتطلب الأدوية البيكومولية تطابقاً شديد الإحكام؛ وغياب رابطة واحدة في distomer يهوي بالألفة مئات الأضعاف. أما الأدوية الرخوة فتتسامح مع الخطأ الكيرالي.",
+              "en": "Brilliant mental model! Carl Pfeiffer (1956) recognized that high-affinity binding enforces rigid active site complementarity; losing one contact heavily penalizes the distomer. Loose, low-affinity binding easily tolerates inverted chiral centers."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "Banka kasaları pozitif yüklüdür, bahçe kapıları ise negatif elektrik yüküyle çalışır.",
+              "ar": "خزائن البنوك موجبة الشحنة، بينما تعمل بوابات الحدائق بالكهرباء السالبة.",
+              "en": "Bank vaults carry positive static charge, while garden gates operate via negative electricity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Elektrik yükü yanılgısı: Bu bir fiziksel elektrostatik yük meselesi değil, 3 boyutlu kavitelerdeki uzaysal sterik tolerans modelidir.",
+              "ar": "خطأ الشحنة: المسألة لا تتعلق بشحنات كهربائية بل بمرونة التسامح الفراغي ثلاثي الأبعاد في الجيب.",
+              "en": "Charge misconception: This analogy addresses 3D spatial complementarity and steric tolerance, not electrostatic charges."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Gevşek bahçe kapısı ilaç moleküllerini kovalent olarak parçalayan bir nükleofildir.",
+              "ar": "مزلاج الباب الرخو كهرومحب يحطم جزيئات الدواء تساهمياً.",
+              "en": "The loose latch is a reactive nucleophile that covalently cleaves drug ligands."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Reaktif kovalent yanılgı: Model gevşek, spesifik olmayan non-kovalent bağlanmayı simgeler.",
+              "ar": "خطأ التفاعل التساهمي: يمثل المزلاج الارتباط الرخو غير النوعي ضعيف الألفة.",
+              "en": "Covalent misconception: The latch illustrates weak, reversible non-specific binding."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Pfeiffer kuralı", "arContext": "قاعدة Pfeiffer" },
+        { "term": "kiral tolerans", "arContext": "التسامح الكيرالي (chiral tolerance)" }
+      ],
+      "hints": [
+        {
+          "tr": "Banka kasası mikron düzeyinde dar ve rijit bir anahtar yarığına sahiptir.",
+          "ar": "يمتلك قفل الخزنة شقاً دقيقاً ضيقاً لا يتسامح مع أي انحراف.",
+          "en": "A bank vault keyway is rigid and narrow, demanding zero deviation."
+        },
+        {
+          "tr": "Afinite ne kadar yüksekse, ligand reseptör cebine o kadar sıkı ve kusursuz oturmak zorundadır.",
+          "ar": "كلما ارتفعت الألفة، توجب على اللجين الاستقرار بإحكام تام داخل جيب المستقبل.",
+          "en": "The higher the affinity, the more tightly the ligand must complement pocket geometry."
+        },
+        {
+          "tr": "Yüksek afiniteli kilitte tek bir yanlış diş kilidi açtırmaz (ER devasa büyür); gevşek mandalda ise dişlerin yönü fark etmez (ER 1'e yaklaşır).",
+          "ar": "في القفل الدقيق يمنع سن واحد خاطئ الفتح (يرتفع ER هائلاً)؛ بينما لا يؤثر اتجاه الأسنان في المزلاج الرخو (يقترب ER من 1).",
+          "en": "In a high-affinity lock, one misaligned contact ruins binding (huge ER); in a loose pocket, stereochemical flaws are forgiven (ER -> 1)."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 28 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "type": "visual_explanation",
+      "title": {
+        "tr": "Dört Biyolojik Filtre: Enantiyomerlerin Vücuttaki Yolculuğu",
+        "ar": "المرشحات البيولوجية الأربعة: رحلة المصاوغات في الجسم",
+        "en": "Four Biological Filters: Enantiomer In Vivo Journey"
+      },
+      "prompt": {
+        "tr": "Enantiyomerler vücutta 4 kiral filtreyle karşılaşır: LAT-1 taşıyıcısı, albumin plazma proteini, CYP450 enzimleri ve hedef reseptör. LAT-1 taşıyıcısının L-Dopa'yı beyne alıp D-Dopa'yı reddetmesi hangi filtreye örnektir?",
+        "ar": "تواجه المصاوغات 4 مرشحات كيرالية: ناقل LAT-1، ألبومين البلازما، أنزيمات CYP450، والمستقبل. إدخال LAT-1 لـ L-Dopa للدماغ ورفض D-Dopa يمثل أي مرشح؟",
+        "en": "Enantiomers face 4 chiral filters: LAT-1 transporters, albumin binding, CYP450 oxidation, and target receptors. LAT-1 transporting L-Dopa across the BBB while rejecting D-Dopa exemplifies which filter?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "Membran taşıyıcı stereoseçiciliği; taşıyıcı protein kiral bir cep içerir ve yalnızca L-konfigürasyonundaki amino asit iskeletini tanıyarak aktif olarak içeri taşır.",
+              "ar": "انتقائية النواقل الغشائية؛ يمتلك بروتين النقل جيباً كيرالياً يتعرف حصراً على هيئة L للحمض الأميني وينقله فعالاً.",
+              "en": "Membrane transporter stereoselectivity; the carrier protein possesses an asymmetric binding alcove that strictly accepts the L-enantiomer for active transport."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! Slide 24'teki 4 biyolojik filtre: 1) Membran taşıyıcı seçiciliği (LAT-1 L-Dopa'yı taşır, D-Dopa'yı taşımaz), 2) Plazma proteini bağlanması, 3) Metabolik enzimler (CYP2C19 S-heksobarbitali yıkar, R değişmeden kalır), 4) Reseptör stereoseçiciliği.",
+              "ar": "ممتاز! مرشحات السلايد 24: 1) انتقائية النواقل (LAT-1 ينقل L-Dopa ويرفض D-Dopa)، 2) الارتباط بألبومين البلازما، 3) أنزيمات الاستقلاب (CYP2C19 يؤكسد S-hexobarbital)، 4) انتقائية المستقبل.",
+              "en": "Perfect! Slide 24 details the 4 biological chiral filters: 1) Active transporter stereoselection (LAT-1 recognizes L-Dopa, rejecting D-Dopa), 2) Plasma protein binding (albumin/AAG), 3) Metabolic enzymes (CYP2C19 stereoselective oxidation of S-hexobarbital), and 4) Target receptor stereo-docking."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "Plazma proteini filtresi; D-Dopa albümine bağlanarak böbreklerden hızla buharlaşır.",
+              "ar": "مرشح بروتين البلازما؛ يرتبط D-Dopa بالألبومين ليتبخر عبر الكلى فوراً.",
+              "en": "Plasma protein filtration; D-Dopa binds albumin and evaporates through renal tubules."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Buharlaşma yanılgısı: D-Dopa buharlaşmaz; kan-beyin bariyerini geçemediği için periferde kalır ve dekarboksile olur.",
+              "ar": "خطأ التبخر: لا يتبخر D-Dopa بل يعجز عن عبور الحاجز الدماغي الدموي ويتخرب محيطياً.",
+              "en": "Evaporation misconception: D-Dopa cannot cross the blood-brain barrier because LAT-1 stereoselectively rejects it."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "Tüm filtreler aynı anda kovalent bağ kurarak D-Dopa'yı kalıcı plastik bir maddeye çevirir.",
+              "ar": "تشكل كافة المرشحات روابط تساهمية تحول D-Dopa لبلاستيك صلب.",
+              "en": "All filters establish covalent bonds, transmuting D-Dopa into an insoluble polymer."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent polimerleşme yanılgısı: LAT-1 geri dönüşümlü bir aktif taşıyıcıdır; polimerizasyon yapmaz.",
+              "ar": "خطأ البلمرة: LAT-1 ناقل عبر غشائي عكوس ولا يشكل بوليمرات بلاستيكية.",
+              "en": "Polymerization misconception: LAT-1 is a membrane transport protein that operates via non-covalent conformational cycling."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "LAT-1 taşıyıcısı", "arContext": "ناقل LAT-1 للأحماض الأمينية" },
+        { "term": "biyolojik kiral filtreler", "arContext": "المرشحات الحيوية الكيرالية" }
+      ],
+      "hints": [
+        {
+          "tr": "L-Dopa Parkinson tedavisinde kan-beyin bariyerini aşmak zorundadır.",
+          "ar": "يجب أن يعبر L-Dopa الحاجز الدماغي الدموي لعلاج الباركنسون.",
+          "en": "L-Dopa must cross the blood-brain barrier to treat Parkinson's disease."
+        },
+        {
+          "tr": "Beyin damarlarındaki LAT-1 proteini doğal L-amino asitleri içeri alan kiral bir taşıyıcıdır.",
+          "ar": "ناقل LAT-1 في الأوعية الدماغية ناقل كيرالي يدخل أحماض L الأمينية الطبيعية حصراً.",
+          "en": "LAT-1 in cerebral capillary endothelia is a stereoselective transporter recognizing L-configured amino acids."
+        },
+        {
+          "tr": "LAT-1 D-Dopa'yı tanımaz ve geçirmez; bu durum membran taşıyıcı stereoseçiciliğinin en çarpıcı kanıtıdır.",
+          "ar": "يرفض LAT-1 مصاوغ D-Dopa؛ مما يثبت انتقائية النواقل الغشائية الفراغية.",
+          "en": "LAT-1 strictly excludes D-Dopa, demonstrating the first line of in vivo pharmacokinetic chiral filtering."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 24 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "type": "dose_response_curve",
+      "widgetType": "DoseResponseCurve",
+      "widget": {
+        "type": "DoseResponseCurve",
+        "config": {
+          "title": "Pisenadol Enantiyomer Çifti: Agonist ve Antagonist Eğrileri",
+          "prompt": "(+)-Pisenadol agonisti ile (-)-pisenadol antagonistinin eğrilerini karşılaştırın.",
+          "defaultEc50": 10,
+          "defaultEmax": 100,
+          "defaultHillSlope": 1.0,
+          "modes": ["agonist", "competitive_antagonist", "partial_agonist"],
+          "source": {
+            "file": "İlaçlarda  İzomeri.pdf",
+            "page": 35
+          },
+          "explanation": "(+)-Pisenadol mu-opioid reseptörünü tam aktive eden bir ötomerdir; (-)-pisenadol ise aynı cebi bloke eden distomerik kompetitif antagonisttir. Rasemat ise parsiyel agonist profil sergiler."
+        }
+      },
+      "title": {
+        "tr": "İnteraktif Laboratuvar: Pisenadol Enantiyomer Doz-Yanıt Eğrisi",
+        "ar": "مختبر تفاعلي: منحنى الجرعة والاستجابة لمصاوغات البيسينادول",
+        "en": "Interactive Lab: Picenadol Enantiomer Dose-Response Curve"
+      },
+      "prompt": {
+        "tr": "(+)-Pisenadol tam agonist, (-)-pisenadol ise kompetitif antagonisttir. Eğrileri değiştirerek antagonizma modunda sağa kaymayı ve rasematın parsiyel agonist profilini inceleyin.",
+        "ar": "(+)-Picenadol منبه كامل، بينما (-)-picenadol مضاد تنافسي. بدل الأنماط لتلاحظ إزاحة المنحنى لليمين وسلوك الخليط الراسيمي كمنبه جزئي.",
+        "en": "(+)-Picenadol is a full agonist; (-)-picenadol is a competitive antagonist. Toggle modes to observe the rightward EC50 shift and the partial agonist behavior of the racemate."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "title": "Pisenadol Enantiyomer Çifti: Agonist ve Antagonist Eğrileri",
+        "prompt": "(+)-Pisenadol agonisti ile (-)-pisenadol antagonistinin eğrilerini karşılaştırın.",
+        "defaultEc50": 10,
+        "defaultEmax": 100,
+        "defaultHillSlope": 1.0,
+        "modes": ["agonist", "competitive_antagonist", "partial_agonist"],
+        "source": {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 35
+        },
+        "explanation": "(+)-Pisenadol mu-opioid reseptörünü tam aktive eden bir ötomerdir; (-)-pisenadol ise aynı cebi bloke eden distomerik kompetitif antagonisttir. Rasemat ise parsiyel agonist profil sergiler."
+      },
+      "technicalTerms": [
+        { "term": "enantiyomerik antagonizma", "arContext": "المناهضة بين المصاوغات (enantiomeric antagonism)" },
+        { "term": "sağa kayma (surmountable shift)", "arContext": "إزاحة المنحنى لليمين" }
+      ],
+      "hints": [
+        {
+          "tr": "(+)-Pisenadol morfin benzeri güçlü bir analjezik agonisttir (Emax = %100).",
+          "ar": "(+)-Picenadol منبه مسكن قوي مشابه للمورفين (Emax = 100%).",
+          "en": "(+)-Picenadol acts as a full opioid analgesic agonist (Emax = 100%)."
+        },
+        {
+          "tr": "(-)-Pisenadol nalokson benzeri bir antagonisttir; agonist eğrisini sağa kaydırır.",
+          "ar": "(-)-Picenadol مضاد منافس شبيه بالنالوكسون؛ يزيح منحنى الجرعة لليمين.",
+          "en": "(-)-Picenadol acts as a competitive antagonist, shifting the agonist curve rightward."
+        },
+        {
+          "tr": "İki izomer birlikte verildiğinde (rasemat), antagonist ötomeri frenler ve ortaya parsiyel agonist bir profil çıkar.",
+          "ar": "عند إعطاء المصاوغين معاً كخليط راسيمي، يكبح المضاد المنبه ليظهر سلوك المنبه الجزئي.",
+          "en": "In the racemate, mutual competition produces an intermediate partial agonist profile."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 35 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "type": "guided_discovery",
+      "title": {
+        "tr": "Rehberli Keşif: Epinin Kanıtı ve Easson-Stedman Hipotezi",
+        "ar": "استكشاف موجه: برهان الإيبينين وفرضية Easson-Stedman",
+        "en": "Guided Discovery: The Epinine Proof & Easson-Stedman Model"
+      },
+      "prompt": {
+        "tr": "R(-)-adrenalin 3 noktadan kenetlenir (ER = 45); S(+)-adrenalinde beta-OH çözücüye bakar (2 nokta). beta-OH grubu hiç bulunmayan deoksiadrenalin (epinin) test edildiğinde afinitesi neden tam olarak S(+)-adrenalinle aynı çıkar?",
+        "ar": "يرتبط R(-)-adrenalin بـ 3 نقاط (ER = 45)، وفي S(+)-adrenalin تتجه beta-OH للخارج (نقطتان). لماذا تتطابق ألفة epinine المجرد من beta-OH تماماً مع S(+)-adrenalin؟",
+        "en": "R(-)-epinephrine docks via 3 points (ER = 45); S(+)-epinephrine's beta-OH faces solvent (2 points). When epinine (lacking beta-OH entirely) is tested, why does its affinity exactly equal S(+)-epinephrine?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": {
+              "tr": "Easson-Stedman hipotezini doğrular: S(+)-adrenalinin beta-OH grubu bağlanmaya hiçbir enerji katkısı sağlamaz (0 kcal/mol); molekül tıpkı akiral epinin gibi sadece 2 temas noktasıyla tutunur.",
+              "ar": "يثبت فرضية Easson-Stedman: لا تقدم beta-OH في S(+)-adrenalin أي طاقة ربط (0 kcal/mol)، فيرتبط بنقطتين تماماً كالإيبينين غير الكيرالي.",
+              "en": "It proves the Easson-Stedman hypothesis: S(+)-epinephrine's misaligned beta-OH contributes 0 kcal/mol binding energy, engaging the exact same 2 contact points as achiral epinine."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir bilimsel çıkarım! Slide 25'te vurgulandığı gibi: R(-)-adrenalin 3 noktadan (katekol, amin, beta-OH) tam kenetlenir. S(+)-adrenalinde ise kiral konfigürasyon ters olduğu için beta-OH çözücüye bakar ve bağlanamaz. Epinin (deoksiadrenalin) beta-OH taşımamasına rağmen S-adrenalinle aynı güçtedir; çünkü ikisi de reseptöre yalnızca 2 noktadan tutunur!",
+              "ar": "استنتاج علمي باهر! يرسو R(-)-adrenalin بثلاث نقاط كاملة؛ بينما في S(+)-adrenalin تتجه beta-OH للمذيب فتنعدم مساهمتها. ويمتلك epinine نفس القوة تماماً لأنه يرتبط بنقطتين فقط، مما يثبت صحة نموذج Easson-Stedman الحاسم.",
+              "en": "Flawless deduction! Slide 25 highlights this classic benchmark: R(-)-epinephrine engages 3 points. In S(+)-epinephrine, the inverted beta-OH points into bulk solvent, providing 0 kcal/mol. Deoxyadrenaline (epinine) lacks beta-OH entirely and displays identical affinity, proving 2-point attachment."
+            }
+          },
+          {
+            "id": "opt-6b",
+            "text": {
+              "tr": "Epinin vücutta kendiliğinden R(-)-adrenalin hormonuna dönüşerek kalbi aşırı uyarır.",
+              "ar": "يتحول الإيبينين في الجسم تلقائياً إلى هرمون R(-)-adrenalin منبهاً القلب.",
+              "en": "Epinine spontaneously synthesizes a chiral beta-OH in plasma, becoming R(-)-adrenaline."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kendiliğinden kiral sentez yanılgısı: Epinin akiral bir feniletilamindir; in vivo ortamda kendiliğinden şiral hidroksillenmez.",
+              "ar": "خطأ الاصطناع التلقائي: الإيبينين مركب غير كيرالي ولا يكتسب هيدروكسيلاً فراغياً في البلازما تلقائياً.",
+              "en": "Spontaneous synthesis misconception: Epinine is an achiral molecule; it does not spontaneously hydroxylate stereospecifically in plasma."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "S(+)-adrenalin ve epinin reseptöre hiç bağlanamaz; yalnızca plasebo etkisi yaratırlar.",
+              "ar": "يعجز كلاهما عن الارتباط بالمستقبل نهائياً ويقتصران على تأثير الغفل (بلاسيبو).",
+              "en": "Neither S(+)-epinephrine nor epinine binds the receptor, producing only placebo effects."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Afinite sıfır yanılgısı: Her iki molekül de mikromolar düzeyde gerçek 2 noktalı adrenerjik agonisttir; afiniteleri sıfır değildir.",
+              "ar": "خطأ انعدام الألفة: كلاهما يرتبط بألفة ميكرومولية حقيقية بنقطتين؛ والألفة ليست صفراً.",
+              "en": "Zero affinity misconception: Both molecules bind with genuine micromolar affinity via 2 contact points."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Easson-Stedman 3-nokta hipotezi", "arContext": "فرضية Easson-Stedman ثلاثية النقاط" },
+        { "term": "epinin (deoksiadrenalin)", "arContext": "إيبينين (منزوع الأكسجين)" }
+      ],
+      "hints": [
+        {
+          "tr": "R(-)-adrenalinde 3 temas noktası vardır: Katekol, Sekonder Amin ve Beta-OH.",
+          "ar": "يمتلك R(-)-adrenalin ثلاث نقاط تماس: الكاتيكول، الأمين، و beta-OH.",
+          "en": "R(-)-epinephrine makes 3 contacts: catechol ring, secondary amine, and beta-OH."
+        },
+        {
+          "tr": "S(+)-adrenalin katekol ve amini bağlar; ancak beta-OH cebin dışına bakar (2 temas).",
+          "ar": "يربط S(+)-adrenalin الكاتيكول والأمين؛ لكن beta-OH تتجه للخارج (تماس بنقطتين).",
+          "en": "S(+)-epinephrine docks catechol and amine; its beta-OH faces solvent (2 contacts)."
+        },
+        {
+          "tr": "Epininde beta-OH hiç yoktur; o da katekol ve amin olmak üzere tam 2 noktadan bağlanır. 2 temas = 2 temas!",
+          "ar": "يخلو الإيبينين من beta-OH فيرتبط بنقطتين أيضاً؛ تماس بنقطتين = تماس بنقطتين!",
+          "en": "Epinine completely lacks beta-OH, making the exact same 2 contacts as S(+)-epinephrine: 2 contacts = 2 contacts!"
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "type": "formal_explanation",
+      "title": {
+        "tr": "Formal Termodinamik: Pfeiffer Kuralı ve Gibbs Enerji Uçurumu",
+        "ar": "الديناميكا الحرارية المنهجية: قاعدة Pfeiffer وفجوة طاقة غيبس",
+        "en": "Formal Thermodynamics: Pfeiffer's Rule & Gibbs Energy Gap"
+      },
+      "prompt": {
+        "tr": "Vücut sıcaklığında (310 K) her 1.42 kcal/mol (5.94 kJ/mol) enerji farkı afiniteyi 10 kat artırır. (+)-Muskarinin 700 katlık eudismik oranı (ER = 700) ötomer ile distomer arasında kaç kcal/mol'lük serbest enerji farkına karşılık gelir?",
+        "ar": "عند 310 K، يمنح كل 1.42 kcal/mol فارقاً في الألفة بعشرة أضعاف. كم يبلغ فارق طاقة غيبس الحرة المقابل لنسبة إيوديزمية ER = 700 في (+)-muscarine؟",
+        "en": "At 310 K, every 1.42 kcal/mol free energy gap scales affinity by 10-fold. What Gibbs free energy difference (ΔΔG°) accounts for the massive 700-fold eudismic ratio (ER = 700) of (+)-muscarine?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": {
+              "tr": "Yaklaşık -4.04 kcal/mol (-16.9 kJ/mol); log10(700) = 2.845 ve 1.42 x 2.845 ≈ 4.04 kcal/mol (mükemmel konumlanmış iki hidrojen bağına eşdeğer enerji).",
+              "ar": "حوالي -4.04 kcal/mol (-16.9 kJ/mol)؛ حيث log10(700) = 2.845 و 1.42 × 2.845 ≈ 4.04 kcal/mol (ما يعادل رابطتين هيدروجينيتين متقنتين).",
+              "en": "Approximately -4.04 kcal/mol (-16.9 kJ/mol); log10(700) = 2.845 and 1.42 x 2.845 ≈ 4.04 kcal/mol, equating to two optimal hydrogen bonds."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bir termodinamik hesap! ΔΔG° = 2.303 RT log10(ER). 310 K'de 2.303 RT ≈ 1.42 kcal/mol. log10(700) ≈ 2.845. ΔΔG° = 1.42 x 2.845 ≈ 4.04 kcal/mol. Bu enerji iki güçlü hidrojen bağına veya bir iyonik bağa denktir!",
+              "ar": "حساب ديناميكي حراري بارع! ΔΔG° = 2.303 RT log10(ER). عند 310 K: 1.42 × log10(700) = 1.42 × 2.845 ≈ 4.04 kcal/mol؛ أي ما يوازي رابطتين هيدروجينيتين نموذجيتين!",
+              "en": "Superb thermodynamic rigor! ΔΔG° = 2.303 RT log10(ER). At 310 K, 1.42 x log10(700) = 1.42 x 2.845 ≈ 4.04 kcal/mol, representing the free energy contribution of two cooperative hydrogen bonds."
+            }
+          },
+          {
+            "id": "opt-7b",
+            "text": {
+              "tr": "Tam olarak -700 kcal/mol; serbest enerji doğrudan ER katsayısına eşittir.",
+              "ar": "-700 kcal/mol تماماً؛ فالطاقة الحرة تتساوى حسابياً مع معامل ER.",
+              "en": "Exactly -700 kcal/mol; free energy scales directly 1:1 with the numerical ER value."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Doğrudan eşitlik yanılgısı: Enerji lineer değil logaritmiktir: ΔΔG° = 2.303 RT log10(ER).",
+              "ar": "خطأ التناسب الخطي: ترتبط طاقة غيبس لوغاريتمياً مع نسبة الألفة وليس تناسباً خطياً بسيطاً.",
+              "en": "Linear equivalence misconception: Gibbs free energy scales logarithmically with equilibrium binding ratios: ΔΔG° = 2.303 RT log10(ER)."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "Yalnızca -0.1 kcal/mol; kiral farklar termodinamik olarak önemsizdir.",
+              "ar": "-0.1 kcal/mol فقط؛ فالفروق الكيرالية مهملة ديناميكياً حرارياً.",
+              "en": "Merely -0.1 kcal/mol; chiral differences are thermodynamically trivial."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Önemsizlik yanılgısı: 4 kcal/mol biyolojik sistemlerde devasa bir farktır ve afiniteyi 700 kat çarpar.",
+              "ar": "خطأ إهمال الفارق: طاقة 4 kcal/mol هائلة بيولوجياً وتضاعف الألفة بـ 700 ضعف.",
+              "en": "Triviality misconception: A 4 kcal/mol free energy gap in biological media translates into a massive 700-fold affinity divergence."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Gibbs serbest enerji farkı (ΔΔG°)", "arContext": "فارق طاقة غيبس الحرة (ΔΔG°)" },
+        { "term": "logaritmik afinite ölçeği", "arContext": "المقياس اللوغاريتمي للألفة" }
+      ],
+      "hints": [
+        {
+          "tr": "Termodinamik formülü hatırlayın: ΔΔG° = 2.303 RT log10(ER).",
+          "ar": "تذكر معادلة غيبس: ΔΔG° = 2.303 RT log10(ER).",
+          "en": "Recall the thermodynamic relationship: ΔΔG° = 2.303 RT log10(ER)."
+        },
+        {
+          "tr": "310 K'de 2.303 RT ≈ 1.42 kcal/mol'dür. log10(700) = log10(7) + log10(100) = 0.845 + 2 = 2.845.",
+          "ar": "عند 310 K يكون 2.303 RT ≈ 1.42 kcal/mol. و log10(700) = 2.845.",
+          "en": "At 310 K, 2.303 RT ≈ 1.42 kcal/mol. Evaluate log10(700) = 2.845."
+        },
+        {
+          "tr": "1.42 kcal/mol'ü 2.845 ile çarparak yaklaşık 4.04 kcal/mol bulursunuz.",
+          "ar": "اضرب 1.42 في 2.845 لتحصل على حوالي 4.04 kcal/mol.",
+          "en": "Multiply 1.42 by 2.845 to obtain approximately 4.04 kcal/mol."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 28 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "type": "concept_check",
+      "title": {
+        "tr": "Kavram Kontrolü: İki İlacın Pfeiffer Analizi",
+        "ar": "فحص المفاهيم: تحليل دوائين وفق قاعدة Pfeiffer",
+        "en": "Concept Check: Two-Drug Pfeiffer Eudismic Audit"
+      },
+      "prompt": {
+        "tr": "İlaç X hedef reseptörüne Kd = 0.05 nM (pikomolar) ile bağlanır. İlaç Y ise aynı reseptöre Kd = 20 μM (mikromolar) ile bağlanır. Pfeiffer kuralına göre hangisinin eudismik oranı (ER) devasa büyüktür?",
+        "ar": "يرتبط الدواء X بمستقبله بألفة Kd = 0.05 nM (بيكومولار)، بينما يرتبط الدواء Y بألفة Kd = 20 μM (ميكرومولار). وفق قاعدة Pfeiffer، أي الدوائين يملك نسبة ER هائلة؟",
+        "en": "Drug X binds its target with Kd = 0.05 nM (picomolar affinity). Drug Y binds the same receptor with Kd = 20 μM. According to Pfeiffer's rule, which candidate will display a massive eudismic ratio?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "İlaç X; pikomolar bağlanma reseptör cebine mikron düzeyinde kusursuz 3D komplementerlik gerektirir, distomerin tek bir eksik teması afiniteyi 500-1000 kat düşürür.",
+              "ar": "الدواء X؛ تتطلب الألفة البيكومولية تطابقاً فراغياً ثلاثي الأبعاد فائق الإحكام، وغياب رابطة واحدة في distomer يخفض الألفة مئات الأضعاف.",
+              "en": "Drug X; picomolar binding demands extreme 3D steric complementarity, meaning a single misaligned contact in the distomer penalizes affinity 500- to 1000-fold."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Pfeiffer kuralı gereğince: Afinite ne kadar yüksekse (doz ne kadar düşükse), iki enantiyomer arasındaki güç farkı o derece devasadır. İlaç X (0.05 nM) enantiyomer kusurlarını affetmez; İlaç Y (20 μM) ise gevşek bağlanır ve ER ~ 1-2 civarında kalır.",
+              "ar": "صحيح! وفق قاعدة Pfeiffer: كلما ارتفعت الألفة، اتسعت فجوة القوة بين المصاوغين. لا يتسامح الدواء X (0.05 nM) مع أي خلل؛ بينما يرتبط Y (20 μM) برخاوة وتتقارب مصاوغاته.",
+              "en": "Correct! Pfeiffer's rule dictates that sub-nanomolar ligands display immense chiral discrimination because the binding pocket demands near-flawless 3D contact network alignment."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "İlaç Y; mikromolar ilaçlar yüksek dozda verildiği için enantiyomerler arası fark daha net görülür.",
+              "ar": "الدواء Y؛ لأن الجرعات العالية للمركبات الميكرومولية تضخم الفارق بين المصاوغات.",
+              "en": "Drug Y; micromolar drugs require high therapeutic doses, magnifying the apparent difference."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Doz yanılgısı: Yüksek doz gevşek bağlanmayı gösterir; gevşek cepler kiral kusurları tolere eder ve ER 1'e yaklaşır.",
+              "ar": "خطأ الجرعة: تعكس الجرعات العالية ارتباطاً رخواً يتسامح مع عيوب الكيرالية؛ فتهبط نسبة ER مقتربة من الواحد.",
+              "en": "Dose misconception: High doses signify loose, non-discriminating binding pockets where chiral inversions are readily accommodated (ER -> 1)."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Her ikisi de tamamen aynı ER değerine sahiptir; Pfeiffer kuralı sadece antibiyotiklerde geçerlidir.",
+              "ar": "كلاهما يمتلك نفس ER تماماً؛ فقاعدة Pfeiffer تنطبق على المضادات الحيوية حصراً.",
+              "en": "Both possess identical ER values; Pfeiffer's rule applies exclusively to antimicrobial agents."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kural sınırlaması yanılgısı: Pfeiffer kuralı tüm reseptör-ligand sistemleri için evrensel bir biyofiziksel prensiptir.",
+              "ar": "خطأ حصر القاعدة: قاعدة Pfeiffer مبدأ بيوفيزيائي شامل ينطبق على كافة أجهزة ومستقبلات الجسم.",
+              "en": "Class limitation misconception: Pfeiffer's rule is a universal biophysical relationship across all receptor-ligand interactions."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "pikomolar afinite", "arContext": "ألفة بيكومولية" },
+        { "term": "reseptör sterik kısıtlaması", "arContext": "الإحكام الفراغي للمستقبل" }
+      ],
+      "hints": [
+        {
+          "tr": "0.05 nM ile 20 μM (20000 nM) arasında 400.000 katlık bir afinite farkı vardır.",
+          "ar": "الفارق بين 0.05 nM و 20 μM (أي 20000 nM) يصل إلى 400,000 ضعف في الألفة.",
+          "en": "There is a 400,000-fold affinity gap between 0.05 nM and 20 μM."
+        },
+        {
+          "tr": "Pfeiffer kuralını anımsayın: Afinite arttıkça Eudismik Oran (ER) katlanarak büyür.",
+          "ar": "تذكر قاعدة Pfeiffer: كلما زادت الألفة تضاعفت النسبة الإيوديزمية ER أسياً.",
+          "en": "Remember Pfeiffer's rule: higher baseline affinity drives exponentially higher eudismic ratios."
+        },
+        {
+          "tr": "İlaç X'in reseptör cebi kusursuz uyum ister; distomer bir temas kaybederse afinite çöker (ER > 500). İlaç Y'de ise ER ~ 1'e yakındır.",
+          "ar": "يتطلب جيب X تطابقاً مثالياً يرفع ER لأكثر من 500؛ بينما يقترب ER للدواء Y من 1.",
+          "en": "Drug X's pocket enforces rigorous fit (ER > 500); Drug Y binds loosely with near-equal enantiomeric potency (ER -> 1)."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 28 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "type": "clinical_vignette",
+      "title": {
+        "tr": "Klinik Vaka: Prilokain Distomeri ve Methemoglobinemi Toksisitesi",
+        "ar": "حالة سريرية: المصاوغ السام للبريلوكائين وميتهيموغلوبين الدم",
+        "en": "Clinical Vignette: Prilocaine Distomer & Methemoglobinemia Toxicity"
+      },
+      "prompt": {
+        "tr": "Rasemik prilokain ile lokal anestezi uygulanan hastada siyanoz gelişir. Toksisite araştırmasında S(+) ötomerinin güvenli anestezik olduğu, ancak R(-) distomerinin methemoglobinemiye yol açtığı saptanır. Hangi metabolik mekanizma suçludur?",
+        "ar": "أصيب مريض بالزرقة ونقص الأكسجة بعد تخدير موضعي بـ prilocaine الراسيمي. أثبتت الفحوصات أمان S(+) بينما سبب R(-) ميتهيموغلوبين الدم. ما الآلية الاستقلابية المسؤولة؟",
+        "en": "Following regional anesthesia with racemic prilocaine, a patient develops cyanosis. Analysis reveals S(+)-prilocaine is a safe local anesthetic, but R(-)-distomer triggers methemoglobinemia. What metabolic mechanism is responsible?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": {
+              "tr": "R(-) distomeri karaciğerde amido-hidrolaz ile stereoselektif hidrolize uğrayarak o-toluidin oluşturur; bu metabolit hemoglobindeki Fe2+'yi Fe3+'e oksitleyerek oksijen taşınmasını felç eder.",
+              "ar": "يتحلل المصاوغ R(-) كبدياً بأنزيم أميدو-هيدرولاز انتقائياً محرراً o-toluidine؛ الذي يؤكسد حديد الهيموغلوبين من Fe2+ إلى Fe3+ شالاً نقل الأكسجين.",
+              "en": "R(-)-distomer undergoes stereoselective hepatic amide hydrolysis to o-toluidine, which oxidizes hemoglobin Fe2+ to Fe3+, paralyzing oxygen transport."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle doğru! Slide 32'deki klasik vaka: S(+)-prilokain güvenli bir anesteziktir. Distomer R(-)-prilokain ise hepatik amidazlarca selektif hidroliz edilir ve o-toluidin açığa çıkar. Bu aromatik amin hemoglobini methemoglobine oksitleyerek doku hipoksisine yol açar.",
+              "ar": "صحيح تماماً! حالة السلايد 32 الكلاسيكية: S(+)-prilocaine مخدر آمن. بينما يتحلل R(-) انتقائياً في الكبد ليعطي o-toluidine الذي يؤكسد حديد الهيموغلوبين معطلاً نقل الأكسجين ومسبباً الزرقة.",
+              "en": "Spot on! Slide 32 details this landmark case: S(+)-prilocaine is therapeutic. Distomer R(-)-prilocaine is stereoselectively cleaved by hepatic amidases into o-toluidine, which oxidizes Fe2+ to Fe3+, causing life-threatening methemoglobinemia."
+            }
+          },
+          {
+            "id": "opt-9b",
+            "text": {
+              "tr": "S(+) ötomeri kandaki alyuvarları kovalent olarak parçalayıp serbest demir salar.",
+              "ar": "يحطم المصاوغ S(+) كريات الدم الحمراء تساهمياً محرراً الحديد الحر.",
+              "en": "S(+)-eutomer covalently lyses red blood cells to release uncomplexed iron."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Ötomer suçlama yanılgısı: S(+) izomeri güvenli ve etkindir; toksisite distomerin stereoselektif metabolitinden doğar.",
+              "ar": "خطأ اتهام المصاوغ الفعال: المصاوغ S(+) آمن تماماً، والسمية تنشأ حصراً من مستقلب المصاوغ الخامل R(-).",
+              "en": "Blaming eutomer misconception: S(+)-prilocaine is safe and non-toxic; methemoglobinemia is driven exclusively by the metabolite of distomer R(-)-prilocaine."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "Prilokain akciğerlerdeki oksijen gazını emerek nitrojen gazına çevirir.",
+              "ar": "يمتص البريلوكائين غاز الأكسجين الرئوي محولاً إياه إلى غاز النيتروجين.",
+              "en": "Prilocaine absorbs pulmonary oxygen gas and chemically transmutes it into nitrogen."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Gaz dönüşüm yanılgısı: Lokal anestezikler gaz transmutasyonu yapmaz; mekanizma eritrosit içi demir oksidasyonudur.",
+              "ar": "خطأ تحول الغاز: المخدرات الموضعية لا تحول الغازات؛ بل تؤكسد مستقلباتها حديد الهيموغلوبين كيميائياً.",
+              "en": "Gas transmutation misconception: Local anesthetics do not transmute respiratory gases; toxicity is driven by intraerythrocytic iron oxidation."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "methemoglobinemi", "arContext": "ميتهيموغلوبين الدم (methemoglobinemia)" },
+        { "term": "o-toluidin metaboliti", "arContext": "مستقلب أورثو-تولويدين" }
+      ],
+      "hints": [
+        {
+          "tr": "Methemoglobinemi kanda Fe2+'nin Fe3+'e dönüşerek oksijen bağlayamaması durumudur.",
+          "ar": "ميتهيموغلوبين الدم هو أكسدة حديد الهيموغلوبين من Fe2+ إلى Fe3+ مما يمنع حمل الأكسجين.",
+          "en": "Methemoglobinemia occurs when ferrous Fe2+ oxidizes to ferric Fe3+, precluding O2 transport."
+        },
+        {
+          "tr": "Karaciğerdeki amidazlar R(-)-prilokaini parçalayarak aromatik o-toluidin açığa çıkarır.",
+          "ar": "تحلل أنزيمات الكبد R(-)-prilocaine محررة مركب أورثو-تولويدين العطري.",
+          "en": "Hepatic amidases selectively hydrolyze R(-)-prilocaine to liberate the toxic arylamine o-toluidine."
+        },
+        {
+          "tr": "R(-) distomerinin bu stereoselektif hidrolizi toksisite kaynağıdır; S(+) izomeri bu metaboliti vermez.",
+          "ar": "هذه الحلمهة الانتقائية لـ R(-) هي مصدر السمية؛ بينما لا ينتج المصاوغ S(+) هذا المستقلب المؤكسد.",
+          "en": "Stereoselective hydrolysis of the R(-)-distomer generates o-toluidine; S(+)-prilocaine does not trigger this toxic pathway."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 32 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "type": "retrieval",
+      "title": {
+        "tr": "Aralıklı Hatırlama: Ketamin ve Esketamin Ayrımı",
+        "ar": "استرجاع متباعد: التمييز الفارماكولوجي بين الكيتامين والإسكيتامين",
+        "en": "Spaced Retrieval: Ketamine vs Esketamine Divergence"
+      },
+      "prompt": {
+        "tr": "Genel anestezik ketamin rasemat olarak kullanıldığında hastalarda postoperatif disfori ve halüsinasyonlar görülür. Saf S(+)-ketamin (Esketamin) geliştirildiğinde klinik tablo nasıl değişir? Distomerin rolü nedir?",
+        "ar": "يسبب كيتامين الراسيمي هلوسات واضطراب ما بعد الجراحة. عند تطوير S(+)-ketamine (Esketamine) النقي، كيف يتغير الأداء السريري؟ وما دور distomer؟",
+        "en": "Racemic ketamine causes emergence delirium, dysphoria, and hallucinations. When pure S(+)-ketamine (Esketamine) is administered, how does the clinical profile change? What was the distomer's contribution?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "S(+)-ötomer 3-4 kat daha güçlü anestezik ve antidepresandır; psikotomimetik halüsinasyon ve kabuslardan ise distomer olan R(-)-ketamin sorumludur.",
+              "ar": "يمتلك S(+) قوة تخدير ومضادة للاكتئاب أعلى بـ 3-4 أضعاف؛ بينما يتحمل المصاوغ R(-) مسؤولية الهلوسة والاضطراب النفسي.",
+              "en": "S(+)-eutomer is 3-4x more potent as an anesthetic and rapid antidepressant; distomer R(-)-ketamine is responsible for dysphoria and emergence delirium."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle doğru! Slide 35'te açıklandığı üzere: Esketamin [S(+)-ketamin] NMDA reseptöründe PCP cebini güçlü bloke ederek 3-4 kat yüksek anestezik/antidepresan etki sunar. R(-)-ketamin distomeri ise ajitasyon, disfori ve kabusların ana kaynağıdır.",
+              "ar": "صحيح تماماً! وفق السلايد 35: Esketamin [S(+)] أقوى بـ 3-4 أضعاف في التخدير ومكافحة الاكتئاب السريع. بينما يسبب distomer [R(-)] الكوابيس والاضطراب النفسي.",
+              "en": "Spot on! Slide 35 details that S(+)-ketamine (Esketamine) is 3-4x more potent at NMDA receptors, while distomer R(-)-ketamine drives post-operative emergence delirium, nightmares, and dysphoria."
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "Esketamin hastanın hafızasını tamamen silerek hastaneyi unutturur.",
+              "ar": "يمحو الإسكيتامين ذاكرة المريض بالكامل فينسى دخوله المستشفى.",
+              "en": "Esketamine permanently erases patient long-term memory, inducing complete amnesia."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kalıcı amnezi yanılgısı: Esketamin güvenli bir NMDA reseptör blokeridir; kalıcı hafıza silinmesi yapmaz.",
+              "ar": "خطأ فقدان الذاكرة الدائم: الإسكيتامين دواء تخديري نوعي ولا يسبب محواً دائماً للذاكرة طويلة الأمد.",
+              "en": "Permanent amnesia misconception: Esketamine is a safe, reversible NMDA antagonist that produces anesthesia without permanent retrograde amnesia."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Her iki enantiyomer de eşit güçte halüsinasyon yapar; ayrıştırma hiçbir fayda sağlamaz.",
+              "ar": "يسبب كلا المصاوغين الهلوسة بنفس الشدة تماماً؛ وفصلهما عديم الفائدة.",
+              "en": "Both enantiomers induce identical hallucinations; chiral switching offers zero benefit."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Eşit psikoz yanılgısı: Halüsinatif distomer R(-) izomeridir; saf S(+) kullanımı psikotomimetik yan etkileri dramatik biçimde azaltır.",
+              "ar": "خطأ التماثل النفسي: المصاوغ R(-) هو المسؤول الأول عن الهلوسات؛ وعزل S(+) النقي يقلل الآثار النفسية بشكل ملحوظ.",
+              "en": "Equal psychosis misconception: Emergence dysphoria is predominantly driven by the R(-)-distomer; isolating S(+)-ketamine significantly refines tolerability."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "esketamin [S(+)-ketamin]", "arContext": "إسكيتامين [S(+)]" },
+        { "term": "NMDA reseptör blokajı", "arContext": "إحصار مستقبلات NMDA" }
+      ],
+      "hints": [
+        {
+          "tr": "Ketamin disosiyatif bir anesteziktir ve NMDA reseptörlerini bloke eder.",
+          "ar": "الكيتامين مخدر فصامي يثبط مستقبلات NMDA في الدماغ.",
+          "en": "Ketamine is a dissociative anesthetic targeting the NMDA receptor channel."
+        },
+        {
+          "tr": "S(+) izomeri arzu edilen güçlü anestezik ve hızlı etkili antidepresandır.",
+          "ar": "المصاوغ S(+) هو المخدر القوي ومضاد الاكتئاب السريع المرغوب.",
+          "en": "The S(+)-isomer is the potent anesthetic and rapid-acting antidepressant eutomer."
+        },
+        {
+          "tr": "R(-) izomeri kabus, dezoryantasyon ve halüsinasyonlara yol açan distomerdir; kiral ayırma bu yan etkileri azaltır.",
+          "ar": "المصاوغ R(-) هو المسؤول عن الكوابيس والهلوسات؛ والفصل الكيرالي يقلل هذه المضاعفات.",
+          "en": "The R(-)-isomer is the distomer responsible for delirium and hallucinations; chiral purification refines patient recovery."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 35 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "type": "connection",
+      "title": {
+        "tr": "Bağlantı: Reseptör Stereoseçiciliği ve Allosterik Modülasyon",
+        "ar": "ربط المفاهيم: الانتقائية الفراغية والتشكيل الخيفي للمستقبلات",
+        "en": "Cross-Topic Bridge: Target Stereoselectivity & Allosteric Tuning"
+      },
+      "prompt": {
+        "tr": "Pfeiffer kuralı ve Easson-Stedman 3-nokta bağlanması, farmakolojideki ters agonist (inverse agonist) ve allosterik modülatörlerin stereoseçiciliğini nasıl aydınlatır? Gelecek farmakoloji modülleriyle bağlantıyı kurun:",
+        "ar": "كيف تضيء قاعدة Pfeiffer ونموذج Easson-Stedman الانتقائية الفراغية للمنبهات العكسية والمعدلات الخيفية؟ اربط بموديولات الفارماكولوجيا القادمة:",
+        "en": "How do Pfeiffer's rule and Easson-Stedman 3-point attachment illuminate the stereoselective design of inverse agonists and allosteric modulators? Connect to upcoming Pharmacology modules:"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "Reseptörün aktif ve inaktif konformasyonları farklı 3D cepler sunar; ötomer yalnızca hedef konformasyonu stabilize eden 3 noktayı kilitlerken, distomer ters konformasyona oturabilir veya bağlanamaz.",
+              "ar": "توفر هيئات المستقبل النشطة وغير النشطة جيوباً فراغية مختلفة؛ يقفل eutomer النقاط الثلاث للهيئة المستهدفة بينما يرسو distomer في الهيئة المعاكسة أو يفشل بالارتباط.",
+              "en": "Active and inactive receptor states expose distinct 3D pockets; the eutomer satisfies 3-point contacts on the desired state, while distomers fail to bind or stabilize opposing states."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz bağlantı! Reseptörler dinamik proteinlerdir. Aktif durum (Ra) ile inaktif durum (Ri) farklı 3 boyutlu kaviteler sunar. Easson-Stedman modeli gereğince ötomer tek bir durumu 3 noktadan kilitlerken, distomer ters durumu stabilize ederek ters agonist veya nötr antagonist olabilir.",
+              "ar": "ربط استثنائي! المستقبلات بروتينات ديناميكية. تقدم الهيئة النشطة وغير النشطة جيوباً فراغية متمايزة. يقفل eutomer هيئة واحدة بثلاث نقاط، بينما قد يثبت distomer الهيئة المعاكسة كمنبه عكسي.",
+              "en": "Outstanding bridge! GPCRs equilibrate between active (Ra) and inactive (Ri) states with distinct 3D pockets. The eutomer stereoselectively locks 3 contacts on Ra (agonist) or Ri (inverse agonist), while the distomer may lack contacts or stabilize the opposing state."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Ters agonistler reseptör proteininin amino asit dizilimini genetik olarak mutasyona uğratır.",
+              "ar": "تحدث المنبهات العكسية طفرات جينية في تسلسل الأحماض الأمينية للمستقبل.",
+              "en": "Inverse agonists genetically mutate the primary amino acid sequence of the receptor."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Genetik mutasyon yanılgısı: Ligandlar proteini mutasyona uğratmaz; mevcut uzaysal konformasyonel dengeleri (Ri vs Ra) kaydırır.",
+              "ar": "خطأ الطفرة الجينية: لا تعدل الأدوية الجينات بل تغير التوازن التشكلي الفراغي للمستقبلات.",
+              "en": "Genetic mutation misconception: Pharmacological ligands modulate existing conformational equilibria, not host genetic sequences."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Allosterik modülatörlerde kiralite tamamen önemsizdir; tüm enantiyomerler eşit etki eder.",
+              "ar": "الكيرالية عديمة الأهمية في المعدلات الخيفية وتعمل كافة المصاوغات بنفس القوة.",
+              "en": "Chirality is irrelevant to allosteric sites; all enantiomers behave identically."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Allosterik akiralite yanılgısı: Allosterik cepler de kiral protein kaviteleridir ve Pfeiffer kuralına tam olarak uyarlar.",
+              "ar": "خطأ لاكيرالية المواقع الخيفية: المواقع الخيفية جيوب كيرالية تخضع بالكامل لقاعدة Pfeiffer ونموذج النقاط الثلاث.",
+              "en": "Allosteric achirality misconception: Allosteric pockets are asymmetric chiral protein cavities that strictly obey Pfeiffer's rule."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "ters agonist (inverse agonist)", "arContext": "المنبه العكسي (inverse agonist)" },
+        { "term": "konformasyonel stereoseçicilik", "arContext": "الانتقائية الفراغية للتشكيل" }
+      ],
+      "hints": [
+        {
+          "tr": "Reseptörler tek bir katı yapı değil, aktif ve inaktif haller arasında salınan dinamik proteinlerdir.",
+          "ar": "المستقبلات ليست هياكل جامدة بل بروتينات تتأرجح بين حالات نشطة وخاملة.",
+          "en": "Receptors are dynamic macromolecules fluctuating between active and inactive states."
+        },
+        {
+          "tr": "Aktif halin cebi ile inaktif halin cebi farklı 3 boyutlu şekillere sahiptir.",
+          "ar": "يمتلك جيب الحالة النشطة شكلاً فراغياً مختلفاً تماماً عن جيب الحالة الخاملة.",
+          "en": "The 3D pocket of the active conformation differs substantially from the inactive state."
+        },
+        {
+          "tr": "Easson-Stedman 3-nokta kenetlenmesi yalnızca doğru konformasyona uyar; ötomer o durumu stabilize ederek sinyali açar veya kapatır.",
+          "ar": "يطابق تعشيق Easson-Stedman هيئة واحدة فقط؛ فيثبتها eutomer لتفعيل الإشارة أو تثبيطها.",
+          "en": "3-point attachment locks only the matching state; the eutomer stabilizes that conformation to direct signaling."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 2 }]
+    },
+    {
+      "id": "mc-mod4-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Yeni Analjezik Adayında Ödismik Analiz ve Kiral Geçiş",
+        "ar": "اختبار الإتقان: التحليل الإيوديزمي والتحول الكيرالي لمرشح مسكن جديد",
+        "en": "Mastery Challenge: Eudismic Audit & Chiral Switch of a Novel Analgesic"
+      },
+      "prompt": {
+        "tr": "Yeni bir analjezik adayında (R)-ötomer Kd = 1.5 nM, (S)-distomer Kd = 1500 nM olarak ölçülmüştür. Bu ilacın Eudismik Oranını (ER), serbest enerji farkını (ΔΔG°) ve saf ötomer geliştirmenin rasyonelliğini değerlendirin:",
+        "ar": "في مرشح مسكن جديد: بلغت Kd لـ (R)-eutomer قيمة 1.5 nM، و (S)-distomer قيمة 1500 nM. احسب النسبة الإيوديزمية (ER)، وفارق الطاقة الحرة (ΔΔG°)، وقيم جدوى التحول الكيرالي:",
+        "en": "In a novel analgesic candidate, (R)-eutomer exhibits Kd = 1.5 nM and (S)-distomer Kd = 1500 nM. Calculate the Eudismic Ratio (ER), free energy difference (ΔΔG°), and evaluate the rationale for a chiral switch:"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "ER = 1000; ΔΔG° = -4.26 kcal/mol (-17.8 kJ/mol); Pfeiffer kuralına tam uyan devasa bir kiral seçicilik vardır. Molekül asidik alfa-proton taşımıyorsa saf (R)-ötomer geliştirilmesi zorunludur.",
+              "ar": "ER = 1000؛ و ΔΔG° = -4.26 kcal/mol (-17.8 kJ/mol)؛ انتقائية كيرالية هائلة تحقق قاعدة Pfeiffer. إذا خلا الجزيء من بروتون ألفا حمضي، فإن تطوير (R) النقي إلزامي.",
+              "en": "ER = 1000; ΔΔG° = -4.26 kcal/mol (-17.8 kJ/mol); demonstrating immense Pfeiffer chiral fidelity. If the molecule lacks acidic alpha-protons, a single-enantiomer chiral switch is mandatory."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler, mükemmel bir farmasötik kimya analizi! 1) ER = 1500 nM / 1.5 nM = 1000. 2) ΔΔG° = 1.42 x log10(1000) = 1.42 x 3 = -4.26 kcal/mol (-17.8 kJ/mol). 3) 1000 katlık fark distomerin %99.9 gereksiz veya potansiyel toksik metabolik yük olduğunu gösterir; kiral inversiyon yoksa saf ötomer geliştirilmelidir.",
+              "ar": "تهانينا، تحليل دوائي عبقري! 1) ER = 1500 / 1.5 = 1000. 2) ΔΔG° = 1.42 × 3 = -4.26 kcal/mol (-17.8 kJ/mol). 3) يثبت فارق الألف ضعف أن distomer عبء استقلابي سام محتمل؛ وتطوير المصاوغ النقي ضرورة تنظيمية وعلاجية.",
+              "en": "Mastery demonstrated! 1) ER = 1500 nM / 1.5 nM = 1000. 2) ΔΔG° = 1.42 x log10(1000) = 1.42 x 3 = -4.26 kcal/mol (-17.8 kJ/mol). 3) A 1000-fold gap proves the distomer is 99.9% inert ballast or toxic liability; pure eutomer development is chemically and clinically indicated."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "ER = 10; ΔΔG° = -1.42 kcal/mol; iki izomer arasında klinik olarak anlamlı bir fark yoktur.",
+              "ar": "ER = 10؛ و ΔΔG° = -1.42 kcal/mol؛ لا يوجد فارق سريري ذو شأن بين المصاوغين.",
+              "en": "ER = 10; ΔΔG° = -1.42 kcal/mol; there is no clinically meaningful difference between isomers."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Oranlama hatası: 1500 nM / 1.5 nM = 1000'dir (10 değil). 1000 katlık fark 3 log dekadına ve ~4.26 kcal/mol serbest enerjiye karşılık gelir.",
+              "ar": "خطأ حسابي: 1500 / 1.5 = 1000 (وليس 10). يعادل فارق الألف ضعف 3 مراتب لوغاريتمية وطاقة حرة قدرها 4.26 kcal/mol.",
+              "en": "Arithmetic error: 1500 nM / 1.5 nM = 1000 (not 10). A 1000-fold ratio equates to 3 log decades and -4.26 kcal/mol free energy."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "ER = 1500; ΔΔG° = -10 kcal/mol; distomer vücutta kendiliğinden saf altına dönüşür.",
+              "ar": "ER = 1500؛ و ΔΔG° = -10 kcal/mol؛ يتحول distomer تلقائياً لذهب نقي.",
+              "en": "ER = 1500; ΔΔG° = -10 kcal/mol; the distomer transmutes spontaneously into elemental gold."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Simya yanılgısı: ER iki afinitenin oranıdır (1000), distomer Kd'si değildir ve organik maddeler altına dönüşmez.",
+              "ar": "خطأ خيالي: ER هي النسبة بين القيمتين (1000) وليست قيمة Kd لـ distomer؛ والمصاوغات العضوية لا تتحول لمعادن.",
+              "en": "Transmutation misconception: ER is the ratio of Kd values (1000), not the distomer Kd itself; organic molecules do not turn into precious metals."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "kiral geçiş (chiral switch)", "arContext": "التحول الكيرالي (chiral switch)" },
+        { "term": "ödismik analiz", "arContext": "التحليل الإيوديزمي (eudismic analysis)" }
+      ],
+      "hints": [
+        {
+          "tr": "Eudismik oranı hesaplayın: ER = Kd(distomer) / Kd(ötomer) = 1500 / 1.5.",
+          "ar": "احسب النسبة الإيوديزمية: ER = Kd(distomer) / Kd(eutomer) = 1500 / 1.5.",
+          "en": "Calculate the eudismic ratio: ER = Kd(distomer) / Kd(eutomer) = 1500 / 1.5."
+        },
+        {
+          "tr": "ER = 1000. log10(1000) = 3. Şimdi serbest enerjiyi bulun: 1.42 kcal/mol x 3 = 4.26 kcal/mol.",
+          "ar": "ER = 1000. و log10(1000) = 3. احسب الطاقة الحرة: 1.42 × 3 = 4.26 kcal/mol.",
+          "en": "ER = 1000. Since log10(1000) = 3, multiply: 1.42 kcal/mol x 3 = 4.26 kcal/mol."
+        },
+        {
+          "tr": "1000 katlık afinite farkı devasa bir kiral üstünlüktür; molekül in vivo rasemize olmuyorsa saf ötomer geliştirilmesi kesinlikle rasyoneldir.",
+          "ar": "يمثل فارق الألف ضعف تفوقاً كيرالياً هائلاً؛ وإذا خلا الدواء من الراسمة التلقائية فإن تطوير المصاوغ النقي خيار حاسم.",
+          "en": "A 1000-fold affinity gap represents profound stereospecificity, making a single-enantiomer chiral switch highly compelling."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 23 }]
+    }
+  ]
+};
+
+const targetPath = path.resolve(__dirname, '../courses/medchem/lessons/lesson-07.json');
+fs.writeFileSync(targetPath, JSON.stringify(lesson07, null, 2) + '\n', 'utf8');
+console.log('Successfully wrote lesson-07.json to:', targetPath);

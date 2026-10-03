@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pharmacy/ui": ["packages/ui/src/index.ts"],
+      "@pharmacy/ui/*": ["packages/ui/src/*"],
+      "@pharmacy/widgets": ["packages/widgets/src/index.ts"],
+      "@pharmacy/widgets/*": ["packages/widgets/src/*"],
+      "@pharmacy/platform": ["packages/platform/src/index.ts"],
+      "@pharmacy/platform/*": ["packages/platform/src/*"]
+    }
+  }
+}

@@ -1,0 +1,2154 @@
+{
+  "id": "pharm-mod6-les2",
+  "courseId": "pharmacology",
+  "moduleId": "ph-mod-06",
+  "title": {
+    "tr": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri",
+    "ar": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان",
+    "en": "Dopaminergic Pathways & Antipsychotic Receptor Profiles"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Dört merkezi dopaminerjik yolağı, D2 reseptör blokaj eşiğini (%65-80) ve atipik antipsikotiklerin 5-HT2A/D2 dengesini kavramak.",
+    "ar": "إتقان المسارات الدوبامينية المركزية الأربعة، وعتبة حظر D2 (65-80%)، وتوازن 5-HT2A/D2 لمضادات الذهان غير النمطية.",
+    "en": "Analyze four central dopaminergic pathways, the 65-80% D2 occupancy therapeutic window, and atypical 5-HT2A/D2 balance."
+  },
+  "misconceptions": [
+    {
+      "tr": "D2 reseptörünü ne kadar çok bloke edersek antipsikotik etkinin o kadar iyi olacağı yanılgısı (%80 in üzerinde şiddetli parkinson benzeri ekstrapiramidal semptomlar çıkar).",
+      "ar": "الظن الخاطئ بأن زيادة حظر D2 تحسن الفعالية دوماً (تجاوز 80% يفجر أعراضاً خارج هرمية شلل-رعاشية حادة).",
+      "en": "Higher D2 receptor occupancy (>80%) provides superior antipsychotic efficacy without extrapyramidal symptoms."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Santral Sinir Sistemi.pdf",
+      "page": 22
+    }
+  ],
+  "citations": [
+    {
+      "id": "CIT-PH12-01",
+      "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
+      "edition": "14th ed.",
+      "topic": "Dopaminergic Pathways and Antipsychotic Receptor Profiles",
+      "chapter": "unverified",
+      "page": "unverified",
+      "status": "unverified"
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "pharm-mod6-les2-card1",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Terapötik D2 Blokaj Penceresi",
+      "prompt": "Antipsikotik etkinlik ve ekstrapiramidal güvenliğin sağlandığı D2 reseptör doluluk penceresi nedir?",
+      "answer": "%65 ila %80 doluluk aralığıdır. %65 in altında etki yetersiz, %80 in üstünde EPS gelişir.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les2-card2",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Dört Dopamin Yolağı",
+      "prompt": "Antipsikotik etkinin görüldüğü ve ekstrapiramidal yan etkinin (EPS) çıktığı iki yolak hangileridir?",
+      "answer": "Antipsikotik etki Mezolimbik yolakta; motor yan etki (EPS) Nigrostriatal yolakta görülür.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod6-les2-card3",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Atipik Antipsikotik Sırrı",
+      "prompt": "İkinci kuşak atipik antipsikotikler (olanzapin, klozapin) neden daha az ekstrapiramidal yan etki yapar?",
+      "answer": "Güçlü 5-HT2A serotonin blokajı nigrostriatal yolda dopamin salınımını serbest bırakarak EPS yi önler.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Dopaminerjik Yolaklar ve Antipsikotik Reseptör Profilleri"
+    },
+    "ar": {
+      "title": "المسارات الدوبامينية والمظهر المستقبلاتي لمضادات الذهان"
+    }
+  },
+  "steps": [
+    {
+      "id": "pharm-mod6-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "title": {
+        "tr": "Halüsinasyonları Sustururken Bedeni Kilitlemek",
+        "ar": "إسكات الهلاوس وتصلب الجسد",
+        "en": "Quieting Hallucinations While Freezing the Body"
+      },
+      "prompt": {
+        "en": "Haloperidol rapidly quells auditory hallucinations in the mesolimbic pathway, yet within two hours violently twists the patient's neck and eyes. Why does blocking D2 trigger acute muscle dystonia?",
+        "tr": "Haloperidol mezolimbik yolda işitsel halüsinasyonları hızla dindirirken, iki saat içinde hastanın boynunu ve gözlerini şiddetle büker. D2 blokajı neden akut distoniye yol açar?",
+        "ar": "يخمد الهالوبيريدول الهلاوس السمعية ميزولمبياً بسرعة، لكنه بعد ساعتين يلوي عنق المريض وعينيه بعنف. لماذا يفجر حظر D2 خلل التوتر العضلي الحاد؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "options": [
+          {
+            "id": "opt_striatal_ach_surge",
+            "text": {
+              "en": "Blocking striatal D2 removes dopamine's tonic inhibitory brake on cholinergic interneurons, unleashing an unchecked acetylcholine surge that drives acute muscle dystonia.",
+              "tr": "Striatal D2 blokajı, dopaminin kolinerjik internöronlar üzerindeki inhibitör frenini kaldırarak aşırı asetilkolin deşarjına ve kas distonisine yol açar.",
+              "ar": "يزيل حظر D2 في المخطط كبح الدوبامين للخلية البينية الكولينية، مفرغاً تدفقاً هائلاً للأسيتيل كولين يقود لخلل التوتر العضلي الحاد."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! In the striatum, dopamine tonically inhibits acetylcholine release. Haloperidol removes this brake, producing an acute cholinergic spasm.",
+              "tr": "Doğru! Striatumda dopamin asetilkolini frenler. D2 blokajı bu freni kaldırarak kolinerjik fırtınaya ve akut distoniye neden olur.",
+              "ar": "صحيح! يكبح الدوبامين إفراز الأسيتيل كولين في المخطط؛ وحظر D2 يزيل هذا الكبح مفجراً تشنجاً كولينياً حاداً."
+            }
+          },
+          {
+            "id": "opt_direct_nicotinic_stimulation",
+            "text": {
+              "en": "Haloperidol directly stimulates nicotinic acetylcholine receptors at peripheral neuromuscular junctions, triggering sustained muscle contraction.",
+              "tr": "Haloperidol periferik nöromüsküler kavşaktaki nikotinik asetilkolin reseptörlerini doğrudan uyararak kalıcı kas kasılması başlatır.",
+              "ar": "يحفز الهالوبيريدول مستقبلات الأسيتيل كولين النيكوتينية في الوصل العصبي العضلي المحيطي مباشرة مسبباً انقباضاً عضلياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol does not bind peripheral nicotinic receptors; dystonia is a central striatal dopamine-acetylcholine imbalance.",
+              "tr": "Yanlış. Haloperidol periferik nikotinik reseptörlere bağlanmaz; distoni santral striatal dopamin-asetilkolin dengesizliğidir.",
+              "ar": "غير صحيح. لا يرتبط الهالوبيريدول بالمستقبلات النيكوتينية؛ بل خلل التوتر ناتج عن اختلال توازن الدوبامين والأسيتيل كولين في المخطط."
+            }
+          },
+          {
+            "id": "opt_d1_agonist_belief",
+            "text": {
+              "en": "Striatal D2 receptors are Gs-coupled, and haloperidol acts as a full agonist that hyperactivates adenylyl cyclase to trigger spasms.",
+              "tr": "Striatal D2 reseptörleri Gs kenetlidir ve haloperidol spazm oluşturmak için adenilat siklazı aşırı uyaran bir tam agonisttir.",
+              "ar": "مستقبلات D2 مقترنة ببروتين Gs، ويعمل الهالوبيريدول كناهض تام يفرط في تنشيط محلقة الأدينيلات لإحداث التشنجات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. D2 receptors are Gi-coupled, and haloperidol is a potent antagonist, not an agonist.",
+              "tr": "Yanlış. D2 reseptörleri Gi kenetlidir ve haloperidol agonist değil çok güçlü bir antagonisttir.",
+              "ar": "غير صحيح. مستقبلات D2 مقترنة ببروتين Gi المثبط، والهالوبيريدول مناهض قوي وليس ناهضاً."
+            }
+          },
+          {
+            "id": "opt_hypocalcemia_belief",
+            "text": {
+              "en": "Haloperidol causes massive renal calcium wasting within two hours, producing severe hypocalcemic tetany resembling motor dystonia.",
+              "tr": "Haloperidol iki saat içinde böbrekten aşırı kalsiyum atılımına yol açarak motor distoniyi taklit eden şiddetli hipokalsemik tetani yapar.",
+              "ar": "يسبب الهالوبيريدول فقداناً كلوياً هائلاً للكالسيوم خلال ساعتين، محدثاً كزازاً بنقص الكالسيوم يشبه خلل التوتر الحركي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol has no direct effect on renal tubular calcium handling; acute dystonia is exclusively a central extrapyramidal side effect.",
+              "tr": "Yanlış. Haloperidol böbrek kalsiyum atılımını etkilemez; akut distoni tamamen santral ekstrapiramidal bir yan etkidir.",
+              "ar": "غير صحيح. لا يؤثر الهالوبيريدول على إطراح الكالسيوم الكلوي؛ بل خلل التوتر هو عرض جانبي حركي خارج هرمي مركزي."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "D2 reseptör blokajı",
+          "arContext": "حظر مستقبِلات D2"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Dopaminin beyindeki tek bir bölgede değil, farklı anatomik yolaklarda farklı görevler yürüttüğünü hatırlayın.",
+          "ar": "تذكر أن الدوبامين لا يعمل في مركز واحد، بل يدير وظائف متباينة في مسارات تشريحية مستقلة.",
+          "en": "Remember that dopamine operates across segregated anatomical pathways with distinct physiological functions."
+        },
+        {
+          "tier": 2,
+          "tr": "Striatumdaki motor kontrol merkezinde dopamin ile asetilkolin arasında hassas bir denge tahterevallisi bulunur.",
+          "ar": "يوجد في مركز التحكم الحركي بالمخطط أرجوحة توازن دقيقة بين الدوبامين والأسيتيل كولين.",
+          "en": "In the striatal motor center, dopamine and acetylcholine exist in a delicately balanced seesaw equilibrium."
+        },
+        {
+          "tier": 3,
+          "tr": "D2 blokajı mezolimbikte psikozu dindirirken, nigrostriatal yolda dopaminin asetilkolin üzerindeki frenini kaldırarak akut distoni yapar.",
+          "ar": "حظر D2 يخمد الذهان ميزولمبياً، لكنه يرفع كبح الدوبامين عن الأسيتيل كولين حركياً مفجراً تشنجاً كولينياً حاداً.",
+          "en": "Blocking D2 quiets mesolimbic psychosis, but lifts dopamine's brake on striatal acetylcholine to cause acute dystonia."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_striatal_ach_surge",
+            "text": {
+              "en": "Blocking striatal D2 removes dopamine's tonic inhibitory brake on cholinergic interneurons, unleashing an unchecked acetylcholine surge that drives acute muscle dystonia.",
+              "tr": "Striatal D2 blokajı, dopaminin kolinerjik internöronlar üzerindeki inhibitör frenini kaldırarak aşırı asetilkolin deşarjına ve kas distonisine yol açar.",
+              "ar": "يزيل حظر D2 في المخطط كبح الدوبامين للخلية البينية الكولينية، مفرغاً تدفقاً هائلاً للأسيتيل كولين يقود لخلل التوتر العضلي الحاد."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! In the striatum, dopamine tonically inhibits acetylcholine release. Haloperidol removes this brake, producing an acute cholinergic spasm.",
+              "tr": "Doğru! Striatumda dopamin asetilkolini frenler. D2 blokajı bu freni kaldırarak kolinerjik fırtınaya ve akut distoniye neden olur.",
+              "ar": "صحيح! يكبح الدوبامين إفراز الأسيتيل كولين في المخطط؛ وحظر D2 يزيل هذا الكبح مفجراً تشنجاً كولينياً حاداً."
+            }
+          },
+          {
+            "id": "opt_direct_nicotinic_stimulation",
+            "text": {
+              "en": "Haloperidol directly stimulates nicotinic acetylcholine receptors at peripheral neuromuscular junctions, triggering sustained muscle contraction.",
+              "tr": "Haloperidol periferik nöromüsküler kavşaktaki nikotinik asetilkolin reseptörlerini doğrudan uyararak kalıcı kas kasılması başlatır.",
+              "ar": "يحفز الهالوبيريدول مستقبلات الأسيتيل كولين النيكوتينية في الوصل العصبي العضلي المحيطي مباشرة مسبباً انقباضاً عضلياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol does not bind peripheral nicotinic receptors; dystonia is a central striatal dopamine-acetylcholine imbalance.",
+              "tr": "Yanlış. Haloperidol periferik nikotinik reseptörlere bağlanmaz; distoni santral striatal dopamin-asetilkolin dengesizliğidir.",
+              "ar": "غير صحيح. لا يرتبط الهالوبيريدول بالمستقبلات النيكوتينية؛ بل خلل التوتر ناتج عن اختلال توازن الدوبامين والأسيتيل كولين في المخطط."
+            }
+          },
+          {
+            "id": "opt_d1_agonist_belief",
+            "text": {
+              "en": "Striatal D2 receptors are Gs-coupled, and haloperidol acts as a full agonist that hyperactivates adenylyl cyclase to trigger spasms.",
+              "tr": "Striatal D2 reseptörleri Gs kenetlidir ve haloperidol spazm oluşturmak için adenilat siklazı aşırı uyaran bir tam agonisttir.",
+              "ar": "مستقبلات D2 مقترنة ببروتين Gs، ويعمل الهالوبيريدول كناهض تام يفرط في تنشيط محلقة الأدينيلات لإحداث التشنجات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. D2 receptors are Gi-coupled, and haloperidol is a potent antagonist, not an agonist.",
+              "tr": "Yanlış. D2 reseptörleri Gi kenetlidir ve haloperidol agonist değil çok güçlü bir antagonisttir.",
+              "ar": "غير صحيح. مستقبلات D2 مقترنة ببروتين Gi المثبط، والهالوبيريدول مناهض قوي وليس ناهضاً."
+            }
+          },
+          {
+            "id": "opt_hypocalcemia_belief",
+            "text": {
+              "en": "Haloperidol causes massive renal calcium wasting within two hours, producing severe hypocalcemic tetany resembling motor dystonia.",
+              "tr": "Haloperidol iki saat içinde böbrekten aşırı kalsiyum atılımına yol açarak motor distoniyi taklit eden şiddetli hipokalsemik tetani yapar.",
+              "ar": "يسبب الهالوبيريدول فقداناً كلوياً هائلاً للكالسيوم خلال ساعتين، محدثاً كزازاً بنقص الكالسيوم يشبه خلل التوتر الحركي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol has no direct effect on renal tubular calcium handling; acute dystonia is exclusively a central extrapyramidal side effect.",
+              "tr": "Yanlış. Haloperidol böbrek kalsiyum atılımını etkilemez; akut distoni tamamen santral ekstrapiramidal bir yan etkidir.",
+              "ar": "غير صحيح. لا يؤثر الهالوبيريدول على إطراح الكالسيوم الكلوي؛ بل خلل التوتر هو عرض جانبي حركي خارج هرمي مركزي."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 17
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "title": {
+        "tr": "Tahmin: İdeal Blokaj Yüzdesi",
+        "ar": "توقع: نسبة الإشغال المثالية",
+        "en": "Prediction: The Ideal D2 Receptor Occupancy Window"
+      },
+      "prompt": {
+        "en": "Why does pure D2 receptor antagonism fail to effectively treat all schizophrenia symptoms simultaneously across the four major dopaminergic pathways?",
+        "tr": "Saf D2 reseptör antagonizması dört ana dopaminerjik yolakta neden tüm şizofreni semptomlarını aynı anda başarıyla tedavi edemez?",
+        "ar": "لماذا يفشل الحظر الخالص لمستقبلات D2 في علاج جميع أعراض الفصام في آن واحد عبر المسارات الدوبامينية الأربعة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "%65-80 arası terapötik penceredir; %80 in üzeri kaçınılmaz motor blokaj yaratır.",
+        "options": [
+          {
+            "id": "opt_pathway_divergence",
+            "text": {
+              "en": "Blocking D2 treats mesolimbic positive symptoms, but worsens mesocortical negative symptoms, causes nigrostriatal EPS, and triggers tuberoinfundibular hyperprolactinemia.",
+              "tr": "D2 blokajı mezolimbik pozitif semptomları düzeltirken, mezokortikal negatif semptomları kötüleştirir, nigrostriatal EPS ve tüberoinfundibuler hiperprolaktinemi yapar.",
+              "ar": "حظر D2 يعالج إيجابيات الميزولمبيك، لكنه يفاقم سلبيات الميزوكورتيكال، ويسبب أعراضاً خارج هرمية بالمخطط، وفرط برولاكتين بالمسار القمعي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! D2 blockade quells mesolimbic hyperactivity, but aggravates hypodopaminergic mesocortical states, causes EPS, and disinhibits prolactin.",
+              "tr": "Doğru! D2 blokajı mezolimbik hiperaktiviteyi dindirir; ancak kortikal negatif semptomları artırır, motor EPS ve prolaktin yüksekliği yapar.",
+              "ar": "صحيح! يخمد حظر D2 نشاط الميزولمبيك المفرط، لكنه يفاقم نقص الدوبامين القشري، ويسبب أعراضاً خارج هرمية، ويحرر إفراز البرولاكتين."
+            }
+          },
+          {
+            "id": "opt_mesocortical_cure",
+            "text": {
+              "en": "Pure D2 blockade selectively stimulates cortical dopamine release, curing negative symptoms while sparing motor and pituitary pathways.",
+              "tr": "Saf D2 blokajı kortikal dopamin salınımını seçici uyararak motor ve hipofiz yollarını korurken negatif semptomları tamamen iyileştirir.",
+              "ar": "يحفز حظر D2 الخالص إفراز الدوبامين القشري انتقائياً، فيشفي الأعراض السلبية مجنباً المسارات الحركية والنخامية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Pure D2 blockade further suppresses already deficient mesocortical dopamine signaling, worsening emotional blunting and apathy.",
+              "tr": "Yanlış. Saf D2 blokajı zaten yetersiz olan mezokortikal dopamini daha da bloke ederek negatif semptomları şiddetlendirir.",
+              "ar": "غير صحيح. يزيد حظر D2 الخالص من خنق إشارات الدوبامين القشرية الضعيفة أصلاً، مفاقماً التبلد الانفعالي والانعزال."
+            }
+          },
+          {
+            "id": "opt_prolactin_suppression_belief",
+            "text": {
+              "en": "D2 blockade in the tuberoinfundibular pathway shuts down pituitary lactotrophs, leading to complete cessation of prolactin production.",
+              "tr": "Tüberoinfundibuler yolaktaki D2 blokajı hipofiz laktotrof hücrelerini susturarak prolaktin üretimini tamamen durdurur.",
+              "ar": "يعطل حظر D2 في المسار القمعي خلايا اللاكتوتروف النخامية مما يؤدي لتوقف تام في إنتاج هرمون البرولاكتين."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dopamine tonically INHIBITS prolactin release. Blocking D2 removes this inhibition, causing profound HYPERprolactinemia.",
+              "tr": "Yanlış. Dopamin hipofizde prolaktin salınımını BASKILAR. D2 bloke edilince bu baskı kalkar ve HİPERprolaktinemi gelişir.",
+              "ar": "غير صحيح. يثبط الدوبامين إفراز البرولاكتين طبيعياً؛ وبالتالي فحظر D2 يرفع البرولاكتين بشدة (فرط برولاكتين الدم)."
+            }
+          },
+          {
+            "id": "opt_bbb_exclusion_belief",
+            "text": {
+              "en": "Haloperidol cannot cross the blood-brain barrier into cortical regions, leaving mesocortical and nigrostriatal circuits completely untouched.",
+              "tr": "Haloperidol kan-beyin bariyerini geçip kortikal bölgelere ulaşamaz; mezokortikal ve nigrostriatal devreleri tamamen dokunulmamış bırakır.",
+              "ar": "يعجز الهالوبيريدول عن اختراق الحاجز الدموي الدماغي نحو المناطق القشرية، تاركاً مسارات الميزوكورتيكال والمخطط دون أي تأثير."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol is highly lipophilic and readily distributes throughout the entire brain, occupying D2 receptors across all pathways.",
+              "tr": "Yanlış. Haloperidol yüksek oranda lipofiliktir, tüm beyne dağılır ve her dört yolaktaki D2 reseptörlerini de bloke eder.",
+              "ar": "غير صحيح. الهالوبيريدول شديد الذوبان بالدسم ويخترق الدماغ بأكمله محتلاً مستقبلات D2 في جميع المسارات."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Dört dopamin yolağını gözünüzün önüne getirin: mezolimbik, mezokortikal, nigrostriatal ve tüberoinfundibuler.",
+          "ar": "استحضر المسارات الدوبامينية الأربعة: الميزولمبي، الميزوكورتيكال، المخططي الأسود، والقمعي النخامي.",
+          "en": "Envision the four core dopamine pathways: mesolimbic, mesocortical, nigrostriatal, and tuberoinfundibular."
+        },
+        {
+          "tier": 2,
+          "tr": "Şizofrenide mezolimbik yol hiperaktifken, mezokortikal yol zaten dopamin eksikliği nedeniyle hipoaktiftir.",
+          "ar": "في الفصام يكون الميزولمبيك مفرط النشاط، بينما يعاني الميزوكورتيكال أصلاً من نقص الدوبامين وخمول النشاط.",
+          "en": "In schizophrenia, the mesolimbic path is hyperactive, while the mesocortical path is already hypoactive."
+        },
+        {
+          "tier": 3,
+          "tr": "D2 antagonisti pozitif semptomları çözer ama negatif semptomları, motor hareketleri ve prolaktin yüksekliğini kötüleştirir.",
+          "ar": "يعالج مناهض D2 الأعراض الإيجابية، لكنه يفاقم الأعراض السلبية، ويحدث اضطراب الحركة وفرط البرولاكتين.",
+          "en": "Pure D2 blockade cures positive symptoms, but worsens negative symptoms, causes motor EPS, and elevates prolactin."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_pathway_divergence",
+            "text": {
+              "en": "Blocking D2 treats mesolimbic positive symptoms, but worsens mesocortical negative symptoms, causes nigrostriatal EPS, and triggers tuberoinfundibular hyperprolactinemia.",
+              "tr": "D2 blokajı mezolimbik pozitif semptomları düzeltirken, mezokortikal negatif semptomları kötüleştirir, nigrostriatal EPS ve tüberoinfundibuler hiperprolaktinemi yapar.",
+              "ar": "حظر D2 يعالج إيجابيات الميزولمبيك، لكنه يفاقم سلبيات الميزوكورتيكال، ويسبب أعراضاً خارج هرمية بالمخطط، وفرط برولاكتين بالمسار القمعي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! D2 blockade quells mesolimbic hyperactivity, but aggravates hypodopaminergic mesocortical states, causes EPS, and disinhibits prolactin.",
+              "tr": "Doğru! D2 blokajı mezolimbik hiperaktiviteyi dindirir; ancak kortikal negatif semptomları artırır, motor EPS ve prolaktin yüksekliği yapar.",
+              "ar": "صحيح! يخمد حظر D2 نشاط الميزولمبيك المفرط، لكنه يفاقم نقص الدوبامين القشري، ويسبب أعراضاً خارج هرمية، ويحرر إفراز البرولاكتين."
+            }
+          },
+          {
+            "id": "opt_mesocortical_cure",
+            "text": {
+              "en": "Pure D2 blockade selectively stimulates cortical dopamine release, curing negative symptoms while sparing motor and pituitary pathways.",
+              "tr": "Saf D2 blokajı kortikal dopamin salınımını seçici uyararak motor ve hipofiz yollarını korurken negatif semptomları tamamen iyileştirir.",
+              "ar": "يحفز حظر D2 الخالص إفراز الدوبامين القشري انتقائياً، فيشفي الأعراض السلبية مجنباً المسارات الحركية والنخامية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Pure D2 blockade further suppresses already deficient mesocortical dopamine signaling, worsening emotional blunting and apathy.",
+              "tr": "Yanlış. Saf D2 blokajı zaten yetersiz olan mezokortikal dopamini daha da bloke ederek negatif semptomları şiddetlendirir.",
+              "ar": "غير صحيح. يزيد حظر D2 الخالص من خنق إشارات الدوبامين القشرية الضعيفة أصلاً، مفاقماً التبلد الانفعالي والانعزال."
+            }
+          },
+          {
+            "id": "opt_prolactin_suppression_belief",
+            "text": {
+              "en": "D2 blockade in the tuberoinfundibular pathway shuts down pituitary lactotrophs, leading to complete cessation of prolactin production.",
+              "tr": "Tüberoinfundibuler yolaktaki D2 blokajı hipofiz laktotrof hücrelerini susturarak prolaktin üretimini tamamen durdurur.",
+              "ar": "يعطل حظر D2 في المسار القمعي خلايا اللاكتوتروف النخامية مما يؤدي لتوقف تام في إنتاج هرمون البرولاكتين."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dopamine tonically INHIBITS prolactin release. Blocking D2 removes this inhibition, causing profound HYPERprolactinemia.",
+              "tr": "Yanlış. Dopamin hipofizde prolaktin salınımını BASKILAR. D2 bloke edilince bu baskı kalkar ve HİPERprolaktinemi gelişir.",
+              "ar": "غير صحيح. يثبط الدوبامين إفراز البرولاكتين طبيعياً؛ وبالتالي فحظر D2 يرفع البرولاكتين بشدة (فرط برولاكتين الدم)."
+            }
+          },
+          {
+            "id": "opt_bbb_exclusion_belief",
+            "text": {
+              "en": "Haloperidol cannot cross the blood-brain barrier into cortical regions, leaving mesocortical and nigrostriatal circuits completely untouched.",
+              "tr": "Haloperidol kan-beyin bariyerini geçip kortikal bölgelere ulaşamaz; mezokortikal ve nigrostriatal devreleri tamamen dokunulmamış bırakır.",
+              "ar": "يعجز الهالوبيريدول عن اختراق الحاجز الدموي الدماغي نحو المناطق القشرية، تاركاً مسارات الميزوكورتيكال والمخطط دون أي تأثير."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Haloperidol is highly lipophilic and readily distributes throughout the entire brain, occupying D2 receptors across all pathways.",
+              "tr": "Yanlış. Haloperidol yüksek oranda lipofiliktir, tüm beyne dağılır ve her dört yolaktaki D2 reseptörlerini de bloke eder.",
+              "ar": "غير صحيح. الهالوبيريدول شديد الذوبان بالدسم ويخترق الدماغ بأكمله محتلاً مستقبلات D2 في جميع المسارات."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Sezgisel Model: 4 Farklı Odaya Açılan Tek Şalter",
+        "ar": "تشبيه حدسي: مفتاح واحد يتحكم بأربع غرف متباينة",
+        "en": "Intuitive Model: One Switch Controlling Four Distinct Rooms"
+      },
+      "prompt": {
+        "en": "PET studies reveal antipsychotic response begins at 65% D2 occupancy, while exceeding 80% triggers extrapyramidal motor toxicity. What does this narrow 15% window dictate clinically?",
+        "tr": "PET çalışmaları antipsikotik yanıtın %65 D2 doluluğunda başladığını, %80 aşılınca EPS motor toksisitesinin patlak verdiğini gösterir. Bu dar %15'lik pencere ne anlama gelir?",
+        "ar": "تكشف دراسات PET أن الاستجابة المضادة للذهان تبدأ عند إشغال 65% لـ D2، وتجاوز 80% يفجر السمية الحركية. ماذا يملي هذا الهامش الضيق سريرياً؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_pet_window",
+            "text": {
+              "en": "Clinical antipsychotic efficacy requires at least 65% D2 occupancy, while exceeding 80% sharply unleashes extrapyramidal symptoms and hyperprolactinemia.",
+              "tr": "Antipsikotik etkinlik en az %65 D2 doluluğu gerektirirken, %80'in aşılması ekstrapiramidal semptomları ve hiperprolaktinemiyi hızla tetikler.",
+              "ar": "تتطلب الفعالية المضادة للذهان إشغال 65% على الأقل لـ D2، بينما يتسبب تجاوز 80% باندلاع حاد للأعراض خارج الهرمية وفرط البرولاكتين."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! The Nordström/Farde PET window proves that between 65% and 80% lies the sweet spot of efficacy without intolerable motor toxicity.",
+              "tr": "Doğru! Nordström ve Farde'nin PET çalışmaları, %65-80 aralığının motor toksisite olmadan klinik etkinlik sağlayan dar pencere olduğunu kanıtlar.",
+              "ar": "صحيح! أثبتت دراسات نوردستروم وفاردي أن نطاق 65-80% هو النافذة العلاجية المثلى للفعالية دون سمية حركية مفرطة."
+            }
+          },
+          {
+            "id": "opt_total_blockade_needed",
+            "text": {
+              "en": "Antipsychotic efficacy requires 95% to 100% D2 occupancy to completely extinguish all dopaminergic firing in the frontal cortex.",
+              "tr": "Antipsikotik etkinlik, frontal korteksteki tüm dopaminerjik uyarıları tamamen söndürmek için %95 ila %100 D2 doluluğu gerektirir.",
+              "ar": "تتطلب الفعالية إشغال 95% إلى 100% لـ D2 لإخماد كافة الإشارات الدوبامينية في القشرة الجبهية نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Near-total blockade (>90%) causes severe catatonia, neuroleptic malignant syndrome, and severe parkinsonism; 65% is sufficient.",
+              "tr": "Yanlış. %90'ın üzerindeki doluluk şiddetli parkinsonizm ve nöroleptik malign sendrom yaratır; antipsikotik etki için %65 yeterlidir.",
+              "ar": "غير صحيح. يسبب الإشغال شبه التام (>90%) جموداً حركياً خبيثاً وشللاً رعاشياً شديداً؛ ويكفي إشغال 65% للعلاج."
+            }
+          },
+          {
+            "id": "opt_eps_at_low_occupancy",
+            "text": {
+              "en": "Extrapyramidal symptoms emerge at 30% occupancy, meaning motor toxicity always precedes any meaningful therapeutic antipsychotic relief.",
+              "tr": "Ekstrapiramidal semptomlar %30 dolulukta ortaya çıkar, yani motor toksisite terapötik antipsikotik etkiden her zaman önce gelir.",
+              "ar": "تظهر الأعراض خارج الهرمية عند إشغال 30%، مما يعني أن السمية الحركية تسبق دوماً أي تحسن علاجي ملموس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Antipsychotic efficacy occurs FIRST at 65% occupancy; EPS emerges ONLY when occupancy exceeds the higher threshold of ~80%.",
+              "tr": "Yanlış. Önce %65'te antipsikotik etki başlar; motor toksisite ise yalnızca %80 eşiği aşıldığında ortaya çıkar.",
+              "ar": "غير صحيح. يبدأ التحسن العلاجي أولاً عند 65%؛ ولا تظهر الأعراض الحركية إلا بتجاوز العتبة العليا البالغة 80%."
+            }
+          },
+          {
+            "id": "opt_no_correlation_occupancy",
+            "text": {
+              "en": "PET studies demonstrated that striatal D2 receptor occupancy has zero correlation with either clinical efficacy or adverse motor outcomes.",
+              "tr": "PET çalışmaları, striatal D2 doluluğunun ne klinik etkiyle ne de motor yan etkilerle hiçbir korelasyonu olmadığını kanıtlamıştır.",
+              "ar": "أثبتت دراسات PET عدم وجود أي ارتباط بين إشغال مستقبلات D2 بالمخطط وبين الفعالية السريرية أو الأعراض الحركية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. D2 receptor occupancy measured by PET is one of the most rigorously validated quantitative biomarkers in neuropsychopharmacology.",
+              "tr": "Yanlış. PET ile ölçülen D2 reseptör doluluğu, nöropsikofarmakolojideki en sağlam doğrulanmış kantitatif biyobelirteçtir.",
+              "ar": "غير صحيح. يُعد إشغال D2 المقاس بالتصوير المقطعي بالإصدار البوزيتروني (PET) أحد أدق المؤشرات الحيوية المثبتة دوائياً."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "ekstrapiramidal semptom",
+          "arContext": "الأعراض خارج الهرمية (EPS)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Nordström ve Farde'nin PET neuroimaging çalışmalarındaki terapötik pencere sınırlarını hatırlayın.",
+          "ar": "تذكر حدود النافذة العلاجية المثبتة بدراسات التصوير البوزيتروني (PET) لنوردستروم وفاردي.",
+          "en": "Recall the therapeutic occupancy boundaries established by Nordström and Farde PET neuroimaging studies."
+        },
+        {
+          "tier": 2,
+          "tr": "Antipsikotik etkinlik için gereken asgari doluluk oranı ile motor yan etkilerin patlak verdiği üst eşiği düşünün.",
+          "ar": "فكر في الحد الأدنى للإشغال اللازم للفعالية، والعتبة العليا التي تندلع عندها السمية الحركية خارج الهرمية.",
+          "en": "Consider the minimum occupancy needed for clinical efficacy versus the upper threshold triggering motor EPS."
+        },
+        {
+          "tier": 3,
+          "tr": "Klinik etki %65 D2 doluluğunda başlar; %80 aşıldığında ise ekstrapiramidal semptomlar ve hiperprolaktinemi fırlar.",
+          "ar": "تبدأ الفعالية العلاجية عند إشغال 65% لـ D2؛ بينما يؤدي تجاوز 80% لاندلاع حاد للأعراض خارج الهرمية وفرط البرولاكتين.",
+          "en": "Antipsychotic efficacy begins at 65% D2 occupancy; exceeding 80% occupancy triggers motor EPS and hyperprolactinemia."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_pet_window",
+            "text": {
+              "en": "Clinical antipsychotic efficacy requires at least 65% D2 occupancy, while exceeding 80% sharply unleashes extrapyramidal symptoms and hyperprolactinemia.",
+              "tr": "Antipsikotik etkinlik en az %65 D2 doluluğu gerektirirken, %80'in aşılması ekstrapiramidal semptomları ve hiperprolaktinemiyi hızla tetikler.",
+              "ar": "تتطلب الفعالية المضادة للذهان إشغال 65% على الأقل لـ D2، بينما يتسبب تجاوز 80% باندلاع حاد للأعراض خارج الهرمية وفرط البرولاكتين."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! The Nordström/Farde PET window proves that between 65% and 80% lies the sweet spot of efficacy without intolerable motor toxicity.",
+              "tr": "Doğru! Nordström ve Farde'nin PET çalışmaları, %65-80 aralığının motor toksisite olmadan klinik etkinlik sağlayan dar pencere olduğunu kanıtlar.",
+              "ar": "صحيح! أثبتت دراسات نوردستروم وفاردي أن نطاق 65-80% هو النافذة العلاجية المثلى للفعالية دون سمية حركية مفرطة."
+            }
+          },
+          {
+            "id": "opt_total_blockade_needed",
+            "text": {
+              "en": "Antipsychotic efficacy requires 95% to 100% D2 occupancy to completely extinguish all dopaminergic firing in the frontal cortex.",
+              "tr": "Antipsikotik etkinlik, frontal korteksteki tüm dopaminerjik uyarıları tamamen söndürmek için %95 ila %100 D2 doluluğu gerektirir.",
+              "ar": "تتطلب الفعالية إشغال 95% إلى 100% لـ D2 لإخماد كافة الإشارات الدوبامينية في القشرة الجبهية نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Near-total blockade (>90%) causes severe catatonia, neuroleptic malignant syndrome, and severe parkinsonism; 65% is sufficient.",
+              "tr": "Yanlış. %90'ın üzerindeki doluluk şiddetli parkinsonizm ve nöroleptik malign sendrom yaratır; antipsikotik etki için %65 yeterlidir.",
+              "ar": "غير صحيح. يسبب الإشغال شبه التام (>90%) جموداً حركياً خبيثاً وشللاً رعاشياً شديداً؛ ويكفي إشغال 65% للعلاج."
+            }
+          },
+          {
+            "id": "opt_eps_at_low_occupancy",
+            "text": {
+              "en": "Extrapyramidal symptoms emerge at 30% occupancy, meaning motor toxicity always precedes any meaningful therapeutic antipsychotic relief.",
+              "tr": "Ekstrapiramidal semptomlar %30 dolulukta ortaya çıkar, yani motor toksisite terapötik antipsikotik etkiden her zaman önce gelir.",
+              "ar": "تظهر الأعراض خارج الهرمية عند إشغال 30%، مما يعني أن السمية الحركية تسبق دوماً أي تحسن علاجي ملموس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Antipsychotic efficacy occurs FIRST at 65% occupancy; EPS emerges ONLY when occupancy exceeds the higher threshold of ~80%.",
+              "tr": "Yanlış. Önce %65'te antipsikotik etki başlar; motor toksisite ise yalnızca %80 eşiği aşıldığında ortaya çıkar.",
+              "ar": "غير صحيح. يبدأ التحسن العلاجي أولاً عند 65%؛ ولا تظهر الأعراض الحركية إلا بتجاوز العتبة العليا البالغة 80%."
+            }
+          },
+          {
+            "id": "opt_no_correlation_occupancy",
+            "text": {
+              "en": "PET studies demonstrated that striatal D2 receptor occupancy has zero correlation with either clinical efficacy or adverse motor outcomes.",
+              "tr": "PET çalışmaları, striatal D2 doluluğunun ne klinik etkiyle ne de motor yan etkilerle hiçbir korelasyonu olmadığını kanıtlamıştır.",
+              "ar": "أثبتت دراسات PET عدم وجود أي ارتباط بين إشغال مستقبلات D2 بالمخطط وبين الفعالية السريرية أو الأعراض الحركية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. D2 receptor occupancy measured by PET is one of the most rigorously validated quantitative biomarkers in neuropsychopharmacology.",
+              "tr": "Yanlış. PET ile ölçülen D2 reseptör doluluğu, nöropsikofarmakolojideki en sağlam doğrulanmış kantitatif biyobelirteçtir.",
+              "ar": "غير صحيح. يُعد إشغال D2 المقاس بالتصوير المقطعي بالإصدار البوزيتروني (PET) أحد أدق المؤشرات الحيوية المثبتة دوائياً."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 19
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Dört Dopaminerjik Yolak Haritası",
+        "ar": "خارطة المسارات الدوبامينية الأربعة",
+        "en": "Map of the Four Central Dopamine Pathways"
+      },
+      "prompt": {
+        "en": "Picture the striatal seesaw: dopamine normally brakes acetylcholine release. When haloperidol cuts dopamine, acetylcholine skyrockets. What emergency drug restores balance against dystonia?",
+        "tr": "Striatal tahterevalliyi hayal edin: dopamin normalde asetilkolini frenler. Haloperidol dopamini kesince asetilkolin fırlar. Distoniyi durdurmak için hangi acil ilaç verilir?",
+        "ar": "تخيل أرجوحة المخطط: يكبح الدوبامين الأسيتيل كولين طبيعياً. عند حظر الدوبامين بالهالوبيريدول، يشتعل الأسيتيل كولين. ما الدواء الإسعافي الذي يعيد التوازن؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_anticholinergic_countermeasure",
+            "text": {
+              "en": "Centrally acting muscarinic antagonists like biperiden or benztropine block M1 receptors, lowering cholinergic tone back into equilibrium with deficient dopamine.",
+              "tr": "Biperiden veya benztropin gibi santral etkili muskarinik antagonistler M1 reseptörlerini bloke ederek kolinerjik tonusu düşürür ve dengeyi kurar.",
+              "ar": "حاصرات المسكارين المركزية مثل البيبيريدين أو البنزتروبين تحظر مستقبلات M1، خافضة التوتر الكوليني لإعادته للتوازن مع الدوبامين المنخفض."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Anticholinergics dampen the relative cholinergic excess caused by D2 blockade, rapidly aborting acute dystonic muscle spasms.",
+              "tr": "Doğru! Antikolinerjikler, D2 blokajının yarattığı göreceli asetilkolin fazlalığını M1 üzerinden söndürerek distoniyi hızla çözer.",
+              "ar": "صحيح! تخمد مضادات الكولين فرط الأسيتيل كولين النسبي الناجم عن حظر D2، موقفة تشنجات خلل التوتر الحاد بسرعة."
+            }
+          },
+          {
+            "id": "opt_acetylcholinesterase_inhibitor",
+            "text": {
+              "en": "Cholinesterase inhibitors like physostigmine or pyridostigmine to boost acetylcholine further and overpower haloperidol at striatal synapses.",
+              "tr": "Haloperidolü alt etmek için asetilkolini daha da artıracak fizostigmin veya piridostigmin gibi kolinesteraz inhibitörleri verilmelidir.",
+              "ar": "مثبطات الكولينستراز مثل فيزوستيغمين لزيادة الأسيتيل كولين والتغلب على الهالوبيريدول في المشابك العصبية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dystonia is caused by EXCESS acetylcholine. Adding a cholinesterase inhibitor would drastically worsen the muscle spasms.",
+              "tr": "Yanlış. Distoni zaten AŞIRI asetilkolinden kaynaklanır; kolinesteraz inhibitörü vermek kas spazmlarını ölümcül seviyeye taşır.",
+              "ar": "غير صحيح. ينجم خلل التوتر عن فرط الأسيتيل كولين؛ وإعطاء مثبط كولينستراز سيفاقم التشنجات العضلية بشكل كارثي."
+            }
+          },
+          {
+            "id": "opt_full_dopamine_agonist",
+            "text": {
+              "en": "High-dose levodopa/carbidopa or bromocriptine to stimulate mesolimbic dopamine receptors and displace haloperidol from cortical regions.",
+              "tr": "Mezolimbik dopamin reseptörlerini uyarmak ve haloperidolü korteksten sökmek için yüksek doz levodopa veya bromokriptin verilmelidir.",
+              "ar": "جرعات عالية من ليفودوبا أو بروموكريبتين لتحفيز مستقبلات الدوبامين الميزولمبية وإزاحة الهالوبيريدول من القشرة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Full dopamine agonists can trigger severe psychotic relapse; emergency treatment of acute dystonia relies on anticholinergics.",
+              "tr": "Yanlış. Tam dopamin agonistleri hastayı anında akut psikotik alevlenmeye sokar; distoninin acil tedavisi antikolinerjiktir.",
+              "ar": "غير صحيح. تفجر ناهضات الدوبامين انتكاسة ذهانية حادة؛ ويعتمد العلاج الإسعافي لخلل التوتر على مضادات الكولين حصراً."
+            }
+          },
+          {
+            "id": "opt_neuromuscular_blockade",
+            "text": {
+              "en": "Intravenous succinylcholine to permanently block striatal cholinergic interneurons without affecting peripheral muscle tone.",
+              "tr": "Periferik kas tonusunu etkilemeden striatal kolinerjik internöronları kalıcı bloke etmek için intravenöz süksinilkolin verilmelidir.",
+              "ar": "سكسينيل كولين وريدي لحظر العصبونات البينية الكولينية في المخطط بشكل دائم دون التأثير على التوتر العضلي المحيطي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Succinylcholine is a peripheral depolarizing paralytic that causes apnea; it does not cross the BBB to treat central dystonia.",
+              "tr": "Yanlış. Süksinilkolin kan-beyin bariyerini geçemez; solunumu felç eden periferik bir paralitiktir ve distonide yeri yoktur.",
+              "ar": "غير صحيح. السكسينيل كولين مشل عضلي محيطي يسبب توقف التنفس ولا يعبر الدماغ لعلاج خلل التوتر المركزي."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "nigrostriatal yolak",
+          "arContext": "المسار الأسود المخطط"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Dopamin eksikliğinde striatumda yükselen aşırı asetilkolin tonusunu nasıl bastırabilirsiniz?",
+          "ar": "كيف يمكنك إخماد التوتر الكوليني المفرط في المخطط عند هبوط إشارات الدوبامين؟",
+          "en": "How can you pharmacologically dampen the excessive striatal cholinergic tone caused by dopamine deficit?"
+        },
+        {
+          "tier": 2,
+          "tr": "Santral etkili bir antimuskarinik (M1 blokörü) asetilkolinin kas spazmı yaptıran etkisini bloke eder.",
+          "ar": "حاصرات المسكارين المركزية (حاصرات M1) تعطل تأثير الأسيتيل كولين المحرض للتشنج العضلي.",
+          "en": "A centrally acting antimuscarinic (M1 antagonist) blocks acetylcholine's ability to drive muscle spasms."
+        },
+        {
+          "tier": 3,
+          "tr": "Biperiden veya benztropin M1 reseptörlerini bloke ederek dopamin-asetilkolin dengesini hızla kurar ve distoniyi çözer.",
+          "ar": "يحظر البيبيريدين أو البنزتروبين مستقبلات M1، معيداً توازن الدوبامين والأسيتيل كولين ليحل التشنج فوراً.",
+          "en": "Biperiden or benztropine blocks M1 receptors, promptly restoring the dopamine-acetylcholine balance to abort dystonia."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_anticholinergic_countermeasure",
+            "text": {
+              "en": "Centrally acting muscarinic antagonists like biperiden or benztropine block M1 receptors, lowering cholinergic tone back into equilibrium with deficient dopamine.",
+              "tr": "Biperiden veya benztropin gibi santral etkili muskarinik antagonistler M1 reseptörlerini bloke ederek kolinerjik tonusu düşürür ve dengeyi kurar.",
+              "ar": "حاصرات المسكارين المركزية مثل البيبيريدين أو البنزتروبين تحظر مستقبلات M1، خافضة التوتر الكوليني لإعادته للتوازن مع الدوبامين المنخفض."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Anticholinergics dampen the relative cholinergic excess caused by D2 blockade, rapidly aborting acute dystonic muscle spasms.",
+              "tr": "Doğru! Antikolinerjikler, D2 blokajının yarattığı göreceli asetilkolin fazlalığını M1 üzerinden söndürerek distoniyi hızla çözer.",
+              "ar": "صحيح! تخمد مضادات الكولين فرط الأسيتيل كولين النسبي الناجم عن حظر D2، موقفة تشنجات خلل التوتر الحاد بسرعة."
+            }
+          },
+          {
+            "id": "opt_acetylcholinesterase_inhibitor",
+            "text": {
+              "en": "Cholinesterase inhibitors like physostigmine or pyridostigmine to boost acetylcholine further and overpower haloperidol at striatal synapses.",
+              "tr": "Haloperidolü alt etmek için asetilkolini daha da artıracak fizostigmin veya piridostigmin gibi kolinesteraz inhibitörleri verilmelidir.",
+              "ar": "مثبطات الكولينستراز مثل فيزوستيغمين لزيادة الأسيتيل كولين والتغلب على الهالوبيريدول في المشابك العصبية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Dystonia is caused by EXCESS acetylcholine. Adding a cholinesterase inhibitor would drastically worsen the muscle spasms.",
+              "tr": "Yanlış. Distoni zaten AŞIRI asetilkolinden kaynaklanır; kolinesteraz inhibitörü vermek kas spazmlarını ölümcül seviyeye taşır.",
+              "ar": "غير صحيح. ينجم خلل التوتر عن فرط الأسيتيل كولين؛ وإعطاء مثبط كولينستراز سيفاقم التشنجات العضلية بشكل كارثي."
+            }
+          },
+          {
+            "id": "opt_full_dopamine_agonist",
+            "text": {
+              "en": "High-dose levodopa/carbidopa or bromocriptine to stimulate mesolimbic dopamine receptors and displace haloperidol from cortical regions.",
+              "tr": "Mezolimbik dopamin reseptörlerini uyarmak ve haloperidolü korteksten sökmek için yüksek doz levodopa veya bromokriptin verilmelidir.",
+              "ar": "جرعات عالية من ليفودوبا أو بروموكريبتين لتحفيز مستقبلات الدوبامين الميزولمبية وإزاحة الهالوبيريدول من القشرة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Full dopamine agonists can trigger severe psychotic relapse; emergency treatment of acute dystonia relies on anticholinergics.",
+              "tr": "Yanlış. Tam dopamin agonistleri hastayı anında akut psikotik alevlenmeye sokar; distoninin acil tedavisi antikolinerjiktir.",
+              "ar": "غير صحيح. تفجر ناهضات الدوبامين انتكاسة ذهانية حادة؛ ويعتمد العلاج الإسعافي لخلل التوتر على مضادات الكولين حصراً."
+            }
+          },
+          {
+            "id": "opt_neuromuscular_blockade",
+            "text": {
+              "en": "Intravenous succinylcholine to permanently block striatal cholinergic interneurons without affecting peripheral muscle tone.",
+              "tr": "Periferik kas tonusunu etkilemeden striatal kolinerjik internöronları kalıcı bloke etmek için intravenöz süksinilkolin verilmelidir.",
+              "ar": "سكسينيل كولين وريدي لحظر العصبونات البينية الكولينية في المخطط بشكل دائم دون التأثير على التوتر العضلي المحيطي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Succinylcholine is a peripheral depolarizing paralytic that causes apnea; it does not cross the BBB to treat central dystonia.",
+              "tr": "Yanlış. Süksinilkolin kan-beyin bariyerini geçemez; solunumu felç eden periferik bir paralitiktir ve distonide yeri yoktur.",
+              "ar": "غير صحيح. السكسينيل كولين مشل عضلي محيطي يسبب توقف التنفس ولا يعبر الدماغ لعلاج خلل التوتر المركزي."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Atölye: Receptor-Ligand Matcher (D2/5-HT2A)",
+        "ar": "ورشة تفاعلية: مطابق مستقبلات D2 و 5-HT2A",
+        "en": "Interactive Workshop: Receptor Matcher (D2 / 5-HT2A)"
+      },
+      "prompt": {
+        "en": "Match haloperidol's functional groups with complementary amino acid residues inside the D2 receptor pocket to uncover high-affinity blockade architecture.",
+        "tr": "Haloperidolün gruplarını D2 cebindeki amino asitlerle eşleştirerek yüksek afiniteli blokajın moleküler mimarisini çözün.",
+        "ar": "طابق مجموعات الهالوبيريدول الوظيفية مع الأحماض الأمينية في جيب D2 لكشف معمارية الارتباط عالي الألفة."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "title": "Haloperidol - D2 Dopamin Reseptör Kenetlenmesi",
+        "prompt": "Haloperidolün gruplarını D2 cebindeki amino asitlerle eşleştirerek yüksek affiniteli blokajın kimyasını çözün.",
+        "drugName": "Haloperidol",
+        "receptorName": "D2 Dopamin Reseptörü",
+        "pairs": [
+          {
+            "id": "pair_tert_amine",
+            "drugGroup": "Protonlanmış Tersiyer Amin (Piperidin)",
+            "correctResidueId": "res_asp114",
+            "bondType": "ionic",
+            "energyKcalMol": "-8 ila -12 kcal/mol",
+            "explanation": "Fizyolojik pH'ta pozitif yüklü piperidin azotu, TM3 heliksindeki negatif Asp114 karboksilatı ile en kritik elektrostatik tuz köprüsünü kurar."
+          },
+          {
+            "id": "pair_fluorophenyl",
+            "drugGroup": "p-Fluorofenil Halkası (Bütirofenon)",
+            "correctResidueId": "res_val115_trp386",
+            "bondType": "van_der_waals",
+            "energyKcalMol": "-3 ila -5 kcal/mol",
+            "explanation": "Lipofilik p-fluorofenil ucu, TM3/TM6 helikslerindeki Val115 ve Trp386 kalıntılarının oluşturduğu derin hidrofobik cebe oturur."
+          },
+          {
+            "id": "pair_chlorophenyl",
+            "drugGroup": "4-(p-Klorofenil) Aromatik Halkası",
+            "correctResidueId": "res_phe390",
+            "bondType": "pi_pi",
+            "energyKcalMol": "-4 ila -6 kcal/mol",
+            "explanation": "Klorlu benzen halkası, TM6'daki Phe390 aromatik halkasıyla paralel pi-pi istiflenme yaparak bağlanmayı sıkılaştırır."
+          },
+          {
+            "id": "pair_hydroxyl",
+            "drugGroup": "4-Hidroksil Grubu (-OH)",
+            "correctResidueId": "res_ser193",
+            "bondType": "h_bond",
+            "energyKcalMol": "-2 ila -4 kcal/mol",
+            "explanation": "Piperidin C4 pozisyonundaki hidroksil grubu, TM5 heliksindeki Ser193 kalıntısıyla yönlendirici hidrojen bağı oluşturur."
+          }
+        ],
+        "residues": [
+          {
+            "id": "res_asp114",
+            "residueName": "Asp114 (TM3)",
+            "description": "Negatif yüklü karboksilat kalıntısı (anyonik kenetlenme merkezi)"
+          },
+          {
+            "id": "res_val115_trp386",
+            "residueName": "Val115 / Trp386 (TM3/TM6)",
+            "description": "Derin apolar hidrofobik cep kalıntıları"
+          },
+          {
+            "id": "res_phe390",
+            "residueName": "Phe390 (TM6)",
+            "description": "Aromatik benzen halkalı fenilalanin kalıntısı"
+          },
+          {
+            "id": "res_ser193",
+            "residueName": "Ser193 (TM5)",
+            "description": "Polar hidrojen bağı verici ve alıcı serin kalıntısı"
+          },
+          {
+            "id": "res_glu95",
+            "residueName": "Glu95 (TM2)",
+            "description": "Ekstraselüler yüzey asidik kalıntısı (cep dışı tuzak kalıntı)"
+          }
+        ],
+        "source": {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 22
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Haloperidolün fonksiyonel gruplarını D2 reseptör cebindeki komplementer amino asitlerle eşleştirin.",
+          "ar": "طابق المجموعات الوظيفية للهالوبيريدول مع الأحماض الأمينية المكملة في جيب مستقبل D2.",
+          "en": "Match haloperidol's functional moieties with complementary amino acids inside the D2 binding pocket."
+        },
+        {
+          "tier": 2,
+          "tr": "Tersiyer amin TM3'teki Asp114 ile tuz köprüsü kurar; aromatik halkalar ise Trp386 ve Phe390 ile etkileşir.",
+          "ar": "يشكل الأمين الثالثي جسراً ملحياً مع Asp114 في TM3؛ وتتآثر الحلقات العطرية مع Trp386 و Phe390.",
+          "en": "The tertiary amine forms an ionic salt bridge with Asp114 (TM3); aromatic rings interact with Trp386 and Phe390."
+        },
+        {
+          "tier": 3,
+          "tr": "4-hidroksil grubu Ser193 (TM5) ile hidrojen bağı yaparak yüksek afiniteli antagonist kenetlenmesini tamamlar.",
+          "ar": "تشكل مجموعة 4-هيدروكسيل رابطة هيدروجينية مع Ser193 في TM5 متممة الالتحام عالي الألفة.",
+          "en": "The 4-hydroxyl group hydrogen bonds with Ser193 (TM5), locking the high-affinity antagonistic conformation."
+        }
+      ],
+      "widgetType": "ReceptorLigandMatcher",
+      "widget": {
+        "type": "ReceptorLigandMatcher",
+        "config": {
+          "title": "Haloperidol - D2 Dopamin Reseptör Kenetlenmesi",
+          "prompt": "Haloperidolün gruplarını D2 cebindeki amino asitlerle eşleştirerek yüksek affiniteli blokajın kimyasını çözün.",
+          "drugName": "Haloperidol",
+          "receptorName": "D2 Dopamin Reseptörü",
+          "pairs": [
+            {
+              "id": "pair_tert_amine",
+              "drugGroup": "Protonlanmış Tersiyer Amin (Piperidin)",
+              "correctResidueId": "res_asp114",
+              "bondType": "ionic",
+              "energyKcalMol": "-8 ila -12 kcal/mol",
+              "explanation": "Fizyolojik pH'ta pozitif yüklü piperidin azotu, TM3 heliksindeki negatif Asp114 karboksilatı ile en kritik elektrostatik tuz köprüsünü kurar."
+            },
+            {
+              "id": "pair_fluorophenyl",
+              "drugGroup": "p-Fluorofenil Halkası (Bütirofenon)",
+              "correctResidueId": "res_val115_trp386",
+              "bondType": "van_der_waals",
+              "energyKcalMol": "-3 ila -5 kcal/mol",
+              "explanation": "Lipofilik p-fluorofenil ucu, TM3/TM6 helikslerindeki Val115 ve Trp386 kalıntılarının oluşturduğu derin hidrofobik cebe oturur."
+            },
+            {
+              "id": "pair_chlorophenyl",
+              "drugGroup": "4-(p-Klorofenil) Aromatik Halkası",
+              "correctResidueId": "res_phe390",
+              "bondType": "pi_pi",
+              "energyKcalMol": "-4 ila -6 kcal/mol",
+              "explanation": "Klorlu benzen halkası, TM6'daki Phe390 aromatik halkasıyla paralel pi-pi istiflenme yaparak bağlanmayı sıkılaştırır."
+            },
+            {
+              "id": "pair_hydroxyl",
+              "drugGroup": "4-Hidroksil Grubu (-OH)",
+              "correctResidueId": "res_ser193",
+              "bondType": "h_bond",
+              "energyKcalMol": "-2 ila -4 kcal/mol",
+              "explanation": "Piperidin C4 pozisyonundaki hidroksil grubu, TM5 heliksindeki Ser193 kalıntısıyla yönlendirici hidrojen bağı oluşturur."
+            }
+          ],
+          "residues": [
+            {
+              "id": "res_asp114",
+              "residueName": "Asp114 (TM3)",
+              "description": "Negatif yüklü karboksilat kalıntısı (anyonik kenetlenme merkezi)"
+            },
+            {
+              "id": "res_val115_trp386",
+              "residueName": "Val115 / Trp386 (TM3/TM6)",
+              "description": "Derin apolar hidrofobik cep kalıntıları"
+            },
+            {
+              "id": "res_phe390",
+              "residueName": "Phe390 (TM6)",
+              "description": "Aromatik benzen halkalı fenilalanin kalıntısı"
+            },
+            {
+              "id": "res_ser193",
+              "residueName": "Ser193 (TM5)",
+              "description": "Polar hidrojen bağı verici ve alıcı serin kalıntısı"
+            },
+            {
+              "id": "res_glu95",
+              "residueName": "Glu95 (TM2)",
+              "description": "Ekstraselüler yüzey asidik kalıntısı (cep dışı tuzak kalıntı)"
+            }
+          ],
+          "source": {
+            "file": "Santral Sinir Sistemi.pdf",
+            "page": 22
+          }
+        }
+      },
+      "conceptCheck": {
+        "options": []
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Atipiklerin 5-HT2A Kurtarma Mekanizması",
+        "ar": "استكشاف موجه: آلية إنقاذ 5-HT2A في مضادات الذهان غير النمطية",
+        "en": "Guided Discovery: The 5-HT2A Rescue Mechanism"
+      },
+      "prompt": {
+        "en": "Why do second-generation atypical antipsychotics (SGAs) cause substantially fewer extrapyramidal motor symptoms than typicals? What role does 5-HT2A receptor antagonism play in the striatum?",
+        "tr": "İkinci kuşak atipik antipsikotikler tipiklere göre neden çok daha az motor yan etki (EPS) yapar? 5-HT2A reseptör antagonizması striatumda nasıl bir rol oynar?",
+        "ar": "لماذا تسبب مضادات الذهان اللانمطية أعراضاً خارج هرمية أقل بكثير مقارنة بالنمطية؟ ما الدور الذي يلعبه حظر مستقبلات 5-HT2A في المخطط؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "5-HT2A antagonizması motor yolda dopamini kurtarır; atipik antipsikotiklerin sırrı budur.",
+        "options": [
+          {
+            "id": "opt_5ht2a_disinhibition",
+            "text": {
+              "en": "Serotonin 5-HT2A receptors normally brake dopamine release; blocking them disinhibits striatal dopamine terminals, competing with D2 blockade to stay below 80% occupancy.",
+              "tr": "5-HT2A normalde dopamin salınımını frenler; blokajı striatumda dopamin salınımını serbest bırakır ve D2 doluluğunu %80'in altında tutar.",
+              "ar": "تكبح مستقبلات 5-HT2A إفراز الدوبامين طبيعياً؛ وحظرها يحرر إفراز الدوبامين بالمخطط ليزاحم حظر D2 ويبقيه تحت عتبة 80%."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! 5-HT2A antagonism disinhibits dopamine release in the nigrostriatal pathway, allowing dopamine to compete and protect against motor EPS.",
+              "tr": "Doğru! 5-HT2A blokajı striatal dopamin salınımını artırır; açığa çıkan dopamin D2'de yarışarak doluluğu %80 altında tutar ve motor EPS'yi önler.",
+              "ar": "صحيح! يحرر حظر 5-HT2A إفراز الدوبامين في المسار الحركي، ليتنافس محلياً مع الدواء ويبقي إشغال D2 دون 80% الحامية من EPS."
+            }
+          },
+          {
+            "id": "opt_direct_d2_synthesis",
+            "text": {
+              "en": "5-HT2A antagonism directly mutates the genetic promoter of D2 receptors, transforming them into Gs-coupled excitatory dopamine receptors.",
+              "tr": "5-HT2A antagonizması D2 reseptörlerinin genetik promotorunu mutasyona uğratarak onları Gs kenetli uyarıcı reseptörlere dönüştürür.",
+              "ar": "يحدث حظر 5-HT2A طفرة جينية في محفز مستقبلات D2 محولاً إياها لمستقبلات منشطة مقترنة بـ Gs."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Pharmacological antagonists do not mutate genetic promoters or alter GPCR coupling identities.",
+              "tr": "Yanlış. Farmakolojik antagonistler genetik promotor mutasyonu yapmaz veya G-proteini tipini değiştiremez.",
+              "ar": "غير صحيح. لا تحدث المناهضات الدوائية طفرات جينية ولا تغير هوية البروتين G المقترن بالمستقبل."
+            }
+          },
+          {
+            "id": "opt_cyp_induction_clearance",
+            "text": {
+              "en": "5-HT2A antagonism massively induces hepatic CYP3A4, completely clearing the antipsychotic from the brain within two minutes of administration.",
+              "tr": "5-HT2A antagonizması karaciğer CYP3A4 enzimini aşırı uyararak ilacın iki dakika içinde beyinden tamamen temizlenmesini sağlar.",
+              "ar": "يحفز حظر 5-HT2A إنزيم CYP3A4 الكبدي بشدة مما يطرد الدواء من الدماغ خلال دقيقتين من تناوله."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Antipsychotics remain in brain tissue for hours; motor sparing is mediated by local neurochemical striatal dopamine release.",
+              "tr": "Yanlış. Antipsikotikler beyinde saatlerce kalır; motor koruma yerel striatal dopamin salınımının artmasıyla sağlanır.",
+              "ar": "غير صحيح. تبقى مضادات الذهان في الدماغ لساعات؛ وتتحقق الحماية الحركية عبر تعزيز إفراز الدوبامين الموضعي بالمخطط."
+            }
+          },
+          {
+            "id": "opt_peripheral_muscle_relaxant",
+            "text": {
+              "en": "5-HT2A blockers act as neuromuscular junction curare-like blockers, directly relaxing skeletal muscles independently of the central nervous system.",
+              "tr": "5-HT2A blokörleri santral sinir sisteminden bağımsız olarak çizgili kasları gevşeten kürar benzeri periferik kas gevşeticilerdir.",
+              "ar": "تعمل حاصرات 5-HT2A كمرخيات عضلية محيطية شبيهة بالكورار ترخي العضلات بمعزل عن الجهاز العصبي المركزي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. 5-HT2A receptors relevant to EPS mitigation operate centrally in cortical and striatal monoaminergic circuits, not peripheral muscles.",
+              "tr": "Yanlış. 5-HT2A reseptörleri periferik kasta değil, santral korteks ve striatumdaki monoaminerjik devrelerde işlev görür.",
+              "ar": "غير صحيح. تعمل مستقبلات 5-HT2A المسؤولة عن تخفيف EPS مركزياً في الدوائر العصبية القشرية والمخططية وليس في العضلات المحيطية."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Serotonin 5-HT2A reseptörlerinin nigrostriatal dopamin terminalleri üzerindeki normal görevini hatırlayın.",
+          "ar": "تذكر الوظيفة الفسيولوجية لمستقبلات السيروتونين 5-HT2A على نهايات الدوبامين في المسار الحركي.",
+          "en": "Recall the normal physiological action of serotonin 5-HT2A heteroreceptors on motor dopamine terminals."
+        },
+        {
+          "tier": 2,
+          "tr": "5-HT2A normalde dopamin salınımını frenler; bu reseptör bloke edilirse dopamin salınımı serbest kalır.",
+          "ar": "يكبح 5-HT2A إفراز الدوبامين فسيولوجياً؛ وحظر هذا المستقبل يحرر إفراز الدوبامين الموضعي بالمخطط.",
+          "en": "5-HT2A normally brakes dopamine release; blocking it disinhibits local dopamine outflow in the striatum."
+        },
+        {
+          "tier": 3,
+          "tr": "Açığa çıkan dopamin striatal D2'de ilaçla yarışır ve doluluğu %80'in altında tutarak motor EPS'yi önler.",
+          "ar": "يزاحم الدوبامين المحرر الدواء عند مستقبلات D2 بالمخطط، مبقياً الإشغال دون 80% ليحمي من EPS.",
+          "en": "Released dopamine outcompetes the drug at striatal D2 receptors, keeping occupancy below 80% to spare EPS."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_5ht2a_disinhibition",
+            "text": {
+              "en": "Serotonin 5-HT2A receptors normally brake dopamine release; blocking them disinhibits striatal dopamine terminals, competing with D2 blockade to stay below 80% occupancy.",
+              "tr": "5-HT2A normalde dopamin salınımını frenler; blokajı striatumda dopamin salınımını serbest bırakır ve D2 doluluğunu %80'in altında tutar.",
+              "ar": "تكبح مستقبلات 5-HT2A إفراز الدوبامين طبيعياً؛ وحظرها يحرر إفراز الدوبامين بالمخطط ليزاحم حظر D2 ويبقيه تحت عتبة 80%."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! 5-HT2A antagonism disinhibits dopamine release in the nigrostriatal pathway, allowing dopamine to compete and protect against motor EPS.",
+              "tr": "Doğru! 5-HT2A blokajı striatal dopamin salınımını artırır; açığa çıkan dopamin D2'de yarışarak doluluğu %80 altında tutar ve motor EPS'yi önler.",
+              "ar": "صحيح! يحرر حظر 5-HT2A إفراز الدوبامين في المسار الحركي، ليتنافس محلياً مع الدواء ويبقي إشغال D2 دون 80% الحامية من EPS."
+            }
+          },
+          {
+            "id": "opt_direct_d2_synthesis",
+            "text": {
+              "en": "5-HT2A antagonism directly mutates the genetic promoter of D2 receptors, transforming them into Gs-coupled excitatory dopamine receptors.",
+              "tr": "5-HT2A antagonizması D2 reseptörlerinin genetik promotorunu mutasyona uğratarak onları Gs kenetli uyarıcı reseptörlere dönüştürür.",
+              "ar": "يحدث حظر 5-HT2A طفرة جينية في محفز مستقبلات D2 محولاً إياها لمستقبلات منشطة مقترنة بـ Gs."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Pharmacological antagonists do not mutate genetic promoters or alter GPCR coupling identities.",
+              "tr": "Yanlış. Farmakolojik antagonistler genetik promotor mutasyonu yapmaz veya G-proteini tipini değiştiremez.",
+              "ar": "غير صحيح. لا تحدث المناهضات الدوائية طفرات جينية ولا تغير هوية البروتين G المقترن بالمستقبل."
+            }
+          },
+          {
+            "id": "opt_cyp_induction_clearance",
+            "text": {
+              "en": "5-HT2A antagonism massively induces hepatic CYP3A4, completely clearing the antipsychotic from the brain within two minutes of administration.",
+              "tr": "5-HT2A antagonizması karaciğer CYP3A4 enzimini aşırı uyararak ilacın iki dakika içinde beyinden tamamen temizlenmesini sağlar.",
+              "ar": "يحفز حظر 5-HT2A إنزيم CYP3A4 الكبدي بشدة مما يطرد الدواء من الدماغ خلال دقيقتين من تناوله."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Antipsychotics remain in brain tissue for hours; motor sparing is mediated by local neurochemical striatal dopamine release.",
+              "tr": "Yanlış. Antipsikotikler beyinde saatlerce kalır; motor koruma yerel striatal dopamin salınımının artmasıyla sağlanır.",
+              "ar": "غير صحيح. تبقى مضادات الذهان في الدماغ لساعات؛ وتتحقق الحماية الحركية عبر تعزيز إفراز الدوبامين الموضعي بالمخطط."
+            }
+          },
+          {
+            "id": "opt_peripheral_muscle_relaxant",
+            "text": {
+              "en": "5-HT2A blockers act as neuromuscular junction curare-like blockers, directly relaxing skeletal muscles independently of the central nervous system.",
+              "tr": "5-HT2A blokörleri santral sinir sisteminden bağımsız olarak çizgili kasları gevşeten kürar benzeri periferik kas gevşeticilerdir.",
+              "ar": "تعمل حاصرات 5-HT2A كمرخيات عضلية محيطية شبيهة بالكورار ترخي العضلات بمعزل عن الجهاز العصبي المركزي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. 5-HT2A receptors relevant to EPS mitigation operate centrally in cortical and striatal monoaminergic circuits, not peripheral muscles.",
+              "tr": "Yanlış. 5-HT2A reseptörleri periferik kasta değil, santral korteks ve striatumdaki monoaminerjik devrelerde işlev görür.",
+              "ar": "غير صحيح. تعمل مستقبلات 5-HT2A المسؤولة عن تخفيف EPS مركزياً في الدوائر العصبية القشرية والمخططية وليس في العضلات المحيطية."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "PET Doluluk Penceresi ve Reseptör Kinetiği",
+        "ar": "نافذة الإشغال في تصوير PET وحركية المستقبل",
+        "en": "Formal Neuropharmacology: PET D2 Occupancy Window"
+      },
+      "prompt": {
+        "en": "What two pharmacological properties define atypical antipsychotics: the Meltzer index and receptor dissociation kinetics (Kapur-Seeman hypothesis)?",
+        "tr": "Atipik antipsikotikleri tanımlayan iki farmakolojik özellik nedir: Meltzer indeksi ve reseptör ayrışma kinetiği (Kapur-Seeman hipotezi)?",
+        "ar": "ما الخاصيتان الدوائيتان اللتان تحددان مضادات الذهان اللانمطية: مؤشر ميلتزر وحركية التفكك عن المستقبل (فرضية كابور-سيمان)؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_atypicality_equation",
+            "text": {
+              "en": "High 5-HT2A/D2 affinity ratio (Meltzer index) and rapid D2 dissociation ('fast-off' kinetics) allowing endogenous dopamine surges to maintain physiological motor control.",
+              "tr": "Yüksek 5-HT2A/D2 afinite oranı (Meltzer indeksi) ve endojen dopaminin fizyolojik motor iletimi sürdürmesini sağlayan hızlı D2 ayrışması ('fast-off' kinetiği).",
+              "ar": "نسبة ألفة مرتفعة لـ 5-HT2A مقارنة بـ D2 (مؤشر ميلتزر) وتفكك سريع عن D2 (حركية fast-off) مما يتيح للدوبامين الحفاظ على التحكم الحركي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! High 5-HT2A affinity and fast D2 dissociation allow atypicals (clozapine, quetiapine) to quell psychosis while sparing physiological motor signaling.",
+              "tr": "Doğru! Yüksek 5-HT2A afinitesi ve D2'den hızla ayrılma (fast-off), atipiklerin psikozu çözerken motor kontrolü korumasını sağlar.",
+              "ar": "صحيح! تتيح الألفة العالية لـ 5-HT2A والتفكك السريع عن D2 للأدوية اللانمطية خمد الذهان مع الحفاظ على الإشارات الحركية الفسيولوجية."
+            }
+          },
+          {
+            "id": "opt_irreversible_binding",
+            "text": {
+              "en": "Irreversible covalent D2 binding paired with zero affinity for 5-HT2A receptors, ensuring permanent silencing of all dopaminergic synapses.",
+              "tr": "D2'ye geri dönüşsüz kovalent bağlanma ve 5-HT2A'ya sıfır afinite, tüm dopaminerjik sinapsların kalıcı olarak susturulmasını sağlar.",
+              "ar": "ارتباط تساهمي غير عكوس بمستقبلات D2 مع انعدام الألفة تجاه 5-HT2A، لضمان إسكات دائم لكافة المشابك الدوبامينية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Irreversible binding would cause devastating, permanent extrapyramidal symptoms. Atypicals dissociate FASTER than typicals.",
+              "tr": "Yanlış. Geri dönüşsüz bağlanma felç edici kalıcı EPS yapardı. Atipikler tipiklere göre D2'den ÇOK DAHA HIZLI ayrılırlar.",
+              "ar": "غير صحيح. الارتباط غير العكوس يسبب شللاً رعاشياً مدمراً ودائماً؛ تتفكك اللانمطيات عن D2 بشكل أسرع بكثير من النمطية."
+            }
+          },
+          {
+            "id": "opt_slow_off_superiority",
+            "text": {
+              "en": "Extremely slow D2 dissociation ('slow-off' kinetics with half-life of days) that outcompetes dopamine even under maximal physiological stress.",
+              "tr": "Maksimal fizyolojik stres altında bile dopamini alt eden aşırı yavaş D2 ayrışması (günler süren 'slow-off' kinetiği).",
+              "ar": "تفكك بطيء للغاية عن D2 (حركية slow-off بنصف عمر لأيام) يتغلب على الدوبامين حتى تحت وطأة الإجهاد الفسيولوجي الأقصى."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Slow-off kinetics (like haloperidol) produce continuous unrelenting receptor blockade and high EPS risk. Fast-off protects motor control.",
+              "tr": "Yanlış. Haloperidol gibi yavaş ayrılan (slow-off) ilaçlar yüksek EPS yapar; motor fonksiyonları koruyan 'fast-off' (hızlı ayrışma) özelliğidir.",
+              "ar": "غير صحيح. الحركية البطيئة (كالهالوبيريدول) تبقي المستقبل محظوراً بلا هوادة وتسبب EPS؛ بينما الحركية السريعة تحمي الحركة."
+            }
+          },
+          {
+            "id": "opt_gastric_degradation_myth",
+            "text": {
+              "en": "Fast-off kinetics refers to rapid destruction of the drug by gastric acid, preventing high systemic bioavailability.",
+              "tr": "Fast-off kinetiği, ilacın mide asidi tarafından hızla parçalanmasını ve yüksek biyoyararlanım oluşmamasını ifade eder.",
+              "ar": "تشير حركية fast-off إلى التفكك السريع للدواء بواسطة حمض المعدة مما يمنع التوافر الحيوي الجهازي المرتفع."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. 'Fast-off' refers strictly to the microscopic dissociation rate constant (k-off) of the drug-receptor complex in the brain.",
+              "tr": "Yanlış. 'Fast-off' mideyle ilgili değildir; ilacın beyindeki reseptörden mikroskobik ayrışma hız sabitini (k-off) tanımlar.",
+              "ar": "غير صحيح. يشير fast-off حصراً إلى ثابت سرعة تفكك معقد الدواء والمستقبل (k-off) في أنسجة الدماغ."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "PET doluluk penceresi",
+          "arContext": "نافذة الإشغال في PET"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Meltzer oranı ve Kapur-Seeman 'fast-off' kinetik hipotezini bir arada değerlendirin.",
+          "ar": "قيم معاً مؤشر ميلتزر وفرضية حركية التفكك السريع 'fast-off' لكابور وسيمان.",
+          "en": "Evaluate the Meltzer affinity ratio together with the Kapur-Seeman fast-off kinetic hypothesis."
+        },
+        {
+          "tier": 2,
+          "tr": "Atipikler 5-HT2A'ya D2'den daha yüksek afiniteyle bağlanır ve D2 reseptöründen hızla ayrışırlar.",
+          "ar": "ترتبط اللانمطيات بـ 5-HT2A بألفة أعلى من D2، وتتفكك عن مستقبلات D2 بسرعة فائقة مقارنة بالنمطية.",
+          "en": "Atypicals bind 5-HT2A with higher affinity than D2 and dissociate rapidly from the D2 receptor pore."
+        },
+        {
+          "tier": 3,
+          "tr": "Hızlı ayrışma ('fast-off'), endojen dopamin dalgalarının fizyolojik motor sinyalleri iletmesine izin verir.",
+          "ar": "يتيح التفكك السريع لموجات الدوبامين الطبيعية تمرير إشارات التحكم الحركي الفسيولوجية دون إعاقة.",
+          "en": "Fast-off kinetics allows physiological pulses of endogenous dopamine to transmit essential motor signals."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_atypicality_equation",
+            "text": {
+              "en": "High 5-HT2A/D2 affinity ratio (Meltzer index) and rapid D2 dissociation ('fast-off' kinetics) allowing endogenous dopamine surges to maintain physiological motor control.",
+              "tr": "Yüksek 5-HT2A/D2 afinite oranı (Meltzer indeksi) ve endojen dopaminin fizyolojik motor iletimi sürdürmesini sağlayan hızlı D2 ayrışması ('fast-off' kinetiği).",
+              "ar": "نسبة ألفة مرتفعة لـ 5-HT2A مقارنة بـ D2 (مؤشر ميلتزر) وتفكك سريع عن D2 (حركية fast-off) مما يتيح للدوبامين الحفاظ على التحكم الحركي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! High 5-HT2A affinity and fast D2 dissociation allow atypicals (clozapine, quetiapine) to quell psychosis while sparing physiological motor signaling.",
+              "tr": "Doğru! Yüksek 5-HT2A afinitesi ve D2'den hızla ayrılma (fast-off), atipiklerin psikozu çözerken motor kontrolü korumasını sağlar.",
+              "ar": "صحيح! تتيح الألفة العالية لـ 5-HT2A والتفكك السريع عن D2 للأدوية اللانمطية خمد الذهان مع الحفاظ على الإشارات الحركية الفسيولوجية."
+            }
+          },
+          {
+            "id": "opt_irreversible_binding",
+            "text": {
+              "en": "Irreversible covalent D2 binding paired with zero affinity for 5-HT2A receptors, ensuring permanent silencing of all dopaminergic synapses.",
+              "tr": "D2'ye geri dönüşsüz kovalent bağlanma ve 5-HT2A'ya sıfır afinite, tüm dopaminerjik sinapsların kalıcı olarak susturulmasını sağlar.",
+              "ar": "ارتباط تساهمي غير عكوس بمستقبلات D2 مع انعدام الألفة تجاه 5-HT2A، لضمان إسكات دائم لكافة المشابك الدوبامينية."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Irreversible binding would cause devastating, permanent extrapyramidal symptoms. Atypicals dissociate FASTER than typicals.",
+              "tr": "Yanlış. Geri dönüşsüz bağlanma felç edici kalıcı EPS yapardı. Atipikler tipiklere göre D2'den ÇOK DAHA HIZLI ayrılırlar.",
+              "ar": "غير صحيح. الارتباط غير العكوس يسبب شللاً رعاشياً مدمراً ودائماً؛ تتفكك اللانمطيات عن D2 بشكل أسرع بكثير من النمطية."
+            }
+          },
+          {
+            "id": "opt_slow_off_superiority",
+            "text": {
+              "en": "Extremely slow D2 dissociation ('slow-off' kinetics with half-life of days) that outcompetes dopamine even under maximal physiological stress.",
+              "tr": "Maksimal fizyolojik stres altında bile dopamini alt eden aşırı yavaş D2 ayrışması (günler süren 'slow-off' kinetiği).",
+              "ar": "تفكك بطيء للغاية عن D2 (حركية slow-off بنصف عمر لأيام) يتغلب على الدوبامين حتى تحت وطأة الإجهاد الفسيولوجي الأقصى."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Slow-off kinetics (like haloperidol) produce continuous unrelenting receptor blockade and high EPS risk. Fast-off protects motor control.",
+              "tr": "Yanlış. Haloperidol gibi yavaş ayrılan (slow-off) ilaçlar yüksek EPS yapar; motor fonksiyonları koruyan 'fast-off' (hızlı ayrışma) özelliğidir.",
+              "ar": "غير صحيح. الحركية البطيئة (كالهالوبيريدول) تبقي المستقبل محظوراً بلا هوادة وتسبب EPS؛ بينما الحركية السريعة تحمي الحركة."
+            }
+          },
+          {
+            "id": "opt_gastric_degradation_myth",
+            "text": {
+              "en": "Fast-off kinetics refers to rapid destruction of the drug by gastric acid, preventing high systemic bioavailability.",
+              "tr": "Fast-off kinetiği, ilacın mide asidi tarafından hızla parçalanmasını ve yüksek biyoyararlanım oluşmamasını ifade eder.",
+              "ar": "تشير حركية fast-off إلى التفكك السريع للدواء بواسطة حمض المعدة مما يمنع التوافر الحيوي الجهازي المرتفع."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. 'Fast-off' refers strictly to the microscopic dissociation rate constant (k-off) of the drug-receptor complex in the brain.",
+              "tr": "Yanlış. 'Fast-off' mideyle ilgili değildir; ilacın beyindeki reseptörden mikroskobik ayrışma hız sabitini (k-off) tanımlar.",
+              "ar": "غير صحيح. يشير fast-off حصراً إلى ثابت سرعة تفكك معقد الدواء والمستقبل (k-off) في أنسجة الدماغ."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Denetimi: Tuberoinfundibuler Yol ve Prolaktin",
+        "ar": "فحص المفهوم: المسار القمعي وهرمون البرولاكتين",
+        "en": "Concept Check: Tuberoinfundibular Pathway & Prolactin"
+      },
+      "prompt": {
+        "en": "A patient on long-term haloperidol develops involuntary lip-smacking and choreoathetoid tongue movements (tardive dyskinesia). Why is administering biperiden (an anticholinergic) clinically catastrophic?",
+        "tr": "Uzun süredir haloperidol kullanan hastada istemsiz dudak şapırdatma ve koreoatetoit dil hareketleri (tardif diskinezi) başlıyor. Biperiden (antikolinerjik) vermek neden klinik bir felakettir?",
+        "ar": "مريض يتناول الهالوبيريدول مزمناً يصاب بحركات لا إرادية للشفتين واللسان (عسر الحركة المتأخر). لماذا يُعد إعطاء البيبيريدين (مضاد كولين) كارثة سريرية؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Tuberoinfundibuler blokaj hiperprolaktinemi yan etkisinden sorumludur.",
+        "options": [
+          {
+            "id": "opt_td_supersensitivity_worsened",
+            "text": {
+              "en": "Tardive dyskinesia results from up-regulated, supersensitive D2 receptors; suppressing opposing cholinergic tone exacerbates dopamine dominance and worsens the chorea.",
+              "tr": "Tardif diskinezi D2 reseptör süpersensitivitesinden kaynaklanır; karşıt kolinerjik tonusun kırılması dopamin hakimiyetini ve koreyi daha da azdırır.",
+              "ar": "ينجم عسر الحركة المتأخر عن فرط حساسية مستقبلات D2 المتكاثرة؛ وتثبيط النغمة الكولينية المعاكسة يفاقم هيمنة الدوبامين ويزيد الحركات الرقصية سوءاً."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Anticholinergics treat acute dystonia, but worsen tardive dyskinesia! Treatment requires switching to clozapine or adding a VMAT2 inhibitor.",
+              "tr": "Doğru! Antikolinerjikler akut distoniyi çözer ama tardif diskineziyi KÖTÜLEŞTİRİR! Tedavide klozapine geçilmeli veya VMAT2 inhibitörü verilmelidir.",
+              "ar": "صحيح! تعالج مضادات الكولين خلل التوتر الحاد لكنها تفاقم عسر الحركة المتأخر! يتطلب العلاج التحويل إلى كلوزابين أو إضافة مثبط VMAT2."
+            }
+          },
+          {
+            "id": "opt_biperiden_cures_td",
+            "text": {
+              "en": "Biperiden instantly cures tardive dyskinesia because the disorder is a peripheral acetylcholine receptor hypersensitivity at skeletal motor endplates.",
+              "tr": "Biperiden tardif diskineziyi anında iyileştirir çünkü bozukluk çizgili kas son plaklarındaki periferik asetilkolin aşırı duyarlılığıdır.",
+              "ar": "يشفي البيبيريدين عسر الحركة المتأخر فوراً لأن الاضطراب ناشئ عن فرط حساسية مستقبلات الأسيتيل كولين المحيطية في اللوحة المحركة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. TD is a central striatal neuroplastic disorder of dopamine receptor supersensitivity, and anticholinergics severely exacerbate it.",
+              "tr": "Yanlış. Tardif diskinezi periferik değil santral bir dopamin aşırı duyarlılığıdır ve antikolinerjikler bu tabloyu çok daha ağırlaştırır.",
+              "ar": "غير صحيح. عسر الحركة المتأخر اضطراب مركزي ناجم عن فرط حساسية مستقبلات الدوبامين، ومضادات الكولين تزيده اشتعالاً."
+            }
+          },
+          {
+            "id": "opt_double_haloperidol_dose",
+            "text": {
+              "en": "The haloperidol dose should be immediately tripled to irreversibly downregulate and destroy all supersensitive D2 receptors permanently.",
+              "tr": "Tüm süpersensitif D2 reseptörlerini kalıcı olarak yok etmek ve desensitize etmek için haloperidol dozu derhal üç katına çıkarılmalıdır.",
+              "ar": "يجب مضاعفة جرعة الهالوبيريدول 3 أضعاف فوراً لإزالة حساسية وتدمير كافة مستقبلات D2 مفرطة الحساسية نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Increasing antipsychotic dose temporarily masks symptoms by blocking supersensitive receptors, but ultimately deepens and cements the pathology.",
+              "tr": "Yanlış. Doz artırmak semptomları geçici maskeler ancak süpersensitiviteyi daha da derinleştirip patolojiyi kalıcılaştırır.",
+              "ar": "غير صحيح. زيادة الجرعة تموه الأعراض مؤقتاً لكنها تعمق فرط الحساسية وترسخ التلف العصبي بشكل لا رجعة فيه."
+            }
+          },
+          {
+            "id": "opt_irreversible_substantia_nigra_death",
+            "text": {
+              "en": "Tardive dyskinesia signifies complete coagulative necrosis of the substantia nigra, requiring emergent neurosurgical deep brain stimulation.",
+              "tr": "Tardif diskinezi substantia nigra'nın koagülasyon nekrozuna uğradığını gösterir ve acil derin beyin stimülasyonu cerrahisi gerektirir.",
+              "ar": "يدل عسر الحركة المتأخر على نخر تخثري كامل في المادة السوداء، مما يتطلب جراحة تحفيز عميق للدماغ بشكل إسعافي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. TD is not coagulative necrosis of the substantia nigra; it is receptor upregulation and maladaptive neuroplasticity in striatal synapses.",
+              "tr": "Yanlış. Tardif diskinezi nekroz değildir; striatal postsinaptik reseptörlerin aşırı duyarlılaşması ve adaptif plastisite bozukluğudur.",
+              "ar": "غير صحيح. ليس عسر الحركة المتأخر نخراً في المادة السوداء؛ بل هو تكاثر وفرط حساسية تكيفية لمستقبلات الدوبامين المشبكية."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Uzun süre D2 blokajına maruz kalan postsinaptik reseptörlerin nasıl bir adaptasyon geliştirdiğini düşünün.",
+          "ar": "فكر في التكيف العصبي الذي تطوره مستقبلات D2 البعد مشبكية بعد حظرها المزمن لسنوات.",
+          "en": "Consider the compensatory adaptations developed by postsynaptic D2 receptors after years of chronic blockade."
+        },
+        {
+          "tier": 2,
+          "tr": "D2 reseptörleri aşırı çoğalır ve süpersensitif hale gelir; bu durumda dopamin sinyali aşırı uyarılabilir.",
+          "ar": "تتكاثر مستقبلات D2 وتصبح مفرطة الحساسية؛ مما يجعل أي إشارة دوبامينية تنفجر كحركات رقصية.",
+          "en": "D2 receptors upregulate and become supersensitive; motor circuits become exquisitely hypersensitive to dopamine."
+        },
+        {
+          "tier": 3,
+          "tr": "Antikolinerjik verilirse dopamini dengeleyen kolinerjik fren kalkar ve tardif diskinezi kore hareketleri azgınlaşır.",
+          "ar": "إعطاء مضاد كولين يزيل الكبح الكوليني المعاكس للدوبامين، مما يؤدي لاشتعال عسر الحركة المتأخر وتفاقمه.",
+          "en": "Administering anticholinergics eliminates the opposing cholinergic brake, disastrously worsening tardive chorea."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_td_supersensitivity_worsened",
+            "text": {
+              "en": "Tardive dyskinesia results from up-regulated, supersensitive D2 receptors; suppressing opposing cholinergic tone exacerbates dopamine dominance and worsens the chorea.",
+              "tr": "Tardif diskinezi D2 reseptör süpersensitivitesinden kaynaklanır; karşıt kolinerjik tonusun kırılması dopamin hakimiyetini ve koreyi daha da azdırır.",
+              "ar": "ينجم عسر الحركة المتأخر عن فرط حساسية مستقبلات D2 المتكاثرة؛ وتثبيط النغمة الكولينية المعاكسة يفاقم هيمنة الدوبامين ويزيد الحركات الرقصية سوءاً."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Anticholinergics treat acute dystonia, but worsen tardive dyskinesia! Treatment requires switching to clozapine or adding a VMAT2 inhibitor.",
+              "tr": "Doğru! Antikolinerjikler akut distoniyi çözer ama tardif diskineziyi KÖTÜLEŞTİRİR! Tedavide klozapine geçilmeli veya VMAT2 inhibitörü verilmelidir.",
+              "ar": "صحيح! تعالج مضادات الكولين خلل التوتر الحاد لكنها تفاقم عسر الحركة المتأخر! يتطلب العلاج التحويل إلى كلوزابين أو إضافة مثبط VMAT2."
+            }
+          },
+          {
+            "id": "opt_biperiden_cures_td",
+            "text": {
+              "en": "Biperiden instantly cures tardive dyskinesia because the disorder is a peripheral acetylcholine receptor hypersensitivity at skeletal motor endplates.",
+              "tr": "Biperiden tardif diskineziyi anında iyileştirir çünkü bozukluk çizgili kas son plaklarındaki periferik asetilkolin aşırı duyarlılığıdır.",
+              "ar": "يشفي البيبيريدين عسر الحركة المتأخر فوراً لأن الاضطراب ناشئ عن فرط حساسية مستقبلات الأسيتيل كولين المحيطية في اللوحة المحركة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. TD is a central striatal neuroplastic disorder of dopamine receptor supersensitivity, and anticholinergics severely exacerbate it.",
+              "tr": "Yanlış. Tardif diskinezi periferik değil santral bir dopamin aşırı duyarlılığıdır ve antikolinerjikler bu tabloyu çok daha ağırlaştırır.",
+              "ar": "غير صحيح. عسر الحركة المتأخر اضطراب مركزي ناجم عن فرط حساسية مستقبلات الدوبامين، ومضادات الكولين تزيده اشتعالاً."
+            }
+          },
+          {
+            "id": "opt_double_haloperidol_dose",
+            "text": {
+              "en": "The haloperidol dose should be immediately tripled to irreversibly downregulate and destroy all supersensitive D2 receptors permanently.",
+              "tr": "Tüm süpersensitif D2 reseptörlerini kalıcı olarak yok etmek ve desensitize etmek için haloperidol dozu derhal üç katına çıkarılmalıdır.",
+              "ar": "يجب مضاعفة جرعة الهالوبيريدول 3 أضعاف فوراً لإزالة حساسية وتدمير كافة مستقبلات D2 مفرطة الحساسية نهائياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Increasing antipsychotic dose temporarily masks symptoms by blocking supersensitive receptors, but ultimately deepens and cements the pathology.",
+              "tr": "Yanlış. Doz artırmak semptomları geçici maskeler ancak süpersensitiviteyi daha da derinleştirip patolojiyi kalıcılaştırır.",
+              "ar": "غير صحيح. زيادة الجرعة تموه الأعراض مؤقتاً لكنها تعمق فرط الحساسية وترسخ التلف العصبي بشكل لا رجعة فيه."
+            }
+          },
+          {
+            "id": "opt_irreversible_substantia_nigra_death",
+            "text": {
+              "en": "Tardive dyskinesia signifies complete coagulative necrosis of the substantia nigra, requiring emergent neurosurgical deep brain stimulation.",
+              "tr": "Tardif diskinezi substantia nigra'nın koagülasyon nekrozuna uğradığını gösterir ve acil derin beyin stimülasyonu cerrahisi gerektirir.",
+              "ar": "يدل عسر الحركة المتأخر على نخر تخثري كامل في المادة السوداء، مما يتطلب جراحة تحفيز عميق للدماغ بشكل إسعافي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. TD is not coagulative necrosis of the substantia nigra; it is receptor upregulation and maladaptive neuroplasticity in striatal synapses.",
+              "tr": "Yanlış. Tardif diskinezi nekroz değildir; striatal postsinaptik reseptörlerin aşırı duyarlılaşması ve adaptif plastisite bozukluğudur.",
+              "ar": "غير صحيح. ليس عسر الحركة المتأخر نخراً في المادة السوداء؛ بل هو تكاثر وفرط حساسية تكيفية لمستقبلات الدوبامين المشبكية."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Klinik Karar: Tipikten Atipiğe Geçiş",
+        "ar": "قرار سريري: التحول من النمطي إلى غير النمطي",
+        "en": "Clinical Decision: Transitioning from Typical to Atypical"
+      },
+      "prompt": {
+        "en": "Aripiprazole is termed a 'dopamine thermostat'. How does its high-affinity D2 partial agonism (~30% intrinsic activity) stabilize both hyperactive and hypoactive dopaminergic circuits?",
+        "tr": "Aripiprazol 'dopamin termostatı' olarak adlandırılır. Yüksek afiniteli D2 parsiyel agonizmi (%30 intrensek etki) hem hiperaktif hem hipoaktif yolakları nasıl dengeler?",
+        "ar": "يُلقب الأريبيبرازول بـ 'منظم حرارة الدوبامين'. كيف يوازن ناهضه الجزئي عالي الألفة لـ D2 (فاعلية ذاتية ~30%) المسارات مفرطة وضعيفة النشاط؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "Atipik antipsikotikler yaşam kalitesini ve motor güvenliği korur.",
+        "options": [
+          {
+            "id": "opt_partial_agonist_thermostat",
+            "text": {
+              "en": "In hyperdopaminergic mesolimbic circuits it acts as a functional antagonist (capping activation at 30%); in hypodopaminergic mesocortical and pituitary paths it supplies essential basal tone.",
+              "tr": "Mezolimbikte tam dopamini engelleyip aktiviteyi %30'a sınırlayarak fonksiyonel antagonist; kortikal ve hipofiz yollarında ise %30 bazal uyarı vererek agonist davranır.",
+              "ar": "يعمل كمناهض وظيفي في الميزولمبيك بحد التنشيط عند 30%؛ بينما يوفر في المسارات القشرية والنخامية نغمة قاعدية محفزة بنسبة 30%."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! In high-dopamine areas, aripiprazole dampens signal to 30% (treating psychosis). In low-dopamine areas, it provides 30% tone (preventing EPS and prolactin elevation).",
+              "tr": "Doğru! Dopamin fazlaysa %30'a indirir (psikozu çözer); azsa %30 uyarı verir (EPS ve prolaktin yüksekliğini önler).",
+              "ar": "صحيح! إذا كان الدوبامين مرتفعاً خفضه إلى 30% (معالجاً الذهان)، وإذا كان منخفضاً رفع التنشيط إلى 30% (مانعاً EPS والبرولاكتين)."
+            }
+          },
+          {
+            "id": "opt_full_agonist_all_regions",
+            "text": {
+              "en": "Aripiprazole acts as a 100% full agonist throughout the entire brain, triggering massive dopamine release to wash out previous neuroleptics.",
+              "tr": "Aripiprazol tüm beyinde %100 tam agonist olarak davranır, önceki nöroleptikleri temizlemek için devasa dopamin salınımı yaptırır.",
+              "ar": "يعمل الأريبيبرازول كناهض تام بنسبة 100% في كامل الدماغ، محفزاً إفرازاً هائلاً للدوبامين لغسل مضادات الذهان السابقة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Aripiprazole has only ~25–30% intrinsic efficacy, not 100%. A full agonist would exacerbate psychosis into acute mania.",
+              "tr": "Yanlış. Aripiprazol tam agonist değil %25-30 parsiyel agonisttir. Tam agonist olsaydı psikozu mani krizine sokardı.",
+              "ar": "غير صحيح. يمتلك الأريبيبرازول فاعلية ذاتية تبلغ ~30% فقط؛ والناهض التام كان سيفاقم الذهان إلى نوبة هوس حادة."
+            }
+          },
+          {
+            "id": "opt_inverse_agonist_everywhere",
+            "text": {
+              "en": "Aripiprazole is a universal inverse agonist that silences baseline constitutively active D2 receptors below zero across all pathways.",
+              "tr": "Aripiprazol tüm yolaklarda bazal D2 aktivitesini sıfırın altına düşüren evrensel bir invers agonisttir.",
+              "ar": "الأريبيبرازول ناهض عكسي عام يخمد النشاط الأساسي لمستقبلات D2 لما دون الصفر في كافة المسارات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. An inverse agonist suppresses basal constitutive activity and would produce severe motor EPS and massive hyperprolactinemia.",
+              "tr": "Yanlış. İnvers agonist olsaydı bazal tonusu da sıfırlar, çok ağır EPS ve hiperprolaktinemi yapardı. Aripiprazol parsiyel agonisttir.",
+              "ar": "غير صحيح. الناهض العكسي يقضي على النغمة القاعدية مسبباً شللاً حركياً وفرط برولاكتين حاد؛ بينما الأريبيبرازول ناهض جزئي."
+            }
+          },
+          {
+            "id": "opt_h1_only_mechanism",
+            "text": {
+              "en": "Aripiprazole does not bind D2 receptors; its clinical antipsychotic action is mediated entirely by blocking peripheral histamine H1 receptors.",
+              "tr": "Aripiprazol D2 reseptörlerine bağlanmaz; antipsikotik etkisi tamamen periferik histamin H1 reseptör blokajından kaynaklanır.",
+              "ar": "لا يرتبط الأريبيبرازول بمستقبلات D2؛ بل يتوسط فعاليته المضادة للذهان حظر مستقبلات الهيستامين H1 المحيطية حصراً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Aripiprazole has sub-nanomolar affinity for D2 receptors; its therapeutic profile is driven by D2 partial agonism, not H1 blockade.",
+              "tr": "Yanlış. Aripiprazol D2'ye sub-nanomolar düzeyde çok güçlü bağlanır; etkinliği D2 parsiyel agonizmine dayanır.",
+              "ar": "غير صحيح. يمتلك الأريبيبرازول ألفة دون النانومولار لمستقبلات D2؛ وتنبثق فعاليته من ميزان ناهضه الجزئي عند D2."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Parsiyel agonistin 'ortamdaki ligand düzeyine göre davranış değiştiren' yapısını hatırlayın.",
+          "ar": "تذكر طبيعة الناهض الجزئي الذي يتغير سلوكه السريري تبعاً لتركيز الناقل الطبيعي في البيئة المشبكية.",
+          "en": "Recall how a partial agonist dynamically adapts its functional behavior based on local agonist tone."
+        },
+        {
+          "tier": 2,
+          "tr": "Aripiprazol %30 intrensek aktiviteye sahiptir; tam dopaminin (%100) olduğu yerde etkinliği %30'a çeker.",
+          "ar": "يمتلك الأريبيبرازول فاعلية ذاتية ~30%؛ فيخفض التنشيط المفرط في الميزولمبيك (100%) إلى 30% فقط.",
+          "en": "Aripiprazole has ~30% intrinsic efficacy; in hyperdopaminergic zones it dampens signaling down to 30%."
+        },
+        {
+          "tier": 3,
+          "tr": "Dopaminin az olduğu hipofiz ve striatumda ise %30 bazal uyarı vererek EPS ve hiperprolaktinemiyi önler.",
+          "ar": "وفي النخامية والمخطط يوفر تنشيطاً قاعدياً بنسبة 30% كافياً لمنع الأعراض الحركية وفرط البرولاكتين.",
+          "en": "In low-dopamine pituitary and striatal pathways, it provides 30% basal tone, preventing EPS and hyperprolactinemia."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_partial_agonist_thermostat",
+            "text": {
+              "en": "In hyperdopaminergic mesolimbic circuits it acts as a functional antagonist (capping activation at 30%); in hypodopaminergic mesocortical and pituitary paths it supplies essential basal tone.",
+              "tr": "Mezolimbikte tam dopamini engelleyip aktiviteyi %30'a sınırlayarak fonksiyonel antagonist; kortikal ve hipofiz yollarında ise %30 bazal uyarı vererek agonist davranır.",
+              "ar": "يعمل كمناهض وظيفي في الميزولمبيك بحد التنشيط عند 30%؛ بينما يوفر في المسارات القشرية والنخامية نغمة قاعدية محفزة بنسبة 30%."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! In high-dopamine areas, aripiprazole dampens signal to 30% (treating psychosis). In low-dopamine areas, it provides 30% tone (preventing EPS and prolactin elevation).",
+              "tr": "Doğru! Dopamin fazlaysa %30'a indirir (psikozu çözer); azsa %30 uyarı verir (EPS ve prolaktin yüksekliğini önler).",
+              "ar": "صحيح! إذا كان الدوبامين مرتفعاً خفضه إلى 30% (معالجاً الذهان)، وإذا كان منخفضاً رفع التنشيط إلى 30% (مانعاً EPS والبرولاكتين)."
+            }
+          },
+          {
+            "id": "opt_full_agonist_all_regions",
+            "text": {
+              "en": "Aripiprazole acts as a 100% full agonist throughout the entire brain, triggering massive dopamine release to wash out previous neuroleptics.",
+              "tr": "Aripiprazol tüm beyinde %100 tam agonist olarak davranır, önceki nöroleptikleri temizlemek için devasa dopamin salınımı yaptırır.",
+              "ar": "يعمل الأريبيبرازول كناهض تام بنسبة 100% في كامل الدماغ، محفزاً إفرازاً هائلاً للدوبامين لغسل مضادات الذهان السابقة."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Aripiprazole has only ~25–30% intrinsic efficacy, not 100%. A full agonist would exacerbate psychosis into acute mania.",
+              "tr": "Yanlış. Aripiprazol tam agonist değil %25-30 parsiyel agonisttir. Tam agonist olsaydı psikozu mani krizine sokardı.",
+              "ar": "غير صحيح. يمتلك الأريبيبرازول فاعلية ذاتية تبلغ ~30% فقط؛ والناهض التام كان سيفاقم الذهان إلى نوبة هوس حادة."
+            }
+          },
+          {
+            "id": "opt_inverse_agonist_everywhere",
+            "text": {
+              "en": "Aripiprazole is a universal inverse agonist that silences baseline constitutively active D2 receptors below zero across all pathways.",
+              "tr": "Aripiprazol tüm yolaklarda bazal D2 aktivitesini sıfırın altına düşüren evrensel bir invers agonisttir.",
+              "ar": "الأريبيبرازول ناهض عكسي عام يخمد النشاط الأساسي لمستقبلات D2 لما دون الصفر في كافة المسارات."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. An inverse agonist suppresses basal constitutive activity and would produce severe motor EPS and massive hyperprolactinemia.",
+              "tr": "Yanlış. İnvers agonist olsaydı bazal tonusu da sıfırlar, çok ağır EPS ve hiperprolaktinemi yapardı. Aripiprazol parsiyel agonisttir.",
+              "ar": "غير صحيح. الناهض العكسي يقضي على النغمة القاعدية مسبباً شللاً حركياً وفرط برولاكتين حاد؛ بينما الأريبيبرازول ناهض جزئي."
+            }
+          },
+          {
+            "id": "opt_h1_only_mechanism",
+            "text": {
+              "en": "Aripiprazole does not bind D2 receptors; its clinical antipsychotic action is mediated entirely by blocking peripheral histamine H1 receptors.",
+              "tr": "Aripiprazol D2 reseptörlerine bağlanmaz; antipsikotik etkisi tamamen periferik histamin H1 reseptör blokajından kaynaklanır.",
+              "ar": "لا يرتبط الأريبيبرازول بمستقبلات D2؛ بل يتوسط فعاليته المضادة للذهان حظر مستقبلات الهيستامين H1 المحيطية حصراً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Aripiprazole has sub-nanomolar affinity for D2 receptors; its therapeutic profile is driven by D2 partial agonism, not H1 blockade.",
+              "tr": "Yanlış. Aripiprazol D2'ye sub-nanomolar düzeyde çok güçlü bağlanır; etkinliği D2 parsiyel agonizmine dayanır.",
+              "ar": "غير صحيح. يمتلك الأريبيبرازول ألفة دون النانومولار لمستقبلات D2؛ وتنبثق فعاليته من ميزان ناهضه الجزئي عند D2."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Tersinir Kinetik ve Koff",
+        "ar": "استرجاع معرفي: الحركية العكوسة ومعدل koff",
+        "en": "Retrieval: Reversible Kinetics and Fast Koff"
+      },
+      "prompt": {
+        "en": "Recall the four major dopaminergic pathways: match in sequence the pathways responsible for antipsychotic efficacy, extrapyramidal motor side effects, and hyperprolactinemia.",
+        "tr": "Dört ana dopaminerjik yolağı hatırlayın: antipsikotik etkinlik, ekstrapiramidal motor yan etkiler ve hiperprolaktinemiden sorumlu yolakları sırasıyla eşleştirin.",
+        "ar": "تذكر المسارات الدوبامينية الأربعة الكبرى: طابق بالترتيب المسارات المسؤولة عن الفعالية المضادة للذهان، والأعراض الحركية خارج الهرمية، وفرط برولاكتين الدم."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_pathway_match_correct",
+            "text": {
+              "en": "Antipsychotic efficacy = Mesolimbic; Extrapyramidal motor symptoms = Nigrostriatal; Hyperprolactinemia = Tuberoinfundibular.",
+              "tr": "Antipsikotik etkinlik = Mezolimbik; Ekstrapiramidal motor semptomlar = Nigrostriatal; Hiperprolaktinemi = Tüberoinfundibuler.",
+              "ar": "الفعالية المضادة للذهان = الميزولمبيك؛ الأعراض الحركية خارج الهرمية = المخططي الأسود؛ فرط البرولاكتين = القمعي النخامي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Mesolimbic mediates positive symptoms; Nigrostriatal controls motor execution; Tuberoinfundibular tonically suppresses prolactin.",
+              "tr": "Doğru! Mezolimbik pozitif semptomları; Nigrostriatal motor hareketleri; Tüberoinfundibuler ise hipofizden prolaktin salınımını kontrol eder.",
+              "ar": "صحيح! الميزولمبيك يتوسط الهلاوس والضلالات؛ المخططي الأسود يتحكم بالحركة؛ والقمعي النخامي يكبح إفراز البرولاكتين فسيولوجياً."
+            }
+          },
+          {
+            "id": "opt_pathway_match_inverted",
+            "text": {
+              "en": "Antipsychotic efficacy = Tuberoinfundibular; Extrapyramidal symptoms = Mesocortical; Hyperprolactinemia = Nigrostriatal.",
+              "tr": "Antipsikotik etkinlik = Tüberoinfundibuler; Ekstrapiramidal semptomlar = Mezokortikal; Hiperprolaktinemi = Nigrostriatal.",
+              "ar": "الفعالية المضادة للذهان = القمعي النخامي؛ الأعراض خارج الهرمية = الميزوكورتيكال؛ فرط البرولاكتين = المخططي الأسود."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The tuberoinfundibular pathway controls prolactin, not psychosis. The mesolimbic pathway mediates antipsychotic efficacy.",
+              "tr": "Yanlış. Tüberoinfundibuler yolak psikozu değil prolaktini yönetir. Antipsikotik etki mezolimbik yoldaki blokajdan kaynaklanır.",
+              "ar": "غير صحيح. يتحكم المسار القمعي بالبرولاكتين وليس بالذهان؛ والمسار الميزولمبي هو المسؤول عن إخماد الهلاوس والذهان."
+            }
+          },
+          {
+            "id": "opt_pathway_match_nigrostriatal_psychosis",
+            "text": {
+              "en": "Antipsychotic efficacy = Nigrostriatal; Extrapyramidal symptoms = Mesolimbic; Hyperprolactinemia = Mesocortical.",
+              "tr": "Antipsikotik etkinlik = Nigrostriatal; Ekstrapiramidal semptomlar = Mezolimbik; Hiperprolaktinemi = Mezokortikal.",
+              "ar": "الفعالية المضادة للذهان = المخططي الأسود؛ الأعراض خارج الهرمية = الميزولمبيك؛ فرط البرولاكتين = الميزوكورتيكال."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Nigrostriatal blockade causes parkinsonian motor symptoms; mesolimbic blockade resolves hallucinations and delusions.",
+              "tr": "Yanlış. Nigrostriatal yol motor kontrol merkezidir ve blokajı EPS yapar; mezolimbik yol ise pozitif semptomları dindirir.",
+              "ar": "غير صحيح. حظر المسار المخططي يسبب الشلل الرعاشي وEPS؛ بينما حظر الميزولمبيك هو من يزيل الهلاوس السمعية والضلالات."
+            }
+          },
+          {
+            "id": "opt_all_mesocortical",
+            "text": {
+              "en": "Antipsychotic efficacy = Mesocortical; Extrapyramidal symptoms = Tuberoinfundibular; Hyperprolactinemia = Mesolimbic.",
+              "tr": "Antipsikotik etkinlik = Mezokortikal; Ekstrapiramidal semptomlar = Tüberoinfundibuler; Hiperprolaktinemi = Mezolimbik.",
+              "ar": "الفعالية المضادة للذهان = الميزوكورتيكال؛ الأعراض خارج الهرمية = القمعي النخامي؛ فرط البرولاكتين = الميزولمبيك."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Mesocortical dopamine deficiency causes negative symptoms; tuberoinfundibular blockade causes hyperprolactinemia.",
+              "tr": "Yanlış. Mezokortikal yol negatif semptomlarla ilişkilidir; prolaktin yükselmesi tüberoinfundibuler yolun bloke edilmesiyle oluşur.",
+              "ar": "غير صحيح. يرتبط نقص الدوبامين بالميزوكورتيكال بالأعراض السلبية؛ بينما ينجم فرط البرولاكتين عن حظر المسار القمعي النخامي."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "koff ayrışma hızı",
+          "arContext": "معدل الانفصال koff"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Beyindeki dört dopamin yolağının adlarını ve anatomik sonlanma yerlerini gözden geçirin.",
+          "ar": "راجع أسماء المسارات الدوبامينية الأربعة في الدماغ ومناطق انتهائها التشريحية.",
+          "en": "Review the anatomical origins, trajectories, and terminal regions of the four major dopamine pathways."
+        },
+        {
+          "tier": 2,
+          "tr": "Limbik sistem duyguları, striatum hareketi, hipotalamus-hipofiz ekseni ise prolaktini yönetir.",
+          "ar": "يدير الجهاز الحوفي العواطف والهلاوس، ويتحكم المخطط بالحركة، ويدير المحور النخامي هرمون الحليب.",
+          "en": "The limbic system governs psychosis; the striatum coordinates movement; the pituitary axis regulates prolactin."
+        },
+        {
+          "tier": 3,
+          "tr": "Sıralama: Antipsikotik etkinlik = Mezolimbik; Motor EPS = Nigrostriatal; Hiperprolaktinemi = Tüberoinfundibuler.",
+          "ar": "الترتيب: الفعالية = الميزولمبيك؛ الأعراض الحركية = المخططي الأسود؛ فرط البرولاكتين = القمعي النخامي.",
+          "en": "Sequence: Antipsychotic efficacy = Mesolimbic; Motor EPS = Nigrostriatal; Hyperprolactinemia = Tuberoinfundibular."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_pathway_match_correct",
+            "text": {
+              "en": "Antipsychotic efficacy = Mesolimbic; Extrapyramidal motor symptoms = Nigrostriatal; Hyperprolactinemia = Tuberoinfundibular.",
+              "tr": "Antipsikotik etkinlik = Mezolimbik; Ekstrapiramidal motor semptomlar = Nigrostriatal; Hiperprolaktinemi = Tüberoinfundibuler.",
+              "ar": "الفعالية المضادة للذهان = الميزولمبيك؛ الأعراض الحركية خارج الهرمية = المخططي الأسود؛ فرط البرولاكتين = القمعي النخامي."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Mesolimbic mediates positive symptoms; Nigrostriatal controls motor execution; Tuberoinfundibular tonically suppresses prolactin.",
+              "tr": "Doğru! Mezolimbik pozitif semptomları; Nigrostriatal motor hareketleri; Tüberoinfundibuler ise hipofizden prolaktin salınımını kontrol eder.",
+              "ar": "صحيح! الميزولمبيك يتوسط الهلاوس والضلالات؛ المخططي الأسود يتحكم بالحركة؛ والقمعي النخامي يكبح إفراز البرولاكتين فسيولوجياً."
+            }
+          },
+          {
+            "id": "opt_pathway_match_inverted",
+            "text": {
+              "en": "Antipsychotic efficacy = Tuberoinfundibular; Extrapyramidal symptoms = Mesocortical; Hyperprolactinemia = Nigrostriatal.",
+              "tr": "Antipsikotik etkinlik = Tüberoinfundibuler; Ekstrapiramidal semptomlar = Mezokortikal; Hiperprolaktinemi = Nigrostriatal.",
+              "ar": "الفعالية المضادة للذهان = القمعي النخامي؛ الأعراض خارج الهرمية = الميزوكورتيكال؛ فرط البرولاكتين = المخططي الأسود."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The tuberoinfundibular pathway controls prolactin, not psychosis. The mesolimbic pathway mediates antipsychotic efficacy.",
+              "tr": "Yanlış. Tüberoinfundibuler yolak psikozu değil prolaktini yönetir. Antipsikotik etki mezolimbik yoldaki blokajdan kaynaklanır.",
+              "ar": "غير صحيح. يتحكم المسار القمعي بالبرولاكتين وليس بالذهان؛ والمسار الميزولمبي هو المسؤول عن إخماد الهلاوس والذهان."
+            }
+          },
+          {
+            "id": "opt_pathway_match_nigrostriatal_psychosis",
+            "text": {
+              "en": "Antipsychotic efficacy = Nigrostriatal; Extrapyramidal symptoms = Mesolimbic; Hyperprolactinemia = Mesocortical.",
+              "tr": "Antipsikotik etkinlik = Nigrostriatal; Ekstrapiramidal semptomlar = Mezolimbik; Hiperprolaktinemi = Mezokortikal.",
+              "ar": "الفعالية المضادة للذهان = المخططي الأسود؛ الأعراض خارج الهرمية = الميزولمبيك؛ فرط البرولاكتين = الميزوكورتيكال."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Nigrostriatal blockade causes parkinsonian motor symptoms; mesolimbic blockade resolves hallucinations and delusions.",
+              "tr": "Yanlış. Nigrostriatal yol motor kontrol merkezidir ve blokajı EPS yapar; mezolimbik yol ise pozitif semptomları dindirir.",
+              "ar": "غير صحيح. حظر المسار المخططي يسبب الشلل الرعاشي وEPS؛ بينما حظر الميزولمبيك هو من يزيل الهلاوس السمعية والضلالات."
+            }
+          },
+          {
+            "id": "opt_all_mesocortical",
+            "text": {
+              "en": "Antipsychotic efficacy = Mesocortical; Extrapyramidal symptoms = Tuberoinfundibular; Hyperprolactinemia = Mesolimbic.",
+              "tr": "Antipsikotik etkinlik = Mezokortikal; Ekstrapiramidal semptomlar = Tüberoinfundibuler; Hiperprolaktinemi = Mezolimbik.",
+              "ar": "الفعالية المضادة للذهان = الميزوكورتيكال؛ الأعراض خارج الهرمية = القمعي النخامي؛ فرط البرولاكتين = الميزولمبيك."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Mesocortical dopamine deficiency causes negative symptoms; tuberoinfundibular blockade causes hyperprolactinemia.",
+              "tr": "Yanlış. Mezokortikal yol negatif semptomlarla ilişkilidir; prolaktin yükselmesi tüberoinfundibuler yolun bloke edilmesiyle oluşur.",
+              "ar": "غير صحيح. يرتبط نقص الدوبامين بالميزوكورتيكال بالأعراض السلبية؛ بينما ينجم فرط البرولاكتين عن حظر المسار القمعي النخامي."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "Büyük Final: 22 Derslik Müfredatın Tamamlanışı",
+        "ar": "الختام الكبير: إتمام منهاج الـ 22 درساً",
+        "en": "Grand Finale: Completing the 22-Lesson Curriculum"
+      },
+      "prompt": {
+        "en": "Antipsychotics block multiple off-target receptors beyond D2. Which adverse clinical consequences emerge from off-target antagonism of H1, alpha-1, and muscarinic M1 receptors?",
+        "tr": "Antipsikotikler D2 dışında birçok reseptörü bloke eder. H1, alfa-1 ve muskarinik M1 reseptörlerinin hedeften sapmış blokajı hangi yan etkileri doğurur?",
+        "ar": "تحظر مضادات الذهان مستقبلات جانبية عديدة غير D2. ما العواقب السريرية الناجمة عن الحظر الجانبي لمستقبلات H1، وألفا-1، والمسكارين M1؟"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "options": [
+          {
+            "id": "opt_off_target_trio",
+            "text": {
+              "en": "H1 antagonism drives sedation and metabolic weight gain; alpha-1 antagonism causes orthostatic hypotension; M1 antagonism provokes dry mouth, constipation, and blurred vision.",
+              "tr": "H1 blokajı sedasyon ve kilo artışı yapar; alfa-1 blokajı ortostatik hipotansiyona yol açar; M1 blokajı ise ağız kuruluğu, kabızlık ve bulanık görme yaratır.",
+              "ar": "حظر H1 يسبب التهدئة وزيادة الوزن؛ وحظر ألفا-1 يسبب هبوط الضغط الانتصابي؛ وحظر M1 يسبب جفاف الفم، والإمساك، وتشوش الرؤية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Antihistaminic effects promote weight gain; antiadrenergic alpha-1 causes orthostatic syncope; anticholinergic M1 produces classic dry/constipated symptoms.",
+              "tr": "Doğru! H1 kilo aldırır ve uyutur; alfa-1 tansiyonu düşürüp baş dönmesi yapar; M1 ise antikolinerjik yan etkileri tetikler.",
+              "ar": "صحيح! حظر H1 مسؤول عن النعاس والبدانة؛ ألفا-1 يسبب الدوار الوضعي؛ وحظر M1 المسكاريني يطلق الأعراض المضادة للكولين."
+            }
+          },
+          {
+            "id": "opt_h1_hypertension",
+            "text": {
+              "en": "H1 antagonism causes severe hypertensive crisis, alpha-1 antagonism causes priapism only, and M1 antagonism causes profuse bronchorrhea and diarrhea.",
+              "tr": "H1 blokajı şiddetli hipertansif kriz yapar, alfa-1 sadece priapizm yapar, M1 blokajı ise aşırı bronkore ve ishal başlatır.",
+              "ar": "يسبب حظر H1 نوبة فرط ضغط حادة، وألفا-1 قسوحاً فقط، ويسبب حظر M1 إسهالاً مفرطاً وسيلاناً قصبياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. H1 causes sedation, not hypertension; M1 blockade INHIBITS secretions (causing dry mouth and constipation), not diarrhea.",
+              "tr": "Yanlış. H1 tansiyonu yükseltmez sedasyon yapar; M1 blokajı ise salgıları artırmaz, kurutur (ağız kuruluğu, kabızlık).",
+              "ar": "غير صحيح. يسبب حظر H1 تهدئة وليس فرط ضغط؛ وحظر M1 يجفف الإفرازات (جفاف الفم وإمساك) ولا يسبب إسهالاً."
+            }
+          },
+          {
+            "id": "opt_alpha1_anticonvulsant",
+            "text": {
+              "en": "Alpha-1 antagonism elevates seizure threshold, while muscarinic M1 blockade stimulates memory consolidation and prevents dementia.",
+              "tr": "Alfa-1 blokajı nöbet eşiğini yükseltir, muskarinik M1 blokajı ise hafızayı güçlendirerek demansı önler.",
+              "ar": "يرفع حظر ألفا-1 عتبة التشنج، بينما يقوي حظر المسكارين M1 الذاكرة ويقي من الخرف."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Alpha-1 blockade does not prevent seizures. M1 blockade IMPAIRS memory and worsens cognitive performance (anticholinergic burden).",
+              "tr": "Yanlış. Alfa-1 nöbeti önlemez; M1 blokajı hafızayı güçlendirmez, aksine bilişsel performansı ve belleği bozar.",
+              "ar": "غير صحيح. لا يقي حظر ألفا-1 من النوبات؛ وحظر M1 يضعف الذاكرة والأداء الإدراكي (العبء المضاد للكولين)."
+            }
+          },
+          {
+            "id": "opt_m1_weight_loss",
+            "text": {
+              "en": "Muscarinic M1 blockade causes profound anorexia and cachexia, while H1 blockade selectively eliminates extrapyramidal symptoms.",
+              "tr": "Muskarinik M1 blokajı anoreksiya ve kaşeksiye yol açar, H1 blokajı ise ekstrapiramidal semptomları tamamen ortadan kaldırır.",
+              "ar": "يسبب حظر المسكارين M1 فقدان شهية حاد وهزالاً، بينما يزيل حظر H1 الأعراض خارج الهرمية تماماً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Weight gain is driven by H1 and 5-HT2C antagonism. M1 blockade causes constipation and autonomic side effects.",
+              "tr": "Yanlış. Kilo alımı H1 ve 5-HT2C blokajından kaynaklanır; M1 blokajı ise otonomik kuruluğa ve kabızlığa yol açar.",
+              "ar": "غير صحيح. تنجم زيادة الوزن عن حظر H1 و 5-HT2C؛ بينما يسبب حظر M1 إمساكاً وجفافاً في الأغشية المخاطية."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "konsept ustalığı",
+          "arContext": "إتقان المفاهيم"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Antipsikotiklerin yan etki profilini belirleyen hedeften sapmış H1, alfa-1 ve M1 reseptörlerini düşünün.",
+          "ar": "فكر في المستقبلات الجانبية H1 وألفا-1 وM1 التي تحدد المظهر الجانبي لمضادات الذهان.",
+          "en": "Consider the off-target H1, alpha-1, and muscarinic M1 receptors that govern antipsychotic adverse effects."
+        },
+        {
+          "tier": 2,
+          "tr": "Histamin iştah ve uyanıklığı, alfa-1 vasküler tonusu, muskarinik reseptörler ise salgıları yönetir.",
+          "ar": "يتحكم الهيستامين باليقظة والشهية، وألفا-1 بالضغط الوعائي، والمسكارين بإفراز اللعاب وحركة الأمعاء.",
+          "en": "Histamine controls wakefulness and appetite; alpha-1 maintains vascular tone; muscarinic receptors control secretions."
+        },
+        {
+          "tier": 3,
+          "tr": "H1 blokajı sedasyon ve kilo artışı; alfa-1 ortostatik hipotansiyon; M1 ise ağız kuruluğu ve kabızlık yapar.",
+          "ar": "حظر H1 يسبب النعاس والبدانة؛ وألفا-1 يسبب هبوط الضغط الانتصابي؛ وM1 يسبب جفاف الفم والإمساك.",
+          "en": "H1 blockade drives sedation and weight gain; alpha-1 causes orthostatic syncope; M1 causes dry mouth and constipation."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_off_target_trio",
+            "text": {
+              "en": "H1 antagonism drives sedation and metabolic weight gain; alpha-1 antagonism causes orthostatic hypotension; M1 antagonism provokes dry mouth, constipation, and blurred vision.",
+              "tr": "H1 blokajı sedasyon ve kilo artışı yapar; alfa-1 blokajı ortostatik hipotansiyona yol açar; M1 blokajı ise ağız kuruluğu, kabızlık ve bulanık görme yaratır.",
+              "ar": "حظر H1 يسبب التهدئة وزيادة الوزن؛ وحظر ألفا-1 يسبب هبوط الضغط الانتصابي؛ وحظر M1 يسبب جفاف الفم، والإمساك، وتشوش الرؤية."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Antihistaminic effects promote weight gain; antiadrenergic alpha-1 causes orthostatic syncope; anticholinergic M1 produces classic dry/constipated symptoms.",
+              "tr": "Doğru! H1 kilo aldırır ve uyutur; alfa-1 tansiyonu düşürüp baş dönmesi yapar; M1 ise antikolinerjik yan etkileri tetikler.",
+              "ar": "صحيح! حظر H1 مسؤول عن النعاس والبدانة؛ ألفا-1 يسبب الدوار الوضعي؛ وحظر M1 المسكاريني يطلق الأعراض المضادة للكولين."
+            }
+          },
+          {
+            "id": "opt_h1_hypertension",
+            "text": {
+              "en": "H1 antagonism causes severe hypertensive crisis, alpha-1 antagonism causes priapism only, and M1 antagonism causes profuse bronchorrhea and diarrhea.",
+              "tr": "H1 blokajı şiddetli hipertansif kriz yapar, alfa-1 sadece priapizm yapar, M1 blokajı ise aşırı bronkore ve ishal başlatır.",
+              "ar": "يسبب حظر H1 نوبة فرط ضغط حادة، وألفا-1 قسوحاً فقط، ويسبب حظر M1 إسهالاً مفرطاً وسيلاناً قصبياً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. H1 causes sedation, not hypertension; M1 blockade INHIBITS secretions (causing dry mouth and constipation), not diarrhea.",
+              "tr": "Yanlış. H1 tansiyonu yükseltmez sedasyon yapar; M1 blokajı ise salgıları artırmaz, kurutur (ağız kuruluğu, kabızlık).",
+              "ar": "غير صحيح. يسبب حظر H1 تهدئة وليس فرط ضغط؛ وحظر M1 يجفف الإفرازات (جفاف الفم وإمساك) ولا يسبب إسهالاً."
+            }
+          },
+          {
+            "id": "opt_alpha1_anticonvulsant",
+            "text": {
+              "en": "Alpha-1 antagonism elevates seizure threshold, while muscarinic M1 blockade stimulates memory consolidation and prevents dementia.",
+              "tr": "Alfa-1 blokajı nöbet eşiğini yükseltir, muskarinik M1 blokajı ise hafızayı güçlendirerek demansı önler.",
+              "ar": "يرفع حظر ألفا-1 عتبة التشنج، بينما يقوي حظر المسكارين M1 الذاكرة ويقي من الخرف."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Alpha-1 blockade does not prevent seizures. M1 blockade IMPAIRS memory and worsens cognitive performance (anticholinergic burden).",
+              "tr": "Yanlış. Alfa-1 nöbeti önlemez; M1 blokajı hafızayı güçlendirmez, aksine bilişsel performansı ve belleği bozar.",
+              "ar": "غير صحيح. لا يقي حظر ألفا-1 من النوبات؛ وحظر M1 يضعف الذاكرة والأداء الإدراكي (العبء المضاد للكولين)."
+            }
+          },
+          {
+            "id": "opt_m1_weight_loss",
+            "text": {
+              "en": "Muscarinic M1 blockade causes profound anorexia and cachexia, while H1 blockade selectively eliminates extrapyramidal symptoms.",
+              "tr": "Muskarinik M1 blokajı anoreksiya ve kaşeksiye yol açar, H1 blokajı ise ekstrapiramidal semptomları tamamen ortadan kaldırır.",
+              "ar": "يسبب حظر المسكارين M1 فقدان شهية حاد وهزالاً، بينما يزيل حظر H1 الأعراض خارج الهرمية تماماً."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Weight gain is driven by H1 and 5-HT2C antagonism. M1 blockade causes constipation and autonomic side effects.",
+              "tr": "Yanlış. Kilo alımı H1 ve 5-HT2C blokajından kaynaklanır; M1 blokajı ise otonomik kuruluğa ve kabızlığa yol açar.",
+              "ar": "غير صحيح. تنجم زيادة الوزن عن حظر H1 و 5-HT2C؛ بينما يسبب حظر M1 إمساكاً وجفافاً في الأغشية المخاطية."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 27
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod6-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Müfredat Ustalık Sınavı: D2 Terapötik Pencere",
+        "ar": "اختبار الإتقان الختامي للمنهاج: نافذة D2 العلاجية",
+        "en": "Curriculum Mastery Assessment: The D2 Therapeutic Window"
+      },
+      "prompt": {
+        "en": "A patient on haloperidol 10 mg/day develops prolactin 85 ng/mL, severe cogwheel rigidity, and emotional blunting. PET shows 84% striatal D2 occupancy. Which rotation resolves all three adverse effects?",
+        "tr": "Haloperidol 10 mg/gün alan hastada prolaktin 85 ng/mL, dişli çark rijiditesi ve duygusal küntlük gelişiyor. PET %84 D2 doluluğu gösteriyor. Hangi ilaca geçiş her üç yan etkiyi çözer?",
+        "ar": "مريض يتناول هالوبيريدول 10 ملغ/يوم يعاني من برولاكتين 85 نغ/مل، وتيبس مسنن، وتبلد انفعالي. يُظهر PET إشغال 84% لـ D2. أي تحويل دوائي يحل الأعراض الثلاثة؟"
+      },
+      "predictThenReveal": true,
+      "config": {
+        "revealedOutcome": "22 Derslik Müfredat Başarıyla Tamamlandı! Büyük Ustalık Rozeti Kazanıldı! +50 XP.",
+        "options": [
+          {
+            "id": "opt_rotate_aripiprazole",
+            "text": {
+              "en": "Switch to Aripiprazole: its D2 partial agonism (~30% intrinsic activity) supplies basal tone to resolve rigidity and prolactin, while controlling psychosis.",
+              "tr": "Aripiprazole geçiş: D2 parsiyel agonizmi (%30 intrensek aktivite) rijiditeyi ve prolaktini düzeltecek bazal tonusu sağlar, psikozu da kontrol altında tutar.",
+              "ar": "التحويل إلى أريبيبرازول: يوفر ناهضه الجزئي لـ D2 (فاعلية ذاتية ~30%) نغمة قاعدية تعالج التيبس والبرولاكتين، مع ضبط الذهان."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Exceeding 80% D2 occupancy causes EPS and hyperprolactinemia. Aripiprazole's ~30% intrinsic tone lowers effective blockade below 80%.",
+              "tr": "Doğru! %80 üzerindeki D2 doluluğu EPS ve prolaktin yüksekliği yapar. Aripiprazolün %30 intrensek tonusu bu etkileri hızla geri çevirir.",
+              "ar": "صحيح! يسبب تجاوز إشغال 80% لـ D2 أعراضاً حركية وفرط برولاكتين؛ وتوفر فاعلية الأريبيبرازول الذاتية (~30%) حلاً متكاملاً."
+            }
+          },
+          {
+            "id": "opt_switch_risperidone",
+            "text": {
+              "en": "Switch to Risperidone, because all second-generation atypicals are completely excluded from the pituitary by the blood-brain barrier.",
+              "tr": "Risperidona geçiş, çünkü tüm ikinci kuşak atipikler kan-beyin bariyeri sayesinde hipofiz dokusundan tamamen dışlanırlar.",
+              "ar": "التحويل إلى ريسبيريدون، لأن جميع الأدوية اللانمطية تُحجب تماماً عن النخامية بواسطة الحاجز الدموي الدماغي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The pituitary gland lies OUTSIDE the blood-brain barrier. Risperidone has potent D2 affinity and causes notorious hyperprolactinemia.",
+              "tr": "Yanlış. Hipofiz bezi kan-beyin bariyerinin DIŞINDADIR. Risperidon güçlü D2 afinitesiyle çok şiddetli hiperprolaktinemi yapar.",
+              "ar": "غير صحيح. تقع الغدة النخامية خارج الحاجز الدموي الدماغي؛ ويمتلك الريسبيريدون ألفة عالية لـ D2 مسبباً فرط برولاكتين حاداً."
+            }
+          },
+          {
+            "id": "opt_add_biperiden_double_dose",
+            "text": {
+              "en": "Add biperiden 4 mg daily and double the haloperidol dose to 20 mg to overcome pituitary dopamine resistance and eliminate hallucinations.",
+              "tr": "Günde 4 mg biperiden ekleyin ve hipofizdeki dopamin direncini kırıp halüsinasyonları bitirmek için haloperidolu 20 mg'a çıkarın.",
+              "ar": "إضافة بيبيريدين 4 ملغ يومياً ومضاعفة جرعة الهالوبيريدول إلى 20 ملغ لكسر مقاومة الدوبامين النخامية وإنهاء الهلاوس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Doubling haloperidol will worsen hyperprolactinemia and emotional blunting, and chronic anticholinergics increase the risk of tardive dyskinesia.",
+              "tr": "Yanlış. Haloperidol dozunu artırmak prolaktini ve apatiyi daha da fırlatır; kronik antikolinerjik eklemek tardif diskinezi riskini katlar.",
+              "ar": "غير صحيح. ستؤدي مضاعفة الهالوبيريدول لمفاقمة فرط البرولاكتين والتبلد؛ كما تزيد مضادات الكولين المزمنة خطر عسر الحركة المتأخر."
+            }
+          },
+          {
+            "id": "opt_add_bromocriptine_full",
+            "text": {
+              "en": "Co-administer bromocriptine (a full D2 agonist) with haloperidol to stimulate pituitary receptors without affecting mesolimbic circuits.",
+              "tr": "Mezolimbik devreleri etkilemeden hipofiz reseptörlerini uyarmak için haloperidolün yanına bromokriptin (tam D2 agonisti) ekleyin.",
+              "ar": "المشاركة الدوائية مع بروموكريبتين (ناهض D2 تام) لتحفيز مستقبلات النخامية دون التأثير على دوائر الميزولمبيك."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Full dopamine agonists counteract antipsychotic efficacy across the entire brain, triggering immediate, violent psychotic relapse.",
+              "tr": "Yanlış. Tam dopamin agonistleri tüm beyinde antipsikotik etkiyi sıfırlar ve hastayı derhal şiddetli psikotik alevlenmeye sokar.",
+              "ar": "غير صحيح. تلغي ناهضات الدوبامين التامة الفعالية المضادة للذهان في كامل الدماغ مفجرة انتكاسة ذهانية عنيفة وفورية."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "etki mekanizması",
+          "arContext": "آلية التأثير الدوائي"
+        },
+        {
+          "term": "reseptör",
+          "arContext": "المستقبِل الحيوي"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "PET'te %84 D2 doluluğu olan, prolaktini fırlamış ve rijiditesi olan hastaya hangi farmakodinamik profil gerekir?",
+          "ar": "مريض بإشغال 84% لـ D2 في PET وفرط برولاكتين وتيبس؛ ما المظهر الديناميكي الدوائي القادر على إنقاذه؟",
+          "en": "What pharmacodynamic profile is needed for a patient with 84% striatal D2 occupancy, hyperprolactinemia, and EPS?"
+        },
+        {
+          "tier": 2,
+          "tr": "D2 doluluğunu %80'in altına çekecek ancak psikozu alevlendirmeyecek bir 'termostat' ajan seçilmelidir.",
+          "ar": "يجب اختيار دواء 'منظم حرارة' يخفض الحظر الفعلي دون 80% دون أن يفجر انتكاسة ذهانية.",
+          "en": "A 'thermostat' agent is required that lowers effective striatal blockade below 80% without psychotic relapse."
+        },
+        {
+          "tier": 3,
+          "tr": "Aripiprazol D2 parsiyel agonizmi (%30 tonus) ile haloperidolü söker, prolaktini ve rijiditeyi çözer, psikozu tutar.",
+          "ar": "الأريبيبرازول بناهضه الجزئي لـ D2 (30%) يزيح الهالوبيريدول، ويعالج التيبس والبرولاكتين، مع ضبط الذهان تماماً.",
+          "en": "Aripiprazole's ~30% intrinsic D2 tone displaces haloperidol, reversing hyperprolactinemia and tremor while stabilizing psychosis."
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt_rotate_aripiprazole",
+            "text": {
+              "en": "Switch to Aripiprazole: its D2 partial agonism (~30% intrinsic activity) supplies basal tone to resolve rigidity and prolactin, while controlling psychosis.",
+              "tr": "Aripiprazole geçiş: D2 parsiyel agonizmi (%30 intrensek aktivite) rijiditeyi ve prolaktini düzeltecek bazal tonusu sağlar, psikozu da kontrol altında tutar.",
+              "ar": "التحويل إلى أريبيبرازول: يوفر ناهضه الجزئي لـ D2 (فاعلية ذاتية ~30%) نغمة قاعدية تعالج التيبس والبرولاكتين، مع ضبط الذهان."
+            },
+            "isCorrect": true,
+            "feedback": {
+              "en": "Correct! Exceeding 80% D2 occupancy causes EPS and hyperprolactinemia. Aripiprazole's ~30% intrinsic tone lowers effective blockade below 80%.",
+              "tr": "Doğru! %80 üzerindeki D2 doluluğu EPS ve prolaktin yüksekliği yapar. Aripiprazolün %30 intrensek tonusu bu etkileri hızla geri çevirir.",
+              "ar": "صحيح! يسبب تجاوز إشغال 80% لـ D2 أعراضاً حركية وفرط برولاكتين؛ وتوفر فاعلية الأريبيبرازول الذاتية (~30%) حلاً متكاملاً."
+            }
+          },
+          {
+            "id": "opt_switch_risperidone",
+            "text": {
+              "en": "Switch to Risperidone, because all second-generation atypicals are completely excluded from the pituitary by the blood-brain barrier.",
+              "tr": "Risperidona geçiş, çünkü tüm ikinci kuşak atipikler kan-beyin bariyeri sayesinde hipofiz dokusundan tamamen dışlanırlar.",
+              "ar": "التحويل إلى ريسبيريدون، لأن جميع الأدوية اللانمطية تُحجب تماماً عن النخامية بواسطة الحاجز الدموي الدماغي."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. The pituitary gland lies OUTSIDE the blood-brain barrier. Risperidone has potent D2 affinity and causes notorious hyperprolactinemia.",
+              "tr": "Yanlış. Hipofiz bezi kan-beyin bariyerinin DIŞINDADIR. Risperidon güçlü D2 afinitesiyle çok şiddetli hiperprolaktinemi yapar.",
+              "ar": "غير صحيح. تقع الغدة النخامية خارج الحاجز الدموي الدماغي؛ ويمتلك الريسبيريدون ألفة عالية لـ D2 مسبباً فرط برولاكتين حاداً."
+            }
+          },
+          {
+            "id": "opt_add_biperiden_double_dose",
+            "text": {
+              "en": "Add biperiden 4 mg daily and double the haloperidol dose to 20 mg to overcome pituitary dopamine resistance and eliminate hallucinations.",
+              "tr": "Günde 4 mg biperiden ekleyin ve hipofizdeki dopamin direncini kırıp halüsinasyonları bitirmek için haloperidolu 20 mg'a çıkarın.",
+              "ar": "إضافة بيبيريدين 4 ملغ يومياً ومضاعفة جرعة الهالوبيريدول إلى 20 ملغ لكسر مقاومة الدوبامين النخامية وإنهاء الهلاوس."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Doubling haloperidol will worsen hyperprolactinemia and emotional blunting, and chronic anticholinergics increase the risk of tardive dyskinesia.",
+              "tr": "Yanlış. Haloperidol dozunu artırmak prolaktini ve apatiyi daha da fırlatır; kronik antikolinerjik eklemek tardif diskinezi riskini katlar.",
+              "ar": "غير صحيح. ستؤدي مضاعفة الهالوبيريدول لمفاقمة فرط البرولاكتين والتبلد؛ كما تزيد مضادات الكولين المزمنة خطر عسر الحركة المتأخر."
+            }
+          },
+          {
+            "id": "opt_add_bromocriptine_full",
+            "text": {
+              "en": "Co-administer bromocriptine (a full D2 agonist) with haloperidol to stimulate pituitary receptors without affecting mesolimbic circuits.",
+              "tr": "Mezolimbik devreleri etkilemeden hipofiz reseptörlerini uyarmak için haloperidolün yanına bromokriptin (tam D2 agonisti) ekleyin.",
+              "ar": "المشاركة الدوائية مع بروموكريبتين (ناهض D2 تام) لتحفيز مستقبلات النخامية دون التأثير على دوائر الميزولمبيك."
+            },
+            "isCorrect": false,
+            "feedback": {
+              "en": "Incorrect. Full dopamine agonists counteract antipsychotic efficacy across the entire brain, triggering immediate, violent psychotic relapse.",
+              "tr": "Yanlış. Tam dopamin agonistleri tüm beyinde antipsikotik etkiyi sıfırlar ve hastayı derhal şiddetli psikotik alevlenmeye sokar.",
+              "ar": "غير صحيح. تلغي ناهضات الدوبامين التامة الفعالية المضادة للذهان في كامل الدماغ مفجرة انتكاسة ذهانية عنيفة وفورية."
+            }
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "Santral Sinir Sistemi.pdf",
+          "page": 28
+        }
+      ]
+    }
+  ]
+}

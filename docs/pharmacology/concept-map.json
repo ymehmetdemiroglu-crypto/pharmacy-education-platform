@@ -1,0 +1,395 @@
+{
+  "courseId": "pharmacology",
+  "courseTitle": "Pharmacology",
+  "version": "1.0.0",
+  "nodeCount": 22,
+  "edgeCount": 24,
+  "nodes": [
+    {
+      "id": "ph_receptor_concept",
+      "name": "Macromolecular Drug Receptor",
+      "definition": "A cellular regulatory macromolecule (membrane-bound or intracellular) that selectively binds endogenous ligands or xenobiotics to initiate a conformational change transducing a biological response.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "ph_mass_action_kd",
+      "name": "Law of Mass Action & Equilibrium Dissociation Constant (Kd)",
+      "definition": "The thermodynamic ratio of unbound drug and receptor concentrations to drug-receptor complex concentration at equilibrium, serving as the quantitative inverse measure of binding affinity.",
+      "category": "equation",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "id": "ph_covalent_receptor_bonds",
+      "name": "Covalent Drug-Receptor Interactions",
+      "definition": "High-energy chemical bonds (40-140 kcal/mol) resulting from electron pair sharing that produce irreversible receptor blockade, requiring de novo protein synthesis for functional recovery.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 9
+        }
+      ]
+    },
+    {
+      "id": "ph_beta_lactam_acylation",
+      "name": "Beta-Lactam Transpeptidase Acylation",
+      "definition": "The irreversible covalent acylation of bacterial penicillin-binding protein (PBP) active-site serine residues by the strained four-membered beta-lactam ring, halting cell-wall peptidoglycan crosslinking.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 11
+        }
+      ]
+    },
+    {
+      "id": "ph_organophosphate_phosphorylation",
+      "name": "Organophosphate Cholinesterase Phosphorylation & Aging",
+      "definition": "Covalent organophosphate phosphorylation of the acetylcholinesterase catalytic serine triad, leading to spontaneous chemical dealkylation ('aging') that renders enzyme inhibition permanently irreversible.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 12
+        }
+      ]
+    },
+    {
+      "id": "ph_ionic_electrostatic_bonds",
+      "name": "Ionic (Electrostatic) Reversible Forces",
+      "definition": "Coulombic attraction between oppositely charged full ions (e.g. protonated ammonium cation and receptor carboxylate) operating across longest effective distances to steer ligands into binding pockets.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "ph_hydrogen_bonding_recognition",
+      "name": "Hydrogen Bonding & Directional Stereoselective Fit",
+      "definition": "Directional non-covalent dipole interactions between electropositive hydrogen and lone-pair donor atoms that confer extreme stereoselective geometric complementarity within active sites.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 15
+        }
+      ]
+    },
+    {
+      "id": "ph_charge_transfer_pi_stacking",
+      "name": "Charge-Transfer Complexes & Pi-Pi Aromatic Stacking",
+      "definition": "Cooperative non-covalent polarization between electron-rich and electron-poor aromatic ring systems, stabilizing planar heterocyclic drug molecules against aromatic receptor residues.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 22
+        }
+      ]
+    },
+    {
+      "id": "ph_van_der_waals_dispersion",
+      "name": "Van der Waals London Dispersion Forces",
+      "definition": "Weak, transient induced dipole attractions (0.5-1 kcal/mol) that decay exponentially with distance (1/r^6), requiring tight geometric contour alignment over large molecular contact surfaces.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 24
+        }
+      ]
+    },
+    {
+      "id": "ph_hydrophobic_entropic_driving_force",
+      "name": "Hydrophobic Effect & Entropic Solvent Release",
+      "definition": "The thermodynamically favorable release of structured, ordered water cages surrounding nonpolar surfaces into bulk solution (delta S > 0), providing the primary energetic driver for lipophilic ligand binding.",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "ph_chelation_metal_complexes",
+      "name": "Heavy Metal Chelation & Clinical Antidotes",
+      "definition": "Coordination complex formation between multidentate electron-donating ligands (EDTA, BAL, penicillamine) and polyvalent metal cations, neutralizing toxicity and enabling renal clearance.",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "id": "ph_multipoint_binding_dibucaine",
+      "name": "Cooperative Multi-Point Receptor Attachment (Dibucaine Model)",
+      "definition": "The synergistic integration of simultaneous ionic bonds, hydrogen bonding, aromatic pi-stacking, and hydrophobic tail burial within a single local anesthetic scaffold to generate potent receptor blockade.",
+      "category": "sar",
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      ]
+    },
+    {
+      "id": "ph_affinity_vs_intrinsic_activity",
+      "name": "Receptor Affinity vs Intrinsic Activity (Efficacy)",
+      "definition": "The fundamental distinction between a molecule's thermodynamic tendency to bind a receptor (affinity) versus its capacity to trigger conformational activation eliciting a cellular response (efficacy).",
+      "category": "concept",
+      "sources": [
+        {
+          "file": "Katzung Basic & Clinical Pharmacology 15e",
+          "page": "Ch. 2, pp. 20-25"
+        }
+      ]
+    },
+    {
+      "id": "ph_full_vs_partial_agonism",
+      "name": "Full Agonists, Partial Agonists & Spare Receptors",
+      "definition": "Full agonists achieve maximal tissue response (Emax) at submaximal receptor occupancy due to spare receptors, whereas partial agonists produce submaximal efficacy even at 100% receptor saturation.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "Katzung Basic & Clinical Pharmacology 15e",
+          "page": "Ch. 2, pp. 26-28"
+        }
+      ]
+    },
+    {
+      "id": "ph_competitive_vs_noncompetitive_antagonism",
+      "name": "Competitive vs Non-Competitive Receptor Antagonism",
+      "definition": "Competitive antagonists displace agonists reversibly causing parallel rightward log dose-response shifts without reducing Emax, while non-competitive/allosteric antagonists depress Emax irreversibly.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "Katzung Basic & Clinical Pharmacology 15e",
+          "page": "Ch. 2, pp. 29-32"
+        }
+      ]
+    },
+    {
+      "id": "ph_adme_mass_balance",
+      "name": "Fundamental Pharmacokinetic Parameters (ADME)",
+      "definition": "The quantitative clinical descriptors of in vivo drug disposition: Bioavailability (F), Volume of Distribution (Vd), Total Clearance (CL), and Elimination Half-life (t1/2).",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "Goodman & Gilman's Pharmacological Basis 14e",
+          "page": "Ch. 2, pp. 15-30"
+        }
+      ]
+    },
+    {
+      "id": "ph_cyp450_biotransformation_mechanisms",
+      "name": "Cytochrome P450 Enzyme Superfamily & Catalytic Cycle",
+      "definition": "Heme-thiolate monooxygenases (predominantly CYP3A4, CYP2D6, CYP2C9) that activate molecular oxygen to functionalize xenobiotics via aliphatic hydroxylation, N-dealkylation, and aromatic epoxidation.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 14
+        }
+      ]
+    },
+    {
+      "id": "ph_metabolic_crystalluria_risk",
+      "name": "Metabolic Crystalluria & Phase II Solubility Traps",
+      "definition": "A toxicological phenomenon wherein Phase II acetylation (e.g. sulfadiazine) produces less soluble, neutral metabolites that precipitate in acidic renal collecting ducts, causing nephrotoxicity.",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "ph_enzyme_induction_inhibition",
+      "name": "CYP450 Enzyme Induction vs Competitive Inhibition",
+      "definition": "Pharmacokinetic drug-drug interactions involving transcriptional upregulation of CYP isozymes (reducing co-administered drug plasma levels) or active-site competitive inhibition (precipitating toxicity).",
+      "category": "pk_pd",
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 39
+        }
+      ]
+    },
+    {
+      "id": "ph_cholinergic_transmission",
+      "name": "Cholinergic Transmission & Receptor Subtypes",
+      "definition": "Neurotransmission mediated by acetylcholine acting upon pentameric ionotropic nicotinic receptors (NM, NN) and metabotropic GPCR muscarinic receptors (M1-M5), terminated by acetylcholinesterase.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "Katzung Basic & Clinical Pharmacology 15e",
+          "page": "Ch. 6-7, pp. 85-112"
+        }
+      ]
+    },
+    {
+      "id": "ph_adrenergic_transmission",
+      "name": "Adrenergic Transmission & Adrenoreceptor Signaling",
+      "definition": "Sympathetic signaling mediated by norepinephrine and epinephrine interacting with Gq-coupled alpha-1, Gi-coupled alpha-2, and Gs-coupled beta-1, beta-2, and beta-3 adrenergic receptors.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "Katzung Basic & Clinical Pharmacology 15e",
+          "page": "Ch. 9-10, pp. 135-170"
+        }
+      ]
+    },
+    {
+      "id": "ph_raas_pathway_inhibition",
+      "name": "Renin-Angiotensin-Aldosterone System (RAAS) Blockade",
+      "definition": "Cardiovascular pharmacotherapy targeting ACE catalytic peptide cleavage (ACE inhibitors) or angiotensin II type 1 (AT1) receptor binding (ARBs) to decrease vascular resistance and renal sodium retention.",
+      "category": "mechanism",
+      "sources": [
+        {
+          "file": "Goodman & Gilman's Pharmacological Basis 14e",
+          "page": "Ch. 26, pp. 475-498"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "ph_receptor_concept",
+      "target": "ph_mass_action_kd",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_receptor_concept",
+      "target": "ph_covalent_receptor_bonds",
+      "relation": "related"
+    },
+    {
+      "source": "ph_covalent_receptor_bonds",
+      "target": "ph_beta_lactam_acylation",
+      "relation": "enhances"
+    },
+    {
+      "source": "ph_covalent_receptor_bonds",
+      "target": "ph_organophosphate_phosphorylation",
+      "relation": "enhances"
+    },
+    {
+      "source": "ph_covalent_receptor_bonds",
+      "target": "ph_ionic_electrostatic_bonds",
+      "relation": "contrasts-with"
+    },
+    {
+      "source": "ph_ionic_electrostatic_bonds",
+      "target": "ph_hydrogen_bonding_recognition",
+      "relation": "related"
+    },
+    {
+      "source": "ph_hydrogen_bonding_recognition",
+      "target": "ph_charge_transfer_pi_stacking",
+      "relation": "related"
+    },
+    {
+      "source": "ph_charge_transfer_pi_stacking",
+      "target": "ph_van_der_waals_dispersion",
+      "relation": "related"
+    },
+    {
+      "source": "ph_van_der_waals_dispersion",
+      "target": "ph_hydrophobic_entropic_driving_force",
+      "relation": "related"
+    },
+    {
+      "source": "ph_covalent_receptor_bonds",
+      "target": "ph_chelation_metal_complexes",
+      "relation": "related"
+    },
+    {
+      "source": "ph_ionic_electrostatic_bonds",
+      "target": "ph_multipoint_binding_dibucaine",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_hydrogen_bonding_recognition",
+      "target": "ph_multipoint_binding_dibucaine",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_hydrophobic_entropic_driving_force",
+      "target": "ph_multipoint_binding_dibucaine",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_mass_action_kd",
+      "target": "ph_affinity_vs_intrinsic_activity",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_affinity_vs_intrinsic_activity",
+      "target": "ph_full_vs_partial_agonism",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_full_vs_partial_agonism",
+      "target": "ph_competitive_vs_noncompetitive_antagonism",
+      "relation": "related"
+    },
+    {
+      "source": "ph_receptor_concept",
+      "target": "ph_adme_mass_balance",
+      "relation": "related"
+    },
+    {
+      "source": "ph_adme_mass_balance",
+      "target": "ph_cyp450_biotransformation_mechanisms",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_cyp450_biotransformation_mechanisms",
+      "target": "ph_metabolic_crystalluria_risk",
+      "relation": "related"
+    },
+    {
+      "source": "ph_cyp450_biotransformation_mechanisms",
+      "target": "ph_enzyme_induction_inhibition",
+      "relation": "prerequisite"
+    },
+    {
+      "source": "ph_receptor_concept",
+      "target": "ph_cholinergic_transmission",
+      "relation": "related"
+    },
+    {
+      "source": "ph_organophosphate_phosphorylation",
+      "target": "ph_cholinergic_transmission",
+      "relation": "related"
+    },
+    {
+      "source": "ph_cholinergic_transmission",
+      "target": "ph_adrenergic_transmission",
+      "relation": "contrasts-with"
+    },
+    {
+      "source": "ph_adrenergic_transmission",
+      "target": "ph_raas_pathway_inhibition",
+      "relation": "related"
+    }
+  ]
+}

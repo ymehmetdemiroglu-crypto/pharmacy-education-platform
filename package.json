@@ -1,41 +1,37 @@
 {
-  "name": "dodopayments-mcp-server",
-  "version": "1.0.0",
-  "description": "Model Context Protocol (MCP) Server for Dodo Payments API and Documentation",
-  "main": "dist/index.js",
+  "name": "pharmacy-education-platform",
+  "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "bin": {
-    "dodopayments-mcp": "./dist/index.js"
-  },
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
-    "test": "node --test"
-  },
-  "keywords": [
-    "mcp",
-    "model-context-protocol",
-    "dodopayments",
-    "payments",
-    "subscriptions",
-    "billing",
-    "ai-agent"
-  ],
-  "author": "Dodo Payments",
-  "license": "Apache-2.0",
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.6.0",
-    "dodopayments": "^2.52.0",
-    "dotenv": "^16.4.7",
-    "zod": "^3.24.2"
+    "dev": "pnpm --filter @pharmacy/web dev",
+    "build": "pnpm -r run build",
+    "lint": "pnpm -r run lint",
+    "typecheck": "pnpm -r --workspace-concurrency=1 run typecheck",
+    "test": "pnpm -r --workspace-concurrency=1 run test",
+    "test:watch": "vitest",
+    "test:rules": "node scripts/run-rules-tests.mjs",
+    "test:e2e": "playwright test",
+    "test:bundle": "node scripts/test-prod-bundle.mjs",
+    "claim-inventory": "node scripts/claim-inventory.mjs",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "emulators": "firebase emulators:start --only firestore,auth,functions",
+    "deploy:staging": "firebase use staging && firebase deploy --only functions,firestore:rules",
+    "deploy:prod": "pnpm run build && firebase use production && firebase deploy --only functions,firestore:rules,hosting"
   },
   "devDependencies": {
-    "@types/node": "^22.13.0",
-    "tsx": "^4.19.3",
-    "typescript": "^5.7.3"
+    "@firebase/rules-unit-testing": "^3.0.4",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "axe-core": "^4.10.2",
+    "eslint": "^9.20.1",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^3.0.5"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
   }
 }

@@ -1,0 +1,943 @@
+{
+  "Biyoizosterizm.pdf": {
+    "rel_path": "materials\\medchem\\Biyoizosterizm.pdf",
+    "course": "medchem",
+    "total_slides": 15,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "Biyoizosteri Aktivitesi bilinen bir molekülden, moleküler modifikasyonla aktif yeni moleküller elde edilmek istenirse, bu molekülünde aynı reseptör yöresiyle etkileşmesi beklenir ve dolayısıyla değiştirilecek grupların yapıları arasında çok büyük farklılıklar olmaması gerekir. Moleküler modifikasyonla etkin, toksisitesi az ve seçiciliği fazla yeni ilaçlar elde edebilmek için molekülde rastgele değişiklikler yapmak yerine belli kurallara uyulması tercih edilir. Kimyasal izosteri kavramı 1919 yılında Langmuir tarafından ortaya atılmıştır. Langmuir, benzer elektriksel yapıları olan molekül, radikal grup veya atomları izoster olarak tanımlamıştır."
+      },
+      {
+        "slide": 2,
+        "text": "N2O CO2 Viskozite (20 oC) 148 x 10-6 148 x 10-6 Dansite (10 oC) 0,856 0,858 Refraktif index (16 oC) 1,193 1,190 Dielektrik sabiti (0 oC) 1,593 1,582 Alkolde çözünürlük (15oC) 3,250 3,130 Bunların fizikokimyasal ve sterik özellikleri birbirine çok yakındır. Bu benzerlikler genellikle periyodik cetvelin aynı grubunda bulunan dış yörünge elektronları aynı veya çok yakın olan atomlar arasında gözlenmektedir. Bu tanıma uygun izoster örnekleri; N2, CO, N2O, N3, NCO’dur."
+      },
+      {
+        "slide": 3,
+        "text": "Daha sonra Grimm’in hidrür katımı kanunu ve psödo atom kavramını ortaya atmasıyla izosteri daha geniş bir anlam kazanmıştır. Buna göre bir atom yerine serbest elektronları ile birlikte bir hidrür katılırsa oluşan bileşiklerin sterik ve fizikokimyasal özellikleri birbirine yakın olacaktır. Piridin halkasında azot yerine metin grubunun girmesiyle oluşan piridin-benzen izosterleri örnek olarak verilebilir. N N piridin CH benzen"
+      },
+      {
+        "slide": 4,
+        "text": "Hidrür katımı kavramıyla geliştirilmiş izosterik gruplar: Elektron sayısı 6 = C 7 = N, CH 8 = O, NH, CH2 9 = F, OH, NH2, CH3 10 = Ne, FH, OH2, NH3, CH4 11 = Na+, FH, FH2 +, OH3, NH4 CH CH benzen tiyofen S S Hansberg’de -S- ve -C=CH- gruplarını izoster olarak kabul etmiştir."
+      },
+      {
+        "slide": 5,
+        "text": "Bugünkü anlamıyla izosterler girdikleri yapıya benzer fiziksel, kimyasal ve sterik özellikler kazandıran gruplar olarak tanımlanırlar. Belirli bir molekülde yeri değiştirildiği zaman aynı esasa dayanan bir farmakolojik etki doğuran bütün gruplar biyoizoster olarak tanımlanırlar. Biyoizosterler klasik ve nonklasik olmak üzere iki gruba, onlar da kendi içlerinde alt gruplara ayrılırlar. 1.- Klasik biyoizosterler : Değişen gruplar hemen hemen aynı büyüklük, şekil, valans değerlik ve aromatik gibi özelliklere sahiptir. 2. - Nonklasik biyoizosterler : Klasik biyoizosterlerin uyduğu sterik ve elektronik kurallara uymazlar. Bunlar aktivite açısından uyumluluk gösterirler."
+      },
+      {
+        "slide": 6,
+        "text": "Klasik biyoizosterlere örnekler : i.- Monovalan atom veya gruplar a) CH3, NH2, OH, F, Cl b) Cl, PH2, SH c) Br, Pr d) I, (+) Bu ii.- Bivalan atom veya gruplar a) -CH2- -NH- -O- -S- -Se- b) -COCH2- -CONH- -CO2- iii.- Trivalan atom veya gruplar a) -CH= -N= b) -P= -As="
+      },
+      {
+        "slide": 7,
+        "text": "iv.- Tetravalan atomlar v.- Halka ekivalanları a) -CH=CH- -S- C Sia) b) C N P + + CH CH benzen tiyofen S S"
+      },
+      {
+        "slide": 8,
+        "text": "b) -CH= -N= c) -O- -S- -CH2- -NH- N N piridin CH benzen O S N H"
+      },
+      {
+        "slide": 9,
+        "text": "Nonklasik biyoizosterlere örnekler : i.- Karbonil ii.- Karboksil S O S OO S O O N R C O C O N C C NC CN CH CN C OH O S O O N H R S O O OH P O OH NH2 P O OH OEt C O NH CN N O OH O OH O N NN N H"
+      },
+      {
+        "slide": 10,
+        "text": "iii.- Hidroksil : -NHCOR, -NHSO2R, -CH2OH, -OH, -NHCN, CH(CN)2 iv.- Halojen : -CF3, -CN, -N(CN)2, -C(CN)3 v.- Tiyoeter : vi.- Azometin : S O C CNCN N CN N C CN"
+      },
+      {
+        "slide": 11,
+        "text": "vii.- Piridin : N NO2 N R NR3 + + viii.- Hacim artışı : (CH2)3 ix.- Hidrojen : H F"
+      },
+      {
+        "slide": 12,
+        "text": "Düz veya dallanmış zincirli siklik olmayan yapılara karşı halkalı yapı değişimi de izosterik bir değişim olarak kabul edilir ve ilaç moleküllerinde bunun pek çok örneğini görmek mümkündür. Halkasız yapılar yerine halkalı yapıların geldiği biyoizosterlere çok bilinen örneklerden biri dietilstilbesterol ve estradiol’dür. HO HO OH OH trans dietilstilbesterol estradiol"
+      },
+      {
+        "slide": 13,
+        "text": "Bazı ilaçların alt grupları biyoizosterizm esasına göre geliştirilmiştir. Örneğin antihistaminik ilaçların alt gruplarının önemli bir kısmı izosterik değişim sonucu oluşmuştur. R-x-(CH2)n-y x = O : etanolamin türevleri = NH : etilendiamin grubu = CH2 : propilamin grubu antihistaminikler genel antihistaminik yapı y = N(CH3)2 (n=2)"
+      },
+      {
+        "slide": 14,
+        "text": "N N N NH H (n = 1) (n = 1, 2) Genel yapısı; olan bileşikte x = COO- grubunun girmesiyle aminoalkol esterleri ve x = -O- girmesiyle de aminoalkol eterleri olan kolinerjik bloke edici bileşikler elde edilmiştir. R X CH2CH2 N Biyoizosterlerde daha çok agonist aktivite gözlenmesine rağmen antagonist aktiviteye kadar varabilen değişiklikler olabilir. Antimetabolitler bu durumun bilinen klasik örnekleridir. 2-tiyenilalanin fenilalanin’in, 5-bromourasil’de Timin’in biyolojik antagonistidir."
+      },
+      {
+        "slide": 15,
+        "text": "S CH2 CH COOH NH2 CH2 CH COOH NH2 tiyenilalanin fenilalanin N N OH OH Br N N OH OH CH3 5-bromourasil timin Fenotiyazin grubu nöroleptik ilaçlarda “–S” yerine “- CH=CH” veya “-CH2CH2-“ gruplarının gelmesiyle dibenzazepin grubu antidepresanlar elde edilir. N S R"
+      }
+    ]
+  },
+  "Farmasötik ve Medisinal Kimya 1-Giriş.pdf": {
+    "rel_path": "materials\\medchem\\Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+    "course": "medchem",
+    "total_slides": 23,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "ECZ 335 FARMASÖTİK VE MEDİSİNAL KİMYA-1 Prof.Dr. Bedia KAYMAKÇIOĞLU"
+      },
+      {
+        "slide": 2,
+        "text": "Farmasötik Kimya, kelime anlamıyla eczacılık kimyasıdır. İlaç olabilecek yeni bileşiklerin tasarımı, geliştirilmesi, sentezi, bu bileşiklerin kimyasal analizleri ve organizma ile olan etkileşimlerini inceleyen bir bilim dalıdır. İlaç molekülünün ilk tasarlanmasında piyasaya sunulmasına kadar geçirdiği tüm aşamalar farmasötik kimyanın konusudur. Medisinal Kimya, ilaç tasarımı,geliştirilmesi ve sentezinin yanısıra daha çok ilacın aktivitesinde temel olan biyokimyasal prensiplere ve moleküler farmakoloji esaslarına dayanan bir bilim dalıdır."
+      },
+      {
+        "slide": 3,
+        "text": " İlaç etken maddesi tasarlamak ve sentezlemek  Sentez yöntemlerini saptamak ve uygulamak  Sentezlenen ilaç etken maddesinin yapısını aydınlatmak  İlaç etken maddesinin fiziksel, kimyasal ve fizikokimyasal özelliklerini belirlemek  İlaç etken maddesinin in vitro ve invivo deneylerle biyolojik aktivitesini tayin etmek, bu sonuçları değerlendirmek  Biyolojik sistemlerdeki ilaç etken maddesinin metabolizma ürünlerini ve metabolize olmadan kalan kısmını saptayacak yöntemleri belirlemek  İlaç etken maddesinin miktar tayinine ve tanısına yarayacak yöntemleri geliştirmek yada bulmak Farmasötik ve Medisinal Kimyanın Çalışma Alanları"
+      },
+      {
+        "slide": 4,
+        "text": " Bir preparatta yer alan etken madde yada maddelerin stabilitesini yani saklama koşullarına ve zamana bağlı olarak bozunup, bozunmadığını saptayacak yöntemleri araştırmak.  İlaç etken maddesinin kimyasal parçalanma yolunu ve bu parçalanmada oluşan bozunma ürünlerinin yapısını aydınlatmak ve miktar tayinleri yapmak"
+      },
+      {
+        "slide": 5,
+        "text": "İlaç Etken Maddesi Kimyasal sentez yolu ile ya da doğal kaynaklardan kazanılan, insan ve hayvan organizmasındaki hastalıkların engellenmesinde, geriletilmesinde, iyileştirilmesinde ve tanısında kullanılan, kimyasal yapısı ve özellikleri saptanmış olan maddelere ilaç etken maddesi denir."
+      },
+      {
+        "slide": 6,
+        "text": "İnsan sağlığını korumak Yaşam kalitesini yükseltmek Sağlıklı bir toplumsal yaşam oluşturmak"
+      },
+      {
+        "slide": 7,
+        "text": "İlaç Etken Madde Kaynakları 1-Doğal Kaynaklı İlaçlar: Bitkiler veya hayvanlardan elde edilen ilaçlar Alkaloidler, hormonlar, vitaminler, mineraller Atropa belladonna Cortex chinae Passiflora edulis (Kınakına kabukları) (Çarkıfelek)"
+      },
+      {
+        "slide": 8,
+        "text": "İlaç Etken Madde Kaynakları 2-Yarı Sentetik Kaynaklı İlaçlar Penisilinler"
+      },
+      {
+        "slide": 9,
+        "text": "İlaç Etken Madde Kaynakları 3-Sentetik Kaynaklı İlaçlar Analjezikler, antidepresanlar, antihipertansifler"
+      },
+      {
+        "slide": 10,
+        "text": "İlaçların Sınıflandırılması  Kimyasal yapı: taşıdıkları kimyasal yapıya göre aminoasitler, nitrobileşikleri, sülfonamitler gibi  Farmakolojik etki veya Terapötik kullanım:İlaç etki tarzına göre Merkezisinir sistemi depresanları (Genel Anestezikler, Sedatif Hipnotikler, Merkezi Etkili Kas Gevşeticiler, Narkotikler) Antihistaminikler, Sitostatikler, Kemoterapötikler (Antibakteriyel, Antimikotik, Antiviral, Antiparaziter) Antineoplastikler Kalp-Damar sistemi ilaçları"
+      },
+      {
+        "slide": 11,
+        "text": " Moleküler seviyede etki mekanizması: Henüz bütün ilaçların etki mekanizmaları bilinmediğinden, bu sınıflama tüm ilaçları kapsamayabilir. Enzimler üzerine etki eden ilaçlar Enzim aktivatörleri, Enzim inhibitörleri, Enzim reaktivatörleri  Anatomik terapötik kimyasal özellikler:Öncelikle bütün ilaçlar 14 ana anatomik sınıfta toplanır; daha sonra her birini kendi içinde terapötik alt gruplara ayrılır ve en son olarakda kimyasal alt sınıflamaya tabi tutulur (ATC)"
+      },
+      {
+        "slide": 12,
+        "text": ""
+      },
+      {
+        "slide": 13,
+        "text": "İlaçların İsimlendirilmesi  Kod numarası: Genellikle ilacı ilk elde eden veya test eden laboratuvar, araştırıcı veya araştırma grubunun isminin ilk harfleri ile bunu takib eden bir sayıdan oluşur. GSK-5381 Kullanılış süresi kısıtlıdır; ilaca uygun bir isim bulununcaya kadar kullanılır."
+      },
+      {
+        "slide": 14,
+        "text": " Kimyasal isim: Bileşiğin kimyasal yapısını tam olarak açıklayan, IUPAC (International Union of Pure and Applied Chemistry), CA (Chemical Abstract) gibi kuruluşların isimlendirme kurallarına göre yapılan isimlendirmedir. Uzun ve karmaşık olduğundan pratikte kullanımı kısıtlıdır. p-Asetilaminofenol 2-Hidroksibenzoik asit 2-Bromo-2-kloro-1,1,1-trifluoroetan (Halotan)"
+      },
+      {
+        "slide": 15,
+        "text": "Jenerik İsim: Dünya Sağlık Örgütü’nün INN Programı veya Amerika Birleşik Devletleri Kabul Edilmiş İsimler (USAN) Konseyi gibi küresel ve ulusal kuruluşlar tarafından atanan resmi, evrensel isimlerdir. Yapı: Önek–ara ek–sonek (kök) şeklindeki standart bir formül kullanılarak oluşturulur: Önek: İlacı aynı sınıftaki diğer ilaçlardan ayırır. Ara ek (İsteğe bağlı): İlacın hedefini veya kökenini ima eder. Sonek/Kök: Farmakolojik sınıfı veya etki mekanizmasını tanımlar (örn. monoklonal antikorlar için -mab). Kullanım: Üreticiden bağımsız olarak, reçete yazma hatalarını önlemek amacıyla sağlık profesyonelleri tarafından evrensel olarak kullanılır. Örnek: Parasetamol veya adalimumab"
+      },
+      {
+        "slide": 16,
+        "text": "Ticari( Marka) İsimleri: İlaç şirketleri tarafından yaratılan ve pazarlanan tescilli isimlerdir. Özellikleri: Akılda kalıcı, hatırlanması kolay ve hem hastalar hem de doktorlar tarafından telaffuz edilmesi kolay olacak şekilde tasarlanmıştır. Sağlık düzenleme kurumları (FDA gibi), bu isimlerin yanlış tıbbi iddialarda bulunmadığından, şirketin reklamını yapmadığından veya diğer ilaçlarla kafa karıştırıcı derecede benzer görünmediğinden ya da kulağa benzer gelmediğinden emin olmak için bunları sıkı bir şekilde inceler. Kullanım: Ticari pazarlama ve hastaların tanıyabilmesi için kullanılır. Örnek: Panadol (jenerik adı: parasetamol) veya Lipitor (jenerik adı: atorvastatin)"
+      },
+      {
+        "slide": 17,
+        "text": "İlaç ve Organizma İlaç aktivitesi biyokimya, farmakoloji ve medisinal kimya konularının en önemli ilgi alanlarından biridir. İlaçların aktivitesi yapılarının bir fonksiyonudur Mayer-Overton ilacın çözünürlük, buhar basıncı, dağılım katsayısı, yüzey aktivite gibi fizikokimyasal özelliklerinin aktivitelerinde önemli olduğunu göstermişlerdir (1898- 1900)."
+      },
+      {
+        "slide": 18,
+        "text": "Ferguson Prensibi: Aktiviteden endobiyofazdaki konsantrasyon sorumludur. Ekzobiyofaz-endobiyofaz arasında dinamik bir denge vardır. Endobiyofazdaki konsantrasyon ekzobiyofazdaki konsantrasyona eşittir. İlacın aktivitesi termodinamik aktivitenin bir ifadesi olan doygunluk derecesine bağlıdır."
+      },
+      {
+        "slide": 19,
+        "text": "Ferguson prensibine, yani termodinamik aktivitelerine göre ilaçlar iki alt grupta toplanır:  Yapı-nonspesifik (yapı-özgül olmayan) ilaçlar  Yapı-spesifik (yapı-özgül) ilaçlar Bir ilacın vücuda girişinden etki yöresine, kendine uygun reseptöre veya kendine özel hücreye ulaşıncaya kadar geçen pek çok karmaşık olaya, farmakolojik aktivitenin cinsine ve etki mekanizmasının tipine bağlı olarak sınıflandırılır."
+      },
+      {
+        "slide": 20,
+        "text": "Yapı Spesifik İlaçlar: Temel bir yapı taşırlar. Yapıdaki küçük değişiklikler aktiviteyi tamamen ortadan kaldırabilir yada tersi aktiviteye (antagonist) neden olabilir. Düşük dozlarda etki gösterirler. Agonist: Reseptörleri endojen maddeler gibi aktive ederek etki gösteren maddeler NH2 O X N CH3 CH3 X: -CH2-, -O-, -NH-"
+      },
+      {
+        "slide": 21,
+        "text": "Tolbutamid (Kısa etkili hipoglisemik) Klorpropamid (Uzun etkili hipoglisemik) Cl SO2NHCONHC3H7 CH3 SO2NHCONHC4H9"
+      },
+      {
+        "slide": 22,
+        "text": "NH N H O O NH N H O O F Urasil (metabolit) 5-Fluorourasil (Antimetabolit)"
+      },
+      {
+        "slide": 23,
+        "text": "Yapı nonspesifik İlaçlar: Farmakolojik etki kimyasal yapıdan bağımsızdır. Farklı yapıda olan bileşikler benzer aktiviteyi gösterebilir. Yapıdaki değişiklikler ilacın aktivitesinde çok büyük farklılıklara yol açmaz, ilacın farmakokinetik özelliklerini değiştirebilir. Kloroform, eter, halotan, ketamin farklı kimyasal yapıda olmalarına rağmen genel anestezik etki gösterirler. CH Cl3 N2O O Cl NH CH3"
+      }
+    ]
+  },
+  "Fonksiyonel gruplar.pdf": {
+    "rel_path": "materials\\medchem\\Fonksiyonel gruplar.pdf",
+    "course": "medchem",
+    "total_slides": 36,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "KİMYASAL ADLANDIRMA VE FONKSİYONEL GRUPLAR Prof.Dr. Bedia Kaymakçıoğlu"
+      },
+      {
+        "slide": 2,
+        "text": "ALKOLLER"
+      },
+      {
+        "slide": 3,
+        "text": "FENOLLER"
+      },
+      {
+        "slide": 4,
+        "text": ""
+      },
+      {
+        "slide": 5,
+        "text": "ETERLER"
+      },
+      {
+        "slide": 6,
+        "text": ""
+      },
+      {
+        "slide": 7,
+        "text": "ALDEHİTLER"
+      },
+      {
+        "slide": 8,
+        "text": "KETONLAR"
+      },
+      {
+        "slide": 9,
+        "text": ""
+      },
+      {
+        "slide": 10,
+        "text": ""
+      },
+      {
+        "slide": 11,
+        "text": "KARBOKSİLİK ASİTLER"
+      },
+      {
+        "slide": 12,
+        "text": ""
+      },
+      {
+        "slide": 13,
+        "text": ""
+      },
+      {
+        "slide": 14,
+        "text": ""
+      },
+      {
+        "slide": 15,
+        "text": "AÇİL GRUPLARI"
+      },
+      {
+        "slide": 16,
+        "text": "ASİT KLORÜRLER"
+      },
+      {
+        "slide": 17,
+        "text": "ESTERLER"
+      },
+      {
+        "slide": 18,
+        "text": ""
+      },
+      {
+        "slide": 19,
+        "text": ""
+      },
+      {
+        "slide": 20,
+        "text": "AMİNLER"
+      },
+      {
+        "slide": 21,
+        "text": ""
+      },
+      {
+        "slide": 22,
+        "text": ""
+      },
+      {
+        "slide": 23,
+        "text": "AMİTLER"
+      },
+      {
+        "slide": 24,
+        "text": ""
+      },
+      {
+        "slide": 25,
+        "text": ""
+      },
+      {
+        "slide": 26,
+        "text": "NİTRİLLER"
+      },
+      {
+        "slide": 27,
+        "text": "ÜRE BİLEŞİKLERİ"
+      },
+      {
+        "slide": 28,
+        "text": "TİYOLLER"
+      },
+      {
+        "slide": 29,
+        "text": "KÜKÜRTLÜ ASİTLER"
+      },
+      {
+        "slide": 30,
+        "text": ""
+      },
+      {
+        "slide": 31,
+        "text": ""
+      },
+      {
+        "slide": 32,
+        "text": "HETEROSİKLİK BİLEŞİKLER"
+      },
+      {
+        "slide": 33,
+        "text": "Heterosiklik Halkalar"
+      },
+      {
+        "slide": 34,
+        "text": ""
+      },
+      {
+        "slide": 35,
+        "text": ""
+      },
+      {
+        "slide": 36,
+        "text": "HETEROSİKLİK RADİKALLER"
+      }
+    ]
+  },
+  "İlaç metabolizması-2026.pdf": {
+    "rel_path": "materials\\pharmacology\\İlaç metabolizması-2026.pdf",
+    "course": "pharmacology",
+    "total_slides": 44,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "ORGANİK BİLEŞİKLERDE METABOLİK REAKSİYONLAR Organizmamız ilaçlar dahil bilinçli ve bilinçsiz olarak dışarıdan alınan kullanım alanları ve kullanım amaçları farklı olan bir çok organik bileşikle karşı karşıyadır. İlaçlardan başka gıdalara bilerek katılan yada kontaminasyon sonucu bulaşan çeşitli bileşikler, gıda katkı maddeleri, sentetik tatlandırıcılar, kozmetik preparatlardaki etken maddeler, yıkama tozları ve sıvıları, meyve ve sebzelerde bulunan pestisid kalıntıları ile hava kirliliğinden kaynaklanan bu çeşit organik maddelere ksenobiyotik adı verilir. Ksenobiyotikler enzimlerin etkisiyle metabolize edilerek genellikle zehirli olmayan ve organizmadan kolayca elimine edilebilen metabolit adı altında bilinen kimyasal bileşiklere dönüşürler. Bu olaya da biyotransformasyon yada ilaç metabolizması adı verilir. Metabolik reaksiyonlar çoğu zaman detoksifikasyon (zehirsizleştirme) ile sonuçlandığı halde bazen daha toksik, daha aktif ve non-polar metabolitlerin oluşumu da mümkündür."
+      },
+      {
+        "slide": 2,
+        "text": "Örneğin sülfadiazinin asetil metaboliti suda çözünmediği için böbrek hücrelerinde kristalizasyon ve harabiyet meydana getirir. asetil metaboliti N N H2N SO2NH Metabolizmanın amacı atılımı yani detoksifikasyonu sağlamaktır. Bazı durumlarda inaktif bileşikler enzimatik reaksiyonla vücutta aktif ilaç haline dönüşürler. Prodrug (ön ilaç) olarak adlandırılan bu bileşiklere örnek olarak prontosili (aktif sülfonamidi verir) ve asetilsalisilik asidi ( salisilik asidi verir) verebiliriz. Ayrıca metabolizma sonrası ilaçlarda farmakolojik aktivite de değişebilir. Örneğin trankilizan etkili olan diazepam N-demetilasyon ve hidroksilasyon sonucu antikonvülsan etkili olan oksazepam’a dönüşür."
+      },
+      {
+        "slide": 3,
+        "text": "İlaç Metabolizması Araştırmaları ile Neler Saptanabilir? 1 – Organizmanın kimyasala yaptığı değişim bulunur. 2 – Kimyasalın organizmaya yaptığı değişim bulunur. 3 – Kullanım güvenilirliği (farmakolojik ve toksikolojik testler) 4 – Maruziyet riskinin azaltılması 5 – İlaç dizaynı (toksik grupların maskelenmesi, prodrug geliştirilmesi, yeni ilaçların bulunması) 6 – Metabolizmayı yönlendiren enzimatik mekanizmanın açığa çıkartılması. Metabolizma Reaksiyonlarının Sınıflandırılması Organizmadan elimine edilmeden önce organik bileşiklerin ve ilaçların büyük bir bölümünün uğradığı metabolizma reaksiyonları Faz I (fonksiyonalizasyon) ve Faz II (konjugasyon) reaksiyonları olarak adlandırılır. Her iki reaksiyon da enzimlerle kontrol edilir."
+      },
+      {
+        "slide": 4,
+        "text": "Faz I reaksiyonları ile molekülde Faz II reaksiyonuna girebilecek – OH, NH2, tiyol (SH) ve COOH (karboksil) gibi uygun fonksiyonel gruplar oluşur. Faz II metabolitlerinin polaritesi substrata ve Faz I metabolitlerine göre daha artmıştır (asetilasyon ve metilasyon hariç). Ayrıca non toksik karakterlidirler. Substrat Eliminasyon 1. Oksidasyon 2. Redüksiyon 3. Hidroliz Enzim Enzim Faz I metaboliti Endojen maddelerle konjugasyon Faz II metaboliti Eliminasyon Eliminasyon Enzim"
+      },
+      {
+        "slide": 5,
+        "text": "Metabonat Bazı bileşikler organizmada non-enzimatik (kimyasal olarak) değişikliğe uğrayabilirler. Oluşan bu yeni kimyasallara metabonat adı verilir. Bunlar ya substrat molekülünün kimyasal modifikasyonu ile yada bir metabolitin veya metabolitlerin kimyasal reaksiyonları ile oluşabilir. kimyasal degisim kimyasal degisim kimyasal degisimMetabolit Metabolit Enzim Metabonat kimyasal degisim Substrat Metabonat Enzim Enzim Metabonat Metabonat"
+      },
+      {
+        "slide": 6,
+        "text": "İlaç Metabolizmasının Etkileri Istenen bir durum 1.Istenmeyen bir durum. 2.Toksik etki artar. 3.Reaktif metabolitler olusur. 4.Vücuttaki makromoleküllerle baglanma olur. 5.Vücutta biyokimyasal olaylar bloke olur. ToksikolojikFarmakolojikToksikolojik Farmakolojik Inaktivasyon Aktivasyon Substrat Epoksit (eter) O OO fenilhidroksil amin -kanserojen- NHOHNH2"
+      },
+      {
+        "slide": 7,
+        "text": "Bir ilaç bazı nedenlerden dolayı metabolize olmayabilir; - Gerekli enzim yoktur. - Polardır atılır. - Metabolize olacak yeri yoktur. hekzaklorobenzenCl Cl Cl Cl Cl Cl pestisit"
+      },
+      {
+        "slide": 8,
+        "text": "Metabolizma Teknikleri İn vitro teknikler Deney hayvanının ilgili organı alınıp, çalışılır. İn vitro tekniklerle metabolizmanın işlediği organ, ilgili enzim, ara metabolitler, Faz I metabolitler ve kimyasal mekanizmalar saptanabilir. İn vivo teknikler Hiç kullanılmamış deney hayvanlarında uygulanan substratın Faz I veya Faz II metabolitleri tesbit edilebilir."
+      },
+      {
+        "slide": 9,
+        "text": "Metabolitlerin Ortak Özellikleri - Çoğu stabil değildir. Isı, ışık ve nemden etkilenirler. - Polardır. Suda çözünürler. - Substrata göre molekül ağırlıkları daha azdır. - Substrata göre daha fazla oksijen taşıyabilirler. (oksidatif reaksiyon gerçekleştiği için) - Özellikle Faz I metabolitlerinden bazıları toksik özellik taşıyabilir. R NH2 oksidasyon R NH OH hidroksilamin (kanserojen) - pH değişimlerine hassastırlar."
+      },
+      {
+        "slide": 10,
+        "text": "İlaç Metabolizması Araştırmalarındaki Yöntemler (in vivo – in vitro) 1.- Substrat ve standart metabolitlerin sentezi. 2.- Kromatografik ayırma yöntemlerinin geliştirilmesi. 3.- Ekstraksiyon çalışması. 4.- Kullanılacak biyolojik sistemin seçimi ve hazırlanması. 5.- Biyolojik sistemle substratın reaksiyonu. (inkübasyon)"
+      },
+      {
+        "slide": 11,
+        "text": "Substrat ve muhtemel metabolit tespiti, sentezi ve yapi aydinlatmasi Substrat + Biyolojik sistem + Ko-faktör Biyolojik sistem secimi ve hazirlanmasi Fizikokimyasal parametrelerin tayini Kromatografik ayirim ve ön ekstraksiyon Ön inkübasyon 5' Inkübasyon 30' Biyolojik ortamdan ekstraksiyon Evoporasyon Metabolik ekstraksiyon Ayirma TLC, HPLC, GC Teshis UV, MASS, TLC İn vitro Metabolizmanın Safhaları"
+      },
+      {
+        "slide": 12,
+        "text": "Metabolitlerin Biyolojik Ortamdan Ekstraksiyonu Burada amaç sulu fazda çözünmüş olarak bulunan metabolitlerin organik faza geçirilmesidir. İki tip ekstraksiyon tekniği kullanılır; sıvı – sıvı ekstraksiyonu ve katı – sıvı ekstraksiyonu. Sıvı sıvı ekstraksiyonunda kullanılacak ekstraksiyon sıvısı suyla karışmamalı, suya göre metabolitleri daha fazla çözmeli, kolay uçucu olmalı, metabolit yada substrat ile etkileşmemeli, saf olmalı, toksik olmamalı ve ucuz olmalıdır. En çok kullanılan çözücüler eter ve diklorometan (DCM)’dir. Bazen metilenklorür (MC)’de kullanılabilir. su DCM eter su"
+      },
+      {
+        "slide": 13,
+        "text": "Sıvı – sıvı ekstraksiyonunda maddenin organik faza alınmasında sorun olursa ya sulu faz NaCl ile doyurulur yada pH ayarlanır. Sıvı – katı ekstraksiyonunda ise hazır kartuşlar kullanılır. Kartuşların içi silika yada C18 + silika ile doludur. Örneği enjektör yardımıyla kartuşdan geçirdiğimizde substrat ve metabolitler kartuşda tutulur ve metanolle yıkanarak alınır. Metanol uçurularak madde kazanılır. İn vitro Metabolizma Çalışmasında Biyolojik Sistemin Hazırlanması Hücre alt fraksiyonları, çoğunlukla mikrozomal fraksiyon, sitosol yada mitokondri kullanılır. Mikrozomlar doku homojenantlarının post- mitokondriyel supernatantlarının yüksek devirde santrifüjlenmesiyle hazırlanır. Ancak uzun zaman alması ve pahalı bir ultrasantrifüj cihazı gerektirdiği için bu metod pek kullanılmaz. Kalsiyum iyonları varlığında endoplazmik retikulum (ER) fragmentlerinin santrifüjüne dayanan, düşük devir ve az zaman gerektiren bir yöntem olan Kalsiyum Klorür Çökeltme Metodu ise mikrozomal preparatların hazırlanmasında tercih edilir."
+      },
+      {
+        "slide": 14,
+        "text": "FAZ I REAKSİYONLARI 1) Oksidasyon 2) Redüksiyon 3) Hidroliz 1.- Oksidasyon a) Karbon oksidasyonu i – alifatik karbon oksidasyonu İlgili enzim karma fonksiyonlu oksidazlardır (MFO). CH3 CH2OH CHO COOH toluen benzil alkol benzaldehit benzoik asit"
+      },
+      {
+        "slide": 15,
+        "text": "CH3CH2CH3 CH3CH2CH2OH CH3 CH CH3 OH 1-Propanol 2-Propanol (w oksidasyonu) (w1 oksidasyonu) primer alkol sekonder alkol ii – çifte bağ oksidasyonu İlgili enzim karma fonksiyonlu oksidazlardır. C C C C O ( O ) epoksit iç eter H2O C OH C OH diol"
+      },
+      {
+        "slide": 16,
+        "text": "iii – aromatik karbon oksidasyonu ( O ) O OH epoksit, ara ürün fenol H2N H2N OH H2N OH H2N OH anilin p-aminofenol o-aminofenol m-aminofenol MFO"
+      },
+      {
+        "slide": 17,
+        "text": "iv – alisiklik karbon oksidasyonu OH OH tetralin tetralin-1-ol tetralin-2-ol"
+      },
+      {
+        "slide": 18,
+        "text": "v – alkol ve aldehid oksidasyonu CH3CH2OH CH3CHO CH3COOH alkol dehidrogenaz aldehid dehidrogenaz Primer alkol aldehid asit Sekonder alkol keton"
+      },
+      {
+        "slide": 19,
+        "text": "vi – heterosiklik karbon oksidasyonu Ar CH2 N N O Ar CH2 N-benzil prolidin karbinolamin, ara ürün N OH Ar CH2 N-benzil-2-prolidon MFO aldehid veya alkol dehidrogenaz"
+      },
+      {
+        "slide": 20,
+        "text": "vii – oksidatif O, S, N-dealkilasyon Eter, tiyoeter ve aminlerde (sekonder ve tersiyer), O, S, N heteroatomuna bağlı alkil grubunun ayrılmasıdır. Bu olay oksidatiftir ve bir karbinol bileşiği üzerinden yürür. Sonunda bir aldehit ve dealkile olmuş alkol, tiyol veya amin elde edilir. R CH2 X R1 MFO X R1CHR OH RCHO H X R1+ X = O,S,NH"
+      },
+      {
+        "slide": 21,
+        "text": "viii – oksidatif deaminasyon +NH3 oksidatif deaminasyon HO CH2 NH2 O CH3 NH2 CH2O --- imin oksidasyonu R N CH R MFO R N CH R + -Onitron --- amid oksidasyonu R CO NH2 MFO R CO NH OH hidroksamik asit"
+      },
+      {
+        "slide": 22,
+        "text": "ix – kükürt oksidasyonu İlgili enzimler karmafonksiyonlu oksidazlardır. --- tiyol oksidasyonu R S H R S OH R S H O R S OH O O sülfenik asit sülfinik asit sülfonik asit --- tiyo eter (sülfid ) oksidasyonu R S R R S R O R S R O O sülfoksid sülfon ---tiyoamid oksidasyonu R C NH2 S R C NH2 S O R C NH2 S OO sülfin sülfen"
+      },
+      {
+        "slide": 23,
+        "text": "x – azot oksidasyonu --- amin oksidasyonu R N H H R N OH H primer amin primer hidroksilamin R N H R R N R RR N R R R N OH R sekonder amin sekonder hidroksilamin O- + tersiyer amin N-oksit"
+      },
+      {
+        "slide": 24,
+        "text": "--- azo grubu oksidasyonu R N N R R N N R + O- azoksi Ilgili enzim karma fonksiyonlu oksidazlar... ---desülfürasyon CH2N NH2 S CH2N NH2 OMFO tiyoüre üre"
+      },
+      {
+        "slide": 25,
+        "text": "2.- Redüksiyon a) Nitro grubu redüksiyonu İlgili enzim nitro redüktazdır. R NO2 R NO R NHOH R NH2 nitro nitroso hidroksilamin amin b) Azo grubu redüksiyonu İlgili enzim azo redüktazdır. R N N R R NH NH R R NH2 azo hidrazo primer amin"
+      },
+      {
+        "slide": 26,
+        "text": "c) Karbonil grubu redüksiyonu İlgili enzim aldehid redüktaz ve keton redüktazdır. CO CH(OH) alkol d) N-oksit redüksiyonu İlgili enzim bakteriyel redüktazdır. N R R R O N R R R + - tersiyer amin"
+      },
+      {
+        "slide": 27,
+        "text": "e) Redüktif dehalojenizasyon CCl4  CHCl3 f) S-S bağının kopması R-S-S-R  R-SH + HS-R"
+      },
+      {
+        "slide": 28,
+        "text": "3.- Hidroliz a) Ester hidrolizi R-COOR1 + H2O  R-COOH + R1OH b) Amid hidrolizi İlgili enzim amid hidrolaz. İlgili enzim ester hidrolaz. R-CO-NH2 + H2O  R-COOH + NH3"
+      },
+      {
+        "slide": 29,
+        "text": "c) Epoksid hidrolizi İlgili enzim epoksid hidrolazdır. R CH CH2 O R CH CH2 OH OH d) Sülfonamid hidrolizi R-SO2-NH2 + H2O  R-SO3H + NH3 e) İmin hidrolizi R-N=CH-R + H2O  R-NH2 + R-CHO"
+      },
+      {
+        "slide": 30,
+        "text": "f) Hidrazon hidrolizi R-CH=N-NH2 + H2O  R-CHO + H2N-NH2 g) Hidrazid hidrolizi R-CO-NH-NH2 + H2O  R-COOH + H2N-NH2"
+      },
+      {
+        "slide": 31,
+        "text": "FAZ II REAKSİYONLARI 1. Asetilasyon -OH, -SH, -NH2 grupları asetilasyona uğrar. Endojen madde asetil koenzim A, ilgili enzim asetil transferazdır. N CONHNH2 isoniyazid asetil isoniyazid N CONHNHCOCH3"
+      },
+      {
+        "slide": 32,
+        "text": "2. Metilasyon -OH, -SH ve -NH2 grupları metilasyona uğrar. Endojen madde asetil S-adenosil metiyonin (SAM), ilgili enzim metil transferazdır. 3. Sülfat konjugasyonu -OH ve –NH2 grupları sülfat konjugasyonuna uğrar. Endojen madde 3’-fosfoadenosin-5’-fosfo sülfat (PAPS), ilgili enzim sülfo transferazlardır. OH OSO3H fenol fenilsülfat"
+      },
+      {
+        "slide": 33,
+        "text": "4. Glukuronik asidle konjugasyon -OH grupları eter glukuronidlerini, -COOH grupları ester glukuronidlerini, -NH2 ve SH grupları sırasıyla N ve S- glukuronidlerini oluşturur. Endojen madde (uridin-5’-difosfo- -D-glukuronik asit) UDPGA, ilgili enzim glukuronil transferazdır. COOH COOC6H9O6 ester glukuronid"
+      },
+      {
+        "slide": 34,
+        "text": "5. Aminoasit konjugasyonu -COOH grupları, glisin ve glutamin gibi aminoasitlerle peptid zinciri oluşturur. Bu olay açil transferaz enzimi ile katalize edilir. COOH OH OH CONH CH2COOH 2,5-diamino-5-oksopentanoik asit"
+      },
+      {
+        "slide": 35,
+        "text": "6. Glutatyon konjugasyonu R CH CH2 O + GSH R CH CH2 OH SG epoksid glutatyon glutatyon konjugati Nitro, alkil halojenürü ve epoksid grupları taşıyan bileşikler glutatyon ile glutatyon S-transferaz enzimi katalizörlüğünde konjuge olurlar. 7. Merkaptürik asit oluşumu Glutatyon konjugatları glutatyanoz enzimi ile hidrolize olarak glutamil artığını, daha sonra peptidaz enzimi ile hidroliz olarak glisin artığını bırakırlar. Bu son madde (S-sübstitüe sistein konjugatı) bir N-asetilaz enzimi varlığında N-asetilasyona uğrar ve merkaptürik asidi oluşturur."
+      },
+      {
+        "slide": 36,
+        "text": "R S CH2 CH CONH CH2 COOH NHCOCH2 CH2 CH COOH NH2 glutatyonaz R S CH2 CH CONH CH2 COOH NH2 R S CH2 CH NHCOCH2 CH2 CH COOH COOH NHCOCH3 peptidaz R S CH2 CH NH2 COOHN-asetilaz merkaptürik asit"
+      },
+      {
+        "slide": 37,
+        "text": "Reaksiyon Adı ve Fonksiyonel Gruplar İlgili Endojen Madde (İlgili Enzim) Örnek Substrat ve Metabolitleri Glukuronidasyon (OH, SH, NH2, COOH) Uridindifosfo glukuronik asit -UDPGA (Glukuronil transferazlar) R-OH R-O-C6H9O6 Eter tip RNH2 R-NH- C6H9O6 R-COOH R-COO C6H9O6 Ester glukuronid Asetilasyon (OH, NH2) Asetil CoA (Asetil transferazlar) 1) Metilasyon (OH, SH, NH2) S-adenosilmetiyonin SAM (Metil transferazlar) gayakol - nonpolar OH OCH3OH OH asetil metaboliti izoniyazid CONHNHCOCH3 N CONHNH2"
+      },
+      {
+        "slide": 38,
+        "text": "Aminoasit ile konjugasyon (COOH) Aminoasit (Açil transferazlar) (H2N-CH2-COOH) Glutatyon konjugatı Glutatyon (Glutatyon transferaz) molekülde S yapısı varsa oluşur. Sülfat konjugatı 3’-fosfoadenosin-5’- fosfo sülfat PAPS (Sülfotransferazlar) Merkaptürik asit oluşumu Asetil CoA (Glutatyonaz, peptidaz, N-asetilaz) R S G Glutatyon OSO3HOH merkaptürik asit peptidaz N-asetilaz glutatyonazglutatyon konjugati OH COOH OH CONH HOOC CH2 salisilik asit salisilürik asit"
+      },
+      {
+        "slide": 39,
+        "text": "METABOLİZMAYIETKİLEYEN FAKTÖRLER 1) Endojen Faktörler -Fizyolojik ve patolojik faktörler. (yaş, hormon, diyet, beslenme) -Genetik faktörler. (cinsiyet, tür, ırk) 2) Eksojen Faktörler (Çevresel Faktörler) -İlaçlar ve diğer ksenobiyotikler -Çevre kirliliği -Doğal bileşikler (Greyfurt-Sitokrom P-450 3A4) -Enzim indüksiyonu yapan ajanlar -Enzim inhibisyonu yapan ajanlar"
+      },
+      {
+        "slide": 40,
+        "text": "Asetilasyon Polimorfizmi : Eskimolar ve Japonlar hızlı asetilatör, Mısırlılar ve Avrupalılar yavaş asetilatördür. Oksidasyon Polimorfizmi : Oksidasyon reaksiyonlarının çoğu sitokrom P-450 izoenzimleri ile katalize edilir. Bu enzimlerin bazıları genetik polimorfizm gösterir. Örneğin; Debrizokin’i (antihipertansif) 4-hidroksi debrizokin’e okside eden izoenzim (P-450 DB) aktivitesinde genetik farklılık nedeniyle meydana gelen polimorfizm vardır. debrizokin N C NH2 NH"
+      },
+      {
+        "slide": 41,
+        "text": "STEREOKİMYASAL FAKTÖRLERİN İLAÇ BİYOTRANSFORMASYONU ÜZERİNDEKİ ETKİLERİ Daha çok rasemik substratların metabolizması insan ve çeşitli hayvan türlerinde kapsamlı bir şekilde incelenmektedir. Fenitoin, hekzobarbital, propranolol, varfarin, glutetimid, ibuprofen, morfin, ketamin ve siklofosfamid gibi çoğu ilaç genellikle rasemik karışım şeklinde alınırlar. Rasemik bir ilacın enantiomerleri genellikle farklı hızda metabolize edilir. Propranolol’ün + enantiyomeri daha aktif olan – enantiyomerinden daha hızlı metabolize edilir."
+      },
+      {
+        "slide": 42,
+        "text": "O CH2 CH CH2 NH CH CH3 CH3OH propranolol O CH2 CH CH2 NH CH CH3 CH3OH OH 4-hidroksipropranolol"
+      },
+      {
+        "slide": 43,
+        "text": "METABOLİZMA REAKSİYONLARININ MEYDANA GELDİĞİ BAŞLICA BÖLGELER 1-Karaciğer 5- Beyin 9- Plasenta 2-Böbrek 6- Mide-bağırsak kanalı 10- Deri 3-İdrar 7- Mide-bağırsak florası 11- Dokular 4-Kan 8- Mesane 12- Akciğer"
+      },
+      {
+        "slide": 44,
+        "text": "İdrarda : Bir üriner sistem antiseptik prodrug olan Hegzametilen tetramin idrarın asidik pH’ında amonyak ve formaldehide hidrolizlenir. Etkili olan madde de non-spesifik bir antibakteriyel olan formaldehid’dir. Mide-bağırsak kanalında : Glukuronik asitle konjugasyon. Deride : Glukuronik asitle konjugasyon Bağırsakta : Sülfat konjugasyonu, asetilasyon. Mide-bağırsak florasında : Havasız bir ortamda redüksiyon reaksiyonları oluşur. Azo ve nitro gruplarının redüksiyonu, hidroliz reaksiyonları. Beyin : Enzim miktarı az olduğu için metabolizma da azdır."
+      }
+    ]
+  },
+  "İlaçlarda  İzomeri.pdf": {
+    "rel_path": "materials\\medchem\\İlaçlarda  İzomeri.pdf",
+    "course": "medchem",
+    "total_slides": 43,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "Prof.Dr. Bedia KAYMAKÇIOĞLU İLAÇLARDA İZOMERİ"
+      },
+      {
+        "slide": 2,
+        "text": "İLAÇLARDA İZOMERİ İlaç-reseptör etkileşmesi hangi mekanizmaya göre gerçekleşirse gerçekleşsin, sonuçta ilaç molekülü reseptöre yaklaşmalı ve iyi bir uyum göstermelidir. Reseptör: Hormonlar, nöromediyatörler gibi etkin endojen maddelere ve ilaçlara seçici afinite göstererek onları bağlayan ve böylece fizyolojik etkiyi başlatan hücresel biyomakromoleküllerdir."
+      },
+      {
+        "slide": 3,
+        "text": "Kovalan Bağlar İyonik Bağlar Hidrojen Bağı İyon Dipol Bağı Dipol-Dipol Bağı Yük Transfer Etkileşimleri Hidrofobik Etkileşimler Vanders Waals Etkileşimleri İlaç Reseptör Etkileşiminde Kimyasal Bağlar"
+      },
+      {
+        "slide": 4,
+        "text": "hidrofobik hidrojen bagidipol - dipol iyon - dipol yük transfer hidrofobik iyon veya iyon dipol hidrojen bagi hidrofobik +:N H3CH2CH2CH2CO O N H CH2CH2 N H CH2 CH2 CH3 CH3"
+      },
+      {
+        "slide": 5,
+        "text": "İzomerler Yapısal izomerler Stereoizomerler Konfigürasyon izomerleri Konformerler (rotomerler) Geometrik izomerler Optik izomerler İzomerler birbirlerine çok benzeyen, fakat yapıdaki bir farklılıktan dolayı birbirinin aynı olmayan moleküllerdir."
+      },
+      {
+        "slide": 6,
+        "text": "Yapısal İzomeri: Yapısal izomeri konum farklılığı veya fonksiyonel grup farklılığına bağlı olarak gözlenebilir. Örneğin; 2-Nitrofenol, ile 3-Nitrofenol yapıdaki nitro grubunun konumunun farklı olmasına bağlı olarak birbirlerinin yapısal izomeridirler. OH N + O - O OH N + O - O"
+      },
+      {
+        "slide": 7,
+        "text": "Yine kapalı formülleri aynı olup, molekül formülleri farklı olan etanol ile dimetil eter yapısal izomeriye örnek olarak verilebilir. CH3 OH Kapalı formülleri: C2H6O CH3 O CH3"
+      },
+      {
+        "slide": 8,
+        "text": "Stereo İzomeri: Stereo izomeri, konfigürasyon ve konformasyon izomeri olmak üzere iki alt başlıkta incelenir: 1-Konfigürasyon izomeri: Asimetrik merkez içeren veya çifte bağ ya da halkalı yapı taşıyan bileşiklerde atom veya grupların uzaydaki konumlanmalarının farklılığından ortaya çıkar. Bir konfigürasyondan diğer konfigürasyona geçiş bağ kırılmasıyla olur. Geometrik izomeri ve optik izomeri konfigürasyon izomerisine örnektir. Geometrik (Uzaysal, spatial) izomeri: Burada yapıların birbirine dönüşmemesi esastır. Bunun için de ya bir çifte bağ ya da halkalı yapı gerekir."
+      },
+      {
+        "slide": 9,
+        "text": "Çifte bağ etrafındaki atom veya grupların en az iki tanesi aynı ise “Cis-Trans İzomeri” söz konusudur. O OH O OH H H O OH H H O OH cis-Butendioik asit (Maleik Asit) trans-Butendioik asit (Fumarik Asit) Halkalı yapılarda tekli bağ etrafındaki kısıtlı dönüş sonucu açığa çıkan yapılar, cis ve trans izomerlere örnek teşkil eder. Örneğin; 1-metil siklohekzan"
+      },
+      {
+        "slide": 10,
+        "text": "CH3 Cl CH3 O CH3 CH3 O OH H Çifte bağ etrafında üç ya da dört farklı grup bulunduğunda ise “E/Z İzomeri” söz konusudur. Burada Z cis’i, E trans’ı ifade eder. Z-2-metoksi-3-etil-5-kloro-2-penten E-4-fenil-3-pentenoik asit"
+      },
+      {
+        "slide": 11,
+        "text": "Cahn Ingold Prelog (CIP): Bu sistem ile çifte bağ etrafındaki grupların öncelik sıraları belirlenir. Bu sıralama aşağıdaki kriterlere göre yapılır: Öncelik ilk bağlı olan atomun atom ağırlığına göre belirlenir. Bağlı olan atomlar aynı ise bir sonrakilere bakılır. Halojenlerde öncelik I, Br, Cl, F şeklinde belirlenir. İzotop durumu var ise kütlesi en büyük olan izotop önceliklidir ( Örneğin; 81Br › 79Br). Çifte bağlı yapılarda çifte bağlı atoma o grup iki kez bağlanmış gibi değerlendirilir. Burada molekülün yapısında n adet çifte bağ bulunuyorsa 2n adet izomeri olduğu düşünülür. Örneğin; molekülün yapısında 1 adet çifte bağ varsa 2 adet izomeri bulunur."
+      },
+      {
+        "slide": 12,
+        "text": "Geometrik izomerlerin çözünürlük, pKa, logP, iyonizasyon, erime derecesi gibi fizikokimyasal özellikleri birbirlerinden farklıdır. Geometrik izomerler, basit ayırma teknikleriyle birbirlerinden ayrılabilirler; 1-Süzme 2-Kristallendirme 3-Distilasyon (Kaynama noktalarının birbirinden farklı olması sebebiyle) 4-pKa farklılığından dolayı ayırım (Maddenin asit veya bazik ortamda verdiği reaksiyonlar ile)"
+      },
+      {
+        "slide": 13,
+        "text": "Optik İzomeri: Dört farklı sübstitüentin bağlı olduğu karbon atomu (asimetrik karbon atomu) şiral merkez olarak adlandırılır ve moleküle optik aktivite kazandırır. CH3 CH3 CH3 CH3 a b c d* Reseptörleri oluşturan protein veya amino asitlerin çoğu şiral moleküllerdir. Ayrıca steroidler, opiyatlar, dopa türevleri, penisilinler ve tetrasiklinler gibi günümüzde kullanılmakta olan birçok ilaç grubu da asimetrik merkezler içermektedir. Optik izomerler yani Enantiyomerler, (enansiyomorf veya optik antipod olarak da isimlendirilirler) birbirinin ayna görüntüsü olan ve üst üste çakıştırılamayan, polarize ışık düzlemini zıt yönde ve ideal olarak aynı miktarda çeviren, bunun dışında bütün özellikleri aynı olan stereoizomerlerdir. Bir moleküldeki izomer sayısı 2n formülü ile, rasemat sayısı ise 2n/2 formülü ile hesaplanır (n=asimetrik karbon atomu sayısıdır)."
+      },
+      {
+        "slide": 14,
+        "text": "Bu optik izomerler polarize ışın düzlemini farklı yönlere çevirirler. Dekstrojir dediğimiz (+) izomer (d izomer) polarize ışığı sağa, yani saat yönüne çevirir. Levojir dediğimiz (-) izomer (l izomer) ise polarize ışığı sola, yani saatin aksi yönüne çevirir. Rasemat=Rasem terimi ise, (+) ve (-) izomerlerin ekimoleküler karışımını ifade eder ( %50 d-izomer ve %50 l-izomer karışımı), dl harfleriyle ya da (±) işaretiyle gösterilir. Rasemat, optikçe aktiflik göstermez. İlaçların çoğu rasemat halindedir. Örneğin; β-blokerler, asidik nonsteroidal antiinflamatuar ilaçlar (NSAID), antikolinerjik olan benzetimid rasemat halinde kullanılmaktadır."
+      },
+      {
+        "slide": 15,
+        "text": "Birden fazla asimetrik merkezi olan bileşiklerde dekstrojir ve levojir yetersiz kalır. Bu durumda R/S konfigürasyonu olarak bilinen absolü konfigürasyon tercih edilir ve Cahn-Ingold- Prelog kurallarına göre hangi enantiyomer olduğu tayin edilir. Atomların CIP’ye göre üç boyutlu dizilişleri saat yönündeyse rektus (R), tersi yönde ise sinister (S) adını alır. Özellikle birden fazla asimetrik merkez içeren bileşiklerin isimlendirilmesinde kullanılır. a d bc a d cb R S : kağıt düzlemi, : kağıt düzleminin üstü, : kağıt düzleminin altı"
+      },
+      {
+        "slide": 16,
+        "text": "Örneğin; İbuprofen O OH* Ar CH3 O OHH ab c C Ar H CH3O OH a b c (R)-İbuprofen (S)-İbuprofen"
+      },
+      {
+        "slide": 17,
+        "text": "Birden fazla asimetrik merkez taşıyan bileşiklerde birbirinin ayna görüntüsü olmayan ve üst üste çakıştırılamayan yeni enantiyomerler oluşur. Bunlara Diasteromer denir. Diasteromerlerin fizikokimyasal özellikleri birbirinden farklıdır. Basit ayırma teknikleriyle birbirlerinden ayrılırlar. Diastereomer çiftlerinde, aynı grupların aynı tarafta olduğu izomer eritro-, ters tarafta olduğu izomer ise treo- olarak adlandırılır. Eritroz ve treoz molekülleri eritro ve treo izomerlerine örnek olarak verilebilir."
+      },
+      {
+        "slide": 18,
+        "text": "D/L izomeri Amino asit ve karbonhidrat adlandırmalarında kullanılan, Fisher’in geliştirdiği bir kuraldır. Karbonhidratlarda karbonil grubuna en uzak –OH sağ tarafta ise D-; sol tarafta ise L- olarak adlandırılır. Amino asitlerde ise amin grubu sağda ise D-, solda ise L- olarak isimlendirilir. Doğada bütün şekerler D, bütün aminoasitler ise L formundadır."
+      },
+      {
+        "slide": 19,
+        "text": "(-)-(1R,2R) (+)-(1S,2S) (+)-(1S,2R) (-)-(1R,2S) Diastereomer Enansiyomer []D 20 = + 19.6 D-Treoz L-Treoz = - 19.620 D[] C H C C CH2 OH H OHH HO O * * C H C C CH2 OH OH HHO H O * * []D 20 = - 14.8 D-Eritroz L-Eritroz = + 14.820 D[] * ** * C H C C CH2 OH H HHO HO OO C H C C CH2 OH OH OHH H"
+      },
+      {
+        "slide": 20,
+        "text": "Mezo- Bir molekülde birden fazla asimetrik grup var ise ve bu asimetrik merkezler aynı grupları taşıyor ve bu gruplar simetrik ise moleküller şiral özellik göstermez. Örneğin; Mezotartarik asit * * mezo-Tartarik asit = 020 D[] C C H COOHHO H COOHHO E.D. = 140 oC * * L-Tartarik asit = + 11.9820 D[] C C H H OH COOHHO HOOC E.D. = 170 oCE.D. = 170 oC C C OHHOOC H COOHHO H []D 20 = - 11.98 D-Tartarik asit * *"
+      },
+      {
+        "slide": 21,
+        "text": "Stereokimyasal faktörler biyolojik aktiviteyi üç farklı şekilde etkiler; 1-Geometrik izomerinin farmakolojik aktiviteye etkisi 2-Optik izomerinin farmakolojik aktiviteye etkisi 3-Konformasyon izomerisinin farmakolojik aktiviteye etkisi Optik izomerinin farmakolojik aktivitede farklılık yaratması enantiyomerlerin aktivitelerinin farklı oluşundan kaynaklanır. Bu farkı oluşturan sebepler; İlaç-reseptör kompleksi oluşturmada farklılık oluşması. Oluşan bağ sayısının ve bağ kuvvetlerinin farklı oluşudur."
+      },
+      {
+        "slide": 22,
+        "text": "Geometrik izomeri ve farmakolojik aktivite •Fizikokimyasal özelliklerinin farklı olması nedeniyle biyolojik ortamda dağılmaları, buna bağlı olarak reseptör yöresine ulaşmadaki farklılıklardan, •Taşıdığı grupların uzayda farklı konumlanmaları sonucu spesifik reseptöre bağlanmadaki farklılıklardan kaynaklanmaktadır. Örnek: Dietilstilbesterol. Bileşiğin trans izomeri, cis izomerine göre 14 kez daha fazla estrojenik aktivite göstermektedir. Estradiol OH HO cis-Dietilstilbesterol HO HO trans-Dietilstilbesterol HO OH Bu aktivite farkı, muhtemelen iki izomerin hidroksil grupları arasındaki interatomik mesafenin farkından kaynaklanmaktadır."
+      },
+      {
+        "slide": 23,
+        "text": "Optik izomeri ve farmakolojik aktivite Optik izomerlerin aktiviteleri arasındaki farklar, çok eski yıllardan beri bilinmektedir ve bu hem reseptör kavramının, hem de ilaç- reseptör etkileşmeleri teorilerinin geliştirilmesinde önemli olmuştur. • İlaçlarda ve diğer biyoaktif moleküllerde stereoselektif aktivite, yani izomerlerin aktivitelerinin farklı olması çok yaygındır. • Enantiyomerlerin aktiviteleri arasındaki farklılıklar, çoğu zaman bir homolog serinin üyelerinin aktiviteleri arasındaki farktan daha fazladır. •Enantiyomerlerin aktiviteleri arasındaki farklılıklar:  1) Esas olarak ilaç-reseptör kompleksini oluşturmadaki farklılıklarından kaynaklanır. 2) Ancak *membran seçiciliği, *seçici metabolizma ve o aktiviteye ait olmayan *(nonspesifik) reseptörlerle etkileşme gibi bazı seçici kademeler nedeniyle reseptöre kadar aynı konsantrasyonda ulaşamamaları da bir diğer faktördür."
+      },
+      {
+        "slide": 24,
+        "text": "Bu seçici kademeler özellikle in vivo şartlarda geçerlidir. • Membran seçiciliği: Taşıyıcı enzimler aracılığıyla olan membran geçişleri, bir seçici kademe oluşturabilir. Örneğin, valin, lösin gibi bazı amino asitlerin sadece L- izomerlerinin bakteri (E. coli gibi) hücre duvarından penetre olabilmeleri stereoselektif transportlarına bağlanır. • Seçici Metabolizma: Bazı metabolik enzimler, asimetrik merkezle selektif olarak etkileşmeye girerler. Örneğin, L-hekzobarbitalin, daha uzun etkili olması ve daha yüksek kan seviyesine ulaşması, D- enantiyomerinin daha büyük bir hızla metabolize olmasının sonucudur. • Nonspesifik reseptörlerle etkileşme (kayıp yöresi): Nonspesifik reseptörlerle etkileşme de aktivite kaybına neden olabilir. Hatta bu nedenle daha güçlü izomer daha az etkili olabilir."
+      },
+      {
+        "slide": 25,
+        "text": "Optik izomerlerin farklı aktivitelerinde en önemli faktör spesifik reseptörün stereoselektivitesidir. Bilinen klasik örneklerden biri epinefrindir."
+      },
+      {
+        "slide": 26,
+        "text": "•Çarpıcı bir diğer örnek muskarindir. Üç asimetrik merkez içeren muskarinin 5S,4R,2S konfigürasyonundaki (+)-izomeri, (-)- izomerinden 700 kez daha fazla muskarinik aktivite gösterir. Aktif muskarin (+)-5S, 4R, 2S Histamin, şiral bir molekül olmamasına rağmen, H1-reseptör antagonistlerinin büyük bir kısmı şiral moleküllerdir ve aktiviteleri stereoselektiftir. Örneğin, antihistaminik klorfeniraminin (S)-(+)- izomeri, (R)-(-)-izomerinden 200 kez daha aktiftir. * * * (CH3)3 OH CH3 H OH H H H CH2 N +"
+      },
+      {
+        "slide": 27,
+        "text": "* N H N Cl (CH3)2 S(+)-Deksklorfeniramin Bu muhtemelen proteinlerin şiral olmalarından kaynaklanmaktadır. Çünkü iki farklı enantiyomerin şiral reseptörle yaptığı kompleksler bir diastereomerik çift oluşturur ve bunlar farklı enerji ve kimyasal özelliklere sahiptirler. Dolayısıyla oluşturdukları ilaç-reseptör kompleksinin disosiyasyon sabitleri de farklı olur."
+      },
+      {
+        "slide": 28,
+        "text": "Enantiyomerlerin farmakolojik aktivitelerinde ençok rastlanan durum her iki izomerin de aynı aktiviteyi farklı miktarlarda göstermesidir; bazı durumlarda bu aktivite farkı çok büyüktür. Ariens nomenklatürüne göre, stereoselektif bir aktivitede, rasem karışımdaki izomerlerden daha aktif olana eutomer (eu), daha az aktif olana ise distomer (dis) denir; enansiyomerlerin aktivite veya afinitelerinin oranına ise eudismik oran (eutomer/distomer) denir ve stereospesifikliğin derecesini gösterir. Karışımdaki distomer, çoğunlukla eutomerle aynı aktiviteyi fakat düşük miktarlarda göstermesine rağmen, bazı durumlarda başka bir etki, hatta istenmeyen yan etkiler veya toksisite gözlenebilir. Bu nedenle distomer çoğunlukla safsızlık olarak kabul edilir."
+      },
+      {
+        "slide": 29,
+        "text": "Distomerin olası etkileri: 1-Her iki izomer de istenen aktiviteyi gösterirken, izomerlerden sadece birinin toksik etkisi olabilir. * O Cl NHCH3 (+)-Ketamin: Genel anestezik olarak (-)-Ketamin: İstenmeyen yan etkilerden sorumludur. 2-Bir izomer terapötik etki gösterirken diğer izomer istenmeyen yan etkilerden veya toksisiteden sorumlu olabilir * CH3 HN C CH CH3 NHCH2CH2CH3 O •Prilokainin her iki izomeri de lokal anestezik • R(-)-izomerinin hidrolizi ile oluşan toluidin metaboliti methemoglobinemiye neden olur."
+      },
+      {
+        "slide": 30,
+        "text": "Talidomid 1953 yılında bulunmuş ve ilk olarak 1957 yılında \"Contergan\" ticari adı ile pisayasa sürülmüştür. Bulantı ve kusmaya uykusuzluğun eşlik ettiği “morning sickness” (hamilelerde sabah bulantısı) sorununu gidermek için kullanıldı. Fakat Talidomid bir rasemik karışımdır. (R)-enantiyomerinin hamilelerin sabah bulantılarını etkilerken, (S)- enantiyomerinin ise hamileliği sırasında talidomid kullanan kadınlardan doğan çocuklarda \"fakomeli\" hastası olmalarına neden olduğu anlaşılmıştır."
+      },
+      {
+        "slide": 31,
+        "text": "Fakomeli hastalığı ile doğan bebeklerde normalden kısa, yüzgeç benzeri kol ve bacakların olmasıdır. Hatta bu anomaliyle dünyaya gelen çocuklara \"flipper babies (yüzgeçli bebekler)“ denmiştir. Dünya üzerinde 46 ülkeden 10.000’in üzerinde bebek ilacın yan etkisi nedeniyle sakat olarak dünyaya gelmiştir. İlaç 1961 yılında da piyasadan kaldırılmıştır."
+      },
+      {
+        "slide": 32,
+        "text": "3-Bazı durumlarda aktif izomerlerden biri farklı bir etki göstermesine rağmen, her iki izomerin bir arada bulunması istenir * N NH CH3 CH3 C4H9 O (+) ve (-)-Bupivakain: Lokal anestezik (-)-Bupivakain: Vazokonstrüktif 4-Enansiyomerler birbirlerinden tamamen farklı etkiler de gösterebilirler"
+      },
+      {
+        "slide": 33,
+        "text": "OCH3 N CH3 CH3 O * * O O NCH3 CH3 CH3 * * Dekstropropoksifen Levopropoksifen [2S,3R-(+)] (analjezik) [2R,3S-(-)] (antitussif)"
+      },
+      {
+        "slide": 34,
+        "text": "Limonen (1-Metil-4-(1-metiletenil) sikloheksen) olarak adlandırılan bir bileşiğin bir enantiyomerik şekli portakalların kokusuyla sorumluyken, diğer enantiyomeri, limonların kokusundan sorumludur."
+      },
+      {
+        "slide": 35,
+        "text": "5-Zıt etki gösteren enansiyomer örnekleri de vardır. OH NCH3CH2CH2 CH3 CH3 (+)-Pisenadol: Narkotik analjezik (-)-Pisenadol: Narkotik antagonist (±)-Pisenadol (rac): Kısmi agonist"
+      },
+      {
+        "slide": 36,
+        "text": "Saf enansiyomer elde edilmesi – Rasemik karışımların resolüsyonu Safsızlık olarak kabul edilen distomeri içermeyen aktif enansiyomeri (eutomer) elde etmek için (çünkü geleneksel sentez yöntemleri sonucu rasemik karışımlar elde edilmektedir) iki yaklaşım söz konusudur: 1-Şiral ajanların kullanıldığı stereospesifik sentez yöntemleri veya mikrobiyolojik sentez yöntemleri kullanılarak tek bir enansiyomerin elde edilmesi, 2- Rasemik karışımdan enansiyomerlerin ayrılması (rasemik rezolüsyon):"
+      },
+      {
+        "slide": 37,
+        "text": "1-Şiral stasyoner faz veya mobil faza katılan şiral ajanların kullanıldığı kromatografik yöntemler kullanarak (kolon kromatografisi, HPLC, süper kritik sıvı kromatografisi (SFC) gibi ) 2-Eğer ilaç molekülünün yapısı uygunsa, diastereomerik türevler oluşturarak ayırım yapılabilir. Örn: Asit bileşiklerde şiral bir baz, bazik bileşiklerde ise şiral bir asitle rasemik bileşiğin tuzuna geçilir; oluşan diastereomerik tuz çiftinin fizikokimyasal özellikleri farklı olduğundan, klasik ayırım yöntemleriyle ayrılırlar ve tuzun hidrolizi sonucu enansiyomerler saf olarak elde edilir."
+      },
+      {
+        "slide": 38,
+        "text": ": (-) (-) (-) (-) (-)(+) (+) 2. Diastereomerik tuz1. Diastereomerik tuz Optikçe aktif amin + Amin HCl+ Amin HCl R COOHR COOH HClHCl R COO HNHN 2. Kristallendirme 1. Tuzuna geçme N+ (-) (+) R COOH R COOH - R COO-+ + Rasemik karışım"
+      },
+      {
+        "slide": 39,
+        "text": "Konformasyon izomerisi ve farmakolojik aktivite •Konformerler arasındaki farklar, konfigürasyon izomerlerine göre biraz daha karışıktır. •Her ne kadar konformerlerin sayısı teorik olarak sonsuz olsa da, molekül en düşük enerjili konformerler halinde bulunmayı tercih eder ve bunların sayısı da kısıtlıdır. Örneğin siklohekzan halkası konformasyon analizi en iyi yapılmış moleküllerdendir ve birkaç tercihli konformeri bulunmaktadır"
+      },
+      {
+        "slide": 40,
+        "text": "a a e e a a e e"
+      },
+      {
+        "slide": 41,
+        "text": "Farmakolojik aktiviteye etkisi Trankilizan etkili 4-(4-hidroksipiperidino)-4-fluorobutirofenon türevlerinde, piperidin halkasının konformerlerinden düşük enerjili sandalya formundaki iki konformerinin (a ve b) aktif olduğu düşünülmüş ve sentezi yapılan rijit analoglarla çalışmalar, ekvatoryal sübstitüentler daha kararlı olmasına rağmen, hidroksilin aksiyel olduğu b konformerin aktivitesinin, ekvatoryal olan a’dan daha fazla olduğunu göstermiştir F(CH2)3COR = NR OH HOH HR N NR OH H NR H OH a. Sandalye (OH ekvatoryal) b. Sandalye (OH aksiyal) c. Bükülmüş d. Bükülmüş"
+      },
+      {
+        "slide": 42,
+        "text": "Asetilkolin, histamin gibi etkin biyomoleküllerin, farklı biyolojik etkilere neden olan farklı reseptörlerle etkileşmeleri konformasyonal esnekliklerine bağlanmaktadır. Asetilkolinin muskarinik reseptörlerle geniş-yaygın konformerinin (I); nikotinik reseptörlerle ise daha az yaygın konformerinin (II) etkileştiği öne sürülmektedir. II + CH3 C O O CH2 CH2 N(CH3)3 CH3 C O CH2 CH2O I + (CH3)3N Muskarinik Reseptör Asetilkolin Nikotinik Reseptör"
+      },
+      {
+        "slide": 43,
+        "text": "Histaminin A konformerinin H1-reseptörleri, azotlar arası mesafesi daha az olan B konformerinin ise H2–reseptörleriyle etkileştiği önerilmektedir + ++ CC N C N H H H CH2 CH2 NH2 HC N N C CH H C H H C H H NH3 3.60 Ao BA o4.55 A C N N C CH H C H H C H H NH3 C H H"
+      }
+    ]
+  },
+  "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf": {
+    "rel_path": "materials\\medchem\\İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+    "course": "medchem",
+    "total_slides": 29,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "Prof.Dr. Bedia KAYMAKÇIOĞLU İLAÇLARDA YAPI AKTİVİTE İLİŞKİLERİ"
+      },
+      {
+        "slide": 2,
+        "text": "İlaç Aktivitesi Oral kullanılan bir ilaç vücuda verilişinden, fizyolojik cevabın gözleneceği etki yerine, bir diger deyişle spesifik reseptöre ulaşıncaya kadar bir çok aşamadan geçer (Absorbsiyon, Dağılma, Metabolizma, Atılım; ADMA). İlacın aktivitesini, bu olaylar üzerinde rol oynayan pek çok faktör belirler. Bu faktörler ilacın yapısına, bulunduğu ortama, biyolojik aktivitesinin karakterine bağlıdır. İlacın fizikokimyasal özellikleri farmakolojik aktivitesini etkiler. Bu özelliklerden önemli olanları; çözünürlük, partisyon katsayısı, yüzey aktivite, asidite ve iyonizasyon gibi özelliklerdir."
+      },
+      {
+        "slide": 3,
+        "text": ""
+      },
+      {
+        "slide": 4,
+        "text": "Çözünürlük Çözünürlük, etki yerinde ilacın aktif konsantrasyonunu sağlama ve sürdürme açısından en önemli özelliklerden biridir. Çünkü organizmanın büyük bir oranı su iken ilaçların etkilerini göstermek üzere geçmek zorunda olduğu membranlar lipid karakterlidir. Çözünürlük maddenin homojen bir dispersiyon oluşturabilme yeteneğidir ve su gibi polar veya yağlar gibi non-polar ortamlarda çözünmeyi ifade eder. Süspansiyonlarda çift faz sistemi söz konusu iken, çözünme sonucu bir tek faz sistemi meydana gelir."
+      },
+      {
+        "slide": 5,
+        "text": ""
+      },
+      {
+        "slide": 6,
+        "text": "Teorik olarak bir madde hem polar hem de nonpolar ortamda çözünebilir, ancak çözünme dereceleri farklıdır. Her iki ortamdaki çözünürlük oranı partisyon katsayısı ile ifade edilir. Genel olarak benzer maddeler benzer çözücüler içinde çözünürler. Yani polar moleküller polar çözücülerde, nonpolar moleküller de nonpolar çözücülerde daha kolay çözünürler. suda çözünürlük yağda çözünürlük hidrofilik bileşik lipofilik bileşik Polarlık, molekül içindeki + ve – yüklerin eşit olmayan dağılımlarının sonucudur. Bir çözücünün polaritesi, dielektrik sabitinin bir fonksiyonudur. Bu değer polar çözücülerde büyük, nonpolar çözücülerde küçüktür."
+      },
+      {
+        "slide": 7,
+        "text": "Çok kullanılan bazı çözücülerin dielektrik sabitleri ve polarite sıralamaları: Bileşik Dielektrik sabiti Bileşik Dielektrik sabiti n-Hekzan 1,89 Etil asetat 6,32 Heptan 1,92 Piridin 12,30 Siklohekzan 2,02 Aseton 20,70 Karbontetraklorür 2,24 Etanol 24,30 Benzen 2,28 Metanol 33,61 Dietileter 4,34 Su 80,37 Kloroform 4,81"
+      },
+      {
+        "slide": 8,
+        "text": "Bir maddenin su veya yağdaki çözünürlüğü üzerine etkili fonksiyonel gruplar şunlardır: Hidrofilik gruplar (azalan hidrofilisite) Lipofilik gruplar (artan lipofilisite) -COO – -CONH2 -CH3 -COOH -CONHR -C2H5 -OH -CONRRI -C3H7 -O – -COOR -C3H7* -+NR3 -Fenil -CHO -Naftil -NH3"
+      },
+      {
+        "slide": 9,
+        "text": "Moleküle oksijen, azot gibi heteroatomlar veya bunları içeren fonksiyonel grupların girmesi molekülün polaritesini yani suda çözünürlüğünü artırır. Alkil zincirleri moleküle yağda çözünürlük kazandırdığı gibi bu zincirin uzaması da yağda çözünürlüğü artırır. Karboksilli asit ve aminlerin homolog serilerinin ilk üyeleri suda kolaylıkla çözünürler. Zincir uzadıkça suda çözünürlükleri azalır. Suda çözünürlüğü olmayan veya çok az olan ilaçlara suda çözünürlük kazandırmak için asit veya alkalilerle tuzlarına geçilir. Hem asidik hem de bazik grup taşıyan moleküller amfoterik özellik gösterir. Bu bileşikler hem asit hem de bazlarla suda çözünen tuzlar yaparlar. Aminoasitler yapılarında bulunan COOH ve NH2 grupları nedeniyle amfoterik maddelerdir."
+      },
+      {
+        "slide": 10,
+        "text": "Düz zincirli bileşikler, dallanmış analoglarından daha çok yağda çözünürler. Yapıda dallanma suda çözünürlüğü artırır. İzopropil alkolün suda çözünürlüğü n-propanolden daha fazladır. Su molekülleri ile hidrojen bağları yapabilen polar bileşikler suda çözünür iken, nonpolar bileşikler van der waals ve hidrofobik bağlar sonucu organik çözücülerde çözünürler. Bu bileşiklerin partikül büyüklüğü, kristal yapısı ve fiziksel özellikleri de çözünürlüğü etkileyen diğer faktörlerdir. Çözünürlüğün biyolojik aktivite üzerine etkisi homolog serilerde özellikle önemlidir. Genel bir kural olarak homolog serilerde ilk üyelerin düşük aktivite göstermesi, karbon zincirinin uzamasıyla etkinin yükselmesi ve belli bir maksimum değerden sonra hızla düşmeye başlaması çözünürlükle açıklanır."
+      },
+      {
+        "slide": 11,
+        "text": "İlaç molekülünün etki göstermek üzere geçmek zorunda olduğu membranlar lipid özelliklidir ve protein tabiatındadır. Bu nedenle lipid çözünürlüğü fazla olan maddeler membranları kolaylıkla ve hızla geçerek etki gösterirler."
+      },
+      {
+        "slide": 12,
+        "text": ""
+      },
+      {
+        "slide": 13,
+        "text": "Suda çözünürlüğü fazla olan maddelerin membranları geçerek etki yerine ulaşmaları ise zordur. Ancak iyonlar yada küçük moleküllü polar maddeler porlardan geçebilir. Aktivitenin bir maksimumdan sonra hızla düşmesi ise, hücreler arası sıvının polar karakterde olması ile açıklanır. Çünkü bu değerden sonra maddenin polar çözücülerdeki çözünürlüğünün çok azalması veya tamamen kalkmasıyla, aktif bölgeye taşınması zorlaşır veya tamamen olanaksızlaşır."
+      },
+      {
+        "slide": 14,
+        "text": "Örneğin izatin--tiyosemikarbazon’larda antiviral aktiviteleri, kloroform’daki çözünürlükleri, yani lipofilik özelikleri ile doğru orantılıdır. Kloroformdaki çözünürlüğü artıran sübstitüentlerin yapıya girdiği türevlerde aktivite, çözünürlüğün derecesiyle orantılı olarak artmaktadır. N O N NH C NH2 S H 1 2 3 4 5 6 7"
+      },
+      {
+        "slide": 15,
+        "text": "Sübstitüent Klorofomdaki çözünürlük Antibakteriyel etki 7-karboksi 0 0 5-metoksi 3 0,03 4-metil 8 3,4 4-fluoro 16 39,8 7-kloro 32 100 N O N NH C NH2 S H 1 2 3 4 5 6 7"
+      },
+      {
+        "slide": 16,
+        "text": "İlacın yağda çözünme eğiliminin bir ölçüsü olan partisyon katsayısı, aktivite üzerine etki eden en önemli faktörlerden biridir. Bir ilacın birbiri ile karışmayan iki fazda (polar: su, nonpolar: organik faz) denge halindeki konsantrasyonlarının oranı olarak tanımlanır. İlaç (polar faz: su) İlaç (nonpolar faz: yağ) P = ilaç (yağ) / ilaç (su) logP= logP=0-5"
+      },
+      {
+        "slide": 17,
+        "text": "Bir ilacın organizmadaki dağılımının tayini çok zor olduğu için ilaçların partisyon katsayıları in vitro olarak tayin edilir. Bu amaçla polar faz olarak su kullanılır. Nonpolar faz olarak ise zeytinyağı, pamuk yağı gibi bir yağ yada kloroform, hekzan, eter, butanol, hekzanol, oktanol gibi organik çözücüler kullanılabilir. Ancak n-oktanol-su sistemi kullanılarak yapılan yapı-aktivite çalışmalarında en başarılı sonuçların elde edilmesi bu sistemin vücuttaki lipid membranlar--ekstraselüler sıvı sistemini en iyi taklit eden faz sistemi olduğunu göstermiştir. Deneylerde fizyolojik pH’ı taklit etmek amacıyla genelde pH’ı 7,4 ayarlanmış fosfat tamponu kullanılır."
+      },
+      {
+        "slide": 18,
+        "text": ""
+      },
+      {
+        "slide": 19,
+        "text": "Belli miktardaki kimyasal bileşiğin ölçülü miktarlarda su ile doyurulmuş oktanol veya oktanol ile doyurulmuş su ve pH : 7,4 ayarlı tampon ile çalkalanması esasına dayanır. İki faz arasındaki dengenin kurulması için yeterli sürenin sonunda fazlardan biri veya her iki fazdaki madde miktarı uygun bir analitik yöntemle ölçülür. Oktanol fazındaki madde konsantrasyonunun, sulu fazdaki madde konsantrasyonuna oranı partisyon katsayısını verir. Log P = log Cyağ / Csu = log Cyağ –log Csu Cyağ ve Csu : denge halindeki yağ ve su fazında ilaç konsantrasyonu Partisyon katsayısının tayini ayrıca TLC, HPLC ile de yapılabilmektedir. HPLC’de stasyoner faz olarak oktadesilsilan, mobil faz olarak metanol veya asetonitril gibi polar bir organik çözücü içeren su veya tampon sistemler kullanılır."
+      },
+      {
+        "slide": 20,
+        "text": ""
+      },
+      {
+        "slide": 21,
+        "text": "Log P = a (alıkonma zamanı) + b a : doğrunun eğimi b : doğrunun y eksenini kestiği nokta Log A = a (log alıkonma zamanı) + b Log A = Bağıl biyolojik aktivite. Maddenin lipofilitesi taşıdığı grupların bir sonucudur. Moleküle lipofilik özellikler kazandıran grupların girmesi partisyon katsayısı değerinin artmasıyla sonuçlanır. Başka bir deyişle partisyon katsayısı yüksek olan bileşiklerin lipofilik özelliği fazladır. Hansch, aktivite ile partisyon katsayısı arasında kantitatif ilişkiler kurmak amacıyla, partisyon katsayısına süstitüentin katkısının sayısal ifadesi olan hidrofobik bağ sabiti kavramını getirmiştir."
+      },
+      {
+        "slide": 22,
+        "text": "= log PX – Log PH  : süstitüentin hidrofobik bağ sabiti PH : ana bileşiğin partisyon katsayısı PX : sübstitüe türevin partisyon katsayısı Hidrofobik bağ sabitinin klor atomu için bulunması aşağıdadır. CL = log Pklorobenzen – log Pbenzen = 2,84 – 2,13 = 0,71  değeri + ise hidrojene göre yağda çözünmeyi artıran, - ise yağda çözünmeyi azaltan grupları göstermektedir."
+      },
+      {
+        "slide": 23,
+        "text": "Örnegin bir sedatif hipnotik bileşik olan etklorvinol’ün log P değeri şöyle hesaplanır. C CH CH Cl H3CCH2 C CH OH C OH C CH CH3CH2 Cl CH CH -1,16 0,84 1,00 1,32   = 2,00 = TeoLog P Drug Likeness SwissAdme"
+      },
+      {
+        "slide": 24,
+        "text": "Log P partisyon katsayısı özellikle genel anestezikler, hipnotikler gibi yapı-nonspesifik ilaçların etki mekanizmalarının açıklanmasında ve biyolojik aktivitelerinde önemlidir. Bir bileşiğin partisyon katsayısı ne kadar büyükse yağda çözünürlüğü, dolayısıyla lipid karakterli membranlardan geçişi ve aktivitesi o kadar fazla olur. Ancak bileşiğin gereğinden fazla hidrofobik olmasının da bazı sakıncaları vardır. Örneğin partisyon katsayısı yüksek olan bileşikler yağ dokusunda birikirler ve kolaylıkla serum albuminlerine bağlanarak etki yöresine ulaşamazlar. Ayrıca hidrofobik ilaçlar metabolizma olmaya çok daha yatkın olduklarından kolaylıkla metabolize olurlar."
+      },
+      {
+        "slide": 25,
+        "text": "Partisyon katsayısı ilaçların etki süreleri bakımından da önemlidir. Örneğin tiyopental’in (barbitürik asit türevi) yağda çözünürlüğü pentobarbitalden fazladır ve bu özelliğinden dolayı vücudun yağ dokularında toplanır ve plazma konsantrasyonu hızla düşer. Bu nedenle tiyopentalin etki süresi daha kısadır. Ayrıca yağda çözünürlüğün fazla olması yağ dokularında toplanan ilacın yavaş ve uzun sürede atılmasına neden olur. Partisyon katsayısı ilacın absorbsiyonu açısından da önemlidir. Yağda çözünen bileşikler deri, göz, akciğer ve kas gibi dokulardan kolaylıkla absorbe olurlar."
+      },
+      {
+        "slide": 26,
+        "text": ""
+      },
+      {
+        "slide": 27,
+        "text": "Lipinski'nin “beş kuralı”, ilaç geliştirme ortamında çözünürlüğü, membran geçirgenliğini ve etkinliği tahmin etmek için deneysel ve hesaplamalı bir yöntemdir. İlaç benzerliğini değerlendiren ve belirli farmakolojik aktivitelere sahip bir kimyasal bileşiğin, onu insanlarda oral olarak aktif bir ilaç haline getirecek fiziksel ve kimyasal özelliklere sahip olup olmadığını belirleyen bir pratik kuraldır. Bu kural, oral yoldan etkili ilaçların çoğunun nispeten küçük ve orta derecede lipofilik moleküller olduğu gözlemine dayanmaktadır. İlaç geliştirme sırasında, farmakolojik olarak aktif öncü yapılar, aktivitelerini ve seçiciliklerini artırmak ve aynı zamanda ilaç benzeri fizikokimyasal özelliklerinin korunmasını sağlamak için adım adım optimize edildiğinde kullanılır."
+      },
+      {
+        "slide": 28,
+        "text": "Lipinski 5 kuralı, - Hidrojen bağı vericisi 5’den küçük, -Hidrojen bağı alıcısı 10’dan küçük, -Molekül ağırlığı 500'den küçük -Hesaplanmış Log P (cLogP) 5’den küçük olmalı."
+      },
+      {
+        "slide": 29,
+        "text": "Makrolidler hariç tutulduğunda, küçük moleküllü inhibitörlerin ortalama molekül ağırlığı 480 olup, 306 (ruxolitinib) ile 615 (trametinib) arasında değişmektedir. Ayrıca, onaylanmış 48 ilaçtan 38'inin cLogP'si beşten azdır ve dabrafenib, fostamatinib ve üç makrolid (sirolimus, everolimus ve temsirolimus) ondan fazla hidrojen bağı alıcısına sahiptir. Molekül ağırlığı 500'den büyük olan bileşikler arasında abemaciclib, bosutinib, brigatinib, cabozantinib, ceritinib, cobimetinib, dabrafenib, encorafenib, fostamatinib (molekül ağırlığı 470 olan R406'ya dönüştürülen bir ön ilaç), gilteritinib, lapatinib, midostaurin, neratinib, nilotinib, nintedanib, ponatinib, trametinib ve üç makrolid bulunmaktadır. Tinibler: tirozin kinaz inhibitörü bileşiklerdir."
+      }
+    ]
+  },
+  "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf": {
+    "rel_path": "materials\\pharmacology\\İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "course": "pharmacology",
+    "total_slides": 33,
+    "slides": [
+      {
+        "slide": 1,
+        "text": "İLAÇ RESEPTÖR ETKİLEŞİMİNDE KİMYASAL BAĞLAR Prof.Dr. Bedia KAYMAKÇIOĞLU"
+      },
+      {
+        "slide": 2,
+        "text": "İ LAÇ RESEPTÖR ETK İ LEŞ İ M İ NDE K İ MYASAL BA Ğ LAR İlaç aktivitesinin mekanizmasını anlayabilmek ve daha aktif ilaç moleküllerine ulaşabilmek için, ilaç-reseptör etkileşiminde rol oynayan güçleri bilmek çok önemlidir. İlaç-reseptör kompleksini sağlayan bağları deneysel olarak saptamak güçtür ancak bu bağların enzim-substrat yada basit moleküller arasındaki etkileşimlerde oluşan bağlarla aynı olduğu bilinmektedir. Bu bağların reseptörün şeklini değiştirebilecek kadar güçlü olmaları ama sinyal iletildikten sonra da reseptöre bağlanan molekülü kolayca serbest bırakmaları gerekmektedir."
+      },
+      {
+        "slide": 3,
+        "text": "Reseptör: Hormonlar, nöromediyatörler gibi etkin endojen maddelere ve ilaçlara seçici afinite göstererek onları bağlayan ve böylece fizyolojik etkiyi başlatan hücresel biyomakro-moleküllerdir. Hücre membranının yüzeyinde, ya da sitoplazma ve/veya çekirdeğinde yer alan ve bir seri olay sonucu belirli bir biyolojik yanıt oluşturabilen proteinler olarak da tanımlanabilir."
+      },
+      {
+        "slide": 4,
+        "text": "İ laç+Reseptör ......... İ laç - Reseptör - Kompleksi........ Etki+Reseptör İlaç Hedef Bölgeleri Reseptörler Enzimler Nükleik asitler İyon kanalları Hücre membranı"
+      },
+      {
+        "slide": 5,
+        "text": "Reseptörlerin büyük kısmı sitoplazmik membranın yüzeyinde, yapılarının aktif kısmı hücre dışına bakacak şekilde konumlanmış membran reseptörleri (membran- bağlı reseptörler)dir. İnsülin, büyüme hormonu, nikotin, glisin ve adrenerjik, muskarinik gibi nörotransmiter reseptörleri Reseptörlerin bir kısmı ise hücre içinde, sitoplazma veya çekirdekte bulunan sitoplazmik reseptörlerdir. Steroit ve tiroit hormon reseptörleri"
+      },
+      {
+        "slide": 6,
+        "text": "Reseptörlerin iki önemli fonksiyonu vardır. • Belli endojen maddeleri ve ilaç moleküllerini (ligant) tanımaları ve bunlara seçici bir afinite göstermeleri • Ligantın reseptöre bağlanmasıyla oluşan kimyasal sinyali amplifiye ederek biyolojik sinyale çevirmeleri (sinyal transdüksiyonu)"
+      },
+      {
+        "slide": 7,
+        "text": "İlaç reseptör etkileşiminde rol oynayan kimyasal bağ/etkileşimler Kovalan Bağlar İyonik Bağlar Hidrojen Bağı İyon Dipol Bağı Dipol-Dipol Bağı Yük Transfer Etkileşimleri Hidrofobik Etkileşimler Vanders Waals Etkileşimleri"
+      },
+      {
+        "slide": 8,
+        "text": ""
+      },
+      {
+        "slide": 9,
+        "text": "KOVALAN BA Ğ LAR Elektron çiftlerinin atomlar arasında ortaklanması ile oluşan bu bağlar ilaç ve reseptör arasında gerçekleşen en kuvvetli bağlardır. Ancak daha seyrek görülür. Çünkü ilaçların büyük çoğunluğu reseptörlerle geri dönüşümsüz kovalan bağlar yapabilecek fonksiyonel gruplara sahip değildir. Biyolojik ortamlarda bu bağların oluşumu normal vücut pH’sı ve ısısında olmakta ve aynı şartlarda parçalanmaları da enzimatik veya katalitik şartlar gerektirmektedir. Bu tip etkileşimler uzun süreli ve geri dönüşümsüz farmakolojik etki oluşturduğu için istenmez. Ancak antibakteriyel, antiparaziter, antifungal ve antikanser gibi bazı farmakolojik etkilerde kovalan bağ oluşumu istenir. Bu amaçlarla kullanılan ilaç molekülleri taşıdıkları fonksiyonel gruplara göre alkilasyon, açilasyon ve fosforilasyon gibi reaksiyonlar üzerinden reseptörle kovalan bağ oluştururlar."
+      },
+      {
+        "slide": 10,
+        "text": "Alkilasyon R N CH2 CH2 CH2 CH2 X X reseptör reseptör R N CH2 CH2 CH2 CH2 X Cl reseptör reseptör protein nükleik asitX ( X ,S ,COO -- ,R2PO4 ,S,N,O ) nitrojen mustard imonyum (mekloretamin) -Cl + R N CH2 CH2 CH2CH2Cl R N CH2 CH2 CH2 CH2 Cl Cl Kanser tedavisinde kullanılan alkilleyici ajanların etki mekanizmaları, reseptör proteinlerin serbest amino gruplarının veya nükleik asitlerin adenil veya fosfat gruplarının alkilasyonu ile kovalan bağ oluşturma esasına dayanır. Çoğu seçici değildir ve çok sayıda protein ve nükleik asitle reaksiyona girerler."
+      },
+      {
+        "slide": 11,
+        "text": "Açilasyon -laktam halkası taşıyan penisilin ve sefalosporin gibi antibiyotikler, bakteri hücre duvarında spesifik açilasyon yapan ilaçlardır. Bakteri hücre duvarı sentezinde hayati önemi olan transpeptidaz enzimini serin’in hidroksil grubundan spesifik olarak açilleyerek etkilerini gösterirler. penisilloil - enzim kompleksi C C C NO O reseptör Beta-laktam antibiyotik (penisilin, sefalosporin gibi) reseptör serin, transpeptidazHO+C C C N O"
+      },
+      {
+        "slide": 12,
+        "text": "Organofosfat bileşikleri ise aktif bölgelerinde serin taşıyan büyük bir enzim grubunu fosforillerler. Bunlara en bilinen örnek, organofosfat insektisidlerinin asetilkolin esteraz ve butiril kolin esteraz ile fosforilasyon reaksiyonu vermeleridir. Organik fosfat Örn. Diizopropil fluorofosfat, malation enzim serinCH2 CH NH COP R1 OCH2 O R (S) serin enzimHO CH2 CH NH CO + (S) R P R1 X O Fosforilasyon"
+      },
+      {
+        "slide": 13,
+        "text": "Y apılarındaağır metal (As, Bi, Sb vb.) taşıyan antiparaziter ilaçlar da etkilerini enzimin tiyol grupları ile kovalan bağ yaparak gösterirler. ROH+Sb S EnzimHS Enzim+Sb OR Zıt yüklü iyonlar arasındaki elektrostatik çekim kuvvetlerinden oluşan iyonik bağların gücü zıt yüklerin miktarına, yükler arasındaki mesafeye ve ortamın dielektrik sabitine bağlıdır. Mesafe ve ortamın dielektrik sabiti arttıkça bağın gücü zayıflar. İyonik Bağlar"
+      },
+      {
+        "slide": 14,
+        "text": "+NH-Reseptör C O O Zayıf asit veya baz özellikteki ilaç molekülleri ve reseptörleri fizyolojik pH’da iyonize olabilen gruplar içerir. Reseptörler ve ilaç moleküllerindeki zıt yüklü iyonlar belli bir mesafeye kadar yaklaştıklarında aralarında iyonik bağlar oluşur."
+      },
+      {
+        "slide": 15,
+        "text": "Hidrojen ba ğ ları Hidrojen bağı, hidrojen atomunun biri donör (verici,x) diğeri akseptör (alıcı,y) olmak üzere iki atom arasında; zayif hidrojen bagi kuvvetli kovalan bag X H y genel yapısını verecek şekilde ortaklanmasıyla oluşur. x ve y elektronegativitesi fazla olan veya üzerinde elektron çifti taşıyan heteroatomlardır. Hidrojen köprüsü olarak da bilinen hidrojen bağı en fazla; gibi grupların oksijen azot ve kükürt heteroatomlarının serbest elektron çifti ile hidroksil, tiyol ve amino gibi gruplarının elektron eksikliği olan hidrojen atomu arasında gerçekleşen elektrostatik bir etkileşimdir. C O, OH, NH2, imino"
+      },
+      {
+        "slide": 16,
+        "text": "N:O H N H :N O H :O N H :O C O C:O H Hidrojen atomu küçük olması ve elektron bulutundan yoksun olması nedeniyle böyle bir etkileşme için ideal özelliklere sahiptir. Hidrojen bağlarının gücü x ve y atomlarının özelliklerine bağlıdır. Oluşan bağın kararlılığı OH----N  OH----O  NH----N  NH----O sırasıyla gider."
+      },
+      {
+        "slide": 17,
+        "text": "akseptör C N O R H H HX X SHR X donör donör donör + akseptör NH XS R R HX Hidrojen bağları aynı molekülün iki fonksiyonel grubu arasında ise molekül içi (intramoleküler), farklı moleküller üzerindeki fonksiyonel gruplar arasında ise moleküller arası (intermoleküler) hidrojen bağları olarak adlandırılır."
+      },
+      {
+        "slide": 18,
+        "text": ""
+      },
+      {
+        "slide": 19,
+        "text": "Hidrojen bağı molekülün fiziksel ve kimyasal özelliklerini genellikle önemli bir derecede değiştirir. Çözünürlük, erime derecesi, pKa değeri, partisyon katsayısı gibi fizikokimyasal ve bazı spektral özellikler değişir.Bu değişiklikler doğal olarak farmakolojik özelliklerde de farklılığa yol açar. Molekül içi hidrojen bağı yapabilen salisilik asit antibakteriyel aktivite gösterirken yapısal izomeri olan ve moleküller arası hidrojen bağları ile polimer oluşturan m- ve p-hidroksibenzoik asit’de bu aktivite görülmez."
+      },
+      {
+        "slide": 20,
+        "text": "İ yon – dipol ve dipol – dipol etkileşmeler Karbonla oksijen ve azot gibi heteroatomlar arasında elektronegativite farkı, elektronların asimetrik dağılımına yani farklı yüklü elektronik kutupların (dipollerin) oluşmasına neden olur. İlaç ve reseptör moleküllerinde bulunan ve dipol oluşumunun gözlendiği fonksiyonel gruplara karbonil bileşikleri (amitler, esterler, ketonlar), nitriller, eterler örnek verilebilir."
+      },
+      {
+        "slide": 21,
+        "text": "Bu kutuplar zıt işaretli iyonlar (iyon-dipol) veya diğer kutuplar (dipol- dipol) gibi yüksek veya düşük elektron dansitesine sahip bölgelerle zayıf ve geri dönüşümlü bağlar oluşturur. Bu etkileşmelerde de ortamın dielektrik sabiti, dipoller arası mesafe ve grupların yerleşimi önemlidir. Zıt yükler arasındaki mesafe dipol-dipol etkileşmelerinde iyon-dipol etkileşmelerine oranla daha önemli ve küçüktür.  +  +  + NH3 O CH3C OH NH2 N (CH3)3 HO Reseptör -  -  -dipol - dipol iyon - dipol + +"
+      },
+      {
+        "slide": 22,
+        "text": "Yük Transfer Etkileşmeleri Bir çeşit moleküler dipol-dipol etkileşmesidir. Elektron donörü molekül ile elektron akseptörü bir molekülün temasa gelmesi ile donör taraftan akseptör tarafa yük transferi gerçekleşir ,yani bir yük transfer kompleksi oluşur. Bu etkileşmenin gücü, donör molekülün iyonizasyon potansiyeli ile akseptör molekülün elektron afinitesi arasındaki farkla orantılıdır. Zayıf etkileşimlerdir ,fakat diğer bağ tipleriyle birlikte toplam ilaç etkisinde rol oynarlar. Elektron veren sübstitüentler içeren alken, alkin ve aromatik gruplar ile bağ yapmamış elektron çifti içeren gruplar elektron donörü, elektron çeken sübstitüentler içeren alken, alkin ve aromatik yapılar veya zayıf asidik protonlar ile elektron akseptörüdür. Aromatik halkaların  sistemlerinin üst üste gelmesiyle oluşan yük- transfer etkileşmeleri bilinen klasik örnekleridir."
+      },
+      {
+        "slide": 23,
+        "text": "donör OHOCH3 akseptör NO2 Reseptör + OH CN Cl Cl CN Cl Cl Fungusit etkili klorotalonil’de yük – transfer etkileşmesi"
+      },
+      {
+        "slide": 24,
+        "text": "Van der Waals Güçleri Moleküllerin polarizlenebilme özelliklerinin yarattığı ve yüksüz atomların ancak birbirlerine çok yaklaştıkları zaman ortaya çıkan atomik çekim kuvvetleridir.Moleküllerin nonpolar kısımlarındaki atomların elektron yoğunluklarının simetrik olmayan dağılımları geçici dipoller oluşturur. İlaç ve reseptör moleküllerinde var olan nonpolar gruplar birbirlerine ~4-6 Ao kadar yaklaştıklarında bir molekülün geçici dipolü diğer moleküldeki zıt yüklü dipolü indükler ve sonuç olarak aralarında elektrostatik çekim güçleri oluşur. Zayıf güçler olmalarına rağmen diğer etkileşimlerle beraber düşünüldüğünde, ilaç-reseptör kompleksinin oluşmasında önemlidirler. -  -  + + C C C C Başka gruplardan dolayı elektron yoğunluğu bir tarafa kayacak ve bir - ve + oluşacaktır."
+      },
+      {
+        "slide": 25,
+        "text": "Hidrofobik Etkileşmeler İlaç molekülünün belli bir konumunda var olan nonpolar sübstitüentlerin aktivite açısından önemini açıklamak üzere geliştirilmiş bir kavramdır. İlaçların lipofilik sübstitüentlerinin reseptörün nonpolar yöresi ile etkileşmesi büyük olasılıkla bu bağlar ile sağlanmaktadır. İki molekülün nonpolar yöreleri belli bir mesafeye kadar birbirlerine yaklaştıklarında bu grupları çevreleyen su molekülleri, bu gruplar tarafından sıkıştırılarak dışarıya doğru itilirler. Bu etkileşmelere hidrofobik etkileşmeler adı bu nedenle verilmiştir. Bu etkileşmeler özellikle nonpolar hidrokarbonlar arasında görülmektedir ve etkileşmeler enerjisi oluşan bağla doğrudan ilgili olmayıp esas olarak sistemin entropisindeki artışla ilgilidir. Reseptörler ve ilaç moleküllerinin etki yöresinde bir dipol olan su molekülleriyle çevrili olmaları, aralarında elektrostatik bağların oluşmasını güçlendirir. Oysa hidrofobik gruplar arasında var olan su moleküllerinin uzaklaştırılması kolay olduğundan, bu gruplar birbirlerine kolaylıkla yaklaşırlar, bu da etkileşmede önemli rol oynar."
+      },
+      {
+        "slide": 26,
+        "text": "Şelasyon Şelat oluşumu, ilacın in vivo aktivitesinde önemli bağ oluşumlarından biridir. Genellikle geçiş metallerinin katyonları ile elektron donörü grupların koordine kovalan bağlar arayıcılığı ile oluşturdukları bileşiklere kompleks veya koordinasyon bileşiği denir. Eğer kompleks siklik yapıda ise şelat olarak adlandırılır. Koordine kovalan bağlarda bağı oluşturmak için kullanılan iki elektronda aynı atomdan gelir.Elektron eksikliği ve boş orbitali olan metal katyonu elektron akseptörüdür ve yapabileceği bağ sayısını koordinasyon sayıları belirler."
+      },
+      {
+        "slide": 27,
+        "text": "Metalik katyon ve koordinasyon sayıları Cr+++ 6 Ni+++ 6 Ag+ 2 Mo+++ 8 Pd++ 4 Au+ 2 Mn+++ 6 Pd+++ 6 Au+++ 6 Fe++ 6 Pt++ 4 Zn++ 6 Fe+++ 6 Pt+++ 6 Cd++ 4 Co+++ 6 Cu+ 2 Hg++ 4 Ni++ 4 Cu++ 4 Al+++ 6"
+      },
+      {
+        "slide": 28,
+        "text": "Metal ile birleşen elektron donörü maddeye ligand denir, ve bağ için elektron çiftini sağlar. Eğer ligand iki veya daha fazla elektron donörü grup taşırsa şelat bileşikleri meydana gelir. Şelat bileşiği oluşturabilecek ligantlar azot, oksijen ve kükürt fonksiyonel gruplar taşıyan bileşikler olup anyonik veya nötral olabilirler."
+      },
+      {
+        "slide": 29,
+        "text": "Nötral Ligantlar Anyonik R-NH2 primer amin R2C=N-R sübstitüe imin R-(Ar)-O- Alkoksi, Fenoksi R2NH sekonder amin R-S-R Tiyoeter R(Ar)-S- Tiyoalkoksi, Tiyofenoksi R3N Tersiyer amin R2-C=O Keton R-COO- Karboksilat R2C=N-OH oksim R2-C=S Tiyoketon Fosfonat R2C=N-H imin Sülfonat R P O OH O - R S O O O"
+      },
+      {
+        "slide": 30,
+        "text": "Eğer ligand iki üç veya daha fazla elektron donörü grup taşıyorsa sırasıyla bidentat, tridentat veya polidentat olarak adlandırılır. Etilen diamin, glisin ve 8-hidroksikinolin anyonu bidentat, dietilentriamin tridentat ligantlara örnek olarak verilebilir. H2N CH2CH2 NH2 .... H2N H2CH2COO-.. N O- .. .. .. H2N CH2CH2 NHCH2CH2 NH2 .. Etilen diamin Glisin 8-hidroksikinolin Dietilentriamin"
+      },
+      {
+        "slide": 31,
+        "text": "Bu şelatların kararlılıkları maddenin fonksiyonu açısından önemlidir. Örn: Glisin-bakır (1:1) kompleksi Hem biyolojik bileşikler hemde ilaçlar metallerle şelat oluştururlar. Biyolojik sistemlerde insülin, hemoglobin, miyoglobin, klorofil bazı vitamin ve enzimler gibi önemli maddeler şelat yapısındadır. Antibakteriyal ve tüberkülostatik bir çok ilaç etkilerini şelatlar oluşturarak gösterirler. Ayrıca enzim reaksiyonlarının önemli bir kısmı, bir metalin ko faktör olarak ortamda bulunmasını gerektirir. Şelasyon ajanlarının klinikte en yaygın kullanım alanı ağır metal zehirlenmelerinde antidot olarak kullanılmalarıdır. Glisin-bakır kompleksi (1:1) [Glisin] [Cu++] [Kompleks] Ks = Glisin anyonu Bivalan bakır + H2C C O O Cu NH2 ++ Cu+ O -H2N CH2 C O"
+      },
+      {
+        "slide": 32,
+        "text": "Örnek olarak EDTA ve BAL verilebilir. •EDTA hiperkalsemide ve kanın pıhtılaşmasını önlemede kullanılmaktadır. •Birçok enzim reaksiyonu, bir metalin kofaktör olarak bulunmasını gerektirir."
+      },
+      {
+        "slide": 33,
+        "text": "Örnek olarak Dibukain molekülünün olası bir reseptörle yapabileceği bağlar verilmiştir. hidrofobik hidrojen bagidipol - dipol iyon - dipol yük transfer hidrofobik iyon veya iyon dipol hidrojen bagi hidrofobik +:N H3CH2CH2CH2CO O N H CH2CH2 N H CH2 CH2 CH3 CH3"
+      }
+    ]
+  }
+}

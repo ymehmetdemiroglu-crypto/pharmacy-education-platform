@@ -1,0 +1,216 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "courseId": "medchem",
+  "courseTitle": "Farmasötik Kimya",
+  "version": "2.0.0",
+  "currencyDefault": "TRY",
+  "gateway": "dodo_payments",
+  "freemium": {
+    "moduleScope": "first_2_lessons_of_every_module",
+    "freeLessonsPerModule": 2,
+    "coreWidgetsIncluded": true,
+    "hintAccessTier": 1,
+    "aiFeedbackIncluded": false,
+    "crossDeviceSyncIncluded": false,
+    "certificatesIncluded": false,
+    "requiresAuth": true,
+    "requiresCard": false,
+    "description": "Permanent free access to Lessons 1 & 2 of every module, core widgets, and Tier 1 hints."
+  },
+  "freeTrial": {
+    "durationDays": 7,
+    "durationHours": 168,
+    "requiresCard": false,
+    "autoDowngradeDay": 8,
+    "progressRetainedOnDowngrade": true,
+    "oneTrialPerAccount": true,
+    "enforcement": "server_authoritative",
+    "description": "7-day full access pass to all modules, 3-tier hints, AI feedback, and cross-device sync. No card upfront. Auto-downgrades to Free."
+  },
+  "pricingOptionsCatalog": {
+    "recommendedOption": "option_a",
+    "options": {
+      "option_a": {
+        "name": "Option A: Student Value Pass (Recommended)",
+        "singleMonthlyUSD": 14.00,
+        "singleSemesterUSD": 49.00,
+        "singleAnnualUSD": 89.00,
+        "bundleMonthlyUSD": 19.00,
+        "bundleSemesterUSD": 69.00,
+        "bundleAnnualUSD": 129.00,
+        "localizedPricing": {
+          "TRY": {
+            "single": { "monthly": 250.00, "semester": 850.00, "annual": 1450.00 },
+            "bundle": { "monthly": 350.00, "semester": 1150.00, "annual": 2100.00 }
+          }
+        }
+      },
+      "option_b": {
+        "name": "Option B: High-Volume Accessible Tier",
+        "singleMonthlyUSD": 9.99,
+        "singleSemesterUSD": 39.99,
+        "singleAnnualUSD": 69.99,
+        "bundleMonthlyUSD": 14.99,
+        "bundleSemesterUSD": 59.99,
+        "bundleAnnualUSD": 99.99,
+        "localizedPricing": {
+          "TRY": {
+            "single": { "monthly": 180.00, "semester": 690.00, "annual": 1150.00 },
+            "bundle": { "monthly": 270.00, "semester": 990.00, "annual": 1650.00 }
+          }
+        }
+      },
+      "option_c": {
+        "name": "Option C: Academic Modular Plan",
+        "singleMonthlyUSD": 16.00,
+        "singleSemesterUSD": 59.00,
+        "singleAnnualUSD": 109.00,
+        "bundleMonthlyUSD": 22.00,
+        "bundleSemesterUSD": 79.00,
+        "bundleAnnualUSD": 149.00,
+        "localizedPricing": {
+          "TRY": {
+            "single": { "monthly": 290.00, "semester": 990.00, "annual": 1750.00 },
+            "bundle": { "monthly": 390.00, "semester": 1350.00, "annual": 2450.00 }
+          }
+        }
+      }
+    }
+  },
+  "refundPolicy": {
+    "guaranteeDays": 14,
+    "maxLessonsCompletedForRefund": 2,
+    "description": "14-day 100% money-back guarantee if 2 or fewer paid lessons have been completed."
+  },
+  "plans": {
+    "single_monthly": {
+      "id": "mc_monthly",
+      "type": "single_course",
+      "billingInterval": "monthly",
+      "recurring": true,
+      "basePriceUSD": 14.00,
+      "localizedPrices": {
+        "TRY": { "amount": 250.00, "symbol": "₺" }
+      },
+      "name": "Medicinal Chemistry — Monthly",
+      "description": "Full access to all Medicinal Chemistry modules, SAR visualizers, and bioisostere editors with month-to-month flexibility."
+    },
+    "single_semester": {
+      "id": "mc_semester",
+      "type": "single_course",
+      "billingInterval": "semester",
+      "durationMonths": 6,
+      "recurring": false,
+      "basePriceUSD": 49.00,
+      "effectiveMonthlyUSD": 8.17,
+      "localizedPrices": {
+        "TRY": { "amount": 850.00, "symbol": "₺" }
+      },
+      "badge": "Best for University Semester",
+      "name": "Medicinal Chemistry — Semester Pass (6 Months)",
+      "description": "6-month one-time pass covering the academic semester and exam cycle. Zero recurring billing risk."
+    },
+    "single_annual": {
+      "id": "mc_annual",
+      "type": "single_course",
+      "billingInterval": "annual",
+      "durationMonths": 12,
+      "recurring": true,
+      "basePriceUSD": 89.00,
+      "effectiveMonthlyUSD": 7.42,
+      "localizedPrices": {
+        "TRY": { "amount": 1450.00, "symbol": "₺" }
+      },
+      "badge": "Save 47%",
+      "name": "Medicinal Chemistry — Annual Pass",
+      "description": "12-month access covering comprehensive board exam preparation sets and Leitner spaced review queue."
+    },
+    "bundle_monthly": {
+      "id": "bundle_monthly",
+      "type": "dual_bundle",
+      "billingInterval": "monthly",
+      "recurring": true,
+      "basePriceUSD": 19.00,
+      "localizedPrices": {
+        "TRY": { "amount": 350.00, "symbol": "₺" }
+      },
+      "name": "All-Access Dual Pass — Monthly",
+      "description": "Complete access to BOTH Medicinal Chemistry and Pharmacology with cross-course bridge cards."
+    },
+    "bundle_semester": {
+      "id": "bundle_semester",
+      "type": "dual_bundle",
+      "billingInterval": "semester",
+      "durationMonths": 6,
+      "recurring": false,
+      "basePriceUSD": 69.00,
+      "effectiveMonthlyUSD": 11.50,
+      "localizedPrices": {
+        "TRY": { "amount": 1150.00, "symbol": "₺" }
+      },
+      "badge": "Popular for Dual Courses",
+      "name": "All-Access Dual Pass — Semester (6 Months)",
+      "description": "One-time 6-month dual pass for students studying both MedChem and Pharmacology concurrently."
+    },
+    "bundle_annual": {
+      "id": "bundle_annual",
+      "type": "dual_bundle",
+      "billingInterval": "annual",
+      "durationMonths": 12,
+      "recurring": true,
+      "basePriceUSD": 129.00,
+      "effectiveMonthlyUSD": 10.75,
+      "localizedPrices": {
+        "TRY": { "amount": 2100.00, "symbol": "₺" }
+      },
+      "badge": "Ultimate Licensure Pack",
+      "name": "All-Access Dual Pass — Annual",
+      "description": "The complete pharmaceutical science suite for NAPLEX, EUS, PEBC, and SPLE board preparation."
+    }
+  },
+  "dodoProductMapping": {
+    "sandbox": {
+      "monthly": "p_sb_mc_mo",
+      "semester": "p_sb_mc_sem",
+      "annual": "p_sb_mc_yr",
+      "single_monthly": "p_sb_mc_mo",
+      "single_semester": "p_sb_mc_sem",
+      "single_annual": "p_sb_mc_yr",
+      "mc_monthly": "p_sb_mc_mo",
+      "mc_semester": "p_sb_mc_sem",
+      "mc_annual": "p_sb_mc_yr",
+      "bundle_monthly": "p_sb_bun_mo",
+      "bundle_semester": "p_sb_bun_sem",
+      "bundle_annual": "p_sb_bun_yr"
+    },
+    "production": {
+      "monthly": "p_live_mc_mo",
+      "semester": "p_live_mc_sem",
+      "annual": "p_live_mc_yr",
+      "single_monthly": "p_live_mc_mo",
+      "single_semester": "p_live_mc_sem",
+      "single_annual": "p_live_mc_yr",
+      "mc_monthly": "p_live_mc_mo",
+      "mc_semester": "p_live_mc_sem",
+      "mc_annual": "p_live_mc_yr",
+      "bundle_monthly": "p_live_bun_mo",
+      "bundle_semester": "p_live_bun_sem",
+      "bundle_annual": "p_live_bun_yr"
+    }
+  },
+  "unitEconomicsP90": {
+    "evaluationDate": "2026-09-28",
+    "status": "APPROVED_OPTION_A",
+    "p90AiCallsPerMonth": 250,
+    "p90AiTokensPerMonth": 250000,
+    "p90VariableCostUSD": 0.090,
+    "dodoFixedFeeUSD": 0.30,
+    "dodoPercentageFee": 0.035,
+    "grossMarginThreshold": 0.70,
+    "lowestObservedMargin": 0.903,
+    "compliantWithMarginFloor": true,
+    "breakevenSubscribersUSDMonthly": 8,
+    "breakevenSubscribersTRYAnnual": 32,
+    "note": "Recomputed including Dodo fixed fee on localized TRY/SAR and p90 Gemini usage. All tiers exceed 90% margin."
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "courseId": "medchem",
+  "title": "Farmasötik Kimya",
+  "description": "Interactive, learn-by-doing course on structure-activity relationships (SAR), chemical bonding, bioisosterism, isomerism, and drug metabolism designed for pharmacy students.",
+  "accentColor": "#4D96FF",
+  "sourcePath": "materials/medchem",
+  "defaultLocale": "tr",
+  "supportedLocales": [
+    "tr",
+    "ar"
+  ],
+  "freePreviewLessonCount": 2,
+  "modules": [
+    {
+      "id": "mc-mod-01",
+      "slug": "introduction-physicochemical-properties",
+      "title": "Module 1: Introduction & Physicochemical Principles",
+      "titleLocalized": {
+        "tr": "Modül 1: Giriş ve Fizikokimyasal İlkeler",
+        "ar": "الوحدة 1: مقدمة والمبادئ الفيزيوكيميائية",
+        "en": "Modül 1: Giriş ve Fizikokimyasal İlkeler"
+      },
+      "sourceDecks": [
+        "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+        "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf"
+      ],
+      "freeLessons": [
+        {
+          "id": "mc-mod1-les1",
+          "slug": "thermodynamic-activity-ferguson-principle",
+          "order": 1,
+          "free": true,
+          "title": {
+            "tr": "Termodinamik Aktivite ve Ferguson İlkesi",
+            "ar": "النشاط الديناميكي الحراري ومبدأ Ferguson",
+            "en": "Termodinamik Aktivite ve Ferguson İlkesi"
+          },
+          "description": {
+            "tr": "Doygunluk dengesi ve yapısal olarak özgül olmayan ilaç etki mekanizması.",
+            "ar": "توازن التشبع وآلية التأثير غير النوعي بنيوياً للأدوية.",
+            "en": "Doygunluk dengesi ve yapısal olarak özgül olmayan ilaç etki mekanizması."
+          },
+          "prerequisiteLessonIds": [],
+          "interactiveArtifact": "ThermodynamicActivityFergusonSlider",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "mc-mod1-les2",
+          "slug": "solubility-ionization-dielectric-constant",
+          "order": 2,
+          "free": true,
+          "title": {
+            "tr": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti",
+            "ar": "الذوبانية، التأين وثابت العزل الكهربائي",
+            "en": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti"
+          },
+          "description": {
+            "tr": "Henderson-Hasselbalch dengesi ve pH bağımlı membran geçirgenliği.",
+            "ar": "توازن Henderson-Hasselbalch ونفوذية الأغشية المعتمدة على درجة الحموضة.",
+            "en": "Henderson-Hasselbalch dengesi ve pH bağımlı membran geçirgenliği."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod1-les1"
+          ],
+          "interactiveArtifact": "IonizationEquilibriumSlider",
+          "estimatedMinutes": 18
+        }
+      ]
+    },
+    {
+      "id": "mc-mod-02",
+      "slug": "functional-groups-bonding",
+      "title": "Module 2: Functional Groups & Intermolecular Bonding",
+      "titleLocalized": {
+        "tr": "Modül 2: Fonksiyonel Gruplar ve Moleküller Arası Bağlar",
+        "ar": "الوحدة 2: المجموعات الوظيفية والروابط بين الجزيئات",
+        "en": "Modül 2: Fonksiyonel Gruplar ve Moleküller Arası Bağlar"
+      },
+      "sourceDecks": [
+        "Fonksiyonel gruplar.pdf"
+      ],
+      "freeLessons": [
+        {
+          "id": "mc-mod2-les1",
+          "slug": "intermolecular-bonding-forces",
+          "order": 1,
+          "free": true,
+          "title": {
+            "tr": "Fonksiyonel Gruplar ve Moleküller Arası Bağlar",
+            "ar": "المجموعات الوظيفية والروابط بين الجزيئات",
+            "en": "Fonksiyonel Gruplar ve Moleküller Arası Bağlar"
+          },
+          "description": {
+            "tr": "Elektrostatik, hidrojen bağı ve hidrofobik bağlanma enerjileri.",
+            "ar": "طاقات الارتباط الكهروستاتيكي، الهيدروجيني والكاره للماء.",
+            "en": "Elektrostatik, hidrojen bağı ve hidrofobik bağlanma enerjileri."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod1-les2"
+          ],
+          "interactiveArtifact": "SarExplorer",
+          "estimatedMinutes": 20
+        },
+        {
+          "id": "mc-mod2-les2",
+          "slug": "easson-stedman-three-point-attachment",
+          "order": 2,
+          "free": true,
+          "title": {
+            "tr": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma",
+            "ar": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط",
+            "en": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma"
+          },
+          "description": {
+            "tr": "Kiral merkezlerin reseptör geometrisine 3-noktalı farmakofor yerleşimi.",
+            "ar": "توضع المراكز الكيرالية على هندسة المستقبِل بنموذج ثلاثي النقاط.",
+            "en": "Kiral merkezlerin reseptör geometrisine 3-noktalı farmakofor yerleşimi."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod2-les1"
+          ],
+          "interactiveArtifact": "ReceptorLigandMatcher",
+          "estimatedMinutes": 18
+        }
+      ]
+    },
+    {
+      "id": "mc-mod-03",
+      "slug": "bioisosterism-drug-design",
+      "title": "Module 3: Bioisosterism & Rational Molecular Design",
+      "titleLocalized": {
+        "tr": "Modül 3: Biyoizosterizm ve Rasyonel Moleküler Tasarım",
+        "ar": "الوحدة 3: التشابه الحيوي والتصميم الجزيئي الرشيد",
+        "en": "Modül 3: Biyoizosterizm ve Rasyonel Moleküler Tasarım"
+      },
+      "sourceDecks": [
+        "Biyoizosterizm.pdf"
+      ],
+      "freeLessons": [
+        {
+          "id": "mc-mod3-les1",
+          "slug": "classical-bioisosterism-grimm-hydride",
+          "order": 1,
+          "free": true,
+          "title": {
+            "tr": "Klasik Biyoizosterizm ve Grimm Hidrit Yer Değiştirme",
+            "ar": "التشابه الحيوي الكلاسيكي وإزاحة هيدريد Grimm",
+            "en": "Klasik Biyoizosterizm ve Grimm Hidrit Yer Değiştirme"
+          },
+          "description": {
+            "tr": "Değerlik elektron kabuğu izosterleri ve öncü bileşik optimizasyonu.",
+            "ar": "متشابهات إلكترونات التكافؤ وتحسين المركبات الطليعية.",
+            "en": "Değerlik elektron kabuğu izosterleri ve öncü bileşik optimizasyonu."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod2-les1"
+          ],
+          "interactiveArtifact": "StructureIdentifier",
+          "estimatedMinutes": 15
+        },
+        {
+          "id": "mc-mod3-les2",
+          "slug": "nonclassical-bioisosteres-carboxylic-acid-tetrazole",
+          "order": 2,
+          "free": true,
+          "title": {
+            "tr": "Klasik Olmayan Biyoizosterler: Karboksilik Asit ve Tetrazol",
+            "ar": "المتشابهات الحيوية غير الكلاسيكية: حمض الكربوكسيل والتترازول",
+            "en": "Klasik Olmayan Biyoizosterler: Karboksilik Asit ve Tetrazol"
+          },
+          "description": {
+            "tr": "Asidik karboksilat gruplarının tetrazol halkalarıyla biyoizosterik değişimi.",
+            "ar": "الاستبدال الحيوي لمجموعات الكربوكسيل الحامضية بحلقات التترازول.",
+            "en": "Asidik karboksilat gruplarının tetrazol halkalarıyla biyoizosterik değişimi."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod3-les1"
+          ],
+          "interactiveArtifact": "StructureIdentifier",
+          "estimatedMinutes": 20
+        }
+      ]
+    },
+    {
+      "id": "mc-mod-04",
+      "slug": "stereochemistry-isomerism",
+      "title": "Module 4: Stereochemistry & Optical Isomerism in Drug Action",
+      "titleLocalized": {
+        "tr": "Modül 4: İlaç Etkisinde Stereokimya ve Optik İzomeri",
+        "ar": "الوحدة 4: الكيمياء الفراغية والتماكب الضوئي في التأثير الدوائي",
+        "en": "Modül 4: İlaç Etkisinde Stereokimya ve Optik İzomeri"
+      },
+      "sourceDecks": [
+        "İlaçlarda  İzomeri.pdf"
+      ],
+      "freeLessons": [
+        {
+          "id": "mc-mod4-les1",
+          "slug": "eutomers-distomers-pfeiffer-rule",
+          "order": 1,
+          "free": true,
+          "title": {
+            "tr": "Ötomerler, Distomerler ve Pfeiffer Kuralı",
+            "ar": "المصاوغات النشطة والمصاوغات الخاملة وقاعدة Pfeiffer",
+            "en": "Ötomerler, Distomerler ve Pfeiffer Kuralı"
+          },
+          "description": {
+            "tr": "Ödismik oran analizi ve yüksek afiniteli ligandlarda stereoseçicilik.",
+            "ar": "تحليل النسبة الإيوديزمية والانتقائية الفراغية في الربيطات عالية الألفة.",
+            "en": "Ödismik oran analizi ve yüksek afiniteli ligandlarda stereoseçicilik."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod2-les2"
+          ],
+          "interactiveArtifact": "ReceptorLigandMatcher",
+          "estimatedMinutes": 18
+        },
+        {
+          "id": "mc-mod4-les2",
+          "slug": "conformational-isomerism-rigid-flexible",
+          "order": 2,
+          "free": true,
+          "title": {
+            "tr": "Konformasyonel İzomerizm: Rijit ve Esnek İskeletler",
+            "ar": "التماكب التشكلي: الهياكل الجاسئة والمرنة",
+            "en": "Konformasyonel İzomerizm: Rijit ve Esnek İskeletler"
+          },
+          "description": {
+            "tr": "Bağ dönmelerini kısıtlayarak reseptör etkileşim entropisini düşürme stratejileri.",
+            "ar": "استراتيجيات تقييد دوران الروابط لخفض إنتروبيا التفاعل مع المستقبِل.",
+            "en": "Bağ dönmelerini kısıtlayarak reseptör etkileşim entropisini düşürme stratejileri."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod4-les1"
+          ],
+          "interactiveArtifact": "SarExplorer",
+          "estimatedMinutes": 15
+        }
+      ]
+    },
+    {
+      "id": "mc-mod-05",
+      "slug": "biotransformation-metabolism",
+      "title": "Module 5: Drug Biotransformation & Phase I/II Metabolism",
+      "titleLocalized": {
+        "tr": "Modül 5: İlaç Biyotransformasyonu ve Faz I/II Metabolizması",
+        "ar": "الوحدة 5: التحول الحيوي للأدوية واستقلاب المرحلتين الأولى والثانية",
+        "en": "Modül 5: İlaç Biyotransformasyonu ve Faz I/II Metabolizması"
+      },
+      "sourceDecks": [
+        "İlaç metabolizması-2026.pdf"
+      ],
+      "freeLessons": [
+        {
+          "id": "mc-mod5-les1",
+          "slug": "phase-1-cyp450-hydroxylation-mechanisms",
+          "order": 1,
+          "free": true,
+          "title": {
+            "tr": "Faz I Fonksiyonelleşme: Sitokrom P450 Hidroksilasyon Mekanizmaları",
+            "ar": "المرحلة الأولى من التحول الحيوي: آليات هدرلة CYP450",
+            "en": "Faz I Fonksiyonelleşme: Sitokrom P450 Hidroksilasyon Mekanizmaları"
+          },
+          "description": {
+            "tr": "Alifatik, aromatik ve heteroatom oksidasyon reaksiyonlarının kimyasal mekanizmaları.",
+            "ar": "الآليات الكيميائية لتفاعلات الأكسدة الأليفاتية والعطرية وعلى الذرات غير المتجانسة.",
+            "en": "Alifatik, aromatik ve heteroatom oksidasyon reaksiyonlarının kimyasal mekanizmaları."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod2-les1"
+          ],
+          "interactiveArtifact": "MetabolismMap",
+          "estimatedMinutes": 22
+        },
+        {
+          "id": "mc-mod5-les2",
+          "slug": "phase-2-glucuronidation-sulfation",
+          "order": 2,
+          "free": true,
+          "title": {
+            "tr": "Faz II Konjugasyonu: Glukuronidasyon ve Sülfat Yolakları",
+            "ar": "المرحلة الثانية: مسارات الاقتران بالجلوكورونيد والكبريتات",
+            "en": "Faz II Konjugasyonu: Glukuronidasyon ve Sülfat Yolakları"
+          },
+          "description": {
+            "tr": "UDP-glukuronoziltransferaz enzim kinetiği ve polar konjugatların atılımı.",
+            "ar": "حركية إنزيم UDP-glucuronosyltransferase وإطراح المشتقات القطبية.",
+            "en": "UDP-glukuronoziltransferaz enzim kinetiği ve polar konjugatların atılımı."
+          },
+          "prerequisiteLessonIds": [
+            "mc-mod5-les1"
+          ],
+          "interactiveArtifact": "MetabolismMap",
+          "estimatedMinutes": 18
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+================================================================
+EXTENDED CLAIM SCANNER MUTATION AUDIT LOG (H4 VERIFICATION)
+Target Script: scripts/claim-inventory.mjs
+Master Lesson: courses/medchem/lessons/lesson-01.json
+Timestamp: 2026-09-30T12:46:19.998Z
+================================================================
+
+----------------------------------------------------------------
+[MUTATION 1/5]: Mutation 1: Turkish Translation Injection (Spelled-out TR Numeral "dokuz")
+----------------------------------------------------------------
+Exit Code: 1
+Observed Error Output:
+================================================================
+PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: [object Object] (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In translations.tr.title: "Termodinamik Aktivite ve Ferguson İlkesi dokuz"
+
+[CONFIRMED] Scanner explicitly caught injected token: "dokuz"
+
+----------------------------------------------------------------
+[MUTATION 2/5]: Mutation 2: Arabic-Indic Digit Injection (٥: Arabic-Indic Digit Five)
+----------------------------------------------------------------
+Exit Code: 1
+Observed Error Output:
+================================================================
+PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: [object Object] (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In translations.ar.title: "النشاط الديناميكي الحراري ومبدأ فيرجسون ٥"
+
+[CONFIRMED] Scanner explicitly caught injected token: "٥"
+
+----------------------------------------------------------------
+[MUTATION 3/5]: Mutation 3: Spelled-out Numeral in English Step Prompt ("forty-two")
+----------------------------------------------------------------
+Exit Code: 1
+Observed Error Output:
+================================================================
+PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: [object Object] (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
+- Total String Nodes Audited: 312
+- Recognized Number/Unit Matches Mapped to Registry: 102
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In steps[0].prompt: "Why does general anesthesia require forty-two grams, while beta-blockers act at milligrams?"
+
+[CONFIRMED] Scanner explicitly caught injected token: "forty-two"
+
+----------------------------------------------------------------
+[MUTATION 4/5]: Mutation 4: Numeric Token Injection in Hint Tier 1 ("99")
+----------------------------------------------------------------
+Exit Code: 1
+Observed Error Output:
+================================================================
+PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: [object Object] (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
+- Total String Nodes Audited: 312
+- Recognized Number/Unit Matches Mapped to Registry: 102
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In steps[0].hints[0]: "Think about 99 drug molecules traveling without specific receptor fit."
+
+[CONFIRMED] Scanner explicitly caught injected token: "99"
+
+----------------------------------------------------------------
+[MUTATION 5/5]: Mutation 5: Numeric Token Injection in Spaced Review Card Prompt ("888")
+----------------------------------------------------------------
+Exit Code: 1
+Observed Error Output:
+================================================================
+PHARMACY EDUCATION PLATFORM — STRUCTURED CLAIM INVENTORY AUDIT
+Lesson: [object Object] (mc-mod1-les1)
+================================================================
+
+[PASS] Content String Guard: 0 forbidden strings ('0.01', '1.0', 'Chapter', 'Ch.') in student content.
+
+Auditing every string in lesson steps, hint tiers, review flashcards, and TR/AR translations for numbers, units, and empirical claims...
+- Total String Nodes Audited: 313
+- Recognized Number/Unit Matches Mapped to Registry: 102
+- Undeclared Numeric or Factual Hits: 1
+
+[FAIL] Found 1 undeclared numeric/factual hit(s) in lesson content:
+  - In spacedReviewCards[0].prompt: "What is the relative thermodynamic saturation 888 range defining non-specific drugs?"
+
+[CONFIRMED] Scanner explicitly caught injected token: "888"
+
+================================================================
+MUTATION AUDIT SUMMARY:
+Total Mutations Evaluated: 5
+Successful Fail-Closed Rejections: 5/5
+Final Status: ALL MUTATION TESTS PASSED (100% FAIL-CLOSED)
+================================================================
