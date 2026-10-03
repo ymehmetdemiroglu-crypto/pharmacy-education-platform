@@ -1,110 +1,72 @@
-# Dodo Payments MCP Server
+# Pharmacy Education Platform
 
-A Model Context Protocol (MCP) Server for **Dodo Payments**, enabling AI assistants (Claude Desktop, Cursor, Codex CLI, Claude Code, Windsurf, Cline, etc.) to securely interact with the Dodo Payments API and documentation.
+An interactive, commercial-grade pharmacy education platform hosting two comprehensive courses:
+1. **Course A: Medicinal Chemistry** (`courses/medchem`)
+2. **Course B: Pharmacology** (`courses/pharmacology`)
 
----
-
-## 🚀 Features & Tools
-
-This MCP server implements **21 tools**, **3 resources**, and **2 prompt templates** covering the entire Dodo Payments platform:
-
-### 1. Checkout & Payments
-* `dodo_create_checkout_session`: Create 24-hour hosted checkout sessions for one-time payments or subscriptions (with trial days and custom currencies).
-* `dodo_get_payment`: Retrieve payment details, status, card brand, and amount by ID.
-* `dodo_list_payments`: List payments with customer, status (`succeeded`, `failed`), and pagination filters.
-* `dodo_create_refund`: Issue full or partial refunds for a transaction.
-
-### 2. Subscriptions
-* `dodo_get_subscription`: Retrieve subscription status, current plan, and renewal dates.
-* `dodo_list_subscriptions`: Filter subscriptions by status (`active`, `on_hold`, `past_due`, `cancelled`).
-* `dodo_change_subscription_plan`: Upgrade or downgrade subscriptions with all 4 Dodo proration modes (`difference_immediately`, `prorated_immediately`, `full_immediately`, `do_not_bill`).
-* `dodo_cancel_subscription`: Cancel subscription immediately or at period end.
-* `dodo_update_payment_method`: Reactivate on-hold subscriptions by generating a payment method update link.
-
-### 3. Customers & Portal
-* `dodo_get_customer`: Look up customer details and billing information.
-* `dodo_list_customers`: List customer accounts.
-* `dodo_create_customer_portal_session`: Generate signed 24h Customer Portal session links for self-service invoices, plan changes, and saved cards.
-
-### 4. Products Catalog
-* `dodo_list_products`: List all products and pricing plans in your catalog.
-* `dodo_get_product`: Retrieve product details and attached entitlements.
-
-### 5. Software License Keys
-* `dodo_validate_license`: Validate license key validity, expiry, and activation count (public endpoint).
-* `dodo_activate_license`: Activate a device or machine instance (`lki_...`).
-* `dodo_deactivate_license`: Deactivate an instance and free up a license seat.
-
-### 6. Credits & Usage Meters
-* `dodo_get_credit_balance`: Query customer balances across custom units (tokens, API calls, compute hours).
-* `dodo_ingest_usage_event`: Send real-time meter events (e.g. `ai.generation`, `api.call`) to deduct credits or bill overage.
-* `dodo_adjust_credit_balance`: Record manual credit (+) or debit (-) ledger adjustments.
-
-### 7. Documentation Search
-* `dodo_search_docs`: Search Dodo Payments guides, integration checklists, and developer resources.
+Built with an active learn-by-doing pedagogy inspired by Brilliant (short bite-sized steps, predict-then-reveal interactions, immediate misconception-targeted feedback, 3-tiered hint ladders, worked-example fading, and spaced review).
 
 ---
 
-## 🛠️ Installation & Setup
+## 🏛️ System Architecture
 
-### 1. Install Dependencies & Build
+- **Web Frontend (`apps/web`)**: Vite + React 18 + TypeScript + Tailwind CSS (Single Page Application). Neo-Brutalist design language with 3-4px high-contrast borders (`#000000`), zero-blur hard drop shadows (6px resting / 8px hover), dark mode (Academic Midnight Slate), and full RTL support for Arabic.
+- **Component System (`packages/ui`)**: Shared neo-brutalist UI components (Cards, Modals, Sliders, Badges, Paywall, Confidence Gauges, Step Dots).
+- **Interactive Widgets (`packages/widgets`)**: Hands-on biophysical simulations grounded in lecture materials:
+  - `IonizationChamber` & `IonizationEquilibriumSlider`: Henderson-Hasselbalch $pK_a$ / pH ionization shifts and membrane permeability.
+  - `EassonStedmanStage`: 3-point chiral pharmacophore binding demonstrating eutomer vs. distomer affinity.
+  - `ReceptorOperationalModel` & `DoseResponseCurve`: Agonist concentration-response curves, competitive vs. non-competitive antagonism shifts, partial agonism.
+  - `PkCockpit` & `PkSimulator`: 1-compartment IV bolus and oral pharmacokinetic curves ($C_{max}$, $t_{max}$, $AUC$, clearance, half-life).
+  - `ClinicalOrderVerification`: Real-world prescription safety checks (warfarin bridging, simvastatin + clarithromycin CYP3A4 MBI, ciprofloxacin + antacid chelation).
+  - `SarExplorer`, `ReceptorLigandMatcher`, `StructureIdentifier`, `MetabolismMap`, `PredictThenReveal`.
+- **Platform Core (`packages/platform`)**:
+  - Authentication (Firebase Auth with offline preview fallback).
+  - Access control (`hasAccess` gating, 7-day single-use free trial, 2 free lessons per module).
+  - Leitner Spaced Repetition engine with exam-calibrated backward scheduling.
+  - Progress tracking and local caching.
+- **Backend & Cloud Functions (`functions`)**: Firebase Cloud Functions v2 (TypeScript) integrating Dodo Payments webhooks with HMAC validation, checkout session creation, trial abuse mitigation, and compliance.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js >= 20.0.0
+- pnpm >= 9.0.0
+
+### Installation
 ```bash
-npm install
-npm run build
+pnpm install
 ```
 
-### 2. Configure Environment Variables
-Create a `.env` file or export your API credentials:
+### Development
 ```bash
-DODO_PAYMENTS_API_KEY=your_dodo_api_key_here
-DODO_PAYMENTS_ENVIRONMENT=test_mode # or live_mode
+# Start the web app dev server
+pnpm dev
+
+# Build all workspace packages
+pnpm build
+
+# Run unit tests across all packages
+pnpm test
+
+# Run Playwright E2E tests
+pnpm test:e2e
+
+# Run production bundle verification
+pnpm test:bundle
 ```
 
 ---
 
-## 🔌 Connecting to AI Clients
+## 🧪 Testing & Verification
 
-### Cursor
-Add to `~/.cursor/mcp.json` or `.cursor/mcp.json`:
-```json
-{
-  "mcpServers": {
-    "dodopayments": {
-      "command": "node",
-      "args": ["<PATH_TO_THIS_REPO>/dist/index.js"],
-      "env": {
-        "DODO_PAYMENTS_API_KEY": "your_test_key_here",
-        "DODO_PAYMENTS_ENVIRONMENT": "test_mode"
-      }
-    }
-  }
-}
-```
-
-### Claude Desktop
-Add to your Claude Desktop config (`%APPDATA%\Claude\claude_desktop_config.json` on Windows):
-```json
-{
-  "mcpServers": {
-    "dodopayments": {
-      "command": "node",
-      "args": ["C:\\Users\\hp\\Documents\\antigravity\\valiant-raman\\dist\\index.js"],
-      "env": {
-        "DODO_PAYMENTS_API_KEY": "your_test_key_here",
-        "DODO_PAYMENTS_ENVIRONMENT": "test_mode"
-      }
-    }
-  }
-}
-```
-
-### Testing the Server
-Run the built-in verification suite:
-```bash
-npx tsx test/test-server.ts
-```
+- **Unit Tests**: 257 unit tests across 65 test suites (100% passing across `@pharmacy/platform`, `@pharmacy/ui`, `@pharmacy/widgets`, `@pharmacy/web`).
+- **End-to-End Tests**: Automated Playwright suite verified on local Brave Browser under both **Shields Default** (strict tracker/fingerprint blocking) and **Shields Down** modes.
+- **Accessibility**: 0 axe-core serious or critical accessibility violations, WCAG 2.1 AA / AAA keyboard compliance.
 
 ---
 
-## 📜 License
-Apache-2.0
+## 📄 License & Source Attribution
+
+All educational claims, molecular structures, equations, and pharmacokinetic parameters trace directly to Marmara University Faculty of Pharmacy lecture slide decks located in `/materials`. All instructional diagrams and text are originally synthesized and verified against source references.
