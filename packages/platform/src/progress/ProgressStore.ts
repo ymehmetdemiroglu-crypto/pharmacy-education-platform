@@ -131,3 +131,62 @@ export function mergeGuestProgressWithCloud(
   };
 }
 
+export async function syncProgressToSupabase(progress: UserProgress): Promise<void> {
+  if (typeof window === 'undefined') return;
+  try {
+    const { supabase } = await import('../supabase');
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) return;
+
+    await supabase.from('user_progress').upsert({
+      user_id: session.user.id,
+      course_id: progress.courseId,
+      completed_lesson_ids: progress.completedLessonIds,
+      current_module_id: progress.currentModuleId,
+      current_lesson_id: progress.currentLessonId,
+      current_step_index: progress.currentStepIndex,
+      streak_days: progress.streakDays,
+      last_streak_date: progress.lastStreakDate || null,
+      total_xp: progress.totalXP,
+      accuracy_rate: progress.accuracyRate,
+      updated_at: new Date().toISOString(),
+    }, {
+      onConflict: 'user_id,course_id'
+    });
+  } catch (err) {
+    console.warn('[Supabase Progress Sync Note]:', err);
+  }
+}
+
+export async function fetchProgressFromSupabase(courseId: string = 'medchem'): Promise<UserProgress | null> {
+  if (typeof window === 'undefined') return null;
+  try {
+    const { supabase } = await import('../supabase');
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session?.user) return null;
+
+    const { data, error } = await supabase
+      .from('user_progress')
+      .select('*')
+      .eq('user_id', session.user.id)
+      .eq('course_id', courseId)
+      .maybeSingle();
+
+    if (error || !data) return null;
+
+    return {
+      courseId: data.course_id,
+      completedLessonIds: data.completed_lesson_ids || [],
+      currentModuleId: data.current_module_id || (courseId === 'medchem' ? 'mc-mod-01' : 'pharm-mod-01'),
+      currentLessonId: data.current_lesson_id || (courseId === 'medchem' ? 'mc-mod1-les1' : 'pharm-mod1-les1'),
+      currentStepIndex: data.current_step_index || 0,
+      streakDays: data.streak_days || 0,
+      lastStreakDate: data.last_streak_date || '',
+      totalXP: data.total_xp || 0,
+      accuracyRate: Number(data.accuracy_rate) || 100,
+    };
+  } catch (err) {
+    console.warn('[Supabase Progress Fetch Note]:', err);
+    return null;
+  }
+}

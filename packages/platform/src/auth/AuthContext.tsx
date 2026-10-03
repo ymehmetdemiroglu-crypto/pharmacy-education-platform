@@ -1,15 +1,7 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { UserProfile, CourseEntitlement } from '../types';
-import { getApps } from 'firebase/app';
-import {
-  getAuth,
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut,
-  type User as FirebaseUser,
-} from 'firebase/auth';
-import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
+import { supabase } from '../supabase';
+import type { User as SupabaseUser, Session } from '@supabase/supabase-js';
 
 export interface AuthContextType {
   user: UserProfile | null;
@@ -24,6 +16,19 @@ export interface AuthContextType {
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
+
+function mapSupabaseEntitlement(row: any): CourseEntitlement {
+  return {
+    courseId: row.course_id || 'dual_bundle',
+    entitlementId: row.entitlement_id || row.id || `ent-${Date.now()}`,
+    plan: row.plan || 'trial',
+    status: row.status || 'active',
+    planId: row.plan_id || 'trial_7day',
+    startedAt: row.started_at || new Date().toISOString(),
+    expiresAt: row.expires_at || new Date(Date.now() + 7 * 86400000).toISOString(),
+    autoRenew: row.auto_renew ?? false,
+  };
+}
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<UserProfile | null>(() => {
@@ -65,8 +70,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return [];
   });
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
+  // Sync profile & entitlements to localStorage
   useEffect(() => {
     if (user && typeof window !== 'undefined') {
       localStorage.setItem('pharmacy_user_profile', JSON.stringify(user));
@@ -79,77 +85,110 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [entitlements]);
 
-  // Connect to live Firebase Auth state and Firestore user document when initialized
-  useEffect(() => {
-    if (typeof window === 'undefined' || getApps().length === 0) return;
-
+  // Load user data from Supabase
+  const syncSupabaseUserData = useCallback(async (sbUser: SupabaseUser) => {
     try {
-      const auth = getAuth();
-      const db = getFirestore();
-      let unsubDoc: (() => void) | null = null;
+      // 1. Fetch Profile
+      const { data: profileData, error: profileErr } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', sbUser.id)
+        .maybeSingle();
 
-      const unsubAuth = onAuthStateChanged(auth, (fbUser: FirebaseUser | null) => {
-        if (unsubDoc) {
-          unsubDoc();
-          unsubDoc = null;
-        }
+      if (profileErr) {
+        console.warn('[Supabase Auth] Profile fetch note:', profileErr.message);
+      }
 
-        if (fbUser) {
-          try {
-            unsubDoc = onSnapshot(
-              doc(db, 'users', fbUser.uid),
-              (docSnap) => {
-                const data = docSnap.exists() ? docSnap.data() : null;
-                setUser((prev) => ({
-                  userId: fbUser.uid,
-                  email: fbUser.email ?? prev?.email ?? null,
-                  displayName:
-                    data?.displayName ||
-                    fbUser.displayName ||
-                    prev?.displayName ||
-                    (fbUser.email ? fbUser.email.split('@')[0] : 'Pharmacy Student'),
-                  university: data?.university || prev?.university || 'İstanbul Üniversitesi',
-                  plan: ((data?.plan as any) || prev?.plan || 'free') as any,
-                  trialUsed: data?.trialUsed ?? prev?.trialUsed ?? false,
-                  trialStartedAt: data?.trialStartedAt ?? prev?.trialStartedAt ?? null,
-                  trialEndsAt: data?.trialEndsAt ?? prev?.trialEndsAt ?? null,
-                  preferredLanguage: (data?.preferredLanguage as any) || prev?.preferredLanguage || 'tr',
-                  createdAt: data?.createdAt || prev?.createdAt || new Date().toISOString(),
-                  lastActiveAt: new Date().toISOString(),
-                }));
-              },
-              () => {
-                setUser((prev) => {
-                  const fallbackName = String(fbUser.displayName || prev?.displayName || fbUser.email || 'Pharmacy Student');
-                  return {
-                    userId: fbUser.uid,
-                    email: fbUser.email ?? prev?.email ?? null,
-                    displayName: fallbackName,
-                    plan: prev?.plan || 'free',
-                    trialUsed: prev?.trialUsed ?? false,
-                    trialStartedAt: prev?.trialStartedAt ?? null,
-                    trialEndsAt: prev?.trialEndsAt ?? null,
-                    preferredLanguage: prev?.preferredLanguage || 'tr',
-                    createdAt: prev?.createdAt || new Date().toISOString(),
-                    lastActiveAt: new Date().toISOString(),
-                  };
-                });
-              }
-            );
-          } catch {
-            // fallback if Firestore offline
-          }
-        }
-      });
+      const email = sbUser.email || '';
+      const fallbackName = sbUser.user_metadata?.display_name || email.split('@')[0] || 'Pharmacy Student';
+      const university = sbUser.user_metadata?.university || 'İstanbul Üniversitesi';
 
-      return () => {
-        if (unsubDoc) unsubDoc();
-        unsubAuth();
+      const resolvedUser: UserProfile = {
+        userId: sbUser.id,
+        email: email,
+        displayName: profileData?.display_name || fallbackName,
+        university: university,
+        plan: (profileData?.plan as any) || 'free',
+        trialUsed: profileData?.trial_used ?? false,
+        trialStartedAt: profileData?.trial_started_at || null,
+        trialEndsAt: profileData?.trial_ends_at || null,
+        preferredLanguage: (profileData?.preferred_language as any) || 'tr',
+        country: profileData?.country || 'TR',
+        createdAt: profileData?.created_at || sbUser.created_at || new Date().toISOString(),
+        lastActiveAt: new Date().toISOString(),
       };
-    } catch {
-      // offline fallback
+
+      setUser(resolvedUser);
+
+      // 2. Fetch Entitlements
+      const { data: entData, error: entErr } = await supabase
+        .from('entitlements')
+        .select('*')
+        .eq('user_id', sbUser.id)
+        .eq('status', 'active');
+
+      if (!entErr && entData && entData.length > 0) {
+        const mapped = entData.map(mapSupabaseEntitlement);
+        setEntitlements(mapped);
+      } else if (resolvedUser.plan === 'free') {
+        setEntitlements([]);
+      }
+    } catch (err) {
+      console.warn('[Supabase Auth] syncUserData error:', err);
     }
   }, []);
+
+  // Connect to live Supabase Auth state listener
+  useEffect(() => {
+    let mounted = true;
+
+    // Initial session check
+    supabase.auth.getSession().then(({ data: { session }, error }) => {
+      if (!mounted) return;
+      if (!error && session?.user) {
+        syncSupabaseUserData(session.user).finally(() => {
+          if (mounted) setLoading(false);
+        });
+      } else {
+        setLoading(false);
+      }
+    });
+
+    // Auth state changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange(async (_event: string, session: Session | null) => {
+      if (!mounted) return;
+      if (session?.user) {
+        await syncSupabaseUserData(session.user);
+      } else {
+        // Logged out
+        if (typeof window !== 'undefined') {
+          const cached = localStorage.getItem('pharmacy_user_profile');
+          if (!cached) {
+            setUser({
+              userId: 'guest-' + Math.random().toString(36).substring(2, 9),
+              displayName: 'Pharmacy Student',
+              plan: 'free',
+              trialUsed: false,
+              trialStartedAt: null,
+              trialEndsAt: null,
+              preferredLanguage: 'tr',
+              createdAt: new Date().toISOString(),
+              lastActiveAt: new Date().toISOString(),
+            });
+            setEntitlements([]);
+          }
+        }
+      }
+      setLoading(false);
+    });
+
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
+    };
+  }, [syncSupabaseUserData]);
 
   const signInGuest = () => {
     setLoading(true);
@@ -175,6 +214,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       return false; // Server-enforced single-use trial
     }
 
+    // If user is authenticated in Supabase, call atomic RPC
+    try {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        const { data, error } = await supabase.rpc('start_free_trial');
+        if (error) {
+          console.warn('[Supabase start_free_trial RPC warning]:', error.message);
+          throw error;
+        }
+        await syncSupabaseUserData(session.user);
+        return true;
+      }
+    } catch (rpcErr: any) {
+      console.warn('[Supabase startTrial exception]:', rpcErr?.message);
+      // If RPC throws that trial already claimed, return false
+      if (rpcErr?.message?.includes('already been claimed')) {
+        return false;
+      }
+    }
+
+    // Guest fallback trial (stored in state/localStorage)
     const now = new Date();
     const trialEnds = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
 
@@ -206,51 +266,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signInWithEmail = async (email: string, password?: string): Promise<void> => {
     setLoading(true);
     try {
-      if (password && getApps().length > 0) {
-        const auth = getAuth();
-        const cred = await signInWithEmailAndPassword(auth, email, password);
-        const fbUser = cred.user;
-        const loggedInUser: UserProfile = {
-          userId: fbUser.uid,
-          email: fbUser.email || email,
-          displayName: fbUser.displayName || email.split('@')[0] || 'Öğrenci',
-          plan: 'free',
-          trialUsed: false,
-          trialStartedAt: null,
-          trialEndsAt: null,
-          preferredLanguage: 'tr',
-          createdAt: new Date().toISOString(),
-          lastActiveAt: new Date().toISOString(),
-        };
-        setUser(loggedInUser);
-        return;
+      if (password) {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        if (data.user) {
+          await syncSupabaseUserData(data.user);
+          return;
+        }
       }
     } catch (err: any) {
-      console.warn('Firebase signInWithEmail error:', err);
-      const isMissingOrInvalidKey =
-        err?.code === 'auth/api-key-not-valid' ||
-        err?.message?.includes('api-key-not-valid') ||
-        err?.message?.includes('network-request-failed');
-      if (!isMissingOrInvalidKey) {
-        throw err;
-      }
+      console.warn('[Supabase signInWithEmail]:', err?.message);
+      throw err;
     } finally {
       setLoading(false);
     }
 
-    const existing = user || ({} as Partial<UserProfile>);
+    // Local state fallback if offline
     const nameFromEmail = email.split('@')[0] || 'Öğrenci';
     const loggedInUser: UserProfile = {
       userId: 'usr-' + Math.random().toString(36).substring(2, 9),
       email,
-      displayName: existing.displayName && !existing.displayName.includes('Guest') ? existing.displayName : nameFromEmail,
-      university: existing.university || 'İstanbul Üniversitesi',
-      plan: existing.plan || 'free',
-      trialUsed: existing.trialUsed ?? false,
-      trialStartedAt: existing.trialStartedAt ?? null,
-      trialEndsAt: existing.trialEndsAt ?? null,
-      preferredLanguage: existing.preferredLanguage || 'tr',
-      createdAt: existing.createdAt || new Date().toISOString(),
+      displayName: nameFromEmail,
+      university: 'İstanbul Üniversitesi',
+      plan: 'free',
+      trialUsed: false,
+      trialStartedAt: null,
+      trialEndsAt: null,
+      preferredLanguage: 'tr',
+      createdAt: new Date().toISOString(),
       lastActiveAt: new Date().toISOString(),
     };
     setUser(loggedInUser);
@@ -269,35 +319,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }): Promise<void> => {
     setLoading(true);
     try {
-      if (password && getApps().length > 0) {
-        const auth = getAuth();
-        const cred = await createUserWithEmailAndPassword(auth, email, password);
-        const fbUser = cred.user;
-        const newUser: UserProfile = {
-          userId: fbUser.uid,
-          email: fbUser.email || email,
-          displayName: name,
-          university: university || 'İstanbul Üniversitesi',
-          plan: 'free',
-          trialUsed: false,
-          trialStartedAt: null,
-          trialEndsAt: null,
-          preferredLanguage: 'tr',
-          createdAt: new Date().toISOString(),
-          lastActiveAt: new Date().toISOString(),
-        };
-        setUser(newUser);
-        return;
+      if (password) {
+        const { data, error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: {
+            data: {
+              display_name: name,
+              university: university || 'İstanbul Üniversitesi',
+            },
+          },
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        if (data.user) {
+          // Upsert initial profile in public.profiles table
+          await supabase.from('profiles').upsert({
+            id: data.user.id,
+            email: email,
+            display_name: name,
+            preferred_language: 'tr',
+            country: 'TR',
+            plan: 'free',
+            trial_used: false,
+          });
+
+          await syncSupabaseUserData(data.user);
+          return;
+        }
       }
     } catch (err: any) {
-      console.warn('Firebase createUserWithEmailAndPassword error:', err);
-      const isMissingOrInvalidKey =
-        err?.code === 'auth/api-key-not-valid' ||
-        err?.message?.includes('api-key-not-valid') ||
-        err?.message?.includes('network-request-failed');
-      if (!isMissingOrInvalidKey) {
-        throw err;
-      }
+      console.warn('[Supabase signUpWithEmail]:', err?.message);
+      throw err;
     } finally {
       setLoading(false);
     }
@@ -320,31 +376,42 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const signInWithGoogle = async (): Promise<void> => {
     setLoading(true);
-    const googleUser: UserProfile = {
-      userId: 'g-user-' + Math.random().toString(36).substring(2, 9),
-      email: 'student@istanbul.edu.tr',
-      displayName: 'Ecz. Öğrencisi',
-      university: 'İstanbul Üniversitesi',
-      plan: 'free',
-      trialUsed: false,
-      trialStartedAt: null,
-      trialEndsAt: null,
-      preferredLanguage: 'tr',
-      createdAt: new Date().toISOString(),
-      lastActiveAt: new Date().toISOString(),
-    };
-    setUser(googleUser);
-    setLoading(false);
+    try {
+      const redirectOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://optimusrufus.com';
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: {
+          redirectTo: redirectOrigin,
+        },
+      });
+      if (error) throw error;
+    } catch (err: any) {
+      console.warn('[Supabase Google Auth]:', err?.message);
+      // Fallback for local testing
+      const googleUser: UserProfile = {
+        userId: 'g-user-' + Math.random().toString(36).substring(2, 9),
+        email: 'student@istanbul.edu.tr',
+        displayName: 'Ecz. Öğrencisi',
+        university: 'İstanbul Üniversitesi',
+        plan: 'free',
+        trialUsed: false,
+        trialStartedAt: null,
+        trialEndsAt: null,
+        preferredLanguage: 'tr',
+        createdAt: new Date().toISOString(),
+        lastActiveAt: new Date().toISOString(),
+      };
+      setUser(googleUser);
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const logout = () => {
+  const logout = async () => {
     try {
-      if (getApps().length > 0) {
-        const auth = getAuth();
-        signOut(auth).catch((err) => console.warn('Firebase signOut note:', err));
-      }
-    } catch {
-      // offline fallback
+      await supabase.auth.signOut();
+    } catch (err) {
+      console.warn('[Supabase signOut]:', err);
     }
     setUser(null);
     setEntitlements([]);

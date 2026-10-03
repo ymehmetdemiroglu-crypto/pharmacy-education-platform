@@ -108,7 +108,7 @@ const fileContent = `import type { LessonData } from '@pharmacy/platform';
  * Production-ready sanitized client lesson database for 22 Free Lessons.
  * Zero unverified developer notes, numeric claim markers, or internal review tags.
  */
-const lessonsById: Record<string, LessonData> = ${JSON.stringify(lessonsById)} as unknown as Record<string, LessonData>;
+const lessonsById: Record<string, LessonData> = JSON.parse(${JSON.stringify(JSON.stringify(lessonsById))}) as unknown as Record<string, LessonData>;
 
 export const allClientLessons: Record<string, LessonData> = {
   ...lessonsById,

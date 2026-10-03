@@ -84,6 +84,13 @@ for (const file of files) {
     let count = 0;
     let pos = lowerContent.indexOf(lowerToken);
     while (pos !== -1) {
+      // Ignore Supabase Auth SDK internal MFA WebAuthn check: factor_type==="webauthn"&&...status==="unverified"
+      const surrounding = content.substring(Math.max(0, pos - 50), Math.min(content.length, pos + 50));
+      if (token === 'unverified' && (surrounding.includes('webauthn') || surrounding.includes('factor_type') || surrounding.includes('mfa.unenroll'))) {
+        pos = lowerContent.indexOf(lowerToken, pos + 1);
+        continue;
+      }
+
       count++;
       pos = lowerContent.indexOf(lowerToken, pos + 1);
     }

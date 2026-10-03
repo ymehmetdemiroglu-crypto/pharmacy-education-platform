@@ -5,3 +5,4 @@ export * from './progress/ProgressStore';
 export * from './auth/AuthContext';
 export * from './curriculum/schema';
 export * from './curriculum/knowledgeGraph';
+export * from './supabase';
