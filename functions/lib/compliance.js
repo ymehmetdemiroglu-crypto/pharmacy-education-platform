@@ -49,7 +49,16 @@ export async function executeDeleteUserAccount(firestoreDb, authUid, dodoClientO
     for (const doc of progressSnap.docs) {
         await doc.ref.delete();
     }
-    // 4. Delete user document
+    // 4. Delete spaced repetition & review cards subcollections
+    const spacedRepSnap = await userRef.collection('spaced_repetition').get();
+    for (const doc of spacedRepSnap.docs) {
+        await doc.ref.delete();
+    }
+    const reviewCardsSnap = await userRef.collection('review_cards').get();
+    for (const doc of reviewCardsSnap.docs) {
+        await doc.ref.delete();
+    }
+    // 5. Delete user document
     await userRef.delete();
     // 5. Delete Firebase Auth record if available
     try {

@@ -1,5 +1,15 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { UserProfile, CourseEntitlement } from '../types';
+import { getApps } from 'firebase/app';
+import {
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+  type User as FirebaseUser,
+} from 'firebase/auth';
+import { getFirestore, doc, onSnapshot } from 'firebase/firestore';
 
 export interface AuthContextType {
   user: UserProfile | null;
@@ -69,6 +79,78 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, [entitlements]);
 
+  // Connect to live Firebase Auth state and Firestore user document when initialized
+  useEffect(() => {
+    if (typeof window === 'undefined' || getApps().length === 0) return;
+
+    try {
+      const auth = getAuth();
+      const db = getFirestore();
+      let unsubDoc: (() => void) | null = null;
+
+      const unsubAuth = onAuthStateChanged(auth, (fbUser: FirebaseUser | null) => {
+        if (unsubDoc) {
+          unsubDoc();
+          unsubDoc = null;
+        }
+
+        if (fbUser) {
+          try {
+            unsubDoc = onSnapshot(
+              doc(db, 'users', fbUser.uid),
+              (docSnap) => {
+                const data = docSnap.exists() ? docSnap.data() : null;
+                setUser((prev) => ({
+                  userId: fbUser.uid,
+                  email: fbUser.email ?? prev?.email ?? null,
+                  displayName:
+                    data?.displayName ||
+                    fbUser.displayName ||
+                    prev?.displayName ||
+                    (fbUser.email ? fbUser.email.split('@')[0] : 'Pharmacy Student'),
+                  university: data?.university || prev?.university || 'İstanbul Üniversitesi',
+                  plan: ((data?.plan as any) || prev?.plan || 'free') as any,
+                  trialUsed: data?.trialUsed ?? prev?.trialUsed ?? false,
+                  trialStartedAt: data?.trialStartedAt ?? prev?.trialStartedAt ?? null,
+                  trialEndsAt: data?.trialEndsAt ?? prev?.trialEndsAt ?? null,
+                  preferredLanguage: (data?.preferredLanguage as any) || prev?.preferredLanguage || 'tr',
+                  createdAt: data?.createdAt || prev?.createdAt || new Date().toISOString(),
+                  lastActiveAt: new Date().toISOString(),
+                }));
+              },
+              () => {
+                setUser((prev) => {
+                  const fallbackName = String(fbUser.displayName || prev?.displayName || fbUser.email || 'Pharmacy Student');
+                  return {
+                    userId: fbUser.uid,
+                    email: fbUser.email ?? prev?.email ?? null,
+                    displayName: fallbackName,
+                    plan: prev?.plan || 'free',
+                    trialUsed: prev?.trialUsed ?? false,
+                    trialStartedAt: prev?.trialStartedAt ?? null,
+                    trialEndsAt: prev?.trialEndsAt ?? null,
+                    preferredLanguage: prev?.preferredLanguage || 'tr',
+                    createdAt: prev?.createdAt || new Date().toISOString(),
+                    lastActiveAt: new Date().toISOString(),
+                  };
+                });
+              }
+            );
+          } catch {
+            // fallback if Firestore offline
+          }
+        }
+      });
+
+      return () => {
+        if (unsubDoc) unsubDoc();
+        unsubAuth();
+      };
+    } catch {
+      // offline fallback
+    }
+  }, []);
+
   const signInGuest = () => {
     setLoading(true);
     const guestUser: UserProfile = {
@@ -121,8 +203,41 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return true;
   };
 
-  const signInWithEmail = async (email: string, _password?: string): Promise<void> => {
+  const signInWithEmail = async (email: string, password?: string): Promise<void> => {
     setLoading(true);
+    try {
+      if (password && getApps().length > 0) {
+        const auth = getAuth();
+        const cred = await signInWithEmailAndPassword(auth, email, password);
+        const fbUser = cred.user;
+        const loggedInUser: UserProfile = {
+          userId: fbUser.uid,
+          email: fbUser.email || email,
+          displayName: fbUser.displayName || email.split('@')[0] || 'Öğrenci',
+          plan: 'free',
+          trialUsed: false,
+          trialStartedAt: null,
+          trialEndsAt: null,
+          preferredLanguage: 'tr',
+          createdAt: new Date().toISOString(),
+          lastActiveAt: new Date().toISOString(),
+        };
+        setUser(loggedInUser);
+        return;
+      }
+    } catch (err: any) {
+      console.warn('Firebase signInWithEmail error:', err);
+      const isMissingOrInvalidKey =
+        err?.code === 'auth/api-key-not-valid' ||
+        err?.message?.includes('api-key-not-valid') ||
+        err?.message?.includes('network-request-failed');
+      if (!isMissingOrInvalidKey) {
+        throw err;
+      }
+    } finally {
+      setLoading(false);
+    }
+
     const existing = user || ({} as Partial<UserProfile>);
     const nameFromEmail = email.split('@')[0] || 'Öğrenci';
     const loggedInUser: UserProfile = {
@@ -139,12 +254,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       lastActiveAt: new Date().toISOString(),
     };
     setUser(loggedInUser);
-    setLoading(false);
   };
 
   const signUpWithEmail = async ({
     name,
     email,
+    password,
     university,
   }: {
     name: string;
@@ -153,6 +268,40 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     university?: string | undefined;
   }): Promise<void> => {
     setLoading(true);
+    try {
+      if (password && getApps().length > 0) {
+        const auth = getAuth();
+        const cred = await createUserWithEmailAndPassword(auth, email, password);
+        const fbUser = cred.user;
+        const newUser: UserProfile = {
+          userId: fbUser.uid,
+          email: fbUser.email || email,
+          displayName: name,
+          university: university || 'İstanbul Üniversitesi',
+          plan: 'free',
+          trialUsed: false,
+          trialStartedAt: null,
+          trialEndsAt: null,
+          preferredLanguage: 'tr',
+          createdAt: new Date().toISOString(),
+          lastActiveAt: new Date().toISOString(),
+        };
+        setUser(newUser);
+        return;
+      }
+    } catch (err: any) {
+      console.warn('Firebase createUserWithEmailAndPassword error:', err);
+      const isMissingOrInvalidKey =
+        err?.code === 'auth/api-key-not-valid' ||
+        err?.message?.includes('api-key-not-valid') ||
+        err?.message?.includes('network-request-failed');
+      if (!isMissingOrInvalidKey) {
+        throw err;
+      }
+    } finally {
+      setLoading(false);
+    }
+
     const newUser: UserProfile = {
       userId: 'usr-' + Math.random().toString(36).substring(2, 9),
       email,
@@ -167,7 +316,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       lastActiveAt: new Date().toISOString(),
     };
     setUser(newUser);
-    setLoading(false);
   };
 
   const signInWithGoogle = async (): Promise<void> => {
@@ -190,6 +338,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
+    try {
+      if (getApps().length > 0) {
+        const auth = getAuth();
+        signOut(auth).catch((err) => console.warn('Firebase signOut note:', err));
+      }
+    } catch {
+      // offline fallback
+    }
     setUser(null);
     setEntitlements([]);
     if (typeof window !== 'undefined') {

@@ -105,7 +105,6 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
   const disabled = readOnly || propDisabled;
   const activeLocale = propLocale || config?.locale || 'tr';
   const isAr = activeLocale === 'ar';
-  const isEn = activeLocale === 'en';
 
   const [baseLogP, setBaseLogP] = useState<number>(
     initialState?.logP ?? config?.defaultLogP ?? 2.5

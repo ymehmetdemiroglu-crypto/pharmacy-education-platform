@@ -149,8 +149,13 @@ test.describe('Motion Verification & Jank Budget Suite (A2 Protocol)', () => {
     });
 
     test('verifies CLS < 0.05 and zero long frames on interactive Lesson 1 step transitions', async ({ page }) => {
-      await page.goto('/courses/medchem/lessons/1');
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
+      const enBtn = page.getByRole('button', { name: 'EN', exact: true });
+      if (await enBtn.isVisible()) {
+        await enBtn.click();
+        await page.waitForTimeout(200);
+      }
       await page.waitForTimeout(500);
 
       // Inject Performance Observers for CLS and Long Tasks (>50ms) during interaction

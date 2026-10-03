@@ -216,11 +216,11 @@ service cloud.firestore {
       // Baseline plan="free" and trialUsed=false flags are initialized authoritatively by onUserCreated Cloud Function.
       allow create: if isOwner(userId) &&
                        request.resource.data.userId == request.auth.uid &&
-                       !request.resource.data.keys().hasAny(['roles', 'isAdmin', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements']);
+                       !request.resource.data.keys().hasAny(['roles', 'isAdmin', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements', 'dodoCustomerId']);
       // On update, sensitive entitlement fields can NEVER be modified by client
       allow update: if isOwner(userId) &&
                        !request.resource.data.diff(resource.data).affectedKeys().hasAny([
-                         'roles', 'isAdmin', 'userId', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements'
+                         'roles', 'isAdmin', 'userId', 'plan', 'trialUsed', 'trialStartedAt', 'trialEndsAt', 'entitlements', 'dodoCustomerId'
                        ]);
       allow delete: if false;
 

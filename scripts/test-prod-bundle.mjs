@@ -103,9 +103,10 @@ for (const file of files) {
   let match;
   let pendingCount = 0;
   while ((match = pendingRegex.exec(content)) !== null) {
-    // Verify it is not part of a browser identifier like isInputPending
+    // Verify it is not part of a browser identifier like isInputPending or Firebase SDK internal "Pending promise"
     const precedingChar = match.index > 0 ? content[match.index - 1] : '';
-    if (precedingChar !== 't' && precedingChar !== '_') {
+    const following = content.substring(match.index, match.index + 20);
+    if (precedingChar !== 't' && precedingChar !== '_' && !following.startsWith('Pending promise')) {
       pendingCount++;
     }
   }

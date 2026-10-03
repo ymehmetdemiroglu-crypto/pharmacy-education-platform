@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { generateClientLesson } from './generate-lesson-client.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,7 +14,7 @@ const targetFile = path.join(REPO_ROOT, 'apps/web/src/data/curriculum.client.ts'
 export function sanitizeLessonForClient(data) {
   const citations = (data.citations || []).map((c, i) => {
     const citation = {
-      id: c.id ? c.id.replace(/CIT-MC/gi, 'cit-ref') : `cit-ref-0${i + 1}`,
+      id: `cit-ref-0${i + 1}`,
       book: c.book,
       edition: c.edition,
       topic: c.topic,
@@ -44,10 +45,18 @@ export function sanitizeLessonForClient(data) {
       const { parameterId, ...cleanConfig } = cleanStep.config;
       cleanStep.config = cleanConfig;
     }
+    if (cleanStep.widget && typeof cleanStep.widget === 'object' && cleanStep.widget.config) {
+      const { parameterId, ...cleanWidgetConfig } = cleanStep.widget.config;
+      cleanStep.widget = {
+        ...cleanStep.widget,
+        config: cleanWidgetConfig,
+      };
+    }
     return cleanStep;
   });
 
   return {
+    $schema: data.$schema,
     id: data.id,
     courseId: data.courseId,
     moduleId: data.moduleId,
@@ -99,3 +108,10 @@ export const allClientLessons: Record<string, LessonData> = ${JSON.stringify(cli
 
 fs.writeFileSync(targetFile, fileContent, 'utf8');
 console.log(`[CLIENT-GENERATOR] Successfully generated ${targetFile} with ${Object.keys(clientLessons).length} entries.`);
+
+const lesson01File = path.join(REPO_ROOT, 'apps/web/src/data/lesson01.client.ts');
+const lesson01Raw = fs.readFileSync(path.join(medchemDir, 'lesson-01.json'), 'utf8');
+const lesson01Content = generateClientLesson(lesson01Raw);
+fs.writeFileSync(lesson01File, lesson01Content, 'utf8');
+console.log(`[CLIENT-GENERATOR] Successfully generated ${lesson01File}`);
+

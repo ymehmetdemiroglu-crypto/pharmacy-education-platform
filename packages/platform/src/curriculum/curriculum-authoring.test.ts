@@ -95,6 +95,7 @@ describe('22 Permanently Free Lessons Curriculum Authoring Audit', () => {
     const validWidgetTypes = new Set([
       'ThermodynamicActivityFergusonSlider',
       'IonizationEquilibriumSlider',
+      'IonizationChamber',
       'SarExplorer',
       'ReceptorLigandMatcher',
       'StructureIdentifier',

@@ -176,22 +176,23 @@ export const CatalogPage: React.FC = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {course.modules.map((m, idx) => (
-                  <div
+                  <Link
                     key={m.id}
-                    className="p-3 bg-gray-50 dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 flex items-center justify-between gap-2"
+                    to={`/courses/${course.id}/lessons/${idx * 5 + 1}`}
+                    className="p-3 bg-gray-50 hover:bg-amber-50 dark:bg-[#1E293B] dark:hover:bg-[#28384E] border-2 border-black dark:border-slate-700 flex items-center justify-between gap-2 transition-colors cursor-pointer group"
                   >
                     <div className="space-y-0.5">
                       <span className="text-[10px] font-mono font-semibold text-gray-700 dark:text-gray-300 uppercase">
                         {copy.moduleNumber(idx + 1)}
                       </span>
-                      <h4 className="font-display font-bold text-xs sm:text-sm">
+                      <h4 className="font-display font-bold text-xs sm:text-sm group-hover:text-[#4D96FF] transition-colors">
                         {m.name}
                       </h4>
                     </div>
-                    <span className="shrink-0 text-[10px] font-mono font-bold bg-[#6BCB77] text-black px-1.5 py-0.5 border border-black">
+                    <span className="shrink-0 text-[10px] font-mono font-bold bg-[#6BCB77] text-black px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000000]">
                       {copy.freeLessonsTag}
                     </span>
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

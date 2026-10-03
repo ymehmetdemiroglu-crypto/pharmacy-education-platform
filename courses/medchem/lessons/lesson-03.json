@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
   "id": "mc-mod2-les1",
   "courseId": "medchem",
   "moduleId": "mc-mod-02",
@@ -10,26 +11,71 @@
   "order": 1,
   "access": "free",
   "objective": {
-    "tr": "İlaç-reseptör kompleksini bir arada tutan kovalent olmayan bağların enerjilerini ve SAR katkılarını analiz etmek.",
-    "ar": "تحليل طاقات الروابط غير التساهمية ومساهمات SAR التي تحافظ على تماسك معقد الدواء والمستقبِل.",
-    "en": "Analyze the bond energies and SAR contributions of non-covalent forces stabilizing the drug-receptor complex."
+    "tr": "İlaç-reseptör bağlanma kuvvetlerini (iyonik, H-bağı, hidrofobik, van der Waals) değerlendirmek ve serbest enerji toplamıyla SAR afinite değişimlerini öngörmek.",
+    "ar": "تقييم قوى الارتباط بين الدواء والمستقبِل (الأيونية، الهيدروجينية، الكارهة للماء، وفان دير فالس) والتنبؤ بتغيرات الألفة في علاقات SAR عبر تراكم الطاقة الحرة.",
+    "en": "Evaluate non-covalent drug-receptor binding forces (ionic, H-bonding, hydrophobic, van der Waals) and predict SAR affinity shifts via free energy summation."
   },
   "misconceptions": [
     {
-      "tr": "Kovalent olmayan bağların ilacın reseptöre sıkıca tutunması için çok zayıf olduğu yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن الروابط غير التساهمية أضعف من أن تثبت الدواء على المستقبِل بقوة.",
-      "en": "Non-covalent bonds are too weak to anchor a drug firmly to its biological receptor."
+      "tr": "Kovalent bağların her zaman en üstün ve arzu edilen ilaç-reseptör etkileşimi olduğu yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الروابط التساهمية هي دوماً النمط الأمثل والأكثر تفضيلاً في تفاعل الدواء مع المستقبِل.",
+      "en": "The misconception that covalent bonds are always the superior and most desirable drug-receptor interaction."
     },
     {
-      "tr": "Hidrofobik etkileşimlerin bir çekme kuvvetinden kaynaklandığı düşüncesi.",
-      "ar": "الظن الخاطئ بأن التأثير الكاره للماء ينشأ من قوة تجاذب ذاتية بين السلاسل الكربونية.",
-      "en": "Hydrophobic interactions arise from an intrinsic attractive force between carbon chains."
+      "tr": "Bireysel olarak zayıf olan kovalent olmayan bağların (2-7 kcal/mol) nanomolar (nM) afinite sağlayamayacağı varsayımı.",
+      "ar": "الافتراض الخاطئ بأن الروابط غير التساهمية لضعفها الفردي عاجزة عن تحقيق ألفة ارتباط نانومولية (nM) عالية الإحكام.",
+      "en": "The assumption that individually weak non-covalent bonds (2-7 kcal/mol) cannot produce nanomolar (nM) binding affinity."
+    },
+    {
+      "tr": "Hidrofobik etkileşimin karbon atomlarının birbirini manyetik gibi çekmesinden kaynaklandığı düşüncesi.",
+      "ar": "الظن الخاطئ بأن التأثير الكاره للماء ينشأ من قوة تجاذب ذاتية بين ذرات الكربون كالجاذبية المغناطيسية.",
+      "en": "The misconception that hydrophobic interactions arise from an intrinsic magnetic-like attraction between carbon atoms."
     }
   ],
   "sources": [
     {
       "file": "Fonksiyonel gruplar.pdf",
-      "page": 12
+      "page": 2
+    },
+    {
+      "file": "Fonksiyonel gruplar.pdf",
+      "page": 3
+    },
+    {
+      "file": "Fonksiyonel gruplar.pdf",
+      "page": 5
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 4
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 7
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 8
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 14
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 15
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 24
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 25
+    },
+    {
+      "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+      "page": 33
     }
   ],
   "citations": [
@@ -37,67 +83,165 @@
       "id": "CIT-MC03-01",
       "book": "Foye's Principles of Medicinal Chemistry",
       "edition": "8th ed.",
-      "topic": "Intermolecular Forces & Drug-Receptor Interactions",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Drug-Receptor Interactions and Non-Covalent Binding Forces",
+      "chapter": "Chapter 2",
+      "page": "25-38",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC03-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Intermolecular Forces, Hydrogen Bonding, and Hydrophobic Interactions",
+      "chapter": "Chapter 3",
+      "page": "42-59",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC03-01",
+      "parameter": "Binding force energy hierarchy: Covalent vs Ionic vs H-bond vs Hydrophobic vs van der Waals",
+      "value": "50-150 vs 5-10 vs 2-7 vs 0.5-2 vs 0.5-1 kcal/mol",
+      "status": "verified",
+      "referencePassage": "Slide 7: Covalent 50-150 kcal/mol, Ionic 5-10 kcal/mol, Hydrogen bond 2-7 kcal/mol, Hydrophobic 0.5-2 kcal/mol, van der Waals 0.5-1 kcal/mol."
+    },
+    {
+      "id": "NUM-MC03-02",
+      "parameter": "Free energy per 10-fold affinity shift at 37 C (310 K)",
+      "value": "-1.42 kcal/mol",
+      "status": "verified",
+      "referencePassage": "Delta G = -RT ln(Ka) = -2.303 RT log10(Ka); at 310 K, 2.303 RT = 1.42 kcal/mol per decade change in Kd."
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "mc-mod2-les1-card1",
       "courseId": "medchem",
-      "drugOrConcept": "İyonik Bağ Enerjisi",
-      "prompt": "İlaç-reseptör etkileşiminde iyonik bağın ortalama serbest enerji katkısı nedir?",
-      "answer": "Yaklaşık -5 ila -10 kcal/mol arasında en güçlü kovalent olmayan bağ enerjisidir.",
+      "drugOrConcept": "Non-Kovalent Bağ Enerjileri Hiyerarşisi",
+      "prompt": "İlaç-reseptör etkileşiminde kovalent olmayan bağların güç sıralaması nasıldır?",
+      "answer": "İyonik (5-10 kcal/mol) > Hidrojen bağı (2-7 kcal/mol) > İyon-dipol (1-5 kcal/mol) > Hidrofobik (0.5-2 kcal/mol) > Van der Waals (0.5-1 kcal/mol).",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod2-les1-card2",
       "courseId": "medchem",
-      "drugOrConcept": "Hidrojen Bağı Enerjisi",
-      "prompt": "Klasik bir hidrojen bağının serbest enerjiye katkısı ne kadardır?",
-      "answer": "Yaklaşık -2 ila -5 kcal/mol düzeyindedir.",
+      "drugOrConcept": "Hidrofobik Etkileşimin Entropik Doğası",
+      "prompt": "İlaç ve reseptörün apolar kısımlarının bir araya gelmesini sağlayan gerçek itici güç nedir?",
+      "answer": "Apolar yüzeyleri saran düzenli klatrat su kafeslerinin yıkılması sonucu serbest kalan su moleküllerinin sistem entropisini artırmasıdır (+ΔS).",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod2-les1-card3",
       "courseId": "medchem",
-      "drugOrConcept": "Hidrofobik Etkinin Termodinamik Temeli",
-      "prompt": "Hidrofobik grupların bir araya gelmesi hangi termodinamik parametreyle sürüklenir?",
-      "answer": "Su moleküllerinin serbest kalması sonucu artan entropi (+Delta S) ile sürüklenir.",
+      "drugOrConcept": "Ester vs Amit Biyoizosterik Kararlılığı",
+      "prompt": "Prokaindeki ester grubu amite dönüştürüldüğünde (prokainamid) etki süresi neden uzar?",
+      "answer": "Amit bağı rezonans kararlılığı nedeniyle psödokolinesteraz enziminin nükleofilik hidrolizine dirençlidir; plazma yarılanma ömrü katbekat uzar.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Fonksiyonel Gruplar ve Moleküller Arası Bağlar"
-    },
-    "ar": {
-      "title": "المجموعات الوظيفية والروابط بين الجزيئات"
-    }
-  },
   "steps": [
     {
       "id": "mc-mod2-les1-step-01",
       "stage": "hook",
       "stageIndex": 1,
       "title": {
-        "tr": "Neden Kovalent Bağ Değil?",
-        "ar": "لماذا ليست روابط تساهمية؟",
-        "en": "Transient Contacts, High Affinity"
+        "tr": "Klinik İkilem: Kovalent Tuzak Paradoksu",
+        "ar": "معضلة سريرية: فخ الروابط التساهمية",
+        "en": "Clinical Dilemma: The Covalent Trap Dilemma"
       },
       "prompt": {
-        "tr": "Çoğu ilaç neden hedefine kopmayan kovalent bağlarla değil de zayıf kovalent olmayan bağlarla bağlanmayı tercih eder?",
-        "ar": "لماذا تفضل معظم الأدوية الارتباط بأهدافها عبر روابط ضعيفة غير تساهمية بدلاً من الروابط التساهمية الدائمة؟",
-        "en": "If individual hydrogen bonds have only 2-5 kcal/mol energy, how can non-covalent drug binding achieve nanomolar affinity?"
+        "tr": "Kovalent bağlar (50-150 kcal/mol) kopmaz güçtedir. Ancak ilaçların %95'i hedeflerine zayıf kovalent olmayan bağlarla bağlanır. Neden tüm ilaçları kalıcı kovalent bağ yapacak şekilde tasarlamıyoruz?",
+        "ar": "تمتلك الروابط التساهمية (50-150 kcal/mol) قوة لا تنكسر. ومع ذلك ترتبط 95% من الأدوية بروابط غير تساهمية ضعيفة. لماذا لا نصمم جميع الأدوية بروابط تساهمية دائمة؟",
+        "en": "Covalent bonds (50-150 kcal/mol) are unbreakable at body temperature. Yet 95% of drugs rely on weak non-covalent forces. Why don't chemists design all drugs to form permanent covalent bonds?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": {
+              "tr": "Kalıcı kovalent bağlar reseptörü ömür boyu kilitler; doz ayarlanamaz, toksisite ve immünolojik aşırı duyarlılık (haptenleşme) riski fırlar.",
+              "ar": "تحظر الروابط التساهمية الدائمة المستقبِل مدى الحياة؛ مما يمنع ضبط الجرعة ويرفع مخاطر التسمم والتحسس المناعي بشكل خطير.",
+              "en": "Permanent covalent bonds lock targets irreversibly, preventing dose titration and triggering severe toxicity and immunological haptenization."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Kovalent bağın kırılması imkansızdır; etki yalnızca yeni reseptör senteziyle biter. Bu durum geri dönüşümsüz organ hasarına ve immün yanıtlara yol açar.",
+              "ar": "صحيح! يستحيل كسر الرابطة التساهمية تلقائياً؛ ولا يزول التأثير إلا باصطناع مستقبِلات جديدة مما يهدد بنخر نسيجي دائم وتفاعلات مناعية.",
+              "en": "Correct! Covalent bonds cannot dissociate spontaneously; effect termination requires de novo protein synthesis, creating high risks of toxicity."
+            }
+          },
+          {
+            "id": "opt-1b",
+            "text": {
+              "tr": "Kovalent bağlar biyolojik ortamda saniyeler içinde su molekülleri tarafından kendiliğinden hidroliz edilir.",
+              "ar": "تتفكك الروابط التساهمية تلقائياً في البيئة الحيوية بواسطة جزيئات الماء خلال ثوانٍ معدودة.",
+              "en": "Covalent bonds are spontaneously hydrolyzed by ambient water molecules within seconds in biological fluids."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Kovalent bağlar 50-150 kcal/mol gibi devasa bir enerjiye sahiptir ve suyla kendiliğinden dakikalar içinde kopmaz.",
+              "ar": "مغالطة: تمتلك الروابط التساهمية طاقة هائلة (50-150 kcal/mol) ولا يمكن للماء كسرها تلقائياً عند حرارة الجسم.",
+              "en": "Misconception: Covalent bonds possess massive activation energies (50-150 kcal/mol) and do not spontaneously hydrolyze in water."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "İnsan proteinlerinde kovalent bağ oluşturabilecek hiçbir nükleofilik amino asit grubu bulunmaz.",
+              "ar": "تخلو بروتينات جسم الإنسان من أي مجموعات أمينية أليفة للنواة قادرة على تشكيل روابط تساهمية.",
+              "en": "Human proteins contain zero nucleophilic amino acid residues capable of participating in covalent reactions."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Reseptör ve enzimlerde kovalent saldırı yapabilen nükleofilik Serin (-OH), Sistein (-SH) ve Lizin (-NH2) kalıntıları bolca bulunur.",
+              "ar": "مغالطة: تعج البروتينات بمجموعات محبة للنواة نشطة مثل سيرين (-OH)، سيستئين (-SH)، ولايسين (-NH2).",
+              "en": "Misconception: Enzymes and receptors are rich in reactive nucleophilic residues such as Serine (-OH), Cysteine (-SH), and Lysine (-NH2)."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": "Kalıcı kovalent bağlar reseptörü kilitler; doz ayarlanamaz ve toksisite fırlar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Reversibilite eksikliği toksisite doğurur."
+          },
+          {
+            "id": "opt-1b",
+            "text": "Kovalent bağlar suda saniyeler içinde hidroliz olur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kovalent bağlar aşırı kararlıdır."
+          },
+          {
+            "id": "opt-1c",
+            "text": "İnsanda kovalent bağ yapacak amino asit yoktur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Ser, Cys, Lys nükleofilik kalıntılardır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Kovalent olmayan bağlar ilaca 'aç-kapa' esnekliği kazandırır; sinyal iletimi fizyolojik olarak sonlandırılabilir ve antagonistlerle yarışabilir.",
+          "ar": "تمنح الروابط غير التساهمية الدواء مرونة ديناميكية عكوسة، مما يسمح بإنهاء الإشارة الحيوية في الوقت المناسب ومنافسة الضادات.",
+          "en": "Non-covalent bonds provide dynamic on-off flexibility, allowing biological signals to terminate and enabling competitive antagonism."
+        },
+        "explanation": {
+          "tr": "Kovalent ilaçlar (organofosfatlar, azotlu hardallar) kalıcı inaktivasyon yapar. Çoğu ilaçta ise reversibilite ve güvenlik için non-kovalent bağlar tercih edilir (Slayt 4, 8, 9).",
+          "ar": "تحدث الأدوية التساهمية حظرًا دائمًا. بينما تفضل الأدوية العلاجية الروابط غير التساهمية لتحقيق الأمان والعكوسية (شريحة 4، 8، 9).",
+          "en": "Covalent drugs cause irreversible inactivation. For most therapies, non-covalent reversibility is essential for clinical safety."
+        }
+      },
       "technicalTerms": [
+        {
+          "term": "kovalent bağ",
+          "arContext": "الرابطة التساهمية"
+        },
         {
           "term": "non-kovalent bağ",
           "arContext": "الرابطة غير التساهمية"
@@ -105,19 +249,33 @@
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Bir ilacın reseptörüne ömür boyu yapışıp hiç ayrılmaması durumunda hastaya ne olur?",
+          "ar": "ماذا يحدث للمريض إذا التصق الدواء بمستقبله إلى الأبد دون أي انفصال؟",
+          "en": "What happens to a patient if a drug binds its target receptor permanently without ever releasing?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Tersinir (reversible) bağlanma, ilacın vücuttan atılmasıyla etkinin sonlanmasını sağlar.",
+          "ar": "الارتباط العكوس يضمن انتهاء التأثير الدوائي بمجرد تصفية الدواء من الجسم.",
+          "en": "Reversible binding ensures pharmacological actions terminate naturally as drug concentration falls."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Kovalent bağlar dozu geri almayı imkansız kılar; non-kovalent bağlar güvenli ve titre edilebilir tedavi sağlar.",
+          "ar": "تجعل الروابط التساهمية التراجع عن الجرعة مستحيلاً؛ بينما تتيح الروابط غير التساهمية علاجاً آمناً قابلاً للمعايرة.",
+          "en": "Covalent bonding makes dose titration impossible; non-covalent binding guarantees safe, titratable therapeutics."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 4
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 8
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 9
         }
       ]
     },
@@ -126,106 +284,260 @@
       "stage": "question",
       "stageIndex": 2,
       "title": {
-        "tr": "Tahmin: Bağların Toplamsal Gücü",
-        "ar": "توقع: القوة التراكمية للروابط",
-        "en": "Prediction: Bond Hierarchy"
+        "tr": "Tahmin: Bireysel Zayıflık vs Toplamsal Güç",
+        "ar": "توقع: الضعف الفردي مقابل القوة التراكمية",
+        "en": "Prediction: Individual Weakness vs Cumulative Power"
       },
       "prompt": {
-        "tr": "Tek bir iyonik bağ, iki hidrojen bağı ve üç van der Waals teması bir araya geldiğinde ne olur?",
-        "ar": "عندما تجتمع رابطة أيونية واحدة مع رابطتين هيدروجينيتين وثلاث نقاط تلامس van der Waals، ماذا يحدث؟",
-        "en": "Rank the following intermolecular forces in order of individual bond strength: Ionic, Hydrogen Bond, Van der Waals, Covalent."
+        "tr": "Bireysel bir hidrojen bağı yalnızca 2-7 kcal/mol enerji sağlarken, non-kovalent bir ilaç hedef reseptörüne nasıl pikomolar (pM) veya nanomolar (nM) düzeyinde sımsıkı tutunabilir?",
+        "ar": "بينما تمنح الرابطة الهيدروجينية المنفردة 2-7 kcal/mol فقط، كيف يستطيع دواء غير تساهمي التشبث بمستقبله بقوة نانومولية (nM) أو بيكومولية (pM) فائقة الإحكام؟",
+        "en": "An individual hydrogen bond yields only 2-7 kcal/mol. How can a non-covalent drug achieve nanomolar (nM) or picomolar (pM) binding affinity without forming covalent bonds?"
       },
       "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": {
+              "tr": "Çoklu non-kovalent temas noktalarının (iyonik, H-bağı, hidrofobik) serbest enerjileri toplanarak devasa bir toplam bağlanma serbest enerjisi (ΔG° = -12 kcal/mol) oluşturur.",
+              "ar": "تتراكم الطاقات الحرة لنقاط التلامس المتعددة (أيونية، هيدروجينية، كارهة للماء) لتولد طاقة ارتباط كلية هائلة (ΔG° = -12 kcal/mol).",
+              "en": "The free energies of multiple discrete non-covalent contacts (ionic, H-bonds, hydrophobic) sum together into a massive net binding free energy (ΔG° = -12 kcal/mol)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Termodinamik kural: ΔG°_toplam = Σ ΔG°_bireysel dir. 1 iyonik bağ, 2 hidrojen bağı ve hidrofobik temaslar bir araya gelince sub-nanomolar afinite doğar.",
+              "ar": "صحيح! القاعدة الثرموديناميكية: ΔG°_الكلية = مجموع ΔG°_الفردية. باجتماع رابطة أيونية مع رابطتين هيدروجينيتين ومناطق كارهة للماء تتولد ألفة نانومولية مذهلة.",
+              "en": "Correct! Thermodynamically, ΔG°_total = Σ ΔG°_individual. Combining an ionic anchor, 2 H-bonds, and hydrophobic surfaces yields sub-nanomolar affinity."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Reseptör proteini ilacı sarınca moleküler ağırlığı 10 katına çıkar ve kütle çekimiyle tutulur.",
+              "ar": "عندما يحيط بروتين المستقبِل بالدواء يتضاعف وزنه الجزيئي 10 مرات فيثبت بقوى التجاذب الثقالي.",
+              "en": "When the receptor protein envelops the drug, its molecular weight increases 10-fold, trapping it via gravitational mass attraction."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Moleküler ölçekte kütle çekimi sıfırdır; bağlanmayı yalnızca elektrostatik ve kuantum mekaniksel kuvvetler yönetir.",
+              "ar": "مغالطة: قوى الجاذبية الثقالية مهملة تماماً على المستوى الجزيئي؛ والفيزياء الكهروستاتيكية هي الحاكمة حصراً.",
+              "en": "Misconception: Gravitational forces are completely negligible at the molecular scale; binding is governed strictly by electrostatics and thermodynamics."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Nanomolar afinite yalnızca kovalent bağlarla mümkündür; non-kovalent ilaçlar daima mikromolar (µM) düzeyinde kalır.",
+              "ar": "تقتصر الألفة النانومولية على الروابط التساهمية فقط؛ بينما تبقى الأدوية غير التساهمية دوماً في المدى الميكرومولي (µM).",
+              "en": "Nanomolar affinity is strictly impossible without covalent bonds; non-covalent drugs never exceed micromolar (µM) affinity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Çoğu klinik ilaç (örn. atorvastatin, fentanil) tamamen kovalent olmayan bağlarla sub-nanomolar afiniteye ulaşır.",
+              "ar": "مغالطة: تحقق معظم الأدوية المعتمدة (مثل أتورفاستاتين وفنتانيل) ألفة دون النانومولية عبر روابط غير تساهمية بالكامل.",
+              "en": "Misconception: Most potent clinical drugs (e.g. atorvastatin, fentanyl) achieve sub-nanomolar affinity purely through non-covalent networks."
+            }
+          }
+        ]
+      },
       "config": {
-        "revealedOutcome": "Bireysel zayıf bağlar toplanarak devasa bir afinite ve seçicilik üretir."
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": "Çoklu non-kovalent temas noktalarının serbest enerjileri toplanarak devasa afinite üretir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Bireysel bağ enerjileri toplanır."
+          },
+          {
+            "id": "opt-2b",
+            "text": "Kütle çekimiyle tutulur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Moleküler düzeyde yerçekimi sıfırdır."
+          },
+          {
+            "id": "opt-2c",
+            "text": "Nanomolar güç sadece kovalent bağla olur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Non-kovalent ağlar pikomolar afiniteye ulaşabilir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Bireysel zayıf bağlar sinerjik biçimde toplanır: 10-15 zayıf bağ birleştiğinde toplam bağlanma enerjisi -10 ila -15 kcal/mol e ulaşır (Kd = 0.1 nM).",
+          "ar": "تتآزر الروابط الضعيفة تراكمياً: باجتماع 10-15 تماساً ضعيفاً تبلغ الطاقة الحرة -10 إلى -15 kcal/mol محققة ألفة نانومولية فائقة (Kd = 0.1 nM).",
+          "en": "Individually weak contacts sum synergistically: 10-15 non-covalent interactions achieve net ΔG° = -10 to -15 kcal/mol (Kd = 0.1 nM)."
+        },
+        "explanation": {
+          "tr": "Termodinamik formül: ΔG° = -RT ln(Ka) = 2.303 RT log10(Kd). Her -1.42 kcal/mol luk serbest enerji kazancı afiniteyi tam 10 kat artırır (Slayt 8, 34).",
+          "ar": "المعادلة الثرموديناميكية: ΔG° = -RT ln(Ka). كل ربح مقداره -1.42 kcal/mol في الطاقة الحرة يضاعف الألفة بمقدار 10 مرات (شريحة 8، 34).",
+          "en": "Thermodynamic relation: ΔG° = -RT ln(Ka). Every -1.42 kcal/mol increment in free energy enhances binding affinity by a full 10-fold order of magnitude."
+        }
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "serbest bağlanma enerjisi",
+          "arContext": "طاقة الارتباط الحرة ΔG"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "afinite sabiti",
+          "arContext": "ثابت الألفة Kd"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Tek bir iplik kolayca kopar; binlerce iplikten örülen bir halat kopar mı?",
+          "ar": "يسهل قطع خيط منفرد؛ لكن هل ينقطع حبل مجدول من آلاف الخيوط بسهولة؟",
+          "en": "A single thread snaps easily; does a thick rope woven from thousands of threads break?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Termodinamikte bağımsız temas noktalarının serbest enerjileri (ΔG) cebirsel olarak toplanır.",
+          "ar": "في الديناميكا الحرارية، تجمع الطاقات الحرة (ΔG) لنقاط التلامس المستقلة جبرياً.",
+          "en": "In thermodynamics, free energies (ΔG) of independent contact points sum algebraically."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "İyonik, H-bağı ve hidrofobik enerjiler toplanarak -12 kcal/mol oluşturur ve nanomolar afinite sağlar.",
+          "ar": "تتراكم طاقات الروابط الأيونية والهيدروجينية والكارهة للماء لتشكل -12 kcal/mol محققة ألفة نانومولية.",
+          "en": "Summing ionic, H-bond, and hydrophobic contributions reaches -12 kcal/mol, unlocking nanomolar potency."
         }
       ],
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mc21-1",
-            "text": {
-              "tr": "Zayıf kalır ve ligand hemen ayrışır.",
-              "ar": "يبقى الارتباط ضعيفاً وينفصل الربيط فوراً.",
-              "en": "It increases logP by approximately +0.50 units."
-            },
-            "isCorrect": false
-          },
-          {
-            "id": "opt-mc21-2",
-            "text": {
-              "tr": "Enerjiler toplanarak nanomolar afiniteli son derece kararlı bir kompleks oluşturur.",
-              "ar": "تتراكم الطاقات لتشكل معقداً شديد الاستقرار بألفة في نطاق النانومولار.",
-              "en": "It decreases lipophilicity."
-            },
-            "isCorrect": true
-          }
-        ]
-      }
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 8
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      ]
     },
     {
       "id": "mc-mod2-les1-step-03",
       "stage": "intuition",
       "stageIndex": 3,
       "title": {
-        "tr": "Sezgisel Model: Cırt Cırt (Velcro) Prensibi",
-        "ar": "نموذج حدسي: مبدأ أشرطة الفيلكرو",
-        "en": "Molecular Intuition: Velcro Analogy"
+        "tr": "Sezgisel Model: Cırt Cırt (Velcro) vs Japon Yapıştırıcısı",
+        "ar": "نموذج حدسي: شريط فيلكرو مقابل الغراء الخارق",
+        "en": "Intuitive Model: Velcro vs Superglue"
       },
       "prompt": {
-        "tr": "Tek bir plastik kanca hiçbir şeyi tutamaz; ancak binlerce minik kanca birleştiğinde güçlü bir yükü taşır.",
-        "ar": "خيط بلاستيكي واحد من الفيلكرو لا يمسك شيئاً، لكن تكاتف مئات الخيوط الصغيرة معاً يولد قوة إمساك هائلة.",
-        "en": "Each tiny hook of Velcro is weak on its own, but hundreds of microscopic hooks acting together create an unbreakable grip."
+        "tr": "Kovalent bağ Japon yapıştırıcısı gibidir; tek noktadan yapışır ama sökmek yüzeyi yırtar. Non-kovalent bağlanma ise cırt cırt (Velcro) gibidir; yüzlerce minik kanca birleşince tutar, çekince iz bırakmadan ayrılır.",
+        "ar": "الرابطة التساهمية كالغراء الخارق؛ تلتحم بنقطة واحدة لكن نزعها يدمر السطح. بينما الارتباط غير التساهمي كشريط فيلكرو؛ مئات الخطافات الدقيقة تمسك بإحكام وتنفصل عند السحب بنظافة.",
+        "en": "Covalent binding is like superglue: unbreakable, but tearing it off destroys the surface. Non-covalent binding is like Velcro: hundreds of micro-hooks hold tightly together, yet peel off cleanly when needed."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "Cırt cırt modeli, ilacın reseptörüne yüksek afinite ve seçicilikle tutunurken, gerektiğinde yan etki yaratmadan ayrılabilmesini (tersinirliği) açıklar.",
+              "ar": "يفسر نموذج فيلكرو قدرة الدواء على التثبت بألفة ونوعية عاليتين، مع إمكانية الانفصال النظيف عكوسياً عند الحاجة.",
+              "en": "The Velcro model explains how a drug achieves high affinity and stereoselectivity while retaining reversible dissociation to avoid toxicity."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz analoji kavrayışı! Velcro mekanizması hem yüksek tutunma kuvvetini hem de geri dönüşümlü (reversibl) ayrılabilmeyi mükemmel açıklar.",
+              "ar": "فهم استثنائي للمقاربة! يجسد شريط فيلكرو كلاً من قوة التثبيت العالية والانفصال العكوس النظيف دون إتلاف الهدف.",
+              "en": "Flawless analogical understanding! The Velcro model beautifully reconciles high multi-point binding affinity with reversible dissociation."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "Japon yapıştırıcısı modeli, tüm tansiyon ve astım ilaçlarında hedeflenen ideal farmakolojik davranıştır.",
+              "ar": "يمثل الغراء الخارق السلوك الدوائي المثالي المنشود في جميع أدوية الضغط والربو.",
+              "en": "The superglue model represents the ideal pharmacological mechanism sought for all cardiovascular and asthma drugs."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Kalıcı yapışma tansiyon veya astım ilaçlarında ölümcül hipotansiyon veya bronkospazma yol açar; tersinir etki şarttır.",
+              "ar": "مغالطة: الارتباط الدائم في أدوية الضغط يسبب هبوطاً دموياً قاتلاً؛ فالعكوسية شرط لا غنى عنه للأمان.",
+              "en": "Misconception: Permanent target destruction in cardiovascular drugs causes fatal hypotension; reversible control is mandatory."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Cırt cırt kancaları reseptör proteinini parçalayarak geri dönüşümsüz inaktivasyona sebep olur.",
+              "ar": "تقوم خطافات فيلكرو بتمزيق بروتين المستقبِل مسببة تثبيطاً غير عكوس.",
+              "en": "Velcro hooks physically shred the receptor protein, inducing irreversible target destruction."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Non-kovalent bağlar proteini tahrip etmez; bağlar termal hareketle iz bırakmadan kendiliğinden açılır.",
+              "ar": "مغالطة: الروابط غير التساهمية لا تتلف البروتين؛ وتتلاشى نقاط التلامس بالاهتزاز الحراري الطبيعي دون أي أثر.",
+              "en": "Misconception: Non-covalent contacts cause zero covalent damage; complexes dissociate cleanly via thermal kinetic motion."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": "Cırt cırt modeli, yüksek afinite ile tersinir ayrılabilme dengesini açıklar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Çoklu temaslar sıkı tutar ama ayrılabilir."
+          },
+          {
+            "id": "opt-3b",
+            "text": "Japon yapıştırıcısı tüm ilaçlarda idealdir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kalıcı bağ kontrolsüz toksisite yaratır."
+          },
+          {
+            "id": "opt-3c",
+            "text": "Cırt cırt reseptörü parçalar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Non-kovalent bağ proteini yırtmaz."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Velcro ilkesi: İlaç ve reseptör birbirine binlerce nanometre karelik mikromimariyle uyar; temas kesilince reseptör orijinal haline döner.",
+          "ar": "مبدأ فيلكرو: يتطابق الدواء والمستقبِل بهندسة جزيئية دقيقة؛ وعند زوال التلامس يعود المستقبِل لحالته الطبيعية الأصلية.",
+          "en": "The Velcro principle: Drugs fit receptor pockets with complementary micromorphology; upon dissociation, targets return to baseline."
+        },
+        "explanation": {
+          "tr": "Reversibilite ilacın yarılanma ömrünü ve etki süresini yönetilebilir kılar. Vücut ilacı klerensle temizledikçe reseptör serbest kalır (Slayt 4, 8).",
+          "ar": "تتيح العكوسية التحكم بعمر النصف ومدة التأثير الدوائي. ومع تصفية الجسم للدواء يستعيد المستقبِل حريته (شريحة 4، 8).",
+          "en": "Reversibility allows drug action to terminate as plasma clearance reduces concentration, restoring receptor availability."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "kooperatif bağlanma",
-          "arContext": "الارتباط التعاوني"
+          "term": "tersinir bağlanma",
+          "arContext": "الارتباط العكوس"
+        },
+        {
+          "term": "moleküler seçicilik",
+          "arContext": "النوعية الجزيئية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Cırt cırt bandının yüzlerce minik plastik kancasından tek birini çekmek ne kadar kolaydır?",
+          "ar": "ما مدى سهولة نزع خطاف بلاستيكي واحد من شريط فيلكرو؟",
+          "en": "How easy is it to pull open a single plastic micro-hook on a Velcro strip?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Tek kanca zayıftır ama tüm şerit bastırıldığında ayırmak ciddi bir kuvvet gerektirir.",
+          "ar": "الخطاف المنفرد ضعيف، لكن عند ضغط الشريط كاملاً يتطلب فصله قوة ملموسة.",
+          "en": "One hook is weak, but hundreds pressed together require substantial energy to separate."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Bu model, zayıf hidrojen bağlarının ve van der Waals temaslarının birleşerek nasıl nanomolar afinite ürettiğini açıklar.",
+          "ar": "يفسر هذا كيف تتحد الروابط الهيدروجينية وقوى فان دير فالس لتوليد ألفة نانومولية هائلة.",
+          "en": "This explains how weak H-bonds and van der Waals contacts combine to produce nanomolar target affinity."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 4
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 8
         }
       ]
     },
@@ -234,38 +546,137 @@
       "stage": "visual_explanation",
       "stageIndex": 4,
       "title": {
-        "tr": "Etkileşim Ağları ve Bağ Mesafeleri",
-        "ar": "شبكات التفاعل والمسافات البينية",
-        "en": "Visual Structural Map: Distance Dependency"
+        "tr": "Görsel Mekanizma: 4 Temel Bağ Kuvveti Hiyerarşisi",
+        "ar": "آلية بصرية: هرمية قوى الارتباط الأربع الأساسية",
+        "en": "Visual Mechanism: The 4-Force Binding Hierarchy"
       },
       "prompt": {
-        "tr": "İyonik bağlar 2.5-4.0 Å, hidrojen bağları 2.7-3.2 Å mesafede etkilidir. Mesafe 1 Å uzadığında kuvvet hızla çöker.",
-        "ar": "تعمل الروابط الأيونية عند مسافة 2.5-4.0 Å والهيدروجينية عند 2.7-3.2 Å. أي تباعد بمقدار 1 Å يضعف القوة سريعاً.",
-        "en": "Ionic bonds decay with 1/r, dipole interactions with 1/r^3, and London dispersion forces require tight atomic contact decaying with 1/r^6."
+        "tr": "İlaç-reseptör bağları güç sırasına göre dizilir: İyonik (5-10 kcal/mol, uzun menzilli 1/r²), Hidrojen bağı (2-7 kcal/mol, 180° yönlü), Hidrofobik (0.5-2 kcal/mol), van der Waals (0.5-1 kcal/mol, kısa menzilli 1/r⁶).",
+        "ar": "تصنف قوى الارتباط حسب قوتها: الأيونية (5-10 kcal/mol، طويلة المدى 1/r²)، الهيدروجينية (2-7 kcal/mol، اتجاهية 180°)، الكارهة للماء (0.5-2 kcal/mol)، وفان دير فالس (0.5-1 kcal/mol، قصيرة المدى 1/r⁶).",
+        "en": "Forces rank by strength: Ionic (5-10 kcal/mol, long-range 1/r²), Hydrogen bond (2-7 kcal/mol, strict 180° directionality), Hydrophobic (0.5-2 kcal/mol), and van der Waals (0.5-1 kcal/mol, short-range 1/r⁶)."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "İyonik bağ ilacı reseptör cebine uzaktan çeken ilk kılavuz güçtür; hidrojen bağı ise katı 180° açı geometrisiyle stereoseçiciliği kilitler.",
+              "ar": "تمثل الرابطة الأيونية القوة الموجهة بعيدة المدى لسحب الدواء نحو الجيب، بينما تحسم الرابطة الهيدروجينية الانتقائية الفراغية بزاوية 180° الصارمة.",
+              "en": "Ionic bonds act as long-range electrostatic guides drawing drugs into pockets, while hydrogen bonds lock stereoselective fit via rigid 180° geometry."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! İyonik bağlar mesafenin karesiyle (1/r²) zayıflar ve ilacı uzaktan yakalar. Hidrojen bağı ise doğrusal (180°) olmadığında gücünün yarısını kaybeder; seçiciliğin efendisidir.",
+              "ar": "رائع! تضعف القوى الأيونية مع مربع المسافة (1/r²) فتجذب الدواء من بعيد، بينما تفقد الرابطة الهيدروجينية نصف قوتها عند انحرافها عن 180° حاكمةً الانتقائية.",
+              "en": "Superb! Ionic forces decay with 1/r², acting at distance. Hydrogen bonds lose >50% energy if deflected 30° from 180°, dictating stereoselective fit."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "Van der Waals kuvvetleri en uzun menzilli kuvvettir ve ilacı 10 nanometre mesafeden yakalar.",
+              "ar": "قوى فان دير فالس هي الأطول مدى وتلتقط الدواء من مسافة 10 نانومتر.",
+              "en": "Van der Waals dispersion forces possess the longest operational range, capturing ligands from 10 nanometers away."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Van der Waals kuvvetleri mesafenin 6. kuvvetiyle (1/r⁶) aşırı hızlı söner; yalnızca atomlar birbirine temas ettiğinde (0.3-0.4 nm) devreye girer.",
+              "ar": "مغالطة: تتلاشى قوى فان دير فالس مع القوة السادسة للمسافة (1/r⁶) بسرعة فائقة؛ ولا تعمل إلا عند التلامس المباشر (0.3-0.4 نانومتر).",
+              "en": "Misconception: Van der Waals forces decay rapidly with 1/r⁶ and operate only at intimate contact distances (0.3-0.4 nm)."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "Hidrojen bağları tamamen yönsüzdür; donör ve akseptör atomlar herhangi bir açıyla eşit güçte bağlanır.",
+              "ar": "الروابط الهيدروجينية غير اتجاهية بالكامل؛ وترتبط الذرات المانحة والآخذة بأي زاوية بنفس القوة.",
+              "en": "Hydrogen bonds are strictly non-directional; donor and acceptor atoms bind with equal strength regardless of angle."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Hidrojen bağları son derece yönlüdür. Donör-H-Akseptör açısı 180° doğrultusunda olmadığında bağ dramatik biçimde zayıflar.",
+              "ar": "مغالطة: الروابط الهيدروجينية اتجاهية بامتياز؛ وأي انحراف عن استقامة 180° بين المانح والبروتون والآخذ يضعف الرابطة بشدة.",
+              "en": "Misconception: Hydrogen bonds are acutely directional; maximum orbital overlap requires a linear 180° geometry."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": "İyonik bağ uzaktan çeker; hidrojen bağı 180° açıyla seçiciliği kilitler.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Menzil ve yönlülük hiyerarşisi bağlanmayı yönetir."
+          },
+          {
+            "id": "opt-4b",
+            "text": "Van der Waals en uzun menzilli kuvvettir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Van der Waals 1/r⁶ ile aşırı kısa menzillidir."
+          },
+          {
+            "id": "opt-4c",
+            "text": "Hidrojen bağları yönsüzdür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: 180° açı geometrisi şarttır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Bağ korelasyonu: Uzun menzilli iyonik çekim ilacı cebe çeker; hidrofobik çöküş yerleştirir; yönlü hidrojen bağları ve van der Waals temasları seçiciliği kilitler.",
+          "ar": "تكامل الروابط: الجذب الأيوني بعيد المدى يسحب الدواء، والانهيار الكاره للماء يثبته، وتراصف الروابط الهيدروجينية يحكم القفل النوعي.",
+          "en": "Binding orchestration: Long-range ionic attraction steers the drug; hydrophobic collapse seats it; directional H-bonds lock selectivity."
+        },
+        "explanation": {
+          "tr": "Bağ enerjileri tablosu (Slayt 7, 14, 16, 24): İyonik (5-10 kcal/mol) > H-bağı (2-7 kcal/mol) > Hidrofobik (0.5-2 kcal/mol) > van der Waals (0.5-1 kcal/mol).",
+          "ar": "جدول طاقات الروابط (شريحة 7، 14، 16، 24): أيونية (5-10) > هيدروجينية (2-7) > كارهة للماء (0.5-2) > فان دير فالس (0.5-1 kcal/mol).",
+          "en": "Energy hierarchy: Ionic (5-10 kcal/mol) > H-bond (2-7 kcal/mol) > Hydrophobic (0.5-2 kcal/mol) > van der Waals (0.5-1 kcal/mol)."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "bağ mesafesi",
-          "arContext": "مسافة الرابطة"
+          "term": "iyonik çekim menzili",
+          "arContext": "مدى التجاذب الأيوني"
+        },
+        {
+          "term": "hidrojen bağı yönlülüğü",
+          "arContext": "اتجاهية الرابطة الهيدروجينية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Farklı bağların mesafe bağımlılıklarını düşünün: 1/r² vs 1/r⁶.",
+          "ar": "قارن اعتماد القوى المختلفة على المسافة: 1/r² مقابل 1/r⁶.",
+          "en": "Consider distance dependence: 1/r² for Coulombic vs 1/r⁶ for dispersion forces."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Hangi kuvvet en uzaktan çeker? Hangi kuvvet katı bir 180° açı geometrisi gerektirir?",
+          "ar": "أي قوة تجذب من أبعد مسافة؟ وأي قوة تتطلب زاوية هندسية صارمة بـ 180 درجة؟",
+          "en": "Which force pulls from the greatest distance? Which requires strict linear geometry?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "İyonik bağ uzun menzilli çekici kılavuzdur; hidrojen bağı 180° doğrusal açıyla stereoseçiciliği sağlar.",
+          "ar": "الرابطة الأيونية دليل جاذب بعيد المدى؛ والرابطة الهيدروجينية باستقامة 180° تؤمن القفل الفراغي النوعي.",
+          "en": "Ionic bonds steer drugs from distance; hydrogen bonds lock stereoselective fit via 180° alignment."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 7
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 14
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 16
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 24
         }
       ]
     },
@@ -274,162 +685,471 @@
       "stage": "interactive_artifact",
       "stageIndex": 5,
       "title": {
-        "tr": "İnteraktif Laboratuvar: SAR Explorer",
-        "ar": "المختبر التفاعلي: مستكشف SAR",
-        "en": "Interactive Artifact: SAR Explorer (Bond Tuning)"
+        "tr": "İnteraktif Simülatör: SAR Analizi ve Bağ Optimizasyonu",
+        "ar": "محاكاة تفاعلية: استكشاف SAR وتحسين الروابط",
+        "en": "Interactive Simulator: SAR Explorer & Binding Optimization"
       },
       "prompt": {
-        "tr": "İlaç iskeletine sırasıyla amino, hidroksil ve fenil grupları ekleyerek toplam serbest bağlanma enerjisindeki (Delta G) artışı ölçün.",
-        "ar": "أضف مجموعات الأمين والهيدروكسيل والفينيل إلى الهيكل الدوائي لقياس الزيادة في طاقة الارتباط الحرة (Delta G).",
-        "en": "Mutate functional groups on the ligand scaffold. Observe how replacing an OH group with CH3 eliminates hydrogen bonding."
+        "tr": "Simülatörde prokain iskeletinde R1 aromatik halka ve R2 amin gruplarını değiştirin. Hidrofobik kütle ve iyonik etkileşimin afiniteyi (Kd) nanomolar düzeye indirmesini izleyin.",
+        "ar": "في المحاكي، عدل المجموعتين R1 و R2 على هيكل البروكائين. راقب كيف يؤدي التلامس الكاره للماء والأيوني إلى تعزيز الألفة (Kd) لتصل لمستوى النانومول.",
+        "en": "In the simulator, swap R1 aromatic and R2 amine substituents on the procaine core. Observe how hydrophobic bulk and ionic anchors drive Kd into nanomolar potency."
       },
       "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "widgetType": "SarExplorer",
       "widget": {
         "type": "SarExplorer",
         "config": {
-          "baseMolecule": "phenylethylamine",
-          "targetPocket": "adrenergic_beta1"
+          "scaffoldName": "Lokal Anestezik Prokain Türevleri",
+          "scaffoldDescription": "Sodyum kanalı vestibülünde hidrofobik ve iyonik temasları optimize ederek afiniteyi artırın.",
+          "baseLogP": 1.9,
+          "basePka": 8.9,
+          "baseAffinityNm": 1200,
+          "positions": [
+            {
+              "positionName": "R1 (Aromatik para-sübstitüent)",
+              "defaultOptionId": "r1-h",
+              "options": [
+                {
+                  "id": "r1-h",
+                  "name": "Hidrojen (-H)",
+                  "structureSnippet": "-H",
+                  "deltaLogP": 0.0,
+                  "deltaPka": 0.0,
+                  "affinityMultiplier": 1.0,
+                  "toxicityRisk": "low"
+                },
+                {
+                  "id": "r1-nh2",
+                  "name": "Amino (-NH2, Prokain)",
+                  "structureSnippet": "-NH2",
+                  "deltaLogP": -0.4,
+                  "deltaPka": 0.1,
+                  "affinityMultiplier": 4.0,
+                  "toxicityRisk": "low"
+                },
+                {
+                  "id": "r1-butox",
+                  "name": "Butoksi (-O-C4H9, Dibukain tipi)",
+                  "structureSnippet": "-O-C4H9",
+                  "deltaLogP": 1.6,
+                  "deltaPka": 0.0,
+                  "affinityMultiplier": 25.0,
+                  "toxicityRisk": "low"
+                }
+              ]
+            },
+            {
+              "positionName": "R2 (Terminal bazik amin)",
+              "defaultOptionId": "r2-dimethyl",
+              "options": [
+                {
+                  "id": "r2-dimethyl",
+                  "name": "Dimetilamino (-N(CH3)2)",
+                  "structureSnippet": "-N(CH3)2",
+                  "deltaLogP": 0.0,
+                  "deltaPka": -0.2,
+                  "affinityMultiplier": 1.5,
+                  "toxicityRisk": "low"
+                },
+                {
+                  "id": "r2-diethyl",
+                  "name": "Dietilamino (-N(C2H5)2)",
+                  "structureSnippet": "-N(C2H5)2",
+                  "deltaLogP": 0.6,
+                  "deltaPka": 0.2,
+                  "affinityMultiplier": 5.0,
+                  "toxicityRisk": "low"
+                }
+              ]
+            }
+          ],
+          "targetGoal": {
+            "description": "Kd <= 20 nM ve logP 2.5 - 4.0 aralığına ulaşın.",
+            "minLogP": 2.5,
+            "maxLogP": 4.0,
+            "maxAffinityNm": 20,
+            "targetOptionIds": [
+              "r1-butox",
+              "r2-diethyl"
+            ]
+          },
+          "explanation": "Aromatik halkaya lipofilik butoksi zinciri ve bazik dietilamino grubu eklendiğinde hidrofobik ve iyonik bağlar sinerji oluşturur; Kd 1200 nM den 10 nM e iner.",
+          "source": {
+            "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+            "page": 33
+          }
         }
-      }
+      },
+      "config": {
+        "scaffoldName": "Lokal Anestezik Prokain Türevleri",
+        "scaffoldDescription": "Sodyum kanalı vestibülünde hidrofobik ve iyonik temasları optimize ederek afiniteyi artırın.",
+        "baseLogP": 1.9,
+        "basePka": 8.9,
+        "baseAffinityNm": 1200,
+        "positions": [
+          {
+            "positionName": "R1 (Aromatik para-sübstitüent)",
+            "defaultOptionId": "r1-h",
+            "options": [
+              {
+                "id": "r1-h",
+                "name": "Hidrojen (-H)",
+                "structureSnippet": "-H",
+                "deltaLogP": 0.0,
+                "deltaPka": 0.0,
+                "affinityMultiplier": 1.0,
+                "toxicityRisk": "low"
+              },
+              {
+                "id": "r1-nh2",
+                "name": "Amino (-NH2, Prokain)",
+                "structureSnippet": "-NH2",
+                "deltaLogP": -0.4,
+                "deltaPka": 0.1,
+                "affinityMultiplier": 4.0,
+                "toxicityRisk": "low"
+              },
+              {
+                "id": "r1-butox",
+                "name": "Butoksi (-O-C4H9, Dibukain tipi)",
+                "structureSnippet": "-O-C4H9",
+                "deltaLogP": 1.6,
+                "deltaPka": 0.0,
+                "affinityMultiplier": 25.0,
+                "toxicityRisk": "low"
+              }
+            ]
+          },
+          {
+            "positionName": "R2 (Terminal bazik amin)",
+            "defaultOptionId": "r2-dimethyl",
+            "options": [
+              {
+                "id": "r2-dimethyl",
+                "name": "Dimetilamino (-N(CH3)2)",
+                "structureSnippet": "-N(CH3)2",
+                "deltaLogP": 0.0,
+                "deltaPka": -0.2,
+                "affinityMultiplier": 1.5,
+                "toxicityRisk": "low"
+              },
+              {
+                "id": "r2-diethyl",
+                "name": "Dietilamino (-N(C2H5)2)",
+                "structureSnippet": "-N(C2H5)2",
+                "deltaLogP": 0.6,
+                "deltaPka": 0.2,
+                "affinityMultiplier": 5.0,
+                "toxicityRisk": "low"
+              }
+            ]
+          }
+        ],
+        "targetGoal": {
+          "description": "Kd <= 20 nM ve logP 2.5 - 4.0 aralığına ulaşın.",
+          "minLogP": 2.5,
+          "maxLogP": 4.0,
+          "maxAffinityNm": 20,
+          "targetOptionIds": [
+            "r1-butox",
+            "r2-diethyl"
+          ]
+        },
+        "explanation": "Aromatik halkaya butoksi zinciri ve terminal dietilamin takıldığında hidrofobik ve iyonik bağlar sinerji kurarak Kd değerini 10 nM düzeyine çeker (Slayt 33).",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "SAR optimizasyonu",
+          "arContext": "تحسين علاقات البنية بالفعالية SAR"
+        },
+        {
+          "term": "afinite çarpanı",
+          "arContext": "مضاعف الألفة"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "R1 konumuna butoksi zinciri takarak lipofilik cebi doldurun.",
+          "ar": "ثبت سلسلة بوتوكسي في الموضع R1 لملء الجيب الكاره للماء.",
+          "en": "Install the butoxy chain at R1 to engage the hydrophobic subpocket."
+        },
+        {
+          "tr": "R2 konumunda dietilamino grubunu seçerek aspartatla iyonik bağı güçlendirin.",
+          "ar": "اختر ثنائي إيثيل أمين في R2 لتعزيز الرابطة الأيونية مع الأسبارتات.",
+          "en": "Select diethylamine at R2 to optimize ionic anchoring with receptor aspartate."
+        },
+        {
+          "tr": "Butoksi (-O-C4H9) ve dietilamino (-N(Et)2) kombinasyonu afiniteyi 125 kat artırarak Kd yi 10 nM e düşürür.",
+          "ar": "مزيج البوتوكسي وثنائي إيثيل أمين يضاعف الألفة 125 مرة ويهبط بـ Kd إلى 10 نانومول.",
+          "en": "Combining butoxy (-O-C4H9) and diethylamino (-N(Et)2) boosts affinity 125-fold, achieving Kd = 10 nM."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      ]
     },
     {
       "id": "mc-mod2-les1-step-06",
       "stage": "guided_discovery",
       "stageIndex": 6,
       "title": {
-        "tr": "Rehberli Keşif: Hidroksil Grubunun Katkısı",
-        "ar": "استكشاف موجه: مساهمة مجموعة الهيدروكسيل",
-        "en": "Guided Discovery: Hydrophobic Collapse & Entropy"
+        "tr": "Rehberli Keşif: Hidrofobik Paradoks ve Su Entropisi",
+        "ar": "استكشاف موجه: مفارقة كره الماء وإنتروبيا الماء",
+        "en": "Guided Discovery: The Hydrophobic Paradox & Water Entropy"
       },
       "prompt": {
-        "tr": "Benzen halkasına fenolik bir -OH grubu eklendiğinde bağlanma enerjisi yaklaşık ne kadar artar?",
-        "ar": "عند إضافة مجموعة -OH فينولية إلى حلقة البنزين، كم تزداد طاقة الارتباط الحرة تقريباً؟",
-        "en": "When nonpolar alkyl chains bury into a hydrophobic pocket, structured water cages collapse, driving binding through favourable entropy (+ΔS)."
+        "tr": "Karbon-karbon atomları birbirini kuvvetle çekmez. O halde apolar iki halkanın sulu ortamda birbirine sımsıkı yapışmasını sağlayan gerçek termodinamik itici güç nedir?",
+        "ar": "لا تتجاذب ذرات الكربون فيما بينها بقوة. ما هي القوة الثرموديناميكية الحقيقية التي تدفع حلقتين غير قطبيتين للالتصاق بإحكام في وسط مائي؟",
+        "en": "Carbon atoms have negligible intrinsic attraction for each other. What actual thermodynamic driving force glues two apolar rings together in an aqueous biological environment?"
       },
       "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": {
+              "tr": "Apolar yüzeyleri saran düzenli buzsu su kafeslerinin (klatrat) yıkılması ve serbest kalan suların sistem entropisini devasa artırmasıdır (ΔS > 0).",
+              "ar": "انهيار أقفاص الماء الجليدية المنظمة (klatrat) المحيطة بالسطوح غير القطبية، وتحرر جزيئات الماء رافعةً إنتروبيا النظام بشدة (ΔS > 0).",
+              "en": "The collapse of ordered, ice-like water clathrate cages surrounding apolar surfaces, releasing water molecules to massively increase entropy (ΔS > 0)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bilimsel kavrayış! Hidrofobik etki karbonların çekimi değildir. Su molekülleri apolar yüzeyden kurtulup serbest faza geçince sistemin entropisi (düzensizliği) fırlar ve ΔG negatifleşir.",
+              "ar": "استيعاب علمي باهر! التأثير الكاره للماء ليس تجاذباً كربونياً، بل تحرر جزيئات الماء من قيود الترتيب نحو العشوائية (ΔS > 0) مما يجعل ΔG سالبة.",
+              "en": "Brilliant scientific deduction! The hydrophobic effect is not carbon attraction; it is driven by water molecules breaking free from rigid cages, surging entropy (+ΔS)."
+            }
+          },
+          {
+            "id": "opt-6b",
+            "text": {
+              "tr": "Karbon atomları arasında gizli bir kovalent rezonans bağı oluşmasıdır.",
+              "ar": "تشكل رابطة رنينية تساهمية خفية بين ذرات الكربون.",
+              "en": "The spontaneous formation of a hidden covalent resonance bond between non-polar carbon atoms."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Apolar gruplar arasında kovalent bağ kurulmaz; hidrofobik etkileşim tamamen entropik bir solvent fenomenidir.",
+              "ar": "مغالطة: لا تتشكل أي روابط تساهمية بين المجموعات غير القطبية؛ فالظاهرة حركية إنتروبية للمذيب حصراً.",
+              "en": "Misconception: No covalent bonds form; the hydrophobic effect is purely an entropic solvent phenomenon."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "Suyun dielektrik sabitinin sıfıra inerek karbonları manyetik gibi birbirine itmesidir.",
+              "ar": "هبوط ثابت عزل الماء للصفر مما يدفع ذرات الكربون للتجاذب كالمغناطيس.",
+              "en": "Water's dielectric constant dropping to zero, magnetically forcing carbon rings into contact."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Suyun dielektrik sabiti 80 dir ve sıfıra inmez; etkileşim elektriksel itme değil termodinamik düzensizlik kazancıdır.",
+              "ar": "مغالطة: ثابت عزل الماء مرتفع (80) ولا يهبط للصفر؛ والقوة الدافعة هي ربح العشوائية الثرموديناميكية وليست قوى مغناطيسية.",
+              "en": "Misconception: Bulk water retains its high dielectric constant (~80); the driving force is thermodynamic entropy gain, not dielectric collapse."
+            }
+          }
+        ]
+      },
       "config": {
-        "revealedOutcome": "Fenolik -OH eklenmesi ilacın afinitesini yaklaşık 100 kat artırır."
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": "Buzsu su kafeslerinin (klatrat) yıkılması ve suyun entropisini artırmasıdır (ΔS > 0).",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Hidrofobik etki entropik bir su olayıdır."
+          },
+          {
+            "id": "opt-6b",
+            "text": "Karbonlar arası kovalent rezonanstır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kovalent bağ kurulmaz."
+          },
+          {
+            "id": "opt-6c",
+            "text": "Dielektrik sabiti sıfıra iner.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Su dielektrik sabiti sabittir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Hidrofobik etki itici gücü: İki nonpolar yüzey birleştiğinde su molekülleri klatrat kafesinden kurtulur; termodinamik serbest enerji ΔG = ΔH - TΔS gereği hızla negatifleşir.",
+          "ar": "المحرك الكاره للماء: بتلاصق السطوح غير القطبية تتحرر جزيئات الماء المنظمة؛ وتتحول الطاقة الحرة ΔG = ΔH - TΔS إلى سالبة بعفوية.",
+          "en": "Hydrophobic driving engine: As apolar surfaces bury, clathrate water is liberated; binding free energy turns negative via ΔG = ΔH - TΔS."
+        },
+        "explanation": {
+          "tr": "Apolar gruplar suda çözünemez çünkü etraflarında su aşırı düzenli klatrat kafesleri kurar (ΔS < 0). İlaç reseptöre oturunca su serbest kalır ve entropi artar (ΔS > 0) (Slayt 25).",
+          "ar": "يعجز الكربون عن الذوبان لأن الماء يحاصره بأقفاص جليدية منظمة (ΔS < 0). وبتثبت الدواء يتحرر الماء لترتفع الإنتروبيا (ΔS > 0) (شريحة 25).",
+          "en": "Non-polar groups force surrounding water into ordered clathrates (ΔS < 0). Desolvation releases trapped water, driving binding via entropy gain (+ΔS)."
+        }
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "klatrat kafesi",
+          "arContext": "قفص الكلاثرات المائي"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "hidrofobik entropi",
+          "arContext": "إنتروبيا كره الماء"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Apolar bir yağ damlası suya konduğunda su molekülleri yağın etrafında nasıl dizilir?",
+          "ar": "عند وضع قطرة زيت في الماء، كيف تنتظم جزيئات الماء حول سطح الزيت؟",
+          "en": "When an oil drop enters water, how do surrounding water molecules arrange themselves?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Su molekülleri hareket özgürlüklerini kaybedip buz benzeri düzenli bir kılıf (klatrat) kurar.",
+          "ar": "تفقد جزيئات الماء حرية حركتها مشكلة غلافاً جليدياً مفرط التنظيم (klatrat).",
+          "en": "Water molecules lose rotational freedom to form highly ordered, rigid clathrate cages."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "İlaç reseptör cebine oturunca bu sular serbest faza kaçar; entropi (ΔS) artar ve bağlanmayı sürükler.",
+          "ar": "بدخول الدواء جيب المستقبِل تتحرر هذه المياه نحو الوسط؛ فتزداد الإنتروبيا (ΔS) دافعة الارتباط.",
+          "en": "Binding releases ordered water into bulk solvent, surging entropy (+ΔS) and thermodynamically driving complexation."
         }
       ],
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mc21-3",
-            "text": {
-              "tr": "-3.0 ila -4.5 kcal/mol (hidrojen bağı katkısı).",
-              "ar": "حوالي -3.0 إلى -4.5 kcal/mol (مساهمة الرابطة الهيدروجينية).",
-              "en": "The hydrophilic hydroxyl group (-OH) with pi = -1.16."
-            },
-            "isCorrect": true
-          },
-          {
-            "id": "opt-mc21-4",
-            "text": {
-              "tr": "-50 kcal/mol (kovalent bağ gücü).",
-              "ar": "حوالي -50 kcal/mol (قوة الرابطة التساهمية).",
-              "en": "The trifluoromethyl group (-CF3)."
-            },
-            "isCorrect": false
-          }
-        ]
-      }
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 25
+        }
+      ]
     },
     {
       "id": "mc-mod2-les1-step-07",
       "stage": "formal_explanation",
       "stageIndex": 7,
       "title": {
-        "tr": "Formal Termodinamik: Gibbs Serbest Enerjisi",
-        "ar": "الديناميكا الحرارية الرسمية: طاقة Gibbs الحرة",
-        "en": "Formal Equations: Gibbs Free Energy"
+        "tr": "Matematiksel Model: Serbest Enerji Toplamı ve Kd",
+        "ar": "النموذج الرياضي: تراكم الطاقة الحرة وحساب Kd",
+        "en": "Mathematical Model: Free Energy Summation & Kd"
       },
       "prompt": {
-        "tr": "Delta G = Delta H - T * Delta S denklemi bağlanmayı yönetir. Delta G negatifleştikçe ayrışma sabiti (Kd) küçülür ve afinite katlanır.",
-        "ar": "تحكم معادلة Delta G = Delta H - T * Delta S الارتباط. كلما ازدادت سلبية Delta G تناقص ثابت التفكك (Kd) وتضاعفت الألفة.",
-        "en": "Binding affinity follows ΔG° = -RT ln(Ka) = ΔH° - TΔS°. Each 1.4 kcal/mol gain in binding free energy improves affinity 10-fold."
+        "tr": "Bir ilaç reseptörle 1 iyonik (-5 kcal/mol), 2 hidrojen bağı (-3 kcal/mol her biri) ve hidrofobik temas (-3 kcal/mol) kuruyor. Toplam ΔG° ve Kd nedir? (ΔG° = -RT ln Ka).",
+        "ar": "يشكل دواء مع مستقبله: رابطة أيونية (-5 kcal/mol)، رابطتين هيدروجينيتين (-3 لكل منهما)، وتماساً كارهاً للماء (-3). ما هي ΔG° الكلية و Kd؟ (ΔG° = -RT ln Ka).",
+        "en": "A drug forms 1 ionic bond (-5 kcal/mol), 2 H-bonds (-3 kcal/mol each), and hydrophobic contacts (-3 kcal/mol). What is total ΔG° and Kd? (ΔG° = -RT ln Ka)."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": {
+              "tr": "ΔG° = -14 kcal/mol dür; 37°C de her -1.42 kcal/mol afiniteyi 10 kat artırdığı için Kd ≈ 0.1 nM (sub-nanomolar) düzeyinde süper afinite üretir.",
+              "ar": "ΔG° = -14 kcal/mol؛ وبما أن كل -1.42 kcal/mol تضاعف الألفة 10 مرات عند 37°C، تنتج ألفة فائقة بحدود Kd ≈ 0.1 nM (دون النانومول).",
+              "en": "ΔG° = -14 kcal/mol; since every -1.42 kcal/mol enhances affinity by 10-fold at 37°C, Kd reaches ~0.1 nM (sub-nanomolar potency)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Matematiksel olarak kusursuz! ΔG° = -5 + 2(-3) + (-3) = -14 kcal/mol. Log10(Ka) = 14 / 1.42 ≈ 9.86; Kd = 1/Ka ≈ 1.4 x 10^-10 M (0.14 nM).",
+              "ar": "حساب رياضي متقن! ΔG° = -5 + 2(-3) + (-3) = -14 kcal/mol. وبقسمتها على 1.42 ينتج Log10(Ka) ≈ 9.86؛ أي Kd ≈ 0.14 نانومول.",
+              "en": "Flawless mathematical deduction! ΔG° = -5 - 6 - 3 = -14 kcal/mol. Dividing by 1.42 kcal/mol yields log10(Ka) ~ 9.9, so Kd ~ 0.14 nM."
+            }
+          },
+          {
+            "id": "opt-7b",
+            "text": {
+              "tr": "ΔG° = -5 kcal/mol dür; çünkü sadece en güçlü olan iyonik bağ hesaba katılır, zayıf bağlar ihmal edilir.",
+              "ar": "ΔG° = -5 kcal/mol؛ لأن الرابطة الأيونية الأقوى هي التي تحسب فقط وتُهمل الروابط الضعيفة.",
+              "en": "ΔG° = -5 kcal/mol; only the strongest ionic bond counts, while weaker non-covalent forces are ignored."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Termodinamikte tüm eşzamanlı temasların serbest enerjileri toplanır; zayıf bağlar ihmal edilemez.",
+              "ar": "مغالطة: في الديناميكا الحرارية تجمع كافة الطاقات الحرة المتزامنة ولا يجوز إهمال أي تلامس.",
+              "en": "Misconception: In binding thermodynamics, all simultaneous contacts contribute additively to net free energy."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "ΔG° pozitif (+14 kcal/mol) çıkar; ilaç reseptöre spontan olarak bağlanamaz.",
+              "ar": "تكون ΔG° موجبة (+14 kcal/mol)؛ وبالتالي لا يمكن للدواء الارتباط بالمستقبِل بعفوية.",
+              "en": "ΔG° is positive (+14 kcal/mol); the drug cannot bind the receptor spontaneously."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Kararlı bağ oluşumu dışarıya enerji verir (ekzotermik/ekzergonik); bu nedenle bağlanma serbest enerjisi daima negatiftir (ΔG° < 0).",
+              "ar": "مغالطة: تشكيل الروابط المستقرة يحرر طاقة حرة؛ لذا تكون طاقة الارتباط سالبة دوماً (ΔG° < 0) في المركبات التلقائية.",
+              "en": "Misconception: Spontaneous stable complex formation releases free energy; binding ΔG° is always negative."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": "ΔG° = -14 kcal/mol; sub-nanomolar afinite (Kd ≈ 0.1 nM) üretir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Bireysel enerjiler toplanıp Kd yi belirler."
+          },
+          {
+            "id": "opt-7b",
+            "text": "ΔG° = -5 kcal/mol; zayıf bağlar ihmal edilir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Tüm temaslar kümülatif katkı sağlar."
+          },
+          {
+            "id": "opt-7c",
+            "text": "ΔG° pozitiftir (+14 kcal/mol).",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bağlanma ekzergoniktir (ΔG < 0)."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Kümülatif afinite: ΔG° = -14 kcal/mol serbest enerjisi, Kütle Hareketi Kanununa göre Kd = 0.14 nM gibi olağanüstü yüksek bir bağlanma gücü oluşturur.",
+          "ar": "الألفة التراكمية: طاقة حرة قدرها ΔG° = -14 kcal/mol تحقق ألفة ارتباط فائقة بمقدار Kd = 0.14 نانومول وفق قانون فعل الكتلة.",
+          "en": "Cumulative potency: Net ΔG° = -14 kcal/mol yields an exceptional binding constant of Kd = 0.14 nM via the Law of Mass Action."
+        },
+        "explanation": {
+          "tr": "Toplam ΔG° = -5 + 2(-3) + (-3) = -14 kcal/mol. 37°C de (310 K) ΔG° = -1.42 log10(Ka) dır. log10(Ka) = 9.86 => Kd = 1.4 x 10^-10 M (Slayt 8, 34).",
+          "ar": "المجموع: ΔG° = -5 + 2(-3) + (-3) = -14 kcal/mol. عند 37 مئوية ΔG° = -1.42 log10(Ka). ينتج log10(Ka) = 9.86 أي Kd = 1.4 x 10^-10 M (شريحة 8، 34).",
+          "en": "Total ΔG° = -5 + 2(-3) + (-3) = -14 kcal/mol. At 310 K, ΔG° = -1.42 log10(Ka), giving log10(Ka) = 9.86, or Kd = 0.14 nM."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "Gibbs serbest enerjisi",
-          "arContext": "طاقة غيبس الحرة"
+          "term": "termodinamik toplam",
+          "arContext": "المجموع الثرموديناميكي"
         },
         {
-          "term": "Kd",
-          "arContext": "ثابت التفكك"
+          "term": "denge sabiti Ka",
+          "arContext": "ثابت التوازن Ka"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Verilen tüm bağ enerjilerini cebirsel olarak toplayın: (-5) + 2x(-3) + (-3) = ?",
+          "ar": "اجمع كافة طاقات الروابط المعطاة جبرياً: (-5) + 2×(-3) + (-3) = ؟",
+          "en": "Sum all given binding free energies algebraically: (-5) + 2x(-3) + (-3) = ?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Toplam serbest enerji -14 kcal/mol dür.",
+          "ar": "تبلغ الطاقة الحرة الإجمالية الناتجة -14 kcal/mol.",
+          "en": "The total binding free energy sums to -14 kcal/mol."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Fizyolojik sıcaklıkta her -1.42 kcal/mol Ka yı 10 kat artırır; -14 kcal/mol Kd yi 0.1 nM seviyesine çeker.",
+          "ar": "عند حرارة الجسم يضاعف كل -1.42 kcal/mol الألفة 10 مرات؛ فتصل Kd مع -14 kcal/mol لمستوى 0.1 نانومول.",
+          "en": "At 37°C, every -1.42 kcal/mol multiplies Ka 10-fold; -14 kcal/mol drives Kd down to ~0.1 nM."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 8
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
         }
       ]
     },
@@ -438,174 +1158,391 @@
       "stage": "concept_check",
       "stageIndex": 8,
       "title": {
-        "tr": "Kavram Denetimi: Hidrofobik Etkinin İtici Gücü",
-        "ar": "فحص المفهوم: القوة الدافعة للتأثير الكاره للماء",
-        "en": "Concept Check: Salt Bridge Disruption"
+        "tr": "Kavram Kontrolü: Fenolün Metilasyonu (-OH -> -OCH3)",
+        "ar": "فحص المفهوم: ميثلة الفينول (-OH -> -OCH3)",
+        "en": "Concept Check: Phenol Methylation (-OH -> -OCH3)"
       },
       "prompt": {
-        "tr": "İki apolar alifatik zincir reseptör cebinde bir araya geldiğinde Gibbs enerjisindeki düşüşün temel kaynağı nedir?",
-        "ar": "عندما تتجمع سلسلتان أليفاتيتان في جيب (reseptör)، ما المصدر الأساسي لانخفاض طاقة غيبس الحرة؟",
-        "en": "Replacing a protonated amine (-NH3+) with a neutral methyl group (-CH3) drops binding affinity 1000-fold. What interaction was broken?"
+        "tr": "Bir ilacın fenolik -OH grubu reseptördeki bir serin karboniline hidrojen bağı donörü (vericisi) olarak bağlanmaktadır. Bu grup metillenip anisol (-OCH3) yapılırsa afinite nasıl değişir?",
+        "ar": "ترتبط مجموعة -OH الفينولية في دواء كمانح لرابطة هيدروجينية مع كربونيل السيرين. إذا تمت ميثلة المجموعة إلى ميثوكسي (-OCH3)، كيف تتأثر ألفة الدواء؟",
+        "en": "A drug's phenolic -OH acts as a critical hydrogen bond donor to a receptor carbonyl. If this group is methylated to an ether (-OCH3), what happens to binding affinity?"
       },
       "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "Eter oksijeninde asidik hidrojen atomu bulunmadığından donör özelliği tamamen yok olur; H-bağı kopar ve afinite 10 ila 100 kat birden düşer.",
+              "ar": "يخلو أكسجين الإيثر من أي هيدروجين قطبي مانح؛ فتفقد المجموعة قدرتها كمانح للرابطة وتهبط الألفة بمقدار 10 إلى 100 ضعف.",
+              "en": "Ether oxygens lack polar hydrogen atoms and cannot act as H-bond donors; the critical bond is lost, dropping affinity by 10- to 100-fold."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler! Alkol ve fenoller hem donör (HBD) hem akseptördür (HBA). Eterler (-OCH3) ise yalnızca akseptördür (HBA); donör olamazlar. Karbonil de akseptör olduğundan iki akseptör birbirini iter.",
+              "ar": "تهانينا! الفينولات مانحة وآخذة في آن واحد. بينما الإيثرات (-OCH3) آخذة فقط ولا تمنح؛ وبما أن الكربونيل آخذ أيضاً، يتنافر الآخذان وتفقد الرابطة.",
+              "en": "Congratulations! Phenols are both donors and acceptors. Ethers are solely acceptors; since carbonyls are also acceptors, donor loss abolishes binding."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "Metil grubu elektron sağladığı için hidrojen bağı iki kat güçlenir ve afinite artar.",
+              "ar": "تقدم مجموعة الميثيل كثافة إلكترونية تضاعف قوة الرابطة الهيدروجينية وترفع الألفة.",
+              "en": "The methyl group donates electron density, doubling the strength of the hydrogen bond and increasing affinity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Ortada bağ yapacak bir hidrojen atomu kalmamıştır (-OCH3); olmayan hidrojen bağı güçlenemez.",
+              "ar": "مغالطة: لم يعد هناك أي ذرة هيدروجين قطبية لتصنع الرابطة أصلاً؛ فلا يمكن تقوية رابطة تلاشت.",
+              "en": "Misconception: There is no longer a polar hydrogen atom on the oxygen; a non-existent hydrogen bond cannot be strengthened."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Eterler fenollerle tamamen aynı hidrojen bağlama kapasitesine sahiptir; afinite değişmez.",
+              "ar": "تمتلك الإيثرات نفس قدرة الفينول تماماً على تشكيل الروابط الهيدروجينية؛ ولا تتغير الألفة.",
+              "en": "Ethers possess identical hydrogen-bonding capacity to phenols; binding affinity remains entirely unchanged."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Donör (HBD) ile Akseptör (HBA) farkını kaçırdınız. Eter donör olamaz.",
+              "ar": "مغالطة: خلطت بين المانح (HBD) والآخذ (HBA). الإيثر عاجز عن القيام بدور المانح.",
+              "en": "Misconception: Conflating H-bond donors with acceptors. Ethers can only accept, never donate."
+            }
+          }
+        ]
+      },
       "config": {
-        "revealedOutcome": "Hidrofobik etki entalpik değil, esasen entropik bir kazançtır."
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": "Eterde donör hidrojen yoktur; bağ kopar ve afinite 10-100 kat düşer.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! -OCH3 donör olamaz."
+          },
+          {
+            "id": "opt-8b",
+            "text": "Metil grubu bağı güçlendirir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Donör hidrojen kaybolmuştur."
+          },
+          {
+            "id": "opt-8c",
+            "text": "Eter ve fenol aynı bağlanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Eter donör olamaz."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Donör kaybı: -OH grubu hem donör hem akseptördür. -OCH3 grubunda donör hidrojen kalmadığı için serin karboniliyle H-bağı kurulamaz; afinite çöker.",
+          "ar": "فقدان المانح: مجموعة -OH مانحة وآخذة معاً. أما -OCH3 فخالية من هيدروجين المنح؛ فتعجز عن الارتباط بكربونيل السيرين وتنهار الألفة.",
+          "en": "Donor loss: -OH is both donor and acceptor. Methylating to -OCH3 removes the donor proton, abolishing the contact with receptor carbonyl."
+        },
+        "explanation": {
+          "tr": "Fonksiyonel gruplar slayt 3 ve 5: Fenoller HBD + HBA dır. Eterler yalnızca HBA dır. Reseptör partneri C=O (HBA) olduğundan donör eksikliği bağı yok eder.",
+          "ar": "المجموعات الوظيفية شريحة 3 و 5: الفينول HBD + HBA؛ بينما الإيثر HBA فقط. ولما كان الشريك C=O آخذاً HBA، يتلاشى الارتباط لغياب المانح.",
+          "en": "Functional groups slides 3 & 5: Phenols are HBD + HBA; ethers are HBA only. Pairing two acceptors (ether O and carbonyl C=O) causes repulsion."
+        }
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "H-bağı donörü",
+          "arContext": "مانح الرابطة الهيدروجينية HBD"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "H-bağı akseptörü",
+          "arContext": "آخذ الرابطة الهيدروجينية HBA"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Fenol (-OH) ile metil eter (-OCH3) arasındaki fark nedir? Hangi atom eksildi?",
+          "ar": "ما الفارق البنيوي بين الفينول (-OH) وإيثر الميثيل (-OCH3)؟ أي ذرة اختفت؟",
+          "en": "What is the structural difference between a phenol (-OH) and a methyl ether (-OCH3)?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Oksijene bağlı hidrojen atomu metil ile değiştirildiğinde donör (verici) hidrojen kalır mı?",
+          "ar": "عند استبدال الهيدروجين المرتبط بالأكسجين بمجموعة ميثيل، هل يتبقى هيدروجين مانح؟",
+          "en": "When the hydroxyl hydrogen is replaced with methyl, does a donor proton remain?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Eter oksijeni donör olamaz; serin karbonili de alıcıdır. İki alıcı birbirine hidrojen bağı yapamaz.",
+          "ar": "أكسجين الإيثر آخذ فقط؛ وكربونيل السيرين آخذ أيضاً. لا يمكن لآخذين تشكيل رابطة هيدروجينية.",
+          "en": "Ether oxygen cannot donate; receptor carbonyl is also an acceptor. Two acceptors cannot form a hydrogen bond."
         }
       ],
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mc21-5",
-            "text": {
-              "tr": "Apolar gruplar etrafındaki düzenli su kafeslerinin dağılmasıyla artan entropi (+Delta S).",
-              "ar": "تفكك أقفاص الماء المنظمة حول السلاسل مما يرفع الإنتروبيا (+Delta S).",
-              "en": "Compound B (logP = 2.10) easily crosses the blood-brain barrier into the CNS."
-            },
-            "isCorrect": true
-          },
-          {
-            "id": "opt-mc21-6",
-            "text": {
-              "tr": "Apolar gruplar arasındaki güçlü nükleer çekim.",
-              "ar": "التجاذب النووي القوي بين المجموعات غير القطبية.",
-              "en": "Compound A (logP = -1.50) penetrates the brain readily."
-            },
-            "isCorrect": false
-          }
-        ]
-      }
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 3
+        },
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 5
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 15
+        }
+      ]
     },
     {
       "id": "mc-mod2-les1-step-09",
       "stage": "application",
       "stageIndex": 9,
       "title": {
-        "tr": "Rasyonel İlaç Tasarımı: İmatinib Örneği",
-        "ar": "تصميم الدواء الرشيد: نموذج Imatinib",
-        "en": "Application: Designing Inhaled Anticholinergics"
+        "tr": "Klinik Vaka: Dibukain Çok Noktalı Kenetlenmesi",
+        "ar": "حالة سريرية: الالتحام متعدد النقاط للـ Dibucaine",
+        "en": "Clinical Case: Dibucaine Multi-Anchor Vestibular Binding"
       },
       "prompt": {
-        "tr": "Lösemi ilacı imatinib, kinaz hedefinde bir cepte ilave hidrojen bağı ve van der Waals etkileşimleri kurarak seçiciliğini nasıl kazanmıştır?",
-        "ar": "كيف اكتسب دواء Imatinib انتقائيته العالية لكيناز اللوكيميا عبر روابط هيدروجينية وتماسات van der Waals إضافية؟",
-        "en": "Why does quaternary ammonium ipratropium remain confined to bronchial tissue without crossing the blood-brain barrier into the CNS?"
+        "tr": "Dibukain en güçlü ve en uzun etkili lokal anesteziktir. Kinolin halkası, butoksi zinciri, amit bağı ve tersiyer amini sodyum kanalı vestibülüne aynı anda nasıl kenetlenir?",
+        "ar": "يعتبر <span dir='ltr'>dibucaine</span> من أقوى المخدرات الموضعية وأطولها تأثيراً. كيف تلتحم حلقة الكينولين، وسلسلة البوتوكسي، ورابطة الأميد، والأمين الثالثي في قناة الصوديوم بالتزامن؟",
+        "en": "Dibucaine is an extraordinarily potent, long-acting local anesthetic. How do its quinoline ring, butoxy chain, amide group, and tertiary amine simultaneously anchor into the sodium channel?"
       },
       "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": {
+              "tr": "Kinolin aromatik π-istiflenmesi, butoksi hidrofobik cep, amit hidrojen bağı ve protonlanmış amin aspartatla iyonik bağ kurarak 4 noktadan kenetlenir.",
+              "ar": "يرتبط الكينولين بتراصف π، والبوتوكسي بالجيب الكاره للماء، والأميد بالرابطة الهيدروجينية، والأمين المتأين برابطة أيونية مع الأسبارتات عبر 4 نقاط التحام.",
+              "en": "Quinoline forms aromatic π-π stacking, butoxy buries into a hydrophobic trench, amide hydrogen bonds, and protonated amine forms an ionic salt bridge with aspartate."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika klinik SAR sentezi! Dibukain bu 4 farklı bağ kuvvetini aynı anda koordine ettiği için prokainden 20 kat daha güçlü ve uzun etkilidir.",
+              "ar": "تحليل سريري مبهر! لتنسيق دواء Dibucaine هذه القوى الأربع بالتزامن، يفوق البروكائين بـ 20 ضعفاً في القوة والمدة.",
+              "en": "Superb clinical SAR synthesis! Because dibucaine coordinates all 4 forces simultaneously, it is 20 times more potent and longer-acting than procaine."
+            }
+          },
+          {
+            "id": "opt-9b",
+            "text": {
+              "tr": "Dibukain sodyum kanalındaki sistein kalıntılarına kovalent bağlanarak kanalı kalıcı olarak yok eder.",
+              "ar": "يرتبط الدواء بروابط تساهمية مع ثيول السيستئين في قناة الصوديوم مدمراً القناة نهائياً.",
+              "en": "Dibucaine binds covalently to cysteine residues, permanently destroying the voltage-gated sodium channel."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Dibukain kovalent bir toksin değildir; etkisi sodyum kanallarını tahrip etmeden tamamen tersinir biçimde sonlanır.",
+              "ar": "مغالطة: ليس الديبوكائين مركباً تساهمياً ساماً؛ بل ينتهي تأثيره التخديري عكوسياً دون أي تخريب هيكلي للقناة.",
+              "en": "Misconception: Dibucaine is not a covalent alkylating toxin; its block is potent but completely reversible."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "Yalnızca tersiyer amin etkilidir; kinolin ve butoksi grupları reseptör dışına bakar ve bağlanmaya katılmaz.",
+              "ar": "الأمين الثالثي هو الفعال حصراً؛ بينما تتجه حلقة الكينولين والبوتوكسي لخارج المستقبِل دون مساهمة.",
+              "en": "Only the tertiary amine participates in binding; the quinoline and butoxy groups project outward into empty solvent."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Kinolin ve butoksi grupları kesilirse afinite 100 kat düşer; bu lipofilik gruplar bağlanma enerjisinin yarısını sağlar.",
+              "ar": "مغالطة: إزالة الكينولين أو البوتوكسي تسقط الألفة بمئة ضعف؛ فهذه المجموعات تؤمن نصف طاقة الارتباط الحرة.",
+              "en": "Misconception: Truncating the quinoline or butoxy groups drops affinity 100-fold; they provide half of the total binding energy."
+            }
+          }
+        ]
+      },
       "config": {
-        "revealedOutcome": "İmatinib in yüksek seçiciliği spesifik non-kovalent ağların kusursuz geometrisine dayanır."
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": "Kinolin π-istiflenmesi, butoksi hidrofobik, amit H-bağı ve amin iyonik bağ kurar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! 4 noktalı kenetlenme devasa afinite sağlar."
+          },
+          {
+            "id": "opt-9b",
+            "text": "Sodyum kanalına kovalent bağlanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Dibukain kovalent bağ yapmaz."
+          },
+          {
+            "id": "opt-9c",
+            "text": "Yalnızca tersiyer amin bağlanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kinolin ve butoksi afinitenin yarısını üretir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Çok noktalı kenetlenme: Dibukain farmakoforu kinolin (π-istiflenme), butoksi (hidrofobik kılıf), amit (H-bağı) ve amin (iyonik tuz köprüsü) ile sodyum kanalını bloke eder.",
+          "ar": "الالتحام متعدد النقاط: يثبت فارماكوفور الديبوكائين نفسه عبر كينولين (تراصف π)، وبوتوكسي (كاره للماء)، وأميد (رابطة H)، وأمين (جسر ملحي أيوني).",
+          "en": "Multi-anchor pharmacophore: Dibucaine coordinates quinoline (π-stacking), butoxy (hydrophobic), amide (H-bond), and amine (ionic bridge)."
+        },
+        "explanation": {
+          "tr": "Slayt 33 vaka analizi: Dibukainin 4 fonksiyonel grubu reseptörün 4 farklı alt bölgesine tam geometrik uyum gösterir; bu durum ona en yüksek lokal anestezik gücü kazandırır.",
+          "ar": "تحليل حالة الشريحة 33: تتطابق مجموعات الديبوكائين الأربع هندسياً مع 4 جيوب فرعية في المستقبِل؛ مما يمنحه أعلى فعالية تخدير موضعي.",
+          "en": "Slide 33 case analysis: Dibucaine's 4 functional groups fit 4 distinct receptor subpockets with geometric precision, conferring top-tier clinical potency."
+        }
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "farmakofor kenetlenmesi",
+          "arContext": "التحام الفارماكوفور"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "π-istiflenmesi",
+          "arContext": "تراصف أوربيتالات π"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Dibukain molekülündeki 4 farklı kimyasal parçayı inceleyin: Kinolin, butoksi, amit ve bazik amin.",
+          "ar": "تفحص الأجزاء الكيميائية الأربعة في جزيء الديبوكائين: كينولين، بوتوكسي، أميد، وأمين قاعدي.",
+          "en": "Inspect the 4 structural components of dibucaine: quinoline ring, butoxy chain, amide, and basic amine."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Her grup hangi non-kovalent bağ türünü kurabilir? Aromatik halka? Alkil zinciri? Karbonil? Katyon?",
+          "ar": "ما نوع الرابطة التي تقدمها كل مجموعة؟ حلقة عطرية؟ سلسلة ألكيلية؟ كربونيل؟ وكاتيون؟",
+          "en": "What bond type can each group form? Aromatic ring? Alkyl chain? Carbonyl? Cation?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Kinolin π-π, butoksi hidrofobik, amit H-bağı ve amin iyonik bağ yaparak kanalı 4 koldan kilitler.",
+          "ar": "يقدم الكينولين تراصف π، والبوتوكسي تماساً كارهاً للماء، والأميد رابطة H، والأمين جسراً أيونياً محكماً.",
+          "en": "Quinoline provides π-π stacking, butoxy hydrophobic packing, amide an H-bond, and amine an ionic salt bridge."
         }
       ],
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mc21-7",
-            "text": {
-              "tr": "Aktif olmayan konformasyondaki spesifik amino asitlerle çoklu temas kurarak.",
-              "ar": "عبر تشكيل تماسات متعددة مع أحماض أمينية محددة في التشكيل غير النشط.",
-              "en": "Introduce a polar group (hydroxyl or carboxylic acid) to lower logP below 2.0."
-            },
-            "isCorrect": true
-          },
-          {
-            "id": "opt-mc21-8",
-            "text": {
-              "tr": "Hedefi tamamen kovalent bağla yakarak.",
-              "ar": "بحرق الهدف نهائياً برابطة تساهمية لا عكوسة.",
-              "en": "Add multiple aromatic rings to increase logP."
-            },
-            "isCorrect": false
-          }
-        ]
-      }
+      "sources": [
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      ]
     },
     {
       "id": "mc-mod2-les1-step-10",
       "stage": "retrieval",
       "stageIndex": 10,
       "title": {
-        "tr": "Geri Çağırma: İyonlaşmış Karboksilat",
-        "ar": "استرجاع معرفي: مجموعة الكربوكسيل المتأينة",
-        "en": "Retrieval: Dielectric Constant & Bond Strength"
+        "tr": "Geri Çağırma: Ester vs Amit Değişimi (Prokain vs Prokainamid)",
+        "ar": "استرجاع: استبدال الإستر بالأميد (Procaine مقابل Procainamide)",
+        "en": "Retrieval: Ester vs Amide Swap (Procaine vs Procainamide)"
       },
       "prompt": {
-        "tr": "Modül 1 de gördüğümüz gibi aspirin fizyolojik pH 7.4 te hangi yüklü grubu oluşturarak iyonik bağa hazır hale gelir?",
-        "ar": "كما رأينا في الوحدة 1، ما هي المجموعة المشحونة التي يشكلها aspirin عند pH 7.4 الفسيولوجي لتكون جاهزة للرابطة الأيونية؟",
-        "en": "According to Coulomb's Law, how does ionic bond strength between two charges change inside a low-dielectric hydrophobic binding pocket?"
+        "tr": "Prokaindeki ester bağı (-COO-) amit bağına (-CONH-) dönüştürülerek prokainamid elde edilir. Reseptör bağlanması korunurken etki süresi neden dakikalardan saatlere uzar?",
+        "ar": "عند استبدال رابطة الإستر (-COO-) في البروكائين برابطة أميد (-CONH-) ينتج بروكايناميد. مع بقاء الارتباط سلبياً، لماذا تمتد مدة التأثير من دقائق إلى ساعات؟",
+        "en": "Converting procaine's ester (-COO-) into an amide (-CONH-) yields procainamide. Why does duration of action expand from minutes to hours while receptor binding affinity is preserved?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "Amit bağındaki azot elektron çifti karbonille güçlü rezonans yapar; psödokolinesteraz enziminin nükleofilik saldırısına direnerek hidrolizi engeller.",
+              "ar": "يقدم زوج إلكترونات نيتروجين الأميد رنيناً قوياً مع الكربونيل؛ مما يصد هجوم إنزيم كولينستيراز المائي ويحمي الرابطة من التفكك السريع.",
+              "en": "Amide nitrogen lone pairs delocalize strongly into the carbonyl via resonance, conferring chemical resistance to pseudocholinesterase hydrolysis."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Esterler plazma bütirilkolinesterazı tarafından 15 dakikada hidroliz edilirken, amitler rezonans kararlılığı sayesinde saatlerce dolaşımda aktif kalır.",
+              "ar": "صحيح! تتفكك الإسترات بإنزيمات البلازما خلال 15 دقيقة، بينما تحافظ الأميدات على استقرارها لساعات بفضل طاقة الرنين الإلكترونية.",
+              "en": "Correct! Esters are cleaved in minutes by plasma esterases; amides resist hydrolysis due to resonance stabilization of the C-N bond."
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "Amit grubu ilacın böbrek glomerüllerinden filtrasyonunu tamamen durdurur.",
+              "ar": "توقف مجموعة الأميد ترشيح الدواء عبر كبيبات الكلى بالكامل.",
+              "en": "The amide group completely halts glomerular filtration in the kidneys."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Fark böbrek filtrasyonundan değil, plazma enzimlerinin hidroliz hızındaki devasa farktan kaynaklanır.",
+              "ar": "مغالطة: الفارق لا يعود للترشيح الكلوي بل للتباين الصاعق في سرعة التفكك الإنزيمي بين الإستر والأميد.",
+              "en": "Misconception: The kinetic difference stems from metabolic enzymatic hydrolysis rates, not renal filtration."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Ester bağı kovalent bağlanırken, amit bağı iyonik bağlanır.",
+              "ar": "ترتبط رابطة الإستر تساهمياً، بينما ترتبط رابطة الأميد أيونياً.",
+              "en": "Esters bind biological receptors covalently, whereas amides bind purely through ionic attractions."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Ne ester ne amit sodyum kanalına kovalent bağlanır; ikisi de hidrojen bağı akseptörü olarak davranır.",
+              "ar": "مغالطة: لا يشكل الإستر ولا الأميد روابط تساهمية مع قناة الصوديوم؛ فكلاهما يعمل كآخذ للرابطة الهيدروجينية.",
+              "en": "Misconception: Neither functional group forms covalent bonds to sodium channels; both serve as non-covalent H-bond partners."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": "Amit azotu rezonansla karbonili kararlı kılar; kolinesteraz hidrolizine direnir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Amit bağı esterden çok daha kararlıdır."
+          },
+          {
+            "id": "opt-10b",
+            "text": "Böbrek filtrasyonunu durdurur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Fark plazma hidrolizindedir."
+          },
+          {
+            "id": "opt-10c",
+            "text": "Ester kovalent bağlanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: İkisi de non-kovalent bağlanır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Biyoizosterik kararlılık: Esterden amite geçiş (prokain -> prokainamid), reseptör H-bağını korurken metabolik yıkımı 20 kat yavaşlatır.",
+          "ar": "الاستقرار التماثلي الحيوي: الانتقال من الإستر للأميد يحافظ على الرابطة الهيدروجينية ويبطئ التفكك الاستقلابي بمقدار 20 ضعفاً.",
+          "en": "Bioisosteric stability: The ester-to-amide shift preserves receptor H-bonding while slowing enzymatic hydrolysis 20-fold."
+        },
+        "explanation": {
+          "tr": "Fonksiyonel gruplar slayt 11: Ester bağı plazma esterazlarına son derece hassastır. Amit bağında ise N atomu elektronlarını C=O ya vererek kısmi çift bağ karakteri kazanır ve hidrolize direnir.",
+          "ar": "المجموعات الوظيفية شريحة 11: الإستر شديد الحساسية لإستراز البلازما؛ بينما يمنح نيتروجين الأميد إلكتروناته للكربونيل ليكتسب صفة الرابطة المزدوجة المقاومة للماء.",
+          "en": "Functional groups slide 11: Esters are cleaved rapidly by plasma esterases; amides possess partial double-bond character resisting nucleophilic attack."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "karboksilat anyonu",
-          "arContext": "أنيون الكربوكسيل"
+          "term": "esteraz hidrolizi",
+          "arContext": "الحلمهة بواسطة الإستراز"
+        },
+        {
+          "term": "amit rezonansı",
+          "arContext": "رنين الرابطة الأميدية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Kandaki psödokolinesteraz enzimi hangi bağı dakikalar içinde parçalar? Ester mi, amit mi?",
+          "ar": "أي رابطة يفككها إنزيم كولينستيراز البلازما خلال دقائق؟ الإستر أم الأميد؟",
+          "en": "Which chemical bond does plasma pseudocholinesterase hydrolyze within minutes? Ester or amide?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Amit bağındaki azotun serbest elektron çifti karbonil karbonuna delokalize olur (rezonans).",
+          "ar": "يتشارك زوج إلكترونات النيتروجين في الأميد مع كربونيل الكربون بالرنين الإلكتروني.",
+          "en": "The nitrogen lone pair in an amide delocalizes into the carbonyl carbon via resonance."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Rezonans kararlılığı amiti enzimatik hidrolize dirençli kılar; ilaç kanda saatlerce parçalanmadan kalır.",
+          "ar": "يمنح الرنين الأميد مناعة ضد التفكك الإنزيمي، فيستمر الدواء في الدم لساعات دون تحلل.",
+          "en": "Resonance stabilization makes the amide bond resistant to enzymatic attack, vastly extending duration."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 4
         }
       ]
     },
@@ -614,38 +1551,129 @@
       "stage": "connection",
       "stageIndex": 11,
       "title": {
-        "tr": "İleri Bağlantı: Kiral Geometri ve 3 Nokta Modeli",
-        "ar": "ربط مفاهيمي: الهندسة الكيرالية ونموذج النقاط الثلاث",
-        "en": "Forward Connection: Optical Chirality & 3-Point Binding"
+        "tr": "İleri Bağlantı: Heterosiklik Halkalar ve π-İstiflenmesi (Modül 3)",
+        "ar": "ربط مفاهيمي: الحلقات غير المتجانسة وتراصف π (الوحدة 3)",
+        "en": "Forward Connection: Heterocycles & π-Stacking (Module 3)"
       },
       "prompt": {
-        "tr": "Bu fonksiyonel grupların uzaydaki 3 boyutlu dizilimi kiraliteyle belirlenir. Sıradaki derste Easson-Stedman 3-noktalı bağlanma kuralını keşfedeceğiz.",
-        "ar": "يتحدد التموضع الفراغي ثلاثي الأبعاد لهذه المجموعات بالكيرالية. في الدرس القادم سنكتشف نموذج Easson-Stedman ثلاثي النقاط.",
-        "en": "In Lesson 4, we examine how spatial arrangement of these functional groups creates dramatic potency differences between enantiomers."
+        "tr": "Benzen halkası yerine piridin, imidazol veya tiyofen getirmek ilacın reseptörle π-istiflenmesini, hidrojen bağı akseptörlüğünü ve suda çözünürlüğünü nasıl aynı anda optimize eder?",
+        "ar": "كيف يؤدي استبدال حلقة البنزين بالبيريدين أو الإيميدازول أو الثيوفين إلى تحسين تراصف π، وقبول الروابط الهيدروجينية، والذوبانية المائية في آن واحد؟",
+        "en": "How does replacing a benzene ring with pyridine, imidazole, or thiophene simultaneously modulate aromatic π-stacking, hydrogen bond accepting capability, and aqueous solubility?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "Heteroatomlar (N, O, S) aromatik halkaya kalıcı dipol momenti ve H-bağı akseptörlüğü katar; bu durum Modül 3 teki biyoizosterik optimizasyonun temelidir.",
+              "ar": "تمنح الذرات غير المتجانسة (N, O, S) عزم ثنائي قطب وقدرة على قبول الروابط الهيدروجينية؛ وهو جوهر التحسين الحيوي التماثلي في الوحدة 3.",
+              "en": "Heteroatoms (N, O, S) introduce permanent ring dipole moments and H-bond accepting sites, forming the basis of bioisosteric optimization in Module 3."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Benzen tamamen simetrik ve apolardır. Piridin ve imidazol ise hem aromatik π-istiflenmesi yapar hem de azot üzerindeki elektron çiftiyle H-bağı kabul eder.",
+              "ar": "صحيح! البنزين متناظر وغير قطبي تماماً. بينما يحقق البيريدين والإيميدازول تراصف π مع قبول الروابط الهيدروجينية بزوج إلكترونات النيتروجين.",
+              "en": "Correct! Benzene is purely apolar; pyridine and imidazole preserve aromatic π-stacking while introducing basic H-bond acceptor lone pairs."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Heterosiklik halkalar aromatikliği tamamen yok ederek molekülü alifatik hidrokarbona çevirir.",
+              "ar": "تدمر الحلقات غير المتجانسة العطرية بالكامل وتحول الجزيء إلى هيدروكربون أليفاتي.",
+              "en": "Heterocycles completely destroy aromaticity, converting planar aromatic rings into floppy aliphatic chains."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Piridin, pirazol ve tiyofen Hückel 4n+2 kuralına uyan tam aromatik halkalardır; aromatiklikleri yok olmaz.",
+              "ar": "مغالطة: تخضع حلقات البيريدين والثيوفين لقاعدة هوكل (4n+2) وتمتلك عطرية حقيقية مستقرة تماماً.",
+              "en": "Misconception: Pyridine and thiophene strictly follow Hückel's 4n+2 rule and remain fully aromatic planar rings."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Heterosiklik halkaların ilaç tasarımında kullanımı toksisite nedeniyle farmakopelerde yasaklanmıştır.",
+              "ar": "يحظر استخدام الحلقات غير المتجانسة في تصميم الأدوية بسبب سميتها العالية في دساتير الأدوية.",
+              "en": "Heterocyclic rings are prohibited by international pharmacopeias due to extreme cellular toxicity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: FDA onaylı küçük moleküllü ilaçların %80 den fazlası en az bir heterosiklik halka içerir.",
+              "ar": "مغالطة: أكثر من 80% من الأدوية المعتمدة عالمياً تحتوي على حلقة غير متجانسة واحدة على الأقل.",
+              "en": "Misconception: Over 80% of all FDA-approved small-molecule drugs contain at least one heterocyclic ring scaffold."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": "Heteroatomlar dipol ve H-bağı katar; biyoizosterik optimizasyonun temelidir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Heterohalkalar aromatikliği H-bağıyla birleştirir."
+          },
+          {
+            "id": "opt-11b",
+            "text": "Aromatikliği yok eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Heterosiklikler tam aromatiktir."
+          },
+          {
+            "id": "opt-11c",
+            "text": "İlaçlarda kullanımları yasaktır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: İlaçların %80 inde heterohalka vardır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Modül 2 den Modül 3 e köprü: Heterosiklik halkalar (piridin, imidazol, tiyofen) aromatik π-istiflenmesini korurken hidrojen bağı pencereleri açarak ilacı mükemmelleştirir.",
+          "ar": "جسر العبور للوحدة 3: تدمج الحلقات غير المتجانسة تراصف π مع فتح نوافذ الروابط الهيدروجينية لتحسين الأدوية.",
+          "en": "Bridge to Module 3: Heterocycles blend aromatic π-stacking with versatile H-bonding portals to optimize lead compounds."
+        },
+        "explanation": {
+          "tr": "Fonksiyonel gruplar slayt 16-25: Heteroatomlar halkanın elektron yoğunluğunu değiştirir. Bir sonraki modülde klasik ve klasik olmayan biyoizosterizmi bu halkalarla inceleyeceğiz.",
+          "ar": "المجموعات الوظيفية شريحة 16-25: تغير الذرات غير المتجانسة الكثافة الإلكترونية، وسنستكشف دورها التماثلي الحيوي بالتفصيل في الوحدة 3.",
+          "en": "Functional groups slides 16-25: Heteroatoms modulate ring electrostatics, setting the stage for classical bioisosterism in Module 3."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "kiralite",
-          "arContext": "الكيرالية"
+          "term": "heterosiklik halka",
+          "arContext": "الحلقة غير المتجانسة"
+        },
+        {
+          "term": "biyoizosterizm",
+          "arContext": "التماثل الحيوي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Benzen halkasındaki bir -CH= grubunu azot (-N=) ile değiştirirseniz ne elde edersiniz? (Piridin).",
+          "ar": "إذا استبدلت مجموعة -CH= في البنزين بذرة نيتروجين (-N=)، ماذا ينتج؟ (بيريدين).",
+          "en": "If you replace a -CH= group in benzene with a nitrogen atom (-N=), what ring is formed? (Pyridine)."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Piridin azotu üzerindeki ortaklanmamış elektron çifti ne yapabilir? Hidrojen bağı kabul edebilir mi?",
+          "ar": "ما الذي يمكن لزوج إلكترونات نيتروجين البيريدين فعله؟ هل يقبل رابطة هيدروجينية؟",
+          "en": "What can the lone pair on the pyridine nitrogen do? Can it act as an H-bond acceptor?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Heteroatomlar aromatikliği bozmadan moleküle hidrojen bağı ve polarite kazandırır.",
+          "ar": "تمنح الذرات غير المتجانسة الجزيء قطبية وقبولاً للروابط الهيدروجينية دون المساس بالعطرية.",
+          "en": "Heteroatoms impart hydrogen-bonding capability and polarity without compromising aromatic π-stacking."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 16
+        },
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 25
         }
       ]
     },
@@ -654,68 +1682,155 @@
       "stage": "mastery_check",
       "stageIndex": 12,
       "title": {
-        "tr": "Ustalık Sınavı: Non-Kovalent Ağların Gücü",
-        "ar": "اختبار الإتقان: قوة الشبكات غير التساهمية",
-        "en": "Mastery Assessment: Scaffold Optimization Rationale"
+        "tr": "Ustalık Sınavı: Ters Çevrilmiş Amit ve 1000 Katlık Afinite Kaybı",
+        "ar": "اختبار الإتقان: الأميد المعكوس وفقدان الألفة بمقدار 1000 ضعف",
+        "en": "Mastery Assessment: Inverted Amide & 1000-Fold Affinity Loss"
       },
       "prompt": {
-        "tr": "İlaç-reseptör bağlanmasında en yüksek enerjili ve en uzun menzilli non-kovalent etkileşim türü hangisidir?",
-        "ar": "ما هو نمط التفاعل غير التساهمي الأعلى طاقة والأطول مدى في ارتباط الدواء مع (reseptör)؟",
-        "en": "Which structural modification most effectively increases ligand residence time on target without causing irreversible toxicity?"
+        "tr": "Yeni bir kinaz inhibitöründe amit bağı (-NH-CO-) ters çevrilip (-CO-NH-) yapıldığında afinite 1000 kat düşmektedir (ΔΔG° = +4.2 kcal/mol). Bu devasa kaybın kesin moleküler nedeni nedir?",
+        "ar": "في مثبط كينيز جديد، يؤدي عكس رابطة الأميد من (-NH-CO-) إلى (-CO-NH-) إلى هبوط الألفة بمقدار 1000 ضعف (ΔΔG° = +4.2 kcal/mol). ما هو السبب الجزيئي الدقيق؟",
+        "en": "In a novel kinase inhibitor, inverting an amide linkage from -NH-CO- to -CO-NH- crashes target affinity 1000-fold (ΔΔG° = +4.2 kcal/mol). What precise molecular interaction explains this loss?"
       },
       "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "Reseptörün rijit cebinde donör (-NH-) ve akseptör (C=O) geometrik konumları yer değiştirmiştir; 180° doğrusal H-bağı kopmuş ve elektrostatik dipol itmesi doğmuştur.",
+              "ar": "تبادلت المجموعتان المانحة (-NH-) والآخذة (C=O) موضعيهما الهندسيين؛ فانكسرت استقامة الرابطة الهيدروجينية 180° ونشأ تنافر ثنائي قطب.",
+              "en": "The donor (-NH-) and acceptor (C=O) positions are inverted relative to rigid receptor residues; the linear 180° H-bond is lost and dipole repulsion is created."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz ustalık çıkarımı! Hidrojen bağları son derece yönlüdür. Donör ve akseptörün yer değiştirmesi, reseptördeki karşılık gelen gruplarla (donör-donör ve akseptör-akseptör) şiddetli elektrostatik itmeye yol açar; her 1.42 kcal/mol luk kayıp afiniteyi 10 kat düşürür (4.2 kcal/mol = 1000 kat!).",
+              "ar": "استنتاج استثنائي فائق الدقة! الروابط الهيدروجينية اتجاهية بصرامة. يؤدي عكس الأميد إلى تنافر آخذ-آخذ ومانح-مانح؛ وكل فقد بمقدار 1.42 kcal/mol يسقط الألفة 10 أضعاف (4.2 تعني هبوطاً بألف ضعف!).",
+              "en": "Exceptional mastery deduction! H-bonds are acutely directional. Inverting the amide forces donor-donor and acceptor-acceptor clashes; losing 4.2 kcal/mol causes an exact 1000-fold affinity collapse."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "Amit bağı ters çevrildiğinde molekülün moleküler ağırlığı iki katına çıkmış ve kanala sığmamıştır.",
+              "ar": "أدى عكس رابطة الأميد إلى مضاعفة الوزن الجزيئي فلم يعد الجزيء يتسع داخل القناة.",
+              "en": "Inverting the amide bond doubles the drug's molecular weight, preventing entry into the binding pocket."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: İzomerik bir düzenlemedir; atom sayısı ve moleküler ağırlık tamamen aynı kalır.",
+              "ar": "مغالطة: هذا تحول تماكبي بنيوي؛ والوزن الجزيئي وعدد الذرات متطابقان تماماً دون أي تغيير.",
+              "en": "Misconception: This is a constitutional rearrangement; the atom count and molecular weight remain identical."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "Amit bağı ters dönünce tüm kovalent bağlar kendiliğinden koparak molekülü ikiye bölmüştür.",
+              "ar": "انكسرت الروابط التساهمية تلقائياً عند عكس الأميد وانشطر الجزيء لنصفين.",
+              "en": "Inverting the amide causes spontaneous covalent bond fission, cleaving the drug into two fragments."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Kimyasal bağlar sağlamdır; kayıp reaksiyonel parçalanmadan değil, reseptör cebindeki 3 boyutlu geometrik uyumsuzluktan kaynaklanır.",
+              "ar": "مغالطة: الجزيء متماسك كيميائياً؛ والخلل يكمن في التنافر الهندسي الفراغي داخل جيب المستقبِل.",
+              "en": "Misconception: Covalent bonds remain intact; the affinity loss is purely due to 3D spatial and electrostatic mismatch."
+            }
+          },
+          {
+            "id": "opt-12d",
+            "text": {
+              "tr": "-CO-NH- bağı kimyasal olarak elektrik yükü taşıyamaz ve van der Waals teması kuramaz.",
+              "ar": "تعجز رابطة -CO-NH- عن حمل شحنات ولا يمكنها تشكيل قوى فان دير فالس إطلاقاً.",
+              "en": "The -CO-NH- group cannot carry partial charges and is incapable of forming van der Waals interactions."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Her iki amit formu da güçlü dipol momentine ve van der Waals temaslarına sahiptir.",
+              "ar": "مغالطة: يمتلك كلا شكلي الأميد عزماً ثنائي قطب قوياً وتماسات فان دير فالس حقيقية.",
+              "en": "Misconception: Both amide orientations possess strong dipole moments (~3.5 Debye) and van der Waals surfaces."
+            }
+          }
+        ]
+      },
       "config": {
-        "revealedOutcome": "Tebrikler! Moleküller arası bağları başarıyla tamamladınız. +50 XP."
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": "Donör ve akseptör yer değiştirmiş; 180° H-bağı kopup dipol itmesi doğmuştur.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Yönlü H-bağının kopması 1000 katlık kayıp yaratır."
+          },
+          {
+            "id": "opt-12b",
+            "text": "Molekül ağırlığı iki katına çıkmıştır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Molekül ağırlığı değişmez."
+          },
+          {
+            "id": "opt-12c",
+            "text": "Kovalent bağlar kendiliğinden kopmuştur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Molekül parçalanmaz, geometrik uyum bozulur."
+          },
+          {
+            "id": "opt-12d",
+            "text": "-CO-NH- bağı elektrik yükü taşımaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Amit bağı güçlü dipol taşır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Tebrikler! Modül 2 Ders 1 Ustalık Sınavını geçtiniz. Hidrojen bağlarının katı 180° yönlülüğünü ve ΔΔG° = 4.2 kcal/mol enerji kaybının 1000 katlık afinite çöküşüne denk geldiğini kanıtladınız. +50 XP.",
+          "ar": "تهانينا! لقد اجتزت اختبار إتقان الدرس 1 من الوحدة 2 بنجاح. أثبتت أن اتجاهية الرابطة الهيدروجينية 180° وفقدان 4.2 kcal/mol يعادلان انهيار الألفة بمقدار 1000 ضعف تماماً. +50 XP.",
+          "en": "Congratulations! You passed the Module 2 Lesson 1 Mastery Check. You proved that strict 180° H-bond directionality and ΔΔG° = +4.2 kcal/mol corresponds precisely to a 1000-fold affinity collapse. +50 XP."
+        },
+        "explanation": {
+          "tr": "Amitin ters çevrilmesi hidrojen bağının donör (C=O...) ve akseptör (...H-N) vektörlerini ters çevirir. Doğrusal 180° temas kopar ve ΔΔG° = +4.2 kcal/mol lük kayıp (3 x 1.42 kcal/mol) afiniteyi 10^3 = 1000 kat düşürür (Slayt 16, 33).",
+          "ar": "عكس الأميد يعكس متجهات الرابطة الهيدروجينية؛ فتنكسر استقامة 180°، ويؤدي فقد 4.2 kcal/mol (أي 3 × 1.42) إلى هبوط الألفة بمقدار 10^3 = 1000 ضعف بدقة (شريحة 16، 33).",
+          "en": "Inverting the amide flips the H-bond donor/acceptor vectors. Breaking the linear 180° bond costs ΔΔG° = +4.2 kcal/mol (3 x 1.42 kcal/mol), dropping affinity by exactly 10^3 = 1000-fold."
+        }
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "ters amit izomeri",
+          "arContext": "المصاوغ الأميدي المعكوس"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "afinite çöküşü",
+          "arContext": "انهيار الألفة الدوائية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Amit bağı -NH-CO- iken donör kimdir? Akseptör kimdir? Ters çevrilince (-CO-NH-) ne olur?",
+          "ar": "في الرابطة -NH-CO-، من هو المانح ومن هو الآخذ؟ وماذا يحدث عند عكسها إلى -CO-NH-؟",
+          "en": "In the amide -NH-CO-, which atom donates and which accepts? What happens when inverted to -CO-NH-?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Reseptörün aktif cebindeki hidrojen bağı partnerleri sabittir; donörün karşısına donör gelirse ne olur?",
+          "ar": "مواقع الارتباط في جيب المستقبِل ثابتة؛ ماذا يحدث عندما يقابل المانح مانحاً آخر؟",
+          "en": "The receptor pocket's partners are fixed in 3D space; what happens when a donor faces another donor?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Donör ve akseptör yer değiştirince 180° H-bağı kopar; 4.2 kcal/mol kayıp afiniteyi 1000 kat (10³) düşürür.",
+          "ar": "بانعكاس المانح والآخذ تنكسر استقامة الرابطة الهيدروجينية؛ وفقد 4.2 kcal/mol يسقط الألفة بمقدار 1000 ضعف.",
+          "en": "Inverting donor and acceptor destroys the 180° H-bond; losing 4.2 kcal/mol (3 x 1.42) collapses Kd by 1000-fold."
         }
       ],
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mc21-9",
-            "text": {
-              "tr": "İyonik (elektrostatik) bağ.",
-              "ar": "الرابطة الأيونية (الكهروستاتيكية).",
-              "en": "1-Octanol mimics the amphipathic lipid membrane bilayer interior."
-            },
-            "isCorrect": true
-          },
-          {
-            "id": "opt-mc21-10",
-            "text": {
-              "tr": "Dipol-dipol bağı.",
-              "ar": "رابطة ثنائي القطب.",
-              "en": "Octanol behaves exactly like pure water."
-            },
-            "isCorrect": false
-          }
-        ]
-      }
+      "sources": [
+        {
+          "file": "Fonksiyonel gruplar.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 16
+        },
+        {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      ]
     }
   ]
 }

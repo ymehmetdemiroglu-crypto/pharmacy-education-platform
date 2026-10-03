@@ -1,0 +1,1203 @@
+const fs = require('fs');
+const path = require('path');
+
+const lesson04 = {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
+  "id": "mc-mod2-les2",
+  "courseId": "medchem",
+  "moduleId": "mc-mod-02",
+  "title": {
+    "tr": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma",
+    "ar": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط",
+    "en": "Optical Chirality & Easson-Stedman 3-Point Attachment"
+  },
+  "order": 2,
+  "access": "free",
+  "objective": {
+    "tr": "Easson-Stedman 3-noktalı bağlanma hipotezini uygulayarak stereoselektif reseptör bağlanmasını öngörmek, eudismik oranları hesaplamak ve distomer klinik farmakolojisini açıklamak.",
+    "ar": "تطبيق فرضية Easson-Stedman ثلاثية النقاط للتنبؤ بالارتباط الانتقائي الفراغي، وحساب النسب الإيوديزمية، واستنتاج الدوائيات السريرية للمصاوغ الأضعف (distomer).",
+    "en": "Apply the Easson-Stedman 3-point attachment hypothesis to predict stereoselective receptor binding, calculate eudismic ratios, and deduce distomer clinical pharmacology."
+  },
+  "misconceptions": [
+    {
+      "tr": "İki enantiyomerin fizyolojik ortamlarda ve reseptörlerde aynı biyolojik güce sahip olduğu yanılgısı.",
+      "ar": "الظن الخاطئ بأن المصاوغين المرآويين يمتلكان نفس التأثير والألفة في الأهداف البيولوجية.",
+      "en": "The misconception that enantiomers possess identical pharmacological activity and target affinity in biological systems."
+    },
+    {
+      "tr": "Asimetrik bir reseptörün enantiyomerleri ayırt edebilmesi için 2 temas noktasının yeterli olduğu düşüncesi.",
+      "ar": "الاعتقاد الخاطئ بأن نقطتي اتصال تكفيان للمستقبل غير المتناظر للتمييز الحاسم بين المصاوغين.",
+      "en": "The belief that two contact points are sufficient for an asymmetric receptor to discriminate between mirror enantiomers."
+    },
+    {
+      "tr": "Saf (R)-talidomid uygulamasının gebelerde fokomeli teratojenitesini önleyebileceği varsayımı.",
+      "ar": "الافتراض الخاطئ بأن إعطاء (R)-thalidomide النقي كان سينقذ الأجنة من تشوهات الفقمية (phocomelia).",
+      "en": "The assumption that administering pure (R)-thalidomide could have prevented phocomelia teratogenicity in pregnant patients."
+    },
+    {
+      "tr": "Tüm kiral ilaçlarda distomeri izole etmenin ilacı klinik olarak mutlaka daha üstün kılacağı yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن فصل المصاوغ الأضعف دوماً ما يجعل الدواء متفوقاً سريرياً في كافة الحالات.",
+      "en": "The misconception that developing single enantiomers is always clinically superior, overlooking synergistic desirable racemates."
+    }
+  ],
+  "sources": [
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 13 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 16 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 22 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 23 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 25 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 26 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 28 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 30 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 31 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 32 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 33 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 35 },
+    { "file": "İlaçlarda  İzomeri.pdf", "page": 42 }
+  ],
+  "citations": [
+    {
+      "id": "CIT-MC04-01",
+      "book": "Foye's Principles of Medicinal Chemistry",
+      "edition": "8th ed.",
+      "topic": "Stereochemistry and Drug Action: Easson-Stedman Model and Eudismic Ratios",
+      "chapter": "Chapter 2",
+      "page": "35-52",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC04-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Physicochemical Properties and Stereochemistry in Drug Design",
+      "chapter": "Chapter 3",
+      "page": "60-78",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC04-01",
+      "parameter": "Easson-Stedman Adrenaline Eudismic Ratio (R-adrenaline vs S-adrenaline)",
+      "value": "45-100 fold",
+      "status": "verified",
+      "referencePassage": "Slide 25: (R)-adrenalin connects via 3 points (catechol, amine, beta-OH), showing 45-fold higher potency than (S)-adrenalin (2 points)."
+    },
+    {
+      "id": "NUM-MC04-02",
+      "parameter": "Gibbs Free Energy Difference per Eudismic Ratio Decade at 310 K",
+      "value": "-1.42 kcal/mol (-5.94 kJ/mol)",
+      "status": "verified",
+      "referencePassage": "DeltaDelta G = 2.303 RT log10(ER); at 37 C (310 K), a 10-fold eudismic ratio equals 1.42 kcal/mol (5.94 kJ/mol)."
+    },
+    {
+      "id": "NUM-MC04-03",
+      "parameter": "Acetylcholine Muscarinic vs Nicotinic N+ to Carbonyl Oxygen Distance",
+      "value": "3.3 A (gauche) vs 4.4 A (anti)",
+      "status": "verified",
+      "referencePassage": "Slide 42: Acetylcholine in gauche conformation has N+ to O distance of 3.3 A (muscarinic), whereas anti/transoid conformation has 4.4 A (nicotinic)."
+    },
+    {
+      "id": "NUM-MC04-04",
+      "parameter": "Thalidomide in vivo chiral racemization half-life",
+      "value": "4-5 hours",
+      "status": "verified",
+      "referencePassage": "Slide 31: Thalidomide acidic chiral proton undergoes rapid spontaneous keto-enol tautomerism in human plasma, racemizing (R to S) within 4-5 hours."
+    }
+  ],
+  "spacedReviewCards": [
+    {
+      "cardId": "mc-mod2-les2-card1",
+      "courseId": "medchem",
+      "drugOrConcept": "Easson-Stedman Hipotezi",
+      "prompt": "Easson-Stedman modeline göre (R)-adrenalin neden (S)-adrenalinden ve dopaminden 45-100 kat daha güçlüdür?",
+      "answer": "(R)-adrenalin katekol, protonlanmış amin ve kiral beta-OH olmak üzere 3 noktadan tam kenetlenir; (S)-adrenalin ve dopamin ise beta-OH bağını kuramayıp sadece 2 noktadan bağlanır.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les2-card2",
+      "courseId": "medchem",
+      "drugOrConcept": "Pfeiffer Kuralı",
+      "prompt": "Pfeiffer kuralına göre bir ilacın reseptör afinitesi ile enantiyomerler arası güç farkı (Eudismik Oran) nasıl ilişkilidir?",
+      "answer": "Afinite ne kadar yüksekse (doz ne kadar düşükse), reseptör cebi kiral kusurlara o derece az tolerans gösterir ve Eudismik Oran katlanarak artar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les2-card3",
+      "courseId": "medchem",
+      "drugOrConcept": "Talidomid İn Vivo Rasemizasyonu",
+      "prompt": "Saf (R)-talidomid uygulanması gebelerde fokomeli teratojenitesini neden engelleyemez?",
+      "answer": "Talidomidin asidik kiral protonu fizyolojik pH'ta keto-enol tautomerisiyle kendiliğinden 4-5 saatte rasemize olur; teratojenik (S)-izomeri in vivo ortamda kaçınılmaz olarak oluşur.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod2-les2-card4",
+      "courseId": "medchem",
+      "drugOrConcept": "Asetilkolin Biyoaktif Konformasyonları",
+      "prompt": "Asetilkolin molekülünün muskarinik ve nikotinik reseptörleri ayırt etmesini sağlayan uzaysal parametre nedir?",
+      "answer": "Katlanmış (gauche) formda N+ ile ester O mesafesi 3.3 Å olup muskarinik reseptörlere; uzamış (anti) formda 4.4 Å olup nikotinik reseptörlere kenetlenir.",
+      "box": 1,
+      "intervalDays": 1
+    }
+  ],
+  "translations": {
+    "tr": {
+      "title": "Optik Kiralite ve Easson-Stedman 3-Noktalı Bağlanma"
+    },
+    "ar": {
+      "title": "الكيرالية الضوئية ونموذج Easson-Stedman ثلاثي النقاط"
+    }
+  },
+  "steps": [
+    {
+      "id": "mc-mod2-les2-step-01",
+      "stage": "hook",
+      "stageIndex": 1,
+      "type": "predict_reveal",
+      "title": {
+        "tr": "Klinik Kiralite: Tek Bir Oksijenin 100 Katlık Uçurumu",
+        "ar": "لغز الكيرالية: فارق القوة لمئة ضعف لذرة أكسجين واحدة",
+        "en": "The Epinephrine Single Oxygen Potency Cliff"
+      },
+      "prompt": {
+        "tr": "Dopamine tek bir alifatik -OH grubu eklenince (R)-adrenalin oluşur ve kardiyak etki gücü 100 kat artar. Ancak aynı -OH grubuna sahip ayna görüntüsü (S)-adrenalin dopaminle aynı zayıf güçtedir. Neden?",
+        "ar": "إضافة مجموعة -OH للدوبامين تنتج (R)-adrenalin لترتفع القوة القلبية بمئة ضعف. لكن المصاوغ المرآوي (S)-adrenalin بنفس الـ -OH يملك نفس فاعلية الدوبامين الضعيفة تماماً! لماذا؟",
+        "en": "Adding an aliphatic -OH to dopamine forms (R)-epinephrine, boosting cardiac potency 100-fold. Yet mirror (S)-epinephrine has that identical -OH, but displays zero potency gain over dopamine! Why?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": {
+              "tr": "(S)-adrenalinde kiral merkez ters döndüğünde -OH grubu reseptör cebinden dışarı, sulu çözücüye bakar; hidrojen bağı hiç kurulamaz.",
+              "ar": "عند انقلاب المركز الكيرالي في (S)-adrenalin، تتجه مجموعة -OH نحو المذيب المائي خارج الجيب، فتنعدم الرابطة الهيدروجينية.",
+              "en": "Inverting the chiral center in (S)-epinephrine directs the -OH group away from the receptor into solvent, eliminating hydrogen bonding."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Reseptör aktif cebi asimetriktir. Katekol ve amin cebe oturduğunda, (S)-adrenalinin -OH grubu boşluğa bakar ve dopamin gibi yalnızca 2 temas noktasıyla bağlanır.",
+              "ar": "صحيح! جيب المستقبل غير متناظر. عند رسو الكاتيكول والأمين، تتجه مجموعة -OH في (S)-adrenalin إلى الخارج ليرتبط بنقطتين فقط كالدوبامين.",
+              "en": "Correct! The binding pocket is asymmetric. When catechol and amine dock, (S)-epinephrine's -OH faces solvent, reducing it to the 2-point binding of dopamine."
+            }
+          },
+          {
+            "id": "opt-1b",
+            "text": {
+              "tr": "(S)-adrenalindeki -OH grubu karaciğerde hemen sülfatlandığı için reseptöre ulaşamadan hızla inaktive olur.",
+              "ar": "تتخرب مجموعة -OH في (S)-adrenalin بالكبد مباشرة عبر الارتباط بالكبريتات قبل وصولها للمستقبل.",
+              "en": "The -OH group in (S)-epinephrine is rapidly sulfated in the liver before reaching the receptor."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Metabolik eliminasyon yanılgısı: Her iki enantiyomer de aynı fiziksel faz II enzimlerine maruz kalır; güç farkı reseptörün aktif cebindeki uzaysal 3 boyutlu kilit-anahtar uyumsuzluğundan kaynaklanır.",
+              "ar": "خطأ الاستقلاب: يخضع كلا المصاوغين لنفس الأنزيمات الكبدية؛ الفارق ينبع مباشرة من عدم التطابق الهندسي الفراغي داخل جيب المستقبل.",
+              "en": "Metabolic misconception: Both enantiomers face identical phase II enzymes; the 100-fold cliff stems from 3D steric mismatch directly inside the receptor binding pocket."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "(S)-adrenalin reseptöre kovalent bağlanarak kanalı bloke eder, bu yüzden agonistik sinyal iletimi sıfıra iner.",
+              "ar": "يرتبط (S)-adrenalin تساهمياً بالمستقبل فيغلقه تماماً مانعاً أي نقل للإشارة المنبهة.",
+              "en": "(S)-epinephrine forms an irreversible covalent bond that blocks receptor signaling."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent blokaj yanılgısı: Adrenalin reseptörüne kovalent değil, tamamen geri dönüşümlü non-kovalent (iyonik, H-bağı, pi-pi) bağlarla bağlanır; (S)-adrenalin bir bloker değildir.",
+              "ar": "خطأ الارتباط التساهمي: يرتبط الأدرينالين بروابط غير تساهمية عكوسة، والمصاوغ (S) ليس حاصراً تساهمياً بل منبه ضعيف الألفة.",
+              "en": "Covalent block misconception: Adrenaline binds reversibly via non-covalent forces; (S)-epinephrine is not a covalent blocker, but a weak 2-point agonist."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "kiralite", "arContext": "الكيرالية" },
+        { "term": "enantiyomer", "arContext": "المصاوغ المرآوي (enantiyomer)" }
+      ],
+      "hints": [
+        {
+          "tr": "Dopamin molekülünde kiral merkez yoktur; iki temel temas noktasıyla (katekol ve amin) reseptöre tutunur.",
+          "ar": "لا يمتلك الدوبامين مركزاً كيرالياً؛ ويرتبط بالمستقبل بنقطتي تماس أساسيتين فقط (الكاتيكول والأمين).",
+          "en": "Dopamine lacks a chiral center, anchoring into the pocket via only two pharmacophoric contact points."
+        },
+        {
+          "tr": "(R) ve (S) enantiyomerlerinin ayna görüntüleri 3 boyutlu uzayda üst üste çakışmaz. Bir gruptaki uzaysal yönelim ters döner.",
+          "ar": "المصاوغان المرآويان لا ينطبقان في الفراغ ثلاثي الأبعاد، مما يقلب الاتجاه الهندسي لإحدى المجموعات.",
+          "en": "Mirror-image enantiomers cannot superimpose in 3D space; inverting configuration points one substituent into empty space."
+        },
+        {
+          "tr": "(R)-adrenalinde beta-OH grubu reseptör serin kalıntısıyla hidrojen bağı yaparken, (S)-adrenalinde aynı grup cebin dışına yönelir ve hidrojen bağı enerjisi sıfıra düşer.",
+          "ar": "في (R)-adrenalin تشكل beta-OH رابطة هيدروجينية مع السيرين، بينما في (S)-adrenalin تبتعد المجموعة عن الجيب لتنعدم طاقة الرابطة.",
+          "en": "In (R)-epinephrine the beta-OH donates a critical H-bond to serine; in (S)-epinephrine it points into bulk water, yielding zero H-bonding energy."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "type": "question",
+      "title": {
+        "tr": "Aktif Soru: Kiral Ayrım İçin Kaç Temas Noktası Gerekir?",
+        "ar": "سؤال تفاعلي: كم نقطة اتصال تلزم للتمييز الكيرالي؟",
+        "en": "Active Question: Minimum Points for Chiral Recognition"
+      },
+      "prompt": {
+        "tr": "Asimetrik bir reseptör cebinin iki kiral ayna görüntüsünü (enantiyomeri) birbirinden kesin olarak ayırt edebilmesi ve birine yüksek afinite göstermesi için en az kaç uzaysal temas noktası gereklidir?",
+        "ar": "كم عدد نقاط الاتصال الفراغية كحد أدنى التي يحتاجها جيب المستقبل غير المتناظر للتمييز الدقيق بين مصاوغين مرآويين وإبداء ألفة أعلى لأحدهما؟",
+        "en": "For an asymmetric receptor pocket to unequivocally distinguish between two mirror-image enantiomers and display stereoselective affinity, what is the absolute minimum number of spatial contact points required?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": {
+              "tr": "En az 3 temas noktası (3-boyutlu uzayda kiral bir asimetri düzlemi oluşturmak için zorunludur).",
+              "ar": "3 نقاط اتصال على الأقل (لتحديد مستوٍ فراغي غير متناظر ثلاثي الأبعاد بشكل حاسم).",
+              "en": "At least 3 contact points (essential to establish an asymmetric plane in 3D space)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika! Easson-Stedman hipotezine göre uzayda 2 nokta yalnızca bir eksen belirler; molekül bu eksen etrafında dönerek her iki enantiyomeri de aynı temasla bağlayabilir. Asimetrik ayrım için asgari 3 nokta şarttır.",
+              "ar": "ممتاز! وفق فرضية Easson-Stedman، تحدد نقطتا اتصال خطاً مستقيماً يمكن للدواء الدوران حوله؛ التمييز الفراغي الكيرالي يتطلب 3 نقاط تماس حتماً.",
+              "en": "Brilliant! By the Easson-Stedman hypothesis, two points merely define a line around which a ligand can rotate. Stereoselective chiral discrimination strictly requires at least 3 points."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Yalnızca 2 temas noktası yeterlidir; bir iyonik ve bir hidrofobik bağ enantiyomeri sabitlemek için kafi gelir.",
+              "ar": "يكفي نقطتا اتصال فقط؛ فرابطة أيونية وأخرى كارهة للماء تكفيان لتثبيت المصاوغ.",
+              "en": "Only 2 contact points are sufficient; one ionic and one hydrophobic bond lock the enantiomer."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "2-nokta yanılgısı: İki nokta etrafında serbest rotasyon mümkündür. Hem (R) hem (S) enantiyomeri aynı iki noktaya eşit güçle tutunabilir; kiral ayrım doğamaz.",
+              "ar": "خطأ النقطتين: دوران الجزيء حول محور نقطتين يسمح لكلا المصاوغين بالارتباط بنفس القوة تماماً دون أي تمييز كيرالي.",
+              "en": "Two-point misconception: Rotation around a two-point axis allows both (R) and (S) enantiomers to engage those two loci identically, producing zero chiral discrimination."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "En az 4 temas noktası gerekir; çünkü karbon sp3 hibritleşmesinde 4 bağ taşır.",
+              "ar": "يلزم 4 نقاط اتصال على الأقل لأن كربون sp3 يرتبط بأربعة روابط.",
+              "en": "At least 4 contact points are required because an sp3 carbon has 4 valence bonds."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Dört bağ yanılgısı: Kiral karbonda 4 farklı grup bulunur, ancak dördüncü grup (genellikle küçük bir -H) reseptör yüzeyinden dışarıya doğru bakar. Yüzeyde 3 temas noktası kiral ayrım için hem gerekli hem yeterlidir.",
+              "ar": "خطأ الروابط الأربعة: يحمل الكربون الكيرالي 4 مجموعات، لكن المجموعة الرابعة (غالباً -H) تتجه نحو الخارج؛ 3 نقاط تماس سطحية كافية وضرورية تماماً للتمييز الكيرالي.",
+              "en": "Four-bond misconception: An sp3 chiral center has 4 substituents, but the 4th (often -H) projects away from the surface; 3 surface contacts are mathematically necessary and sufficient."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Easson-Stedman hipotezi", "arContext": "فرضية Easson-Stedman" },
+        { "term": "asimetrik merkez", "arContext": "المركز غير المتناظر" }
+      ],
+      "hints": [
+        {
+          "tr": "Düz bir çizgiyi (2 noktayı) çevirdiğinizde simetri bozulur mu, yoksa bir düzlem (3 nokta) mi gerekir?",
+          "ar": "هل يكفي خط مستقيم (نقطتان) لكسر التناظر الفراغي، أم تحتاج إلى مستوٍ (3 نقاط)؟",
+          "en": "Can two points define chirality, or do you require a 3-point plane to distinguish spatial orientation?"
+        },
+        {
+          "tr": "İki temas noktası etrafında molekül dönebilir ve her iki enantiyomer de aynı 2 bağı kurabilir (dopamin örneğinde olduğu gibi).",
+          "ar": "حول نقطتي تماس، يمكن للجزيء أن يدور ليحقق كلا المصاوغين نفس الارتباط (كما في الدوبامين).",
+          "en": "A molecule can freely pivot around a two-point axis, permitting both enantiomers to engage equally."
+        },
+        {
+          "tr": "Easson-Stedman kuralına göre 3 boyutlu kiral seçicilik için asgari 3 tamamlayıcı etkileşim noktası şarttır.",
+          "ar": "وفق قاعدة Easson-Stedman، يلزم ما لا يقل عن ثلاث نقاط تفاعل تكميلية للتمييز الكيرالي ثلاثي الأبعاد.",
+          "en": "Under the Easson-Stedman rule, chiral discrimination strictly demands a minimum of 3 complementary contact loci."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "type": "intuition",
+      "title": {
+        "tr": "Sezgisel Model: Sağ El ve Sağ Eldiven Uyuşumu",
+        "ar": "النموذج الحسي: اليد اليمنى والقفاز الأيمن",
+        "en": "Intuitive Mental Model: The Right Hand in the Right Glove"
+      },
+      "prompt": {
+        "tr": "Elinizi bir eldivene soktuğunuzu düşünün. Sağ elinizi sağ eldivene oturtabilirsiniz ama sol eldivene oturmaz. Neden simetrik bir top her iki eldivene de girerken eliniz giremez?",
+        "ar": "تخيل ارتداء قفاز. يدك اليمنى تلائم القفاز الأيمن حصراً ولا تلائم الأيسر. لماذا تدخل كرة متناظرة في كلا القفازين بسلاسة بينما تعجز يدك؟",
+        "en": "Consider slipping your hand into a glove. Your right hand fits a right glove, but never a left glove. Why does a symmetric tennis ball fit either glove easily, while your hand cannot?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "Sağ el en az 3 asimetrik referans noktasına sahiptir (başparmak, avuç içi, parmak uçları); top ise tekdüze simetriktir.",
+              "ar": "تمتلك اليد 3 نقاط إسناد غير متناظرة على الأقل (الإبهام، الراحة، الأصابع)، بينما الكرة متناظرة منتظمة.",
+              "en": "The hand possesses at least 3 asymmetric reference features (thumb, palm, fingers), whereas a ball is uniformly symmetric."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tam olarak öyle! Eldiven kiral bir reseptördür. Başparmak yuvası, avuç yüzeyi ve parmak yuvaları 3 farklı koordinat oluşturur. Top akiraldir (2 temas noktası gibi), bu yüzden her iki eldivene de uyar.",
+              "ar": "بالضبط! القفاز مستقبل كيرالي بـ 3 إحداثيات (الإبهام والراحة والأصابع). والكرة متناظرة عديمة الكيرالية فتلائم كلا القفازين دون تمييز.",
+              "en": "Spot on! The glove is a chiral receptor with 3 distinct coordinates (thumb, palm, fingers). A symmetric ball is achiral, docking into either glove identically."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "Eldiven kumaşı sağ elin yaydığı pozitif elektrostatik yükü iter, sol eli çeker.",
+              "ar": "نسيج القفاز يتنافر مع الشحنة الموجبة لليد اليمنى وينجذب لليد اليسرى.",
+              "en": "Glove fabric repels the positive electrostatic field of the right hand and attracts the left."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Fiziksel yük yanılgısı: Sorun elektriksel yük değil, 3 boyutlu kiral geometrinin uzaysal çakışmazlığıdır.",
+              "ar": "خطأ الشحنة: المسألة لا تتعلق بشحنات كهربائية بل بعدم التطابق الهندسي الفراغي ثلاثي الأبعاد.",
+              "en": "Electrostatic misconception: The obstacle is not charge repulsion, but 3D geometric non-superimposability."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Sağ el sol eldivene girerken kovalent bağları parçalayarak kumaşı deler.",
+              "ar": "اليد اليمنى تمزق الروابط التساهمية في القفاز الأيسر عند محاولة ارتدائه.",
+              "en": "The right hand shears covalent bonds of the left glove when forced inside."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent yıkım yanılgısı: Kiral uyumsuzluk bağ kopması değil, sterik çakışma ve temas noktalarının boşlukta kalmasıdır.",
+              "ar": "خطأ التخريب التساهمي: التنافر الكيرالي ينشأ من إعاقة فراغية وابتعاد نقاط التماس، وليس من كسر روابط تساهمية.",
+              "en": "Destruction misconception: Stereochemical mismatch is pure steric clash and misaligned contacts, not covalent bond breaking."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "uzaysal komplementerlik", "arContext": "التطابق الفراغي" },
+        { "term": "kiral ayrım", "arContext": "التمييز الكيرالي" }
+      ],
+      "hints": [
+        {
+          "tr": "Başparmak, avuç içi ve parmakların oluşturduğu 3 boyutlu üçgeni hayal edin.",
+          "ar": "تخيل المثلث ثلاثي الأبعاد المتشكل من الإبهام وراحة اليد والأصابع.",
+          "en": "Visualize the 3D triangular coordinate frame formed by thumb, palm, and fingers."
+        },
+        {
+          "tr": "Eğer sadece 2 özelliğiniz olsaydı (örneğin sadece silindirik bir kol), eldiven fark etmezdi.",
+          "ar": "لو كنت تملك ميزتين فقط (كذراع أسطواني)، لما اختلف القفاز الأيمن عن الأيسر.",
+          "en": "If you had only 2 reference features (like a cylinder), either glove would fit equally well."
+        },
+        {
+          "tr": "Kiralitenin tanınması için eldivenin 3 temas cebinin (başparmak yuvası, avuç yüzeyi, parmak yuvaları) elin 3 noktasıyla eşleşmesi şarttır.",
+          "ar": "للتمييز الكيرالي، يجب أن تتطابق جيوب القفاز الثلاثة مع معالم اليد الثلاثة في آن واحد.",
+          "en": "Chiral recognition requires 3 distinct receptor alcoves matching 3 ligand pharmacophores simultaneously."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 13 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "type": "visual_explanation",
+      "title": {
+        "tr": "Görsel Reseptör Mimarisi: Adrenerjik Bağlanma Cebi",
+        "ar": "الهندسة البصرية للمستقبل: جيب الارتباط الأدريناليني",
+        "en": "Visual Architecture: The Adrenergic Binding Alcove"
+      },
+      "prompt": {
+        "tr": "Beta-adrenerjik reseptör cebini inceleyin: Asp113 iyonik bir kuyu, Ser204/207 hidrojen bağı sırtı ve Phe290 aromatik ceptir. (R)-adrenalin bu üç noktaya nasıl aynı anda kenetlenir?",
+        "ar": "تأمل جيب مستقبل بيتا الأدريناليني: يمثل Asp113 فجوة أيونية، وSer204/207 جسراً هيدروجينياً، وPhe290 جيباً عطرياً. كيف يرسو (R)-adrenalin في هذه النقاط الثلاث معاً؟",
+        "en": "Examine the beta-adrenergic pocket: Asp113 forms an anionic pit, Ser204/207 forms an H-bonding ridge, and Phe290 provides aromatic stacking. How does (R)-epinephrine dock into all three simultaneously?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "Katekol halkası Phe290'a pi-istiflenir, protonlanmış sekonder amin Asp113 ile tuz köprüsü kurar, kiral (R)-beta-OH ise serin kalıntısıyla hidrojen bağı yapar.",
+              "ar": "تتراكب حلقة الكاتيكول مع Phe290، ويشكل الأمين الثانوي جسراً أيونياً مع Asp113، وترتبط (R)-beta-OH بهيدروجين مع السيرين.",
+              "en": "The catechol ring pi-stacks with Phe290, protonated secondary amine forms a salt bridge with Asp113, and chiral (R)-beta-OH forms an H-bond with serine."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! (R)-adrenalin üç farmakoforunu reseptörün tamamlayıcı üç bölgesine aynı anda oturtarak -42 kJ/mol bağlanma serbest enerjisi elde eder. Üç nokta da eksiksiz kilitlenir.",
+              "ar": "ممتاز! يرسو (R)-adrenalin بمجموعاته الثلاث في المواقع التكميلية الثلاثة محرراً طاقة ارتباط -42 kJ/mol بتعشيق كامل.",
+              "en": "Perfect! (R)-epinephrine docks all three pharmacophores into complementary receptor zones, yielding -42 kJ/mol binding free energy."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "Katekol halkası Asp113 ile kovalent ester bağı oluşturur ve diğer iki grup serbest kalır.",
+              "ar": "تشكل حلقة الكاتيكول رابطة إستر تساهمية مع Asp113 وتبقى المجموعتان طليقتين.",
+              "en": "The catechol ring forms a covalent ester bond with Asp113, leaving the other groups free."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent ester yanılgısı: Aspartat bir karboksilattır; katekolle ester yapmaz. Protonlanmış amonyumu iyonik elektrostatik çekimle bağlar.",
+              "ar": "خطأ الإستر التساهمي: لا يشكل الأسبارتات إستراً مع الكاتيكول، بل يربط الأمين الكاتيوني المشحون بجسر ملحي أيوني.",
+              "en": "Covalent ester misconception: Asp113 does not esterify catechol; it forms an electrostatic ionic salt bridge with the cationic protonated amine."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "Sekonder amin Phe290 içine gömülerek van der Waals bağı kurar, katekol ise çözücüye bakar.",
+              "ar": "ينغمس الأمين الثانوي في Phe290 ليشكل روابط فان دير فالس بينما يواجه الكاتيكول المذيب.",
+              "en": "The secondary amine buries into Phe290 for van der Waals contacts while catechol points to solvent."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Ters yönelim yanılgısı: Yüklü amin hidrofiliktir, aromatik cebe değil anyonik Asp113'e yönelir. Apolar katekol halkası Phe290 aromatik cebine oturur.",
+              "ar": "خطأ التوجيه المعكوس: الأمين المشحون محب للماء فينجذب لأسبارتات Asp113 الأيوني، بينما تقبع حلقة الكاتيكول في جيب Phe290 العطري.",
+              "en": "Inverted orientation misconception: The charged amine seeks anionic Asp113, while the aromatic catechol ring nests into the Phe290 pi-stacking alcove."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "adrenerjik reseptör", "arContext": "المستقبل الأدريناليني" },
+        { "term": "farmakofor", "arContext": "الفارماكوفور" }
+      ],
+      "hints": [
+        {
+          "tr": "Her fonksiyonel grubun karşıt kimyasal doğasını eşleştirin: (+) yüklü amin (-) yüklü aspartatı arar.",
+          "ar": "طابق الطبيعة الكيميائية لكل مجموعة: الأمين موجب الشحنة ينجذب لأسبارتات سالب الشحنة.",
+          "en": "Pair complementary chemistries: positively charged ammonium seeks negatively charged aspartate carboxylate."
+        },
+        {
+          "tr": "Aromatik katekol halkası aromatik fenilalanin ile etkileşir; polar alkol ise serin kalıntısıyla H-bağı kurar.",
+          "ar": "تتفاعل حلقة الكاتيكول العطرية مع الفينيل ألانين، بينما يشكل الكحول رابطة هيدروجينية مع السيرين.",
+          "en": "The aromatic catechol interacts with aromatic phenylalanine, while the polar alcohol donates an H-bond to serine."
+        },
+        {
+          "tr": "(R)-adrenalin 3 farmakoforunu (amin, katekol, beta-OH) reseptörün 3 tamamlayıcı cebine (Asp113, Phe290, Ser204) aynı anda oturtarak tam kenetlenir.",
+          "ar": "يحقق (R)-adrenalin تعشيقاً تاماً بتطابق معالمه الثلاثة مع جيوب المستقبل الثلاثة (Asp113, Phe290, Ser204).",
+          "en": "(R)-epinephrine aligns its three pharmacophoric groups simultaneously into Asp113, Phe290, and Ser204."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "type": "receptor_ligand_matcher",
+      "widgetType": "ReceptorLigandMatcher",
+      "title": {
+        "tr": "İnteraktif Laboratuvar: Easson-Stedman 3-Noktalı Eşleşme",
+        "ar": "مختبر تفاعلي: مطابقة Easson-Stedman ثلاثية النقاط",
+        "en": "Interactive Lab: 3-Point Easson-Stedman Receptor Matching"
+      },
+      "prompt": {
+        "tr": "(R)-adrenalinin fonksiyonel gruplarını beta-2 adrenerjik reseptörün tamamlayıcı amino asit cepleriyle eşleştirin. 3 noktalı kusursuz kenetlenmeyi tamamlayıp afiniteyi doğrulayın.",
+        "ar": "طابق المجموعات الوظيفية لـ (R)-adrenalin مع ثمالات الأحماض الأمينية المكملة في مستقبل بيتا-2 الأدريناليني. أكمل التعشيق ثلاثي النقاط وتحقق من الألفة.",
+        "en": "Match the functional groups of (R)-epinephrine with complementary amino acid residues in the beta-2 adrenergic receptor. Complete the 3-point attachment to verify affinity."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "title": "Easson-Stedman 3-Noktalı Adrenerjik Eşleşme",
+        "prompt": "(R)-adrenalin gruplarını reseptörün tamamlayıcı amino asit cepleriyle eşleştirin.",
+        "drugName": "(R)-Adrenalin",
+        "receptorName": "Beta-2 Adrenerjik Reseptör (β2-AR)",
+        "pairs": [
+          {
+            "id": "pair_amine",
+            "drugGroup": "Protonlanmış Sekonder Amin (-NH2+CH3)",
+            "correctResidueId": "res_asp113",
+            "bondType": "ionic",
+            "energyKcalMol": "-5 to -10 kcal/mol",
+            "explanation": "Asp113 TM3 karboksilat anyonu ile güçlü bir tuz köprüsü elektrostatik bağı kurar."
+          },
+          {
+            "id": "pair_beta_oh",
+            "drugGroup": "Kiral Alifatik (R)-β-OH Grubu",
+            "correctResidueId": "res_asn293",
+            "bondType": "h_bond",
+            "energyKcalMol": "-3 to -5 kcal/mol",
+            "explanation": "Asn293/Ser165 yan zinciri ile kiral yönelimli hidrojen bağı yapar; (S)-izomerinde bu temas kaybolur."
+          },
+          {
+            "id": "pair_catechol",
+            "drugGroup": "Aromatik Katekol Halkası (3,4-(OH)2-Ph)",
+            "correctResidueId": "res_phe290",
+            "bondType": "pi_pi",
+            "energyKcalMol": "-3 to -5 kcal/mol",
+            "explanation": "Phe290 TM6 fenil halkası ile pi-pi istiflenmesi ve Ser204/207 ile ek H-bağları kurar."
+          }
+        ],
+        "residues": [
+          {
+            "id": "res_asp113",
+            "residueName": "Asp113 (TM3 Karboksilat Anyonu)",
+            "description": "Negatif yüklü elektrostatik anyonik tuz köprüsü cebi"
+          },
+          {
+            "id": "res_asn293",
+            "residueName": "Asn293/Ser165 (Kiral β-OH Cebi)",
+            "description": "Alifatik hidroksil grubu için spesifik hidrojen bağı akseptörü/donörü"
+          },
+          {
+            "id": "res_phe290",
+            "residueName": "Phe290 (TM6 Aromatik Halka Cebi)",
+            "description": "Aromatik halka için pi-pi istiflenme ve van der Waals cebi"
+          },
+          {
+            "id": "res_leu275",
+            "residueName": "Leu275 (Apolar Alifatik Yan Zincir)",
+            "description": "Hidrofobik apolar kalıntı (katyon veya H-bağı yapmaz)"
+          },
+          {
+            "id": "res_glu107",
+            "residueName": "Glu107 (Dış Hücresel İlmek Karboksilatı)",
+            "description": "Bağlanma cebinin dışında kalan çözücüye açık kalıntı"
+          }
+        ],
+        "source": {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 25
+        }
+      },
+      "technicalTerms": [
+        { "term": "tuz köprüsü", "arContext": "الجسر الملحي" },
+        { "term": "pi-pi istiflenmesi", "arContext": "تراكب باي-باي (pi-pi stacking)" }
+      ],
+      "hints": [
+        {
+          "tr": "Pozitif yüklü amonyum grubunu negatif yüklü aspartat karboksilatına bağlayın.",
+          "ar": "صل مجموعة الأمونيوم موجبة الشحنة بأسبارتات كربوكسيلات سالب الشحنة.",
+          "en": "Connect the positively charged ammonium group to the negatively charged aspartate carboxylate."
+        },
+        {
+          "tr": "Alifatik beta-hidroksil hidrojen bağı akseptörü olan Asn293/Ser165 cebine yerleşir.",
+          "ar": "تستقر مجموعة بيتا-هيدروكسيل الأليفاتية في جيب Asn293 المستقبل للروابط الهيدروجينية.",
+          "en": "The aliphatic beta-hydroxyl docks into the Asn293/Ser165 hydrogen-bonding acceptor alcove."
+        },
+        {
+          "tr": "Amin -> Asp113, (R)-beta-OH -> Asn293, Katekol -> Phe290 eşleşmesini yapın.",
+          "ar": "طابق الأمين مع Asp113، و (R)-beta-OH مع Asn293، والكاتيكول مع Phe290.",
+          "en": "Pair Amine -> Asp113, (R)-beta-OH -> Asn293, and Catechol -> Phe290 to complete docking."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "type": "guided_discovery",
+      "title": {
+        "tr": "Rehberli Keşif: Eudismik Oran ve Pfeiffer Kuralı",
+        "ar": "استكشاف موجه: النسبة الإيوديزمية وقاعدة Pfeiffer",
+        "en": "Guided Discovery: Eudismic Ratio and Pfeiffer's Rule"
+      },
+      "prompt": {
+        "tr": "Eutomerin afinitesinin distomere oranına Eudismik Oran (ER) denir. Pfeiffer kuralına göre, bir ilacın reseptörüne olan afinitesi arttıkça (gereken dozu düştükçe) ER değeri nasıl değişir?",
+        "ar": "تسمى نسبة ألفة المصاوغ الأقوى إلى الأضعف بالنسبة الإيوديزمية (ER). وفق قاعدة Pfeiffer، كلما زادت ألفة الدواء نحو مستقبله (وقلت جرعته المطلوبة)، كيف تتغير قيمة ER؟",
+        "en": "The ratio of eutomer to distomer potency is the Eudismic Ratio (ER). According to Pfeiffer's Rule, as a drug's target affinity increases (dose decreases), how does its ER change?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": {
+              "tr": "ER katlanarak artar; çünkü yüksek afinite reseptör cebine kusursuz uzaysal komplementerlik gerektirir ve kiral kusurlara tolerans sıfırlanır.",
+              "ar": "ترتفع ER بشكل هائل؛ لأن الألفة العالية تتطلب تطابقاً فراغياً مثالياً في جيب المستقبل وتنعدم مرونة التسامح مع العيوب الكيرالية.",
+              "en": "ER increases dramatically; high affinity demands strict 3D complementarity, leaving near-zero tolerance for chiral misfit."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Carl Pfeiffer (1956) göstermiştir ki, pikomolar/nanomolar afiniteli ilaçlar reseptör cebini milimetrik doldurur; distomerdeki tek bir eksik bağ afiniteyi 100-1000 kat düşürür.",
+              "ar": "صحيح! أثبت كارل فايفر (1956) أن الأدوية عالية الألفة تملأ جيب المستقبل بإحكام تام؛ وغياب رابطة واحدة في المصاوغ الأضعف يخفض الألفة مئات الأضعاف.",
+              "en": "Correct! Carl Pfeiffer (1956) established that high-affinity ligands occupy pockets with rigid complementarity; losing one contact penalizes potency 100- to 1000-fold."
+            }
+          },
+          {
+            "id": "opt-6b",
+            "text": {
+              "tr": "ER bire yaklaşır (1.0); çünkü yüksek afiniteli ilaçlar reseptörü her yönelimde bağlayabilir.",
+              "ar": "تقترب ER من الواحد (1.0)؛ لأن الأدوية عالية الألفة ترتبط بالمستقبل في أي اتجاه فراغي.",
+              "en": "ER approaches unity (1.0); high-affinity drugs can bind the pocket regardless of orientation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Ters tolerans yanılgısı: Yüksek afinite kiral toleransı artırmaz, sıfırlar! Düşük afiniteli (mikromolar) ilaçlar gevşek bağlandığı için kiral kusurları tolere eder ve ER 1'e yaklaşır.",
+              "ar": "خطأ التسامح المعكوس: الألفة العالية تلغي التسامح الكيرالي تماماً! الأدوية ضعيفة الألفة فقط ترتبط برخاوة وتتسامح مع العيوب الكيرالية مقتربة من 1.",
+              "en": "Inverted tolerance misconception: High affinity abolishes chiral tolerance. Only low-affinity drugs bind loosely enough to tolerate chiral misfits (ER -> 1)."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "ER sabit kalır; eudismik oran sadece molekül ağırlığına bağlı olup afiniteyle değişmez.",
+              "ar": "تبقى ER ثابتة؛ فالنسبة الإيوديزمية تعتمد حصراً على الوزن الجزيئي ولا تتأثر بالألفة.",
+              "en": "ER remains constant; eudismic ratios depend solely on molecular weight rather than target affinity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Molekül ağırlığı yanılgısı: İki enantiyomerin molekül ağırlığı ve atom bileşimi tamamen aynıdır. ER doğrudan 3 boyutlu reseptör kilit-anahtar seçiciliğine bağlıdır.",
+              "ar": "خطأ الوزن الجزيئي: يمتلك المصاوغان نفس الوزن الجزيئي تماماً. ترتبط ER مباشرة بدرجة الإحكام الفراغي في جيب المستقبل.",
+              "en": "Molecular weight misconception: Enantiomers share identical molecular weight; ER reflects pocket stereoselectivity exclusively."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "eudismik oran", "arContext": "النسبة الإيوديزمية (eudismic ratio)" },
+        { "term": "Pfeiffer kuralı", "arContext": "قاعدة Pfeiffer" },
+        { "term": "ötomer", "arContext": "المصاوغ الفعال (eutomer)" },
+        { "term": "distomer", "arContext": "المصاوغ الأضعف (distomer)" }
+      ],
+      "hints": [
+        {
+          "tr": "Çok dar ve hassas bir anahtar deliğine milimetrik yanlış bir anahtar soktuğunuzu düşünün.",
+          "ar": "تخيل إدخال مفتاح به خطأ ميكروني في قفل شديد الدقة والإحكام.",
+          "en": "Imagine trying to insert an imperfect key into a microscopic, ultra-precise lock."
+        },
+        {
+          "tr": "Pfeiffer (1956) gözlemlemiştir: Mikromolar afiniteli ilaçlarda enantiyomer farkı az iken, pikomolar ilaçlarda fark yüzlerce kata çıkar.",
+          "ar": "لاحظ فايفر (1956): الفارق بين المصاوغات طفيف في الأدوية الميكرومولية، لكنه يتسع لمئات الأضعاف في الأدوية البيكومولية.",
+          "en": "Pfeiffer (1956) noted: micromolar ligands show minimal enantiomer differences, whereas picomolar ligands display 100- to 1000-fold gaps."
+        },
+        {
+          "tr": "Pfeiffer kuralı gereğince afinite arttıkça reseptör-ligand uyumu sıkılaşır; distomerin eksik bağı afiniteyi dramatik biçimde düşürür ve ER katlanarak artar.",
+          "ar": "وفق قاعدة Pfeiffer، كلما زادت الألفة زاد إحكام الجيب، فتهوي ألفة المصاوغ الناقص وتتضاعف ER.",
+          "en": "By Pfeiffer's rule, tighter baseline binding enforces rigid stereocomplementarity, magnifying the eudismic ratio."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 28 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "type": "formal_explanation",
+      "title": {
+        "tr": "Termodinamik Temel: Kiral Serbest Enerji Farkı",
+        "ar": "الأساس الديناميكي الحراري: فرق الطاقة الحرة الكيرالية",
+        "en": "Thermodynamic Foundation: Chiral Free Energy Gap"
+      },
+      "prompt": {
+        "tr": "Vücut sıcaklığında (310 K) her 1.42 kcal/mol (5.94 kJ/mol) serbest enerji farkı afinitada 10 kat değişim yaratır. (R)-adrenalin ekstra -3.3 kcal/mol (-14 kJ/mol) kazanıyorsa ER nedir?",
+        "ar": "عند حرارة الجسم (310 K)، يمنح كل 1.42 kcal/mol فارقاً في الألفة بعشرة أضعاف. إذا كسب (R)-adrenalin طاقة إضافية قدرها -3.3 kcal/mol (-14 kJ/mol)، فما هي قيمة ER؟",
+        "en": "At body temperature (310 K), every 1.42 kcal/mol (5.94 kJ/mol) free energy shift produces a 10-fold affinity change. If (R)-epinephrine gains an extra -3.3 kcal/mol (-14 kJ/mol), what is the ER?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": {
+              "tr": "Yaklaşık 200 kat (ΔΔG / 1.42 = 3.3 / 1.42 ≈ 2.32 log birimi; 10^2.32 ≈ 210 kat).",
+              "ar": "حوالي 200 ضعف (ΔΔG / 1.42 = 3.3 / 1.42 ≈ 2.32 في المقياس اللوغاريتمي؛ 10^2.32 ≈ 210 أضعاف).",
+              "en": "Approximately 200-fold (ΔΔG / 1.42 = 3.3 / 1.42 ≈ 2.32 log decades; 10^2.32 ≈ 210-fold)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz termodinamik hesap! ΔΔG° = 2.303 RT log10(ER). 3.3 kcal/mol'lük tek bir hidrojen bağı enerjisi, logaritmik ilişki sebebiyle afiniteyi 200 kattan fazla artırır.",
+              "ar": "حساب ديناميكي حراري متقن! طاقة رابطة هيدروجينية واحدة (3.3 kcal/mol) تضاعف الألفة بأكثر من 200 ضعف بسبب العلاقة اللوغاريتمية الأسية.",
+              "en": "Flawless thermodynamic calculation! ΔΔG° = 2.303 RT log10(ER). A single 3.3 kcal/mol H-bond magnifies affinity over 200-fold exponentially."
+            }
+          },
+          {
+            "id": "opt-7b",
+            "text": {
+              "tr": "Yalnızca 2.3 kat (enerjiler logaritmik değil lineer orantılıdır).",
+              "ar": "2.3 ضعفاً فقط (لأن الطاقات تتناسب خطياً وليس لوغاريتمياً).",
+              "en": "Only 2.3-fold (free energies scale linearly with affinity rather than logarithmically)."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Lineer ölçek yanılgısı: Gibbs serbest enerjisi denge sabitiyle logaritmik ilişkilidir (ΔG = -RT ln K); serbest enerjideki aritmetik artış afiniteyi üssel olarak çarpar.",
+              "ar": "خطأ التناسب الخطي: ترتبط طاقة غيبس لوغاريتمياً مع ثابت التوازن؛ الزيادة الخطية في الطاقة تضاعف الألفة أسياً.",
+              "en": "Linear scale misconception: Gibbs free energy scales logarithmically with equilibrium constant; arithmetic energy additions multiply affinity exponentially."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "Tam olarak 33 kat (3.3 kcal/mol doğrudan 10 ile çarpılarak bulunur).",
+              "ar": "33 ضعفاً تماماً (بضرب 3.3 kcal/mol مباشرة في معامل 10).",
+              "en": "Exactly 33-fold (multiplying 3.3 kcal/mol directly by a factor of 10)."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Doğrudan çarpma yanılgısı: Logaritmik üs hesabında 10^2.32 hesaplanmalıdır; 10 ile çarpım yapılmaz (10^2 = 100, 10^2.32 ≈ 210).",
+              "ar": "خطأ الضرب المباشر: يجب رفع الأساس 10 إلى القوة 2.32، ولا يجوز الضرب في 10 مباشرة (10^2.32 ≈ 210).",
+              "en": "Direct product misconception: You must evaluate 10 raised to the power 2.32, which equals ~210, not 10 multiplied by 2.32."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Gibbs serbest enerjisi", "arContext": "طاقة غيبس الحرة" },
+        { "term": "bağlanma sabiti", "arContext": "ثابت الارتباط" }
+      ],
+      "hints": [
+        {
+          "tr": "Termodinamik formülü hatırlayın: ΔΔG° = 2.303 RT log10(ER). 310 K'de 2.303 RT ≈ 1.42 kcal/mol.",
+          "ar": "تذكر المعادلة الديناميكية الحرارية: ΔΔG° = 2.303 RT log10(ER). عند 310 K، 2.303 RT ≈ 1.42 kcal/mol.",
+          "en": "Recall the thermodynamic equation: ΔΔG° = 2.303 RT log10(ER). At 310 K, 2.303 RT ≈ 1.42 kcal/mol."
+        },
+        {
+          "tr": "Log10(ER) = 3.3 / 1.42 ≈ 2.32. Buradan ER = 10^2.32 hesaplanır.",
+          "ar": "Log10(ER) = 3.3 / 1.42 ≈ 2.32. ومنها نحسب ER = 10^2.32.",
+          "en": "Log10(ER) = 3.3 / 1.42 ≈ 2.32. Hence, ER = 10^2.32."
+        },
+        {
+          "tr": "10^2 = 100 ve 10^0.32 ≈ 2.1 olduğundan, ER = 100 × 2.1 ≈ 210 (yaklaşık 200 kat).",
+          "ar": "بما أن 10^2 = 100 و 10^0.32 ≈ 2.1، فإن ER = 100 × 2.1 ≈ 210 (حوالي 200 ضعف).",
+          "en": "Since 10^2 = 100 and 10^0.32 ≈ 2.1, ER = 100 × 2.1 ≈ 210 (~200-fold)."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 23 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "type": "concept_check",
+      "title": {
+        "tr": "Kavram Kontrolü: İki İlacın Pfeiffer Kıyaslaması",
+        "ar": "فحص المفاهيم: مقارنة دوائين وفق قاعدة Pfeiffer",
+        "en": "Concept Check: Comparing High vs Low Affinity Drugs"
+      },
+      "prompt": {
+        "tr": "İlaç A reseptörüne 0.2 nM afiniteyle bağlanan güçlü bir agonisttir. İlaç B ise aynı reseptöre 50 μM afiniteyle bağlanan zayıf bir liganddır. Pfeiffer kuralına göre hangisinin eudismik oranı büyüktür?",
+        "ar": "يرتبط الدواء A بمستقبله بألفة 0.2 nM وهو منبه قوي، بينما يرتبط الدواء B بألفة ضعيفة 50 μM. وفق قاعدة Pfeiffer، أي الدوائين يملك نسبة إيوديزمية (ER) أكبر بكثير؟",
+        "en": "Drug A binds its receptor with 0.2 nM affinity. Drug B binds the same target weakly at 50 μM. According to Pfeiffer's Rule, which drug exhibits a vastly higher eudismic ratio?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "İlaç A; sub-nanomolar afinite sıkı ve rijit kiral komplementerlik gerektirir, distomerin eksik kontağı afiniteyi sertçe düşürür.",
+              "ar": "الدواء A؛ لأن الألفة دون النانومولية تتطلب تطابقاً كيرالياً شديد الإحكام، وغياب رابطة واحدة في distomer يخفض الألفة بقسوة.",
+              "en": "Drug A; sub-nanomolar binding demands rigid 3D complementarity, causing a massive potency penalty for distomer misorientation."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! 0.2 nM afiniteye sahip İlaç A cebi kusursuz doldurmalıdır; distomerin bir bağ kaybetmesi afiniteyi 500-1000 kat düşürür. 50 μM'lik İlaç B ise zaten gevşek bağlıdır.",
+              "ar": "صحيح! يتطلب الدواء A بألفة 0.2 nM تطابقاً محكماً يرفع ER لمئات الأضعاف، بينما يرتبط الدواء B برخاوة تتقارب فيها المصاوغات.",
+              "en": "Correct! High-affinity 0.2 nM binding demands near-perfect fit, amplifying the distomer deficit into a massive ER, unlike loose 50 μM binding."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "İlaç B; mikromolar ilaçlar daha fazla moleküle ihtiyaç duyduğundan enantiyomerler arası fark daha büyüktür.",
+              "ar": "الدواء B؛ لأن الأدوية الميكرومولية تتطلب عدداً أكبر من الجزيئات مما يضخم الفارق بين المصاوغات.",
+              "en": "Drug B; micromolar drugs require higher concentrations, amplifying the apparent difference between enantiomers."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Konsantrasyon yanılgısı: Yüksek konsantrasyon gevşek bağlanmayı simgeler. Gevşek bağlanma kiral kusurları tolere eder; bu yüzden İlaç B'nin enantiyomerleri birbirine yakın güçte kalır (ER yakındır 1'e).",
+              "ar": "خطأ التركيز: التركيز العالي يعكس ارتباطاً رخواً غير محكم يتسامح مع عيوب الكيرالية؛ فتقترب نسبة ER للدواء B من الواحد.",
+              "en": "Concentration misconception: High micromolar doses signify loose binding that easily accommodates chiral flaws, driving ER toward unity."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Her ikisinin de ER değeri aynıdır; eudismik oran reseptör afinitesinden bağımsızdır.",
+              "ar": "كلاهما يمتلك نفس قيمة ER؛ فالنسبة الإيوديزمية مستقلة تماماً عن درجة ألفة المستقبل.",
+              "en": "Both have identical ER values; eudismic ratios are independent of baseline target affinity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Bağımsızlık yanılgısı: Pfeiffer kuralının ana temeli tam olarak afinite ile ER arasındaki doğrudan pozitif korelasyondur.",
+              "ar": "خطأ الاستقلالية: جوهر قاعدة Pfeiffer يكمن في وجود ارتباط طردي وثيق بين ارتفاع الألفة وارتفاع النسبة الإيوديزمية.",
+              "en": "Independence misconception: Pfeiffer's rule explicitly establishes a direct positive correlation between baseline affinity and eudismic ratio."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Pfeiffer kuralı", "arContext": "قاعدة Pfeiffer" },
+        { "term": "reseptör afinitesi", "arContext": "ألفة المستقبل" }
+      ],
+      "hints": [
+        {
+          "tr": "Pfeiffer kuralını hatırlayın: Afinite ne kadar yüksek (Kd ne kadar küçük) olursa ER o kadar büyür.",
+          "ar": "تذكر قاعدة Pfeiffer: كلما زادت الألفة (صغرت Kd) تضاعفت النسبة الإيوديزمية ER.",
+          "en": "Recall Pfeiffer's rule: greater affinity (lower Kd) drives a substantially higher eudismic ratio."
+        },
+        {
+          "tr": "0.2 nM (pikomolar seviye) ile 50 μM (50000 nM) arasında 250.000 katlık afinite farkı vardır.",
+          "ar": "الفارق بين 0.2 nM و 50 μM (أي 50000 nM) يصل إلى 250,000 ضعف في الألفة الأساسية.",
+          "en": "There is a 250,000-fold affinity gap between 0.2 nM and 50 μM baseline binding."
+        },
+        {
+          "tr": "İlaç A son derece dar bir afinite penceresine sahiptir; enantiyomer farkı yüzlerce kat olurken, İlaç B'nin enantiyomerleri birbirine yakın güçte kalır.",
+          "ar": "يمتلك الدواء A نافذة ألفة شديدة الدقة؛ مما يرفع فارق المصاوغات لمئات الأضعاف مقارنة بالدواء B.",
+          "en": "Drug A demands extreme stereocomplementarity, yielding a massive ER, while Drug B binds loosely with near-equal enantiomer potency."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 28 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "type": "clinical_vignette",
+      "title": {
+        "tr": "Klinik Vaka: Prilokain ve Methemoglobinemi Toksisitesi",
+        "ar": "حالة سريرية: البريلوكائين وسمية الميتهيموغلوبين",
+        "en": "Clinical Vignette: Prilocaine and Methemoglobinemia Toxicity"
+      },
+      "prompt": {
+        "tr": "Diş hekimliğinde lokal anestezik prilokain rasemat olarak kullanılır. Yüksek doz uygulanan hastada siyanoz gelişir. Hangi enantiyomerin metaboliti ferro demiri ferri demire oksitleyerek methemoglobinemiye yol açmıştır?",
+        "ar": "يُستخدم المخدر الموضعي prilocaine كخليط راسيمي. بعد جرعة عالية يصاب المريض بالزرقة ونقص الأكسجة. أي المصاوغين ينتج مستقلباً يؤكسد حديد الهيموغلوبين مسبباً ميتهيموغلوبين الدم؟",
+        "en": "Local anesthetic prilocaine is administered as a racemate. Following a high dose, a patient develops cyanosis. Which enantiomer undergoes metabolic hydrolysis to produce the hematotoxic metabolite o-toluidine?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": {
+              "tr": "R(-)-prilokain; hepatik amidazlarca selektif hidrolize edilerek o-toluidin oluşturur ve hemoglobindeki Fe2+'yi Fe3+'e oksitler.",
+              "ar": "المصاوغ R(-)-prilocaine؛ يُحلمه في الكبد انتقائياً ليعطي o-toluidine الذي يؤكسد Fe2+ إلى Fe3+ في الهيموغلوبين.",
+              "en": "R(-)-prilocaine; selectively hydrolyzed by hepatic amidases to form o-toluidine, which oxidizes Fe2+ to Fe3+."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle doğru! S(+)-prilokain güvenli ve aktif lokal anesteziktir. Distomer olan R(-)-prilokain ise karaciğerde stereoselektif hidrolize uğrar ve açığa çıkan o-toluidin methemoglobinemiye neden olur.",
+              "ar": "صحيح تماماً! المصاوغ S(+) مخدر موضعي آمن وفعال، بينما يخضع المصاوغ الأضعف R(-) لحلمهة كبدية انتقائية محرراً o-toluidine السام للدم.",
+              "en": "Spot on! S(+)-prilocaine is the active, non-toxic anesthetic. Distomer R(-)-prilocaine undergoes stereoselective hepatic hydrolysis, liberating o-toluidine which induces methemoglobinemia."
+            }
+          },
+          {
+            "id": "opt-9b",
+            "text": {
+              "tr": "S(+)-prilokain; aktif anestezik olduğu için sinir kılıfındaki hemoglobinleri doğrudan parçalar.",
+              "ar": "المصاوغ S(+)-prilocaine؛ لأنه المخدر الفعال فيخرب هيموغلوبين غمد العصب مباشرة.",
+              "en": "S(+)-prilocaine; being the active anesthetic, it directly lyses hemoglobin molecules."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Eutomer toksisitesi yanılgısı: S(+)-enantiyomeri methemoglobinemi yapmaz; toksisite distomer olan R(-)-formunun metabolitinden doğar.",
+              "ar": "خطأ سمية المصاوغ الفعال: لا يسبب المصاوغ S(+) ميتهيموغلوبين الدم؛ السمية تنشأ حصراً من مستقلب المصاوغ R(-).",
+              "en": "Eutomer toxicity misconception: S(+)-prilocaine is non-toxic; methemoglobinemia stems entirely from the hepatic metabolite of distomer R(-)-prilocaine."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "Her iki enantiyomer de eşit oranda parçalanır; toksisite stereoselektif değildir.",
+              "ar": "يتحلل كلا المصاوغين بنفس المعدل تماماً؛ فالسمية ليست انتقائية فراغياً.",
+              "en": "Both enantiomers undergo equal hydrolysis; toxicity is completely non-stereoselective."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Eşit metabolizma yanılgısı: Hepatik enzimler şiral proteinlerdir ve enantiyomerleri farklı hızlarda dönüştürür; prilokain hidrolizi belirgin biçimde R-selektiftir.",
+              "ar": "خطأ التماثل الاستقلابي: الأنزيمات الكبدية بروتينات كيرالية تميز المصاوغات وتفكك المصاوغ R بسرعة وانتقائية أعلى بكثير.",
+              "en": "Equal metabolism misconception: Hepatic amidases are chiral proteins that hydrolyze R(-)-prilocaine with high stereoselectivity."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "stereoselektif hidroliz", "arContext": "الحلمهة الانتقائية الفراغية" },
+        { "term": "methemoglobinemi", "arContext": "ميتهيموغلوبين الدم" },
+        { "term": "o-toluidin", "arContext": "أورثو-تولويدين" }
+      ],
+      "hints": [
+        {
+          "tr": "Methemoglobinemiye yol açan metabolit o-toluidin (orto-toluidin) bileşiğidir.",
+          "ar": "المستقلب المسبب لميتهيموغلوبين الدم هو أورثو-تولويدين (o-toluidine).",
+          "en": "The toxic culprit oxidizing hemoglobin is the metabolite ortho-toluidine (o-toluidine)."
+        },
+        {
+          "tr": "S(+)-prilokain arzu edilen aktif ötomerdir; R(-)-prilokain ise toksik distomerdir.",
+          "ar": "المصاوغ S(+)-prilocaine هو الفعال المرغوب، بينما R(-)-prilocaine هو المصاوغ السام.",
+          "en": "S(+)-prilocaine is the therapeutic eutomer; R(-)-prilocaine is the toxic distomer."
+        },
+        {
+          "tr": "R(-)-prilokain karaciğerde amido-hidrolaz ile selektif hidrolize uğrar; açığa çıkan o-toluidin Fe2+'yi Fe3+'e yükseltgeyerek methemoglobinemi yapar.",
+          "ar": "يتحلل R(-)-prilocaine في الكبد ليعطي o-toluidine الذي يؤكسد Fe2+ إلى Fe3+ مسبباً المرض.",
+          "en": "R(-)-prilocaine undergoes stereoselective amide hydrolysis to liberate o-toluidine, oxidizing Fe2+ to Fe3+."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 32 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "type": "retrieval",
+      "title": {
+        "tr": "Aralıklı Hatırlama: Talidomid İn Vivo Rasemizasyonu",
+        "ar": "استرجاع متباعد: الانقلاب الكيرالي التلقائي للثاليدوميد",
+        "en": "Spaced Retrieval: In Vivo Racemization of Thalidomide"
+      },
+      "prompt": {
+        "tr": "Gebelerde sabah bulantısı için saf R(+)-talidomid üretilip verilseydi fokomeli (fetal uzuv agenezi) faciası tamamen önlenebilir miydi? Neden?",
+        "ar": "لو تم تصنيع وإعطاء R(+)-thalidomide نقياً للحوامل لعلاج الغثيان، هل كان بالإمكان تجنب كارثة الفقمية (تشوه الأطراف) تماماً؟ ولماذا؟",
+        "en": "If pharmaceutical companies had manufactured and administered pure R(+)-thalidomide to pregnant patients, would phocomelia birth defects have been prevented? Why or why not?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "Hayır; talidomidin asidik kiral protonu plazmada keto-enol tautomerisiyle 4-5 saatte kendiliğinden rasemize olur (R -> S dönüşümü kaçınılmazdır).",
+              "ar": "كلا؛ فالبروتون الكيرالي الحمضي للثاليدوميد ينقلب تلقائياً في البلازما عبر التوتوميرية (keto-enol) خلال 4-5 ساعات ليعيد تكوين المصاوغ المشوه S.",
+              "en": "No; thalidomide's acidic chiral proton undergoes rapid in vivo keto-enol tautomerism, spontaneously racemizing into the teratogenic S-isomer within 4-5 hours."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kritik farmasötik gerçek! Talidomidin kiral karbonundaki proton iki karbonil arasında asidiktir; fizyolojik pH'ta hızla kopup düzlemsel ara ürün üzerinden her iki enantiyomere döner. Saf R verilse bile 4-5 saatte teratojenik S oluşur.",
+              "ar": "حقيقة صيدلانية بالغة الأهمية! البروتون الكيرالي يقع بين مجموعتي كربونيل حمضيتين؛ فيفقد تلقائياً عند pH الفيزيولوجي ليعيد تشكيل المصاوغ السام S خلال ساعات.",
+              "en": "Critical pharmaceutical reality! The chiral proton flanked by carbonyls is acidic; at physiological pH it deprotonates to an achiral planar enolate, racemizing in vivo within 4-5 hours."
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "Evet; R(+)-enantiyomeri kimyasal olarak kararlıdır ve vücutta asla S(-)-enantiyomerine dönüşemez.",
+              "ar": "نعم؛ لأن المصاوغ R(+) مستقر كيميائياً تماماً ويستحيل تحوله في الجسم إلى المصاوغ S(-).",
+              "en": "Yes; the R(+)-enantiomer is stereochemically stable and cannot interconvert in biological media."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kiral kararlılık yanılgısı: Kiral merkezler her zaman statik değildir; alfa-asidik proton taşıyan moleküller fizyolojik koşullarda kendiliğinden kiral inversiyona / rasemizasyona uğrar.",
+              "ar": "خطأ ثبات الكيرالية: ليست كل المراكز الكيرالية خاملة؛ فالبروتونات الحمضية المجاورة للكربونيل تسمح بالانقلاب الكيرالي التلقائي في سوائل الجسم.",
+              "en": "Chiral stability misconception: Chiral centers with acidic alpha-protons spontaneously racemize at physiological pH via planar enol intermediates."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Evet; çünkü S(-)-talidomid plasenta bariyerini geçebilirken saf R(+) asla plasentayı geçemez.",
+              "ar": "نعم؛ لأن المصاوغ S(-) يعبر المشيمة بينما يعجز المصاوغ R(+) النقي عن عبورها نهائياً.",
+              "en": "Yes; because only the S(-)-enantiomer crosses the placenta while pure R(+) is completely blocked."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Membran bariyeri yanılgısı: Her iki enantiyomer de aynı lipofilik yapıdadır ve plasenta membranını pasif difüzyonla kolayca geçer.",
+              "ar": "خطأ الحاجز المشيمي: يمتلك كلا المصاوغين نفس الخصائص المحبة للدهن ويعبران المشيمة بسهولة بالانتشار المنفعل.",
+              "en": "Placental barrier misconception: Both enantiomers possess identical lipophilicity and freely diffuse across placental membranes."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "kiral rasemizasyon", "arContext": "الراسمة الكيرالية الحيوية" },
+        { "term": "keto-enol tautomerisi", "arContext": "التوتوميرية كيتو-إينول" },
+        { "term": "teratojenite", "arContext": "التشوه الجنيني" }
+      ],
+      "hints": [
+        {
+          "tr": "Talidomidin kiral merkezindeki hidrojen atomu iki karbonil grubunun arasındadır (asidiktir).",
+          "ar": "تقع ذرة الهيدروجين في المركز الكيرالي للثاليدوميد بين مجموعتي كربونيل (فهي حمضية).",
+          "en": "The hydrogen atom at thalidomide's chiral center is flanked by two electron-withdrawing carbonyls (acidic)."
+        },
+        {
+          "tr": "Fizyolojik pH'ta (7.4) bu proton kolayca kopar ve düzlemsel enolat ara ürünü üzerinden her iki taraftan geri bağlanır.",
+          "ar": "عند درجة الحموضة الفيزيولوجية (7.4) ينفصل هذا البروتون بسهولة مشكلاً وسيطاً مستوياً ينقلب للجهتين.",
+          "en": "At physiological pH 7.4, this proton dissociates, forming a planar enolate intermediate that protonates from either face."
+        },
+        {
+          "tr": "In vivo kiral rasemizasyon nedeniyle saf R-talidomid birkaç saat içinde 50:50 rasemik karışıma döner; teratojenik S-formu vücutta mutlaka oluşur.",
+          "ar": "بسبب الراسمة التلقائية في الجسم، يتحول R النقي إلى خليط 50:50 خلال ساعات منتجاً المصاوغ المشوه S حتماً.",
+          "en": "Due to in vivo chiral racemization, pure R-thalidomide reaches a 50:50 racemic mixture in 4-5 hours, inevitability producing teratogenic S-thalidomide."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 31 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "type": "connection",
+      "title": {
+        "tr": "Bağlantı: Asetilkolinin Muskarinik vs Nikotinik Konformasyonu",
+        "ar": "ربط المفاهيم: هيئات الأستيل كولين المسكارينية مقابل النيكوتينية",
+        "en": "Cross-Topic Bridge: Acetylcholine Gauche vs Anti Conformations"
+      },
+      "prompt": {
+        "tr": "Asetilkolin tekli bağ rotasyonuyla iki ana konformasyonda bulunur. Gauche (katlanmış) formu muskarinik reseptöre, anti (uzamış) formu nikotinik reseptöre bağlanır. Bu seçiciliğin geometrik temeli nedir?",
+        "ar": "يوجد أستيل كولين في هيئتين رئيسيتين بدوران الروابط. تلائم هيئة gauche (المطوية) المستقبلات المسكارينية، وهيئة anti (الممتدة) المستقبلات النيكوتينية. ما الأساس الهندسي؟",
+        "en": "Acetylcholine exists in two interconverting conformers. The gauche (folded) conformer activates muscarinic receptors; anti (extended) activates nicotinic receptors. What is the spatial basis of this subtype selectivity?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "Kuvaterner amonyum (N+) ile ester oksijeni arasındaki mesafe gauche formda 3.3 Å (muskarinik uyumlu), anti formda ise 4.4 Å (nikotinik uyumlu) dur.",
+              "ar": "المسافة بين الأمونيوم (N+) وأكسجين الإستر تبلغ 3.3 Å في هيئة gauche (مطابقة للمسكاريني)، و4.4 Å في هيئة anti (مطابقة للنيكوتيني).",
+              "en": "The distance between quaternary ammonium (N+) and ester oxygen is 3.3 Å in gauche (muscarinic fit) versus 4.4 Å in anti (nicotinic fit)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel bağlantı! Tekli sigma bağlarının dönmesiyle N+ ile O arasındaki mesafe 3.3 Å (katlanmış) ile 4.4 Å (açık) arasında değişir. Bu mesafe rijit siklopropan türevleriyle dondurularak ispatlanmıştır.",
+              "ar": "ربط ممتاز! بدوران الرابطة الأحادية تتغير المسافة بين N+ و O بين 3.3 Å (مطوية) و 4.4 Å (ممتدة)، وهو ما تم إثباته بربط الجزيء بحلقة سيكلوبروبان صلبة.",
+              "en": "Outstanding bridge! Torsional rotation around C-C single bonds alters the N+ to O distance from 3.3 Å (folded, muscarinic) to 4.4 Å (extended, nicotinic), verified with rigid cyclopropyl analogs."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Gauche formunda ester bağı parçalanarak serbest asetik asit açığa çıkar ve muskarinik reseptörü uyarır.",
+              "ar": "في هيئة gauche ينكسر الإستر متحرراً إلى حمض الخل الذي ينبه المستقبل المسكاريني.",
+              "en": "In the gauche conformer, the ester bond breaks into acetic acid to trigger muscarinic receptors."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Hidroliz yanılgısı: Konformasyonel izomeri kimyasal bağ kırılması içermez; molekül kovalent olarak bütündür, yalnızca uzaysal dönme açısı değişir.",
+              "ar": "خطأ الحلمهة: لا تتضمن المصاوغة التشكيلية أي كسر للروابط الكيميائية؛ بل يتغير اتجاه الدوران الفراغي فقط مع بقاء الجزيء سليماً.",
+              "en": "Hydrolysis misconception: Conformational isomerism involves zero bond breakage; the molecule remains intact, only changing its dihedral torsion angle."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Anti konformasyonunda asetilkolin pozitif yükünü kaybederek yüksüz bir moleküle dönüşür.",
+              "ar": "في هيئة anti يفقد أستيل كولين شحنته الموجبة ويتحول إلى جزيء غير مشحون.",
+              "en": "In the anti conformation, acetylcholine loses its formal positive charge to become neutral."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yük kaybı yanılgısı: Kuvaterner amonyum kalıcı pozitif yüklüdür (dörde bağlı azot); konformasyonel dönme molekülün net yükünü etkilemez.",
+              "ar": "خطأ فقدان الشحنة: يحمل الأمونيوم الرباعي شحنة موجبة دائمة لا تتأثر مطلقاً بالدوران التشكيل الفراغي.",
+              "en": "Charge loss misconception: Quaternary ammonium carries a permanent positive charge regardless of dihedral angle."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "konformasyonel izomeri", "arContext": "المصاوغة التشكيلية (الهيئية)" },
+        { "term": "biyoaktif konformasyon", "arContext": "الهيئة الفعالة حيوياً" },
+        { "term": "rotamer", "arContext": "المصاوغ الدوراني" }
+      ],
+      "hints": [
+        {
+          "tr": "Rijit siklopropan analogları (trans-asetilsiklopropil vs cis-asetilsiklopropil) bu mesafeyi dondurarak kanıtlamıştır.",
+          "ar": "أثبتت مشتقات السيكلوبروبان الصلبة الفارق بتثبيت المسافة الفراغية.",
+          "en": "Rigid cyclopropyl analogs freeze the pharmacophore distance, demonstrating receptor subtype selectivity."
+        },
+        {
+          "tr": "Muskarinik cepte N+ ile O mesafesi yaklaşık 3.3 Å iken, nikotinik cepte mesafe daha geniştir (4.4 Å).",
+          "ar": "تبلغ المسافة في الجيب المسكاريني 3.3 Å، بينما تتسع في الجيب النيكوتيني إلى 4.4 Å.",
+          "en": "Muscarinic pockets recognize a compact 3.3 Å span; nicotinic pockets require an extended 4.4 Å pharmacophore."
+        },
+        {
+          "tr": "Gauche formunda N+ ve O arasındaki mesafe 3.3 Å olup muskarinik cebe; uzamış anti formunda 4.4 Å olup nikotinik cebe kusursuz geometrik uyum gösterir.",
+          "ar": "في هيئة gauche تبلغ المسافة 3.3 Å ملائمة للمسكاريني، وفي هيئة anti تبلغ 4.4 Å ملائمة للنيكوتيني.",
+          "en": "Gauche geometry maintains 3.3 Å between N+ and O for muscarinic docking; extended anti geometry establishes 4.4 Å for nicotinic binding."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 42 }]
+    },
+    {
+      "id": "mc-mod2-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Yeni Kiral Bronkodilatör Tasarımı",
+        "ar": "اختبار الإتقان: تصميم موسع قصبات كيرالي جديد",
+        "en": "Mastery Challenge: Novel Chiral Beta-2 Bronchodilator Design"
+      },
+      "prompt": {
+        "tr": "Yeni bir astım ilacı adayında (R)-izomeri beta-2 reseptörüne 2 nM afiniteyle bağlanırken, (S)-izomeri 400 nM afinite göstermektedir. Bu ilacın eudismik oranı ve kiral bağlanma serbest enerji farkı nedir?",
+        "ar": "مرشح دوائي جديد للربو: يرتبط المصاوغ (R) بمستقبل بيتا-2 بألفة 2 nM بينما يرتبط المصاوغ (S) بألفة 400 nM. ما هي النسبة الإيوديزمية وفرق الطاقة الحرة للارتباط؟",
+        "en": "In a novel asthma drug candidate, the (R)-isomer binds beta-2 receptors with 2 nM affinity, while the (S)-isomer shows 400 nM affinity. What is the eudismic ratio and chiral free energy difference?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "ER = 200; ΔΔG° = -3.27 kcal/mol (-13.7 kJ/mol); (R)-izomeri Easson-Stedman 3-nokta bağlanmasını tamamlarken (S) sadece 2 noktadan tutunur.",
+              "ar": "ER = 200؛ وΔΔG° = -3.27 kcal/mol (-13.7 kJ/mol)؛ يحقق (R) تعشيق Easson-Stedman ثلاثي النقاط بينما يقتصر (S) على نقطتين فقط.",
+              "en": "ER = 200; ΔΔG° = -3.27 kcal/mol (-13.7 kJ/mol); (R) satisfies 3-point Easson-Stedman attachment while (S) binds via only 2 contacts."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler, tam bir uzman cevabı! ER = 400 nM / 2 nM = 200. ΔΔG° = 1.42 kcal/mol × log10(200) = 1.42 × 2.301 ≈ 3.27 kcal/mol (-13.7 kJ/mol). Bu enerji Easson-Stedman 3. temas noktası olan güçlü bir hidrojen bağına tam olarak karşılık gelir.",
+              "ar": "تهانينا، إتقان مذهل! ER = 400/2 = 200. و ΔΔG° = 1.42 × log10(200) = 3.27 kcal/mol. يمثل هذا الفارق تماماً طاقة الرابطة الهيدروجينية للنقطة الثالثة في نموذج Easson-Stedman.",
+              "en": "Mastery demonstrated! ER = 400 nM / 2 nM = 200. ΔΔG° = 1.42 kcal/mol × log10(200) = 3.27 kcal/mol (-13.7 kJ/mol), matching the exact free energy contribution of the 3rd Easson-Stedman contact."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "ER = 20; ΔΔG° = -1.42 kcal/mol; iki izomer arasındaki fark tek bir van der Waals bağı kadardır.",
+              "ar": "ER = 20؛ وΔΔG° = -1.42 kcal/mol؛ الفارق بين المصاوغين يعادل رابطة فان دير فالس واحدة فقط.",
+              "en": "ER = 20; ΔΔG° = -1.42 kcal/mol; the difference between isomers equates to a single van der Waals bond."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Oranlama hatası: 400 / 2 = 200'dür (20 değil). 1.42 kcal/mol yalnızca 10 katlık bir afinite değişimine karşılık gelir; burada ise 200 katlık dev bir fark vardır.",
+              "ar": "خطأ حسابي: 400 / 2 = 200 (وليس 20). طاقة 1.42 تعادل فارق 10 أضعاف فقط، بينما الفارق الفعلي 200 ضعف.",
+              "en": "Arithmetic error: 400 / 2 = 200 (not 20). A 1.42 kcal/mol shift produces only a 10-fold difference, whereas this case features a 200-fold gap."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "ER = 400; ΔΔG° = -5.0 kcal/mol; (S)-izomeri reseptörde tam kovalent inaktivasyon yapar.",
+              "ar": "ER = 400؛ وΔΔG° = -5.0 kcal/mol؛ يقوم المصاوغ (S) بتعطيل تساهمي كامل للمستقبل.",
+              "en": "ER = 400; ΔΔG° = -5.0 kcal/mol; the (S)-isomer causes irreversible covalent receptor inactivation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kd yanılgısı: ER iki afinitenin birbirine oranıdır (400/2 = 200); distomerin afinite sayısı doğrudan ER olamaz. Ayrıca ligand non-kovalent bir agonisttir.",
+              "ar": "خطأ النسبة: ER هي النسبة بين القيمتين (400/2 = 200)، وليست قيمة distomer المفردة؛ والارتباط عكوس غير تساهمي.",
+              "en": "Ratio misconception: ER is the ratio of distomer to eutomer Kd (400 / 2 = 200), not the distomer Kd alone; furthermore, binding is non-covalent."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        { "term": "Easson-Stedman 3-nokta bağlanması", "arContext": "نموذج Easson-Stedman ثلاثي النقاط" },
+        { "term": "eudismik oran", "arContext": "النسبة الإيوديزمية" }
+      ],
+      "hints": [
+        {
+          "tr": "Eudismik oranı bulun: ER = Distomer Kd / Eutomer Kd = 400 nM / 2 nM.",
+          "ar": "احسب النسبة الإيوديزمية: ER = Kd للمصاوغ الأضعف / Kd للمصاوغ الأقوى = 400 / 2.",
+          "en": "Find the eudismic ratio: ER = Distomer Kd / Eutomer Kd = 400 nM / 2 nM."
+        },
+        {
+          "tr": "ER = 200. Şimdi termodinamik hesabı yapın: log10(200) = log10(2) + log10(100) = 0.301 + 2 = 2.301.",
+          "ar": "ER = 200. الآن احسب القيمة اللوغاريتمية: log10(200) = 2.301.",
+          "en": "ER = 200. Evaluate the logarithm: log10(200) = 2.301."
+        },
+        {
+          "tr": "ΔΔG° = 1.42 kcal/mol × 2.301 ≈ 3.27 kcal/mol (-13.7 kJ/mol). Bu değer Easson-Stedman 3. noktası olan hidrojen bağının serbest enerji katkısıdır.",
+          "ar": "ΔΔG° = 1.42 × 2.301 ≈ 3.27 kcal/mol (-13.7 kJ/mol). يمثل هذا الفارق تماماً طاقة النقطة الثالثة.",
+          "en": "ΔΔG° = 1.42 kcal/mol × 2.301 ≈ 3.27 kcal/mol (-13.7 kJ/mol), representing the 3rd Easson-Stedman H-bond contact."
+        }
+      ],
+      "sources": [{ "file": "İlaçlarda  İzomeri.pdf", "page": 25 }]
+    }
+  ]
+};
+
+const targetPath = path.resolve(__dirname, '../courses/medchem/lessons/lesson-04.json');
+fs.writeFileSync(targetPath, JSON.stringify(lesson04, null, 2) + '\n', 'utf8');
+console.log('Successfully wrote lesson-04.json to:', targetPath);

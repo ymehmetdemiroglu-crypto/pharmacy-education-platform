@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
   "id": "mc-mod4-les2",
   "courseId": "medchem",
   "moduleId": "mc-mod-04",
@@ -10,21 +11,51 @@
   "order": 2,
   "access": "free",
   "objective": {
-    "tr": "İlaç iskeletini rijit hale getirerek biyoaktif konformasyonu dondurmayı ve bağlanma entropi cezasını düşürmeyi öğrenmek.",
-    "ar": "تعلم استراتيجيات تجسئة الهيكل الدوائي لتثبيت التشكيل الحيوي الفعال وخفض ضريبة الإنتروبيا عند الارتباط.",
-    "en": "Design conformationally constrained drug scaffolds to eliminate entropic penalties and achieve target-selective binding."
+    "tr": "Asetilkolin ve histamin gibi esnek moleküllerde konformasyonel kısıtlama ve rijit analog tasarımını uygulayarak reseptör alt tip seçiciliğini artırmayı ve bağlanma entropi cezasını düşürmeyi öğrenmek.",
+    "ar": "تطبيق استراتيجيات التجسئة الهيكلية والتقييد التشكلي على الجزيئات المرنة كأستيل كولين والهستامين لتحسين الانتقائية الفرعية وخفض ضريبة الإنتروبيا.",
+    "en": "Design conformationally restricted and rigid drug scaffolds to lock bioactive conformers, eliminate conformational entropy penalties, and maximize receptor subtype selectivity."
   },
   "misconceptions": [
     {
-      "tr": "Molekülün çözeltideki en kararlı (en düşük enerjili) konformasyonunun her zaman reseptöre bağlanan konformasyon olduğu yanılgısı.",
-      "ar": "الظن الخاطئ بأن التشكيل الأكثر استقراراً في المحلول هو دائماً التشكيل الذي يرتبط بالمستقبِل.",
-      "en": "A flexible drug is always superior because it can adapt to multiple receptor shapes."
+      "tr": "Molekülün çözeltideki en kararlı (en düşük enerjili) konformasyonunun her zaman reseptöre bağlanan konformasyon olduğu yanılgısı (Biyoaktif Konformasyon Paradoksu).",
+      "ar": "الظن الخاطئ بأن التشكيل الفراغي الأكثر استقراراً والأدنى طاقة في المحلول الحر هو دائماً التشكيل الذي يرتبط بالمستقبل.",
+      "en": "The misconception that the global minimum energy conformer in aqueous solution is always the conformer that binds the receptor."
+    },
+    {
+      "tr": "Çok sayıda serbest dönebilen tekli bağa sahip aşırı esnek moleküllerin reseptör ceplerine daha kolay uyum sağlayıp daha güçlü bağlanacağı yanılgısı (Entropi cezası göz ardı edilir).",
+      "ar": "الاعتقاد الخاطئ بأن الجزيئات مفرطة المرونة ترتبط بقوة أكبر لقدرتها على التكيف متجاهلاً ضريبة الإنتروبيا التشكيلية الهائلة.",
+      "en": "The belief that high molecular flexibility improves affinity, ignoring the massive conformational entropy penalty upon binding."
+    },
+    {
+      "tr": "Asetilkolinin muskarinik ve nikotinik reseptörleri aynı 3 boyutlu uzaysal konformasyonda aktive ettiği düşüncesi.",
+      "ar": "الظن الخاطئ بأن الأسيتيل كولين ينشط المستقبلات المسكارينية والنيكوتينية بنفس التشكيل الفراغي المتطابق.",
+      "en": "The assumption that acetylcholine activates both muscarinic and nicotinic receptors in an identical spatial conformation."
     }
   ],
   "sources": [
     {
       "file": "İlaçlarda  İzomeri.pdf",
-      "page": 34
+      "page": 8
+    },
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 39
+    },
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 40
+    },
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 41
+    },
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 42
+    },
+    {
+      "file": "İlaçlarda  İzomeri.pdf",
+      "page": 43
     }
   ],
   "citations": [
@@ -32,37 +63,101 @@
       "id": "CIT-MC08-01",
       "book": "Foye's Principles of Medicinal Chemistry",
       "edition": "8th ed.",
-      "topic": "Conformational Isomerism & Rigidification Strategies",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Conformational Isomerism, Rigidification, and Bioactive Conformations",
+      "chapter": "Chapter 2",
+      "page": "45-62",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC08-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Conformational Factors in Drug Action: Acetylcholine and Histamine Rotamers",
+      "chapter": "Chapter 2",
+      "page": "35-50",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC08-01",
+      "parameter": "Acetylcholine gauche conformer N+ to ester O distance",
+      "value": "3.3 Angstroms",
+      "status": "verified",
+      "referencePassage": "Slide 42: Gauche (folded) conformation has N+ to ester O distance of 3.3 A, selectively binding muscarinic receptors."
+    },
+    {
+      "id": "NUM-MC08-02",
+      "parameter": "Acetylcholine anti conformer N+ to ester O distance",
+      "value": "4.4 Angstroms",
+      "status": "verified",
+      "referencePassage": "Slide 42: Anti (extended) conformation has N+ to ester O distance of 4.4 A, selectively binding nicotinic receptors."
+    },
+    {
+      "id": "NUM-MC08-03",
+      "parameter": "Histamine Conformer A imidazole to amino distance",
+      "value": "4.55 Angstroms",
+      "status": "verified",
+      "referencePassage": "Slide 43: Transoid Conformer A has 4.55 A distance, binding H1 receptors."
+    },
+    {
+      "id": "NUM-MC08-04",
+      "parameter": "Histamine Conformer B imidazole to amino distance",
+      "value": "3.60 Angstroms",
+      "status": "verified",
+      "referencePassage": "Slide 43: Gauche Conformer B has 3.60 A distance, binding H2 receptors."
+    },
+    {
+      "id": "NUM-MC08-05",
+      "parameter": "Entropic free energy savings per frozen rotatable bond",
+      "value": "2.5 to 4.0 kJ/mol (0.6 to 1.0 kcal/mol)",
+      "status": "verified",
+      "referencePassage": "Blueprint Cluster 4: Each frozen rotatable bond saves ~2.5-4.0 kJ/mol in conformational entropy penalty upon binding."
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "mc-mod4-les2-card1",
       "courseId": "medchem",
-      "drugOrConcept": "Konformasyonel Entropi Cezası",
-      "prompt": "Esnek bir molekül reseptöre bağlandığında serbest dönme serbestliğini kaybetmesi termodinamik olarak neye yol açar?",
-      "answer": "Olumsuz entropi cezasına (-T * Delta S) yol açarak serbest bağlanma enerjisini zayıflatır.",
+      "drugOrConcept": "Asetilkolin Gauche vs Anti Mesafeleri",
+      "prompt": "Asetilkolinin muskarinik ve nikotinik reseptörleri bağlayan konformerlerinde N+ ile ester O arası mesafeler nedir?",
+      "answer": "Katlanmış (gauche) formda 3.3 Å (muskarinik); uzamış (anti) formda 4.4 Å (nikotinik) mesafededir (Slayt 42).",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod4-les2-card2",
       "courseId": "medchem",
-      "drugOrConcept": "Rijitleştirme Stratejisi",
-      "prompt": "İlaç kimyasında esnek bir zinciri halkalaştırmanın (siklizasyon) temel amacı nedir?",
-      "answer": "Biyoaktif konformasyonu sabitleyip entropi kaybını önlemek ve reseptör seçiciliğini artırmak.",
+      "drugOrConcept": "Biyoaktif Konformasyon Paradoksu",
+      "prompt": "Bir ilacın çözeltideki en düşük enerjili konformasyonu reseptöre bağlanan form olmak zorunda mıdır?",
+      "answer": "Hayır; reseptör bağlanma entalpisi (ΔH), daha yüksek enerjili bir biyoaktif konformasyona geçiş enerjisini karşılar.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod4-les2-card3",
       "courseId": "medchem",
-      "drugOrConcept": "Asetilkolin Konformasyonları",
-      "prompt": "Asetilkolin nikotinik reseptöre kvazi-halkasal syn konformasyonunda mı, yoksa açık anti konformasyonunda mı bağlanır?",
-      "answer": "Muskarinik reseptöre anti, nikotinik reseptöre ise syn-klon konformasyonunda bağlanır.",
+      "drugOrConcept": "Histamin H1 vs H2 Mesafeleri",
+      "prompt": "Histaminin H1 ve H2 reseptörlerine bağlanan rotamerlerindeki farmakoforik mesafeler nedir?",
+      "answer": "H1 için uzamış transoid A formu 4.55 Å; H2 için katlanmış gauche B formu 3.60 Å mesafededir (Slayt 43).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les2-card4",
+      "courseId": "medchem",
+      "drugOrConcept": "Rijit İskelet Tasarımının Entropi Kazancı",
+      "prompt": "Esnek bir molekülü halka içine alarak dondurmak bağlanma serbest enerjisini (ΔG) neden katlar?",
+      "answer": "Rotasyonel bağlar donduğunda bağlanma anındaki konformasyonel entropi kaybı (-TΔS) silinir; her bağ ~2.5-4 kJ/mol kazandırır.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "mc-mod4-les2-card5",
+      "courseId": "medchem",
+      "drugOrConcept": "Siklopropil Asetilkolin Testi",
+      "prompt": "Asetilkolinin (+)-cis ve (+)-trans siklopropil analogları hangi reseptörleri seçici olarak uyarır?",
+      "answer": "(+)-Cis analog sadece muskarinik, (+)-trans analog ise sadece nikotinik reseptörleri uyarır (Slayt 42).",
       "box": 1,
       "intervalDays": 1
     }
@@ -80,239 +175,671 @@
       "id": "mc-mod4-les2-step-01",
       "stage": "hook",
       "stageIndex": 1,
+      "type": "predict_reveal",
       "title": {
-        "tr": "Asetilkolinin İki Yüzü",
-        "ar": "وجها الأسيتيل كولين",
-        "en": "Acetylcholine's Double Life: Muscarinic or Nicotinic?"
+        "tr": "İki Ayrı Reseptör, Tek Bir Esnek Molekül",
+        "ar": "مستقبلان مختلفان لجزيء مرن واحد",
+        "en": "The Acetylcholine Paradox: One Molecule, Two Shapes"
       },
       "prompt": {
-        "tr": "Asetilkolin tek bir moleküldür fakat hem kalp muskarinik reseptörünü hem nöromusküler nikotinik reseptörü nasıl uyarır?",
-        "ar": "الأسيتيل كولين جزيء واحد، لكن كيف ينشط كلاً من مستقبلات القلب الموسكارينية ومستقبلات العضلات النيكوتينية؟",
-        "en": "How can tiny, flexible acetylcholine activate both muscarinic GPCRs and nicotinic ion channels with high affinity and distinct pharmacophores?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "konformasyonel esneklik",
-          "arContext": "المرونة التشكيلية"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod4-les2-step-02",
-      "stage": "question",
-      "stageIndex": 2,
-      "title": {
-        "tr": "Tahmin: Serbest Dönmenin Bedeli",
-        "ar": "توقع: ضريبة الدوران الحر",
-        "en": "Prediction: Entropic Cost of Free Rotation"
-      },
-      "prompt": {
-        "tr": "10 serbest dönen tek bağı olan esnek bir molekül reseptöre bağlandığında termodinamik olarak ne kaybeder?",
-        "ar": "عندما يرتبط جزيء مرن يمتلك 10 روابط أحادية حرة الدوران بمستقبله، ماذا يخسر ديناميكياً؟",
-        "en": "When a ligand with 8 freely rotating single bonds freezes into a single binding pose, how does this affect binding free energy (ΔG)?"
+        "tr": "Asetilkolin kalpte muskarinik, çizgili kasta nikotinik reseptörleri uyarır. Esnek bir ester zincirine sahip tek bir molekül, iki tamamen farklı reseptör cebini nasıl ayrı ayrı aktive edebilir?",
+        "ar": "ينشط الأسيتيل كولين المستقبلات المسكارينية في القلب والنيكوتينية في العضلات. كيف ينشط جزيء مرن واحد نوعين متباعدين تماماً من المستقبلات دون التباس؟",
+        "en": "Acetylcholine activates muscarinic receptors in the heart and nicotinic receptors in skeletal muscle. How can a single flexible molecule selectively trigger two radically different receptor pockets?"
       },
       "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Her dondurulan serbest bağ yaklaşık 0.7 kcal/mol entropi cezası ödetir."
-      },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
+          "term": "konformasyonel izomerizm",
+          "arContext": "التماكب التشكلي"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "rotamer",
+          "arContext": "المتشكل الدوراني"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Tekli sigma bağlarının etrafında serbest dönme serbestliğini düşünün.",
+          "ar": "فكر في حرية الدوران حول الروابط الأحادية سيغما.",
+          "en": "Consider the freedom of rotation around single sigma bonds."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Molekül uzayda katlanabilir veya uzayabilir; iki formun atomlar arası mesafeleri farklıdır.",
+          "ar": "يمكن للجزيء أن ينطوي أو يمتد؛ فالمسافات بين الذرات تختلف في الشكلين.",
+          "en": "The molecule can fold or extend, altering interatomic pharmacophoric distances."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Asetilkolin tekli bağlarını döndürerek katlanmış (gauche) formda muskarinik, uzamış (anti) formda nikotinik reseptöre oturur.",
+          "ar": "يدور أستيل كولين ليتبنى تشكيلاً مطوياً مع المسكاريني وتشكيلاً ممتداً مع النيكوتيني.",
+          "en": "Acetylcholine rotates to adopt a folded gauche conformer for muscarinic and an extended anti conformer for nicotinic receptors."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 42
         }
       ],
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mc42-1",
+            "id": "opt-1a",
             "text": {
-              "tr": "Büyük miktarda konformasyonel entropi kaybeder ve bu afiniteyi düşürür.",
-              "ar": "يفقد قدراً كبيراً من الإنتروبيا التشكيلية مما يضعف طاقة الارتباط الكلية.",
-              "en": "Biological activity is drastically reduced or lost completely."
+              "tr": "Tekli bağları etrafında dönerek farklı konformerler alır: Katlanmış (gauche) form muskarinik, uzamış (anti) form nikotinik cebe uyar.",
+              "ar": "يدور حول روابطه الأحادية: التشكيل المطوي (gauche) يلائم المسكاريني والممتد (anti) يلائم النيكوتيني.",
+              "en": "It rotates around sigma bonds: The folded gauche conformer fits muscarinic, while extended anti fits nicotinic receptors."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tam isabet! Tekli bağlar etrafında dönme ile oluşan rotamerler sayesinde asetilkolin iki farklı cepte iki farklı biyoaktif geometri sunar (Slayt 42).",
+              "ar": "صحيح تماماً! الدوران الحر حول الروابط ينتج متشكلي gauche و anti بمسافات فراغية مطابقة لكلا المستقبلين.",
+              "en": "Spot on! Free rotation around single bonds generates folded gauche and extended anti rotamers custom-tailored to each receptor pocket (Slide 42)."
+            }
           },
           {
-            "id": "opt-mc42-2",
+            "id": "opt-1b",
             "text": {
-              "tr": "Kütlesini kaybeder.",
-              "ar": "يفقد كتلته الجزيئية.",
-              "en": "Potency increases tenfold automatically."
+              "tr": "Asetilkolin iki farklı reseptöre bağlanabilmek için kanda enzimatik olarak iki farklı kovalent izomere parçalanıp yeniden sentezlenir.",
+              "ar": "يتفكك الأستيل كولين إنزيمياً في الدم إلى مماكبين تساهميين مختلفين ثم يعاد تركيبه ليرتبط بكل مستقبل.",
+              "en": "Acetylcholine enzymatically cleaves and resynthesizes in blood into two distinct covalent isomers to bind each receptor."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent izomerizasyon yanılgısı: Reseptör alt tiplerine bağlanmak için kovalent bağların kırılıp oluşmasına gerek yoktur; molekül tekli C-C ve C-O bağları etrafında nanosaniyelik hızla dönerek farklı uzaysal konformasyonlar (rotamerler) üretir.",
+              "ar": "مغالطة التماكب التساهمي: لا حاجة لكسر روابط تساهمية؛ الجزيء يدور بسرعة نانوثانية حول روابطه الأحادية ليعطي تشكيلات فراغية مختلفة.",
+              "en": "Covalent isomerization misconception: No covalent bond cleavage is required; the molecule rotates around single bonds in nanoseconds to generate distinct conformers."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "Asetilkolinin kuaterner amonyum grubu o kadar güçlü bir pozitif yüktür ki reseptör cep şekli ne olursa olsun elektrostatik çekim tek başına iki reseptörü de ayrım yapmaksızın aktive eder.",
+              "ar": "شحنة الأمونيوم الرباعية قوية جداً بحيث تجذب وتنشط كلا المستقبلين كهربائياً بغض النظر عن الشكل الفراغي للجيب.",
+              "en": "Acetylcholine's quaternary ammonium positive charge is so strong that electrostatic attraction alone activates both receptors regardless of pocket shape."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yalnızca iyonik çekim yanılgısı: İyonik bağ reseptöre ilk yanaşmayı sağlasa da, farmakofor grupları (amonyum ve ester oksijenleri) arasındaki mesafenin reseptör cebine uymaması durumunda bağlanma ve aktivasyon gerçekleşemez.",
+              "ar": "مغالطة الجذب الأيوني الحصري: الرابطة الأيونية تقرب الجزيء لكن تطابق المسافة الفراغية بين مجموعات الفارماكوفور وجيب المستقبل ضروري للارتباط والتنشيط.",
+              "en": "Ionic-only attraction fallacy: Ionic attraction initiates binding, but precise pharmacophoric distance match inside the pocket is mandatory for activation."
+            }
           }
         ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": "Tekli bağları etrafında dönerek farklı konformerler alır: Katlanmış (gauche) form muskarinik, uzamış (anti) form nikotinik cebe uyar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Tam isabet! Tekli bağlar etrafında dönme ile oluşan rotamerler sayesinde asetilkolin iki farklı cepte iki farklı biyoaktif geometri sunar (Slayt 42)."
+          },
+          {
+            "id": "opt-1b",
+            "text": "Asetilkolin iki farklı reseptöre bağlanabilmek için kanda enzimatik olarak iki farklı kovalent izomere parçalanıp yeniden sentezlenir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kovalent izomerizasyon yanılgısı: Reseptör alt tiplerine bağlanmak için kovalent bağların kırılıp oluşmasına gerek yoktur; molekül tekli C-C ve C-O bağları etrafında nanosaniyelik hızla dönerek farklı uzaysal konformasyonlar (rotamerler) üretir."
+          },
+          {
+            "id": "opt-1c",
+            "text": "Asetilkolinin kuaterner amonyum grubu o kadar güçlü bir pozitif yüktür ki reseptör cep şekli ne olursa olsun elektrostatik çekim tek başına iki reseptörü de ayrım yapmaksızın aktive eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yalnızca iyonik çekim yanılgısı: İyonik bağ reseptöre ilk yanaşmayı sağlasa da, farmakofor grupları (amonyum ve ester oksijenleri) arasındaki mesafenin reseptör cebine uymaması durumunda bağlanma ve aktivasyon gerçekleşemez."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Tekli bağları etrafında dönerek farklı konformerler alır: Katlanmış (gauche) form muskarinik, uzamış (anti) form nikotinik cebe uyar.",
+          "ar": "يدور حول روابطه الأحادية: التشكيل المطوي (gauche) يلائم المسكاريني والممتد (anti) يلائم النيكوتيني.",
+          "en": "It rotates around sigma bonds: The folded gauche conformer fits muscarinic, while extended anti fits nicotinic receptors."
+        },
+        "explanation": {
+          "tr": "Tam isabet! Tekli bağlar etrafında dönme ile oluşan rotamerler sayesinde asetilkolin iki farklı cepte iki farklı biyoaktif geometri sunar (Slayt 42).",
+          "ar": "صحيح تماماً! الدوران الحر حول الروابط ينتج متشكلي gauche و anti بمسافات فراغية مطابقة لكلا المستقبلين.",
+          "en": "Spot on! Free rotation around single bonds generates folded gauche and extended anti rotamers custom-tailored to each receptor pocket (Slide 42)."
+        }
+      }
+    },
+    {
+      "id": "mc-mod4-les2-step-02",
+      "stage": "question",
+      "stageIndex": 2,
+      "type": "question",
+      "title": {
+        "tr": "Biyoaktif Konformasyon Paradoksu",
+        "ar": "مفارقة التشكيل الحيوي الفعال",
+        "en": "The Bioactive Conformation Conundrum"
+      },
+      "prompt": {
+        "tr": "Bir molekülün sulu çözeltideki en düşük enerjili en kararlı konformasyonu, reseptöre bağlandığı andaki biyoaktif konformasyonu olmak zorunda mıdır?",
+        "ar": "هل يجب بالضرورة أن يكون التشكيل الفراغي الأكثر استقراراً والأدنى طاقة في المحلول هو ذاته التشكيل الفعال المرتبط بالمستقبل؟",
+        "en": "Must a flexible drug's lowest-energy ground state conformer in solution be the exact bioactive conformation that binds the receptor?"
+      },
+      "technicalTerms": [
+        {
+          "term": "biyoaktif konformasyon",
+          "arContext": "التشكيل الحيوي الفعال"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Reseptör cebi ile ligand arasında yeni bağlar kurulurken ne açığa çıkar?",
+          "ar": "ما الذي يتحرر عند تشكل روابط جديدة بين الدواء وجيب المستقبل؟",
+          "en": "What is released when new noncovalent bonds form between drug and receptor?"
+        },
+        {
+          "tr": "Bağlanma entalpisi (ΔH), molekülün enerji bariyerini aşmasına yardım edebilir mi?",
+          "ar": "هل يمكن لطاقة الارتباط (ΔH) أن تعوض طاقة إجهاد التشكيل؟",
+          "en": "Can binding enthalpy (ΔH) compensate for the energetic cost of adopting a higher-energy rotamer?"
+        },
+        {
+          "tr": "Reseptöre bağlanan form en düşük enerjili form olmak zorunda değildir; bağlanma serbest enerjisi farkı karşılar.",
+          "ar": "ليس بالضرورة؛ طاقة الارتباط تعوض الانتقال إلى تشكيل أعلى طاقة.",
+          "en": "Not necessarily; favorable binding free energy readily offsets the modest strain of adopting a higher-energy conformer."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 39
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": {
+              "tr": "Hayır; reseptörle kurulan non-kovalan bağların açığa çıkardığı bağlanma enerjisi, daha yüksek enerjili bir biyoaktif konformasyonu sübvanse eder.",
+              "ar": "لا؛ فطاقة الارتباط الناتجة عن الروابط مع المستقبل تعوض تكلفة تبني تشكيل حيوي أعلى طاقة.",
+              "en": "No; the favorable binding enthalpy from drug-receptor contacts easily offsets the energetic cost of a higher-energy conformer."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! Bu kural farmasötik kimyanın temelidir: Çözeltide %1 oranında bulunan yüksek enerjili bir konformer, reseptöre kusursuz bağlanıp biyoaktif form olabilir (Slayt 39).",
+              "ar": "رائع! التشكيل الحيوي الفعال ليس بالضرورة التشكيل الأكثر وفرة أو الأقل طاقة في المحلول الحر.",
+              "en": "Excellent! A minor conformer present at <1% in solution can be the true bioactive species if its receptor contacts provide massive stabilizing enthalpy (Slide 39)."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Evet; termodinamik kuralları gereği reseptörler yalnızca mutlak global minimumdaki molekülleri kabul edebilir.",
+              "ar": "نعم؛ تفرض قوانين الديناميكا الحرارية قبول التشكيل الأدنى طاقة فقط.",
+              "en": "Yes; thermodynamic laws dictate that receptors only accept molecules in their absolute global energy minimum."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "En düşük enerji dogması: Reseptör bir spektrometre değildir; ligand-reseptör kompleksinin toplam serbest enerjisi minimuma iner, serbest ligantın değil.",
+              "ar": "فخ طاقة القاع: العبرة بالطاقة الحرة الكلية للمعقد (الدواء-المستقبل) وليس للدواء بمفرده في الماء.",
+              "en": "Ground-state dogma: What must be minimized is the free energy of the overall drug-receptor complex, not the isolated ligand in water."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Evet; çünkü reseptörün bağlanma cebi tamamen katı ve hareketsizdir, ligantın yüksek enerjili bir forma bükülmesine izin verecek esnekliğe sahip değildir.",
+              "ar": "نعم، لأن جيب المستقبل صلب وثابت تماماً ولا يملك أي مرونة تسمح بارتباط مركب منحني بشكل عالي الطاقة.",
+              "en": "Yes, because the receptor binding pocket is completely rigid and immutable, lacking any flexibility to accommodate strained conformations."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Rijit anahtar-kilit yanılgısı: Koshland'ın indüklenmiş uyum (induced-fit) teorisine göre hem reseptör hem ligant bağlanma sırasında birbirine uyum sağlayacak konformasyonel değişiklikler geçirir.",
+              "ar": "مغالطة القفل والمفتاح الجاسئ: وفقاً لنظرية التلاؤم المحثوث (induced-fit)، يخضع كل من المستقبل والربيطة لتغيرات تشكلية للتكيف المتبادل.",
+              "en": "Rigid lock-and-key fallacy: Under induced-fit theory, both the receptor pocket and the ligand undergo mutual conformational adaptations upon binding."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-2a",
+            "text": "Hayır; reseptörle kurulan non-kovalan bağların açığa çıkardığı bağlanma enerjisi, daha yüksek enerjili bir biyoaktif konformasyonu sübvanse eder.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel! Bu kural farmasötik kimyanın temelidir: Çözeltide %1 oranında bulunan yüksek enerjili bir konformer, reseptöre kusursuz bağlanıp biyoaktif form olabilir (Slayt 39)."
+          },
+          {
+            "id": "opt-2b",
+            "text": "Evet; termodinamik kuralları gereği reseptörler yalnızca mutlak global minimumdaki molekülleri kabul edebilir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "En düşük enerji dogması: Reseptör bir spektrometre değildir; ligand-reseptör kompleksinin toplam serbest enerjisi minimuma iner, serbest ligantın değil."
+          },
+          {
+            "id": "opt-2c",
+            "text": "Evet; çünkü reseptörün bağlanma cebi tamamen katı ve hareketsizdir, ligantın yüksek enerjili bir forma bükülmesine izin verecek esnekliğe sahip değildir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Rijit anahtar-kilit yanılgısı: Koshland'ın indüklenmiş uyum (induced-fit) teorisine göre hem reseptör hem ligant bağlanma sırasında birbirine uyum sağlayacak konformasyonel değişiklikler geçirir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Hayır; reseptörle kurulan non-kovalan bağların açığa çıkardığı bağlanma enerjisi, daha yüksek enerjili bir biyoaktif konformasyonu sübvanse eder.",
+          "ar": "لا؛ فطاقة الارتباط الناتجة عن الروابط مع المستقبل تعوض تكلفة تبني تشكيل حيوي أعلى طاقة.",
+          "en": "No; the favorable binding enthalpy from drug-receptor contacts easily offsets the energetic cost of a higher-energy conformer."
+        },
+        "explanation": {
+          "tr": "Mükemmel! Bu kural farmasötik kimyanın temelidir: Çözeltide %1 oranında bulunan yüksek enerjili bir konformer, reseptöre kusursuz bağlanıp biyoaktif form olabilir (Slayt 39).",
+          "ar": "رائع! التشكيل الحيوي الفعال ليس بالضرورة التشكيل الأكثر وفرة أو الأقل طاقة في المحلول الحر.",
+          "en": "Excellent! A minor conformer present at <1% in solution can be the true bioactive species if its receptor contacts provide massive stabilizing enthalpy (Slide 39)."
+        }
       }
     },
     {
       "id": "mc-mod4-les2-step-03",
       "stage": "intuition",
       "stageIndex": 3,
+      "type": "intuition",
       "title": {
-        "tr": "Sezgisel Analoji: Dans Eden İp vs Döküm Anahtar",
-        "ar": "تشبيه حدسي: الحبل الراقص مقابل المفتاح المصبوب",
-        "en": "Intuitive Model: Spaghetti vs Pretzel"
+        "tr": "Sezgisel Model: Sallanan İp vs Kilitli Anahtar",
+        "ar": "نموذج حدسي: الحبل المتأرجح مقابل المفتاح الثابت",
+        "en": "Mental Model: Wild Rope vs Pre-Cast Key"
       },
       "prompt": {
-        "tr": "Rüzgarda savrulan esnek bir ipi anahtar deliğine sokamazsınız; fakat döküm çelik bir anahtar doğrudan yuvaya oturur.",
-        "ar": "لا يمكنك إدخال حبل يتمايل في الرياح داخل قفل، بينما ينزلق المفتاح الفولاذي الصلب مباشرة إلى مجراه.",
-        "en": "Boiled flexible spaghetti flails in all directions, losing heat and energy to coil up. A crispy pretzel is pre-shaped to slot instantly into a toaster."
+        "tr": "Serbest dönen 4 tekli bağı olan esnek bir molekül reseptöre bağlanırken neden büyük bir termodinamik ceza öder?",
+        "ar": "لماذا تدفع جزيئة مرنة تمتلك 4 روابط أحادية دوارة ضريبة ديناميكية حرارية باهظة عند ارتباطها بالمستقبل؟",
+        "en": "Why does an ultra-flexible drug molecule with 4 rotatable bonds pay a massive thermodynamic penalty when locking into a receptor pocket?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "rijit iskelet",
-          "arContext": "الهيكل الجاسئ"
+          "term": "konformasyonel entropi",
+          "arContext": "الإنتروبيا التشكيلية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Çözeltide yüzlerce farklı biçimde sallanan bir ipi tek bir şekle soktuğunuzda düzensizlik (entropi) ne olur?",
+          "ar": "ماذا يحدث للعشوائية (الإنتروبيا) عندما تجبر حبلاً حراً يتلوى بمئات الأشكال على التزام شكل واحد؟",
+          "en": "What happens to molecular disorder (entropy) when a rope twisting in hundreds of states is forced into one fixed shape?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Termodinamikte düzenin bedeli (-TΔS) pozitiftir; bu bağlanma serbest enerjisini (ΔG) zayıflatır.",
+          "ar": "ضريبة النظام الإيجابية (-TΔS) تضعف طاقة الارتباط الحرة.",
+          "en": "The thermodynamic penalty of enforced order (-TΔS > 0) directly opposes and weakens binding affinity."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Dönen bağların donması konformasyonel entropi cezası üretir; rijit moleküller bu cezadan muaftır.",
+          "ar": "تجميد الروابط الدوارة يفرض ضريبة إنتروبية باهظة؛ بينما الهياكل الجاسئة معفاة منها.",
+          "en": "Freezing rotatable bonds creates a severe conformational entropy penalty; pre-organized rigid scaffolds evade this penalty."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 41
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "Serbest rotasyon yapan bağların tek bir şekilde donması entropi cezası (-TΔS) üretir ve afiniteyi zayıflatır.",
+              "ar": "تجميد الروابط الحرة في هيئة واحدة يولد ضريبة إنتروبيا (-TΔS) تنقص من طاقة الارتباط الكلية.",
+              "en": "Freezing freely rotating bonds into a single pose incurs a heavy conformational entropy penalty (-TΔS), weakening affinity."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika analiz! Her serbest dönebilen bağ için ~2.5-4.0 kJ/mol entropik bedel ödenir. Bu nedenle esnek moleküller cebe oturmakta zorlanır.",
+              "ar": "تحليل رائع! كل رابطة حرة تتجمد تكلف ~2.5 إلى 4 كيلوجول/مول كضريبة إنتروبية تضعف الارتباط.",
+              "en": "Brilliant! Freezing each rotatable bond costs ~2.5-4.0 kJ/mol in entropic penalty. Pre-organizing the scaffold saves this energy."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "Esnek moleküllerin reseptör cebine girmesi sterik olarak imkansızdır; bu yüzden esnek ilaçlar reseptör içine hiç nüfuz edemez.",
+              "ar": "دخول الجزيئات المرنة إلى جيب المستقبل مستحيل فراغياً بسبب الإعاقة الحجمية؛ لذلك لا تنفذ إطلاقاً.",
+              "en": "Flexible molecules face insurmountable steric bulk preventing entry into narrow receptor pockets entirely."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Sterik giriş engeli yanılgısı: Esnek moleküller cebe rahatlıkla girer; sorun cebe girememeleri değil, cebe oturduklarında kaybettikleri rotasyonel serbestliğin termodinamik bir entropi bedeli doğurmasıdır.",
+              "ar": "مغالطة عائق الدخول الفراغي: الجزيئات المرنة تدخل بسهولة؛ المشكلة تكمن في ضريبة الإنتروبيا التشكيلية الناتجة عن فقدان حرية الدوران.",
+              "en": "Steric block fallacy: Flexible molecules enter easily; the limitation is the severe thermodynamic entropy loss from freezing rotatable bonds."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Dönen bağlar ilacın biyolojik zarları geçmesini engeller; esnek moleküller yağ fazında tamamen çözünmez kalır.",
+              "ar": "الروابط الدوارة تمنع الدواء من عبور الأغشية الحيوية، فتبقى الجزيئات المرنة غير ذوابة بالدهون تماماً.",
+              "en": "Rotating bonds prevent drugs from crossing biological membranes; flexible drugs remain completely insoluble in lipids."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Membran geçişi yanılgısı: Esnek moleküller çözücüye göre konformasyon değiştirerek zarları kolayca geçebilir; ancak reseptöre kilitlenme afiniteleri entropi kaybı nedeniyle düşüktür.",
+              "ar": "مغالطة عبور الغشاء: الجزيئات المرنة تعبر الأغشية بسهولة بتغيير تشكلها؛ لكن ألفة ارتباطها تنخفض بسبب ضريبة الإنتروبيا.",
+              "en": "Membrane transit fallacy: Flexible molecules readily cross membranes by adapting conformers, but binding affinity suffers from entropy loss."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": "Serbest rotasyon yapan bağların tek bir şekilde donması entropi cezası (-TΔS) üretir ve afiniteyi zayıflatır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika analiz! Her serbest dönebilen bağ için ~2.5-4.0 kJ/mol entropik bedel ödenir. Bu nedenle esnek moleküller cebe oturmakta zorlanır."
+          },
+          {
+            "id": "opt-3b",
+            "text": "Esnek moleküllerin reseptör cebine girmesi sterik olarak imkansızdır; bu yüzden esnek ilaçlar reseptör içine hiç nüfuz edemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Sterik giriş engeli yanılgısı: Esnek moleküller cebe rahatlıkla girer; sorun cebe girememeleri değil, cebe oturduklarında kaybettikleri rotasyonel serbestliğin termodinamik bir entropi bedeli doğurmasıdır."
+          },
+          {
+            "id": "opt-3c",
+            "text": "Dönen bağlar ilacın biyolojik zarları geçmesini engeller; esnek moleküller yağ fazında tamamen çözünmez kalır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Membran geçişi yanılgısı: Esnek moleküller çözücüye göre konformasyon değiştirerek zarları kolayca geçebilir; ancak reseptöre kilitlenme afiniteleri entropi kaybı nedeniyle düşüktür."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Serbest rotasyon yapan bağların tek bir şekilde donması entropi cezası (-TΔS) üretir ve afiniteyi zayıflatır.",
+          "ar": "تجميد الروابط الحرة في هيئة واحدة يولد ضريبة إنتروبيا (-TΔS) تنقص من طاقة الارتباط الكلية.",
+          "en": "Freezing freely rotating bonds into a single pose incurs a heavy conformational entropy penalty (-TΔS), weakening affinity."
+        },
+        "explanation": {
+          "tr": "Harika analiz! Her serbest dönebilen bağ için ~2.5-4.0 kJ/mol entropik bedel ödenir. Bu nedenle esnek moleküller cebe oturmakta zorlanır.",
+          "ar": "تحليل رائع! كل رابطة حرة تتجمد تكلف ~2.5 إلى 4 كيلوجول/مول كضريبة إنتروبية تضعف الارتباط.",
+          "en": "Brilliant! Freezing each rotatable bond costs ~2.5-4.0 kJ/mol in entropic penalty. Pre-organizing the scaffold saves this energy."
+        }
+      }
     },
     {
       "id": "mc-mod4-les2-step-04",
       "stage": "visual_explanation",
       "stageIndex": 4,
+      "type": "visual_explanation",
       "title": {
-        "tr": "Newman İzdüşümü ve Torsiyonel Açılar",
-        "ar": "إسقاط Newman وزوايا الالتواء",
-        "en": "Visual Diagram: Torsion Angles (Gauche vs Anti)"
+        "tr": "Asetilkolinin İki Yüzü: Gauche vs Anti",
+        "ar": "وجها الأسيتيل كولين: المتطابق والممتد",
+        "en": "Structural Profiles: Gauche vs Anti Rotamers"
       },
       "prompt": {
-        "tr": "Tek bağ etrafında dönme syn, gauche ve anti rotamerlerini üretir. Enerji bariyerleri oda sıcaklığında saniyede milyonlarca kez aşılır.",
-        "ar": "يولد الدوران حول الرابطة الأحادية أشكال syn و gauche و anti. يتم تجاوز حواجز الطاقة ملايين المرات في الثانية.",
-        "en": "Examine acetylcholine's N-C-C-O torsion angle: synclinal (gauche, 60°) fits muscarinic receptors; antiperiplanar (trans, 180°) fits nicotinic."
+        "tr": "Asetilkolinin kuaterner azotu ile ester oksijeni arasındaki mesafe katlanmış (gauche) formda 3.3 Å, uzamış (anti) formda 4.4 Å'dür. Bu fark neyi belirler?",
+        "ar": "المسافة بين نيتروجين الأسيتيل كولين وأكسجين الإستر هي 3.3 أنغستروم في التشكيل المطوي و4.4 في الممتد. ماذا يحدد هذا؟",
+        "en": "The distance between acetylcholine's quaternary nitrogen and ester oxygen is 3.3 Å in the folded gauche conformer and 4.4 Å in the extended anti conformer. What does this dictate?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "rotamer",
-          "arContext": "المصاوغ الدوراني (Rotamer)"
+          "term": "gauche konformasyon",
+          "arContext": "تشكيل غوش المطوي"
+        },
+        {
+          "term": "anti konformasyon",
+          "arContext": "تشكيل أنتي الممتد"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "3.3 Å ve 4.4 Å mesafeleri iki farklı reseptör cebinin bağlanma noktalarına karşılık gelir.",
+          "ar": "المسافتان 3.3 و 4.4 أنغستروم تقابلان نقطتي ارتباط في جيبي مستقبلين مختلفين.",
+          "en": "The 3.3 Å and 4.4 Å spans match distinct pharmacophore distances in two different receptor subtypes."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Kalp kası muskarinik, çizgili kas nikotinik cepleri farklı mesafeler arar.",
+          "ar": "يتطلب الجيب المسكاريني في القلب والنيكوتيني في العضلات مسافات فراغية متباينة.",
+          "en": "Muscarinic GPCRs and nicotinic ion channels require completely different interaction geometries."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "3.3 Å katlanmış form muskarinik reseptöre, 4.4 Å uzamış form nikotinik reseptöre bağlanır.",
+          "ar": "الشكل المطوي 3.3 يربط المسكاريني والشكل الممتد 4.4 يربط النيكوتيني.",
+          "en": "The 3.3 Å folded gauche rotamer binds muscarinic receptors; the 4.4 Å extended anti rotamer binds nicotinic receptors."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 42
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "Reseptör alt tip seçiciliğini: 3.3 Å katlanmış form muskarinik cebe, 4.4 Å uzamış form nikotinik cebe tam oturur.",
+              "ar": "الانتقائية الفرعية للمستقبل: المطوي (3.3 Å) يلائم المسكاريني والممتد (4.4 Å) يلائم النيكوتيني.",
+              "en": "Subtype selectivity: The 3.3 Å gauche form binds muscarinic, while the 4.4 Å anti form binds nicotinic receptors."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz bilgi! Slayt 40 ve 42: Newman projeksiyonlarında çapraz (staggered) gauche (3.3 Å) ve anti (4.4 Å) rotamerleri enerji çukurlarıdır; çakışık (eclipsed) formlar ise sterik itme tepeleridir. Gauche formu muskarinik, anti formu nikotinik reseptöre seçicilik sağlar.",
+              "ar": "دقة مثالية! شريحة 40 و 42: في مساقط نيومان (Newman projections) تمثل الهيئات المتقاطعة (staggered) كـ gauche (3.3 Å) و anti (4.4 Å) قيعان استقرار، بينما الهيئات المكسوفة (eclipsed) قمم طاقة. يلائم gauche المسكاريني و anti النيكوتيني.",
+              "en": "Flawless! Slides 40 & 42: In Newman projections, staggered gauche (3.3 Å) and anti (4.4 Å) rotamers are energy troughs; eclipsed forms are torsional energy peaks. Gauche binds muscarinic GPCRs; anti binds nicotinic channels."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "Molekülün lipofilitesini: Uzamış form tüm kutupları açığa çıkardığı için katlanmış forma göre 100 kat daha fazla suda çözünür.",
+              "ar": "محبة الدهون: التشكيل الممتد يكشف المجموعات القطبية فيكون أكثر ذوباناً بالماء بـ 100 مرة مقارنة بالمنطوي.",
+              "en": "Lipophilicity: The extended form exposes all polar groups, making it 100-fold more water-soluble than folded."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yalnızca çözünürlük yanılgısı: Rotamerler arası mesafe farkının birincil klinik sonucu çözünürlük değil, farmakoforik mesafenin değişmesiyle muskarinik ve nikotinik reseptörler arasındaki alt tip seçiciliğidir.",
+              "ar": "مغالطة حصر الأثر في الذوبانية: النتيجة السريرية الجوهرية لتباعد المسافة هي الانتقائية للمستقبلات المسكارينية مقابل النيكوتينية.",
+              "en": "Solubility-only misconception: The paramount pharmacological outcome is pharmacophore distance matching receptor subtypes, not simple bulk solubility."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "İlacın pKa değerini: Uzamış form kuaterner amonyumun iyonlaşmasını engellerken katlanmış form iyonlaşmayı artırır.",
+              "ar": "قيمة pKa: التشكيل الممتد يمنع تأين الأمونيوم الرباعي بينما التشكيل المنطوي يزيد من تأينه.",
+              "en": "Drug pKa: The extended conformation prevents quaternary ammonium ionization while the folded form enhances it."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kuaterner amonyum pKa yanılgısı: Asetilkolinin kuaterner amonyum azotu pH'tan bağımsız olarak kalıcı ve tam yüklüdür (%100 iyonize); konformasyon değişimi yük durumunu değiştirmez.",
+              "ar": "مغالطة pKa الأمونيوم الرباعي: نيتروجين الأمونيوم الرباعي مشحون دائماً بنسبة 100% بغض النظر عن pH أو التشكيل الفراغي.",
+              "en": "Quaternary ammonium pKa fallacy: The quaternary ammonium nitrogen is permanently 100% ionized regardless of pH or conformation."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": "Reseptör alt tip seçiciliğini: 3.3 Å katlanmış form muskarinik cebe, 4.4 Å uzamış form nikotinik cebe tam oturur.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz bilgi! Slayt 40 ve 42: Newman projeksiyonlarında çapraz (staggered) gauche (3.3 Å) ve anti (4.4 Å) rotamerleri enerji çukurlarıdır; çakışık (eclipsed) formlar ise sterik itme tepeleridir. Gauche formu muskarinik, anti formu nikotinik reseptöre seçicilik sağlar."
+          },
+          {
+            "id": "opt-4b",
+            "text": "Molekülün lipofilitesini: Uzamış form tüm kutupları açığa çıkardığı için katlanmış forma göre 100 kat daha fazla suda çözünür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yalnızca çözünürlük yanılgısı: Rotamerler arası mesafe farkının birincil klinik sonucu çözünürlük değil, farmakoforik mesafenin değişmesiyle muskarinik ve nikotinik reseptörler arasındaki alt tip seçiciliğidir."
+          },
+          {
+            "id": "opt-4c",
+            "text": "İlacın pKa değerini: Uzamış form kuaterner amonyumun iyonlaşmasını engellerken katlanmış form iyonlaşmayı artırır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kuaterner amonyum pKa yanılgısı: Asetilkolinin kuaterner amonyum azotu pH'tan bağımsız olarak kalıcı ve tam yüklüdür (%100 iyonize); konformasyon değişimi yük durumunu değiştirmez."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Reseptör alt tip seçiciliğini: 3.3 Å katlanmış form muskarinik cebe, 4.4 Å uzamış form nikotinik cebe tam oturur.",
+          "ar": "الانتقائية الفرعية للمستقبل: المطوي (3.3 Å) يلائم المسكاريني والممتد (4.4 Å) يلائم النيكوتيني.",
+          "en": "Subtype selectivity: The 3.3 Å gauche form binds muscarinic, while the 4.4 Å anti form binds nicotinic receptors."
+        },
+        "explanation": {
+          "tr": "Kusursuz bilgi! Slayt 40 ve 42: Newman projeksiyonlarında çapraz (staggered) gauche (3.3 Å) ve anti (4.4 Å) rotamerleri enerji çukurlarıdır; çakışık (eclipsed) formlar ise sterik itme tepeleridir. Gauche formu muskarinik, anti formu nikotinik reseptöre seçicilik sağlar.",
+          "ar": "دقة مثالية! شريحة 40 و 42: في مساقط نيومان (Newman projections) تمثل الهيئات المتقاطعة (staggered) كـ gauche (3.3 Å) و anti (4.4 Å) قيعان استقرار، بينما الهيئات المكسوفة (eclipsed) قمم طاقة. يلائم gauche المسكاريني و anti النيكوتيني.",
+          "en": "Flawless! Slides 40 & 42: In Newman projections, staggered gauche (3.3 Å) and anti (4.4 Å) rotamers are energy troughs; eclipsed forms are torsional energy peaks. Gauche binds muscarinic GPCRs; anti binds nicotinic channels."
+        }
+      }
     },
     {
       "id": "mc-mod4-les2-step-05",
       "stage": "interactive_artifact",
       "stageIndex": 5,
+      "type": "receptor_ligand_matcher",
+      "widgetType": "ReceptorLigandMatcher",
       "title": {
-        "tr": "İnteraktif Laboratuvar: SAR Explorer (Konformasyon)",
-        "ar": "المختبر التفاعلي: مستكشف SAR (التشكيل)",
-        "en": "Interactive Artifact: Scaffold Rigidity Engine"
+        "tr": "İnteraktif Eşleştirici: Asetilkolin Konformerleri",
+        "ar": "المطابق التفاعلي: تشكيلات الأسيتيل كولين",
+        "en": "Interactive Matcher: Acetylcholine Conformer Pharmacophores"
       },
       "prompt": {
-        "tr": "Esnek zincire çift bağ veya halka katarak molekülü sabitleyin. Entropi cezasının nasıl sıfırlandığını ve afinitenin nasıl fırladığını gözlemleyin.",
-        "ar": "أضف رابطة مضاعفة أو حلقة لتثبيت السلسلة المرنة ولاحظ كيف تتلاشى ضريبة الإنتروبيا وتتضاعف الألفة.",
-        "en": "Incorporate cyclopropane rings and double bonds into flexible neurotransmitters. Measure conformational entropy loss and subtype selectivity."
+        "tr": "Asetilkolinin gauche (3.3 Å) ve anti (4.4 Å) rotamerlerini ile rijit siklopropil analoglarını doğru reseptör cepleriyle eşleştirin.",
+        "ar": "طابق متشكلي أستيل كولين gauche (3.3 Å) و anti (4.4 Å) ونظائرهما الجاسئة مع الجيوب المستقبلية الصحيحة.",
+        "en": "Match acetylcholine's gauche (3.3 Å) and anti (4.4 Å) rotamers and rigid cyclopropyl analogs to their selective receptor pockets."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "config": {
+        "title": "Asetilkolin Konformerleri ve Rijit Analog Eşleştiricisi",
+        "prompt": "Konformerleri ve rijit analogları doğru reseptör cebiyle eşleştirin.",
+        "drugName": "Asetilkolin ve Siklopropil Analogları",
+        "receptorName": "Muskarinik (M1) ve Nikotinik (nAChR) Reseptör Cepleri",
+        "pairs": [
+          {
+            "id": "pair_gauche",
+            "drugGroup": "Katlanmış Gauche Form (3.3 Å)",
+            "correctResidueId": "res_muscarinic",
+            "bondType": "ionic",
+            "energyKcalMol": "5-10 kcal/mol",
+            "explanation": "3.3 Å katlanmış mesafe Muskarinik M1 reseptör cebindeki Asp105 ve hidrojen bağı noktalarına tam kenetlenir."
+          },
+          {
+            "id": "pair_anti",
+            "drugGroup": "Uzamış Anti Form (4.4 Å)",
+            "correctResidueId": "res_nicotinic",
+            "bondType": "pi_pi",
+            "energyKcalMol": "2-7 kcal/mol",
+            "explanation": "4.4 Å uzamış mesafe Nikotinik nAChR cebindeki Trp149 katyon-pi ve Tyr93 dipol cebine kusursuz oturur."
+          },
+          {
+            "id": "pair_cis_cyclo",
+            "drugGroup": "(+)-Cis-Asetilsiklopropil",
+            "correctResidueId": "res_muscarinic",
+            "bondType": "ionic",
+            "energyKcalMol": "5-10 kcal/mol",
+            "explanation": "Cis-siklopropil halkası gauche geometriyi rijit olarak dondurur; sadece muskarinik reseptörleri uyarır (Slayt 42)."
+          },
+          {
+            "id": "pair_trans_cyclo",
+            "drugGroup": "(+)-Trans-Asetilsiklopropil",
+            "correctResidueId": "res_nicotinic",
+            "bondType": "pi_pi",
+            "energyKcalMol": "2-7 kcal/mol",
+            "explanation": "Trans-siklopropil halkası anti geometriyi rijit olarak dondurur; sadece nikotinik reseptörleri uyarır (Slayt 42)."
+          }
+        ],
+        "residues": [
+          {
+            "id": "res_muscarinic",
+            "residueName": "Muskarinik M1 Reseptör Cebi (3.3 Å)",
+            "description": "Katlanmış 3.3 Å farmakofor arayan dar, derin GPCR aktif cebi."
+          },
+          {
+            "id": "res_nicotinic",
+            "residueName": "Nikotinik nAChR Cebi (4.4 Å)",
+            "description": "Uzamış 4.4 Å farmakofor arayan pentamerik iyon kanalı cebi."
+          },
+          {
+            "id": "res_steric_clash",
+            "residueName": "Sterik İtme / Uyumsuz Cep",
+            "description": "Yanlış geometrideki rotamerleri dışarı iten sterik engel bölgesi."
+          }
+        ],
+        "source": {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 42
+        }
+      },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "rijit analog",
+          "arContext": "النظير الجاسئ"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Gauche ve cis-analogları 3.3 Å kısa mesafeyi temsil eder.",
+          "ar": "يمثل تشكيل gauche والنظير cis المسافة القصيرة 3.3 أنغستروم.",
+          "en": "Gauche rotamers and cis-analogs represent the compact 3.3 Å distance."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Anti ve trans-analogları 4.4 Å uzun mesafeyi temsil eder.",
+          "ar": "يمثل تشكيل anti والنظير trans المسافة الطويلة 4.4 أنغستروم.",
+          "en": "Anti rotamers and trans-analogs represent the extended 4.4 Å distance."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Kısa mesafe muskarinik cebe, uzun mesafe nikotinik cebe kenetlenir.",
+          "ar": "المسافة القصيرة تلائم المسكاريني، والمسافة الطويلة تلائم النيكوتيني.",
+          "en": "Compact distance docks into muscarinic; extended distance docks into nicotinic receptors."
         }
       ],
-      "widgetType": "SarExplorer",
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 42
+        }
+      ],
       "widget": {
-        "type": "SarExplorer",
+        "type": "ReceptorLigandMatcher",
         "config": {
-          "mode": "conformational_restriction",
-          "baseMolecule": "histamine_flexible"
+          "title": "Asetilkolin Konformerleri ve Rijit Analog Eşleştiricisi",
+          "prompt": "Konformerleri ve rijit analogları doğru reseptör cebiyle eşleştirin.",
+          "drugName": "Asetilkolin ve Siklopropil Analogları",
+          "receptorName": "Muskarinik (M1) ve Nikotinik (nAChR) Reseptör Cepleri",
+          "pairs": [
+            {
+              "id": "pair_gauche",
+              "drugGroup": "Katlanmış Gauche Form (3.3 Å)",
+              "correctResidueId": "res_muscarinic",
+              "bondType": "ionic",
+              "energyKcalMol": "5-10 kcal/mol",
+              "explanation": "3.3 Å katlanmış mesafe Muskarinik M1 reseptör cebindeki Asp105 ve hidrojen bağı noktalarına tam kenetlenir."
+            },
+            {
+              "id": "pair_anti",
+              "drugGroup": "Uzamış Anti Form (4.4 Å)",
+              "correctResidueId": "res_nicotinic",
+              "bondType": "pi_pi",
+              "energyKcalMol": "2-7 kcal/mol",
+              "explanation": "4.4 Å uzamış mesafe Nikotinik nAChR cebindeki Trp149 katyon-pi ve Tyr93 dipol cebine kusursuz oturur."
+            },
+            {
+              "id": "pair_cis_cyclo",
+              "drugGroup": "(+)-Cis-Asetilsiklopropil",
+              "correctResidueId": "res_muscarinic",
+              "bondType": "ionic",
+              "energyKcalMol": "5-10 kcal/mol",
+              "explanation": "Cis-siklopropil halkası gauche geometriyi rijit olarak dondurur; sadece muskarinik reseptörleri uyarır (Slayt 42)."
+            },
+            {
+              "id": "pair_trans_cyclo",
+              "drugGroup": "(+)-Trans-Asetilsiklopropil",
+              "correctResidueId": "res_nicotinic",
+              "bondType": "pi_pi",
+              "energyKcalMol": "2-7 kcal/mol",
+              "explanation": "Trans-siklopropil halkası anti geometriyi rijit olarak dondurur; sadece nikotinik reseptörleri uyarır (Slayt 42)."
+            }
+          ],
+          "residues": [
+            {
+              "id": "res_muscarinic",
+              "residueName": "Muskarinik M1 Reseptör Cebi (3.3 Å)",
+              "description": "Katlanmış 3.3 Å farmakofor arayan dar, derin GPCR aktif cebi."
+            },
+            {
+              "id": "res_nicotinic",
+              "residueName": "Nikotinik nAChR Cebi (4.4 Å)",
+              "description": "Uzamış 4.4 Å farmakofor arayan pentamerik iyon kanalı cebi."
+            },
+            {
+              "id": "res_steric_clash",
+              "residueName": "Sterik İtme / Uyumsuz Cep",
+              "description": "Yanlış geometrideki rotamerleri dışarı iten sterik engel bölgesi."
+            }
+          ],
+          "source": {
+            "file": "İlaçlarda  İzomeri.pdf",
+            "page": 42
+          }
         }
       }
     },
@@ -320,392 +847,877 @@
       "id": "mc-mod4-les2-step-06",
       "stage": "guided_discovery",
       "stageIndex": 6,
+      "type": "guided_discovery",
       "title": {
-        "tr": "Rehberli Keşif: Halka Kapatma Stratejisi",
-        "ar": "استكشاف موجه: استراتيجية إغلاق الحلقة",
-        "en": "Guided Discovery: Cyclopropane Constraint (Muscarine)"
+        "tr": "Siklopropan Halkasıyla Dondurma Deneyi",
+        "ar": "تجربة التجميد بحلقة البروبان الحلقي",
+        "en": "The Cyclopropane Ring Freezing Experiment"
       },
       "prompt": {
-        "tr": "Histamin molekülü esnekken H1 ve H2 reseptörlerini ayıramaz. Siklopropan halkasıyla biyoaktif konformasyon kilitlendiğinde seçicilik nasıl değişir?",
-        "ar": "يكون الهستامين المرن عاجزاً عن التمييز بين مستقبلات H1 و H2. عندما يقفل تشكيله بحلقة سيكلوبروبان، كيف تتغير الانتقائية؟",
-        "en": "Notice how trans-ACTM (cyclopropane analogue) selectively activates muscarinic receptors while failing to trigger nicotinic ganglionic firing."
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Rijitleştirme diğer reseptör ceplerine girişi engelleyerek seçiciliği garantiler."
+        "tr": "Bilim insanları asetilkolin zincirine siklopropan halkası ekleyerek dönmeyi durdurdu. (+)-Trans-analog sadece nikotinik, (+)-cis-analog sadece muskarinik etki gösterdi. Bu neyi ispatlar?",
+        "ar": "جمد العلماء دوران الأستيل كولين بإقحام حلقة بروبان حلقي. نشط متماكب trans المستقبل النيكوتيني فقط، ونشط cis المسكاريني فقط. ما الذي يثبته هذا؟",
+        "en": "Chemists inserted a cyclopropane ring to freeze acetylcholine's rotation. The (+)-trans analog activated only nicotinic, while (+)-cis activated only muscarinic receptors. What does this definitively prove?"
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "konformasyonel kısıtlama",
+          "arContext": "التقييد التشكلي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Esnek asetilkolin her iki reseptörü uyarırken, dondurulmuş halkalı moleküller sadece birini uyardı.",
+          "ar": "بينما نشط أستيل كولين المرن كلا المستقبلين، نشطت النظائر المجمدة مستقبلاً واحداً فقط.",
+          "en": "Flexible acetylcholine hit both targets, but rigid locked analogs activated only one target each."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Bu deney, her reseptör alt tipinin liganddan farklı bir geometrik şekil talep ettiğinin kanıtıdır.",
+          "ar": "يثبت هذا أن كل نوع فرعي من المستقبلات يشترط شكلاً هندسياً مستقلاً للارتباط.",
+          "en": "This proves each receptor subtype requires an unequivocal spatial pharmacophoric geometry."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Biyoaktif konformasyon hipotezini doğrular: Muskarinik reseptör gauche, nikotinik reseptör anti şekli ister.",
+          "ar": "يؤكد فرضية التشكيل الحيوي: المسكاريني يطلب شكل gauche، والنيكوتيني يطلب anti.",
+          "en": "It validates bioactive conformation theory: Muscarinic requires gauche; nicotinic requires anti."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 42
         }
       ],
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mc42-3",
+            "id": "opt-6a",
             "text": {
-              "tr": "Yalnızca bir reseptör alt tipine seçici hale gelirken diğer reseptöre bağlanamaz.",
-              "ar": "يصبح انتقائياً لنمط فرعي واحد فقط بينما يعجز عن الارتباط بالمستقبل الآخر.",
-              "en": "The distance between aromatic ring and terminal basic nitrogen (≈ 5.1 Å)."
+              "tr": "Biyoaktif konformasyon teorisini: Her reseptör alt tipi esnek molekülün kendine uyan tek bir uzaysal formunu seçerek bağlar.",
+              "ar": "نظرية التشكيل الحيوي الفعال: كل نوع فرعي من المستقبلات يختار وينشط بتشكيل هندسي محدد وحيد.",
+              "en": "Bioactive conformation theory: Each receptor subtype selects and binds a single distinct spatial geometry."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika çıkarım! Slayt 42'de belirtildiği gibi rijit siklopropil analogları, asetilkolinin iki farklı reseptörde iki farklı biyoaktif konformasyon sergilediğinin kesin kimyasal kanıtıdır.",
+              "ar": "استنتاج رائع! تثبت نظائر البروبان الحلقي الجاسئة أن أستيل كولين يمتلك تشكيلين حيويين متمايزين لكل مستقبل.",
+              "en": "Outstanding deduction! As shown on Slide 42, rigid cyclopropyl analogs provide definitive chemical proof of subtype-specific bioactive conformations."
+            }
           },
           {
-            "id": "opt-mc42-4",
+            "id": "opt-6b",
             "text": {
-              "tr": "Her iki reseptörü de 100 kat daha güçlü uyarır.",
-              "ar": "ينشط كلا المستقبلين بقوة أكبر بـ 100 ضعف.",
-              "en": "The overall molecular weight alone."
+              "tr": "Siklopropil halkasının elektron çekici etkisiyle ester grubunun reaktivitesini artırıp asetilkolinesteraz enzimini inhibe ettiğini.",
+              "ar": "أن حلقة السيكلوبروبيل تزيد تفاعلية الإستر وتسحب الإلكترونات مما يثبط إنزيم أستيل كولين إستراز بشكل مباشر.",
+              "en": "The cyclopropyl ring withdraws electrons to enhance ester reactivity and directly inhibit acetylcholinesterase."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Enzim inhibisyonu yanılgısı: Siklopropil halkası asetilkolinesteraz inhibitörü olarak değil; N-O atomlar arası mesafeyi (3.3 Å vs 4.4 Å) kovalent bir halka ile dondurarak reseptör alt tip seçiciliğini kanıtlamak için tasarlanmıştır.",
+              "ar": "مغالطة التثبيط الإنزيمي: حلقة السيكلوبروبيل صممت لتجميد المسافة الفراغية وإثبات انتقائية المستقبل وليس لتثبيط الإنزيم.",
+              "en": "Enzyme inhibition misconception: The cyclopropyl ring was designed to lock interatomic distance and demonstrate receptor subtype selectivity, not inhibit AChE."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "Trans-izomerin iki kiral merkeze sahip olmasının ilacın yalnızca kan plazmasındaki albümine bağlanmasını sağladığını.",
+              "ar": "أن امتلاك المماكب trans لمركزين كيراليين يجعله يرتبط حصرياً بألبومين البلازما بدلاً من المستقبلات.",
+              "en": "The trans isomer having two chiral centers causes the drug to bind exclusively to serum albumin rather than receptors."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Plazma proteini yanılgısı: Kiral siklopropil analogları albümine bağlanma amacıyla değil, muskarinik ve nikotinik reseptörlerin kiral ve boyutsal cep geometrisini haritalamak için geliştirilmiştir.",
+              "ar": "مغالطة بروتينات البلازما: طورت مشتقات السيكلوبروبيل الكيرالية لرسم خريطة المستقبلات المسكارينية والنيكوتينية وليس للارتباط بالألبومين.",
+              "en": "Plasma protein fallacy: Chiral cyclopropyl analogs were synthesized to probe chiral receptor pharmacophore geometry, not target albumin."
+            }
           }
         ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": "Biyoaktif konformasyon teorisini: Her reseptör alt tipi esnek molekülün kendine uyan tek bir uzaysal formunu seçerek bağlar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika çıkarım! Slayt 42'de belirtildiği gibi rijit siklopropil analogları, asetilkolinin iki farklı reseptörde iki farklı biyoaktif konformasyon sergilediğinin kesin kimyasal kanıtıdır."
+          },
+          {
+            "id": "opt-6b",
+            "text": "Siklopropil halkasının elektron çekici etkisiyle ester grubunun reaktivitesini artırıp asetilkolinesteraz enzimini inhibe ettiğini.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Enzim inhibisyonu yanılgısı: Siklopropil halkası asetilkolinesteraz inhibitörü olarak değil; N-O atomlar arası mesafeyi (3.3 Å vs 4.4 Å) kovalent bir halka ile dondurarak reseptör alt tip seçiciliğini kanıtlamak için tasarlanmıştır."
+          },
+          {
+            "id": "opt-6c",
+            "text": "Trans-izomerin iki kiral merkeze sahip olmasının ilacın yalnızca kan plazmasındaki albümine bağlanmasını sağladığını.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Plazma proteini yanılgısı: Kiral siklopropil analogları albümine bağlanma amacıyla değil, muskarinik ve nikotinik reseptörlerin kiral ve boyutsal cep geometrisini haritalamak için geliştirilmiştir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Biyoaktif konformasyon teorisini: Her reseptör alt tipi esnek molekülün kendine uyan tek bir uzaysal formunu seçerek bağlar.",
+          "ar": "نظرية التشكيل الحيوي الفعال: كل نوع فرعي من المستقبلات يختار وينشط بتشكيل هندسي محدد وحيد.",
+          "en": "Bioactive conformation theory: Each receptor subtype selects and binds a single distinct spatial geometry."
+        },
+        "explanation": {
+          "tr": "Harika çıkarım! Slayt 42'de belirtildiği gibi rijit siklopropil analogları, asetilkolinin iki farklı reseptörde iki farklı biyoaktif konformasyon sergilediğinin kesin kimyasal kanıtıdır.",
+          "ar": "استنتاج رائع! تثبت نظائر البروبان الحلقي الجاسئة أن أستيل كولين يمتلك تشكيلين حيويين متمايزين لكل مستقبل.",
+          "en": "Outstanding deduction! As shown on Slide 42, rigid cyclopropyl analogs provide definitive chemical proof of subtype-specific bioactive conformations."
+        }
       }
     },
     {
       "id": "mc-mod4-les2-step-07",
       "stage": "formal_explanation",
       "stageIndex": 7,
+      "type": "formal_explanation",
       "title": {
-        "tr": "Biyoaktif Konformasyon ve Entropi Optimizasyonu",
-        "ar": "التشكيل الحيوي وتحسين الإنتروبيا",
-        "en": "Formal Thermodynamics: Conformational Entropy"
+        "tr": "Histamin H1 ve H2 Konformer Ayrımı",
+        "ar": "التمييز التشكلي للهستامين بين H1 و H2",
+        "en": "Histamine Dilemma: H1 Bronchoconstriction vs H2 Acid"
       },
       "prompt": {
-        "tr": "Biyoaktif konformasyon en düşük enerjili konformasyon olmak zorunda değildir. Önceden organize edilmiş rijit ligandlar minimum entropi kaybıyla bağlanır.",
-        "ar": "ليس بالضرورة أن يكون التشكيل الفعال هو الأدنى طاقة في المحلول. الربيطات الجاسئة مسبقة التنظيم ترتبط بأدنى خسارة إنتروبية.",
-        "en": "ΔG_bind = ΔH - TΔS. Freezing each rotatable bond costs ≈ 0.5 - 0.7 kcal/mol in entropy (-TΔS > 0). Rigidification saves this penalty."
+        "tr": "Histaminin uzamış transoid A konformeri (4.55 Å) H1 reseptörüne, katlanmış B konformeri (3.60 Å) H2 reseptörüne bağlanır. Bu rijit ayrım neden hayati bir klinik kazançtır?",
+        "ar": "يرتبط تشكيل هستامين الممتد A (4.55 Å) بمستقبل H1، والمطوي B (3.60 Å) بمستقبل H2. لماذا يعد التقييد التشكلي مكسباً سريرياً حاسماً؟",
+        "en": "Histamine's extended conformer A (4.55 Å) binds H1 receptors, while folded conformer B (3.60 Å) binds H2. Why is rigid analog design clinically vital?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "biyoaktif konformasyon",
-          "arContext": "التشكيل الفراغي الحيوي الفعال"
+          "term": "H1 reseptörü",
+          "arContext": "مستقبل الهستامين 1"
+        },
+        {
+          "term": "H2 reseptörü",
+          "arContext": "مستقبل الهستامين 2"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "H1 uyarısı alerji ve bronkospazm yaparken, H2 uyarısı mide asidi salgılar.",
+          "ar": "تنشيط H1 يسبب الحساسية وتضيق القصبات، وتنشيط H2 يفرز حمض المعدة.",
+          "en": "H1 activation mediates allergies and bronchoconstriction; H2 activation stimulates gastric acid."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Esnek histamin her iki etkiyi birden tetikler; rijit bir molekül ise sadece birini hedefler.",
+          "ar": "الهستامين المرن يطلق كلا الأثرين معاً، بينما يستهدف الجزيء الجاسئ أحدهما حصراً.",
+          "en": "Flexible histamine triggers both pathways, whereas a rigidified analog selectively addresses only one."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod4-les2-step-08",
-      "stage": "concept_check",
-      "stageIndex": 8,
-      "title": {
-        "tr": "Kavram Denetimi: Dondurulan Rotasyon Başına Kazanç",
-        "ar": "فحص المفهوم: المكسب لكل دورة مقيدة",
-        "en": "Concept Check: Bioactive vs Ground State"
-      },
-      "prompt": {
-        "tr": "Rasyonel tasarımda tek bir bağın dönmesini dondurmak afiniteye ortalama ne kadar katkı sağlar?",
-        "ar": "في التصميم الرشيد، كم تضيف تقريباً إعاقة دوران رابطة أحادية واحدة إلى طاقة الارتباط الحرة؟",
-        "en": "True or False: The bound bioactive conformation of a drug may be 2-3 kcal/mol higher in energy than its lowest energy conformer in aqueous solution."
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "5 bağın dondurulması afiniteyi 100 kattan fazla yükseltebilir."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "tr": "3.60 Å katlanmış mesafede dondurulan rijit ligandlar alerjik yan etki yapmadan sadece mide asidini bloke eder.",
+          "ar": "تجميد المسافة عند 3.60 Å يثبط حمض المعدة حصراً دون تداخل مع مستقبلات الحساسية.",
+          "en": "Freezing the pharmacophore at 3.60 Å selectively blocks gastric acid without causing allergic cross-reactivity."
         }
       ],
-      "hints": [
+      "sources": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 43
         }
       ],
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mc42-5",
+            "id": "opt-7a",
             "text": {
-              "tr": "~0.5 - 0.8 kcal/mol serbest enerji avantajı (yaklaşık 3 kat afinite artışı).",
-              "ar": "حوالي 0.5 - 0.8 kcal/mol كأفضلية طاقة حرة (مضاعفة الألفة بنحو 3 أضعاف).",
-              "en": "Bulky N-alkyl substituents (e.g., isopropyl, tert-butyl)."
+              "tr": "Esnek histamin iki reseptörü de uyarırken, mesafesi kilitlenen rijit analoglar alerjik yan etki yapmadan sadece mide asidini selektif bloke eder.",
+              "ar": "بينما ينشط الهستامين المرن المستقبلين، فإن تثبيت المسافة يسمح بحجب حمض المعدة دون آثار حساسية.",
+              "en": "While flexible histamine triggers both, rigidified analogs lock the exact distance to block gastric acid without allergic cross-reactivity."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler! Slayt 43'e göre: Histamin A konformeri (4.55 Å) H1 bronkokonstriksiyonunu, B konformeri (3.60 Å) H2 mide asidini yönetir. Simetidin gibi H2 blokerleri bu konformasyonel tasarımla doğmuştur.",
+              "ar": "تهانينا! شريحة 43: التشكيل A بمسافة 4.55 Å يخص H1، والتشكيل B بمسافة 3.60 Å يخص H2. أدوية قرحة المعدة (H2 blockers) صممت بناء على هذا المبدأ.",
+              "en": "Congratulations! Slide 43 documents: Conformer A (4.55 Å) governs H1 allergic response; Conformer B (3.60 Å) governs H2 gastric acid. Blockbusters like cimetidine were engineered using this exact rigid constraint."
+            }
           },
           {
-            "id": "opt-mc42-6",
+            "id": "opt-7b",
             "text": {
-              "tr": "Sıfır katkı.",
-              "ar": "صفر مساهمة.",
-              "en": "A primary amine without substituents."
+              "tr": "H1 ve H2 reseptörlerinin aslında tek bir protein olduğunu ve ayrımın önemsiz olduğunu göstermek için.",
+              "ar": "لإثبات أن مستقبلي H1 و H2 بروتين واحد متطابق ولا فائدة من التمييز بينهما.",
+              "en": "To demonstrate that H1 and H2 receptors are an identical single protein with meaningless differences."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Monolitik reseptör yanılgısı: H1 (Gq kenetli) ve H2 (Gs kenetli) tamamen farklı genler ve proteinlerdir.",
+              "ar": "خطأ تماثل المستقبلات: مستقبلا H1 و H2 مختلفان تماماً جينياً ووظيفياً.",
+              "en": "Identical receptor misconception: H1 (Gq-coupled) and H2 (Gs-coupled) are distinct GPCR genes with divergent signaling cascades."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "Histamin H1 ve H2 reseptörlerinin aynı farmakofor mesafesini talep ettiğini, dolayısıyla rijit analogların seçicilik sağlayamayacağını.",
+              "ar": "أن مستقبلي H1 و H2 يتطلبان نفس المسافة الفارماكوفورية تماماً وبالتالي لا يمكن تحقيق أي انتقائية بالتجسئة.",
+              "en": "Histamine H1 and H2 receptors require identical pharmacophoric distances, making conformational restriction useless for selectivity."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Özdeş cep yanılgısı: Slayt 43: H1 reseptörü transoid A konformasyonunu (4.55 Å), H2 reseptörü ise gauche B konformasyonunu (3.60 Å) seçer; aradaki 0.95 Å'luk fark selektif antihistaminik ve antiülser ilaçların temelidir.",
+              "ar": "مغالطة الجيب المتطابق: شريحة 43: مستقبل H1 يختار transoid A (4.55 Å) ومستقبل H2 يختار gauche B (3.60 Å)؛ فارق 0.95 Å هو أساس الأدوية النوعية.",
+              "en": "Identical pocket misconception: Slide 43: H1 prefers transoid A (4.55 Å) while H2 prefers gauche B (3.60 Å); this 0.95 Å difference governs selectivity."
+            }
           }
         ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": "Esnek histamin iki reseptörü de uyarırken, mesafesi kilitlenen rijit analoglar alerjik yan etki yapmadan sadece mide asidini selektif bloke eder.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Tebrikler! Slayt 43'e göre: Histamin A konformeri (4.55 Å) H1 bronkokonstriksiyonunu, B konformeri (3.60 Å) H2 mide asidini yönetir. Simetidin gibi H2 blokerleri bu konformasyonel tasarımla doğmuştur."
+          },
+          {
+            "id": "opt-7b",
+            "text": "H1 ve H2 reseptörlerinin aslında tek bir protein olduğunu ve ayrımın önemsiz olduğunu göstermek için.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Monolitik reseptör yanılgısı: H1 (Gq kenetli) ve H2 (Gs kenetli) tamamen farklı genler ve proteinlerdir."
+          },
+          {
+            "id": "opt-7c",
+            "text": "Histamin H1 ve H2 reseptörlerinin aynı farmakofor mesafesini talep ettiğini, dolayısıyla rijit analogların seçicilik sağlayamayacağını.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Özdeş cep yanılgısı: Slayt 43: H1 reseptörü transoid A konformasyonunu (4.55 Å), H2 reseptörü ise gauche B konformasyonunu (3.60 Å) seçer; aradaki 0.95 Å'luk fark selektif antihistaminik ve antiülser ilaçların temelidir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Esnek histamin iki reseptörü de uyarırken, mesafesi kilitlenen rijit analoglar alerjik yan etki yapmadan sadece mide asidini selektif bloke eder.",
+          "ar": "بينما ينشط الهستامين المرن المستقبلين، فإن تثبيت المسافة يسمح بحجب حمض المعدة دون آثار حساسية.",
+          "en": "While flexible histamine triggers both, rigidified analogs lock the exact distance to block gastric acid without allergic cross-reactivity."
+        },
+        "explanation": {
+          "tr": "Tebrikler! Slayt 43'e göre: Histamin A konformeri (4.55 Å) H1 bronkokonstriksiyonunu, B konformeri (3.60 Å) H2 mide asidini yönetir. Simetidin gibi H2 blokerleri bu konformasyonel tasarımla doğmuştur.",
+          "ar": "تهانينا! شريحة 43: التشكيل A بمسافة 4.55 Å يخص H1، والتشكيل B بمسافة 3.60 Å يخص H2. أدوية قرحة المعدة (H2 blockers) صممت بناء على هذا المبدأ.",
+          "en": "Congratulations! Slide 43 documents: Conformer A (4.55 Å) governs H1 allergic response; Conformer B (3.60 Å) governs H2 gastric acid. Blockbusters like cimetidine were engineered using this exact rigid constraint."
+        }
+      }
+    },
+    {
+      "id": "mc-mod4-les2-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "type": "concept_check",
+      "title": {
+        "tr": "Nöroleptik Bütirofenonlarda Sandalye Konformasyonu",
+        "ar": "تشكيل الكرسي في البوتيروفينونات المضادة للذهان",
+        "en": "Butyrophenone Neuroleptics: Equatorial vs Axial"
+      },
+      "prompt": {
+        "tr": "Haloperidol benzeri bütirofenon nöroleptiklerde 4-hidroksipiperidin halkası sandalye konformasyonundadır. Aromatik sübstitüentin ekvatoryal veya aksiyal yönelimi aktiviteyi nasıl değiştirir?",
+        "ar": "في مضادات الذهان مثل هالوبيريدول تتبنى حلقة بيبيريدين تشكيل الكرسي. كيف يغير التوجه الاستوائي أو المحوري الفعالية؟",
+        "en": "In butyrophenone neuroleptics, the piperidine ring adopts a chair conformation. How does the equatorial versus axial orientation of the 4-aryl group impact antipsychotic potency?"
+      },
+      "technicalTerms": [
+        {
+          "term": "sandalye konformasyonu",
+          "arContext": "تشكيل الكرسي"
+        },
+        {
+          "term": "ekvatoryal konum",
+          "arContext": "الموقع الاستوائي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Sikloheksan/piperidin sandalye konformasyonunda aksiyal gruplar 1,3-diaxial itmeye maruz kalır.",
+          "ar": "في تشكيل الكرسي، تتعرض المجموعات المحورية (axial) لتنافر sterik مع الهيدروجينات المجاورة.",
+          "en": "In chair conformations, axial substituents experience severe 1,3-diaxial steric clash."
+        },
+        {
+          "tr": "Ekvatoryal grup halkanın çevresine doğru uzanarak reseptör düzlemine engelsizce yanaşır.",
+          "ar": "تمتد المجموعة الاستوائية (equatorial) نحو المحيط الخارجي فتقترب من جيب المستقبل بلا عائق.",
+          "en": "Equatorial substituents project outward into the equatorial plane, docking unobstructed into receptor sub-pockets."
+        },
+        {
+          "tr": "Ekvatoryal aril grubu dopamin D2 cebine tam oturur; aksiyal bükülme afiniteyi şiddetle düşürür.",
+          "ar": "المجموعة الاستوائية تلائم جيب دوبامين D2 بدقة، بينما يسقط التوجه المحوري الألفة بشدة.",
+          "en": "The equatorial aryl conformer binds dopamine D2 pockets with high affinity; axial orientation destroys binding."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 41
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "Ekvatoryal konumdaki aril grubu dopamin D2 cebine kusursuz oturur; aksiyal bükülme sterik itmeyle afiniteyi 100 kat düşürür.",
+              "ar": "المجموعة الاستوائية تلائم جيب مستقبل دوبامين D2 تماماً؛ بينما يقلل التوجه المحوري الألفة بمقدار 100 ضعف بسبب الإعاقة الفراغية.",
+              "en": "The equatorial 4-aryl conformer docks perfectly into dopamine D2 pockets; axial orientation causes steric clash, dropping affinity 100-fold."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle doğru! Slayt 41'e göre: 4-(4-hidroksipiperidino)bütirofenonlarda piperidin halkasındaki sübstitüentin ekvatoryal/aksiyal konformasyonu nöroleptik etkinin varlığını belirler.",
+              "ar": "صحيح بدقة! شريحة 41: يحدد التشكيل الاستوائي/المحوري في حلقة البيبيريدين قوة الفعالية المضادة للذهان.",
+              "en": "Precisely correct! Slide 41 documents that equatorial vs axial orientation on the piperidine chair dictates neuroleptic potency at dopamine D2 receptors."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "Aksiyal aril grubu halkanın merkezine yöneldiği için reseptörle hidrofobik teması artırır ve daima ekvatoryal forma göre daha yüksek afinite gösterir.",
+              "ar": "المجموعة العطرية المحورية تتجه نحو مركز الحلقة فتزيد التلامس الكاره للماء وتعطي دائماً ألفة أعلى من الاستوائية.",
+              "en": "The axial aryl group points toward the ring core to maximize hydrophobic contact, consistently conferring higher affinity than equatorial."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "1,3-diaksiyal itme yanılgısı: Aksiyal konumdaki hacimli aril grupları halkanın diğer aksiyal hidrojenleriyle şiddetli sterik çakışmaya (1,3-diaxial strain) girer; bu nedenle molekül ekvatoryal konformasyonu tercih eder.",
+              "ar": "مغالطة الإجهاد ثنائي المحور: المجموعات الحجمية في الموقع المحوري تعاني من تنافر فراغي شديد (1,3-diaxial strain)؛ لذا يفضل الجزيء التشكيل الاستوائي.",
+              "en": "1,3-diaxial misconception: Bulky axial aryls suffer severe steric strain with syn-axial hydrogens, making equatorial orientation energetically favored."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Piperidin halkası fizyolojik sıcaklıkta o kadar hızlı ring-flip yapar ki ekvatoryal ve aksiyal konformerler farmakolojik olarak ayırt edilemez.",
+              "ar": "حلقة البيبيريدين تقلب بسرعة فائقة في الحرارة الفسيولوجية بحيث يستحيل تفريق التشكيل الاستوائي عن المحوري دوائياً.",
+              "en": "The piperidine ring undergoes such rapid chair flipping at body temperature that equatorial and axial conformers are pharmacologically indistinguishable."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Ayırt edilemezlik yanılgısı: Halka dönüşümü hızlı olsa da, reseptör cebi iki konformerden yalnızca birini (biyoaktif formu) seçerek bağlar; bu seçim afiniteler arasında devasa farklar yaratır.",
+              "ar": "مغالطة التكافؤ الدوائي: رغم سرعة الانقلاب، ينتقي جيب المستقبل تشكيلاً واحداً فقط للارتباط؛ مما يولد فارقاً هائلاً في الألفة.",
+              "en": "Indistinguishability fallacy: Despite rapid interconversion in solution, the rigid receptor pocket binds only one bioactive conformer, yielding vast affinity differences."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": "Ekvatoryal konumdaki aril grubu dopamin D2 cebine kusursuz oturur; aksiyal bükülme sterik itmeyle afiniteyi 100 kat düşürür.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kesinlikle doğru! Slayt 41'e göre: 4-(4-hidroksipiperidino)bütirofenonlarda piperidin halkasındaki sübstitüentin ekvatoryal/aksiyal konformasyonu nöroleptik etkinin varlığını belirler."
+          },
+          {
+            "id": "opt-8b",
+            "text": "Aksiyal aril grubu halkanın merkezine yöneldiği için reseptörle hidrofobik teması artırır ve daima ekvatoryal forma göre daha yüksek afinite gösterir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "1,3-diaksiyal itme yanılgısı: Aksiyal konumdaki hacimli aril grupları halkanın diğer aksiyal hidrojenleriyle şiddetli sterik çakışmaya (1,3-diaxial strain) girer; bu nedenle molekül ekvatoryal konformasyonu tercih eder."
+          },
+          {
+            "id": "opt-8c",
+            "text": "Piperidin halkası fizyolojik sıcaklıkta o kadar hızlı ring-flip yapar ki ekvatoryal ve aksiyal konformerler farmakolojik olarak ayırt edilemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Ayırt edilemezlik yanılgısı: Halka dönüşümü hızlı olsa da, reseptör cebi iki konformerden yalnızca birini (biyoaktif formu) seçerek bağlar; bu seçim afiniteler arasında devasa farklar yaratır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Ekvatoryal konumdaki aril grubu dopamin D2 cebine kusursuz oturur; aksiyal bükülme sterik itmeyle afiniteyi 100 kat düşürür.",
+          "ar": "المجموعة الاستوائية تلائم جيب مستقبل دوبامين D2 تماماً؛ بينما يقلل التوجه المحوري الألفة بمقدار 100 ضعف بسبب الإعاقة الفراغية.",
+          "en": "The equatorial 4-aryl conformer docks perfectly into dopamine D2 pockets; axial orientation causes steric clash, dropping affinity 100-fold."
+        },
+        "explanation": {
+          "tr": "Kesinlikle doğru! Slayt 41'e göre: 4-(4-hidroksipiperidino)bütirofenonlarda piperidin halkasındaki sübstitüentin ekvatoryal/aksiyal konformasyonu nöroleptik etkinin varlığını belirler.",
+          "ar": "صحيح بدقة! شريحة 41: يحدد التشكيل الاستوائي/المحوري في حلقة البيبيريدين قوة الفعالية المضادة للذهان.",
+          "en": "Precisely correct! Slide 41 documents that equatorial vs axial orientation on the piperidine chair dictates neuroleptic potency at dopamine D2 receptors."
+        }
       }
     },
     {
       "id": "mc-mod4-les2-step-09",
       "stage": "application",
       "stageIndex": 9,
+      "type": "clinical_vignette",
       "title": {
-        "tr": "Klinik İlaç Tasarımı: Morfin ve Esnek Opioidler",
-        "ar": "تصميم سريري: المورفين والأفيونات المرنة",
-        "en": "Application: Chlorpromazine vs Promethazine"
+        "tr": "Entropik Tasarım: Rotasyonel Serbestlik Tasarrufu",
+        "ar": "التصميم الإنتروبي: توفير حرية الدوران",
+        "en": "Quantitative Thermodynamics: Rotatable Bond Savings"
       },
       "prompt": {
-        "tr": "Morfin rijit 5 halkalı sert bir iskelete sahipken, meperidin ve fentanil esnektir. Morfinin mu reseptörüne yüksek seçiciliği bu rijitlikten kaynaklanır.",
-        "ar": "يمتلك المورفين هيكلاً صلباً خماسي الحلقات بينما الفنتانيل مرن. تنبع انتقائية المورفين الفائقة لمستقبلات mu من هذه الجساءة.",
-        "en": "Analyze how bending the phenothiazine ring system alters dopamine D2 antagonism versus histamine H1 sedation profiles."
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Rijitleştirilmiş iskeletler reseptör seçiciliğinin zirve noktasıdır."
+        "tr": "Bir ilaç tasarımcısı, 5 adet serbest dönebilen tekli bağı bir sikloheksil halkası içine kilitleyerek rijit hale getirmiştir. Bağlanma serbest enerjisinde (ΔG) beklenen termodinamik kazanç nedir?",
+        "ar": "قام مصمم أدوية بتجميد 5 روابط أحادية دوارة داخل حلقة سداسية صلبة. ما هو الكسب الديناميكي الحراري المتوقع في طاقة الارتباط الحرة (ΔG)؟",
+        "en": "A medicinal chemist rigidifies a flexible lead by locking 5 rotatable bonds into a fused cyclohexyl scaffold. What is the expected thermodynamic gain in binding free energy (ΔG)?"
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "bağlanma serbest enerjisi (ΔG)",
+          "arContext": "طاقة الارتباط الحرة"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Her serbest dönebilen bağ için tasarruf edilen ortalama entropik enerjiyi hatırlayın.",
+          "ar": "تذكر متوسط الطاقة الإنتروبية الموفرة لكل رابطة دوارة متجمدة.",
+          "en": "Recall the average entropic energy saved per frozen rotatable bond (~2.5-4.0 kJ/mol)."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "5 bağ için toplam kazanç: 5 × (2.5 ila 4.0 kJ/mol) = 12.5 ila 20.0 kJ/mol.",
+          "ar": "الحصيلة لـ 5 روابط: 5 × (2.5 إلى 4.0) = 12.5 إلى 20 كيلوجول/مول.",
+          "en": "Multiply 5 bonds by ~3 kJ/mol: ~15 kJ/mol favorable shift in ΔG."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "15 kJ/mol serbest enerji kazancı, Kd afinitesinde 100 ila 1000 kat artışa karşılık gelir.",
+          "ar": "كسب 15 كيلوجول/مول يرفع ألفة الارتباط بمقدار 100 إلى 1000 ضعف.",
+          "en": "A 15 kJ/mol gain in ΔG translates to a 100- to 1000-fold increase in binding affinity (Kd drops)."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 41
         }
       ],
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mc42-7",
+            "id": "opt-9a",
             "text": {
-              "tr": "Rijit fenantren iskeleti morfinin farmakoforunu tek bir kusursuz konformasyonda tutar.",
-              "ar": "هيكل الفينانثرين الجاسئ يثبت فارماكوفور المورفين في تشكيل فراغي متقن واحد.",
-              "en": "Incorporate a bulky N-tert-butyl group to confer selective beta-2 bronchodilation."
+              "tr": "Her donan bağ için ~2.5-4.0 kJ/mol entropi tasarrufu sağlanır; toplamda ~15 kJ/mol kazanç afiniteyi (Kd) 100-1000 kat artırır.",
+              "ar": "توفر كل رابطة مجمدة ~2.5-4.0 كيلوجول/مول؛ وحصيلة ~15 كيلوجول/مول ترفع الألفة بمقدار 100 إلى 1000 ضعف.",
+              "en": "Each frozen bond saves ~2.5-4.0 kJ/mol in entropy penalty; ~15 kJ/mol total gain boosts affinity (drops Kd) 100- to 1000-fold."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Olağanüstü biyofiziksel kavrayış! ΔG = ΔH - TΔS denkleminde bağların önceden kilitlenmesi TΔS kaybını sıfırlayarak bağlanmayı kat kat güçlü kılar.",
+              "ar": "فهم فيزيائي حيوي استثنائي! تثبيت الروابط مسبقاً يلغي ضريبة الإنتروبيا التشكيلية فيرفع الألفة بشكل أسي.",
+              "en": "Extraordinary biophysical deduction! In ΔG = ΔH - TΔS, pre-organizing the scaffold eliminates conformational entropy loss, driving exponential affinity increases."
+            }
           },
           {
-            "id": "opt-mc42-8",
+            "id": "opt-9b",
             "text": {
-              "tr": "Morfinde kiral merkez yoktur.",
-              "ar": "المورفين يفتقر للمراكز الكيرالية.",
-              "en": "Remove all aromatic substituents."
+              "tr": "Serbest bağları dondurmak molekül ağırlığını azalttığı için difüzyon katsayısını 10 kat artırır ama bağlanma afinitesini hiç etkilemez.",
+              "ar": "تجميد الروابط ينقص الوزن الجزيئي فيزيد سرعة الانتشار 10 أضعاف لكنه لا يغير ألفة الارتباط إطلاقاً.",
+              "en": "Freezing rotatable bonds reduces molecular weight, accelerating diffusion 10-fold without altering binding affinity."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Molekül ağırlığı yanılgısı: Rotasyonel bağları halkaya kilitlemek molekül ağırlığını neredeyse değiştirmez; afinite artışının temel nedeni termodinamik konformasyonel entropi (-TΔS) cezasının silinmesidir.",
+              "ar": "مغالطة الوزن الجزيئي: تقييد الروابط لا يغير الوزن الجزيئي؛ زيادة الألفة سببها إلغاء ضريبة الإنتروبيا التشكيلية (-TΔS).",
+              "en": "Molecular weight fallacy: Rigidification barely alters molecular weight; affinity spikes because the conformational entropy penalty (-TΔS) is eliminated."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "Bağların dondurulması entalpiyi (ΔH) 100 kJ/mol yükselterek ilacın reseptörle kovalent bağ kurmasını sağlar.",
+              "ar": "تجميد الروابط يرفع الإنثالبيا (ΔH) بمقدار 100 kJ/mol مما يدفع الدواء لتشكيل روابط تساهمية مع المستقبل.",
+              "en": "Freezing bonds drives enthalpy (ΔH) up by 100 kJ/mol, enabling the drug to form irreversible covalent bonds with the receptor."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kovalent bağlanma yanılgısı: İskeleti rijit hale getirmek molekülü kovalent yapmaz; non-kovalan bağlanmada entalpiden ziyade entropik kayıpları önleyerek serbest enerjiyi (ΔG = ΔH - TΔS) negatifleştirir.",
+              "ar": "مغالطة الارتباط التساهمي: التجسئة لا تجعل الدواء تساهمياً؛ بل تحسن طاقة جيبس الحرة بمنع ضياع الإنتروبيا في التفاعلات غير التساهمية.",
+              "en": "Covalent binding fallacy: Rigidification does not confer covalent reactivity; it enhances free energy (ΔG = ΔH - TΔS) by preventing non-covalent entropy penalties."
+            }
           }
         ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": "Her donan bağ için ~2.5-4.0 kJ/mol entropi tasarrufu sağlanır; toplamda ~15 kJ/mol kazanç afiniteyi (Kd) 100-1000 kat artırır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Olağanüstü biyofiziksel kavrayış! ΔG = ΔH - TΔS denkleminde bağların önceden kilitlenmesi TΔS kaybını sıfırlayarak bağlanmayı kat kat güçlü kılar."
+          },
+          {
+            "id": "opt-9b",
+            "text": "Serbest bağları dondurmak molekül ağırlığını azalttığı için difüzyon katsayısını 10 kat artırır ama bağlanma afinitesini hiç etkilemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Molekül ağırlığı yanılgısı: Rotasyonel bağları halkaya kilitlemek molekül ağırlığını neredeyse değiştirmez; afinite artışının temel nedeni termodinamik konformasyonel entropi (-TΔS) cezasının silinmesidir."
+          },
+          {
+            "id": "opt-9c",
+            "text": "Bağların dondurulması entalpiyi (ΔH) 100 kJ/mol yükselterek ilacın reseptörle kovalent bağ kurmasını sağlar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kovalent bağlanma yanılgısı: İskeleti rijit hale getirmek molekülü kovalent yapmaz; non-kovalan bağlanmada entalpiden ziyade entropik kayıpları önleyerek serbest enerjiyi (ΔG = ΔH - TΔS) negatifleştirir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Her donan bağ için ~2.5-4.0 kJ/mol entropi tasarrufu sağlanır; toplamda ~15 kJ/mol kazanç afiniteyi (Kd) 100-1000 kat artırır.",
+          "ar": "توفر كل رابطة مجمدة ~2.5-4.0 كيلوجول/مول؛ وحصيلة ~15 كيلوجول/مول ترفع الألفة بمقدار 100 إلى 1000 ضعف.",
+          "en": "Each frozen bond saves ~2.5-4.0 kJ/mol in entropy penalty; ~15 kJ/mol total gain boosts affinity (drops Kd) 100- to 1000-fold."
+        },
+        "explanation": {
+          "tr": "Olağanüstü biyofiziksel kavrayış! ΔG = ΔH - TΔS denkleminde bağların önceden kilitlenmesi TΔS kaybını sıfırlayarak bağlanmayı kat kat güçlü kılar.",
+          "ar": "فهم فيزيائي حيوي استثنائي! تثبيت الروابط مسبقاً يلغي ضريبة الإنتروبيا التشكيلية فيرفع الألفة بشكل أسي.",
+          "en": "Extraordinary biophysical deduction! In ΔG = ΔH - TΔS, pre-organizing the scaffold eliminates conformational entropy loss, driving exponential affinity increases."
+        }
       }
     },
     {
       "id": "mc-mod4-les2-step-10",
       "stage": "retrieval",
       "stageIndex": 10,
+      "type": "retrieval",
       "title": {
-        "tr": "Geri Çağırma: Pfeiffer Kuralı ve Seçicilik",
-        "ar": "استرجاع معرفي: قاعدة Pfeiffer والانتقائية",
-        "en": "Retrieval: Van der Waals Contacts"
+        "tr": "Aralıklı Hatırlama: Konfigürasyon vs Konformasyon",
+        "ar": "استرجاع متباعد: التشكيل الفراغي مقابل التماكب البنائي",
+        "en": "Spaced Retrieval: Conformation vs Configuration"
       },
       "prompt": {
-        "tr": "Bir önceki derste öğrendiğimiz gibi ligandın hedef afinitesi arttıkça enantiyomerler arasındaki ödismik oran nasıl değişiyordu?",
-        "ar": "كما تعلمنا في الدرس السابق، كيف تتغير النسبة الإيوديزمية بين المصاوغات مع زيادة ألفة الربيط نحو هدفه؟",
-        "en": "How does conformational locking improve steric complementarity with the hydrophobic binding pocket walls?"
+        "tr": "Optik enantiyomerler (konfigürasyon) ile rotamerler (konformasyon) arasındaki temel kimyasal ayrım nedir?",
+        "ar": "ما الفارق الكيميائي الجوهري الحاسم بين المصاوغات الضوئية المرآوية والمتشكلات الدورانية؟",
+        "en": "What is the fundamental physical-chemical boundary separating enantiomers (configuration) from rotamers (conformation)?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "Pfeiffer kuralı",
-          "arContext": "قاعدة Pfeiffer"
+          "term": "konfigürasyon",
+          "arContext": "التشكيل التكويني"
+        },
+        {
+          "term": "konformasyon",
+          "arContext": "التشكيل الفراغي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Birbirine dönüştürmek için kovalent bağ kırmak gerekir mi gerekmez mi?",
+          "ar": "هل يتطلب التحويل كسر روابط تساهمية أم لا؟",
+          "en": "Does interconversion require breaking and reforming covalent bonds?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Enantiyomerler kovalent bağ kırılmadan birbirine dönüşemez; rotamerler tekli bağ dönmesiyle dinamik olarak dönüşür.",
+          "ar": "لا تتحول المصاوغات المرآوية إلا بكسر الروابط؛ بينما تتحول الروتانيرات بالدوران الحر فقط.",
+          "en": "Enantiomers require covalent bond cleavage; rotamers interconvert dynamically via thermal rotation."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod4-les2-step-11",
-      "stage": "connection",
-      "stageIndex": 11,
-      "title": {
-        "tr": "İleri Bağlantı: İlaç Metabolizması ve Biyotransformasyon (Modül 5)",
-        "ar": "ربط مفاهيمي: استقلاب الأدوية والتحول الحيوي (الوحدة 5)",
-        "en": "Forward Connection: Phase I Drug Metabolism (Module 5)"
-      },
-      "prompt": {
-        "tr": "Reseptörüne bağlanan ilaç görevini bitirdikten sonra vücuttan nasıl temizlenir? Modül 5 te Sitokrom P450 hidroksilasyon mekanizmalarını inceleyeceğiz.",
-        "ar": "بعد أداء وظيفته، كيف يطرح الدواء من الجسم؟ في الوحدة 5، سنستكشف آليات الأكسدة بواسطة إنزيمات CYP450.",
-        "en": "In Module 5, we discover how rigid aromatic rings and steric hindrance protect drug scaffolds from Cytochrome P450 oxidation."
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "sitokrom P450",
-          "arContext": "إنزيمات CYP450"
+          "tr": "Konfigürasyon kovalent bağ kırılması şart koşar; konformasyon serbest döner.",
+          "ar": "التكوين يشترط كسر الروابط؛ والتشكيل يدور بحرية.",
+          "en": "Configuration requires covalent bond breaking; conformation rotates freely around single bonds."
         }
       ],
-      "hints": [
+      "sources": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 8
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod4-les2-step-12",
-      "stage": "mastery_check",
-      "stageIndex": 12,
-      "title": {
-        "tr": "Ustalık Sınavı: Konformasyonel Kısıtlama",
-        "ar": "اختبار الإتقان: تقييد التشكيل الفراغي",
-        "en": "Mastery Assessment: Conformational Restriction Tactics"
-      },
-      "prompt": {
-        "tr": "Esnek bir ilaç kurşun bileşiğini optimize ederken halka oluşturarak rijitlik kazandırmanın sağladığı iki temel avantaj nedir?",
-        "ar": "ما الميزتان الأساسيتان لإكساب المركب الطليعي المرن جساءة تشكيلية عبر بناء حلقة؟",
-        "en": "Which synthetic strategy constitutes an authentic conformational restriction method to improve receptor selectivity?"
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Modül 4 tamamlandı! 3 review cards eklendi. +50 XP."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 39
         }
       ],
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mc42-9",
+            "id": "opt-10a",
             "text": {
-              "tr": "Bağlanma entropi cezasını düşürerek afiniteyi artırmak ve diğer reseptörleri engelleyerek seçicilik kazanmak.",
-              "ar": "خفض ضريبة الإنتروبيا لرفع الألفة، ومنع الارتباط بالمستقبلات الأخرى لضمان الانتقائية.",
-              "en": "Spatial orientation of critical pharmacophore features complementary to the receptor."
+              "tr": "Konfigürasyon izomerleri ancak kovalent bağ kırılıp yeniden oluşarak dönüşebilir; konformerler ise tekil bağlar etrafında enerji harcamaksızın döner.",
+              "ar": "تتحول المصاوغات التكوينية حصراً بكسر روابط تساهمية وإعادة بنائها؛ بينما تدور المتشكلات الفراغية حول الروابط الأحادية بحرية.",
+              "en": "Configuration isomers only interconvert by breaking covalent bonds; conformers interconvert dynamically via rotation around single bonds."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tam bir sınav klasiği! Slayt 8 ve 39'un özeti: Konfigürasyon (enantiyomerler, cis/trans) kovalent bağ kırılması gerektirirken, konformasyon dinamik dengededir.",
+              "ar": "قاعدة ذهبية! شريحة 8 و 39: التماكب التكويني يتطلب كسر الروابط، بينما التماكب التشكلي دوران حر في توازن ديناميكي.",
+              "en": "Textbook gold standard! Slides 8 and 39: Configuration requires covalent bond rupture; conformation interconverts via thermal single-bond rotation."
+            }
           },
           {
-            "id": "opt-mc42-10",
+            "id": "opt-10b",
             "text": {
-              "tr": "İlacı suda tamamen çözünmez kılmak.",
-              "ar": "جعل الدواء غير قابل للذوبان في الماء مطلقاً.",
-              "en": "Absolute molecular weight alone."
+              "tr": "Konfigürasyon izomerleri oda sıcaklığında saniyede milyonlarca kez birbirine dönüşürken, konformasyonlar yalnızca yüksek ısıda değişir.",
+              "ar": "المتماكبات التكوينية تتحول تلقائياً ملايين المرات في الثانية، بينما التشكيلات الفراغية تتغير فقط بالحرارة العالية.",
+              "en": "Configurational isomers interconvert millions of times per second, whereas conformers require high thermal energy to flip."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Hız ve mekanizma tersliği yanılgısı: Tam tersi! Oda sıcaklığında nanotaniyelerde dönen yapılar konformerlerdir; konfigürasyonel izomerlerin (R/S, cis/trans) birbirine dönüşmesi için kovalent bağ kırılması şarttır.",
+              "ar": "مغالطة عكس الآلية والسرعة: العكس تماماً! التشكيلات تدور في نانوثوانٍ؛ بينما المتماكبات التكوينية تتطلب كسر روابط تساهمية.",
+              "en": "Interconversion rate inversion fallacy: Opposite! Conformers rotate in nanoseconds; configurational isomers (R/S, cis/trans) require covalent bond cleavage."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Konformasyonel izomerler sadece optikçe aktif kiral moleküllerde görülür; akiral moleküllerde konformasyon oluşamaz.",
+              "ar": "التماكب التشكلي يحدث حصراً في الجزيئات الكيرالية ذات الفعالية الضوئية، ولا وجود له في الجزيئات غير الكيرالية.",
+              "en": "Conformational isomerism occurs exclusively in optically active chiral molecules; achiral molecules cannot possess conformers."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kiralite bağımlılığı yanılgısı: Konformasyonel izomerizm kiraliteye bağlı değildir; etan veya asetilkolin gibi akiral moleküller bile tekli bağları etrafında dönerek sonsuz sayıda konformasyon alır.",
+              "ar": "مغالطة اشتراط الكيرالية: التماكب التشكلي لا يرتبط بالكيرالية؛ فحتى الجزيئات غير الكيرالية كالإيثان والأستيل كولين تدور وتأخذ أشكالاً لا نهائية.",
+              "en": "Chirality dependence fallacy: Conformation does not require chirality; even achiral molecules like ethane or acetylcholine adopt infinite rotamers."
+            }
           }
         ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": "Konfigürasyon izomerleri ancak kovalent bağ kırılıp yeniden oluşarak dönüşebilir; konformerler ise tekil bağlar etrafında enerji harcamaksızın döner.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Tam bir sınav klasiği! Slayt 8 ve 39'un özeti: Konfigürasyon (enantiyomerler, cis/trans) kovalent bağ kırılması gerektirirken, konformasyon dinamik dengededir."
+          },
+          {
+            "id": "opt-10b",
+            "text": "Konfigürasyon izomerleri oda sıcaklığında saniyede milyonlarca kez birbirine dönüşürken, konformasyonlar yalnızca yüksek ısıda değişir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Hız ve mekanizma tersliği yanılgısı: Tam tersi! Oda sıcaklığında nanotaniyelerde dönen yapılar konformerlerdir; konfigürasyonel izomerlerin (R/S, cis/trans) birbirine dönüşmesi için kovalent bağ kırılması şarttır."
+          },
+          {
+            "id": "opt-10c",
+            "text": "Konformasyonel izomerler sadece optikçe aktif kiral moleküllerde görülür; akiral moleküllerde konformasyon oluşamaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kiralite bağımlılığı yanılgısı: Konformasyonel izomerizm kiraliteye bağlı değildir; etan veya asetilkolin gibi akiral moleküller bile tekli bağları etrafında dönerek sonsuz sayıda konformasyon alır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Konfigürasyon izomerleri ancak kovalent bağ kırılıp yeniden oluşarak dönüşebilir; konformerler ise tekil bağlar etrafında enerji harcamaksızın döner.",
+          "ar": "تتحول المصاوغات التكوينية حصراً بكسر روابط تساهمية وإعادة بنائها؛ بينما تدور المتشكلات الفراغية حول الروابط الأحادية بحرية.",
+          "en": "Configuration isomers only interconvert by breaking covalent bonds; conformers interconvert dynamically via rotation around single bonds."
+        },
+        "explanation": {
+          "tr": "Tam bir sınav klasiği! Slayt 8 ve 39'un özeti: Konfigürasyon (enantiyomerler, cis/trans) kovalent bağ kırılması gerektirirken, konformasyon dinamik dengededir.",
+          "ar": "قاعدة ذهبية! شريحة 8 و 39: التماكب التكويني يتطلب كسر الروابط، بينما التماكب التشكلي دوران حر في توازن ديناميكي.",
+          "en": "Textbook gold standard! Slides 8 and 39: Configuration requires covalent bond rupture; conformation interconverts via thermal single-bond rotation."
+        }
+      }
+    },
+    {
+      "id": "mc-mod4-les2-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "type": "connection",
+      "title": {
+        "tr": "Modül Köprüsü: Sitokrom P450 ve Metabolik Cep Uyumu",
+        "ar": "جسر الموديول: تطابق السيتوكروم P450 والجيب الاستقلابي",
+        "en": "Module Bridge: Conformation Meets Phase I Metabolism"
+      },
+      "prompt": {
+        "tr": "Bir ilacın esnek konformasyonel yapısı, karaciğerde Sitokrom P450 enzimlerinin oksitleyeceği metabolik zayıf noktaları (soft-spots) nasıl belirler?",
+        "ar": "كيف يحدد التشكيل الفراغي المرن للدواء نقاط الضعف الاستقلابية التي ستؤكسدها إنزيمات السيتوكروم P450 في الكبد؟",
+        "en": "How does a drug's dynamic conformational flexibility determine which metabolic soft-spots are presented to the heme iron-oxo radical of Cytochrome P450?"
+      },
+      "technicalTerms": [
+        {
+          "term": "metabolik zayıf nokta (soft-spot)",
+          "arContext": "نقطة الضعف الاستقلابية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "CYP450 aktif bölgesinde reaktif bir demir-okso radikali (Fe4+=O) bulunur.",
+          "ar": "يحتوي الجيب النشط لـ CYP450 على جذر أكسيد الحديد التفاعلي.",
+          "en": "The CYP450 catalytic pocket contains an iron-oxo radical intermediate ([Fe4+=O]•+)."
+        },
+        {
+          "tr": "İlacın hangi pozisyonunun hidroksilleneceği, molekülün cebe hangi konformasyonda yanaştığına bağlıdır.",
+          "ar": "يعتمد موقع الهدرلة على التشكيل الفراغي الذي يقدمه الدواء لجذر الحديد.",
+          "en": "Which atom is oxygenated depends on which conformation presents that bond closest to the heme iron."
+        },
+        {
+          "tr": "Enzime bağlanan biyoaktif konformasyon, reaktif radikale en yakın karbonu metabolize eder (Modül 5 Faz I temeli).",
+          "ar": "التشكيل المرتبط بالإنزيم يقدم الكربون الأقرب لجذر الأكسجين ليتم أكسدته.",
+          "en": "The conformer bound inside the catalytic cleft presents the closest carbon to the radical center (Module 5 Phase I bridge)."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 41
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "İlaç CYP450 cebine oturduğunda en kararlı değil, enzimin demir-okso merkezine en yakın uzanan konformasyon hidroksillenir.",
+              "ar": "عندما يستقر الدواء في جيب CYP450، فإن التشكيل الذي يوجه الرابطة الأقرب لمركز جذر الحديد هو الذي يتأكسد.",
+              "en": "When docked into CYP450, the conformation presenting a C-H bond closest to the iron-oxo radical is selectively hydroxylated."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika modül köprüsü! Peptidomimetiklerde ve makrosiklik moleküllerde (makrosiklizasyon) iskelet rijitlenerek hem biyoaktif konformasyon korunur hem de CYP450 metabolik soft-spot'larının enzime yanaşması engellenir (Modül 5 Faz I temeli).",
+              "ar": "ربط موديولي رائع! في أشباه الببتيدات (peptidomimetics) والجزيئات الحلقية الضخمة (macrocyclization)، يتم تجسئة الهيكل للحفاظ على التشكل الحيوي ومنع وصول نقاط الضعف الاستقلابية لإنزيمات CYP450.",
+              "en": "Masterful bridge! In peptidomimetics and macrocycles (macrocyclization), scaffold rigidification locks the bioactive pose while sterically shielding metabolic soft-spots from CYP450 oxidation (Module 5 Phase I bridge)."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Sitokrom P450 enzimleri yalnızca dairesel halkaları tanır; zincirleri parçalayamaz.",
+              "ar": "تتعرف إنزيمات CYP450 على الحلقات فقط ولا تؤكسد السلاسل الأليفاتية المفتوحة.",
+              "en": "Cytochrome P450 enzymes only recognize closed rings and cannot oxidize open aliphatic chains."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Enzim kısıtlama yanılgısı: CYP450 hem aromatik halkaları hem de alifatik yan zincirleri (ω ve ω-1) hızla hidroksiller.",
+              "ar": "خطأ قصر الإنزيم: تؤكسد إنزيمات CYP450 السلاسل الأليفاتية والحلقات العطرية على حد سواء.",
+              "en": "Enzyme restriction fallacy: CYP450 readily hydroxylates aliphatic chains (at omega and omega-1 positions) as well as aromatic rings."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Bir molekülün karaciğerde metabolize olabilmesi için mutlaka çözeltideki mutlak en düşük enerjili konformasyonunda olması zorunludur.",
+              "ar": "لكي يستقلب الجزيء في الكبد، يجب أن يكون حتماً في التشكيل الأدنى طاقة والأكثر استقراراً في المحلول.",
+              "en": "For a drug to be metabolized in the liver, it must strictly adopt its absolute global minimum energy conformation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Metabolik minimum yanılgısı: Tıpkı reseptörlerde olduğu gibi, enzim ceplerinde de ilacın katalitik merkezle en uygun mesafeyi kurduğu konformasyon metabolize edilir; bu form serbest çözeltideki en kararlı form olmak zorunda değildir.",
+              "ar": "مغالطة الأدنى طاقة بالاستقلاب: تماماً كالمستقبلات، جيب الإنزيم يفضل التشكيل الذي يضع الرابطة بمحاذاة المركز التحفيزي حتى لو كان أعلى طاقة في المحلول.",
+              "en": "Metabolic minimum fallacy: Like receptors, catalytic enzyme active sites bind the conformer presenting the bond to the heme iron, regardless of solution minimum."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": "İlaç CYP450 cebine oturduğunda en kararlı değil, enzimin demir-okso merkezine en yakın uzanan konformasyon hidroksillenir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika modül köprüsü! Peptidomimetiklerde ve makrosiklik moleküllerde (makrosiklizasyon) iskelet rijitlenerek hem biyoaktif konformasyon korunur hem de CYP450 metabolik soft-spot'larının enzime yanaşması engellenir (Modül 5 Faz I temeli)."
+          },
+          {
+            "id": "opt-11b",
+            "text": "Sitokrom P450 enzimleri yalnızca dairesel halkaları tanır; zincirleri parçalayamaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Enzim kısıtlama yanılgısı: CYP450 hem aromatik halkaları hem de alifatik yan zincirleri (ω ve ω-1) hızla hidroksiller."
+          },
+          {
+            "id": "opt-11c",
+            "text": "Bir molekülün karaciğerde metabolize olabilmesi için mutlaka çözeltideki mutlak en düşük enerjili konformasyonunda olması zorunludur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Metabolik minimum yanılgısı: Tıpkı reseptörlerde olduğu gibi, enzim ceplerinde de ilacın katalitik merkezle en uygun mesafeyi kurduğu konformasyon metabolize edilir; bu form serbest çözeltideki en kararlı form olmak zorunda değildir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "İlaç CYP450 cebine oturduğunda en kararlı değil, enzimin demir-okso merkezine en yakın uzanan konformasyon hidroksillenir.",
+          "ar": "عندما يستقر الدواء في جيب CYP450، فإن التشكيل الذي يوجه الرابطة الأقرب لمركز جذر الحديد هو الذي يتأكسد.",
+          "en": "When docked into CYP450, the conformation presenting a C-H bond closest to the iron-oxo radical is selectively hydroxylated."
+        },
+        "explanation": {
+          "tr": "Harika modül köprüsü! Peptidomimetiklerde ve makrosiklik moleküllerde (makrosiklizasyon) iskelet rijitlenerek hem biyoaktif konformasyon korunur hem de CYP450 metabolik soft-spot'larının enzime yanaşması engellenir (Modül 5 Faz I temeli).",
+          "ar": "ربط موديولي رائع! في أشباه الببتيدات (peptidomimetics) والجزيئات الحلقية الضخمة (macrocyclization)، يتم تجسئة الهيكل للحفاظ على التشكل الحيوي ومنع وصول نقاط الضعف الاستقلابية لإنزيمات CYP450.",
+          "en": "Masterful bridge! In peptidomimetics and macrocycles (macrocyclization), scaffold rigidification locks the bioactive pose while sterically shielding metabolic soft-spots from CYP450 oxidation (Module 5 Phase I bridge)."
+        }
+      }
+    },
+    {
+      "id": "mc-mod4-les2-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Dopamin Agonistinde Rijit Halka Tasarımı",
+        "ar": "اختبار الإتقان: تصميم حلقة صلبة لناهض الدوبامين",
+        "en": "Mastery Transfer: Rigidification of Dopamine D2 Leads"
+      },
+      "prompt": {
+        "tr": "Dopamin D2 reseptörü transoid (anti) etilamin konformasyonunu şart koşar. 4 dönebilen bağı olan esnek öncü bir liganttan sub-nanomolar afiniteli rijit bir türev tasarlamak için ne yaparsınız?",
+        "ar": "يشترط مستقبل الدوبامين D2 تشكيل الإيثيل أمين الممتد (anti). لتصميم مشتق جاسئ فائق الألفة من ربيطة مرنة تمتلك 4 روابط دوارة، ماذا تفعل؟",
+        "en": "Dopamine D2 receptors strictly require a trans-coplanar (anti) ethylamine geometry. To evolve a flexible 4-rotatable-bond lead into a sub-nanomolar drug, what structural design do you propose?"
+      },
+      "technicalTerms": [
+        {
+          "term": "konformasyonel rigidifikasyon",
+          "arContext": "التجسئة التشكيلية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "D2 reseptörünün istediği geometri transoid (anti) uzamış formdur.",
+          "ar": "الهندسة التي يشترطها مستقبل D2 هي الشكل الممتد anti.",
+          "en": "The geometry demanded by the D2 receptor is the trans-coplanar (anti) extended pose."
+        },
+        {
+          "tr": "Esnek etilamin zincirini bu anti-biçimde sabitleyen halkalı bir iskelet (tetralin / 2-aminotetralin) düşünün.",
+          "ar": "فكر في هيكل حلقي يجمد سلسلة الإيثيل أمين في شكل anti مثل حلقة التترالين.",
+          "en": "Consider cyclizing the ethylamine chain into a bicyclic tetralin scaffold locking the anti conformation."
+        },
+        {
+          "tr": "Zinciri trans-tetralin içine kaynaştırmak anti-geometriyi dondurur, entropi cezasını silerek afiniteyi katlar.",
+          "ar": "دمج السلسلة في حلقة trans-tetralin يجمد شكل anti ويوفر ضريبة الإنتروبيا فيرفع الألفة بشدة.",
+          "en": "Fusing the chain into a trans-tetralin ring locks the anti geometry and eliminates entropy penalties, boosting affinity."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda  İzomeri.pdf",
+          "page": 41
+        }
+      ],
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "Etilamin zincirini 2-aminotetralin halkası içine kaynaştırıp anti-geometriyi dondurur, entropi cezasını silerek sub-nanomolar afinite sağlarız.",
+              "ar": "ندمج سلسلة الإيثيل أمين داخل حلقة 2-aminotetralin لتجميد شكل anti وإلغاء ضريبة الإنتروبيا لتحقيق ألفة عالية.",
+              "en": "Fuse the ethylamine chain into a 2-aminotetralin scaffold to lock the anti geometry, eliminating entropy penalties to achieve sub-nanomolar affinity."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz bir farmasötik kimya transferi! Esnek dopamin iskeletini trans-tetralin içine kilitlemek (-TΔS) cezasını (~12 kJ/mol) siler ve molekülü doğrudan D2 agonistine (örn. rotigotin) dönüştürür.",
+              "ar": "إتقان مبهر في الكيمياء الدوائية! تجميد هيكل الدوبامين في حلقة التترالين يوفر طاقة الإنتروبيا وينتج ناهضات دوبامين قوية مثل روتيغوتين.",
+              "en": "Flawless medicinal chemistry transfer! Locking dopamine's flexible ethylamine chain into a trans-tetralin ring saves ~12 kJ/mol in entropic penalty, yielding sub-nanomolar D2 agonists like rotigotine."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "Etilamin zincirini siklopropan halkası ile cis-koplanar (katlanmış) konformasyonda dondurarak amino grubunun katekol hidroksilleri ile molekül içi hidrojen bağı yapmasını sağlarız.",
+              "ar": "تجميد سلسلة الإيثيل أمين في حلقة سيكلوبروبيل بتشكيل cis المطوي لتشكيل روابط هيدروجينية داخلية مع هيدروكسيلات الكاتيكول.",
+              "en": "Lock the ethylamine into a cis-coplanar cyclopropyl ring so the amine forms an intramolecular hydrogen bond with the catechol OH groups."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Molekül içi H-bağı vs reseptör geometrisi yanılgısı: Katlanmış (cis) form molekül içinde kararlı hissettirse de, dopamin D2 reseptörü kesin olarak uzamış anti-geometriyi (transoid) şart koşar; cis türevleri D2 afinitesini kaybeder.",
+              "ar": "مغالطة الرابطة الهيدروجينية الداخلية: رغم أن التشكيل المطوي مستقر داخلياً، إلا أن مستقبل D2 يشترط التشكيل الممتد transoid؛ مشتقات cis تفقد الألفة تماماً.",
+              "en": "Intramolecular H-bond fallacy: While cis folding appears internally stable, the D2 receptor pocket strictly demands the extended transoid geometry."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "Esnekliği daha da artırmak için etilamin zincirine 3 ilave serbest dönen karbon ekleyerek molekülün reseptör cebindeki tüm amino asitleri aynı anda taramasını sağlarız.",
+              "ar": "زيادة المرونة بإضافة 3 كربونات حرة الدوران إلى السلسلة لتمكين الجزيء من مسح والتوافق مع جميع الأحماض الأمينية في المستقبل معاً.",
+              "en": "Add 3 more rotatable carbons to the ethylamine chain to maximize flexibility so the molecule can simultaneously contact all pocket residues."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Daha fazla esneklik yanılgısı: Serbest dönen bağ sayısını artırmak entropi cezasını (-TΔS) dramatik şekilde büyütür ve bağlanma afinitesini yıkar; hedefimiz esnekliği artırmak değil, biyoaktif formu kilitlemektir.",
+              "ar": "مغالطة المرونة الزائدة: زيادة الروابط الدوارة تضخم ضريبة الإنتروبيا التشكيلية وتدمر الألفة؛ الهدف ليس زيادة المرونة بل قفل التشكيل الحيوي.",
+              "en": "Flexibility fallacy: Adding rotatable bonds escalates the conformational entropy penalty, crushing affinity; medicinal design seeks rigidification."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": "Etilamin zincirini 2-aminotetralin halkası içine kaynaştırıp anti-geometriyi dondurur, entropi cezasını silerek sub-nanomolar afinite sağlarız.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz bir farmasötik kimya transferi! Esnek dopamin iskeletini trans-tetralin içine kilitlemek (-TΔS) cezasını (~12 kJ/mol) siler ve molekülü doğrudan D2 agonistine (örn. rotigotin) dönüştürür."
+          },
+          {
+            "id": "opt-12b",
+            "text": "Etilamin zincirini siklopropan halkası ile cis-koplanar (katlanmış) konformasyonda dondurarak amino grubunun katekol hidroksilleri ile molekül içi hidrojen bağı yapmasını sağlarız.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Molekül içi H-bağı vs reseptör geometrisi yanılgısı: Katlanmış (cis) form molekül içinde kararlı hissettirse de, dopamin D2 reseptörü kesin olarak uzamış anti-geometriyi (transoid) şart koşar; cis türevleri D2 afinitesini kaybeder."
+          },
+          {
+            "id": "opt-12c",
+            "text": "Esnekliği daha da artırmak için etilamin zincirine 3 ilave serbest dönen karbon ekleyerek molekülün reseptör cebindeki tüm amino asitleri aynı anda taramasını sağlarız.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Daha fazla esneklik yanılgısı: Serbest dönen bağ sayısını artırmak entropi cezasını (-TΔS) dramatik şekilde büyütür ve bağlanma afinitesini yıkar; hedefimiz esnekliği artırmak değil, biyoaktif formu kilitlemektir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Etilamin zincirini 2-aminotetralin halkası içine kaynaştırıp anti-geometriyi dondurur, entropi cezasını silerek sub-nanomolar afinite sağlarız.",
+          "ar": "ندمج سلسلة الإيثيل أمين داخل حلقة 2-aminotetralin لتجميد شكل anti وإلغاء ضريبة الإنتروبيا لتحقيق ألفة عالية.",
+          "en": "Fuse the ethylamine chain into a 2-aminotetralin scaffold to lock the anti geometry, eliminating entropy penalties to achieve sub-nanomolar affinity."
+        },
+        "explanation": {
+          "tr": "Kusursuz bir farmasötik kimya transferi! Esnek dopamin iskeletini trans-tetralin içine kilitlemek (-TΔS) cezasını (~12 kJ/mol) siler ve molekülü doğrudan D2 agonistine (örn. rotigotin) dönüştürür.",
+          "ar": "إتقان مبهر في الكيمياء الدوائية! تجميد هيكل الدوبامين في حلقة التترالين يوفر طاقة الإنتروبيا وينتج ناهضات دوبامين قوية مثل روتيغوتين.",
+          "en": "Flawless medicinal chemistry transfer! Locking dopamine's flexible ethylamine chain into a trans-tetralin ring saves ~12 kJ/mol in entropic penalty, yielding sub-nanomolar D2 agonists like rotigotine."
+        }
       }
     }
   ]

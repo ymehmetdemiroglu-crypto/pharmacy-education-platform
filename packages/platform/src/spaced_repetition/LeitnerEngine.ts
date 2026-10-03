@@ -16,7 +16,7 @@ export const BOX_DEFAULT_STABILITY: Record<1 | 2 | 3 | 4 | 5, number> = {
   5: 60.0,
 };
 
-export const RETRIEVABILITY_DUE_THRESHOLD = 0.80; // 80% retention threshold
+export const RETRIEVABILITY_DUE_THRESHOLD = 0.85; // Calibrated 85% retention threshold (prevents decay to 37% at interval boundary)
 
 /**
  * Calculates exponential retrievability decay:
@@ -119,6 +119,135 @@ export function getDueReviewCards(
       }
       return calculateCardRetrievability(a, now) - calculateCardRetrievability(b, now);
     });
+}
+
+export interface BackwardReviewMilestone {
+  date: string; // ISO string
+  daysFromNow: number;
+  description: string;
+  targetRetrievability: number;
+}
+
+export interface BackwardExamScheduleResult {
+  cardId: string;
+  daysUntilExam: number;
+  currentStability: number; // in days
+  currentRetrievability: number;
+  projectedExamRetrievability: number; // without further review
+  requiredStabilityAtExam: number; // in days to keep R >= targetRetention
+  targetRetention: number;
+  urgency: 'low' | 'moderate' | 'high' | 'critical';
+  reviewMilestones: BackwardReviewMilestone[];
+}
+
+/**
+ * Calculates backward exam schedule for a card.
+ * Given an upcoming exam date and target retention (default 0.85), determines:
+ * - Projected retrievability on exam day if no review occurs: R(t) = exp(-delta_t / S)
+ * - Required stability S_req = delta_t / -ln(R_target)
+ * - Scheduled backward review milestones leading up to the exam
+ */
+export function calculateBackwardExamSchedule(
+  card: SpacedReviewCard,
+  examDate: Date,
+  now: Date = new Date(),
+  targetRetention: number = RETRIEVABILITY_DUE_THRESHOLD
+): BackwardExamScheduleResult {
+  const currentTimestamp = now.getTime();
+  const examTimestamp = examDate.getTime();
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const daysUntilExam = Math.max(0, (examTimestamp - currentTimestamp) / msPerDay);
+
+  const currentStability = card.stability ?? BOX_DEFAULT_STABILITY[card.box];
+  const lastReviewedMs = new Date(card.lastReviewedAt).getTime();
+  const elapsedDaysSinceLastReview = Math.max(0, (currentTimestamp - lastReviewedMs) / msPerDay);
+
+  const currentRetrievability = calculateMemoryDecay(elapsedDaysSinceLastReview, currentStability);
+  const totalDaysUntilExamFromReview = elapsedDaysSinceLastReview + daysUntilExam;
+  const projectedExamRetrievability = calculateMemoryDecay(totalDaysUntilExamFromReview, currentStability);
+
+  const safeTargetRetention = Math.min(0.99, Math.max(0.50, targetRetention));
+  const requiredStabilityAtExam = daysUntilExam > 0
+    ? daysUntilExam / -Math.log(safeTargetRetention)
+    : currentStability;
+
+  let urgency: 'low' | 'moderate' | 'high' | 'critical' = 'low';
+  if (daysUntilExam <= 1 || projectedExamRetrievability < 0.50) {
+    urgency = 'critical';
+  } else if (projectedExamRetrievability < safeTargetRetention) {
+    urgency = 'high';
+  } else if (projectedExamRetrievability < 0.90) {
+    urgency = 'moderate';
+  }
+
+  const reviewMilestones: BackwardReviewMilestone[] = [];
+
+  if (daysUntilExam <= 0.5) {
+    reviewMilestones.push({
+      date: now.toISOString(),
+      daysFromNow: 0,
+      description: 'Immediate Final Blitz Review',
+      targetRetrievability: 1.0,
+    });
+  } else if (daysUntilExam <= 3) {
+    reviewMilestones.push({
+      date: now.toISOString(),
+      daysFromNow: 0,
+      description: 'Pre-Exam Retrieval Booster',
+      targetRetrievability: 1.0,
+    });
+    const finalReviewDate = new Date(examTimestamp - 1 * msPerDay);
+    if (finalReviewDate.getTime() > currentTimestamp) {
+      reviewMilestones.push({
+        date: finalReviewDate.toISOString(),
+        daysFromNow: Number(((finalReviewDate.getTime() - currentTimestamp) / msPerDay).toFixed(1)),
+        description: 'T-24h Final Consolidation',
+        targetRetrievability: 0.95,
+      });
+    }
+  } else {
+    if (currentRetrievability <= safeTargetRetention) {
+      reviewMilestones.push({
+        date: now.toISOString(),
+        daysFromNow: 0,
+        description: 'Immediate Remediation Review',
+        targetRetrievability: 1.0,
+      });
+    }
+
+    const midDays = Math.round(daysUntilExam * 0.5);
+    if (midDays >= 2 && midDays < daysUntilExam - 1) {
+      const midDate = new Date(currentTimestamp + midDays * msPerDay);
+      reviewMilestones.push({
+        date: midDate.toISOString(),
+        daysFromNow: midDays,
+        description: 'Mid-Prep Retrieval Strengthening',
+        targetRetrievability: safeTargetRetention,
+      });
+    }
+
+    const finalReviewDate = new Date(examTimestamp - 1 * msPerDay);
+    if (finalReviewDate.getTime() > currentTimestamp) {
+      reviewMilestones.push({
+        date: finalReviewDate.toISOString(),
+        daysFromNow: Number(((finalReviewDate.getTime() - currentTimestamp) / msPerDay).toFixed(1)),
+        description: 'T-24h Exam Readiness Lock-In',
+        targetRetrievability: 0.95,
+      });
+    }
+  }
+
+  return {
+    cardId: card.cardId,
+    daysUntilExam: Number(daysUntilExam.toFixed(2)),
+    currentStability: Number(currentStability.toFixed(2)),
+    currentRetrievability: Number(currentRetrievability.toFixed(4)),
+    projectedExamRetrievability: Number(projectedExamRetrievability.toFixed(4)),
+    requiredStabilityAtExam: Number(requiredStabilityAtExam.toFixed(2)),
+    targetRetention: safeTargetRetention,
+    urgency,
+    reviewMilestones,
+  };
 }
 
 export interface ReviewCardSeed {

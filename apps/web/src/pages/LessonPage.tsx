@@ -9,6 +9,7 @@ import {
   HintDrawer,
   PaywallModal,
   TechnicalTermBadge,
+  SkeletonLoader,
   useTheme,
 } from '@pharmacy/ui';
 import {
@@ -27,6 +28,7 @@ import {
   type SpacedReviewCardSeed,
   type UserProgress,
 } from '@pharmacy/platform';
+import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/firebase';
 import {
   ChevronLeft,
   ChevronRight,
@@ -66,6 +68,11 @@ import {
   pkSimulatorStandardDemo,
   MembranePartitionSimulator,
   membranePartitionStandardDemo,
+  IonizationChamber,
+  EassonStedmanStage,
+  ReceptorOperationalModel,
+  PkCockpit,
+  ClinicalOrderVerification,
 } from '@pharmacy/widgets';
 
 function getLocalizedText(
@@ -125,6 +132,16 @@ function renderInteractiveWidget(
       return <PkSimulator config={{ ...pkSimulatorStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'MembranePartitionSimulator':
       return <MembranePartitionSimulator config={{ ...membranePartitionStandardDemo, ...mergedConfig }} locale={locale} />;
+    case 'IonizationChamber':
+      return <IonizationChamber config={mergedConfig} locale={locale} />;
+    case 'EassonStedmanStage':
+      return <EassonStedmanStage config={mergedConfig} locale={locale} />;
+    case 'ReceptorOperationalModel':
+      return <ReceptorOperationalModel config={mergedConfig} locale={locale} />;
+    case 'PkCockpit':
+      return <PkCockpit config={mergedConfig} locale={locale} />;
+    case 'ClinicalOrderVerification':
+      return <ClinicalOrderVerification config={mergedConfig} />;
     default:
       return null;
   }
@@ -210,7 +227,7 @@ export const LessonPage: React.FC = () => {
       const p = new URLSearchParams(window.location.search).get('phase');
       if (p === 'quiz' || p === 'missions' || p === 'explore') return p;
     }
-    return 'explore';
+    return 'quiz';
   });
   const [simParams, setSimParams] = useState<Record<string, any>>(interactiveData.defaultParams);
   const [selectedPresetId, setSelectedPresetId] = useState<string | null>(interactiveData.presets[0]?.id || null);
@@ -421,8 +438,55 @@ export const LessonPage: React.FC = () => {
   ]);
 
   const handleStartTrialClick = async () => {
+    try {
+      const res = await callStartFreeTrial();
+      if (res?.data?.success) {
+        setIsPaywallOpen(false);
+        window.location.reload();
+        return;
+      }
+    } catch (err) {
+      console.warn('Backend trial error, falling back to local trial:', err);
+    }
     const success = await startTrial();
     if (success) {
+      setIsPaywallOpen(false);
+    }
+  };
+
+  const handleSelectPlan = async (plan: string, curr: string, isBundle: boolean) => {
+    try {
+      const planIdMap: Record<string, 'monthly' | 'semester_pass' | 'annual'> = {
+        monthly: 'monthly',
+        semester: 'semester_pass',
+        semester_pass: 'semester_pass',
+        annual: 'annual',
+      };
+      const resolvedPlanId = planIdMap[plan] || 'monthly';
+      const resolvedCourseId: 'medchem' | 'pharmacology' | 'dual_bundle' = isBundle
+        ? 'dual_bundle'
+        : (courseId === 'pharmacology' ? 'pharmacology' : 'medchem');
+
+      const res = await callCreateCheckoutSession({
+        courseId: resolvedCourseId,
+        planId: resolvedPlanId,
+        currency: curr === 'USD' || curr === 'SAR' ? curr : 'TRY',
+        returnUrl: window.location.href,
+      });
+
+      if (res?.data?.checkoutUrl) {
+        window.location.href = res.data.checkoutUrl;
+      } else {
+        throw new Error('No checkout URL returned.');
+      }
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      alert(
+        locale === 'tr'
+          ? `Ödeme oturumu başlatılamadı: ${err.message || 'Lütfen tekrar deneyin.'}`
+          : `فشل بدء جلسة الدفع: ${err.message || 'يرجى المحاولة مجدداً.'}`
+      );
+    } finally {
       setIsPaywallOpen(false);
     }
   };
@@ -491,7 +555,16 @@ export const LessonPage: React.FC = () => {
   }
 
   if (!currentStep) {
-    return <div className="p-8 text-center font-mono">{locale === 'tr' ? 'Ders adımı yükleniyor...' : locale === 'ar' ? 'جارٍ تحميل الخطوة...' : 'Loading step...'}</div>;
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-8 space-y-6">
+        <SkeletonLoader height="h-12" width="w-2/3" />
+        <SkeletonLoader height="h-64" width="w-full" />
+        <div className="flex gap-4">
+          <SkeletonLoader height="h-12" width="w-1/2" />
+          <SkeletonLoader height="h-12" width="w-1/2" />
+        </div>
+      </div>
+    );
   }
 
   const options = (((currentStep as any).conceptCheck?.options || currentStep.config?.options) as Array<{
@@ -643,11 +716,11 @@ export const LessonPage: React.FC = () => {
           onClick={() => setActiveJourneyPhase('explore')}
           className={`flex items-center gap-1.5 px-3 py-2 font-display font-black text-xs sm:text-sm uppercase tracking-tight transition-all shrink-0 ${
             activeJourneyPhase === 'explore'
-              ? 'bg-[#4D96FF] text-white border-2 border-black dark:border-blue-400 shadow-[2px_2px_0px_#000000] ring-2 ring-black'
+              ? 'bg-[#4D96FF] text-black border-2 border-black dark:border-blue-400 shadow-[2px_2px_0px_#000000] ring-2 ring-black'
               : 'hover:bg-black/5 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300'
           }`}
         >
-          <Sparkles className="w-4 h-4 text-amber-300" />
+          <Sparkles className="w-4 h-4 text-black" />
           <span>{t.phase1Explore}</span>
         </button>
 
@@ -734,7 +807,9 @@ export const LessonPage: React.FC = () => {
                           {getLocalizedText(preset.badge, locale)}
                         </span>
                       </div>
-                      <p className="text-[11px] font-body text-gray-600 dark:text-gray-300 line-clamp-2 leading-snug">
+                      <p className={`text-[11px] font-body line-clamp-2 leading-snug ${
+                        isSelected ? 'text-gray-900 font-medium' : 'text-gray-600 dark:text-gray-300'
+                      }`}>
                         {getLocalizedText(preset.description, locale)}
                       </p>
                     </button>
@@ -1458,10 +1533,7 @@ export const LessonPage: React.FC = () => {
         onClose={() => setIsPaywallOpen(false)}
         canStartTrial={user ? !user.trialUsed : true}
         onStartTrial={handleStartTrialClick}
-        onSelectPlan={(plan, curr, isBundle) => {
-          alert(`Checkout initiated for ${plan} plan in ${curr} (Bundle: ${isBundle}). (Emulator sandbox)`);
-          setIsPaywallOpen(false);
-        }}
+        onSelectPlan={handleSelectPlan}
       />
     </div>
   );

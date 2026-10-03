@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, StickerBadge } from '@pharmacy/ui';
-import { ShieldCheck, ArrowLeft, FileText } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const TermsPage: React.FC = () => {

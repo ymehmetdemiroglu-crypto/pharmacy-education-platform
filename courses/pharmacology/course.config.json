@@ -27,18 +27,18 @@
       "freeLessons": [
         {
           "id": "pharm-mod1-les1",
-          "slug": "macromolecular-drug-targets-mass-action",
+          "slug": "macromolecular-drug-targets-chemical-bonds",
           "order": 1,
           "free": true,
           "title": {
-            "tr": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi",
-            "ar": "أهداف الأدوية الجزيئية وتوازن فعل الكتلة",
-            "en": "Makromoleküler İlaç Hedefleri ve Kütle Etkisi Dengesi"
+            "tr": "Makromoleküler İlaç Hedefleri ve Kimyasal Bağlar",
+            "ar": "أهداف الأدوية الجزيئية وقوى الروابط الكيميائية",
+            "en": "Macromolecular Drug Targets & Chemical Bond Energetics"
           },
           "description": {
-            "tr": "Kütle etkisi kanunu, Kd ayrışma sabiti ve reseptör doluluk fraksiyonu.",
-            "ar": "قانون فعل الكتلة، ثابت التفكك Kd ونسبة إشغال المستقبِلات.",
-            "en": "Kütle etkisi kanunu, Kd ayrışma sabiti ve reseptör doluluk fraksiyonu."
+            "tr": "İlaçların makromoleküler hedefleri, kovalent ve non-kovalent kimyasal bağ enerjileri ve çok noktalı bağlanma.",
+            "ar": "أهداف الأدوية الجزيئية وطاقات الروابط التساهمية وغير التساهمية والارتباط متعدد النقاط.",
+            "en": "Macromolecular drug targets, covalent and non-covalent bond energetics, and multipoint binding."
           },
           "prerequisiteLessonIds": [
             "mc-mod1-les1"
@@ -48,24 +48,24 @@
         },
         {
           "id": "pharm-mod1-les2",
-          "slug": "reversible-noncovalent-forces-binding-affinity",
+          "slug": "law-of-mass-action-kd-receptor-occupancy",
           "order": 2,
           "free": true,
           "title": {
-            "tr": "Tersinir Non-Kovalent Kuvvetler ve Bağlanma İlgisi",
-            "ar": "القوى غير التساهمية العكوسة وألفة الارتباط",
-            "en": "Tersinir Non-Kovalent Kuvvetler ve Bağlanma İlgisi"
+            "tr": "Kütle Hareketi Kanunu, Kd ve Reseptör Doluluk Dengesi",
+            "ar": "قانون فعل الكتلة وثابت Kd وتوازن إشغال المستقبِلات",
+            "en": "Law of Mass Action, Kd & Receptor Occupancy Equilibrium"
           },
           "description": {
-            "tr": "Çok noktalı bağlanma termodinamiği ve afinite hesaplamaları.",
-            "ar": "ديناميكا الارتباط متعدد النقاط وحسابات الألفة الدوائية.",
-            "en": "Çok noktalı bağlanma termodinamiği ve afinite hesaplamaları."
+            "tr": "Kütle hareketi kanunu, Kd ayrışma sabiti, Hill-Langmuir doluluk fraksiyonu ve yedek reseptör rezervi.",
+            "ar": "قانون فعل الكتلة، وثابت التفكك Kd، ومعادلة إشغال المستقبِلات والاحتياطي الوظيفي.",
+            "en": "Law of mass action, Kd dissociation constant, fractional occupancy, and spare receptor reserve."
           },
           "prerequisiteLessonIds": [
             "pharm-mod1-les1",
             "mc-mod2-les1"
           ],
-          "interactiveArtifact": "ReceptorLigandMatcher",
+          "interactiveArtifact": "DoseResponseCurve",
           "estimatedMinutes": 20
         }
       ]

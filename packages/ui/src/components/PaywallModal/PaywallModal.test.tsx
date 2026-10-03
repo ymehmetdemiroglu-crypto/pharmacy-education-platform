@@ -33,4 +33,16 @@ describe('PaywallModal Component', () => {
     fireEvent.click(ctaButton);
     expect(handleSelectPlan).toHaveBeenCalledWith('semester', 'TRY', false);
   });
+
+  it('renders student-first USD pricing when defaultCurrency is USD', () => {
+    const handleSelectPlan = vi.fn();
+    render(<PaywallModal isOpen={true} onClose={() => {}} defaultCurrency="USD" onSelectPlan={handleSelectPlan} />);
+    expect(screen.getByText('$14')).toBeInTheDocument();
+    expect(screen.getByText('$49')).toBeInTheDocument();
+    expect(screen.getByText('$89')).toBeInTheDocument();
+
+    const ctaButton = screen.getByRole('button', { name: /continue with semester pass/i });
+    fireEvent.click(ctaButton);
+    expect(handleSelectPlan).toHaveBeenCalledWith('semester', 'USD', false);
+  });
 });

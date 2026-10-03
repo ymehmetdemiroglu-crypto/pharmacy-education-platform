@@ -1,13 +1,81 @@
 import React, { useState } from 'react';
 import { Card, Button, StickerBadge } from '@pharmacy/ui';
-import { Check, Sparkles, ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import { Check, Sparkles, ArrowRight, Zap, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { useAuth } from '@pharmacy/platform';
 import { useTranslation } from '../context/TranslationContext';
+import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/firebase';
 
 export const PricingPage: React.FC = () => {
   const { locale, t } = useTranslation();
   const [isBundle, setIsBundle] = useState(false);
+  const [loadingPlan, setLoadingPlan] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { startTrial } = useAuth();
+
+  const handleCheckout = async (planId: 'monthly' | 'semester_pass' | 'annual') => {
+    try {
+      setLoadingPlan(planId);
+      setErrorMessage(null);
+      const courseId: 'medchem' | 'pharmacology' | 'dual_bundle' = isBundle ? 'dual_bundle' : 'medchem';
+      const returnUrl = `${window.location.origin}/pricing?checkout=success`;
+      const res = await callCreateCheckoutSession({
+        courseId,
+        planId,
+        currency: 'TRY',
+        returnUrl,
+      });
+
+      if (res?.data?.checkoutUrl) {
+        window.location.href = res.data.checkoutUrl;
+      } else {
+        throw new Error('Checkout session URL was not returned.');
+      }
+    } catch (err: any) {
+      console.error('Checkout error:', err);
+      setErrorMessage(
+        locale === 'tr'
+          ? `Ödeme ekranına yönlendirilemedi: ${err.message || 'Lütfen tekrar deneyin.'}`
+          : `تعذر الانتقال إلى شاشة الدفع: ${err.message || 'يرجى المحاولة مرة أخرى.'}`
+      );
+    } finally {
+      setLoadingPlan(null);
+    }
+  };
+
+  const handleTrialActivation = async () => {
+    try {
+      setLoadingPlan('trial');
+      setErrorMessage(null);
+      const res = await callStartFreeTrial();
+      if (res?.data?.success) {
+        alert(
+          locale === 'tr'
+            ? '7 Günlük Ücretsiz Deneme Başlatıldı!'
+            : 'تم تفعيل التجربة المجانية لمدة 7 أيام!'
+        );
+        window.location.reload();
+        return;
+      }
+    } catch (err: any) {
+      console.warn('Backend trial callable fallback to local state:', err);
+    }
+
+    const localSuccess = await startTrial();
+    if (localSuccess) {
+      alert(
+        locale === 'tr'
+          ? '7 Günlük Ücretsiz Deneme Başlatıldı!'
+          : 'تم تفعيل التجربة المجانية لمدة 7 أيام!'
+      );
+    } else {
+      alert(
+        locale === 'tr'
+          ? 'Deneme sürümü zaten kullanılmış veya aktif.'
+          : 'تم استخدام النسخة التجريبية بالفعل أو أنها نشطة حالياً.'
+      );
+    }
+    setLoadingPlan(null);
+  };
 
   // All pricing is strictly in Turkish Lira (₺)
   const prices = {
@@ -208,10 +276,17 @@ export const PricingPage: React.FC = () => {
                 ))}
               </ul>
             </div>
+            {errorMessage && (
+              <div className="p-3 bg-red-100 dark:bg-red-950/60 border-2 border-red-600 text-red-800 dark:text-red-200 text-xs font-mono flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0 text-red-600" />
+                <span>{errorMessage}</span>
+              </div>
+            )}
             <Button
               variant="secondary"
               fullWidth
-              onClick={() => alert(locale === 'tr' ? 'Aylık ödeme ekranına yönlendiriliyorsunuz (₺250)...' : 'جارٍ الانتقال إلى شاشة الدفع للاشتراك الشهري (₺250)...')}
+              isLoading={loadingPlan === 'monthly'}
+              onClick={() => handleCheckout('monthly')}
             >
               {copy.monthlyCta}
             </Button>
@@ -252,7 +327,8 @@ export const PricingPage: React.FC = () => {
               variant="primary"
               size="lg"
               fullWidth
-              onClick={() => alert(locale === 'tr' ? 'Dönemlik ödeme ekranına yönlendiriliyorsunuz (₺850)...' : 'جارٍ الانتقال إلى شاشة الدفع لاشتراك الفصل الدراسي (₺850)...')}
+              isLoading={loadingPlan === 'semester_pass'}
+              onClick={() => handleCheckout('semester_pass')}
             >
               {copy.semesterCta}
             </Button>
@@ -288,7 +364,8 @@ export const PricingPage: React.FC = () => {
             <Button
               variant="secondary"
               fullWidth
-              onClick={() => alert(locale === 'tr' ? 'Yıllık ödeme ekranına yönlendiriliyorsunuz (₺1.450)...' : 'جارٍ الانتقال إلى شاشة الدفع للاشتراك السنوي (₺1.450)...')}
+              isLoading={loadingPlan === 'annual'}
+              onClick={() => handleCheckout('annual')}
             >
               {copy.annualCta}
             </Button>
@@ -308,11 +385,8 @@ export const PricingPage: React.FC = () => {
           </div>
           <Button
             variant="primary"
-            onClick={async () => {
-              const res = await startTrial();
-              if (res) alert(locale === 'tr' ? '7 Günlük Ücretsiz Deneme Başlatıldı!' : 'تم تفعيل التجربة المجانية لمدة 7 أيام!');
-              else alert(locale === 'tr' ? 'Deneme sürümü zaten kullanılmış veya aktif.' : 'تم استخدام النسخة التجريبية بالفعل أو أنها نشطة حالياً.');
-            }}
+            isLoading={loadingPlan === 'trial'}
+            onClick={handleTrialActivation}
             rightIcon={<ArrowRight className="w-4 h-4 rtl:rotate-180" />}
           >
             {copy.trialBannerCta}

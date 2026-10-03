@@ -5,6 +5,8 @@ import {
   calculateMemoryDecay,
   calculateCardRetrievability,
   routeRemediation,
+  calculateBackwardExamSchedule,
+  RETRIEVABILITY_DUE_THRESHOLD,
   LEITNER_INTERVALS,
   BOX_DEFAULT_STABILITY,
   CANONICAL_REMEDIATION_CATALOG,
@@ -257,6 +259,72 @@ describe('Leitner Spaced Repetition Engine', () => {
         expect(item!.nearTransferCheck.prompt).toBeDefined();
         expect(item!.nearTransferCheck.options.some((o) => o.isCorrect)).toBe(true);
       }
+    });
+  });
+
+  describe('Backward Exam Scheduling & 85% Retention Threshold', () => {
+    it('sets the default RETRIEVABILITY_DUE_THRESHOLD strictly to 0.85', () => {
+      expect(RETRIEVABILITY_DUE_THRESHOLD).toBe(0.85);
+    });
+
+    it('triggers review when retrievability is 0.83 (below 0.85 threshold)', () => {
+      const now = new Date('2026-09-28T12:00:00Z');
+      // S = 7 days. If 1.3 days elapsed: R = exp(-1.3 / 7) ≈ 0.830 < 0.85
+      const card: SpacedReviewCard = {
+        ...sampleCard,
+        cardId: 'c-thresh',
+        box: 3,
+        stability: 7.0,
+        lastReviewedAt: new Date(now.getTime() - 1.3 * 24 * 60 * 60 * 1000).toISOString(),
+        nextReviewDue: new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000).toISOString(),
+      };
+
+      const due = getDueReviewCards([card], now);
+      expect(due.map((c) => c.cardId)).toContain('c-thresh');
+    });
+
+    it('calculates backward exam schedule correctly for an upcoming exam in 14 days', () => {
+      const now = new Date('2026-10-01T12:00:00Z');
+      const examDate = new Date('2026-10-15T12:00:00Z'); // 14 days later
+
+      const card: SpacedReviewCard = {
+        ...sampleCard,
+        box: 2,
+        stability: 3.0, // weak memory stability
+        lastReviewedAt: '2026-09-30T12:00:00Z', // 1 day ago
+      };
+
+      const result = calculateBackwardExamSchedule(card, examDate, now, 0.85);
+
+      expect(result.daysUntilExam).toBe(14);
+      expect(result.currentStability).toBe(3.0);
+      expect(result.targetRetention).toBe(0.85);
+      // S_req = 14 / -ln(0.85) ≈ 14 / 0.16252 ≈ 86.14 days
+      expect(result.requiredStabilityAtExam).toBeCloseTo(14 / -Math.log(0.85), 1);
+      // Projected retrievability on exam day without review: exp(-(1 + 14)/3) = exp(-5) ≈ 0.0067 < 0.50
+      expect(result.projectedExamRetrievability).toBeLessThan(0.05);
+      expect(result.urgency).toBe('critical');
+
+      // Milestones must include final pre-exam lock-in and mid-prep booster
+      expect(result.reviewMilestones.length).toBeGreaterThanOrEqual(2);
+      const finalMilestone = result.reviewMilestones[result.reviewMilestones.length - 1];
+      expect(finalMilestone?.description).toContain('Exam Readiness');
+    });
+
+    it('flags critical urgency and immediate blitz review for exam within 24 hours', () => {
+      const now = new Date('2026-10-01T12:00:00Z');
+      const examDate = new Date('2026-10-01T18:00:00Z'); // 6 hours later
+
+      const card: SpacedReviewCard = {
+        ...sampleCard,
+        box: 3,
+        stability: 7.0,
+      };
+
+      const result = calculateBackwardExamSchedule(card, examDate, now);
+      expect(result.daysUntilExam).toBeCloseTo(0.25, 2);
+      expect(result.urgency).toBe('critical');
+      expect(result.reviewMilestones[0]?.description).toContain('Blitz');
     });
   });
 });

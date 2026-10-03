@@ -192,3 +192,18 @@ A task or phase is only considered **DONE** when:
 5. **Automated Test Coverage**: Vitest unit tests pass for widgets/UI; Firestore emulator rules tests pass with 0 security regressions.
 6. **Artifacts Published**: All design rationale, architecture decisions, review files, and open issues are committed to `/docs/`.
 7. **Explicit User Gate Approval**: Orchestration never proceeds across phase STOP gates without direct user signoff.
+
+---
+
+## 8. Curriculum Authoring, Pedagogical & Verification Invariants
+
+All lesson authoring and refinement must strictly comply with [`.agents/rules/curriculum-authoring-invariants.md`](.agents/rules/curriculum-authoring-invariants.md):
+1. **12-Stage Mastery Progression**: Every lesson adheres to the sequence: `[hook -> question -> intuition -> visual_explanation -> interactive_artifact -> guided_discovery -> formal_explanation -> concept_check -> application -> retrieval -> connection -> mastery_check]`. Step 1 strictly mandates `predictThenReveal: true`.
+2. **Cognitive Load Ceiling**: Every step prompt across all locales (`tr`, `ar`, `en`) must be strictly $\le 40$ words using the plain-intuition first, technical term second approach.
+3. **Distractor Decontamination Standard**: Zero joke, frivolous, or caricature distractors. Every incorrect option must diagnose a named 3rd-year pharmacy misconception with targeted diagnostic feedback.
+4. **Scaffolded 3-Tier Hint Ladders**: Exactly 3 tiers per problem step: `[Tier 1: Nudge, Tier 2: Clue, Tier 3: Solution]`. Never generic placeholders.
+5. **Dual Widget Configuration Wrapper**: Interactive steps must co-locate `widget: { type, config }` and top-level `config: { ... }` to satisfy all test runners.
+6. **Strict Localization**: Always use `"Farmasötik Kimya"` in Turkish text (never `"Medisinal Kimya"`). Preserve Turkish terminology in Arabic `technicalTerms`.
+7. **Dual-Workspace Synchronization & Client Cache**: Synchronize changes immediately between `valiant-raman` and the active worktree, and regenerate `apps/web/src/data/curriculum.client.ts` using `node scripts/generate-all-client-lessons.mjs`.
+8. **Multi-Agent Quality Gate Protocol**: Every lesson cycle involves `interactive_brainstormer` blueprinting, authoring with full automated test verification, and adversarial audit and decontamination by `pedagogical_reviewer` achieving a verified 5.0/5.0 certification.
+

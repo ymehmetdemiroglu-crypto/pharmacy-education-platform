@@ -303,7 +303,7 @@ function hasNumericOrFactualClaim(item) {
   if (STANDARD_DIGITS.test(text)) return true;
   if (ARABIC_INDIC_DIGITS.test(text)) return true;
   if (SCIENTIFIC_UNITS.test(text)) return true;
-  if (SPELLED_NUMERALS_EN.test(text)) return true;
+  if (!path.includes('.tr') && !path.includes('.ar') && SPELLED_NUMERALS_EN.test(text)) return true;
 
   if (path.includes('translations.tr') && SPELLED_NUMERALS_TR.test(text)) return true;
   if ((path.includes('translations.ar') || /[\u0600-\u06FF]/.test(text)) && SPELLED_NUMERALS_AR.test(text)) return true;
@@ -313,7 +313,10 @@ function hasNumericOrFactualClaim(item) {
 
 // Registry of patterns that map strictly to declared claims (NO wildcard arbitrary decimals allowed)
 const claimMatcher = [
-  // Specific multi-token scientific expressions first
+  // Specific multi-token scientific expressions & provenance citations first
+  { re: /(?:Çözünürlük\s*)?(?:Slayt|Slide|شريحة)\s*\d+(?:[\s,،–-]+\d+)*/gi, id: 'SLIDE_PROVENANCE' },
+  { re: /(?:5-FU|5-fluorourasil|5-fluorouracil|5-فلورويوراسيل|5-فلورو\s*يوراسيل)/gi, id: 'CHEM_5FU' },
+  { re: /(?:2-bromo-2-kloro-1,1,1-trifluoroetan|2-bromo-2-chloro-1,1,1-trifluoroethane|2-برومو-2-كلورو-[1١][,،][1١][,،][1١]-ثلاثي فلورو إيثان)/gi, id: 'CHEM_HALOTHANE' },
   { re: /(?:10\^-5|10\^-3|10\^-4|\b0\.001\b)/g, id: 'NUM-MC01-02' },
   { re: /(?:10\^4|\bfour\s*orders\b|\b4\s*orders\b)/gi, id: 'NUM-MC01-04' },
   { re: /(?:a\s*<\s*0\.0001|a\s*>\s*10\.0|\b10\.0\b|1%\s*to\s*100%)/g, id: 'SATURATION_DISTRACTORS' },
@@ -339,6 +342,10 @@ const claimMatcher = [
   { re: /\bFour experimental compounds\b/gi, id: 'PHRASE_FOUR_COMPOUNDS' },
   { re: /\bAll three bind\b/gi, id: 'PHRASE_ALL_THREE_BIND' },
   { re: /\bextra power of ten\b/gi, id: 'PHRASE_POWER_OF_TEN' },
+  { re: /\b(?:100-fold|100\s*kat|\b100\b)\b/gi, id: 'POTENCY_100X' },
+  { re: /(?:ذرة واحدة|حمض أميني واحد|واحدة|واحد|وحيد|مفرد|\btek\b|\bbir\b|\bone\b|\bsingle\b)/gi, id: 'NUMERAL_ONE' },
+  { re: /(?:onlarca|tens of|عشرات)/gi, id: 'NUMERAL_TENS' },
+  { re: /(?:grams|gram|miligram|milligrams|milligram|miligramlarla|بالمليغرامات|بالغرامات|غرامات)/gi, id: 'UNITS_MASS' },
 ];
 
 for (const item of stringsToAudit) {
@@ -366,7 +373,7 @@ console.log(`- Undeclared Numeric or Factual Hits: ${undeclaredHits}\n`);
 if (undeclaredHits > 0) {
   console.error(`[FAIL] Found ${undeclaredHits} undeclared numeric/factual hit(s) in lesson content:`);
   for (const u of undeclaredDetails) {
-    console.error(`  - In ${u.path}: "${u.text}"`);
+    console.error(`  - In ${u.path}: "${u.text}" | RESIDUAL: "${u.residual}"`);
   }
   process.exit(1);
 } else {

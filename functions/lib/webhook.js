@@ -24,9 +24,10 @@ export async function processDodoWebhook(firestoreDb, req, res, secretOverride, 
         }
     }
     const appConfig = getAppConfig();
+    const isEmulatorOrTest = process.env.FUNCTIONS_EMULATOR === 'true' || process.env.NODE_ENV === 'test' || Boolean(secretOverride);
     const webhookSecret = secretOverride || appConfig.webhookSecret;
-    if (!webhookSecret && process.env.NODE_ENV === 'production') {
-        appLogger.error('Webhook signing secret not configured in production environment');
+    if (!webhookSecret || (webhookSecret === 'test_whsec_dummy' && !isEmulatorOrTest)) {
+        appLogger.error('Webhook signing secret not configured for production environment');
         return res.status(500).send({ error: 'Webhook signing secret not configured' });
     }
     const effectiveSecret = webhookSecret || 'local_dev_secret';
@@ -53,6 +54,10 @@ export async function processDodoWebhook(firestoreDb, req, res, secretOverride, 
         appLogger.warn('Missing webhook signature header', { webhookId });
         return res.status(401).send('Missing webhook signature header');
     }
+    if (stdSignature && !webhookTimestamp) {
+        appLogger.warn('Missing webhook timestamp header', { webhookId });
+        return res.status(401).send('Missing webhook timestamp');
+    }
     let verifiedEvent;
     try {
         if (stdSignature) {
@@ -60,7 +65,7 @@ export async function processDodoWebhook(firestoreDb, req, res, secretOverride, 
                 verifiedEvent = dodoClientOverride.webhooks.unwrap(rawBodyString, {
                     headers: {
                         'webhook-id': webhookId,
-                        'webhook-timestamp': webhookTimestamp || new Date().toISOString(),
+                        'webhook-timestamp': webhookTimestamp,
                         'webhook-signature': stdSignature,
                     },
                     key: effectiveSecret,
@@ -70,13 +75,19 @@ export async function processDodoWebhook(firestoreDb, req, res, secretOverride, 
                 const wh = new Webhook(effectiveSecret);
                 wh.verify(rawBodyString, {
                     'webhook-id': webhookId,
-                    'webhook-timestamp': webhookTimestamp || new Date().toISOString(),
+                    'webhook-timestamp': webhookTimestamp,
                     'webhook-signature': stdSignature,
                 });
                 verifiedEvent = JSON.parse(rawBodyString);
             }
         }
         else if (legacySignature) {
+            if (webhookTimestamp) {
+                const timeDiffMs = Math.abs(Date.now() - new Date(webhookTimestamp).getTime());
+                if (timeDiffMs > 5 * 60 * 1000) {
+                    throw new Error('Webhook timestamp outside 5-minute freshness window');
+                }
+            }
             const computedHmac = crypto
                 .createHmac('sha256', effectiveSecret)
                 .update(rawBodyString)
@@ -106,23 +117,30 @@ export async function processDodoWebhook(firestoreDb, req, res, secretOverride, 
         eventType,
     });
     const eventRef = firestoreDb.collection('webhook_events').doc(eventId);
-    // 3. Idempotency Lock via Firestore
+    // 3. Idempotency Lock via Firestore Transaction
     try {
-        const existingSnap = await eventRef.get();
-        if (existingSnap.exists) {
-            const data = existingSnap.data();
-            if (data?.status === 'completed' || data?.status === 'processing') {
-                appLogger.info(`Webhook event ${eventId} already processed (idempotent skip)`);
-                return res.status(200).send({ received: true, status: 'already_processed' });
+        let alreadyHandled = false;
+        await firestoreDb.runTransaction(async (transaction) => {
+            const existingSnap = await transaction.get(eventRef);
+            if (existingSnap.exists) {
+                const data = existingSnap.data();
+                if (data?.status === 'completed' || data?.status === 'processing') {
+                    alreadyHandled = true;
+                    return;
+                }
             }
-        }
-        await eventRef.set({
-            eventId,
-            eventType,
-            receivedAt: new Date(),
-            timestamp: eventTimestamp,
-            status: 'processing',
+            transaction.set(eventRef, {
+                eventId,
+                eventType,
+                receivedAt: new Date(),
+                timestamp: eventTimestamp,
+                status: 'processing',
+            });
         });
+        if (alreadyHandled) {
+            appLogger.info(`Webhook event ${eventId} already processed (idempotent skip)`);
+            return res.status(200).send({ received: true, status: 'already_processed' });
+        }
     }
     catch (idempotencyErr) {
         appLogger.warn(`Idempotency check error: ${idempotencyErr.message}`);

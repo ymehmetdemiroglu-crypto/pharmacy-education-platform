@@ -6,6 +6,9 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
   ],
+  build: {
+    emptyOutDir: false,
+  },
   resolve: {
     alias: {
       '@pharmacy/ui': path.resolve(__dirname, '../../packages/ui/src'),
@@ -15,5 +18,6 @@ export default defineConfig(({ mode }) => ({
   },
   server: {
     port: 3000,
+    host: true,
   },
 }));

@@ -1,4 +1,6 @@
 import { initializeApp, getApps, getApp, FirebaseApp } from 'firebase/app';
+import { getAuth, connectAuthEmulator, Auth } from 'firebase/auth';
+import { getFirestore, connectFirestoreEmulator, Firestore } from 'firebase/firestore';
 import {
   initializeAppCheck,
   ReCaptchaV3Provider,
@@ -74,41 +76,49 @@ if (typeof window !== 'undefined' && !isTest) {
   }
 }
 
-// Initialize Functions SDK (natively transmits X-Firebase-AppCheck header when appCheck is active)
+// Initialize Firebase Auth, Firestore, and Functions SDKs
+export const auth: Auth = getAuth(app);
+export const db: Firestore = getFirestore(app);
 export const functions: Functions = getFunctions(app);
 
-// Connect to functions emulator if configured
+// Connect to Firebase emulators if configured
 if (
   import.meta.env.VITE_USE_FIREBASE_EMULATOR === 'true' &&
   typeof window !== 'undefined'
 ) {
   const emulatorHost = import.meta.env.VITE_FIREBASE_EMULATOR_HOST || '127.0.0.1';
-  const emulatorPort = Number(import.meta.env.VITE_FUNCTIONS_EMULATOR_PORT) || 5001;
-  connectFunctionsEmulator(functions, emulatorHost, emulatorPort);
+  const functionsPort = Number(import.meta.env.VITE_FUNCTIONS_EMULATOR_PORT) || 5001;
+  const authPort = Number(import.meta.env.VITE_AUTH_EMULATOR_PORT) || 9099;
+  const firestorePort = Number(import.meta.env.VITE_FIRESTORE_EMULATOR_PORT) || 8080;
+
+  connectFunctionsEmulator(functions, emulatorHost, functionsPort);
+  connectAuthEmulator(auth, `http://${emulatorHost}:${authPort}`, { disableWarnings: true });
+  connectFirestoreEmulator(db, emulatorHost, firestorePort);
 }
 
 // Typed callable wrappers
 export interface CreateCheckoutSessionParams {
-  planId: string;
   courseId: 'medchem' | 'pharmacology' | 'dual_bundle';
-  country?: string;
+  planId: 'monthly' | 'semester_pass' | 'annual';
+  currency?: 'TRY' | 'USD' | 'SAR';
+  returnUrl?: string;
 }
 
 export interface CreateCustomerPortalSessionParams {
-  subscriptionId?: string;
-  sendEmailNotification?: boolean;
+  returnUrl?: string;
+  sendEmail?: boolean;
 }
 
 export interface CancelSubscriptionParams {
-  subscriptionId: string;
-  immediate?: boolean;
+  courseId: 'medchem' | 'pharmacology' | 'dual_bundle';
+  cancelImmediately?: boolean;
   reason?: string;
 }
 
 export interface ChangeSubscriptionPlanParams {
-  subscriptionId: string;
-  newPlanId: string;
-  prorationMode?: 'prorated_immediately' | 'prorated_next_billing' | 'full_immediately' | 'none';
+  courseId: 'medchem' | 'pharmacology' | 'dual_bundle';
+  newPlanId: 'monthly' | 'semester_pass' | 'annual';
+  prorationMode?: 'difference_immediately' | 'prorated_immediately' | 'full_immediately' | 'do_not_bill';
 }
 
 export const callStartFreeTrial = httpsCallable<void, { success: boolean; trialStartedAt: string; trialEndsAt: string; plan: string }>(
@@ -121,22 +131,22 @@ export const callCreateCheckoutSession = httpsCallable<CreateCheckoutSessionPara
   'createCheckoutSession'
 );
 
-export const callCreateCustomerPortalSession = httpsCallable<CreateCustomerPortalSessionParams, { portalUrl: string }>(
+export const callCreateCustomerPortalSession = httpsCallable<CreateCustomerPortalSessionParams, { portalUrl: string; expiresAt?: string }>(
   functions,
   'createCustomerPortalSession'
 );
 
-export const callCancelSubscription = httpsCallable<CancelSubscriptionParams, { success: boolean; status: string; cancelledAt: string }>(
+export const callCancelSubscription = httpsCallable<CancelSubscriptionParams, { success: boolean; subscriptionId: string; cancelImmediately: boolean; message: string }>(
   functions,
   'cancelSubscription'
 );
 
-export const callChangeSubscriptionPlan = httpsCallable<ChangeSubscriptionPlanParams, { success: boolean; newPlanId: string }>(
+export const callChangeSubscriptionPlan = httpsCallable<ChangeSubscriptionPlanParams, { success: boolean; subscriptionId: string; newPlanId: string; status: string }>(
   functions,
   'changeSubscriptionPlan'
 );
 
-export const callDeleteUserAccount = httpsCallable<void, { success: boolean; purgedAt: string }>(
+export const callDeleteUserAccount = httpsCallable<void, { success: boolean; message: string }>(
   functions,
   'deleteUserAccount'
 );

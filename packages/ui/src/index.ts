@@ -14,3 +14,4 @@ export * from './components/SkeletonLoader/SkeletonLoader';
 export * from './components/TrialBanner/TrialBanner';
 export * from './components/PaywallModal/PaywallModal';
 export * from './components/TechnicalTermBadge/TechnicalTermBadge';
+export * from './components/ConfidenceGauge/ConfidenceGauge';

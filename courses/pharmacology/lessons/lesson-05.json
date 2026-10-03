@@ -3,712 +3,1541 @@
   "courseId": "pharmacology",
   "moduleId": "ph-mod-03",
   "title": {
-    "tr": "Tek Kompartmanlı Farmakokinetik: Klerens ve Yarılanma Ömrü",
-    "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف",
-    "en": "One-Compartment Pharmacokinetics: Clearance & Half-Life"
+    "tr": "Tek Kompartmanlı Farmakokinetik: Klerens, Dağılım Hacmi ve Yarılanma Ömrü",
+    "ar": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وحجم التوزع وعمر النصف",
+    "en": "One-Compartment Pharmacokinetics: Clearance, Volume of Distribution & Half-Life"
   },
   "order": 1,
   "access": "free",
   "objective": {
-    "tr": "Tek kompartmanlı modelde dağılım hacmi (Vd), klerens (CL) ve eliminasyon yarılanma ömrü (t1/2) arasındaki matematiksel ilişkiyi yönetmek.",
-    "ar": "إتقان العلاقة الرياضية بين حجم التوزع (Vd) والتصفية (CL) وعمر النصف الإطراحي (t1/2) في نموذج الحجيرة الواحدة.",
-    "en": "Calculate clearance (Cl), volume of distribution (Vd), elimination rate constant (ke), and elimination half-life (t1/2)."
+    "tr": "Tek kompartmanlı farmakokinetik modelde sanal dağılım hacmi (Vd), klerens (CL) ve eliminasyon yarılanma ömrü (t1/2) arasındaki matematiksel ilişkiyi yönetmek ve hemodiyaliz etkinliğini öngörmek.",
+    "ar": "إتقان العلاقة الرياضية بين حجم التوزع الظاهري (Vd) والتصفية (CL) وعمر النصف الإطراحي (t1/2) والتنبؤ بجدوى الديال الدموي في نموذج الحجيرة الواحدة.",
+    "en": "Master the mathematical relationships between apparent volume of distribution (Vd), clearance (CL), and elimination half-life (t1/2), and predict hemodialysis efficacy in a one-compartment model."
   },
   "misconceptions": [
     {
-      "tr": "İnfüzyon hızını artırmanın kararlı duruma (steady-state) ulaşma süresini kısalttığı yanılgısı (kararlı duruma ulaşma süresi yalnızca t1/2 ye bağlıdır).",
-      "ar": "الظن الخاطئ بأن تسريع معدل التسريب يقلل الزمن اللازم لبلوغ الحالة المستقرة (الزمن محكوم حصراً بـ t1/2).",
-      "en": "Doubling a drug dose doubles its elimination half-life."
+      "tr": "İnfüzyon hızını iki katına çıkarmanın kararlı duruma (steady-state) ulaşma süresini yarıya indireceği yanılgısı (kararlı duruma ulaşma süresi yalnızca eliminasyon yarılanma ömrü t1/2 ile belirlenir).",
+      "ar": "الظن الخاطئ بأن مضاعفة معدل التسريب الوريدي يقلل زمن الوصول إلى الحالة المستقرة إلى النصف (الزمن محكوم حصراً بعمر النصف الإطراحي t1/2).",
+      "en": "The misconception that doubling the infusion rate halves the time to reach steady-state (time to steady-state depends solely on elimination half-life t1/2)."
+    },
+    {
+      "tr": "Dağılım hacminin (Vd) gerçek bir anatomik sıvı hacmini temsil ettiği yanılgısı (Vd, plazma konsantrasyonu ile vücuttaki toplam ilaç miktarını birbirine bağlayan sanal bir orantı katsayısıdır).",
+      "ar": "الاعتقاد بأن حجم التوزع (Vd) يمثل حيزاً مائياً تشريحياً حقيقياً (Vd مجرد ثابت تناسب ظاهري يربط كمية الدواء الكلية بتركيز البلازما).",
+      "en": "The belief that volume of distribution (Vd) reflects a real anatomical fluid volume rather than an apparent proportionality constant."
     }
   ],
   "sources": [
     {
       "file": "İlaç metabolizması-2026.pdf",
-      "page": 34
+      "page": 2
     }
   ],
   "citations": [
     {
-      "id": "CIT-PH05-01",
+      "id": "CIT-KATZUNG-CH03-P34",
+      "book": "Katzung's Basic & Clinical Pharmacology",
+      "edition": "15th ed.",
+      "topic": "Pharmacokinetics: Volume of Distribution, Clearance, and Half-Life",
+      "chapter": "Chapter 3: Pharmacokinetics & Pharmacodynamics: Rational Dosing & the Time Course of Drug Action",
+      "page": "pp. 34-41",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-GG-CH02-P21",
       "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
       "edition": "14th ed.",
-      "topic": "Pharmacokinetics: Volume of Distribution, Clearance, and Half-Life",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Clinical Pharmacokinetics: Clearance, Volume of Distribution, and Half-Life",
+      "chapter": "Chapter 2: Pharmacokinetics: The Dynamics of Drug Absorption, Distribution, Metabolism, and Elimination",
+      "page": "pp. 21-30",
+      "status": "verified"
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "pharm-mod3-les1-card1",
       "courseId": "pharmacology",
-      "drugOrConcept": "Yarılanma Ömrü Formülü",
-      "prompt": "Eliminasyon yarılanma ömrü (t1/2) Vd ve CL cinsinden nasıl hesaplanır?",
-      "answer": "t1/2 = 0.693 x Vd / CL.",
+      "drugOrConcept": "Sanal Dağılım Hacmi Formülü",
+      "prompt": "Tek kompartmanlı modelde sanal dağılım hacmi (Vd) IV bolus doz ve ekstrapole sıfır anı konsantrasyonu (C0) ile nasıl hesaplanır?",
+      "answer": "Vd = Doz / C0 (Vd, vücuttaki toplam ilaç miktarını plazma konsantrasyonuna oranlayan sanal hacimdir).",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod3-les1-card2",
       "courseId": "pharmacology",
-      "drugOrConcept": "Kararlı Duruma Ulaşma Kuralı",
-      "prompt": "Sürekli infüzyonda kararlı durum plazma konsantrasyonunun (Css) %95 inden fazlasına kaç yarı ömürde ulaşılır?",
-      "answer": "Yaklaşık 4 ila 5 yarılanma ömrü (t1/2) süresinde.",
+      "drugOrConcept": "Yarılanma Ömrü Bağımlı Parametresi",
+      "prompt": "Eliminasyon yarılanma ömrü (t1/2) Vd ve CL cinsinden nasıl formüle edilir ve neden bağımlı bir parametredir?",
+      "answer": "t1/2 = 0.693 x Vd / CL. Bağımsız fizyolojik parametreler Vd ve CL olup, t1/2 bunların oranından türeyen bağımlı hibrit parametredir.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod3-les1-card3",
       "courseId": "pharmacology",
-      "drugOrConcept": "Dağılım Hacmi Anlamı (Vd)",
-      "prompt": "Bir ilacın Vd si 500 Litre çıkarsa bu ne anlama gelir?",
-      "answer": "İlaç plazmadan çıkıp derin dokulara ve yağlara aşırı derecede dağılmıştır (görünür hacim).",
+      "drugOrConcept": "Kararlı Durum Kuralı (Steady-State)",
+      "prompt": "Sabit hızlı sürekli infüzyonda kararlı durum plazma düzeyinin (Css) %93.8'ine kaç yarılanma ömründe ulaşılır?",
+      "answer": "Tam olarak 4 yarılanma ömründe (%93.75). 5 yarılanma ömründe ise %96.88'e ulaşılır; infüzyon hızından tamamen bağımsızdır.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod3-les1-card4",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Klerens ve EAA İlişkisi",
+      "prompt": "Sistemik vücut klerensi (CL) IV bolus doz ve plazma konsantrasyon-zaman eğrisi altındaki alan (EAA) ile nasıl hesaplanır?",
+      "answer": "CL = Doz / EAA (veya CL = ke x Vd). Vücudun birim zamanda kandan tamamen temizlediği sanal plazma hacmini ifade eder.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Tek Kompartmanlı Farmakokinetik: Klerens ve Yarılanma Ömrü"
-    },
-    "ar": {
-      "title": "حركية الدواء في نموذج الحجيرة الواحدة: التصفية وعمر النصف"
-    }
-  },
   "steps": [
     {
-      "id": "pharm-mod3-les1-step-01",
-      "stage": "hook",
+      "id": "pharm-mod3-les1-step1",
+      "order": 1,
       "stageIndex": 1,
-      "title": {
-        "tr": "Vücuttan Büyük Bir Hacim Mümkün mü?",
-        "ar": "هل يمكن لحجم الدواء أن يتجاوز حجم الجسم؟",
-        "en": "Why Renal Failure Turns Safe Doses Toxic"
-      },
-      "prompt": {
-        "tr": "70 kg lık bir insanın vücut suyu 42 litredir. Peki klorokinin dağılım hacmi (Vd) nasıl 15.000 litre çıkabilir?",
-        "ar": "يبلغ ماء جسم الإنسان بوزن 70 كغ حوالي 42 لتراً. كيف يمكن لحجم توزع Chloroquine أن يبلغ 15,000 لتر؟",
-        "en": "A standard antibiotic dose causes severe ototoxicity in a hemodialysis patient. Which fundamental pharmacokinetic parameter failed?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "dağılım hacmi",
-          "arContext": "حجم التوزع الظاهري Vd"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod3-les1-step-02",
-      "stage": "question",
-      "stageIndex": 2,
-      "title": {
-        "tr": "Tahmin: Yarılanma Ömrünü Kim Belirler?",
-        "ar": "توقع: ما الذي يحدد عمر النصف؟",
-        "en": "Prediction: Dose and Half-Life in First-Order Kinetics"
-      },
-      "prompt": {
-        "tr": "Bir ilacın klerensi (CL) yarıya düşer, dağılım hacmi (Vd) ise iki katına çıkarsa eliminasyon yarılanma ömrü (t1/2) ne olur?",
-        "ar": "إذا انخفضت تصفية دواء (CL) إلى النصف وتضاعف حجم توقعه (Vd)، فماذا يحدث لعمر النصف الإطراحي (t1/2)؟",
-        "en": "Under standard first-order elimination kinetics, if you double the administered dose from 100 mg to 200 mg, what happens to t1/2?"
-      },
+      "stage": "hook",
+      "type": "hook",
       "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Pay 2 katına çıkıp payda yarıya indiği için yarı ömür 4 kat uzar."
+      "prompt": {
+        "tr": "Klorokin ile aşırı doz alan hastada hemodiyaliz başlatıldı. Dört saat sonra kandaki klorokin düzeyi neredeyse hiç düşmedi. Hemodiyaliz neden tamamen başarısız oldu?",
+        "ar": "بدأ غسيل الكلى لمريض تناول جرعة مفرطة من الكلوروكين. بعد أربع ساعات، لم ينخفض تركيزه بالدم. لماذا فشل الغسيل تماماً؟",
+        "en": "Hemodialysis was started in a chloroquine overdose. After four hours, blood chloroquine levels barely dropped. Why did dialysis fail completely?"
       },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "conceptCheck": {
+        "question": {
+          "tr": "Klorokin gibi devasa dağılım hacmine sahip bir ilaçta hemodiyalizin klerense katkı sağlayamamasının temel nedeni nedir?",
+          "ar": "ما السبب الأساسي لعدم قدرة الديال الدموي على تصفية دواء ذي حجم توزع هائل مثل الكلوروكين؟",
+          "en": "What is the primary reason hemodialysis fails to clear a drug with a massive volume of distribution like chloroquine?"
+        },
         "options": [
           {
-            "id": "opt-ph31-1",
+            "id": "opt-1",
             "text": {
-              "tr": "Tam 4 kat uzar (t1/2 = 0.693 x Vd / CL).",
-              "ar": "يتضاعف 4 مرات تماماً (t1/2 = 0.693 x Vd / CL).",
-              "en": "Half-life remains unchanged under first-order kinetics."
+              "tr": "Klorokin doku kompartmanlarına yoğun sekestre olur; toplam vücut yükünün %1'inden azı kanda bulunur.",
+              "ar": "يحتجز الكلوروكين بكثافة داخل أنسجة الجسم؛ أقل من 1% من إجمالي الدواء موجود بالدم.",
+              "en": "Chloroquine sequesters deeply into tissues; less than 1% of total body drug resides in blood."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel klinik teşhis! Vd ~15.000 L olan klorokinde ilacın %99'dan fazlası hücre içindedir; hemodiyaliz filtresi kanda bulunmayan ilacı temizleyemez.",
+              "ar": "تشخيص سريري ممتاز! الكلوروكين بحجم توزع 15,000 لتر يحتجز بنسبة 99% في الأنسجة؛ وفلتر الديال لا ينقي دواءً غير موجود بالدم.",
+              "en": "Superb clinical reasoning! With Vd ~15,000 L, over 99% of chloroquine is sequestered in tissues; dialysis cannot clear what is not in blood."
+            }
           },
           {
-            "id": "opt-ph31-2",
+            "id": "opt-2",
             "text": {
-              "tr": "Değişmez.",
-              "ar": "يبقى ثابتاً دون تغيير.",
-              "en": "Half-life doubles automatically."
+              "tr": "Hemodiyaliz membran porları klorokin molekülünün geçişine fiziksel olarak izin vermeyecek kadar küçüktür.",
+              "ar": "مسام غشاء غسيل الكلى صغيرة جداً فيزيائياً بحيث تمنع عبور جزيء الكلوروكين.",
+              "en": "Hemodialysis membrane pores are physically too small to permit passage of the chloroquine molecule."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Klorokinin molekül ağırlığı 320 Da'dur. Hemodiyaliz filtreleri 10.000 Da'a kadar molekülleri rahatça süzer; sorun por boyutu değil doku sekestrasyonudur.",
+              "ar": "غير صحيح: الوزن الجزيئي للكلوروكين 320 دالتون. فلاتر الديال تمرر جزيئات حتى 10,000 دالتون؛ المشكلة احتجاز نسيجي وليست حجم المسام.",
+              "en": "Incorrect: Chloroquine MW is 320 Da. Dialysis membranes easily filter up to 10,000 Da; failure is caused by tissue sequestration, not pore size."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Klorokin fizyolojik pH'da pozitif yüklü olduğundan diyaliz sıvısına geçişi elektriksel olarak itilir.",
+              "ar": "شحنة الكلوروكين الموجبة عند الباهاء الفسيولوجية تسبب تنافراً كهربائياً مع سائل الديال.",
+              "en": "Chloroquine is positively charged at physiological pH, causing electrical repulsion from dialysis fluid."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Katyonik bazik ilaçlar konsantrasyon gradyentiyle diyalizata diffüze olabilir; elektrostatik itme hemodiyaliz yetersizliğini açıklamaz.",
+              "ar": "غير صحيح: الأدوية القاعدية الكاتيونية تنتشر بحسب مدروج التركيز؛ التنافر الكهربائي ليس سبب فشل الديال الدموي.",
+              "en": "Incorrect: Cationic basic drugs diffuse freely down concentration gradients; electrostatic repulsion is not the reason dialysis fails."
+            }
           }
         ]
-      }
+      },
+      "technicalTerms": [
+        {
+          "term": "sanal dağılım hacmi",
+          "arContext": "حجم التوزع الظاهري (apparent volume of distribution)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Hemodiyaliz membranı vücudun hangi sıvı kompartmanını doğrudan filtreleyebilir?",
+          "ar": "ما هو الحيز السائل في الجسم الذي يفلتره غشاء غسيل الكلى مباشرة؟",
+          "en": "Which anatomical fluid compartment does a hemodialysis machine directly filter?"
+        },
+        {
+          "tier": 2,
+          "tr": "İlacın %99'u kas, karaciğer ve lizozomların içindeyse kanda ne kadarı kalır?",
+          "ar": "إذا كان 99% من الدواء محتجزاً داخل العضلات والكبد والجسيمات الحالة، فكم يتبقى بالدم؟",
+          "en": "If 99% of a drug is sequestered in muscle, liver, and lysosomes, how much remains in blood?"
+        },
+        {
+          "tier": 3,
+          "tr": "Hemodiyaliz yalnızca kanda dolaşan serbest ilacı temizler; Vd çok büyükse diyaliz etkisizdir.",
+          "ar": "غسيل الكلى ينقي فقط الدواء الحر في البلازما؛ وإذا كان Vd ضخماً جداً يصبح الغسيل غير مجدٍ.",
+          "en": "Hemodialysis clears only free drug in plasma; if Vd is enormous, dialysis is completely ineffective."
+        }
+      ],
+      "title": {
+        "tr": "Klinik Paradoks: Klorokin Dozaşımı ve Diyaliz İflası",
+        "ar": "مفارقة سريرية: جرعة الكلوروكين المفرطة وفشل الديال",
+        "en": "Clinical Paradox: Chloroquine Overdose & Dialysis Failure"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "Klorokin doku kompartmanlarına yoğun sekestre olur; toplam vücut yükünün %1'inden azı kanda bulunur.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel klinik teşhis! Vd ~15.000 L olan klorokinde ilacın %99'dan fazlası hücre içindedir; hemodiyaliz filtresi kanda bulunmayan ilacı temizleyemez."
+          },
+          {
+            "id": "opt-2",
+            "text": "Hemodiyaliz membran porları klorokin molekülünün geçişine fiziksel olarak izin vermeyecek kadar küçüktür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Klorokinin molekül ağırlığı 320 Da'dur. Hemodiyaliz filtreleri 10.000 Da'a kadar molekülleri rahatça süzer; sorun por boyutu değil doku sekestrasyonudur."
+          },
+          {
+            "id": "opt-3",
+            "text": "Klorokin fizyolojik pH'da pozitif yüklü olduğundan diyaliz sıvısına geçişi elektriksel olarak itilir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Katyonik bazik ilaçlar konsantrasyon gradyentiyle diyalizata diffüze olabilir; elektrostatik itme hemodiyaliz yetersizliğini açıklamaz."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ]
     },
     {
-      "id": "pharm-mod3-les1-step-03",
-      "stage": "intuition",
+      "id": "pharm-mod3-les1-step2",
+      "order": 2,
+      "stageIndex": 2,
+      "stage": "question",
+      "type": "question",
+      "prompt": {
+        "tr": "Toplam vücut sıvısı 42 litre olan 70 kg'lık bir insanda, klorokinin dağılım hacmi nasıl 15.000 litre gibi devasa bir değer çıkabilir?",
+        "ar": "في إنسان يزن 70 كغ ولديه 42 لتراً من سوائل الجسم الكلية، كيف يصل حجم توزع الكلوروكين إلى 15,000 لتر؟",
+        "en": "In a 70 kg human with 42 liters of total body water, how can chloroquine have a distribution volume of 15,000 liters?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Dağılım hacminin (Vd) toplam vücut suyu hacmini (42 L) katbekat aşabilmesinin mantığı nedir?",
+          "ar": "ما هو التفسير العلمي لتجاوز حجم التوزع (Vd) إجمالي ماء الجسم (42 لتر) بأضعاف مضاعفة؟",
+          "en": "What is the scientific explanation for volume of distribution (Vd) greatly exceeding total body water (42 L)?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Vd anatomik bir hacim değil, plazma derişiminin düşüklüğünü yansıtan matematiksel bir orantı katsayısıdır.",
+              "ar": "حجم التوزع ليس حيزاً تشريحياً، بل ثابت تناسب رياضي يعكس شدة انخفاض تركيز البلازما.",
+              "en": "Vd is not an anatomical space, but a mathematical proportionality constant reflecting low plasma concentration."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika! Vd = Doz / C0 formülünde, dokuya aşırı bağlanan ilaçların plazma derişimi (C0) sıfıra yakın olur; bu da yapay olarak devasa bir sanal hacim üretir.",
+              "ar": "رائع! في معادلة Vd = الجرعة / C0، الأدوية شديدة الارتباط بالأنسجة ينخفض تركيزها بالبلازما بشدة، مما ينتج حجماً ظاهرياً هائلاً.",
+              "en": "Brilliant! In Vd = Dose / C0, extensive tissue binding drives plasma concentration (C0) near zero, generating a massive apparent volume."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Klorokin böbreklerden atılamayıp lenfatik kanallarda biriktiği için ekstra lenf sıvısı üretir.",
+              "ar": "الكلوروكين لا يطرح كلوياً بل يتراكم في القنوات اللمفاوية مما يحفز إنتاج سوائل إضافية.",
+              "en": "Chloroquine accumulates in lymphatics rather than urine, stimulating generation of excess fluid."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: İlaçlar vücutta yeni sıvı yaratamaz. 15.000 L gerçek bir hacim değildir, doku sekestrasyonunun matematiksel sonucudur.",
+              "ar": "غير صحيح: الأدوية لا تخلق سوائل جديدة في الجسم. 15,000 لتر ليست حجماً حقيقياً بل انعكاس رياضي للاحتجاز النسيجي.",
+              "en": "Incorrect: Drugs do not create new fluid volumes. 15,000 L is a mathematical artifact of tissue sequestration, not real fluid."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Vd değeri yalnızca plazma proteinlerine bağlanan ilaç miktarını gösterir; dokular hesaba katılmaz.",
+              "ar": "قيمة Vd تعبر حصراً عن كمية الدواء المرتبطة ببروتينات البلازما، دون حساب الأنسجة.",
+              "en": "The Vd value represents only drug bound to plasma proteins, ignoring tissue compartments."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Tam tersi! Plazma proteinlerine aşırı bağlanan ilaçların plazma derişimi yüksek kalır ve Vd'si küçüktür (örn. varfarin Vd ~7 L).",
+              "ar": "العكس تماماً! الأدوية شديدة الارتباط ببروتينات البلازما يبقى تركيزها البلازمي مرتفعاً فيصغر Vd (كالوارفارين Vd ~7 لتر).",
+              "en": "The exact opposite! Drugs heavily bound to plasma proteins remain in circulation and have small Vd (e.g. warfarin Vd ~7 L)."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "doku sekestrasyonu",
+          "arContext": "الاحتجاز النسيجي (tissue sequestration)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Vd formülü nedir? Doz bölü plazma derişimi (C0).",
+          "ar": "ما هو قانون Vd؟ الجرعة مقسومة على تركيز البلازما (C0).",
+          "en": "What is the formula for Vd? Dose divided by plasma concentration (C0)."
+        },
+        {
+          "tier": 2,
+          "tr": "Paydadaki plazma derişimi aşırı küçüldüğünde bölüm sonucu ne olur?",
+          "ar": "عندما يصغر تركيز البلازما في المقام جداً، ماذا يحدث لناتج القسمة؟",
+          "en": "When the denominator (plasma concentration) becomes very small, what happens to the result?"
+        },
+        {
+          "tier": 3,
+          "tr": "Dokuya bağlanan ilaç plazmadan çekilir; düşük C0 değeri devasa bir sanal Vd üretir.",
+          "ar": "الدواء المنجذب للأنسجة يغادر البلازما؛ انخفاض C0 ينتج رياضياً قيمة Vd هائلة.",
+          "en": "Tissue-bound drug leaves plasma; a tiny C0 mathematically yields a massive apparent Vd."
+        }
+      ],
+      "title": {
+        "tr": "Kavramsal Soru: 15.000 Litrelik Sanal Okyanus",
+        "ar": "سؤال مفاهيمي: محيط افتراضي سعة 15,000 لتر",
+        "en": "Conceptual Question: The 15,000-Liter Apparent Ocean"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "Vd anatomik bir hacim değil, plazma derişiminin düşüklüğünü yansıtan matematiksel bir orantı katsayısıdır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika! Vd = Doz / C0 formülünde, dokuya aşırı bağlanan ilaçların plazma derişimi (C0) sıfıra yakın olur; bu da yapay olarak devasa bir sanal hacim üretir."
+          },
+          {
+            "id": "opt-2",
+            "text": "Klorokin böbreklerden atılamayıp lenfatik kanallarda biriktiği için ekstra lenf sıvısı üretir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: İlaçlar vücutta yeni sıvı yaratamaz. 15.000 L gerçek bir hacim değildir, doku sekestrasyonunun matematiksel sonucudur."
+          },
+          {
+            "id": "opt-3",
+            "text": "Vd değeri yalnızca plazma proteinlerine bağlanan ilaç miktarını gösterir; dokular hesaba katılmaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Tam tersi! Plazma proteinlerine aşırı bağlanan ilaçların plazma derişimi yüksek kalır ve Vd'si küçüktür (örn. varfarin Vd ~7 L)."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les1-step3",
+      "order": 3,
       "stageIndex": 3,
-      "title": {
-        "tr": "Sezgisel Analoji: Delikli Havuz ve Sünger",
-        "ar": "تشبيه حدسي: الحوض المثقوب والإسفنج",
-        "en": "Intuitive Analogy: The Water Tank with a Drain"
-      },
+      "stage": "intuition",
+      "type": "intuition",
       "prompt": {
-        "tr": "Vd suyu çeken süngerlerin büyüklüğüdür; CL havuzun tahliye deliğidir. Sünger büyük ve delik küçükse suyun boşalması saatler sürer.",
-        "ar": "حجم Vd هو إسفنج يمتص الماء من الحوض؛ والتصفية CL ثقب التصريف. إذا كبر الإسفنج وضاق الثقب يستغرق التفريغ ساعات طويلة.",
-        "en": "Clearance is the diameter of the drainage pipe (L/h). Volume of distribution is tank size (L). Together they dictate the water drain rate."
+        "tr": "Bir kova suya boya damlatıp içine kuru bir sünger atın. Sünger boyayı tamamen emerse, kovadaki serbest suyun rengi ve boya derişimi ne olur?",
+        "ar": "ضع صبغة في دلو ماء ثم أسقط إسفنجة جافة. إذا امتصت الإسفنجة كل الصبغة، فماذا يحدث للون الماء المتبقي؟",
+        "en": "Drop dye into a water bucket and add a dry sponge. If the sponge greedily absorbs the dye, what happens to the water's color?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Sünger analojisinde 'sünger' ve 'kova suyu' farmakokinetikte hangi kompartmanları temsil eder?",
+          "ar": "في تشبيه الإسفنجة والدلو، ماذا تمثل 'الإسفنجة' وماذا يمثل 'ماء الدلو' في حركية الدواء؟",
+          "en": "In the sponge analogy, what do the 'sponge' and the 'bucket water' represent in pharmacokinetics?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Sünger derin dokuları (yağ, kas), kova suyu ise kan plazmasını temsil eder.",
+              "ar": "الإسفنجة تمثل الأنسجة العميقة (الدهون والعضلات)، وماء الدلو يمثل بلازما الدم.",
+              "en": "The sponge represents deep tissues (fat, muscle), while bucket water represents blood plasma."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru kavrayış! Doku süngeri ilacı emip hapsettiğinde plazma berrak kalır; örnek alan hekim ilacın devasa bir okyanusta çözündüğünü zanneder.",
+              "ar": "فهم سليم! عندما تمتص إسفنجة الأنسجة الدواء، تصبح البلازما شبه خالية، فيتوهم المقيس أن الدواء تمدد في محيط مائي هائل.",
+              "en": "Spot on! When tissue sponges absorb drug, plasma is depleted; an observer measuring plasma perceives an immense dilution volume."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Sünger böbrek glomerüllerini, kova suyu ise idrar kesesini temsil eder.",
+              "ar": "الإسفنجة تمثل كبيبات الكلى، وماء الدلو يمثل المثانة البولية.",
+              "en": "The sponge represents renal glomeruli, and bucket water represents the urinary bladder."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Glomerüller süzme yapar, depolama yapmaz. Sünger dağılımı ve doku sekestrasyonunu simgeler, eliminasyonu değil.",
+              "ar": "غير صحيح: الكبيبات ترشح ولا تخزن. الإسفنجة ترمز لتوزع واحتجاز الدواء النسيجي وليس للإطراح.",
+              "en": "Incorrect: Glomeruli filter, they do not store. The sponge symbolizes distribution and tissue sequestration, not elimination."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Sünger albümin proteinlerini, kova suyu ise eritrositlerin içini temsil eder.",
+              "ar": "الإسفنجة تمثل بروتينات الألبومين، وماء الدلو يمثل داخل كريات الدم الحمراء.",
+              "en": "The sponge represents albumin proteins, and bucket water represents red blood cell interiors."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Albümin kanda dolaşır. Albümine yüksek bağlanan ilaç kanda kalır ve Vd'si küçüktür; sünger kan dışındaki dokulardır.",
+              "ar": "غير صحيح: الألبومين يسبح في الدم. ارتباط الألبومين يبقي الدواء في البلازما فيصغر Vd؛ الإسفنجة هي الأنسجة خارج الدوران.",
+              "en": "Incorrect: Albumin is in blood. High albumin binding keeps drug in plasma and reduces Vd; the sponge is extravascular tissue."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "klerens",
-          "arContext": "التصفية الحيوية CL"
+          "term": "dağılım süngeri",
+          "arContext": "إسفنجة التوزع (distribution sponge)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Sünger kovadaki boyayı emerse, sudan aldığınız örnekte boya miktarı nasıl görünür?",
+          "ar": "إذا امتصت الإسفنجة الصبغة، فكيف سيبدو تركيز الصبغة في عينة الماء المأخوذة؟",
+          "en": "If the sponge absorbs the dye, what does the dye concentration in a water sample look like?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Plazmadan kan örneği aldığımızda dokuların içindeki ilacı doğrudan ölçebilir miyiz?",
+          "ar": "عند أخذ عينة دم من البلازما، هل نقيس الدواء المحتجز داخل الأنسجة مباشرة؟",
+          "en": "When taking a plasma sample, can we directly measure the drug trapped inside tissue cells?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Doku süngeri ilacı çeker; kanda kalan azıcık ilaç, dağılım hacmini yapay olarak devasa gösterir.",
+          "ar": "إسفنجة الأنسجة تسحب الدواء؛ قلة الدواء في البلازما تجعل حجم التوزع المحسوب يبدو عملاقاً.",
+          "en": "Tissue sponges absorb drug; low plasma residue makes the calculated volume appear immense."
+        }
+      ],
+      "title": {
+        "tr": "Fiziksel Sezgi: Sünger ve Kova Analojisi",
+        "ar": "الحدس الفيزيائي: تشبيه الإسفنجة والدلو",
+        "en": "Physical Intuition: Sponge & Bucket Analogy"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "Sünger derin dokuları (yağ, kas), kova suyu ise kan plazmasını temsil eder.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru kavrayış! Doku süngeri ilacı emip hapsettiğinde plazma berrak kalır; örnek alan hekim ilacın devasa bir okyanusta çözündüğünü zanneder."
+          },
+          {
+            "id": "opt-2",
+            "text": "Sünger böbrek glomerüllerini, kova suyu ise idrar kesesini temsil eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Glomerüller süzme yapar, depolama yapmaz. Sünger dağılımı ve doku sekestrasyonunu simgeler, eliminasyonu değil."
+          },
+          {
+            "id": "opt-3",
+            "text": "Sünger albümin proteinlerini, kova suyu ise eritrositlerin içini temsil eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Albümin kanda dolaşır. Albümine yüksek bağlanan ilaç kanda kalır ve Vd'si küçüktür; sünger kan dışındaki dokulardır."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
         }
       ]
     },
     {
-      "id": "pharm-mod3-les1-step-04",
-      "stage": "visual_explanation",
+      "id": "pharm-mod3-les1-step4",
+      "order": 4,
       "stageIndex": 4,
-      "title": {
-        "tr": "Plazma Konsantrasyon-Zaman Eğrisi",
-        "ar": "منحنى تركيز البلازما مقابل الزمن",
-        "en": "Concentration-Time Decay Profile"
-      },
+      "stage": "visual_explanation",
+      "type": "visual_explanation",
       "prompt": {
-        "tr": "IV bolus sonrası konsantrasyon üstel olarak düşer: C(t) = C0 * e^(-ke * t). Yarı-logaritmik grafikte eğim -ke yi verir.",
-        "ar": "بعد الحقن الوريدي يهبط التركيز أسياً: C(t) = C0 * e^(-ke * t). يعطي ميل المنحنى شبه اللوغاريتمي معدل الإطراح -ke.",
-        "en": "Semilogarithmic plotting of plasma concentration vs time yields a straight line with slope -ke / 2.303 and y-intercept C0 = Dose / Vd."
+        "tr": "Yarı-logaritmik konsantrasyon-zaman grafiğine bakın. Eliminasyon doğrusunu geriye sıfır anına uzattığımızda elde edilen C0 kesişimi, Vd'yi nasıl açığa çıkarır?",
+        "ar": "انظر إلى الرسم البياني نصف اللوغاريتمي للتركيز مقابل الزمن. كيف يكشف تقاطع استقراء خط الإطراح مع الصفر (C0) عن قيمة Vd؟",
+        "en": "Examine the semi-logarithmic concentration-time plot. How does extrapolating the elimination line back to zero time (C0) reveal Vd?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Tek kompartmanlı bir modelde IV bolus sonrası C0 değeri 2 katına çıkarsa, hesaplanan Vd değeri nasıl değişir?",
+          "ar": "في نموذج الحجيرة الواحدة بعد حقنة IV، إذا تضاعف تركيز C0 المستقرأ مرتين لنفس الجرعة، فكيف يتغير Vd؟",
+          "en": "In a one-compartment model after an IV bolus, if extrapolated C0 doubles for the same dose, how does calculated Vd change?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Vd değeri yarıya iner çünkü Vd = Doz / C0 eşitliğinde C0 ile Vd ters orantılıdır.",
+              "ar": "ينخفض Vd إلى النصف لأن Vd يتناسب عكساً مع C0 حسب المعادلة: Vd = الجرعة / C0.",
+              "en": "Vd is halved because Vd is inversely proportional to C0 in Vd = Dose / C0."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kesinlikle doğru! Aynı doz verildiğinde kanda iki kat yüksek derişim ölçülmesi, ilacın dokulara daha az dağılıp kanda kaldığını ve Vd'nin yarıya indiğini gösterir.",
+              "ar": "صحيح تماماً! قياس تركيز مضاعف في الدم لنفس الجرعة يعني أن الدواء لم يتوزع كثيراً في الأنسجة وبقي بالبلازما، فينخفض Vd للنصف.",
+              "en": "Exactly right! A two-fold higher plasma concentration for the same dose proves less tissue uptake, meaning drug remains in blood and Vd halves."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Vd değeri iki katına çıkar çünkü yüksek başlangıç derişimi daha büyük dağılım gerektirir.",
+              "ar": "يتضاعف Vd مرتين لأن التركيز الابتدائي المرتفع يتطلب حجماً أكبر للاستيعاب.",
+              "en": "Vd doubles because a higher initial concentration requires a larger space to accommodate it."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: C0 paydadadır (Vd = Doz / C0). C0 artarsa Vd küçülür, büyümez.",
+              "ar": "غير صحيح: C0 في المقام (Vd = الجرعة / C0). زيادة C0 تقلل Vd ولا تزيده.",
+              "en": "Incorrect: C0 is in the denominator (Vd = Dose / C0). When C0 increases, Vd decreases."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Vd değişmez çünkü dağılım hacmi doza ve plazma konsantrasyonuna tamamen duyarsızdır.",
+              "ar": "لا يتغير Vd لأن حجم التوزع ثابت ومستقل تماماً عن الجرعة وتركيز البلازما.",
+              "en": "Vd remains unchanged because volume of distribution is completely insensitive to concentration."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Kısmen yanıltıcı: Vd bir ilaç özelliği olsa da, hesaplama formülü Vd = Doz / C0'dır; C0 değişirse hesaplanan hacim değişir.",
+              "ar": "مضلل: رغم أن Vd خاصية للدواء، إلا أن حسابه يعتمد على Vd = الجرعة / C0؛ وتغير C0 يغير الحجم المحسوب.",
+              "en": "Misleading: While Vd is a pharmacokinetic property, its calculation is Vd = Dose / C0; altered C0 alters calculated Vd."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "eliminasyon hız sabiti",
-          "arContext": "ثابت سرعة الإطراح ke"
+          "term": "sıfır anı konsantrasyonu",
+          "arContext": "التركيز الابتدائي المستقرأ (extrapolated C0)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Vd = Doz / C0 formülünde C0 paydada yer alır.",
+          "ar": "في قانون Vd = الجرعة / C0، يقع C0 في المقام.",
+          "en": "In the formula Vd = Dose / C0, C0 is in the denominator."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Grafikte C0 ne kadar yüksekse, ilacın kanda toplanma oranı o kadar fazladır.",
+          "ar": "كلما كان تقاطع C0 أعلى على الرسم البياني، كان احتباس الدواء في الدم أكبر.",
+          "en": "A higher C0 intercept on the curve indicates greater drug confinement to the bloodstream."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "C0 iki katına çıkarsa Vd yarıya iner; kanda yüksek derişim küçük dağılım hacmi demektir.",
+          "ar": "مضاعفة C0 تقلل Vd إلى النصف؛ التركيز الدموي العالي يعني حجم توزع صغير.",
+          "en": "Doubling C0 halves Vd; high blood concentration reflects a small distribution volume."
+        }
+      ],
+      "title": {
+        "tr": "Görsel Açıklama: Yarı-Logaritmik Eğri ve C0 Ekstrapolasyonu",
+        "ar": "الشرح البصري: المنحنى نصف اللوغاريتمي واستقراء C0",
+        "en": "Visual Explanation: Semi-Log Plot & C0 Extrapolation"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "Vd değeri yarıya iner çünkü Vd = Doz / C0 eşitliğinde C0 ile Vd ters orantılıdır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kesinlikle doğru! Aynı doz verildiğinde kanda iki kat yüksek derişim ölçülmesi, ilacın dokulara daha az dağılıp kanda kaldığını ve Vd'nin yarıya indiğini gösterir."
+          },
+          {
+            "id": "opt-2",
+            "text": "Vd değeri iki katına çıkar çünkü yüksek başlangıç derişimi daha büyük dağılım gerektirir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: C0 paydadadır (Vd = Doz / C0). C0 artarsa Vd küçülür, büyümez."
+          },
+          {
+            "id": "opt-3",
+            "text": "Vd değişmez çünkü dağılım hacmi doza ve plazma konsantrasyonuna tamamen duyarsızdır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Kısmen yanıltıcı: Vd bir ilaç özelliği olsa da, hesaplama formülü Vd = Doz / C0'dır; C0 değişirse hesaplanan hacim değişir."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
         }
       ]
     },
     {
-      "id": "pharm-mod3-les1-step-05",
-      "stage": "interactive_artifact",
+      "id": "pharm-mod3-les1-step5",
+      "order": 5,
       "stageIndex": 5,
-      "title": {
-        "tr": "İnteraktif Simülatör: One-Compartment PK Simulator",
-        "ar": "محاكي تفاعلي: حركية نموذج الحجيرة الواحدة",
-        "en": "Interactive Simulator: PkSimulator (One-Compartment)"
-      },
+      "stage": "interactive_artifact",
+      "type": "interactive_artifact",
       "prompt": {
-        "tr": "Doz, Vd ve klerens değerlerini değiştirin. Tekrarlayan dozlarda ilacın plazmada 4-5 yarı ömürde kararlı duruma (Css) ulaşmasını simüle edin.",
-        "ar": "عدل قيم الجرعة و Vd والتصفية. راقب وصول الدواء للحالة المستقرة (Css) خلال 4-5 أعمار نصف بالجرعات المتكررة.",
-        "en": "Vary clearance (Cl) and volume of distribution (Vd) to observe real-time plasma decay slopes and steady-state accumulation."
+        "tr": "Simülatörde Vd ve CL kaydırıcılarını değiştirin. Vd'yi artırmanın başlangıç konsantrasyonunu düşürürken eliminasyon eğrisini nasıl uzattığını gözlemleyin.",
+        "ar": "حرك شريطي Vd و CL في المحاكي. لاحظ كيف يؤدي رفع Vd إلى خفض التركيز الابتدائي وإطالة منحنى الإطراح.",
+        "en": "Adjust Vd and CL sliders in the simulator. Observe how increasing Vd lowers initial concentration while lengthening the elimination curve."
       },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "widgetType": "PkSimulator",
       "widget": {
         "type": "PkSimulator",
         "config": {
-          "model": "one_compartment_iv",
-          "doseMg": 500,
-          "vdLitres": 40,
-          "clearanceLPerHour": 4
+          "drugName": "Klorokin ve Teofilin PK Modeli",
+          "prompt": "Vd ve CL parametrelerini ayarlayarak plazma konsantrasyonu ve eliminasyon yarılanma ömrünü simüle edin.",
+          "defaultDoseMg": 500,
+          "defaultClearanceLHr": 3,
+          "defaultVdL": 50,
+          "defaultBioavailabilityF": 1,
+          "defaultKa": 1.5,
+          "therapeuticWindow": [
+            10,
+            20
+          ],
+          "routes": [
+            "iv_bolus",
+            "oral"
+          ],
+          "source": {
+            "file": "İlaç metabolizması-2026.pdf",
+            "page": 2
+          },
+          "explanation": "Vd plazma tepe derişimini, CL ise birim zamandaki ilaç temizleme hızını belirler."
         }
-      }
+      },
+      "config": {
+        "drugName": "Klorokin ve Teofilin PK Modeli",
+        "prompt": "Vd ve CL parametrelerini ayarlayarak plazma konsantrasyonu ve eliminasyon yarılanma ömrünü simüle edin.",
+        "defaultDoseMg": 500,
+        "defaultClearanceLHr": 3,
+        "defaultVdL": 50,
+        "defaultBioavailabilityF": 1,
+        "defaultKa": 1.5,
+        "therapeuticWindow": [
+          10,
+          20
+        ],
+        "routes": [
+          "iv_bolus",
+          "oral"
+        ],
+        "source": {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        },
+        "explanation": "Vd plazma tepe derişimini, CL ise birim zamandaki ilaç temizleme hızını belirler."
+      },
+      "technicalTerms": [
+        {
+          "term": "farmakokinetik simülasyon",
+          "arContext": "المحاكاة الحركية الدوائية (pharmacokinetic simulation)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Vd kaydırıcısını en sağa çekin; başlangıç derişimi (C0) nasıl değişti?",
+          "ar": "اسحب شريط Vd إلى أقصى اليمين؛ كيف تغير التركيز الابتدائي C0؟",
+          "en": "Slide the Vd slider to maximum; how does the initial concentration (C0) respond?"
+        },
+        {
+          "tier": 2,
+          "tr": "Vd büyüdüğünde klerens sabit kalsa bile ilacın vücuttan temizlenme süresi (t1/2) uzar mı?",
+          "ar": "عندما يكبر Vd مع ثبات التصفية، هل يطول الوقت اللازم لتخلص الجسم من الدواء (t1/2)؟",
+          "en": "When Vd expands while clearance stays constant, does drug persistence time (t1/2) lengthen?"
+        },
+        {
+          "tier": 3,
+          "tr": "Büyük Vd, ilacı dokulara saklar; klerens sabit kalsa bile kanda az ilaç olduğundan eliminasyon gecikir.",
+          "ar": "حجم Vd الكبير يخفي الدواء في الأنسجة؛ فتبطأ التصفية ويطول عمر النصف لقلة الدواء في الدم.",
+          "en": "A large Vd hides drug in tissues; because little drug reaches the organs of clearance, half-life lengthens."
+        }
+      ],
+      "title": {
+        "tr": "İnteraktif Deney: Vd ve CL ile PK Simülasyonu",
+        "ar": "تجربة تفاعلية: محاكاة الحركية الدوائية بتعديل Vd و CL",
+        "en": "Interactive Experiment: PK Simulation of Vd & CL"
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
+        }
+      ]
     },
     {
-      "id": "pharm-mod3-les1-step-06",
-      "stage": "guided_discovery",
+      "id": "pharm-mod3-les1-step6",
+      "order": 6,
       "stageIndex": 6,
-      "title": {
-        "tr": "Rehberli Keşif: İnfüzyon Hızı ve Css",
-        "ar": "استكشاف موجه: سرعة التسريب وحالة Css",
-        "en": "Guided Discovery: The t1/2 = 0.693 * Vd / Cl Relationship"
-      },
+      "stage": "guided_discovery",
+      "type": "guided_discovery",
       "prompt": {
-        "tr": "Simülatörde IV infüzyon hızını 2 katına çıkarın. Kararlı durum konsantrasyonu ve kararlı duruma ulaşma süresi nasıl değişti?",
-        "ar": "ضاعف معدل التسريب الوريدي. كيف تغير تركيز الحالة المستقرة (Css) والزمن اللازم لبلوغها؟",
-        "en": "Notice how expanding Vd extends half-life without changing organ elimination capacity (Cl), delaying drug washout."
+        "tr": "Yaşlı bir hastada vücut yağ oranı artarak diazepamın Vd'sini iki katına çıkarmıştır. Karaciğer klerensi değişmediği halde diazepamın yarılanma ömrü neden iki katına çıkar?",
+        "ar": "في مريض مسن ارتفعت نسبة الدهون فتضاعف حجم توزع الديازيبام مرتين. مع ثبات التصفية الكبدية، لماذا تضاعف عمر نصف الدواء؟",
+        "en": "In an elderly patient, increased body fat doubles diazepam's Vd. With hepatic clearance unchanged, why does diazepam's half-life double?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "İnfüzyon hızı seviyeyi belirler; o seviyeye ulaşma süresini ise sadece yarı ömür belirler."
+      "conceptCheck": {
+        "question": {
+          "tr": "Yarılanma ömrünün (t1/2) bağımsız bir fizyolojik parametre olmayıp 'hibrit' bir parametre olmasının klinik anlamı nedir?",
+          "ar": "ما المعنى السريري لكون عمر النصف (t1/2) متغيراً هجيناً وتابعاً وليس ثابتاً فسيولوجياً مستقلاً؟",
+          "en": "What is the clinical significance of half-life (t1/2) being a dependent hybrid parameter rather than an independent parameter?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "t1/2 hem dağılımın (Vd) hem eliminasyonun (CL) oranıdır; organ yetmezliği olmasa bile Vd artışı yarı ömrü uzatır.",
+              "ar": "عمر النصف ناتج نسبة Vd إلى CL؛ وأي زيادة في التوزع تطيل عمر النصف حتى لو كانت وظائف الأعضاء سليمة.",
+              "en": "t1/2 is the ratio of Vd to CL; expanding Vd prolongs half-life even when organ clearance is completely normal."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika kavrayış! t1/2 = 0.693 x Vd / CL. Karaciğer ve böbrekler mükemmel çalışsa bile, Vd genişlediğinde ilaç kandan saklandığı için yarı ömür uzar.",
+              "ar": "فهم عبقري! t1/2 = 0.693 × Vd / CL. حتى مع كفاءة الكبد والكلية التامة، اتساع Vd يخفي الدواء عن التصفية فيطول عمر النصف.",
+              "en": "Superb insight! t1/2 = 0.693 * Vd / CL. Even with perfect organ function, an expanded Vd sequesters drug away from clearance, prolonging t1/2."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Yarılanma ömrü yalnızca sitokrom P450 enzimlerinin ekspresyon hızına bağlıdır; vücut kompozisyonu etkisizdir.",
+              "ar": "عمر النصف محكوم فقط بمعدل إنزيمات السيتوكروم P450، ولا يتأثر إطلاقاً بتكوين الجسم.",
+              "en": "Half-life depends solely on CYP450 enzyme expression; body composition has no influence."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: CYP enzimleri klerensi (CL) etkiler; fakat yarı ömür Vd'ye de doğrudan bağlıdır. Yağ dokusu artışı lipofilik ilaçların yarı ömrünü uzatır.",
+              "ar": "غير صحيح: إنزيمات CYP تحدد التصفية، لكن عمر النصف يتأثر طردياً بحجم التوزع Vd أيضاً.",
+              "en": "Incorrect: CYP enzymes govern clearance (CL), but half-life is equally determined by Vd. Fat accumulation extends lipophilic drug half-life."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Vd arttığında karaciğer kan akımı fizyolojik bir refleksle yarıya iner ve klerensi düşürür.",
+              "ar": "عند زيادة Vd، يقل تدفق الدم إلى الكبد تلقائياً إلى النصف مما يخفض التصفية.",
+              "en": "When Vd expands, hepatic blood flow reflexively drops by half to lower clearance."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Vd artışı karaciğer kan akımını düşürmez. Klerens sabit kalabilir; yarı ömrün uzaması tamamen matematiksel oran sonucudur.",
+              "ar": "غير صحيح: زيادة Vd لا تقلل تدفق دم الكبد؛ بل ثبات CL مع زيادة Vd يطيل t1/2 حسابياً.",
+              "en": "Incorrect: Vd does not alter liver blood flow. Clearance remains unchanged; half-life extension is a purely mathematical consequence of the ratio."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "bağımlı hibrit parametre",
+          "arContext": "المتغير الهجين التابع (dependent hybrid parameter)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Yarılanma ömrü formülü: t1/2 = 0.693 x Vd / CL.",
+          "ar": "قانون عمر النصف: t1/2 = 0.693 × Vd / CL.",
+          "en": "Half-life formula: t1/2 = 0.693 * Vd / CL."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Paydaki Vd iki katına çıkar, paydadaki CL sabit kalırsa t1/2 ne olur?",
+          "ar": "إذا تضاعف البسط Vd مرتين وبقي المقام CL ثابتاً، فماذا يحدث لـ t1/2؟",
+          "en": "If numerator Vd doubles while denominator CL is unchanged, what happens to t1/2?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Vd iki katına çıktığında t1/2 tam iki katına çıkar; karaciğer sağlam olsa bile hastada sedasyon uzar.",
+          "ar": "مضاعفة Vd تضاعف t1/2 تماماً؛ فيطول التسكين لدى المسن رغم سلامة وظائف الكبد.",
+          "en": "Doubling Vd exactly doubles t1/2; prolonged sedation occurs in the elderly despite intact hepatic clearance."
         }
       ],
-      "conceptCheck": {
+      "title": {
+        "tr": "Rehberli Keşif: Yaşlılıkta Diazepam Yarı Ömrü Paradoksu",
+        "ar": "اكتشاف موجه: مفارقة عمر نصف الديازيبام لدى المسنين",
+        "en": "Guided Discovery: Elderly Diazepam Half-Life Paradox"
+      },
+      "config": {
         "options": [
           {
-            "id": "opt-ph31-3",
-            "text": {
-              "tr": "Css iki katına çıktı, ancak kararlı duruma ulaşma süresi kesinlikle değişmedi (yine 4-5 t1/2).",
-              "ar": "تضاعف تركيز Css للضعف، لكن زمن الوصول للحالة المستقرة لم يتغير إطلاقاً (4-5 t1/2).",
-              "en": "Steady-state concentration (Css) doubled, but time to reach steady state remained unchanged."
-            },
-            "isCorrect": true
+            "id": "opt-1",
+            "text": "t1/2 hem dağılımın (Vd) hem eliminasyonun (CL) oranıdır; organ yetmezliği olmasa bile Vd artışı yarı ömrü uzatır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika kavrayış! t1/2 = 0.693 x Vd / CL. Karaciğer ve böbrekler mükemmel çalışsa bile, Vd genişlediğinde ilaç kandan saklandığı için yarı ömür uzar."
           },
           {
-            "id": "opt-ph31-4",
-            "text": {
-              "tr": "Kararlı duruma 2 kat daha hızlı ulaşıldı.",
-              "ar": "وصل للحالة المستقرة بأسرع بمرتين.",
-              "en": "Steady state was reached twice as fast."
-            },
-            "isCorrect": false
+            "id": "opt-2",
+            "text": "Yarılanma ömrü yalnızca sitokrom P450 enzimlerinin ekspresyon hızına bağlıdır; vücut kompozisyonu etkisizdir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: CYP enzimleri klerensi (CL) etkiler; fakat yarı ömür Vd'ye de doğrudan bağlıdır. Yağ dokusu artışı lipofilik ilaçların yarı ömrünü uzatır."
+          },
+          {
+            "id": "opt-3",
+            "text": "Vd arttığında karaciğer kan akımı fizyolojik bir refleksle yarıya iner ve klerensi düşürür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Vd artışı karaciğer kan akımını düşürmez. Klerens sabit kalabilir; yarı ömrün uzaması tamamen matematiksel oran sonucudur."
           }
         ]
-      }
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 6
+        },
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 20
+        }
+      ]
     },
     {
-      "id": "pharm-mod3-les1-step-07",
-      "stage": "formal_explanation",
+      "id": "pharm-mod3-les1-step7",
+      "order": 7,
       "stageIndex": 7,
-      "title": {
-        "tr": "Temel Farmakokinetik Formüller",
-        "ar": "القوانين الحركية الأساسية",
-        "en": "Formal Equations: First-Order Elimination"
-      },
+      "stage": "formal_explanation",
+      "type": "formal_explanation",
       "prompt": {
-        "tr": "CL = ke * Vd. t1/2 = 0.693 / ke = 0.693 * Vd / CL. Kararlı durum Css = İnfüzyon Hızı / CL.",
-        "ar": "التصفية CL = ke * Vd. عمر النصف t1/2 = 0.693 * Vd / CL. تركيز الحالة المستقرة Css = معدل التسريب / CL.",
-        "en": "Ct = C0 * e^(-ke * t). Clearance: Cl = ke * Vd = Rate of elimination / C. Half-life: t1/2 = ln(2) / ke = 0.693 * Vd / Cl."
+        "tr": "Temel farmakokinetik eşitlikleri inceleyin: Klerens CL = ke x Vd = Doz / EAA ve eliminasyon yarı ömrü t1/2 = ln(2) / ke = 0.693 x Vd / CL.",
+        "ar": "تأمل المعادلات الحركية الأساسية: التصفية CL = ke × Vd = الجرعة / AUC، وعمر النصف t1/2 = 0.693 × Vd / CL.",
+        "en": "Review the fundamental equations: clearance CL = ke * Vd = Dose / AUC, and half-life t1/2 = ln(2) / ke = 0.693 * Vd / CL."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Tek kompartmanlı bir modelde eliminasyon hız sabiti ke = 0.1 h^-1 ve dağılım hacmi Vd = 40 L ise klerens (CL) ve yarılanma ömrü (t1/2) nedir?",
+          "ar": "في نموذج الحجيرة الواحدة، إذا كان ثابت الإطراح ke = 0.1 h^-1 وحجم التوزع Vd = 40 L، فما هي التصفية وعمر النصف؟",
+          "en": "In a one-compartment model, if elimination rate constant ke = 0.1 hr^-1 and Vd = 40 L, what are clearance and half-life?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "CL = 4.0 L/saat ve t1/2 = 6.93 saat.",
+              "ar": "التصفية CL = 4.0 L/h وعمر النصف t1/2 = 6.93 ساعات.",
+              "en": "CL = 4.0 L/hr and t1/2 = 6.93 hours."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz hesaplama! CL = ke x Vd = 0.1 x 40 = 4.0 L/saat. t1/2 = 0.693 / ke = 0.693 / 0.1 = 6.93 saat.",
+              "ar": "حساب دقيق! التصفية = 0.1 × 40 = 4.0 لتر/ساعة. عمر النصف = 0.693 / 0.1 = 6.93 ساعات.",
+              "en": "Flawless calculation! CL = ke * Vd = 0.1 * 40 = 4.0 L/hr. t1/2 = 0.693 / 0.1 = 6.93 hours."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "CL = 400 L/saat ve t1/2 = 10 saat.",
+              "ar": "التصفية CL = 400 L/h وعمر النصف t1/2 = 10 ساعات.",
+              "en": "CL = 400 L/hr and t1/2 = 10 hours."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Vd'yi ke'ye bölmüşsünüz (40 / 0.1 = 400). Doğru işlem çarpmadır: CL = ke x Vd = 4.0 L/saat.",
+              "ar": "غير صحيح: قمت بقسمة Vd على ke بدلاً من ضربهما. الصحيح: CL = ke × Vd = 4.0 لتر/ساعة.",
+              "en": "Incorrect: You divided Vd by ke instead of multiplying. The formula is CL = ke * Vd = 4.0 L/hr."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "CL = 0.4 L/saat ve t1/2 = 4.0 saat.",
+              "ar": "التصفية CL = 0.4 L/h وعمر النصف t1/2 = 4.0 ساعات.",
+              "en": "CL = 0.4 L/hr and t1/2 = 4.0 hours."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Basamak hatası (0.1 x 40 = 4.0'dır, 0.4 değil). Ayrıca t1/2 hesaplanırken ln(2) ~ 0.693 çarpanı kullanılmalıdır.",
+              "ar": "غير صحيح: خطأ حسابي في الفواصل، كما تم إغفال المعامل 0.693 في حساب عمر النصف.",
+              "en": "Incorrect: Arithmetic decimal error (0.1 * 40 = 4.0, not 0.4). Additionally, ln(2) ~ 0.693 must be used for t1/2."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "kararlı durum",
-          "arContext": "الحالة المستقرة (Steady-State)"
+          "term": "eliminasyon hız sabiti",
+          "arContext": "ثابت معدل الإطراح (elimination rate constant ke)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "CL = ke x Vd formülünü uygulayın.",
+          "ar": "طبق معادلة: CL = ke × Vd.",
+          "en": "Apply the formula: CL = ke * Vd."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "t1/2 = 0.693 / ke formülünü kullanın.",
+          "ar": "استخدم قانون: t1/2 = 0.693 / ke.",
+          "en": "Use the formula: t1/2 = 0.693 / ke."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "CL = 0.1 x 40 = 4 L/saat; t1/2 = 0.693 / 0.1 = 6.93 saattir.",
+          "ar": "التصفية = 0.1 × 40 = 4 لتر/ساعة؛ وعمر النصف = 0.693 / 0.1 = 6.93 ساعات.",
+          "en": "CL = 0.1 * 40 = 4 L/hr; t1/2 = 0.693 / 0.1 = 6.93 hours."
+        }
+      ],
+      "title": {
+        "tr": "Biçimsel Açıklama: Klerens, ke ve Yarı Ömür Formülleri",
+        "ar": "الشرح المنهجي: معادلات التصفية وثابت ke وعمر النصف",
+        "en": "Formal Explanation: Clearance, ke & Half-Life Formulas"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "CL = 4.0 L/saat ve t1/2 = 6.93 saat.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Kusursuz hesaplama! CL = ke x Vd = 0.1 x 40 = 4.0 L/saat. t1/2 = 0.693 / ke = 0.693 / 0.1 = 6.93 saat."
+          },
+          {
+            "id": "opt-2",
+            "text": "CL = 400 L/saat ve t1/2 = 10 saat.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Vd'yi ke'ye bölmüşsünüz (40 / 0.1 = 400). Doğru işlem çarpmadır: CL = ke x Vd = 4.0 L/saat."
+          },
+          {
+            "id": "opt-3",
+            "text": "CL = 0.4 L/saat ve t1/2 = 4.0 saat.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Basamak hatası (0.1 x 40 = 4.0'dır, 0.4 değil). Ayrıca t1/2 hesaplanırken ln(2) ~ 0.693 çarpanı kullanılmalıdır."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
         }
       ]
     },
     {
-      "id": "pharm-mod3-les1-step-08",
-      "stage": "concept_check",
+      "id": "pharm-mod3-les1-step8",
+      "order": 8,
       "stageIndex": 8,
-      "title": {
-        "tr": "Kavram Denetimi: Yarılanma Sayısı Kuralı",
-        "ar": "فحص المفهوم: قاعدة تضاعف أعمار النصف",
-        "en": "Concept Check: The 5 Half-Lives Washout Rule"
-      },
+      "stage": "concept_check",
+      "type": "concept_check",
       "prompt": {
-        "tr": "Tek bir IV doz verilen ilacın vücuttan %93.75 oranında temizlenmesi için kaç yarılanma ömrü geçmelidir?",
-        "ar": "للتخلص من 93.75% من جرعة دواء وريدية وحيدة، كم عمر نصف يجب أن ينقضي؟",
-        "en": "What percentage of a drug is eliminated from the body after 5 elimination half-lives (t = 5 * t1/2)?"
+        "tr": "Bir hekim sürekli IV infüzyon hızını iki katına çıkarırsa, hastanın kararlı duruma (steady-state, Css) ulaşması için gereken süre nasıl değişir?",
+        "ar": "إذا ضاعف الطبيب معدل التسريب الوريدي المستمر إلى الضعفين، فكيف يتغير الوقت اللازم لبلوغ الحالة المستقرة (Css)؟",
+        "en": "If a physician doubles the continuous IV infusion rate, how does the time required to reach steady-state (Css) change?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "4 yarılanma ömründe ilacın %94 ü, 5 yarı ömürde %97 si vücuttan atılmış olur."
+      "conceptCheck": {
+        "question": {
+          "tr": "İnfüzyon hızı (R0) artırıldığında kararlı duruma (steady-state) ulaşma süresinin değişmeme sebebi nedir?",
+          "ar": "ما السبب الحركي لعدم تغير زمن بلوغ الحالة المستقرة عند زيادة معدل التسريب (R0)؟",
+          "en": "What pharmacokinetic principle explains why time to reach steady-state is independent of infusion rate (R0)?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Kararlı duruma ulaşma süresi infüzyon hızına değil, yalnızca ilacın eliminasyon yarılanma ömrüne (4-5 x t1/2) bağlıdır.",
+              "ar": "زمن الوصول للحالة المستقرة مستقل عن معدل التسريب، ويعتمد حصراً على عمر النصف الإطراحي (4-5 × t1/2).",
+              "en": "Time to steady-state is independent of infusion rate and depends solely on elimination half-life (4-5 * t1/2)."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika! İnfüzyon hızını iki katına çıkarmak ulaşılan kararlı durum derişimini (Css) iki katına çıkarır; ancak oraya varış süresi daima 4-5 yarı ömürdür.",
+              "ar": "رائع! مضاعفة معدل التسريب تضاعف تركيز الحالة المستقرة (Css) فقط، لكن زمن الوصول يظل ثابتاً عند 4-5 أعمار نصف.",
+              "en": "Spot on! Doubling the infusion rate doubles the plateau concentration (Css), but reaching that plateau always takes 4 to 5 half-lives."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Süre yarıya iner çünkü kompartmana birim zamanda iki kat daha fazla ilaç pompalanmaktadır.",
+              "ar": "ينخفض الزمن إلى النصف لأن ضعف كمية الدواء تضخ إلى الحجيرة في وحدة الزمن.",
+              "en": "The time is cut in half because twice as much drug is pumped into the compartment per hour."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Klasik öğrenci yanılgısı! Daha hızlı vermek konsantrasyonu yükseltir, ancak eliminasyon hızlandığı için platoya varış süresi değişmez.",
+              "ar": "مغالطة شائعة! ضخ الدواء أسرع يرفع التركيز النهائي لكنه لا يسرع زمن الوصول لأن الإطراح يتسارع بالتوازي.",
+              "en": "Classic misconception! Infusing faster raises concentration, but because elimination accelerates proportionally, time to plateau is unchanged."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Süre iki katına çıkar çünkü artan konsantrasyon eliminasyon enzimlerini doygunluğa ulaştırır.",
+              "ar": "يتضاعف الزمن مرتين لأن التركيز المرتفع يشبع إنزيمات الإطراح بالكامل.",
+              "en": "The time doubles because elevated drug concentration fully saturates elimination enzymes."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Birinci derece kinetikte enzim doygunluğu olmaz. Eliminasyon hızı konsantrasyonla lineer artar.",
+              "ar": "غير صحيح: في الحركية من الرتبة الأولى لا يحدث إشباع؛ بل يزداد معدل الإطراح طردياً مع التركيز.",
+              "en": "Incorrect: First-order kinetics assumes linear capacity without saturation. Elimination rate rises proportionally with concentration."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "kararlı durum konsantrasyonu",
+          "arContext": "تركيز الحالة المستقرة (steady-state Css)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Kararlı duruma ulaşma kuralını hatırlayın: Platoya kaç yarılanma ömründe varılır?",
+          "ar": "تذكر قاعدة الحالة المستقرة: كم عمر نصف يلزم لبلوغ الهضبة؟",
+          "en": "Recall the steady-state rule: how many half-lives are required to reach the plateau?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "İnfüzyon hızı Css düzeyini yükseltir; fakat %95 doluluğa ulaşma süresi t1/2 fonksiyonudur.",
+          "ar": "معدل التسريب يرفع مستوى Css، لكن الوصول إلى 95% منه محكوم بـ t1/2.",
+          "en": "Infusion rate governs the plateau height, but time to 95% completion is a function of t1/2."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "İnfüzyon hızı ne olursa olsun kararlı duruma daima 4 ila 5 yarılanma ömründe ulaşılır.",
+          "ar": "مهما كان معدل التسريب، يلزم دائماً 4 إلى 5 أعمار نصف لبلوغ الحالة المستقرة.",
+          "en": "Regardless of infusion rate, steady-state is always reached in 4 to 5 half-lives."
         }
       ],
-      "conceptCheck": {
+      "title": {
+        "tr": "Kavram Kontrolü: İnfüzyon Hızı ve Kararlı Durum Yanılgısı",
+        "ar": "اختبار المفهوم: مغالطة معدل التسريب والحالة المستقرة",
+        "en": "Concept Check: Infusion Rate & Steady-State Fallacy"
+      },
+      "config": {
         "options": [
           {
-            "id": "opt-ph31-5",
-            "text": {
-              "tr": "Tam 4 yarılanma ömrü (kalan: %50 -> %25 -> %12.5 -> %6.25).",
-              "ar": "4 أعمار نصف تماماً (المتبقي: 50% -> 25% -> 12.5% -> 6.25%).",
-              "en": "Approximately 97% of the drug has been eliminated (leaving < 3.125%)."
-            },
-            "isCorrect": true
+            "id": "opt-1",
+            "text": "Kararlı duruma ulaşma süresi infüzyon hızına değil, yalnızca ilacın eliminasyon yarılanma ömrüne (4-5 x t1/2) bağlıdır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika! İnfüzyon hızını iki katına çıkarmak ulaşılan kararlı durum derişimini (Css) iki katına çıkarır; ancak oraya varış süresi daima 4-5 yarı ömürdür."
           },
           {
-            "id": "opt-ph31-6",
-            "text": {
-              "tr": "1 yarılanma ömrü.",
-              "ar": "عمر نصف واحد.",
-              "en": "Only 50% has been eliminated."
-            },
-            "isCorrect": false
+            "id": "opt-2",
+            "text": "Süre yarıya iner çünkü kompartmana birim zamanda iki kat daha fazla ilaç pompalanmaktadır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Klasik öğrenci yanılgısı! Daha hızlı vermek konsantrasyonu yükseltir, ancak eliminasyon hızlandığı için platoya varış süresi değişmez."
+          },
+          {
+            "id": "opt-3",
+            "text": "Süre iki katına çıkar çünkü artan konsantrasyon eliminasyon enzimlerini doygunluğa ulaştırır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Birinci derece kinetikte enzim doygunluğu olmaz. Eliminasyon hızı konsantrasyonla lineer artar."
           }
         ]
-      }
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
+        }
+      ]
     },
     {
-      "id": "pharm-mod3-les1-step-09",
-      "stage": "application",
+      "id": "pharm-mod3-les1-step9",
+      "order": 9,
       "stageIndex": 9,
-      "title": {
-        "tr": "Klinik Karar: Yükleme Dozu İhtiyacı",
-        "ar": "قرار سريري: الحاجة إلى جرعة التحميل",
-        "en": "Clinical Decision: Loading Dose Requirement"
-      },
+      "stage": "application",
+      "type": "clinical_vignette",
       "prompt": {
-        "tr": "Yarılanma ömrü 5 gün olan amiodaron ile acil aritmi tedavisinde neden yükleme dozu (loading dose) verilir?",
-        "ar": "في علاج اضطرابات النظم الحادة بدواء Amiodarone ذي t1/2 = 5 أيام، لماذا تعطى جرعة تحميل (loading dose)؟",
-        "en": "A patient with septic shock requires immediate therapeutic plasma concentration (10 mg/L). Vd = 50 L. Calculate required IV loading dose."
+        "tr": "Teofilin toksisitesi (Vd = 35 L, CL = 2.8 L/saat) geçiren hastaya hemodiyaliz (diyalizör klerensi = 7.0 L/saat) uygulanıyor. Diyaliz hastanın yarılanma ömrünü ne kadar kısaltır?",
+        "ar": "مريض بتسمم التيوفيلين (Vd = 35 L, CL = 2.8 L/h) يخضع لغسيل الكلى (تصفية الفلتر = 7.0 L/h). كم يختصر الغسيل عمر النصف؟",
+        "en": "A theophylline toxicity patient (Vd = 35 L, CL = 2.8 L/hr) undergoes hemodialysis (dialyzer clearance = 7.0 L/hr). How much does dialysis shorten t1/2?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Yükleme dozu = Hedef Css x Vd formülüyle anında terapötik pencereye girilir."
+      "conceptCheck": {
+        "question": {
+          "tr": "Hemodiyaliz öncesi ve hemodiyaliz sırasındaki teofilin yarılanma ömürleri sırasıyla hangi seçenekte doğru verilmiştir?",
+          "ar": "ما هو عمر نصف التيوفيلين قبل الغسيل وأثناء الغسيل على التوالي؟",
+          "en": "What are the theophylline half-lives before and during hemodialysis, respectively?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Diyaliz öncesi t1/2 = 8.66 saat; diyaliz sırasında toplam klerens 9.8 L/saat olup t1/2 = 2.47 saate iner.",
+              "ar": "قبل الديال t1/2 = 8.66 ساعات؛ وأثناء الديال تصبح التصفية الكلية 9.8 L/h فيهبط t1/2 إلى 2.47 ساعة.",
+              "en": "Before dialysis t1/2 = 8.66 hours; during dialysis total clearance is 9.8 L/hr, dropping t1/2 to 2.47 hours."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel klinik hesaplama! Teofilin Vd'si küçük (35 L) olduğu için kanda boldur. Diyaliz klerensi (7 L/saat) toplam klerensi 9.8 L/saate çıkarır ve yarı ömrü 8.7'den 2.5 saate düşürür.",
+              "ar": "حساب سريري رائع! التيوفيلين حجم توزعه صغير (35 لتر) فهو متوافر بالدم. غسيل الكلى يرفع التصفية إلى 9.8 L/h فيقلص عمر النصف من 8.7 إلى 2.5 ساعة.",
+              "en": "Outstanding clinical calculation! Theophylline has a small Vd (35 L), so drug resides mostly in plasma. Dialysis adds 7 L/hr, reducing t1/2 from 8.7 to 2.5 hours."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Diyaliz öncesi t1/2 = 12.5 saat; diyaliz sırasında t1/2 hiç değişmez çünkü diyalizör klerensi vücut klerensine eklenemez.",
+              "ar": "قبل الديال t1/2 = 12.5 ساعة؛ وأثناء الديال لا يتغير لأن تصفية الفلتر لا تضاف لتصفية الجسم.",
+              "en": "Before dialysis t1/2 = 12.5 hours; during dialysis t1/2 is unchanged because filter clearance cannot be added to body clearance."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Klerensler paralel organlar gibi doğrudan toplanır (CL_toplam = CL_vücut + CL_diyaliz).",
+              "ar": "غير صحيح: معدلات التصفية تجمع طردياً كما في الأعضاء المتوازية (التصفية الكلية = تصفية الجسم + تصفية الديال).",
+              "en": "Incorrect: Clearances are strictly additive (CL_total = CL_body + CL_dialysis)."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Diyaliz öncesi t1/2 = 8.66 saat; diyaliz sırasında t1/2 sıfıra iner çünkü klerens sonsuz kabul edilir.",
+              "ar": "قبل الديال t1/2 = 8.66 ساعات؛ وأثناء الديال يصبح صفر لأن التصفية تعتبر لانهائية.",
+              "en": "Before dialysis t1/2 = 8.66 hours; during dialysis t1/2 drops to zero because clearance is infinite."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Diyalizör klerensi sonludur (7.0 L/saat). Dağılım hacmi nedeniyle yarı ömür sıfır olamaz.",
+              "ar": "غير صحيح: تصفية الفلتر محدودة (7.0 L/h). وبسبب حجم التوزع لا يمكن لعمر النصف أن ينعدم.",
+              "en": "Incorrect: Dialyzer clearance is finite (7.0 L/hr). Volume of distribution prevents half-life from dropping to zero."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "diyalizör klerensi",
+          "arContext": "تصفية الفلتر (dialyzer clearance)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Diyaliz öncesi t1/2 = 0.693 x 35 / 2.8 formülüyle hesaplanır.",
+          "ar": "قبل الديال: t1/2 = 0.693 × 35 / 2.8.",
+          "en": "Before dialysis: t1/2 = 0.693 * 35 / 2.8."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Diyaliz sırasında toplam klerens: 2.8 + 7.0 = 9.8 L/saattir.",
+          "ar": "أثناء الديال: التصفية الكلية = 2.8 + 7.0 = 9.8 L/h.",
+          "en": "During dialysis: total clearance is 2.8 + 7.0 = 9.8 L/hr."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Yeni t1/2 = 0.693 x 35 / 9.8 = 2.47 saattir; teofilin zehirlenmesinde diyaliz hayat kurtarıcıdır.",
+          "ar": "عمر النصف الجديد = 0.693 × 35 / 9.8 = 2.47 ساعة؛ الديال ينقذ الحياة في تسمم التيوفيلين.",
+          "en": "New t1/2 = 0.693 * 35 / 9.8 = 2.47 hours; dialysis is lifesaving in theophylline toxicity."
         }
       ],
-      "conceptCheck": {
+      "title": {
+        "tr": "Klinik Uygulama: Teofilin Zehirlenmesi ve Diyaliz Klerensi",
+        "ar": "تطبيق سريري: تسمم التيوفيلين وتصفية غسيل الكلى",
+        "en": "Clinical Vignette: Theophylline Poisoning & Dialysis"
+      },
+      "config": {
         "options": [
           {
-            "id": "opt-ph31-7",
-            "text": {
-              "tr": "Normal idame dozuyla kararlı duruma ulaşmak 25 gün süreceğinden, terapötik seviyeye hemen ulaşmak için.",
-              "ar": "لأن بلوغ الحالة المستقرة يستغرق 25 يوماً بالجرعة العادية، فللوصول الفوري للتركيز العلاجي.",
-              "en": "Loading dose = Target Concentration * Vd = 10 mg/L * 50 L = 500 mg."
-            },
-            "isCorrect": true
+            "id": "opt-1",
+            "text": "Diyaliz öncesi t1/2 = 8.66 saat; diyaliz sırasında toplam klerens 9.8 L/saat olup t1/2 = 2.47 saate iner.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel klinik hesaplama! Teofilin Vd'si küçük (35 L) olduğu için kanda boldur. Diyaliz klerensi (7 L/saat) toplam klerensi 9.8 L/saate çıkarır ve yarı ömrü 8.7'den 2.5 saate düşürür."
           },
           {
-            "id": "opt-ph31-8",
-            "text": {
-              "tr": "Böbrekleri temizlemek için.",
-              "ar": "لتنشيط وظائف الكلى.",
-              "en": "Administer a standard maintenance dose of 50 mg."
-            },
-            "isCorrect": false
+            "id": "opt-2",
+            "text": "Diyaliz öncesi t1/2 = 12.5 saat; diyaliz sırasında t1/2 hiç değişmez çünkü diyalizör klerensi vücut klerensine eklenemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Klerensler paralel organlar gibi doğrudan toplanır (CL_toplam = CL_vücut + CL_diyaliz)."
+          },
+          {
+            "id": "opt-3",
+            "text": "Diyaliz öncesi t1/2 = 8.66 saat; diyaliz sırasında t1/2 sıfıra iner çünkü klerens sonsuz kabul edilir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Diyalizör klerensi sonludur (7.0 L/saat). Dağılım hacmi nedeniyle yarı ömür sıfır olamaz."
           }
         ]
-      }
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ]
     },
     {
-      "id": "pharm-mod3-les1-step-10",
-      "stage": "retrieval",
+      "id": "pharm-mod3-les1-step10",
+      "order": 10,
       "stageIndex": 10,
-      "title": {
-        "tr": "Geri Çağırma: Faz I ve II Metabolizma",
-        "ar": "استرجاع معرفي: استقلاب المرحلتين الأولى والثانية",
-        "en": "Retrieval: Phase I and II Metabolism"
-      },
+      "stage": "retrieval",
+      "type": "retrieval",
       "prompt": {
-        "tr": "Medchem dersinde öğrendiğimiz gibi karaciğerde klerensi sağlayan temel Faz I ve Faz II enzim sistemleri nelerdi?",
-        "ar": "كما تعلمنا في مساق الكيمياء، ما هي المنظومات الإنزيمية الأساسية المسؤولة عن التصفية الكبدية بالمرحلتين 1 و 2؟",
-        "en": "Recall Course A Module 5: How does hepatic CYP oxidation contribute to total systemic body clearance (Cl)?"
+        "tr": "Tek bir intravenöz bolus dozun ardından, vücuttaki toplam ilaç miktarının %93'ünden fazlasının elenmesi için kaç yarılanma ömrü (t1/2) geçmesi gerekir?",
+        "ar": "بعد جرعة وريدية واحدة، كم عمر نصف (t1/2) يلزم لإطراح أكثر من 93% من إجمالي الدواء من الجسم؟",
+        "en": "Following a single intravenous bolus dose, how many half-lives (t1/2) must elapse to eliminate over 93% of the drug?"
       },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "hepatik metabolizma",
-          "arContext": "الاستقلاب الكبدي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod3-les1-step-11",
-      "stage": "connection",
-      "stageIndex": 11,
-      "title": {
-        "tr": "İleri Bağlantı: Biyoyararlanım ve İlk Geçiş Etkisi (Ders 6)",
-        "ar": "ربط مفاهيمي: التوافر الحيوي وتأثير المرور الأول (الدرس 6)",
-        "en": "Connection: Bioavailability & First-Pass Effect (Lesson 6)"
-      },
-      "prompt": {
-        "tr": "İlacı damardan değil ağızdan verdiğimizde kana ne kadarı ulaşır? Bir sonraki derste biyoyararlanım (F) ve EAA analizini öğreneceğiz.",
-        "ar": "عند إعطاء الدواء فموياً بدلاً من الوريد، كم يصل منه للدم؟ في الدرس القادم، سنتعلم التوافر الحيوي (F) وتحليل AUC.",
-        "en": "IV administration delivers 100% of dose to systemic circulation, but what happens when a drug is taken orally?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "biyoyararlanım",
-          "arContext": "التوافر الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod3-les1-step-12",
-      "stage": "mastery_check",
-      "stageIndex": 12,
-      "title": {
-        "tr": "Ustalık Sınavı: Farmakokinetik Parametreler",
-        "ar": "اختبار الإتقan: المعاملات الحركية",
-        "en": "Mastery Assessment: Pharmacokinetic Parameters"
-      },
-      "prompt": {
-        "tr": "Bir ilacın dağılım hacmi 70 Litre ve klerensi 7 L/saat ise eliminasyon yarılanma ömrü yaklaşık kaç saattir?",
-        "ar": "إذا كان حجم توزع دواء 70 لتراً وتصفيته 7 لتر/ساعة، فكم يبلغ عمر نصفه الإطراحي تقريباً؟",
-        "en": "If systemic clearance drops by 50% while Vd remains unchanged, what is the exact effect on elimination half-life?"
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards eklendi. +50 XP."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "conceptCheck": {
+        "question": {
+          "tr": "Eliminasyon yarılanma ömrü ile atılan ilaç fraksiyonu eşleştirmelerinden hangisi doğrudur?",
+          "ar": "أي من الارتباطات التالية بين عمر النصف والنسبة المئوية للإطراح صحيحة دقيقة؟",
+          "en": "Which mapping between elapsed half-lives and percentage of eliminated drug is accurate?"
+        },
         "options": [
           {
-            "id": "opt-ph31-9",
+            "id": "opt-1",
             "text": {
-              "tr": "Yaklaşık 7 saat (0.693 x 70 / 7 ≈ 6.93 saat).",
-              "ar": "حوالي 7 ساعات (0.693 x 70 / 7 ≈ 6.93 ساعات).",
-              "en": "t1/2 doubles from 4 hours to 8 hours."
+              "tr": "4 yarılanma ömrü: %93.75 elenir (kalan %6.25); 5 yarılanma ömründe %96.88 elenir.",
+              "ar": "4 أعمار نصف: يطرح 93.75% (يتبقى 6.25%)؛ وفي 5 أعمار نصف يطرح 96.88%.",
+              "en": "4 half-lives: 93.75% eliminated (6.25% remains); in 5 half-lives 96.88% eliminated."
             },
-            "isCorrect": true
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! 1. yarı ömürde %50 kalır, 2.'de %25, 3.'te %12.5, 4.'te %6.25 kalır (%93.75 elenir).",
+              "ar": "صحيح! بعد عمر نصف واحد يتبقى 50%، ثم 25%، ثم 12.5%، وفي الرابع يتبقى 6.25% (أي تم إطراح 93.75%).",
+              "en": "Correct! After 1 t1/2: 50% remains, after 2: 25%, after 3: 12.5%, after 4: 6.25% remains (93.75% eliminated)."
+            }
           },
           {
-            "id": "opt-ph31-10",
+            "id": "opt-2",
             "text": {
-              "tr": "70 saat.",
-              "ar": "70 ساعة.",
-              "en": "Half-life drops to 2 hours."
+              "tr": "2 yarılanma ömrü: İlaç miktarı doğrusal azalarak tamamı (%100) elenir.",
+              "ar": "عمران نصف: يتناقص الدواء خطياً ليتم إطراح 100% منه تماماً.",
+              "en": "2 half-lives: Drug quantity decreases linearly so that 100% is completely eliminated."
             },
-            "isCorrect": false
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Klasik lineer yanılgı! İlaç doğrusal değil üstel azalır. 2 yarı ömürde ancak %75'i elenir, %25'i kalır.",
+              "ar": "مغالطة خطية شائعة! تناقص الدواء أسي وليس خطياً. بعد عمرين نصف يطرح 75% فقط ويتبقى 25%.",
+              "en": "Classic linear misconception! First-order elimination is exponential. After 2 half-lives, only 75% is cleared."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "7 yarılanma ömrü: %93'e ancak 7 yarı ömürde ulaşılır, öncesinde eliminasyon çok yavaştır.",
+              "ar": "7 أعمار نصف: لا يتم بلوغ 93% إلا عند عمر النصف السابع لبطء الإطراح الأولي.",
+              "en": "7 half-lives: 93% is only reached at 7 half-lives because initial clearance is slow."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: 7 yarı ömürde %99.2 elenmiş olur (klinik temizlenme kuralı). %93 için 4 yarılanma ömrü yeterlidir.",
+              "ar": "غير صحيح: عند 7 أعمار نصف يطرح 99.2% من الدواء (قاعدة الغسيل التام). للوصول إلى 93% يكفي 4 أعمار نصف.",
+              "en": "Incorrect: At 7 half-lives, 99.2% is eliminated (washout rule). 4 half-lives is sufficient to clear 93.75%."
+            }
           }
         ]
-      }
+      },
+      "technicalTerms": [
+        {
+          "term": "üstel eliminasyon",
+          "arContext": "الإطراح الأسي (exponential elimination)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Her yarı ömürde kalan ilaç miktarı yarıya iner: 100 -> 50 -> 25 -> ...",
+          "ar": "في كل عمر نصف ينصف المتبقي: 100 -> 50 -> 25 -> ...",
+          "en": "With each half-life remaining drug halves: 100 -> 50 -> 25 -> ..."
+        },
+        {
+          "tier": 2,
+          "tr": "3 yarı ömürde %12.5 kalır (%87.5 atılır). Bir sonraki yarı ömürde ne kalır?",
+          "ar": "بعد 3 أعمار نصف يتبقى 12.5% (يطرح 87.5%). كم يتبقى بعد عمر النصف التالي؟",
+          "en": "After 3 half-lives 12.5% remains (87.5% cleared). What remains after the next half-life?"
+        },
+        {
+          "tier": 3,
+          "tr": "4. yarı ömürde %6.25 kalır, yani %93.75'i vücuttan atılmış olur.",
+          "ar": "في عمر النصف الرابع يتبقى 6.25%، أي تم التخلص من 93.75% من الدواء.",
+          "en": "At the 4th half-life 6.25% remains, meaning 93.75% has been eliminated."
+        }
+      ],
+      "title": {
+        "tr": "Hafıza Yoklama: 4 Yarılanma Ömrü Kuralı",
+        "ar": "استرجاع معرفي: قاعدة الأعمار النصفية الأربعة",
+        "en": "Retrieval: The 4 Half-Lives Rule"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "4 yarılanma ömrü: %93.75 elenir (kalan %6.25); 5 yarılanma ömründe %96.88 elenir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! 1. yarı ömürde %50 kalır, 2.'de %25, 3.'te %12.5, 4.'te %6.25 kalır (%93.75 elenir)."
+          },
+          {
+            "id": "opt-2",
+            "text": "2 yarılanma ömrü: İlaç miktarı doğrusal azalarak tamamı (%100) elenir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Klasik lineer yanılgı! İlaç doğrusal değil üstel azalır. 2 yarı ömürde ancak %75'i elenir, %25'i kalır."
+          },
+          {
+            "id": "opt-3",
+            "text": "7 yarılanma ömrü: %93'e ancak 7 yarı ömürde ulaşılır, öncesinde eliminasyon çok yavaştır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: 7 yarı ömürde %99.2 elenmiş olur (klinik temizlenme kuralı). %93 için 4 yarılanma ömrü yeterlidir."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les1-step11",
+      "order": 11,
+      "stageIndex": 11,
+      "stage": "connection",
+      "type": "connection",
+      "prompt": {
+        "tr": "Plazma proteinlerine bağlanma (albümin) ile doku proteinlerine bağlanma arasındaki çekişme, bir ilacın Vd'sinin 5 L mi yoksa 15.000 L mi olacağını nasıl belirler?",
+        "ar": "كيف يحدد التنافس بين الارتباط ببروتينات البلازما (الألبومين) وبروتينات الأنسجة ما إذا كان Vd يساوي 5 لترات أم 15,000 لتر؟",
+        "en": "How does the tug-of-war between plasma protein binding (albumin) and tissue binding dictate whether Vd is 5 L or 15,000 L?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Fizyolojik dağılım hacmi eşitliği Vd = Vp + Vt x (fu / fu,t) gereğince, plazma serbest kesri (fu) doku serbest kesrinden (fu,t) çok daha büyükse ne olur?",
+          "ar": "وفق معادلة Vd = Vp + Vt × (fu / fu,t)، إذا كان الكسر الحر في البلازما (fu) أكبر بكثير من الكسر الحر في الأنسجة (fu,t)، فما النتيجة؟",
+          "en": "According to Vd = Vp + Vt * (fu / fu,t), if free fraction in plasma (fu) far exceeds free fraction in tissue (fu,t), what occurs?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "İlaç plazmadan kaçarak dokulara hücum eder; fu / fu,t oranı büyür ve Vd anatomik sınırları aşarak devasa boyutlara ulaşır.",
+              "ar": "يهرب الدواء من البلازما إلى الأنسجة؛ ترتفع نسبة fu / fu,t ويتضخم Vd متجاوزاً الحيز التشريحي.",
+              "en": "Drug flees plasma into tissues; the ratio fu / fu,t expands and Vd swells far beyond anatomical fluid limits."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Harika bağdaştırma! fu yüksek (plazmaya az bağlı) ve fu,t düşük (dokuya aşırı bağlı) olduğunda Vd binlerce litreye ulaşır (örn. trisiklik antidepresanlar, klorokin).",
+              "ar": "ربط علمي ممتاز! عندما يكون fu كبيراً و fu,t صغيراً، يقفز Vd لآلاف اللترات كما في مضادات الاكتئاب ثلاثية الحلقات والكلوروكين.",
+              "en": "Superb synthesis! When fu is high (low plasma binding) and fu,t is tiny (high tissue binding), Vd reaches thousands of liters (e.g. TCAs, chloroquine)."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "İlaç dokulara geçemez; plazmada hapsolarak Vd değerini plazma hacminin (3 L) altına düşürür.",
+              "ar": "يعجز الدواء عن دخول الأنسجة، فينحصر في البلازما ويهبط Vd إلى أقل من حجم البلازما (3 لتر).",
+              "en": "Drug cannot enter tissues; it becomes trapped in plasma, dropping Vd below plasma volume (3 L)."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Vd hiçbir zaman plazma hacminden (Vp ~3 L) küçük olamaz. Ayrıca fu'nun büyük olması ilacın dokuya geçmesini kolaylaştırır.",
+              "ar": "غير صحيح: لا يمكن لـ Vd أن يقل عن حجم البلازما (3 لتر). كما أن كبر fu يسهل عبور الدواء للأنسجة.",
+              "en": "Incorrect: Vd can never physically be less than plasma volume (~3 L). Furthermore, a high fu facilitates tissue entry."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Plazma protein bağlanması Vd'yi etkilemez çünkü kılcal damar endoteli proteinleri de süzer.",
+              "ar": "الارتباط ببروتينات البلازما لا يؤثر على Vd لأن بطانة الشعيرات ترشح البروتينات أيضاً.",
+              "en": "Plasma protein binding has no effect on Vd because capillary endothelium filters proteins as well."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Albümin kapiller endoteli geçemez (MW ~66 kDa). Albümine bağlı ilaç damar yatağında hapsolur.",
+              "ar": "غير صحيح: الألبومين لا يعبر بطانة الشعيرات لضخامة وزنه (66 كيلو دالتون)، فيحجز الدواء المرتبط داخل الأوعية.",
+              "en": "Incorrect: Albumin cannot cross intact capillary endothelium (MW ~66 kDa). Albumin-bound drug is trapped within blood vessels."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "serbest ilaç kesri",
+          "arContext": "الكسر الدوائي الحر (fraction unbound fu)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Vd = Vp + Vt x (fu / fu,t) formülünü göz önüne alın.",
+          "ar": "انظر إلى معادلة: Vd = Vp + Vt × (fu / fu,t).",
+          "en": "Consider the equation: Vd = Vp + Vt * (fu / fu,t)."
+        },
+        {
+          "tier": 2,
+          "tr": "Dokuya bağlanma aşırı güçlüyse dokudaki serbest kesir (fu,t) sıfıra yaklaşır.",
+          "ar": "إذا كان الارتباط بالأنسجة شديداً، فإن الكسر الحر النسيجي fu,t يقترب من الصفر.",
+          "en": "If tissue binding is extremely avid, free fraction in tissue (fu,t) approaches zero."
+        },
+        {
+          "tier": 3,
+          "tr": "Paydadaki fu,t küçüldükçe Vd katlanarak büyür; bu durum ilacı dokularda depolayarak Vd'yi devasa yapar.",
+          "ar": "صغر fu,t في المقام يضخم Vd أضعافاً مضاعفة؛ مما يؤدي لتخزين الدواء بالأنسجة.",
+          "en": "A tiny denominator fu,t causes Vd to multiply massively, sequestering drug into tissues."
+        }
+      ],
+      "title": {
+        "tr": "Bütünsel Bağlantı: Plazma Albümini vs Doku Bağlanması Dengesi",
+        "ar": "الربط الشامل: توازن ارتباط ألبومين البلازما بالأنسجة",
+        "en": "Holistic Connection: Plasma Albumin vs Tissue Binding Tug-of-War"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "İlaç plazmadan kaçarak dokulara hücum eder; fu / fu,t oranı büyür ve Vd anatomik sınırları aşarak devasa boyutlara ulaşır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Harika bağdaştırma! fu yüksek (plazmaya az bağlı) ve fu,t düşük (dokuya aşırı bağlı) olduğunda Vd binlerce litreye ulaşır (örn. trisiklik antidepresanlar, klorokin)."
+          },
+          {
+            "id": "opt-2",
+            "text": "İlaç dokulara geçemez; plazmada hapsolarak Vd değerini plazma hacminin (3 L) altına düşürür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Vd hiçbir zaman plazma hacminden (Vp ~3 L) küçük olamaz. Ayrıca fu'nun büyük olması ilacın dokuya geçmesini kolaylaştırır."
+          },
+          {
+            "id": "opt-3",
+            "text": "Plazma protein bağlanması Vd'yi etkilemez çünkü kılcal damar endoteli proteinleri de süzer.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Albümin kapiller endoteli geçemez (MW ~66 kDa). Albümine bağlı ilaç damar yatağında hapsolur."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 2
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod3-les1-step12",
+      "order": 12,
+      "stageIndex": 12,
+      "stage": "mastery_check",
+      "type": "mastery_check",
+      "prompt": {
+        "tr": "Deneysel antifungal AF-90 (400 mg IV bolus) sonrasında C0 = 8.0 mg/L ve EAA = 80 mg·h/L bulunuyor. Vd, CL ve t1/2 değerlerini hesaplayıp hemodiyaliz uygulanabilirliğini değerlendirin.",
+        "ar": "مضاد فطري تجريبي AF-90 (400 mg حقنة IV) سجل C0 = 8.0 mg/L و AUC = 80 mg·h/L. احسب Vd و CL و t1/2 وقيم جدوى غسيل الكلى.",
+        "en": "Experimental antifungal AF-90 (400 mg IV bolus) yields C0 = 8.0 mg/L and AUC = 80 mg·hr/L. Calculate Vd, CL, and t1/2, and evaluate hemodialysis."
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "AF-90'ın farmakokinetik parametreleri ve hemodiyaliz ile temizlenebilirlik durumu hangi seçenekte eksiksiz ve doğru verilmiştir?",
+          "ar": "ما هي المعايير الحركية الصحيحة للدواء AF-90 ومدى قابليته للإزالة بغسيل الكلى؟",
+          "en": "Which option completely and accurately states AF-90's pharmacokinetic parameters and hemodialysis feasibility?"
+        },
+        "options": [
+          {
+            "id": "opt-1",
+            "text": {
+              "tr": "Vd = 50 L, CL = 5.0 L/saat, t1/2 = 6.93 saat; Vd vücut sıvısına yakın olduğundan hemodiyaliz zehirlenmede etkilidir.",
+              "ar": "Vd = 50 L، والتصفية CL = 5.0 L/h، و t1/2 = 6.93 ساعات؛ وبما أن Vd مقارب لماء الجسم فإن الديال فعال.",
+              "en": "Vd = 50 L, CL = 5.0 L/hr, t1/2 = 6.93 hours; moderate Vd close to total body water allows effective hemodialysis."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel ustalık! Vd = 400 / 8 = 50 L. CL = 400 / 80 = 5.0 L/saat. t1/2 = 0.693 x 50 / 5 = 6.93 saat. Vd küçük/orta olduğundan hemodiyaliz kanda bulunan ilacı etkin temizler.",
+              "ar": "إتقان حركي باهر! Vd = 400 / 8 = 50 لتر. التصفية = 400 / 80 = 5 لتر/ساعة. عمر النصف = 0.693 × 50 / 5 = 6.93 ساعات. صغر Vd يجعل الغسيل فعالاً لوجود الدواء بالدم.",
+              "en": "Mastery demonstrated! Vd = 400 / 8 = 50 L. CL = 400 / 80 = 5.0 L/hr. t1/2 = 0.693 * 50 / 5 = 6.93 hours. Because Vd is moderate (~total body water), hemodialysis is clinically effective."
+            }
+          },
+          {
+            "id": "opt-2",
+            "text": {
+              "tr": "Vd = 3200 L, CL = 0.2 L/saat, t1/2 = 110 saat; Vd çok büyük olduğundan hemodiyaliz tamamen başarısız olur.",
+              "ar": "Vd = 3200 L، والتصفية CL = 0.2 L/h، و t1/2 = 110 ساعات؛ الحجم الهائل يمنع نجاح الديال.",
+              "en": "Vd = 3200 L, CL = 0.2 L/hr, t1/2 = 110 hours; massive Vd causes hemodialysis to fail completely."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: Formülleri ters çarpmışsınız (400 x 8 = 3200). Doğrusu Doz / C0 = 400 / 8 = 50 L'dir.",
+              "ar": "غير صحيح: قمت بضرب الجرعة بالتركيز بدلاً من القسمة (400 × 8 = 3200). الصحيح: الجرعة / C0 = 50 لتراً.",
+              "en": "Incorrect: You multiplied dose by concentration instead of dividing (400 * 8 = 3200). Correct: Dose / C0 = 50 L."
+            }
+          },
+          {
+            "id": "opt-3",
+            "text": {
+              "tr": "Vd = 50 L, CL = 5.0 L/saat, t1/2 = 10.0 saat; hemodiyaliz membranında çökme yapacağı için kontrendikedir.",
+              "ar": "Vd = 50 L، والتصفية CL = 5.0 L/h، و t1/2 = 10.0 ساعات؛ يمنع الديال لخطورة ترسب الدواء بالفلتر.",
+              "en": "Vd = 50 L, CL = 5.0 L/hr, t1/2 = 10.0 hours; dialysis is contraindicated due to filter precipitation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanlış: t1/2 hesaplanırken ln(2) = 0.693 ihmal edilmiş (50 / 5 = 10 denmiş). Ayrıca hemodiyalizde ilaç çökmesi gibi bir kontrendikasyon yoktur.",
+              "ar": "غير صحيح: تم إهمال المعامل 0.693 في حساب عمر النصف (50 / 5 = 10). كما لا يوجد موانع ترسب في الفلتر.",
+              "en": "Incorrect: Failed to multiply by 0.693 (50 / 5 = 10). Furthermore, filter precipitation is an invented distractor."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "toksikokinetik optimizasyon",
+          "arContext": "التحسين السمومي الحركي (toxicokinetic optimization)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Vd = Doz / C0 ve CL = Doz / EAA eşitliklerini çözün.",
+          "ar": "حل معادلتي: Vd = الجرعة / C0 و CL = الجرعة / AUC.",
+          "en": "Solve Vd = Dose / C0 and CL = Dose / AUC."
+        },
+        {
+          "tier": 2,
+          "tr": "t1/2 = 0.693 x Vd / CL formülünde 50 L ve 5 L/saat değerlerini yerine koyun.",
+          "ar": "عوض القيم في قانون: t1/2 = 0.693 × Vd / CL.",
+          "en": "Substitute 50 L and 5 L/hr into t1/2 = 0.693 * Vd / CL."
+        },
+        {
+          "tier": 3,
+          "tr": "Vd = 50 L, CL = 5 L/saat, t1/2 = 6.93 saat. Vd < 1 L/kg (~70 L) olduğundan hemodiyaliz kanda bol ilaç bulur ve etkilidir.",
+          "ar": "Vd = 50 L، والتصفية 5 L/h، و t1/2 = 6.93 ساعات. صغر Vd يجعل غسيل الكلى خياراً ممتازاً وفعالاً.",
+          "en": "Vd = 50 L, CL = 5 L/hr, t1/2 = 6.93 hrs. Because Vd is moderate (< 1 L/kg), hemodialysis is clinically effective."
+        }
+      ],
+      "title": {
+        "tr": "Ustalık Sınavı: Antifungal AF-90 PK ve Diyaliz Analizi",
+        "ar": "اختبار الإتقان: التحليل الحركي للدواء AF-90 وتقييم الديال",
+        "en": "Mastery Check: Antifungal AF-90 PK & Dialysis Analysis"
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1",
+            "text": "Vd = 50 L, CL = 5.0 L/saat, t1/2 = 6.93 saat; Vd vücut sıvısına yakın olduğundan hemodiyaliz zehirlenmede etkilidir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Mükemmel ustalık! Vd = 400 / 8 = 50 L. CL = 400 / 80 = 5.0 L/saat. t1/2 = 0.693 x 50 / 5 = 6.93 saat. Vd küçük/orta olduğundan hemodiyaliz kanda bulunan ilacı etkin temizler."
+          },
+          {
+            "id": "opt-2",
+            "text": "Vd = 3200 L, CL = 0.2 L/saat, t1/2 = 110 saat; Vd çok büyük olduğundan hemodiyaliz tamamen başarısız olur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: Formülleri ters çarpmışsınız (400 x 8 = 3200). Doğrusu Doz / C0 = 400 / 8 = 50 L'dir."
+          },
+          {
+            "id": "opt-3",
+            "text": "Vd = 50 L, CL = 5.0 L/saat, t1/2 = 10.0 saat; hemodiyaliz membranında çökme yapacağı için kontrendikedir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanlış: t1/2 hesaplanırken ln(2) = 0.693 ihmal edilmiş (50 / 5 = 10 denmiş). Ayrıca hemodiyalizde ilaç çökmesi gibi bir kontrendikasyon yoktur."
+          }
+        ]
+      },
+      "sources": [
+        {
+          "file": "İlaç metabolizması-2026.pdf",
+          "page": 3
+        }
+      ]
     }
   ]
 }

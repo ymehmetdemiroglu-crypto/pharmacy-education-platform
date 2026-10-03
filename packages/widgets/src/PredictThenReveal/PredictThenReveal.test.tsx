@@ -63,4 +63,23 @@ describe('PredictThenReveal Widget', () => {
     expect(handleIncorrect).toHaveBeenCalled();
     expect(screen.getByText(/unexpected outcome \/ misconception alert/i)).toBeInTheDocument();
   });
+
+  it('displays the Hypercorrection Opportunity banner when confidence is high ("sure") and hypothesis is incorrect', () => {
+    render(<PredictThenReveal config={mockConfig} locale="en" />);
+
+    // Select incorrect option
+    fireEvent.click(screen.getByText(/solubility increases due to/i));
+
+    // Rate confidence as "Sure"
+    const sureBtn = screen.getByRole('radio', { name: /sure/i });
+    fireEvent.click(sureBtn);
+
+    // Reveal outcome
+    fireEvent.click(screen.getByRole('button', { name: /reveal experimental outcome/i }));
+
+    // Verify Hypercorrection banner is rendered
+    expect(screen.getByTestId('hypercorrection-alert')).toBeInTheDocument();
+    expect(screen.getByText(/hypercorrection opportunity/i)).toBeInTheDocument();
+  });
 });
+

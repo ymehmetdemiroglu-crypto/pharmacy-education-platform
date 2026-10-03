@@ -225,6 +225,7 @@ test.describe('Pharmacy Platform Phase 2 UI & State Matrix Verification (A3 Prot
       await page.keyboard.press('Tab'); // Brand Rx logo
       await page.keyboard.press('Tab'); // Gallery link
       await page.keyboard.press('Tab'); // Courses link
+      await page.keyboard.press('Tab'); // Review link
       await page.keyboard.press('Tab'); // Pricing link
       await page.keyboard.press('Enter'); // Navigate via keyboard
       await page.waitForURL('**/pricing');

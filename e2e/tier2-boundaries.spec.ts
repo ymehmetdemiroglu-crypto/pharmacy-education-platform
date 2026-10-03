@@ -321,7 +321,7 @@ test.describe('Tier 2: Boundary & Corner Cases (>=5 Tests Per Feature Area)', ()
       await page.waitForLoadState('networkidle');
 
       // Must show locked lesson card and open PaywallModal
-      await expect(page.getByText('Unlock Lesson 3: The Partition Coefficient')).toBeVisible();
+      await expect(page.getByText(/Premium Lesson \(Locked\)|Premium Ders \(Kilitli\)|Unlock Full Course Modules/i)).toBeVisible();
       await expect(page.getByRole('dialog')).toBeVisible();
       await expect(page.getByRole('button', { name: /Start Free Trial|Ücretsiz Denemeyi Başlat|بدء التجربة المجانية/i }).first()).toBeVisible();
     });
@@ -437,7 +437,7 @@ test.describe('Tier 2: Boundary & Corner Cases (>=5 Tests Per Feature Area)', ()
     });
 
     test('T2-BND-24: stepper navigation prevents advancing without committing a prediction hypothesis', async ({ page }) => {
-      await page.goto('/courses/medchem/lessons/1');
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
 
       // Go to Step 2
@@ -453,7 +453,7 @@ test.describe('Tier 2: Boundary & Corner Cases (>=5 Tests Per Feature Area)', ()
     });
 
     test('T2-BND-25: rapid double-clicking "Commit Hypothesis" submits once without duplicate XP awards', async ({ page }) => {
-      await page.goto('/courses/medchem/lessons/1');
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
       await page.getByRole('button', { name: /continue to step 2|adım 2'e devam et|المتابعة إلى الخطوة 2/i }).click();
 
@@ -469,7 +469,7 @@ test.describe('Tier 2: Boundary & Corner Cases (>=5 Tests Per Feature Area)', ()
     });
 
     test('T2-BND-26: step navigation boundaries (ArrowLeft on Step 1, ArrowRight without completion) do not throw errors', async ({ page }) => {
-      await page.goto('/courses/medchem/lessons/1');
+      await page.goto('/courses/medchem/lessons/1?phase=quiz');
       await page.waitForLoadState('networkidle');
 
       // On Step 1: Press ArrowLeft - boundary clamp stays at Step 1

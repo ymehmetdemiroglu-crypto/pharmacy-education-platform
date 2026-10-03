@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import { clsx } from 'clsx';
-import { Card, Button, StickerBadge } from '@pharmacy/ui';
-import { CheckCircle2, AlertCircle, ArrowRight } from 'lucide-react';
+import { Card, Button, StickerBadge, ConfidenceGauge, ConfidenceLevel } from '@pharmacy/ui';
+import { CheckCircle2, AlertCircle, ArrowRight, Zap } from 'lucide-react';
 import { BaseWidgetProps } from '../types';
 import { PredictThenRevealConfig } from './schema';
 
-export type PredictThenRevealProps = BaseWidgetProps<PredictThenRevealConfig, string>;
+export type PredictThenRevealProps = BaseWidgetProps<PredictThenRevealConfig, any>;
 
 export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
   config,
   onAttempt,
   onCorrect,
   onIncorrect,
+  locale = 'tr',
   disabled = false,
   className,
 }) => {
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+  const [confidence, setConfidence] = useState<ConfidenceLevel | null>(null);
   const [isRevealed, setIsRevealed] = useState(false);
 
   const selectedOption = config.options.find((o) => o.id === selectedOptionId);
@@ -36,6 +38,8 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
       if (onIncorrect) onIncorrect(selectedOption.misconceptionFeedback);
     }
   };
+
+  const isHighConfidenceError = !selectedOption?.isCorrect && confidence === 'sure';
 
   return (
     <Card
@@ -95,6 +99,22 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
         </div>
       </div>
 
+      {/* Metacognitive Confidence Rating Gauge */}
+      {selectedOptionId && !isRevealed && (
+        <div className="space-y-1.5 animate-in fade-in duration-150">
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+            Step 2: Rate your confidence
+          </span>
+          <ConfidenceGauge
+            value={confidence}
+            onChange={(lvl) => setConfidence(lvl)}
+            locale={locale}
+            disabled={disabled || isRevealed}
+            size="sm"
+          />
+        </div>
+      )}
+
       {/* Reveal Action / Outcome */}
       {!isRevealed ? (
         <div className="pt-2">
@@ -122,6 +142,24 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
               </div>
             )}
           </div>
+
+          {/* Hypercorrection Alert Banner */}
+          {isHighConfidenceError && (
+            <div
+              data-testid="hypercorrection-alert"
+              className="p-3 bg-[#FF6B9D] text-black border-3 border-black font-body text-xs shadow-neo-sm flex items-start gap-2"
+            >
+              <Zap className="w-4 h-4 shrink-0 fill-current mt-0.5" />
+              <div>
+                <strong className="font-display font-black uppercase tracking-wider block">
+                  Hypercorrection Opportunity (Yüksek Güvenilirlikli Yanılgı)
+                </strong>
+                <p className="mt-0.5 leading-relaxed">
+                  Öğrenme bilimi (Butterfield & Metcalfe, 2001), tam emin olunan yanılgıların düzeltilmesinin uzun vadeli hafıza ve klinik muhakemede en yüksek kalıcılığı sağladığını kanıtlar.
+                </p>
+              </div>
+            </div>
+          )}
 
           {/* Targeted Misconception feedback if incorrect */}
           {!selectedOption?.isCorrect && selectedOption?.misconceptionFeedback && (

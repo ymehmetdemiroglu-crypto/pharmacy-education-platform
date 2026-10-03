@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
   "id": "mc-mod1-les2",
   "courseId": "medchem",
   "moduleId": "mc-mod-01",
@@ -10,26 +11,59 @@
   "order": 2,
   "access": "free",
   "objective": {
-    "tr": "Henderson-Hasselbalch bağıntısıyla ilaç iyonizasyonunu hesaplayıp membran geçişini öngörmek.",
-    "ar": "حساب درجة التأين (iyonizasyon) عبر علاقة Henderson-Hasselbalch والتنبؤ بنفوذية الأغشية.",
-    "en": "Calculate drug ionization fraction using the Henderson-Hasselbalch equation and predict membrane permeation across biological barriers."
+    "tr": "Henderson-Hasselbalch bağıntısıyla fizyolojik kompartmanlarda ilaç iyonizasyonunu hesaplamak; membran geçirgenliği, iyon tuzağı ve dielektrik çözünürlük ilkelerini öngörmek.",
+    "ar": "حساب درجة تأين الأدوية عبر علاقة Henderson-Hasselbalch في الحجيرات الحيوية والتنبؤ بنفوذية الأغشية والحصار الأيوني وثابت العزل الكهربائي.",
+    "en": "Calculate drug ionization across physiological compartments using Henderson-Hasselbalch, and predict membrane permeation, ion trapping, and formulation solubility."
   },
   "misconceptions": [
     {
-      "tr": "Asitlerin her zaman yüklü, bazların ise nötr olduğu yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن الأحماض مشحونة دائماً بينما القواعد محايدة.",
-      "en": "Acids are always charged, whereas bases are always neutral."
+      "tr": "Asitlerin daima yüklü, bazların ise daima nötr olduğu ya da zayıf bazların asidik ortamda nötr kaldığı yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الأحماض مشحونة دوماً والقواعد محايدة، أو أن القواعد الضعيفة تبقى متعادلة في الوسط الحامضي.",
+      "en": "The misconception that acids are always charged and bases neutral, or that weak bases remain un-ionized in acidic media."
     },
     {
-      "tr": "İyonize türlerin biyolojik zarlardan pasif difüzyonla kolayca geçebileceği varsayımı.",
-      "ar": "الافتراض الخاطئ بأن الأنواع المتأينة تعبر الأغشية البيولوجية بالانتشار البسيط بسهولة.",
-      "en": "Ionized species can readily cross lipid bilayers via passive diffusion."
+      "tr": "Midede nötr fraksiyonun (%99) yüksek olmasının, aspirinin mideden ince bağırsaktan daha fazla emilmesini sağlayacağı yanılgısı (yüzey alanını göz ardı etme).",
+      "ar": "الافتراض الخاطئ بأن النسبة العالية للكسر المتعادل (99%) في المعدة تجعل امتصاص الأسبرين المعدي أكبر من المعوي متجاهلاً مساحة السطح.",
+      "en": "The assumption that a 99% un-ionized fraction in the stomach causes more total aspirin to be absorbed there than in the small intestine (ignoring surface area)."
+    },
+    {
+      "tr": "Dielektrik sabitinin yalnızca çözücünün fiziksel yoğunluğunu temsil ettiği ve iyonik kristal kafes ayrışmasını etkilemediği varsayımı.",
+      "ar": "الاعتقاد الخاطئ بأن ثابت العزل الكهربائي يمثل فقط كثافة المذيب الفيزيائية ولا يحدد تفكك الشبكة البلورية للأملاح.",
+      "en": "The misconception that the dielectric constant merely represents solvent density and does not govern ionic crystal lattice dissociation."
     }
   ],
   "sources": [
     {
       "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 2
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
       "page": 5
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 6
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 7
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 9
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 11
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 16
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 17
     }
   ],
   "citations": [
@@ -37,91 +71,202 @@
       "id": "CIT-MC02-01",
       "book": "Foye's Principles of Medicinal Chemistry",
       "edition": "8th ed.",
-      "topic": "Ionization, pKa, and Solubility",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Physicochemical Properties: Ionization, pKa, and Partitioning",
+      "chapter": "Chapter 2",
+      "page": "35-48",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-MC02-02",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Solubility, Ionization, and Biological Membrane Transit",
+      "chapter": "Chapter 3",
+      "page": "55-72",
+      "status": "verified"
+    }
+  ],
+  "numericClaims": [
+    {
+      "id": "NUM-MC02-01",
+      "parameter": "Aspirin gastric un-ionized fraction at pH 1.5 vs intestinal un-ionized fraction at pH 6.5",
+      "value": "99.0% vs 0.1%",
+      "status": "verified",
+      "referencePassage": "At gastric pH 1.5 (pKa 3.5), aspirin is 99% un-ionized; at intestinal pH 6.5, aspirin is 99.9% ionized."
+    },
+    {
+      "id": "NUM-MC02-02",
+      "parameter": "Gastrointestinal surface area comparison: stomach vs small intestine",
+      "value": "~1 m^2 vs ~32 m^2",
+      "status": "verified",
+      "referencePassage": "Gastric mucosa has ~1 m^2 surface area, whereas intestinal villi and microvilli expand mucosal absorptive area to ~30-32 m^2 (Helander & Fändriks, 2014)."
+    },
+    {
+      "id": "NUM-MC02-03",
+      "parameter": "Solvent dielectric constants (epsilon) at 20-25 C: hexane vs ethanol vs water",
+      "value": "1.89 vs 24.3 vs 80.37",
+      "status": "verified",
+      "referencePassage": "Dielectric constants: n-hexane 1.89, ethanol 24.3, water 80.37 (Slide 7)."
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "mc-mod1-les2-card1",
       "courseId": "medchem",
-      "drugOrConcept": "Henderson-Hasselbalch Asit Formülü",
-      "prompt": "Zayıf asitler için iyonize fraksiyon yüzdesi formülü nedir?",
-      "answer": "% İyonize = 100 / (1 + 10^(pKa - pH)).",
+      "drugOrConcept": "Aspirin Emilim Paradoksu ve Yüzey Alanı",
+      "prompt": "Midede %99 nötr olan aspirinin %90'ından fazlası neden ince bağırsaktan emilir?",
+      "answer": "İnce bağırsağın ~32 m²'lik geniş emilim yüzey alanı ve yoğun mezenterik kan akımı, %0.1'lik nötr fraksiyonu hızla emerek Le Chatelier dengesini sürekli nötr forma kaydırır.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les2-card2",
       "courseId": "medchem",
-      "drugOrConcept": "pH Eşit pKa Durumu",
-      "prompt": "Ortam pH değeri ilacın pKa değerine eşit olduğunda iyonize oran ne olur?",
-      "answer": "Tam olarak %50 iyonize, %50 iyonize olmamış molekül dengededir.",
+      "drugOrConcept": "Henderson-Hasselbalch 50:50 Kuralı ve 1-2 Birim Kuralı",
+      "prompt": "Ortam pH'sı zayıf bir asidin pKa'sına eşit olduğunda, 1 birim ve 2 birim üzerine çıktığında iyonize yüzdeleri ne olur?",
+      "answer": "pH = pKa iken %50; pH = pKa + 1 iken %90.9; pH = pKa + 2 iken %99.0 iyonizedir.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les2-card3",
       "courseId": "medchem",
-      "drugOrConcept": "İyon Tuzağı Mekanizması",
-      "prompt": "Aspirin zehirlenmesinde idrar alkalileştirildiğinde atılım neden hızlanır?",
-      "answer": "Bazik idrarda aspirin iyonize (A-) forma dönüşür, tübüler zardan geri emilemeyip atılır.",
+      "drugOrConcept": "Dielektrik Sabiti ve Coulomb Çekimi",
+      "prompt": "Suyun yüksek dielektrik sabiti (ε = 80.4) iyonik tuzların kristal kafesinden çözünmesini nasıl sağlar?",
+      "answer": "Coulomb yasasına göre (F = q1·q2 / ε·r²) çözücünün dielektrik sabiti zıt iyonlar arasındaki elektrostatik çekim kuvvetini 80 kat azaltarak kristal kafesin ayrışmasını sağlar.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Çözünürlük, İyonizasyon ve Dielektrik Sabiti"
-    },
-    "ar": {
-      "title": "الذوبانية، التأين وثابت العزل الكهربائي"
-    }
-  },
   "steps": [
     {
       "id": "mc-mod1-les2-step-01",
       "stage": "hook",
       "stageIndex": 1,
       "title": {
-        "tr": "Mide mi Bağırsak mı?",
-        "ar": "المعدة أم الأمعاء؟",
-        "en": "Stomach or Intestine?"
+        "tr": "Klinik İkilem: Aspirin Emilim Paradoksu",
+        "ar": "معضلة سريرية: مفارقة امتصاص الأسبرين",
+        "en": "Clinical Dilemma: The Aspirin Absorption Paradox"
       },
       "prompt": {
-        "tr": "Aspirin (pKa = 3.5) asidik midede (pH 1.5) mi, yoksa bazik ince bağırsakta (pH 6.5) mı daha hızlı zardan geçer?",
-        "ar": "هل يمتص Aspirin ذو (pKa = 3.5) أسرع عبر غشاء المعدة الحامضية (pH 1.5) أم الأمعاء الدقيقة (pH 6.5)؟",
-        "en": "Does aspirin (pKa = 3.5) cross biological membranes faster across the acidic gastric mucosa (pH 1.5) or basic intestinal lumen (pH 6.5)?"
+        "tr": "Aspirin (pKa 3.5) midede %99 nötr, bağırsakta %99.9 iyonizedir. Ancak aspirinin %90'ından fazlası mideden değil bağırsaktan emilir! Yüklü iyon zardan sızamazken bu nasıl gerçekleşir?",
+        "ar": "يتواجد <span dir='ltr'>aspirin</span> (pKa 3.5) في المعدة بنسبة 99% متعادلاً، وفي الأمعاء بنسبة 99.9% متأيّناً. ومع ذلك يُمتص 90% منه معوياً! كيف يعبر الجزيء المشحون؟",
+        "en": "Aspirin (pKa 3.5) is 99% un-ionized in stomach, yet 99.9% ionized in intestine. Still, over 90% is absorbed intestinally! If charged ions cannot cross bilayers, how does this occur?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": {
+              "tr": "İnce bağırsağın geniş mikrovillüs yüzey alanı (~32 m²), midedeki yüksek nötr molekül oranını bütünüyle gölgede bırakır.",
+              "ar": "المساحة الكبيرة للزغابات المعوية (~32 م²) والتروية الدموية تتفوق تماماً على نسبة الجزيئات المتعادلة في المعدة.",
+              "en": "The intestine's absorptive microvillar surface area (~32 m²) completely dwarfs the stomach's favorable un-ionized fraction."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Fick kanununa göre emilim; geçirgenlik katsayısı ile yüzey alanının çarpımıdır. ~32 m² yüzey alanı kimyasal iyonizasyon dezavantajını ezer geçer.",
+              "ar": "صحيح! وفق قانون فيك، يعتمد الامتصاص على جداء النفوذية ومساحة السطح؛ مساحة ~32 م² تتغلب على عائق التأين تماماً.",
+              "en": "Correct! By Fick's law, total absorption is permeability times surface area. A ~32 m² surface area easily overcomes the low un-ionized fraction."
+            }
+          },
+          {
+            "id": "opt-1b",
+            "text": {
+              "tr": "İyonize aspirin bağırsak epitelindeki aktif anyon pompalarıyla enerji harcanarak içeri çekilir.",
+              "ar": "يُمتص الأسبرين المتأين بواسطة مضخات أنيونية نشطة تستهلك ATP في خلايا الأمعاء.",
+              "en": "Ionized aspirin is actively pumped across intestinal enterocytes by energy-consuming anion transporters."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Aspirin aktif taşıyıcılarla değil, %0.1'lik nötr fraksiyonun pasif difüzyonu ve Le Chatelier kayması ile emilir.",
+              "ar": "مغالطة: لا يعتمد الأسبرين على النقل النشط، بل على الانتشار السلبي للكسر المتعادل (0.1%) مع انزياح توازن لوشاتيليه.",
+              "en": "Misconception: Aspirin is absorbed passively via its 0.1% un-ionized fraction, which is replenished instantaneously by Le Chatelier's principle."
+            }
+          },
+          {
+            "id": "opt-1c",
+            "text": {
+              "tr": "Mide asidi aspirini anında kimyasal olarak parçalayarak emilmesini imkansız kılar.",
+              "ar": "يقوم حمض المعدة بتفكيك جزيء الأسبرين كيميائياً على الفور مما يمنع امتصاصه.",
+              "en": "Gastric hydrochloric acid instantly decomposes aspirin chemically, preventing any gastric absorption."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Aspirin asidik midede stabildir; kimyasal hidroliz bağırsak ve kanda yavaş gerçekleşir.",
+              "ar": "مغالطة: الأسبرين مستقر في حمض المعدة؛ وتفككه المائي بطيء يحدث لاحقاً في الأمعاء والدم.",
+              "en": "Misconception: Aspirin is chemically stable in gastric acid; ester hydrolysis occurs gradually in blood and liver."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-1a",
+            "text": "İnce bağırsağın devasa mikrovillüs yüzey alanı midedeki nötr oranı gölgede bırakır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Yüzey alanı çarpanı kimyasal iyonizasyon dezavantajını ezer."
+          },
+          {
+            "id": "opt-1b",
+            "text": "İyonize aspirin aktif taşıyıcı pompalarla emilir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Aspirin pasif difüzyonla emilir."
+          },
+          {
+            "id": "opt-1c",
+            "text": "Mide asidi aspirini parçalar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Aspirin asitte stabildir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Aspirin midede neredeyse tamamen nötr olmasına rağmen, bağırsağın 30 kat büyük yüzey alanı (~32 m²) ve dinamik denge kayması nedeniyle bağırsaktan emilir.",
+          "ar": "رغم تعادل الأسبرين في المعدة، فإن مساحة الأمعاء الأكبر بـ 30 ضعفاً (~32 م²) وانزياح التوازن يجعلان الامتصاص معوياً بامتياز.",
+          "en": "Despite favorable gastric neutral fraction, the intestine's 30-fold greater surface area (~32 m²) drives >90% of total absorption."
+        },
+        "explanation": {
+          "tr": "pH-partisyon hipotezine göre sadece nötr moleküller geçer; ancak toplam emilim hızı = Geçirgenlik x Yüzey Alanı x Gradyan dır (Slayt 2, 11).",
+          "ar": "وفق فرضية pH-partition، تنفذ الجزيئات المتعادلة فقط؛ لكن معدل الامتصاص الكلي = النفوذية × مساحة السطح × مدروج التركيز (شريحة 2، 11).",
+          "en": "By the pH-partition hypothesis, only neutral molecules permeate; yet total flux equals Permeability x Surface Area x Concentration Gradient."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "iyonizasyon",
-          "arContext": "التأين"
+          "term": "pH-partisyon hipotezi",
+          "arContext": "فرضية pH-partition"
         },
         {
-          "term": "pKa",
-          "arContext": "ثابت التفكك الحامضي"
+          "term": "pasif difüzyon",
+          "arContext": "الانتشار السلبي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Midenin iç yüzey alanı ile ince bağırsağın villüs alanlarını kıyaslayın.",
+          "ar": "قارن مساحة السطح الداخلي للمعدة مع مساحة الزغابات في الأمعاء الدقيقة.",
+          "en": "Compare the anatomical surface area of the stomach with intestinal microvilli."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Fick difüzyon kanununu düşünün: Toplam akı yüzey alanıyla doğru orantılıdır.",
+          "ar": "تذكر قانون فيك للانتشار: يتناسب التدفق الكلي طرداً مع مساحة سطح الغشاء.",
+          "en": "Recall Fick's law: total mass flux is directly proportional to membrane surface area."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Mide ~1 m² iken ince bağırsak ~32 m² dir; 30 katlık alan farkı az miktardaki nötr ilacı hızla çeker.",
+          "ar": "تبلغ مساحة المعدة ~1 م² بينما الأمعاء ~32 م²؛ فارق الثلاثين ضعفاً يسحب الدواء المتعادل فوراً.",
+          "en": "Stomach area is ~1 m² vs intestine ~32 m²; this 30-fold area difference drives rapid systemic uptake."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 11
         }
       ]
     },
@@ -130,44 +275,58 @@
       "stage": "question",
       "stageIndex": 2,
       "title": {
-        "tr": "Tahmin: Asit Ortamda Yük Durumu",
-        "ar": "توقع: حالة الشحنة في الوسط الحامضي",
-        "en": "Prediction: Charge State in Acidic Medium"
+        "tr": "Tahmin: Nötr Fraksiyon vs Emilim Alanı",
+        "ar": "تنبؤ: الكسر المتعادل مقابل مساحة الامتصاص",
+        "en": "Prediction: Neutral Fraction vs Absorption Area"
       },
       "prompt": {
-        "tr": "Zayıf bir asit olan aspirin pH 1.5 midede hangi oranda iyonize olur?",
-        "ar": "كم تكون نسبة تأين aspirin كحمض ضعيف في بيئة المعدة ذات pH 1.5؟",
-        "en": "What percentage of weak acid aspirin is ionized in the gastric lumen at pH 1.5?"
+        "tr": "Bir ilacın zardan pasif emilim miktarını belirleyen temel faktör yalnızca nötr molekül yüzdesi midir, yoksa emilim yüzey alanı ve kan akımı da belirleyici midir?",
+        "ar": "هل تقتصر كمية امتصاص الدواء بالانتشار البسيط على نسبة الجزيئات المتعادلة فقط، أم أن مساحة سطح الامتصاص والتروية الدموية تشاركان بالحسم؟",
+        "en": "Is the total passive absorption of a drug determined solely by its un-ionized fraction, or do mucosal surface area and local blood flow dictate overall uptake?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-2-1",
+            "id": "opt-2a",
             "text": {
-              "tr": "%99 dan fazla iyonize (A-).",
-              "ar": "أكثر من 99% متأين (A-).",
-              "en": "More than 99% ionized (A-)."
-            },
-            "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Asidik ortam asidin iyonlaşmasını baskılar.",
-              "ar": "الوسط الحامضي يثبط تأين الحمض الضعيف.",
-              "en": "Correct! Since pH (7.4) is well above pKa (3.5), the weak acid is overwhelmingly deprotonated and ionized."
-            }
-          },
-          {
-            "id": "opt-2-2",
-            "text": {
-              "tr": "%99 dan fazla iyonize olmamış (HA).",
-              "ar": "أكثر من 99% غير متأين (HA).",
-              "en": "More than 99% unionized (HA)."
+              "tr": "Fick kanununa göre toplam emilim; membran geçirgenliği, yüzey alanı ve konsantrasyon gradyanının ortak fonksiyonudur.",
+              "ar": "وفق قانون فيك، الامتصاص محصلة مشتركة للنفوذية الغشائية ومساحة السطح ومدروج التركيز.",
+              "en": "By Fick's law, total absorption is the integrated product of membrane permeability, surface area, and concentration gradient."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Doğru! pH < pKa durumunda zayıf asit protonlanmış nötr HA formundadır.",
-              "ar": "صحيح! عندما يكون pH أقل من pKa يتواجد الحمض بشكله المتعادل غير المشحون.",
-              "en": "When pH exceeds pKa, weak acids dissociate into charged conjugate bases."
+              "tr": "Doğru! Kimyasal iyonizasyon geçirgenliği (P) belirlerken, anatomik alan (A) toplam molekül geçiş hızını tayin eder.",
+              "ar": "صحيح! يحدد التأين الكيميائي النفوذية الغشائية، بينما تحدد المساحة التشريحية معدل انتقال الجزيئات الكلي.",
+              "en": "Correct! Ionization dictates intrinsic permeability (P), but anatomical surface area (A) dictates overall mass transfer rate."
+            }
+          },
+          {
+            "id": "opt-2b",
+            "text": {
+              "tr": "Yalnızca nötr yüzde belirler; mide emilimi zayıf asitlerde bağırsaktan daima kat kat hızlıdır.",
+              "ar": "تحدد النسبة المتعادلة وحدها الامتصاص؛ وامتصاص الأحماض الضعيفة في المعدة أسرع دوماً من الأمعاء.",
+              "en": "Only un-ionized fraction matters; weak acids are always absorbed far faster in the stomach than intestine."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Nötr yüzde birim alandaki hızı artırır; ancak mide yüzey alanı o kadar küçüktür ki toplam emilen miktar bağırsaktan az kalır.",
+              "ar": "مغالطة: النسبة المتعادلة ترفع سرعة العبور لوحدة المساحة فقط، لكن صغر مساحة المعدة يجعل إجمالي الممتص ضئيلاً.",
+              "en": "Misconception: Un-ionized fraction increases flux per unit area, but the stomach's small area limits total drug quantity."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Yüzey alanı tamamen önemsizdir; molekül ağırlığı 500 Da altındaki tüm ilaçlar mideden difüze olur.",
+              "ar": "مساحة السطح غير مهمة تماماً؛ فجميع الأدوية دون 500 دالتون تنفذ عبر المعدة بحرية.",
+              "en": "Surface area is irrelevant; all drugs under 500 Da diffuse across the stomach regardless of area."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Lipinski kuralındaki molekül ağırlığı tek başına emilimi garantilemez; yüzey alanı olmadan emilim yavaşlar.",
+              "ar": "مغالطة: الوزن الجزيئي وحده لا يضمن الامتصاص؛ فبدون مساحة سطح كافية يتباطأ العبور الحيوي.",
+              "en": "Misconception: Low molecular weight permits membrane crossing, but insufficient surface area severely limits rate."
             }
           }
         ]
@@ -175,40 +334,66 @@
       "config": {
         "options": [
           {
-            "id": "opt-2-1",
-            "text": "%99 dan fazla iyonize (A-).",
-            "isCorrect": false
+            "id": "opt-2a",
+            "text": "Toplam emilim; geçirgenlik, yüzey alanı ve gradyanın çarpımıdır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Fick kanunu alan ve geçirgenliği çarpar."
           },
           {
-            "id": "opt-2-2",
-            "text": "%99 dan fazla iyonize olmamış (HA).",
-            "isCorrect": true
+            "id": "opt-2b",
+            "text": "Yalnızca nötr yüzde belirler.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Alan faktörü ihmal edilemez."
+          },
+          {
+            "id": "opt-2c",
+            "text": "Yüzey alanı önemsizdir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Yüzey alanı ana belirleyicidir."
           }
         ],
-        "revealedOutcome": "Midede aspirin %99 oranında yüksüz HA formundadır.",
-        "explanation": "pH = 1.5 ve pKa = 3.5 olduğunda pH - pKa = -2 dir. Bu da 100 kat nötr tür fazlalığı demektir."
+        "revealedOutcome": {
+          "tr": "Emilim hızı dQ/dt = P · A · (C1 - C2) dir. Geçirgenlik midede yüksek olsa da, bağırsağın alanı (A) 30 kat daha geniştir (~32 m² vs ~1 m²).",
+          "ar": "معدل الامتصاص dQ/dt = P · A · (C1 - C2). ورغم ارتفاع النفوذية في المعدة، فإن مساحة الأمعاء تفوقها بثلاثين ضعفاً (~32 م² مقابل ~1 م²).",
+          "en": "Absorption rate dQ/dt = P · A · (C1 - C2). Permeability is higher in stomach, but intestinal area (A) is ~30-fold greater (~32 m² vs ~1 m²)."
+        },
+        "explanation": {
+          "tr": "Mide emilimi kimyasal olarak mümkündür fakat anatomik yüzey alanı kısıtlılığı nedeniyle toplam biyoyararlanıma katkısı düşüktür (Slayt 2, 11).",
+          "ar": "امتصاص المعدة ممكن كيميائياً لكن مساحتها المحدودة تجعل مساهمتها في التوافر الحيوي الإجمالي ثانوية (شريحة 2، 11).",
+          "en": "Gastric absorption occurs chemically, but limited anatomical area makes its contribution to total bioavailability minor."
+        }
       },
       "technicalTerms": [
         {
-          "term": "Henderson-Hasselbalch",
-          "arContext": "معادلة Henderson-Hasselbalch"
+          "term": "Fick difüzyon kanunu",
+          "arContext": "قانون فيك للانتشار"
+        },
+        {
+          "term": "biyoyararlanım",
+          "arContext": "التوافر الحيوي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Fick kanununun bileşenlerini hatırlayın: Akı = P x A x ΔC.",
+          "ar": "تذكر عناصر قانون فيك: التدفق = النفوذية × المساحة × مدروج التركيز.",
+          "en": "Recall the components of Fick's first law: Flux = P x A x ΔC."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Yalnızca kimyasal form (P) değil, fiziksel temas yüzeyi (A) de hesaba katılmalıdır.",
+          "ar": "لا تنظر للشكل الكيميائي فقط، بل احسب مساحة التلامس الفيزيائية أيضاً.",
+          "en": "Consider both intrinsic permeability (P) and physical contact surface area (A)."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Geçirgenlik yüksek olsa bile küçük yüzey alanı toplam emilim miktarını sınırlar.",
+          "ar": "حتى مع النفوذية العالية، فإن صغر المساحة يقيد كمية الدواء الكلية الممتصة.",
+          "en": "Even with superior permeability, low surface area severely restricts total absorbed drug mass."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
         }
       ]
     },
@@ -217,38 +402,125 @@
       "stage": "intuition",
       "stageIndex": 3,
       "title": {
-        "tr": "Sezgisel Analoji: Su Zırhı ve Yağ Kapısı",
-        "ar": "تشبيه حدسي: درع الماء وبوابة الزيت",
-        "en": "Intuitive Analogy: Water Shield & Lipid Gate"
+        "tr": "Sezgisel Model: Dar Elek ve Dev Sünger",
+        "ar": "نموذج حدسي: المصفاة الضيقة والإسفنجة العملاقة",
+        "en": "Intuitive Model: Tight Sieve vs Giant Sponge"
       },
       "prompt": {
-        "tr": "Yüklü iyonlar çevrelerine kalın bir su kalkanı sararak yağlı zara yaklaşamaz. Nötr molekül ise bu kalkanı taşımadığından zardan rahatça süzülür.",
-        "ar": "تحاط الأيونات المشحونة بدرع ماء كثيف يمنعها من عبور الغشاء الدهني، بينما تنفذ الجزيئات المحايدة الخالية من الشحنة بسهولة.",
-        "en": "Charged ions surround themselves with a dense hydration shell, unable to enter greasy lipid bilayers. Neutral molecules slip through easily."
+        "tr": "Mide (~1 m²) dar bir geçit gibidir. Bağırsak (~32 m²) ise geniş villüs kıvrımlarıyla dev bir süngerdir. Azıcık sızan nötr ilaç bile bu yüzeyde anında emilir.",
+        "ar": "المعدة (~1 م²) كممر ضيق، بينما الأمعاء (~32 م²) إسفنجة واسعة الزغابات؛ حتى التسرب الضئيل للدواء المتعادل يُمتص عبر هذا السطح في الحال.",
+        "en": "The stomach (~1 m²) is a narrow passage. The intestine (~32 m²) is a vast folded sponge: even a small neutral fraction is absorbed rapidly."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": {
+              "tr": "Bağırsaktaki %0.1'lik nötr aspirin emildikçe, Le Chatelier ilkesi gereği iyonize aspirin anında nötr forma dönüşerek emilimi sürdürür.",
+              "ar": "كلما امتُص كسر 0.1% المتعادل في الأمعاء، ينزاح توازن لوشاتيليه فوراً لتحويل مزيد من الأيونات إلى شكل متعادل.",
+              "en": "As the 0.1% neutral aspirin is absorbed, Le Chatelier's principle shifts the equilibrium to instantly generate more neutral drug."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! İyonizasyon statik bir kilit değildir. Nötr molekül zardan geçip kana karıştıkça, geride kalan iyonlar proton alarak nötrleşir ve tükenene kadar emilir.",
+              "ar": "رائع! التأين توازن حركي؛ فكلما نفذ جزيء متعادل للدم، يلتقط أيون آخر بروتوناً ليعوض النقص حتى يكتمل الامتصاص.",
+              "en": "Excellent! Ionization is a dynamic equilibrium. As neutral drug exits into blood, remaining ions protonate, driving continuous complete absorption."
+            }
+          },
+          {
+            "id": "opt-3b",
+            "text": {
+              "tr": "İyonize moleküller bir kez oluştuktan sonra asla tekrar nötr forma dönemezler.",
+              "ar": "بمجرد تشكل الجزيئات المتأينة تصبح عاجزة نهائياً عن العودة للشكل المتعادل.",
+              "en": "Once molecules become ionized in aqueous solution, they can never revert back to the neutral state."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Asit-baz iyonizasyonu dinamik ve mikrosaniyeler içinde tersinir bir kimyasal dengedir (HA <=> H+ + A-).",
+              "ar": "مغالطة: تفاعل الحمض والقاعدة توازن كيميائي حركي وعكوس فائق السرعة (HA <=> H+ + A-).",
+              "en": "Misconception: Acid-base dissociation is a rapid, dynamic, and fully reversible chemical equilibrium."
+            }
+          },
+          {
+            "id": "opt-3c",
+            "text": {
+              "tr": "Sünger etkisi sadece suda çözünen vitaminlerde görülür, sentetik ilaçlarda işlemez.",
+              "ar": "ينطبق تأثير الإسفنجة على الفيتامينات الذوابة بالماء فقط ولا يعمل مع الأدوية المصنعة.",
+              "en": "The sponge sink effect applies solely to water-soluble vitamins, not synthetic pharmaceuticals."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Biyofiziksel yüzey alanı ve dinamik kütle etkisi kuralları tüm kimyasal moleküller için evrenseldir.",
+              "ar": "مغالطة: قوانين مساحة السطح وفعل الكتلة الحركية عامة وشاملة لجميع الجزيئات الدوائية.",
+              "en": "Misconception: Biophysical surface area sink principles govern all small-molecule drugs universally."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-3a",
+            "text": "Nötr form emildikçe Le Chatelier ilkesiyle iyonize form nötr forma dönüşür.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Dinamik denge sürekli nötr molekül üretir."
+          },
+          {
+            "id": "opt-3b",
+            "text": "İyonize molekül nötr forma dönemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: İyonizasyon dengesi tersinirdir."
+          },
+          {
+            "id": "opt-3c",
+            "text": "Sünger modeli sentetik ilaçlarda işlemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Fizikokimyasal kurallar evrenseldir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "İnce bağırsak dev bir lavabo (sink) görevi görür; nötr aspirin kana geçtikçe denge sağa kayar ve tüm doz emilir.",
+          "ar": "تعمل الأمعاء كبالوعة تصريف حيوية؛ وبامتصاص الجزيئات المتعادلة ينزاح التوازن لامتصاص كامل الجرعة.",
+          "en": "The intestine acts as a dynamic sink; systemic removal of neutral drug continually shifts the equilibrium to absorb the full dose."
+        },
+        "explanation": {
+          "tr": "Kandaki kan akımı emilen nötr ilacı hızla uzaklaştırır (sink koşulları). Bu durum lümendeki iyon dengesini sürekli protonlanmaya zorlar (Slayt 2, 3).",
+          "ar": "يجرف التدفق الدموي الدواء المتعادل فور نفوذه (شروط البالوعة)، مما يجبر الأيونات المتبقية في اللمعة على التعادل باستمرار (شريحة 2، 3).",
+          "en": "Mesenteric blood flow rapidly sweeps away absorbed neutral drug (sink conditions), driving continuous de novo protonation in the lumen."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "hidrasyon kabuğu",
-          "arContext": "غلاف الإماهة"
+          "term": "Le Chatelier dengesi",
+          "arContext": "توازن لوشاتيليه"
+        },
+        {
+          "term": "lavabo koşulları",
+          "arContext": "شروط البالوعة الحيوية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Dinamik kimyasal dengelerde ürünlerden biri ortamdan çekilirse ne olur?",
+          "ar": "ماذا يحدث في التوازنات الكيميائية الحركية عند سحب أحد النواتج من الوسط باستمرار؟",
+          "en": "What happens in a dynamic equilibrium when one product is continuously removed from the system?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Le Chatelier prensibini hatırlayın: Nötr HA azaldıkça A- iyonları proton bağlar.",
+          "ar": "تذكر مبدأ لوشاتيليه: مع تناقص HA المتعادل تلتقط أيونات A⁻ البروتونات لتعويضه.",
+          "en": "Recall Le Chatelier's principle: as neutral HA diffuses away, A- re-protonates."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Bağırsaktaki kan akımı nötr molekülü hızla uzaklaştırır; denge sürekli nötr üretir.",
+          "ar": "يجرف الدم الجزيئات المتعادلة سريعاً؛ فيستمر التوازن بإنتاج شكل متعادل حتى امتصاص كامل الدواء.",
+          "en": "Capillary blood flow clears absorbed drug; the equilibrium continuously generates neutral molecules until fully absorbed."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 3
         }
       ]
     },
@@ -257,38 +529,129 @@
       "stage": "visual_explanation",
       "stageIndex": 4,
       "title": {
-        "tr": "Mekanizma Şeması: İyon Tuzağı",
-        "ar": "مخطط الآلية: الحصار الأيوني",
-        "en": "Mechanism Diagram: Ion Trapping"
+        "tr": "Görsel Mekanizma: Membran Dielektrik Bariyeri",
+        "ar": "آلية بصرية: حاجز العزل الكهربائي الغشائي",
+        "en": "Visual Mechanism: Bilayer Dielectric Barrier"
       },
       "prompt": {
-        "tr": "Nötr molekül zarı geçtikten sonra bazik kanda (pH 7.4) iyonlaşırsa kapana kısılır. Buna iyon tuzağı (ion trapping) denir.",
-        "ar": "عندما ينفذ الجزيء المتعادل إلى الدم ذي pH 7.4 يتأين ويصبح عاجزاً عن العودة، وهي ظاهرة الحصار الأيوني (iyon tuzağı).",
-        "en": "Once neutral molecules diffuse into blood (pH 7.4), they ionize into charged species and cannot return. This is ion trapping."
+        "tr": "Fosfolipid çift tabakasının iç çekirdeği hidrokarbon kuyruklardan oluşur (ε ≈ 2). Nötr HA rahatça geçerken, yüklü A⁻ hidrasyon kalkanı nedeniyle hidrokarbon çekirdeğe giremez ve itilir.",
+        "ar": "تتكون نواة الغشاء الفسفوليبيدي من ذيول هيدروكربونية (ε ≈ 2). يعبر HA المتعادل بسلاسة، بينما يعجز A⁻ المشحون عن اختراق الوسط الهيدروكربوني لتمسكه بغلاف الإماهة.",
+        "en": "The phospholipid bilayer core is an apolar hydrocarbon layer (ε ≈ 2). Neutral HA diffuses across, while charged A- cannot shed its rigid hydration shell and is electrostatically repelled."
       },
-      "predictThenReveal": false,
-      "config": {},
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": {
+              "tr": "İyonik yükün su moleküllerini soyması için gereken desolvatasyon serbest enerjisi devasadır; apolar lipid ortam bu enerjiyi karşılayamaz.",
+              "ar": "طاقة نزع غلاف الإماهة عن الأيون المشحون هائلة جداً؛ والوسط الدهني غير القطبي عاجز عن تعويض هذا الفقد الطاقي.",
+              "en": "The desolvation free energy penalty to strip water from an ion is immense; the apolar lipid bilayer cannot compensate for this energetic cost."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Born denklemine göre bir iyonu yüksek dielektrikli sudan (ε = 80) düşük dielektrikli lipide (ε = 2) taşımak aşırı yüksek pozitif serbest enerji (ΔG > 0) gerektirir.",
+              "ar": "صحيح! وفق معادلة بورن، نقل أيون من الماء (ε = 80) إلى الغشاء الدهني (ε = 2) يتطلب طاقة حرة موجبة هائلة.",
+              "en": "Correct! By the Born equation, transferring an ion from water (ε = 80) to lipid (ε = 2) incurs a massive positive free energy penalty (ΔG > 0)."
+            }
+          },
+          {
+            "id": "opt-4b",
+            "text": {
+              "tr": "Fosfolipid başları pozitif yüklüdür ve negatif A⁻ iyonlarını kovalent bağlarla parçalar.",
+              "ar": "رؤوس الفسفوليبيد موجبة الشحنة وتقوم بتفكيك أيونات A⁻ بروابط تساهمية.",
+              "en": "Phospholipid headgroups are positively charged and cleave negative A- anions via covalent bond formation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Membran fosfolipidleri ilaçlarla kovalent bağ yapmaz; engel kimyasal parçalanma değil, elektrostatik dielektrik itmedir.",
+              "ar": "مغالطة: لا تشكل دهون الغشاء روابط تساهمية مع الأدوية؛ فالعائق هو التنافر الكهروستاتيكي وليس التفكك الكيميائي.",
+              "en": "Misconception: Biological membrane lipids do not covalently bind drugs; the barrier is electrostatic desolvation."
+            }
+          },
+          {
+            "id": "opt-4c",
+            "text": {
+              "tr": "Dielektrik sabiti düşük ortamlar iyonların yükünü nötrleştirerek lipitte çözünmelerini sağlar.",
+              "ar": "البيئات منخفضة العزل الكهربائي تعادل شحنة الأيونات وتسمح بذوبانها في الدهون.",
+              "en": "Low dielectric media neutralize ionic charges, promoting high solubility within hydrocarbon chains."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Düşük dielektrikli ortamlar yükü nötrleştirmez; tersine elektrostatik itmeyi şiddetlendirir.",
+              "ar": "مغالطة: الأوساط منخفضة العزل لا تعادل الشحنة، بل تضاعف قوى التنافر الكهروستاتيكي وتمنع ذوبان الشوارد.",
+              "en": "Misconception: Low dielectric media do not neutralize ions; they intensify electrostatic repulsion against charge entry."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-4a",
+            "text": "İyonik yükün su kalkanını soyması için gereken desolvatasyon enerjisi devasadır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Desolvatasyon cezası iyonların geçişini engeller."
+          },
+          {
+            "id": "opt-4b",
+            "text": "Fosfolipidler iyonları kovalent olarak parçalar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Membranda kovalent parçalanma olmaz."
+          },
+          {
+            "id": "opt-4c",
+            "text": "Düşük dielektrik iyonu nötrleştirir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Düşük dielektrik iyon girişine karşı direnç yaratır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Born enerjisi bariyeri: Su (ε = 80) ile yağ (ε = 2) arasındaki devasa dielektrik uçurumu, iyonize türleri sulu kompartmanda kilitli tutar.",
+          "ar": "حاجز طاقة بورن: الفارق الهائل في العزل الكهربائي بين الماء (ε = 80) والدهن (ε = 2) يقفل الباب أمام الشوارد المتأينة.",
+          "en": "Born energy barrier: The huge dielectric disparity between water (ε = 80) and lipid (ε = 2) traps ionized species in aqueous compartments."
+        },
+        "explanation": {
+          "tr": "İyonize maddeler (A⁻, BH⁺) kalın bir hidrasyon kabuğuna sahiptir. Bu kabuğun lipid fazında soyulması termodinamik olarak imkansızdır (Slayt 6, 11).",
+          "ar": "تحاط الشوارد المتأينة (A⁻, BH⁺) بغلاف إماهة مائي كثيف، ونزع هذا الغلاف في وسط دهني مستحيل ديناميكياً (شريحة 6، 11).",
+          "en": "Ionized species possess rigid hydration shells; desolvating them inside a low-dielectric hydrocarbon core is thermodynamically prohibitive."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "iyon tuzağı",
-          "arContext": "الحصار الأيوني"
+          "term": "dielektrik sabiti",
+          "arContext": "ثابت العزل الكهربائي"
+        },
+        {
+          "term": "desolvatasyon enerjisi",
+          "arContext": "طاقة إزالة الإماهة"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Suyun dielektrik sabiti (ε = 80) ile lipid zarın dielektrik sabitini (ε = 2) kıyaslayın.",
+          "ar": "قارن ثابت العزل الكهربائي للماء (ε = 80) مع غشاء الدهون (ε = 2).",
+          "en": "Compare the dielectric constant of water (ε = 80) with lipid membranes (ε = 2)."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Yüklü bir iyonu saran su moleküllerini (hidrasyon kabuğu) soymak enerji ister mi?",
+          "ar": "هل يتطلب نزع جزيئات الماء المحيطة بالأيون (غلاف الإماهة) طاقة؟",
+          "en": "Does stripping the structured hydration shell from a charged ion require energy?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Yüksek desolvatasyon enerjisi nedeniyle iyonlar düşük dielektrikli lipid çekirdeğe giremez.",
+          "ar": "بسبب طاقة نزع الإماهة المرتفعة تعجز الأيونات عن اختراق النواة الدهنية منخفضة العزل.",
+          "en": "Immense desolvation penalty prevents hydrated ions from partitioning into the low-dielectric lipid core."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 6
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 11
         }
       ]
     },
@@ -297,48 +660,97 @@
       "stage": "interactive_artifact",
       "stageIndex": 5,
       "title": {
-        "tr": "İnteraktif Simülatör: İyonizasyon Sürgüsü",
-        "ar": "محاكي تفاعلي: زالق توازن التأين",
-        "en": "Interactive Simulator: Ionization Slider"
+        "tr": "İnteraktif Simülatör: İyonizasyon Dengesi",
+        "ar": "محاكاة تفاعلية: توازن التأين",
+        "en": "Interactive Simulator: Ionization Equilibrium"
       },
       "prompt": {
-        "tr": "pH sürgüsünü 1.0 den 8.0 e kaydırarak aspirinin ve propranololün iyonize oranlarındaki dramatik değişimi ve zar geçirgenliğini test edin.",
-        "ar": "حرك زالق pH من 1.0 إلى 8.0 لاختبار التغير الجذري في تأين ونفوذية aspirin و propranolol عبر الغشاء.",
-        "en": "Sweep the pH slider between 1.0 and 8.0 to observe the dramatic shift in aspirin and propranolol ionization and membrane flux."
+        "tr": "Simülatörde aspirin (pKa 3.5) için pH sürgüsünü 1.5'ten 7.4'e getirin. Henderson-Hasselbalch dengesi değiştikçe zardan geçen parçacık akısını ve logD değerini izleyin.",
+        "ar": "حرك شريط pH في المحاكي من 1.5 إلى 7.4 لدواء <span dir='ltr'>aspirin</span> (pKa 3.5). راقب تغير توازن Henderson-Hasselbalch وتدفق الجزيئات عبر الغشاء.",
+        "en": "In the simulator, slide pH from 1.5 to 7.4 for aspirin (pKa 3.5). Observe how the Henderson-Hasselbalch equilibrium shifts particle flux across the membrane in real time."
       },
       "predictThenReveal": false,
-      "widgetType": "IonizationEquilibriumSlider",
+      "widgetType": "IonizationChamber",
       "widget": {
-        "type": "IonizationEquilibriumSlider",
+        "type": "IonizationChamber",
         "config": {
-          "molecule": "aspirin",
+          "drugName": "Aspirin (Asetilsalisilik Asit)",
           "pKa": 3.5,
-          "moleculeType": "acid",
-          "initialPh": 7.4
+          "drugType": "weak_acid",
+          "compartmentA": {
+            "name": "Mide Lümeni (Stomach)",
+            "defaultPh": 1.5,
+            "minPh": 1.0,
+            "maxPh": 8.5,
+            "surfaceAreaM2": 1.0
+          },
+          "compartmentB": {
+            "name": "Sistemik Kan (Blood)",
+            "ph": 7.4,
+            "surfaceAreaM2": 32.0
+          },
+          "maxParticleCount": 20,
+          "equationRef": "Helander & Fändriks (2014); Foye Principles of Medicinal Chemistry 8th ed."
         }
       },
-      "config": {},
+      "config": {
+        "drugName": "Aspirin (Asetilsalisilik Asit)",
+        "pKa": 3.5,
+        "drugType": "weak_acid",
+        "compartmentA": {
+          "name": "Mide Lümeni (Stomach)",
+          "defaultPh": 1.5,
+          "minPh": 1.0,
+          "maxPh": 8.5,
+          "surfaceAreaM2": 1.0
+        },
+        "compartmentB": {
+          "name": "Sistemik Kan (Blood)",
+          "ph": 7.4,
+          "surfaceAreaM2": 32.0
+        },
+        "maxParticleCount": 20,
+        "explanation": {
+          "tr": "Midede (pH 1.5) aspirin %99 nötrdür ancak alan 1 m² dir. İnce bağırsakta (pH 6.5) nötr fraksiyon %0.1'dir ancak alan ~32 m² ve mezenterik kan akımı emilimi hızla sürdürür.",
+          "ar": "في المعدة (pH 1.5) يكون الأسبرين 99% متعادلاً ولكن المساحة 1 م². وفي الأمعاء (pH 6.5) يكون 0.1% فقط متعادلاً ولكن المساحة ~32 م² والتروية تسحب الدواء باستمرار.",
+          "en": "In the stomach (pH 1.5), aspirin is 99% un-ionized but area is only 1 m². In the intestine (pH 6.5), the un-ionized fraction is 0.1% but ~32 m² area and sink conditions sustain massive overall uptake."
+        }
+      },
       "technicalTerms": [
         {
-          "term": "Henderson-Hasselbalch dengesi",
-          "arContext": "توازن Henderson-Hasselbalch"
+          "term": "Henderson-Hasselbalch",
+          "arContext": "معادلة Henderson-Hasselbalch"
+        },
+        {
+          "term": "logD",
+          "arContext": "معامل التوزع logD"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "pH sürgüsünü 1.5 ten 3.5 e ve ardından 7.4 e yavaşça çekin.",
+          "ar": "اسحب شريط pH ببطء من 1.5 إلى 3.5 ثم إلى 7.4.",
+          "en": "Gradually drag the pH slider from 1.5 to 3.5, and then up to 7.4."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "pH tam olarak 3.5 e geldiğinde nötr ve iyonize yüzdeleri ne oldu?",
+          "ar": "عندما يصبح pH مطابقاً تماماً لـ 3.5، ماذا تصبح النسبة بين المتعادل والمتأين؟",
+          "en": "When pH reaches exactly 3.5, what happens to the percentages of neutral and ionized species?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "pH = pKa noktasında tam %50 nötr, %50 iyonize denge kurulur; pH arttıkça iyonizasyon logaritmik uçar.",
+          "ar": "عند pH = pKa يتساوى الطرفان بدقة 50% لكل منهما؛ ومع زيادة pH يتصاعد التأين لوغاريتمياً.",
+          "en": "At pH = pKa, exact 50:50 equilibrium is reached; higher pH drives exponential ionization."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 11
         }
       ]
     },
@@ -347,44 +759,58 @@
       "stage": "guided_discovery",
       "stageIndex": 6,
       "title": {
-        "tr": "Rehberli Keşif: Bazik İlaçların Emilimi",
-        "ar": "استكشاف موجه: امتصاص الأدوية القاعدية",
-        "en": "Guided Discovery: Basic Drug Absorption"
+        "tr": "Rehberli Keşif: 50:50 Kuralı ve Logaritmik Sıçrama",
+        "ar": "استكشاف موجه: قاعدة 50:50 والقفزات اللوغاريتمية",
+        "en": "Guided Discovery: The 50:50 Rule & Logarithmic Shifts"
       },
       "prompt": {
-        "tr": "Simülatörde zayıf baz olan propranololu (pKa = 9.5) seçin. pH 1.5 midede propranolol hangi formdadır ve emilebilir mi?",
-        "ar": "اختر propranolol القاعدي (pKa = 9.5). في المعدة ذات pH 1.5، بأي شكل يتواجد وهل يستطيع العبور؟",
-        "en": "Select weak base propranolol (pKa = 9.5). In the stomach at pH 1.5, what fraction is protonated (BH+) and can it be absorbed?"
+        "tr": "Zayıf bir asidin pKa değerine tam eşit bir pH ortamında iyonize ve nötr molekül oranları ne olur? pH değerini 1 ve 2 birim artırırsak oranlar nasıl değişir?",
+        "ar": "في وسط يساوي فيه pH تماماً قيمة pKa لحمض ضعيف، ما هي نسبة الجزيئات المتأينة والمتعادلة؟ وكيف تتغير إذا رفعنا pH بمقدار وحدة ووحدتين؟",
+        "en": "When ambient pH equals a weak acid's pKa, what is the ratio of ionized to neutral molecules? How does this ratio shift at 1 and 2 units above pKa?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-disc2-1",
+            "id": "opt-6a",
             "text": {
-              "tr": "%99.99 protonlanmış yüklü (BH+) formdadır; mideden emilemez.",
-              "ar": "أكثر من 99.99% بروتوني مشحون (BH+)؛ ولا يعبر الغشاء من المعدة.",
-              "en": "Over 99.99% protonated charged (BH+) form; cannot permeate gastric membranes."
+              "tr": "pH = pKa iken tam %50:%50 dengededir; +1 pH biriminde %90.9 iyonize, +2 pH biriminde %99.0 iyonizedir.",
+              "ar": "عند pH = pKa يتساوى الطرفان بنسبة 50%:50%؛ وعند زيادة وحدة يصبح 90.9% متأيّناً، وعند وحدتين يصبح 99.0% متأيّناً.",
+              "en": "At pH = pKa, species are in exact 50:50 balance; at +1 pH unit it is 90.9% ionized, and at +2 pH units it is 99.0% ionized."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Kesinlikle! Zayıf bazlar asidik midede tamamen protonlanarak iyon tuzağına düşer.",
-              "ar": "بالتأكيد! القواعد الضعيفة تتأين بالكامل في المعدة الحامضية ولا تعبر.",
-              "en": "Correct! In the acidic stomach (pH 1.5), basic amine drugs are protonated into charged cations that cannot cross lipid bilayers."
+              "tr": "Doğru! Henderson-Hasselbalch logaritmik bir fonksiyondur: 1 birim fark 10 kat oran (10/1), 2 birim fark 100 kat oran (100/1) yaratır.",
+              "ar": "صحيح! معادلة Henderson-Hasselbalch دالة لوغاريتمية: فارق وحدة يعطي نسبة 10 أضعاف، وفارق وحدتين يعطي نسبة 100 ضعف.",
+              "en": "Correct! Henderson-Hasselbalch is logarithmic: a 1-unit shift creates a 10:1 ratio (90.9%), while a 2-unit shift creates a 100:1 ratio (99.0%)."
             }
           },
           {
-            "id": "opt-disc2-2",
+            "id": "opt-6b",
             "text": {
-              "tr": "Nötr B formundadır ve mideden çok hızlı emilir.",
-              "ar": "بشكله المتعادل B ويمتص بسرعة فائقة من المعدة.",
-              "en": "In neutral B form and rapidly absorbed through gastric mucosa."
+              "tr": "pH = pKa iken %100 nötrdür; her 1 pH birimi artışı iyonizasyonu doğrusal olarak %10 artırır.",
+              "ar": "عند pH = pKa يكون 100% متعادلاً؛ وكل زيادة بمقدار وحدة ترفع التأين خطياً بنسبة 10%.",
+              "en": "At pH = pKa, it is 100% neutral; each 1-unit pH increase produces a linear 10% gain in ionization."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
-              "tr": "Bazlar asidik ortamda proton alarak pozitif yük kazanırlar.",
-              "ar": "القواعد تكتسب بروتوناً وتصبح مشحونة إيجابياً في الوسط الحامضي.",
-              "en": "Basic drugs exist predominantly in charged cation form in highly acidic environments."
+              "tr": "Yanılgı: İyonizasyon doğrusal (lineer) değil logaritmiktir. pH = pKa da nötr ve iyonize miktarları birbirine eşittir.",
+              "ar": "مغالطة: التأين دالة لوغاريتمية وليست خطية؛ وعند pH = pKa يتساوى المتعادل مع المتأين تماماً.",
+              "en": "Misconception: Ionization is logarithmic, not linear. At pH = pKa, neutral and ionized fractions are exactly equal."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "pH = pKa anında ilaç çöker ve çözünürlük tamamen sıfıra iner.",
+              "ar": "عند نقطة pH = pKa يترسب الدواء وتهبط الذوبانية إلى الصفر تماماً.",
+              "en": "At pH = pKa, the drug precipitates out of solution and solubility drops to zero."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: pH = pKa çökelme noktası değildir; hem nötr hem iyonize formun çözeltide dengede bulunduğu noktadır.",
+              "ar": "مغالطة: نقطة pH = pKa ليست نقطة ترسيب، بل نقطة توازن ذائبة بين الشكلين المتعادل والمتأين.",
+              "en": "Misconception: pH = pKa is not a precipitation threshold; both species remain in solution at dynamic equilibrium."
             }
           }
         ]
@@ -392,44 +818,66 @@
       "config": {
         "options": [
           {
-            "id": "opt-disc2-1",
-            "text": "%99.99 yüklü formdadır; emilemez.",
-            "isCorrect": true
+            "id": "opt-6a",
+            "text": "pH = pKa iken %50:%50; +1 birimde %90.9, +2 birimde %99.0 iyonizedir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Logaritmik denge 10 ve 100 katlık sıçramalar yapar."
           },
           {
-            "id": "opt-disc2-2",
-            "text": "Nötrdür ve emilir.",
-            "isCorrect": false
+            "id": "opt-6b",
+            "text": "pH = pKa iken %100 nötrdür; artış doğrusaldır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Asit-baz dengesi doğrusal değildir."
+          },
+          {
+            "id": "opt-6c",
+            "text": "pH = pKa anında ilaç çöker.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Çökme değil denge noktasıdır."
           }
         ],
-        "revealedOutcome": "Propranolol midede tamamen iyonizedir ve mideden emilmez.",
-        "explanation": "Bazik ilaçlar ince bağırsakta pH yükseldikçe nötr hale geçerek emilirler."
+        "revealedOutcome": {
+          "tr": "Asit-baz dengesinde 1 birimlik pH değişimi iyonize/nötr oranını 10 kat, 2 birimlik değişim ise 100 kat kaydırır.",
+          "ar": "في توازن الحمض والقاعدة، يغير فارق وحدة pH النسبة بعشرة أضعاف، بينما يغيرها فارق وحدتين بمئة ضعف.",
+          "en": "In acid-base equilibrium, a 1-unit pH shift alters the ionization ratio 10-fold, and a 2-unit shift alters it 100-fold."
+        },
+        "explanation": {
+          "tr": "Henderson-Hasselbalch: pH - pKa = log([A-]/[HA]). Fark 0 ise oran 1 dir (%50). Fark +1 ise oran 10 dur (%90.9). Fark +2 ise oran 100 dür (%99.0) (Slayt 2).",
+          "ar": "علاقة Henderson-Hasselbalch: pH - pKa = log([A-]/[HA]). إذا كان الفارق 0 فالنسبة 1 (50%). وإذا كان +1 فالنسبة 10 (90.9%). وإذا كان +2 فالنسبة 100 (99.0%) (شريحة 2).",
+          "en": "Henderson-Hasselbalch: pH - pKa = log([A-]/[HA]). When Δ = 0, ratio = 1 (50%). When Δ = +1, ratio = 10 (90.9%). When Δ = +2, ratio = 100 (99.0%)."
+        }
       },
       "technicalTerms": [
         {
-          "term": "zayıf baz",
-          "arContext": "قاعدة ضعيفة"
+          "term": "50:50 iyonizasyon kuralı",
+          "arContext": "قاعدة التأين 50:50"
         },
         {
-          "term": "protonlanma",
-          "arContext": "البرتنة"
+          "term": "Henderson-Hasselbalch",
+          "arContext": "معادلة Henderson-Hasselbalch"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Henderson-Hasselbalch denkleminde log([A-]/[HA]) ifadesine odaklanın.",
+          "ar": "ركز على تعبير log([A-]/[HA]) في معادلة Henderson-Hasselbalch.",
+          "en": "Focus on the term log([A-]/[HA]) in the Henderson-Hasselbalch equation."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "pH = pKa olduğunda log(oran) = 0 olur; 10^0 kaça eşittir?",
+          "ar": "عندما يكون pH = pKa يصبح log(النسبة) = 0؛ ما قيمة 10^0؟",
+          "en": "When pH = pKa, log(ratio) = 0; what does 10^0 equal?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "10^0 = 1 olduğundan [A-] = [HA] yani %50:%50 dir; her bir pH birimi 10 katlık sıçrama yapar.",
+          "ar": "بما أن 10^0 = 1، فإن [A-] = [HA] أي 50%:50%؛ وكل وحدة pH إضافية تقفز بالنسب 10 أضعاف.",
+          "en": "Since 10^0 = 1, [A-] = [HA] (50:50); each additional pH unit produces a 10-fold logarithmic leap."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
         }
       ]
     },
@@ -438,40 +886,125 @@
       "stage": "formal_explanation",
       "stageIndex": 7,
       "title": {
-        "tr": "Formal İlkeler: Henderson-Hasselbalch Denklemleri",
-        "ar": "المبادئ الرسمية: معادلات Henderson-Hasselbalch",
-        "en": "Formal Principles: Henderson-Hasselbalch Equations"
+        "tr": "Matematiksel Model: Henderson-Hasselbalch Denklemi",
+        "ar": "النموذج الرياضي: معادلة Henderson-Hasselbalch",
+        "en": "Mathematical Model: Henderson-Hasselbalch Equation"
       },
       "prompt": {
-        "tr": "Zayıf asitler için pH = pKa + log([A-]/[HA]), zayıf bazlar için pH = pKa + log([B]/[BH+]) geçerlidir. İyonlaşma dielektrik sabitine de bağlıdır.",
-        "ar": "للأحماض: pH = pKa + log([A-]/[HA])، وللقواعد: pH = pKa + log([B]/[BH+]). يعتمد التأين أيضاً على ثابت العزل الكهربائي.",
-        "en": "For weak acids: pH = pKa + log([A-]/[HA]). For weak bases: pH = pKa + log([B]/[BH+]). Ionization is also governed by medium dielectric constant."
+        "tr": "Fenobarbital (pKa 7.4) kanda (pH 7.4) tam %50 nötrdür. İdrar asitleşip pH 5.4 olduğunda Henderson-Hasselbalch ile tübüldeki nötr HA oranını hesaplayın: pH - pKa = log([A-]/[HA]).",
+        "ar": "يتواجد <span dir='ltr'>fenobarbital</span> (pKa 7.4) في الدم (pH 7.4) بنسبة 50% متعادلاً. عند تحميض البول إلى pH 5.4، احسب نسبة HA المتعادلة عبر: pH - pKa = log([A-]/[HA]).",
+        "en": "Phenobarbital (pKa 7.4) is 50% neutral in plasma (pH 7.4). When tubular urine acidifies to pH 5.4, calculate the neutral HA fraction using: pH - pKa = log([A-]/[HA])."
       },
-      "predictThenReveal": false,
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": {
+              "tr": "pH - pKa = -2.0; [A-]/[HA] = 1/100 dür. Fenobarbital %99 nötr HA olur ve tübülden kana geri emilir.",
+              "ar": "pH - pKa = -2.0؛ نسبة [A-]/[HA] = 1/100. يصبح الفينوباربيتال 99% متعادلاً ويعاد امتصاصه إلى الدم.",
+              "en": "pH - pKa = -2.0; [A-]/[HA] = 1/100. Phenobarbital is 99% neutral HA, driving passive reabsorption back into blood."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Kusursuz! pH, pKa'nın 2 birim altına indiğinde zayıf asit protonlanır (%99 nötrleşir). Nötr molekül tübül membranından hızla geri emilerek zehirlenmeyi ağırlaştırır.",
+              "ar": "ممتاز! بهبوط pH بمقدار وحدتين دون pKa يلتقط الحمض البروتونات (99% متعادل)، فينفذ عبر النبيبات ليعود لمجرى الدم مفاقماً التسمم.",
+              "en": "Flawless! At 2 units below pKa, weak acids are 99% protonated/neutral, causing massive tubular reabsorption and worsening toxicity."
+            }
+          },
+          {
+            "id": "opt-7b",
+            "text": {
+              "tr": "pH - pKa = -2.0; [A-]/[HA] = 100/1 dir. Fenobarbital %99 iyonizedir ve idrarla hızla atılır.",
+              "ar": "pH - pKa = -2.0؛ نسبة [A-]/[HA] = 100/1. يصبح الدواء 99% متأيّناً ويُطرح سريعاً مع البول.",
+              "en": "pH - pKa = -2.0; [A-]/[HA] = 100/1. Phenobarbital is 99% ionized, causing rapid renal excretion."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Negatif logaritmik değer (10^-2 = 0.01) iyonize formun azaldığını gösterir, arttığını değil.",
+              "ar": "مغالطة: القيمة اللوغاريتمية السالبة (10^-2 = 0.01) تعني انخفاض الشوارد المتأينة وليس زيادتها.",
+              "en": "Misconception: A negative log difference (10^-2 = 0.01) indicates dominant neutral acid, not dominant ionized conjugate base."
+            }
+          },
+          {
+            "id": "opt-7c",
+            "text": {
+              "tr": "Asidik idrarda pKa değeri değişir ve fenobarbital her iki formda eşit dağılır.",
+              "ar": "تتغير قيمة pKa في البول الحامضي ويتوزع الدواء بالتساوي بين الشكلين.",
+              "en": "In acidic urine, the drug's fundamental pKa shifts, maintaining an even 50:50 distribution."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: pKa molekülün içsel termodinamik sabitidir; ortamın pH sı değişse de pKa değişmez.",
+              "ar": "مغالطة: pKa ثابت ثرموديناميكي متأصل في الجزيء ولا يتغير بتغير pH الوسط الخارجي.",
+              "en": "Misconception: pKa is an intrinsic molecular thermodynamic constant and does not change with ambient pH."
+            }
+          }
+        ]
+      },
       "config": {
-        "formula": "pH = pK_a + \\log\\frac{[\\text{Baz}]}{[\\text{Asit}]}"
+        "options": [
+          {
+            "id": "opt-7a",
+            "text": "pH - pKa = -2.0; fenobarbital %99 nötr HA olur ve kana geri emilir.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Asit idrar asit ilacı nötrleştirip geri emer."
+          },
+          {
+            "id": "opt-7b",
+            "text": "Fenobarbital %99 iyonizedir ve hızla atılır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Asit ortam asidin iyonlaşmasını baskılar."
+          },
+          {
+            "id": "opt-7c",
+            "text": "pKa değeri değişir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: pKa sabiti değişmez."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "İdrar asitleştiğinde fenobarbital nötr HA formuna geçerek (%99) böbrek tübüllerinden kana geri emilir; atılım durma noktasına gelir.",
+          "ar": "عند تحميض البول يتحول الفينوباربيتال إلى شكله المتعادل HA بنسبة 99% ليعاد امتصاصه كلوياً ويتوقف إطراحه.",
+          "en": "Acidifying urine forces phenobarbital into its 99% neutral HA state, driving passive tubular reabsorption and halting elimination."
+        },
+        "explanation": {
+          "tr": "Zayıf asitler için % İyonize = 100 / (1 + 10^(pKa - pH)) dir. pKa - pH = 7.4 - 5.4 = 2.0; % İyonize = 100 / (1 + 100) = %0.99 dur (Slayt 2).",
+          "ar": "للأحماض الضعيفة % التأين = 100 / (1 + 10^(pKa - pH)). الفارق 2.0؛ % التأين = 100 / 101 = 0.99% (شريحة 2).",
+          "en": "For weak acids, % Ionized = 100 / (1 + 10^(pKa - pH)). Here, pKa - pH = 2.0; % Ionized = 100 / 101 = 0.99% (99% neutral)."
+        }
       },
       "technicalTerms": [
         {
-          "term": "dielektrik sabiti",
-          "arContext": "ثابت العزل الكهربائي"
+          "term": "tübüler geri emilim",
+          "arContext": "إعادة الامتصاص النبيبي"
+        },
+        {
+          "term": "asit dissosiyasyon sabiti",
+          "arContext": "ثابت التفكك الحامضي pKa"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "pH (5.4) değerinden pKa (7.4) değerini çıkarın: 5.4 - 7.4 = ?",
+          "ar": "اطرح قيمة pKa (7.4) من pH (5.4): 5.4 - 7.4 = ؟",
+          "en": "Subtract pKa (7.4) from pH (5.4): 5.4 - 7.4 = ?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Fark -2 dir; 10^(-2) = 1/100 dür. Bu oran [A-] / [HA] dır.",
+          "ar": "الناتج هو -2؛ و 10^(-2) = 1/100، وهذه تمثل نسبة [A-] / [HA].",
+          "en": "The difference is -2; 10^(-2) = 1/100, which represents the ratio of [A-] to [HA]."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "1 iyonize moleküle karşılık 100 nötr molekül vardır; yani ilaç %99 nötrleşmiştir ve kana geri döner.",
+          "ar": "يقابل كل جزيء متأين 100 جزيء متعادل؛ أي أن الدواء متعادل بنسبة 99% وسيعود للدم.",
+          "en": "There are 100 neutral molecules for every 1 ion; the drug is 99% un-ionized and reabsorbed into blood."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
         }
       ]
     },
@@ -480,44 +1013,58 @@
       "stage": "concept_check",
       "stageIndex": 8,
       "title": {
-        "tr": "Kavram Denetimi: İdrar Alkalileştirme",
-        "ar": "فحص المفهوم: قلونة البول السريرية",
-        "en": "Concept Check: Urinary Alkalinization"
+        "tr": "Kavram Kontrolü: Zayıf Bazların İyonlaşma Tuzağı",
+        "ar": "فحص المفهوم: فخ تأين القواعد الضعيفة",
+        "en": "Concept Check: The Weak Base Ionization Trap"
       },
       "prompt": {
-        "tr": "Fenobarbital (zayıf asit, pKa = 7.4) zehirlenmesinde sodyum bikarbonat verilerek idrar pH sı 8.0 e çıkarılır. Atılım nasıl değişir?",
-        "ar": "في التسمم بـ Fenobarbital (حمض ضعيف، pKa = 7.4)، يعطى بيكربونات الصوديوم لرفع pH البول إلى 8.0. كيف يتأثر الإطراح؟",
-        "en": "In phenobarbital toxicity (weak acid, pKa = 7.4), IV sodium bicarbonate raises urine pH to 8.0. How does renal clearance change?"
+        "tr": "Zayıf bir baz olan diazepam (pKa 3.3), pH 1.3 olan mide sıvısında hangi formda baskındır ve zardan geçebilir mi?",
+        "ar": "دواء <span dir='ltr'>diazepam</span> قاعدة ضعيفة (pKa 3.3)، في سائل المعدة ذي pH 1.3 بأي شكل يتواجد غالباً وهل يعبر الغشاء؟",
+        "en": "For weak base diazepam (pKa 3.3) in gastric fluid at pH 1.3, which species predominates, and can it passively cross mucosal membranes?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-chk2-1",
+            "id": "opt-8a",
             "text": {
-              "tr": "İdrarda iyonize fenobarbital artar, tübülden geri emilemez ve atılım kat kat hızlanır.",
-              "ar": "يزداد تأين الدواء في البول، فيتعذر ارتشافه كلوياً ويتسارع إطراحه أضعافاً.",
-              "en": "50% ionized, 50% unionized."
+              "tr": "pH < pKa olduğu için %99 oranında protonlanmış katyonik (BH+) formdadır; zardan pasif olarak geçemez.",
+              "ar": "بما أن pH < pKa يتواجد بنسبة 99% بشكله الكاتيوني المشحون (BH+) ويعجز عن عبور الغشاء.",
+              "en": "Since pH < pKa, it is 99% protonated in the cationic (BH+) form and cannot passively cross membranes."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Kusursuz! Alkalileştirme ilacı tübüler lümende hapseder (renal iyon tuzağı).",
-              "ar": "ممتاز! القلونة تحبس الدواء في لمعة الأنابيب الكلوية (حصار أيوني).",
-              "en": "Correct! When pH equals pKa, [A-] equals [HA] exactly according to Henderson-Hasselbalch."
+              "tr": "Tebrikler! Bazlar asit ortamda proton alarak iyonlaşır (B + H+ <=> BH+). pH, pKa nın 2 birim altında olduğu için ilaç %99 yüklüdür.",
+              "ar": "تهانينا! تلتقط القواعد البروتونات في الوسط الحامضي لتتأين (B + H+ <=> BH+). وبفارق وحدتين يتأين 99% من الدواء.",
+              "en": "Congratulations! Bases accept protons in acidic media (B + H+ <=> BH+). At 2 pH units below pKa, it is 99% cationic."
             }
           },
           {
-            "id": "opt-chk2-2",
+            "id": "opt-8b",
             "text": {
-              "tr": "Nötrleşen fenobarbital kana hızla geri döner.",
-              "ar": "يتعادل الدواء ويعود إلى الدم بسرعة.",
-              "en": "100% ionized."
+              "tr": "Baz olduğu için asidik ortamda nötr (B) kalır; mideden hızla kana difüze olur.",
+              "ar": "لكونه قاعدة يبقى متعادلاً (B) في الوسط الحامضي ويمتص سريعاً عبر المعدة.",
+              "en": "Because it is a base, it remains neutral (B) in acid and rapidly diffuses across the stomach into blood."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
-              "tr": "pH pKa dan büyük olduğunda asitler iyonlaşır, nötrleşmez.",
-              "ar": "عندما يتجاوز pH قيمة pKa يتأين الحمض ولا يتعادل.",
-              "en": "Full ionization requires pH to be at least 2 units away from pKa."
+              "tr": "Yanılgı: En yaygın öğrenci hatası! Bazlar asit ortamda nötr kalmaz; ortamdaki bol protonları bağlayarak pozitif yüklenirler.",
+              "ar": "مغالطة: الخطأ الطلابي الأكثر شيوعاً! لا تبقى القواعد متعادلة في الحمض، بل تلتقط البروتونات وتصبح مشحونة إيجابياً.",
+              "en": "Misconception: A classic trap! Bases do not stay neutral in acid; high proton concentrations force them into the charged BH+ state."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "pKa değeri 7 den küçük olduğu için diazepam aslında bir asittir ve anyon oluşturur.",
+              "ar": "بما أن قيمة pKa أقل من 7، فإن الديازيبام حمض في الحقيقة ويشكل شحنة سالبة.",
+              "en": "Because its pKa is below 7, diazepam actually behaves as an acid and dissociates into an anion."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: pKa değerinin 7 den küçük olması bileşiği asit yapmaz; zayıf bazların konjuge asit pKa sı da düşük olabilir.",
+              "ar": "مغالطة: كون pKa أقل من 7 لا يعني أنه حمض؛ فالقواعد شديدة الضعف تمتلك pKa منخفضاً لحمضها المقترن.",
+              "en": "Misconception: A pKa below 7 does not make a compound an acid; very weak bases have low conjugate acid pKa values."
             }
           }
         ]
@@ -525,40 +1072,66 @@
       "config": {
         "options": [
           {
-            "id": "opt-chk2-1",
-            "text": "Atılım hızlanır.",
-            "isCorrect": true
+            "id": "opt-8a",
+            "text": "pH < pKa olduğu için %99 protonlanmış katyondur (BH+) ve zarı geçemez.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Bazlar asitte protonlanıp yüklenir."
           },
           {
-            "id": "opt-chk2-2",
-            "text": "Kana geri döner.",
-            "isCorrect": false
+            "id": "opt-8b",
+            "text": "Baz olduğu için asitte nötr kalır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bazlar asitte iyonlaşır."
+          },
+          {
+            "id": "opt-8c",
+            "text": "pKa < 7 olduğu için asittir.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: pKa düşüklüğü bazlığı dışlamaz."
           }
         ],
-        "revealedOutcome": "Fenobarbital renal tübülde hapsedilerek hızla idrarla atılır.",
-        "explanation": "pH > pKa olduğundan asit molekülleri proton kaybederek A- haline geçer ve membrandan kana dönemez."
+        "revealedOutcome": {
+          "tr": "Zayıf bazlar asidik ortamda protonlanarak (BH+) iyonlaşır. Midede diazepam %99 katyonik formdadır ve emilemez.",
+          "ar": "تتأين القواعد الضعيفة في الوسط الحامضي باكتساب بروتون (BH+)؛ وفي المعدة يكون الديازيبام 99% كاتيوني الشحنة وغير قابل للامتصاص.",
+          "en": "Weak bases accept protons to become cationic (BH+) in acidic environments. In the stomach, diazepam is 99% charged and cannot permeate."
+        },
+        "explanation": {
+          "tr": "Zayıf bazlar için % İyonize = 100 / (1 + 10^(pH - pKa)) dir. pH - pKa = 1.3 - 3.3 = -2.0; % İyonize = 100 / (1 + 0.01) = %99.0 dur (Slayt 2).",
+          "ar": "للقواعد الضعيفة % التأين = 100 / (1 + 10^(pH - pKa)). الفارق -2.0؛ % التأين = 100 / (1 + 0.01) = 99.0% (شريحة 2).",
+          "en": "For weak bases, % Ionized = 100 / (1 + 10^(pH - pKa)). Here, pH - pKa = -2.0; % Ionized = 100 / 1.01 = 99.0%."
+        }
       },
       "technicalTerms": [
         {
-          "term": "renal tübüler atılım",
-          "arContext": "الإطراح النبيبي الكلوي"
+          "term": "zayıf baz iyonizasyonu",
+          "arContext": "تأين القاعدة الضعيفة"
+        },
+        {
+          "term": "katyonik form",
+          "arContext": "الشكل الكاتيوني المشحون"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Diazepam bir zayıf bazdır: B + H+ <=> BH+ dengesini yazın.",
+          "ar": "الديازيبام قاعدة ضعيفة: اكتب معادلة التوازن B + H+ <=> BH+.",
+          "en": "Diazepam is a weak base: write the equilibrium B + H+ <=> BH+."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Asidik ortamda (pH 1.3) serbest H+ konsantrasyonu çok yüksektir; baz bu protonları alır mı, verir mi?",
+          "ar": "في الوسط الحامضي (pH 1.3) يتوفر فائض هائل من البروتونات H+؛ هل تلتقطها القاعدة أم تمنحها؟",
+          "en": "In acidic media (pH 1.3), protons (H+) are abundant; does a base accept or donate protons?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Baz proton alarak pozitif yüklü BH+ formuna geçer; pH < pKa durumunda bazlar iyonizedir.",
+          "ar": "تلتقط القاعدة البروتون لتتحول إلى كتيون BH+ موجب الشحنة؛ وعندما يكون pH < pKa تتأين القواعد.",
+          "en": "Bases accept protons to become positively charged BH+ cations; at pH < pKa, weak bases are ionized."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
         }
       ]
     },
@@ -567,44 +1140,58 @@
       "stage": "application",
       "stageIndex": 9,
       "title": {
-        "tr": "Klinik Karar: Lokal Anestezik Enjeksiyonu",
-        "ar": "قرار سريري: حقن المخدر الموضعي",
-        "en": "Clinical Decision: Local Anesthetic Injection"
+        "tr": "Klinik Uygulama: Zehirlenmede İyon Tuzağı",
+        "ar": "تطبيق سريري: الحصار الأيوني في التسمم",
+        "en": "Clinical Application: Ion Trapping in Overdose"
       },
       "prompt": {
-        "tr": "İltihaplı ve asidik (pH 5.0) bir apse dokusuna zayıf baz olan lidokain (pKa = 7.9) enjekte edildiğinde anestezi neden başarısız olur?",
-        "ar": "عند حقن Lidocaine القاعدي (pKa = 7.9) في نسيج خراج ملتهب حامضي (pH 5.0)، لماذا يفشل التخدير الموضعي؟",
-        "en": "Why does lidocaine injection (weak base, pKa = 7.9) fail to achieve anesthesia when injected into acidic, inflamed abscess tissue (pH 5.0)?"
+        "tr": "Akut aspirin zehirlenmesinde hastaya IV sodyum bikarbonat verilerek idrar pH'sı 5.5'ten 7.5'e yükseltilir. Bu müdahale aspirinin renal tübüler geri emilimini nasıl engeller?",
+        "ar": "في تسمم <span dir='ltr'>aspirin</span> الحاد، يُعطى المريض بيكربونات الصوديوم وريدياً لرفع pH البول من 5.5 إلى 7.5. كيف تمنع هذه القلونة عودة امتصاص الأسبرين كلوياً؟",
+        "en": "In acute aspirin toxicity, IV sodium bicarbonate raises urine pH from 5.5 to 7.5. How does this alkalinization prevent renal tubular reabsorption of salicylate?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-app2-1",
+            "id": "opt-9a",
             "text": {
-              "tr": "Lidokain asit dokuda tamamen iyonlaşarak sinir kılıfı lipid zarını geçemez.",
-              "ar": "يتأين Lidocaine بالكامل في الوسط الحامضي فيعجز عن عبور غمد العصب الدهني.",
-              "en": "Alkalinize urine with sodium bicarbonate to trap ionized salicylate (A-)."
+              "tr": "İdrarda aspirin %99.99 oranında iyonize (A-) hale gelir; yüklü anyon lipid tübül hücresinden kana dönemeyip idrarla atılır (iyon tuzağı).",
+              "ar": "يصبح الأسبرين 99.99% متأيّناً (A-) في البول؛ ويعجز الأنيون المشحون عن اختراق جدار النبيبات ليعود للدم فيُطرح مع البول (حصار أيوني).",
+              "en": "Salicylate becomes 99.99% ionized (A-) in alkaline urine; the charged anion cannot cross tubular membranes back into blood and is trapped."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Doğru! Sinir hücresine giremeyen lidokain sodyum kanallarını içeriden bloke edemez.",
-              "ar": "صحيح! لتعذر دخوله الخلية العصبية يعجز عن حظر قنوات الصوديوم من الداخل.",
-              "en": "Correct! Ion trapping forces salicylic acid into its charged water-soluble form, preventing renal tubular reabsorption."
+              "tr": "Harika klinik akıl yürütme! İdrar pH sı (7.5), aspirinin pKa sından (3.5) tam 4 birim yüksektir. İyonizasyon oranı 10.000:1 e fırlar ve tübüler geri emilim sıfırlanır.",
+              "ar": "استنتاج سريري رائع! يرتفع pH البول (7.5) بأربع وحدات كاملة فوق pKa الأسبرين (3.5)؛ فتقفز نسبة التأين إلى 10,000:1 ويتوقف الامتصاص تماماً.",
+              "en": "Superb clinical deduction! Urine pH (7.5) is 4 units above pKa (3.5), driving ionization to 10,000:1 and abolishing tubular reabsorption."
             }
           },
           {
-            "id": "opt-app2-2",
+            "id": "opt-9b",
             "text": {
-              "tr": "İltihap lidokaini parçalar.",
-              "ar": "يقوم الالتهاب بتفكيك جزيء الليدوكائين كيميائياً.",
-              "en": "Acidify urine with ammonium chloride."
+              "tr": "Bikarbonat aspirine doğrudan kovalent bağlanarak böbrek glomerül filtresinde çökeltir.",
+              "ar": "ترتبط البيكربونات بالأسبرين تساهمياً مما يؤدي لترسيبه في مرشح الكبيبات الكلوية.",
+              "en": "Bicarbonate binds covalently to aspirin, causing it to precipitate in renal glomerular filters."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
-              "tr": "Sorun kimyasal yıkım değil, iyonizasyon kaynaklı membran geçirgenlik kaybıdır.",
-              "ar": "الخلل ليس تفككاً كيميائياً بل فقدان النفوذية بسبب التأين.",
-              "en": "Acidifying urine would convert salicylate back to neutral HA, causing reabsorption into blood."
+              "tr": "Yanılgı: Bikarbonat ilaca kovalent bağlanmaz; ortamın proton derişimini düşürerek asidin iyonlaşmasını sağlar.",
+              "ar": "مغالطة: لا تشكل البيكربونات روابط تساهمية مع الدواء، بل ترفع قلوية الوسط مما يجبر الحمض على منح بروتونه والتأين.",
+              "en": "Misconception: Bicarbonate does not form covalent adducts; it acts strictly by neutralizing protons to drive conjugate base ionization."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "İdrar bazikleşince böbrek kan damarları büzülür ve süzülme durur.",
+              "ar": "عند قلونة البول تنقبض أوعية الكلى الدموية ويتوقف الترشيح الكبيبي.",
+              "en": "Alkalinizing urine causes severe renal vasoconstriction, shutting down glomerular filtration entirely."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Bikarbonat böbrek filtrasyonunu durdurmaz; tam tersine tübüler lümendeki atılımı katbekat artırır.",
+              "ar": "مغالطة: لا توقف البيكربونات وظيفة الكلى، بل تزيد التصفية الكلوية للدواء في اللمعة البولية أضعافاً مضاعفة.",
+              "en": "Misconception: Alkalinization does not impair renal hemodynamics; it dramatically accelerates tubular clearance."
             }
           }
         ]
@@ -612,40 +1199,70 @@
       "config": {
         "options": [
           {
-            "id": "opt-app2-1",
-            "text": "İyonlaşarak sinir zarını geçemez.",
-            "isCorrect": true
+            "id": "opt-9a",
+            "text": "Aspirin %99.99 iyonize (A-) olur; tübülden kana dönemeyip atılır (iyon tuzağı).",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Bazik idrar asit ilacı iyonize edip lümende hapseder."
           },
           {
-            "id": "opt-app2-2",
-            "text": "İltihap ilacı yıkar.",
-            "isCorrect": false
+            "id": "opt-9b",
+            "text": "Bikarbonat aspirine kovalent bağlanıp çöktürür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kovalent bağlanma olmaz."
+          },
+          {
+            "id": "opt-9c",
+            "text": "Damarlar büzülür ve süzülme durur.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Filtrasyon durmaz, atılım artar."
           }
         ],
-        "revealedOutcome": "Lidokain asidik dokuda iyonize kalarak sinir hücresi içine difüze olamaz.",
-        "explanation": "pH 5.0 ve pKa 7.9 farkı ilacın %99.9 unu yüklü formda tutar ve akson membranından geçişi önler."
+        "revealedOutcome": {
+          "tr": "Renal iyon tuzağı: İdrar pH 7.5 yapıldığında aspirin 10.000 kat iyonize forma geçer ve tübül hücresi membranından kana kaçamaz.",
+          "ar": "الحصار الأيوني الكلوي: عند رفع pH البول إلى 7.5 يتأين الأسبرين بنسبة 10,000 ضعف ويعجز عن النفاذ عبر جدار النبيبات ليعود للدم.",
+          "en": "Renal ion trapping: At urine pH 7.5, aspirin is ionized 10,000-fold, completely barring passive diffusion across tubular membranes back into blood."
+        },
+        "explanation": {
+          "tr": "Aspirin (pKa 3.5): pH 7.5 te pH - pKa = 4.0 dir. İyonize/nötr oranı 10^4 = 10.000 dir. Salisilat lümende hapsedilir (Slayt 2, 9).",
+          "ar": "الأسبرين (pKa 3.5): عند pH 7.5 يكون الفارق 4.0؛ نسبة المتأين إلى المتعادل 10^4 = 10,000؛ فيُحبس الساليسيلات في اللمعة ويُطرح (شريحة 2، 9).",
+          "en": "For aspirin (pKa 3.5): at pH 7.5, Δ = 4.0. The ionized/neutral ratio is 10^4 = 10,000:1, trapping salicylate in the tubular lumen."
+        }
       },
       "technicalTerms": [
         {
-          "term": "lokal anestezik",
-          "arContext": "مخدر موضعي"
+          "term": "iyon tuzağı",
+          "arContext": "الحصار الأيوني"
+        },
+        {
+          "term": "alkalinizasyon",
+          "arContext": "القلونة البولية"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Aspirinin pKa sı 3.5 tir; idrar pH sı 7.5 yapıldığında aradaki fark kaçtır?",
+          "ar": "تبلغ قيمة pKa للأسبرين 3.5؛ عندما يصبح pH البول 7.5 كم يبلغ الفارق بينهما؟",
+          "en": "Aspirin pKa is 3.5; when urine pH is raised to 7.5, what is the difference (pH - pKa)?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Fark 4 birimdir; 10^4 = 10.000 kat iyonize A- fazlalığı oluşur.",
+          "ar": "الفارق هو 4 وحدات؛ مما يولد فائضاً بمقدار 10^4 = 10,000 ضعف لصالح الأيون A⁻.",
+          "en": "The difference is 4 units; 10^4 creates a 10,000-fold excess of charged A- anion."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Yüklü A- tübül epitelinden geri emilemez ve idrara hapsedilerek hızla vücuttan atılır.",
+          "ar": "يعجز الأيون A⁻ عن العبور السلبي فيحاصَر في البول ويُطرح سريعاً من الجسم.",
+          "en": "Charged A- cannot cross lipophilic tubular membranes, becoming trapped in urine and excreted."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 9
         }
       ]
     },
@@ -654,40 +1271,133 @@
       "stage": "retrieval",
       "stageIndex": 10,
       "title": {
-        "tr": "Geri Çağırma: Doygunluk ve Termodinamik Aktivite",
-        "ar": "استرجاع معرفي: التشبع والنشاط الديناميكي",
-        "en": "Retrieval: Saturation & Thermodynamic Activity"
+        "tr": "Geri Çağırma: Apsede Anestezi Neden İflas Eder?",
+        "ar": "استرجاع: لماذا يفشل التخدير في الخراج الملتهب؟",
+        "en": "Retrieval: Why Does Anesthesia Fail in an Abscess?"
       },
       "prompt": {
-        "tr": "Ders 1 de öğrendiğimiz gibi, yapısal olarak özgül olmayan bir ilacın kanda zarlara kaçmasını sağlayan termodinamik büyüklük nedir?",
-        "ar": "كما تعلمنا في الدرس 1، ما هو المقدار الديناميكي الحراري الذي يدفع الدواء غير النوعي للهروب من الدم إلى الأغشية؟",
-        "en": "As learned in Lesson 1, what thermodynamic property drives non-specific drug molecules from blood into cellular lipid bilayers?"
+        "tr": "Zayıf baz olan lidokain (pKa 7.9) iltihaplı ve asidik (pH 5.9) apse dokusuna enjekte edildiğinde lokal anestezi neden tutmaz? Ağrı iletimi neden durdurulamaz?",
+        "ar": "عند حقن <span dir='ltr'>lidokain</span> القاعدي (pKa 7.9) في خراج ملتهب وحامضي (pH 5.9)، لماذا يفشل التخدير الموضعي وتستمر إشارات الألم دون توقف؟",
+        "en": "When weak base lidocaine (pKa 7.9) is injected into acidic abscess tissue (pH 5.9), local anesthesia fails completely. Why cannot nerve conduction be blocked?"
       },
-      "predictThenReveal": false,
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "pH, pKa'nın 2 birim altındadır; lidokain %99 katyonik (BH+) olur, hidrofobik sinir kılıfını aşıp akson içine girip sodyum kanalını bloke edemez.",
+              "ar": "بما أن pH أقل بوحدتين من pKa يتأين الليدوكائين بنسبة 99% ككاتيون (BH+)، فيعجز عن عبور غمد العصب الدهني لحظر قنوات الصوديوم.",
+              "en": "pH is 2 units below pKa; lidocaine is 99% cationic (BH+), preventing it from penetrating the axonal nerve sheath to block sodium channels from within."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Mükemmel! Lokal anestezikler sodyum kanalını aksonun iç yüzünden bloke eder. Aksonun içine girebilmek için nötr (B) olmalıdırlar; asidik apse ilacı dışarıda iyon tuzağına düşürür.",
+              "ar": "إجابة متقنة! تحظر المخدرات الموضعية قنوات الصوديوم من الوجه الداخلي للخلية العصبية؛ والوسط الحامضي للخراج يحبسها في الخارج كشوارد.",
+              "en": "Superb! Local anesthetics block sodium channels from the intracellular axoplasmic face. In an acidic abscess, cationic lidocaine cannot penetrate the nerve."
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "İltihap dokusundaki bakteriler lidokain molekülünü enzimleriyle parçalayarak besin olarak tüketir.",
+              "ar": "تفرز بكتيريا الخراج إنزيمات تفكك جزيء الليدوكائين وتتغذى عليه فوراً.",
+              "en": "Abscess bacteria secrete destructive enzymes that rapidly digest lidocaine molecules as nutrients."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Anestezi başarısızlığı bakteriyel yıkımdan değil, doku asidozunun ilacı zardan geçemeyen yüklü BH+ formuna kilitlemesinden kaynaklanır.",
+              "ar": "مغالطة: فشل التخدير لا يعود للتفكك البكتيري بل إلى حموضة النسيج التي تقفل الدواء في الشكل المشحون العاجز عن النفاذ.",
+              "en": "Misconception: Anesthetic failure is caused by biophysical protonation, not bacterial enzymatic degradation."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Asidik ortam sodyum kanallarını kalıcı olarak tahrip ettiği için lidokain bağlanacak reseptör bulamaz.",
+              "ar": "يقوم الوسط الحامضي بتدمير قنوات الصوديوم فلا يجد الليدوكائين مستقبلاً ليرتبط به.",
+              "en": "The acidic abscess environment permanently destroys voltage-gated sodium channels, leaving no binding targets."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Sodyum kanalları sapasağlamdır ve aksiyon potansiyeli üretmeye devam eder; sorun ilacın kanala ulaşamamasıdır.",
+              "ar": "مغالطة: قنوات الصوديوم سليمة وتواصل توليد كمونات العمل؛ العائق يكمن في عجز الدواء عن الوصول لموقع الارتباط.",
+              "en": "Misconception: Sodium channels remain structurally intact and continue firing; lidocaine simply cannot reach its intracellular binding site."
+            }
+          }
+        ]
+      },
       "config": {
-        "targetConcept": "termodinamik aktivite"
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": "Lidokain %99 katyonik (BH+) olur, hidrofobik sinir kılıfını aşıp akson içine giremez.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Akson zarı yüklü lidokaine geçit vermez."
+          },
+          {
+            "id": "opt-10b",
+            "text": "Bakteriler lidokaini parçalar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Sorun bakteriyel yıkım değildir."
+          },
+          {
+            "id": "opt-10c",
+            "text": "Asit sodyum kanallarını tahrip eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Kanallar aktiftir, ilaç hedefe ulaşamaz."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Lokal anestezi paradoksu: Asidik apsede (pH 5.9) lidokain (pKa 7.9) %99 protonlanır; yüklü molekül akson lipid zarını geçip sodyum kanalını içeriden tıkayamaz.",
+          "ar": "مفارقة التخدير الموضعي: في الخراج الحامضي (pH 5.9) يتأين الليدوكائين (pKa 7.9) بنسبة 99% ككاتيون عاجز عن اختراق غمد العصب.",
+          "en": "Local anesthetic paradox: In an acidic abscess (pH 5.9), lidocaine (pKa 7.9) is 99% cationic, preventing it from crossing the nerve sheath to block the channel."
+        },
+        "explanation": {
+          "tr": "Zayıf baz lidokain için pH - pKa = 5.9 - 7.9 = -2.0 dir. Nötr baz fraksiyonu yalnızca %1 dir. Sodyum kanalı aksonun iç yüzündedir (Slayt 2, 9, 11).",
+          "ar": "لليدوكائين القاعدي: pH - pKa = 5.9 - 7.9 = -2.0؛ الكسر المتعادل لا يتعدى 1% فقط، وموقع حظر القناة يقع في الجانب الداخلي (شريحة 2، 9، 11).",
+          "en": "For lidocaine: pH - pKa = -2.0; un-ionized base is only 1%. Because the binding site is intracellular, the ionized drug remains locked outside."
+        }
       },
       "technicalTerms": [
         {
-          "term": "termodinamik aktivite",
-          "arContext": "النشاط الديناميكي الحراري"
+          "term": "aksonal penetrasyon",
+          "arContext": "النفاذ المحواري العصبي"
+        },
+        {
+          "term": "lokal anestezik mekanizması",
+          "arContext": "آلية المخدر الموضعي"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Lidokain zayıf bir bazdır (pKa 7.9); apse dokusu ise asidiktir (pH 5.9).",
+          "ar": "الليدوكائين قاعدة ضعيفة (pKa 7.9)؛ بينما نسيج الخراج حامضي (pH 5.9).",
+          "en": "Lidocaine is a weak base (pKa 7.9); the abscess tissue is acidic (pH 5.9)."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "pH < pKa durumunda zayıf baz hangi formdadır? Nötr mü, katyonik mi?",
+          "ar": "عندما يكون pH < pKa ما هو الشكل الغالب للقاعدة الضعيفة؟ متعادل أم كاتيوني مشحون؟",
+          "en": "When pH < pKa, which form dominates for a weak base? Neutral or cationic?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Lidokain %99 oranında katyoniktir (BH+); yağlı sinir zarını aşıp kanalın iç ağzına ulaşamaz.",
+          "ar": "يتأين الليدوكائين بنسبة 99% ككاتيون (BH+) فيعجز عن عبور غمد العصب الدهني للوصول للقناة.",
+          "en": "Lidocaine is 99% cationic (BH+); it cannot traverse the lipophilic nerve sheath to access the channel pore."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 2
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 9
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 11
         }
       ]
     },
@@ -696,40 +1406,129 @@
       "stage": "connection",
       "stageIndex": 11,
       "title": {
-        "tr": "İleri Bağlantı: Fonksiyonel Gruplar ve Bağlar (Modül 2)",
-        "ar": "ربط مفاهيمي: المجموعات الوظيفية والروابط (الوحدة 2)",
-        "en": "Forward Connection: Functional Groups & Bonds (Module 2)"
+        "tr": "İleri Bağlantı: Çözücü Dielektrik Sabiti (ε)",
+        "ar": "ربط مفاهيمي: ثابت العزل الكهربائي للمذيبات",
+        "en": "Forward Connection: Solvent Dielectric Constant (ε)"
       },
       "prompt": {
-        "tr": "İlacın iyonlaşması elektrik yükü yaratır. Modül 2 de bu yüklerin reseptör amino asitleriyle nasıl güçlü iyonik bağlar kurduğunu göreceğiz.",
-        "ar": "يولد تأين الدواء شحنات كهربائية. في الوحدة 2، سنستكشف كيف تشكل هذه الشحنات روابط أيونية وثيقة مع الأحماض الأمينية في (reseptör).",
-        "en": "Ionization generates formal electrostatic charges. In Module 2, we explore how these charges form powerful ionic bonds with receptor residues."
+        "tr": "Su (ε = 80.4) tuzları çözerken, hekzan (ε = 1.9) neden çözemez? Coulomb yasasına göre dielektrik sabiti iyonik kristal kafes çekimini (F = q1·q2 / ε·r²) nasıl zayıflatır?",
+        "ar": "يذيب الماء (ε = 80.4) الأملاح، بينما يعجز الهكسان (ε = 1.9). وفق قانون كولوم، كيف يُضعف ثابت العزل التجاذب البلوري الأيوني: F = q1·q2 / ε·r²؟",
+        "en": "Water (ε = 80.4) readily dissolves salts, while hexane (ε = 1.9) cannot. How does dielectric constant weaken crystal lattice attraction according to Coulomb's law: F = q1·q2 / ε·r²?"
       },
-      "predictThenReveal": false,
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": {
+              "tr": "Yüksek ε değeri zıt yükler arasındaki elektrostatik çekim kuvvetini 80 kat zayıflatarak iyonların solvatasyon kabuğuna ayrışmasını sağlar.",
+              "ar": "تخفض قيمة ε العالية قوة التجاذب الكهروستاتيكي بين الشحنات المتعاكسة بمقدار 80 ضعفاً مما يسمح بتفكك الأيونات وإماهتها.",
+              "en": "A high ε value reduces electrostatic attractive force between opposite charges by 80-fold, allowing water to solvate and separate individual ions."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Coulomb kuvveti paydadaki ε ile ters orantılıdır. Suda (ε = 80) iyonlar arası çekim 80 kat zayıflarken, hekzanda (ε = 1.9) kristal kafes asla ayrılamaz.",
+              "ar": "صحيح! تتناسب قوة كولوم عكساً مع ε في المقام؛ ففي الماء تضعف قوة التجاذب 80 مرة، بينما في الهكسان تستحيل فرملة قوى التجاذب البلورية.",
+              "en": "Correct! Coulomb force is inversely proportional to ε in the denominator. Water weakens lattice attractions 80-fold; hexane cannot dissociate them."
+            }
+          },
+          {
+            "id": "opt-11b",
+            "text": {
+              "tr": "Hekzanın dielektrik sabiti düşük olduğu için tuz iyonlarıyla kovalent bağlar kurarak çökelmeyi hızlandırır.",
+              "ar": "لكون ثابت عزل الهكسان منخفضاً، فإنه يشكل روابط تساهمية مع الأيونات تعجل الترسيب.",
+              "en": "Because hexane has a low dielectric constant, it forms strong covalent bonds with salt ions, precipitating them."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Hekzan apolar bir hidrokarbondur; iyonlarla kovalent bağ yapamaz, sadece elektrostatik çekimi zayıflatamaz.",
+              "ar": "مغالطة: الهكسان هيدروكربون غير قطبي لا يشكل روابط تساهمية مع الشوارد؛ وعجزه يكمن في عدم إضعاف التجاذب الكهروستاتيكي.",
+              "en": "Misconception: Hexane is an inert non-polar hydrocarbon; it forms no covalent bonds, but simply fails to shield electrostatic charges."
+            }
+          },
+          {
+            "id": "opt-11c",
+            "text": {
+              "tr": "Dielektrik sabiti yalnızca çözücünün kaynama noktasını belirler; iyon ayrışmasında hiçbir rol oynamaz.",
+              "ar": "يحدد ثابت العزل الكهربائي درجة غليان المذيب فقط، ولا دور له في تفكك الشوارد إطلاقاً.",
+              "en": "The dielectric constant solely dictates solvent boiling point and plays zero role in ionic lattice dissociation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Dielektrik sabiti çözücünün yükleri yalıtma kapasitesidir ve çözünme termodinamiğinin temel parametresidir.",
+              "ar": "مغالطة: ثابت العزل هو قدرة المذيب على عزل الشحنات الكهربائية ويمثل الركيزة الأساسية لذوبان الأملاح.",
+              "en": "Misconception: The dielectric constant measures charge-shielding capacity and is the primary determinant of salt solubility."
+            }
+          }
+        ]
+      },
       "config": {
-        "nextModule": "mc-mod-02"
+        "options": [
+          {
+            "id": "opt-11a",
+            "text": "Yüksek ε elektrostatik çekimi 80 kat zayıflatarak iyonların ayrışmasını sağlar.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Coulomb kuvveti paydadaki ε ile ters orantılıdır."
+          },
+          {
+            "id": "opt-11b",
+            "text": "Hekzan tuzla kovalent bağ kurar.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Hekzan kovalent bağ yapmaz."
+          },
+          {
+            "id": "opt-11c",
+            "text": "Dielektrik sabiti iyon ayrışmasını etkilemez.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Dielektrik sabiti iyonik çözünmeyi yönetir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Dielektrik sabiti kuralı: Çözücünün dielektrik sabiti (ε) ne kadar yüksekse, kristal kafesteki zıt iyonların çekim kuvveti o kadar zayıflar ve tuz çözünür.",
+          "ar": "قاعدة ثابت العزل: كلما ارتفع ثابت عزل المذيب (ε)، ضعفت قوة التجاذب بين شحنات الشبكة البلورية وذاب الملح.",
+          "en": "Dielectric law: The higher the solvent dielectric constant (ε), the weaker the inter-ionic lattice attraction, driving spontaneous salt dissolution."
+        },
+        "explanation": {
+          "tr": "Coulomb yasası: F = (q1·q2) / (ε·r²). Suyun ε değeri (80.37) kristal bağları kırarken, hekzanın ε değeri (1.89) iyonları ayıramaz (Slayt 6, 7).",
+          "ar": "قانون كولوم: F = (q1·q2) / (ε·r²). يكسر ثابت عزل الماء (80.37) روابط البلورة، بينما يعجز عزل الهكسان (1.89) تماماً (شريحة 6، 7).",
+          "en": "Coulomb's Law: F = (q1·q2) / (ε·r²). Water's high dielectric constant (80.37) breaks ionic crystal bonds; hexane (1.89) cannot."
+        }
       },
       "technicalTerms": [
         {
-          "term": "iyonik bağ",
-          "arContext": "الرابطة الأيونية"
+          "term": "dielektrik sabiti",
+          "arContext": "ثابت العزل الكهربائي"
+        },
+        {
+          "term": "Coulomb yasası",
+          "arContext": "قانون كولوم"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Coulomb formülüne bakın: F = (q1·q2) / (ε·r²). Paydadaki ε büyürse kuvvet (F) ne olur?",
+          "ar": "انظر لصيغة كولوم: F = (q1·q2) / (ε·r²). ماذا يحدث للقوة (F) عندما تزداد ε في المقام؟",
+          "en": "Look at Coulomb's formula: F = (q1·q2) / (ε·r²). If ε in the denominator increases, what happens to force (F)?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Paydadaki dielektrik sabiti büyüdükçe, artı ve eksi iyonları birbirine çeken kuvvet azalır.",
+          "ar": "مع ازدياد ثابت العزل في المقام، تتضاءل القوة التي تجذب الأيونات الموجبة والسالبة لبعضها.",
+          "en": "As dielectric constant increases in the denominator, the electrostatic attraction between ions weakens."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Su çekim kuvvetini 80 kat azaltarak iyonları ayırır; hekzan (ε = 1.9) çekimi azaltamaz ve tuz kristal kalır.",
+          "ar": "يقلص الماء قوة الجذب بـ 80 ضعفاً محرراً الشوارد؛ بينما يعجز الهكسان (ε = 1.9) عن ذلك فيبقى الملح متبلوراً.",
+          "en": "Water reduces attraction 80-fold, solvating ions; hexane (ε = 1.9) fails to shield charges, leaving salt crystals intact."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 6
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 7
         }
       ]
     },
@@ -738,44 +1537,72 @@
       "stage": "mastery_check",
       "stageIndex": 12,
       "title": {
-        "tr": "Ustalık Sınavı: İyonizasyon ve Membran Geçişi",
-        "ar": "اختبار الإتقان: التأين ونفوذية الأغشية",
-        "en": "Mastery Assessment: Ionization & Membrane Permeation"
+        "tr": "Ustalık Sınavı: Siprofloksasin İkili pKa ve Zwitterion",
+        "ar": "اختبار الإتقان: سيبروفلوكساسين وثنائي pKa والزوترأيون",
+        "en": "Mastery Assessment: Ciprofloxacin Dual pKa & Zwitterion"
       },
       "prompt": {
-        "tr": "Bir zayıf asit ilacın lipid membranlardan pasif difüzyon hızını maksimize etmek için ortam pH sı pKa ya göre nerede olmalıdır?",
-        "ar": "لتعظيم سرعة الانتشار البسيط لحمض ضعيف عبر الأغشية الدهنية، أين يجب أن تكون درجة حموضة الوسط مقارنة بـ pKa؟",
-        "en": "To maximize passive lipid membrane permeation of a weak acid drug, how must ambient pH compare to the drug's pKa?"
+        "tr": "Siprofloksasinin iki pKa değeri vardır: Karboksilik asit (pKa1 = 6.1) ve piperazin azotu (pKa2 = 8.7). Fizyolojik kanda (pH 7.4) bu ilacın baskın türü ve net yükü nedir?",
+        "ar": "يمتلك <span dir='ltr'>ciprofloxacin</span> قيمتي pKa: حمض كربوكسيلي (pKa1 = 6.1) ونيتروجين بيبيرازين (pKa2 = 8.7). في دم الإنسان (pH 7.4)، ما هي الشحنة الصافية للجزيء؟",
+        "en": "Ciprofloxacin has dual pKa values: carboxylic acid (pKa1 = 6.1) and piperazine nitrogen (pKa2 = 8.7). In blood at pH 7.4, what is the predominant molecular species and net charge?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-mst2-1",
+            "id": "opt-12a",
             "text": {
-              "tr": "pH < pKa olmalıdır; böylece asit protonlanmış nötr HA formuna geçer ve zardan hızla süzülür.",
-              "ar": "يجب أن يكون pH < pKa؛ ليتواجد الحمض بشكله المحايد HA ويعبر الغشاء بسرعة.",
-              "en": "Only unionized (neutral) species freely permeate biological membranes via passive diffusion."
+              "tr": "Karboksil grubu deprotonlanmış (-COO-), piperazin azotu protonlanmıştır (-NH2+); molekül nötr net yüke sahip amfoterik zwitterion formundadır.",
+              "ar": "تكون مجموعة الكربوكسيل فاقدة للبروتون (-COO-)، ونيتروجين البيبيرازين مكتسباً للبروتون (-NH2+)؛ فيتشكل زوترأيون محايد المحصلة.",
+              "en": "The carboxyl group is deprotonated (-COO-) and the piperazine nitrogen is protonated (-NH2+); the molecule exists predominantly as a zwitterion with net zero charge."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Tebrikler! İyonizasyon ve membran geçirgenliği prensiplerini tam olarak kavradınız. +50 XP.",
-              "ar": "تهانينا! لقد أتقنت تماماً مبادئ التأين ونفوذية الأغشية البيولوجية. +50 XP.",
-              "en": "Correct! The pH-partition hypothesis dictates that lipid membranes are permeable primarily to neutral lipophilic molecules."
+              "tr": "Kusursuz ustalık transferi! pH 7.4, asidik pKa1 in (6.1) üzerinde olduğu için karboksil deprotonlanıp eksi yüklenir; bazik pKa2 nin (8.7) altında olduğu için amin protonlanıp artı yüklenir. Molekül zwitteriondur.",
+              "ar": "إتقان استثنائي لنقل المعرفة! يقع pH 7.4 فوق pKa1 (6.1) فيتأين الكربوكسيل سالباً، ودون pKa2 (8.7) فيتأين الأمين موجباً، مشكلاً زوترأيون متوازن الشحنة.",
+              "en": "Exceptional mastery transfer! Since pH 7.4 > pKa1 (6.1), the acid deprotonates (-1); since pH 7.4 < pKa2 (8.7), the base protonates (+1), forming a net-neutral zwitterion."
             }
           },
           {
-            "id": "opt-mst2-2",
+            "id": "opt-12b",
             "text": {
-              "tr": "pH > pKa olmalıdır; böylece molekül negatif yük kazanarak zarı çeker.",
-              "ar": "يجب أن يكون pH > pKa؛ ليكتسب الجزيء شحنة سالبة تجذب الغشاء.",
-              "en": "Only charged ions cross membranes through passive lipid diffusion."
+              "tr": "Her iki fonksiyonel grup da deprotonlanmıştır; molekül kanda net -2 anyonik yüke sahiptir.",
+              "ar": "تكون المجموعتان فاقدتين للبروتون؛ ويمتلك الجزيء شحنة سالبة صافية (-2) في الدم.",
+              "en": "Both functional groups are deprotonated; the molecule carries a net -2 anionic charge in blood."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
-              "tr": "Yüklü türler hidrasyon kalkanı nedeniyle zardan geçemezler.",
-              "ar": "الأنواع المشحونة تعجز عن عبور الغشاء بسبب غلاف الإماهة المائي.",
-              "en": "Ions are surrounded by a hydration shell and cannot passively cross hydrophobic lipid interiors."
+              "tr": "Yanılgı: Piperazin azotunun pKa sı 8.7 dir. pH 7.4 te proton kaybetmez; aksine protonlanmış formda kalır.",
+              "ar": "مغالطة: يبلغ pKa البيبيرازين 8.7؛ وعند pH 7.4 لا يفقد بروتونه بل يظل كاتيونا موجباً.",
+              "en": "Misconception: Piperazine pKa is 8.7. At pH 7.4, ambient pH is below pKa, so the amine remains protonated."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "Her iki grup da tamamen yüksüzdür; molekül kanda zwitterion oluşturamaz.",
+              "ar": "تكون المجموعتان خاليتين من أي شحنة؛ ولا يمكن للجزيء تشكيل زوترأيون في الدم.",
+              "en": "Both groups are fully un-ionized; the molecule cannot form a zwitterion in aqueous plasma."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Zwitterion molekülün yüksüz olması demek değil, eşit sayıda artı ve eksi yük taşıyarak net yükünün sıfır olması demektir.",
+              "ar": "مغالطة: الزوترأيون لا يعني غياب الشحنات، بل حمل شحنتين موجبة وسالبة متساويتين بحيث تكون المحصلة صفراً.",
+              "en": "Misconception: A zwitterion is not devoid of charge; it carries equal and opposite positive and negative charges."
+            }
+          },
+          {
+            "id": "opt-12d",
+            "text": {
+              "tr": "Siprofloksasin fizyolojik pH 7.4 te tamamen çöker ve kanda çözünemez.",
+              "ar": "يترسب السيبروفلوكساسين بالكامل عند pH 7.4 ويعجز عن الذوبان في الدم.",
+              "en": "Ciprofloxacin precipitates completely at physiological pH 7.4 and is insoluble in blood."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Zwitterion formunda çözünürlük izoelektrik noktada minimuma inse de tamamen sıfırlanmaz; terapötik konsantrasyonlarda çözünür kalır.",
+              "ar": "مغالطة: رغم تدني الذوبانية عند النقطة متساوية الكهربائية، إلا أنه لا يترسب في التراكيز العلاجية بالدم.",
+              "en": "Misconception: While solubility reaches a minimum at the isoelectric point, therapeutic concentrations remain soluble."
             }
           }
         ]
@@ -783,40 +1610,72 @@
       "config": {
         "options": [
           {
-            "id": "opt-mst2-1",
-            "text": "pH < pKa olmalıdır.",
-            "isCorrect": true
+            "id": "opt-12a",
+            "text": "Karboksil (-COO-) ve piperazin (-NH2+); net nötr zwitterion formundadır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Karboksil eksi, amin artı; net yük sıfırdır."
           },
           {
-            "id": "opt-mst2-2",
-            "text": "pH > pKa olmalıdır.",
-            "isCorrect": false
+            "id": "opt-12b",
+            "text": "Her iki grup deprotonlanmıştır (-2 yük).",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bazik amin pH 7.4 te protonludur."
+          },
+          {
+            "id": "opt-12c",
+            "text": "Her iki grup yüksüzdür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Her iki grup da yüklüdür (zwitterion)."
+          },
+          {
+            "id": "opt-12d",
+            "text": "Kanda tamamen çöker.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Terapötik düzeyde çözünür kalır."
           }
         ],
-        "revealedOutcome": "Modül 1 tamamlandı! 3 review cards Leitner Box 1 e eklendi. +50 XP.",
-        "explanation": "pH < pKa durumunda nötr form baskındır ve zardan geçiş maksimumdur."
+        "revealedOutcome": {
+          "tr": "Tebrikler! Modül 1 Ustalık Sınavı tamamlandı. Siprofloksasinin fizyolojik pH 7.4 te zwitterion (amfoterik) formda olduğunu ve Henderson-Hasselbalch ilkelerini başarıyla kanıtladınız. +50 XP.",
+          "ar": "تهانينا! اكتمل اختبار إتقان الوحدة 1 بنجاح. أثبتت أن السيبروفلوكساسين يتواجد كزوترأيون عند pH 7.4 واستوعبت مبادئ Henderson-Hasselbalch بامتياز. +50 XP.",
+          "en": "Congratulations! Module 1 Mastery Check passed. You proved ciprofloxacin exists as a zwitterion at pH 7.4 and demonstrated rigorous command of Henderson-Hasselbalch principles. +50 XP."
+        },
+        "explanation": {
+          "tr": "Amfoterik moleküllerde: pH > pKa1 (7.4 > 6.1) olduğundan asit deprotonlanır (-COO-). pH < pKa2 (7.4 < 8.7) olduğundan baz protonlanır (-NH2+). Molekül net sıfır yüklü zwitteriondur (Slayt 9).",
+          "ar": "في الجزيئات المذبذبة: بما أن pH > pKa1 (7.4 > 6.1) يفقد الحمض بروتونه (-COO-)؛ وبما أن pH < pKa2 (7.4 < 8.7) يكتسب الأمين بروتوناً (-NH2+)، مشكلاً زوترأيون محايد الشحنة (شريحة 9).",
+          "en": "In amphoteric compounds: pH > pKa1 (7.4 > 6.1) deprotonates the acid (-COO-); pH < pKa2 (7.4 < 8.7) protonates the base (-NH2+), yielding a net-zero zwitterion."
+        }
       },
       "technicalTerms": [
         {
-          "term": "pasif difüzyon",
-          "arContext": "الانتشار السلبي البسيط"
+          "term": "zwitterion",
+          "arContext": "الزوترأيون المزدوج الشحنة"
+        },
+        {
+          "term": "amfoterik bileşik",
+          "arContext": "مركب مذبذب (amfoterik)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tr": "Karboksilik asit (pKa 6.1) için pH 7.4 te deprotonasyon durumuna bakın: pH > pKa mıdır?",
+          "ar": "بالنسبة للحمض (pKa 6.1) عند pH 7.4: هل pH > pKa؟",
+          "en": "For the carboxylic acid (pKa 6.1) at pH 7.4: is pH > pKa?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tr": "Piperazin azotu (pKa 8.7) için pH 7.4 te protonasyon durumuna bakın: pH < pKa mıdır?",
+          "ar": "بالنسبة للأمين القاعدي (pKa 8.7) عند pH 7.4: هل pH < pKa؟",
+          "en": "For the basic piperazine amine (pKa 8.7) at pH 7.4: is pH < pKa?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tr": "Karboksil eksi (-COO-) ve amin artı (-NH2+) yüklüdür; ikisi birbirini nötrler ve zwitterion oluşur.",
+          "ar": "يحمل الكربوكسيل شحنة سالبة (-COO-) والأمين شحنة موجبة (-NH2+)؛ فتتعادل الشحنتان لتشكيل زوترأيون.",
+          "en": "Carboxyl carries -1 (-COO-) and amine carries +1 (-NH2+); opposite charges balance to form a zwitterion."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 9
         }
       ]
     }

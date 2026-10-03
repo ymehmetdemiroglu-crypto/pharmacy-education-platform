@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
 import { Button, StickerBadge } from '@pharmacy/ui';
-import { Sun, Moon, Sparkles, BookOpen, Layers, CreditCard, LogIn, User } from 'lucide-react';
+import { Sun, Moon, Sparkles, BookOpen, Layers, CreditCard, LogIn, User, RotateCw } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
 import { AuthModal } from './AuthModal';
 
@@ -21,6 +21,7 @@ export const Navbar: React.FC = () => {
   const navLinks = [
     { to: '/gallery', label: t('navbar.gallery'), icon: Layers },
     { to: '/catalog', label: t('navbar.courses'), icon: BookOpen },
+    { to: '/review', label: t('navbar.review'), icon: RotateCw },
     { to: '/pricing', label: t('navbar.pricing'), icon: CreditCard },
   ];
 
@@ -135,12 +136,16 @@ export const Navbar: React.FC = () => {
           {/* Student Auth / Login Button */}
           {user?.email ? (
             <div className="flex items-center gap-1.5 font-mono text-xs">
-              <span className="hidden lg:inline-flex items-center gap-1 font-bold text-gray-800 dark:text-slate-200">
+              <Link
+                to="/settings"
+                className="hidden lg:inline-flex items-center gap-1 font-bold text-gray-800 dark:text-slate-200 hover:text-[#4D96FF] transition-colors"
+                title="Hesap Ayarları / Settings"
+              >
                 <User className="w-3.5 h-3.5" />
-                <span className="max-w-[110px] truncate" title={user.displayName || user.email}>
+                <span className="max-w-[110px] truncate">
                   {user.displayName || user.email.split('@')[0]}
                 </span>
-              </span>
+              </Link>
               <Button
                 size="sm"
                 variant="ghost"

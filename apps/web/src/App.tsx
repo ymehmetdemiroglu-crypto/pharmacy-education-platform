@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
-import { Routes, Route, Navigate, Link } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { GalleryPage } from './pages/GalleryPage';
 import { CatalogPage } from './pages/CatalogPage';
 import { PricingPage } from './pages/PricingPage';
 import { LessonPage } from './pages/LessonPage';
+import { ReviewPage } from './pages/ReviewPage';
+import { SettingsPage } from './pages/SettingsPage';
 import { TermsPage } from './pages/TermsPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { RefundPage } from './pages/RefundPage';
+import { ErrorBoundary } from './components/ErrorBoundary';
 import { TrialBanner, PaywallModal } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
-
+import { callCreateCheckoutSession, callStartFreeTrial } from './lib/firebase';
 import { useTranslation } from './context/TranslationContext';
 
 export const App: React.FC = () => {
   const { user, startTrial } = useAuth();
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [paywallOpen, setPaywallOpen] = useState(false);
 
   const calculateDaysRemaining = () => {
@@ -43,22 +47,26 @@ export const App: React.FC = () => {
       ) : null}
 
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Navigate to="/gallery" replace />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/catalog" element={<CatalogPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/refund" element={<RefundPage />} />
-          <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
-          <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
-          <Route path="/courses/pharmacology/lessons/:lessonId" element={<LessonPage />} />
-          <Route path="/courses/pharmacology/lessons" element={<Navigate to="/courses/pharmacology/lessons/1" replace />} />
-          <Route path="/courses/:courseId/lessons/:lessonId" element={<LessonPage />} />
-          <Route path="/courses/:courseId/lessons" element={<Navigate to="/catalog" replace />} />
-          <Route path="*" element={<Navigate to="/gallery" replace />} />
-        </Routes>
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Navigate to="/catalog" replace />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/catalog" element={<CatalogPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route path="/review" element={<ReviewPage />} />
+            <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/refund" element={<RefundPage />} />
+            <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
+            <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
+            <Route path="/courses/pharmacology/lessons/:lessonId" element={<LessonPage />} />
+            <Route path="/courses/pharmacology/lessons" element={<Navigate to="/courses/pharmacology/lessons/1" replace />} />
+            <Route path="/courses/:courseId/lessons/:lessonId" element={<LessonPage />} />
+            <Route path="/courses/:courseId/lessons" element={<Navigate to="/catalog" replace />} />
+            <Route path="*" element={<Navigate to="/catalog" replace />} />
+          </Routes>
+        </ErrorBoundary>
       </main>
 
       {/* Neo-Brutalist Footer */}
@@ -72,14 +80,17 @@ export const App: React.FC = () => {
               {t('footer.tagline')}
             </span>
             <div className="flex flex-wrap gap-4 mt-2 text-[11px] font-mono">
-              <Link to="/terms" className="hover:underline font-bold text-[#FF5722]">
+              <Link to="/terms" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
                 Terms of Service
               </Link>
-              <Link to="/privacy" className="hover:underline font-bold text-[#00BCD4]">
+              <Link to="/privacy" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
                 Privacy &amp; KVKK / GDPR
               </Link>
-              <Link to="/refund" className="hover:underline font-bold text-[#4CAF50]">
+              <Link to="/refund" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
                 Refund Policy
+              </Link>
+              <Link to="/settings" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
+                Settings
               </Link>
             </div>
           </div>
@@ -97,8 +108,32 @@ export const App: React.FC = () => {
       <PaywallModal
         isOpen={paywallOpen}
         onClose={() => setPaywallOpen(false)}
-        onSelectPlan={() => setPaywallOpen(false)}
+        onSelectPlan={async (plan, currency, isBundle) => {
+          try {
+            const res = await callCreateCheckoutSession({
+              courseId: isBundle ? 'dual_bundle' : 'medchem',
+              planId: plan === 'semester' ? 'semester_pass' : plan,
+              currency,
+              returnUrl: window.location.href,
+            });
+            if (res.data?.checkoutUrl) {
+              window.location.href = res.data.checkoutUrl;
+            } else {
+              setPaywallOpen(false);
+              navigate('/pricing');
+            }
+          } catch (err) {
+            console.error('Checkout error:', err);
+            setPaywallOpen(false);
+            navigate('/pricing');
+          }
+        }}
         onStartTrial={async () => {
+          try {
+            await callStartFreeTrial();
+          } catch (err) {
+            console.warn('Backend trial activation notice:', err);
+          }
           await startTrial();
           setPaywallOpen(false);
         }}

@@ -14,8 +14,6 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
   disabled = false,
   className,
 }) => {
-  const isAr = locale === 'ar';
-  const isEn = locale === 'en';
   const [activeMode, setActiveMode] = useState<string>(config.modes[0] || 'agonist');
   const [logEc50, setLogEc50] = useState<number>(-7); // 10^-7 M = 100 nM
   const [emax, setEmax] = useState<number>(config.defaultEmax || 100);

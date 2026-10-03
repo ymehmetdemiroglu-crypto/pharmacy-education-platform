@@ -117,7 +117,7 @@ export function getAppConfig(): AppConfig {
 
   const webhookSecret = (dodoEnv === 'live'
     ? process.env.DODO_PAYMENTS_WEBHOOK_KEY_LIVE
-    : process.env.DODO_PAYMENTS_WEBHOOK_KEY_TEST) || process.env.DODO_PAYMENTS_WEBHOOK_KEY || process.env.DODO_WEBHOOK_SECRET || 'test_whsec_dummy';
+    : process.env.DODO_PAYMENTS_WEBHOOK_KEY_TEST) || process.env.DODO_PAYMENTS_WEBHOOK_KEY || process.env.DODO_WEBHOOK_SECRET || (dodoEnv === 'live' ? '' : 'test_whsec_dummy');
 
   const appBaseUrl = process.env.APP_BASE_URL || 'http://localhost:5173';
 
@@ -139,6 +139,7 @@ export function getDodoClient(configOverride?: Partial<AppConfig>): DodoPayments
     bearerToken: cfg.apiKey,
     environment: cfg.sdkEnvironment,
     webhookKey: cfg.webhookSecret,
+    timeout: 15000,
   });
 }
 

@@ -28,6 +28,14 @@ test.describe('Automated Axe-Core Accessibility Audit Matrix (A3 Protocol)', () 
       const seriousOrCritical = results.violations.filter(
         (v: any) => v.impact === 'serious' || v.impact === 'critical'
       );
+      if (seriousOrCritical.length > 0) {
+        console.error('AXE VIOLATIONS:', JSON.stringify(seriousOrCritical.map((v: any) => ({
+          id: v.id,
+          impact: v.impact,
+          description: v.description,
+          nodes: v.nodes.map((n: any) => n.target)
+        })), null, 2));
+      }
       expect(seriousOrCritical).toEqual([]);
     });
 

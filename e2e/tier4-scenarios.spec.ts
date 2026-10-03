@@ -57,7 +57,7 @@ test.describe('Tier 4: Real-World Clinical Pharmacy Student Application Scenario
       }
     }
 
-    await expect(page.getByText(/Ders 1 Başarıyla Tamamlandı|Lesson 1 Mastered/i)).toBeVisible();
+    await expect(page.getByText(/Ders (?:1 )?Başarıyla Tamamlandı|Lesson (?:1 )?Mastered/i)).toBeVisible();
     await expect(page.getByText('+50 XP', { exact: true })).toBeVisible();
 
     // Verify 3 Leitner cards enqueued to Box 1 in localStorage
@@ -138,7 +138,7 @@ test.describe('Tier 4: Real-World Clinical Pharmacy Student Application Scenario
 
     // 3. PaywallModal opens automatically
     await expect(page.getByRole('dialog')).toBeVisible();
-    await expect(page.getByText(/Unlock Lesson 3/i)).toBeVisible();
+    await expect(page.getByText(/Unlock Full Pharmacy Mastery|Tüm Eczacılık Müfredatını Aç|Unlock Lesson/i)).toBeVisible();
 
     // 4. Clicks "Start 7-Day Free Trial"
     await page.getByRole('dialog').getByRole('button', { name: /Start Free Trial|Ücretsiz Denemeyi Başlat|بدء التجربة المجانية/i }).click();
@@ -228,6 +228,7 @@ test.describe('Tier 4: Real-World Clinical Pharmacy Student Application Scenario
     await page.keyboard.press('Tab'); // Logo
     await page.keyboard.press('Tab'); // Gallery link
     await page.keyboard.press('Tab'); // Courses link
+    await page.keyboard.press('Tab'); // Review link
     await page.keyboard.press('Tab'); // Pricing link
     await page.keyboard.press('Enter');
 

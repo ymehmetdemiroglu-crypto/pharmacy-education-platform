@@ -72,6 +72,10 @@ export function generateClientLesson(sourceJson) {
       const { parameterId, ...cleanConfig } = cleanStep.config;
       cleanStep.config = cleanConfig;
     }
+    if (cleanStep.widget && cleanStep.widget.config && typeof cleanStep.widget.config === 'object') {
+      const { parameterId, ...cleanWidgetConfig } = cleanStep.widget.config;
+      cleanStep.widget = { ...cleanStep.widget, config: cleanWidgetConfig };
+    }
     return cleanStep;
   });
 

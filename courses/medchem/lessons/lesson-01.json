@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../packages/platform/schema/lesson.schema.json",
   "id": "mc-mod1-les1",
   "courseId": "medchem",
   "moduleId": "mc-mod-01",
@@ -10,26 +11,63 @@
   "order": 1,
   "access": "free",
   "objective": {
-    "tr": "Yapısal olarak özgül olmayan ilaçların etki mekanizmasını termodinamik aktivite ve doygunluk dengesiyle açıklamak.",
-    "ar": "توضيح آلية التأثير غير النوعي بنيوياً للأدوية عبر النشاط الديناميكي الحراري (termodinamik aktivite) وتوازن التشبع.",
-    "en": "Differentiate structurally specific from structurally non-specific drugs using thermodynamic activity thresholds."
+    "tr": "Yapı-spesifik ve yapı-nonspesifik ilaçları ayırt etmek ve etkiyi termodinamik aktivite (bağıl doygunluk) ile tahmin etmek.",
+    "ar": "التمييز بين الأدوية النوعية وغير النوعية بنيوياً والتنبؤ بالتأثير عبر النشاط الديناميكي الحراري (التشبع النسبي).",
+    "en": "Differentiate structurally specific from non-specific drugs and predict biological action from relative thermodynamic saturation."
   },
   "misconceptions": [
     {
       "tr": "Tüm ilaçların spesifik bir protein reseptörüne kilit-anahtar uyumuyla bağlandığı yanılgısı.",
-      "ar": "الاعتقاد الخاطئ بأن جميع الأدوية تتطلب ارتباطاً نوعياً مع (reseptör) بروتيني نوعي.",
-      "en": "The misconception that all drugs must bind specific stereoselective protein receptors."
+      "ar": "الاعتقاد الخاطئ بأن جميع الأدوية تتطلب ارتباطاً نوعياً مع مستقبل بروتيني كالقفل والمفتاح.",
+      "en": "The misconception that all pharmacological agents must bind stereoselective lock-and-key protein receptors."
     },
     {
-      "tr": "Kimyasal olarak farklı genel anesteziklerin farklı biyofazik mekanizmalarla etki ettiği varsayımı.",
-      "ar": "الافتراض الخاطئ بأن المخدرات العامة المختلفة كيميائياً تعمل بآليات (biyofaz) مستقلة.",
-      "en": "The assumption that chemically diverse general anesthetics operate via distinct biophasic mechanisms."
+      "tr": "Farklı kimyasal yapılardaki genel anesteziklerin farklı hücresel etki mekanizmalarına sahip olduğu varsayımı.",
+      "ar": "الافتراض الخاطئ بأن المخدرات العامة متباينة البنية الكيميائية تعمل بآليات خلوية مستقلة.",
+      "en": "The assumption that chemically diverse general anesthetics operate via distinct cellular mechanisms."
+    },
+    {
+      "tr": "Homolog serilerde karbon zinciri uzadıkça aktivitenin sonsuza kadar artacağı yanılgısı.",
+      "ar": "الاعتقاد الخاطئ بأن الفاعلية الحيوية في السلاسل المتماثلة تستمر بالزيادة إلى ما لا نهاية مع طول السلسلة.",
+      "en": "The misconception that increasing alkyl chain length in a homologous series boosts potency indefinitely."
     }
   ],
   "sources": [
     {
       "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
       "page": 17
+    },
+    {
+      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+      "page": 18
+    },
+    {
+      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+      "page": 19
+    },
+    {
+      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+      "page": 20
+    },
+    {
+      "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+      "page": 23
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 10
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 13
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 24
+    },
+    {
+      "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+      "page": 25
     }
   ],
   "citations": [
@@ -44,18 +82,18 @@
     },
     {
       "id": "CIT-02",
-      "book": "An Introduction to Medicinal Chemistry",
-      "edition": "6th ed., Patrick",
-      "topic": "Ferguson's Principle of Non-Specific Action",
+      "book": "Wilson and Gisvold's Textbook of Organic Medicinal and Pharmaceutical Chemistry",
+      "edition": "12th ed.",
+      "topic": "Physicochemical Properties and Drug Action",
       "chapter": "unverified",
       "page": "unverified",
       "status": "unverified"
     },
     {
       "id": "CIT-03",
-      "book": "The Practice of Medicinal Chemistry",
-      "edition": "4th ed., Wermuth",
-      "topic": "Physicochemical Properties and Biological Activity",
+      "book": "Burger's Medicinal Chemistry and Drug Discovery",
+      "edition": "8th ed.",
+      "topic": "Drug-Receptor Interactions and Non-specific Action",
       "chapter": "unverified",
       "page": "unverified",
       "status": "unverified"
@@ -64,37 +102,19 @@
   "numericClaims": [
     {
       "id": "NUM-MC01-01",
-      "parameter": "Non-Specific Thermodynamic Saturation Threshold",
-      "value": "pending-human-review",
+      "parameter": "Ferguson Relative Saturation Range for Non-specific Anesthesia",
+      "value": "0.01 - 0.05",
       "status": "pending-human-review",
-      "referencePassage": "Qualitative high relative saturation threshold retained."
-    },
-    {
-      "id": "NUM-MC01-02",
-      "parameter": "Specific Drug Thermodynamic Activity Cutoff",
-      "value": "a < 0.001 (10^-5 to 10^-3)",
-      "status": "pending-human-review"
-    },
-    {
-      "id": "NUM-MC01-03",
-      "parameter": "Vapor Pressure Ratio for Ether Anesthesia",
-      "value": "Pt / P0 ≈ 0.03-0.05 (3%-5% relative saturation)",
-      "status": "pending-human-review"
-    },
-    {
-      "id": "NUM-MC01-04",
-      "parameter": "Thermodynamic Activity Divergence Between Specific and Non-Specific Mechanisms",
-      "value": "10^4 (4 orders of magnitude)",
-      "status": "pending-human-review"
+      "referencePassage": "Non-specific depressants typically achieve biological activity at relative saturation values between 0.01 and 0.05 (or 0.01-0.10 depending on biological endpoint)."
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "mc-mod1-les1-card1",
       "courseId": "medchem",
-      "drugOrConcept": "Ferguson İlkesi ve Doygunluk",
-      "prompt": "What is the relative thermodynamic saturation range defining non-specific drugs?",
-      "answer": "Yapısal olarak özgül olmayan bileşikler yüksek bağıl doygunlukta (a ≈ 0.03-0.05) etki gösterir.",
+      "drugOrConcept": "Ferguson Saturation Threshold",
+      "prompt": "What relative biophasic saturation range (Pt / P0) characterizes structurally non-specific volatile anesthetics?",
+      "answer": "A relative thermodynamic saturation of roughly 0.03 to 0.05 (or a few percent saturation) produces surgical anesthesia across non-specific agents.",
       "box": 1,
       "intervalDays": 1,
       "status": "pending-human-review"
@@ -102,81 +122,81 @@
     {
       "cardId": "mc-mod1-les1-card2",
       "courseId": "medchem",
-      "drugOrConcept": "Termodinamik Aktivite Denklemi",
-      "prompt": "Gaz fazındaki bileşikler için termodinamik aktivite nasıl formüle edilir?",
-      "answer": "Kısmi buhar basıncının doygun buhar basıncına oranı: a = Pt / P0.",
+      "drugOrConcept": "Chemical Structure Alteration",
+      "prompt": "How does minor chemical modification affect structurally specific versus structurally non-specific drugs?",
+      "answer": "Specific drugs lose activity or convert to antagonists; non-specific drugs experience altered volatility or pharmacokinetics without mechanism change.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "mc-mod1-les1-card3",
       "courseId": "medchem",
-      "drugOrConcept": "Özgül ve Özgül Olmayan Etki Ayrımı",
-      "prompt": "Bir ilacın termodinamik aktivitesi a < 0.001 ise hangi etki mekanizması beklenir?",
-      "answer": "Stereo-spesifik reseptör bağlanması ile karakterize yapısal olarak özgül etki.",
+      "drugOrConcept": "Solubility Cutoff Phenomenon",
+      "prompt": "Why does biological activity plunge abruptly past a critical alkyl chain length in a homologous series?",
+      "answer": "Hyper-lipophilic molecules cannot dissolve in polar intercellular fluid, preventing physical transport across the aqueous barrier to the biophase.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Termodinamik Aktivite ve Ferguson İlkesi"
-    },
-    "ar": {
-      "title": "النشاط الديناميكي الحراري ومبدأ Ferguson"
-    }
-  },
   "steps": [
     {
       "id": "mc-mod1-les1-step-01",
       "stage": "hook",
       "stageIndex": 1,
       "title": {
-        "tr": "Klinik Çelişki: Gramlar ve Mikrogramlar",
-        "ar": "المفارقة السريرية: غرامات مقابل ميكروغرامات",
-        "en": "Two Drugs, Vastly Different Quantities"
+        "tr": "Kasa Giriş: Gramlar ve Miligramlar Paradoksu",
+        "ar": "مدخل سريري: مفارقة الغرامات والمليغرامات",
+        "en": "Clinical Case: The Grams vs Milligrams Paradox"
       },
       "prompt": {
-        "tr": "Dietil eter ile cerrahi anestezi onlarca gram gerektirirken, propranolol miligramlarla etki eder. Bu devasa doz farkının kökeni nedir?",
-        "ar": "يتطلب التخدير بـ Diethyl Ether عشرات الغرامات، بينما يعمل Propranolol بالمليغرامات. ما أصل هذا الفارق الهائل في الجرعة؟",
-        "en": "General anesthesia with ether requires tens of grams, while beta-blocker propranolol acts at milligram doses. What causes this immense dose divergence?"
+        "tr": "Dietil eter anestezisi onlarca gram gerektirirken, urasilin tek bir atomu değişerek üretilen 5-fluorourasil miligramlarla tümör hücresini öldürür. Bu devasa doz ve duyarlılık farkının kökeni nedir?",
+        "ar": "يتطلب التخدير بالإيثر عشرات الغرامات، بينما يقتل 5-فلورويوراسيل الناتج عن استبدال ذرة واحدة في اليوراسيل الأورام بالمليغرامات. ما أصل هذا الفارق الهائل في الجرعة والحساسية؟",
+        "en": "While ether anesthesia requires tens of grams, 5-fluorouracil kills tumor cells at milligram doses via a single atom substitution on uracil. What fundamentally explains this massive difference in dose and sensitivity?"
       },
-      "predictThenReveal": false,
+      "predictThenReveal": true,
       "config": {
-        "drugA": {
-          "name": "Diethyl Ether",
-          "dose": "Tens of grams (high molar concentration)"
-        },
-        "drugB": {
-          "name": "Propranolol",
-          "dose": "Milligrams (micromolar to nanomolar)"
+        "caseStudy": "Ether (non-specific, gram doses) vs 5-FU (specific, milligram doses)",
+        "explanation": {
+          "tr": "Spesifik ilaçlar hücredeki tek bir hedef enzimi veya reseptörü kilit-anahtar uyumuyla bloke ederken, genel anestezikler membran lipidlerini fiziksel olarak doyurmak zorundadır (Slayt 20, 23).",
+          "ar": "تثبط الأدوية النوعية إنزيماً أو مستقبلاً وحيداً كالقفل والمفتاح، بينما تتطلب المخدرات العامة تشبيع دهون الغشاء فيزيائياً بجرعات ضخمة (شريحة 20، 23).",
+          "en": "Structurally specific agents inhibit a single enzyme/receptor at micro-doses, whereas general anesthetics must physically saturate membrane lipids at gram scales."
         }
       },
       "technicalTerms": [
         {
-          "term": "termodinamik aktivite",
-          "arContext": "النشاط الديناميكي الحراري"
+          "term": "yapı-spesifik mekanizma",
+          "arContext": "آلية نوعية بنيوياً"
         },
         {
-          "term": "reseptör",
-          "arContext": "المستقبِل الدوائي النوعي"
+          "term": "yapı-nonspesifik mekanizma",
+          "arContext": "آلية غير نوعية بنيوياً"
         }
       ],
       "hints": [
         {
-          "tr": "Moleküllerin etki ettiği biyolojik hedeflerin niteliğini düşünün.",
-          "ar": "فكر في طبيعة الأهداف البيولوجية التي تؤثر عليها الجزيئات.",
-          "en": "Consider the nature of the biological targets these molecules act upon."
+          "tr": "Hedefin tek bir protein cebi mi yoksa tüm hücre zarı mı olduğunu düşünün.",
+          "ar": "فكر هل الهدف هو جيب بروتيني مفرد أم كامل الغشاء الخلوي.",
+          "en": "Consider whether the target is a discrete protein pocket or the entire bulk cell membrane."
         },
         {
-          "tr": "Bir madde zarı fiziksel olarak bozar, diğeri tek bir reseptöre bağlanır.",
-          "ar": "مادة تعطل الغشاء فيزيائياً، والأخرى ترتبط بمستقبِل مفرد.",
-          "en": "One substance physically perturbs the membrane; the other binds a single receptor pocket."
+          "tr": "Spesifik kilit-anahtar bağlanması ile fiziksel membran doygunluğu arasındaki farkı hatırlayın.",
+          "ar": "تذكر الفرق بين الارتباط النوعي كالقفل والمفتاح والتشبع الغشائي الفيزيائي.",
+          "en": "Recall the contrast between lock-and-key receptor binding and physical membrane saturation."
         },
         {
-          "tr": "Spesifik olmayan etki yüksek doygunluk gerektirir.",
-          "ar": "التأثير غير النوعي يتطلب تشبعاً عالياً.",
-          "en": "Non-specific action requires high relative saturation."
+          "tr": "Eter gram düzeyinde fiziksel membran doygunluğu yaparken, 5-FU miligramla enzimi bloke eder.",
+          "ar": "يحدث الإيثر تشبيعاً فيزيائياً بالغرامات بينما يثبط 5-FU الإنزيم بالمليغرامات.",
+          "en": "Ether requires grams to physically saturate membranes; 5-FU acts at milligrams by inhibiting thymidylate synthase."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 20
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
         }
       ]
     },
@@ -185,58 +205,58 @@
       "stage": "question",
       "stageIndex": 2,
       "title": {
-        "tr": "Tahmin: Eşit Doygunlukta Anestezi",
-        "ar": "توقع: التخدير عند التساوي في التشبع",
-        "en": "Prediction: Anesthesia at Equal Saturation"
+        "tr": "Tahmin: Kimyasal Çeşitlilik ve Ortak Anestezi",
+        "ar": "تنبؤ: التنوع الكيميائي والتخدير المشترك",
+        "en": "Prediction: Chemical Diversity and Shared Anesthesia"
       },
       "prompt": {
-        "tr": "Farklı kimyasal yapılardaki gazlar aynı bağıl doygunluğa (Pt / P0) ulaştığında anestezi derinliği nasıl değişir?",
-        "ar": "عندما تصل غازات متباينة كيميائياً لنفس نسبة التشبع النسبي (Pt / P0)، كيف يتغير عمق التخدير؟",
-        "en": "When chemically diverse volatile agents reach equal relative saturation (Pt / P0), how does their depth of anesthesia compare?"
+        "tr": "Kloroform (CHCl3), azot protoksit (N2O) ve dietil eter tamamen farklı kimyasal yapılara sahiptir. Farklı yapılardaki bu gazlar cerrahi anestezide nasıl ortak bir biyolojik etki oluşturabilir?",
+        "ar": "يمتلك الكلوروفورم (CHCl3) وأكسيد النيتروز (N2O) وإيثر ثنائي الإيثيل بنى كيميائية شديدة التباين. كيف يمكن لهذه الغازات المختلفة إحداث نفس التخدير الجراحي؟",
+        "en": "Chloroform (CHCl3), nitrous oxide (N2O), and diethyl ether have completely different chemical structures. How can such structurally diverse gases produce an identical surgical anesthetic state?"
       },
       "predictThenReveal": true,
       "conceptCheck": {
         "options": [
           {
-            "id": "opt-a",
+            "id": "opt-2a",
             "text": {
-              "tr": "Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.",
-              "ar": "تظهر تأثيرات متباينة تماماً تبعاً لاختلاف بنيتها.",
-              "en": "They exhibit completely different effects based on differing chemical structures."
+              "tr": "Hepsi beyinde tek bir 'anestezi reseptörü' proteinine kovalent bağlarla bağlanır.",
+              "ar": "ترتبط جميعها بروابط تساهمية مع مستقبل بروتيني مفرد للتخدير في الدماغ.",
+              "en": "They all bind covalently to a single dedicated 'anesthesia receptor' protein in the brain."
             },
             "isCorrect": false,
             "misconceptionFeedback": {
-              "tr": "Ferguson ilkesine göre kimyasal yapı değil, termodinamik aktivite belirleyicidir.",
-              "ar": "وفق مبدأ Ferguson، النشاط الديناميكي الحراري هو الحاكم وليس البنية.",
-              "en": "According to Ferguson's principle, thermodynamic activity governs biological depression, not chemical structure."
+              "tr": "Yanılgı: 'Tüm ilaçlar tek bir spesifik reseptöre bağlanır.' Yapı-nonspesifik gazlar kovalent bağ yapmaz ve ortak bir reseptör cebine ihtiyaç duymaz (Slayt 23).",
+              "ar": "مغالطة: 'جميع الأدوية ترتبط بمستقبل مفرد'. الغازات غير النوعية لا تشكل روابط تساهمية ولا تتطلب جيب مستقبل مشترك (شريحة 23).",
+              "en": "Misconception: 'All depressants bind one receptor.' Structurally non-specific volatile agents act without covalent binding to a shared receptor."
             }
           },
           {
-            "id": "opt-b",
+            "id": "opt-2b",
             "text": {
-              "tr": "Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.",
-              "ar": "الجزيئات ذات الوزن الجزيئي الصغير فقط تحدث تخديراً.",
-              "en": "Only volatile molecules with low molecular weight produce surgical anesthesia."
-            },
-            "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Molekül ağırlığı tek başına anestezi gücünü tayin etmez.",
-              "ar": "الوزن الجزيئي وحده لا يحدد القوة التخديرية.",
-              "en": "Molecular weight alone does not dictate anesthetic potency."
-            }
-          },
-          {
-            "id": "opt-c",
-            "text": {
-              "tr": "Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.",
-              "ar": "تحدث نفس درجة التخدير تقريباً بغض النظر عن البنية الكيميائية.",
-              "en": "They produce approximately the same depth of anesthesia regardless of chemical structure."
+              "tr": "Kimyasal yapıdan bağımsız olarak, hücre membranında eşit bağıl doygunluk oluşturarak etki ederler.",
+              "ar": "تؤثر عبر إحداث تشبع نسبي متساوٍ في الغشاء الخلوي، بمعزل عن بنيتها الكيميائية.",
+              "en": "They act by achieving equivalent relative saturation in cell membranes, independent of chemical structure."
             },
             "isCorrect": true,
             "misconceptionFeedback": {
-              "tr": "Doğru! Bağıl doygunluk eşit olduğunda biyofazdaki termodinamik kaçma eğilimi eşittir.",
-              "ar": "صحيح! عند تساوي التشبع، يكون ميل الهروب الديناميكي متساوياً.",
-              "en": "Correct! At equal relative saturation, thermodynamic escaping tendency in the biophase is identical."
+              "tr": "Doğru! Ferguson ilkesine göre yapı-nonspesifik ilaçlar, zarda benzer termodinamik doygunluğa ulaştıklarında benzer etki gösterirler (Slayt 18, 23).",
+              "ar": "صحيح! وفق مبدأ Ferguson، تحدث المواد غير النوعية بنيوياً نفس التأثير عند وصولها لنفس التشبع الثرموديناميكي الغشائي (شريحة 18، 23).",
+              "en": "Correct! Ferguson's principle proves chemically diverse non-specific depressants produce identical depression at comparable thermodynamic biophasic saturation."
+            }
+          },
+          {
+            "id": "opt-2c",
+            "text": {
+              "tr": "Kanda hızla parçalanıp aynı ortak aktif metabolite dönüşürler.",
+              "ar": "تتفكك سريعاً في مجرى الدم متحولة إلى نفس المستقلب الفعال المشترك.",
+              "en": "They undergo rapid enzymatic cleavage in blood into a single shared active metabolite."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: 'Uçucu gazlar ortak bir metabolite dönüşerek etki eder.' Uçucu anestezikler büyük oranda metabolize olmadan, akciğerlerden değişmeden atılırlar.",
+              "ar": "مغالطة: 'تتحول المخدرات لمستقلب مشترك'. تُطرح المخدرات الاستنشاقية عبر الرئتين دون تغير بنيوي يذكر.",
+              "en": "Misconception: 'Volatile agents act through common metabolites.' Inhalation anesthetics act physically and are eliminated largely unchanged via the lungs."
             }
           }
         ]
@@ -244,667 +264,34 @@
       "config": {
         "options": [
           {
-            "id": "opt-a",
-            "text": "Farklı yapılara bağlı olarak tamamen farklı etkiler gösterirler.",
-            "isCorrect": false
-          },
-          {
-            "id": "opt-b",
-            "text": "Yalnızca molekül ağırlığı küçük olanlar anestezi yapar.",
-            "isCorrect": false
-          },
-          {
-            "id": "opt-c",
-            "text": "Kimyasal yapıdan bağımsız olarak yaklaşık aynı derecede anestezi oluştururlar.",
-            "isCorrect": true
-          }
-        ],
-        "revealedOutcome": "Tüm uçucu anestezikler a = Pt / P0 ≈ 0.03-0.05 aralığında cerrahi anestezi oluşturur.",
-        "explanation": "Ferguson ilkesine göre yapısal olarak özgül olmayan maddeler eşit bağıl doygunlukta eşit biyolojik yanıt verir."
-      },
-      "technicalTerms": [
-        {
-          "term": "Ferguson ilkesi",
-          "arContext": "مبدأ Ferguson"
-        },
-        {
-          "term": "bağıl doygunluk",
-          "arContext": "التشبع النسبي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Termodinamik aktivite fazlar arası dengeyi temsil eder.",
-          "ar": "يمثل النشاط الديناميكي الحراري التوازن بين الأطوار.",
-          "en": "Thermodynamic activity represents equilibrium across biophasic compartments."
-        },
-        {
-          "tr": "Biyofazdaki kaçma eğilimini göz önüne alın.",
-          "ar": "ضع في اعتبارك ميل الهروب في الطور الحيوي.",
-          "en": "Consider the escaping tendency of volatile molecules into the biophase."
-        },
-        {
-          "tr": "Pt / P0 oranı eşit olduğunda zardaki yoğunlaşma eşittir.",
-          "ar": "عند تساوي نسبة Pt / P0 يتساوى التركيز في الغشاء.",
-          "en": "Equal partial saturation yields equal membrane concentration."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-03",
-      "stage": "intuition",
-      "stageIndex": 3,
-      "title": {
-        "tr": "Sezgisel Model: Zardan Kaçma Eğilimi",
-        "ar": "النموذج الحدسي: ميل الهروب من الغشاء",
-        "en": "Intuitive Model: Escaping Tendency from Membrane"
-      },
-      "prompt": {
-        "tr": "Bir sıvıyı buharlaşmaya zorlayan iç basınç gibi, çözücüdeki moleküller de doymuşluk arttıkça zarlara itilir. Doygunluk yükseldikçe ne olur?",
-        "ar": "كما يدفع الضغط الداخلي السائل للتبخر، تندفع الجزيئات نحو الأغشية مع اقتراب التشبع. ماذا يحدث عند زيادة التشبع؟",
-        "en": "Thermodynamic activity measures a molecule's escaping tendency from its biophasic solution into target cellular lipid bilayers."
-      },
-      "predictThenReveal": false,
-      "config": {
-        "analogy": "Crowded room escaping tendency"
-      },
-      "technicalTerms": [
-        {
-          "term": "kaçma eğilimi",
-          "arContext": "ميل الهروب الجزيئي"
-        },
-        {
-          "term": "biyofaz",
-          "arContext": "الطور الحيوي الغشائي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Molekül kendi fazında sıkıştıkça hücre zarına kaçar.",
-          "ar": "كلما انحصر الجزيء في طوره هرب إلى غشاء الخلية.",
-          "en": "As molecules crowd their initial phase, they escape into cellular lipid membranes."
-        },
-        {
-          "tr": "Zar lipidlerine yerleşen moleküller zarı genişletir.",
-          "ar": "الجزيئات المستقرة في دهون الغشاء تؤدي لتمدده.",
-          "en": "Molecules intercalating into lipid bilayers cause physical membrane expansion."
-        },
-        {
-          "tr": "Bu durum iyon kanallarının iletimini bloke eder.",
-          "ar": "هذا يغلق القنوات الأيونية ميكانيكياً.",
-          "en": "This expansion mechanically compresses and blocks ion channel conduction."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-04",
-      "stage": "visual_explanation",
-      "stageIndex": 4,
-      "title": {
-        "tr": "Görselleştirme: Lipid Çift Katmanının Genişlemesi",
-        "ar": "التوضيح البصري: تمدد طبقة الدهون الثنائية",
-        "en": "Visualization: Lipid Bilayer Expansion"
-      },
-      "prompt": {
-        "tr": "Termodinamik aktivite a arttıkça lipid çift katmanına yerleşen moleküller membran hacmini genişletir (Delta V). Bu durum nöronal iletimi durdurur.",
-        "ar": "مع ارتفاع النشاط termodinamik aktivite تتكدس الجزيئات في الطبقة الثنائية وتحدث تمدداً حجمياً يعطل السيالة العصبية.",
-        "en": "Accumulation of structurally non-specific molecules expands the neuronal membrane volume, mechanically compressing vital ion channel pores."
-      },
-      "predictThenReveal": false,
-      "config": {
-        "diagram": "membrane_expansion_svg"
-      },
-      "technicalTerms": [
-        {
-          "term": "lipid çift katmanı",
-          "arContext": "طبقة الدهون الثنائية"
-        },
-        {
-          "term": "membran hacmi",
-          "arContext": "حجم الغشاء الخلوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Zar kalınlaşması iyon kanallarına baskı uygular.",
-          "ar": "سماكة الغشاء تضغط على القنوات الأيونية.",
-          "en": "Membrane thickening exerts lateral pressure on neuronal ion channels."
-        },
-        {
-          "tr": "Sodyum geçişi durunca aksiyon potansiyeli kaybolur.",
-          "ar": "يتوقف جهد الفعل بتعطل شوارد الصوديوم.",
-          "en": "When sodium influx is halted, nerve action potentials cannot propagate."
-        },
-        {
-          "tr": "Kritik hacim hipotezi anestezinin fiziksel temelidir.",
-          "ar": "فرضية الحجم الحرج هي أساس التخدير الفيزيائي.",
-          "en": "The critical volume hypothesis provides the physical basis for anesthesia."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-05",
-      "stage": "interactive_artifact",
-      "stageIndex": 5,
-      "title": {
-        "tr": "İnteraktif Simülasyon: Ferguson Slider",
-        "ar": "المحاكاة التفاعلية: زالق Ferguson",
-        "en": "Interactive Simulation: Ferguson Slider"
-      },
-      "prompt": {
-        "tr": "Kısmi buhar basıncını artırarak termodinamik aktiviteyi (a) ve membran hacim genişlemesini gözlemleyin. Anestezi eşiği hangi değerdedir?",
-        "ar": "قم بزيادة الضغط الجزئي لملاحظة النشاط الديناميكي وتمدد الغشاء. عند أي قيمة يقع عتبة التخدير الجراحي؟",
-        "en": "Modulate partial vapor pressure to examine the iso-activity anesthetic window and phase cutoff boundaries."
-      },
-      "predictThenReveal": false,
-      "widgetType": "ThermodynamicActivityFergusonSlider",
-      "widget": {
-        "type": "ThermodynamicActivityFergusonSlider",
-        "config": {
-          "compound": "diethyl_ether",
-          "p0": 440,
-          "pt": 15,
-          "anestheticThreshold": 0.03
-        }
-      },
-      "config": {
-        "defaultAgent": "diethyl_ether",
-        "initialPt": 15
-      },
-      "technicalTerms": [
-        {
-          "term": "kısmi buhar basıncı",
-          "arContext": "الضغط الجزئي للبخار"
-        },
-        {
-          "term": "anestezi eşiği",
-          "arContext": "عتبة التخدير"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Kısmi basıncı artırarak anestezi eşiğini belirleyin.",
-          "ar": "قم بزيادة الضغط الجزئي لتحديد عتبة التخدير.",
-          "en": "Increase partial vapor pressure to identify the surgical anesthesia threshold."
-        },
-        {
-          "tr": "a = Pt / P0 oranını kontrol edin.",
-          "ar": "تحقق من النسبة a = Pt / P0.",
-          "en": "Monitor the relative saturation ratio."
-        },
-        {
-          "tr": "a değeri 0.03 ile 0.05 arasına ulaştığında anestezi başlar.",
-          "ar": "يبدأ التخدير عندما تصل قيمة a بين 0.03 و 0.05.",
-          "en": "Anesthesia occurs when relative saturation reaches the target window."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-06",
-      "stage": "guided_discovery",
-      "stageIndex": 6,
-      "title": {
-        "tr": "Rehberli Keşif: Nitrojen Suboksit vs Kloroform",
-        "ar": "استكشاف موجه: أكسيد النيتروز مقابل الكلوروفورم",
-        "en": "Guided Discovery: Nitrous Oxide vs Chloroform"
-      },
-      "prompt": {
-        "tr": "Simülatörde kloroform ve N2O gazlarını karşılaştırın. Kaynama noktaları ve P0 değerleri çok farklı olsa da anestezi hangi a değerinde gerçekleşir?",
-        "ar": "قارن بين الكلوروفورم و N2O. رغم اختلاف درجات الغليان و P0، عند أي قيمة a يحدث التخدير المشترك؟",
-        "en": "Notice how nitrous oxide and chloroform produce identical surgical depth despite a massive difference in absolute saturation pressure."
-      },
-      "predictThenReveal": true,
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-disc-1",
-            "text": {
-              "tr": "Her iki gaz için de aynı dar aralıkta: a ≈ 0.03-0.05.",
-              "ar": "لكلا الغازين في نفس النطاق الضيق: a ≈ 0.03-0.05.",
-              "en": "In the same narrow relative saturation window for both gases."
-            },
-            "isCorrect": true,
-            "misconceptionFeedback": {
-              "tr": "Harika! Bağıl doygunluk kuralı kimyasal yapıdan bağımsızdır.",
-              "ar": "ممتاز! قاعدة التشبع النسبي مستقلة عن التركيب الكيميائي.",
-              "en": "Excellent! The relative saturation rule is independent of chemical structure."
-            }
-          },
-          {
-            "id": "opt-disc-2",
-            "text": {
-              "tr": "Farklı moleküler ağırlıklar nedeniyle tamamen farklı a değerlerinde.",
-              "ar": "عند قيم a متباينة تماماً بسبب اختلاف الأوزان الجزيئية.",
-              "en": "At completely different activity values due to differing molecular weights."
-            },
+            "id": "opt-2a",
+            "text": "Hepsi beyinde tek bir anestezi reseptörüne kovalent bağlanır.",
             "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Molekül ağırlığı farklı olsa bile termodinamik aktivite aralığı aynıdır.",
-              "ar": "رغم اختلاف الوزن، نطاق النشاط الديناميكي يبقى ثابتاً.",
-              "en": "Even with different molecular weights, the thermodynamic activity window remains the same."
-            }
-          }
-        ]
-      },
-      "config": {
-        "options": [
-          {
-            "id": "opt-disc-1",
-            "text": "Her iki gaz için de a ≈ 0.03-0.05 aralığında.",
-            "isCorrect": true
+            "misconceptionFeedback": "Yapı-nonspesifik gazlar ortak bir reseptör cebine bağlanmazlar."
           },
           {
-            "id": "opt-disc-2",
-            "text": "Farklı a değerlerinde.",
-            "isCorrect": false
-          }
-        ],
-        "revealedOutcome": "Her iki molekül de a ≈ 0.03-0.05 seviyesinde anestezi oluşturur.",
-        "explanation": "Kimyasal yapı ne olursa olsun, membran lipid fazındaki doygunluk oranı aynı etkiyi yaratır."
-      },
-      "technicalTerms": [
-        {
-          "term": "bağıl doygunluk oranı",
-          "arContext": "نسبة التشبع النسبي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "N2O gazının P0 değeri çok yüksektir.",
-          "ar": "قيمة P0 لغاز N2O مرتفعة جداً.",
-          "en": "Nitrous oxide has an extremely high saturation vapor pressure."
-        },
-        {
-          "tr": "Kloroformun P0 değeri düşüktür.",
-          "ar": "قيمة P0 للكلوروفورم منخفضة.",
-          "en": "Chloroform has a much lower saturation vapor pressure."
-        },
-        {
-          "tr": "Pt / P0 oranı her ikisinde de 0.03-0.05 düzeyindedir.",
-          "ar": "نسبة Pt / P0 في كليهما بين 0.03-0.05.",
-          "en": "Relative saturation produces equivalent depth for both volatile agents."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-07",
-      "stage": "formal_explanation",
-      "stageIndex": 7,
-      "title": {
-        "tr": "Formal Formülasyon: Ferguson Yasası",
-        "ar": "الصياغة الرياضية: قانون Ferguson",
-        "en": "Formal Formulation: Ferguson's Principle"
-      },
-      "prompt": {
-        "tr": "Termodinamik aktivite gaz fazında a = Pt / P0, çözeltide ise a = St / S0 olarak tanımlanır. Bu oran kimyasal potansiyelin doğrudan göstergesidir.",
-        "ar": "يعرف النشاط بـ a = Pt / P0 للغازات و a = St / S0 للمحاليل. هذه النسبة هي المقياس المباشر للكمون الكيميائي.",
-        "en": "For non-specific agents, thermodynamic activity in the biophase equals relative saturation in external phase."
-      },
-      "predictThenReveal": false,
-      "config": {
-        "formula": "a = \\frac{P_t}{P_0} \\approx \\frac{S_t}{S_0}",
-        "cutoff": "high relative saturation non-specific; a < 0.001 specific"
-      },
-      "technicalTerms": [
-        {
-          "term": "kimyasal potansiyel",
-          "arContext": "الكمون الكيميائي"
-        },
-        {
-          "term": "çözünürlük doygunluğu",
-          "arContext": "تشبع الذوبانية"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Pt: ortamdaki kısmi basınç, P0: doymuş buhar basıncı.",
-          "ar": "Pt: الضغط الجزئي، P0: ضغط البخار المشبع.",
-          "en": "Pt represents partial pressure; P0 represents saturation vapor pressure."
-        },
-        {
-          "tr": "St: çözelti konsantrasyonu, S0: doymuşluk çözünürlüğü.",
-          "ar": "St: التركيز في المحلول، S0: الذوبانية عند التشبع.",
-          "en": "St represents concentration in solution; S0 represents saturation solubility."
-        },
-        {
-          "tr": "a değeri unity değerine yaklaştıkça sistem doygunluğa ulaşır.",
-          "ar": "كلما اقتربت a من حد التشبع الأقصى اقترب النظام من الامتلاء التام.",
-          "en": "As activity approaches saturation, the biophase reaches thermodynamic equilibrium."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-08",
-      "stage": "concept_check",
-      "stageIndex": 8,
-      "title": {
-        "tr": "Kavram Denetimi: Gizemli Bileşiklerin Sınıflandırılması",
-        "ar": "فحص المفهوم: تصنيف المركبات المجهولة",
-        "en": "Concept Check: Classifying Mystery Compounds"
-      },
-      "prompt": {
-        "tr": "Bileşik X 500 mg dozda a = 0.20 aktiviteyle; Bileşik Y 10 ug dozda a = 0.00001 aktiviteyle etki ediyor. Hangisi yapısal olarak özgüldür?",
-        "ar": "مركب X بجرعة 500 mg يمتلك نشاط a = 0.20، ومركب Y بجرعة 10 ug يمتلك نشاط a = 0.00001. أيهما نوعي بنيوياً؟",
-        "en": "Compound X requires high relative saturation for depression. Compound Y produces activity at extreme dilution. Classify their mechanisms."
-      },
-      "predictThenReveal": true,
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-chk-1",
-            "text": {
-              "tr": "Bileşik Y yapısal olarak özgüldür çünkü aşırı seyreltik doygunlukta (a < 0.001) etki eder.",
-              "ar": "المركب Y نوعي بنيوياً لأنه يؤثر عند تشبع متناهي الصغر (a < 0.001).",
-              "en": "Compound Y is structurally specific because it acts at extreme dilution."
-            },
+            "id": "opt-2b",
+            "text": "Kimyasal yapıdan bağımsız olarak, hücre membranında eşit bağıl doygunluk oluştururlar.",
             "isCorrect": true,
-            "misconceptionFeedback": {
-              "tr": "Doğru! a < 0.001 olması spesifik reseptör bağlanmasının kesin kanıtıdır. Arada 4 orders of magnitude fark vardır.",
-              "ar": "صحيح! a < 0.001 برهان على الارتباط بمستقبِل نوعي (reseptör).",
-              "en": "Correct! Low activity proves specific receptor binding. There is a huge divergence in saturation."
-            }
+            "misconceptionFeedback": "Doğru! Ferguson ilkesine göre benzer termodinamik doygunluk benzer etki üretir."
           },
           {
-            "id": "opt-chk-2",
-            "text": {
-              "tr": "Bileşik X yapısal olarak özgüldür çünkü dozu daha büyüktür.",
-              "ar": "المركب X نوعي بنيوياً لأن جرعته أكبر.",
-              "en": "Compound X is structurally specific because its effective dose is larger."
-            },
+            "id": "opt-2c",
+            "text": "Kanda parçalanıp aynı ortak aktif metabolite dönüşürler.",
             "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Büyük doz ve yüksek a (0.20) yapısal olarak özgül olmayan fiziksel etkiyi gösterir.",
-              "ar": "الجرعة الكبيرة و a العالية تدل على تأثير فيزيائي غير نوعي.",
-              "en": "High saturation requirements define structurally non-specific membrane perturbation."
-            }
-          }
-        ]
-      },
-      "config": {
-        "options": [
-          {
-            "id": "opt-chk-1",
-            "text": "Bileşik Y özgüldür (a < 0.001).",
-            "isCorrect": true
-          },
-          {
-            "id": "opt-chk-2",
-            "text": "Bileşik X özgüldür.",
-            "isCorrect": false
+            "misconceptionFeedback": "Uçucu anestezikler metabolize olmadan akciğerlerden değişmeden atılırlar."
           }
         ],
-        "revealedOutcome": "Bileşik Y reseptör aracılı özgül bir ilaçtır.",
-        "explanation": "Bileşik Y ile Bileşik X arasında termodinamik aktivite açısından 4 orders of magnitude büyüklük farkı mevcuttur."
-      },
-      "technicalTerms": [
-        {
-          "term": "yapısal olarak özgül",
-          "arContext": "نوعي بنيوياً"
+        "revealedOutcome": {
+          "tr": "Farklı kimyasal yapılardaki gazlar, membran lipidlerinde eşit bağıl doygunluk (termodinamik aktivite) oluşturarak anestezi meydana getirir.",
+          "ar": "تحدث الغازات المتباينة كيميائياً التخدير عبر توليد نفس التشبع النسبي (النشاط الثرموديناميكي) في دهون الأغشية.",
+          "en": "Structurally diverse volatile agents induce anesthesia by establishing identical relative saturation in membrane lipids."
         },
-        {
-          "term": "reseptör aracılı",
-          "arContext": "بواسطة المستقبِل"
+        "explanation": {
+          "tr": "Ferguson'a göre aktiviteden endobiyofazdaki bağıl doygunluk derecesi sorumludur; kimyasal yapı değişken olsa da benzer etki görülür (Slayt 18, 23).",
+          "ar": "وفق Ferguson، فإن درجة التشبع النسبي في الطور الحيوي الداخلي هي المسؤولة عن التأثير بمعزل عن الهيكل الكيميائي (شريحة 18، 23).",
+          "en": "According to Ferguson, relative biophasic saturation dictates potency; diverse structures produce comparable depression at equal saturation."
         }
-      ],
-      "hints": [
-        {
-          "tr": "a < 0.001 eşiğini hatırlayın.",
-          "ar": "تذكر عتبة a < 0.001.",
-          "en": "Recall the cutoff dividing specific and non-specific mechanisms."
-        },
-        {
-          "tr": "Bileşik Y aşırı düşük doygunlukta etki gösteriyor.",
-          "ar": "المركب Y يعمل عند تشبع بالغ الانخفاض.",
-          "en": "Compound Y produces biological effects at extreme biophasic dilution."
-        },
-        {
-          "tr": "Düşük termodinamik aktivite yüksek reseptör ilgisini kanıtlar.",
-          "ar": "النشاط الديناميكي المنخفض يثبت ألفة المستقبِل العالية.",
-          "en": "Low thermodynamic activity proves high-affinity stereospecific receptor binding."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-09",
-      "stage": "application",
-      "stageIndex": 9,
-      "title": {
-        "tr": "Uygulama: Soluma Anesteziğinde Doz Hesabı",
-        "ar": "تطبيق سريري: حساب جرعة المخدر الاستنشاقي",
-        "en": "Application: Volatile Inhalation Dose Calculation"
-      },
-      "prompt": {
-        "tr": "Doygun buhar basıncı P0 = 200 mmHg olan yeni bir anestezik gaz için Pt = 10 mmHg uygulandığında a değeri ve etki durumu nedir?",
-        "ar": "مخدر غازي جديد يمتلك P0 = 200 mmHg، عند تطبيق Pt = 10 mmHg ما هي قيمة a والحالة التخديرية الناتجة؟",
-        "en": "A volatile anesthetic has saturation vapor pressure P0 = 200 mmHg. Inhalation anesthesia occurs at partial pressure Pt = 10 mmHg. Calculate a."
-      },
-      "predictThenReveal": true,
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-app-1",
-            "text": {
-              "tr": "a = 20.0; ölümcül doz aşımıdır.",
-              "ar": "a = 20.0؛ جرعة مفرطة قاتلة.",
-              "en": "a = 20.0; represents a fatal massive overdose."
-            },
-            "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Pt / P0 oranı unity sınırından büyük olamaz, bölme yönüne dikkat edin.",
-              "ar": "لا يمكن أن تتجاوز نسبة Pt / P0 حد التشبع الأقصى.",
-              "en": "Calculation error: relative saturation cannot exceed standard limits under equilibrium."
-            }
-          },
-          {
-            "id": "opt-app-2",
-            "text": {
-              "tr": "a = 0.05 (5% doygunluk); cerrahi anestezi aralığındadır.",
-              "ar": "a = 0.05 (تشبع 5%)؛ يقع ضمن نطاق التخدير الجراحي.",
-              "en": "a = 0.05; falls within the surgical anesthesia window."
-            },
-            "isCorrect": true,
-            "misconceptionFeedback": {
-              "tr": "Doğru: a = 10 / 200 = 0.05. Bu değer tam anestezi penceresindedir.",
-              "ar": "صحيح: a = 10 / 200 = 0.05، وهي ضمن نافذة التخدير الجراحي.",
-              "en": "Correct! a = Pt / P0 = 10 / 200 = 0.05, matching the Ferguson threshold."
-            }
-          }
-        ]
-      },
-      "config": {
-        "options": [
-          {
-            "id": "opt-app-1",
-            "text": "a = 20.0; ölümcül aşırı doz.",
-            "isCorrect": false
-          },
-          {
-            "id": "opt-app-2",
-            "text": "a = 0.05; cerrahi anestezi aralığındadır.",
-            "isCorrect": true
-          }
-        ],
-        "revealedOutcome": "a = Pt / P0 = 10 / 200 = 0.05 (5% bağıl doygunluk). Cerrahi anestezi başarıyla sağlanır.",
-        "explanation": "Hesaplanan 0.05 değeri Ferguson un belirlediği 0.03-0.05 anestezi aralığına tam uyar."
-      },
-      "technicalTerms": [
-        {
-          "term": "cerrahi anestezi",
-          "arContext": "التخدير الجراحي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Formülü uygulayın: a = Pt / P0.",
-          "ar": "طبق القانون: a = Pt / P0.",
-          "en": "Apply Ferguson's equation: a = Pt / P0."
-        },
-        {
-          "tr": "10 bölü 200 işlemini yapın.",
-          "ar": "اقسم 10 على 200.",
-          "en": "Calculate the ratio of given vapor pressures."
-        },
-        {
-          "tr": "Sonuç 0.05 tir ve anestezi aralığındadır.",
-          "ar": "النتيجة 0.05 وتقع ضمن نطاق التخدير.",
-          "en": "The quotient falls within the surgical anesthesia window."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-10",
-      "stage": "retrieval",
-      "stageIndex": 10,
-      "title": {
-        "tr": "Geri Çağırma: Genel Kimyadan Raoult Yasası",
-        "ar": "استرجاع معرفي: قانون Raoult من الكيمياء العامة",
-        "en": "Retrieval: Raoult's Law from General Chemistry"
-      },
-      "prompt": {
-        "tr": "İdeal çözeltilerde kısmi buhar basıncı ile mol kesri arasındaki ilişkiyi kuran temel termodinamik yasa hangisidir?",
-        "ar": "ما هو القانون الديناميكي الحراري الأساسي الذي يربط بين الضغط الجزئي والكسر المولي في المحاليل المثالية؟",
-        "en": "In ideal solutions, how does partial vapor pressure over a solution relate to mole fraction and saturation vapor pressure?"
-      },
-      "predictThenReveal": false,
-      "config": {
-        "targetConcept": "Raoult Yasası"
-      },
-      "technicalTerms": [
-        {
-          "term": "Raoult yasası",
-          "arContext": "قانون Raoult"
-        },
-        {
-          "term": "mol kesri",
-          "arContext": "الكسر المولي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "Buhar basıncı düşmesi yasasını hatırlayın.",
-          "ar": "تذكر قانون انخفاض ضغط البخار.",
-          "en": "Recall the law governing vapor pressure depression in solutions."
-        },
-        {
-          "tr": "Fransız kimyacı François-Marie Raoult un adıyla anılır.",
-          "ar": "منسوب إلى الكيميائي الفرنسي Raoult.",
-          "en": "Named after French physical chemist Francois-Marie Raoult."
-        },
-        {
-          "tr": "Ferguson ilkesi Raoult yasasının biyolojik uyarlamasıdır.",
-          "ar": "مبدأ Ferguson هو تطبيق بيولوجي لقانون Raoult.",
-          "en": "Ferguson's principle represents the biophysical application of Raoult's law."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-11",
-      "stage": "connection",
-      "stageIndex": 11,
-      "title": {
-        "tr": "İleri Bağlantı: Çözünürlük ve İyonizasyon (Ders 2)",
-        "ar": "ربط مفاهيمي: الذوبانية والتأين (الدرس 2)",
-        "en": "Connection: Solubility and Ionization (Lesson 2)"
-      },
-      "prompt": {
-        "tr": "Termodinamik aktivite ilaç molekülünün sudan kaçıp zara sığınmasını açıklar. Bir sonraki derste bu kaçışı belirleyen iyonizasyon dengesini inceleyeceğiz.",
-        "ar": "يفسر النشاط الديناميكي هروب الجزيء من الماء للغشاء. في الدرس القادم، سندرس توازن التأين (iyonizasyon) الذي يتحكم بهذا العبور.",
-        "en": "Thermodynamic activity governs non-specific agents, but how does aqueous ionization dictate membrane crossing for specific drugs?"
-      },
-      "predictThenReveal": false,
-      "config": {
-        "nextLesson": "mc-mod1-les2"
-      },
-      "technicalTerms": [
-        {
-          "term": "iyonizasyon dengesi",
-          "arContext": "توازن التأين"
-        },
-        {
-          "term": "membran geçişi",
-          "arContext": "عبور الأغشية"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "İyonlaşmış moleküller suda kalır.",
-          "ar": "الجزيئات المتأينة تبقى في الطور المائي.",
-          "en": "Ionized species remain partitioned in the bulk aqueous phase."
-        },
-        {
-          "tr": "İyonlaşmamış moleküller lipid zara geçer.",
-          "ar": "الجزيئات غير المتأينة تعبر الغشاء الدهني.",
-          "en": "Un-ionized neutral molecules diffuse across hydrophobic lipid membranes."
-        },
-        {
-          "tr": "Henderson-Hasselbalch denklemi bu oranı yönetir.",
-          "ar": "معادلة Henderson-Hasselbalch تحكم هذه النسبة.",
-          "en": "The Henderson-Hasselbalch equation governs this ionization equilibrium."
-        }
-      ]
-    },
-    {
-      "id": "mc-mod1-les1-step-12",
-      "stage": "mastery_check",
-      "stageIndex": 12,
-      "title": {
-        "tr": "Ustalık Sınavı: Ferguson İlkesi Özeti",
-        "ar": "اختبار الإتقان: ملخص مبدأ Ferguson",
-        "en": "Mastery Assessment: Ferguson Principle Summary"
-      },
-      "prompt": {
-        "tr": "Ferguson ilkesinin temel kuralını tek bir cümleyle özetleyin: Yapısal olarak özgül olmayan maddelerin biyolojik etkisi neye bağlıdır?",
-        "ar": "لخص مبدأ Ferguson بجملة واحدة: على ماذا يعتمد التأثير البيولوجي للمركبات غير النوعية بنيوياً؟",
-        "en": "Which definitive criterion proves that a series of hypnotic drugs operates via a structurally non-specific biophysical mechanism?"
-      },
-      "predictThenReveal": true,
-      "conceptCheck": {
-        "options": [
-          {
-            "id": "opt-mst-1",
-            "text": {
-              "tr": "Kimyasal yapılarına ve spesifik kovalent bağ oluşturma güçlerine.",
-              "ar": "على بنيتها الكيميائية وقدرتها على تشكيل روابط تساهمية نوعية.",
-              "en": "Their chemical core structures and ability to form specific covalent bonds."
-            },
-            "isCorrect": false,
-            "misconceptionFeedback": {
-              "tr": "Yapısal olarak özgül olmayan bileşikler spesifik bağ yapmazlar.",
-              "ar": "المركبات غير النوعية بنيوياً لا تشكل روابط نوعية.",
-              "en": "Non-specific drugs do not form stereospecific covalent bonds."
-            }
-          },
-          {
-            "id": "opt-mst-2",
-            "text": {
-              "tr": "Kimyasal yapıdan bağımsız olarak, biyofazdaki bağıl doygunluklarına (termodinamik aktivitelerine).",
-              "ar": "على تشبعها النسبي في الطور الحيوي (termodinamik aktivite) بمعزل عن بنيتها.",
-              "en": "Their relative thermodynamic saturation in the biophase, independent of chemical structure."
-            },
-            "isCorrect": true,
-            "misconceptionFeedback": {
-              "tr": "Tebrikler! Dersi ustalıkla tamamladınız. +50 XP kazandınız.",
-              "ar": "تهانينا! لقد أتقنت الدرس بنجاح. حصلت على +50 XP.",
-              "en": "Correct! Ferguson's principle proves biological depression is governed by relative thermodynamic activity."
-            }
-          }
-        ]
-      },
-      "config": {
-        "options": [
-          {
-            "id": "opt-mst-1",
-            "text": "Kimyasal yapıya bağlıdır.",
-            "isCorrect": false
-          },
-          {
-            "id": "opt-mst-2",
-            "text": "Biyofazdaki bağıl doygunluğa (termodinamik aktiviteye) bağlıdır.",
-            "isCorrect": true
-          }
-        ],
-        "revealedOutcome": "Ders başarıyla tamamlandı! 3 review cards Leitner Box 1 e 1-day aralıkla eklendi. +50 XP.",
-        "explanation": "Tebrikler, Ferguson ilkesi ve termodinamik aktivite kavramını tam anlamıyla kavradınız."
       },
       "technicalTerms": [
         {
@@ -918,19 +305,1098 @@
       ],
       "hints": [
         {
-          "tr": "Kimyasal yapı mı yoksa faz dengesi mi?",
-          "ar": "هل البنية الكيميائية أم توازن الأطوار؟",
-          "en": "Consider chemical structure versus biophasic phase equilibrium."
+          "tr": "Bu gazların moleküler şekilleri birbirine benzer mi?",
+          "ar": "هل تتشابه الأشكال الجزيئية لهذه الغازات؟",
+          "en": "Do the molecular shapes of chloroform, nitrous oxide, and ether resemble each other?"
         },
         {
-          "tr": "Doygunluk oranı anahtar kavramdır.",
-          "ar": "نسبة التشبع هي المفهوم المحوري.",
-          "en": "Relative saturation is the key governing parameter."
+          "tr": "Şekiller tamamen farklıysa, ortak etki kimyasal kilide değil fiziksel faz dengesine dayanır.",
+          "ar": "إذا كانت الأشكال شديدة التباين، فإن التأثير المشترك يعتمد على توازن الأطوار الفيزيائي.",
+          "en": "If molecular shapes share no common template, action relies on physical phase partitioning."
         },
         {
-          "tr": "Eşit termodinamik aktivite eşit biyolojik yanıt üretir.",
-          "ar": "النشاط الديناميكي المتساوي يولد استجابة متساوية.",
-          "en": "Equal thermodynamic activity produces equal biological depression."
+          "tr": "Ferguson prensibine göre kimyasal yapıdan bağımsız eşit bağıl doygunluk ortak etkiyi açıklar.",
+          "ar": "وفق مبدأ Ferguson، يفسر تساوي التشبع النسبي التأثير المشترك بمعزل عن البنية.",
+          "en": "Ferguson's principle demonstrates equal relative biophasic saturation produces equal depression."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-03",
+      "stage": "intuition",
+      "stageIndex": 3,
+      "title": {
+        "tr": "Fiziksel Sezgi: Dinamik Denge ve Kaçma Eğilimi",
+        "ar": "حدس فيزيائي: التوازن الديناميكي وميل الهروب",
+        "en": "Physical Intuition: Dynamic Equilibrium & Escaping Tendency"
+      },
+      "prompt": {
+        "tr": "Ekzobiyofaz (kan/dış ortam) ile endobiyofaz (hücre membranı) arasında dinamik bir denge vardır. Molekülün sulu ortamdan kaçıp membran lipidlerine sığınma eğilimi termodinamik aktiviteyi belirler.",
+        "ar": "ينشأ توازن ديناميكي بين الطور الخارجي (الدم) والطور الحيوي الداخلي (الغشاء). ميل الجزيء للهروب من الوسط المائي نحو دهون الغشاء يحدد النشاط الديناميكي الحراري.",
+        "en": "A dynamic equilibrium exists between the exobiophase (blood/external medium) and endobiophase (cell membrane). A molecule's thermodynamic tendency to escape water into lipid bilayers dictates its activity."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "model": "PhaseEquilibriumEscapingTendency",
+        "explanation": {
+          "tr": "Molekülün sudan kaçma eğilimi, faz dengesinde zardaki kimyasal potansiyeli dış ortamdaki bağıl basınca (Pt / P0) eşitler (Slayt 18).",
+          "ar": "ميل الجزيء للهروب من الماء يجعل الكمون الكيميائي في الغشاء مساوياً للضغط النسبي الخارجي (Pt / P0) عند التوازن (شريحة 18).",
+          "en": "A molecule's aqueous escaping tendency equalizes its chemical potential in lipid membranes with external relative saturation (Pt / P0)."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "ekzobiyofaz",
+          "arContext": "الطور الحيوي الخارجي"
+        },
+        {
+          "term": "endobiyofaz",
+          "arContext": "الطور الحيوي الداخلي"
+        },
+        {
+          "term": "kaçma eğilimi",
+          "arContext": "ميل الهروب الثرموديناميكي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "İki faz arasındaki dengeyi düşünün: moleküller sulu fazdan sürekli membran fazına geçer.",
+          "ar": "فكر في التوازن بين طورين: تنتقل الجزيئات باستمرار من الطور المائي إلى الغشاء.",
+          "en": "Consider partition equilibrium: molecules constantly exchange between aqueous and membrane phases."
+        },
+        {
+          "tr": "Denge kurulduğunda endobiyofazdaki kimyasal potansiyel ekzobiyofaza eşitlenir.",
+          "ar": "عند التوازن يتساوى الكمون الكيميائي الداخلي مع الخارجي.",
+          "en": "At dynamic equilibrium, chemical potential in the endobiophase equals that in the exobiophase."
+        },
+        {
+          "tr": "Bu eşitlik sayesinde doğrudan ölçülemeyen zardaki aktivite, dış ortamdaki Pt / P0 ile ölçülür.",
+          "ar": "يتيح هذا التوازن قياس النشاط الغشائي الداخلي عبر قياس نسبة التشبع الخارجية Pt / P0.",
+          "en": "This equilibrium allows unmeasurable membrane activity to be quantified by external Pt / P0."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-04",
+      "stage": "visual_explanation",
+      "stageIndex": 4,
+      "title": {
+        "tr": "Görsel Karşılaştırma: Yapısal Hassasiyet vs Nonspesifiklik",
+        "ar": "مقارنة بصرية: الحساسية البنيوية مقابل اللانوعية",
+        "en": "Visual Comparison: Structural Sensitivity vs Non-specificity"
+      },
+      "prompt": {
+        "tr": "Urasile tek flor eklenmesi (5-FU) veya tolbutamiddeki metilin klora dönmesi (klorpropamid) etkiyi radikal değiştirir. Anesteziklerde ise yapı değişimi etki tipini değil sadece uçuculuğu değiştirir.",
+        "ar": "إضافة الفلور لليوراسيل (5-FU) أو استبدال الميثيل بالكلور في التولبوتاميد يغير التأثير جذرياً. أما في المخدرات، فتغير البنية يبدل التطاير فقط دون نوع التأثير.",
+        "en": "Adding fluorine to uracil (5-FU) or replacing methyl with chlorine in tolbutamide radically alters activity. In volatile depressants, structural changes only shift volatility, not pharmacological effect."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "comparisonType": "SpecificVsNonSpecificStructuralSensitivity",
+        "classicalModelFraming": {
+          "tr": "Klasik modelde ketamin ve N2O genel anestezik membran teorisi içinde anılsa da, modern farmakolojide spesifik reseptör hedefleri (NMDA blokajı) tanımlanmıştır.",
+          "ar": "على الرغم من إدراج الكيتامين و N2O في النموذج الكلاسيكي ضمن نظرية التخدير الغشائي، إلا أن علم الأدوية الحديث حدد لهما أهدافاً جزيئية نوعية (تثبيط مستقبلات NMDA).",
+          "en": "While classical models grouped ketamine and N2O under non-specific membrane anesthesia, modern pharmacology identifies specific molecular receptor targets (NMDA antagonism)."
+        },
+        "explanation": {
+          "tr": "Klasik modelde ketamin ve N2O genel anestezik membran teorisi içinde anılsa da, modern farmakolojide spesifik reseptör hedefleri (NMDA blokajı) tanımlanmıştır (Slayt 20-23).",
+          "ar": "على الرغم من إدراج الكيتامين و N2O في النموذج الكلاسيكي ضمن نظرية التخدير الغشائي، إلا أن علم الأدوية الحديث حدد لهما أهدافاً جزيئية نوعية (تثبيط مستقبلات NMDA) (شريحة 20-23).",
+          "en": "While classical models grouped ketamine and N2O under non-specific membrane anesthesia, modern pharmacology identifies specific molecular receptor targets (NMDA antagonism)."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "antimetabolit",
+          "arContext": "مضاد استقلاب"
+        },
+        {
+          "term": "yapısal duyarlılık",
+          "arContext": "الحساسية البنيوية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Urasil ile 5-fluorourasil arasındaki tek atomluk farkı inceleyin.",
+          "ar": "تأمل الفارق في ذرة واحدة بين اليوراسيل و 5-فلورويوراسيل.",
+          "en": "Examine the single-atom substitution between uracil and 5-fluorouracil."
+        },
+        {
+          "tr": "Spesifik ilaçlarda tek bir atom değişimi ilacı antimetabolite veya antagoniste çevirir.",
+          "ar": "في الأدوية النوعية، يحول تغير ذرة واحدة الدواء إلى مضاد استقلاب أو مضاد تنافسي.",
+          "en": "In specific agents, a single atom modification converts a metabolite into an antagonist."
+        },
+        {
+          "tr": "Nonspesifik anesteziklerde ise moleküler yapı tamamen değişse bile genel anestezi korunur.",
+          "ar": "في المخدرات غير النوعية، يستمر التخدير العام حتى مع التغير الجذري في البنية.",
+          "en": "In non-specific anesthetics, CNS depression persists despite radical architectural divergences."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 20
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 21
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 22
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-05",
+      "stage": "interactive_artifact",
+      "stageIndex": 5,
+      "title": {
+        "tr": "İnteraktif Simülatör: Bağıl Doygunluk ve Biyofaz",
+        "ar": "محاكاة تفاعلية: التشبع النسبي والطور الحيوي",
+        "en": "Interactive Simulator: Relative Saturation & Biophase"
+      },
+      "prompt": {
+        "tr": "Simülatörde kısmi basınç oranını (Pt / P0) değiştirin. Doygun buhar basıncının yüzde birkaçı düzeyinde zardaki termodinamik kaçma eğiliminin genel anestezi eşiğine nasıl ulaştığını gözlemleyin.",
+        "ar": "غير نسبة الضغط الجزئي (Pt / P0) في المحاكي. راقب كيف يصل ميل الهروب الثرموديناميكي في الغشاء إلى عتبة التخدير الجراحي عند نسبة مئوية ضئيلة من التشبع.",
+        "en": "Adjust the partial pressure ratio (Pt / P0) in the simulator. Observe how thermodynamic escaping tendency into the membrane achieves the surgical anesthesia threshold at a few percent saturation."
+      },
+      "predictThenReveal": false,
+      "widgetType": "ThermodynamicActivityFergusonSlider",
+      "widget": {
+        "type": "ThermodynamicActivityFergusonSlider",
+        "config": {
+          "defaultPtP0": 0.03,
+          "anesthesiaThresholdRange": [
+            0.03,
+            0.05
+          ],
+          "parameterId": "NUM-MC01-01",
+          "teaches": {
+            "tr": "Uçucu anestezikler doymuş buhar basınçlarının yüzde birkaçında cerrahi anestezi oluşturur.",
+            "ar": "تحدث المخدرات الاستنشاقية تخديراً جراحياً عند نسبة مئوية ضئيلة من ضغط بخارها المشبع.",
+            "en": "Volatile anesthetics produce surgical anesthesia at a few percent of their saturation pressure."
+          }
+        }
+      },
+      "config": {
+        "defaultPtP0": 0.03,
+        "parameterId": "NUM-MC01-01",
+        "explanation": {
+          "tr": "Termodinamik aktivite a = Pt / P0 dır. Bağıl doygunluk yükseldikçe moleküller zarda toplanır ve membran fonksiyonunu bozar (Slayt 18).",
+          "ar": "النشاط الثرموديناميكي a = Pt / P0. مع ارتفاع التشبع النسبي تتكدس الجزيئات في الغشاء وتثبط وظيفته (شريحة 18).",
+          "en": "Thermodynamic activity a = Pt / P0. As relative saturation rises, molecules partition into lipid bilayers, impairing membrane dynamics."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "bağıl doygunluk",
+          "arContext": "التشبع النسبي"
+        },
+        {
+          "term": "termodinamik kaçma eğilimi",
+          "arContext": "ميل الهروب الثرموديناميكي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Kaydırıcıyı hareket ettirerek Pt / P0 oranını artırın.",
+          "ar": "حرك شريط التمرير لزيادة نسبة Pt / P0.",
+          "en": "Drag the slider to increase the Pt / P0 ratio."
+        },
+        {
+          "tr": "Yüzde birkaç doygunluk oranına ulaşıldığında anestezi eşiği aşılır.",
+          "ar": "عند بلوغ نسبة مئوية ضئيلة من التشبع يتم تجاوز عتبة التخدير.",
+          "en": "Surgical anesthesia threshold is crossed at a few percent biophasic saturation."
+        },
+        {
+          "tr": "Uçucu anestezikler için termodinamik aktivite bağıl buhar basıncı ile ölçülür.",
+          "ar": "يقاس النشاط الديناميكي للغازات المتطايرة عبر ضغط البخار النسبي.",
+          "en": "For volatile agents, thermodynamic activity is directly measured as relative vapor pressure."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-06",
+      "stage": "guided_discovery",
+      "stageIndex": 6,
+      "title": {
+        "tr": "Rehberli Keşif: Mutlak Doz vs Bağıl Doygunluk",
+        "ar": "استكشاف موجه: الجرعة المطلقة مقابل التشبع النسبي",
+        "en": "Guided Discovery: Absolute Dose vs Relative Saturation"
+      },
+      "prompt": {
+        "tr": "İki uçucu anestezikten birinin kanda oluşturduğu kısmi basınç diğerinden kat kat yüksektir; ancak her ikisi de kendi doymuş buhar basınçlarının eşit bir kesrinde (aynı Pt / P0 oranında) anestezi yapar. Termodinamik güçleri nasıldır?",
+        "ar": "يحدث مخدر استنشاقي تخديراً عند ضغط جزئي أعلى بأضعاف من مخدر آخر، لكن كلاهما يحقق التخدير عند نفس الكسر من ضغط بخاره المشبع (نفس نسبة Pt / P0). كيف تُقارن قوتهما الثرموديناميكية؟",
+        "en": "One volatile anesthetic requires a much higher partial pressure in blood than another, yet both produce anesthesia at the exact same fraction of their saturation vapor pressure (identical Pt / P0). How do their thermodynamic potencies compare?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": {
+              "tr": "Termodinamik olarak eşit güçtedirler; çünkü her ikisi de aynı bağıl doygunluk kesrinde aynı biyofazik depresyonu oluşturur.",
+              "ar": "متساويان في القوة الثرموديناميكية؛ كلاهما أحدث نفس التثبيط الحيوي عند نفس كسر التشبع النسبي.",
+              "en": "They possess equal thermodynamic potency; both produce equal depression at the exact same relative saturation fraction."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Ferguson ilkesine göre yapı-nonspesifik etki bağıl doygunluk kesrine bağlıdır; oranlar eşitse termodinamik etki güçleri eşittir (Slayt 18).",
+              "ar": "صحيح! وفق مبدأ Ferguson، يعتمد التأثير غير النوعي على نسبة التشبع، وتساوي النسبة يعني تماثل القوة الثرموديناميكية (شريحة 18).",
+              "en": "Correct! Ferguson's principle proves non-specific depression is governed by relative saturation; equal saturation means equal thermodynamic potency."
+            }
+          },
+          {
+            "id": "opt-6b",
+            "text": {
+              "tr": "Daha düşük kısmi basınç gerektiren ajan kat kat daha güçlüdür çünkü daha az molekülle aynı klinik anesteziyi sağlamıştır.",
+              "ar": "المخدر الذي تطلب ضغطاً أقل أقوى بأضعاف لأنه حقق نفس النتيجة السريرية بجزيئات أقل.",
+              "en": "The agent requiring lower partial pressure is far more potent because it achieved anesthesia with fewer molecules."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: 'Düşük mutlak doz yüksek termodinamik güç demektir.' Yapı-nonspesifik gazlarda mutlak doz buharlaşma kolaylığını yansıtır; termodinamik güçleri eşittir.",
+              "ar": "مغالطة: 'الجرعة المطلقة الأقل تعني قوة حيوية أعلى'. في الغازات غير النوعية، الجرعة تعكس التطاير فقط بينما الفعالية الثرموديناميكية متماثلة.",
+              "en": "Misconception: 'Lower absolute dose signifies superior intrinsic potency.' In non-specific depressants, absolute concentration reflects volatility, not receptor affinity."
+            }
+          },
+          {
+            "id": "opt-6c",
+            "text": {
+              "tr": "Daha yüksek kısmi basınç gerektiren ajan daha güçlüdür çünkü zarda daha fazla molekül biriktirerek felç yapar.",
+              "ar": "المخدر الذي تطلب ضغطاً أعلى أقوى لأنه يكدس جزيئات أكثر داخل الغشاء مسبباً شللاً حيوياً أعمق.",
+              "en": "The agent requiring higher partial pressure is more potent because more molecules accumulate to produce neural paralysis."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: 'Daha yüksek miligram sayısı daha güçlü etki yapar.' Bağıl doygunluk eşit olduğunda zardaki termodinamik aktivite aynıdır.",
+              "ar": "مغالطة: 'الكمية الأكبر تعني تأثيراً أقوى'. عند تساوي التشبع النسبي، يتساوى النشاط الثرموديناميكي في الغشاء تماماً.",
+              "en": "Misconception: 'Higher molar quantity implies superior potency.' Thermodynamic activity in the membrane is identical at equal saturation."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-6a",
+            "text": "Termodinamik olarak eşit güçtedirler; aynı bağıl doygunlukta aynı etkiyi verirler.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Ferguson ilkesine göre bağıl doygunluk eşitse etki güçleri eşittir."
+          },
+          {
+            "id": "opt-6b",
+            "text": "Düşük kısmi basınç gerektiren ajan kat kat daha güçlüdür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Mutlak dozdaki fark buharlaşma kolaylığını yansıtır, intrensek gücü değil."
+          },
+          {
+            "id": "opt-6c",
+            "text": "Yüksek kısmi basınç gerektiren ajan daha güçlüdür.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bağıl doygunluk eşitse zardaki termodinamik aktivite aynıdır."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Mutlak basınçları farklı olsa da eşit bağıl doygunluk kesrinde etki eden anesteziklerin termodinamik güçleri eşittir.",
+          "ar": "رغم اختلاف ضغطهما المطلق، فإن المخدرين اللذين يؤثران عند نفس التشبع النسبي يمتلكان قوة ثرموديناميكية متساوية.",
+          "en": "Despite differing absolute pressures, volatile anesthetics acting at identical relative saturation share equal thermodynamic potency."
+        },
+        "explanation": {
+          "tr": "Mutlak dozdaki fark maddelerin doymuş buhar basınçlarından (P0) kaynaklanır; bağıl doygunluk (Pt / P0) eşitse termodinamik etki aynıdır (Slayt 18).",
+          "ar": "الفارق في الجرعة المطلقة ناتج عن تباين ضغط البخار المشبع (P0)؛ وعند تساوي نسبة التشبع (Pt / P0) يتطابق الأثر الثرموديناميكي (شريحة 18).",
+          "en": "Absolute dose differences reflect pure saturation vapor pressures (P0); at equal relative saturation (Pt / P0), thermodynamic depression is identical."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "mutlak doz",
+          "arContext": "الجرعة المطلقة"
+        },
+        {
+          "term": "termodinamik güç",
+          "arContext": "القوة الثرموديناميكية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Ferguson eşitliğine bakın: a = Pt / P0.",
+          "ar": "انظر لمعادلة Ferguson: a = Pt / P0.",
+          "en": "Look at the Ferguson equation: a = Pt / P0."
+        },
+        {
+          "tr": "Her iki ajan da doymuş buhar basıncının aynı kesrinde etki göstermiştir.",
+          "ar": "أحدث كلا المخدرين تأثيراً عند نفس الكسر من ضغط بخارهما المشبع.",
+          "en": "Both anesthetics produced surgical depression at the identical saturation fraction."
+        },
+        {
+          "tr": "Biyofazdaki kaçma eğilimi mutlak basınca değil, bu bağıl orana bağlıdır.",
+          "ar": "ميل الهروب في الطور الحيوي محكوم بالنسبة النسبية وليس بالضغط المطلق.",
+          "en": "Escaping tendency into the biophase is determined by relative saturation, not absolute pressure."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-07",
+      "stage": "formal_explanation",
+      "stageIndex": 7,
+      "title": {
+        "tr": "Çözünürlük Sınırı ve Kesilme (Cutoff) Olayı",
+        "ar": "حد الذوبانية وظاهرة الانقطاع (Cutoff)",
+        "en": "Solubility Limit & The Cutoff Phenomenon"
+      },
+      "prompt": {
+        "tr": "Homolog serilerde karbon zinciri uzadıkça yağda çözünürlük ve etki önce artar. Ancak belli bir tepe noktadan sonra zincir uzatılınca biyolojik aktivite neden aniden düşer veya tamamen yok olur?",
+        "ar": "في السلاسل المتماثلة تزداد الذوبانية الدهنية والفاعلية أولاً مع طول السلسلة. لكن بعد ذروة معينة، إذا أطلنا السلسلة، لماذا تهبط الفاعلية الحيوية فجأة أو تنعدم تماماً؟",
+        "en": "In homologous series, lipid solubility and activity initially rise as the carbon chain elongates. However, past a peak threshold, why does further elongation cause biological activity to plunge or vanish?"
+      },
+      "predictThenReveal": false,
+      "config": {
+        "mechanism": "HomologousSeriesCutoff",
+        "polarBarrier": "intercellular_fluid",
+        "explanation": {
+          "tr": "Homolog serilerde aktivitenin bir maksimumdan sonra hızla düşmesi, hücreler arası sıvının polar karakterde olmasıyla açıklanır (Çözünürlük Slayt 10, 13).",
+          "ar": "يفسر هبوط الفعالية بعد الذروة في السلاسل المتماثلة بكون السوائل بين الخلوية ذات طبيعة قطبية مائية تعجز الجزيئات الشحمية عن عبورها (شريحة 10، 13).",
+          "en": "The post-peak activity plunge in homologous series occurs because intercellular fluid is polar, preventing hyper-lipophilic molecules from reaching biophasic sites."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "homolog seri",
+          "arContext": "سلسلة متماثلة"
+        },
+        {
+          "term": "kesilme noktası (cutoff)",
+          "arContext": "نقطة الانقطاع الفاعلي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Hücreler arasındaki sıvının polar karakterde olduğunu hatırlayın (Slayt 13).",
+          "ar": "تذكر أن السائل بين الخلوي ذو طبيعة قطبية مائية (شريحة 13).",
+          "en": "Recall that intercellular fluids possess a polar aqueous character (Slide 13)."
+        },
+        {
+          "tr": "Aşırı yağseven uzun zincirli moleküller bu sulu sıvıda çözünemez hale gelir.",
+          "ar": "الجزيئات مفرطة الشحمية طويلة السلسلة تفقد قدرتها تماماً على الذوبان في هذا السائل المائي.",
+          "en": "Hyper-lipophilic long-chain molecules cannot dissolve in this aqueous intercellular fluid."
+        },
+        {
+          "tr": "Çözünemeyen ilaç hedef hücre zarlarına taşınamaz ve etki aniden kaybolur.",
+          "ar": "الدواء العاجز عن الذوبان لا يمكن نقله للأغشية المستهدفة فيختفي التأثير فجأة.",
+          "en": "Undissolved drug cannot be transported to target membranes, causing activity to abruptly terminate."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 10
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-08",
+      "stage": "concept_check",
+      "stageIndex": 8,
+      "title": {
+        "tr": "Kavram Kontrolü: Özgüllük Sınıflandırması",
+        "ar": "اختبار مفهوم: تصنيف النوعية",
+        "en": "Concept Check: Specificity Classification"
+      },
+      "prompt": {
+        "tr": "Aşağıdaki klinik senaryolardan hangisi bir ilacın 'yapı-nonspesifik' (yapı-özgül olmayan) mekanizmayla etki ettiğini kesin olarak kanıtlar?",
+        "ar": "أي من السيناريوهات السريرية التالية يثبت بشكل قاطع أن الدواء يعمل بآلية 'غير نوعية بنيوياً'؟",
+        "en": "Which clinical scenario definitively proves that a drug operates through a 'structurally non-specific' mechanism?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": {
+              "tr": "İlacın tek bir amino asit mutasyonu taşıyan hücrelerde tüm etkisini tamamen kaybetmesi.",
+              "ar": "فقدان الدواء لفاعليته كلياً في الخلايا التي تحمل طفرة في حمض أميني واحد.",
+              "en": "The drug completely losing its activity in cells harboring a single amino acid point mutation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Tek bir nokta mutasyonla etki kaybı, hedefin stereoselektif kilit-anahtar reseptörü olduğunu (yapı-spesifik) gösterir (Slayt 20).",
+              "ar": "مغالطة: فقدان التأثير بطفرة نقطية يثبت الارتباط بمستقبل نوعي فراغي كالقفل والمفتاح (دواء نوعي) (شريحة 20).",
+              "en": "Misconception: Sensitivity to point mutations denotes a stereoselective lock-and-key receptor (structurally specific drug)."
+            }
+          },
+          {
+            "id": "opt-8b",
+            "text": {
+              "tr": "Molekülün saf bir enantiyomerinin rasemik karışımdan yüz kat daha güçlü etki etmesi.",
+              "ar": "إظهار متخايل فراغي نقي فاعلية تفوق الخليط الراسيمي بمئة ضعف.",
+              "en": "A pure enantiomer displaying 100-fold higher biological potency than the racemic mixture."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Enantiyomer seçiciliği, ilacın kiral bir reseptör cebine bağlandığını (yapı-spesifik mekanizma) kanıtlar.",
+              "ar": "مغالطة: الانتقائية الفراغية للمتخايلات تثبت الارتباط بجيب مستقبل كيرالي نوعي.",
+              "en": "Misconception: Enantiomeric selectivity proves stereochemical fit within a chiral receptor binding pocket."
+            }
+          },
+          {
+            "id": "opt-8c",
+            "text": {
+              "tr": "Tamamen farklı kimyasal yapıdaki bileşiklerle birlikte, zardaki benzer bağıl doygunlukta aynı depresif etkiyi göstermesi.",
+              "ar": "إحداث نفس الأثر التثبيطي عند تساوي التشبع النسبي في الغشاء بالتشارك مع مركبات مختلفة البنية كلياً.",
+              "en": "Displaying identical depressive action alongside chemically unrelated compounds at comparable relative biophasic saturation."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Kimyasal yapıdan bağımsız olarak eşit bağıl doygunlukta görülen etki, yapı-nonspesifik etki mekanizmasının tanımıdır (Slayt 18, 23).",
+              "ar": "صحيح! التأثير المشترك عند تساوي التشبع النسبي بمعزل عن البنية الكيميائية هو المعيار الحاسم للأدوية غير النوعية (شريحة 18، 23).",
+              "en": "Correct! Similar biological depression at equal relative biophasic saturation independent of chemical structure defines non-specific action."
+            }
+          },
+          {
+            "id": "opt-8d",
+            "text": {
+              "tr": "İlacın monoklonal antikor ile nötralize edildiğinde etkisinin derhal tamamen durması.",
+              "ar": "توقف مفعول الدواء كلياً فور معادلته بواسطة جسم مضاد وحيد النسيلة.",
+              "en": "The drug's pharmacological effect being immediately halted upon neutralization by a monoclonal antibody."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Antikorla nötralizasyon spesifik bir hedefin varlığını gösterir, nonspesifik membran depresyonunu değil.",
+              "ar": "مغالطة: التعادل بالأضداد يتطلب استهدافاً نوعياً لجزيء مفرد ولا ينطبق على التثبيط الغشائي العام.",
+              "en": "Misconception: Monoclonal antibody neutralization signifies specific molecular targeting, not non-specific membrane effects."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-8a",
+            "text": "Tek bir amino asit mutasyonu taşıyan hücrelerde tüm etkisini kaybetmesi.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Nokta mutasyon duyarlılığı yapı-spesifik reseptör bağlanmasını gösterir."
+          },
+          {
+            "id": "opt-8b",
+            "text": "Saf enantiyomerinin rasemik karışımdan 100 kat güçlü olması.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Enantiyomer seçiciliği kiral reseptör etkileşimini kanıtlar."
+          },
+          {
+            "id": "opt-8c",
+            "text": "Farklı kimyasal yapıdaki bileşiklerle benzer bağıl doygunlukta aynı etkiyi vermesi.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Kimyasal yapıdan bağımsız eşit bağıl doygunluk nonspesifik mekanizmayı tanımlar."
+          },
+          {
+            "id": "opt-8d",
+            "text": "Monoklonal antikorla nötralize edildiğinde etkisinin durması.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Antikorla nötralizasyon spesifik hedef varlığını gösterir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Kimyasal yapıdan bağımsız olarak eşit bağıl doygunlukta görülen etki, yapı-nonspesifik etki mekanizmasını tanımlar.",
+          "ar": "التأثير المشترك عند تساوي التشبع النسبي بمعزل عن البنية هو المعيار الحاسم للأدوية غير النوعية.",
+          "en": "Similar depression at equal relative saturation independent of structure defines non-specific action."
+        },
+        "explanation": {
+          "tr": "Ferguson prensibine göre yapı-nonspesifik ilaçlar stereokimyasal reseptörlere değil, biyofazdaki termodinamik aktiviteye dayanır (Slayt 18, 23).",
+          "ar": "وفق Ferguson، تعتمد الأدوية غير النوعية على النشاط الثرموديناميكي في الطور الحيوي وليس على المستقبلات الفراغية (شريحة 18، 23).",
+          "en": "Ferguson demonstrated non-specific action depends on thermodynamic biophasic saturation rather than receptor stereochemistry."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "yapı-nonspesifik mekanizma",
+          "arContext": "آلية غير نوعية بنيوياً"
+        },
+        {
+          "term": "enantiyomer seçiciliği",
+          "arContext": "انتقائية المتخايلات الفراغية"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Spesifik reseptör bağlanması ile fiziksel membran doygunluğu arasındaki farkı hatırlayın.",
+          "ar": "تذكر الفارق الجوهري بين الارتباط بمستقبل نوعي والتشبع الفيزيائي للغشاء.",
+          "en": "Recall the fundamental distinction between specific receptor binding and physical membrane saturation."
+        },
+        {
+          "tr": "Nonspesifik etkide kimyasal yapının ne olduğu değil, doymuşluk kesri önemlidir.",
+          "ar": "في التأثير غير النوعي، المعيار هو نسبة التشبع وليس نوع البنية الكيميائية.",
+          "en": "In non-specific depression, the saturation fraction governs rather than chemical identity."
+        },
+        {
+          "tr": "Farklı yapıdaki gazların aynı bağıl doygunlukta anestezi yapması Ferguson un ana kuralıdır.",
+          "ar": "إحداث غازات متباينة التخدير عند نفس التشبع النسبي هو القاعدة المركزية لـ Ferguson.",
+          "en": "Diverse gases inducing depression at equivalent saturation is Ferguson's definitive hallmark."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-09",
+      "stage": "application",
+      "stageIndex": 9,
+      "title": {
+        "tr": "Uygulama: Tiyopental ve Yeniden Dağılım Kinetiği",
+        "ar": "تطبيق سريري: الثيوبنتال وحركية إعادة التوزع",
+        "en": "Application: Thiopental & Redistribution Kinetics"
+      },
+      "prompt": {
+        "tr": "Tiyopental pentobarbitalden çok daha lipofiliktir ve beyne hızla geçer. Ancak hastada anestezi etkisi dakikalar içinde aniden sonlanır. Bu kısa etkinin gerçek mekanizması nedir?",
+        "ar": "الثيوبنتال أكثر شحمية بكثير من البنتوباربيتال ويعبر الدماغ فوراً. ومع ذلك يزول تأثيره التخديري في دقائق معدودة. ما هي الآلية الحقيقية لهذا التأثير القصير؟",
+        "en": "Thiopental is far more lipophilic than pentobarbital and crosses the BBB immediately. Yet surgical anesthesia terminates within minutes. What is the true mechanism of this ultrashort action?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": {
+              "tr": "Beyin parankiminde bulunan spesifik enzimler tarafından saniyeler içinde hızla parçalanır.",
+              "ar": "يتفكك سريعاً في ثوانٍ بواسطة إنزيمات نوعية داخل النسيج الدماغي.",
+              "en": "It is degraded within seconds by specific metabolic enzymes located inside brain parenchyma."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Tiyopental beyinde hızla yıkılmaz; karaciğerde yavaş metabolize olur. Etkinin bitişi metabolizmaya değil doku dağılımına bağlıdır.",
+              "ar": "مغالطة: لا يُخرب الثيوبنتال سريعاً في الدماغ بل يستقلب ببطء كبدياً؛ وزوال الأثر سببه إعادة التوزع النسيجي.",
+              "en": "Misconception: Thiopental is not rapidly cleaved in brain tissue; hepatic metabolism is slow and does not terminate initial anesthesia."
+            }
+          },
+          {
+            "id": "opt-9b",
+            "text": {
+              "tr": "Beyinden hızla çıkıp önce iyi kanlanan kas ve iç organlara, ardından yağ dokusuna yeniden dağılır.",
+              "ar": "يغادر الدماغ بسرعة ويعاد توزعه أولاً إلى العضلات والأحشاء ثم لاحقاً إلى النسيج الدهني.",
+              "en": "It exits the brain rapidly, redistributing first to well-perfused lean tissues and muscle, and later to fat depots."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Tiyopentalin plazma ve beyin konsantrasyonu hızla düşer; çünkü ilaç hızla kas ve iç organlara, ardından yağ dokusuna yeniden dağılır (Slayt 25).",
+              "ar": "صحيح! تهبط مستويات الثيوبنتال الدماغية والدموية سريعاً بسبب إعادة توزعه إلى العضلات والأحشاء ثم تراكمه في النسيج الدهني (شريحة 25).",
+              "en": "Correct! Blood and brain levels plunge because thiopental promptly redistributes into well-perfused muscle and viscera, then sequesters into fat depots."
+            }
+          },
+          {
+            "id": "opt-9c",
+            "text": {
+              "tr": "Yüksek lipofilitesi nedeniyle böbreklerden idrarla değişmeden derhal atılır.",
+              "ar": "يُطرح كلوياً فوراً مع البول دون تغير نظراً لشحميته الفائقة.",
+              "en": "Due to high lipophilicity, it undergoes immediate and unchanged filtration via the kidneys."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Lipofilik moleküller böbrek tübüllerinden geri emilir, doğrudan atılamaz (Slayt 24).",
+              "ar": "مغالطة: يُعاد امتصاص الجزيئات الشحمية من الأنابيب الكلوية ولا يمكن طرحها مباشرة دون استقلاب (شريحة 24).",
+              "en": "Misconception: Lipophilic compounds undergo tubular reabsorption and cannot clear directly via urine without prior metabolism."
+            }
+          },
+          {
+            "id": "opt-9d",
+            "text": {
+              "tr": "GABA reseptörlerinden kovalent olarak kopup bir daha bağlanamaz.",
+              "ar": "ينفصل تساهمياً عن مستقبلات GABA ويعجز عن الارتباط مجدداً.",
+              "en": "It detaches irreversibly from GABA receptors and cannot re-engage binding pockets."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Barbitüratlar kovalent bağ yapmazlar; etki sonlanması reseptör kopmasından değil doku kaçışından kaynaklanır.",
+              "ar": "مغالطة: لا تشكل الباربيتورات روابط تساهمية؛ وزوال الأثر ناجم عن هروب الجزيئات نسيجياً.",
+              "en": "Misconception: Barbiturates do not bind covalently; termination reflects pharmacokinetic tissue redistribution."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-9a",
+            "text": "Beyin parankiminde bulunan spesifik enzimlerce saniyeler içinde parçalanır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Tiyopental beyinde hızla yıkılmaz; karaciğerde yavaş metabolize olur."
+          },
+          {
+            "id": "opt-9b",
+            "text": "Beyinden çıkıp önce kas ve iç organlara, ardından yağ dokusuna yeniden dağılır.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Plazma ve beyin konsantrasyonu yeniden dağılım nedeniyle hızla düşer."
+          },
+          {
+            "id": "opt-9c",
+            "text": "Yüksek lipofilitesi nedeniyle böbreklerden idrarla derhal atılır.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Lipofilik moleküller böbrek tübüllerinden geri emilir."
+          },
+          {
+            "id": "opt-9d",
+            "text": "GABA reseptörlerinden kovalent olarak kopup bir daha bağlanamaz.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Barbitüratlar kovalent bağ yapmazlar."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Tiyopentalin plazma ve beyin düzeyi hızla düşer; çünkü ilaç önce iyi kanlanan kas ve iç organlara, ardından yağ dokusuna yeniden dağılır.",
+          "ar": "تهبط مستويات الثيوبنتال الدماغية سريعاً بسبب إعادة توزعه إلى العضلات والأحشاء ثم تراكمه البطيء في النسيج الدهني.",
+          "en": "Thiopental brain concentrations fall rapidly due to redistribution into well-perfused lean tissues and subsequent slow accumulation in adipose tissue."
+        },
+        "explanation": {
+          "tr": "Partisyon katsayısı yüksek olan tiyopental beyne hızla geçer, ancak plazma ve beyin seviyesi yeniden dağılım ile dakikalar içinde düşer (Slayt 24, 25).",
+          "ar": "يعبر الثيوبنتال عالي الشحمية الدماغ فوراً، لكن مستوياته تهبط سريعاً نتيجة إعادة التوزع إلى العضلات والدهون (شريحة 24، 25).",
+          "en": "Highly lipophilic thiopental penetrates the BBB instantly, but tissue redistribution rapidly terminates central anesthesia."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "yeniden dağılım (redistribüsyon)",
+          "arContext": "إعادة التوزع النسيجي"
+        },
+        {
+          "term": "partisyon katsayısı",
+          "arContext": "معامل التوزع"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Tiyopentalin vücutta kan akımı yüksek ve düşük dokular arasındaki geçişini düşünün.",
+          "ar": "فكر في انتقال الثيوبنتال بين الأنسجة عالية التروية والأنسجة منخفضة التروية.",
+          "en": "Consider thiopental shifting from highly perfused organs to poorly perfused tissues."
+        },
+        {
+          "tr": "İlaç beyinden hızla ayrılıp kas, iç organlar ve yağ dokusuna transfer olur.",
+          "ar": "يغادر الدواء الدماغ بسرعة منتقلاً نحو العضلات والأحشاء والدهون.",
+          "en": "The drug quickly departs brain tissue, equilibrating into muscle, viscera, and fat."
+        },
+        {
+          "tr": "Bu süreç metabolizma değil, fizikokimyasal bir yeniden dağılım olayıdır.",
+          "ar": "هذه العملية ليست استقلاباً بل إعادة توزع فيزيوكيميائية سريعة.",
+          "en": "This mechanism represents physical pharmacokinetic redistribution rather than hepatic clearance."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 24
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 25
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-10",
+      "stage": "retrieval",
+      "stageIndex": 10,
+      "title": {
+        "tr": "Geri Çağırma: Yapı-Spesifik İlacın Temel Kriteri",
+        "ar": "استرجاع: المعيار الجوهري للأدوية النوعية",
+        "en": "Retrieval: Core Criterion for Structurally Specific Drugs"
+      },
+      "prompt": {
+        "tr": "Aşağıdaki özelliklerden hangisi bir ilacın 'yapı-spesifik' (yapı-özgül) etki mekanizmasına sahip olduğunu gösteren en temel kriterdir?",
+        "ar": "أي من الخصائص التالية تمثل المعيار الأساسي الدال على أن الدواء يعمل بآلية 'نوعية بنيوياً'؟",
+        "en": "Which of the following characteristics represents the core defining criterion of a 'structurally specific' drug?"
+      },
+      "predictThenReveal": false,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": {
+              "tr": "Temel bir yapı taşıması, yapısındaki küçük değişikliklerin etkiyi tamamen yok edebilmesi veya tersine çevirebilmesi.",
+              "ar": "امتلاك هيكل أساسي يؤدي أي تعديل طفيف فيه إلى زوال التأثير كلياً أو قلبه إلى تأثير مضاد.",
+              "en": "Possessing a fundamental pharmacophore where minor structural modifications abolish or invert activity."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Doğru! Slayt 20: 'Yapı Spesifik İlaçlar: Temel bir yapı taşırlar. Yapıdaki küçük değişiklikler aktiviteyi tamamen ortadan kaldırabilir yada tersi aktiviteye neden olabilir.'",
+              "ar": "صحيح! شريحة 20: 'الأدوية النوعية بنيوياً تمتلك هيكلاً أساسياً، والتعديلات الطفيفة قد تلغي التأثير تماماً أو تسبب تأثيراً مضاداً'.",
+              "en": "Correct! Slide 20: 'Structurally Specific Drugs: Possess a core structure. Minor structural alterations can completely abolish activity or trigger antagonist effects.'"
+            }
+          },
+          {
+            "id": "opt-10b",
+            "text": {
+              "tr": "Kimyasal yapısının tamamen değişken olabilmesi ve sadece biyofazdaki termodinamik doygunlukla etki göstermesi.",
+              "ar": "إمكانية تنوع بنيته الكيميائية كلياً واعتماد تأثيره فقط على التشبع الثرموديناميكي في الطور الحيوي.",
+              "en": "Having a completely variable chemical structure and acting purely through thermodynamic biophasic saturation."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Bu ifade eter ve kloroform gibi 'yapı-nonspesifik' ilaçları tanımlar (Slayt 23).",
+              "ar": "مغالطة: هذا التعريف يخص الأدوية غير النوعية بنيوياً مثل الإيثر والكلوروفورم (شريحة 23).",
+              "en": "Misconception: This describes structurally non-specific drugs like ether and chloroform."
+            }
+          },
+          {
+            "id": "opt-10c",
+            "text": {
+              "tr": "Yalnızca gaz fazında uygulanabilmesi ve sadece santral sinir sistemi depresyonu yapabilmesi.",
+              "ar": "إمكانية تطبيقه في الطور الغازي حصراً واقتصار تأثيره على تثبيط الجهاز العصبي المركزي.",
+              "en": "Being administrable exclusively in the gaseous state and causing only central depression."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Uçucu anestezikler nonspesifiktir; ancak spesifik ilaçlar her yoldan verilebilir ve tüm sistemleri etkiler.",
+              "ar": "مغالطة: المخدرات الاستنشاقية غير نوعية، بينما تعطى الأدوية النوعية بكافة الطرق وتؤثر على جميع أجهزة الجسم.",
+              "en": "Misconception: Specific drugs can be administered via oral, parenteral, or topical routes and act on all physiological systems."
+            }
+          },
+          {
+            "id": "opt-10d",
+            "text": {
+              "tr": "Etkisinin yalnızca kandaki fiziksel çözünürlük katsayısı ile doğrudan orantılı olması.",
+              "ar": "تناسب تأثيره طرداً وبشكل حصري مع معامل الذوبانية الفيزيائية في الدم.",
+              "en": "Its biological activity being solely and directly proportional to blood solubility."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Fiziksel çözünürlük Meyer-Overton nonspesifik kuralıdır; spesifik ilaçlar reseptör bağlanmasına dayanır.",
+              "ar": "مغالطة: الذوبانية الفيزيائية تخص قاعدة Meyer-Overton للأدوية غير النوعية؛ بينما تعتمد الأدوية النوعية على المستقبلات.",
+              "en": "Misconception: Bulk solubility governs Meyer-Overton non-specific action; specific drugs rely on receptor affinity."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-10a",
+            "text": "Temel bir yapı taşıması; küçük değişikliklerin aktiviteyi yok edebilmesi veya tersine çevirmesi.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Doğru! Slayt 20: Temel yapı taşırlar ve küçük modifikasyonlar etkiyi yok edebilir."
+          },
+          {
+            "id": "opt-10b",
+            "text": "Kimyasal yapısının değişken olabilmesi ve sadece doygunlukla etki etmesi.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bu özellik yapı-nonspesifik ilaçları tanımlar."
+          },
+          {
+            "id": "opt-10c",
+            "text": "Yalnızca gaz fazında uygulanabilmesi ve sadece SSS depresyonu yapması.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Spesifik ilaçlar her yoldan verilebilir ve tüm sistemleri etkiler."
+          },
+          {
+            "id": "opt-10d",
+            "text": "Etkisinin yalnızca kandaki fiziksel çözünürlükle orantılı olması.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Fiziksel çözünürlük nonspesifik teoriyi temsil eder."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Yapı-spesifik ilaçlar temel bir kimyasal iskelet taşır; bu iskeletteki en ufak modifikasyon aktiviteyi yok edebilir veya zıt etkiye (antagonist) yol açabilir.",
+          "ar": "تمتلك الأدوية النوعية هيكلاً كيميائياً أساسياً؛ وأي تعديل طفيف فيه قد يلغي التأثير تماماً أو يؤدي لتأثير مضاد.",
+          "en": "Structurally specific drugs possess a fundamental template where minor chemical alterations abolish activity or induce antagonism."
+        },
+        "explanation": {
+          "tr": "Düşük dozlarda etki eden yapı-spesifik ilaçlar, reseptörlerine komplementer uyumla bağlandıkları için yapısal değişikliklere aşırı duyarlıdır (Slayt 20).",
+          "ar": "نظراً لارتباطها بالمستقبلات بتوافق تكاملي عالي، تكون الأدوية النوعية الفعالة بجرعات منخفضة شديدة الحساسية للتعديل البنيوي (شريحة 20).",
+          "en": "Acting at low doses via receptor complementarity, structurally specific agents are exquisitely sensitive to chemical modification."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "yapı-spesifik ilaç",
+          "arContext": "دواء نوعي بنيوياً"
+        },
+        {
+          "term": "antagonist",
+          "arContext": "مناهض / مضاد تنافسي"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Urasil ile 5-fluorourasil örneğini hatırlayın.",
+          "ar": "تذكر مثال اليوراسيل و 5-فلورويوراسيل.",
+          "en": "Recall the transition from uracil to 5-fluorouracil."
+        },
+        {
+          "tr": "Spesifik ilaçlar kilit-anahtar uyumu ile biyolojik hedefe bağlanırlar.",
+          "ar": "ترتبط الأدوية النوعية بالأهداف الحيوية وفق نموذج القفل والمفتاح.",
+          "en": "Structurally specific drugs engage targets through lock-and-key complementarity."
+        },
+        {
+          "tr": "Tek bir atomun değişmesi kilit yuvasını bozar ve etkiyi tamamen ortadan kaldırır.",
+          "ar": "تغيير ذرة واحدة يفسد التوافق مع جيب القفل فيلغي التأثير تماماً.",
+          "en": "Altering a single atom disrupts pocket complementarity, terminating drug action."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-11",
+      "stage": "connection",
+      "stageIndex": 11,
+      "title": {
+        "tr": "İleri Bağlantı: Çözünürlük ve İyonizasyon (Ders 2)",
+        "ar": "ربط مفاهيمي: الذوبانية والتأين (الدرس 2)",
+        "en": "Conceptual Bridge: Solubility & Ionization (Lesson 2)"
+      },
+      "prompt": {
+        "tr": "Termodinamik aktivite molekülün sulu fazdan lipid zara kaçışını açıklar. Bir sonraki derste bu kaçışı yöneten asit-baz iyonizasyon dengesini (Henderson-Hasselbalch) inceleyeceğiz.",
+        "ar": "يفسر النشاط الثرموديناميكي هروب الجزيء من الماء نحو الغشاء. في الدرس القادم، سندرس توازن التأين الحمضي-الأساسي (Henderson-Hasselbalch) الذي يتحكم بهذا العبور.",
+        "en": "Thermodynamic activity explains how neutral molecules escape water into membranes. In the next lesson, we will explore the acid-base ionization equilibrium (Henderson-Hasselbalch) governing this crossing."
+      },
+      "predictThenReveal": false,
+      "config": {
+        "nextLesson": "mc-mod1-les2",
+        "bridgingConcept": "HendersonHasselbalchIonization",
+        "explanation": {
+          "tr": "İyonlaşmış türler sulu ortamda polar bağlarla kalırken, iyonlaşmamış nötr formlar lipid membranlara kolayca geçer (Çözünürlük Slayt 9, 13).",
+          "ar": "تبقى الأشكال المتأينة في الوسط المائي بروابط قطبية، بينما تعبر الأشكال المعتدلة غير المتأينة الأغشية الدهنية بسهولة (شريحة 9، 13).",
+          "en": "Ionized species remain partitioned in polar water, whereas un-ionized neutral molecules readily diffuse across lipid membranes."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "iyonizasyon dengesi",
+          "arContext": "توازن التأين"
+        },
+        {
+          "term": "Henderson-Hasselbalch denklemi",
+          "arContext": "معادلة Henderson-Hasselbalch"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "İyonlaşmış moleküller sulu ortamda kalma eğilimindedir.",
+          "ar": "تميل الجزيئات المتأينة للبقاء في الوسط المائي.",
+          "en": "Ionized molecules exhibit a strong preference for polar aqueous environments."
+        },
+        {
+          "tr": "Yalnızca iyonlaşmamış nötr form lipid membranlardan geçebilir.",
+          "ar": "فقط الشكل المعتدل غير المتأين يستطيع عبور الأغشية الدهنية.",
+          "en": "Only the un-ionized neutral fraction diffuses passively across lipid membranes."
+        },
+        {
+          "tr": "Henderson-Hasselbalch denklemi bu oranı ortam pH sı ve pKa ile belirler.",
+          "ar": "تحدد معادلة Henderson-Hasselbalch هذه النسبة بناءً على pH الوسط و pKa الدواء.",
+          "en": "The Henderson-Hasselbalch equation defines this ratio from ambient pH and drug pKa."
+        }
+      ],
+      "sources": [
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 9
+        },
+        {
+          "file": "İlaçlarda Yapı Etki İlişkileri-Çözünürlük.pdf",
+          "page": 13
+        }
+      ]
+    },
+    {
+      "id": "mc-mod1-les1-step-12",
+      "stage": "mastery_check",
+      "stageIndex": 12,
+      "title": {
+        "tr": "Ustalık Sınavı: Halotan Vakasında Yapısal ve Termodinamik Kanıtlar",
+        "ar": "اختبار الإتقان: أدلة البنية والديناميكا الحرارية في حالة الهالوتان",
+        "en": "Mastery Assessment: Halothane Structure & Thermodynamic Evidence"
+      },
+      "prompt": {
+        "tr": "Halotan (2-bromo-2-kloro-1,1,1-trifluoroetan), eter ve kloroformdan çok farklı bir yapıda olmasına rağmen cerrahi anestezi oluşturur. Halotanın yapı-nonspesifik olduğunu hangi yapısal ve termodinamik kanıtlar gösterir?",
+        "ar": "يحدث الهالوتان تخديراً جراحياً رغم اختلاف بنيته كلياً عن الإيثر والكلوروفورم. ما هي الأدلة البنيوية والحرارية التي تثبت أنه دواء غير نوعي بنيوياً؟",
+        "en": "Halothane produces surgical anesthesia despite possessing a structure entirely distinct from ether and chloroform. What structural and thermodynamic evidence proves halothane acts via a structurally non-specific mechanism?"
+      },
+      "predictThenReveal": true,
+      "conceptCheck": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": {
+              "tr": "Halotan tek bir kovalent reseptör bağı oluşturarak nanogram düzeyindeki mikroskobik dozlarda geri dönüşsüz felç yapar.",
+              "ar": "يشكل الهالوتان رابطة تساهمية مع مستقبل مفرد مسبباً شللاً لا رجعة فيه بجرعات مجهرية بالنانوغرام.",
+              "en": "Halothane forms an irreversible covalent bond with a single receptor at microscopic nanogram doses."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Bu senaryo alkilleyici sitotoksik ajanları tanımlar; halotan kovalent bağ yapmaz ve gram düzeyinde verilir.",
+              "ar": "مغالطة: هذا السلوك يصف العوامل السامة المؤلكلة؛ الهالوتان لا يشكل روابط تساهمية ويُعطى بجرعات غرامية.",
+              "en": "Misconception: This describes cytotoxic alkylating agents; halothane binds non-covalently and requires gram-scale administration."
+            }
+          },
+          {
+            "id": "opt-12b",
+            "text": {
+              "tr": "Belirli bir farmakofor taşımaması, farklı yapılı uçucu gazlarla benzer bağıl doygunlukta aynı etkiyi vermesi ve yapı değişiminin sadece fizikokimyasal özellikleri etkilemesi.",
+              "ar": "عدم امتلاكه لمجموعة نوعية، وإحداثه نفس الأثر عند تشبع نسبي مماثل لغازات متباينة، واقتصار أثر التعديل على الخواص الفيزيوكيميائية.",
+              "en": "Lacking a stereoselective pharmacophore, sharing depressant action with diverse volatile gases at comparable relative saturation, with structural edits altering only physical properties."
+            },
+            "isCorrect": true,
+            "misconceptionFeedback": {
+              "tr": "Tebrikler! Hem kimyasal yapının değişkenliği hem de bağıl doygunluk prensibi (Ferguson) halotanın yapı-nonspesifik etki mekanizmasını eksiksiz kanıtlar (Slayt 14, 18, 23).",
+              "ar": "تهانينا! يثبت تنوع البنية ومبدأ التشبع النسبي (Ferguson) معاً أن الهالوتان دواء غير نوعي بنيوياً بشكل قاطع (شريحة 14، 18، 23).",
+              "en": "Congratulations! Both structural insensitivity and biophasic relative saturation (Ferguson) conclusively prove halothane's non-specific physical mechanism."
+            }
+          },
+          {
+            "id": "opt-12c",
+            "text": {
+              "tr": "Moleküler yapısından bağımsız olarak, sadece buhar basıncı sayısal olarak yüksek bir değer olduğu için nonspesifiktir.",
+              "ar": "كونه غير نوعي لمجرد أن ضغط بخاره المشبع يمثل قيمة عددية مرتفعة، بمعزل عن بنيته الجزيئية.",
+              "en": "Being non-specific solely because its saturation vapor pressure is a numerically high value, irrespective of molecular structure."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Tek başına hiçbir sayısal değer nonspesifikliğin kanıtı olamaz; farmakofor yokluğu ve biyofazik bağıl doygunluk birlikte değerlendirilmelidir.",
+              "ar": "مغالطة: لا يمكن لرقم بمفرده إثبات اللانوعية؛ المعيار هو غياب المجموعة الفعالة والتكافؤ في التشبع النسبي في الطور الحيوي.",
+              "en": "Misconception: A number alone never proves non-specificity; absence of a pharmacophore and biophasic relative saturation together establish the mechanism."
+            }
+          },
+          {
+            "id": "opt-12d",
+            "text": {
+              "tr": "Taşıdığı halojen atomlarının beyindeki tüm enzim aktif bölgelerini kimyasal olarak geri dönüşsüz inaktive etmesi.",
+              "ar": "تعطيل ذرات الهالوجين التي يحملها لجميع المواقع النشطة للإنزيمات في الدماغ كيميائياً ولا رجعة فيه.",
+              "en": "Its halogen atoms irreversibly inactivating all enzyme catalytic pockets throughout brain tissue."
+            },
+            "isCorrect": false,
+            "misconceptionFeedback": {
+              "tr": "Yanılgı: Halotandaki halojenler uçuculuk ve lipofilitesini belirler; intihar enzim inhibitörü olarak davranmazlar.",
+              "ar": "مغالطة: تحدد الهالوجينات في الهالوتان التطاير والشحمية فقط، ولا تعمل كمثبطات انتحارية للإنزيمات.",
+              "en": "Misconception: Halogens in halothane modulate volatility and partition kinetics; they do not function as suicide enzyme inhibitors."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-12a",
+            "text": "Tek bir kovalent reseptör bağı yaparak nanogram düzeyinde etki eder.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Bu davranış alkilleyici sitotoksik ajanları tanımlar."
+          },
+          {
+            "id": "opt-12b",
+            "text": "Farmakofor taşımaması, farklı yapılı gazlarla benzer bağıl doygunlukta aynı etkiyi vermesi.",
+            "isCorrect": true,
+            "misconceptionFeedback": "Tebrikler! Yapısal bağımsızlık ve Ferguson bağıl doygunluğu nonspesifikliği kanıtlar."
+          },
+          {
+            "id": "opt-12c",
+            "text": "Sadece buhar basıncı sayısal olarak yüksek bir değer olduğu için.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Tek başına hiçbir sayısal değer nonspesifikliğin kanıtı olamaz."
+          },
+          {
+            "id": "opt-12d",
+            "text": "Halojen atomlarının beyindeki tüm enzimleri inaktive etmesi.",
+            "isCorrect": false,
+            "misconceptionFeedback": "Yanılgı: Halojenler uçuculuk ve lipofilitesini belirler, enzim zehiri değildir."
+          }
+        ],
+        "revealedOutcome": {
+          "tr": "Halotan belirli bir farmakofor taşımaması ve farklı yapılı anesteziklerle benzer bağıl doygunlukta anestezi yapması nedeniyle yapı-nonspesifiktir.",
+          "ar": "يعتبر الهالوتان غير نوعي بنيوياً لغياب المجموعة الفعالة وتماثل أثره عند نفس التشبع النسبي مع مخدرات متباينة البنية كلياً.",
+          "en": "Halothane is structurally non-specific because it lacks a discrete pharmacophore and shares clinical depression at comparable relative saturation."
+        },
+        "explanation": {
+          "tr": "2-Bromo-2-kloro-1,1,1-trifluoroetan (halotan), eter ve kloroform gibi genel anesteziklerle benzer bağıl doygunlukta zarı doymuş hale getirerek etki gösterir (Slayt 14, 18, 23).",
+          "ar": "يؤثر الهالوتان (2-برومو-2-كلورو-1،1،1-ثلاثي فلورو إيثان) عبر تشبيع الغشاء عند نفس التشبع النسبي كالإيثر والكلوروفورم (شريحة 14، 18، 23).",
+          "en": "Halothane (2-bromo-2-chloro-1,1,1-trifluoroethane) operates by physically saturating membrane lipids at comparable relative thermodynamic activity."
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "halotan",
+          "arContext": "هالوتان"
+        },
+        {
+          "term": "termodinamik doygunluk",
+          "arContext": "التشبع الديناميكي الحراري"
+        }
+      ],
+      "hints": [
+        {
+          "tr": "Halotanın kimyasal yapısını kloroform ve dietil eter ile karşılaştırın.",
+          "ar": "قارن بنية الهالوتان الكيميائية مع الكلوروفورم وإيثر ثنائي الإيثيل.",
+          "en": "Compare halothane's molecular structure with chloroform and diethyl ether."
+        },
+        {
+          "tr": "Sayısal bir değer tek başına etki mekanizmasını açıklayabilir mi?",
+          "ar": "هل يمكن لقيمة عددية بمفردها تفسير آلية التأثير؟",
+          "en": "Can a numerical value in isolation prove an underlying mechanism of action?"
+        },
+        {
+          "tr": "Hem yapısal çeşitlilik hem de Ferguson bağıl doygunluk kuralı birlikte düşünülmelidir.",
+          "ar": "يجب الجمع بين التنوع البنيوي وقاعدة Ferguson للتشبع النسبي معاً.",
+          "en": "Combine absence of a stereoselective pharmacophore with Ferguson relative biophasic saturation."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 14
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 18
+        },
+        {
+          "file": "Farmasötik ve Medisinal Kimya 1-Giriş.pdf",
+          "page": 23
         }
       ]
     }

@@ -5,712 +5,2003 @@
   "title": {
     "tr": "Kolinerjik Transmisyon ve Muskarinik Reseptör Modülasyonu",
     "ar": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية",
-    "en": "Cholinergic Transmission & Muscarinic Receptor Modulation"
+    "en": "Cholinergic Neurotransmission & Muscarinic Receptor Modulation"
   },
   "order": 2,
   "access": "free",
   "objective": {
-    "tr": "Asetilkolin sentezi, kolinesteraz yıkımı, muskarinik (M1-M5) GPCR lar ve nikotinik iyon kanallarının farmakolojisini kavramak.",
-    "ar": "فهم اصطناع الأسيتيل كولين وإماهته بإنزيم الكولينستراز وفارماكولوجيا مستقبلات GPCR الموسكارينية والقنوات النيكوتينية.",
-    "en": "Master acetylcholine synthesis, cholinesterase degradation, muscarinic (M1-M5) GPCR signaling, and nicotinic ion channels."
+    "tr": "Asetilkolin sentez ve yıkım döngüsünü, muskarinik (M1-M5) ve nikotinik (Nn, Nm) reseptör alt tiplerini, organofosfat toksidromunu ve Tensilon testini yönetmek.",
+    "ar": "إتقان دورة اصطناع وحلمهة الأسيتيل كولين، والأنماط الموسكارينية (M1-M5) والنيكوتينية (Nn, Nm)، ومتلازمة التسمم بالفوسفور العضوي واختبار تينسيلون.",
+    "en": "Master acetylcholine synthesis and hydrolysis, muscarinic (M1-M5) and nicotinic (Nn, Nm) receptor subtypes, organophosphate toxidrome, and Tensilon testing."
   },
   "misconceptions": [
     {
-      "tr": "Asetilkolinin yalnızca parasempatik sisteme özgü olduğu yanılgısı (tüm otonom ganglionlarda ve nöromusküler kavşakta nikotiniktir).",
-      "ar": "الاعتقاد الخاطئ بأن الأسيتيل كولين خاص بنظير الودي فقط (هو الناقل في العقد الذاتية كافة والوصل العضلي العصبي).",
-      "en": "Atropine stimulates muscarinic receptors to accelerate heart rate."
+      "tr": "Atropinin tüm kolinerjik reseptörleri bloke eden evrensel bir panzehir olduğu yanılgısı (atropin yalnızca muskarinik M1-M5 reseptörlerini bloke eder; çizgili kas nikotinik Nm reseptörlerine sıfır afinitesi vardır).",
+      "ar": "الظن الخاطئ بأن الأتروبين ترياق شامل يعطل كل المستقبلات الكولينية (الأتروبين يحصر المستقبلات الموسكارينية فقط، ولا يملك أي ألفة لمستقبلات Nm العضلية الهيكلية).",
+      "en": "The misconception that atropine is a universal cholinergic antagonist (atropine selectively blocks muscarinic M1-M5 receptors with zero activity at nicotinic Nm endplates)."
+    },
+    {
+      "tr": "Miyasteni krizinde zayıflık hisseden hastaya körlemesine kolinesteraz inhibitörü verilmesi yanılgısı (hastalık miyastenik kriz değil aşırı doz kolinerjik kriz ise, ilaç depolarizan felci şiddetlendirip hastayı boğabilir).",
+      "ar": "الاعتقاد الخاطئ بإمكانية إعطاء مثبطات الكولينستراز عميانياً عند تفاقم الوهن العضلي (إذا كانت النوبة كولينية ناتجة عن فرط الجرعة، فإن الدواء يعمق الشلل الاستقطابي ويفضي للوفاة).",
+      "en": "The dangerous practice of blindly giving AChE inhibitors in myasthenic weakness (if the event is an overtreatment cholinergic crisis, adding drug deepens depolarizing paralysis into fatal asphyxiation)."
     }
   ],
   "sources": [
     {
       "file": "Otonom Sinir Sistemi.pdf",
-      "page": 32
+      "page": 22
     }
   ],
   "citations": [
     {
-      "id": "CIT-PH08-01",
+      "id": "CIT-KATZUNG-CH07-P105",
+      "book": "Katzung's Basic & Clinical Pharmacology",
+      "edition": "15th ed.",
+      "topic": "Cholinoceptor-Activating & Cholinesterase-Inhibiting Drugs",
+      "chapter": "Chapter 7: Cholinoceptor-Activating & Cholinesterase-Inhibiting Drugs",
+      "page": "pp. 105-125",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-GG-CH07-P135",
       "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
       "edition": "14th ed.",
-      "topic": "Cholinergic Neurotransmission, Muscarinic Receptors, and Anticholinergics",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Muscarinic Receptor Agonists and Antagonists",
+      "chapter": "Chapter 7: Muscarinic Receptor Agonists and Antagonists",
+      "page": "pp. 135-155",
+      "status": "verified"
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "pharm-mod4-les2-card1",
       "courseId": "pharmacology",
-      "drugOrConcept": "Asetilkolinesteraz Görevi",
-      "prompt": "Sinaptik aralıktaki asetilkolin sinyali hangi enzimle milisaniyeler içinde sonlandırılır?",
-      "answer": "Asetilkolinesteraz (AChE) enzimi ile asetat ve koline hidroliz edilerek.",
+      "drugOrConcept": "Atropin Paradoksu ve Nikotinik Felç",
+      "prompt": "Organofosfat zehirlenmesinde yüksek doz atropin sekresyonları durdurduğu halde diyafram kas felcini neden önleyemez?",
+      "answer": "Atropin yalnızca muskarinik (M1-M5) reseptörleri bloke eder; nöromusküler kavşaktaki nikotinik (Nm) reseptörleri bloke edemez. Pralidoksim (2-PAM) gereklidir.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod4-les2-card2",
       "courseId": "pharmacology",
-      "drugOrConcept": "M2 Reseptörü ve Kalp",
-      "prompt": "Kalpte vagal uyarımla bradikardi (kalp yavaşlaması) oluşturan muskarinik reseptör hangisidir?",
-      "answer": "M2 muskarinik reseptör (Gi proteini ile kenetli, cAMP yi düşürür ve K+ kanallarını açar).",
+      "drugOrConcept": "Endotelyal M3 Paradoksu",
+      "prompt": "Damar düz kasında parasempatik innervasyon olmadığı halde intravenöz asetilkolin neden güçlü vazodilatasyon yapar?",
+      "answer": "Endotel hücrelerindeki M3 reseptörleri Gq/Ca2+ ile endotelyal nitrik oksit sentazı (eNOS) aktive eder; salınan NO düz kasa diffüze olup cGMP ile gevşeme sağlar.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod4-les2-card3",
       "courseId": "pharmacology",
-      "drugOrConcept": "Atropin Etki Mekanizması",
-      "prompt": "Klinik atropin ilacı hangi reseptörlerin yarışmalı antagonistidir?",
-      "answer": "Tüm muskarinik (M1-M5) reseptörlerin non-selektif yarışmalı antagonistidir.",
+      "drugOrConcept": "Tensilon Testi Ayırıcı Tanısı",
+      "prompt": "Miyastenia Gravis krizinde ultra kısa etkili edrofonyum (Tensilon) verildiğinde klinik yanıt nasıl yorumlanır?",
+      "answer": "Kas gücü anında düzelirse Miyastenik Krizdir (yetersiz ACh); kas felci daha da kötüleşir ve fasikülasyon artarsa Kolinerjik Krizdir (aşırı ACh / depolarizasyon bloku).",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod4-les2-card4",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Pralidoksim ve Yaşlanma (Aging)",
+      "prompt": "Organofosfat zehirlenmesinde pralidoksim (2-PAM) neden ilk saatlerde hızla uygulanmalıdır?",
+      "answer": "Organofosfat-AChE kompleksi alkil grubunu kaybedip 'yaşlanma' (aging) sürecine girdiğinde kovalent bağ kalıcılaşır ve enzim artık reaktive edilemez.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Kolinerjik Transmisyon ve Muskarinik Reseptör Modülasyonu"
-    },
-    "ar": {
-      "title": "النقل العصبي الكوليني وتعديل المستقبِلات الموسكارينية"
-    }
-  },
   "steps": [
     {
-      "id": "pharm-mod4-les2-step-01",
-      "stage": "hook",
+      "id": "pharm-mod4-les2-step1",
+      "order": 1,
       "stageIndex": 1,
+      "stage": "hook",
+      "type": "predict_reveal",
       "title": {
-        "tr": "Ölümcül Mantar ve Güzel Kadın Otu",
-        "ar": "الفطر القاتل ونبتة ست الحسن",
-        "en": "Deadly Mushroom and Beautiful Lady (Belladonna)"
-      },
-      "prompt": {
-        "tr": "Amanita muscaria mantarını yiyen biri ter içinde boğulurken, Atropa belladonna (güzelavrat otu) yiyen birinin ağzı neden çöl gibi kurur?",
-        "ar": "بينما يغرق متناول فطر Amanita بالإفرازات والعرق، لماذا يجف فم متناول نبتة ست الحسن (Belladonna) كالصحراء؟",
-        "en": "Ingestion of Amanita muscaria causes profuse salivation and bradycardia, while Belladonna (atropine) produces dry mouth and mydriasis. Why?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "muskarinik etki",
-          "arContext": "التأثير الموسكاريني"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod4-les2-step-02",
-      "stage": "question",
-      "stageIndex": 2,
-      "title": {
-        "tr": "Tahmin: Atropin Kalp Hızını Ne Yapar?",
-        "ar": "توقع: ماذا يفعل Atropine بسرعة القلب؟",
-        "en": "Prediction: What Does Atropine Do to Heart Rate?"
-      },
-      "prompt": {
-        "tr": "Vagus sinirinin kalbi frenleyen M2 muskarinik reseptörleri atropin ile bloke edilirse kalp atım hızı ne olur?",
-        "ar": "عند حظر مستقبلات M2 التي تكبح نبض القلب بواسطة Atropine، ماذا يحدث لمعدل ضربات القلب؟",
-        "en": "Atropine is a competitive antagonist at cardiac M2 muscarinic receptors. By blocking vagal acetylcholine, what happens to heart rate?"
+        "tr": "Klinik Paradoks: Organofosfat Zehirlenmesinde Atropin Çıkmazı",
+        "ar": "المفارقة السريرية: مأزق الأتروبين في التسمم بالفوسفات العضوي",
+        "en": "Clinical Paradox: Organophosphate Poisoning & The Atropine Dilemma"
       },
       "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Atropin vagal tonusu kaldırarak kalp atımını hızlandırır (bradikardi tedavisinde ilk seçenek)."
+      "prompt": {
+        "tr": "Şiddetli organofosfat zehirlenmesi yaşayan tarım işçisine yüksek doz IV atropin veriliyor. Bradikardi ve tükürük salgısı düzeliyor ancak solunum kası güçsüzlüğü ve fasikülasyonlar kötüleşiyor. Atropin çizgili kas felcini neden düzeltemez?",
+        "ar": "تلقى مزارع مصاب بتسمم فوسفوري عضوي حاد جرعة عالية من الأتروبين وريدياً. تراجع بطء القلب واللعاب، لكن ضعف الحجاب الحاجز والنفضان العضلي تفاقما. لماذا يفشل الأتروبين في إنقاذ الشلل العضلي الهيكلي؟",
+        "en": "An agricultural worker with severe organophosphate poisoning receives high-dose IV atropine. Bradycardia and salivation resolve, but diaphragmatic weakness and muscle fasciculations worsen. Why does atropine fail to rescue skeletal muscle paralysis?"
       },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "conceptCheck": {
+        "question": {
+          "tr": "Atropin organofosfat zehirlenmesinde çizgili kas güçsüzlüğünü ve diyafram felcini neden düzeltemez?",
+          "ar": "لماذا يفشل الأتروبين في عكس الضعف العضلي وشلل الحجاب الحاجز في التسمم بالفوسفات العضوي؟",
+          "en": "Why does atropine fail to reverse skeletal muscle weakness and diaphragmatic paralysis in organophosphate toxicity?"
+        },
         "options": [
           {
-            "id": "opt-ph42-1",
+            "id": "opt-l8-s1-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Fren boşalır ve kalp hızı aniden fırlar (taşikardi).",
-              "ar": "يفلت الكابح وتتسارع ضربات القلب فجأة (تسرع القلب).",
-              "en": "Vagal parasympathetic brake is lifted, resulting in accelerated heart rate (tachycardia)."
+              "tr": "Atropin yarışmalı bir muskarinik antagonisttir; nöromusküler kavşaktaki nikotinik (Nm) reseptörlere afinitesi yoktur ve aşırı ACh depolarizan blok yapmaya devam eder.",
+              "ar": "الأتروبين مضاد مسكاريني تنافسي ليس له أي ألفة لمستقبلات النيكوتين (Nm) في الوصل العصبي العضلي، فيستمر فائض الأسيتيل كولين بإحداث شلل إزالة الاستقطاب.",
+              "en": "Atropine is a competitive muscarinic antagonist with zero affinity for nicotinic (Nm) receptors at the neuromuscular junction; excess ACh continues to cause depolarizing neuromuscular block."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Atropin paradoksu: atropin muskarinik organları (SLUDGE) kurtarır ancak nikotinik kavşağa bağlanamaz; çizgili kas için oksim (Pralidoksim/2-PAM) gerekir.",
+              "ar": "صحيح. مفارقة الأتروبين: ينقذ الأعضاء الموسكارينية ولكنه لا يرتبط بالوصل النيكوتيني؛ يتطلب شلل العضلات مضاداً نوعياً مثل البراليدوكسيم (2-PAM).",
+              "en": "Correct. The atropine paradox: atropine rescues muscarinic organs, but has zero affinity for nicotinic Nm endplates, requiring Pralidoxime (2-PAM) for muscle recovery."
+            }
           },
           {
-            "id": "opt-ph42-2",
+            "id": "opt-l8-s1-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Kalp tamamen durur.",
-              "ar": "يتوقف القلب عن النبض تماماً.",
-              "en": "Heart rate drops to zero immediately."
+              "tr": "Çizgili kas nikotinik reseptörleri atropine 1000 kat daha düşük afinite gösterir ve intravenöz dozun iki katına çıkarılmasını gerektirir.",
+              "ar": "تمتلك مستقبلات النيكوتين العضلية ألفة أقل بألف ضعف للأتروبين، مما يتطلب مضاعفة الجرعة الوريدية بشكل هائل.",
+              "en": "Skeletal muscle nicotinic receptors possess 1,000-fold lower affinity for atropine, requiring a massive doubling of the intravenous dose."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Atropin muskarinik GPCR'lara (M1-M5) kimyasal olarak selektiftir; hiçbir klinik dozda nikotinik katyon kanallarını antagonize etmez.",
+              "ar": "غير صحيح. الأتروبين انتقائي بنيوياً للمستقبلات الموسكارينية؛ ولا يحصر قنوات النيكوتين الكاتيونية بأي جرعة سريرية.",
+              "en": "Incorrect. Atropine is chemically selective for muscarinic GPCRs (M1-M5) and does not antagonize nicotinic cation channels at any clinical dose."
+            }
+          },
+          {
+            "id": "opt-l8-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Organofosfatlar doğrudan nikotinik reseptör iyon kanallarına bağlanarak onları geri dönüşsüz denatüre eder ve farmakolojik geri çevirmeyi imkansız kılar.",
+              "ar": "ترتبط الفوسفات العضوية مباشرة بقنوات مستقبلات النيكوتين الأيونية وتخربها نهائياً، مما يجعل أي عكس دوائي مستحيلاً.",
+              "en": "Organophosphates directly bind and irreversibly denature nicotinic receptor ion channels, rendering any pharmacological reversal impossible."
+            },
+            "feedback": {
+              "tr": "Yanlış. Organofosfatlar asetilkolinesterazı inhibe eder; nöromusküler blok aşırı ACh birikimine bağlı sekonder bir depolarizan bloktur ve oksimlerle geri çevrilebilir.",
+              "ar": "غير صحيح. تثبط الفوسفات العضوية كولينستراز الأسيتيل مسببة تراكمه؛ والشلل العضلي إحصار ثانوي ناجم عن فرط الاستقطاب يمكن عكسه بالأوكسيمات.",
+              "en": "Incorrect. Organophosphates inhibit acetylcholinesterase; muscle paralysis is a secondary depolarizing block reversible by oximes before aging."
+            }
           }
         ]
-      }
+      },
+      "technicalTerms": [
+        {
+          "term": "Muskarinik Selektivite",
+          "arContext": "الانتقائية الموسكارينية (Muscarinic Selectivity)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Otonom uç organlar ile somatik nöromusküler kavşağı yöneten reseptör sınıflarını kıyaslayın.",
+          "ar": "قارن بين فئات المستقبلات المنظمة للأعضاء الذاتية وتلك المنظمة للوصل العصبي العضلي الجسدي.",
+          "en": "Which receptor class mediates autonomic end-organs versus somatic neuromuscular junctions?"
+        },
+        {
+          "tier": 2,
+          "tr": "Atropin katı biçimde muskarinik antagonisttir. Ligand kapılı nikotinik (Nm) reseptörlerine afinitesi var mıdır?",
+          "ar": "الأتروبين مضاد مسكاريني بحت. هل يمتلك ألفة تجاه مستقبلات النيكوتين (Nm) المبوبة بالربيطة؟",
+          "en": "Atropine is classified strictly as a muscarinic antagonist. Does it have affinity for ligand-gated nicotinic (Nm) receptors?"
+        },
+        {
+          "tier": 3,
+          "tr": "Atropin muskarinik GPCR'ları (M1-M5) bloke ederek SLUDGE'ı ve bradikardiyi çözer; ancak nikotinik Nm reseptörlerine bağlanamaz ve depolarizan çizgili kas felcini durduramaz.",
+          "ar": "يحصر الأتروبين مستقبلات GPCR الموسكارينية (M1-M5) عاكساً أعراض SLUDGE؛ لكنه لا يرتبط بمستقبلات النيكوتين Nm، فيستمر شلل العضلات الهيكلية.",
+          "en": "Atropine selectively blocks muscarinic GPCRs (M1-M5), reversing SLUDGE and bradycardia, but cannot block nicotinic Nm receptors where ACh sustains depolarizing paralysis."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s1-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Atropin yarışmalı bir muskarinik antagonisttir; nöromusküler kavşaktaki nikotinik (Nm) reseptörlere afinitesi yoktur ve aşırı ACh depolarizan blok yapmaya devam eder.",
+              "ar": "الأتروبين مضاد مسكاريني تنافسي ليس له أي ألفة لمستقبلات النيكوتين (Nm) في الوصل العصبي العضلي، فيستمر فائض الأسيتيل كولين بإحداث شلل إزالة الاستقطاب.",
+              "en": "Atropine is a competitive muscarinic antagonist with zero affinity for nicotinic (Nm) receptors at the neuromuscular junction; excess ACh continues to cause depolarizing neuromuscular block."
+            },
+            "feedback": {
+              "tr": "Doğru. Atropin paradoksu: atropin muskarinik organları (SLUDGE) kurtarır ancak nikotinik kavşağa bağlanamaz; çizgili kas için oksim (Pralidoksim/2-PAM) gerekir.",
+              "ar": "صحيح. مفارقة الأتروبين: ينقذ الأعضاء الموسكارينية ولكنه لا يرتبط بالوصل النيكوتيني؛ يتطلب شلل العضلات مضاداً نوعياً مثل البراليدوكسيم (2-PAM).",
+              "en": "Correct. The atropine paradox: atropine rescues muscarinic organs, but has zero affinity for nicotinic Nm endplates, requiring Pralidoxime (2-PAM) for muscle recovery."
+            }
+          },
+          {
+            "id": "opt-l8-s1-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Çizgili kas nikotinik reseptörleri atropine 1000 kat daha düşük afinite gösterir ve intravenöz dozun iki katına çıkarılmasını gerektirir.",
+              "ar": "تمتلك مستقبلات النيكوتين العضلية ألفة أقل بألف ضعف للأتروبين، مما يتطلب مضاعفة الجرعة الوريدية بشكل هائل.",
+              "en": "Skeletal muscle nicotinic receptors possess 1,000-fold lower affinity for atropine, requiring a massive doubling of the intravenous dose."
+            },
+            "feedback": {
+              "tr": "Yanlış. Atropin muskarinik GPCR'lara (M1-M5) kimyasal olarak selektiftir; hiçbir klinik dozda nikotinik katyon kanallarını antagonize etmez.",
+              "ar": "غير صحيح. الأتروبين انتقائي بنيوياً للمستقبلات الموسكارينية؛ ولا يحصر قنوات النيكوتين الكاتيونية بأي جرعة سريرية.",
+              "en": "Incorrect. Atropine is chemically selective for muscarinic GPCRs (M1-M5) and does not antagonize nicotinic cation channels at any clinical dose."
+            }
+          },
+          {
+            "id": "opt-l8-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Organofosfatlar doğrudan nikotinik reseptör iyon kanallarına bağlanarak onları geri dönüşsüz denatüre eder ve farmakolojik geri çevirmeyi imkansız kılar.",
+              "ar": "ترتبط الفوسفات العضوية مباشرة بقنوات مستقبلات النيكوتين الأيونية وتخربها نهائياً، مما يجعل أي عكس دوائي مستحيلاً.",
+              "en": "Organophosphates directly bind and irreversibly denature nicotinic receptor ion channels, rendering any pharmacological reversal impossible."
+            },
+            "feedback": {
+              "tr": "Yanlış. Organofosfatlar asetilkolinesterazı inhibe eder; nöromusküler blok aşırı ACh birikimine bağlı sekonder bir depolarizan bloktur ve oksimlerle geri çevrilebilir.",
+              "ar": "غير صحيح. تثبط الفوسفات العضوية كولينستراز الأسيتيل مسببة تراكمه؛ والشلل العضلي إحصار ثانوي ناجم عن فرط الاستقطاب يمكن عكسه بالأوكسيمات.",
+              "en": "Incorrect. Organophosphates inhibit acetylcholinesterase; muscle paralysis is a secondary depolarizing block reversible by oximes before aging."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Şiddetli organofosfat zehirlenmesi yaşayan tarım işçisine yüksek doz IV atropin veriliyor. Bradikardi ve tükürük salgısı düzeliyor ancak solunum kası güçsüzlüğü ve fasikülasyonlar kötüleşiyor. Atropin çizgili kas felcini neden düzeltemez?",
+          "ar": "تلقى مزارع مصاب بتسمم فوسفوري عضوي حاد جرعة عالية من الأتروبين وريدياً. تراجع بطء القلب واللعاب، لكن ضعف الحجاب الحاجز والنفضان العضلي تفاقما. لماذا يفشل الأتروبين في إنقاذ الشلل العضلي الهيكلي؟",
+          "en": "An agricultural worker with severe organophosphate poisoning receives high-dose IV atropine. Bradycardia and salivation resolve, but diaphragmatic weakness and muscle fasciculations worsen. Why does atropine fail to rescue skeletal muscle paralysis?"
+        },
+        "title": {
+          "tr": "Klinik Paradoks: Organofosfat Zehirlenmesinde Atropin Çıkmazı",
+          "ar": "المفارقة السريرية: مأزق الأتروبين في التسمم بالفوسفات العضوي",
+          "en": "Clinical Paradox: Organophosphate Poisoning & The Atropine Dilemma"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 17
+        }
+      ]
     },
     {
-      "id": "pharm-mod4-les2-step-03",
-      "stage": "intuition",
+      "id": "pharm-mod4-les2-step2",
+      "order": 2,
+      "stageIndex": 2,
+      "stage": "question",
+      "type": "question",
+      "title": {
+        "tr": "Kavramsal Soru: Hızlı İyon Kanalları ve Yavaş GPCR'lar",
+        "ar": "سؤال مفاهيمي: قنوات الأيونات السريعة مقابل GPCR البطيئة",
+        "en": "Conceptual Question: Fast Ion Channels vs Slow GPCRs"
+      },
+      "prompt": {
+        "tr": "Aynı asetilkolin molekülü, iskelet kasında milisaniyeler içinde hızlı depolarizasyonu tetiklerken kardiyak pacemaker'da nasıl uzun süreli hiperpolarizasyon ve bradikardiye yol açar?",
+        "ar": "كيف يمكن لجزيء الأسيتيل كولين نفسه أن يحفز إزالة استقطاب سريعة بالميلي ثانية في العضلة الهيكلية، بينما يثير فرط استقطاب مديداً وبطء قلب في الناظمة القلبية؟",
+        "en": "How can the exact same acetylcholine molecule trigger millisecond-fast depolarization in skeletal muscle, while evoking prolonged hyperpolarization and sustained bradycardia in the cardiac pacemaker?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Asetilkolin iskelet kası ve kalp düğüm dokusunda neden tamamen farklı hız ve yönde elektriksel yanıtlar oluşturur?",
+          "ar": "لماذا يولد الأسيتيل كولين استجابات كهربائية متباينة السرعة والاتجاه بين العضلات الهيكلية والعقد القلبية؟",
+          "en": "Why does acetylcholine mediate divergent speeds and directions of electrical response between skeletal muscle and cardiac pacemaker?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "İskelet kası nikotinik Nm ligand kapılı katyon kanalları taşır (anlık iyon akışı); kardiyak pacemaker ise Gi/beta-gama ile GIRK K+ kanallarına kenetli muskarinik M2 GPCR'lar taşır (yavaş kaskad).",
+              "ar": "تعبر العضلة الهيكلية عن قنوات Nm النيكوتينية المبوبة بالربيطة (تدفق أيوني فوري)؛ وتعبر الناظمة القلبية عن مستقبلات M2 المقترنة بـ Gi/بيتا-غاما بقنوات GIRK للبوتاسيوم (شلال أبطأ).",
+              "en": "Skeletal muscle expresses nicotinic Nm ligand-gated cation channels (immediate ion flux); cardiac pacemaker expresses muscarinic M2 GPCRs coupled via Gi/beta-gamma to GIRK K+ channels (slower cascade)."
+            },
+            "feedback": {
+              "tr": "Doğru. Nikotinik reseptörler doğrudan sodyum/kalsiyum geçiren iyon kanallarıdır (iyonotropik); muskarinik M2 ise Gi aracılığıyla GIRK K+ kanallarını açan metabotropik bir GPCR'dır.",
+              "ar": "صحيح. مستقبلات النيكوتين قنوات كاتيونية أيونية؛ بينما M2 مستقبل أيضي مقترن بـ Gi يفتح قنوات البوتاسيوم GIRK مسبباً فرط الاستقطاب.",
+              "en": "Correct. Nicotinic receptors are ionotropic cation channels conducting sub-millisecond flux, whereas muscarinic M2 is a metabotropic GPCR coupled to GIRK K+ channels."
+            }
+          },
+          {
+            "id": "opt-l8-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak asetilkolin, iskelet kasındaki L-konformerine göre 100 kat daha yavaş hidroliz olan stereoizomerik bir D-konformasyonunda bulunur.",
+              "ar": "يوجد الأسيتيل كولين القلبي في متماكب فراغي D يتحلمه أبطأ بمئة مرة من متماكب L في العضلات الهيكلية.",
+              "en": "Cardiac acetylcholine exists in a stereoisomeric D-conformation that hydrolyzes 100 times slower than the skeletal muscle L-conformer."
+            },
+            "feedback": {
+              "tr": "Yanlış. Asetilkolin kiral merkez içermez, optik izomeri yoktur; kinetik fark reseptör mimarisinden (iyonotropik vs GPCR) kaynaklanır.",
+              "ar": "غير صحيح. الأسيتيل كولين جزيء لا كيرالي ليس له متماكبات ضوئية؛ ويعود الفارق الحركي كلياً لبنية المستقبل (أيوني مقابل GPCR).",
+              "en": "Incorrect. Acetylcholine is an achiral molecule with no stereoisomers; receptor architecture alone dictates kinetic response speed."
+            }
+          },
+          {
+            "id": "opt-l8-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak dokuda asetilkolinesteraz tamamen bulunmaz ve nöromusküler kavşağın aksine asetilkolinin dakikalarca kalmasına izin verir.",
+              "ar": "يفتقر النسيج القلبي تماماً لإنزيم كولينستراز الأسيتيل، مما يسمح للأسيتيل كولين بالبقاء لدقائق بخلاف الوصل العصبي العضلي.",
+              "en": "Cardiac tissue completely lacks acetylcholinesterase, allowing acetylcholine to persist for minutes, unlike the neuromuscular junction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kalp dokusunda bol miktarda asetilkolinesteraz bulunur. Yanıt süresini belirleyen şey doğrudan iyon poru açılmasına karşı GPCR sinyal iletimidir.",
+              "ar": "غير صحيح. يحتوي القلب على كولينستراز بوفرة. يحدد الفارق الزمني طبيعة المستقبل (فتح قناة مباشر مقابل شلال GPCR).",
+              "en": "Incorrect. Heart tissue contains abundant acetylcholinesterase. Kinetic divergence is governed by direct ion channel gating versus GPCR intracellular signaling."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Ligand Kapılı İyon Kanalı",
+          "arContext": "القناة الأيونية المبوبة بالربيط (Ligand-Gated Ion Channel)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Reseptör süper ailelerini karşılaştırın: iyonotropik ligand kapılı kanallar ile metabotropik G-protein kenetli reseptörler.",
+          "ar": "قارن بين العائلات الكبرى للمستقبلات: القنوات الأيونية المبوبة بالربيطة مقابل مستقبلات GPCR الاستقلابية.",
+          "en": "Compare the receptor superfamilies: ionotropic ligand-gated channels versus metabotropic GPCRs."
+        },
+        {
+          "tier": 2,
+          "tr": "Nikotinik Nm kanalları ligand bağlanınca anında açılır. Muskarinik M2 reseptörleri ise GIRK K+ kanallarını açmak için heterotrimerik Gi proteinini aktive etmek zorundadır.",
+          "ar": "تفتح قنوات Nm النيكوتينية فور ارتباط الربيطة. بينما يجب أن تفعل مستقبلات M2 الموسكارينية بروتين Gi لفتح قنوات البوتاسيوم GIRK.",
+          "en": "Nicotinic Nm channels open directly upon binding. Muscarinic M2 receptors must activate a heterotrimeric Gi protein to open GIRK K+ channels."
+        },
+        {
+          "tier": 3,
+          "tr": "Nikotinik Nm kanallarında doğrudan iyon geçişi milisaniyede depolarizasyon yapar; M2 reseptöründe ise Gi beta-gama alt birimlerinin potasyum kanallarını açması daha yavaş ve uzundur.",
+          "ar": "يحدث الفتح المباشر لقناة Nm النيكوتينية إزالة استقطاب بالميلي ثانية؛ بينما يفتح تأشير M2 عبر وحدات Gi بيتا-غاما قنوات البوتاسيوم ببطء واستدامة أكبر.",
+          "en": "Direct ion channel gating at nicotinic Nm endplates produces sub-millisecond depolarization, while M2 GPCR signaling through Gi beta-gamma opens potassium channels more slowly."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "İskelet kası nikotinik Nm ligand kapılı katyon kanalları taşır (anlık iyon akışı); kardiyak pacemaker ise Gi/beta-gama ile GIRK K+ kanallarına kenetli muskarinik M2 GPCR'lar taşır (yavaş kaskad).",
+              "ar": "تعبر العضلة الهيكلية عن قنوات Nm النيكوتينية المبوبة بالربيطة (تدفق أيوني فوري)؛ وتعبر الناظمة القلبية عن مستقبلات M2 المقترنة بـ Gi/بيتا-غاما بقنوات GIRK للبوتاسيوم (شلال أبطأ).",
+              "en": "Skeletal muscle expresses nicotinic Nm ligand-gated cation channels (immediate ion flux); cardiac pacemaker expresses muscarinic M2 GPCRs coupled via Gi/beta-gamma to GIRK K+ channels (slower cascade)."
+            },
+            "feedback": {
+              "tr": "Doğru. Nikotinik reseptörler doğrudan sodyum/kalsiyum geçiren iyon kanallarıdır (iyonotropik); muskarinik M2 ise Gi aracılığıyla GIRK K+ kanallarını açan metabotropik bir GPCR'dır.",
+              "ar": "صحيح. مستقبلات النيكوتين قنوات كاتيونية أيونية؛ بينما M2 مستقبل أيضي مقترن بـ Gi يفتح قنوات البوتاسيوم GIRK مسبباً فرط الاستقطاب.",
+              "en": "Correct. Nicotinic receptors are ionotropic cation channels conducting sub-millisecond flux, whereas muscarinic M2 is a metabotropic GPCR coupled to GIRK K+ channels."
+            }
+          },
+          {
+            "id": "opt-l8-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak asetilkolin, iskelet kasındaki L-konformerine göre 100 kat daha yavaş hidroliz olan stereoizomerik bir D-konformasyonunda bulunur.",
+              "ar": "يوجد الأسيتيل كولين القلبي في متماكب فراغي D يتحلمه أبطأ بمئة مرة من متماكب L في العضلات الهيكلية.",
+              "en": "Cardiac acetylcholine exists in a stereoisomeric D-conformation that hydrolyzes 100 times slower than the skeletal muscle L-conformer."
+            },
+            "feedback": {
+              "tr": "Yanlış. Asetilkolin kiral merkez içermez, optik izomeri yoktur; kinetik fark reseptör mimarisinden (iyonotropik vs GPCR) kaynaklanır.",
+              "ar": "غير صحيح. الأسيتيل كولين جزيء لا كيرالي ليس له متماكبات ضوئية؛ ويعود الفارق الحركي كلياً لبنية المستقبل (أيوني مقابل GPCR).",
+              "en": "Incorrect. Acetylcholine is an achiral molecule with no stereoisomers; receptor architecture alone dictates kinetic response speed."
+            }
+          },
+          {
+            "id": "opt-l8-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Kardiyak dokuda asetilkolinesteraz tamamen bulunmaz ve nöromusküler kavşağın aksine asetilkolinin dakikalarca kalmasına izin verir.",
+              "ar": "يفتقر النسيج القلبي تماماً لإنزيم كولينستراز الأسيتيل، مما يسمح للأسيتيل كولين بالبقاء لدقائق بخلاف الوصل العصبي العضلي.",
+              "en": "Cardiac tissue completely lacks acetylcholinesterase, allowing acetylcholine to persist for minutes, unlike the neuromuscular junction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kalp dokusunda bol miktarda asetilkolinesteraz bulunur. Yanıt süresini belirleyen şey doğrudan iyon poru açılmasına karşı GPCR sinyal iletimidir.",
+              "ar": "غير صحيح. يحتوي القلب على كولينستراز بوفرة. يحدد الفارق الزمني طبيعة المستقبل (فتح قناة مباشر مقابل شلال GPCR).",
+              "en": "Incorrect. Heart tissue contains abundant acetylcholinesterase. Kinetic divergence is governed by direct ion channel gating versus GPCR intracellular signaling."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Aynı asetilkolin molekülü, iskelet kasında milisaniyeler içinde hızlı depolarizasyonu tetiklerken kardiyak pacemaker'da nasıl uzun süreli hiperpolarizasyon ve bradikardiye yol açar?",
+          "ar": "كيف يمكن لجزيء الأسيتيل كولين نفسه أن يحفز إزالة استقطاب سريعة بالميلي ثانية في العضلة الهيكلية، بينما يثير فرط استقطاب مديداً وبطء قلب في الناظمة القلبية؟",
+          "en": "How can the exact same acetylcholine molecule trigger millisecond-fast depolarization in skeletal muscle, while evoking prolonged hyperpolarization and sustained bradycardia in the cardiac pacemaker?"
+        },
+        "title": {
+          "tr": "Kavramsal Soru: Hızlı İyon Kanalları ve Yavaş GPCR'lar",
+          "ar": "سؤال مفاهيمي: قنوات الأيونات السريعة مقابل GPCR البطيئة",
+          "en": "Conceptual Question: Fast Ion Channels vs Slow GPCRs"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 18
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les1-step3",
+      "order": 3,
       "stageIndex": 3,
+      "stage": "intuition",
+      "type": "intuition",
       "title": {
-        "tr": "Sezgisel Analoji: Dinlen ve Sindir (Rest & Digest)",
-        "ar": "تشبيه حدسي: الراحة والهضم (Rest & Digest)",
-        "en": "Intuitive Analogy: Rest and Digest (SLUDGE)"
+        "tr": "Fiziksel Sezgi: Asma Köprü Kolu ve Belediye Ulağı",
+        "ar": "الحدس الفيزيائي: رافعة الجسر مقابل رسول البلدية",
+        "en": "Physical Intuition: The Drawbridge vs The City Hall Messenger"
       },
       "prompt": {
-        "tr": "Parasempatik sistem yemekten sonraki huzurdur: Tükürük akar, bağırsaklar çalışır, göz bebekleri küçülür, kalp yavaşlar.",
-        "ar": "الجهاز نظير الودي هو حالة السكون بعد الطعام: يسيل اللعاب، تنشط الأمعاء، تتضيق الحدقة، ويهدأ نبض القلب.",
-        "en": "Parasympathetic muscarinic activation mediates: Salivation, Lacrimation, Urination, Defecation, Gastrointestinal upset, and Emesis."
+        "tr": "Bir kalenin asma köprüsünü doğrudan bir kol çekerek açmakla, koridorlardan ulak gönderip kapının açılmasını talep etmeyi kıyaslayın. Bu kolinerjik iletimi nasıl modeller?",
+        "ar": "قارن بين فتح جسر قلعة بسحب رافعة مباشرة وبين إرسال رسول عبر الأروقة لطلب فتح البوابة. كيف يمثل ذلك النقل الكوليني؟",
+        "en": "Compare opening a castle drawbridge by pulling a direct lever versus dispatching a messenger through corridors to request gate opening. How does this model cholinergic transmission?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Asma köprü kolu ve belediye ulağı benzetmesi kolinerjik iletimde neyi temsil eder?",
+          "ar": "ماذا يمثل تشبيه رافعة الجسر ورسول البلدية في النقل الكوليني؟",
+          "en": "What do the direct lever and city hall messenger analogies represent in cholinergic neurotransmission?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s3-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Doğrudan kol, ligand kapılı nikotinik iyon kanallarını modeller (anlık por açılması); ulak ise muskarinik GPCR'ları modeller (çok basamaklı biyokimyasal kaskad).",
+              "ar": "تمثل الرافعة قنوات النيكوتين الأيونية (فتح فوري للمسام)؛ بينما يمثل الرسول مستقبلات GPCR الموسكارينية (شلال كيميائي حيوي متعدد المراحل).",
+              "en": "The lever represents ligand-gated nicotinic ion channels (direct intrinsic pore opening); the messenger represents muscarinic GPCRs (multi-step intracellular biochemical cascade)."
+            },
+            "feedback": {
+              "tr": "Doğru. İyonotropik nikotinik kanallar reseptör ve poru tek bir komplekste birleştirir (anlık kol). Muskarinik GPCR'lar ise G-proteini ve ikinci haberciler gerektirir (ulak).",
+              "ar": "صحيح. تدمج قنوات النيكوتين المستقبل والمسام في معقد واحد (رافعة فورية)؛ بينما تتطلب GPCR الموسكارينية بروتينات G ومراسيل ثانوية (رسول).",
+              "en": "Correct. Ionotropic nicotinic channels combine receptor and pore in one protein complex (instant lever). Metabotropic GPCRs require G-protein relays (messenger)."
+            }
+          },
+          {
+            "id": "opt-l8-s3-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Doğrudan kol yavaş muskarinik GPCR transkripsiyonunu modeller; ulak ise lipid çift tabakasından hızlı veziküler ekzositozu modeller.",
+              "ar": "تمثل الرافعة استنساخ GPCR الموسكاريني البطيء؛ ويمثل الرسول الإخراج الخلوي الحويصلي السريع عبر طبقة الليبيد.",
+              "en": "The lever represents slow muscarinic GPCR transcription; the messenger represents fast vesicular exocytosis through the lipid bilayer."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kol benzetmesi agonist bağlanınca iyon kanalının doğrudan açılmasını modeller; nükleer transkripsiyonla ilgisi yoktur.",
+              "ar": "غير صحيح. يمثل تشبيه الرافعة الفتح المباشر لمسام القناة الأيونية عند ارتباط المنبه، ولا علاقة له بالاستنساخ النووي.",
+              "en": "Incorrect. The lever models the mechanical opening of the ionotropic channel pore upon agonist binding, not nuclear transcription."
+            }
+          },
+          {
+            "id": "opt-l8-s3-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Doğrudan kol asetilkolinesterazın kolini hidroliz etmesini modeller; ulak ise asetatın mitokondriye geri difüzyonunu modeller.",
+              "ar": "تمثل الرافعة حلمهة الكولين بإنزيم كولينستراز؛ ويمثل الرسول انتشار الأسيتات عائداً إلى الميتوكوندريا.",
+              "en": "The lever represents acetylcholinesterase hydrolysis of choline; the messenger represents acetate diffusion back into mitochondria."
+            },
+            "feedback": {
+              "tr": "Yanlış. Her iki analoji de post-sinaptik sinyal iletim mekanizmalarını karşılaştırmak içindir, enzimatik yıkım için değil.",
+              "ar": "غير صحيح. يصف كلا التشبيهين آليات تحويل الإشارة بعد المشبكية، مقارنين بين فتح القنوات المباشر وشلالات GPCR.",
+              "en": "Incorrect. Both analogies describe post-synaptic transduction mechanisms, contrasting direct channel opening with GPCR second messenger cascades."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "parasempatik tonus",
-          "arContext": "المقوية نظيرة الودية"
+          "term": "İyonotropik vs Metabotropik",
+          "arContext": "أيوني مقابل أيضي (Ionotropic vs Metabotropic)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Mekanizma hızını düşünün: hangi süreç tek parça mekanik bir eylemdir, hangisi ikincil adımların zinciridir?",
+          "ar": "فكر في سرعة الآلية: أي عملية هي فعل ميكانيكي من خطوة واحدة، وأيها سلسلة من خطوات الترحيل؟",
+          "en": "Think about the speed and machinery: which process is an all-in-one mechanical action versus a relay of secondary steps?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Nikotinik reseptörün poru bağlanma bölgesiyle aynı protein üzerindedir. Muskarinik reseptör ise sinyali G-proteinleri üzerinden iletmelidir.",
+          "ar": "تحتوي مستقبلات النيكوتين على المسام مدمجاً مع موقع الارتباط. بينما يجب أن ترحل المستقبلات الموسكارينية الإشارة عبر بروتينات G.",
+          "en": "Nicotinic receptors have the channel built into the binding site. Muscarinic receptors must relay the signal through G-proteins."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Doğrudan kol ligand kapılı nikotinik iyon kanalını (anlık por açılması); ulak ise muskarinik GPCR ikinci haberci kaskadını modeller.",
+          "ar": "تمثل الرافعة قنوات النيكوتين الأيونية (فتح ميكانيكي مباشر للمسام)؛ ويمثل الرسول شلال المستقبلات الموسكارينية المقترنة بـ GPCR.",
+          "en": "The lever directly opens the channel pore (ionotropic nicotinic receptor). The messenger navigates biochemical pathways to activate effectors (metabotropic GPCR)."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s3-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Doğrudan kol, ligand kapılı nikotinik iyon kanallarını modeller (anlık por açılması); ulak ise muskarinik GPCR'ları modeller (çok basamaklı biyokimyasal kaskad).",
+              "ar": "تمثل الرافعة قنوات النيكوتين الأيونية (فتح فوري للمسام)؛ بينما يمثل الرسول مستقبلات GPCR الموسكارينية (شلال كيميائي حيوي متعدد المراحل).",
+              "en": "The lever represents ligand-gated nicotinic ion channels (direct intrinsic pore opening); the messenger represents muscarinic GPCRs (multi-step intracellular biochemical cascade)."
+            },
+            "feedback": {
+              "tr": "Doğru. İyonotropik nikotinik kanallar reseptör ve poru tek bir komplekste birleştirir (anlık kol). Muskarinik GPCR'lar ise G-proteini ve ikinci haberciler gerektirir (ulak).",
+              "ar": "صحيح. تدمج قنوات النيكوتين المستقبل والمسام في معقد واحد (رافعة فورية)؛ بينما تتطلب GPCR الموسكارينية بروتينات G ومراسيل ثانوية (رسول).",
+              "en": "Correct. Ionotropic nicotinic channels combine receptor and pore in one protein complex (instant lever). Metabotropic GPCRs require G-protein relays (messenger)."
+            }
+          },
+          {
+            "id": "opt-l8-s3-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Doğrudan kol yavaş muskarinik GPCR transkripsiyonunu modeller; ulak ise lipid çift tabakasından hızlı veziküler ekzositozu modeller.",
+              "ar": "تمثل الرافعة استنساخ GPCR الموسكاريني البطيء؛ ويمثل الرسول الإخراج الخلوي الحويصلي السريع عبر طبقة الليبيد.",
+              "en": "The lever represents slow muscarinic GPCR transcription; the messenger represents fast vesicular exocytosis through the lipid bilayer."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kol benzetmesi agonist bağlanınca iyon kanalının doğrudan açılmasını modeller; nükleer transkripsiyonla ilgisi yoktur.",
+              "ar": "غير صحيح. يمثل تشبيه الرافعة الفتح المباشر لمسام القناة الأيونية عند ارتباط المنبه، ولا علاقة له بالاستنساخ النووي.",
+              "en": "Incorrect. The lever models the mechanical opening of the ionotropic channel pore upon agonist binding, not nuclear transcription."
+            }
+          },
+          {
+            "id": "opt-l8-s3-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Doğrudan kol asetilkolinesterazın kolini hidroliz etmesini modeller; ulak ise asetatın mitokondriye geri difüzyonunu modeller.",
+              "ar": "تمثل الرافعة حلمهة الكولين بإنزيم كولينستراز؛ ويمثل الرسول انتشار الأسيتات عائداً إلى الميتوكوندريا.",
+              "en": "The lever represents acetylcholinesterase hydrolysis of choline; the messenger represents acetate diffusion back into mitochondria."
+            },
+            "feedback": {
+              "tr": "Yanlış. Her iki analoji de post-sinaptik sinyal iletim mekanizmalarını karşılaştırmak içindir, enzimatik yıkım için değil.",
+              "ar": "غير صحيح. يصف كلا التشبيهين آليات تحويل الإشارة بعد المشبكية، مقارنين بين فتح القنوات المباشر وشلالات GPCR.",
+              "en": "Incorrect. Both analogies describe post-synaptic transduction mechanisms, contrasting direct channel opening with GPCR second messenger cascades."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Bir kalenin asma köprüsünü doğrudan bir kol çekerek açmakla, koridorlardan ulak gönderip kapının açılmasını talep etmeyi kıyaslayın. Bu kolinerjik iletimi nasıl modeller?",
+          "ar": "قارن بين فتح جسر قلعة بسحب رافعة مباشرة وبين إرسال رسول عبر الأروقة لطلب فتح البوابة. كيف يمثل ذلك النقل الكوليني؟",
+          "en": "Compare opening a castle drawbridge by pulling a direct lever versus dispatching a messenger through corridors to request gate opening. How does this model cholinergic transmission?"
+        },
+        "title": {
+          "tr": "Fiziksel Sezgi: Asma Köprü Kolu ve Belediye Ulağı",
+          "ar": "الحدس الفيزيائي: رافعة الجسر مقابل رسول البلدية",
+          "en": "Physical Intuition: The Drawbridge vs The City Hall Messenger"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 19
         }
       ]
     },
     {
-      "id": "pharm-mod4-les2-step-04",
-      "stage": "visual_explanation",
+      "id": "pharm-mod4-les2-step4",
+      "order": 4,
       "stageIndex": 4,
+      "stage": "visual_explanation",
+      "type": "visual_explanation",
       "title": {
-        "tr": "Muskarinik Reseptör Haritası (M1 - M5)",
-        "ar": "خارطة المستقبلات الموسكارينية (M1 - M5)",
-        "en": "Muscarinic Receptor Subtypes Map (M1 to M5)"
+        "tr": "Görsel Açıklama: Asetilkolin Sinaptik Yaşam Döngüsü",
+        "ar": "شرح مرئي: دورة حياة الأسيتيل كولين المشبكية",
+        "en": "Visual Explanation: Acetylcholine Synaptic Life Cycle"
       },
       "prompt": {
-        "tr": "Tek sayılı reseptörler (M1, M3, M5) Gq kenetlidir (salgılar ve düz kas kasılması). Çift sayılı reseptörler (M2, M4) Gi kenetlidir (kalp inhibisyonu).",
-        "ar": "المستقبلات الفردية (M1, M3, M5) مقترنة بـ Gq (الإفرازات وتقلص العضلات). المستقبلات الزوجية (M2, M4) مقترنة بـ Gi (تثبيط القلب).",
-        "en": "Odd numbers (M1, M3, M5) couple to Gq (IP3/DAG). Even numbers (M2, M4) couple to Gi (inhibits adenylate cyclase, opens GIRK K+ channels)."
+        "tr": "Kolinerjik sinaps yaşam döngüsünü inceleyin: Asetilkolin sentezindeki birincil hız kısıtlayıcı basamak nedir ve botulinum nörotoksini tam olarak hangi noktada müdahale eder?",
+        "ar": "راجع دورة حياة المشبك الكوليني: ما هي الخطوة المحددة للسرعة في اصطناع الأسيتيل كولين، وأين يتدخل ذيفان البوتولينوم بالتحديد؟",
+        "en": "Review the cholinergic synapse life cycle: What constitutes the primary rate-limiting step in acetylcholine synthesis, and at what specific point does botulinum neurotoxin intervene?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Asetilkolin sentezinde hız kısıtlayıcı basamak hangisidir ve botulinum toksini nereyi vurur?",
+          "ar": "ما هي الخطوة المحددة للسرعة في اصطناع الأسيتيل كولين وأين يؤثر ذيفان البوتولينوم؟",
+          "en": "What is the rate-limiting step in acetylcholine synthesis and where does botulinum toxin act?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak sodyum bağımlı yüksek afiniteli kolin geri alımıdır (CHT1); Botulinum nörotoksini presinaptik SNARE proteinlerini keserek veziküler ekzositozu engeller.",
+              "ar": "الخطوة المحددة للسرعة هي إعادة التقاط الكولين عالية الألفة المعتمدة على الصوديوم (CHT1)؛ ويقطع ذيفان البوتولينوم بروتينات SNARE مانعاً تحرر الأسيتيل كولين.",
+              "en": "Rate-limiting step is high-affinity sodium-dependent choline reuptake (CHT1); Botulinum neurotoxin cleaves presynaptic SNARE proteins, blocking vesicular acetylcholine exocytosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Yüksek afiniteli kolin alımı (CHT1) hız kısıtlayıcıdır (hemikolinyum ile bloke edilir). Botulinum toksini SNARE kompleksini (SNAP-25 vb.) keserek ekzositozu durdurur.",
+              "ar": "صحيح. التقاط الكولين عالي الألفة (CHT1) هو المحدد للسرعة (يحصر بـ هيميكولينيوم). ويقطع ذيفان البوتولينوم بروتينات SNARE موقفاً الإخراج الخلوي.",
+              "en": "Correct. High-affinity choline uptake (CHT1) is the rate-limiting step. Botulinum toxin cleaves SNARE complex proteins (SNAP-25, syntaxin, synaptobrevin), arresting exocytosis."
+            }
+          },
+          {
+            "id": "opt-l8-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak kolin asetiltransferaz (ChAT) hızıdır; Botulinum nörotoksini asetilkolini tüketmek için sinaptik asetilkolinesterazı aşırı aktive eder.",
+              "ar": "الخطوة المحددة هي سرعة إنزيم ChAT؛ وينشط ذيفان البوتولينوم كولينستراز الأسيتيل المشبكي بشدة لاستنزاف الأسيتيل كولين.",
+              "en": "Rate-limiting step is choline acetyltransferase (ChAT) velocity; Botulinum neurotoxin hyper-activates synaptic acetylcholinesterase to deplete acetylcholine."
+            },
+            "feedback": {
+              "tr": "Yanlış. ChAT enzimi aşırı kapasiteyle çalışır, hız kısıtlayıcı değildir. Botulinum toksini AChE'yi değil, SNARE proteinlerini keser.",
+              "ar": "غير صحيح. يعمل إنزيم ChAT بفائض قدرة ولا يحدد السرعة. ويقطع ذيفان البوتولينوم بروتينات SNARE وليس إنزيم AChE.",
+              "en": "Incorrect. ChAT is not rate-limiting (operates with excess capacity); choline uptake is rate-limiting. Botulinum toxin cleaves SNARE fusion proteins, not AChE."
+            }
+          },
+          {
+            "id": "opt-l8-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak VAChT ile veziküler depolamadır; Botulinum nörotoksini sodyum-kolin kotransporterı CHT1'i yarışmalı olarak inhibe eder.",
+              "ar": "الخطوة المحددة هي التخزين الحويصلي عبر VAChT؛ ويثبط ذيفان البوتولينوم تنافسياً ناقل الصوديوم والكولين CHT1.",
+              "en": "Rate-limiting step is vesicular storage via VAChT; Botulinum neurotoxin competitively inhibits the sodium-choline cotransporter CHT1."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hemikolinyum-3 CHT1'i bloke eder; vezamikol VAChT'yi bloke eder. Botulinum toksini ise çinko-endopeptidaz olarak SNARE'i parçalar.",
+              "ar": "غير صحيح. يحصر هيميكولينيوم-3 ناقل CHT1؛ ويحصر فيزاميكول ناقل VAChT. بينما يعمل ذيفان البوتولينوم كإندوببتيداز زنك يشطر SNARE.",
+              "en": "Incorrect. Hemicholinium-3 blocks CHT1; vesamicol blocks VAChT. Botulinum toxin is a zinc-endopeptidase that proteolytically cleaves SNARE proteins."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "M1-M5 reseptörleri",
-          "arContext": "مستقبلات M1 إلى M5"
+          "term": "SNARE Kompleksi",
+          "arContext": "معقد بروتينات SNARE (SNARE Complex)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Kolin substratının nereden geldiğini ve presinaptik terminale nasıl girdiğini düşünün.",
+          "ar": "فكر في مصدر ركيزة الكولين وكيفية دخولها إلى النهاية العصبية قبل المشبكية.",
+          "en": "Where does the raw choline substrate originate and how does it enter the presynaptic nerve terminal?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Yüksek afiniteli CHT1 taşıyıcısı ile kolin geri alımı toplam sentez hızını sınırlar. Botulinum ise vezikül füzyon mekanizmasını hedefler.",
+          "ar": "يحدد التقاط الكولين عبر ناقل CHT1 عالي الألفة سرعة الاصطناع الكلية. بينما يستهدف البوتولينوم آليات اندماج الحويصلات.",
+          "en": "The uptake of choline through the high-affinity CHT1 transporter limits overall synthesis rate. Botulinum targets the fusion machinery."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Sodyum bağımlı yüksek afiniteli kolin geri alımı (CHT1) hız kısıtlayıcıdır; Botulinum nörotoksini SNARE kompleksini keserek vezikül ekzositozunu bloke eder.",
+          "ar": "التقاط الكولين عالي الألفة المعتمد على الصوديوم (CHT1) هو الخطوة المحددة للسرعة؛ ويقطع ذيفان البوتولينوم معقد SNARE مانعاً إفراز الحويصلات.",
+          "en": "High-affinity Na+-dependent choline reuptake (CHT1) is rate-limiting. Botulinum neurotoxin cleaves the SNARE complex, preventing vesicle fusion and transmitter release."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak sodyum bağımlı yüksek afiniteli kolin geri alımıdır (CHT1); Botulinum nörotoksini presinaptik SNARE proteinlerini keserek veziküler ekzositozu engeller.",
+              "ar": "الخطوة المحددة للسرعة هي إعادة التقاط الكولين عالية الألفة المعتمدة على الصوديوم (CHT1)؛ ويقطع ذيفان البوتولينوم بروتينات SNARE مانعاً تحرر الأسيتيل كولين.",
+              "en": "Rate-limiting step is high-affinity sodium-dependent choline reuptake (CHT1); Botulinum neurotoxin cleaves presynaptic SNARE proteins, blocking vesicular acetylcholine exocytosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Yüksek afiniteli kolin alımı (CHT1) hız kısıtlayıcıdır (hemikolinyum ile bloke edilir). Botulinum toksini SNARE kompleksini (SNAP-25 vb.) keserek ekzositozu durdurur.",
+              "ar": "صحيح. التقاط الكولين عالي الألفة (CHT1) هو المحدد للسرعة (يحصر بـ هيميكولينيوم). ويقطع ذيفان البوتولينوم بروتينات SNARE موقفاً الإخراج الخلوي.",
+              "en": "Correct. High-affinity choline uptake (CHT1) is the rate-limiting step. Botulinum toxin cleaves SNARE complex proteins (SNAP-25, syntaxin, synaptobrevin), arresting exocytosis."
+            }
+          },
+          {
+            "id": "opt-l8-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak kolin asetiltransferaz (ChAT) hızıdır; Botulinum nörotoksini asetilkolini tüketmek için sinaptik asetilkolinesterazı aşırı aktive eder.",
+              "ar": "الخطوة المحددة هي سرعة إنزيم ChAT؛ وينشط ذيفان البوتولينوم كولينستراز الأسيتيل المشبكي بشدة لاستنزاف الأسيتيل كولين.",
+              "en": "Rate-limiting step is choline acetyltransferase (ChAT) velocity; Botulinum neurotoxin hyper-activates synaptic acetylcholinesterase to deplete acetylcholine."
+            },
+            "feedback": {
+              "tr": "Yanlış. ChAT enzimi aşırı kapasiteyle çalışır, hız kısıtlayıcı değildir. Botulinum toksini AChE'yi değil, SNARE proteinlerini keser.",
+              "ar": "غير صحيح. يعمل إنزيم ChAT بفائض قدرة ولا يحدد السرعة. ويقطع ذيفان البوتولينوم بروتينات SNARE وليس إنزيم AChE.",
+              "en": "Incorrect. ChAT is not rate-limiting (operates with excess capacity); choline uptake is rate-limiting. Botulinum toxin cleaves SNARE fusion proteins, not AChE."
+            }
+          },
+          {
+            "id": "opt-l8-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hız kısıtlayıcı basamak VAChT ile veziküler depolamadır; Botulinum nörotoksini sodyum-kolin kotransporterı CHT1'i yarışmalı olarak inhibe eder.",
+              "ar": "الخطوة المحددة هي التخزين الحويصلي عبر VAChT؛ ويثبط ذيفان البوتولينوم تنافسياً ناقل الصوديوم والكولين CHT1.",
+              "en": "Rate-limiting step is vesicular storage via VAChT; Botulinum neurotoxin competitively inhibits the sodium-choline cotransporter CHT1."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hemikolinyum-3 CHT1'i bloke eder; vezamikol VAChT'yi bloke eder. Botulinum toksini ise çinko-endopeptidaz olarak SNARE'i parçalar.",
+              "ar": "غير صحيح. يحصر هيميكولينيوم-3 ناقل CHT1؛ ويحصر فيزاميكول ناقل VAChT. بينما يعمل ذيفان البوتولينوم كإندوببتيداز زنك يشطر SNARE.",
+              "en": "Incorrect. Hemicholinium-3 blocks CHT1; vesamicol blocks VAChT. Botulinum toxin is a zinc-endopeptidase that proteolytically cleaves SNARE proteins."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Kolinerjik sinaps yaşam döngüsünü inceleyin: Asetilkolin sentezindeki birincil hız kısıtlayıcı basamak nedir ve botulinum nörotoksini tam olarak hangi noktada müdahale eder?",
+          "ar": "راجع دورة حياة المشبك الكوليني: ما هي الخطوة المحددة للسرعة في اصطناع الأسيتيل كولين، وأين يتدخل ذيفان البوتولينوم بالتحديد؟",
+          "en": "Review the cholinergic synapse life cycle: What constitutes the primary rate-limiting step in acetylcholine synthesis, and at what specific point does botulinum neurotoxin intervene?"
+        },
+        "title": {
+          "tr": "Görsel Açıklama: Asetilkolin Sinaptik Yaşam Döngüsü",
+          "ar": "شرح مرئي: دورة حياة الأسيتيل كولين المشبكية",
+          "en": "Visual Explanation: Acetylcholine Synaptic Life Cycle"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 20
         }
       ]
     },
     {
-      "id": "pharm-mod4-les2-step-05",
-      "stage": "interactive_artifact",
+      "id": "pharm-mod4-les2-step5",
+      "order": 5,
       "stageIndex": 5,
+      "stage": "interactive_artifact",
+      "type": "interactive_artifact",
       "title": {
-        "tr": "İnteraktif Modül: Receptor-Ligand Matcher (Kolinerjik)",
-        "ar": "محاكي تفاعلي: مطابق المستقبلات الكولينية",
-        "en": "Interactive Matcher: Cholinergic Receptors & Drugs"
+        "tr": "İnteraktif Deney: Asetilkolin-M3 Reseptör Kenetlenmesi",
+        "ar": "تجربة تفاعلية: تطابق الأسيتيل كولين مع مستقبل M3",
+        "en": "Interactive Experiment: Acetylcholine-M3 Receptor Docking"
       },
       "prompt": {
-        "tr": "Asetilkolin, pilokarpin ve atropini muskarinik ve nikotinik reseptörlere bağlayarak Gq, Gi ve Na+ iyon akımlarını simüle edin.",
-        "ar": "اربط الأسيتيل كولين والبيلوكاربين والأتروبين بالمستقبلات الموسكارينية والنيكوتينية ولاحظ تدفقات شوارد Na+ وتأشير Gq/Gi.",
-        "en": "Match pilocarpine, bethanechol, atropine, ipratropium, and physostigmine to their specific muscarinic and nicotinic targets."
+        "tr": "Asetilkolinin kuaterner amonyum, ester karbonil ve etilen gruplarını M3 muskarinik reseptör aktif cebindeki Asp147, Tyr506, Asn507 ve Trp199 kalıntılarıyla eşleştirin.",
+        "ar": "طابق مجموعات الأمونيوم الرباعي وإستر الكربونيل والإيثيلين للأسيتيل كولين مع ثمالات Asp147 و Tyr506 و Asn507 و Trp199 في جيب مستقبل M3.",
+        "en": "Dock acetylcholine into the M3 muscarinic pocket by matching its quaternary ammonium, ester carbonyl, and ethylene spacer to Asp147, Tyr506, Asn507, and Trp199."
       },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "widgetType": "ReceptorLigandMatcher",
       "widget": {
         "type": "ReceptorLigandMatcher",
         "config": {
-          "mode": "cholinergic_network",
-          "receptors": [
-            "m2_cardiac",
-            "m3_secretory",
-            "nm_neuromuscular"
-          ]
+          "title": "Asetilkolin - M3 Muskarinik Reseptör Kenetlenmesi",
+          "prompt": "Asetilkolin molekülünün yapısal kısımlarını M3 reseptör cebindeki amino asit kalıntılarıyla eşleştirin.",
+          "drugName": "Asetilkolin (Acetylcholine)",
+          "receptorName": "M3 Muskarinik GPCR",
+          "pairs": [
+            {
+              "id": "pair-1",
+              "drugGroup": "Kuaterner Amonyum Katyonu (-N+(CH3)3)",
+              "correctResidueId": "res-asp147",
+              "bondType": "ionic",
+              "energyKcalMol": "-6 to -10 kcal/mol",
+              "explanation": "Pozitif yüklü kuaterner amonyum başı, TM3 heliksindeki Asp147 karboksilat anyonu ile zorunlu elektrostatik tuz köprüsü kurar."
+            },
+            {
+              "id": "pair-2",
+              "drugGroup": "Kuaterner Amonyum Metil Grupları",
+              "correctResidueId": "res-tyr506",
+              "bondType": "pi_pi",
+              "energyKcalMol": "-3 to -6 kcal/mol",
+              "explanation": "Kuaterner amonyumun pozitif yükü, TM6 heliksindeki Tyr506 aromatik halkasının pi elektron bulutuyla katyon-pi etkileşimi yapar."
+            },
+            {
+              "id": "pair-3",
+              "drugGroup": "Ester Karbonil Oksijeni (C=O)",
+              "correctResidueId": "res-asn507",
+              "bondType": "h_bond",
+              "energyKcalMol": "-3 to -6 kcal/mol",
+              "explanation": "Ester karbonil oksijeni, TM6'daki Asn507 yan zincir amidi ile spesifik dipol-dipol hidrojen bağı kurar."
+            },
+            {
+              "id": "pair-4",
+              "drugGroup": "Etilen Köprüsü (-CH2-CH2-)",
+              "correctResidueId": "res-trp199",
+              "bondType": "van_der_waals",
+              "energyKcalMol": "-1.5 to -3 kcal/mol",
+              "explanation": "İki karbonlu etilen köprüsü, TM5 heliksindeki Trp199 indol halkasıyla hidrofobik van der Waals teması kurar."
+            }
+          ],
+          "residues": [
+            {
+              "id": "res-asp147",
+              "residueName": "Asp147 (TM3)",
+              "description": "Negatif yüklü aspartat kalıntısı; asetilkolinin kuaterner amonyum katyonunu tuz köprüsüyle bağlar."
+            },
+            {
+              "id": "res-tyr506",
+              "residueName": "Tyr506 (TM6)",
+              "description": "Aromatik tirozin halkası; kuaterner amonyum ile katyon-pi etkileşimi oluşturur."
+            },
+            {
+              "id": "res-asn507",
+              "residueName": "Asn507 (TM6)",
+              "description": "Polar asparajin kalıntısı; ester karbonil grubuyla hidrojen bağı akseptörü/donörü olarak etkileşir."
+            },
+            {
+              "id": "res-trp199",
+              "residueName": "Trp199 (TM5)",
+              "description": "Büyük aromatik triptofan kalıntısı; etilen köprüsünü van der Waals temaslarıyla destekler."
+            },
+            {
+              "id": "res-leu225",
+              "residueName": "Leu225 (TM5)",
+              "description": "Hidrofobik lösin yan zinciri; terminal asetil metil grubunu çevreleyen apolar cep."
+            }
+          ],
+          "source": {
+            "file": "Otonom Sinir Sistemi.pdf",
+            "page": 22
+          }
         }
-      }
+      },
+      "config": {
+        "title": "Asetilkolin - M3 Muskarinik Reseptör Kenetlenmesi",
+        "prompt": "Asetilkolin molekülünün yapısal kısımlarını M3 reseptör cebindeki amino asit kalıntılarıyla eşleştirin.",
+        "drugName": "Asetilkolin (Acetylcholine)",
+        "receptorName": "M3 Muskarinik GPCR",
+        "pairs": [
+          {
+            "id": "pair-1",
+            "drugGroup": "Kuaterner Amonyum Katyonu (-N+(CH3)3)",
+            "correctResidueId": "res-asp147",
+            "bondType": "ionic",
+            "energyKcalMol": "-6 to -10 kcal/mol",
+            "explanation": "Pozitif yüklü kuaterner amonyum başı, TM3 heliksindeki Asp147 karboksilat anyonu ile zorunlu elektrostatik tuz köprüsü kurar."
+          },
+          {
+            "id": "pair-2",
+            "drugGroup": "Kuaterner Amonyum Metil Grupları",
+            "correctResidueId": "res-tyr506",
+            "bondType": "pi_pi",
+            "energyKcalMol": "-3 to -6 kcal/mol",
+            "explanation": "Kuaterner amonyumun pozitif yükü, TM6 heliksindeki Tyr506 aromatik halkasının pi elektron bulutuyla katyon-pi etkileşimi yapar."
+          },
+          {
+            "id": "pair-3",
+            "drugGroup": "Ester Karbonil Oksijeni (C=O)",
+            "correctResidueId": "res-asn507",
+            "bondType": "h_bond",
+            "energyKcalMol": "-3 to -6 kcal/mol",
+            "explanation": "Ester karbonil oksijeni, TM6'daki Asn507 yan zincir amidi ile spesifik dipol-dipol hidrojen bağı kurar."
+          },
+          {
+            "id": "pair-4",
+            "drugGroup": "Etilen Köprüsü (-CH2-CH2-)",
+            "correctResidueId": "res-trp199",
+            "bondType": "van_der_waals",
+            "energyKcalMol": "-1.5 to -3 kcal/mol",
+            "explanation": "İki karbonlu etilen köprüsü, TM5 heliksindeki Trp199 indol halkasıyla hidrofobik van der Waals teması kurar."
+          }
+        ],
+        "residues": [
+          {
+            "id": "res-asp147",
+            "residueName": "Asp147 (TM3)",
+            "description": "Negatif yüklü aspartat kalıntısı; asetilkolinin kuaterner amonyum katyonunu tuz köprüsüyle bağlar."
+          },
+          {
+            "id": "res-tyr506",
+            "residueName": "Tyr506 (TM6)",
+            "description": "Aromatik tirozin halkası; kuaterner amonyum ile katyon-pi etkileşimi oluşturur."
+          },
+          {
+            "id": "res-asn507",
+            "residueName": "Asn507 (TM6)",
+            "description": "Polar asparajin kalıntısı; ester karbonil grubuyla hidrojen bağı akseptörü/donörü olarak etkileşir."
+          },
+          {
+            "id": "res-trp199",
+            "residueName": "Trp199 (TM5)",
+            "description": "Büyük aromatik triptofan kalıntısı; etilen köprüsünü van der Waals temaslarıyla destekler."
+          },
+          {
+            "id": "res-leu225",
+            "residueName": "Leu225 (TM5)",
+            "description": "Hidrofobik lösin yan zinciri; terminal asetil metil grubunu çevreleyen apolar cep."
+          }
+        ],
+        "source": {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 22
+        }
+      },
+      "technicalTerms": [
+        {
+          "term": "Katyon-Pi Etkileşimi",
+          "arContext": "تأثر الكاتيون بحلقة باي (Cation-Pi Interaction)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Asetilkolinin pozitif yüklü kuaterner amonyumunu, ester karbonilini ve etilen zincirini inceleyin.",
+          "ar": "افحص الأمونيوم الرابعي الموجب وإستر الكربونيل وجسر الإيثيلين في الأسيتيل كولين.",
+          "en": "Examine acetylcholine's positively charged quaternary ammonium, ester carbonyl, and ethylene spacer."
+        },
+        {
+          "tier": 2,
+          "tr": "Asp147 kuaterner amonyum ile iyonik bağ kurar; Tyr506 katyon-pi kafesi oluşturur; Asn507 ester oksijeniyle H-bağı yapar.",
+          "ar": "يشكل Asp147 رابطاً أيونياً مع الأمونيوم؛ ويوفر Tyr506 قفصاً عطرياً (كاتيون-باي)؛ ويصنع Asn507 رابطاً هيدروجينياً مع الإستر.",
+          "en": "Asp147 provides an ionic anchor for quaternary ammonium; Tyr506 creates a cation-pi cage; Asn507 H-bonds with carbonyl."
+        },
+        {
+          "tier": 3,
+          "tr": "Kuaterner azotu Asp147'ye (iyonik), kolin metillerini Tyr506'ya (pi-pi), karbonil oksijenini Asn507'ye (H-bağı) ve etilen omurgasını Trp199'a (van der Waals) yerleştirin.",
+          "ar": "اربط الأمونيوم الرابعي بـ Asp147 (أيوني)، والميثيل بـ Tyr506 (كاتيون-باي)، وأكسجين الكربونيل بـ Asn507 (هيدروجيني)، والإيثيلين بـ Trp199.",
+          "en": "Dock quaternary ammonium into Asp147 (ionic), methyl groups into Tyr506 (cation-pi), ester carbonyl into Asn507 (H-bond), and ethylene into Trp199 (van der Waals)."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 21
+        }
+      ]
     },
     {
-      "id": "pharm-mod4-les2-step-06",
-      "stage": "guided_discovery",
+      "id": "pharm-mod4-les2-step6",
+      "order": 6,
       "stageIndex": 6,
+      "stage": "guided_discovery",
+      "type": "guided_discovery",
       "title": {
-        "tr": "Rehberli Keşif: Organofosfat Zehirlenmesi",
-        "ar": "استكشاف موجه: التسمم بالمبيدات الفوسفورية",
-        "en": "Guided Discovery: Organophosphate Poisoning"
+        "tr": "Rehberli Keşif: Endotelyal M3 Vazodilatasyon Paradoksu",
+        "ar": "استكشاف موجه: مفارقة التوسع الوعائي البطاني بـ M3",
+        "en": "Guided Discovery: Endothelial M3 Vasodilatation Paradox"
       },
       "prompt": {
-        "tr": "Tarım ilacı organofosfat asetilkolinesteraz enzimini kovalent bağla kilitlerse vücutta ne birikir ve hangi kriz doğar?",
-        "ar": "عندما تعطل المبيدات الفوسفورية إنزيم AChE تساهمياً، ما الذي يتراكم في المشابك وما هي الأزمة الناتجة؟",
-        "en": "Observe how covalent acetylcholinesterase inhibition by sarin or parathion causes catastrophic acetylcholine flood at all cholinergic synapses."
+        "tr": "Damar düz kasında doğrudan parasempatik innervasyon yoktur. Sağlam vasküler endoteli olan bir bireyde intravenöz asetilkolin uygulaması nasıl sistemik vazodilatasyon ve hipotansiyona yol açar?",
+        "ar": "تفتقر العضلات الملساء الوعائية للتعصيب نظير الودي المباشر. كيف يحدث إعطاء الأسيتيل كولين وريدياً توسعاً وعائياً وهبوط ضغط لدى شخص ببطانة وعائية سليمة؟",
+        "en": "Vascular smooth muscle lacks direct parasympathetic innervation. How does intravenous acetylcholine administration provoke systemic vasodilation and hypotension in an individual with intact vascular endothelium?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "AChE inhibisyonu DUMBELS tablosu denen kolinerjik toksidromu üretir; antidotu atropin ve pralidoksimdir."
+      "conceptCheck": {
+        "question": {
+          "tr": "İntakt endoteli olan damarlarda intravenöz asetilkolin vazodilatasyonu nasıl tetikler?",
+          "ar": "كيف يحفز الأسيتيل كولين وريدياً التوسع الوعائي في الأوعية ذات البطانة السليمة؟",
+          "en": "How does intravenous acetylcholine trigger vasodilation in vessels with an intact endothelial layer?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s6-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Endotelyal M3 reseptörleri Gq ile Ca2+ salarak eNOS'u aktive eder ve Nitrik Oksit (NO) üretir; NO düz kasa difüze olup guanilat siklazı uyararak cGMP sentezler.",
+              "ar": "تحفز مستقبلات M3 البطانية تحرر الكالسيوم عبر Gq، منشطة eNOS لإنتاج أكسيد النيتريك (NO)؛ ينتشر NO للعضلات الملساء منشطاً محلقة الغوانيلات لإنتاج cGMP.",
+              "en": "Endothelial M3 receptors trigger Gq-mediated Ca2+ release, activating eNOS to produce Nitric Oxide (NO); NO diffuses into smooth muscle, activating guanylyl cyclase to generate cGMP."
+            },
+            "feedback": {
+              "tr": "Doğru. Furchgott'un EDRF keşfi: endotelyal M3 NO salar, düz kasta cGMP artışı gevşeme yapar. Endotel hasarlıysa asetilkolin doğrudan düz kası büzerek vazokonstriksiyon yapar.",
+              "ar": "صحيح. اكتشاف فورشغوت لـ EDRF: يحرر M3 البطاني أكسيد النيتريك رافعاً cGMP ومحدثاً الارتخاء. في حال غياب البطانة، يضيق الأسيتيل كولين العضلة الملساء مباشرة.",
+              "en": "Correct. Furchgott's EDRF discovery: endothelial M3 activation releases nitric oxide (NO), stimulating guanylyl cyclase in smooth muscle to induce cGMP-mediated relaxation."
+            }
+          },
+          {
+            "id": "opt-l8-s6-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Asetilkolin damar düz kası beta-2 adrenerjik reseptörlerine bağlanarak adenilat siklazı aktive eder ve gevşetici cAMP üretir.",
+              "ar": "يرتبط الأسيتيل كولين بمستقبلات بيتا-2 الأدرينالينية في العضلات الملساء، منشطاً محلقة الأدينيلات لإنتاج cAMP المرخي.",
+              "en": "Acetylcholine binds vascular smooth muscle beta-2 adrenergic receptors, activating adenylyl cyclase and generating relaxing cAMP."
+            },
+            "feedback": {
+              "tr": "Yanlış. Asetilkolin adrenerjik beta-2 reseptörlerine bağlanmaz; vazodilatasyon endotelyal muskarinik M3 / NO / cGMP kaskadıyla yönetilir.",
+              "ar": "غير صحيح. لا يرتبط الأسيتيل كولين بمستقبلات بيتا-2؛ ويتوسط التوسع الوعائي مستقبلات M3 البطانية عبر شلال أكسيد النيتريك/cGMP.",
+              "en": "Incorrect. Acetylcholine does not bind adrenergic beta-2 receptors; vasodilation is mediated by endothelial muscarinic M3 receptors via the NO/cGMP cascade."
+            }
+          },
+          {
+            "id": "opt-l8-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Damar düz kası, endotel katılımı olmaksızın potasyum kanallarını doğrudan açan bol miktarda inhibitör M2 reseptörü ifade eder.",
+              "ar": "تعبر العضلات الملساء الوعائية عن مستقبلات M2 تثبيطية وفيرة تفتح قنوات البوتاسيوم مباشرة دون تدخل البطانة.",
+              "en": "Vascular smooth muscle expresses abundant inhibitory M2 receptors that directly open potassium channels without endothelial involvement."
+            },
+            "feedback": {
+              "tr": "Yanlış. Endotelin kazınması vazodilatasyonu tamamen yok eder ve paradoksal vazokonstriksiyonu açığa çıkarır; bu da endotel zorunluluğunu kanıtlar.",
+              "ar": "غير صحيح. يؤدي كشط البطانة إلى إلغاء التوسع الوعائي كلياً وكشف تضيق وعائي متناقض، مما يثبت الاعتماد المطلق على البطانة.",
+              "en": "Incorrect. Endothelial denudation completely abolishes acetylcholine-induced vasodilation and unmasks vasoconstriction, proving obligatory endothelial mediation."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "Endotelyal Nitrik Oksit Sentaz",
+          "arContext": "إنزيم سينثاز أكسيد النيتريك البطاني (Endothelial Nitric Oxide Synthase (eNOS))"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Robert Furchgott'un Nobel ödüllü deneyini hatırlayın: endotel tabakası kazınırsa asetilkolinin etkisi tamamen tersine döner.",
+          "ar": "تذكر تجربة روبرت فورشغوت الحائزة على نوبل: إذا كُشطت البطانة، ينعكس تأثير الأسيتيل كولين تماماً.",
+          "en": "Remember Robert Furchgott's Nobel-winning experiment: the response to acetylcholine flips completely if the endothelial lining is removed."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Endotel hücreleri, gaz halinde bir vazodilatatör haberci (Nitrik Oksit) sentezleyen bir enzime kenetli M3 reseptörleri taşır.",
+          "ar": "تحمل الخلايا البطانية مستقبلات M3 المقترنة بإنزيم يصنع مرسالاً موسعاً غازياً (أكسيد النيتريك).",
+          "en": "Endothelial cells express M3 receptors coupled to an enzyme that synthesizes a gaseous vasodilator messenger (Nitric Oxide)."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Endotelyal M3 uyarımı eNOS aracılığıyla Nitrik Oksit (NO) salar; NO düz kasa difüze olup cGMP'yi yükseltir ve gevşeme yaptırır.",
+          "ar": "يحفز تنبيه M3 البطاني إطلاق أكسيد النيتريك (NO) عبر eNOS؛ ينتشر NO للعضلات الملساء رافعاً cGMP ومحدثاً الارتخاء.",
+          "en": "Endothelial M3 stimulation releases Nitric Oxide (NO) via eNOS; NO diffuses into vascular smooth muscle, raising cGMP and driving relaxation."
         }
       ],
-      "conceptCheck": {
+      "config": {
         "options": [
           {
-            "id": "opt-ph42-3",
+            "id": "opt-l8-s6-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Asetilkolin sel gibi birikir; aşırı tükürük, bronkospazm, bradikardi ve felçle kolinerjik kriz doğar.",
-              "ar": "يتراكم الأسيتيل كولين كالسيل مسبباً أزمة كولينية: إفرازات مفرطة، تشنج قصبي، بطء قلب وشلل عضلي.",
-              "en": "Acetylcholine flood causes profuse salivation, bronchospasm, bradycardia, and muscle fasciculations."
+              "tr": "Endotelyal M3 reseptörleri Gq ile Ca2+ salarak eNOS'u aktive eder ve Nitrik Oksit (NO) üretir; NO düz kasa difüze olup guanilat siklazı uyararak cGMP sentezler.",
+              "ar": "تحفز مستقبلات M3 البطانية تحرر الكالسيوم عبر Gq، منشطة eNOS لإنتاج أكسيد النيتريك (NO)؛ ينتشر NO للعضلات الملساء منشطاً محلقة الغوانيلات لإنتاج cGMP.",
+              "en": "Endothelial M3 receptors trigger Gq-mediated Ca2+ release, activating eNOS to produce Nitric Oxide (NO); NO diffuses into smooth muscle, activating guanylyl cyclase to generate cGMP."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Furchgott'un EDRF keşfi: endotelyal M3 NO salar, düz kasta cGMP artışı gevşeme yapar. Endotel hasarlıysa asetilkolin doğrudan düz kası büzerek vazokonstriksiyon yapar.",
+              "ar": "صحيح. اكتشاف فورشغوت لـ EDRF: يحرر M3 البطاني أكسيد النيتريك رافعاً cGMP ومحدثاً الارتخاء. في حال غياب البطانة، يضيق الأسيتيل كولين العضلة الملساء مباشرة.",
+              "en": "Correct. Furchgott's EDRF discovery: endothelial M3 activation releases nitric oxide (NO), stimulating guanylyl cyclase in smooth muscle to induce cGMP-mediated relaxation."
+            }
           },
           {
-            "id": "opt-ph42-4",
+            "id": "opt-l8-s6-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Asetilkolin tamamen tükenir.",
-              "ar": "ينضب الأسيتيل كولين كلياً.",
-              "en": "Acetylcholine is completely destroyed."
+              "tr": "Asetilkolin damar düz kası beta-2 adrenerjik reseptörlerine bağlanarak adenilat siklazı aktive eder ve gevşetici cAMP üretir.",
+              "ar": "يرتبط الأسيتيل كولين بمستقبلات بيتا-2 الأدرينالينية في العضلات الملساء، منشطاً محلقة الأدينيلات لإنتاج cAMP المرخي.",
+              "en": "Acetylcholine binds vascular smooth muscle beta-2 adrenergic receptors, activating adenylyl cyclase and generating relaxing cAMP."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Asetilkolin adrenerjik beta-2 reseptörlerine bağlanmaz; vazodilatasyon endotelyal muskarinik M3 / NO / cGMP kaskadıyla yönetilir.",
+              "ar": "غير صحيح. لا يرتبط الأسيتيل كولين بمستقبلات بيتا-2؛ ويتوسط التوسع الوعائي مستقبلات M3 البطانية عبر شلال أكسيد النيتريك/cGMP.",
+              "en": "Incorrect. Acetylcholine does not bind adrenergic beta-2 receptors; vasodilation is mediated by endothelial muscarinic M3 receptors via the NO/cGMP cascade."
+            }
+          },
+          {
+            "id": "opt-l8-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Damar düz kası, endotel katılımı olmaksızın potasyum kanallarını doğrudan açan bol miktarda inhibitör M2 reseptörü ifade eder.",
+              "ar": "تعبر العضلات الملساء الوعائية عن مستقبلات M2 تثبيطية وفيرة تفتح قنوات البوتاسيوم مباشرة دون تدخل البطانة.",
+              "en": "Vascular smooth muscle expresses abundant inhibitory M2 receptors that directly open potassium channels without endothelial involvement."
+            },
+            "feedback": {
+              "tr": "Yanlış. Endotelin kazınması vazodilatasyonu tamamen yok eder ve paradoksal vazokonstriksiyonu açığa çıkarır; bu da endotel zorunluluğunu kanıtlar.",
+              "ar": "غير صحيح. يؤدي كشط البطانة إلى إلغاء التوسع الوعائي كلياً وكشف تضيق وعائي متناقض، مما يثبت الاعتماد المطلق على البطانة.",
+              "en": "Incorrect. Endothelial denudation completely abolishes acetylcholine-induced vasodilation and unmasks vasoconstriction, proving obligatory endothelial mediation."
+            }
           }
-        ]
-      }
+        ],
+        "prompt": {
+          "tr": "Damar düz kasında doğrudan parasempatik innervasyon yoktur. Sağlam vasküler endoteli olan bir bireyde intravenöz asetilkolin uygulaması nasıl sistemik vazodilatasyon ve hipotansiyona yol açar?",
+          "ar": "تفتقر العضلات الملساء الوعائية للتعصيب نظير الودي المباشر. كيف يحدث إعطاء الأسيتيل كولين وريدياً توسعاً وعائياً وهبوط ضغط لدى شخص ببطانة وعائية سليمة؟",
+          "en": "Vascular smooth muscle lacks direct parasympathetic innervation. How does intravenous acetylcholine administration provoke systemic vasodilation and hypotension in an individual with intact vascular endothelium?"
+        },
+        "title": {
+          "tr": "Rehberli Keşif: Endotelyal M3 Vazodilatasyon Paradoksu",
+          "ar": "استكشاف موجه: مفارقة التوسع الوعائي البطاني بـ M3",
+          "en": "Guided Discovery: Endothelial M3 Vasodilatation Paradox"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 22
+        }
+      ]
     },
     {
-      "id": "pharm-mod4-les2-step-07",
-      "stage": "formal_explanation",
+      "id": "pharm-mod4-les2-step7",
+      "order": 7,
       "stageIndex": 7,
+      "stage": "formal_explanation",
+      "type": "formal_explanation",
       "title": {
-        "tr": "Nikotinik vs Muskarinik Reseptör Mimarisi",
-        "ar": "بنية المستقبلات النيكوتينية مقابل الموسكارينية",
-        "en": "Formal Comparison: Nicotinic vs Muscarinic Architecture"
+        "tr": "Biçimsel Açıklama: Kanonik Kolinoseptör Mimarisi",
+        "ar": "شرح رسمي: البنية المعيارية للمستقبلات الكولينية",
+        "en": "Formal Explanation: Canonical Cholinoceptor Architecture"
       },
       "prompt": {
-        "tr": "Muskarinikler 7-transmembran GPCR dır. Nikotinikler ise 5 alt birimli pentamerik ligand kapılı iyon kanallarıdır (hızlı milisaniyelik Na+ akımı).",
-        "ar": "الموسكارينية مستقبلات GPCR سباعية الغشاء، بينما النيكوتينية قنوات أيونية خماسية الوحدات تبوب بالربيط وتمرر شوارد Na+ بلمح البصر.",
-        "en": "Nicotinic receptors are pentameric ligand-gated ion channels (fast, Na+ influx). Muscarinic receptors are 7-transmembrane GPCRs (slow, second messengers)."
+        "tr": "Kanonik kolinerjik reseptör sınıflandırma tablosunu inceleyin. Hangi ifade bir kolinoseptör alt tipini, moleküler iletecini ve birincil fizyolojik yanıtını doğru eşleştirir?",
+        "ar": "راجع جدول تصنيف المستقبلات الكولينية. أي عبارة تقرن بدقة بين نمط المستقبل الكوليني وموصله الجزيئي واستجابته الفسيولوجية الأساسية؟",
+        "en": "Review the canonical cholinoceptor classification table. Which statement accurately pairs a cholinoceptor subtype with its molecular transducer and primary physiological response?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "Hangi kolinerjik reseptör alt tipi, G-proteini ve fizyolojik yanıtıyla doğru eşleştirilmiştir?",
+          "ar": "أي نمط فرعي للمستقبلات الكولينية مقترن بدقة ببروتين G واستجابته الفسيولوجية؟",
+          "en": "Which cholinoceptor subtype is accurately matched with its G-protein and physiological response?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "M2 (Gi): Adenilat siklaz aktivitesini azaltır ve kardiyak pacemaker'da GIRK K+ kanallarını açarak kalp hızını yavaşlatır.",
+              "ar": "M2 (Gi): يقلل نشاط محلقة الأدينيلات ويفتح قنوات البوتاسيوم GIRK في الناظمة القلبية، مبطئاً معدل ضربات القلب.",
+              "en": "M2 (Gi): Decreases adenylyl cyclase activity and opens GIRK K+ channels in cardiac pacemaker, slowing heart rate."
+            },
+            "feedback": {
+              "tr": "Doğru. Muskarinik M2 reseptörleri Gi ile cAMP'yi düşürür ve G beta-gama ile içe doğrultucu GIRK K+ kanallarını açarak kalbi yavaşlatır.",
+              "ar": "صحيح. تقترن مستقبلات M2 بـ Gi لخفض cAMP وفتح قنوات البوتاسيوم GIRK عبر بيتا-غاما مفرطة استقطاب العقد القلبية.",
+              "en": "Correct. Muscarinic M2 receptors couple to Gi, inhibiting cAMP and directly opening GIRK K+ channels via G beta-gamma to slow heart rate."
+            }
+          },
+          {
+            "id": "opt-l8-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "M3 (Gi): Ekzokrin bezlerde fosfolipaz C'yi inhibe ederek tükürük ve gözyaşı salgılarını belirgin şekilde azaltır.",
+              "ar": "M3 (Gi): يثبط فوسفوليباز C في الغدد خارجية الإفراز، مخفضاً الإفراز اللعابي والدمعي بشكل ملحوظ.",
+              "en": "M3 (Gi): Inhibits phospholipase C in exocrine glands, dramatically reducing salivary and lacrimal secretions."
+            },
+            "feedback": {
+              "tr": "Yanlış. M3 Gi'ye değil Gq'ya kenetlenir ve PLC'yi aktive ederek hücre içi kalsiyumu artırır; ekzokrin salgıları güçlü şekilde uyarır.",
+              "ar": "غير صحيح. يقترن M3 بـ Gq (وليس Gi) وينشط PLC لرفع الكالسيوم الداخلي، محفزاً الإفرازات الغدية بقوة.",
+              "en": "Incorrect. M3 couples to Gq (not Gi) and activates PLC to increase intracellular calcium, powerfully stimulating secretions."
+            }
+          },
+          {
+            "id": "opt-l8-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Nm (Gs): Nöromusküler kavşakta adenilat siklazı aktive eder ve istemli tetanik kas kasılmasını sürdürmek için cAMP üretir.",
+              "ar": "Nm (Gs): ينشط محلقة الأدينيلات في الوصل العصبي العضلي، مولداً cAMP لاستدامة الانقباض الكزازي الإرادي.",
+              "en": "Nm (Gs): Activates adenylyl cyclase in neuromuscular junctions, generating cAMP to sustain voluntary tetanic muscle contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Nikotinik reseptörler GPCR değildir; pentamerik iyonotropik kanallardır ve sodyum/kalsiyum girişiyle motor son plağı doğrudan depolarize eder.",
+              "ar": "غير صحيح. مستقبلات النيكوتين قنوات أيونية وليست GPCR؛ تزيل استقطاب الصفيحة المحركة مباشرة بتدفق الصوديوم والكالسيوم.",
+              "en": "Incorrect. Nicotinic receptors are ionotropic ligand-gated cation channels, not GPCRs; they depolarize the motor endplate directly."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
-          "term": "nikotinik reseptör",
-          "arContext": "المستقبِل النيكوتيني"
+          "term": "GIRK Potasyum Kanalı",
+          "arContext": "قنوات البوتاسيوم المقومة للداخل (GIRK) (GIRK Potassium Channel)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Kuralı hatırlayın: tek sayılı muskarinikler (M1, M3, M5) Gq'ya; çift sayılı olanlar (M2, M4) Gi'ye kenetlenir.",
+          "ar": "تذكر القاعدة: تقترن الموسكارينية الفردية (M1, M3, M5) بـ Gq؛ بينما تقترن الزوجية (M2, M4) بـ Gi.",
+          "en": "Remember the rule: odd-numbered muscarinics (M1, M3, M5) couple to Gq; even-numbered (M2, M4) couple to Gi."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Nikotinik reseptörler (Nm, Nn) GPCR değildir; doğrudan ligand kapılı iyon kanallarıdır.",
+          "ar": "المستقبلات النيكوتينية (Nm, Nn) ليست من نمط GPCR؛ بل هي قنوات أيونية مبوبة بالربيطة مباشرة.",
+          "en": "Nicotinic receptors (Nm, Nn) are not GPCRs at all; they are pentameric ligand-gated ion channels."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "M2 reseptörleri kalpte Gi'ye kenetlenir, potasyum kanallarını açarak pacemaker'ı hiperpolarize eder ve kalp hızını yavaşlatır.",
+          "ar": "تقترن مستقبلات M2 بـ Gi في النسيج العقدي القلبي، فاتحة قنوات البوتاسيوم لفرط استقطاب الناظمة وإبطاء القلب.",
+          "en": "M2 (Gi): Decreases adenylyl cyclase activity and opens GIRK K+ channels in cardiac pacemaker, slowing heart rate."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "M2 (Gi): Adenilat siklaz aktivitesini azaltır ve kardiyak pacemaker'da GIRK K+ kanallarını açarak kalp hızını yavaşlatır.",
+              "ar": "M2 (Gi): يقلل نشاط محلقة الأدينيلات ويفتح قنوات البوتاسيوم GIRK في الناظمة القلبية، مبطئاً معدل ضربات القلب.",
+              "en": "M2 (Gi): Decreases adenylyl cyclase activity and opens GIRK K+ channels in cardiac pacemaker, slowing heart rate."
+            },
+            "feedback": {
+              "tr": "Doğru. Muskarinik M2 reseptörleri Gi ile cAMP'yi düşürür ve G beta-gama ile içe doğrultucu GIRK K+ kanallarını açarak kalbi yavaşlatır.",
+              "ar": "صحيح. تقترن مستقبلات M2 بـ Gi لخفض cAMP وفتح قنوات البوتاسيوم GIRK عبر بيتا-غاما مفرطة استقطاب العقد القلبية.",
+              "en": "Correct. Muscarinic M2 receptors couple to Gi, inhibiting cAMP and directly opening GIRK K+ channels via G beta-gamma to slow heart rate."
+            }
+          },
+          {
+            "id": "opt-l8-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "M3 (Gi): Ekzokrin bezlerde fosfolipaz C'yi inhibe ederek tükürük ve gözyaşı salgılarını belirgin şekilde azaltır.",
+              "ar": "M3 (Gi): يثبط فوسفوليباز C في الغدد خارجية الإفراز، مخفضاً الإفراز اللعابي والدمعي بشكل ملحوظ.",
+              "en": "M3 (Gi): Inhibits phospholipase C in exocrine glands, dramatically reducing salivary and lacrimal secretions."
+            },
+            "feedback": {
+              "tr": "Yanlış. M3 Gi'ye değil Gq'ya kenetlenir ve PLC'yi aktive ederek hücre içi kalsiyumu artırır; ekzokrin salgıları güçlü şekilde uyarır.",
+              "ar": "غير صحيح. يقترن M3 بـ Gq (وليس Gi) وينشط PLC لرفع الكالسيوم الداخلي، محفزاً الإفرازات الغدية بقوة.",
+              "en": "Incorrect. M3 couples to Gq (not Gi) and activates PLC to increase intracellular calcium, powerfully stimulating secretions."
+            }
+          },
+          {
+            "id": "opt-l8-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Nm (Gs): Nöromusküler kavşakta adenilat siklazı aktive eder ve istemli tetanik kas kasılmasını sürdürmek için cAMP üretir.",
+              "ar": "Nm (Gs): ينشط محلقة الأدينيلات في الوصل العصبي العضلي، مولداً cAMP لاستدامة الانقباض الكزازي الإرادي.",
+              "en": "Nm (Gs): Activates adenylyl cyclase in neuromuscular junctions, generating cAMP to sustain voluntary tetanic muscle contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Nikotinik reseptörler GPCR değildir; pentamerik iyonotropik kanallardır ve sodyum/kalsiyum girişiyle motor son plağı doğrudan depolarize eder.",
+              "ar": "غير صحيح. مستقبلات النيكوتين قنوات أيونية وليست GPCR؛ تزيل استقطاب الصفيحة المحركة مباشرة بتدفق الصوديوم والكالسيوم.",
+              "en": "Incorrect. Nicotinic receptors are ionotropic ligand-gated cation channels, not GPCRs; they depolarize the motor endplate directly."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Kanonik kolinerjik reseptör sınıflandırma tablosunu inceleyin. Hangi ifade bir kolinoseptör alt tipini, moleküler iletecini ve birincil fizyolojik yanıtını doğru eşleştirir?",
+          "ar": "راجع جدول تصنيف المستقبلات الكولينية. أي عبارة تقرن بدقة بين نمط المستقبل الكوليني وموصله الجزيئي واستجابته الفسيولوجية الأساسية؟",
+          "en": "Review the canonical cholinoceptor classification table. Which statement accurately pairs a cholinoceptor subtype with its molecular transducer and primary physiological response?"
+        },
+        "title": {
+          "tr": "Biçimsel Açıklama: Kanonik Kolinoseptör Mimarisi",
+          "ar": "شرح رسمي: البنية المعيارية للمستقبلات الكولينية",
+          "en": "Formal Explanation: Canonical Cholinoceptor Architecture"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 23
         }
       ]
     },
     {
-      "id": "pharm-mod4-les2-step-08",
-      "stage": "concept_check",
+      "id": "pharm-mod4-les2-step8",
+      "order": 8,
       "stageIndex": 8,
+      "stage": "concept_check",
+      "type": "concept_check",
       "title": {
-        "tr": "Kavram Denetimi: Antikolinerjik Yan Etkiler",
-        "ar": "فحص المفهوم: الآثار الجانبية المضادة للكولين",
-        "en": "Concept Check: Anticholinergic Side Effect Profile"
+        "tr": "Kavram Kontrolü: Tropikamid ile Göz Dibi Muayenesi",
+        "ar": "تحقق مفاهيمي: فحص قاع العين بالتروبيكاميد",
+        "en": "Concept Check: Tropicamide Fundus Examination"
       },
       "prompt": {
-        "tr": "Atropin benzeri bir antikolinerjik ilaç alan hastada hangi klasik belirtiler görülür?",
-        "ar": "ما الأعراض الكلاسيكية التي تظهر على مريض يتناول دواءً مضاداً للكولين شبيهاً بـ Atropine؟",
-        "en": "Which symptom triad characterizes systemic muscarinic receptor blockade: 'Blind as a bat, dry as a bone, mad as a hatter'?"
+        "tr": "Bir göz hekimi fundus muayenesinden önce muskarinik antagonist tropikamid damlatır. Hastada aynı anda hangi iki farklı farmakolojik oküler değişiklik meydana gelir?",
+        "ar": "يقطر طبيب العيون مضاد الموسكارين تروبيكاميد قبل فحص قاع العين. ما التغيران الدوائيان البصريان المتزامنان اللذان يحدثان لدى المريض؟",
+        "en": "An ophthalmologist instills the muscarinic antagonist tropicamide before examining the ocular fundus. Which two distinct pharmacological ocular changes occur simultaneously in the patient?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Kırmızı, kuru, kör, çılgın tekerlemesi antikolinerjik blokajın klasik tablosudur."
+      "conceptCheck": {
+        "question": {
+          "tr": "Tropikamid göze damlatıldığında hangi iki etki aynı anda ortaya çıkar?",
+          "ar": "ما التأثيران المتزامنان اللذان يظهران عند تقطير التروبيكاميد في العين؟",
+          "en": "Which two effects occur simultaneously following ocular tropicamide instillation?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s8-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Midriyazis (sfinkter pupilla felciyle pupil dilatasyonu) ve siklopleji (silier kas felciyle yakın akomodasyon kaybı).",
+              "ar": "توسع الحدقة (شلل العضلة العاصرة الحدقية) وشلل المطابقة (شلل العضلة الهدبية وفقدان المطابقة للرؤية القريبة).",
+              "en": "Mydriasis (pupillary dilation via circular sphincter paralysis) and cycloplegia (loss of near accommodation via ciliary muscle paralysis)."
+            },
+            "feedback": {
+              "tr": "Doğru. Tropikamid sfinkter pupilladaki M3'ü bloke ederek midriyazis, silier kastaki M3'ü bloke ederek siklopleji yapar.",
+              "ar": "صحيح. يحصر التروبيكاميد مستقبلات M3 في العاصرة مسبباً توسع الحدقة، وفي العضلة الهدبية مسبباً شلل المطابقة.",
+              "en": "Correct. Tropicamide blocks M3 receptors on both the circular sphincter (causing mydriasis) and ciliary muscle (causing cycloplegia)."
+            }
+          },
+          {
+            "id": "opt-l8-s8-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Miyozis (radyal kas aktivasyonuyla pupil daralması) ve uzak görme keskinliğinde kalıcı felç.",
+              "ar": "تضيق الحدقة (تنشيط العضلة الشعاعية) وشلل دائم في حدة الرؤية البعيدة.",
+              "en": "Miosis (pupillary constriction via radial muscle activation) and permanent paralysis of distant visual acuity."
+            },
+            "feedback": {
+              "tr": "Yanlış. Muskarinik antagonistler miyozis değil midriyazis yapar. Radyal dilatör kas alfa-1 adrenerjik kontrol altındadır.",
+              "ar": "غير صحيح. تسبب مضادات الموسكارين توسع الحدقة لا تضيقها؛ وتخضع العضلة الشعاعية لسيطرة مستقبلات ألفا-1 الودية.",
+              "en": "Incorrect. Muscarinic antagonists cause mydriasis, not miosis. The radial dilator muscle is controlled by alpha-1 adrenoceptors."
+            }
+          },
+          {
+            "id": "opt-l8-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Trabeküler ağdan aköz drenajın artmasıyla birlikte pupil dilatasyonu ve göz içi basıncında belirgin düşüş.",
+              "ar": "توسع الحدقة مترافقاً بتصريف متزايد للخلط المائي عبر الشبكة التربيقية، خافضاً ضغط العين بشدة.",
+              "en": "Pupillary dilation accompanied by enhanced trabecular meshwork aqueous drainage, dramatically reducing intraocular pressure."
+            },
+            "feedback": {
+              "tr": "Yanlış. Antimuskarinik midriyazis iridokorneal açıyı daraltarak aköz drenajını tıkar ve göz içi basıncını yükseltebilir.",
+              "ar": "غير صحيح. يؤدي توسع الحدقة بمضادات الموسكارين لتضيق زاوية العين وإعاقة تصريف الخلط المائي، مما قد يرفع ضغط العين.",
+              "en": "Incorrect. Antimuscarinic mydriasis crowds the iridocorneal angle, obstructing aqueous drainage and risking intraocular pressure spikes."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "Siklopleji",
+          "arContext": "شلل المطابقة البصرية (Cycloplegia)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Muskarinik M3 reseptörleri iki farklı oküler kası kasar: sfinkter pupilla ve silier kas.",
+          "ar": "تقبض مستقبلات M3 الموسكارينية عضلتين عينيتين متميزتين: العضلة العاصرة للحدقة والعضلة الهدبية.",
+          "en": "Muscarinic M3 receptors contract two distinct ocular muscles: the pupillary sphincter and the ciliary muscle."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Sfinkterin felç olması gözbebeğinin daralmasını engeller; silier kasın felç olması merceği yassılaştırarak yakın görme uyumunu bozar.",
+          "ar": "شلل العاصرة يمنع تضيق الحدقة؛ بينما شلل العضلة الهدبية يسطح العدسة ملغياً المطابقة للرؤية القريبة.",
+          "en": "Paralyzing the sphincter prevents pupillary constriction; paralyzing the ciliary muscle flattens the lens, abolishing near accommodation."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "M3 blokajı sfinkter felciyle midriyazis (bebek genişlemesi), silier kas felciyle ise siklopleji (yakın görme uyumu kaybı) yapar.",
+          "ar": "يحدث حصر M3 توسعاً للحدقة (شلل العاصرة) وشللاً للمطابقة (شلل العضلة الهدبية وفقدان التركيز القريب).",
+          "en": "Blocking M3 produces mydriasis (pupillary dilation via sphincter paralysis) and cycloplegia (loss of near accommodation via ciliary paralysis)."
         }
       ],
-      "conceptCheck": {
+      "config": {
         "options": [
           {
-            "id": "opt-ph42-5",
+            "id": "opt-l8-s8-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Ağız kuruluğu, midriyazis (göz bebeği büyümesi), kabızlık ve idrar retansiyonu.",
-              "ar": "جفاف الفم، اتساع حدقة العين (midriyazis)، إمساك واحتباس بولي.",
-              "en": "Dry mouth, mydriasis (dilated pupils), blurred vision, constipation, and urinary retention."
+              "tr": "Midriyazis (sfinkter pupilla felciyle pupil dilatasyonu) ve siklopleji (silier kas felciyle yakın akomodasyon kaybı).",
+              "ar": "توسع الحدقة (شلل العضلة العاصرة الحدقية) وشلل المطابقة (شلل العضلة الهدبية وفقدان المطابقة للرؤية القريبة).",
+              "en": "Mydriasis (pupillary dilation via circular sphincter paralysis) and cycloplegia (loss of near accommodation via ciliary muscle paralysis)."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Tropikamid sfinkter pupilladaki M3'ü bloke ederek midriyazis, silier kastaki M3'ü bloke ederek siklopleji yapar.",
+              "ar": "صحيح. يحصر التروبيكاميد مستقبلات M3 في العاصرة مسبباً توسع الحدقة، وفي العضلة الهدبية مسبباً شلل المطابقة.",
+              "en": "Correct. Tropicamide blocks M3 receptors on both the circular sphincter (causing mydriasis) and ciliary muscle (causing cycloplegia)."
+            }
           },
           {
-            "id": "opt-ph42-6",
+            "id": "opt-l8-s8-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Aşırı ishal ve terleme.",
-              "ar": "إسهال شديد وتعرق غزير.",
-              "en": "Excessive diarrhea and hyperhidrosis."
+              "tr": "Miyozis (radyal kas aktivasyonuyla pupil daralması) ve uzak görme keskinliğinde kalıcı felç.",
+              "ar": "تضيق الحدقة (تنشيط العضلة الشعاعية) وشلل دائم في حدة الرؤية البعيدة.",
+              "en": "Miosis (pupillary constriction via radial muscle activation) and permanent paralysis of distant visual acuity."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Muskarinik antagonistler miyozis değil midriyazis yapar. Radyal dilatör kas alfa-1 adrenerjik kontrol altındadır.",
+              "ar": "غير صحيح. تسبب مضادات الموسكارين توسع الحدقة لا تضيقها؛ وتخضع العضلة الشعاعية لسيطرة مستقبلات ألفا-1 الودية.",
+              "en": "Incorrect. Muscarinic antagonists cause mydriasis, not miosis. The radial dilator muscle is controlled by alpha-1 adrenoceptors."
+            }
+          },
+          {
+            "id": "opt-l8-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Trabeküler ağdan aköz drenajın artmasıyla birlikte pupil dilatasyonu ve göz içi basıncında belirgin düşüş.",
+              "ar": "توسع الحدقة مترافقاً بتصريف متزايد للخلط المائي عبر الشبكة التربيقية، خافضاً ضغط العين بشدة.",
+              "en": "Pupillary dilation accompanied by enhanced trabecular meshwork aqueous drainage, dramatically reducing intraocular pressure."
+            },
+            "feedback": {
+              "tr": "Yanlış. Antimuskarinik midriyazis iridokorneal açıyı daraltarak aköz drenajını tıkar ve göz içi basıncını yükseltebilir.",
+              "ar": "غير صحيح. يؤدي توسع الحدقة بمضادات الموسكارين لتضيق زاوية العين وإعاقة تصريف الخلط المائي، مما قد يرفع ضغط العين.",
+              "en": "Incorrect. Antimuscarinic mydriasis crowds the iridocorneal angle, obstructing aqueous drainage and risking intraocular pressure spikes."
+            }
           }
-        ]
-      }
+        ],
+        "prompt": {
+          "tr": "Bir göz hekimi fundus muayenesinden önce muskarinik antagonist tropikamid damlatır. Hastada aynı anda hangi iki farklı farmakolojik oküler değişiklik meydana gelir?",
+          "ar": "يقطر طبيب العيون مضاد الموسكارين تروبيكاميد قبل فحص قاع العين. ما التغيران الدوائيان البصريان المتزامنان اللذان يحدثان لدى المريض؟",
+          "en": "An ophthalmologist instills the muscarinic antagonist tropicamide before examining the ocular fundus. Which two distinct pharmacological ocular changes occur simultaneously in the patient?"
+        },
+        "title": {
+          "tr": "Kavram Kontrolü: Tropikamid ile Göz Dibi Muayenesi",
+          "ar": "تحقق مفاهيمي: فحص قاع العين بالتروبيكاميد",
+          "en": "Concept Check: Tropicamide Fundus Examination"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 24
+        }
+      ]
     },
     {
-      "id": "pharm-mod4-les2-step-09",
-      "stage": "application",
+      "id": "pharm-mod4-les2-step9",
+      "order": 9,
       "stageIndex": 9,
+      "stage": "application",
+      "type": "clinical_vignette",
       "title": {
-        "tr": "Klinik Uygulama: Göz Dibi Muayenesinde Midriyazis",
-        "ar": "تطبيق سريري: توسيع الحدقة لفحص قاع العين",
-        "en": "Clinical Application: Mydriasis for Fundus Examination"
+        "tr": "Klinik Vaka: Tensilon Testi ile Kriz Ayrımı",
+        "ar": "حالة سريرية: تفريق الأزمة باختبار تينسيلون",
+        "en": "Clinical Vignette: Tensilon Test Crisis Differentiation"
       },
       "prompt": {
-        "tr": "Göz doktorları göz dibini incelemek için neden tropikamid damlatır? Pupilla sfinkterindeki M3 reseptörlerini bloke ederek midriyazis yapar.",
-        "ar": "لماذا يقطر طبيب العيون دواء Tropicamide؟ لحظر مستقبلات M3 في عاصرة القزحية مما يوسع الحدقة للفحص.",
-        "en": "Why are short-acting antimuscarinics (tropicamide) preferred over atropine for routine ophthalmologic retinal examination?"
+        "tr": "Piridostigmin kullanan Miyastenia Gravis hastasında akut gevşek solunum güçsüzlüğü gelişir. Nörolog IV edrofonyum uygular (Tensilon testi). Tanısal yanıt nasıl yorumlanır?",
+        "ar": "مريض وهن عضلي وخيم يعالج ببيريدوستيغمين أصيب بضعف تنفسي رخو حاد. حقن طبيب الأعصاب إدروفونيوم وريدياً (اختبار تينسيلون). كيف تفسر الاستجابة التشخيصية؟",
+        "en": "A Myasthenia Gravis patient on pyridostigmine develops acute flaccid respiratory weakness. The neurologist administers IV edrophonium (Tensilon test). How is the diagnostic response interpreted?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Kısa etkili antimuskarinikler oftalmolojik tanının temel araçlarıdır."
+      "conceptCheck": {
+        "question": {
+          "tr": "Edrofonyum (Tensilon) testi ile miyastenik kriz ve kolinerjik kriz nasıl ayırt edilir?",
+          "ar": "كيف يفرق اختبار الإدروفونيوم (تينسيلون) بين الأزمة الوهنية والأزمة الكولينية؟",
+          "en": "How does the edrophonium (Tensilon) test distinguish between myasthenic crisis and cholinergic crisis?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s9-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Kas gücünde ani düzelme yetersiz tedaviyi (Miyastenik Kriz); fasikülasyonlarla artan güçsüzlük ise aşırı tedaviyi (Kolinerjik Kriz) gösterir.",
+              "ar": "التحسن الفوري في قوة العضلات يشير لنقص العلاج (أزمة وهنية)؛ وتفاقم الضعف مع نفضان عضلي يشير لفرط العلاج (أزمة كولينية).",
+              "en": "Immediate improvement in muscle strength indicates undertreatment (Myasthenic Crisis); worsening weakness with fasciculations indicates overtreatment (Cholinergic Crisis)."
+            },
+            "feedback": {
+              "tr": "Doğru. Edrofonyum ultra kısa etkili bir AChE inhibitörüdür. Miyastenik krizde ACh artışı gücü toparlar; kolinerjik krizde ise depolarizan bloğu derinleştirip felci ağırlaştırır.",
+              "ar": "صحيح. الإدروفونيوم مثبط فائق قصر الأمد للـ AChE. في الأزمة الوهنية يعيد الأسيتيل كولين القوة؛ وفي الأزمة الكولينية يعمق الشلل الاستقطابي.",
+              "en": "Correct. Edrophonium is an ultra-short acting reversible AChE inhibitor. In myasthenic crisis, more ACh restores strength; in cholinergic crisis, more ACh deepens depolarizing block."
+            }
+          },
+          {
+            "id": "opt-l8-s9-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Edrofonyum, çizgili kasta voltaj kapılı kalsiyum kanallarını doğrudan açarak her iki krizde de tam kas gücünü geri kazandırır.",
+              "ar": "يعيد الإدروفونيوم كامل القوة العضلية في كلتا الأزمتين عن طريق فتح قنوات الكالسيوم في العضلات الهيكلية مباشرة.",
+              "en": "Edrophonium restores full muscle power in both crises by directly opening voltage-gated calcium channels in skeletal muscle."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kolinerjik krizde motor son plaklar zaten aşırı ACh ile depolarize ve inaktiftir; edrofonyum eklemek solunum durmasına yol açabilir.",
+              "ar": "غير صحيح. في الأزمة الكولينية، تكون الصفائح مزالة الاستقطاب ومثبطة؛ وإضافة الإدروفونيوم تعمق الشلل وقد توقف التنفس.",
+              "en": "Incorrect. In a cholinergic crisis, motor endplates are already depolarized and desensitized; adding edrophonium worsens the block and risks respiratory arrest."
+            }
+          },
+          {
+            "id": "opt-l8-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Düzelme edrofonyumun dolaşımdaki nikotinik otoantikorları nötralize ettiğini; başarısızlık ise geri dönüşsüz motor nöron ölümünü kanıtlar.",
+              "ar": "يثبت التحسن أن الإدروفونيوم عادل الأجسام المضادة لمستقبلات النيكوتين، بينما يشير الفشل إلى موت عصبوني حركي غير عكوس.",
+              "en": "Improvement proves edrophonium neutralized circulating nicotinic receptor autoantibodies, while failure indicates irreversible motor neuron death."
+            },
+            "feedback": {
+              "tr": "Yanlış. Edrofonyum antikorları bağlamaz veya nötralize etmez; yalnızca asetilkolinesterazı geçici olarak durdurarak ACh konsantrasyonunu artırır.",
+              "ar": "غير صحيح. لا يعادل الإدروفونيوم الأجسام المضادة؛ بل يثبط الكولينستراز مؤقتاً لرفع تركيز الأسيتيل كولين لمنافسة الأضداد.",
+              "en": "Incorrect. Edrophonium does not neutralize antibodies; it transiently inhibits acetylcholinesterase, elevating acetylcholine to compete with antibodies."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "Tensilon Testi",
+          "arContext": "اختبار تينسيلون (Tensilon Test)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Hem miyastenik kriz (yetersiz tedavi) hem kolinerjik kriz (aşırı tedavi) aynı gevşek kas güçsüzlüğüyle gelir.",
+          "ar": "تتظاهر كل من الأزمة الوهنية (نقص العلاج) والأزمة الكولينية (فرط العلاج) بذات الضعف الرخو.",
+          "en": "Both myasthenic crisis (undertreatment) and cholinergic crisis (overtreatment) present with identical flaccid weakness."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Edrofonyum sinaptik asetilkolini 5-10 dakika geçici olarak yükseltir. Zaten depolarize ve duyarsızlaşmış bir plakaya daha fazla ACh eklenirse ne olur?",
+          "ar": "يرفع الإدروفونيوم الأسيتيل كولين مؤقتاً لـ 5-10 دقائق. ماذا يحدث لصفيحة محركة مزالة الاستقطاب ومفرطة الإشباع إذا أضفت مزيداً من الأسيتيل كولين؟",
+          "en": "Edrophonium transiently increases synaptic ACh for 5-10 minutes. What happens if you add more ACh to an already depolarized, desensitized motor endplate?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Güçsüzlük ACh azlığından kaynaklanıyorsa kas gücü artar (Miyastenik Kriz); aşırı ACh'nin depolarizan bloğundan kaynaklanıyorsa güçsüzlük kötüleşir (Kolinerjik Kriz).",
+          "ar": "إذا كان الضعف بسبب نقص الأسيتيل كولين تتحسن القوة (أزمة وهنية)؛ أما إذا كان بسبب فائض الأسيتيل كولين يتفاقم الشلل مع نفضان (أزمة كولينية).",
+          "en": "If weakness was due to lack of ACh (myasthenic crisis), strength improves. If due to excess ACh causing depolarizing block (cholinergic crisis), paralysis worsens."
         }
       ],
-      "conceptCheck": {
+      "config": {
         "options": [
           {
-            "id": "opt-ph42-7",
+            "id": "opt-l8-s9-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Silyer kası ve sfinkteri felç ederek göz bebeğini genişletir.",
-              "ar": "لأنه يشل العضلة الهدبية والعاصرة مما يوسع الحدقة بشكل مؤقت.",
-              "en": "Paralyzes the pupillary sphincter muscle and ciliary body to produce mydriasis and cycloplegia."
+              "tr": "Kas gücünde ani düzelme yetersiz tedaviyi (Miyastenik Kriz); fasikülasyonlarla artan güçsüzlük ise aşırı tedaviyi (Kolinerjik Kriz) gösterir.",
+              "ar": "التحسن الفوري في قوة العضلات يشير لنقص العلاج (أزمة وهنية)؛ وتفاقم الضعف مع نفضان عضلي يشير لفرط العلاج (أزمة كولينية).",
+              "en": "Immediate improvement in muscle strength indicates undertreatment (Myasthenic Crisis); worsening weakness with fasciculations indicates overtreatment (Cholinergic Crisis)."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Edrofonyum ultra kısa etkili bir AChE inhibitörüdür. Miyastenik krizde ACh artışı gücü toparlar; kolinerjik krizde ise depolarizan bloğu derinleştirip felci ağırlaştırır.",
+              "ar": "صحيح. الإدروفونيوم مثبط فائق قصر الأمد للـ AChE. في الأزمة الوهنية يعيد الأسيتيل كولين القوة؛ وفي الأزمة الكولينية يعمق الشلل الاستقطابي.",
+              "en": "Correct. Edrophonium is an ultra-short acting reversible AChE inhibitor. In myasthenic crisis, more ACh restores strength; in cholinergic crisis, more ACh deepens depolarizing block."
+            }
           },
           {
-            "id": "opt-ph42-8",
+            "id": "opt-l8-s9-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Göz içi tansiyonunu artırmak için.",
-              "ar": "لرفع ضغط العين الداخلي.",
-              "en": "Constricts pupils into pinpoint miosis."
+              "tr": "Edrofonyum, çizgili kasta voltaj kapılı kalsiyum kanallarını doğrudan açarak her iki krizde de tam kas gücünü geri kazandırır.",
+              "ar": "يعيد الإدروفونيوم كامل القوة العضلية في كلتا الأزمتين عن طريق فتح قنوات الكالسيوم في العضلات الهيكلية مباشرة.",
+              "en": "Edrophonium restores full muscle power in both crises by directly opening voltage-gated calcium channels in skeletal muscle."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Kolinerjik krizde motor son plaklar zaten aşırı ACh ile depolarize ve inaktiftir; edrofonyum eklemek solunum durmasına yol açabilir.",
+              "ar": "غير صحيح. في الأزمة الكولينية، تكون الصفائح مزالة الاستقطاب ومثبطة؛ وإضافة الإدروفونيوم تعمق الشلل وقد توقف التنفس.",
+              "en": "Incorrect. In a cholinergic crisis, motor endplates are already depolarized and desensitized; adding edrophonium worsens the block and risks respiratory arrest."
+            }
+          },
+          {
+            "id": "opt-l8-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Düzelme edrofonyumun dolaşımdaki nikotinik otoantikorları nötralize ettiğini; başarısızlık ise geri dönüşsüz motor nöron ölümünü kanıtlar.",
+              "ar": "يثبت التحسن أن الإدروفونيوم عادل الأجسام المضادة لمستقبلات النيكوتين، بينما يشير الفشل إلى موت عصبوني حركي غير عكوس.",
+              "en": "Improvement proves edrophonium neutralized circulating nicotinic receptor autoantibodies, while failure indicates irreversible motor neuron death."
+            },
+            "feedback": {
+              "tr": "Yanlış. Edrofonyum antikorları bağlamaz veya nötralize etmez; yalnızca asetilkolinesterazı geçici olarak durdurarak ACh konsantrasyonunu artırır.",
+              "ar": "غير صحيح. لا يعادل الإدروفونيوم الأجسام المضادة؛ بل يثبط الكولينستراز مؤقتاً لرفع تركيز الأسيتيل كولين لمنافسة الأضداد.",
+              "en": "Incorrect. Edrophonium does not neutralize antibodies; it transiently inhibits acetylcholinesterase, elevating acetylcholine to compete with antibodies."
+            }
           }
-        ]
-      }
+        ],
+        "prompt": {
+          "tr": "Piridostigmin kullanan Miyastenia Gravis hastasında akut gevşek solunum güçsüzlüğü gelişir. Nörolog IV edrofonyum uygular (Tensilon testi). Tanısal yanıt nasıl yorumlanır?",
+          "ar": "مريض وهن عضلي وخيم يعالج ببيريدوستيغمين أصيب بضعف تنفسي رخو حاد. حقن طبيب الأعصاب إدروفونيوم وريدياً (اختبار تينسيلون). كيف تفسر الاستجابة التشخيصية؟",
+          "en": "A Myasthenia Gravis patient on pyridostigmine develops acute flaccid respiratory weakness. The neurologist administers IV edrophonium (Tensilon test). How is the diagnostic response interpreted?"
+        },
+        "title": {
+          "tr": "Klinik Vaka: Tensilon Testi ile Kriz Ayrımı",
+          "ar": "حالة سريرية: تفريق الأزمة باختبار تينسيلون",
+          "en": "Clinical Vignette: Tensilon Test Crisis Differentiation"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 25
+        }
+      ]
     },
     {
-      "id": "pharm-mod4-les2-step-10",
-      "stage": "retrieval",
+      "id": "pharm-mod4-les2-step10",
+      "order": 10,
       "stageIndex": 10,
+      "stage": "retrieval",
+      "type": "retrieval",
       "title": {
-        "tr": "Geri Çağırma: Konformasyonel İzomerizm ve Asetilkolin",
-        "ar": "استرجاع معرفي: التماكب التشكلي والأسيتيل كولين",
-        "en": "Retrieval: Conformational Isomerism of Acetylcholine"
+        "tr": "Geri Çağırma: Kolinesteraz Reaktivatörü Panzehir",
+        "ar": "استرجاع: الترياق المنشط للكولينستراز",
+        "en": "Retrieval: Cholinesterase Reactivator Antidote"
       },
       "prompt": {
-        "tr": "Medchem Modül 4 te gördüğümüz gibi asetilkolin muskarinik reseptöre anti, nikotinik reseptöre syn konformasyonda bağlanıyordu. Bu ne tür izomerizmdi?",
-        "ar": "كما رأينا في مساق الكيمياء، يرتبط الأسيتيل كولين بالموسكاريني بشكل anti وبالنيكوتيني بـ syn. ما نوع هذا التماكب؟",
-        "en": "Recall Course A Lesson 7: What conformational geometry enables acetylcholine to bind nicotinic vs muscarinic receptor states?"
+        "tr": "Hangi özgül farmakolojik panzehir organofosfatla fosforillenmiş asetilkolinesterazı yeniden aktifleştirebilir ve hangi kritik biyokimyasal reaksiyondan önce uygulanmalıdır?",
+        "ar": "ما هو الترياق الدوائي النوعي القادر على إعادة تنشيط إنزيم كولينستراز الأسيتيل المفسفر بالفوسفات العضوي، وما التفاعل الكيميائي الحاسم الذي يجب أن يسبقه؟",
+        "en": "Which specific pharmacological antidote can reactivate organophosphate-phosphorylated acetylcholinesterase, and what critical biochemical reaction must it precede?"
       },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "konformasyonel izomerizm",
-          "arContext": "التماكب التشكلي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod4-les2-step-11",
-      "stage": "connection",
-      "stageIndex": 11,
-      "title": {
-        "tr": "İleri Bağlantı: Kardiyovasküler ve Renal Farmakoloji (Modül 5)",
-        "ar": "ربط مفاهيمي: أدوية القلب والكلى (الوحدة 5)",
-        "en": "Connection: Cardiovascular & Renal Pharmacology (Module 5)"
-      },
-      "prompt": {
-        "tr": "Otonom sistemi tamamladık! Modül 5 te vücudun sıvı ve kan basıncı kontrol mekanizması olan RAAS sistemini ve antihipertansifleri inceleyeceğiz.",
-        "ar": "أتممنا الجهاز الذاتي! في الوحدة 5، سنستكشف نظام RAAS المتحكم بالسوائل وضغط الدم ومضادات ارتفاع الضغط.",
-        "en": "Autonomic nerves modulate blood pressure, but how does the renin-angiotensin-aldosterone hormonal axis govern chronic vascular tone?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "RAAS sistemi",
-          "arContext": "مسار RAAS"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod4-les2-step-12",
-      "stage": "mastery_check",
-      "stageIndex": 12,
-      "title": {
-        "tr": "Ustalık Sınavı: Muskarinik Reseptörler",
-        "ar": "اختبار الإتقان: المستقبلات الموسكارينية",
-        "en": "Mastery Assessment: Muscarinic Signaling"
-      },
-      "prompt": {
-        "tr": "Tükürük salgısını, bronş kasılmasını ve bağırsak peristaltizmini artıran primer Gq-kenetli muskarinik reseptör hangisidir?",
-        "ar": "ما هو المستقبِل الموسكاريني الأساسي المقترن بـ Gq المسؤول عن زيادة إفراز اللعاب وتقلص القصبات وحركة الأمعاء؟",
-        "en": "Which muscarinic receptor subtype couples to Gi proteins on cardiac sinoatrial node tissue to slow heart rate?"
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Modül 4 tamamlandı! 3 review cards eklendi. +50 XP."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "conceptCheck": {
+        "question": {
+          "tr": "Organofosfatla kilitlenmiş asetilkolinesterazı hangi ilaç reaktive eder ve hangi sınırlamaya tabidir?",
+          "ar": "ما هو الدواء الذي يعيد تنشيط إنزيم كولينستراز المثبط بالفوسفات العضوي وما محدداته؟",
+          "en": "Which drug reactivates organophosphate-inhibited acetylcholinesterase and what critical limitation applies?"
+        },
         "options": [
           {
-            "id": "opt-ph42-9",
+            "id": "opt-l8-s10-1",
+            "isCorrect": true,
             "text": {
-              "tr": "M3 muskarinik reseptör.",
-              "ar": "مستقبِل M3 الموسكاريني.",
-              "en": "Cardiac M2 muscarinic receptors (couple to Gi to open GIRK K+ channels)."
+              "tr": "Pralidoksim (2-PAM); nükleofilik oksim saldırısı serbest enzimi rejenere eder ancak kovalent 'yaşlanma' (aging) gerçekleşmeden önce verilmelidir.",
+              "ar": "براليدوكسيم (2-PAM)؛ حيث يحرر الهجوم النكليوفيلي للأوكسيم الإنزيم، ولكن يجب إعطاؤه قبل حدوث 'تعمير' الإنزيم الكوفالنتي (aging).",
+              "en": "Pralidoxime (2-PAM); nucleophilic oxime attack regenerates free enzyme, but it must be given before covalent enzyme 'aging' occurs."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Pralidoksim oksim grubuyla fosforil-serin bağını koparır. Ancak enzim dealkilasyona ('yaşlanma') uğrarsa kimyasal reaktivasyon imkansızlaşır.",
+              "ar": "صحيح. يكسر البراليدوكسيم الرابطة بهجوم نكليوفيلي. ولكن إذا حدث التعمير (فقدان ألكيل) يصبح الإنزيم عصياً على أي تنشيط كيميائي.",
+              "en": "Correct. Pralidoxime uses an oxime nucleophile to regenerate the active serine. Once covalent 'aging' (dealkylation) occurs, reactivation is impossible."
+            }
           },
           {
-            "id": "opt-ph42-10",
+            "id": "opt-l8-s10-2",
+            "isCorrect": false,
             "text": {
-              "tr": "M2 reseptör.",
-              "ar": "مستقبِل M2.",
-              "en": "Smooth muscle M3 receptors."
+              "tr": "Atropin; tersiyer amini kovalent fosfat-ester bağını keserek katalitik triadın kendiliğinden dekarboksilasyonunu engeller.",
+              "ar": "الأتروبين؛ حيث يقطع أمينه الثالثي الرابطة الفوسفاتية الكوفالنتية، مانعاً نزع الكربوكسيل التلقائي من الثالوث التحفيزي.",
+              "en": "Atropine; its tertiary amine cleaves the covalent phosphate-ester bond, preventing spontaneous decarboxylation of the catalytic triad."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Atropin bir muskarinik reseptör antagonistidir; asetilkolinesterazı yeniden aktifleştiremez veya organofosfatı yerinden sökemez.",
+              "ar": "غير صحيح. الأتروبين مضاد للمستقبلات الموسكارينية؛ وليس له أي خواص لإعادة تنشيط الإنزيم أو فك ارتباط الفوسفات العضوي.",
+              "en": "Incorrect. Atropine is a muscarinic receptor antagonist; it has zero enzymatic reactivating properties and cannot displace organophosphates from AChE."
+            }
+          },
+          {
+            "id": "opt-l8-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fizostigmin; geri dönüşümlü bir karbamat inhibitörü olarak aktif bölgeden organofosfatları kovar ve dakikalar içinde hidroliz olur.",
+              "ar": "فيزوستيغمين؛ كونه مثبط كربامات عكوس، فإنه يزيح الفوسفات العضوي من الموقع النشط ويتحلمه خلال دقائق.",
+              "en": "Physostigmine; as a reversible carbamate inhibitor, it displaces organophosphates from the active site and hydrolyzes within minutes."
+            },
+            "feedback": {
+              "tr": "Yanlış. Aktif organofosfat zehirlenmesinde fizostigmin verilmesi kolinesteraz inhibisyonunu daha da artırarak toksisiteyi ve ölümü hızlandırır.",
+              "ar": "غير صحيح. يؤدي إعطاء فيزوستيغمين أثناء التسمم بالفوسفات العضوي إلى مضاعفة تثبيط الكولينستراز وتسريع الوفاة.",
+              "en": "Incorrect. Giving an AChE inhibitor like physostigmine during organophosphate toxicity compounds enzyme inhibition, worsening lethal cholinergic crisis."
+            }
           }
         ]
-      }
+      },
+      "technicalTerms": [
+        {
+          "term": "Kolinesteraz Reaktivatörü",
+          "arContext": "منشط الكولينستراز (Cholinesterase Reactivator)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Semptomları maskeleyen bir reseptör blokeri ile enzimi kimyasal olarak kurtaran bir reaktivatörü ayırt edin.",
+          "ar": "ميز بين حاصر المستقبلات الذي يخفي الأعراض وبين المنشط الذي ينقذ الإنزيم كيميائياً.",
+          "en": "Distinguish between a receptor antagonist that masks symptoms versus a biochemical reactivator that restores the enzyme."
+        },
+        {
+          "tier": 2,
+          "tr": "Bu panzehir, organofosfatın fosfor atomuna nükleofilik saldırı yapabilen bir oksim (=N-OH) grubuna sahiptir.",
+          "ar": "يمتلك هذا الترياق زمرة أوكسيم (=N-OH) قادرة على شن هجوم نكليوفيلي على ذرة الفوسفور.",
+          "en": "This antidote possesses an oxime group capable of launching a nucleophilic attack on the organophosphorus atom."
+        },
+        {
+          "tier": 3,
+          "tr": "Pralidoksim (2-PAM) serbest enzimi rejenere etmek için nükleofilik oksim saldırısı yapar; ancak geri dönüşsüz 'yaşlanma' (aging) öncesinde verilmelidir.",
+          "ar": "براليدوكسيم (2-PAM)؛ حيث يحرر الهجوم النكليوفيلي الإنزيم، لكن يجب إعطاؤه قبل حدوث 'تعمير' الإنزيم الكوفالنتي غير العكوس (aging).",
+          "en": "Pralidoxime (2-PAM) acts as a nucleophile to displace the organophosphate from catalytic serine, but must be given before irreversible dealkylation ('aging')."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s10-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Pralidoksim (2-PAM); nükleofilik oksim saldırısı serbest enzimi rejenere eder ancak kovalent 'yaşlanma' (aging) gerçekleşmeden önce verilmelidir.",
+              "ar": "براليدوكسيم (2-PAM)؛ حيث يحرر الهجوم النكليوفيلي للأوكسيم الإنزيم، ولكن يجب إعطاؤه قبل حدوث 'تعمير' الإنزيم الكوفالنتي (aging).",
+              "en": "Pralidoxime (2-PAM); nucleophilic oxime attack regenerates free enzyme, but it must be given before covalent enzyme 'aging' occurs."
+            },
+            "feedback": {
+              "tr": "Doğru. Pralidoksim oksim grubuyla fosforil-serin bağını koparır. Ancak enzim dealkilasyona ('yaşlanma') uğrarsa kimyasal reaktivasyon imkansızlaşır.",
+              "ar": "صحيح. يكسر البراليدوكسيم الرابطة بهجوم نكليوفيلي. ولكن إذا حدث التعمير (فقدان ألكيل) يصبح الإنزيم عصياً على أي تنشيط كيميائي.",
+              "en": "Correct. Pralidoxime uses an oxime nucleophile to regenerate the active serine. Once covalent 'aging' (dealkylation) occurs, reactivation is impossible."
+            }
+          },
+          {
+            "id": "opt-l8-s10-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Atropin; tersiyer amini kovalent fosfat-ester bağını keserek katalitik triadın kendiliğinden dekarboksilasyonunu engeller.",
+              "ar": "الأتروبين؛ حيث يقطع أمينه الثالثي الرابطة الفوسفاتية الكوفالنتية، مانعاً نزع الكربوكسيل التلقائي من الثالوث التحفيزي.",
+              "en": "Atropine; its tertiary amine cleaves the covalent phosphate-ester bond, preventing spontaneous decarboxylation of the catalytic triad."
+            },
+            "feedback": {
+              "tr": "Yanlış. Atropin bir muskarinik reseptör antagonistidir; asetilkolinesterazı yeniden aktifleştiremez veya organofosfatı yerinden sökemez.",
+              "ar": "غير صحيح. الأتروبين مضاد للمستقبلات الموسكارينية؛ وليس له أي خواص لإعادة تنشيط الإنزيم أو فك ارتباط الفوسفات العضوي.",
+              "en": "Incorrect. Atropine is a muscarinic receptor antagonist; it has zero enzymatic reactivating properties and cannot displace organophosphates from AChE."
+            }
+          },
+          {
+            "id": "opt-l8-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Fizostigmin; geri dönüşümlü bir karbamat inhibitörü olarak aktif bölgeden organofosfatları kovar ve dakikalar içinde hidroliz olur.",
+              "ar": "فيزوستيغمين؛ كونه مثبط كربامات عكوس، فإنه يزيح الفوسفات العضوي من الموقع النشط ويتحلمه خلال دقائق.",
+              "en": "Physostigmine; as a reversible carbamate inhibitor, it displaces organophosphates from the active site and hydrolyzes within minutes."
+            },
+            "feedback": {
+              "tr": "Yanlış. Aktif organofosfat zehirlenmesinde fizostigmin verilmesi kolinesteraz inhibisyonunu daha da artırarak toksisiteyi ve ölümü hızlandırır.",
+              "ar": "غير صحيح. يؤدي إعطاء فيزوستيغمين أثناء التسمم بالفوسفات العضوي إلى مضاعفة تثبيط الكولينستراز وتسريع الوفاة.",
+              "en": "Incorrect. Giving an AChE inhibitor like physostigmine during organophosphate toxicity compounds enzyme inhibition, worsening lethal cholinergic crisis."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Hangi özgül farmakolojik panzehir organofosfatla fosforillenmiş asetilkolinesterazı yeniden aktifleştirebilir ve hangi kritik biyokimyasal reaksiyondan önce uygulanmalıdır?",
+          "ar": "ما هو الترياق الدوائي النوعي القادر على إعادة تنشيط إنزيم كولينستراز الأسيتيل المفسفر بالفوسفات العضوي، وما التفاعل الكيميائي الحاسم الذي يجب أن يسبقه؟",
+          "en": "Which specific pharmacological antidote can reactivate organophosphate-phosphorylated acetylcholinesterase, and what critical biochemical reaction must it precede?"
+        },
+        "title": {
+          "tr": "Geri Çağırma: Kolinesteraz Reaktivatörü Panzehir",
+          "ar": "استرجاع: الترياق المنشط للكولينستراز",
+          "en": "Retrieval: Cholinesterase Reactivator Antidote"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 26
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les2-step11",
+      "order": 11,
+      "stageIndex": 11,
+      "stage": "connection",
+      "type": "connection",
+      "title": {
+        "tr": "Bütünsel Bağlantı: Botulinum ve Tetanoz Nörotoksinleri",
+        "ar": "ترابط شمولي: ذيفانا البوتولينوم والكزاز",
+        "en": "Holistic Connection: Botulinum vs Tetanus Neurotoxins"
+      },
+      "prompt": {
+        "tr": "Hem Botulinum hem Tetanoz nörotoksinleri SNARE proteinlerini kesen çinko endopeptidazlardır. Neden Botulinum gevşek felç yaparken Tetanoz şiddetli spastik kasılmalara yol açar?",
+        "ar": "كلا ذيفاني البوتولينوم والكزاز من إندوببتيدازات الزنك التي تقطع بروتينات SNARE. لماذا يحدث البوتولينوم شللاً رخواً، بينما يثير الكزاز تشنجات كزازية عاتية؟",
+        "en": "Both Botulinum and Tetanus neurotoxins are zinc-endopeptidases that cleave SNARE proteins. Why does Botulinum produce flaccid paralysis, whereas Tetanus provokes violent spastic convulsions?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Botulinum ve Tetanoz toksinleri aynı enzimatik etkiye sahipken neden zıt felç tabloları oluşturur?",
+          "ar": "لماذا يولد ذيفانا البوتولينوم والكزاز شللين متناقضين رغم امتلاكهما الفعالية الإنزيمية ذاتها؟",
+          "en": "Why do Botulinum and Tetanus toxins produce opposing paralytic states despite sharing enzymatic SNARE cleavage?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Botulinum periferik kolinerjik nöromusküler kavşakta lokal etki gösterir (ACh'yi engeller); Tetanoz ise retrograd taşınarak spinal inhibitör internöronlara ulaşır (GABA/glisini engeller).",
+              "ar": "يعمل البوتولينوم موضعياً في الوصل العصبي العضلي الكوليني (حاجباً الأسيتيل كولين)؛ بينما ينتقل الكزاز رجوعياً لعصبونات النخاع التثبيطية (حاجباً الغابا والغليسين).",
+              "en": "Botulinum acts locally at peripheral cholinergic neuromuscular junctions (blocking ACh release); Tetanus undergoes retrograde axonal transport to spinal inhibitory interneurons (blocking GABA/glycine release)."
+            },
+            "feedback": {
+              "tr": "Doğru. Anatomik hedef tabloyu belirler: Botulinum kavşakta ACh'yi keserek gevşek felç yapar; Tetanoz ise spinal Renshaw hücrelerinde inhibitör GABA/glisini keserek spastik felç yapar.",
+              "ar": "صحيح. الموقع التشريحي يحدد المرضية: يحجب البوتولينوم الأسيتيل كولين محيطياً (شلل رخو)، بينما يهاجر الكزاز للنخاع قاطعاً تثبيط الغابا والغليسين (تشنج كزازي).",
+              "en": "Correct. Site of action dictates pathology: Botulinum blocks peripheral ACh release (flaccid). Tetanus undergoes retrograde transport to silence spinal inhibitory interneurons (spastic)."
+            }
+          },
+          {
+            "id": "opt-l8-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Botulinum asetilkolin ekzositozunu bloke ederken, Tetanoz nikotinik Nm reseptörlerinde doğrudan süper-agonist gibi davranarak sürekli kasılmaya zorlar.",
+              "ar": "يحجب البوتولينوم إخراج الأسيتيل كولين، بينما يعمل الكزاز كمنبه فائق مباشر لمستقبلات Nm، فارضاً انقباضاً مستمراً.",
+              "en": "Botulinum blocks acetylcholine exocytosis, while Tetanus acts as a direct super-agonist on nicotinic Nm receptors, forcing continuous contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tetanoz toksininin nikotinik reseptörlerde agonist etkisi yoktur; spastisite spinal internöronların disinhibisyonundan kaynaklanır.",
+              "ar": "غير صحيح. ليس لذيفان الكزاز فعالية تنبيهية على مستقبلات النيكوتين؛ تنجم التشنجات عن فقدان التثبيط المركزي في النخاع.",
+              "en": "Incorrect. Tetanus toxin has no agonist activity at nicotinic receptors; spasticity arises from disinhibition of spinal motor neurons."
+            }
+          },
+          {
+            "id": "opt-l8-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Her iki toksin de sadece nöromusküler kavşakta kalır; Botulinum SNAP-25'i keserken Tetanoz kas kasılma miyozin zincirlerini keser.",
+              "ar": "يبقى كلا الذيفانين حصرياً في الوصل العصبي العضلي؛ يقطع البوتولينوم SNAP-25، بينما يقطع الكزاز سلاسل الميوزين الانقباضية.",
+              "en": "Both toxins remain strictly at the neuromuscular junction; Botulinum cleaves SNAP-25, whereas Tetanus cleaves muscle contractile myosin chains."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tetanoz toksini miyozini parçalamaz; karakteristik spastisitesi motor nöron boyu retrograd aksonal taşınarak merkezi sinir sistemine ulaşmasını gerektirir.",
+              "ar": "غير صحيح. لا يخرب الكزاز الميوزين؛ بل تتطلب تشنجاته المميزة انتقالاً رجوعياً عبر المحوار للوصول للجهاز العصبي المركزي.",
+              "en": "Incorrect. Tetanus toxin does not degrade myosin; its spasticity requires retrograde axonal transport to spinal inhibitory interneurons."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Retrograd Aksonal Taşınma",
+          "arContext": "النقل المحواري الرجوعي (Retrograde Axonal Transport)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Her iki toksin de aynı moleküler mekanizmayı (SNARE kesimi) kullanır, ancak etki gösterdikleri anatomik bölgeler tamamen farklıdır.",
+          "ar": "يستخدم كلا الذيفانين الآلية الجزيئية ذاتها (شطر SNARE)، ولكن مواقعهما التشريحية للعمل مختلفة تماماً.",
+          "en": "Both toxins share the same molecular mechanism (SNARE cleavage), but their anatomical sites of action are completely different."
+        },
+        {
+          "tier": 2,
+          "tr": "Toksinler motor sinir ucuna girdikten sonra nereye gider? Spinal korddaki inhibitör internöronlara retrograd taşınmayı düşünün.",
+          "ar": "أين ينتقل كل ذيفان بعد دخول النهاية المحركة؟ فكر في النقل المحواري الرجوعي إلى العصبونات التثبيطية في النخاع الشوكي.",
+          "en": "Where does each toxin travel after entering the nerve terminal? Consider retrograde axonal transport to spinal inhibitory interneurons."
+        },
+        {
+          "tier": 3,
+          "tr": "Botulinum nöromusküler kavşakta lokal kalarak ACh'yi engeller (gevşek felç); Tetanoz ise spinal korddaki Renshaw hücrelerine taşınarak GABA ve glisin salınımını engeller (spastik felç).",
+          "ar": "يعمل البوتولينوم موضعياً في الوصل العصبي العضلي مانعاً الأسيتيل كولين (شلل رخو)؛ بينما يهاجر الكزاز رجوعياً للنخاع مانعاً تحرر الغابا والغليسين (تشنج كزازي).",
+          "en": "Botulinum acts locally at peripheral neuromuscular junctions to block ACh (flaccid). Tetanus migrates retrogradely to spinal inhibitory interneurons to block GABA/glycine (spastic)."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Botulinum periferik kolinerjik nöromusküler kavşakta lokal etki gösterir (ACh'yi engeller); Tetanoz ise retrograd taşınarak spinal inhibitör internöronlara ulaşır (GABA/glisini engeller).",
+              "ar": "يعمل البوتولينوم موضعياً في الوصل العصبي العضلي الكوليني (حاجباً الأسيتيل كولين)؛ بينما ينتقل الكزاز رجوعياً لعصبونات النخاع التثبيطية (حاجباً الغابا والغليسين).",
+              "en": "Botulinum acts locally at peripheral cholinergic neuromuscular junctions (blocking ACh release); Tetanus undergoes retrograde axonal transport to spinal inhibitory interneurons (blocking GABA/glycine release)."
+            },
+            "feedback": {
+              "tr": "Doğru. Anatomik hedef tabloyu belirler: Botulinum kavşakta ACh'yi keserek gevşek felç yapar; Tetanoz ise spinal Renshaw hücrelerinde inhibitör GABA/glisini keserek spastik felç yapar.",
+              "ar": "صحيح. الموقع التشريحي يحدد المرضية: يحجب البوتولينوم الأسيتيل كولين محيطياً (شلل رخو)، بينما يهاجر الكزاز للنخاع قاطعاً تثبيط الغابا والغليسين (تشنج كزازي).",
+              "en": "Correct. Site of action dictates pathology: Botulinum blocks peripheral ACh release (flaccid). Tetanus undergoes retrograde transport to silence spinal inhibitory interneurons (spastic)."
+            }
+          },
+          {
+            "id": "opt-l8-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Botulinum asetilkolin ekzositozunu bloke ederken, Tetanoz nikotinik Nm reseptörlerinde doğrudan süper-agonist gibi davranarak sürekli kasılmaya zorlar.",
+              "ar": "يحجب البوتولينوم إخراج الأسيتيل كولين، بينما يعمل الكزاز كمنبه فائق مباشر لمستقبلات Nm، فارضاً انقباضاً مستمراً.",
+              "en": "Botulinum blocks acetylcholine exocytosis, while Tetanus acts as a direct super-agonist on nicotinic Nm receptors, forcing continuous contraction."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tetanoz toksininin nikotinik reseptörlerde agonist etkisi yoktur; spastisite spinal internöronların disinhibisyonundan kaynaklanır.",
+              "ar": "غير صحيح. ليس لذيفان الكزاز فعالية تنبيهية على مستقبلات النيكوتين؛ تنجم التشنجات عن فقدان التثبيط المركزي في النخاع.",
+              "en": "Incorrect. Tetanus toxin has no agonist activity at nicotinic receptors; spasticity arises from disinhibition of spinal motor neurons."
+            }
+          },
+          {
+            "id": "opt-l8-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Her iki toksin de sadece nöromusküler kavşakta kalır; Botulinum SNAP-25'i keserken Tetanoz kas kasılma miyozin zincirlerini keser.",
+              "ar": "يبقى كلا الذيفانين حصرياً في الوصل العصبي العضلي؛ يقطع البوتولينوم SNAP-25، بينما يقطع الكزاز سلاسل الميوزين الانقباضية.",
+              "en": "Both toxins remain strictly at the neuromuscular junction; Botulinum cleaves SNAP-25, whereas Tetanus cleaves muscle contractile myosin chains."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tetanoz toksini miyozini parçalamaz; karakteristik spastisitesi motor nöron boyu retrograd aksonal taşınarak merkezi sinir sistemine ulaşmasını gerektirir.",
+              "ar": "غير صحيح. لا يخرب الكزاز الميوزين؛ بل تتطلب تشنجاته المميزة انتقالاً رجوعياً عبر المحوار للوصول للجهاز العصبي المركزي.",
+              "en": "Incorrect. Tetanus toxin does not degrade myosin; its spasticity requires retrograde axonal transport to spinal inhibitory interneurons."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Hem Botulinum hem Tetanoz nörotoksinleri SNARE proteinlerini kesen çinko endopeptidazlardır. Neden Botulinum gevşek felç yaparken Tetanoz şiddetli spastik kasılmalara yol açar?",
+          "ar": "كلا ذيفاني البوتولينوم والكزاز من إندوببتيدازات الزنك التي تقطع بروتينات SNARE. لماذا يحدث البوتولينوم شللاً رخواً، بينما يثير الكزاز تشنجات كزازية عاتية؟",
+          "en": "Both Botulinum and Tetanus neurotoxins are zinc-endopeptidases that cleave SNARE proteins. Why does Botulinum produce flaccid paralysis, whereas Tetanus provokes violent spastic convulsions?"
+        },
+        "title": {
+          "tr": "Bütünsel Bağlantı: Botulinum ve Tetanoz Nörotoksinleri",
+          "ar": "ترابط شمولي: ذيفانا البوتولينوم والكزاز",
+          "en": "Holistic Connection: Botulinum vs Tetanus Neurotoxins"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 27
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod4-les2-step12",
+      "order": 12,
+      "stageIndex": 12,
+      "stage": "mastery_check",
+      "type": "mastery_check",
+      "title": {
+        "tr": "Ustalık Sınavı: Antikolinerjik Toksidrom ve Fizostigmin Kurtarması",
+        "ar": "اختبار الإتقان: المتلازمة المضادة للكولين والإنقاذ بفيزوستيغمين",
+        "en": "Mastery Check: Anticholinergic Toxidrome & Physostigmine Rescue"
+      },
+      "prompt": {
+        "tr": "Bir hasta hipertermi (40°C), kuru kızarık cilt, aşırı ağız kuruluğu, fiks dilate pupiller, deliryum ve idrar retansiyonuyla geliyor. Toksidromu, mekanizmayı ve kan-beyin bariyerini geçen uygun panzehiri belirleyin.",
+        "ar": "وصل مريض بارتفاع حرارة (40°C)، جلد أحمر جاف، جفاف فم شديد، حدقات متسعة ثابتة، هذيان واحتباس بول. حدد المتلازمة والآلية والترياق المناسب العابر للحاجز الدماغي.",
+        "en": "A patient presents with hyperthermia (40°C), flushed anhidrotic skin, extreme xerostomia, fixed dilated pupils, delirium, and urinary retention. Identify the toxidrome, mechanism, and the pharmacologically appropriate blood-brain barrier-penetrating antidote."
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Tablodaki zehirlenmenin toksidromu, reseptör mekanizması ve santral etkili panzehiri hangisidir?",
+          "ar": "ما هي المتلازمة والآلية والترياق المركزي المناسب للحالة المذكورة؟",
+          "en": "What is the toxidrome, receptor mechanism, and central-acting antidote for this poisoning presentation?"
+        },
+        "options": [
+          {
+            "id": "opt-l8-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Muskarinik blokaj kaynaklı Antikolinerjik toksidrom; santral deliryumu düzeltmek için kan-beyin bariyerini geçen tersiyer amin Fizostigmin ile tedavi edilir.",
+              "ar": "متلازمة مضادة للكولين عبر حصر المستقبلات الموسكارينية؛ تعالج بـ فيزوستيغمين (أمين ثالثي يعبر الحاجز الدماغي لعكس الهذيان المركزي).",
+              "en": "Anticholinergic toxidrome via muscarinic receptor blockade; treat with Physostigmine (a tertiary amine that crosses the blood-brain barrier to reverse central delirium)."
+            },
+            "feedback": {
+              "tr": "Doğru! Klasik antikolinerjik toksidrom. Cildin tamamen kuru olması (anhidroz) onu terli sempatomimetik toksisiteden ayırır. Fizostigmin tersiyer amin yapısıyla KBB'yi geçer.",
+              "ar": "صحيح! المتلازمة الكلاسيكية لمضادات الموسكارين. يميز جفاف الجلد (اللاحرق) هذه الحالة عن التسمم الودي (التعرق الغزير). ويعبر فيزوستيغمين الحاجز الدماغي كونه أميناً ثالثياً.",
+              "en": "Correct! Classical anticholinergic toxidrome. Anhidrosis (dry skin) differentiates it from sympathomimetic toxicity (sweaty). Physostigmine is a tertiary amine crossing the BBB."
+            }
+          },
+          {
+            "id": "opt-l8-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1/beta-1 hiperstimülasyonu kaynaklı Sempatomimetik toksidrom; intravenöz yüksek doz beta-bloker Esmolol ile tedavi edilir.",
+              "ar": "متلازمة شبيهة بالودي عبر فرط تنبيه مستقبلات ألفا-1/بيتا-1؛ تعالج بجرعة عالية من حاصر بيتا إسمولول وريدياً.",
+              "en": "Sympathomimetic toxidrome via alpha-1/beta-1 adrenoceptor hyperstimulation; treat with intravenous high-dose beta-blocker Esmolol."
+            },
+            "feedback": {
+              "tr": "Yanlış. Sempatomimetik toksisitede (kokain/amfetamin) taşikardi ve hipertermiye rağmen şiddetli terleme (diaforez) görülür. Antikolinerjikte ise cilt tamamen kurudur.",
+              "ar": "غير صحيح. تترافق المتلازمة الودية (كوكايين/أمفيتامين) بتعرق غزير رغم الحرارة المرتفعة؛ بينما يكون الجلد جافاً تماماً في التسمم بمضادات الكولين.",
+              "en": "Incorrect. Sympathomimetic toxicity presents with profuse diaphoresis (sweating). Anticholinergic toxicity produces dry (anhidrotic) skin."
+            }
+          },
+          {
+            "id": "opt-l8-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Antikolinerjik toksidrom; bilinci kurtarmak amacıyla merkezi sinir sistemine selektif geçen kuaterner amin Neostigmin ile tedavi edilir.",
+              "ar": "متلازمة مضادة للكولين؛ تعالج بـ نيوستيغمين (أمين رابعي ينفذ انتقائياً للجهاز العصبي المركزي لإنقاذ الوعي).",
+              "en": "Anticholinergic toxidrome; treat with Neostigmine (a quaternary amine that selectively penetrates the central nervous system to rescue consciousness)."
+            },
+            "feedback": {
+              "tr": "Yanlış. Neostigmin kalıcı yüklü kuaterner amonyum taşır ve kan-beyin bariyerini ASLA GEÇEMEZ; santral deliryumu düzeltemez. Yalnızca tersiyer amin Fizostigmin beyne geçer.",
+              "ar": "غير صحيح. يحمل النيوستيغمين أميناً رابعياً مشحوناً دائماً ولا يعبر إطلاقاً الحاجز الدماغي؛ فلا يعكس الهذيان المركزي. وحده فيزوستيغمين يعبر للدماغ.",
+              "en": "Incorrect. Neostigmine possesses a permanently charged quaternary nitrogen that CANNOT cross the blood-brain barrier; only tertiary amines like physostigmine enter the CNS."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "Antikolinerjik Toksidrom",
+          "arContext": "متلازمة مضادات الكولين السمومية (Anticholinergic Toxidrome)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Klinik anımsatıcıyı hatırlayın: 'Pancar gibi kırmızı, kemik gibi kuru, yarasa gibi kör, tavşan gibi sıcak, şapkacı gibi deli.' Cilt nemine dikkat edin!",
+          "ar": "تذكر العبارة السريرية الشهيرة: 'أحمر كالشمندر، جاف كالعظم، أعمى كالوطواط، ساخن كالأرنب، مجنون كصانع القبعات'. انتبه لرطوبة الجلد!",
+          "en": "Mnemonic: 'Red as a beet, dry as a bone, blind as a bat, hot as a hare, mad as a hatter.' Pay close attention to skin moisture and central delirium."
+        },
+        {
+          "tier": 2,
+          "tr": "Muskarinik blokaj terlemeyi durdurur (anhidroz) ve santral deliryum yapar. Panzehirin santral semptomları düzeltmesi için kan-beyin bariyerini geçmesi şarttır.",
+          "ar": "يوقف الحصر الموسكاريني التعرق (جفاف تام) ويحدث هذياناً مركزياً. يجب أن يعبر الترياق الحاجز الدماغي لإنقاذ الوعي.",
+          "en": "Muscarinic blockade halts eccrine sweating (anhidrosis) and blocks central M1 receptors (delirium). The antidote must cross the blood-brain barrier."
+        },
+        {
+          "tier": 3,
+          "tr": "Bu bir antikolinerjik toksidromdur; yük taşımayan tersiyer amin yapısıyla kan-beyin bariyerini geçebilen Fizostigmin ile tedavi edilir.",
+          "ar": "هذه متلازمة مضادة للكولين؛ تعالج بـ فيزوستيغمين كونه أميناً ثالثياً غير مشحون قادراً على عبور الحاجز الدماغي لعكس الهذيان.",
+          "en": "Anticholinergic toxidrome; treat with Physostigmine, an uncharged tertiary amine that crosses the blood-brain barrier to reverse central delirium."
+        }
+      ],
+      "config": {
+        "options": [
+          {
+            "id": "opt-l8-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Muskarinik blokaj kaynaklı Antikolinerjik toksidrom; santral deliryumu düzeltmek için kan-beyin bariyerini geçen tersiyer amin Fizostigmin ile tedavi edilir.",
+              "ar": "متلازمة مضادة للكولين عبر حصر المستقبلات الموسكارينية؛ تعالج بـ فيزوستيغمين (أمين ثالثي يعبر الحاجز الدماغي لعكس الهذيان المركزي).",
+              "en": "Anticholinergic toxidrome via muscarinic receptor blockade; treat with Physostigmine (a tertiary amine that crosses the blood-brain barrier to reverse central delirium)."
+            },
+            "feedback": {
+              "tr": "Doğru! Klasik antikolinerjik toksidrom. Cildin tamamen kuru olması (anhidroz) onu terli sempatomimetik toksisiteden ayırır. Fizostigmin tersiyer amin yapısıyla KBB'yi geçer.",
+              "ar": "صحيح! المتلازمة الكلاسيكية لمضادات الموسكارين. يميز جفاف الجلد (اللاحرق) هذه الحالة عن التسمم الودي (التعرق الغزير). ويعبر فيزوستيغمين الحاجز الدماغي كونه أميناً ثالثياً.",
+              "en": "Correct! Classical anticholinergic toxidrome. Anhidrosis (dry skin) differentiates it from sympathomimetic toxicity (sweaty). Physostigmine is a tertiary amine crossing the BBB."
+            }
+          },
+          {
+            "id": "opt-l8-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Alfa-1/beta-1 hiperstimülasyonu kaynaklı Sempatomimetik toksidrom; intravenöz yüksek doz beta-bloker Esmolol ile tedavi edilir.",
+              "ar": "متلازمة شبيهة بالودي عبر فرط تنبيه مستقبلات ألفا-1/بيتا-1؛ تعالج بجرعة عالية من حاصر بيتا إسمولول وريدياً.",
+              "en": "Sympathomimetic toxidrome via alpha-1/beta-1 adrenoceptor hyperstimulation; treat with intravenous high-dose beta-blocker Esmolol."
+            },
+            "feedback": {
+              "tr": "Yanlış. Sempatomimetik toksisitede (kokain/amfetamin) taşikardi ve hipertermiye rağmen şiddetli terleme (diaforez) görülür. Antikolinerjikte ise cilt tamamen kurudur.",
+              "ar": "غير صحيح. تترافق المتلازمة الودية (كوكايين/أمفيتامين) بتعرق غزير رغم الحرارة المرتفعة؛ بينما يكون الجلد جافاً تماماً في التسمم بمضادات الكولين.",
+              "en": "Incorrect. Sympathomimetic toxicity presents with profuse diaphoresis (sweating). Anticholinergic toxicity produces dry (anhidrotic) skin."
+            }
+          },
+          {
+            "id": "opt-l8-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Antikolinerjik toksidrom; bilinci kurtarmak amacıyla merkezi sinir sistemine selektif geçen kuaterner amin Neostigmin ile tedavi edilir.",
+              "ar": "متلازمة مضادة للكولين؛ تعالج بـ نيوستيغمين (أمين رابعي ينفذ انتقائياً للجهاز العصبي المركزي لإنقاذ الوعي).",
+              "en": "Anticholinergic toxidrome; treat with Neostigmine (a quaternary amine that selectively penetrates the central nervous system to rescue consciousness)."
+            },
+            "feedback": {
+              "tr": "Yanlış. Neostigmin kalıcı yüklü kuaterner amonyum taşır ve kan-beyin bariyerini ASLA GEÇEMEZ; santral deliryumu düzeltemez. Yalnızca tersiyer amin Fizostigmin beyne geçer.",
+              "ar": "غير صحيح. يحمل النيوستيغمين أميناً رابعياً مشحوناً دائماً ولا يعبر إطلاقاً الحاجز الدماغي؛ فلا يعكس الهذيان المركزي. وحده فيزوستيغمين يعبر للدماغ.",
+              "en": "Incorrect. Neostigmine possesses a permanently charged quaternary nitrogen that CANNOT cross the blood-brain barrier; only tertiary amines like physostigmine enter the CNS."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Bir hasta hipertermi (40°C), kuru kızarık cilt, aşırı ağız kuruluğu, fiks dilate pupiller, deliryum ve idrar retansiyonuyla geliyor. Toksidromu, mekanizmayı ve kan-beyin bariyerini geçen uygun panzehiri belirleyin.",
+          "ar": "وصل مريض بارتفاع حرارة (40°C)، جلد أحمر جاف، جفاف فم شديد، حدقات متسعة ثابتة، هذيان واحتباس بول. حدد المتلازمة والآلية والترياق المناسب العابر للحاجز الدماغي.",
+          "en": "A patient presents with hyperthermia (40°C), flushed anhidrotic skin, extreme xerostomia, fixed dilated pupils, delirium, and urinary retention. Identify the toxidrome, mechanism, and the pharmacologically appropriate blood-brain barrier-penetrating antidote."
+        },
+        "title": {
+          "tr": "Ustalık Sınavı: Antikolinerjik Toksidrom ve Fizostigmin Kurtarması",
+          "ar": "اختبار الإتقان: المتلازمة المضادة للكولين والإنقاذ بفيزوستيغمين",
+          "en": "Mastery Check: Anticholinergic Toxidrome & Physostigmine Rescue"
+        }
+      },
+      "sources": [
+        {
+          "file": "Otonom Sinir Sistemi.pdf",
+          "page": 28
+        }
+      ]
     }
   ]
 }

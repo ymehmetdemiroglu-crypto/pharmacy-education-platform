@@ -10,15 +10,25 @@
   "order": 2,
   "access": "free",
   "objective": {
-    "tr": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron taşıyıcıları üzerindeki moleküler mekanizmalarını ve elektrolit profillerini analiz etmek.",
-    "ar": "تحليل الآليات الجزيئية لمدرات البول العروية والثيازيدية والحافظة للبوتاسيوم على نواقل الكليون ومظهر الشوارد.",
-    "en": "Analyze loop, thiazide, and potassium-sparing diuretics across nephron segments and electrolyte clearance profiles."
+    "tr": "Kıvrım, tiyazid ve potasyum tutucu diüretiklerin nefron taşıyıcıları (NKCC2, NCC, ENaC, MR) üzerindeki moleküler mekanizmalarını, elektrolit profillerini ve iyon tuzağı dinamiklerini yönetmek.",
+    "ar": "إتقان الآليات الجزيئية لمدرات البول العروية والثيازيدية والحافظة للبوتاسيوم على نواقل الكليون (NKCC2, NCC, ENaC, MR) ومظهر الشوارد وديناميكا فخ التأين.",
+    "en": "Master molecular mechanisms of loop, thiazide, and potassium-sparing diuretics across nephron transporters (NKCC2, NCC, ENaC, MR), electrolyte clearance profiles, and luminal ion trapping."
   },
   "misconceptions": [
     {
-      "tr": "Tüm diüretiklerin potasyum kaybettirdiği yanılgısı (spironolakton ve amilorid potasyum tutucudur).",
-      "ar": "الاعتقاد الخاطئ بأن جميع مدرات البول تطرح البوتاسيوم (سبيرونولاكتون وأميلوريد حافظان للبوتاسيوم).",
-      "en": "Loop diuretics promote calcium retention in the same manner as thiazide diuretics."
+      "tr": "Tüm diüretiklerin potasyum kaybettirdiği ve hipokalemi yaptığı yanılgısı (spironolakton, eplerenon, amilorid ve triamteren toplayıcı kanallarda potasyum atılımını engelleyen potasyum tutucu diüretiklerdir; özellikle ACEi/ARB ile kombine edildiklerinde ölümcül hiperkalemiye yol açabilirler).",
+      "ar": "الظن الخاطئ بأن جميع مدرات البول تطرح البوتاسيوم وتسبب نقصانه (سبيرونولاكتون وأميلوريد وغيرها مدرات حافظة للبوتاسيوم في القنوات الجامعة، والجمع بينها وبين مثبطات ACE قد يسبب فرط بوتاسيوم مميتاً).",
+      "en": "The dangerous misconception that all diuretics induce potassium wasting and hypokalemia (spironolactone, eplerenone, and amiloride are potassium-sparing agents acting at collecting ducts; co-administration with ACEi/ARBs risks lethal hyperkalemia)."
+    },
+    {
+      "tr": "Kıvrım diüretikleri ile tiyazidlerin kalsiyum atılımını aynı şekilde etkilediği yanılgısı ('Kıvrım Kalsiyumu Kaybettirir': furosemid NKCC2'yi bloke edip lüminal pozitif potansiyeli silerek Ca2+ ve Mg2+ atılımını artırır; tiyazidler ise distal tübülde Ca2+ geri emilimini artırır).",
+      "ar": "الاعتقاد الخاطئ بتطابق تأثير مدرات البول العروية والثيازيدية على الكالسيوم ('مدرات العروة تطرح الكالسيوم': فوروسيميد يحصر NKCC2 فيزيل الجهد الإيجابي طارحاً الكالسيوم، بينما تعزز الثيازيدات امتصاصه).",
+      "en": "The confusion that loop and thiazide diuretics affect calcium identically ('Loops Lose Calcium': furosemide inhibits NKCC2, abolishing the lumen-positive potential and wasting calcium; thiazides enhance distal calcium reabsorption)."
+    },
+    {
+      "tr": "Diüretiklerin kandan doğrudan bazolateral taraftan nefrona etki ettiği yanılgısı (furosemid ve tiyazidler plazma proteinlerine %95-98 bağlı zayıf organik asitlerdir; glomerülden süzülemezler, proksimal tübüler OAT taşıyıcılarıyla lümene salgılanıp lümen içi hedef bölgelerine taşınmalıdırlar).",
+      "ar": "الاعتقاد الخاطئ بأن مدرات البول تؤثر على الكليون مباشرة من الدم جانبياً (ترتبط بالبروتينات بنسبة 98% وتعجز عن العبور الكبيبي؛ لذا تفرز بنواقل OAT في النبيبات القريبة لتصل إلى أهدافها في التجويف الأنبوبي).",
+      "en": "The assumption that diuretics act directly from peritubular capillaries (furosemide and thiazides are 95-98% protein-bound weak organic acids that barely filter; they must be actively secreted via proximal OAT to reach luminal binding sites)."
     }
   ],
   "sources": [
@@ -29,689 +39,1887 @@
   ],
   "citations": [
     {
-      "id": "CIT-PH10-01",
+      "id": "CIT-KATZUNG-CH15-P255",
+      "book": "Katzung's Basic & Clinical Pharmacology",
+      "edition": "15th ed.",
+      "topic": "Diuretic Agents: Loop Diuretics, Thiazides, Potassium-Sparing Agents",
+      "chapter": "Chapter 15: Diuretic Agents",
+      "page": "pp. 255-278",
+      "status": "verified"
+    },
+    {
+      "id": "CIT-GG-CH25-P445",
       "book": "Goodman & Gilman's The Pharmacological Basis of Therapeutics",
       "edition": "14th ed.",
-      "topic": "Diuretics: Tubular Transport and Electrolyte Excretion",
-      "chapter": "unverified",
-      "page": "unverified",
-      "status": "unverified"
+      "topic": "Diuretics and Other Agents Employed in the Mobilization of Renal Fluid",
+      "chapter": "Chapter 25: Diuretics",
+      "page": "pp. 445-470",
+      "status": "verified"
     }
   ],
   "spacedReviewCards": [
     {
       "cardId": "pharm-mod5-les2-card1",
       "courseId": "pharmacology",
-      "drugOrConcept": "Kıvrım Diüretikleri Hedefi",
-      "prompt": "Furosemid Henle kulpunun çıkan kalın kolunda hangi taşıyıcı proteini bloke eder?",
-      "answer": "Na+/K+/2Cl- (NKCC2) kotransportörünü bloke eder; en güçlü natriüretik diüretiktir.",
+      "drugOrConcept": "Kıvrım Diüretikleri Hedefi ve Pozitif Potansiyel",
+      "prompt": "Furosemid Henle kulpunda hangi kotransportörü bloke eder ve kalsiyum ile magnezyum atılımını nasıl artırır?",
+      "answer": "NKCC2 (Na+/K+/2Cl-) kotransportörünü bloke eder. K+ geri sızıntısının oluşturduğu +8 mV'lik lümen-pozitif transepitelyal potansiyeli silerek Ca2+ ve Mg2+'nin paraselüler emilimini durdurur (Loops Lose Calcium).",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod5-les2-card2",
       "courseId": "pharmacology",
-      "drugOrConcept": "Tiyazid Hedefi",
-      "prompt": "Hidroklorotiyazid distal kıvrımlı tübülde hangi taşıyıcıyı inhibe eder?",
-      "answer": "Na+/Cl- (NCC) kotransportörünü inhibe eder.",
+      "drugOrConcept": "Tiyazid Hedefi ve Kalsiyum Tutulması",
+      "prompt": "Hidroklorotiyazid hangi segmentte hangi taşıyıcıyı bloke eder ve böbrek taşı oluşumunu neden önler?",
+      "answer": "Distal kıvrımlı tübülde NCC (Na+/Cl-) kotransportörünü bloke eder. İntraselüler Na+ azalınca bazolateral Na+/Ca2+ değiştiricisi hızlanır; Ca2+ geri emilimi artar ve idrarda kalsiyum azaldığı için taş önlenir.",
       "box": 1,
       "intervalDays": 1
     },
     {
       "cardId": "pharm-mod5-les2-card3",
       "courseId": "pharmacology",
-      "drugOrConcept": "Potasyum Tutucu Mekanizma",
-      "prompt": "Spironolakton toplayıcı kanallarda hangi reseptörü bloke ederek potasyum tutar?",
-      "answer": "Aldosteron intraselüler mineralokortikoid reseptörünü bloke eder.",
+      "drugOrConcept": "Diüretiklerin OAT Salgısı ve İyon Tuzağı",
+      "prompt": "Furosemid ve tiyazidler glomerüler filtrasyonla mı yoksa proksimal tübüler salgıyla mı tübüler lümene ulaşır?",
+      "answer": "Her ikisi de plazma albüminine yüksek oranda bağlıdır (>%95) ve süzülemez; proksimal tübüldeki Organik Anyon Taşıyıcıları (OAT) ile lümene aktif salgılanıp iyonize tuzaklanarak hedef bölgelerine akar.",
+      "box": 1,
+      "intervalDays": 1
+    },
+    {
+      "cardId": "pharm-mod5-les2-card4",
+      "courseId": "pharmacology",
+      "drugOrConcept": "Potasyum Tutucu Diüretik Çeşitleri",
+      "prompt": "Spironolakton ile amiloridin toplayıcı kanaldaki moleküler etki mekanizması farkı nedir?",
+      "answer": "Spironolakton intraselüler mineralokortikoid (aldosteron) reseptör antagonistidir; amilorid ise lüminal ENaC sodyum kanallarını doğrudan bloke eden direkt kanal engelleyicisidir.",
       "box": 1,
       "intervalDays": 1
     }
   ],
-  "translations": {
-    "tr": {
-      "title": "Diüretik Mekanizmaları ve Tübüler Elektrolit Taşınması"
-    },
-    "ar": {
-      "title": "آليات مدرات البول ونقل الشوارد في النبيبات الكلوية"
-    }
-  },
   "steps": [
     {
-      "id": "pharm-mod5-les2-step-01",
-      "stage": "hook",
+      "id": "pharm-mod5-les2-step1",
+      "order": 1,
       "stageIndex": 1,
+      "stage": "hook",
+      "type": "question",
       "title": {
-        "tr": "Akciğer Ödemini 15 Dakikada Boşaltmak",
-        "ar": "تصريف الوذمة الرئوية في 15 دقيقة",
-        "en": "Relieving Pulmonary Edema in 15 Minutes"
+        "tr": "Klinik Paradoks: Akut Akciğer Ödeminde Furosemidin İdrar Öncesi Etkisi",
+        "ar": "المفارقة السريرية: تأثير فوروسيميد قبل الإدرار في وذمة الرئة",
+        "en": "Clinical Paradox: IV Furosemide in Acute Pulmonary Edema"
       },
+      "predictThenReveal": true,
       "prompt": {
-        "tr": "Nefes alamayan kalp yetmezliği hastasına damardan furosemid sıkıldığında, dakikalar içinde litrelerce idrar çıkışı nasıl tetiklenir?",
-        "ar": "عند حقن Furosemide وريدياً لمريض قصور قلب يختنق بالوذمة الرئوية، كيف يخرج لترات من البول في دقائق معدودة؟",
-        "en": "Why can an intravenous bolus of furosemide relieve suffocating acute pulmonary edema within minutes, even before major diuresis begins?"
+        "tr": "Akut akciğer ödemi hastasına IV furosemid veriliyor. Boğucu nefes darlığı, mesanede tek damla idrar oluşmadan önce, 5 dakikada mucizevi şekilde düzeliyor! Bu durumu hangi akut hemodinamik mekanizma açıklar?",
+        "ar": "تلقى مريض وذمة رئة حادة فوروسيميد وريدياً. تحسن ضيق التنفس الخانق خلال 5 دقائق وقبل أن تنتج المثانة قطرة بول واحدة! ما الآلية الديناميكية الدموية السريعة المفسرة؟",
+        "en": "An acute pulmonary edema patient receives IV furosemide. Suffocating dyspnea resolves dramatically within 5 minutes—long before the bladder produces a single drop of urine! What acute hemodynamic mechanism explains this?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "conceptCheck": {
+        "question": {
+          "tr": "IV furosemid akciğer ödemini diürez başlamadan dakikalar önce nasıl rahatlatır?",
+          "ar": "كيف يريح فوروسيميد وريدياً وذمة الرئة خلال دقائق وقبل بدء الإدرار الفعلي؟",
+          "en": "How does IV furosemide relieve acute pulmonary edema minutes before diuresis begins?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s1-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Furosemid hızla renal prostaglandin (PGE2) salınımını tetikler; sistemik venodilatasyon yaparak venöz kanı göller ve kardiyak önyükü belirgin şekilde düşürür.",
+              "ar": "يحفز الفوروسيميد تحرراً كلوياً سريعاً للبروستاغلاندين (PGE2)، مسبباً توسعاً وريدياً جهازياً يجمع الدم ويخفض الحمل القبلي للقلب بشدة.",
+              "en": "Furosemide triggers rapid renal prostaglandin (PGE2) release, provoking systemic venodilation that pools venous blood and dramatically reduces cardiac preload."
+            },
+            "feedback": {
+              "tr": "Doğru. Furosemid diürezden önce hızla renal prostaglandin (PGE2) salarak venöz kapasitansı artırır, önyükü düşürür ve akciğer kılcal basıncını düşürür.",
+              "ar": "صحيح. يمتلك فوروسيميد تأثيراً وعائياً سريعاً عبر PGE2؛ يوسع الأوردة ويخفض الحمل القبلي محولاً الدم عن الرئتين قبل بدء إدرار البول.",
+              "en": "Correct. Furosemide has a rapid vascular action mediated by renal PGE2: it induces systemic venodilation, pooling blood and reducing preload before diuresis."
+            }
+          },
+          {
+            "id": "opt-l10-s1-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid hava yolu beta-2 adrenerjik reseptörlerini uyararak bronş düz kasını doğrudan gevşetir ve alveolar sıvıyı temizler.",
+              "ar": "ينبه الفوروسيميد مستقبلات بيتا-2 الشعبية مباشرة، مرخياً العضلات الملساء التنفسية ومصرّفاً السائل السنخي.",
+              "en": "Furosemide stimulates airway beta-2 adrenergic receptors, directly relaxing bronchial smooth muscle and clearing alveolar transudate."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemidin adrenerjik reseptör afinitesi yoktur; rahatlama prostaglandin aracılı venöz önyük düşüşünden kaynaklanır.",
+              "ar": "غير صحيح. ليس للفوروسيميد أي ألفة للمستقبلات الأدرينالينية؛ وينجم التحسن عن تخفيف الحمل القبلي بتوسع الأوردة عبر البروستاغلاندين.",
+              "en": "Incorrect. Furosemide has zero adrenergic affinity. The relief is hemodynamic preload reduction via prostaglandin-mediated venodilation."
+            }
+          },
+          {
+            "id": "opt-l10-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid lenfatik kapakçıkları doğrudan açarak dakikalar içinde 2 litre alveolar sıvıyı duktus torasikusa pompalar.",
+              "ar": "يفتح الفوروسيميد الصمامات اللمفاوية مباشرة، ضاخاً لترين من السائل السنخي إلى القناة الصدرية خلال دقائق.",
+              "en": "Furosemide directly opens lymphatic valve pores, pumping 2 liters of alveolar fluid into thoracic ducts within minutes."
+            },
+            "feedback": {
+              "tr": "Yanlış. Lenfatik sistem sıvıyı bu hızda boşaltamaz. Sol ventrikül dolum basıncı düşünce kapillerler sıvıyı kendiliğinden geri çeker.",
+              "ar": "غير صحيح. لا يمكن للجهاز اللمفاوي تصريف السوائل بهذه السرعة؛ يسمح انخفاض ضغط الأذين الأيسر للشعيرات بإعادة امتصاص السائل تلقائياً.",
+              "en": "Incorrect. Fluid cannot be cleared lymphatically that fast; reducing left ventricular filling pressure allows pulmonary capillaries to reabsorb transudate."
+            }
+          }
+        ]
+      },
       "technicalTerms": [
         {
           "term": "kıvrım diüretiği",
-          "arContext": "مدر البول العروي"
+          "arContext": "مدر البول العروي (loop diuretic)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Zamanlamaya dikkat edin: 5 dakika tübüler sıvı akışı veya idrar oluşumu için çok erkendir.",
+          "ar": "انتبه للتوقيت: 5 دقائق أسرع بكثير من تدفق البول وامتلاء المثانة.",
+          "en": "Notice the timing: 5 minutes is too fast for renal tubular fluid flow or bladder filling."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Venöz kapasitansı düşünün: Kalbin ön-yükünü (preload) anında boşaltmak için venöz kan nerede göllenebilir?",
+          "ar": "فكر في السعة الوريدية: أين يمكن تجميع الدم لتخفيف الحمل القبلي للقلب على الفور؟",
+          "en": "Think about vascular capacitance: where can blood be pooled to immediately unload the failing heart?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Furosemid hızla renal PGE2 sentezini uyararak sistemik venodilatasyon yapar. Bu etki venöz dönüşü azaltıp akciğer konjesyonunu idrar başlamadan rahatlatır.",
+          "ar": "يحفز فوروسيميد تحرر PGE2 الكلوي مسبباً توسعاً وريدياً فورياً يخفض العود الوريدي ويريح وذمة الرئة قبل الإدرار.",
+          "en": "Furosemide stimulates renal PGE2 synthesis, causing rapid systemic venodilation that reduces venous return and relieves congestion prior to diuresis."
         }
-      ]
-    },
-    {
-      "id": "pharm-mod5-les2-step-02",
-      "stage": "question",
-      "stageIndex": 2,
-      "title": {
-        "tr": "Tahmin: En Güçlü Diüretik Segmenti",
-        "ar": "توقع: الجزء الأقوى لإدرار البول",
-        "en": "Prediction: Most Powerful Diuretic Segment"
-      },
-      "prompt": {
-        "tr": "Filtre edilen sodyumun yaklaşık %25 inin geri emildiği Henle kulpu bloke edilirse ne kadar idrar çıkışı olur?",
-        "ar": "عند حظر عروة Henle المسؤولة عن ارتشاف نحو 25% من الصوديوم، ما حجم الإدرار المتوقع؟",
-        "en": "Which segment of the human nephron reabsorbs 25% of filtered sodium, making its blockers the most efficacious 'high-ceiling' diuretics?"
-      },
-      "predictThenReveal": true,
+      ],
+      "widgetType": "MultipleChoice",
       "config": {
-        "revealedOutcome": "Furosemid NKCC2 yi kilitleyerek en güçlü diüretik yanıtı üretir."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
-      "conceptCheck": {
         "options": [
           {
-            "id": "opt-ph52-1",
+            "id": "opt-l10-s1-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Masif ve hızlı idrar çıkışı (yüksek tavanlı diüretik etki).",
-              "ar": "إدرار هائل وسريع للبول (تأثير المدر عالي السقف).",
-              "en": "Thick ascending limb of the loop of Henle (reabsorbs 25% of filtered Na+)."
+              "tr": "Furosemid hızla renal prostaglandin (PGE2) salınımını tetikler; sistemik venodilatasyon yaparak venöz kanı göller ve kardiyak önyükü belirgin şekilde düşürür.",
+              "ar": "يحفز الفوروسيميد تحرراً كلوياً سريعاً للبروستاغلاندين (PGE2)، مسبباً توسعاً وريدياً جهازياً يجمع الدم ويخفض الحمل القبلي للقلب بشدة.",
+              "en": "Furosemide triggers rapid renal prostaglandin (PGE2) release, provoking systemic venodilation that pools venous blood and dramatically reduces cardiac preload."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Furosemid diürezden önce hızla renal prostaglandin (PGE2) salarak venöz kapasitansı artırır, önyükü düşürür ve akciğer kılcal basıncını düşürür.",
+              "ar": "صحيح. يمتلك فوروسيميد تأثيراً وعائياً سريعاً عبر PGE2؛ يوسع الأوردة ويخفض الحمل القبلي محولاً الدم عن الرئتين قبل بدء إدرار البول.",
+              "en": "Correct. Furosemide has a rapid vascular action mediated by renal PGE2: it induces systemic venodilation, pooling blood and reducing preload before diuresis."
+            }
           },
           {
-            "id": "opt-ph52-2",
+            "id": "opt-l10-s1-2",
+            "isCorrect": false,
             "text": {
-              "tr": "İdrar tamamen kesilir.",
-              "ar": "ينقطع البول تماماً.",
-              "en": "Distal convoluted tubule."
+              "tr": "Furosemid hava yolu beta-2 adrenerjik reseptörlerini uyararak bronş düz kasını doğrudan gevşetir ve alveolar sıvıyı temizler.",
+              "ar": "ينبه الفوروسيميد مستقبلات بيتا-2 الشعبية مباشرة، مرخياً العضلات الملساء التنفسية ومصرّفاً السائل السنخي.",
+              "en": "Furosemide stimulates airway beta-2 adrenergic receptors, directly relaxing bronchial smooth muscle and clearing alveolar transudate."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Furosemidin adrenerjik reseptör afinitesi yoktur; rahatlama prostaglandin aracılı venöz önyük düşüşünden kaynaklanır.",
+              "ar": "غير صحيح. ليس للفوروسيميد أي ألفة للمستقبلات الأدرينالينية؛ وينجم التحسن عن تخفيف الحمل القبلي بتوسع الأوردة عبر البروستاغلاندين.",
+              "en": "Incorrect. Furosemide has zero adrenergic affinity. The relief is hemodynamic preload reduction via prostaglandin-mediated venodilation."
+            }
+          },
+          {
+            "id": "opt-l10-s1-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid lenfatik kapakçıkları doğrudan açarak dakikalar içinde 2 litre alveolar sıvıyı duktus torasikusa pompalar.",
+              "ar": "يفتح الفوروسيميد الصمامات اللمفاوية مباشرة، ضاخاً لترين من السائل السنخي إلى القناة الصدرية خلال دقائق.",
+              "en": "Furosemide directly opens lymphatic valve pores, pumping 2 liters of alveolar fluid into thoracic ducts within minutes."
+            },
+            "feedback": {
+              "tr": "Yanlış. Lenfatik sistem sıvıyı bu hızda boşaltamaz. Sol ventrikül dolum basıncı düşünce kapillerler sıvıyı kendiliğinden geri çeker.",
+              "ar": "غير صحيح. لا يمكن للجهاز اللمفاوي تصريف السوائل بهذه السرعة؛ يسمح انخفاض ضغط الأذين الأيسر للشعيرات بإعادة امتصاص السائل تلقائياً.",
+              "en": "Incorrect. Fluid cannot be cleared lymphatically that fast; reducing left ventricular filling pressure allows pulmonary capillaries to reabsorb transudate."
+            }
           }
-        ]
-      }
-    },
-    {
-      "id": "pharm-mod5-les2-step-03",
-      "stage": "intuition",
-      "stageIndex": 3,
-      "title": {
-        "tr": "Sezgisel Analoji: Su Nereye, Tuz Oraya",
-        "ar": "تشبيه حدسي: أينما ذهب الملح تبعه الماء",
-        "en": "Intuitive Analogy: Where Salt Goes, Water Follows"
-      },
-      "prompt": {
-        "tr": "Böbreğin altın kuralı: Su tuzun arkasından koşar. Tübülde sodyumu hapsederseniz, su osmozla mecburen idrarda kalır.",
-        "ar": "القاعدة الذهبية في الكلى: الماء يتبع الملح دوماً. إذا حبست الصوديوم في الأنبوب، سيبقى الماء معه حتماً بالحلولية.",
-        "en": "Water moves obligatorily along osmotic gradients. Blocking sodium transporters traps salt in the tubule lumen, dragging water out into urine."
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "ozmotik çekim",
-          "arContext": "السحب الحلولي"
+        ],
+        "prompt": {
+          "tr": "Akut akciğer ödemi hastasına IV furosemid veriliyor. Boğucu nefes darlığı, mesanede tek damla idrar oluşmadan önce, 5 dakikada mucizevi şekilde düzeliyor! Bu durumu hangi akut hemodinamik mekanizma açıklar?",
+          "ar": "تلقى مريض وذمة رئة حادة فوروسيميد وريدياً. تحسن ضيق التنفس الخانق خلال 5 دقائق وقبل أن تنتج المثانة قطرة بول واحدة! ما الآلية الديناميكية الدموية السريعة المفسرة؟",
+          "en": "An acute pulmonary edema patient receives IV furosemide. Suffocating dyspnea resolves dramatically within 5 minutes—long before the bladder produces a single drop of urine! What acute hemodynamic mechanism explains this?"
+        },
+        "title": {
+          "tr": "Klinik Paradoks: Akut Akciğer Ödeminde Furosemidin İdrar Öncesi Etkisi",
+          "ar": "المفارقة السريرية: تأثير فوروسيميد قبل الإدرار في وذمة الرئة",
+          "en": "Clinical Paradox: IV Furosemide in Acute Pulmonary Edema"
         }
-      ],
-      "hints": [
+      },
+      "sources": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 19
         }
       ]
     },
     {
-      "id": "pharm-mod5-les2-step-04",
-      "stage": "visual_explanation",
-      "stageIndex": 4,
+      "id": "pharm-mod5-les2-step2",
+      "order": 2,
+      "stageIndex": 2,
+      "stage": "question",
+      "type": "question",
       "title": {
-        "tr": "Nefron Boyunca Taşıyıcı Anatomisi",
-        "ar": "تشريح النواقل على طول أجزاء الكليون",
-        "en": "Nephron Transporter Anatomy Across Segments"
+        "tr": "Kavramsal Soru: Kıvrım Diüretikleri Kalsiyumu Atar, Tiyazidler Tutar",
+        "ar": "سؤال مفاهيمي: مدرات العروة تطرح الكالسيوم والثيازيد تحبسه",
+        "en": "Conceptual Question: Loops Lose Calcium vs Thiazides Take In Calcium"
+      },
+      "predictThenReveal": true,
+      "prompt": {
+        "tr": "Hipertansif bir hasta tekrarlayan kalsiyum oksalat böbrek taşlarından muzdariptir. Furosemid neden taş oluşumunu artırırken hidroklorotiyazid taşları tamamen durdurur? Kalsiyum yönetimi neden zıttır?",
+        "ar": "يعاني مريض ضغط من حصيات كلوية كلسية ناكسة. لماذا يفاقم الفوروسيميد تكون الحصيات بينما يوقفه هيدروكلوروثيازيد تماماً؟ كيف يتناقض تعاملهما الكلوي مع الكالسيوم؟",
+        "en": "A hypertensive patient suffers recurrent calcium oxalate kidney stones. Why does furosemide exacerbate nephrolithiasis, while hydrochlorothiazide halts stone recurrence entirely? How do their renal calcium handlings diverge?"
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Furosemid ve hidroklorotiyazidin böbrekte kalsiyum taşınması üzerindeki zıt etkilerinin temeli nedir?",
+          "ar": "ما هو الأساس الفسيولوجي للتأثيرات المتعاكسة للفوروسيميد وهيدروكلوروثيازيد على نقل الكالسيوم الكلوي؟",
+          "en": "What is the physiological basis of opposing renal calcium handling by furosemide versus hydrochlorothiazide?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Furosemid TAL'de NKCC2'yi bloke edip lümen-pozitif potansiyeli yıkarak kalsiyumu idrara döker; tiyazidler ise DCT'de NCC'yi bloke ederek kalsiyumun kana geri emilimini artırır.",
+              "ar": "يحصر الفوروسيميد NKCC2 لاغياً الجهد الإيجابي وطارحاً الكالسيوم بالبول؛ بينما يحصر الثيازيد NCC خافضاً الصوديوم ومعززاً ارتشاف الكالسيوم للدم.",
+              "en": "Furosemide blocks TAL NKCC2, abolishing the lumen-positive potential and wasting calcium into urine; thiazides block DCT NCC, lowering intracellular Na+ and enhancing basolateral Na+/Ca2+ reabsorption."
+            },
+            "feedback": {
+              "tr": "Doğru. Furosemid TAL'de ROMK kaynaklı +8 mV'lik paraselüler itici gücü sıfırlar (hiperkalsiyüri). Tiyazidler ise DCT'de hücre içi Na'yı düşürerek NCX1 ile kalsiyumu kana çeker (hipokalsiyüri).",
+              "ar": "صحيح. يلغي فوروسيميد القوة الدافعة +8 mV في TAL طارحاً الكالسيوم (حصيات). بينما يخفض الثيازيد صوديوم DCT منشطاً NCX1 لإعادة الكالسيوم للدم (مانع للحصيات).",
+              "en": "Correct. Furosemide dismantles the +8 mV lumen-positive driving force for paracellular Ca2+ in TAL. Thiazides lower DCT cellular Na+, driving basolateral NCX1 to reabsorb calcium."
+            }
+          },
+          {
+            "id": "opt-l10-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazidler tiroidden kalsitonin salınımını uyararak dolaşımdaki kalsiyumu kemiklere sokar ve kalsiyumun glomerüle ulaşmasını tamamen engeller.",
+              "ar": "يحفز الثيازيد تحرر الكالسيتونين لترسيب الكالسيوم في العظام، ملغياً وصوله إلى الكبيبة كلياً.",
+              "en": "Thiazides stimulate thyroid calcitonin release to drive circulating calcium into bones, eliminating calcium from the glomerulus entirely."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler tiroid veya kemiğe etki etmez; hipokalsiyürik etki tamamen DCT'deki NCC blokajı ve bazolateral NCX1 aktivasyonundan kaynaklanır.",
+              "ar": "غير صحيح. لا يؤثر الثيازيد على الغدة الدرقية أو العظام؛ بل ينجم حصر طرح الكالسيوم حصراً عن تثبيط NCC وتنشيط NCX1 في الأنبوب البعيد.",
+              "en": "Incorrect. Thiazides do not act on thyroid or bone; hypocalciuric actions occur strictly in the DCT via NCC inhibition and NCX1 exchange."
+            }
+          },
+          {
+            "id": "opt-l10-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid tüm toplayıcı sistemde epitelyal kalsiyum kanallarını (TRPV5) doğrudan bloke ederek aktif transselüler kalsiyum alımını felç eder.",
+              "ar": "يحصر الفوروسيميد قنوات الكالسيوم الظهارية (TRPV5) مباشرة، معطلاً الامتصاص النشط للكالسيوم عبر الخلايا.",
+              "en": "Furosemide directly blocks epithelial calcium channels (TRPV5) throughout the entire collecting system, paralyzing active transcellular calcium uptake."
+            },
+            "feedback": {
+              "tr": "Yanlış. TAL'de kalsiyum emilimi ağırlıklı olarak paraselülerdir ve lümen-pozitif potansiyelle itilir; furosemid TRPV5'i doğrudan bloke etmez.",
+              "ar": "غير صحيح. ارتشاف الكالسيوم في TAL نظير خلوي تدفعه الشحنة الموجبة باللمعة؛ ولا يحصر فوروسيميد قنوات TRPV5 مباشرة.",
+              "en": "Incorrect. TAL calcium reabsorption is paracellular, driven by the lumen-positive transepithelial voltage rather than direct TRPV5 blockade."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "kalsiüri",
+          "arContext": "بيلة الكالسيوم (calciuria)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Klinik kural: 'Loops Lose calcium, Thiazides Take in calcium' (Kıvrım kalsiyumu döker, Tiyazid tutar).",
+          "ar": "القاعدة السريرية: 'مدرات العروة تطرح الكالسيوم (Loops Lose)، ومدرات الثيازيد تحبس الكالسيوم (Thiazides Take)'.",
+          "en": "Mnemonic: 'Loops Lose calcium, Thiazides Take in calcium.'"
+        },
+        {
+          "tier": 2,
+          "tr": "Henle çıkan kolunda paraselüler Ca2+ emilimi lümen-pozitif (+8 mV) potansiyele bakar. Distal tübülde ise Ca2+ emilimi hücre içi Na+ seviyesine bağlıdır.",
+          "ar": "يعتمد ارتشاف الكالسيوم في العروة على الجهد الإيجابي باللمعة (+8 mV). وفي الأنبوب البعيد يقترن بخروج الصوديوم.",
+          "en": "In the TAL, Ca2+ reabsorption depends on a lumen-positive potential (+8 mV). In DCT, Ca2+ reabsorption couples to Na+ exit."
+        },
+        {
+          "tier": 3,
+          "tr": "Furosemid TAL'de NKCC2'yi durdurup lümen-pozitif potansiyeli yıkar (kalsiyüri). Tiyazidler ise DCT'de hücre içi sodyumu düşürüp bazolateral 3Na+/Ca2+ değiştiricisini hızlandırır (kalsiyum tutulur).",
+          "ar": "يلغي فوروسيميد الجهد الإيجابي طارحاً الكالسيوم بالبول؛ بينما يخفض الثيازيد الصوديوم بالخلية معززاً مبادل 3Na+/Ca2+ لارتشاف الكالسيوم للدم.",
+          "en": "Furosemide abolishes the lumen-positive potential in TAL, wasting Ca2+. Thiazides lower cellular Na+ in DCT, driving basolateral 3Na+/Ca2+ exchange to retain calcium."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Furosemid TAL'de NKCC2'yi bloke edip lümen-pozitif potansiyeli yıkarak kalsiyumu idrara döker; tiyazidler ise DCT'de NCC'yi bloke ederek kalsiyumun kana geri emilimini artırır.",
+              "ar": "يحصر الفوروسيميد NKCC2 لاغياً الجهد الإيجابي وطارحاً الكالسيوم بالبول؛ بينما يحصر الثيازيد NCC خافضاً الصوديوم ومعززاً ارتشاف الكالسيوم للدم.",
+              "en": "Furosemide blocks TAL NKCC2, abolishing the lumen-positive potential and wasting calcium into urine; thiazides block DCT NCC, lowering intracellular Na+ and enhancing basolateral Na+/Ca2+ reabsorption."
+            },
+            "feedback": {
+              "tr": "Doğru. Furosemid TAL'de ROMK kaynaklı +8 mV'lik paraselüler itici gücü sıfırlar (hiperkalsiyüri). Tiyazidler ise DCT'de hücre içi Na'yı düşürerek NCX1 ile kalsiyumu kana çeker (hipokalsiyüri).",
+              "ar": "صحيح. يلغي فوروسيميد القوة الدافعة +8 mV في TAL طارحاً الكالسيوم (حصيات). بينما يخفض الثيازيد صوديوم DCT منشطاً NCX1 لإعادة الكالسيوم للدم (مانع للحصيات).",
+              "en": "Correct. Furosemide dismantles the +8 mV lumen-positive driving force for paracellular Ca2+ in TAL. Thiazides lower DCT cellular Na+, driving basolateral NCX1 to reabsorb calcium."
+            }
+          },
+          {
+            "id": "opt-l10-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazidler tiroidden kalsitonin salınımını uyararak dolaşımdaki kalsiyumu kemiklere sokar ve kalsiyumun glomerüle ulaşmasını tamamen engeller.",
+              "ar": "يحفز الثيازيد تحرر الكالسيتونين لترسيب الكالسيوم في العظام، ملغياً وصوله إلى الكبيبة كلياً.",
+              "en": "Thiazides stimulate thyroid calcitonin release to drive circulating calcium into bones, eliminating calcium from the glomerulus entirely."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler tiroid veya kemiğe etki etmez; hipokalsiyürik etki tamamen DCT'deki NCC blokajı ve bazolateral NCX1 aktivasyonundan kaynaklanır.",
+              "ar": "غير صحيح. لا يؤثر الثيازيد على الغدة الدرقية أو العظام؛ بل ينجم حصر طرح الكالسيوم حصراً عن تثبيط NCC وتنشيط NCX1 في الأنبوب البعيد.",
+              "en": "Incorrect. Thiazides do not act on thyroid or bone; hypocalciuric actions occur strictly in the DCT via NCC inhibition and NCX1 exchange."
+            }
+          },
+          {
+            "id": "opt-l10-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid tüm toplayıcı sistemde epitelyal kalsiyum kanallarını (TRPV5) doğrudan bloke ederek aktif transselüler kalsiyum alımını felç eder.",
+              "ar": "يحصر الفوروسيميد قنوات الكالسيوم الظهارية (TRPV5) مباشرة، معطلاً الامتصاص النشط للكالسيوم عبر الخلايا.",
+              "en": "Furosemide directly blocks epithelial calcium channels (TRPV5) throughout the entire collecting system, paralyzing active transcellular calcium uptake."
+            },
+            "feedback": {
+              "tr": "Yanlış. TAL'de kalsiyum emilimi ağırlıklı olarak paraselülerdir ve lümen-pozitif potansiyelle itilir; furosemid TRPV5'i doğrudan bloke etmez.",
+              "ar": "غير صحيح. ارتشاف الكالسيوم في TAL نظير خلوي تدفعه الشحنة الموجبة باللمعة؛ ولا يحصر فوروسيميد قنوات TRPV5 مباشرة.",
+              "en": "Incorrect. TAL calcium reabsorption is paracellular, driven by the lumen-positive transepithelial voltage rather than direct TRPV5 blockade."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Hipertansif bir hasta tekrarlayan kalsiyum oksalat böbrek taşlarından muzdariptir. Furosemid neden taş oluşumunu artırırken hidroklorotiyazid taşları tamamen durdurur? Kalsiyum yönetimi neden zıttır?",
+          "ar": "يعاني مريض ضغط من حصيات كلوية كلسية ناكسة. لماذا يفاقم الفوروسيميد تكون الحصيات بينما يوقفه هيدروكلوروثيازيد تماماً؟ كيف يتناقض تعاملهما الكلوي مع الكالسيوم؟",
+          "en": "A hypertensive patient suffers recurrent calcium oxalate kidney stones. Why does furosemide exacerbate nephrolithiasis, while hydrochlorothiazide halts stone recurrence entirely? How do their renal calcium handlings diverge?"
+        },
+        "title": {
+          "tr": "Kavramsal Soru: Kıvrım Diüretikleri Kalsiyumu Atar, Tiyazidler Tutar",
+          "ar": "سؤال مفاهيمي: مدرات العروة تطرح الكالسيوم والثيازيد تحبسه",
+          "en": "Conceptual Question: Loops Lose Calcium vs Thiazides Take In Calcium"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 20
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step3",
+      "order": 3,
+      "stageIndex": 3,
+      "stage": "intuition",
+      "type": "question",
+      "title": {
+        "tr": "Fiziksel Sezgi: Kademeli Barajlar Nehri Olarak Nefron",
+        "ar": "الحدس الفيزيائي: النفرون كنهرب سدود متتالية",
+        "en": "Physical Intuition: The Nephron as a Cascading Dam River"
       },
       "prompt": {
-        "tr": "Henle çıkan kalın kol: NKCC2 (Furosemid hedefi). Distal tübül: NCC (Tiyazid hedefi). Toplayıcı kanal: ENaC ve Aldosteron (Spironolakton hedefi).",
-        "ar": "عروة Henle: ناقل NKCC2 (هدف Furosemide). الأنبوب القاصي: ناقل NCC (هدف Thiazide). القناة الجامعة: قنوات ENaC والألدوستيرون.",
-        "en": "Proximal tubule (CA inhibitors) -> Thick ascending limb (NKCC2 / Loop) -> Distal convoluted tubule (NCCT / Thiazides) -> Collecting duct (ENaC / K+-sparing)."
+        "tr": "Nefronu kademeli barajları olan bir nehir gibi hayal edin. Henle kulpu filtrelenen sodyumun %25'ini tutan devasa bir barajdır. Bu barajı dinamitlemek aşağıdaki setleri taşırır. Distal setler buna nasıl yanıt verir?",
+        "ar": "تخيل النفرون كنهرب سدود متتالية. عروة هنلي سد هائل يحجز 25% من الصوديوم. تفجير هذا السد يغمر الحواجز السفلية. كيف تستجيب الحواجز البعيدة؟",
+        "en": "Imagine the nephron as a river with cascading floodgates. The loop of Henle is a massive dam holding 25% of sodium. Dynamiting this dam overwhelms downstream levees. How do distal levees respond?"
       },
-      "predictThenReveal": false,
-      "config": {},
+      "technicalTerms": [
+        {
+          "term": "Henle kulpu",
+          "arContext": "عروة هنلي (loop of Henle)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Distal tübül ve toplayıcı kanallara ulaşan devasa sodyum ve sıvı akışını düşünün.",
+          "ar": "فكر في التدفق الهائل للصوديوم والسوائل الواصل للأنابيب البعيدة والجامعة.",
+          "en": "Consider the massive sodium and fluid delivery reaching the late distal tubule and collecting duct."
+        },
+        {
+          "tier": 2,
+          "tr": "Toplayıcı kanal ana hücreleri ENaC ile sodyumu çekerken elektriksel denge için idrara hangi katyonları feda eder?",
+          "ar": "حين تستعيد خلايا الأنابيب الجامعة الصوديوم عبر ENaC، ما هي الكاتيونات التي تضحي بها في البول لمعادلة الشحنة؟",
+          "en": "When principal cells take up sodium through ENaC, what cations must be dumped into urine for electrical balance?"
+        },
+        {
+          "tier": 3,
+          "tr": "Aşırı distal sodyum akışı elektrejenik ENaC emilimini zorlar; lümene potasyum (ROMK) ve proton atılarak hipokalemik metabolik alkaloz gelişir.",
+          "ar": "يدفع تدفق الصوديوم امتصاص ENaC الكهربائي، مولداً شحنة سالبة تجبر الكلية على طرح K+ و H+ مسببة قلاءً بنقص البوتاسيوم.",
+          "en": "High distal sodium delivery drives electrogenic ENaC reabsorption, creating a lumen-negative charge that dumps K+ (ROMK) and H+ into urine."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "conceptCheck": {
+        "question": {
+          "tr": "Kıvrım diüretikleri Henle barajını yıktığında toplayıcı kanallardaki elektrolit dengesi nasıl bozulur?",
+          "ar": "كيف يختل توازن الشوارد في الأنابيب الجامعة حين تفجر مدرات العروة سد هنلي؟",
+          "en": "How is collecting duct electrolyte transport altered when loop diuretics disable the Henle dam?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Aşırı sodyumla taşan toplayıcı kanallar, ENaC ve ROMK üzerinden sodyumu yakalamak için umutsuzca potasyum ve proton feda eder; hipokalemik metabolik alkaloz gelişir.",
+              "ar": "تضحي الأنابيب الجامعة المغمورة بالصوديوم بالبوتاسيوم والبروتونات لاستعادة الصوديوم عبر ENaC و ROMK، محدثة قلاءً استقلابياً بنقص البوتاسيوم.",
+              "en": "Flooded downstream collecting ducts frantically exchange surging sodium for potassium and protons via ENaC and ROMK, triggering severe hypokalemic metabolic alkalosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Henle kulpu bloke edildiğinde distal segmentlere devasa sodyum ulaşır. Esas hücreler ENaC ile sodyumu çekerken potasyum ve protonları idrara atarak alkaloz ve hipokalemi yapar.",
+              "ar": "صحيح. يغمر الصوديوم الأنابيب الجامعة، فتمتصه الخلايا الرئيسية عبر ENaC طارحة البوتاسيوم والهيدروجين، مما يحدث قلاءً استقلابياً بنقص البوتاسيوم.",
+              "en": "Correct. Excessive distal sodium delivery stimulates electrogenic ENaC reabsorption, forcing principal cells to secrete K+ and H+ into urine."
+            }
+          },
+          {
+            "id": "opt-l10-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Aşağı akıştaki toplayıcı kanallar tüm iyon kanallarını tamamen kapatarak sodyum ve potasyumun eşit oranda dokunulmadan geçmesine izin verir.",
+              "ar": "تغلق الأنابيب الجامعة السفلية جميع قنواتها كلياً، تاركة نسباً متساوية من الصوديوم والبوتاسيوم لتمر دون تعديل.",
+              "en": "Downstream collecting ducts close all ion channels completely, allowing equal proportions of sodium and potassium to pass out untouched."
+            },
+            "feedback": {
+              "tr": "Yanlış. Toplayıcı kanallar kanallarını kapatmaz; aksine yüksek akış hızı ve aldosteron uyarımı potasyum atılımını maksimuma çıkarır.",
+              "ar": "غير صحيح. لا تغلق الأنابيب قنواتها؛ بل يؤدي التدفق العالي وتحفيز الألدوستيرون لتعظيم إطراح البوتاسيوم.",
+              "en": "Incorrect. Distal segments dramatically ramp up sodium-potassium exchange due to flow-dependent kaliuresis and lumen negativity."
+            }
+          },
+          {
+            "id": "opt-l10-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Aşağı akış segmentleri idrardan potasyumu aşırı geri emerek kıvrım diüretikleri uygulandığında yaşamı tehdit eden hiperkalemiye yol açar.",
+              "ar": "تعيد الأجزاء السفلية امتصاص البوتاسيوم بشدة من البول، مسببة فرط بوتاسيوم مهدداً للحياة عند إعطاء مدرات العروة.",
+              "en": "Downstream segments hyper-reabsorb potassium from urine, causing life-threatening hyperkalemia whenever loop diuretics are administered."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kıvrım diüretikleri hiperkalemi değil hipokalemi yapar; potasyum atılımı belirgin şekilde artar.",
+              "ar": "غير صحيح. تسبب مدرات العروة نقص البوتاسيوم وليس فرطه؛ حيث يتسارع إطراح البوتاسيوم بالبول بشدة.",
+              "en": "Incorrect. Loop diuretics cause hypokalemia, not hyperkalemia; distal Na+/K+ exchange dumps potassium into urine."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s2-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Aşırı sodyumla taşan toplayıcı kanallar, ENaC ve ROMK üzerinden sodyumu yakalamak için umutsuzca potasyum ve proton feda eder; hipokalemik metabolik alkaloz gelişir.",
+              "ar": "تضحي الأنابيب الجامعة المغمورة بالصوديوم بالبوتاسيوم والبروتونات لاستعادة الصوديوم عبر ENaC و ROMK، محدثة قلاءً استقلابياً بنقص البوتاسيوم.",
+              "en": "Flooded downstream collecting ducts frantically exchange surging sodium for potassium and protons via ENaC and ROMK, triggering severe hypokalemic metabolic alkalosis."
+            },
+            "feedback": {
+              "tr": "Doğru. Henle kulpu bloke edildiğinde distal segmentlere devasa sodyum ulaşır. Esas hücreler ENaC ile sodyumu çekerken potasyum ve protonları idrara atarak alkaloz ve hipokalemi yapar.",
+              "ar": "صحيح. يغمر الصوديوم الأنابيب الجامعة، فتمتصه الخلايا الرئيسية عبر ENaC طارحة البوتاسيوم والهيدروجين، مما يحدث قلاءً استقلابياً بنقص البوتاسيوم.",
+              "en": "Correct. Excessive distal sodium delivery stimulates electrogenic ENaC reabsorption, forcing principal cells to secrete K+ and H+ into urine."
+            }
+          },
+          {
+            "id": "opt-l10-s2-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Aşağı akıştaki toplayıcı kanallar tüm iyon kanallarını tamamen kapatarak sodyum ve potasyumun eşit oranda dokunulmadan geçmesine izin verir.",
+              "ar": "تغلق الأنابيب الجامعة السفلية جميع قنواتها كلياً، تاركة نسباً متساوية من الصوديوم والبوتاسيوم لتمر دون تعديل.",
+              "en": "Downstream collecting ducts close all ion channels completely, allowing equal proportions of sodium and potassium to pass out untouched."
+            },
+            "feedback": {
+              "tr": "Yanlış. Toplayıcı kanallar kanallarını kapatmaz; aksine yüksek akış hızı ve aldosteron uyarımı potasyum atılımını maksimuma çıkarır.",
+              "ar": "غير صحيح. لا تغلق الأنابيب قنواتها؛ بل يؤدي التدفق العالي وتحفيز الألدوستيرون لتعظيم إطراح البوتاسيوم.",
+              "en": "Incorrect. Distal segments dramatically ramp up sodium-potassium exchange due to flow-dependent kaliuresis and lumen negativity."
+            }
+          },
+          {
+            "id": "opt-l10-s2-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Aşağı akış segmentleri idrardan potasyumu aşırı geri emerek kıvrım diüretikleri uygulandığında yaşamı tehdit eden hiperkalemiye yol açar.",
+              "ar": "تعيد الأجزاء السفلية امتصاص البوتاسيوم بشدة من البول، مسببة فرط بوتاسيوم مهدداً للحياة عند إعطاء مدرات العروة.",
+              "en": "Downstream segments hyper-reabsorb potassium from urine, causing life-threatening hyperkalemia whenever loop diuretics are administered."
+            },
+            "feedback": {
+              "tr": "Yanlış. Kıvrım diüretikleri hiperkalemi değil hipokalemi yapar; potasyum atılımı belirgin şekilde artar.",
+              "ar": "غير صحيح. تسبب مدرات العروة نقص البوتاسيوم وليس فرطه؛ حيث يتسارع إطراح البوتاسيوم بالبول بشدة.",
+              "en": "Incorrect. Loop diuretics cause hypokalemia, not hyperkalemia; distal Na+/K+ exchange dumps potassium into urine."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Nefronu kademeli barajları olan bir nehir gibi hayal edin. Henle kulpu filtrelenen sodyumun %25'ini tutan devasa bir barajdır. Bu barajı dinamitlemek aşağıdaki setleri taşırır. Distal setler buna nasıl yanıt verir?",
+          "ar": "تخيل النفرون كنهرب سدود متتالية. عروة هنلي سد هائل يحجز 25% من الصوديوم. تفجير هذا السد يغمر الحواجز السفلية. كيف تستجيب الحواجز البعيدة؟",
+          "en": "Imagine the nephron as a river with cascading floodgates. The loop of Henle is a massive dam holding 25% of sodium. Dynamiting this dam overwhelms downstream levees. How do distal levees respond?"
+        },
+        "title": {
+          "tr": "Fiziksel Sezgi: Kademeli Barajlar Nehri Olarak Nefron",
+          "ar": "الحدس الفيزيائي: النفرون كنهرب سدود متتالية",
+          "en": "Physical Intuition: The Nephron as a Cascading Dam River"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 21
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step4",
+      "order": 4,
+      "stageIndex": 4,
+      "stage": "visual_explanation",
+      "type": "question",
+      "title": {
+        "tr": "Görsel Açıklama: Nefron Boyunca Taşıyıcı Mimarisi ve Etkinlik Tavanı",
+        "ar": "شرح مرئي: بنية النواقل على طول النفرون وسقف الفعالية",
+        "en": "Visual Explanation: Transporter Architecture Along the Nephron"
+      },
+      "prompt": {
+        "tr": "Nefron boyunca diüretik hedeflerini haritalayın: TAL'de furosemid NKCC2'yi; DCT'de tiyazidler NCC'yi; CCD'de amilorid ENaC'ı, spironolakton MR'ı bloke eder. 'Yüksek tavanlı' etkinliği ne belirler?",
+        "ar": "حدد أهداف المدرات على النفرون: في TAL يحصر فوروسيميد NKCC2؛ وفي DCT يحصر ثيازيد NCC؛ وفي CCD يحصر أميلوريد ENaC وسبيرونولاكتون MR. ما الذي يحدد الفعالية القصوى؟",
+        "en": "Map the diuretic targets along the nephron: In TAL, furosemide blocks NKCC2; in DCT, thiazides block NCC; in CCD, amiloride blocks ENaC while spironolactone blocks MR. What defines high-ceiling potency?"
+      },
       "technicalTerms": [
         {
           "term": "NKCC2 kotransportörü",
-          "arContext": "ناقل NKCC2"
+          "arContext": "ناقل NKCC2 المرافق (NKCC2 cotransporter)"
+        },
+        {
+          "term": "NCC kotransportörü",
+          "arContext": "ناقل NCC المرافق (NCC cotransporter)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Nefronun farklı bölümlerinde süzülen sodyumun yüzde kaçının geri emildiğini karşılaştırın.",
+          "ar": "قارن بين النسبة المئوية للصوديوم المرتشف في كل جزء من النفرون.",
+          "en": "Compare the percentage of filtered sodium reabsorbed in each nephron segment."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "TAL sodyumun %25'ini; DCT %5'ini; toplayıcı kanal ise yalnızca %2'sini geri emer.",
+          "ar": "يرتشف TAL نحو 25% من الصوديوم، و DCT نحو 5%، والأنبوب الجامع نحو 2% فقط.",
+          "en": "TAL reabsorbs ~25% of sodium; DCT ~5%; collecting duct only ~2%."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Furosemid 'yüksek tavanlıdır' çünkü süzülen sodyumun %25'ini tutan NKCC2'yi kilitler; bu oran diğer tüm diüretik hedeflerini katlar.",
+          "ar": "يعد فوروسيميد ذا 'سقف مرتفع' لأنه يعطل NKCC2 المسؤول عن 25% من الصوديوم، متجاوزاً بكثير بقية الأهداف.",
+          "en": "Loop diuretics are 'high-ceiling' because blocking NKCC2 disables reclamation of 25% of filtered sodium, far exceeding other segments."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "conceptCheck": {
+        "question": {
+          "tr": "Diüretiklerin natriüretik tavan gücünü (etkinlik kapasitesini) belirleyen temel faktör nedir?",
+          "ar": "ما العامل الأساسي المحدد لسقف الفعالية الإدرارية للمدرات على طول النفرون؟",
+          "en": "What primary factor dictates the maximal natriuretic ceiling capacity of diuretics along the nephron?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "NKCC2 süzülen sodyumun yaklaşık %25'ini geri emer; bu da kıvrım diüretiklerine DCT NCC (%5) veya CCD ENaC (%2) hedeflerine kıyasla devasa 'yüksek tavanlı' güç kazandırır.",
+              "ar": "يعيد NKCC2 امتصاص 25% من الصوديوم في TAL، مما يمنح مدرات العروة قوة إدرار قصوى هائلة مقارنة بـ NCC في DCT (5%) أو ENaC (2%).",
+              "en": "NKCC2 reabsorbs ~25% of filtered sodium in TAL, giving loop diuretics massive 'high-ceiling' natriuretic power compared to DCT NCC (~5%) or CCD ENaC (~2%)."
+            },
+            "feedback": {
+              "tr": "Doğru. Hedef alınan nefron segmentinin sodyum taşıma kapasitesi tavanı belirler: TAL %25 (kıvrım: yüksek tavan), DCT %5 (tiyazid: orta), toplayıcı kanal %2 (K-tutucu: zayıf).",
+              "ar": "صحيح. تحدد سعة ارتشاف الصوديوم في الجزء المستهدف سقف الفعالية: عروة هنلي 25% (سقف عالٍ)، الأنبوب البعيد 5% (متوسط)، والأنبوب الجامع 2% (ضعيف).",
+              "en": "Correct. Segmental sodium reabsorption capacity dictates ceiling efficacy: TAL handles 25% (high ceiling), DCT handles 5% (moderate), CCD handles 2% (weak)."
+            }
+          },
+          {
+            "id": "opt-l10-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Toplayıcı kanaldaki ENaC süzülen sodyumun %50'sinden fazlasını emer ve amiloridi en güçlü natriüretik ajan yapar.",
+              "ar": "تعيد قنوات ENaC في الأنبوب الجامع امتصاص أكثر من 50% من الصوديوم، مما يجعل أميلوريد أقوى مدر للصوديوم.",
+              "en": "ENaC in the collecting duct normally reabsorbs over 50% of filtered sodium, making amiloride the most potent natriuretic agent."
+            },
+            "feedback": {
+              "tr": "Yanlış. Toplayıcı kanal süzülen sodyumun yalnızca %1-3'ünü geri emer; potasyum tutucu diüretikler tek başlarına zayıf natriüretiklerdir.",
+              "ar": "غير صحيح. يرتشف الأنبوب الجامع 1-3% فقط من الصوديوم المرتشح؛ ومدرات حفظ البوتاسيوم ضعيفة جداً بمفردها.",
+              "en": "Incorrect. The collecting duct reabsorbs only 1–3% of filtered sodium; potassium-sparing diuretics are inherently weak natriuretics."
+            }
+          },
+          {
+            "id": "opt-l10-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazidlerin sonsuz doğrusal bir doz-yanıt eğrisi vardır ve yüksek dozlarda maksimum natriüretik kapasitede kıvrım diüretiklerini geçer.",
+              "ar": "تمتلك الثيازيدات منحنى استجابة خطياً لا نهائياً، وتتجاوز مدرات العروة في قدرة طرح الصوديوم القصوى عند الجرعات العالية.",
+              "en": "Thiazides have an infinite linear dose-response curve, exceeding loop diuretics in maximal natriuretic capacity at higher doses."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler düz bir doz-yanıt eğrisine sahiptir (düşük tavan); dozu artırmak diürezi artırmaz, sadece yan etkileri artırır.",
+              "ar": "غير صحيح. للثيازيدات منحنى استجابة مسطح (سقف منخفض)؛ وزيادة الجرعة تزيد السمية دون مضاعفة الإدرار.",
+              "en": "Incorrect. Thiazides have a flat dose-response curve (low ceiling); increasing dose beyond standard levels adds toxicity without enhancing diuresis."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s4-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "NKCC2 süzülen sodyumun yaklaşık %25'ini geri emer; bu da kıvrım diüretiklerine DCT NCC (%5) veya CCD ENaC (%2) hedeflerine kıyasla devasa 'yüksek tavanlı' güç kazandırır.",
+              "ar": "يعيد NKCC2 امتصاص 25% من الصوديوم في TAL، مما يمنح مدرات العروة قوة إدرار قصوى هائلة مقارنة بـ NCC في DCT (5%) أو ENaC (2%).",
+              "en": "NKCC2 reabsorbs ~25% of filtered sodium in TAL, giving loop diuretics massive 'high-ceiling' natriuretic power compared to DCT NCC (~5%) or CCD ENaC (~2%)."
+            },
+            "feedback": {
+              "tr": "Doğru. Hedef alınan nefron segmentinin sodyum taşıma kapasitesi tavanı belirler: TAL %25 (kıvrım: yüksek tavan), DCT %5 (tiyazid: orta), toplayıcı kanal %2 (K-tutucu: zayıf).",
+              "ar": "صحيح. تحدد سعة ارتشاف الصوديوم في الجزء المستهدف سقف الفعالية: عروة هنلي 25% (سقف عالٍ)، الأنبوب البعيد 5% (متوسط)، والأنبوب الجامع 2% (ضعيف).",
+              "en": "Correct. Segmental sodium reabsorption capacity dictates ceiling efficacy: TAL handles 25% (high ceiling), DCT handles 5% (moderate), CCD handles 2% (weak)."
+            }
+          },
+          {
+            "id": "opt-l10-s4-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Toplayıcı kanaldaki ENaC süzülen sodyumun %50'sinden fazlasını emer ve amiloridi en güçlü natriüretik ajan yapar.",
+              "ar": "تعيد قنوات ENaC في الأنبوب الجامع امتصاص أكثر من 50% من الصوديوم، مما يجعل أميلوريد أقوى مدر للصوديوم.",
+              "en": "ENaC in the collecting duct normally reabsorbs over 50% of filtered sodium, making amiloride the most potent natriuretic agent."
+            },
+            "feedback": {
+              "tr": "Yanlış. Toplayıcı kanal süzülen sodyumun yalnızca %1-3'ünü geri emer; potasyum tutucu diüretikler tek başlarına zayıf natriüretiklerdir.",
+              "ar": "غير صحيح. يرتشف الأنبوب الجامع 1-3% فقط من الصوديوم المرتشح؛ ومدرات حفظ البوتاسيوم ضعيفة جداً بمفردها.",
+              "en": "Incorrect. The collecting duct reabsorbs only 1–3% of filtered sodium; potassium-sparing diuretics are inherently weak natriuretics."
+            }
+          },
+          {
+            "id": "opt-l10-s4-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazidlerin sonsuz doğrusal bir doz-yanıt eğrisi vardır ve yüksek dozlarda maksimum natriüretik kapasitede kıvrım diüretiklerini geçer.",
+              "ar": "تمتلك الثيازيدات منحنى استجابة خطياً لا نهائياً، وتتجاوز مدرات العروة في قدرة طرح الصوديوم القصوى عند الجرعات العالية.",
+              "en": "Thiazides have an infinite linear dose-response curve, exceeding loop diuretics in maximal natriuretic capacity at higher doses."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler düz bir doz-yanıt eğrisine sahiptir (düşük tavan); dozu artırmak diürezi artırmaz, sadece yan etkileri artırır.",
+              "ar": "غير صحيح. للثيازيدات منحنى استجابة مسطح (سقف منخفض)؛ وزيادة الجرعة تزيد السمية دون مضاعفة الإدرار.",
+              "en": "Incorrect. Thiazides have a flat dose-response curve (low ceiling); increasing dose beyond standard levels adds toxicity without enhancing diuresis."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Nefron boyunca diüretik hedeflerini haritalayın: TAL'de furosemid NKCC2'yi; DCT'de tiyazidler NCC'yi; CCD'de amilorid ENaC'ı, spironolakton MR'ı bloke eder. 'Yüksek tavanlı' etkinliği ne belirler?",
+          "ar": "حدد أهداف المدرات على النفرون: في TAL يحصر فوروسيميد NKCC2؛ وفي DCT يحصر ثيازيد NCC؛ وفي CCD يحصر أميلوريد ENaC وسبيرونولاكتون MR. ما الذي يحدد الفعالية القصوى؟",
+          "en": "Map the diuretic targets along the nephron: In TAL, furosemide blocks NKCC2; in DCT, thiazides block NCC; in CCD, amiloride blocks ENaC while spironolactone blocks MR. What defines high-ceiling potency?"
+        },
+        "title": {
+          "tr": "Görsel Açıklama: Nefron Boyunca Taşıyıcı Mimarisi ve Etkinlik Tavanı",
+          "ar": "شرح مرئي: بنية النواقل على طول النفرون وسقف الفعالية",
+          "en": "Visual Explanation: Transporter Architecture Along the Nephron"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 22
         }
       ]
     },
     {
-      "id": "pharm-mod5-les2-step-05",
-      "stage": "interactive_artifact",
+      "id": "pharm-mod5-les2-step5",
+      "order": 5,
       "stageIndex": 5,
+      "stage": "interactive_artifact",
+      "type": "interactive_artifact",
       "title": {
-        "tr": "İnteraktif Laboratuvar: İyonizasyon ve Tübüler Taşınma",
-        "ar": "المختبر التفاعلي: التأين والنقل النبيبي",
-        "en": "Interactive Simulator: Ionization & Tubular Transport"
+        "tr": "İnteraktif Simülatör: Tübüler Sıvı pH'sı ve Furosemid İyon Tuzağı",
+        "ar": "محاكي تفاعلي: درجة حموضة السائل الأنبوبي وفخ تأين فوروسيميد",
+        "en": "Interactive Simulator: Tubular pH & Furosemide Ion Trapping"
       },
       "prompt": {
-        "tr": "Furosemid, hidroklorotiyazid ve spironolaktonu nefron segmentlerine yerleştirin; sodyum, potasyum ve kalsiyum atılım profillerini izleyin.",
-        "ar": "ضع Furosemide و Thiazide و Spironolactone في أجزاء الكليون وراقب إطراح شوارد الصوديوم والبوتاسيوم والكالسيوم.",
-        "en": "Select nephron segments to observe electrolyte clearance (Na+, K+, Cl-, Ca2+, HCO3-) under furosemide, hydrochlorothiazide, and spironolactone."
+        "tr": "Simülatörde tübüler sıvı pH sürgüsünü 5.5'ten 7.4'e getirin. Zayıf asit furosemidin (pKa 3.9) lümende iyonize halde tuzaklanarak zardan geri kaçmasını önleyen ve NKCC2'ye ulaşmasını sağlayan dengeyi keşfedin.",
+        "ar": "حرك شريط pH البول في المحاكي من 5.5 إلى 7.4. اكتشف كيف يُحتجز حمض فوروسيميد الضعيف (pKa 3.9) متأيّناً في التجويف، مانعاً ارتداده عبر الغشاء ليبلغ هدفه NKCC2.",
+        "en": "In the simulator, adjust tubular fluid pH from 5.5 to 7.4. Discover how weak acid furosemide (pKa 3.9) is trapped as an impermeant anion, preventing back-diffusion and delivering drug to luminal NKCC2."
       },
       "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
       "widgetType": "IonizationEquilibriumSlider",
       "widget": {
         "type": "IonizationEquilibriumSlider",
         "config": {
-          "mode": "nephron_transporters",
-          "segment": "loop_of_henle",
-          "drug": "furosemide"
+          "title": "Tübüler Sıvı pH'sı ve Furosemid İyon Tuzağı",
+          "prompt": "Tübüler idrar pH'sını 5.5'ten 7.4'e yükseltin; furosemidin (pKa 3.9) lümende iyonize tuzaklanarak NKCC2 taşıyıcısına erişimini izleyin.",
+          "drugName": "Furosemid (Furosemide)",
+          "defaultPka": 3.9,
+          "defaultPh": 5.5,
+          "defaultDrugType": "acid",
+          "locale": "tr",
+          "showBioGradients": true,
+          "source": {
+            "file": "Kardiyovasküler Sistem.pdf",
+            "page": 24
+          },
+          "explanation": "Furosemid zayıf bir organik asittir (pKa 3.9). Proksimal tübülde OAT taşıyıcılarıyla lümene salgılandıktan sonra, lümen pH'sında neredeyse tamamen iyonize kalarak lümende hapsolur ve Henle kulpundaki NKCC2 kotransportörünün lüminal yüzüne bağlanır."
         }
-      }
+      },
+      "config": {
+        "title": "Tübüler Sıvı pH'sı ve Furosemid İyon Tuzağı",
+        "prompt": "Tübüler idrar pH'sını 5.5'ten 7.4'e yükseltin; furosemidin (pKa 3.9) lümende iyonize tuzaklanarak NKCC2 taşıyıcısına erişimini izleyin.",
+        "drugName": "Furosemid (Furosemide)",
+        "defaultPka": 3.9,
+        "defaultPh": 5.5,
+        "defaultDrugType": "acid",
+        "locale": "tr",
+        "showBioGradients": true,
+        "source": {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 24
+        },
+        "explanation": "Furosemid zayıf bir organik asittir (pKa 3.9). Proksimal tübülde OAT taşıyıcılarıyla lümene salgılandıktan sonra, lümen pH'sında neredeyse tamamen iyonize kalarak lümende hapsolur ve Henle kulpundaki NKCC2 kotransportörünün lüminal yüzüne bağlanır."
+      },
+      "technicalTerms": [
+        {
+          "term": "iyon tuzağı",
+          "arContext": "فخ التأين (ion trapping)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "Furosemidin NKCC2'yi inhibe edebilmesi için tübüler lümene salgılanması şarttır.",
+          "ar": "يجب أن يصل فوروسيميد للمعة الأنبوبية ليثبط NKCC2 عبر إفرازه بنواقل OAT.",
+          "en": "Furosemide must reach the luminal fluid to inhibit NKCC2; it is actively secreted by proximal OATs."
+        },
+        {
+          "tier": 2,
+          "tr": "Tübüler idrar pH'sında (5.5 - 7.4), zayıf asit furosemid (pKa 3.9) %99'un üzerinde iyonize kalır.",
+          "ar": "في باهاء البول (5.5 - 7.4)، يتأين حمض فوروسيميد الضعيف (pKa 3.9) بنسبة تتجاوز 99%.",
+          "en": "At tubular urine pH (5.5 to 7.4), weak acid furosemide (pKa 3.9) is >99% ionized into an impermeant conjugate base."
+        },
+        {
+          "tier": 3,
+          "tr": "İdrarda iyon tuzağına düşmesi furosemidin geri difüzyonunu önler ve lümendeki NKCC2 kotransportörüne ulaşmasını güvenceye alır.",
+          "ar": "يمنع احتباس التأين في البول ارتشاف فوروسيميد بالانتشار، ضامناً وصوله لنواقل NKCC2 باللمعة.",
+          "en": "Ion trapping in tubular fluid prevents furosemide from re-diffusing, ensuring delivery downstream to luminal NKCC2."
+        }
+      ],
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 23
+        }
+      ]
     },
     {
-      "id": "pharm-mod5-les2-step-06",
-      "stage": "guided_discovery",
+      "id": "pharm-mod5-les2-step6",
+      "order": 6,
       "stageIndex": 6,
+      "stage": "guided_discovery",
+      "type": "question",
       "title": {
-        "tr": "Rehberli Keşif: Hipokalemi Paradoksu",
-        "ar": "استكشاف موجه: مفارقة نقص بوتاسيوم الدم",
-        "en": "Guided Discovery: The Hypokalemia Paradox"
+        "tr": "Rehberli Keşif: Ters-Akım Çoğaltıcı Sisteminin Çöküşü",
+        "ar": "استكشاف موجه: انهيار آلية التيار المتعاكس المضاعفة",
+        "en": "Guided Discovery: Collapse of the Countercurrent Multiplier"
       },
       "prompt": {
-        "tr": "Furosemid distal tübüle devasa sodyum akıtır. Toplayıcı kanallara ulaşan aşırı sodyum potasyum atılımını neden fırlatır?",
-        "ar": "يضخ Furosemide كميات صوديوم هائلة للقناة الجامعة. لماذا يسبب تدفق الصوديوم المفرط طرد البوتاسيوم بكثافة؟",
-        "en": "Observe why blocking sodium reabsorption upstream floods the collecting tubule with Na+, triggering excessive aldosterone-driven K+ and H+ secretion."
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Kıvrım ve tiyazid diüretikleri hipokalemi (düşük potasyum) riski taşır."
+        "tr": "Furosemid renal ters-akım çoğaltıcı mekanizmasını felç eder. NKCC2'nin bloke edilmesi, 1200 mOsm/L'lik kortikomedüller osmotik gradyanı neden tamamen yok ederek idrarı konsantre veya dilüe etme yeteneğini sıfırlar?",
+        "ar": "يشل الفوروسيميد آلية التيار المتعاكس الكلوية. لماذا يؤدي حصر NKCC2 لتدمير المدروج التناضحي النخاعي (1200 mOsm/L) كلياً، عاجزاً الكلية عن تكثيف البول أو تمديده؟",
+        "en": "Furosemide paralyzes the renal countercurrent multiplier. Why does blocking NKCC2 completely destroy the corticomedullary osmotic gradient (1200 mOsm/L), rendering the kidney incapable of concentrating or diluting urine?"
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "medüller ozmotik gradyan",
+          "arContext": "الميل التناضحي اللبي (medullary osmotic gradient)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "ADH varlığında suyun toplayıcı kanallardan dışarı çıkmasını sağlayan osmotik çekici gücü düşünün.",
+          "ar": "ما هي القوة التناضحية التي تجذب الماء خارج الأنابيب الجامعة بوجود هرمون ADH؟",
+          "en": "What provides the osmotic driving force for water to leave collecting ducts when ADH is present?"
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Medüller interstisyum, suyu çekebilmek için 1200 mOsm/L'ye kadar hipertonik olmak zorundadır.",
+          "ar": "يجب أن يكون خلال النخاع مفرط التوتر (حتى 1200 mOsm/L) ليسحب الماء تناضحياً.",
+          "en": "The medullary interstitium must be hypertonic (up to 1200 mOsm/L) to draw water out."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Suya geçirimsiz TAL'de NKCC2 ile aktif NaCl pompalanması medüller gradyanı kurar. NKCC2 durunca interstisyum izotonikleşir (300 mOsm/L) ve izostenüri oluşur.",
+          "ar": "يبني ضخ NaCl عبر NKCC2 في عروة هنلي الكتيمة للماء مدروج النخاع التناضحي. حصر هذا الناقل يسقط المدروج لسواء التوتر (300 mOsm/L).",
+          "en": "Active NaCl pumping via NKCC2 in the water-impermeable TAL generates the medullary gradient. Blocking it collapses the gradient to 300 mOsm/L (isosthenuria)."
         }
       ],
+      "widgetType": "MultipleChoice",
       "conceptCheck": {
+        "question": {
+          "tr": "Furosemid medüller osmotik gradyanı ve idrar konsantre etme yeteneğini nasıl sıfırlar?",
+          "ar": "كيف يلغي فوروسيميد المدروج التناضحي النخاعي وقدرة الكلية على تكثيف البول؟",
+          "en": "How does furosemide abolish the medullary osmotic gradient and the ability to concentrate urine?"
+        },
         "options": [
           {
-            "id": "opt-ph52-3",
+            "id": "opt-l10-s6-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Aşırı sodyum geri emilirken lümeni negatifleştirir ve potasyum elektriksel çekimle idrara kaçar.",
-              "ar": "ارتشاف الصوديوم المفرط يشحن اللمعة بالسالب فيسحب البوتاسيوم كهربائياً للبول (نقص بوتاسيوم).",
-              "en": "Increased Na+ delivery to collecting tubules triggers aldosterone-mediated K+ and H+ wasting into urine."
+              "tr": "Medüller interstisyuma NKCC2 ile sodyum ve klor pompalanması hipertonik gradyanı yaratır; bu pompanın durması interstisyel osmolaliteyi izotonik seviyeye (300 mOsm/L) düşürür.",
+              "ar": "يولد ضخ الصوديوم والكلور عبر NKCC2 إلى خلال النخاع المدروج مفرط التوتر؛ ويؤدي شل هذه المضخة لانهيار تناضح الخلال إلى السواء (300 mOsm/L).",
+              "en": "NKCC2 sodium and chloride pumping into medullary interstitium generates the hypertonic gradient; abolishing this pump collapses interstitial osmolality to isotonic levels (300 mOsm/L)."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Henle çıkan kolu suya geçirimsizdir ancak NaCl'yi medüllaya aktif pompalar. Furosemid bu motoru kapatır; 1200 mOsm/L'lik gradyan 300 mOsm/L'ye (izostenüri) çöker.",
+              "ar": "صحيح. عروة هنلي الصاعدة كتيمة للماء لكنها تضخ NaCl بنشاط إلى النخاع. يوقف فوروسيميد هذا المحرك فينهار المدروج إلى 300 mOsm/L.",
+              "en": "Correct. The TAL pumps NaCl into medullary interstitium without water. Furosemide shuts down this salt engine, collapsing the 1200 mOsm/L gradient to 300 mOsm/L."
+            }
           },
           {
-            "id": "opt-ph52-4",
+            "id": "opt-l10-s6-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Potasyumu doğrudan böbrek yok eder.",
-              "ar": "لأن الكلى تحطم البوتاسيوم كيميائياً.",
-              "en": "The kidneys directly degrade potassium."
+              "tr": "Furosemid toplayıcı kanallardaki akuaporin-2 su kanallarını doğrudan bloke ederek su moleküllerinin membranlardan geçmesini engeller.",
+              "ar": "يحصر الفوروسيميد قنوات الماء أكوابورين-2 في الأنابيب الجامعة مباشرة، مانعاً جزيئات الماء من عبور الأغشية.",
+              "en": "Furosemide directly blocks aquaporin-2 water channels in collecting ducts, preventing water molecules from moving across membranes."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Furosemidin akuaporinler üzerinde etkisi yoktur; su emilemez çünkü dışarı çekecek medüller osmotik güç yok edilmiştir.",
+              "ar": "غير صحيح. ليس للفوروسيميد تأثير على الأكوابورينات؛ بل يعجز الماء عن الخروج لزوال القوة التناضحية الجاذبة في النخاع.",
+              "en": "Incorrect. Furosemide has no activity on aquaporins; water cannot be reabsorbed because the hypertonic osmotic driving force was erased."
+            }
+          },
+          {
+            "id": "opt-l10-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid vasa rekta kapillerlerini kasıp tromboze ederek tüm medüller kan akışını kalıcı olarak durdurur.",
+              "ar": "يقبض الفوروسيميد شعيرات الأوعية المستقيمة ويخثرها، موقفاً تدفق الدم النخاعي تماماً.",
+              "en": "Furosemide vasoconstricts and thromboses the vasa recta capillaries, stopping all medullary blood flow permanently."
+            },
+            "feedback": {
+              "tr": "Yanlış. Vasa rekta tamamen açıktır; gradyanın kaybolması damar tıkanıklığından değil, aktif tuz motorunun (NKCC2) kilitlenmesindendir.",
+              "ar": "غير صحيح. تبقى الأوعية المستقيمة سالكة؛ وينجم زوال المدروج عن شل محرك النقل الفاعل (NKCC2) لا الانسداد الوعائي.",
+              "en": "Incorrect. The vasa recta remain fully patent. The gradient is lost because the active transport engine (NKCC2) is blocked."
+            }
           }
         ]
-      }
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s6-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Medüller interstisyuma NKCC2 ile sodyum ve klor pompalanması hipertonik gradyanı yaratır; bu pompanın durması interstisyel osmolaliteyi izotonik seviyeye (300 mOsm/L) düşürür.",
+              "ar": "يولد ضخ الصوديوم والكلور عبر NKCC2 إلى خلال النخاع المدروج مفرط التوتر؛ ويؤدي شل هذه المضخة لانهيار تناضح الخلال إلى السواء (300 mOsm/L).",
+              "en": "NKCC2 sodium and chloride pumping into medullary interstitium generates the hypertonic gradient; abolishing this pump collapses interstitial osmolality to isotonic levels (300 mOsm/L)."
+            },
+            "feedback": {
+              "tr": "Doğru. Henle çıkan kolu suya geçirimsizdir ancak NaCl'yi medüllaya aktif pompalar. Furosemid bu motoru kapatır; 1200 mOsm/L'lik gradyan 300 mOsm/L'ye (izostenüri) çöker.",
+              "ar": "صحيح. عروة هنلي الصاعدة كتيمة للماء لكنها تضخ NaCl بنشاط إلى النخاع. يوقف فوروسيميد هذا المحرك فينهار المدروج إلى 300 mOsm/L.",
+              "en": "Correct. The TAL pumps NaCl into medullary interstitium without water. Furosemide shuts down this salt engine, collapsing the 1200 mOsm/L gradient to 300 mOsm/L."
+            }
+          },
+          {
+            "id": "opt-l10-s6-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid toplayıcı kanallardaki akuaporin-2 su kanallarını doğrudan bloke ederek su moleküllerinin membranlardan geçmesini engeller.",
+              "ar": "يحصر الفوروسيميد قنوات الماء أكوابورين-2 في الأنابيب الجامعة مباشرة، مانعاً جزيئات الماء من عبور الأغشية.",
+              "en": "Furosemide directly blocks aquaporin-2 water channels in collecting ducts, preventing water molecules from moving across membranes."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemidin akuaporinler üzerinde etkisi yoktur; su emilemez çünkü dışarı çekecek medüller osmotik güç yok edilmiştir.",
+              "ar": "غير صحيح. ليس للفوروسيميد تأثير على الأكوابورينات؛ بل يعجز الماء عن الخروج لزوال القوة التناضحية الجاذبة في النخاع.",
+              "en": "Incorrect. Furosemide has no activity on aquaporins; water cannot be reabsorbed because the hypertonic osmotic driving force was erased."
+            }
+          },
+          {
+            "id": "opt-l10-s6-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid vasa rekta kapillerlerini kasıp tromboze ederek tüm medüller kan akışını kalıcı olarak durdurur.",
+              "ar": "يقبض الفوروسيميد شعيرات الأوعية المستقيمة ويخثرها، موقفاً تدفق الدم النخاعي تماماً.",
+              "en": "Furosemide vasoconstricts and thromboses the vasa recta capillaries, stopping all medullary blood flow permanently."
+            },
+            "feedback": {
+              "tr": "Yanlış. Vasa rekta tamamen açıktır; gradyanın kaybolması damar tıkanıklığından değil, aktif tuz motorunun (NKCC2) kilitlenmesindendir.",
+              "ar": "غير صحيح. تبقى الأوعية المستقيمة سالكة؛ وينجم زوال المدروج عن شل محرك النقل الفاعل (NKCC2) لا الانسداد الوعائي.",
+              "en": "Incorrect. The vasa recta remain fully patent. The gradient is lost because the active transport engine (NKCC2) is blocked."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Furosemid renal ters-akım çoğaltıcı mekanizmasını felç eder. NKCC2'nin bloke edilmesi, 1200 mOsm/L'lik kortikomedüller osmotik gradyanı neden tamamen yok ederek idrarı konsantre veya dilüe etme yeteneğini sıfırlar?",
+          "ar": "يشل الفوروسيميد آلية التيار المتعاكس الكلوية. لماذا يؤدي حصر NKCC2 لتدمير المدروج التناضحي النخاعي (1200 mOsm/L) كلياً، عاجزاً الكلية عن تكثيف البول أو تمديده؟",
+          "en": "Furosemide paralyzes the renal countercurrent multiplier. Why does blocking NKCC2 completely destroy the corticomedullary osmotic gradient (1200 mOsm/L), rendering the kidney incapable of concentrating or diluting urine?"
+        },
+        "title": {
+          "tr": "Rehberli Keşif: Ters-Akım Çoğaltıcı Sisteminin Çöküşü",
+          "ar": "استكشاف موجه: انهيار آلية التيار المتعاكس المضاعفة",
+          "en": "Guided Discovery: Collapse of the Countercurrent Multiplier"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 24
+        }
+      ]
     },
     {
-      "id": "pharm-mod5-les2-step-07",
-      "stage": "formal_explanation",
+      "id": "pharm-mod5-les2-step7",
+      "order": 7,
       "stageIndex": 7,
+      "stage": "formal_explanation",
+      "type": "question",
       "title": {
-        "tr": "Elektrolit ve Asit-Baz Profilleri",
-        "ar": "توازن الشوارد والحمض والأساس",
-        "en": "Formal Comparison: Electrolyte & Acid-Base Signatures"
+        "tr": "Biçimsel Açıklama: Diüretik Metabolik Komplikasyonları: Gut ve Alkaloz",
+        "ar": "شرح رسمي: الاختلاطات الاستقلابية للمدرات: النقرس والقلاء",
+        "en": "Formal Explanation: Diuretic Metabolic Complications: Gout & Alkalosis"
       },
       "prompt": {
-        "tr": "Kıvrım: Na+, K+, Cl-, Ca2+, Mg2+ atar (hipokalsemi riski). Tiyazid: Na+, K+, Cl- atar fakat Ca2+ tutar (hiperkalsemi yapabilir).",
-        "ar": "مدرات العروة: تطرح Na+ و K+ و Ca2+ (خطر نقص الكالسيوم). الثيازيدات: تطرح Na+ و K+ لكنها تحبس Ca2+ بالجسم.",
-        "en": "Loop diuretics: Ca2+ wasting, hypokalemic metabolic alkalosis. Thiazides: Ca2+ sparing (hypercalcemia), hypokalemic metabolic alkalosis."
+        "tr": "Kronik kıvrım ve tiyazid diüretikleri neden sıklıkla akut hiperürisemi ve gut ataklarını tetiklerken aynı zamanda hipokalemik metabolik alkaloza yol açar?",
+        "ar": "لماذا تثير مدرات العروة والثيازيد المزمنة فرط حمض البول وهجمات النقرس، بالتزامن مع إحداث قلاء استقلابي بنقص البوتاسيوم؟",
+        "en": "Why do chronic loop and thiazide diuretics frequently precipitate acute hyperuricemia and gout flares, while simultaneously causing hypokalemic metabolic alkalosis?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "hipokalemi",
-          "arContext": "نقص بوتاسيوم الدم"
+          "term": "hipokalemik metabolik alkaloz",
+          "arContext": "قلاء استقلابي بنقص بوتاسيوم الدم (hypokalemic metabolic alkalosis)"
         },
         {
-          "term": "kalsiyum tutulumu",
-          "arContext": "احتباس الكالسيوم"
+          "term": "hiperürisemi",
+          "arContext": "فرط حمض يوريك الدم (hyperuricemia)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Organik asitlerin (diüretikler ve ürik asit) proksimal tübülde nasıl atıldığını düşünün.",
+          "ar": "فكر في كيفية إفراز الأحماض العضوية (المدرات وحمض البول) في الأنبوب القريب.",
+          "en": "Consider how organic acids (diuretics and uric acid) are cleared in the proximal tubule."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Diüretikler OAT1/3 taşıyıcılarında ürik asitle yarışır; hipovolemi ise üratın geri emilimini artırır.",
+          "ar": "تنافس المدرات حمض البول على نواقل OAT1/3؛ ويزيد نقص الحجم ارتشاف اليورات.",
+          "en": "Diuretics compete with urate for OAT1/3 transporters, while hypovolemia drives proximal urate reabsorption."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "OAT yarışması ve hacim kaybı ürik asidi kanda yükseltir (gut). Distal sodyum akışı ise toplayıcı kanallarda H+ ve K+ kaybına yol açar (alkaloz).",
+          "ar": "يرفع تنافس OAT ونقص الحجم حمض البول (نقرس)؛ بينما يحفز تدفق الصوديوم البعيد إطراح H+ و K+ (قلاء استقلابي).",
+          "en": "OAT competition plus hypovolemia elevates serum uric acid (gout). Meanwhile, distal Na+ delivery drives aldosterone-mediated H+ and K+ wasting (alkalosis)."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "conceptCheck": {
+        "question": {
+          "tr": "Diüretiklerin hiperürisemi (gut) ve hipokalemik metabolik alkaloz yapma mekanizmaları nasıldır?",
+          "ar": "ما هي آليات إحداث المدرات لفرط حمض البول (النقرس) والقلاء الاستقلابي بنقص البوتاسيوم؟",
+          "en": "What are the mechanisms underlying diuretic-induced hyperuricemia and hypokalemic metabolic alkalosis?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Diüretikler proksimal OAT1/3 salgısında ürik asitle yarışır ve hacim kaybı ürat geri emilimini artırır; distal sodyum ise K+ ve H+ atılımını hızlandırır.",
+              "ar": "تنافس المدرات حمض البول على الإفراز عبر OAT1/3 القريب ويزيد نقص الحجم ارتشافه؛ بينما يسرع تدفق الصوديوم البعيد إطراح K+ و H+.",
+              "en": "Diuretics compete with uric acid for proximal OAT1/3 secretion and volume depletion enhances proximal urate reabsorption; distal sodium delivery accelerates K+ and H+ secretion."
+            },
+            "feedback": {
+              "tr": "Doğru. Diüretikler organik asit taşıyıcılarında (OAT) ürik asitle yarışır ve hipovolemi ürik asit emilimini artırır (gut). Distal sodyum yükü ise K+ ve H+ kaybına yol açar (alkaloz).",
+              "ar": "صحيح. تنافس المدرات حمض البول على نواقل OAT ويزيد نقص الحجم امتصاصه (نقرس). كما يقود تدفق الصوديوم لإطراح البوتاسيوم والبروتون (قلاء).",
+              "en": "Correct. Diuretics compete with uric acid at proximal OATs; hypovolemia enhances urate reabsorption. Distal Na+ delivery drives K+ and H+ wasting."
+            }
+          },
+          {
+            "id": "opt-l10-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazid molekülleri hepatik ksantin oksidaz tarafından doğrudan ürik asit kristallerine metabolize edilir.",
+              "ar": "تستقلب جزيئات الثيازيد مباشرة إلى بلورات حمض البول بواسطة إنزيم أوكسيداز الزانثين الكبدي.",
+              "en": "Thiazide molecules are metabolized directly into uric acid crystals by hepatic xanthine oxidase."
+            },
+            "feedback": {
+              "tr": "Yanlış. Diüretikler ürik aside dönüşmez; hiperürisemi proksimal tübüler OAT atılım yarışmasından kaynaklanır.",
+              "ar": "غير صحيح. لا تتحول المدرات لحمض البول؛ بل ينجم فرط حمض البول عن تنافس الإطراح الأنبوبي عبر نواقل OAT.",
+              "en": "Incorrect. Diuretics do not turn into uric acid; hyperuricemia is an excretory defect via OAT competition."
+            }
+          },
+          {
+            "id": "opt-l10-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Diüretikler devasa proksimal bikarbonat salınımını uyarır ve bu da paradoksal olarak arter kanını alkalileştirir.",
+              "ar": "تحفز المدرات إفرازاً كبيباً هائلاً للبيكربونات، مما يقلي دم الشرايين بشكل متناقض.",
+              "en": "Diuretics stimulate massive proximal bicarbonate secretion, which paradoxically alkalizes systemic arterial blood."
+            },
+            "feedback": {
+              "tr": "Yanlış. Bikarbonat atılımı metabolik asidoz yapar (asetazolamid gibi). Kıvrım ve tiyazid diüretikleri ise proton kaybı ve hacim daralması ile alkaloz yapar.",
+              "ar": "غير صحيح. طرح البيكربونات يسبب حماضاً استقلابياً (كـ أسيتازولاميد). تحدث مدرات العروة قلاءً بفقدان البروتونات وانكماش الحجم.",
+              "en": "Incorrect. Bicarbonate wasting causes metabolic acidosis (e.g., acetazolamide). Loop and thiazide diuretics cause alkalosis via proton loss and contraction."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s7-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Diüretikler proksimal OAT1/3 salgısında ürik asitle yarışır ve hacim kaybı ürat geri emilimini artırır; distal sodyum ise K+ ve H+ atılımını hızlandırır.",
+              "ar": "تنافس المدرات حمض البول على الإفراز عبر OAT1/3 القريب ويزيد نقص الحجم ارتشافه؛ بينما يسرع تدفق الصوديوم البعيد إطراح K+ و H+.",
+              "en": "Diuretics compete with uric acid for proximal OAT1/3 secretion and volume depletion enhances proximal urate reabsorption; distal sodium delivery accelerates K+ and H+ secretion."
+            },
+            "feedback": {
+              "tr": "Doğru. Diüretikler organik asit taşıyıcılarında (OAT) ürik asitle yarışır ve hipovolemi ürik asit emilimini artırır (gut). Distal sodyum yükü ise K+ ve H+ kaybına yol açar (alkaloz).",
+              "ar": "صحيح. تنافس المدرات حمض البول على نواقل OAT ويزيد نقص الحجم امتصاصه (نقرس). كما يقود تدفق الصوديوم لإطراح البوتاسيوم والبروتون (قلاء).",
+              "en": "Correct. Diuretics compete with uric acid at proximal OATs; hypovolemia enhances urate reabsorption. Distal Na+ delivery drives K+ and H+ wasting."
+            }
+          },
+          {
+            "id": "opt-l10-s7-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazid molekülleri hepatik ksantin oksidaz tarafından doğrudan ürik asit kristallerine metabolize edilir.",
+              "ar": "تستقلب جزيئات الثيازيد مباشرة إلى بلورات حمض البول بواسطة إنزيم أوكسيداز الزانثين الكبدي.",
+              "en": "Thiazide molecules are metabolized directly into uric acid crystals by hepatic xanthine oxidase."
+            },
+            "feedback": {
+              "tr": "Yanlış. Diüretikler ürik aside dönüşmez; hiperürisemi proksimal tübüler OAT atılım yarışmasından kaynaklanır.",
+              "ar": "غير صحيح. لا تتحول المدرات لحمض البول؛ بل ينجم فرط حمض البول عن تنافس الإطراح الأنبوبي عبر نواقل OAT.",
+              "en": "Incorrect. Diuretics do not turn into uric acid; hyperuricemia is an excretory defect via OAT competition."
+            }
+          },
+          {
+            "id": "opt-l10-s7-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Diüretikler devasa proksimal bikarbonat salınımını uyarır ve bu da paradoksal olarak arter kanını alkalileştirir.",
+              "ar": "تحفز المدرات إفرازاً كبيباً هائلاً للبيكربونات، مما يقلي دم الشرايين بشكل متناقض.",
+              "en": "Diuretics stimulate massive proximal bicarbonate secretion, which paradoxically alkalizes systemic arterial blood."
+            },
+            "feedback": {
+              "tr": "Yanlış. Bikarbonat atılımı metabolik asidoz yapar (asetazolamid gibi). Kıvrım ve tiyazid diüretikleri ise proton kaybı ve hacim daralması ile alkaloz yapar.",
+              "ar": "غير صحيح. طرح البيكربونات يسبب حماضاً استقلابياً (كـ أسيتازولاميد). تحدث مدرات العروة قلاءً بفقدان البروتونات وانكماش الحجم.",
+              "en": "Incorrect. Bicarbonate wasting causes metabolic acidosis (e.g., acetazolamide). Loop and thiazide diuretics cause alkalosis via proton loss and contraction."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Kronik kıvrım ve tiyazid diüretikleri neden sıklıkla akut hiperürisemi ve gut ataklarını tetiklerken aynı zamanda hipokalemik metabolik alkaloza yol açar?",
+          "ar": "لماذا تثير مدرات العروة والثيازيد المزمنة فرط حمض البول وهجمات النقرس، بالتزامن مع إحداث قلاء استقلابي بنقص البوتاسيوم؟",
+          "en": "Why do chronic loop and thiazide diuretics frequently precipitate acute hyperuricemia and gout flares, while simultaneously causing hypokalemic metabolic alkalosis?"
+        },
+        "title": {
+          "tr": "Biçimsel Açıklama: Diüretik Metabolik Komplikasyonları: Gut ve Alkaloz",
+          "ar": "شرح رسمي: الاختلاطات الاستقلابية للمدرات: النقرس والقلاء",
+          "en": "Formal Explanation: Diuretic Metabolic Complications: Gout & Alkalosis"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 25
         }
       ]
     },
     {
-      "id": "pharm-mod5-les2-step-08",
-      "stage": "concept_check",
+      "id": "pharm-mod5-les2-step8",
+      "order": 8,
       "stageIndex": 8,
+      "stage": "concept_check",
+      "type": "question",
       "title": {
-        "tr": "Kavram Denetimi: Osteoporozlu Hipertansiyon Hastası",
-        "ar": "فحص المفهوم: مريض ضغط مصاب بهشاشة العظام",
-        "en": "Concept Check: Hypertensive Patient with Osteoporosis"
+        "tr": "Kavram Kontrolü: Furosemid ve Digoksin Ölümcül Aritmi Tuzağı",
+        "ar": "تحقق مفاهيمي: فخ اضطراب النظم المميت بين فوروسيميد وديجوكسين",
+        "en": "Concept Check: The Furosemide-Digoxin Lethal Arrhythmia Trap"
       },
       "prompt": {
-        "tr": "Kemik erimesi (osteoporoz) olan bir hipertansiyon hastasında furosemid yerine neden tiyazid tercih edilir?",
-        "ar": "في مريض ضغط يعاني من هشاشة العظام، لماذا يفضل مدر Thiazide على Furosemide؟",
-        "en": "Why are thiazide diuretics uniquely advantageous for hypertensive patients with concurrent osteoporosis?"
+        "tr": "Digoksin kullanan bir kalp yetmezliği hastasına potasyum desteği verilmeden yüksek doz furosemid başlanıyor. Günler içinde ventriküler bigemini ve ölümcül fibrilasyon gelişiyor. Hangi moleküler mekanizma bu aritmiyi tetikledi?",
+        "ar": "بدأ مريض قصور قلب يعالج بالديجوكسين فوروسيميد عالي الجرعة دون تعويض البوتاسيوم. وخلال أيام حدث توأمية بطينية ورجفان مميت. ما الآلية الجزيئية المحفزة؟",
+        "en": "A heart failure patient receiving digoxin is started on high-dose furosemide without potassium supplementation. Within days, ventricular bigeminy and fatal fibrillation occur. What molecular mechanism triggered this arrhythmia?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Tiyazidlerin renal kalsiyum tutucu etkisi osteoporozda ek fayda sağlar."
+      "conceptCheck": {
+        "question": {
+          "tr": "Furosemid kaynaklı hipokalemi digoksin toksisitesini ve fatal aritmileri moleküler olarak nasıl tetikler?",
+          "ar": "كيف يحفز نقص البوتاسيوم الناجم عن فوروسيميد سمية الديجوكسين واضطرابات النظم المميتة؟",
+          "en": "How does furosemide-induced hypokalemia molecularly precipitate digoxin toxicity and fatal arrhythmias?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s8-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Furosemid kaynaklı hipokalemi, kardiyak Na+/K+-ATPazın ekstraselüler bölgesindeki potasyum yarışmasını kaldırır; digoksin bağlanmasını, toksisitesini ve ölümcül ard-depolarizasyonları aşırı artırır.",
+              "ar": "يزيل نقص البوتاسيوم الناجم عن الفوروسيميد التنافس على الموقع الخارجي لمضخة Na+/K+ القلبية، مضاعفاً ارتباط الديجوكسين وسميته واضطرابات النظم.",
+              "en": "Furosemide-induced hypokalemia removes potassium competition at the extracellular binding site of cardiac Na+/K+-ATPase, massively potentiating digoxin binding, toxicity, and triggered afterdepolarizations."
+            },
+            "feedback": {
+              "tr": "Doğru. Potasyum ve digoksin Na+/K+-ATPaz üzerindeki aynı ekstraselüler cep için yarışır. Hipokalemi koruyucu kalkanı kaldırır; terapötik digoksin seviyesi bile ölümcül kalsiyum yüklenmesine yol açar.",
+              "ar": "صحيح. يتنافس البوتاسيوم والديجوكسين على نفس الجيب الخارجي للمضخة. يزيل نقص البوتاسيوم الحماية، مما يجعل الجرعات العلاجية سامة وقاتلة بتراكم الكالسيوم.",
+              "en": "Correct. Extracellular potassium and digoxin compete for the same binding site on Na+/K+-ATPase. Hypokalemia removes competition, precipitating toxic calcium overload."
+            }
+          },
+          {
+            "id": "opt-l10-s8-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid, renal digoksin salgısını durduran, serum digoksin konsantrasyonunu 10 kat artıran güçlü bir P-glikoprotein inhibitörüdür.",
+              "ar": "الفوروسيميد مثبط قوي لبروتين P السكري يوقف إفراز الديجوكسين الكلوي، مضاعفاً تركيزه 10 أضعاف.",
+              "en": "Furosemide is a potent P-glycoprotein inhibitor that halts renal digoxin secretion, multiplying serum digoxin concentrations 10-fold."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid P-glikoproteini inhibe etmez (amiodaron ve kinidin eder). Aritmi kan düzeyinden değil, hipokalemi kaynaklı farmakodinamik duyarlılıktan kaynaklanır.",
+              "ar": "غير صحيح. لا يثبط فوروسيميد بروتين P السكري (بل يفعل ذلك كينيدين وأميودارون). ينجم التسمم عن حساسية ديناميكية دوائية بنقص البوتاسيوم.",
+              "en": "Incorrect. Furosemide does not inhibit P-glycoprotein; the arrhythmia is driven by pharmacodynamic hypokalemia, not elevated drug levels."
+            }
+          },
+          {
+            "id": "opt-l10-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid ventriküler miyositlere girerek hızlı sodyum kanallarını doğrudan açar ve aksiyon potansiyelini uzatır.",
+              "ar": "يعبر الفوروسيميد للخلايا البطينية فاتحاً قنوات الصوديوم السريعة مباشرة ومطولاً كمون العمل.",
+              "en": "Furosemide crosses into ventricular myocytes and directly opens fast sodium channels, prolonging action potentials."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemidin kardiyak hızlı sodyum kanalları üzerinde hiçbir doğrudan etkisi yoktur; toksisite tamamen hipokalemi kaynaklıdır.",
+              "ar": "غير صحيح. ليس للفوروسيميد تأثير مباشر على قنوات الصوديوم القلبية؛ بل السمية ناجمة حصراً عن استنزاف البوتاسيوم الخارجي.",
+              "en": "Incorrect. Furosemide has no direct action on cardiac sodium channels; toxicity is purely mediated by extracellular potassium depletion."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "digoksin toksisitesi",
+          "arContext": "سمية الديجوكسين (digoxin toxicity)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Digoksinin hedef enzimine bakın: kardiyak miyosit membranındaki Na+/K+-ATPaz pompası.",
+          "ar": "انتبه للإنزيم المستهدف بالديجوكسين: مضخة Na+/K+-ATPase في غشاء الخلية القلبية.",
+          "en": "Look at the target enzyme of digoxin: the cardiac sarcolemmal Na+/K+-ATPase pump."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Ekstraselüler ortamda digoksin ile hangi fizyolojik katyon aynı bağlanma cebi için yarışır?",
+          "ar": "أي كاتيون فسيولوجي ينافس الديجوكسين على جيب الارتباط الخارجي للمضخة؟",
+          "en": "What physiological cation competes with digoxin for the extracellular binding pocket on the pump?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "Ekstraselüler K+ digoksinle yarışır. Furosemid hipokalemi yaptığında yarışma biter; digoksin aşırı bağlanarak hücre içi kalsiyum patlamasına ve ölümcül aritmiye yol açar.",
+          "ar": "ينافس البوتاسيوم الديجوكسين. عند حدوث نقص البوتاسيوم بفوروسيميد، يرتبط الديجوكسين دون منازع مسبباً فرط الكالسيوم القاتل واضطراب النظم.",
+          "en": "Extracellular K+ competes with digoxin for the Na+/K+-ATPase. When furosemide causes hypokalemia, digoxin binds unopposed, triggering toxic calcium overload and arrhythmias."
         }
       ],
-      "conceptCheck": {
+      "widgetType": "MultipleChoice",
+      "config": {
         "options": [
           {
-            "id": "opt-ph52-5",
+            "id": "opt-l10-s8-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Tiyazidler kalsiyumun idrarla atılımını azaltarak kemikleri korur.",
-              "ar": "لأن الثيازيدات تقلل طرح الكالسيوم البولي مما يحمي العظام من التآكل.",
-              "en": "Thiazides enhance distal renal tubular calcium reabsorption, preserving bone mineral density."
+              "tr": "Furosemid kaynaklı hipokalemi, kardiyak Na+/K+-ATPazın ekstraselüler bölgesindeki potasyum yarışmasını kaldırır; digoksin bağlanmasını, toksisitesini ve ölümcül ard-depolarizasyonları aşırı artırır.",
+              "ar": "يزيل نقص البوتاسيوم الناجم عن الفوروسيميد التنافس على الموقع الخارجي لمضخة Na+/K+ القلبية، مضاعفاً ارتباط الديجوكسين وسميته واضطرابات النظم.",
+              "en": "Furosemide-induced hypokalemia removes potassium competition at the extracellular binding site of cardiac Na+/K+-ATPase, massively potentiating digoxin binding, toxicity, and triggered afterdepolarizations."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Potasyum ve digoksin Na+/K+-ATPaz üzerindeki aynı ekstraselüler cep için yarışır. Hipokalemi koruyucu kalkanı kaldırır; terapötik digoksin seviyesi bile ölümcül kalsiyum yüklenmesine yol açar.",
+              "ar": "صحيح. يتنافس البوتاسيوم والديجوكسين على نفس الجيب الخارجي للمضخة. يزيل نقص البوتاسيوم الحماية، مما يجعل الجرعات العلاجية سامة وقاتلة بتراكم الكالسيوم.",
+              "en": "Correct. Extracellular potassium and digoxin compete for the same binding site on Na+/K+-ATPase. Hypokalemia removes competition, precipitating toxic calcium overload."
+            }
           },
           {
-            "id": "opt-ph52-6",
+            "id": "opt-l10-s8-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Tiyazid kalsiyumu idrarla atar.",
-              "ar": "لأن الثيازيد يطرح الكالسيوم بالبول.",
-              "en": "Thiazides excrete high amounts of calcium."
+              "tr": "Furosemid, renal digoksin salgısını durduran, serum digoksin konsantrasyonunu 10 kat artıran güçlü bir P-glikoprotein inhibitörüdür.",
+              "ar": "الفوروسيميد مثبط قوي لبروتين P السكري يوقف إفراز الديجوكسين الكلوي، مضاعفاً تركيزه 10 أضعاف.",
+              "en": "Furosemide is a potent P-glycoprotein inhibitor that halts renal digoxin secretion, multiplying serum digoxin concentrations 10-fold."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Furosemid P-glikoproteini inhibe etmez (amiodaron ve kinidin eder). Aritmi kan düzeyinden değil, hipokalemi kaynaklı farmakodinamik duyarlılıktan kaynaklanır.",
+              "ar": "غير صحيح. لا يثبط فوروسيميد بروتين P السكري (بل يفعل ذلك كينيدين وأميودارون). ينجم التسمم عن حساسية ديناميكية دوائية بنقص البوتاسيوم.",
+              "en": "Incorrect. Furosemide does not inhibit P-glycoprotein; the arrhythmia is driven by pharmacodynamic hypokalemia, not elevated drug levels."
+            }
+          },
+          {
+            "id": "opt-l10-s8-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid ventriküler miyositlere girerek hızlı sodyum kanallarını doğrudan açar ve aksiyon potansiyelini uzatır.",
+              "ar": "يعبر الفوروسيميد للخلايا البطينية فاتحاً قنوات الصوديوم السريعة مباشرة ومطولاً كمون العمل.",
+              "en": "Furosemide crosses into ventricular myocytes and directly opens fast sodium channels, prolonging action potentials."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemidin kardiyak hızlı sodyum kanalları üzerinde hiçbir doğrudan etkisi yoktur; toksisite tamamen hipokalemi kaynaklıdır.",
+              "ar": "غير صحيح. ليس للفوروسيميد تأثير مباشر على قنوات الصوديوم القلبية؛ بل السمية ناجمة حصراً عن استنزاف البوتاسيوم الخارجي.",
+              "en": "Incorrect. Furosemide has no direct action on cardiac sodium channels; toxicity is purely mediated by extracellular potassium depletion."
+            }
           }
-        ]
-      }
+        ],
+        "prompt": {
+          "tr": "Digoksin kullanan bir kalp yetmezliği hastasına potasyum desteği verilmeden yüksek doz furosemid başlanıyor. Günler içinde ventriküler bigemini ve ölümcül fibrilasyon gelişiyor. Hangi moleküler mekanizma bu aritmiyi tetikledi?",
+          "ar": "بدأ مريض قصور قلب يعالج بالديجوكسين فوروسيميد عالي الجرعة دون تعويض البوتاسيوم. وخلال أيام حدث توأمية بطينية ورجفان مميت. ما الآلية الجزيئية المحفزة؟",
+          "en": "A heart failure patient receiving digoxin is started on high-dose furosemide without potassium supplementation. Within days, ventricular bigeminy and fatal fibrillation occur. What molecular mechanism triggered this arrhythmia?"
+        },
+        "title": {
+          "tr": "Kavram Kontrolü: Furosemid ve Digoksin Ölümcül Aritmi Tuzağı",
+          "ar": "تحقق مفاهيمي: فخ اضطراب النظم المميت بين فوروسيميد وديجوكسين",
+          "en": "Concept Check: The Furosemide-Digoxin Lethal Arrhythmia Trap"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 26
+        }
+      ]
     },
     {
-      "id": "pharm-mod5-les2-step-09",
-      "stage": "application",
+      "id": "pharm-mod5-les2-step9",
+      "order": 9,
       "stageIndex": 9,
+      "stage": "application",
+      "type": "question",
       "title": {
-        "tr": "Kombinasyon Sanatı: Tiyazid + Spironolakton",
-        "ar": "فن المشاركة الدوائية: Thiazide + Spironolactone",
-        "en": "Combination Art: Thiazide Plus Spironolactone"
+        "tr": "Klinik Vaka: İleri Böbrek Yetmezliğinde Tiyazid Yetersizliği ve Kıvrım Zorunluluğu",
+        "ar": "حالة سريرية: عجز الثيازيد في القصور الكلوي وإلزامية مدرات العروة",
+        "en": "Clinical Vignette: Renal Failure: Thiazide Inefficacy vs High-Ceiling Loops"
       },
       "prompt": {
-        "tr": "Tiyazid diüretiğinin yanına spironolakton eklenmesi neden mükemmel bir farmakolojik dengedir?",
-        "ar": "لماذا تعتبر إضافة Spironolactone إلى مدر Thiazide توازناً فارماكولوجياً متقناً؟",
-        "en": "Why is spironolactone or amiloride frequently co-prescribed with hydrochlorothiazide in essential hypertension?"
+        "tr": "eGFR'si 22 mL/dak'ya gerileyen diyabetik nefropati hastasında, hidroklorotiyazid maksimum doza çıkılmasına rağmen dirençli sıvı retansiyonu görülür. Tiyazidler neden etkisizdir ve hangi tedavi değişikliği zorunludur?",
+        "ar": "أصيب مريض اعتلال كلى سكري تراجع GFR لديه لـ 22 مل/د باحتباس سوائل معند رغم رفع هيدروكلوروثيازيد للحد الأقصى. لماذا تفشل الثيازيدات وما التعديل الإلزامي؟",
+        "en": "A diabetic nephropathy patient whose eGFR declines to 22 mL/min exhibits refractory fluid retention despite increasing hydrochlorothiazide to maximum dose. Why are thiazides ineffective, and what therapeutic adjustment is mandatory?"
       },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Potasyum tutucu kombinasyonlar aritmi riskini minimize eder."
+      "conceptCheck": {
+        "question": {
+          "tr": "eGFR < 30 mL/dak olan hastalarda tiyazidlerin etkisiz kalma nedeni ve klinik çözüm nedir?",
+          "ar": "ما سبب عجز الثيازيد حين يقل GFR عن 30 مل/د وما هو الحل السريري؟",
+          "en": "Why do thiazides lose efficacy when eGFR falls below 30 mL/min, and what is the clinical solution?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s9-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "eGFR < 30 mL/dak olduğunda yetersiz distal sodyum iletimi nedeniyle tiyazidler etkisini kaybeder; tedavi yüksek tavanlı bir kıvrım diüretiğine (furosemid, torsemid) geçirilmelidir.",
+              "ar": "تفقد الثيازيدات فعاليتها حين ينخفض GFR دون 30 مل/د لعدم كفاية الصوديوم الواصل للأنابيب البعيدة؛ ويجب الانتقال لمدرات العروة عالية الفعالية (فوروسيميد، تورسيميد).",
+              "en": "Thiazides lose efficacy when eGFR < 30 mL/min due to inadequate distal sodium delivery; therapy must transition to a high-ceiling loop diuretic (e.g., furosemide, torsemide)."
+            },
+            "feedback": {
+              "tr": "Doğru. Tiyazidlerin etkili olması için yeterli filtrasyon (eGFR > 30 mL/dak) gerekir. 30'un altında distal sodyum yetersiz kalır ve yüksek tavanlı kıvrım diüretiklerine geçiş zorunludur.",
+              "ar": "صحيح. تتطلب الثيازيدات رشحاً كافياً (>30 مل/د) للوصول لموقع عملها؛ ودون ذلك يجب التحول فوراً لمدرات العروة عالية الفعالية.",
+              "en": "Correct. Thiazides require adequate GFR (>30 mL/min) for distal delivery. When eGFR < 30 mL/min, high-ceiling loop diuretics are mandatory."
+            }
+          },
+          {
+            "id": "opt-l10-s9-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hidroklorotiyazidi, glomerüler filtrasyondan bağımsız etki eden yüksek doz spironolakton monoterapisine geçirin.",
+              "ar": "استبدل هيدروكلوروثيازيد بجرعة عالية من سبيرونولاكتون كعلاج وحيد يعمل باستقلال عن الرشح الكبيبي.",
+              "en": "Switch hydrochlorothiazide to high-dose spironolactone monotherapy, which acts independently of glomerular filtration."
+            },
+            "feedback": {
+              "tr": "Yanlış. eGFR < 30 mL/dak olan hastada spironolakton monoterapisi zayıf bir natriüretiktir ve ölümcül hiperkalemi riski taşır.",
+              "ar": "غير صحيح. سبيرونولاكتون مدر ضعيف للصوديوم، ويشكل خطراً مميتاً لفرط البوتاسيوم في مرضى قصور الكلى الشديد.",
+              "en": "Incorrect. Spironolactone monotherapy is a weak natriuretic and poses an extreme risk of fatal hyperkalemia in patients with eGFR < 30 mL/min."
+            }
+          },
+          {
+            "id": "opt-l10-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hastalıklı böbrek, hidroklorotiyazidi aktif serbest sülfonamid formuna enzimatik olarak hidroksilleyemez.",
+              "ar": "تعجز الكلى المصابة عن هدرجة هيدروكلوروثيازيد إنزيمياً إلى شكله النشط من السلفوناميد الحر.",
+              "en": "The diseased kidney fails to enzymatically hydroxylate hydrochlorothiazide into its active free sulfonamide form."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hidroklorotiyazid ön-ilaç değildir ve böbrekte metabolize edilmez; başarısızlık tamamen hemodinamik yetersizliktendir.",
+              "ar": "غير صحيح. هيدروكلوروثيازيد دواء نشط بذاته ولا يحتاج استقلاباً كلوياً؛ بل الفشل ناتج عن نقص الحمل الهيدروديناميكي الواصل للأنبوب.",
+              "en": "Incorrect. Hydrochlorothiazide is active parent drug; failure is purely hemodynamic due to insufficient filtration."
+            }
+          }
+        ]
       },
       "technicalTerms": [
         {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
+          "term": "diüretik direnci",
+          "arContext": "مقاومة مدرات البول (diuretic resistance)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "Tiyazid diüretikleri için kritik eGFR eşiğini hatırlayın: 30 mL/dak.",
+          "ar": "تذكر عتبة GFR الحرجة لفعالية مدرات الثيازيد: 30 مل/دقيقة.",
+          "en": "Recall the critical eGFR threshold for thiazide diuretics: 30 mL/min."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Glomerüler filtrasyon ciddi şekilde düştüğünde, distal kıvrımlı tübüle tiyazidlerin etki edebileceği kadar sodyum ulaşabilir mi?",
+          "ar": "عند هبوط الرشح بشدة، هل يصل صوديوم كافٍ للأنبوب البعيد لتعمل عليه الثيازيدات؟",
+          "en": "When GFR is severely reduced, does enough sodium reach the distal tubule for thiazides to work?"
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
+          "tier": 3,
+          "tr": "eGFR < 30 mL/dak olduğunda yetersiz sodyum iletimi nedeniyle tiyazidler çalışmaz; tedavi yüksek tavanlı bir kıvrım diüretiğine (furosemid) geçirilmelidir.",
+          "ar": "حين يقل GFR عن 30 مل/د تفقد الثيازيدات فعاليتها لقلة الصوديوم الواصل؛ ويجب الانتقال لمدرات العروة عالية الفعالية مثل فوروسيميد.",
+          "en": "Thiazides fail when eGFR < 30 mL/min due to inadequate distal sodium delivery; transitioning to a high-ceiling loop diuretic (furosemide) is mandatory."
         }
       ],
-      "conceptCheck": {
+      "widgetType": "MultipleChoice",
+      "config": {
         "options": [
           {
-            "id": "opt-ph52-7",
+            "id": "opt-l10-s9-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Tiyazidin attırdığı potasyumu spironolakton tutarak serum potasyumunu dengede tutar.",
-              "ar": "لأن سبيرونولاكتون يحبس البوتاسيوم فيعوض النقص الذي يحدثه الثيازيد ويحفظ التوازن.",
-              "en": "Spironolactone retains potassium, neutralizing thiazide-induced hypokalemia."
+              "tr": "eGFR < 30 mL/dak olduğunda yetersiz distal sodyum iletimi nedeniyle tiyazidler etkisini kaybeder; tedavi yüksek tavanlı bir kıvrım diüretiğine (furosemid, torsemid) geçirilmelidir.",
+              "ar": "تفقد الثيازيدات فعاليتها حين ينخفض GFR دون 30 مل/د لعدم كفاية الصوديوم الواصل للأنابيب البعيدة؛ ويجب الانتقال لمدرات العروة عالية الفعالية (فوروسيميد، تورسيميد).",
+              "en": "Thiazides lose efficacy when eGFR < 30 mL/min due to inadequate distal sodium delivery; therapy must transition to a high-ceiling loop diuretic (e.g., furosemide, torsemide)."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Tiyazidlerin etkili olması için yeterli filtrasyon (eGFR > 30 mL/dak) gerekir. 30'un altında distal sodyum yetersiz kalır ve yüksek tavanlı kıvrım diüretiklerine geçiş zorunludur.",
+              "ar": "صحيح. تتطلب الثيازيدات رشحاً كافياً (>30 مل/د) للوصول لموقع عملها؛ ودون ذلك يجب التحول فوراً لمدرات العروة عالية الفعالية.",
+              "en": "Correct. Thiazides require adequate GFR (>30 mL/min) for distal delivery. When eGFR < 30 mL/min, high-ceiling loop diuretics are mandatory."
+            }
           },
           {
-            "id": "opt-ph52-8",
+            "id": "opt-l10-s9-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Birbirlerinin etkisini sıfırlarlar.",
-              "ar": "لأنهما يبطلان مفعول بعضهما.",
-              "en": "They cancel out each other's diuretic action."
+              "tr": "Hidroklorotiyazidi, glomerüler filtrasyondan bağımsız etki eden yüksek doz spironolakton monoterapisine geçirin.",
+              "ar": "استبدل هيدروكلوروثيازيد بجرعة عالية من سبيرونولاكتون كعلاج وحيد يعمل باستقلال عن الرشح الكبيبي.",
+              "en": "Switch hydrochlorothiazide to high-dose spironolactone monotherapy, which acts independently of glomerular filtration."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. eGFR < 30 mL/dak olan hastada spironolakton monoterapisi zayıf bir natriüretiktir ve ölümcül hiperkalemi riski taşır.",
+              "ar": "غير صحيح. سبيرونولاكتون مدر ضعيف للصوديوم، ويشكل خطراً مميتاً لفرط البوتاسيوم في مرضى قصور الكلى الشديد.",
+              "en": "Incorrect. Spironolactone monotherapy is a weak natriuretic and poses an extreme risk of fatal hyperkalemia in patients with eGFR < 30 mL/min."
+            }
+          },
+          {
+            "id": "opt-l10-s9-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Hastalıklı böbrek, hidroklorotiyazidi aktif serbest sülfonamid formuna enzimatik olarak hidroksilleyemez.",
+              "ar": "تعجز الكلى المصابة عن هدرجة هيدروكلوروثيازيد إنزيمياً إلى شكله النشط من السلفوناميد الحر.",
+              "en": "The diseased kidney fails to enzymatically hydroxylate hydrochlorothiazide into its active free sulfonamide form."
+            },
+            "feedback": {
+              "tr": "Yanlış. Hidroklorotiyazid ön-ilaç değildir ve böbrekte metabolize edilmez; başarısızlık tamamen hemodinamik yetersizliktendir.",
+              "ar": "غير صحيح. هيدروكلوروثيازيد دواء نشط بذاته ولا يحتاج استقلاباً كلوياً؛ بل الفشل ناتج عن نقص الحمل الهيدروديناميكي الواصل للأنبوب.",
+              "en": "Incorrect. Hydrochlorothiazide is active parent drug; failure is purely hemodynamic due to insufficient filtration."
+            }
           }
-        ]
-      }
+        ],
+        "prompt": {
+          "tr": "eGFR'si 22 mL/dak'ya gerileyen diyabetik nefropati hastasında, hidroklorotiyazid maksimum doza çıkılmasına rağmen dirençli sıvı retansiyonu görülür. Tiyazidler neden etkisizdir ve hangi tedavi değişikliği zorunludur?",
+          "ar": "أصيب مريض اعتلال كلى سكري تراجع GFR لديه لـ 22 مل/د باحتباس سوائل معند رغم رفع هيدروكلوروثيازيد للحد الأقصى. لماذا تفشل الثيازيدات وما التعديل الإلزامي؟",
+          "en": "A diabetic nephropathy patient whose eGFR declines to 22 mL/min exhibits refractory fluid retention despite increasing hydrochlorothiazide to maximum dose. Why are thiazides ineffective, and what therapeutic adjustment is mandatory?"
+        },
+        "title": {
+          "tr": "Klinik Vaka: İleri Böbrek Yetmezliğinde Tiyazid Yetersizliği ve Kıvrım Zorunluluğu",
+          "ar": "حالة سريرية: عجز الثيازيد في القصور الكلوي وإلزامية مدرات العروة",
+          "en": "Clinical Vignette: Renal Failure: Thiazide Inefficacy vs High-Ceiling Loops"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 27
+        }
+      ]
     },
     {
-      "id": "pharm-mod5-les2-step-10",
-      "stage": "retrieval",
+      "id": "pharm-mod5-les2-step10",
+      "order": 10,
       "stageIndex": 10,
+      "stage": "retrieval",
+      "type": "question",
       "title": {
-        "tr": "Geri Çağırma: Henderson-Hasselbalch ve İyon Tuzağı",
-        "ar": "استرجاع معرفي: معادلة Henderson-Hasselbalch والحصار الأيوني",
-        "en": "Retrieval: Henderson-Hasselbalch and Ion Trapping"
+        "tr": "Geri Çağırma: Furosemid Ototoksisitesi ve Spironolakton Jinekomastisi",
+        "ar": "استرجاع: سمية فوروسيميد السمعية وتثدي سبيرونولاكتون",
+        "en": "Retrieval: Furosemide Ototoxicity vs Spironolactone Gynecomastia"
       },
       "prompt": {
-        "tr": "Modül 1 de gördüğümüz gibi zayıf asit ilaçların böbrekten atılımını hızlandırmak için idrar nasıl modifiye ediliyordu?",
-        "ar": "كما تعلمنا في الوحدة 1، كيف كنا نعدل pH البول لتسريع إطراح الأدوية الحامضية الضعيفة؟",
-        "en": "Recall Course A Lesson 2: How can alkalinizing urine with sodium bicarbonate accelerate the excretion of weakly acidic drugs like aspirin?"
+        "tr": "Furosemid kaynaklı ototoksisite (tinnitus, sensörinöral sağırlık) ve spironolakton kaynaklı ağrılı jinekomastiyi hangi moleküler mekanizmalar açıklar?",
+        "ar": "ما الآليتان الجزيئيتان المفسرتان للسمية السمعية الناجمة عن فوروسيميد (طنين، صمم عصبي) والتثدي المؤلم الناجم عن سبيرونولاكتون؟",
+        "en": "Which molecular transport mechanisms account for furosemide-induced ototoxicity (tinnitus, sensorineural deafness) and spironolactone-induced painful gynecomastia?"
       },
-      "predictThenReveal": false,
-      "config": {},
       "technicalTerms": [
         {
-          "term": "idrar alkalileştirme",
-          "arContext": "قلونة البول"
+          "term": "ototoksisite",
+          "arContext": "السمية السمعية (ototoxicity)"
+        },
+        {
+          "term": "jinekomasti",
+          "arContext": "تثدي الرجل (gynecomastia)"
         }
       ],
       "hints": [
         {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
+          "tier": 1,
+          "tr": "İç kulakta bulunan Na-K-2Cl kotransportörünün böbrek dışı izoformunu (NKCC1) düşünün.",
+          "ar": "فكر في النمط الإنزيمي لناقل Na-K-2Cl الموجود في الأذن الداخلية (NKCC1).",
+          "en": "Consider the non-renal isoform of the Na-K-2Cl cotransporter in the inner ear: NKCC1."
         },
         {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
+          "tier": 2,
+          "tr": "Spironolakton, diğer nükleer steroid hormon reseptörleriyle çapraz reaksiyona giren steroid halkalı bir yapıya sahiptir.",
+          "ar": "يمتلك سبيرونولاكتون بنية ستيرويدية تتفاعل تصالبياً مع مستقبلات الهرمونات الجنسية الأخرى.",
+          "en": "Spironolactone possesses a steroid nucleus that cross-reacts with nuclear sex hormone receptors."
         },
         {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod5-les2-step-11",
-      "stage": "connection",
-      "stageIndex": 11,
-      "title": {
-        "tr": "İleri Bağlantı: Merkezi Sinir Sistemi ve Nörofarmakoloji (Modül 6)",
-        "ar": "ربط مفاهيمي: الجهاز العصبي المركزي (الوحدة 6)",
-        "en": "Connection: Central Nervous System Neuropharmacology (Module 6)"
-      },
-      "prompt": {
-        "tr": "Kardiyovasküler sistemden sonra beynin derinliklerine iniyoruz: Modül 6 da GABA ve Dopamin yolaklarını keşfedeceğiz.",
-        "ar": "بعد القلب والكلى ننطلق لأعماق الدماغ: في الوحدة 6، سنستكشف مسارات GABA والدوبامين العصبية.",
-        "en": "Renal electrolyte transporters regulate peripheral fluid balance, but how do neuronal chloride channels regulate central nervous inhibition?"
-      },
-      "predictThenReveal": false,
-      "config": {},
-      "technicalTerms": [
-        {
-          "term": "merkezi sinir sistemi",
-          "arContext": "الجهاز العصبي المركزي"
+          "tier": 3,
+          "tr": "Furosemid iç kulak stria vaskülaristeki NKCC1'i bloke ederek endolenf potansiyelini bozar. Spironolakton ise androjen reseptörlerini bloke ederek jinekomasti yapar (eplerenon selektiftir).",
+          "ar": "يحصر فوروسيميد NKCC1 في السرة الوعائية للأذن معطلاً كمون اللمف الداخلي؛ ويحصر سبيرونولاكتون مستقبلات الأندروجين مسبباً التثدي (إبليرينون انتقائي).",
+          "en": "Furosemide blocks NKCC1 in the stria vascularis, impairing endolymph generation. Spironolactone cross-reacts with androgen receptors, causing gynecomastia."
         }
       ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ]
-    },
-    {
-      "id": "pharm-mod5-les2-step-12",
-      "stage": "mastery_check",
-      "stageIndex": 12,
-      "title": {
-        "tr": "Ustalık Sınavı: Diüretik Hedefleri",
-        "ar": "اختبار الإتقان: أهداف مدرات البول",
-        "en": "Mastery Assessment: Diuretic Transport Targets"
-      },
-      "prompt": {
-        "tr": "Furosemid gibi kıvrım diüretiklerinin nefrondaki primer moleküler hedefi hangi taşıyıcı sistemdir?",
-        "ar": "ما هو الهدف الجزيئي الأساسي لمدرات البول العروية مثل Furosemide في الكليون؟",
-        "en": "Which molecular transporter in the thick ascending limb of the loop of Henle is selectively inhibited by furosemide?"
-      },
-      "predictThenReveal": true,
-      "config": {
-        "revealedOutcome": "Modül 5 tamamlandı! 3 review cards eklendi. +50 XP."
-      },
-      "technicalTerms": [
-        {
-          "term": "etki mekanizması",
-          "arContext": "آلية التأثير الدوائي"
-        },
-        {
-          "term": "reseptör",
-          "arContext": "المستقبِل الحيوي"
-        }
-      ],
-      "hints": [
-        {
-          "tr": "1. Aşama İpucu: Temel kavramı ve moleküler mekanizmayı göz önünde bulundurun.",
-          "ar": "تلميح المستوى الأول: انظر في المفهوم الجوهري والآلية الجزيئية الأساسية.",
-          "en": "Tier 1 Hint: Consider the foundational concept and core molecular mechanism."
-        },
-        {
-          "tr": "2. Aşama İpucu: İlgili biyofiziksel kuralı veya denklemi hatırlayın.",
-          "ar": "تلميح المستوى الثاني: تذكر القاعدة الفيزيائية الحيوية أو المعادلة ذات الصلة.",
-          "en": "Tier 2 Hint: Recall the relevant biophysical rule or governing equation."
-        },
-        {
-          "tr": "3. Aşama İpucu: Farmakolojik ilkeyi doğrudan soru senaryosuna uygulayın.",
-          "ar": "تلميح المستوى الثالث: طبق المبدأ الدوائي المعني مباشرة على سيناريو السؤال.",
-          "en": "Tier 3 Hint: Directly apply the pharmacological principle to the scenario."
-        }
-      ],
+      "widgetType": "MultipleChoice",
       "conceptCheck": {
+        "question": {
+          "tr": "Furosemidin iç kulak ototoksisitesi ve spironolaktonun jinekomasti yapmasının moleküler mekanizmaları nelerdir?",
+          "ar": "ما الآليتان الجزيئيتان لإحداث فوروسيميد للسمية السمعية وسبيرونولاكتون للتثدي؟",
+          "en": "What are the molecular mechanisms of furosemide ototoxicity and spironolactone-induced gynecomastia?"
+        },
         "options": [
           {
-            "id": "opt-ph52-9",
+            "id": "opt-l10-s10-1",
+            "isCorrect": true,
             "text": {
-              "tr": "Henle kulpu çıkan kalın kolundaki luminal Na+/K+/2Cl- (NKCC2) kotransportörü.",
-              "ar": "ناقل Na+/K+/2Cl- (NKCC2) اللمعي في الطرف الصاعد الثخين لعروة Henle.",
-              "en": "Na+/K+/2Cl- (NKCC2) cotransporter in the thick ascending limb."
+              "tr": "Furosemid iç kulak stria vaskülaristeki NKCC1'i inhibe eder (endolenf potansiyelini bozar); spironolakton ise androjen reseptörlerini non-selektif bloke ederek jinekomasti yapar.",
+              "ar": "يثبط فوروسيميد NKCC1 في السرة الوعائية للأذن الداخلية (معطلاً كمون اللمف الداخلي)؛ بينما يحصر سبيرونولاكتون مستقبلات الأندروجين مسبباً التثدي.",
+              "en": "Furosemide inhibits inner ear stria vascularis NKCC1 (disrupting endolymph potential); spironolactone non-selectively antagonizes androgen receptors and inhibits 17beta-hydroxysteroid dehydrogenase (causing gynecomastia)."
             },
-            "isCorrect": true
+            "feedback": {
+              "tr": "Doğru. Furosemid iç kulaktaki NKCC1'i bloke ederek endolenf elektrolit dengesini bozar ve ototoksisite yapar. Spironolakton androjen reseptörlerini antagonize edip jinekomastiye yol açar.",
+              "ar": "صحيح. يحصر فوروسيميد NKCC1 في الأذن الداخلية معطلاً شوارد اللمف الداخلي والسمع؛ بينما يحصر سبيرونولاكتون مستقبلات الأندروجين مسبباً التثدي.",
+              "en": "Correct. Furosemide blocks NKCC1 in inner ear stria vascularis, abolishing endocochlear potential. Spironolactone cross-reacts with androgen receptors."
+            }
           },
           {
-            "id": "opt-ph52-10",
+            "id": "opt-l10-s10-2",
+            "isCorrect": false,
             "text": {
-              "tr": "Proksimal tübül glukoz taşıyıcısı.",
-              "ar": "ناقل الجلوكوز في الأنبوب القريب.",
-              "en": "Proximal tubular SGLT2 transporter."
+              "tr": "Furosemid koklear tüy hücrelerini kalsifiye eder; spironolakton aromatazı aktive ederek meme dokusunda östrojen sentezini uyarır.",
+              "ar": "يكلس فوروسيميد الخلايا الشعرية القوقعية؛ بينما ينشط سبيرونولاكتون اصطناع الإستروجين بتفعيل الأروماتاز.",
+              "en": "Furosemide calcifies cochlear hair cells; spironolactone stimulates breast tissue estrogen synthesis via aromatase activation."
             },
-            "isCorrect": false
+            "feedback": {
+              "tr": "Yanlış. Furosemid ototoksisitesi kalsifikasyondan değil, stria vaskülaristeki NKCC1 blokajındandır. Spironolakton ise androjen reseptör blokajı yapar.",
+              "ar": "غير صحيح. السمية السمعية ناتجة عن حصر NKCC1 في السرة الوعائية لا التكلس؛ والتثدي ناجم عن حصر مستقبلات الأندروجين.",
+              "en": "Incorrect. Ototoxicity stems from NKCC1 inhibition altering endolymph K+; gynecomastia stems from androgen receptor blockade."
+            }
+          },
+          {
+            "id": "opt-l10-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Şiddetli sistemik hiperkalemi işitsel tüy hücrelerini depolarize eder ve hipofizden prolaktin salınımını uyarır.",
+              "ar": "يؤدي فرط البوتاسيوم الجهازي الشديد لفرط استقطاب الخلايا السمعية وتحفيز إفراز البرولاكتين النخامي.",
+              "en": "Severe systemic hyperkalemia depolarizes auditory hair cells and stimulates pituitary prolactin release."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid hiperkalemi değil hipokalemi yapar. Her iki toksisite de elektrolit seviyesinden bağımsız doğrudan moleküler etkilerdir.",
+              "ar": "غير صحيح. يسبب فوروسيميد نقص البوتاسيوم لا فرطه. كلا الأثرين الجانبيين ناجمان عن أهداف جزيئية مباشرة خارج الكلية.",
+              "en": "Incorrect. Furosemide causes hypokalemia, not hyperkalemia. Both toxicities are off-target molecular receptor/transporter effects."
+            }
           }
         ]
-      }
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s10-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Furosemid iç kulak stria vaskülaristeki NKCC1'i inhibe eder (endolenf potansiyelini bozar); spironolakton ise androjen reseptörlerini non-selektif bloke ederek jinekomasti yapar.",
+              "ar": "يثبط فوروسيميد NKCC1 في السرة الوعائية للأذن الداخلية (معطلاً كمون اللمف الداخلي)؛ بينما يحصر سبيرونولاكتون مستقبلات الأندروجين مسبباً التثدي.",
+              "en": "Furosemide inhibits inner ear stria vascularis NKCC1 (disrupting endolymph potential); spironolactone non-selectively antagonizes androgen receptors and inhibits 17beta-hydroxysteroid dehydrogenase (causing gynecomastia)."
+            },
+            "feedback": {
+              "tr": "Doğru. Furosemid iç kulaktaki NKCC1'i bloke ederek endolenf elektrolit dengesini bozar ve ototoksisite yapar. Spironolakton androjen reseptörlerini antagonize edip jinekomastiye yol açar.",
+              "ar": "صحيح. يحصر فوروسيميد NKCC1 في الأذن الداخلية معطلاً شوارد اللمف الداخلي والسمع؛ بينما يحصر سبيرونولاكتون مستقبلات الأندروجين مسبباً التثدي.",
+              "en": "Correct. Furosemide blocks NKCC1 in inner ear stria vascularis, abolishing endocochlear potential. Spironolactone cross-reacts with androgen receptors."
+            }
+          },
+          {
+            "id": "opt-l10-s10-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid koklear tüy hücrelerini kalsifiye eder; spironolakton aromatazı aktive ederek meme dokusunda östrojen sentezini uyarır.",
+              "ar": "يكلس فوروسيميد الخلايا الشعرية القوقعية؛ بينما ينشط سبيرونولاكتون اصطناع الإستروجين بتفعيل الأروماتاز.",
+              "en": "Furosemide calcifies cochlear hair cells; spironolactone stimulates breast tissue estrogen synthesis via aromatase activation."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid ototoksisitesi kalsifikasyondan değil, stria vaskülaristeki NKCC1 blokajındandır. Spironolakton ise androjen reseptör blokajı yapar.",
+              "ar": "غير صحيح. السمية السمعية ناتجة عن حصر NKCC1 في السرة الوعائية لا التكلس؛ والتثدي ناجم عن حصر مستقبلات الأندروجين.",
+              "en": "Incorrect. Ototoxicity stems from NKCC1 inhibition altering endolymph K+; gynecomastia stems from androgen receptor blockade."
+            }
+          },
+          {
+            "id": "opt-l10-s10-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Şiddetli sistemik hiperkalemi işitsel tüy hücrelerini depolarize eder ve hipofizden prolaktin salınımını uyarır.",
+              "ar": "يؤدي فرط البوتاسيوم الجهازي الشديد لفرط استقطاب الخلايا السمعية وتحفيز إفراز البرولاكتين النخامي.",
+              "en": "Severe systemic hyperkalemia depolarizes auditory hair cells and stimulates pituitary prolactin release."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid hiperkalemi değil hipokalemi yapar. Her iki toksisite de elektrolit seviyesinden bağımsız doğrudan moleküler etkilerdir.",
+              "ar": "غير صحيح. يسبب فوروسيميد نقص البوتاسيوم لا فرطه. كلا الأثرين الجانبيين ناجمان عن أهداف جزيئية مباشرة خارج الكلية.",
+              "en": "Incorrect. Furosemide causes hypokalemia, not hyperkalemia. Both toxicities are off-target molecular receptor/transporter effects."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Furosemid kaynaklı ototoksisite (tinnitus, sensörinöral sağırlık) ve spironolakton kaynaklı ağrılı jinekomastiyi hangi moleküler mekanizmalar açıklar?",
+          "ar": "ما الآليتان الجزيئيتان المفسرتان للسمية السمعية الناجمة عن فوروسيميد (طنين، صمم عصبي) والتثدي المؤلم الناجم عن سبيرونولاكتون؟",
+          "en": "Which molecular transport mechanisms account for furosemide-induced ototoxicity (tinnitus, sensorineural deafness) and spironolactone-induced painful gynecomastia?"
+        },
+        "title": {
+          "tr": "Geri Çağırma: Furosemid Ototoksisitesi ve Spironolakton Jinekomastisi",
+          "ar": "استرجاع: سمية فوروسيميد السمعية وتثدي سبيرونولاكتون",
+          "en": "Retrieval: Furosemide Ototoxicity vs Spironolactone Gynecomastia"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 28
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step11",
+      "order": 11,
+      "stageIndex": 11,
+      "stage": "connection",
+      "type": "question",
+      "title": {
+        "tr": "Bütünsel Bağlantı: Nöronal Klor Taşınması ve Kıvrım Taşıyıcıları",
+        "ar": "ترابط شمولي: نقل الكلور العصبوني ونواقل العروة",
+        "en": "Holistic Connection: Neuronal Chloride Transport & Loop Transporters"
+      },
+      "prompt": {
+        "tr": "Renal NKCC2 taşıyıcısı nöronal NKCC1 ve KCC2 ile homoloji paylaşır. Nöronal klor taşınması GABA-A reseptör kanallarının hiperpolarizan inhibitör gücünü nasıl yönetir?",
+        "ar": "يتشابه ناقل NKCC2 الكلوي بنيوياً مع NKCC1 و KCC2 العصبونيين. كيف يحكم نقل الكلور العصبوني قوة فرط الاستقطاب التثبيطية لقنوات مستقبلات GABA-A؟",
+        "en": "The renal NKCC2 transporter shares homology with neuronal NKCC1 and KCC2. How does neuronal chloride transport govern the hyperpolarizing inhibitory power of GABA-A receptor channels?"
+      },
+      "technicalTerms": [
+        {
+          "term": "klorür dengesi",
+          "arContext": "توازن شوارد الكلوريد (chloride equilibrium)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "GABA-A reseptörleri ligand kapılı klor iyon kanallarıdır.",
+          "ar": "مستقبلات GABA-A هي قنوات كلور أيونية مبوبة بالربيطة.",
+          "en": "GABA-A receptors are ligand-gated chloride ion channels."
+        },
+        {
+          "tier": 2,
+          "tr": "GABA bağlandığında klor içeri mi akar dışarı mı? Bu, KCC2 ve NKCC1'in belirlediği hücre içi klor konsantrasyonuna bağlıdır.",
+          "ar": "هل يتدفق الكلور للداخل أم الخارج عند ارتباط GABA؟ يعتمد ذلك كلياً على تركيز الكلور الداخلي الذي يحدده KCC2 و NKCC1.",
+          "en": "Whether chloride flows inward or outward depends on the intracellular chloride gradient set by KCC2 and NKCC1."
+        },
+        {
+          "tier": 3,
+          "tr": "KCC2 kloru olgun nöronların dışına atar; bu düşük iç klor seviyesi GABA-A açıldığında klorun içeri akmasını, membranın hiperpolarize olmasını ve nöbetlerin durmasını sağlar.",
+          "ar": "يطرد KCC2 الكلور خارج العصبونات البالغة؛ ويضمن انخفاضه الداخلي تدفق الكلور للداخل عند فتح GABA-A، مما يفرط الاستقطاب ويكبح التشنجات.",
+          "en": "KCC2 pumps chloride out of adult neurons. This low internal chloride ensures that opening GABA-A channels causes chloride influx, hyperpolarizing the membrane."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "conceptCheck": {
+        "question": {
+          "tr": "Nöronal klor kotransportörleri GABA-A sinyallemesinin inhibitör doğasını nasıl belirler?",
+          "ar": "كيف تحدد نواقل الكلور العصبونية الطبيعة التثبيطية لتأشير مستقبلات GABA-A؟",
+          "en": "How do neuronal cation-chloride cotransporters establish the inhibitory nature of GABA-A receptor signaling?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "KCC2 olgun nöronlarda kloru dışarı atarak hücre içi [Cl-]'yi düşük tutar; GABA-A açıldığında klor içeri akar, nöronu hiperpolarize eder ve nöbetleri baskılar.",
+              "ar": "يطرد KCC2 الكلور خارج العصبونات البالغة مبقياً تركيزه منخفضاً؛ وحين يفتح GABA-A يتدفق الكلور للداخل مفرطاً استقطاب الخلية وكابحاً النوبات.",
+              "en": "KCC2 extrudes intracellular chloride in mature neurons, maintaining a low [Cl-]i; when GABA-A opens, chloride flows inward, hyperpolarizing the neuron and suppressing seizures."
+            },
+            "feedback": {
+              "tr": "Doğru. KCC2 nöron içi kloru düşük tutarak klorun denge potansiyelini negatifte tutar. Böylece GABA-A açıldığında klor içeri akar ve inhibitör hiperpolarizasyon oluşur.",
+              "ar": "صحيح. يطرد KCC2 الكلور ليحافظ على تركيز داخلي منخفض؛ مما يجعل فتح قنوات GABA-A يدخل الكلور سالباً مفرطاً للاستقطاب وكابحاً للاستثارة.",
+              "en": "Correct. Cation-chloride cotransporters dictate the chloride equilibrium potential. KCC2 extrudes Cl- to keep [Cl-]i low, ensuring GABA-A produces inhibitory hyperpolarization."
+            }
+          },
+          {
+            "id": "opt-l10-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "NKCC1 ve KCC2 nöronlara sodyum pompalayarak epileptik nöbetler sırasında GABA-A'yı uyarıcı bir sodyum kanalına dönüştürür.",
+              "ar": "يضخ NKCC1 و KCC2 الصوديوم للعصبونات، محولين GABA-A إلى قناة صوديوم استثارية أثناء النوبات الصرعية.",
+              "en": "NKCC1 and KCC2 pump sodium into neurons, transforming GABA-A into an excitatory sodium channel during epileptic seizures."
+            },
+            "feedback": {
+              "tr": "Yanlış. GABA-A katyon değil klor kanalıdır; taşıyıcılar klor gradyanını belirleyerek GABA yanıtının yönünü tayin eder.",
+              "ar": "غير صحيح. مستقبل GABA-A قناة كلور وليس قناة صوديوم؛ وتحدد النواقل مدروج الكلور لتحديد اتجاه الاستجابة.",
+              "en": "Incorrect. GABA-A is strictly a chloride channel. Transporters set the chloride gradient, determining whether GABA is inhibitory or depolarizing."
+            }
+          },
+          {
+            "id": "opt-l10-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid kan-beyin bariyerini serbestçe geçip nöronal KCC2'yi inhibe ederek status epileptikusu saniyeler içinde tamamen iyileştirir.",
+              "ar": "يعبر فوروسيميد الحاجز الدماغي بحرية ليثبط KCC2 العصبوني، معالجاً الحالة الصرعية تماماً خلال ثوانٍ.",
+              "en": "Furosemide freely crosses the blood-brain barrier to inhibit neuronal KCC2, completely curing status epilepticus within seconds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid yüksek iyonizasyonu ve protein bağlanması nedeniyle kan-beyin bariyerini geçemez; santral NKCC1 blokajı için bumetanid türevleri araştırılmaktadır.",
+              "ar": "غير صحيح. نفوذية فوروسيميد للدماغ شبه معدومة لتأينه العالي؛ وتدرس مشتقات بوميتانيد تجريبياً للنفاذ للجهاز العصبي.",
+              "en": "Incorrect. Furosemide has very poor BBB penetration due to its high ionization and protein binding; it cannot be used to treat status epilepticus."
+            }
+          }
+        ]
+      },
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s11-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "KCC2 olgun nöronlarda kloru dışarı atarak hücre içi [Cl-]'yi düşük tutar; GABA-A açıldığında klor içeri akar, nöronu hiperpolarize eder ve nöbetleri baskılar.",
+              "ar": "يطرد KCC2 الكلور خارج العصبونات البالغة مبقياً تركيزه منخفضاً؛ وحين يفتح GABA-A يتدفق الكلور للداخل مفرطاً استقطاب الخلية وكابحاً النوبات.",
+              "en": "KCC2 extrudes intracellular chloride in mature neurons, maintaining a low [Cl-]i; when GABA-A opens, chloride flows inward, hyperpolarizing the neuron and suppressing seizures."
+            },
+            "feedback": {
+              "tr": "Doğru. KCC2 nöron içi kloru düşük tutarak klorun denge potansiyelini negatifte tutar. Böylece GABA-A açıldığında klor içeri akar ve inhibitör hiperpolarizasyon oluşur.",
+              "ar": "صحيح. يطرد KCC2 الكلور ليحافظ على تركيز داخلي منخفض؛ مما يجعل فتح قنوات GABA-A يدخل الكلور سالباً مفرطاً للاستقطاب وكابحاً للاستثارة.",
+              "en": "Correct. Cation-chloride cotransporters dictate the chloride equilibrium potential. KCC2 extrudes Cl- to keep [Cl-]i low, ensuring GABA-A produces inhibitory hyperpolarization."
+            }
+          },
+          {
+            "id": "opt-l10-s11-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "NKCC1 ve KCC2 nöronlara sodyum pompalayarak epileptik nöbetler sırasında GABA-A'yı uyarıcı bir sodyum kanalına dönüştürür.",
+              "ar": "يضخ NKCC1 و KCC2 الصوديوم للعصبونات، محولين GABA-A إلى قناة صوديوم استثارية أثناء النوبات الصرعية.",
+              "en": "NKCC1 and KCC2 pump sodium into neurons, transforming GABA-A into an excitatory sodium channel during epileptic seizures."
+            },
+            "feedback": {
+              "tr": "Yanlış. GABA-A katyon değil klor kanalıdır; taşıyıcılar klor gradyanını belirleyerek GABA yanıtının yönünü tayin eder.",
+              "ar": "غير صحيح. مستقبل GABA-A قناة كلور وليس قناة صوديوم؛ وتحدد النواقل مدروج الكلور لتحديد اتجاه الاستجابة.",
+              "en": "Incorrect. GABA-A is strictly a chloride channel. Transporters set the chloride gradient, determining whether GABA is inhibitory or depolarizing."
+            }
+          },
+          {
+            "id": "opt-l10-s11-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Furosemid kan-beyin bariyerini serbestçe geçip nöronal KCC2'yi inhibe ederek status epileptikusu saniyeler içinde tamamen iyileştirir.",
+              "ar": "يعبر فوروسيميد الحاجز الدماغي بحرية ليثبط KCC2 العصبوني، معالجاً الحالة الصرعية تماماً خلال ثوانٍ.",
+              "en": "Furosemide freely crosses the blood-brain barrier to inhibit neuronal KCC2, completely curing status epilepticus within seconds."
+            },
+            "feedback": {
+              "tr": "Yanlış. Furosemid yüksek iyonizasyonu ve protein bağlanması nedeniyle kan-beyin bariyerini geçemez; santral NKCC1 blokajı için bumetanid türevleri araştırılmaktadır.",
+              "ar": "غير صحيح. نفوذية فوروسيميد للدماغ شبه معدومة لتأينه العالي؛ وتدرس مشتقات بوميتانيد تجريبياً للنفاذ للجهاز العصبي.",
+              "en": "Incorrect. Furosemide has very poor BBB penetration due to its high ionization and protein binding; it cannot be used to treat status epilepticus."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Renal NKCC2 taşıyıcısı nöronal NKCC1 ve KCC2 ile homoloji paylaşır. Nöronal klor taşınması GABA-A reseptör kanallarının hiperpolarizan inhibitör gücünü nasıl yönetir?",
+          "ar": "يتشابه ناقل NKCC2 الكلوي بنيوياً مع NKCC1 و KCC2 العصبونيين. كيف يحكم نقل الكلور العصبوني قوة فرط الاستقطاب التثبيطية لقنوات مستقبلات GABA-A؟",
+          "en": "The renal NKCC2 transporter shares homology with neuronal NKCC1 and KCC2. How does neuronal chloride transport govern the hyperpolarizing inhibitory power of GABA-A receptor channels?"
+        },
+        "title": {
+          "tr": "Bütünsel Bağlantı: Nöronal Klor Taşınması ve Kıvrım Taşıyıcıları",
+          "ar": "ترابط شمولي: نقل الكلور العصبوني ونواقل العروة",
+          "en": "Holistic Connection: Neuronal Chloride Transport & Loop Transporters"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 29
+        }
+      ]
+    },
+    {
+      "id": "pharm-mod5-les2-step12",
+      "order": 12,
+      "stageIndex": 12,
+      "stage": "mastery_check",
+      "type": "question",
+      "title": {
+        "tr": "Ustalık Sınavı: Elektrolit ve Kan Gazı Paneli ile Diüretik Teşhisi",
+        "ar": "اختبار الإتقان: تشخيص صنف المدر عبر لوحة الغازات والشوارد",
+        "en": "Mastery Check: Electrolyte & Arterial Blood Gas Panel Diagnosis"
+      },
+      "prompt": {
+        "tr": "Laboratuvar sonuçları: Arter pH 7.52, serum HCO3- 34 mEq/L (metabolik alkaloz), potasyum 2.8 mEq/L, sodyum 132 mEq/L ve belirgin hiperkalsiüri (idrar Ca2+ > 350 mg/24 saat). Sorumlu diüretik sınıfını teşhis edin.",
+        "ar": "أظهرت التحاليل: باهاء شرياني 7.52، بيكربونات 34 mEq/L (قلاء استقلابي)، بوتاسيوم 2.8 mEq/L، صوديوم 132 mEq/L، وفرط كلس بول مميز (>350 ملغ/24س). حدد صنف المدر.",
+        "en": "Diagnostic labs reveal: Arterial pH 7.52, serum HCO3- 34 mEq/L (metabolic alkalosis), potassium 2.8 mEq/L, sodium 132 mEq/L, and marked hypercalciuria (urinary Ca2+ > 350 mg/24h). Diagnose the causative diuretic class."
+      },
+      "conceptCheck": {
+        "question": {
+          "tr": "Bu kan gazı ve elektrolit tablosu hangi diüretik sınıfının kullanımını kesin olarak kanıtlar?",
+          "ar": "أي صنف من المدرات تؤكده لوحة غازات الدم والشوارد المذكورة بشكل قاطع؟",
+          "en": "Which diuretic class is definitively diagnosed by this blood gas and electrolyte panel?"
+        },
+        "options": [
+          {
+            "id": "opt-l10-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Kıvrım Diüretiği (Furosemid); NKCC2 blokajı lümen-pozitif transepitelyal potansiyeli yıkarak kalsiyumu idrara döker; artan distal sodyum ise K+ ve H+ atılımını körükler.",
+              "ar": "مدر عروة (فوروسيميد)؛ حصر NKCC2 يلغي الجهد الإيجابي طارحاً الكالسيوم بالبول، بينما يدفع تدفق الصوديوم البعيد إطراح K+ و H+.",
+              "en": "Loop Diuretic (e.g., Furosemide); NKCC2 blockade wipes out the lumen-positive transepithelial potential, wasting calcium into urine while distal sodium delivery drives K+ and H+ excretion."
+            },
+            "feedback": {
+              "tr": "Doğru! Hiperkalsiüri (kalsiyum atılımı) ile birlikte hipokalemik metabolik alkaloz tablosu Kıvrım Diüretiklerinin (furosemid) patognomonik izidir. Tiyazidler ise kalsiyumu kanda tutarak hipokalsiüri yapar.",
+              "ar": "صحيح! قلاء استقلابي بنقص البوتاسيوم مع فرط كلس البول هو البصمة المميزة لمدرات العروة (فوروسيميد). بينما تحبس الثيازيدات الكالسيوم بالدم مسببة نقص كلس البول.",
+              "en": "Correct! The triad of hypokalemic metabolic alkalosis with hypercalciuria (calcium wasting) is pathognomonic for Loop Diuretics. Thiazides cause hypocalciuria."
+            }
+          },
+          {
+            "id": "opt-l10-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazid Diüretiği (Hidroklorotiyazid); çünkü distal kıvrımlı tübüldeki NCC'nin inhibisyonu hipokalemi ile birlikte idrara yoğun kalsiyum dökülmesine yol açar.",
+              "ar": "مدر ثيازيدي (هيدروكلوروثيازيد)؛ لأن تثبيط NCC في الأنبوب البعيد يطرح الكالسيوم بكثافة في البول مترافقاً بنقص البوتاسيوم.",
+              "en": "Thiazide Diuretic (Hydrochlorothiazide); because inhibiting distal convoluted tubule NCC causes massive calcium dumping into urine alongside hypokalemia."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler idrar kalsiyumunu azaltır (hipokalsiüri); bu yüzden böbrek taşı tedavisinde kullanılırlar. Belirgin hiperkalsiüri tiyazid olasılığını kesinlikle eler.",
+              "ar": "غير صحيح. تخفض الثيازيدات كالسيوم البول (نقص كلس البول) ولذا تعالج الحصيات الكلسية؛ ووجود فرط كلس البول ينفي الثيازيد تماماً.",
+              "en": "Incorrect. Thiazides decrease urinary calcium (hypocalciuria) by enhancing basolateral NCX1 in DCT; marked hypercalciuria definitively rules out thiazides."
+            }
+          },
+          {
+            "id": "opt-l10-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Karbonik Anhidraz İnhibitörü (Asetazolamid); çünkü bikarbonat geri emiliminin bloke edilmesi sistemik arteryel kanı alkalileştirir.",
+              "ar": "مثبط الأنهيدراز الكربوني (أسيتازولاميد)؛ لأن حصر ارتشاف البيكربونات يقلي دم الشرايين الجهازي.",
+              "en": "Carbonic Anhydrase Inhibitor (Acetazolamide); because blocking bicarbonate reabsorption alkalizes systemic arterial blood."
+            },
+            "feedback": {
+              "tr": "Yanlış. Asetazolamid bikarbonatı idrara dökerek metabolik ASİDOZ yapar (arter pH < 7.35, düşük HCO3-), metabolik alkaloz yapmaz.",
+              "ar": "غير صحيح. يطرح أسيتازولاميد البيكربونات مسبباً حماضاً استقلابياً (pH < 7.35) وليس قلاءً استقلابياً.",
+              "en": "Incorrect. Acetazolamide wastes bicarbonate, producing metabolic ACIDOSIS (arterial pH < 7.35), not metabolic alkalosis."
+            }
+          }
+        ]
+      },
+      "technicalTerms": [
+        {
+          "term": "metabolik alkaloz",
+          "arContext": "القلاء الاستقلابي (metabolic alkalosis)"
+        }
+      ],
+      "hints": [
+        {
+          "tier": 1,
+          "tr": "İdrardaki kalsiyuma bakın: kalsiyum idrara atılıyor mu (hiperkalsiüri) yoksa kanda mı tutuluyor (hipokalsiüri)?",
+          "ar": "انظر إلى كالسيوم البول: هل يُطرح الكالسيوم بالبول (فرط كلس البول) أم يُحتبس بالدم (نقص كلس البول)؟",
+          "en": "Look at urinary calcium: Is calcium being wasted into the urine (hypercalciuria) or retained in the blood (hypocalciuria)?"
+        },
+        {
+          "tier": 2,
+          "tr": "Unutmayın: 'Kıvrım kalsiyumu döker, Tiyazid tutar'. Her ikisi de hipokalemik metabolik alkaloz yapar ancak kalsiyum üzerindeki etkileri zıttır.",
+          "ar": "تذكر: مدرات العروة تطرح الكالسيوم والثيازيد تحبسه. كلاهما يحدث قلاءً بنقص البوتاسيوم ولكن تأثيرهما على الكالسيوم متعاكس تماماً.",
+          "en": "Remember: 'Loops Lose calcium, Thiazides Take in calcium.' Both cause hypokalemic alkalosis, but their calcium effects are opposite."
+        },
+        {
+          "tier": 3,
+          "tr": "Hipokalemik metabolik alkaloz ile birlikte yüksek idrar kalsiyumu (>350 mg/gün), TAL lümen-pozitif potansiyelini yıkan Kıvrım Diüretiklerinin (furosemid) patognomonik tablosudur.",
+          "ar": "القلاء الاستقلابي بنقص البوتاسيوم مع فرط كلس البول (>350 ملغ/يوم) بصمة مشخصة لمدرات العروة (فوروسيميد) لإلغائها الجهد الإيجابي باللمعة.",
+          "en": "Hypokalemic metabolic alkalosis combined with high urinary calcium (>350 mg/24h) is diagnostic of loop diuretic (furosemide) therapy due to loss of the TAL lumen-positive potential."
+        }
+      ],
+      "widgetType": "MultipleChoice",
+      "config": {
+        "options": [
+          {
+            "id": "opt-l10-s12-1",
+            "isCorrect": true,
+            "text": {
+              "tr": "Kıvrım Diüretiği (Furosemid); NKCC2 blokajı lümen-pozitif transepitelyal potansiyeli yıkarak kalsiyumu idrara döker; artan distal sodyum ise K+ ve H+ atılımını körükler.",
+              "ar": "مدر عروة (فوروسيميد)؛ حصر NKCC2 يلغي الجهد الإيجابي طارحاً الكالسيوم بالبول، بينما يدفع تدفق الصوديوم البعيد إطراح K+ و H+.",
+              "en": "Loop Diuretic (e.g., Furosemide); NKCC2 blockade wipes out the lumen-positive transepithelial potential, wasting calcium into urine while distal sodium delivery drives K+ and H+ excretion."
+            },
+            "feedback": {
+              "tr": "Doğru! Hiperkalsiüri (kalsiyum atılımı) ile birlikte hipokalemik metabolik alkaloz tablosu Kıvrım Diüretiklerinin (furosemid) patognomonik izidir. Tiyazidler ise kalsiyumu kanda tutarak hipokalsiüri yapar.",
+              "ar": "صحيح! قلاء استقلابي بنقص البوتاسيوم مع فرط كلس البول هو البصمة المميزة لمدرات العروة (فوروسيميد). بينما تحبس الثيازيدات الكالسيوم بالدم مسببة نقص كلس البول.",
+              "en": "Correct! The triad of hypokalemic metabolic alkalosis with hypercalciuria (calcium wasting) is pathognomonic for Loop Diuretics. Thiazides cause hypocalciuria."
+            }
+          },
+          {
+            "id": "opt-l10-s12-2",
+            "isCorrect": false,
+            "text": {
+              "tr": "Tiyazid Diüretiği (Hidroklorotiyazid); çünkü distal kıvrımlı tübüldeki NCC'nin inhibisyonu hipokalemi ile birlikte idrara yoğun kalsiyum dökülmesine yol açar.",
+              "ar": "مدر ثيازيدي (هيدروكلوروثيازيد)؛ لأن تثبيط NCC في الأنبوب البعيد يطرح الكالسيوم بكثافة في البول مترافقاً بنقص البوتاسيوم.",
+              "en": "Thiazide Diuretic (Hydrochlorothiazide); because inhibiting distal convoluted tubule NCC causes massive calcium dumping into urine alongside hypokalemia."
+            },
+            "feedback": {
+              "tr": "Yanlış. Tiyazidler idrar kalsiyumunu azaltır (hipokalsiüri); bu yüzden böbrek taşı tedavisinde kullanılırlar. Belirgin hiperkalsiüri tiyazid olasılığını kesinlikle eler.",
+              "ar": "غير صحيح. تخفض الثيازيدات كالسيوم البول (نقص كلس البول) ولذا تعالج الحصيات الكلسية؛ ووجود فرط كلس البول ينفي الثيازيد تماماً.",
+              "en": "Incorrect. Thiazides decrease urinary calcium (hypocalciuria) by enhancing basolateral NCX1 in DCT; marked hypercalciuria definitively rules out thiazides."
+            }
+          },
+          {
+            "id": "opt-l10-s12-3",
+            "isCorrect": false,
+            "text": {
+              "tr": "Karbonik Anhidraz İnhibitörü (Asetazolamid); çünkü bikarbonat geri emiliminin bloke edilmesi sistemik arteryel kanı alkalileştirir.",
+              "ar": "مثبط الأنهيدراز الكربوني (أسيتازولاميد)؛ لأن حصر ارتشاف البيكربونات يقلي دم الشرايين الجهازي.",
+              "en": "Carbonic Anhydrase Inhibitor (Acetazolamide); because blocking bicarbonate reabsorption alkalizes systemic arterial blood."
+            },
+            "feedback": {
+              "tr": "Yanlış. Asetazolamid bikarbonatı idrara dökerek metabolik ASİDOZ yapar (arter pH < 7.35, düşük HCO3-), metabolik alkaloz yapmaz.",
+              "ar": "غير صحيح. يطرح أسيتازولاميد البيكربونات مسبباً حماضاً استقلابياً (pH < 7.35) وليس قلاءً استقلابياً.",
+              "en": "Incorrect. Acetazolamide wastes bicarbonate, producing metabolic ACIDOSIS (arterial pH < 7.35), not metabolic alkalosis."
+            }
+          }
+        ],
+        "prompt": {
+          "tr": "Laboratuvar sonuçları: Arter pH 7.52, serum HCO3- 34 mEq/L (metabolik alkaloz), potasyum 2.8 mEq/L, sodyum 132 mEq/L ve belirgin hiperkalsiüri (idrar Ca2+ > 350 mg/24 saat). Sorumlu diüretik sınıfını teşhis edin.",
+          "ar": "أظهرت التحاليل: باهاء شرياني 7.52، بيكربونات 34 mEq/L (قلاء استقلابي)، بوتاسيوم 2.8 mEq/L، صوديوم 132 mEq/L، وفرط كلس بول مميز (>350 ملغ/24س). حدد صنف المدر.",
+          "en": "Diagnostic labs reveal: Arterial pH 7.52, serum HCO3- 34 mEq/L (metabolic alkalosis), potassium 2.8 mEq/L, sodium 132 mEq/L, and marked hypercalciuria (urinary Ca2+ > 350 mg/24h). Diagnose the causative diuretic class."
+        },
+        "title": {
+          "tr": "Ustalık Sınavı: Elektrolit ve Kan Gazı Paneli ile Diüretik Teşhisi",
+          "ar": "اختبار الإتقان: تشخيص صنف المدر عبر لوحة الغازات والشوارد",
+          "en": "Mastery Check: Electrolyte & Arterial Blood Gas Panel Diagnosis"
+        }
+      },
+      "sources": [
+        {
+          "file": "Kardiyovasküler Sistem.pdf",
+          "page": 30
+        }
+      ]
     }
   ]
 }

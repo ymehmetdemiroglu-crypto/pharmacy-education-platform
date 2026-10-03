@@ -7,7 +7,7 @@ import { StickerBadge } from '../StickerBadge/StickerBadge';
 
 import { ThemeContext } from '../../theme/ThemeProvider';
 
-export type Currency = 'TRY';
+export type Currency = 'TRY' | 'USD';
 export type PlanType = 'monthly' | 'semester' | 'annual';
 
 export interface PaywallModalProps {
@@ -31,23 +31,29 @@ const pricingTable: Record<Currency, PriceData> = {
     bundle: { monthly: 350, semester: 1150, annual: 2100 },
     symbol: '₺',
   },
+  USD: {
+    single: { monthly: 14, semester: 49, annual: 89 },
+    bundle: { monthly: 19, semester: 69, annual: 129 },
+    symbol: '$',
+  },
 };
 
 export const PaywallModal: React.FC<PaywallModalProps> = ({
   isOpen,
   onClose,
   canStartTrial = true,
+  defaultCurrency = 'TRY',
   onStartTrial,
   onSelectPlan,
 }) => {
   const themeCtx = React.useContext(ThemeContext);
   const themeLocale = themeCtx?.locale;
 
-  const currency: Currency = 'TRY';
+  const [currency, setCurrency] = useState<Currency>(defaultCurrency);
   const [isBundle, setIsBundle] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<PlanType>('semester');
 
-  const prices = pricingTable.TRY;
+  const prices = pricingTable[currency] || pricingTable.TRY;
   const activePrices = isBundle ? prices.bundle : prices.single;
 
   const handleCheckout = () => {
