@@ -69,4 +69,23 @@ describe('IonizationChamber Widget', () => {
     fireEvent.click(screen.getByText(/view equation/i));
     expect(screen.getByText(/ph - pka = log\(\[a⁻\]\/\[ha\]\)/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish with pure Turkish labels', () => {
+    render(<IonizationChamber locale="tr" />);
+
+    expect(screen.getByText(/İyonizasyon ve Membran Geçiş Odası/i)).toBeInTheDocument();
+    expect(screen.getByText(/Mide \(pH 1\.5, ~1 m²\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/ZAYIF ASİT/i)).toBeInTheDocument();
+    expect(screen.getByText(/Alan: 1 m²/i)).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic with RTL direction and native Arabic labels', () => {
+    const { container } = render(<IonizationChamber locale="ar" />);
+
+    const card = container.querySelector('[dir="rtl"]');
+    expect(card).toBeInTheDocument();
+    expect(screen.getByText(/حجيرة التأين ونفوذية الأغشية الخلوية/i)).toBeInTheDocument();
+    expect(screen.getByText(/حمض ضعيف/i)).toBeInTheDocument();
+    expect(screen.getByText(/المساحة: 1 م²/i)).toBeInTheDocument();
+  });
 });

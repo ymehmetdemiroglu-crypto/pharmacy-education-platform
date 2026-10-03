@@ -2,6 +2,13 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import { UserProfile, CourseEntitlement } from '../types';
 import { supabase } from '../supabase';
 import type { User as SupabaseUser, Session } from '@supabase/supabase-js';
+import {
+  OAuthProviderDisabledError,
+  isOAuthProviderEnabled,
+  probeAuthorizeUrl,
+} from './oauthPreflight';
+
+export { OAuthProviderDisabledError, isOAuthProviderEnabled, probeAuthorizeUrl };
 
 export interface AuthContextType {
   user: UserProfile | null;
@@ -377,17 +384,47 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const signInWithGoogle = async (): Promise<void> => {
     setLoading(true);
     try {
+      const sbUrl: string =
+        (supabase as any).supabaseUrl ||
+        (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_SUPABASE_URL) ||
+        'https://ibyntbynqkpkkpeoudzv.supabase.co';
+      const sbKey: string =
+        (supabase as any).supabaseKey ||
+        (typeof import.meta !== 'undefined' && (import.meta as any).env?.VITE_SUPABASE_ANON_KEY) ||
+        'sb_publishable_Df_D7IPDzVKcUhsxynB5sQ_06q_DAym';
+
+      // 1. Proactive settings check
+      const isEnabled = await isOAuthProviderEnabled(sbUrl, sbKey, 'google');
+      if (!isEnabled) {
+        throw new OAuthProviderDisabledError('google');
+      }
+
+      // 2. Request authorization URL without browser redirect
       const redirectOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://optimusrufus.com';
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
           redirectTo: redirectOrigin,
+          skipBrowserRedirect: true,
         },
       });
+
       if (error) {
         throw error;
       }
-      if (data?.url && typeof window !== 'undefined') {
+
+      if (!data?.url) {
+        throw new Error('Supabase did not return an OAuth authorization URL');
+      }
+
+      // 3. Secondary safety probe on data.url
+      const probe = await probeAuthorizeUrl(data.url);
+      if (!probe.ok) {
+        throw new OAuthProviderDisabledError('google', probe.error);
+      }
+
+      // 4. Guaranteed safe browser navigation
+      if (typeof window !== 'undefined') {
         window.location.href = data.url;
       }
     } catch (err: any) {

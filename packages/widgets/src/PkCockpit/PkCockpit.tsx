@@ -14,6 +14,144 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
 }) => {
   const config = PkCockpitConfigSchema.parse(rawConfig || {});
 
+  const dict = {
+    tr: {
+      badge: 'Çoklu-Doz PK Simülatörü & Güvenlik İzlemi',
+      title: 'Farmakokinetik Kokpit (PkCockpit)',
+      oralRoute: (F: number) => `Oral Tablet (F=${F})`,
+      ivRoute: 'IV Bolus (F=1.0)',
+      plotTitle: 'Zaman-Konsantrasyon Eğrisi (5 Dozluk Kümülatif Profil)',
+      plotAria: 'Farmakokinetik Çoklu Doz Konsantrasyon Grafiği',
+      timeAxis: 'Zaman (saat)',
+      dataHeader: 'Kararlı Durum (Css) Verileri',
+      peak: 'Tepe (Css,max):',
+      trough: 'Dip (Css,min):',
+      average: 'Ortalama (Css,avg):',
+      accumulation: 'Kümülasyon (R_acc):',
+      halfLife: 'Yarılanma Ömrü (t1/2):',
+      hoursUnit: 'saat',
+      optimalAlert: '✓ Terapötik Aralıkta: Tepe ve dip derişimler hedef güvenlik sınırları içinde!',
+      toxicAlert: (max: string) => `⚠ Toksisite Uyarısı: Tepe konsantrasyonu (${max} mg/L) MTC tavanını aştı!`,
+      subtherapeuticAlert: (min: string) => `⚠ Subterapötik Uyarı: Dip konsantrasyonu (${min} mg/L) MEC tabanının altına düşüyor!`,
+      paramsHeader: 'Dozaj ve Farmakokinetik Parametreleri',
+      singleDoseAmount: 'Tek Doz Miktarı:',
+      doseAria: 'Doz miktarı ayarı',
+      decDoseAria: 'Dozu 50 mg azalt',
+      incDoseAria: 'Dozu 50 mg artır',
+      dosingInterval: 'Doz Aralığı (τ):',
+      tauAria: 'Doz aralığı tau ayarı',
+      decTauAria: 'Doz aralığını 2 saat azalt',
+      incTauAria: 'Doz aralığını 2 saat artır',
+      clearance: 'Vücut Klerensi (CL):',
+      clAria: 'Klerens ayarı',
+      decClAria: 'Klerensi 0.5 L/h azalt',
+      incClAria: 'Klerensi 0.5 L/h artır',
+      noticeHeader: 'Model İllüstrasyonu Notu:',
+      noticeText: 'Çoklu doz farmakokinetik simülasyonu analitik süperpozisyon prensibiyle modellenmiştir. Kararlı durum birikim katsayısı R_acc = 1 / (1 - e^(-ke·τ)) ve ortalama kararlı durum konsantrasyonu C_ss_avg = (F·Doz) / (CL·τ) formülleriyle hesaplanır. Terapötik pencere (MEC-MTC) aşımı durumunda toksik ya da etkisiz plazma düzeyleri tetiklenir. Referans: ',
+    },
+    ar: {
+      badge: 'محاكي الحركية الدوائية للجرعات المتكررة ومراقبة السلامة',
+      title: 'قمرة قيادة الحركية الدوائية (PkCockpit)',
+      oralRoute: (F: number) => `قرص فموي (F=${F})`,
+      ivRoute: 'حقنة وريدية مباشرة (F=1.0)',
+      plotTitle: 'منحنى التركيز مقابل الزمن (ملف تراكمي لخمس جرعات)',
+      plotAria: 'رسم بياني لتركيز الجرعات المتكررة في الحركية الدوائية',
+      timeAxis: 'الزمن (ساعات)',
+      dataHeader: 'بيانات حالة الاستقرار (Css)',
+      peak: 'الذروة (Css,max):',
+      trough: 'القاع (Css,min):',
+      average: 'المتوسط (Css,avg):',
+      accumulation: 'التراكم (R_acc):',
+      halfLife: 'عمر النصف (t1/2):',
+      hoursUnit: 'ساعات',
+      optimalAlert: '✓ ضمن النافذة العلاجية: تركيزات الذروة والقاع ضمن الحدود الآمنة المستهدفة!',
+      toxicAlert: (max: string) => `⚠ تحذير من السمية: تركيز الذروة (${max} ملغ/لتر) تجاوز الحد الأقصى الآمن MTC!`,
+      subtherapeuticAlert: (min: string) => `⚠ تحذير دون علاجي: تركيز القاع (${min} ملغ/لتر) هبط دون الحد الأدنى الفعال MEC!`,
+      paramsHeader: 'معايير الجرعة والحركية الدوائية',
+      singleDoseAmount: 'مقدار الجرعة المفردة:',
+      doseAria: 'ضبط مقدار الجرعة',
+      decDoseAria: 'إنقاص الجرعة 50 ملغ',
+      incDoseAria: 'زيادة الجرعة 50 ملغ',
+      dosingInterval: 'الفترة الفاصلة بين الجرعات (τ):',
+      tauAria: 'ضبط الفترة الفاصلة tau',
+      decTauAria: 'إنقاص الفترة الفاصلة ساعتين',
+      incTauAria: 'زيادة الفترة الفاصلة ساعتين',
+      clearance: 'التصفية الكلية بالجسم (CL):',
+      clAria: 'ضبط معدل التصفية',
+      decClAria: 'إنقاص التصفية بمقدار 0.5 لتر/ساعة',
+      incClAria: 'زيادة التصفية بمقدار 0.5 لتر/ساعة',
+      noticeHeader: 'ملاحظة النموذج التوضيحي:',
+      noticeText: 'تمت نمذجة محاكاة الحركية الدوائية للجرعات المتكررة وفق مبدأ التراكب التحليلي. يُحسب معامل التراكم R_acc = 1 / (1 - e^(-ke·τ)) ومتوسط التركيز في حالة الاستقرار C_ss_avg = (F·Dose) / (CL·τ). تجاوز النافذة العلاجية (MEC-MTC) يؤدي إلى مستويات سامة أو غير علاجية. المرجع: ',
+    },
+    en: {
+      badge: 'Multi-Dose PK Simulator & Safety Monitor',
+      title: 'Pharmacokinetic Cockpit (PkCockpit)',
+      oralRoute: (F: number) => `Oral Tablet (F=${F})`,
+      ivRoute: 'IV Bolus (F=1.0)',
+      plotTitle: 'Concentration-Time Curve (5-Dose Cumulative Profile)',
+      plotAria: 'Pharmacokinetic Multi-Dose Concentration Plot',
+      timeAxis: 'Time (hours)',
+      dataHeader: 'Steady State (Css) Metrics',
+      peak: 'Peak (Css,max):',
+      trough: 'Trough (Css,min):',
+      average: 'Average (Css,avg):',
+      accumulation: 'Accumulation (R_acc):',
+      halfLife: 'Half-Life (t1/2):',
+      hoursUnit: 'hours',
+      optimalAlert: '✓ In Therapeutic Window: Peak and trough concentrations remain within target safety bounds!',
+      toxicAlert: (max: string) => `⚠ Toxicity Alert: Peak concentration (${max} mg/L) exceeded MTC limit!`,
+      subtherapeuticAlert: (min: string) => `⚠ Subtherapeutic Alert: Trough concentration (${min} mg/L) fell below MEC threshold!`,
+      paramsHeader: 'Dosing & Pharmacokinetic Parameters',
+      singleDoseAmount: 'Unit Dose Amount:',
+      doseAria: 'Dose amount setting',
+      decDoseAria: 'Decrease dose by 50 mg',
+      incDoseAria: 'Increase dose by 50 mg',
+      dosingInterval: 'Dosing Interval (τ):',
+      tauAria: 'Dosing interval tau setting',
+      decTauAria: 'Decrease dosing interval by 2 hours',
+      incTauAria: 'Increase dosing interval by 2 hours',
+      clearance: 'Total Clearance (CL):',
+      clAria: 'Clearance setting',
+      decClAria: 'Decrease clearance by 0.5 L/h',
+      incClAria: 'Increase clearance by 0.5 L/h',
+      noticeHeader: 'Model Illustration Note:',
+      noticeText: 'Multi-dose pharmacokinetic simulation is modeled using analytical superposition. Steady-state accumulation ratio R_acc = 1 / (1 - e^(-ke·τ)) and average steady-state concentration C_ss_avg = (F·Dose) / (CL·τ). Crossing the therapeutic window (MEC-MTC) triggers toxic or subtherapeutic alerts. Reference: ',
+    },
+  }[locale || 'tr'] || {
+    badge: 'Çoklu-Doz PK Simülatörü & Güvenlik İzlemi',
+    title: 'Farmakokinetik Kokpit (PkCockpit)',
+    oralRoute: (F: number) => `Oral Tablet (F=${F})`,
+    ivRoute: 'IV Bolus (F=1.0)',
+    plotTitle: 'Zaman-Konsantrasyon Eğrisi (5 Dozluk Kümülatif Profil)',
+    plotAria: 'Farmakokinetik Çoklu Doz Konsantrasyon Grafiği',
+    timeAxis: 'Zaman (saat)',
+    dataHeader: 'Kararlı Durum (Css) Verileri',
+    peak: 'Tepe (Css,max):',
+    trough: 'Dip (Css,min):',
+    average: 'Ortalama (Css,avg):',
+    accumulation: 'Kümülasyon (R_acc):',
+    halfLife: 'Yarılanma Ömrü (t1/2):',
+    hoursUnit: 'saat',
+    optimalAlert: '✓ Terapötik Aralıkta: Tepe ve dip derişimler hedef güvenlik sınırları içinde!',
+    toxicAlert: (max: string) => `⚠ Toksisite Uyarısı: Tepe konsantrasyonu (${max} mg/L) MTC tavanını aştı!`,
+    subtherapeuticAlert: (min: string) => `⚠ Subterapötik Uyarı: Dip konsantrasyonu (${min} mg/L) MEC tabanının altına düşüyor!`,
+    paramsHeader: 'Dozaj ve Farmakokinetik Parametreleri',
+    singleDoseAmount: 'Tek Doz Miktarı:',
+    doseAria: 'Doz miktarı ayarı',
+    decDoseAria: 'Dozu 50 mg azalt',
+    incDoseAria: 'Dozu 50 mg artır',
+    dosingInterval: 'Doz Aralığı (τ):',
+    tauAria: 'Doz aralığı tau ayarı',
+    decTauAria: 'Doz aralığını 2 saat azalt',
+    incTauAria: 'Doz aralığını 2 saat artır',
+    clearance: 'Vücut Klerensi (CL):',
+    clAria: 'Klerens ayarı',
+    decClAria: 'Klerensi 0.5 L/h azalt',
+    incClAria: 'Klerensi 0.5 L/h artır',
+    noticeHeader: 'Model İllüstrasyonu Notu:',
+    noticeText: 'Çoklu doz farmakokinetik simülasyonu analitik süperpozisyon prensibiyle modellenmiştir. Kararlı durum birikim katsayısı R_acc = 1 / (1 - e^(-ke·τ)) ve ortalama kararlı durum konsantrasyonu C_ss_avg = (F·Doz) / (CL·τ) formülleriyle hesaplanır. Terapötik pencere (MEC-MTC) aşımı durumunda toksik ya da etkisiz plazma düzeyleri tetiklenir. Referans: ',
+  };
+
   const [doseMg, setDoseMg] = useState<number>(config.defaultDoseMg);
   const [tauHours, setTauHours] = useState<number>(config.defaultTauHours);
   const [clearanceLHr, setClearanceLHr] = useState<number>(config.defaultClearanceLHr);
@@ -111,16 +249,17 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
     <section
       role="region"
       aria-labelledby={headingId}
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black ${className}`}
     >
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b-4 border-black gap-2">
         <div>
           <span className="inline-block text-xs uppercase tracking-widest font-black bg-[#FF9F45] text-black px-2 py-0.5 border-2 border-black mb-1">
-            Çoklu-Doz PK Simülatörü & Güvenlik İzlemi
+            {dict.badge}
           </span>
           <h3 id={headingId} className="text-xl sm:text-2xl font-black uppercase tracking-tight">
-            Farmakokinetik Kokpit (PkCockpit)
+            {dict.title}
           </h3>
         </div>
 
@@ -134,7 +273,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               route === 'oral' ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white'
             }`}
           >
-            Oral Tablet (F={config.defaultBioavailabilityF})
+            {dict.oralRoute(config.defaultBioavailabilityF)}
           </button>
           <button
             type="button"
@@ -144,7 +283,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               route === 'iv_bolus' ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white'
             }`}
           >
-            IV Bolus (F=1.0)
+            {dict.ivRoute}
           </button>
         </div>
       </div>
@@ -154,14 +293,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
         {/* SVG Plot (2 cols) */}
         <div className="md:col-span-2 bg-white border-4 border-black p-4 flex flex-col items-center">
           <div className="w-full flex justify-between items-center text-xs font-mono font-bold mb-2">
-            <span>Zaman-Konsantrasyon Eğrisi (5 Dozluk Kümülatif Profil)</span>
+            <span>{dict.plotTitle}</span>
             <span className="text-gray-500">{config.drugName}</span>
           </div>
 
           <svg
             viewBox={`0 0 ${svgWidth} ${svgHeight}`}
             className="w-full h-auto bg-[#FAFAFA] border-2 border-black"
-            aria-label="Farmakokinetik Çoklu Doz Konsantrasyon Grafiği"
+            aria-label={dict.plotAria}
           >
             {/* Shaded Green Therapeutic Target Window */}
             <rect
@@ -254,7 +393,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             })}
 
             <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="10" fontWeight="bold">
-              Zaman (saat)
+              {dict.timeAxis}
             </text>
           </svg>
         </div>
@@ -262,41 +401,41 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
         {/* Calculated Safety & Accumulation Metrics (1 col) */}
         <div className="bg-white border-4 border-black p-4 flex flex-col justify-between">
           <div>
-            <div className="text-xs font-black uppercase text-gray-500 mb-2">Kararlı Durum (Css) Verileri</div>
+            <div className="text-xs font-black uppercase text-gray-500 mb-2">{dict.dataHeader}</div>
 
             <div className="space-y-2.5 font-mono text-xs mb-3">
               <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">Tepe (Css,max):</span>
+                <span className="text-gray-600">{dict.peak}</span>
                 <span data-testid="metric-css-max" className={`font-black ${isToxic ? 'text-red-600' : 'text-black'}`}>
                   {cssMax.toFixed(1)} mg/L
                 </span>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">Dip (Css,min):</span>
+                <span className="text-gray-600">{dict.trough}</span>
                 <span data-testid="metric-css-min" className={`font-black ${isSubtherapeutic ? 'text-amber-600' : 'text-black'}`}>
                   {cssMin.toFixed(1)} mg/L
                 </span>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">Ortalama (Css,avg):</span>
+                <span className="text-gray-600">{dict.average}</span>
                 <span data-testid="metric-css-avg" className="font-black text-blue-700">
                   {cssAvg.toFixed(1)} mg/L
                 </span>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">Kümülasyon (R_acc):</span>
+                <span className="text-gray-600">{dict.accumulation}</span>
                 <span data-testid="metric-r-acc" className="font-black text-black">
                   {rAcc.toFixed(2)}x
                 </span>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">Yarılanma Ömrü (t1/2):</span>
+                <span className="text-gray-600">{dict.halfLife}</span>
                 <span data-testid="metric-half-life" className="font-black text-black">
-                  {halfLifeHours.toFixed(1)} saat
+                  {halfLifeHours.toFixed(1)} {dict.hoursUnit}
                 </span>
               </div>
             </div>
@@ -307,7 +446,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 data-testid="alert-target-range"
                 className="p-2.5 bg-[#E8F5E9] border-2 border-green-700 text-green-900 font-sans font-bold text-xs"
               >
-                ✓ Terapötik Aralıkta: Tepe ve dip derişimler hedef güvenlik sınırları içinde!
+                {dict.optimalAlert}
               </div>
             )}
             {isToxic && (
@@ -315,7 +454,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 data-testid="alert-toxicity-warning"
                 className="p-2.5 bg-[#FFEBEE] border-2 border-red-700 text-red-900 font-sans font-bold text-xs"
               >
-                ⚠ Toksisite Uyarısı: Tepe konsantrasyonu ({cssMax.toFixed(1)} mg/L) MTC tavanını aştı!
+                {dict.toxicAlert(cssMax.toFixed(1))}
               </div>
             )}
             {isSubtherapeutic && (
@@ -323,7 +462,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 data-testid="alert-subtherapeutic-warning"
                 className="p-2.5 bg-[#FFF9C4] border-2 border-amber-700 text-amber-900 font-sans font-bold text-xs mt-1.5"
               >
-                ⚠ Subterapötik Uyarı: Dip konsantrasyonu ({cssMin.toFixed(1)} mg/L) MEC tabanının altına düşüyor!
+                {dict.subtherapeuticAlert(cssMin.toFixed(1))}
               </div>
             )}
           </div>
@@ -332,13 +471,13 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
 
       {/* Interactive Sliders & WCAG 2.2 Controls */}
       <div className="p-4 bg-white border-4 border-black mb-4">
-        <div className="text-xs font-black uppercase tracking-wider mb-4">Dozaj ve Farmakokinetik Parametreleri</div>
+        <div className="text-xs font-black uppercase tracking-wider mb-4">{dict.paramsHeader}</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Dose (mg) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Tek Doz Miktarı:</span>
+              <span>{dict.singleDoseAmount}</span>
               <span data-testid="value-dose" className="text-black font-black">{doseMg} mg</span>
             </div>
             <input
@@ -348,14 +487,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               step="50"
               value={doseMg}
               onChange={(e) => setDoseMg(parseInt(e.target.value, 10))}
-              aria-label="Doz miktarı ayarı"
+              aria-label={dict.doseAria}
               className="w-full accent-black cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setDoseMg((prev) => Math.max(100, prev - 50))}
-                aria-label="Dozu 50 mg azalt"
+                aria-label={dict.decDoseAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -50 mg
@@ -363,7 +502,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               <button
                 type="button"
                 onClick={() => setDoseMg((prev) => Math.min(1200, prev + 50))}
-                aria-label="Dozu 50 mg artır"
+                aria-label={dict.incDoseAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +50 mg
@@ -374,8 +513,8 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
           {/* Dosing Interval (tau) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Doz Aralığı (τ):</span>
-              <span data-testid="value-tau" className="text-black font-black">{tauHours} saat</span>
+              <span>{dict.dosingInterval}</span>
+              <span data-testid="value-tau" className="text-black font-black">{tauHours} {dict.hoursUnit}</span>
             </div>
             <input
               type="range"
@@ -384,14 +523,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               step="2"
               value={tauHours}
               onChange={(e) => setTauHours(parseInt(e.target.value, 10))}
-              aria-label="Doz aralığı tau ayarı"
+              aria-label={dict.tauAria}
               className="w-full accent-black cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setTauHours((prev) => Math.max(4, prev - 2))}
-                aria-label="Doz aralığını 2 saat azalt"
+                aria-label={dict.decTauAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -2h
@@ -399,7 +538,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               <button
                 type="button"
                 onClick={() => setTauHours((prev) => Math.min(24, prev + 2))}
-                aria-label="Doz aralığını 2 saat artır"
+                aria-label={dict.incTauAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +2h
@@ -410,7 +549,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
           {/* Clearance (CL) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Vücut Klerensi (CL):</span>
+              <span>{dict.clearance}</span>
               <span data-testid="value-cl" className="text-black font-black">{clearanceLHr.toFixed(1)} L/h</span>
             </div>
             <input
@@ -420,14 +559,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               step="0.5"
               value={clearanceLHr}
               onChange={(e) => setClearanceLHr(parseFloat(e.target.value))}
-              aria-label="Klerens ayarı"
+              aria-label={dict.clAria}
               className="w-full accent-black cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setClearanceLHr((prev) => Math.max(1.0, parseFloat((prev - 0.5).toFixed(1))))}
-                aria-label="Klerensi 0.5 L/h azalt"
+                aria-label={dict.decClAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -0.5
@@ -435,7 +574,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               <button
                 type="button"
                 onClick={() => setClearanceLHr((prev) => Math.min(10.0, parseFloat((prev + 0.5).toFixed(1))))}
-                aria-label="Klerensi 0.5 L/h artır"
+                aria-label={dict.incClAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +0.5
@@ -450,8 +589,8 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
         data-testid="model-illustration-notice"
         className="p-3 bg-[#FFF] border-2 border-black text-xs text-gray-700 font-mono leading-relaxed"
       >
-        <span className="font-bold text-black uppercase">Model İllüstrasyonu Notu:</span>{' '}
-        {'Çoklu doz farmakokinetik simülasyonu analitik süperpozisyon prensibiyle modellenmiştir. Kararlı durum birikim katsayısı R_acc = 1 / (1 - e^(-ke·τ)) ve ortalama kararlı durum konsantrasyonu C_ss_avg = (F·Doz) / (CL·τ) formülleriyle hesaplanır. Terapötik pencere (MEC-MTC) aşımı durumunda toksik ya da etkisiz plazma düzeyleri tetiklenir. Referans: ' + config.equationRef}
+        <span className="font-bold text-black uppercase">{dict.noticeHeader}</span>{' '}
+        {dict.noticeText + config.equationRef}
       </aside>
     </section>
   );

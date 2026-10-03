@@ -119,7 +119,7 @@ describe('MembranePartitionSimulator Widget Component', () => {
     expect(screen.getByRole('term', { name: /logP \/ logD/i })).toBeInTheDocument();
     expect(screen.getByText(/Temel logP/i)).toBeInTheDocument();
     expect(screen.getByText(/Hansch Sübstitüent/i)).toBeInTheDocument();
-    expect(screen.getByText(/Sulu Faz \(Aqueous\)/i)).toBeInTheDocument();
+    expect(screen.getByText(/Sulu Faz:/i)).toBeInTheDocument();
   });
 
   it('adds Hansch substituent and updates effective logP', () => {
@@ -152,17 +152,33 @@ describe('MembranePartitionSimulator Widget Component', () => {
   });
 
   it('renders properly in Arabic locale with Special Arabic Rule compliance', () => {
-    render(
+    const { container } = render(
       <MembranePartitionSimulator
         config={membranePartitionStandardDemo}
         locale="ar"
       />
     );
 
+    const card = container.querySelector('[dir="rtl"]');
+    expect(card).toBeInTheDocument();
     expect(screen.getByText(/محاكي التقسيم الغشائي/i)).toBeInTheDocument();
     expect(screen.getByRole('term', { name: /logP \/ logD/i })).toBeInTheDocument();
     expect(screen.getByText(/نوع المركب:/i)).toBeInTheDocument();
     expect(screen.getByText(/إضافة المجموعات الوظيفية/i)).toBeInTheDocument();
+  });
+
+  it('renders properly in English locale with pure English strings', () => {
+    render(
+      <MembranePartitionSimulator
+        config={membranePartitionStandardDemo}
+        locale="en"
+      />
+    );
+
+    expect(screen.getByText(/Membrane Partition Simulator/i)).toBeInTheDocument();
+    expect(screen.getByText(/Compound Type:/i)).toBeInTheDocument();
+    expect(screen.getByText(/Weak Acid/i)).toBeInTheDocument();
+    expect(screen.getByText(/Aqueous Phase:/i)).toBeInTheDocument();
   });
 
   it('enforces strict dir="ltr" isolation on SVG and plot containers', () => {

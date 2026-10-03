@@ -37,7 +37,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
   {
     id: 'ether',
     nameTr: 'Dietil Eter',
-    nameAr: 'ثنائي إيثيل الإيثر (Dietil Eter)',
+    nameAr: 'ثنائي إيثيل الإيثر',
     nameEn: 'Diethyl Ether',
     mode: 'vapor',
     saturationValue: 440,
@@ -47,7 +47,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
   {
     id: 'chloroform',
     nameTr: 'Kloroform',
-    nameAr: 'كلوروفورم (Kloroform)',
+    nameAr: 'كلوروفورم',
     nameEn: 'Chloroform',
     mode: 'vapor',
     saturationValue: 160,
@@ -57,7 +57,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
   {
     id: 'halothane',
     nameTr: 'Halotan',
-    nameAr: 'هالوثان (Halotan)',
+    nameAr: 'هالوثان',
     nameEn: 'Halothane',
     mode: 'vapor',
     saturationValue: 243,
@@ -77,7 +77,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
   {
     id: 'butanol',
     nameTr: '1-Bütanol',
-    nameAr: '1-بيوتانول (1-Bütanol)',
+    nameAr: '1-بيوتانول',
     nameEn: '1-Butanol',
     mode: 'solution',
     saturationValue: 1000,
@@ -87,7 +87,7 @@ export const FERGUSON_AGENTS: FergusonAgent[] = [
   {
     id: 'octanol',
     nameTr: '1-Oktanol',
-    nameAr: '1-أوكتانol (1-Oktanol)',
+    nameAr: '1-أوكتانول',
     nameEn: '1-Octanol',
     mode: 'solution',
     saturationValue: 4.0,
@@ -376,7 +376,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isEn ? 'Vapor Phase (Buhar Fazı: a = Pt/P0)' : isAr ? 'Buhar Fazı (طور البخار: a = Pt/P0)' : 'Buhar Fazı (Vapor: a = Pt/P0)'}
+              {isEn ? 'Vapor Phase (a = Pt/P₀)' : isAr ? 'طور البخار (a = Pt/P₀)' : 'Buhar Fazı (a = Pt/P₀)'}
             </button>
             <button
               type="button"
@@ -389,13 +389,24 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {isEn ? 'Solution Phase (Çözelti Fazı: a = St/S0)' : isAr ? 'Çözelti Fazı (طور المحلول: a = St/S0)' : 'Çözelti Fazı (Solution: a = St/S0)'}
+              {isEn ? 'Solution Phase (a = St/S₀)' : isAr ? 'طور المحلول (a = St/S₀)' : 'Çözelti Fazı (a = St/S₀)'}
             </button>
           </div>
         </div>
 
         <div className="text-xs font-mono font-bold" dir="ltr">
-          {mode === 'vapor' ? 'P₀ (Doygunluk Basıncı)' : 'S₀ (Doygunluk Çözünürlüğü)'}:{' '}
+          {mode === 'vapor'
+            ? isEn
+              ? 'P₀ (Saturation Vapor Pressure)'
+              : isAr
+              ? 'P₀ (ضغط بخار الإشباع)'
+              : 'P₀ (Doygunluk Basıncı)'
+            : isEn
+            ? 'S₀ (Saturation Solubility)'
+            : isAr
+            ? 'S₀ (ذائبية الإشباع)'
+            : 'S₀ (Doygunluk Çözünürlüğü)'}
+          :{' '}
           <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-slate-800 border border-black/20 dark:border-slate-600">
             {currentAgent.saturationValue} {currentAgent.unit}
           </span>
@@ -539,19 +550,25 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         <div className="flex flex-wrap items-center justify-between text-[10px] font-mono text-gray-600 dark:text-slate-400 pt-1">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-emerald-400 border border-black inline-block" /> Bilinç (0-0.02)
+              <span className="w-2.5 h-2.5 bg-emerald-400 border border-black inline-block" />{' '}
+              {isEn ? 'Conscious (0-0.02)' : isAr ? 'واعي (0-0.02)' : 'Bilinç (0-0.02)'}
             </span>
             <span className="flex items-center gap-1 font-bold text-amber-800 dark:text-amber-400">
-              <span className="w-2.5 h-2.5 bg-[#FFD93D] border border-black inline-block" /> Ferguson Anestezi (0.02-0.05)
+              <span className="w-2.5 h-2.5 bg-[#FFD93D] border border-black inline-block" />{' '}
+              {isEn ? 'Ferguson Anesthesia (0.02-0.05)' : isAr ? 'تخدير فيرغسون (0.02-0.05)' : 'Ferguson Anestezi (0.02-0.05)'}
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-red-500 border border-black inline-block" /> Toksik (0.10-1.0)
+              <span className="w-2.5 h-2.5 bg-red-500 border border-black inline-block" />{' '}
+              {isEn ? 'Toxic (0.10-1.0)' : isAr ? 'سام (0.10-1.0)' : 'Toksik (0.10-1.0)'}
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-purple-700 border border-black inline-block" /> Kesilme (&gt;1.0)
+              <span className="w-2.5 h-2.5 bg-purple-700 border border-black inline-block" />{' '}
+              {isEn ? 'Cutoff (>1.0)' : isAr ? 'انقطاع (>1.0)' : 'Kesilme (>1.0)'}
             </span>
           </div>
-          <div>Doygunluk Eşiği: a = 1.00</div>
+          <div>
+            {isEn ? 'Saturation Threshold: a = 1.00' : isAr ? 'عتبة الإشباع: a = 1.00' : 'Doygunluk Eşiği: a = 1.00'}
+          </div>
         </div>
       </div>
 
@@ -590,7 +607,11 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       >
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
-            Nöronal Membran Hacimsel Genleşmesi (ΔV/V Modeli):
+            {isEn
+              ? 'Neuronal Membrane Volume Expansion (ΔV/V Model):'
+              : isAr
+              ? 'التمدد الحجمي للغشاء العصبي (نموذج ΔV/V):'
+              : 'Nöronal Membran Hacimsel Genleşmesi (ΔV/V Modeli):'}
           </span>
           <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-400">
             ΔV/V = +{calc.membraneVolumeExpansion}%
@@ -661,7 +682,17 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             textAnchor="middle"
             fill="currentColor"
           >
-            {calc.activity >= 0.02 ? 'Kanal Kapalı (Lateral Basınç)' : 'İyon Kanalı Açık'}
+            {calc.activity >= 0.02
+              ? isEn
+                ? 'Channel Closed (Lateral Pressure)'
+                : isAr
+                ? 'القناة مغلقة (ضغط جانبي)'
+                : 'Kanal Kapalı (Lateral Basınç)'
+              : isEn
+              ? 'Ion Channel Open'
+              : isAr
+              ? 'القناة الأيونية مفتوحة'
+              : 'İyon Kanalı Açık'}
           </text>
 
           {/* Cutoff Phase Saturation / Precipitation Overlay */}
@@ -677,7 +708,11 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                 textAnchor="middle"
                 fill="#7E22CE"
               >
-                ⚠️ KESİLME OLGUSU (CUTOFF): ÇÖKELTİ & FAZ AYRIŞMASI
+                {isEn
+                  ? '⚠️ CUTOFF PHENOMENON: PRECIPITATION & PHASE SEPARATION'
+                  : isAr
+                  ? '⚠️ ظاهرة الانقطاع: ترسب وانفصال الطور'
+                  : '⚠️ KESİLME OLGUSU (CUTOFF): ÇÖKELTİ & FAZ AYRIŞMASI'}
               </text>
 
               {/* Precipitate crystals */}
@@ -700,16 +735,40 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         locale={activeLocale as 'tr' | 'ar' | 'en'}
         equation={
           mode === 'vapor'
-            ? 'a = Pt / P₀   (Buhar Fazı Termodinamik Aktivite Eşitliği)'
+            ? isEn
+              ? 'a = Pt / P₀   (Vapor Phase Thermodynamic Activity Equation)'
+              : isAr
+              ? 'a = Pt / P₀   (معادلة النشاط الديناميكي الحراري لطور البخار)'
+              : 'a = Pt / P₀   (Buhar Fazı Termodinamik Aktivite Eşitliği)'
+            : isEn
+            ? 'a = St / S₀   (Solution Phase Thermodynamic Activity Equation)'
+            : isAr
+            ? 'a = St / S₀   (معادلة النشاط الديناميكي الحراري لطور المحلول)'
             : 'a = St / S₀   (Çözelti Fazı Termodinamik Aktivite Eşitliği)'
         }
         sourceReference="Ferguson, J. (1939) Proc. R. Soc. Lond. B 127:387-404; Foye's Principles of Medicinal Chemistry (8th ed.)"
-        assumptions={[
-          'Yapısal olmayan biyoaktivite spesifik reseptör bağlanmasına değil, hücresel biyofazdaki termodinamik aktiviteye (a) bağlıdır',
-          'Tüm uçucu anestetikler ve fiziksel depresanlar a ≈ 0.02 - 0.05 aralığında cerrahi anestezi oluşturur',
-          'Termodinamik denge koşullarında termodinamik aktivite birim değeri (a = 1.0) aşamaz',
-          'Çözünürlük veya buhar basıncı limiti aşıldığında madde faz ayrışmasına uğrar (Kesilme Olgusu)',
-        ]}
+        assumptions={
+          isEn
+            ? [
+                'Structurally non-specific bioactivity depends on thermodynamic activity (a) in the cellular biophase, not specific receptor binding',
+                'All volatile anesthetics and physical depressants produce surgical anesthesia in the a ≈ 0.02 - 0.05 range',
+                'Under thermodynamic equilibrium, thermodynamic activity cannot exceed unity (a = 1.0)',
+                'When the solubility or vapor pressure limit is exceeded, phase separation occurs (Cutoff Phenomenon)',
+              ]
+            : isAr
+            ? [
+                'النشاط الحيوي غير النوعي يعتمد على النشاط الديناميكي الحراري (a) في الطور الحيوي، وليس على الارتباط بمستقبل نوعي',
+                'تنتج جميع المخدرات الطيارة والمثبطات الفيزيائية تخديراً جراحياً في النطاق a ≈ 0.02 - 0.05',
+                'في ظروف التوازن الديناميكي الحراري، لا يمكن أن يتجاوز النشاط الديناميكي الحراري القيمة 1.0',
+                'عند تجاوز حد الذائبية أو ضغط البخار، يحدث انفصال للطور (ظاهرة الانقطاع)',
+              ]
+            : [
+                'Yapısal olmayan biyoaktivite spesifik reseptör bağlanmasına değil, hücresel biyofazdaki termodinamik aktiviteye (a) bağlıdır',
+                'Tüm uçucu anestetikler ve fiziksel depresanlar a ≈ 0.02 - 0.05 aralığında cerrahi anestezi oluşturur',
+                'Termodinamik denge koşullarında termodinamik aktivite birim değeri (a = 1.0) aşamaz',
+                'Çözünürlük veya buhar basıncı limiti aşıldığında madde faz ayrışmasına uğrar (Kesilme Olgusu)',
+              ]
+        }
       />
     </Card>
   );

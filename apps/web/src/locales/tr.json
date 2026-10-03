@@ -198,7 +198,13 @@
       "googleSuccess": "Google ile giriş başarılı!",
       "googleError": "Google ile giriş hatası.",
       "unlock22Lessons": "Kayıt olduğunuzda 22 ders hemen ücretsiz erişiminize açılır!",
-      "googleNotConfigured": "Google ile giriş henüz backend üzerinde yapılandırılmamış (Supabase Dashboard > Authentication > Providers > Google alanından Client ID ve Secret bilgilerini girerek etkinleştirin)."
+      "googleNotConfigured": "Google ile giriş henüz backend üzerinde yapılandırılmamış (Supabase Dashboard > Authentication > Providers > Google alanından Client ID ve Secret bilgilerini girerek etkinleştirin).",
+      "googleNotice": {
+        "title": "Google Girişi Yapılandırılmadı",
+        "description": "Google ile giriş bu sunucuda henüz etkinleştirilmemiştir. Lütfen aşağıdaki E-posta ve Şifre bölümünü kullanarak hemen giriş yapın veya ücretsiz kaydolun.",
+        "adminTip": "Yönetici Notu: Supabase Dashboard > Authentication > Providers > Google bölümünden Client ID ve Client Secret bilgilerini girerek etkinleştirin.",
+        "useEmailCta": "E-posta ile Devam Et"
+      }
     },
     "paywall": {
       "title": "Tüm Eczacılık Müfredatını Aç",

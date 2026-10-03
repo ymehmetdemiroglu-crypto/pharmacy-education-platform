@@ -7,14 +7,74 @@ import { StructureIdentifierConfig } from './schema';
 
 export type StructureIdentifierProps = BaseWidgetProps<StructureIdentifierConfig, string>;
 
+const STRINGS = {
+  en: {
+    badge: 'Structure Identifier',
+    source: 'Source',
+    pageAbbr: 'p.',
+    target: 'Target',
+    molecule: 'Molecule',
+    smiles: 'SMILES',
+    selected: 'Selected',
+    node: 'Node',
+    promptClick: 'Click an atom above to select',
+    confirm: 'Confirm Atom Selection',
+    correctTitle: 'Target Identified Correctly!',
+    incorrectTitle: 'Incorrect Atom Selected',
+    misconception: 'Misconception Note:',
+    incorrectFallback: (label: string) => `Selected ${label} is not the target pharmacophore`,
+    atomAria: (label: string) => `Atom ${label}`,
+    svgAria: (name: string) => `Chemical structure of ${name}`,
+  },
+  tr: {
+    badge: 'Yapı Tanımlayıcı',
+    source: 'Kaynak',
+    pageAbbr: 's.',
+    target: 'Hedef',
+    molecule: 'Molekül',
+    smiles: 'SMILES',
+    selected: 'Seçilen',
+    node: 'Düğüm',
+    promptClick: 'Seçmek için yukarıdaki bir atoma tıklayın',
+    confirm: 'Atom Seçimini Onayla',
+    correctTitle: 'Hedef Başarıyla Belirlendi!',
+    incorrectTitle: 'Yanlış Atom Seçildi',
+    misconception: 'Kavram Yanılgısı Notu:',
+    incorrectFallback: (label: string) => `Seçilen ${label} hedef farmakofor değildir`,
+    atomAria: (label: string) => `Atom ${label}`,
+    svgAria: (name: string) => `${name} kimyasal yapısı`,
+  },
+  ar: {
+    badge: 'محدد البنية الكيميائية',
+    source: 'المصدر',
+    pageAbbr: 'ص.',
+    target: 'الهدف',
+    molecule: 'الجزيء',
+    smiles: 'SMILES',
+    selected: 'المحدد',
+    node: 'العقدة',
+    promptClick: 'انقر على ذرة أعلاه لتحديدها',
+    confirm: 'تأكيد اختيار الذرة',
+    correctTitle: 'تم تحديد الهدف بنجاح!',
+    incorrectTitle: 'تم اختيار ذرة غير صحيحة',
+    misconception: 'ملاحظة حول الفهم الخاطئ:',
+    incorrectFallback: (label: string) => `الذرة المحددة ${label} ليست المجموعة الفارماكوفورية المستهدفة`,
+    atomAria: (label: string) => `ذرة ${label}`,
+    svgAria: (name: string) => `البنية الكيميائية لمركب ${name}`,
+  },
+};
+
 export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
   config,
+  locale = 'en',
   onAttempt,
   onCorrect,
   onIncorrect,
   disabled = false,
   className,
 }) => {
+  const t = STRINGS[locale] ?? STRINGS.en;
+  const isRtl = locale === 'ar';
   const [selectedAtomId, setSelectedAtomId] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -33,7 +93,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
     if (selectedAtom.isTarget) {
       if (onCorrect) onCorrect();
     } else {
-      if (onIncorrect) onIncorrect(`Selected ${selectedAtom.label} is not the target pharmacophore`);
+      if (onIncorrect) onIncorrect(t.incorrectFallback(selectedAtom.label));
     }
   };
 
@@ -45,15 +105,16 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
   return (
     <Card
       variant="default"
-      className={clsx('w-full flex flex-col gap-4', className)}
+      dir={isRtl ? 'rtl' : 'ltr'}
+      className={clsx('w-full flex flex-col gap-4 text-start', className)}
     >
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <StickerBadge variant="blue" size="sm">
-            Structure Identifier
+            {t.badge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {t.source}: {config.source.file} ({t.pageAbbr} {config.source.page})
           </span>
         </div>
         {config.title && (
@@ -65,15 +126,15 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
           {config.prompt}
         </p>
         <p className="text-xs font-mono text-gray-600 dark:text-gray-400">
-          Target: <strong>{config.targetDescription}</strong>
+          {t.target}: <strong>{config.targetDescription}</strong>
         </p>
       </div>
 
       {/* Chemical Metadata Bar */}
       <div className="flex flex-wrap items-center justify-between gap-2 p-2 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-mono">
-        <span>Molecule: <strong>{config.moleculeName}</strong></span>
+        <span>{t.molecule}: <strong>{config.moleculeName}</strong></span>
         <span className="truncate max-w-xs" title={config.smiles}>
-          SMILES: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700" dir="ltr">{config.smiles}</code>
+          {t.smiles}: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700" dir="ltr">{config.smiles}</code>
         </span>
       </div>
 
@@ -83,7 +144,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
           viewBox="0 0 400 240"
           className="w-full max-w-md h-auto select-none"
           role="img"
-          aria-label={`Chemical structure of ${config.moleculeName}`}
+          aria-label={t.svgAria(config.moleculeName)}
         >
           {/* Render Chemical Bonds */}
           {config.bonds.map((bond, idx) => {
@@ -142,7 +203,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                 tabIndex={disabled || isSubmitted ? -1 : 0}
                 role="button"
                 aria-pressed={isSelected}
-                aria-label={`Atom ${atom.label}`}
+                aria-label={t.atomAria(atom.label)}
                 onClick={() => handleSelectAtom(atom.id)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -188,14 +249,14 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       {!isSubmitted ? (
         <div className="flex items-center justify-between gap-3 pt-2">
           <span className="text-xs font-mono text-gray-700 dark:text-gray-300">
-            {selectedAtom ? `Selected: ${selectedAtom.label} (Node ${selectedAtom.id})` : 'Click an atom above to select'}
+            {selectedAtom ? `${t.selected}: ${selectedAtom.label} (${t.node} ${selectedAtom.id})` : t.promptClick}
           </span>
           <Button
             variant="primary"
             disabled={!selectedAtomId || disabled}
             onClick={handleSubmit}
           >
-            Confirm Atom Selection
+            {t.confirm}
           </Button>
         </div>
       ) : (
@@ -204,18 +265,18 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
             {selectedAtom?.isTarget ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
-                <span>Target Identified Correctly!</span>
+                <span>{t.correctTitle}</span>
               </div>
             ) : (
               <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
-                <span>Incorrect Atom Selected</span>
+                <span>{t.incorrectTitle}</span>
               </div>
             )}
           </div>
           {selectedAtom && !selectedAtom.isTarget && selectedAtom.distractorRationale && (
             <div className="p-3 bg-[#FFF0F5] dark:bg-[#2D1B22] border-2 border-[#FF6B9D] text-xs font-body leading-relaxed text-black dark:text-rose-200">
-              <span className="font-bold font-mono text-[#D92662] dark:text-[#FF85B2] uppercase block mb-1">Misconception Note:</span>
+              <span className="font-bold font-mono text-[#D92662] dark:text-[#FF85B2] uppercase block mb-1">{t.misconception}</span>
               {selectedAtom.distractorRationale}
             </div>
           )}

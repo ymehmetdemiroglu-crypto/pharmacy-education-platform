@@ -12,11 +12,125 @@ export type PkSimulatorProps = BaseWidgetProps<
 
 export const PkSimulator: React.FC<PkSimulatorProps> = ({
   config,
-  locale = 'tr',
+  locale = 'en',
   onAttempt: _onAttempt,
   disabled = false,
   className,
 }) => {
+  const dict = {
+    tr: {
+      badge: 'PK Simülatörü (1-Kompartman)',
+      source: 'Kaynak: ',
+      page: 's. ',
+      profileSuffix: 'Farmakokinetik Profili',
+      ivBolus: 'IV Bolus',
+      oral: 'Oral (F=0.7)',
+      multipleDosing: 'Çoklu Doz (Kararlı Durum)',
+      plotAria: 'Plazma ilaç konsantrasyonu - zaman eğrisi',
+      therapeuticWindow: 'Terapötik Pencere',
+      timeAxis: 'Zaman (Saat)',
+      halfLife: 'Yarılanma Ömrü',
+      hrUnit: 'saat',
+      eliminationRate: 'Eliminasyon Hızı (ke)',
+      peakCp: 'Tepe Konsantrasyon (Cmax)',
+      avgCss: 'Ortalama Css',
+      na: 'Yok',
+      dose: 'Doz (mg)',
+      clearance: 'Klerens (CL)',
+      vd: 'Dağılım Hacmi (Vd)',
+      dosingInterval: 'Doz Aralığı (Tau)',
+      hoursUnit: 'saat',
+      assumptions: [
+        'Anlık homojen dağılım (1-kompartmanlı model)',
+        'Birinci derece doğrusal eliminasyon kinetiği (doymamış enzimler)',
+        'IV için tam sistemik emilim; oral yol için sabit Ka',
+      ],
+    },
+    ar: {
+      badge: 'محاكي الحركية الدوائية (حجرة واحدة)',
+      source: 'المصدر: ',
+      page: 'ص. ',
+      profileSuffix: 'الملف الحركي الدوائي',
+      ivBolus: 'حقنة وريدية مباشرة',
+      oral: 'فموي (F=0.7)',
+      multipleDosing: 'جرعات متكررة (حالة الاستقرار)',
+      plotAria: 'منحنى تركيز الدواء في البلازما مقابل الزمن',
+      therapeuticWindow: 'النافذة العلاجية',
+      timeAxis: 'الزمن (ساعات)',
+      halfLife: 'عمر النصف الإطراحي',
+      hrUnit: 'ساعة',
+      eliminationRate: 'معدل الإطراح (ke)',
+      peakCp: 'ذروة التركيز (Cmax)',
+      avgCss: 'متوسط التركيز المستقر Css',
+      na: 'غير متاح',
+      dose: 'الجرعة (ملغ)',
+      clearance: 'التصفية (CL)',
+      vd: 'حجم التوزع (Vd)',
+      dosingInterval: 'الفترة الفاصلة بين الجرعات (Tau)',
+      hoursUnit: 'ساعات',
+      assumptions: [
+        'توزع فوري متجانس (نموذج الحجرة الواحدة)',
+        'حركية إطراح خطية من الرتبة الأولى (إنزيمات غير مشبعة)',
+        'امتصاص جهازي كامل للحقن الوريدي؛ ثابت امتصاص ثابت للطريق الفموي',
+      ],
+    },
+    en: {
+      badge: 'PK Simulator (1-Compartment)',
+      source: 'Source: ',
+      page: 'p. ',
+      profileSuffix: 'Pharmacokinetic Profile',
+      ivBolus: 'IV Bolus',
+      oral: 'Oral (F=0.7)',
+      multipleDosing: 'Multiple Dosing (Steady State)',
+      plotAria: 'Plasma drug concentration versus time curve',
+      therapeuticWindow: 'Therapeutic Window',
+      timeAxis: 'Time (Hours)',
+      halfLife: 'Elimination Half-Life',
+      hrUnit: 'hr',
+      eliminationRate: 'Elimination Rate (ke)',
+      peakCp: 'Peak Cp (Cmax)',
+      avgCss: 'Average Css',
+      na: 'N/A',
+      dose: 'Dose (mg)',
+      clearance: 'Clearance (CL)',
+      vd: 'Volume of Dist. (Vd)',
+      dosingInterval: 'Dosing Interval (Tau)',
+      hoursUnit: 'hours',
+      assumptions: [
+        'Instantaneous uniform distribution (1-compartment model)',
+        'First-order linear elimination kinetics (un-saturated enzymes)',
+        'Complete systemic absorption for IV; constant Ka for oral route',
+      ],
+    },
+  }[locale || 'en'] || {
+    badge: 'PK Simulator (1-Compartment)',
+    source: 'Source: ',
+    page: 'p. ',
+    profileSuffix: 'Pharmacokinetic Profile',
+    ivBolus: 'IV Bolus',
+    oral: 'Oral (F=0.7)',
+    multipleDosing: 'Multiple Dosing (Steady State)',
+    plotAria: 'Plasma drug concentration versus time curve',
+    therapeuticWindow: 'Therapeutic Window',
+    timeAxis: 'Time (Hours)',
+    halfLife: 'Elimination Half-Life',
+    hrUnit: 'hr',
+    eliminationRate: 'Elimination Rate (ke)',
+    peakCp: 'Peak Cp (Cmax)',
+    avgCss: 'Average Css',
+    na: 'N/A',
+    dose: 'Dose (mg)',
+    clearance: 'Clearance (CL)',
+    vd: 'Volume of Dist. (Vd)',
+    dosingInterval: 'Dosing Interval (Tau)',
+    hoursUnit: 'hours',
+    assumptions: [
+      'Instantaneous uniform distribution (1-compartment model)',
+      'First-order linear elimination kinetics (un-saturated enzymes)',
+      'Complete systemic absorption for IV; constant Ka for oral route',
+    ],
+  };
+
   const [route, setRoute] = useState<'iv_bolus' | 'oral'>('iv_bolus');
   const [doseMg, setDoseMg] = useState<number>(config.defaultDoseMg);
   const [clLHr, setClLHr] = useState<number>(config.defaultClearanceLHr);
@@ -92,19 +206,23 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
   const cssAvg = Math.round(((F * doseMg) / (clLHr * tauHr)) * 10) / 10;
 
   return (
-    <Card variant="default" className={clsx('w-full flex flex-col gap-4', className)}>
+    <Card
+      variant="default"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className={clsx('w-full flex flex-col gap-4', className)}
+    >
       {/* Header */}
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <StickerBadge variant="orange" size="sm">
-            PK Simulator (1-Compartment)
+            {dict.badge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
         <h3 className="font-display font-bold text-base sm:text-lg">
-          {config.drugName} Pharmacokinetic Profile
+          {config.drugName} {dict.profileSuffix}
         </h3>
         <p className="text-xs font-body text-gray-700 dark:text-gray-300">{config.prompt}</p>
       </div>
@@ -125,13 +243,13 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
                   : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
               )}
             >
-              {r === 'iv_bolus' ? 'IV Bolus' : 'Oral (F=0.7)'}
+              {r === 'iv_bolus' ? dict.ivBolus : dict.oral}
             </button>
           ))}
         </div>
 
         <Toggle
-          label="Multiple Dosing (Steady State)"
+          label={dict.multipleDosing}
           checked={isMultipleDosing}
           onChange={setIsMultipleDosing}
           disabled={disabled}
@@ -144,7 +262,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"
           role="img"
-          aria-label="Plasma drug concentration versus time curve"
+          aria-label={dict.plotAria}
         >
           {/* Shaded Green Therapeutic Target Range */}
           <rect
@@ -167,7 +285,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
             fill="#2E7D32"
             fontWeight="bold"
           >
-            Therapeutic Window ({config.therapeuticWindow[0]}–{config.therapeuticWindow[1]} mg/L)
+            {dict.therapeuticWindow} ({config.therapeuticWindow[0]}–{config.therapeuticWindow[1]} mg/L)
           </text>
 
           {/* Axes */}
@@ -189,7 +307,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           <text x="370" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">{maxTime}h</text>
 
           <text x="210" y="238" textAnchor="middle" fontSize="11" fontFamily="sans-serif" fontWeight="bold" fill="currentColor">
-            Time (Hours)
+            {dict.timeAxis}
           </text>
 
           {/* Concentration Curve */}
@@ -205,20 +323,20 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
         {/* Readout Summary */}
         <div aria-live="polite" className="grid grid-cols-2 sm:grid-cols-4 gap-2 mt-3 pt-2 border-t border-black/10 dark:border-slate-700 text-xs font-mono text-center">
           <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
-            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Elimination Half-Life</span>
-            <strong>{tHalf} hr</strong>
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">{dict.halfLife}</span>
+            <strong>{tHalf} {dict.hrUnit}</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
-            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Elimination Rate (ke)</span>
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">{dict.eliminationRate}</span>
             <strong>{ke.toFixed(3)} h⁻¹</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
-            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Peak Cp (Cmax)</span>
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">{dict.peakCp}</span>
             <strong>{maxObservedCp.toFixed(1)} mg/L</strong>
           </div>
           <div className="bg-gray-50 dark:bg-[#1E293B] p-1.5 border border-black/20 dark:border-slate-700 text-black dark:text-slate-100">
-            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">Average Css</span>
-            <strong>{isMultipleDosing ? `${cssAvg} mg/L` : 'N/A'}</strong>
+            <span className="text-[10px] text-gray-700 dark:text-slate-300 uppercase block">{dict.avgCss}</span>
+            <strong>{isMultipleDosing ? `${cssAvg} mg/L` : dict.na}</strong>
           </div>
         </div>
       </div>
@@ -226,7 +344,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
       {/* Sliders */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <Slider
-          label="Dose (mg)"
+          label={dict.dose}
           value={doseMg}
           min={50}
           max={1000}
@@ -236,7 +354,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           disabled={disabled}
         />
         <Slider
-          label="Clearance (CL)"
+          label={dict.clearance}
           value={clLHr}
           min={1}
           max={20}
@@ -246,7 +364,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           disabled={disabled}
         />
         <Slider
-          label="Volume of Dist. (Vd)"
+          label={dict.vd}
           value={vdL}
           min={10}
           max={150}
@@ -260,12 +378,12 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
       {isMultipleDosing && (
         <div className="p-3 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
           <Slider
-            label="Dosing Interval (Tau)"
+            label={dict.dosingInterval}
             value={tauHr}
             min={4}
             max={24}
             step={4}
-            unit="hours"
+            unit={dict.hoursUnit}
             onChange={setTauHr}
             disabled={disabled}
           />
@@ -277,11 +395,7 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
         locale={locale}
         equation="Cp(t) = (D / Vd) * e^(-(CL/Vd)*t)   [IV Bolus 1-Compartment]"
         sourceReference="Rowland and Tozer's Clinical Pharmacokinetics and Pharmacodynamics (4th ed.)"
-        assumptions={[
-          'Instantaneous uniform distribution (1-compartment model)',
-          'First-order linear elimination kinetics (un-saturated enzymes)',
-          'Complete systemic absorption for IV; constant Ka for oral route',
-        ]}
+        assumptions={dict.assumptions}
       />
     </Card>
   );

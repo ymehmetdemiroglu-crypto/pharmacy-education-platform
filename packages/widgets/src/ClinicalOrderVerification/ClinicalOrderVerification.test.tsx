@@ -96,4 +96,20 @@ describe('ClinicalOrderVerification Component', () => {
     expect(screen.getByText(/C3 karboksil ve C4 okso oksijenleri/i)).toBeDefined();
     expect(screen.getByText(/Model İllüstrasyonu/i)).toBeDefined();
   });
+
+  it('renders correctly in English', () => {
+    render(<ClinicalOrderVerification locale="en" />);
+    expect(screen.getByText(/Clinical Pharmacist Order Verification Station/i)).toBeDefined();
+    expect(screen.getByText(/Patient Chart/i)).toBeDefined();
+    expect(screen.getByRole('button', { name: /Verify Order \/ Record Decision/i })).toBeDefined();
+  });
+
+  it('renders correctly in Arabic with RTL direction', () => {
+    const { container } = render(<ClinicalOrderVerification locale="ar" />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText(/محطة التحقق من الوصفات السريرية للصيدلي/i)).toBeDefined();
+    expect(screen.getByText(/ملف المريض/i)).toBeDefined();
+    expect(screen.getByRole('button', { name: /تأكيد الوصفة \/ حفظ القرار/i })).toBeDefined();
+  });
 });
+

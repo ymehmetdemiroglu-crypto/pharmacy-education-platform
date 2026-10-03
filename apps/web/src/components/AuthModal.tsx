@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Input } from '@pharmacy/ui';
-import { useAuth } from '@pharmacy/platform';
-import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap } from 'lucide-react';
+import { useAuth, OAuthProviderDisabledError } from '@pharmacy/platform';
+import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap, AlertTriangle, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
 
 export interface AuthModalProps {
@@ -68,10 +68,12 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [googleDisabledNotice, setGoogleDisabledNotice] = useState(false);
 
   const resetForm = () => {
     setError(null);
     setSuccessMessage(null);
+    setGoogleDisabledNotice(false);
     setIsSubmitting(false);
   };
 
@@ -153,6 +155,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   const handleGoogleAuth = async () => {
     setIsSubmitting(true);
     setError(null);
+    setGoogleDisabledNotice(false);
 
     try {
       if (signInWithGoogle) {
@@ -170,8 +173,16 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       }, 600);
     } catch (err: any) {
       const msg = err?.message || '';
-      if (msg.includes('provider is not enabled') || msg.includes('validation_failed') || msg.includes('Unsupported provider')) {
-        setError(t('modals.auth.googleNotConfigured'));
+      if (
+        err instanceof OAuthProviderDisabledError ||
+        err?.name === 'OAuthProviderDisabledError' ||
+        err?.code === 'oauth_provider_disabled' ||
+        msg.includes('provider is not enabled') ||
+        msg.includes('validation_failed') ||
+        msg.includes('Unsupported provider')
+      ) {
+        setGoogleDisabledNotice(true);
+        setError(null);
       } else {
         setError(err?.message || t('modals.auth.googleError'));
       }
@@ -216,6 +227,52 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             <span>{t('modals.auth.signupTab')}</span>
           </button>
         </div>
+
+        {/* Google OAuth Disabled In-App Neo-Brutalist Notice Card */}
+        {googleDisabledNotice && (
+          <div
+            data-testid="google-oauth-disabled-notice"
+            className="border-4 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0F172A] p-4 shadow-[6px_6px_0px_#000000] dark:shadow-[6px_6px_0px_#030712] space-y-3 rounded-none animate-in fade-in duration-200"
+          >
+            {/* Warning Badge & Header */}
+            <div className="flex items-center gap-2.5 pb-2.5 border-b-2 border-black/20 dark:border-slate-700">
+              <div className="w-7 h-7 bg-[#FFD93D] border-2 border-black flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#000000]">
+                <AlertTriangle className="w-4 h-4 text-black" />
+              </div>
+              <h4 className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-black dark:text-slate-100">
+                {t('modals.auth.googleNotice.title')}
+              </h4>
+            </div>
+
+            {/* Localized Explanation */}
+            <p className="font-sans text-xs sm:text-sm text-gray-800 dark:text-slate-200 leading-relaxed font-medium">
+              {t('modals.auth.googleNotice.description')}
+            </p>
+
+            {/* Admin Guidance / Tip */}
+            <div className="p-2.5 bg-amber-50 dark:bg-amber-950/40 border-2 border-black/30 dark:border-slate-600 text-[11px] font-mono text-amber-900 dark:text-amber-200 leading-normal">
+              {t('modals.auth.googleNotice.adminTip')}
+            </div>
+
+            {/* Email/Password Fallback CTA */}
+            <button
+              type="button"
+              onClick={() => {
+                setGoogleDisabledNotice(false);
+                setTab('login');
+                setTimeout(() => {
+                  const input = document.querySelector<HTMLInputElement>('input[type="email"]');
+                  input?.focus();
+                }, 50);
+              }}
+              className="w-full py-2.5 px-3 bg-[#6BCB77] hover:bg-[#58ba64] text-black font-mono text-xs sm:text-sm font-bold uppercase border-3 border-black shadow-[4px_4px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <LogIn className="w-4 h-4" />
+              <span>{t('modals.auth.googleNotice.useEmailCta')}</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
 
         {/* Status Alerts */}
         {error && (

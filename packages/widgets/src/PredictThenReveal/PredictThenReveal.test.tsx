@@ -81,5 +81,20 @@ describe('PredictThenReveal Widget', () => {
     expect(screen.getByTestId('hypercorrection-alert')).toBeInTheDocument();
     expect(screen.getByText(/hypercorrection opportunity/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish (tr) locale', () => {
+    render(<PredictThenReveal config={mockConfig} locale="tr" />);
+    expect(screen.getByText('Tahmin Et ve Gör')).toBeInTheDocument();
+    expect(screen.getByText('1. Adım: Hipotezinizi Belirleyin')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Deneysel Sonucu Gör' })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<PredictThenReveal config={mockConfig} locale="ar" />);
+    expect(screen.getByText('توقع ثم اكتشف')).toBeInTheDocument();
+    expect(screen.getByText('الخطوة 1: حدد فرضيتك')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'كشف النتيجة التجريبية' })).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });
 

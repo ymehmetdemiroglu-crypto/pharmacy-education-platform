@@ -58,4 +58,25 @@ describe('ReceptorOperationalModel Component', () => {
 
     expect(screen.getByTestId('value-tau')).toHaveTextContent('9.5');
   });
+
+  it('renders correctly in English with pure English labels', () => {
+    render(<ReceptorOperationalModel config={defaultConfig} locale="en" />);
+
+    expect(screen.getByText(/Black-Leff Operational Model of Agonism/i)).toBeInTheDocument();
+    expect(screen.getByTestId('preset-full-agonist')).toHaveTextContent('Full Agonist (τ=10)');
+    expect(screen.getByTestId('spare-receptor-banner')).toHaveTextContent(/High Spare Reserve: 92% receptors uncoupled!/i);
+    const decButton = screen.getByLabelText(/Decrease tau by 0.5/i);
+    fireEvent.click(decButton);
+    expect(screen.getByTestId('value-tau')).toHaveTextContent('9.5');
+  });
+
+  it('renders correctly in Arabic with RTL direction and native Arabic labels', () => {
+    const { container } = render(<ReceptorOperationalModel config={defaultConfig} locale="ar" />);
+
+    const section = container.querySelector('section');
+    expect(section).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText(/نموذج بلاك-ليف التشغيلي للألفة والفاعلية/i)).toBeInTheDocument();
+    expect(screen.getByTestId('preset-full-agonist')).toHaveTextContent('ناهض كامل (τ=10)');
+    expect(screen.getByTestId('spare-receptor-banner')).toHaveTextContent(/فائض مستقبلات مرتفع/i);
+  });
 });

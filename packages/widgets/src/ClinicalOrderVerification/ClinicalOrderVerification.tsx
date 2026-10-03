@@ -211,18 +211,545 @@ export const CANONICAL_CLINICAL_CASES: ClinicalOrderCase[] = [
   },
 ];
 
+export const CANONICAL_CASES_EN: ClinicalOrderCase[] = [
+  {
+    caseId: 'ciprofloxacin_caco3',
+    title: 'Case 1: Fluoroquinolone & Cation Chelation',
+    patientProfile: {
+      age: 64,
+      gender: 'Female',
+      weightKg: 68,
+      indication: 'Uncomplicated Acute Pyelonephritis',
+      renalFunction: 'eGFR 72 mL/min/1.73m²',
+      allergies: 'NKDA (No Known Drug Allergies)',
+    },
+    activeOrder: {
+      drugName: 'Ciprofloxacin',
+      dose: '500 mg PO',
+      route: 'Oral Tablet',
+      frequency: 'Twice daily (BID)',
+    },
+    concomitantMedication: {
+      drugName: 'Calcium Carbonate (CaCO₃)',
+      dose: '1000 mg (400 mg elemental Ca²⁺)',
+      indication: 'Osteopenia / Calcium Supplementation (TID with meals)',
+    },
+    clinicalScenario:
+      'The patient is ordered Ciprofloxacin 500 mg and Calcium Carbonate 1000 mg tablets to be ingested simultaneously at the 08:00 AM dose. As a clinical pharmacist, do you verify this order?',
+    correctDecision: 'modify_spacing',
+    options: [
+      {
+        id: 'opt-c1-approve',
+        decision: 'approve',
+        text: 'Approve order as written: Fluoroquinolone absorption is not clinically affected by calcium salts.',
+        isCorrect: false,
+        feedback:
+          'Erroneous Assessment: Divalent Ca²⁺ cations form insoluble bidentate chelate complexes with the 4-keto and 3-carboxyl groups of ciprofloxacin, reducing oral bioavailability by ~40–50%. This creates a high risk of therapeutic failure.',
+        misconceptionCode: 'MISC-CHELATION-NEGLECT',
+      },
+      {
+        id: 'opt-c1-spacing',
+        decision: 'modify_spacing',
+        text: 'Adjust dosing interval: Administer ciprofloxacin at least 2 hours before or 6 hours after calcium.',
+        isCorrect: true,
+        feedback:
+          'Clinically Flawless! Separating administration by 2 hours before or 6 hours after completely prevents bidentate chelation and preserves oral AUC. IV switch is unnecessary.',
+      },
+      {
+        id: 'opt-c1-iv',
+        decision: 'contraindicated_switch',
+        text: 'Reject order and switch to mandatory IV form: Cannot be administered orally because absorption collapses by over 80%.',
+        isCorrect: false,
+        feedback:
+          'Overtreatment Fallacy: >80% absorption collapse occurs with trivalent Al³⁺/Mg²⁺ hydroxide antacids; CaCO₃ reduces bioavailability by ~40–50%. Proper spacing safely rescues oral therapy.',
+        misconceptionCode: 'MISC-CATION-VALENCY-CONFLATION',
+      },
+      {
+        id: 'opt-c1-double',
+        decision: 'approve',
+        text: 'Increase ciprofloxacin to 1000 mg BID concurrently: Overcome chelation binding saturation.',
+        isCorrect: false,
+        feedback:
+          'Dangerous Approach: Bioavailability remains erratic and unpredictable; excessive fluoroquinolone dosing compounds risks of QTc prolongation and gastrointestinal toxicity.',
+        misconceptionCode: 'MISC-EMPIRIC-OVERDOSE',
+      },
+    ],
+    pharmacologicalMechanism:
+      'The C3 carboxyl and C4 oxo oxygens of the fluoroquinolone form water-insoluble bidentate chelate complexes with divalent Ca²⁺ cations. This suppresses GI absorption by 40–50% (compared to >80% for trivalent Al³⁺/Mg²⁺). Separating administration times solves the interaction.',
+    keyEvidenceCitation:
+      'Goodman & Gilman 14th Ed. Ch. 59; Katzung 15th Ed. Ch. 44; Nix DE et al. Antimicrob Agents Chemother 1989.',
+  },
+  {
+    caseId: 'simvastatin_clarithromycin',
+    title: 'Case 2: CYP3A4 Mechanism-Based Inhibition',
+    patientProfile: {
+      age: 58,
+      gender: 'Male',
+      weightKg: 82,
+      indication: 'Community-Acquired Pneumonia (CAP) + Primary Hypercholesterolemia',
+      renalFunction: 'eGFR 65 mL/min/1.73m²',
+      allergies: 'NKDA',
+    },
+    activeOrder: {
+      drugName: 'Clarithromycin',
+      dose: '500 mg PO',
+      route: 'Oral Tablet',
+      frequency: 'Twice daily (BID) - 7-day course',
+    },
+    concomitantMedication: {
+      drugName: 'Simvastatin',
+      dose: '40 mg PO',
+      indication: 'Coronary Artery Disease Secondary Prophylaxis (Nightly QHS)',
+    },
+    clinicalScenario:
+      'Oral clarithromycin 500 mg BID for 7 days is initiated for pneumonia. The patient chronically takes simvastatin 40 mg QHS. How do you manage this clinical order?',
+    correctDecision: 'contraindicated_switch',
+    options: [
+      {
+        id: 'opt-c2-approve',
+        decision: 'approve',
+        text: 'Approve order: Simvastatin is cleared primarily via OATP2B1 and renal excretion and will not interact.',
+        isCorrect: false,
+        feedback:
+          'Fatal Pharmacokinetic Fallacy: Simvastatin is an inactive lipophilic lactone prodrug cleared almost completely by intestinal/hepatic CYP3A4 (F < 5%). OATP2B1 saturation is a fabricated mechanism.',
+        misconceptionCode: 'MISC-INVENTED-TRANSPORTER-MECHANISM',
+      },
+      {
+        id: 'opt-c2-switch',
+        decision: 'contraindicated_switch',
+        text: 'Contraindicated combination: Hold simvastatin during clarithromycin or switch antibiotic to Azithromycin.',
+        isCorrect: true,
+        feedback:
+          'Outstanding Clinical Judgment! Clarithromycin is a potent mechanism-based CYP3A4 inactivator; it elevates simvastatin AUC by 10–12 fold (+1000–1100%), precipitating severe rhabdomyolysis and acute kidney injury. Azithromycin does not inhibit CYP3A4.',
+      },
+      {
+        id: 'opt-c2-halve',
+        decision: 'modify_spacing',
+        text: 'Continue therapy with simvastatin reduced to 20 mg: 50% dose reduction ensures safe systemic exposure.',
+        isCorrect: false,
+        feedback:
+          'Inadequate Protection: Against a 10–12 fold massive AUC surge, halving the dose leaves exposure 5–6 fold above toxic thresholds. Co-administration is strictly contraindicated.',
+        misconceptionCode: 'MISC-LINEAR-DOSE-FALLACY',
+      },
+      {
+        id: 'opt-c2-lovastatin',
+        decision: 'approve',
+        text: 'Substitute simvastatin with equivalent Lovastatin: Lovastatin is an alternative statin unaffected by macrolides.',
+        isCorrect: false,
+        feedback:
+          'Erroneous Alternative: Lovastatin is also a major CYP3A4 substrate and carries the exact same fatal rhabdomyolysis risk.',
+        misconceptionCode: 'MISC-CLASS-SUBSTRATE-CONFUSION',
+      },
+    ],
+    pharmacologicalMechanism:
+      'Clarithromycin forms a metabolite-intermediate (MI) complex with CYP3A4 heme iron, causing quasi-irreversible mechanism-based inactivation (MBI). First-pass clearance collapses and simvastatin AUC surges 10–12 fold (+1000–1100%). Hold statin or switch to Azithromycin.',
+    keyEvidenceCitation:
+      'FDA Drug Safety Communication; Goodman & Gilman 14th Ed. Ch. 35; Katzung 15th Ed. Ch. 35; Neuvonen PJ et al. Clin Pharmacol Ther 1998.',
+  },
+  {
+    caseId: 'warfarin_heparin_bridge',
+    title: 'Case 3: Warfarin Latency & Heparin Bridging',
+    patientProfile: {
+      age: 71,
+      gender: 'Male',
+      weightKg: 76,
+      indication: 'Acute Proximal Deep Vein Thrombosis (DVT)',
+      renalFunction: 'eGFR 58 mL/min/1.73m²',
+      allergies: 'NKDA',
+    },
+    activeOrder: {
+      drugName: 'Warfarin',
+      dose: '5 mg PO Daily (Initiated 48h ago)',
+      route: 'Oral',
+      frequency: 'Once daily (Evening)',
+    },
+    concomitantMedication: {
+      drugName: 'Enoxaparin (LMWH Heparin)',
+      dose: '80 mg (1 mg/kg) SC',
+      indication: 'Acute DVT Therapeutic Dosing (Twice daily Q12H)',
+    },
+    clinicalScenario:
+      'A patient admitted for acute DVT was initiated concurrently on Enoxaparin and Warfarin 48h ago. Day 2 morning lab reveals INR = 2.2. The resident suggests: "INR reached therapeutic range (2.0-3.0), discontinue Enoxaparin to avoid bleeding risk." What is your clinical decision?',
+    correctDecision: 'maintain_bridge',
+    options: [
+      {
+        id: 'opt-c3-stop',
+        decision: 'approve',
+        text: 'Approve stopping Enoxaparin: Target INR achieved, discontinue heparin immediately to mitigate hemorrhage risk.',
+        isCorrect: false,
+        feedback:
+          'Critical Clinical Pitfall! Early INR elevation reflects depletion of Factor VII (half-life ~6h). However, antithrombotic efficacy requires depletion of prothrombin (Factor II, t½ ~60–72h) and Factor X (t½ ~36–48h). Stopping heparin on Day 2 risks recurrent thrombosis and warfarin skin necrosis.',
+        misconceptionCode: 'MISC-INR-EFFICACY-EQUATION',
+      },
+      {
+        id: 'opt-c3-bridge',
+        decision: 'maintain_bridge',
+        text: 'Maintain heparin bridge: Enoxaparin must continue for at least 5 days and until INR is therapeutic for 24 hours.',
+        isCorrect: true,
+        feedback:
+          'Correct and Life-Saving! True antithrombotic protection depends on depletion of Factor II and is delayed by 5–7 days. Rapid initial decline of Protein C (t½ ~8h) creates transient hypercoagulability. Bridging is mandatory.',
+      },
+      {
+        id: 'opt-c3-double',
+        decision: 'approve',
+        text: 'Double warfarin to 10 mg and discontinue heparin: Higher dose accelerates antithrombotic onset.',
+        isCorrect: false,
+        feedback:
+          'Erroneous & Dangerous: Doubling the dose when INR is already 2.2 triggers delayed accumulation, supratherapeutic INR, and life-threatening hemorrhage.',
+        misconceptionCode: 'MISC-KINETIC-OVERCORRECTION',
+      },
+      {
+        id: 'opt-c3-withhold',
+        decision: 'approve',
+        text: 'Withhold both warfarin and enoxaparin for 48 hours due to hypersensitivity concern.',
+        isCorrect: false,
+        feedback:
+          'Unsound: Halting all anticoagulation in acute DVT invites fatal pulmonary embolism.',
+        misconceptionCode: 'MISC-ACUTE-DISCONTINUATION',
+      },
+    ],
+    pharmacologicalMechanism:
+      'Warfarin inhibits VKORC1, blocking carboxylation of Factors II, VII, IX, X and Proteins C/S. Short half-life Factor VII (t½ ~6h) drops rapidly, elevating INR in 24–48h. However, real antithrombotic efficacy requires prothrombin (Factor II, t½ ~60–72h) and Factor X depletion (5–7 days). Bridging for at least 5 days is essential.',
+    keyEvidenceCitation:
+      'CHEST 2012/2018 Antithrombotic Therapy Guidelines; Goodman & Gilman 14th Ed. Ch. 34; Katzung 15th Ed. Ch. 34.',
+  },
+];
+
+export const CANONICAL_CASES_AR: ClinicalOrderCase[] = [
+  {
+    caseId: 'ciprofloxacin_caco3',
+    title: 'الحالة 1: الفلوروكينولون واستخلاب الكاتيونات',
+    patientProfile: {
+      age: 64,
+      gender: 'أنثى',
+      weightKg: 68,
+      indication: 'التهاب الحويضة والكلية الحاد غير المصحوب بمضاعفات',
+      renalFunction: 'معدل الترشيح الكبيبي 72 مل/دقيقة/1.73م²',
+      allergies: 'لا توجد حساسية دوائية معروفة (NKDA)',
+    },
+    activeOrder: {
+      drugName: 'سيبروفلوكساسين',
+      dose: '500 ملغ فموياً',
+      route: 'قرص فموي',
+      frequency: 'مرتان يومياً (BID)',
+    },
+    concomitantMedication: {
+      drugName: 'كربونات الكالسيوم (CaCO₃)',
+      dose: '1000 ملغ (400 ملغ كالسيوم عنصري)',
+      indication: 'قلة العظام / مكمل كالسيوم (3 مرات يومياً مع الوجبات)',
+    },
+    clinicalScenario:
+      'تم وصف سيبروفلوكساسين 500 ملغ وأقراص كربونات الكالسيوم 1000 ملغ ليتم تناولهما معاً في جرعة الساعة 08:00 صباحاً. بصفتك صيدلياً سريرياً، هل توافق على هذه الوصفة؟',
+    correctDecision: 'modify_spacing',
+    options: [
+      {
+        id: 'opt-c1-approve',
+        decision: 'approve',
+        text: 'الموافقة على الوصفة كما هي: امتصاص الفلوروكينولون لا يتأثر سريرياً بأملاح الكالسيوم.',
+        isCorrect: false,
+        feedback:
+          'تقييم خاطئ: تشكل كاتيونات Ca²⁺ ثنائية التكافؤ معقدات استخلابية ثنائية السن غير قابلة للذوبان مع مجموعتي 4-كيتو و3-كاربوكسيل في السيبروفلوكساسين، مما يخفض التوافر الحيوي الفموي بنسبة 40-50%. ينشأ خطر فشل العلاج.',
+        misconceptionCode: 'MISC-CHELATION-NEGLECT',
+      },
+      {
+        id: 'opt-c1-spacing',
+        decision: 'modify_spacing',
+        text: 'تعديل الفاصل الزمني للجرعات: إعطاء السيبروفلوكساسين قبل الكالسيوم بساعتين على الأقل أو بعده بـ 6 ساعات.',
+        isCorrect: true,
+        feedback:
+          'قرار سريري ممتاز! تطبيق قاعدة الساعتين قبل أو الست ساعات بعد يمنع تشكل المعقدات الاستخلابية تماماً ويحافظ على المساحة تحت المنحنى (AUC) الفموية. لا حاجة للتحويل الوريدي.',
+      },
+      {
+        id: 'opt-c1-iv',
+        decision: 'contraindicated_switch',
+        text: 'رفض الوصفة والتحويل الإلزامي إلى الحقن الوريدي: لا يمكن إعطاؤه فموياً لهبوط الامتصاص بأكثر من 80%.',
+        isCorrect: false,
+        feedback:
+          'مغالطة الإفراط في العلاج: هبوط الامتصاص بأكثر من 80% يحدث مع مضادات الحموضة المحتوية على هيدروكسيد Al³⁺/Mg²⁺؛ بينما CaCO₃ يخفضه بنسبة 40-50% فقط. الفصل الزمني كافٍ لإنقاذ العلاج الفموي بأمان.',
+        misconceptionCode: 'MISC-CATION-VALENCY-CONFLATION',
+      },
+      {
+        id: 'opt-c1-double',
+        decision: 'approve',
+        text: 'مضاعفة جرعة السيبروفلوكساسين إلى 1000 ملغ مرتين يومياً بالتزامن: لتجاوز تشبع الاستخلاب.',
+        isCorrect: false,
+        feedback:
+          'نهج خطير: يصبح التوافر الحيوي غير متوقع؛ والجرعات المفرطة تضاعف مخاطر استطالة فاصل QTc والسمية المعدية المعوية.',
+        misconceptionCode: 'MISC-EMPIRIC-OVERDOSE',
+      },
+    ],
+    pharmacologicalMechanism:
+      'يشكل أكسجينا C3 كاربوكسيل وC4 أوكسو في الفلوروكينولون معقدات استخلابية غير ذوابة مع Ca²⁺ ثنائي التكافؤ، مما يثبط الامتصاص الهضمي بنسبة 40-50%. يُحل التداخل بفصل مواعيد التناول.',
+    keyEvidenceCitation:
+      'Goodman & Gilman 14th Ed. Ch. 59; Katzung 15th Ed. Ch. 44; Nix DE et al. Antimicrob Agents Chemother 1989.',
+  },
+  {
+    caseId: 'simvastatin_clarithromycin',
+    title: 'الحالة 2: تثبيط CYP3A4 القائم على الآلية',
+    patientProfile: {
+      age: 58,
+      gender: 'ذكر',
+      weightKg: 82,
+      indication: 'ذات الرئة المكتسبة من المجتمع (CAP) + فرط كولسترول الدم الأولي',
+      renalFunction: 'معدل الترشيح الكبيبي 65 مل/دقيقة/1.73م²',
+      allergies: 'لا توجد حساسية دوائية معروفة (NKDA)',
+    },
+    activeOrder: {
+      drugName: 'كلاريثروميسين',
+      dose: '500 ملغ فموياً',
+      route: 'قرص فموي',
+      frequency: 'مرتان يومياً (BID) - دورة لمدة 7 أيام',
+    },
+    concomitantMedication: {
+      drugName: 'سيمفاستاتين',
+      dose: '40 ملغ فموياً',
+      indication: 'الوقاية الثانوية من داء الشريان التاجي (ليلياً عند النوم)',
+    },
+    clinicalScenario:
+      'تم وصف كلاريثروميسين فموي 500 ملغ مرتين يومياً لمدة 7 أيام لعلاج ذات الرئة. يتناول المريض سيمفاستاتين 40 ملغ ليلياً بشكل مزمن. كيف تدير هذه الوصفة؟',
+    correctDecision: 'contraindicated_switch',
+    options: [
+      {
+        id: 'opt-c2-approve',
+        decision: 'approve',
+        text: 'الموافقة على الوصفة: يتم التخلص من السيمفاستاتين أساساً عبر OATP2B1 والإطراح الكلوي ولن يتداخل.',
+        isCorrect: false,
+        feedback:
+          'مغالطة دوائية مميتة: السيمفاستاتين طليعة دوائية لاكتونية تُستقلب كلياً تقريباً عبر CYP3A4 المعوي والكبدي (التوافر الحيوي < 5%). تشبع OATP2B1 آلية مختلقة.',
+        misconceptionCode: 'MISC-INVENTED-TRANSPORTER-MECHANISM',
+      },
+      {
+        id: 'opt-c2-switch',
+        decision: 'contraindicated_switch',
+        text: 'مزيج مضاد استطباب: يجب إيقاف السيمفاستاتين أثناء العلاج بالكلاريثروميسين أو التحويل إلى أزيثروميسين.',
+        isCorrect: true,
+        feedback:
+          'قرار سريري سليم تماماً! الكلاريثروميسين مثبط قوي لـ CYP3A4 قائم على الآلية؛ يرفع AUC للسيمفاستاتين بمقدار 10-12 ضعفاً (+1000-1100%)، مما يثير خطر انحلال الربيدات والقصور الكلوي الحاد. الأزيثروميسين لا يثبط CYP3A4.',
+      },
+      {
+        id: 'opt-c2-halve',
+        decision: 'modify_spacing',
+        text: 'مواصلة العلاج مع تخفيض جرعة السيمفاستاتين إلى 20 ملغ: خفض الجرعة بنسبة 50% يضمن مستوى آمناً.',
+        isCorrect: false,
+        feedback:
+          'حماية غير كافية: أمام ارتفاع هائل بمقدار 10-12 ضعفاً، فإن خفض الجرعة للنصف يترك المستويات 5-6 أضعاف فوق العتبة السمية. الاستخدام المتزامن مضاد استطباب قطعي.',
+        misconceptionCode: 'MISC-LINEAR-DOSE-FALLACY',
+      },
+      {
+        id: 'opt-c2-lovastatin',
+        decision: 'approve',
+        text: 'استبدال السيمفاستاتين بجرعة مكافئة من لوفاستاتين: لوفاستاتين ستاتين بديل لا يتأثر بالماكروليدات.',
+        isCorrect: false,
+        feedback:
+          'بديل غير صحيح: اللوفاستاتين مثل السيمفاستاتين ركيزة رئيسية لـ CYP3A4 ويحمل نفس الخطر القاتل لانحلال الربيدات.',
+        misconceptionCode: 'MISC-CLASS-SUBSTRATE-CONFUSION',
+      },
+    ],
+    pharmacologicalMechanism:
+      'يرتبط الكلاريثروميسين بحديد الهيم في CYP3A4 مشكلاً معقداً وسيطاً شبه غير عكوس. ينهار التصفية الكبدية ويرتفع AUC للسيمفاستاتين بمقدار 10-12 ضعفاً. يجب إيقاف الستاتين أو التحويل إلى أزيثروميسين.',
+    keyEvidenceCitation:
+      'FDA Drug Safety Communication; Goodman & Gilman 14th Ed. Ch. 35; Katzung 15th Ed. Ch. 35; Neuvonen PJ et al. Clin Pharmacol Ther 1998.',
+  },
+  {
+    caseId: 'warfarin_heparin_bridge',
+    title: 'الحالة 3: تأخر تأثير الوارفارين والتجسير بالهيبارين',
+    patientProfile: {
+      age: 71,
+      gender: 'ذكر',
+      weightKg: 76,
+      indication: 'الخثار الوريدي العميق الداني الحاد (DVT)',
+      renalFunction: 'معدل الترشيح الكبيبي 58 مل/دقيقة/1.73م²',
+      allergies: 'لا توجد حساسية دوائية معروفة (NKDA)',
+    },
+    activeOrder: {
+      drugName: 'وارفارين',
+      dose: '5 ملغ فموياً يومياً (بدأ قبل 48 ساعة)',
+      route: 'فموي',
+      frequency: 'مرة واحدة يومياً (مساءً)',
+    },
+    concomitantMedication: {
+      drugName: 'إينوكسابارين (هيبارين منخفض الوزن الجزيئي)',
+      dose: '80 ملغ (1 ملغ/كغ) تحت الجلد',
+      indication: 'جرعة علاجية للـ DVT الحاد (مرتان يومياً Q12H)',
+    },
+    clinicalScenario:
+      'مريض منوم لعلاج DVT حاد بدأ بالتزامن على إينوكسابارين ووارفارين قبل 48 ساعة. أظهرت تحاليل صباح اليوم الثاني: INR = 2.2. يقول الطبيب المقيم: "وصل INR إلى النطاق العلاجي (2.0-3.0)، فلنوقف الإينوكسابارين لتجنب النزيف". ما هو قرارك الصيدلاني؟',
+    correctDecision: 'maintain_bridge',
+    options: [
+      {
+        id: 'opt-c3-stop',
+        decision: 'approve',
+        text: 'الموافقة على إيقاف الإينوكسابارين: تحقق الهدف العلاجي لـ INR، ويجب إيقاف الهيبارين فوراً لتفادي النزف.',
+        isCorrect: false,
+        feedback:
+          'فخ سريري حرج! الارتفاع المبكر لـ INR يعكس استنفاد العامل VII ذي نصف العمر القصير (~6 ساعات). لكن الفعالية الحقيقية المضادة للتخثر تتطلب نضوب العامل II (~60-72 ساعة) والعامل X (~36-48 ساعة). إيقاف الهيبارين في اليوم الثاني يعرض المريض لانتكاس الخثار ونخر الجلد بالوارفارين.',
+        misconceptionCode: 'MISC-INR-EFFICACY-EQUATION',
+      },
+      {
+        id: 'opt-c3-bridge',
+        decision: 'maintain_bridge',
+        text: 'مواصلة التجسير بالهيبارين: يجب عدم إيقاف الإينوكسابارين قبل 5 أيام على الأقل وبقاء INR في النطاق العلاجي ليومين متتاليين.',
+        isCorrect: true,
+        feedback:
+          'صحيح ومنقذ للحياة! الحماية الحقيقية المضادة للتخثر تتأخر من 5-7 أيام بانتظار نضوب العامل II (البروثرومبين). كما أن الهبوط السريع لبروتين C (~8 ساعات) يخلق حالة مؤقتة مؤهبة للتخثر. التجسير إلزامي.',
+      },
+      {
+        id: 'opt-c3-double',
+        decision: 'approve',
+        text: 'مضاعفة جرعة الوارفارين إلى 10 ملغ وإيقاف الهيبارين: الجرعة الأعلى تسرع الأثر المضاد للتخثر.',
+        isCorrect: false,
+        feedback:
+          'خاطئ وخطير: مضاعفة الجرعة بينما INR بالفعل 2.2 تؤدي لتراكم متأخر وقيم فوق علاجية ونزف جسيم مهدد للحياة.',
+        misconceptionCode: 'MISC-KINETIC-OVERCORRECTION',
+      },
+      {
+        id: 'opt-c3-withhold',
+        decision: 'approve',
+        text: 'إيقاف الوارفارين والإينوكسابارين معاً لمدة 48 ساعة تحسباً لفرط التحسس.',
+        isCorrect: false,
+        feedback:
+          'خاطئ: إيقاف كامل مضادات التخثر في مريض DVT حاد يدعو إلى انصمام رئوي مميت.',
+        misconceptionCode: 'MISC-ACUTE-DISCONTINUATION',
+      },
+    ],
+    pharmacologicalMechanism:
+      'يثبط الوارفارين VKORC1 مانعاً كربكسلة العوامل II, VII, IX, X والبروتينين C/S. ينضب العامل VII سريعاً ليرتفع INR في 24-48 ساعة، لكن الوقاية الحقيقية تتطلب نضوب البروثرومبين (العامل II) والعامل X (5-7 أيام). التجسير بالهيبارين لـ 5 أيام على الأقل إلزامي.',
+    keyEvidenceCitation:
+      'CHEST 2012/2018 Antithrombotic Therapy Guidelines; Goodman & Gilman 14th Ed. Ch. 34; Katzung 15th Ed. Ch. 34.',
+  },
+];
+
+const STRINGS = {
+  tr: {
+    stationBadge: 'Klinik Eczacı İstemi Doğrulama İstasyonu',
+    pharmacovigilanceTag: '[Vaka Odaklı Farmakovijilans]',
+    stationTitle: 'Klinik İlaç Etkileşim ve Dozlama Doğrulama',
+    caseSelectorAria: 'Klinik Vaka Seçimi',
+    tabCase1: '1: Florokinolon & Ca²⁺',
+    tabCase2: '2: Statin & Makrolid',
+    tabCase3: '3: Varfarin & Heparin',
+    patientChart: 'Hasta Dosyası',
+    inpatientWard: 'YATAKLI SERVİS',
+    ageGender: 'Yaş/Cinsiyet:',
+    yearsOld: 'yaş',
+    weight: 'Ağırlık:',
+    indication: 'Endikasyon:',
+    renalFunction: 'Böbrek Fonksiyonu:',
+    allergies: 'Alerjiler:',
+    medicationRegimen: 'İlaç Tedavisi ve Doğrulama Bekleyen İstem',
+    orderAwaitingVerification: 'Doğrulama İstenen İstem:',
+    dose: 'Doz:',
+    frequency: 'Sıklık:',
+    concomitantTherapy: 'Eşzamanlı Tedavi / Lab:',
+    detail: 'Detay:',
+    clinicalScenario: 'Klinik Senaryo: ',
+    decisionTitle: 'Eczacı Doğrulama Kararı & Klinik Müdahale Seçeneği:',
+    optionsAria: 'Klinik Seçenekler',
+    evalCompleted: 'Değerlendirme Tamamlandı',
+    selectOneOption: 'Lütfen 1 Seçenek Belirleyin',
+    clinicalRationale: '✓ Klinik Gerekçe: ',
+    diagnosticError: '✗ Hata Tanısı: ',
+    verifyBtn: 'İstemi Onayla / Kararı Kaydet',
+    tryAgainBtn: 'Tekrar Dene',
+    showMechanismBtn: 'Biyofiziksel Mekanizma İncele',
+    hideMechanismBtn: 'Mekanizma Notunu Gizle',
+    source: 'Kaynak:',
+    mechanismSummary: 'Moleküler & Farmakolojik Mekanizma Özeti',
+    mechanismAssumption: 'Klinik etkileşim hesaplamaları in-vivo insan farmakokinetik ve kararlı durum çalışmalarına dayanır.',
+  },
+  en: {
+    stationBadge: 'Clinical Pharmacist Order Verification Station',
+    pharmacovigilanceTag: '[Case-Based Pharmacovigilance]',
+    stationTitle: 'Clinical Drug Interaction & Dosing Verification',
+    caseSelectorAria: 'Clinical Case Selection',
+    tabCase1: '1: Fluoroquinolone & Ca²⁺',
+    tabCase2: '2: Statin & Macrolide',
+    tabCase3: '3: Warfarin & Heparin',
+    patientChart: 'Patient Chart',
+    inpatientWard: 'INPATIENT WARD',
+    ageGender: 'Age/Gender:',
+    yearsOld: 'yo',
+    weight: 'Weight:',
+    indication: 'Indication:',
+    renalFunction: 'Renal Function:',
+    allergies: 'Allergies:',
+    medicationRegimen: 'Medication Regimen & Queued Order',
+    orderAwaitingVerification: 'Order Awaiting Verification:',
+    dose: 'Dose:',
+    frequency: 'Frequency:',
+    concomitantTherapy: 'Concomitant Therapy / Lab:',
+    detail: 'Detail:',
+    clinicalScenario: 'Clinical Scenario: ',
+    decisionTitle: 'Pharmacist Verification Decision & Intervention:',
+    optionsAria: 'Clinical Options',
+    evalCompleted: 'Evaluation Completed',
+    selectOneOption: 'Please Select 1 Option',
+    clinicalRationale: '✓ Clinical Rationale: ',
+    diagnosticError: '✗ Diagnostic Misconception: ',
+    verifyBtn: 'Verify Order / Record Decision',
+    tryAgainBtn: 'Try Again',
+    showMechanismBtn: 'Explore Biophysical Mechanism',
+    hideMechanismBtn: 'Hide Mechanism Note',
+    source: 'Source:',
+    mechanismSummary: 'Molecular & Pharmacological Mechanism Summary',
+    mechanismAssumption: 'Clinical interaction evaluations are based on in-vivo human pharmacokinetics and steady-state studies.',
+  },
+  ar: {
+    stationBadge: 'محطة التحقق من الوصفات السريرية للصيدلي',
+    pharmacovigilanceTag: '[التيقظ الدوائي القائم على الحالات]',
+    stationTitle: 'التحقق السريري من التداخلات الدوائية والجرعات',
+    caseSelectorAria: 'اختيار الحالة السريرية',
+    tabCase1: '1: الفلوروكينولون و Ca²⁺',
+    tabCase2: '2: الستاتين والماكروليد',
+    tabCase3: '3: الوارفارين والهيبارين',
+    patientChart: 'ملف المريض',
+    inpatientWard: 'قسم التنويم',
+    ageGender: 'العمر/الجنس:',
+    yearsOld: 'سنة',
+    weight: 'الوزن:',
+    indication: 'دواعي الاستعمال:',
+    renalFunction: 'وظائف الكلى:',
+    allergies: 'الحساسية:',
+    medicationRegimen: 'النظام العلاجي والوصفة بانتظار التحقق',
+    orderAwaitingVerification: 'الوصفة المطلوب التحقق منها:',
+    dose: 'الجرعة:',
+    frequency: 'التكرار:',
+    concomitantTherapy: 'العلاج المتزامن / التحاليل:',
+    detail: 'التفاصيل:',
+    clinicalScenario: 'السيناريو السريري: ',
+    decisionTitle: 'قرار الصيدلي السريري وخيار التدخل:',
+    optionsAria: 'الخيارات السريرية',
+    evalCompleted: 'تم التقييم',
+    selectOneOption: 'يرجى تحديد خيار واحد',
+    clinicalRationale: '✓ التعليل السريري: ',
+    diagnosticError: '✗ تشخيص الخطأ: ',
+    verifyBtn: 'تأكيد الوصفة / حفظ القرار',
+    tryAgainBtn: 'إعادة المحاولة',
+    showMechanismBtn: 'فحص الآلية البيوفيزيائية',
+    hideMechanismBtn: 'إخفاء ملاحظة الآلية',
+    source: 'المصدر:',
+    mechanismSummary: 'ملخص الآلية الجزيئية والدوائية',
+    mechanismAssumption: 'تستند حسابات التداخلات السريرية إلى دراسات الحركية الدوائية وحالة الاستقرار لدى الإنسان في الجسم الحي.',
+  },
+};
+
 export interface ClinicalOrderVerificationProps {
   config?: ClinicalOrderVerificationConfig;
+  locale?: 'tr' | 'ar' | 'en';
   className?: string;
   onVerify?: (result: { caseId: ClinicalCaseId; isCorrect: boolean; selectedOptionId: string }) => void;
 }
 
 export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps> = ({
   config,
+  locale = 'tr',
   className = '',
   onVerify,
 }) => {
-  const cases = config?.cases || CANONICAL_CLINICAL_CASES;
+  const t = STRINGS[locale] ?? STRINGS.tr;
+  const isRtl = locale === 'ar';
+  const defaultCases = locale === 'ar' ? CANONICAL_CASES_AR : locale === 'en' ? CANONICAL_CASES_EN : CANONICAL_CLINICAL_CASES;
+  const cases = config?.cases || defaultCases;
   const [selectedCaseId, setSelectedCaseId] = useState<ClinicalCaseId>(
     config?.initialCaseId || 'ciprofloxacin_caco3'
   );
@@ -267,7 +794,8 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
 
   return (
     <div
-      className={`border-4 border-black bg-[#FFF8E7] p-5 shadow-[6px_6px_0px_#000000] text-black ${className}`}
+      dir={isRtl ? 'rtl' : 'ltr'}
+      className={`border-4 border-black bg-[#FFF8E7] p-5 shadow-[6px_6px_0px_#000000] text-black text-start ${className}`}
       data-testid="clinical-order-verification-station"
     >
       {/* Header */}
@@ -275,19 +803,19 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         <div>
           <div className="flex items-center gap-2">
             <span className="bg-[#4D96FF] px-2 py-0.5 text-xs font-black uppercase text-white border-2 border-black shadow-[2px_2px_0px_#000000]">
-              Klinik Eczacı İstemi Doğrulama İstasyonu
+              {t.stationBadge}
             </span>
             <span className="font-mono text-xs font-bold text-gray-700">
-              [Vaka Odaklı Farmakovijilans]
+              {t.pharmacovigilanceTag}
             </span>
           </div>
           <h2 className="mt-1 font-heading text-xl font-black text-black">
-            Klinik İlaç Etkileşim ve Dozlama Doğrulama
+            {t.stationTitle}
           </h2>
         </div>
 
         {/* Case selector tabs */}
-        <div className="flex flex-wrap gap-2" role="tablist" aria-label="Klinik Vaka Seçimi">
+        <div className="flex flex-wrap gap-2" role="tablist" aria-label={t.caseSelectorAria}>
           {cases.map((c) => {
             const isCurrent = c.caseId === selectedCaseId;
             return (
@@ -302,9 +830,9 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                     : 'bg-white hover:bg-gray-100 shadow-[2px_2px_0px_#000000]'
                 }`}
               >
-                {c.caseId === 'ciprofloxacin_caco3' && '1: Florokinolon & Ca²⁺'}
-                {c.caseId === 'simvastatin_clarithromycin' && '2: Statin & Makrolid'}
-                {c.caseId === 'warfarin_heparin_bridge' && '3: Varfarin & Heparin'}
+                {c.caseId === 'ciprofloxacin_caco3' && t.tabCase1}
+                {c.caseId === 'simvastatin_clarithromycin' && t.tabCase2}
+                {c.caseId === 'warfarin_heparin_bridge' && t.tabCase3}
               </button>
             );
           })}
@@ -317,32 +845,32 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         <div className="border-3 border-black bg-white p-3 shadow-[4px_4px_0px_#000000]">
           <div className="flex items-center justify-between border-b-2 border-black pb-1">
             <span className="text-xs font-black uppercase tracking-wider text-black">
-              Hasta Dosyası
+              {t.patientChart}
             </span>
             <span className="bg-[#6BCB77] px-1.5 py-0.2 text-[10px] font-black text-black border border-black">
-              YATAKLI SERVİS
+              {t.inpatientWard}
             </span>
           </div>
           <div className="mt-2 space-y-1 font-mono text-xs text-gray-800">
             <div>
-              <span className="font-bold">Yaş/Cinsiyet:</span> {activeCase.patientProfile.age} yaş,{' '}
+              <span className="font-bold">{t.ageGender}</span> {activeCase.patientProfile.age} {t.yearsOld},{' '}
               {activeCase.patientProfile.gender}
             </div>
             <div>
-              <span className="font-bold">Ağırlık:</span> {activeCase.patientProfile.weightKg} kg
+              <span className="font-bold">{t.weight}</span> {activeCase.patientProfile.weightKg} kg
             </div>
             <div>
-              <span className="font-bold">Endikasyon:</span>{' '}
+              <span className="font-bold">{t.indication}</span>{' '}
               <span className="font-semibold text-black">{activeCase.patientProfile.indication}</span>
             </div>
             <div>
-              <span className="font-bold">Böbrek Fonksiyonu:</span>{' '}
+              <span className="font-bold">{t.renalFunction}</span>{' '}
               <span className="bg-yellow-100 px-1 font-bold text-black border border-black">
                 {activeCase.patientProfile.renalFunction}
               </span>
             </div>
             <div>
-              <span className="font-bold">Alerjiler:</span> {activeCase.patientProfile.allergies}
+              <span className="font-bold">{t.allergies}</span> {activeCase.patientProfile.allergies}
             </div>
           </div>
         </div>
@@ -350,43 +878,43 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         {/* Active Order & Concomitant Meds */}
         <div className="border-3 border-black bg-white p-3 shadow-[4px_4px_0px_#000000] md:col-span-2">
           <div className="text-xs font-black uppercase tracking-wider text-black border-b-2 border-black pb-1">
-            İlaç Tedavisi ve Doğrulama Bekleyen İstem
+            {t.medicationRegimen}
           </div>
           <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
             <div className="border-2 border-black bg-[#E8F0FE] p-2.5 shadow-[2px_2px_0px_#000000]">
               <div className="text-[11px] font-black uppercase text-[#1A73E8]">
-                Doğrulama İstenen İstem:
+                {t.orderAwaitingVerification}
               </div>
               <div className="mt-1 font-bold text-sm text-black">
                 {activeCase.activeOrder.drugName}
               </div>
               <div className="font-mono text-xs text-gray-900 mt-0.5">
-                Doz: <span className="font-black">{activeCase.activeOrder.dose}</span> (
+                {t.dose} <span className="font-black">{activeCase.activeOrder.dose}</span> (
                 {activeCase.activeOrder.route})
               </div>
               <div className="font-mono text-xs text-gray-700">
-                Sıklık: {activeCase.activeOrder.frequency}
+                {t.frequency} {activeCase.activeOrder.frequency}
               </div>
             </div>
 
             <div className="border-2 border-black bg-[#FFF3E0] p-2.5 shadow-[2px_2px_0px_#000000]">
               <div className="text-[11px] font-black uppercase text-[#E65100]">
-                Eşzamanlı Tedavi / Lab:
+                {t.concomitantTherapy}
               </div>
               <div className="mt-1 font-bold text-sm text-black">
                 {activeCase.concomitantMedication.drugName}
               </div>
               <div className="font-mono text-xs text-gray-900 mt-0.5">
-                Doz: {activeCase.concomitantMedication.dose}
+                {t.dose} {activeCase.concomitantMedication.dose}
               </div>
               <div className="font-mono text-xs text-gray-700">
-                Detay: {activeCase.concomitantMedication.indication}
+                {t.detail} {activeCase.concomitantMedication.indication}
               </div>
             </div>
           </div>
 
           <div className="mt-3 border-l-4 border-[#FF9F45] bg-[#FFF8E7] p-2 text-xs font-medium text-black">
-            <span className="font-black uppercase">Klinik Senaryo: </span>
+            <span className="font-black uppercase">{t.clinicalScenario}</span>
             {activeCase.clinicalScenario}
           </div>
         </div>
@@ -396,14 +924,14 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
       <div className="mt-5 border-3 border-black bg-white p-4 shadow-[4px_4px_0px_#000000]">
         <div className="flex items-center justify-between border-b-2 border-black pb-2">
           <div className="text-xs font-black uppercase tracking-wider text-black">
-            Eczacı Doğrulama Kararı & Klinik Müdahale Seçeneği:
+            {t.decisionTitle}
           </div>
           <span className="font-mono text-xs text-gray-600">
-            {hasSubmitted ? 'Değerlendirme Tamamlandı' : 'Lütfen 1 Seçenek Belirleyin'}
+            {hasSubmitted ? t.evalCompleted : t.selectOneOption}
           </span>
         </div>
 
-        <div className="mt-3 space-y-2.5" role="radiogroup" aria-label="Klinik Seçenekler">
+        <div className="mt-3 space-y-2.5" role="radiogroup" aria-label={t.optionsAria}>
           {activeCase.options.map((option) => {
             const isSelected = selectedOptionId === option.id;
             let containerBg = 'bg-white hover:bg-yellow-50';
@@ -455,7 +983,7 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                     }`}
                   >
                     <span className="font-black uppercase">
-                      {option.isCorrect ? '✓ Klinik Gerekçe: ' : '✗ Hata Tanısı: '}
+                      {option.isCorrect ? t.clinicalRationale : t.diagnosticError}
                     </span>
                     {option.feedback}
                   </div>
@@ -479,7 +1007,7 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                     : 'bg-gray-300 opacity-60 cursor-not-allowed'
                 }`}
               >
-                İstemi Onayla / Kararı Kaydet
+                {t.verifyBtn}
               </button>
             ) : (
               <button
@@ -487,7 +1015,7 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                 onClick={handleReset}
                 className="border-3 border-black bg-white px-4 py-2 font-black uppercase text-xs shadow-[3px_3px_0px_#000000] hover:bg-gray-100 active:translate-x-1 active:translate-y-1"
               >
-                Tekrar Dene
+                {t.tryAgainBtn}
               </button>
             )}
 
@@ -496,12 +1024,12 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
               onClick={() => setShowMechanismDeepDive(!showMechanismDeepDive)}
               className="border-2 border-black bg-white px-3 py-2 text-xs font-black uppercase shadow-[2px_2px_0px_#000000] hover:bg-gray-50"
             >
-              {showMechanismDeepDive ? 'Mekanizma Notunu Gizle' : 'Biyofiziksel Mekanizma İncele'}
+              {showMechanismDeepDive ? t.hideMechanismBtn : t.showMechanismBtn}
             </button>
           </div>
 
           <div className="text-right text-[11px] font-mono text-gray-600">
-            Kaynak: <span className="font-bold">{activeCase.keyEvidenceCitation}</span>
+            {t.source} <span className="font-bold">{activeCase.keyEvidenceCitation}</span>
           </div>
         </div>
       </div>
@@ -511,7 +1039,7 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         <div className="mt-4 border-3 border-black bg-[#E8F0FE] p-4 shadow-[4px_4px_0px_#000000]">
           <div className="flex items-center justify-between border-b-2 border-black pb-1">
             <span className="text-xs font-black uppercase text-[#1A73E8]">
-              Moleküler & Farmakolojik Mekanizma Özeti
+              {t.mechanismSummary}
             </span>
             <span className="font-mono text-xs font-bold text-gray-700">
               {activeCase.caseId}
@@ -522,9 +1050,10 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
           </p>
           <div className="mt-3">
             <ModelIllustrationNotice
+              locale={locale}
               equation={activeCase.keyEvidenceCitation}
               sourceReference="Goodman & Gilman 14. Baskı; Katzung 15. Baskı"
-              assumptions={['Klinik etkileşim hesaplamaları in-vivo insan farmakokinetik ve kararlı durum çalışmalarına dayanır.']}
+              assumptions={[t.mechanismAssumption]}
             />
           </div>
         </div>

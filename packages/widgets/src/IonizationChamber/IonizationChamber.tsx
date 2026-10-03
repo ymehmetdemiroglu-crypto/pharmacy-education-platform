@@ -30,6 +30,111 @@ const DEFAULT_CONFIG: IonizationChamberConfig = {
   equationRef: 'Helander & Fändriks (2014); Foye Principles of Medicinal Chemistry 8th ed.',
 };
 
+const STRINGS = {
+  tr: {
+    title: 'İyonizasyon ve Membran Geçiş Odası',
+    subtitle: (drugName: string, pKa: number) => `${drugName} (pKa: ${pKa})`,
+    phControl: 'Ortam pH Seviyesi:',
+    areaControl: 'Mukozal Yüzey Alanı:',
+    stomachPreset: 'Mide (pH 1.5, ~1 m²)',
+    intestinePreset: 'İnce Bağırsak (pH 6.5, ~32 m²)',
+    ionizedLabel: 'İyonize Fraksiyon (Geçemez)',
+    nonIonizedLabel: 'Nötr Fraksiyon (Geçer)',
+    membraneLabel: 'Lipid Çift Tabaka (Hücre Zarı)',
+    membraneSub: 'Lipofilik Bariyer (P)',
+    bloodLabel: 'Mezenterik Kan Akımı (pH 7.4)',
+    massFlux: 'Göreceli Emilim Akısı (J = P · A · C):',
+    fluxUnit: 'akı birimi',
+    areaLabel: (area: number) => `Alan: ${area} m²`,
+    acidic: '(Asidik)',
+    basic: '(Bazik)',
+    ratioHalf: (pKa: number) => `pH = pKa (${pKa.toFixed(1)}) → %50 : %50`,
+    paradoxAlert: 'Aspirin Paradoksu: Midede %99 nötr molekül bulunmasına rağmen, ince bağırsağın 30 katlık dev yüzey alanı (~32 m²) ve Le Chatelier çekimi emilimin %90+ oranında bağırsaktan gerçekleşmesini sağlar.',
+    modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
+    modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
+    drugTypeLabels: {
+      weak_acid: 'ZAYIF ASİT',
+      weak_base: 'ZAYIF BAZ',
+    },
+    defaultDrugName: 'Aspirin (Asetilsalisilik Asit)',
+    defaultCompartmentA: 'Mide Lümeni',
+    defaultCompartmentB: 'Sistemik Kan',
+    assumptions: [
+      "Pasif transselüler geçiş Fick'in birinci difüzyon yasasına uyar.",
+      'İyonize türler (A⁻) ihmal edilebilir lipid çift tabaka geçirgenliğine sahiptir.',
+      'İnce bağırsak mukozal yüzey alanı (~30-32 m²) Helander ve Fändriks (2014) mikrovillüs ölçümlerine dayanır.',
+    ],
+  },
+  en: {
+    title: 'Ionization & Membrane Permeation Chamber',
+    subtitle: (drugName: string, pKa: number) => `${drugName} (pKa: ${pKa})`,
+    phControl: 'Medium pH Level:',
+    areaControl: 'Mucosal Surface Area:',
+    stomachPreset: 'Stomach (pH 1.5, ~1 m²)',
+    intestinePreset: 'Intestine (pH 6.5, ~32 m²)',
+    ionizedLabel: 'Ionized Fraction (Blocked)',
+    nonIonizedLabel: 'Neutral Fraction (Crosses)',
+    membraneLabel: 'Lipid Bilayer Membrane',
+    membraneSub: 'Lipophilic Barrier (P)',
+    bloodLabel: 'Systemic Blood (pH 7.4)',
+    massFlux: 'Relative Mass Flux (J = P · A · C):',
+    fluxUnit: 'flux units',
+    areaLabel: (area: number) => `Area: ${area} m²`,
+    acidic: '(Acidic)',
+    basic: '(Basic)',
+    ratioHalf: (pKa: number) => `pH = pKa (${pKa.toFixed(1)}) → 50% : 50%`,
+    paradoxAlert: 'Aspirin Paradox: Although 99% un-ionized in stomach, the intestine\'s 30-fold larger surface area (~32 m²) and sink condition drive >90% of total absorption.',
+    modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
+    modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
+    drugTypeLabels: {
+      weak_acid: 'WEAK ACID',
+      weak_base: 'WEAK BASE',
+    },
+    defaultDrugName: 'Aspirin (Acetylsalicylic Acid)',
+    defaultCompartmentA: 'Gastric Lumen',
+    defaultCompartmentB: 'Systemic Blood',
+    assumptions: [
+      'Passive transcellular permeation follows Fick\'s first law of diffusion.',
+      'Ionized species (A⁻) have negligible passive lipid bilayer permeability.',
+      'Intestinal mucosal surface area (~30–32 m²) follows Helander & Fändriks (2014) physiological microvilli measurements.',
+    ],
+  },
+  ar: {
+    title: 'حجيرة التأين ونفوذية الأغشية الخلوية',
+    subtitle: (drugName: string, pKa: number) => `${drugName} (pKa: ${pKa})`,
+    phControl: 'درجة حموضة الوسط (pH):',
+    areaControl: 'مساحة السطح المخاطي:',
+    stomachPreset: 'المعدة (pH 1.5، ~1 م²)',
+    intestinePreset: 'الأمعاء (pH 6.5، ~32 م²)',
+    ionizedLabel: 'الكسر المتأين (ممنوع العبور)',
+    nonIonizedLabel: 'الكسر المتعادل (يعبر الغشاء)',
+    membraneLabel: 'غشاء ثنائي الطبقة الشحمية',
+    membraneSub: 'حاجز محب للدهون (P)',
+    bloodLabel: 'التروية الدموية (pH 7.4)',
+    massFlux: 'تدفق الامتصاص النسبي (J = P · A · C):',
+    fluxUnit: 'وحدة تدفق',
+    areaLabel: (area: number) => `المساحة: ${area} م²`,
+    acidic: '(حمضي)',
+    basic: '(قاعدي)',
+    ratioHalf: (pKa: number) => `pH = pKa (${pKa.toFixed(1)}) → %50 : %50`,
+    paradoxAlert: 'مفارقة الأسبرين: رغم أن 99% منه غير متأين بالمعدة، فإن مساحة الأمعاء الأكبر بـ 30 ضعفاً (~32 م²) تجعل 90%+ من الامتصاص معوياً.',
+    modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
+    modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
+    drugTypeLabels: {
+      weak_acid: 'حمض ضعيف',
+      weak_base: 'قاعدة ضعيفة',
+    },
+    defaultDrugName: 'الأسبرين (حمض أسيتيل ساليسيليك)',
+    defaultCompartmentA: 'تجويف المعدة',
+    defaultCompartmentB: 'الدم الجهازي',
+    assumptions: [
+      'يتبع النفاذ السلبي عبر الخلايا قانون فيك الأول للانتشار.',
+      'الأنواع المتأينة (A⁻) نفاذيتها عبر الغشاء الدهني مهملة.',
+      'مساحة السطح المخاطي المعوي (~30-32 م²) تستند لقياسات هيلاندر وفاندريكس (2014).',
+    ],
+  },
+};
+
 export const IonizationChamber: React.FC<IonizationChamberProps> = ({
   config: userConfig,
   locale = 'tr',
@@ -37,11 +142,27 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
   className,
   onStateChange,
 }) => {
+  const isAr = locale === 'ar';
+  const t = STRINGS[locale] || STRINGS.tr;
+
+  const drugName = userConfig?.drugName || t.defaultDrugName;
+  const compartmentAName = userConfig?.compartmentA?.name || t.defaultCompartmentA;
+  const compartmentBName = userConfig?.compartmentB?.name || t.defaultCompartmentB;
+
   const config: IonizationChamberConfig = {
     ...DEFAULT_CONFIG,
+    drugName,
     ...userConfig,
-    compartmentA: { ...DEFAULT_CONFIG.compartmentA, ...userConfig?.compartmentA },
-    compartmentB: { ...DEFAULT_CONFIG.compartmentB, ...userConfig?.compartmentB },
+    compartmentA: {
+      ...DEFAULT_CONFIG.compartmentA,
+      name: compartmentAName,
+      ...userConfig?.compartmentA,
+    },
+    compartmentB: {
+      ...DEFAULT_CONFIG.compartmentB,
+      name: compartmentBName,
+      ...userConfig?.compartmentB,
+    },
   };
 
   const [currentPh, setCurrentPh] = useState<number>(config.compartmentA.defaultPh);
@@ -54,72 +175,6 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
 
   // Relative mucosal flux: Flux ~ Permeability * Area * C_nonionized
   const relativeFlux = Math.round(currentSurfaceArea * fractions.nonIonizedFraction * 100);
-
-  const t = {
-    tr: {
-      title: 'İyonizasyon ve Membran Geçiş Odası',
-      subtitle: `${config.drugName} (pKa: ${config.pKa})`,
-      phControl: 'Ortam pH Seviyesi:',
-      areaControl: 'Mukozal Yüzey Alanı:',
-      stomachPreset: 'Mide (pH 1.5, ~1 m²)',
-      intestinePreset: 'İnce Bağırsak (pH 6.5, ~32 m²)',
-      ionizedLabel: 'İyonize / Yüklü Fraksiyon (Geçemez)',
-      nonIonizedLabel: 'Nötr / Moleküler Fraksiyon (Geçer)',
-      membraneLabel: 'Lipid Çift Tabaka (Hücre Zarı)',
-      bloodLabel: 'Mezenterik Kan Akımı (pH 7.4)',
-      massFlux: 'Göreceli Emilim Akısı (J = P · A · C):',
-      paradoxAlert: 'Aspirin Paradoksu: Midede %99 nötr molekül bulunmasına rağmen, ince bağırsağın 30 katlık dev yüzey alanı (~32 m²) ve Le Chatelier çekimi emilimin %90+ oranında bağırsaktan gerçekleşmesini sağlar.',
-      modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
-      modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
-    },
-    en: {
-      title: 'Ionization & Membrane Permeation Chamber',
-      subtitle: `${config.drugName} (pKa: ${config.pKa})`,
-      phControl: 'Medium pH Level:',
-      areaControl: 'Mucosal Surface Area:',
-      stomachPreset: 'Stomach (pH 1.5, ~1 m²)',
-      intestinePreset: 'Intestine (pH 6.5, ~32 m²)',
-      ionizedLabel: 'Ionized / Charged Fraction (Blocked)',
-      nonIonizedLabel: 'Neutral / Molecular Fraction (Crosses)',
-      membraneLabel: 'Lipid Bilayer Membrane',
-      bloodLabel: 'Systemic Blood (pH 7.4)',
-      massFlux: 'Relative Mass Flux (J = P · A · C):',
-      paradoxAlert: 'Aspirin Paradox: Although 99% un-ionized in stomach, the intestine\'s 30-fold larger surface area (~32 m²) and sink condition drive >90% of total absorption.',
-      modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
-      modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
-    },
-    ar: {
-      title: 'حجيرة التأين ونفوذية الأغشية الخلوية',
-      subtitle: `${config.drugName} (pKa: ${config.pKa})`,
-      phControl: 'درجة حموضة الوسط (pH):',
-      areaControl: 'مساحة السطح المخاطي:',
-      stomachPreset: 'المعدة (pH 1.5، ~1 م²)',
-      intestinePreset: 'الأمعاء (pH 6.5، ~32 م²)',
-      ionizedLabel: 'الكسر المتأين / المشحون (ممنوع العبور)',
-      nonIonizedLabel: 'الكسر المتعادل / غير المتأين (يعبر الغشاء)',
-      membraneLabel: 'غشاء ثنائي الطبقة الشحمية',
-      bloodLabel: 'التروية الدموية (pH 7.4)',
-      massFlux: 'تدفق الامتصاص النسبي (J = P · A · C):',
-      paradoxAlert: 'مفارقة الأسبرين: رغم أن 99% منه غير متأين بالمعدة، فإن مساحة الأمعاء الأكبر بـ 30 ضعفاً (~32 م²) تجعل 90%+ من الامتصاص معوياً.',
-      modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
-      modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
-    },
-  }[locale || 'tr'] || {
-    title: 'Ionization & Membrane Permeation Chamber',
-    subtitle: `${config.drugName} (pKa: ${config.pKa})`,
-    phControl: 'Medium pH Level:',
-    areaControl: 'Mucosal Surface Area:',
-    stomachPreset: 'Stomach (pH 1.5, ~1 m²)',
-    intestinePreset: 'Intestine (pH 6.5, ~32 m²)',
-    ionizedLabel: 'Ionized / Charged Fraction (Blocked)',
-    nonIonizedLabel: 'Neutral / Molecular Fraction (Crosses)',
-    membraneLabel: 'Lipid Bilayer Membrane',
-    bloodLabel: 'Systemic Blood (pH 7.4)',
-    massFlux: 'Relative Mass Flux (J = P · A · C):',
-    paradoxAlert: 'Aspirin Paradox: Although 99% un-ionized in stomach, the intestine\'s 30-fold larger surface area (~32 m²) and sink condition drive >90% of total absorption.',
-    modelEq: 'pH - pKa = log([A⁻]/[HA]) | J = P · A · ΔC',
-    modelSource: 'Prof. Dr. Bedia Kaymakçıoğlu, Farmasötik Kimya; Helander & Fändriks (2014)',
-  };
 
   const handlePhChange = (newPh: number) => {
     const clamped = Math.max(config.compartmentA.minPh, Math.min(config.compartmentA.maxPh, Math.round(newPh * 10) / 10));
@@ -152,7 +207,8 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
     <Card
       role="region"
       aria-label={t.title}
-      className={clsx('space-y-4 p-4 md:p-6 bg-[#FFF8E7] dark:bg-[#0B0F17]', className)}
+      dir={isAr ? 'rtl' : 'ltr'}
+      className={clsx('space-y-4 p-4 md:p-6 bg-[#FFF8E7] dark:bg-[#0B0F17] text-start', className)}
     >
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-3 border-black dark:border-slate-700 pb-3">
@@ -161,11 +217,11 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
             {t.title}
           </h3>
           <p className="font-mono text-xs text-gray-700 dark:text-slate-300">
-            {t.subtitle}
+            {t.subtitle(config.drugName, config.pKa)}
           </p>
         </div>
         <StickerBadge variant="blue" size="sm">
-          {config.drugType.toUpperCase().replace('_', ' ')}
+          {t.drugTypeLabels[config.drugType as keyof typeof t.drugTypeLabels] || config.drugType.toUpperCase().replace('_', ' ')}
         </StickerBadge>
       </div>
 
@@ -227,9 +283,9 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
         />
 
         <div className="flex justify-between text-[10px] font-mono text-gray-500 mt-1">
-          <span>pH {config.compartmentA.minPh.toFixed(1)} (Asidik)</span>
-          <span className="font-bold text-black dark:text-white">pH = pKa ({config.pKa.toFixed(1)}) → %50 : %50</span>
-          <span>pH {config.compartmentA.maxPh.toFixed(1)} (Bazik)</span>
+          <span>pH {config.compartmentA.minPh.toFixed(1)} {t.acidic}</span>
+          <span className="font-bold text-black dark:text-white">{t.ratioHalf(config.pKa)}</span>
+          <span>pH {config.compartmentA.maxPh.toFixed(1)} {t.basic}</span>
         </div>
       </div>
 
@@ -242,7 +298,7 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
               {config.compartmentA.name}
             </span>
             <span className="font-mono text-xs px-1.5 py-0.5 bg-yellow-100 dark:bg-yellow-950/40 text-black dark:text-white border border-black">
-              Area: {currentSurfaceArea} m²
+              {t.areaLabel(currentSurfaceArea)}
             </span>
           </div>
 
@@ -284,7 +340,7 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
             {t.membraneLabel}
           </span>
           <span className="font-mono text-[9px] text-gray-600 dark:text-slate-400 mt-1">
-            Lipofilik Bariyer (P)
+            {t.membraneSub}
           </span>
         </div>
 
@@ -304,7 +360,7 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
               {t.massFlux}
             </span>
             <span className="font-display text-2xl font-black text-black dark:text-white my-1">
-              {relativeFlux} <span className="text-xs font-mono font-normal">akı birimi</span>
+              {relativeFlux} <span className="text-xs font-mono font-normal">{t.fluxUnit}</span>
             </span>
             <span className="text-[11px] font-mono text-gray-600 dark:text-slate-400">
               J = P · ({currentSurfaceArea} m²) · ({nonIonizedPct}%)
@@ -328,11 +384,7 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
         equation={t.modelEq}
         sourceReference={t.modelSource}
         locale={locale}
-        assumptions={[
-          'Passive transcellular permeation follows Fick\'s first law of diffusion.',
-          'Ionized species (A⁻) have negligible passive lipid bilayer permeability.',
-          'Intestinal mucosal surface area (~30–32 m²) follows Helander & Fändriks (2014) physiological microvilli measurements.',
-        ]}
+        assumptions={t.assumptions}
       />
     </Card>
   );

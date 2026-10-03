@@ -9,6 +9,7 @@ export type MultipleChoiceProps = BaseWidgetProps<MultipleChoiceConfig, string[]
 
 export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
   config,
+  locale = 'en',
   onAttempt,
   onCorrect,
   onIncorrect,
@@ -17,6 +18,52 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
 }) => {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const dict = {
+    tr: {
+      multiSelectBadge: 'Çoklu Seçim Sorusu',
+      singleSelectBadge: 'Tekli Seçim Sorusu',
+      source: 'Kaynak: ',
+      page: 's. ',
+      checkAnswer: 'Yanıtı Kontrol Et',
+      correct: 'Doğru!',
+      needsReview: 'Gözden Geçirilmeli',
+      misconception: 'Kavram Yanılgısı: ',
+      explanation: 'Açıklama:',
+    },
+    ar: {
+      multiSelectBadge: 'سؤال متعدد الخيارات',
+      singleSelectBadge: 'سؤال باختيار وحيد',
+      source: 'المصدر: ',
+      page: 'ص. ',
+      checkAnswer: 'تحقق من الإجابة',
+      correct: 'صحيح!',
+      needsReview: 'بحاجة للمراجعة',
+      misconception: 'مغالطة شائعة: ',
+      explanation: 'التوضيح:',
+    },
+    en: {
+      multiSelectBadge: 'Multi-Select Question',
+      singleSelectBadge: 'Multiple Choice Question',
+      source: 'Source: ',
+      page: 'p. ',
+      checkAnswer: 'Check Answer',
+      correct: 'Correct!',
+      needsReview: 'Needs Review',
+      misconception: 'Misconception: ',
+      explanation: 'Explanation:',
+    },
+  }[locale || 'en'] || {
+    multiSelectBadge: 'Multi-Select Question',
+    singleSelectBadge: 'Multiple Choice Question',
+    source: 'Source: ',
+    page: 'p. ',
+    checkAnswer: 'Check Answer',
+    correct: 'Correct!',
+    needsReview: 'Needs Review',
+    misconception: 'Misconception: ',
+    explanation: 'Explanation:',
+  };
 
   const toggleSelect = (id: string) => {
     if (isSubmitted || disabled) return;
@@ -52,15 +99,16 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
   return (
     <Card
       variant="default"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={clsx('w-full flex flex-col gap-4', className)}
     >
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <StickerBadge variant="orange" size="sm">
-            {config.isMultiSelect ? 'Multi-Select Question' : 'Multiple Choice Question'}
+            {config.isMultiSelect ? dict.multiSelectBadge : dict.singleSelectBadge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
         <h3 className="font-display font-bold text-base sm:text-lg leading-snug">
@@ -96,7 +144,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
                 disabled={isSubmitted || disabled}
                 onClick={() => toggleSelect(opt.id)}
                 className={clsx(
-                  'w-full text-left p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
+                  'w-full text-start p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
                   'transition-all duration-150 flex items-center justify-between gap-3',
                   optionStyle,
                   disabled && 'opacity-50 cursor-not-allowed'
@@ -122,7 +170,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
               {/* Show distractor rationale when selected and incorrect */}
               {isSubmitted && isSelected && !correct && opt.distractorRationale && (
                 <div className="p-2.5 bg-[#FFE4E6] dark:bg-[#2A0E18] border-2 border-black dark:border-rose-600 text-xs font-body text-rose-900 dark:text-rose-200">
-                  <strong>Misconception: </strong>
+                  <strong>{dict.misconception}</strong>
                   {opt.distractorRationale}
                 </div>
               )}
@@ -139,7 +187,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
             disabled={selectedIds.length === 0 || disabled}
             onClick={handleSubmit}
           >
-            Check Answer
+            {dict.checkAnswer}
           </Button>
         </div>
       ) : (
@@ -151,17 +199,17 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
             selectedIds.every((id) => isOptionCorrect(id)) ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
-                <span>Correct!</span>
+                <span>{dict.correct}</span>
               </div>
             ) : (
               <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
-                <span>Needs Review</span>
+                <span>{dict.needsReview}</span>
               </div>
             )}
           </div>
           <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-slate-300">Explanation:</span>
+            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-slate-300">{dict.explanation}</span>
             <p className="text-xs font-body leading-relaxed pt-1 text-gray-800 dark:text-slate-200">
               {config.explanation}
             </p>

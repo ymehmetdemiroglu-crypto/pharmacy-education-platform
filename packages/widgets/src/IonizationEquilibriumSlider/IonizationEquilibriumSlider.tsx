@@ -29,10 +29,10 @@ interface PresetCompound {
 }
 
 const PRESETS: PresetCompound[] = [
-  { id: 'aspirin', nameTr: 'Aspirin (Asetilsalisilik Asit)', nameAr: 'Aspirin (حمض أسيتيل ساليسيليك)', nameEn: 'Aspirin (Acetylsalicylic Acid)', type: 'acid', pKa: 3.5 },
-  { id: 'ibuprofen', nameTr: 'İbuprofen', nameAr: 'İbuprofen (إيبوبروفين)', nameEn: 'Ibuprofen', type: 'acid', pKa: 4.4 },
-  { id: 'diazepam', nameTr: 'Diazepam', nameAr: 'Diazepam (ديازيبام)', nameEn: 'Diazepam', type: 'base', pKa: 3.4 },
-  { id: 'propranolol', nameTr: 'Propranolol', nameAr: 'Propranolol (بروبرانولول)', nameEn: 'Propranolol', type: 'base', pKa: 9.5 },
+  { id: 'aspirin', nameTr: 'Aspirin (Asetilsalisilik Asit)', nameAr: 'الأسبرين (حمض أسيتيل ساليسيليك)', nameEn: 'Aspirin (Acetylsalicylic Acid)', type: 'acid', pKa: 3.5 },
+  { id: 'ibuprofen', nameTr: 'İbuprofen', nameAr: 'إيبوبروفين', nameEn: 'Ibuprofen', type: 'acid', pKa: 4.4 },
+  { id: 'diazepam', nameTr: 'Diazepam', nameAr: 'ديازيبام', nameEn: 'Diazepam', type: 'base', pKa: 3.4 },
+  { id: 'propranolol', nameTr: 'Propranolol', nameAr: 'بروبرانولول', nameEn: 'Propranolol', type: 'base', pKa: 9.5 },
   { id: 'custom', nameTr: 'Özel Bileşik', nameAr: 'مركب مخصص', nameEn: 'Custom Compound', type: 'acid', pKa: 4.5 },
 ];
 
@@ -195,7 +195,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       ph: 'Ortam pH Değeri',
       unionized: 'İyonize Olmamış',
       ionized: 'İyonize',
-      equilibrium: 'pH = pKa: %50 / %50 Dengesi',
+      equilibrium: 'pH = pKa: %50 - %50 Dengesi',
       membraneTitle: 'Lipit Çift Tabaka Difüzyon Modeli:',
       passiveActive: '🟢 Pasif Difüzyon Etkin',
       ionicRepelled: '🔴 İyonik Yansıma Hakim',
@@ -211,13 +211,13 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       prompt: 'تحكم في قيم pH و pKa لدراسة توازن Henderson-Hasselbalch ومعدلات النفاذية عبر الأغشية الحيوية.',
       presets: 'المركبات النموذجية:',
       compType: 'طبيعة المركب:',
-      acid: 'حمض ضعيف (Zayıf Asit)',
-      base: 'قاعدة ضعيفة (Zayıf Baz)',
+      acid: 'حمض ضعيف',
+      base: 'قاعدة ضعيفة',
       pka: 'ثابت التأين (pKa)',
       ph: 'الأس الهيدروجيني للوسط (pH)',
       unionized: 'غير متأين',
       ionized: 'متأين',
-      equilibrium: 'pH = pKa: توازن 50% / 50%',
+      equilibrium: 'pH = pKa: توازن %50 - %50',
       membraneTitle: 'نموذج النفاذية عبر الطبقة الشحمية الثنائية:',
       passiveActive: '🟢 انتشار بسيط فعّال',
       ionicRepelled: '🔴 انعكاس شاردي مهيمن',
@@ -239,7 +239,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       ph: 'Environmental pH',
       unionized: 'Un-ionized',
       ionized: 'Ionized',
-      equilibrium: 'pH = pKa: 50% / 50% Equilibrium',
+      equilibrium: 'pH = pKa: 50% - 50% Equilibrium',
       membraneTitle: 'Lipid Bilayer Diffusion Model:',
       passiveActive: '🟢 Passive Diffusion Active',
       ionicRepelled: '🔴 Ionic Reflection Dominant',
@@ -275,8 +275,9 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
   return (
     <Card
       variant="default"
+      dir={isAr ? 'rtl' : 'ltr'}
       className={clsx(
-        'w-full flex flex-col gap-4 text-black dark:text-slate-100',
+        'w-full flex flex-col gap-4 text-black dark:text-slate-100 text-start',
         className
       )}
     >
@@ -629,9 +630,17 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       <ModelIllustrationNotice
         locale={activeLocale}
         equation={
-          drugType === 'acid'
-            ? 'pH = pKa + log([A⁻] / [HA])  =>  % İyonize = 100 / (1 + 10^(pKa - pH))'
-            : 'pH = pKa + log([B] / [BH⁺])  =>  % İyonize = 100 / (1 + 10^(pH - pKa))'
+          activeLocale === 'tr'
+            ? (drugType === 'acid'
+                ? 'pH = pKa + log([A⁻] / [HA])  =>  % İyonize = 100 / (1 + 10^(pKa - pH))'
+                : 'pH = pKa + log([B] / [BH⁺])  =>  % İyonize = 100 / (1 + 10^(pH - pKa))')
+            : activeLocale === 'ar'
+            ? (drugType === 'acid'
+                ? 'pH = pKa + log([A⁻] / [HA])  =>  % المتأين = 100 / (1 + 10^(pKa - pH))'
+                : 'pH = pKa + log([B] / [BH⁺])  =>  % المتأين = 100 / (1 + 10^(pH - pKa))')
+            : (drugType === 'acid'
+                ? 'pH = pKa + log([A⁻] / [HA])  =>  % Ionized = 100 / (1 + 10^(pKa - pH))'
+                : 'pH = pKa + log([B] / [BH⁺])  =>  % Ionized = 100 / (1 + 10^(pH - pKa))')
         }
         sourceReference="Foye's Principles of Medicinal Chemistry (8th ed.) & Katzung Basic and Clinical Pharmacology (15th ed.)"
         assumptions={assumptions}

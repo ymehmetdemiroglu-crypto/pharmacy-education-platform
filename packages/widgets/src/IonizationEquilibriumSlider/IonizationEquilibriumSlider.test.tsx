@@ -119,13 +119,15 @@ describe('IonizationEquilibriumSlider Widget Component', () => {
   });
 
   it('renders properly in Arabic locale adhering to Special Arabic Rule', () => {
-    render(
+    const { container } = render(
       <IonizationEquilibriumSlider
         config={ionizationEquilibriumStandardDemo}
         locale="ar"
       />
     );
 
+    const card = container.querySelector('[dir="rtl"]');
+    expect(card).toBeInTheDocument();
     // Arabic header badge
     expect(screen.getByText(/محاكي التوازن الأيوني/i)).toBeInTheDocument();
     // Turkish canonical badge preserved via role="term"
@@ -135,6 +137,18 @@ describe('IonizationEquilibriumSlider Widget Component', () => {
     expect(screen.getByText(/الاثني عشر/i)).toBeInTheDocument();
     expect(screen.getByText(/بلازما الدم/i)).toBeInTheDocument();
     expect(screen.getByText(/البول/i)).toBeInTheDocument();
+  });
+
+  it('renders properly in English locale with pure English strings', () => {
+    render(
+      <IonizationEquilibriumSlider
+        locale="en"
+      />
+    );
+
+    expect(screen.getByText(/Ionization Equilibrium & Membrane Permeability Simulator/i)).toBeInTheDocument();
+    expect(screen.getByText(/Weak Acid/i)).toBeInTheDocument();
+    expect(screen.getByText(/Blood Plasma/i)).toBeInTheDocument();
   });
 
   it('enforces strict dir="ltr" isolation for visual elements', () => {

@@ -61,4 +61,20 @@ describe('MetabolismMap Widget', () => {
     expect(handleCorrect).toHaveBeenCalled();
     expect(screen.getByText(/correct metabolic vulnerability identified!/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish', () => {
+    render(<MetabolismMap config={mockMetabolism} locale="tr" />);
+    expect(screen.getByText(/metabolizma ve biyotansformasyon haritası/i)).toBeInTheDocument();
+    expect(screen.getByText(/paracetamol biyotansformasyon yolakları/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /hedef bölgeyi onayla/i })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic with RTL direction', () => {
+    const { container } = render(<MetabolismMap config={mockMetabolism} locale="ar" />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText(/خريطة الاستقلاب والتحول الحيوي/i)).toBeInTheDocument();
+    expect(screen.getByText(/مسارات التحول الحيوي لـ Paracetamol/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /تأكيد الموقع المستهدف/i })).toBeInTheDocument();
+  });
 });
+

@@ -198,7 +198,13 @@
       "googleSuccess": "Signed in with Google successfully!",
       "googleError": "Google sign-in error.",
       "unlock22Lessons": "Register now to immediately unlock 22 free lessons across all modules!",
-      "googleNotConfigured": "Google sign-in is not yet enabled in the backend (please enable Google provider in Supabase Dashboard > Authentication > Providers > Google)."
+      "googleNotConfigured": "Google sign-in is not yet enabled in the backend (please enable Google provider in Supabase Dashboard > Authentication > Providers > Google).",
+      "googleNotice": {
+        "title": "Google Sign-In Not Configured",
+        "description": "Google sign-in is not yet enabled on this server. Please use Email & Password below to log in or register immediately.",
+        "adminTip": "Admin Note: Enable Google OAuth in Supabase Dashboard > Authentication > Providers > Google by adding your Client ID and Client Secret.",
+        "useEmailCta": "Continue with Email"
+      }
     },
     "paywall": {
       "title": "Unlock Complete Pharmacy Mastery",

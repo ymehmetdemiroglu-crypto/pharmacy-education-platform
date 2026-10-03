@@ -9,6 +9,7 @@ export interface HintDrawerProps {
   isPremiumOrTrial?: boolean | undefined;
   onUpgradeClick?: (() => void) | undefined;
   className?: string | undefined;
+  locale?: 'tr' | 'ar' | 'en' | undefined;
 }
 
 export const HintDrawer: React.FC<HintDrawerProps> = ({
@@ -16,12 +17,13 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
   isPremiumOrTrial = false,
   onUpgradeClick,
   className,
+  locale: propLocale,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [unlockedTier, setUnlockedTier] = useState<number>(0); // 0 = none, 1, 2, 3
   const containerRef = useRef<HTMLDivElement>(null);
   const themeCtx = useContext(ThemeContext);
-  const locale = themeCtx?.locale || 'en';
+  const locale = propLocale || themeCtx?.locale || 'en';
 
   useEffect(() => {
     if (isOpen && containerRef.current && typeof containerRef.current.scrollIntoView === 'function') {
@@ -104,11 +106,24 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
       ? 'المستوى التالي'
       : 'Next Tier';
 
+  const toggleAriaLabel = isOpen
+    ? locale === 'tr'
+      ? 'İpuçlarını daralt'
+      : locale === 'ar'
+      ? 'طي التلميحات'
+      : 'Collapse hints'
+    : locale === 'tr'
+    ? 'İpuçlarını genişlet'
+    : locale === 'ar'
+    ? 'توسيع التلميحات'
+    : 'Expand hints';
+
   return (
     <div
       ref={containerRef}
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={clsx(
-        'w-full bg-[#FFFDF7] dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 rounded-none',
+        'w-full bg-[#FFFDF7] dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 rounded-none text-start',
         'shadow-neo dark:shadow-neo-dark transition-all duration-200',
         className
       )}
@@ -140,7 +155,7 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
           <button
             type="button"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? 'Collapse hints' : 'Expand hints'}
+            aria-label={toggleAriaLabel}
             className="p-1 border-2 border-black hover:bg-black/10 active:translate-y-0.5"
           >
             {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}

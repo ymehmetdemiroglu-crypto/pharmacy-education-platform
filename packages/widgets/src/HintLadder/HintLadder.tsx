@@ -8,21 +8,47 @@ export interface HintLadderProps extends BaseWidgetProps<HintLadderConfig, numbe
   onUpgradeClick?: () => void;
 }
 
+const STRINGS = {
+  tr: {
+    badge: '3 Aşamalı İpucu Merdiveni',
+    sourceLabel: 'Kaynak:',
+    pageLabel: 's.',
+  },
+  en: {
+    badge: '3-Tier Hint Ladder',
+    sourceLabel: 'Source:',
+    pageLabel: 'p.',
+  },
+  ar: {
+    badge: 'سلم التلميحات ثلاثي المراحل',
+    sourceLabel: 'المصدر:',
+    pageLabel: 'ص.',
+  },
+};
+
 export const HintLadder: React.FC<HintLadderProps> = ({
   config,
   onHint: _onHint,
   isPremiumOrTrial = false,
   onUpgradeClick,
   className,
+  locale = 'en',
 }) => {
+  const isAr = locale === 'ar';
+  const t = STRINGS[locale] || STRINGS.en;
+
   return (
-    <Card variant="default" className={`w-full flex flex-col gap-3 ${className || ''}`}>
+    <Card
+      variant="default"
+      dir={isAr ? 'rtl' : 'ltr'}
+      className={`w-full flex flex-col gap-3 text-start ${className || ''}`}
+    >
       <div className="flex items-center justify-between">
         <StickerBadge variant="yellow" size="sm">
-          3-Tier Hint Ladder
+          {t.badge}
         </StickerBadge>
         <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-          Source: {config.source.file} (p. {config.source.page})
+          {t.sourceLabel} {config.source.file} ({t.pageLabel} {config.source.page})
         </span>
       </div>
 
@@ -34,6 +60,7 @@ export const HintLadder: React.FC<HintLadderProps> = ({
         hints={config.hints}
         isPremiumOrTrial={isPremiumOrTrial}
         onUpgradeClick={onUpgradeClick}
+        locale={locale}
       />
     </Card>
   );

@@ -70,4 +70,18 @@ describe('PkCockpit Component', () => {
 
     expect(screen.getByTestId('value-dose')).toHaveTextContent('350 mg');
   });
+
+  it('renders correctly in English (en) locale', () => {
+    render(<PkCockpit config={defaultConfig} locale="en" />);
+    expect(screen.getByText('Multi-Dose PK Simulator & Safety Monitor')).toBeInTheDocument();
+    expect(screen.getByText('Pharmacokinetic Cockpit (PkCockpit)')).toBeInTheDocument();
+    expect(screen.getByText('Steady State (Css) Metrics')).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<PkCockpit config={defaultConfig} locale="ar" />);
+    expect(screen.getByText('قمرة قيادة الحركية الدوائية (PkCockpit)')).toBeInTheDocument();
+    expect(screen.getByText('بيانات حالة الاستقرار (Css)')).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });

@@ -66,4 +66,19 @@ describe('ReceptorLigandMatcher Widget', () => {
     expect(handleCorrect).toHaveBeenCalled();
     expect(screen.getByText(/all pocket interactions verified!/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish (tr) locale', () => {
+    render(<ReceptorLigandMatcher config={mockMatcher} locale="tr" />);
+    expect(screen.getByText('Reseptör-Ligand Eşleştirici')).toBeInTheDocument();
+    expect(screen.getByText(/Ligand Fonksiyonel Grupları/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Eşleşmeleri Sıfırla' })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<ReceptorLigandMatcher config={mockMatcher} locale="ar" />);
+    expect(screen.getByText('مطابق المستقبل والمرتبط')).toBeInTheDocument();
+    expect(screen.getByText(/مجموعات المرتبط الوظيفية/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'إعادة ضبط الأزواج' })).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });

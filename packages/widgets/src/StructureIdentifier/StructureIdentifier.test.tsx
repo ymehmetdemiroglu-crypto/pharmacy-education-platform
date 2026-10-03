@@ -50,4 +50,20 @@ describe('StructureIdentifier Widget', () => {
     expect(handleCorrect).toHaveBeenCalled();
     expect(screen.getByText(/target identified correctly!/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish', () => {
+    render(<StructureIdentifier config={mockConfig} locale="tr" />);
+    expect(screen.getByText('Yapı Tanımlayıcı')).toBeInTheDocument();
+    expect(screen.getByText(/seçmek için yukarıdaki bir atoma tıklayın/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /atom seçimini onayla/i })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic with RTL direction', () => {
+    const { container } = render(<StructureIdentifier config={mockConfig} locale="ar" />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText('محدد البنية الكيميائية')).toBeInTheDocument();
+    expect(screen.getByText(/انقر على ذرة أعلاه لتحديدها/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /تأكيد اختيار الذرة/i })).toBeInTheDocument();
+  });
 });
+

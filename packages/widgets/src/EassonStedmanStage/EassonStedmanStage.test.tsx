@@ -76,4 +76,20 @@ describe('EassonStedmanStage Component', () => {
     fireEvent.click(screen.getByTestId('snap-bioactive-button'));
     expect(screen.getByText(/Açı: X:0° \| Y:0° \| Z:0°/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in English', () => {
+    render(<EassonStedmanStage config={defaultConfig} locale="en" />);
+    expect(screen.getByText(/Easson-Stedman 3-Point Attachment/i)).toBeInTheDocument();
+    expect(screen.getByTestId('toggle-eutomer')).toHaveTextContent(/Eutomer/i);
+    expect(screen.getByTestId('snap-bioactive-button')).toHaveTextContent('Snap to Bioactive Pocket');
+  });
+
+  it('renders correctly in Arabic with RTL direction', () => {
+    const { container } = render(<EassonStedmanStage config={defaultConfig} locale="ar" />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText(/نموذج إيسون-ستيدمان للالتحام ثلاثي النقاط/i)).toBeInTheDocument();
+    expect(screen.getByTestId('toggle-eutomer')).toHaveTextContent(/المصاوغ الفعال/i);
+    expect(screen.getByTestId('snap-bioactive-button')).toHaveTextContent('محاذاة مع الجيب الحيوي');
+  });
 });
+

@@ -10,6 +10,7 @@ export interface TrialBannerProps {
   status: TrialBannerStatus;
   daysRemaining?: number;
   onActionClick: () => void;
+  locale?: 'tr' | 'ar' | 'en';
   className?: string;
 }
 
@@ -17,9 +18,11 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
   status,
   daysRemaining = 7,
   onActionClick,
+  locale: propLocale,
   className,
 }) => {
-  const { locale } = useTheme();
+  const { locale: contextLocale } = useTheme();
+  const locale = propLocale || contextLocale || 'tr';
 
   const copy = {
     tr: {
@@ -122,6 +125,7 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
 
   return (
     <aside
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       aria-label={copy.ariaLabel}
       role="region"
       data-testid="trial-banner"

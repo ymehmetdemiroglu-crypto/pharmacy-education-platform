@@ -9,12 +9,83 @@ export type SarExplorerProps = BaseWidgetProps<SarExplorerConfig, Record<string,
 
 export const SarExplorer: React.FC<SarExplorerProps> = ({
   config,
+  locale = 'en',
   onAttempt,
   onCorrect,
   onIncorrect,
   disabled = false,
   className,
 }) => {
+  const dict = {
+    tr: {
+      badge: 'SAR Gezgini',
+      source: 'Kaynak: ',
+      page: 's. ',
+      titleSuffix: 'Yapı-Aktivite Optimizasyonu',
+      target: 'Optimizasyon Hedefi: ',
+      logP: 'LogP (Lipofisite)',
+      pKa: 'pKa',
+      affinityKd: 'Afinite Kd',
+      site: 'Sübstitüsyon Bölgesi: ',
+      affinityLabel: 'Afinite: ',
+      reset: 'İskeleti Sıfırla',
+      testCandidate: 'Aday Bileşiği Test Et',
+      achieved: 'Hedef Aday Profiline Ulaşıldı!',
+      suboptimal: 'Hedef Dışı SAR Dengesi',
+      incorrectFeedback: 'Sübstitüent kombinasyonu hedef afinite veya lipofisiteyi karşılamıyor',
+    },
+    ar: {
+      badge: 'مستكشف علاقة البنية بالفاعلية (SAR)',
+      source: 'المصدر: ',
+      page: 'ص. ',
+      titleSuffix: 'تحسين بنية وفاعلية الدواء',
+      target: 'هدف التحسين: ',
+      logP: 'LogP (الألفة للدهن)',
+      pKa: 'pKa',
+      affinityKd: 'الألفة Kd',
+      site: 'موقع الاستبدال: ',
+      affinityLabel: 'الألفة: ',
+      reset: 'إعادة ضبط الهيكل',
+      testCandidate: 'اختبار ألفة المركب المرشح',
+      achieved: 'تم تحقيق الملف المطلوب للمركب المرشح!',
+      suboptimal: 'توازن غير أمثل لعلاقة البنية بالفاعلية',
+      incorrectFeedback: 'توليفة المجموعات البديلة لا تحقق الألفة أو الألفة للدهن المستهدفة',
+    },
+    en: {
+      badge: 'SAR Explorer',
+      source: 'Source: ',
+      page: 'p. ',
+      titleSuffix: 'Structure-Activity Optimization',
+      target: 'Optimization Target: ',
+      logP: 'LogP (Lipophilicity)',
+      pKa: 'pKa',
+      affinityKd: 'Affinity Kd',
+      site: 'Substitution Site: ',
+      affinityLabel: 'Affinity: ',
+      reset: 'Reset Scaffold',
+      testCandidate: 'Test Candidate Affinity',
+      achieved: 'Target Candidate Profile Achieved!',
+      suboptimal: 'Sub-optimal SAR Balance',
+      incorrectFeedback: 'Substituent combination does not meet target affinity or lipophilicity',
+    },
+  }[locale || 'en'] || {
+    badge: 'SAR Explorer',
+    source: 'Source: ',
+    page: 'p. ',
+    titleSuffix: 'Structure-Activity Optimization',
+    target: 'Optimization Target: ',
+    logP: 'LogP (Lipophilicity)',
+    pKa: 'pKa',
+    affinityKd: 'Affinity Kd',
+    site: 'Substitution Site: ',
+    affinityLabel: 'Affinity: ',
+    reset: 'Reset Scaffold',
+    testCandidate: 'Test Candidate Affinity',
+    achieved: 'Target Candidate Profile Achieved!',
+    suboptimal: 'Sub-optimal SAR Balance',
+    incorrectFeedback: 'Substituent combination does not meet target affinity or lipophilicity',
+  };
+
   const [selectedSubstituents, setSelectedSubstituents] = useState<Record<string, string>>(() => {
     const initial: Record<string, string> = {};
     config.positions.forEach((pos) => {
@@ -81,7 +152,7 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
     if (hasTargetOptions || (satisfiesLogP && satisfiesAffinity)) {
       if (onCorrect) onCorrect();
     } else {
-      if (onIncorrect) onIncorrect('Substituent combination does not meet target affinity or lipophilicity');
+      if (onIncorrect) onIncorrect(dict.incorrectFeedback);
     }
   };
 
@@ -93,19 +164,23 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
         (config.targetGoal.maxAffinityNm === undefined || currentAffinityNm <= config.targetGoal.maxAffinityNm)));
 
   return (
-    <Card variant="default" className={clsx('w-full flex flex-col gap-4', className)}>
+    <Card
+      variant="default"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className={clsx('w-full flex flex-col gap-4', className)}
+    >
       {/* Header */}
       <div className="space-y-1.5">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <StickerBadge variant="blue" size="sm">
-            SAR Explorer
+            {dict.badge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
         <h3 className="font-display font-black text-base sm:text-lg">
-          {config.scaffoldName} Structure-Activity Optimization
+          {config.scaffoldName} {dict.titleSuffix}
         </h3>
         <p className="text-xs font-body text-gray-700 dark:text-gray-300">
           {config.scaffoldDescription}
@@ -114,26 +189,26 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
 
       {/* Target Goal Banner */}
       <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] text-xs font-mono text-black dark:text-slate-100">
-        <span className="font-bold text-[#92400E] dark:text-amber-400 uppercase">Optimization Target: </span>
+        <span className="font-bold text-[#92400E] dark:text-amber-400 uppercase">{dict.target}</span>
         <span>{config.targetGoal.description}</span>
       </div>
 
       {/* Dynamic Property Readout Box */}
       <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark text-center" dir="ltr">
         <div>
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">LogP (Lipophilicity)</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.logP}</span>
           <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
             {roundedLogP}
           </span>
         </div>
         <div className="border-x-2 border-black/20 dark:border-slate-700">
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">pKa</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.pKa}</span>
           <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
             {roundedPka}
           </span>
         </div>
         <div>
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">Affinity Kd</span>
+          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.affinityKd}</span>
           <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
             {currentAffinityNm} nM
           </span>
@@ -148,7 +223,7 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
           return (
             <div key={pos.positionName} className="space-y-2">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
-                Substitution Site: {pos.positionName}
+                {dict.site}{pos.positionName}
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                 {pos.options.map((opt) => {
@@ -160,7 +235,7 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
                       disabled={disabled || isSubmitted}
                       onClick={() => handleSelectSubstituent(pos.positionName, opt.id)}
                       className={clsx(
-                        'p-2.5 border-2 border-black dark:border-slate-700 rounded-none text-left transition-all duration-100 flex flex-col justify-between',
+                        'p-2.5 border-2 border-black dark:border-slate-700 rounded-none text-start transition-all duration-100 flex flex-col justify-between',
                         isSelected
                           ? 'bg-[#FFD93D] text-black font-bold shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] scale-102'
                           : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
@@ -168,14 +243,14 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
                     >
                       <div className="flex justify-between items-center text-xs">
                         <span>{opt.name}</span>
-                        <code className="text-[10px] opacity-80">{opt.structureSnippet}</code>
+                        <code className="text-[10px] opacity-80" dir="ltr">{opt.structureSnippet}</code>
                       </div>
                       <div className={clsx(
                         "mt-2 text-[10px] font-mono flex justify-between",
                         isSelected ? "text-black font-bold" : "text-gray-700 dark:text-slate-300"
                       )}>
                         <span>ΔlogP: {opt.deltaLogP > 0 ? `+${opt.deltaLogP}` : opt.deltaLogP}</span>
-                        <span>Affinity: {opt.affinityMultiplier}x</span>
+                        <span>{dict.affinityLabel}{opt.affinityMultiplier}x</span>
                       </div>
                     </button>
                   );
@@ -189,11 +264,11 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
       {/* Actions */}
       <div className="flex items-center justify-between pt-2 gap-3">
         <Button variant="ghost" size="sm" onClick={handleReset} leftIcon={<RefreshCw className="w-3.5 h-3.5" />}>
-          Reset Scaffold
+          {dict.reset}
         </Button>
         {!isSubmitted ? (
           <Button variant="primary" disabled={disabled} onClick={handleSubmit}>
-            Test Candidate Affinity
+            {dict.testCandidate}
           </Button>
         ) : null}
       </div>
@@ -205,12 +280,12 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
             {isSuccess ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
-                <span>Target Candidate Profile Achieved!</span>
+                <span>{dict.achieved}</span>
               </div>
             ) : (
               <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
-                <span>Sub-optimal SAR Balance</span>
+                <span>{dict.suboptimal}</span>
               </div>
             )}
           </div>

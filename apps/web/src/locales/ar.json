@@ -198,7 +198,13 @@
       "googleSuccess": "تم تسجيل الدخول عبر Google بنجاح!",
       "googleError": "خطأ في تسجيل الدخول عبر Google.",
       "unlock22Lessons": "عند التسجيل يفتح لك 22 درساً مجاناً على الفور!",
-      "googleNotConfigured": "تسجيل الدخول بواسطة Google غير مفعل حالياً في إعدادات الخادم (Supabase Dashboard). يرجى إدخال Client ID و Secret في لوحة التحكم."
+      "googleNotConfigured": "تسجيل الدخول بواسطة Google غير مفعل حالياً في إعدادات الخادم (Supabase Dashboard). يرجى إدخال Client ID و Secret في لوحة التحكم.",
+      "googleNotice": {
+        "title": "تسجيل الدخول عبر Google غير مهيأ",
+        "description": "تسجيل الدخول عبر Google غير مفعل حالياً على هذا الخادم. يرجى استخدام البريد الإلكتروني وكلمة المرور أدناه لتسجيل الدخول أو إنشاء حساب على الفور.",
+        "adminTip": "ملاحظة المسؤول: قم بتفعيل Google OAuth في Supabase Dashboard > Authentication > Providers > Google بإدخال Client ID و Client Secret.",
+        "useEmailCta": "المتابعة بالبريد الإلكتروني"
+      }
     },
     "paywall": {
       "title": "فتح الإتقان الكامل للعلوم الصيدلانية",

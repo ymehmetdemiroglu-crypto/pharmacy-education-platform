@@ -12,12 +12,75 @@ export type ReceptorLigandMatcherProps = BaseWidgetProps<
 
 export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
   config,
+  locale = 'en',
   onAttempt,
   onCorrect,
   onIncorrect,
   disabled = false,
   className,
 }) => {
+  const dict = {
+    tr: {
+      badge: 'Reseptör-Ligand Eşleştirici',
+      source: 'Kaynak: ',
+      page: 's. ',
+      ligandHeader: (drug: string) => `Ligand Fonksiyonel Grupları (${drug})`,
+      receptorHeader: (receptor: string) => `Bağlanma Cebi Rezidüleri (${receptor})`,
+      pairedTo: 'Eşleşti: ',
+      clickToSelect: '(Seçmek için tıkla)',
+      linked: 'Bağlandı',
+      reset: 'Eşleşmeleri Sıfırla',
+      verify: 'Cep Eşleşmelerini Doğrula',
+      allCorrect: 'Tüm Cep Etkileşimleri Doğrulandı!',
+      mismatch: 'Uyumsuz Rezidüler Tespit Edildi',
+      incorrectFeedback: 'Bir veya birden fazla ilaç fonksiyonel grubu yanlış reseptör rezidüsüyle eşleştirildi',
+    },
+    ar: {
+      badge: 'مطابق المستقبل والمرتبط',
+      source: 'المصدر: ',
+      page: 'ص. ',
+      ligandHeader: (drug: string) => `مجموعات المرتبط الوظيفية (${drug})`,
+      receptorHeader: (receptor: string) => `ثمالات جيب الارتباط (${receptor})`,
+      pairedTo: 'مقترن بـ: ',
+      clickToSelect: '(انقر للاختيار)',
+      linked: 'مرتبط',
+      reset: 'إعادة ضبط الأزواج',
+      verify: 'التحقق من تطابق الجيب',
+      allCorrect: 'تم التحقق من جميع تفاعلات الجيب بنجاح!',
+      mismatch: 'تم رصد ثمالات غير متطابقة',
+      incorrectFeedback: 'تم ربط واحدة أو أكثر من المجموعات الوظيفية للدواء بثمالات غير صحيحة في المستقبل',
+    },
+    en: {
+      badge: 'Receptor-Ligand Matcher',
+      source: 'Source: ',
+      page: 'p. ',
+      ligandHeader: (drug: string) => `Ligand Functional Groups (${drug})`,
+      receptorHeader: (receptor: string) => `Binding Pocket Residues (${receptor})`,
+      pairedTo: 'Paired to: ',
+      clickToSelect: '(Click to select)',
+      linked: 'Linked',
+      reset: 'Reset Pairs',
+      verify: 'Verify Pocket Matches',
+      allCorrect: 'All Pocket Interactions Verified!',
+      mismatch: 'Mismatched Residues Detected',
+      incorrectFeedback: 'One or more drug functional groups are paired with the wrong receptor residues',
+    },
+  }[locale || 'en'] || {
+    badge: 'Receptor-Ligand Matcher',
+    source: 'Source: ',
+    page: 'p. ',
+    ligandHeader: (drug: string) => `Ligand Functional Groups (${drug})`,
+    receptorHeader: (receptor: string) => `Binding Pocket Residues (${receptor})`,
+    pairedTo: 'Paired to: ',
+    clickToSelect: '(Click to select)',
+    linked: 'Linked',
+    reset: 'Reset Pairs',
+    verify: 'Verify Pocket Matches',
+    allCorrect: 'All Pocket Interactions Verified!',
+    mismatch: 'Mismatched Residues Detected',
+    incorrectFeedback: 'One or more drug functional groups are paired with the wrong receptor residues',
+  };
+
   const [selectedPairId, setSelectedPairId] = useState<string | null>(null);
   const [matches, setMatches] = useState<Record<string, string>>({}); // pairId -> residueId
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -55,7 +118,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
     if (isAllCorrect) {
       if (onCorrect) onCorrect();
     } else {
-      if (onIncorrect) onIncorrect('One or more drug functional groups are paired with the wrong receptor residues');
+      if (onIncorrect) onIncorrect(dict.incorrectFeedback);
     }
   };
 
@@ -63,14 +126,18 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
   const isAllCorrect = isSubmitted && config.pairs.every((p) => matches[p.id] === p.correctResidueId);
 
   return (
-    <Card variant="default" className={clsx('w-full flex flex-col gap-4', className)}>
+    <Card
+      variant="default"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className={clsx('w-full flex flex-col gap-4', className)}
+    >
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <StickerBadge variant="blue" size="sm">
-            Receptor-Ligand Matcher
+            {dict.badge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
         <h3 className="font-display font-bold text-base sm:text-lg">
@@ -86,7 +153,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
         {/* Left Column: Drug Functional Groups */}
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
-            Ligand Functional Groups ({config.drugName})
+            {dict.ligandHeader(config.drugName)}
           </span>
           <div className="space-y-2">
             {config.pairs.map((pair) => {
@@ -114,8 +181,8 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   <div className="text-[11px] font-mono flex items-center gap-1 text-gray-700 dark:text-slate-300">
                     <LinkIcon className="w-3 h-3 text-gray-400" />
                     <span>
-                      Paired to:{' '}
-                      <strong>{matchedResidue ? matchedResidue.residueName : '(Click to select)'}</strong>
+                      {dict.pairedTo}{' '}
+                      <strong>{matchedResidue ? matchedResidue.residueName : dict.clickToSelect}</strong>
                     </span>
                   </div>
                 </div>
@@ -127,7 +194,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
         {/* Right Column: Receptor Residues */}
         <div className="space-y-2">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
-            Binding Pocket Residues ({config.receptorName})
+            {dict.receptorHeader(config.receptorName)}
           </span>
           <div className="space-y-2">
             {config.residues.map((res) => {
@@ -152,7 +219,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   </div>
                   {isUsed && (
                     <span className="text-[10px] font-mono font-bold bg-[#FFD93D] text-black px-1.5 py-0.5 border border-black">
-                      Linked
+                      {dict.linked}
                     </span>
                   )}
                 </button>
@@ -165,11 +232,11 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
       {/* Control Actions */}
       <div className="flex items-center justify-between pt-2">
         <Button variant="ghost" size="sm" onClick={handleReset} leftIcon={<RefreshCw className="w-3.5 h-3.5" />}>
-          Reset Pairs
+          {dict.reset}
         </Button>
         {!isSubmitted ? (
           <Button variant="primary" disabled={!isComplete || disabled} onClick={handleSubmit}>
-            Verify Pocket Matches
+            {dict.verify}
           </Button>
         ) : null}
       </div>
@@ -181,12 +248,12 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
             {isAllCorrect ? (
               <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
-                <span>All Pocket Interactions Verified!</span>
+                <span>{dict.allCorrect}</span>
               </div>
             ) : (
               <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
-                <span>Mismatched Residues Detected</span>
+                <span>{dict.mismatch}</span>
               </div>
             )}
           </div>

@@ -61,4 +61,17 @@ describe('MultipleChoice Widget', () => {
     expect(handleIncorrect).toHaveBeenCalled();
     expect(screen.getByText(/tertiary amines have no hydrogen attached/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish (tr) locale', () => {
+    render(<MultipleChoice config={mockMcq} locale="tr" />);
+    expect(screen.getByText('Tekli Seçim Sorusu')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Yanıtı Kontrol Et' })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<MultipleChoice config={mockMcq} locale="ar" />);
+    expect(screen.getByText('سؤال باختيار وحيد')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'تحقق من الإجابة' })).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });

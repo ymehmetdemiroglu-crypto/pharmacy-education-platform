@@ -34,4 +34,19 @@ describe('DoseResponseCurve Widget', () => {
     expect(screen.getByText(/agonist alone/i)).toBeInTheDocument();
     expect(screen.getByText(/antagonist ratio/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish (tr) locale', () => {
+    render(<DoseResponseCurve config={mockCurve} locale="tr" />);
+    expect(screen.getByText('Doz-Yanıt Simülatörü')).toBeInTheDocument();
+    expect(screen.getByText('Model İllüstrasyonu')).toBeInTheDocument();
+    expect(screen.getByText('Parsiyel Agonist')).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<DoseResponseCurve config={mockCurve} locale="ar" />);
+    expect(screen.getByText('محاكي الجرعة والاستجابة')).toBeInTheDocument();
+    expect(screen.getByText('نموذج محاكاة توضيحي')).toBeInTheDocument();
+    expect(screen.getByText('ناهض جزئي')).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });

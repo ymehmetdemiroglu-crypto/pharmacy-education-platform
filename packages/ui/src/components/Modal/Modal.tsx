@@ -11,6 +11,8 @@ export interface ModalProps {
   footer?: React.ReactNode;
   maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
+  locale?: 'en' | 'tr' | 'ar';
+  closeAriaLabel?: string;
 }
 
 const maxWidthMap = {
@@ -28,8 +30,17 @@ export const Modal: React.FC<ModalProps> = ({
   footer,
   maxWidth = 'md',
   className,
+  locale,
+  closeAriaLabel,
 }) => {
   const modalRef = useRef<HTMLDivElement>(null);
+  const activeCloseLabel =
+    closeAriaLabel ||
+    (locale === 'tr'
+      ? 'Kapat (Close modal)'
+      : locale === 'ar'
+      ? 'إغلاق (Close modal)'
+      : 'Close modal');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -96,6 +107,7 @@ export const Modal: React.FC<ModalProps> = ({
     >
       <div
         ref={modalRef}
+        dir={locale === 'ar' ? 'rtl' : 'ltr'}
         className={twMerge(
           clsx(
             'w-full bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
@@ -118,7 +130,7 @@ export const Modal: React.FC<ModalProps> = ({
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close modal"
+            aria-label={activeCloseLabel}
             className="p-1.5 border-2 border-black dark:border-slate-700 hover:bg-black/10 dark:hover:bg-slate-800 text-black dark:text-slate-100 active:translate-x-0.5 active:translate-y-0.5 transition-transform"
           >
             <X className="w-5 h-5 stroke-[2.5]" />

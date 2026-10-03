@@ -74,4 +74,19 @@ describe('SarExplorer Widget', () => {
     expect(handleCorrect).toHaveBeenCalled();
     expect(screen.getByText(/target candidate profile achieved!/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish', () => {
+    render(<SarExplorer config={mockSar} locale="tr" />);
+    expect(screen.getByText(/yapı-aktivite optimizasyonu/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /aday bileşiği test et/i })).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic with RTL direction', () => {
+    const { container } = render(<SarExplorer config={mockSar} locale="ar" />);
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+    expect(screen.getByText(/تحسين بنية وفاعلية الدواء/i)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /اختبار ألفة المركب المرشح/i })).toBeInTheDocument();
+  });
 });
+
+

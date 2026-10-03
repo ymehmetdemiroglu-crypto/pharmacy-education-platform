@@ -37,8 +37,45 @@ export class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
+      const getLocale = (): 'tr' | 'ar' | 'en' => {
+        if (typeof window !== 'undefined') {
+          const saved = localStorage.getItem('pharmacy_locale');
+          if (saved === 'tr' || saved === 'ar' || saved === 'en') return saved;
+          const docLang = document.documentElement.getAttribute('lang');
+          if (docLang === 'tr' || docLang === 'ar' || docLang === 'en') return docLang;
+        }
+        return 'tr';
+      };
+
+      const locale = getLocale();
+      const copy = {
+        tr: {
+          title: 'Bir Hata Oluştu',
+          description: 'Uygulama beklenmeyen bir durumla karşılaştı. Öğrenme ilerlemeniz kaydedildi.',
+          retry: 'Yeniden Dene',
+          catalog: 'Katalog',
+        },
+        ar: {
+          title: 'حدث خطأ غير متوقع',
+          description: 'واجه التطبيق مشكلة غير متوقعة. تم حفظ تقدمك التعليمي بأمان.',
+          retry: 'إعادة المحاولة',
+          catalog: 'فهرس المقررات',
+        },
+        en: {
+          title: 'An Error Occurred',
+          description: 'The application encountered an unexpected situation. Your learning progress has been saved.',
+          retry: 'Retry',
+          catalog: 'Catalog',
+        },
+      };
+
+      const t = copy[locale] || copy.tr;
+
       return (
-        <div className="min-h-screen bg-[#FFF8E7] dark:bg-[#121212] flex items-center justify-center p-4">
+        <div
+          dir={locale === 'ar' ? 'rtl' : 'ltr'}
+          className="min-h-screen bg-[#FFF8E7] dark:bg-[#121212] flex items-center justify-center p-4"
+        >
           <Card
             variant="default"
             elevated
@@ -50,13 +87,13 @@ export class ErrorBoundary extends Component<Props, State> {
 
             <div className="space-y-2">
               <h2 className="font-display font-black text-2xl uppercase tracking-tight text-gray-950 dark:text-white">
-                Bir Hata Oluştu / An Error Occurred
+                {t.title}
               </h2>
               <p className="font-body text-sm text-gray-700 dark:text-gray-300">
-                Uygulama beklenmeyen bir durumla karşılaştı. Öğrenme ilerlemeniz kaydedildi.
+                {t.description}
               </p>
               {this.state.error?.message && (
-                <div className="p-3 bg-red-50 dark:bg-red-950/40 border-2 border-red-500 text-red-700 dark:text-red-300 text-xs font-mono text-start overflow-x-auto">
+                <div className="p-3 bg-red-50 dark:bg-red-950/40 border-2 border-red-500 text-red-700 dark:text-red-300 text-xs font-mono text-start overflow-x-auto" dir="ltr">
                   {this.state.error.message}
                 </div>
               )}
@@ -66,16 +103,16 @@ export class ErrorBoundary extends Component<Props, State> {
               <Button
                 variant="primary"
                 onClick={this.handleReset}
-                leftIcon={<RotateCcw className="w-4 h-4" />}
+                leftIcon={<RotateCcw className="w-4 h-4 rtl:rotate-180" />}
               >
-                Yeniden Dene / Retry
+                {t.retry}
               </Button>
               <Button
                 variant="secondary"
                 onClick={this.handleGoHome}
                 leftIcon={<Home className="w-4 h-4" />}
               >
-                Katalog / Catalog
+                {t.catalog}
               </Button>
             </div>
           </Card>

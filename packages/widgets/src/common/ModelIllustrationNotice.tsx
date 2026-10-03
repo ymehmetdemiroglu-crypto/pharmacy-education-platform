@@ -21,7 +21,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
 
   const t = {
     tr: {
-      badge: 'Model İllüstrasyonu (Model Illustration)',
+      badge: 'Model İllüstrasyonu',
       subtitle: 'Eğitim amaçlı basitleştirilmiş biyo-fizikokimyasal simülasyon modeli',
       viewEq: 'Denklemi Görüntüle',
       hideEq: 'Denklemi Gizle',
@@ -30,7 +30,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
       assumptions: 'Model Varsayımları: ',
     },
     ar: {
-      badge: 'نموذج محاكاة توضيحي (Model Illustration)',
+      badge: 'نموذج محاكاة توضيحي',
       subtitle: 'نموذج محاكاة فيزيائية حيوية مبسط لأغراض تعليمية',
       viewEq: 'عرض المعادلة الرياضية',
       hideEq: 'إخفاء المعادلة',
@@ -59,6 +59,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
 
   return (
     <div
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
       aria-label={t.badge}
       className={`border-2 border-black dark:border-slate-700 bg-[#FFFDF7] dark:bg-[#131B2A] p-2 text-xs font-mono select-none text-black dark:text-slate-100 ${className || ''}`}
     >

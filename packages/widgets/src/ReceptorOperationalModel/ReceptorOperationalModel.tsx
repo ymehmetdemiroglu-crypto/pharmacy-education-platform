@@ -6,12 +6,128 @@ export interface ReceptorOperationalModelProps extends BaseWidgetProps<ReceptorO
   onParamChange?: (tau: number, KA: number, ec50: number) => void;
 }
 
+const STRINGS = {
+  tr: {
+    badge: 'Black-Leff Operasyonel Agonizma Modeli',
+    title: 'Yedek Reseptör & Operasyonel Etkinlik (τ)',
+    presetFull: 'Tam Agonist (τ=10)',
+    presetPartial: 'Parsiyel Agonist (τ=0.8)',
+    presetBlockade: '%80 Blokaj (Kovalent)',
+    plotTitle: 'Doz-Yanıt Eğrisi (Black-Leff 1983)',
+    target: (receptor: string) => `Hedef: ${receptor}`,
+    plotAria: 'Black-Leff Doz-Yanıt Eğrisi Grafiği',
+    xAxisLabel: '[Agonist Derişimi] (M, logaritmik)',
+    panelTitle: 'Canlı Hesaplama Paneli',
+    emaxLabel: 'Gözlenen Maksimal Etki (Emax):',
+    ec50Label: 'Operasyonel Potens (EC50):',
+    occupancyLabel: "EC50'deki Reseptör Doluluk Oranı (ρ):",
+    occupancyVal: (val: string) => `%${val}`,
+    spareHigh: (pct: string) => `★ Yüksek Yedek Rezerv: %${pct} reseptör boşta!`,
+    spareMid: (pct: string) => `Yedek Rezerv: %${pct}`,
+    spareZero: '⚠ Sıfır Yedek Rezerv: Parsiyel Agonist davranışı!',
+    footnote: 'τ = [Rt] / KE. τ yükseldikçe EC50 sola kayar ve maksimum yanıt için daha az reseptör doluluğu yeterli olur.',
+    controlsTitle: 'Model Parametre Denetleyicileri',
+    paramTau: 'Operasyonel Etkinlik (τ):',
+    tauAria: 'Operasyonel Etkinlik tau ayarı',
+    tauDecAria: 'tau değerini 0.5 azalt',
+    tauIncAria: 'tau değerini 0.5 artır',
+    paramLogKA: 'Ayrışma Sabiti (log KA):',
+    logKAAria: 'log KA afinite ayarı',
+    logKADecAria: 'log KA değerini 0.2 azalt',
+    logKAIncAria: 'log KA değerini 0.2 artır',
+    paramBlockade: 'Kovalent Blokaj (Rezerv Kaybı):',
+    blockadeVal: (pct: number) => `%${pct}`,
+    blockadeAria: 'Kovalent blokaj yüzdesi ayarı',
+    blockadeDecAria: 'Blokajı yüzde 10 azalt',
+    blockadeIncAria: 'Blokajı yüzde 10 artır',
+    noticeLabel: 'Model İllüstrasyonu Notu:',
+    noticeText: (ref: string) =>
+      "Black & Leff operasyonel modelinde (1983) agonist yanıtı Effect = (Emax · τⁿ · [A]ⁿ) / ((KA + [A])ⁿ + τⁿ · [A]ⁿ) kapalı formülüyle hesaplanır. Operasyonel etkinlik τ = [Rt] / KE doku reseptör yoğunluğu [Rt] ile orantılıdır. Yüksek τ değerinde sistemde yedek reseptör bulunur ve EC50 = KA / (1 + τ) afinite sabiti KA'dan çok daha düşüktür. Referans: " + ref,
+  },
+  en: {
+    badge: 'Black-Leff Operational Model of Agonism',
+    title: 'Spare Receptors & Operational Efficacy (τ)',
+    presetFull: 'Full Agonist (τ=10)',
+    presetPartial: 'Partial Agonist (τ=0.8)',
+    presetBlockade: '80% Blockade (Covalent)',
+    plotTitle: 'Dose-Response Curve (Black-Leff 1983)',
+    target: (receptor: string) => `Target: ${receptor}`,
+    plotAria: 'Black-Leff Dose-Response Curve Plot',
+    xAxisLabel: '[Agonist Concentration] (M, logarithmic)',
+    panelTitle: 'Live Derivation Panel',
+    emaxLabel: 'Observed Maximal Effect (Emax):',
+    ec50Label: 'Operational Potency (EC50):',
+    occupancyLabel: 'Receptor Occupancy at EC50 (ρ):',
+    occupancyVal: (val: string) => `${val}%`,
+    spareHigh: (pct: string) => `★ High Spare Reserve: ${pct}% receptors uncoupled!`,
+    spareMid: (pct: string) => `Spare Reserve: ${pct}%`,
+    spareZero: '⚠ Zero Spare Reserve: Partial Agonist behavior!',
+    footnote: 'τ = [Rt] / KE. As τ increases, EC50 shifts leftward and less receptor occupancy is required for maximum response.',
+    controlsTitle: 'Model Parameter Controllers',
+    paramTau: 'Operational Efficacy (τ):',
+    tauAria: 'Operational efficacy tau adjustment',
+    tauDecAria: 'Decrease tau by 0.5',
+    tauIncAria: 'Increase tau by 0.5',
+    paramLogKA: 'Dissociation Constant (log KA):',
+    logKAAria: 'log KA affinity adjustment',
+    logKADecAria: 'Decrease log KA by 0.2',
+    logKAIncAria: 'Increase log KA by 0.2',
+    paramBlockade: 'Covalent Blockade (Reserve Depletion):',
+    blockadeVal: (pct: number) => `${pct}%`,
+    blockadeAria: 'Covalent blockade percentage adjustment',
+    blockadeDecAria: 'Decrease blockade by 10%',
+    blockadeIncAria: 'Increase blockade by 10%',
+    noticeLabel: 'Model Illustration Notice:',
+    noticeText: (ref: string) =>
+      'In the Black & Leff operational model (1983), agonist response is calculated via Effect = (Emax · τⁿ · [A]ⁿ) / ((KA + [A])ⁿ + τⁿ · [A]ⁿ). Operational efficacy τ = [Rt] / KE is proportional to tissue receptor density [Rt]. At high τ, spare receptors exist and EC50 = KA / (1 + τ) is substantially lower than affinity constant KA. Reference: ' + ref,
+  },
+  ar: {
+    badge: 'نموذج بلاك-ليف التشغيلي للألفة والفاعلية',
+    title: 'المستقبلات الفائضة والفاعلية التشغيلية (τ)',
+    presetFull: 'ناهض كامل (τ=10)',
+    presetPartial: 'ناهض جزئي (τ=0.8)',
+    presetBlockade: 'حصار 80% (تساهمي)',
+    plotTitle: 'منحنى الجرعة والاستجابة (بلاك-ليف 1983)',
+    target: (receptor: string) => `الهدف: ${receptor}`,
+    plotAria: 'مخطط منحنى الجرعة والاستجابة لبلاك-ليف',
+    xAxisLabel: '[تركيز الناهض] (مولار، لوغاريتمي)',
+    panelTitle: 'لوحة الحسابات الحية',
+    emaxLabel: 'التأثير الأقصى الملاحظ (Emax):',
+    ec50Label: 'القوة التشغيلية (EC50):',
+    occupancyLabel: 'نسبة إشغال المستقبلات عند EC50 (ρ):',
+    occupancyVal: (val: string) => `%${val}`,
+    spareHigh: (pct: string) => `★ فائض مستقبلات مرتفع: %${pct} من المستقبلات غير مقترنة!`,
+    spareMid: (pct: string) => `الفائض الاحتياطي: %${pct}`,
+    spareZero: '⚠ لا يوجد فائض احتياطي: سلوك ناهض جزئي!',
+    footnote: 'τ = [Rt] / KE. كلما زادت قيمة τ، ينزاح EC50 نحو اليسار ويكفي إشغال عدد أقل من المستقبلات لبلوغ الاستجابة القصوى.',
+    controlsTitle: 'عناصر التحكم في معاملات النموذج',
+    paramTau: 'الفاعلية التشغيلية (τ):',
+    tauAria: 'ضبط الفاعلية التشغيلية تاو',
+    tauDecAria: 'تقليل تاو بمقدار 0.5',
+    tauIncAria: 'زيادة تاو بمقدار 0.5',
+    paramLogKA: 'ثابت التفكك (log KA):',
+    logKAAria: 'ضبط ألفة log KA',
+    logKADecAria: 'تقليل log KA بمقدار 0.2',
+    logKAIncAria: 'زيادة log KA بمقدار 0.2',
+    paramBlockade: 'الحصار التساهمي (فقد الاحتياطي):',
+    blockadeVal: (pct: number) => `%${pct}`,
+    blockadeAria: 'ضبط نسبة الحصار التساهمي',
+    blockadeDecAria: 'تقليل الحصار بنسبة 10%',
+    blockadeIncAria: 'زيادة الحصار بنسبة 10%',
+    noticeLabel: 'ملاحظة نموذج المحاكاة التوضيحي:',
+    noticeText: (ref: string) =>
+      'في نموذج بلاك وليف التشغيلي (1983)، تُحسب استجابة الناهض بواسطة المعادلة: Effect = (Emax · τⁿ · [A]ⁿ) / ((KA + [A])ⁿ + τⁿ · [A]ⁿ). الفاعلية التشغيلية τ = [Rt] / KE تتناسب طردياً مع كثافة المستقبلات النسيجية [Rt]. عند القيم العالية لـ τ، تتواجد مستقبلات فائضة ويكون EC50 = KA / (1 + τ) أقل بكثير من ثابت الألفة KA. المرجع: ' + ref,
+  },
+};
+
 export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> = ({
   config: rawConfig,
   locale = 'tr',
   className = '',
   onParamChange,
 }) => {
+  const t = STRINGS[locale] ?? STRINGS.tr;
+  const isRtl = locale === 'ar';
   const config = ReceptorOperationalConfigSchema.parse(rawConfig || {});
   
   // Interactive parameters
@@ -86,16 +202,17 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
     <section
       role="region"
       aria-labelledby={headingId}
-      className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black ${className}`}
+      dir={isRtl ? 'rtl' : 'ltr'}
+      className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black text-start ${className}`}
     >
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b-4 border-black gap-2">
         <div>
           <span className="inline-block text-xs uppercase tracking-widest font-black bg-[#6BCB77] text-black px-2 py-0.5 border-2 border-black mb-1">
-            Black-Leff Operasyonel Agonizma Modeli
+            {t.badge}
           </span>
           <h3 id={headingId} className="text-xl sm:text-2xl font-black uppercase tracking-tight">
-            Yedek Reseptör & Operasyonel Etkinlik (τ)
+            {t.title}
           </h3>
         </div>
 
@@ -107,7 +224,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             data-testid="preset-full-agonist"
             className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
           >
-            Tam Agonist (τ=10)
+            {t.presetFull}
           </button>
           <button
             type="button"
@@ -115,7 +232,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             data-testid="preset-partial-agonist"
             className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
           >
-            Parsiyel Agonist (τ=0.8)
+            {t.presetPartial}
           </button>
           <button
             type="button"
@@ -123,7 +240,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             data-testid="preset-depleted-reserve"
             className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
           >
-            %80 Blokaj (Kovalent)
+            {t.presetBlockade}
           </button>
         </div>
       </div>
@@ -133,14 +250,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
         {/* SVG Curve Plot (2 cols) */}
         <div className="md:col-span-2 bg-white border-4 border-black p-4 flex flex-col items-center">
           <div className="w-full flex justify-between items-center text-xs font-mono font-bold mb-2">
-            <span>Doz-Yanıt Eğrisi (Black-Leff 1983)</span>
-            <span className="text-gray-500">Hedef: {config.targetReceptor}</span>
+            <span>{t.plotTitle}</span>
+            <span className="text-gray-500">{t.target(config.targetReceptor)}</span>
           </div>
 
           <svg
             viewBox={`0 0 ${svgWidth} ${svgHeight}`}
             className="w-full h-auto bg-[#FAFAFA] border-2 border-black"
-            aria-label="Black-Leff Doz-Yanıt Eğrisi Grafiği"
+            aria-label={t.plotAria}
           >
             {/* Grid & Axis Lines */}
             <line
@@ -196,7 +313,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
 
             {/* Axis Labels */}
             <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="10" fontWeight="bold">
-              [Agonist Derişimi] (M, logaritmik)
+              {t.xAxisLabel}
             </text>
 
             {/* Observed Curve */}
@@ -237,27 +354,27 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
         {/* Calculated Biophysical Metrics (1 col) */}
         <div className="bg-white border-4 border-black p-4 flex flex-col justify-between">
           <div>
-            <div className="text-xs font-black uppercase text-gray-500 mb-2">Canlı Hesaplama Paneli</div>
+            <div className="text-xs font-black uppercase text-gray-500 mb-2">{t.panelTitle}</div>
 
             <div className="space-y-3 font-mono text-xs">
               <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">Gözlenen Maksimal Etki (Emax):</div>
+                <div className="text-gray-600">{t.emaxLabel}</div>
                 <div data-testid="metric-emax" className="text-lg font-black text-black">
                   {observedEmax.toFixed(1)}%
                 </div>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">Operasyonel Potens (EC50):</div>
+                <div className="text-gray-600">{t.ec50Label}</div>
                 <div data-testid="metric-ec50" className="text-base font-black text-[#4D96FF]">
                   {(ec50 * 1e6).toFixed(2)} μM <span className="text-[10px] text-gray-500">(10^{logEC50.toFixed(2)})</span>
                 </div>
               </div>
 
               <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">EC50'deki Reseptör Doluluk Oranı (ρ):</div>
+                <div className="text-gray-600">{t.occupancyLabel}</div>
                 <div data-testid="metric-occupancy" className="text-base font-black text-black">
-                  %{occupancyAtEC50.toFixed(1)}
+                  {t.occupancyVal(occupancyAtEC50.toFixed(1))}
                 </div>
               </div>
 
@@ -272,29 +389,29 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
                 }`}
               >
                 {spareReceptorPercent > 50
-                  ? `★ Yüksek Yedek Rezerv: %${spareReceptorPercent.toFixed(0)} reseptör boşta!`
+                  ? t.spareHigh(spareReceptorPercent.toFixed(0))
                   : spareReceptorPercent > 10
-                  ? `Yedek Rezerv: %${spareReceptorPercent.toFixed(0)}`
-                  : '⚠ Sıfır Yedek Rezerv: Parsiyel Agonist davranışı!'}
+                  ? t.spareMid(spareReceptorPercent.toFixed(0))
+                  : t.spareZero}
               </div>
             </div>
           </div>
 
           <div className="text-[11px] text-gray-600 leading-tight mt-3">
-            τ = [Rt] / KE. τ yükseldikçe EC50 sola kayar ve maksimum yanıt için daha az reseptör doluluğu yeterli olur.
+            {t.footnote}
           </div>
         </div>
       </div>
 
       {/* Interactive Controls & WCAG 2.2 Steppers */}
       <div className="p-4 bg-white border-4 border-black mb-4">
-        <div className="text-xs font-black uppercase tracking-wider mb-4">Model Parametre Denetleyicileri</div>
+        <div className="text-xs font-black uppercase tracking-wider mb-4">{t.controlsTitle}</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Parameter 1: Operational Efficacy (tau) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Operasyonel Etkinlik (τ):</span>
+              <span>{t.paramTau}</span>
               <span data-testid="value-tau" className="text-black font-black">{tau.toFixed(1)}</span>
             </div>
             <input
@@ -304,14 +421,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               step="0.1"
               value={tau}
               onChange={(e) => setTau(parseFloat(e.target.value))}
-              aria-label="Operasyonel Etkinlik tau ayarı"
+              aria-label={t.tauAria}
               className="w-full accent-black cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setTau((prev) => Math.max(0.1, parseFloat((prev - 0.5).toFixed(1))))}
-                aria-label="tau değerini 0.5 azalt"
+                aria-label={t.tauDecAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -0.5
@@ -319,7 +436,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               <button
                 type="button"
                 onClick={() => setTau((prev) => Math.min(20, parseFloat((prev + 0.5).toFixed(1))))}
-                aria-label="tau değerini 0.5 artır"
+                aria-label={t.tauIncAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +0.5
@@ -330,7 +447,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
           {/* Parameter 2: Affinity (logKA) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Ayrışma Sabiti (log KA):</span>
+              <span>{t.paramLogKA}</span>
               <span className="text-black font-black">{logKA.toFixed(1)} M</span>
             </div>
             <input
@@ -340,14 +457,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               step="0.2"
               value={logKA}
               onChange={(e) => setLogKA(parseFloat(e.target.value))}
-              aria-label="log KA afinite ayarı"
+              aria-label={t.logKAAria}
               className="w-full accent-black cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setLogKA((prev) => Math.max(-8, parseFloat((prev - 0.2).toFixed(1))))}
-                aria-label="log KA değerini 0.2 azalt"
+                aria-label={t.logKADecAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -0.2
@@ -355,7 +472,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               <button
                 type="button"
                 onClick={() => setLogKA((prev) => Math.min(-4, parseFloat((prev + 0.2).toFixed(1))))}
-                aria-label="log KA değerini 0.2 artır"
+                aria-label={t.logKAIncAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +0.2
@@ -366,8 +483,8 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
           {/* Parameter 3: Irreversible Receptor Blockade (%) */}
           <div className="flex flex-col gap-1.5">
             <div className="flex justify-between items-center text-xs font-bold font-mono">
-              <span>Kovalent Blokaj (Rezerv Kaybı):</span>
-              <span data-testid="value-blockade" className="text-red-600 font-black">%{blockadePercent}</span>
+              <span>{t.paramBlockade}</span>
+              <span data-testid="value-blockade" className="text-red-600 font-black">{t.blockadeVal(blockadePercent)}</span>
             </div>
             <input
               type="range"
@@ -376,14 +493,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               step="5"
               value={blockadePercent}
               onChange={(e) => setBlockadePercent(parseInt(e.target.value, 10))}
-              aria-label="Kovalent blokaj yüzdesi ayarı"
+              aria-label={t.blockadeAria}
               className="w-full accent-red-600 cursor-pointer"
             />
             <div className="flex items-center gap-1">
               <button
                 type="button"
                 onClick={() => setBlockadePercent((prev) => Math.max(0, prev - 10))}
-                aria-label="Blokajı yüzde 10 azalt"
+                aria-label={t.blockadeDecAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 -10%
@@ -391,7 +508,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               <button
                 type="button"
                 onClick={() => setBlockadePercent((prev) => Math.min(95, prev + 10))}
-                aria-label="Blokajı yüzde 10 artır"
+                aria-label={t.blockadeIncAria}
                 className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
               >
                 +10%
@@ -406,8 +523,8 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
         data-testid="model-illustration-notice"
         className="p-3 bg-[#FFF] border-2 border-black text-xs text-gray-700 font-mono leading-relaxed"
       >
-        <span className="font-bold text-black uppercase">Model İllüstrasyonu Notu:</span>{' '}
-        {'Black & Leff operasyonel modelinde (1983) agonist yanıtı Effect = (Emax · τⁿ · [A]ⁿ) / ((KA + [A])ⁿ + τⁿ · [A]ⁿ) kapalı formülüyle hesaplanır. Operasyonel etkinlik τ = [Rt] / KE doku reseptör yoğunluğu [Rt] ile orantılıdır. Yüksek τ değerinde sistemde yedek reseptör bulunur ve EC50 = KA / (1 + τ) afinite sabiti KA\'dan çok daha düşüktür. Referans: ' + config.equationRef}
+        <span className="font-bold text-black uppercase">{t.noticeLabel}</span>{' '}
+        {t.noticeText(config.equationRef)}
       </aside>
     </section>
   );

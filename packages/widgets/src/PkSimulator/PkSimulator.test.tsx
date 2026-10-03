@@ -38,4 +38,19 @@ describe('PkSimulator Widget', () => {
     expect(multiToggle).toBeChecked();
     expect(screen.getByText(/dosing interval \(tau\)/i)).toBeInTheDocument();
   });
+
+  it('renders correctly in Turkish (tr) locale', () => {
+    render(<PkSimulator config={mockPk} locale="tr" />);
+    expect(screen.getByText('PK Simülatörü (1-Kompartman)')).toBeInTheDocument();
+    expect(screen.getByText('Model İllüstrasyonu')).toBeInTheDocument();
+    expect(screen.getByText('Çoklu Doz (Kararlı Durum)')).toBeInTheDocument();
+  });
+
+  it('renders correctly in Arabic (ar) locale with RTL', () => {
+    const { container } = render(<PkSimulator config={mockPk} locale="ar" />);
+    expect(screen.getByText('محاكي الحركية الدوائية (حجرة واحدة)')).toBeInTheDocument();
+    expect(screen.getByText('نموذج محاكاة توضيحي')).toBeInTheDocument();
+    expect(screen.getByText('جرعات متكررة (حالة الاستقرار)')).toBeInTheDocument();
+    expect(container.firstChild).toHaveAttribute('dir', 'rtl');
+  });
 });

@@ -119,13 +119,13 @@ function renderInteractiveWidget(
     case 'IonizationEquilibriumSlider':
       return <IonizationEquilibriumSlider config={{ ...ionizationEquilibriumStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'SarExplorer':
-      return <SarExplorer config={{ ...sarExplorerStandardDemo, ...mergedConfig }} />;
+      return <SarExplorer config={{ ...sarExplorerStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'ReceptorLigandMatcher':
-      return <ReceptorLigandMatcher config={{ ...receptorLigandMatcherStandardDemo, ...mergedConfig }} />;
+      return <ReceptorLigandMatcher config={{ ...receptorLigandMatcherStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'StructureIdentifier':
-      return <StructureIdentifier config={{ ...structureIdentifierStandardDemo, ...mergedConfig }} />;
+      return <StructureIdentifier config={{ ...structureIdentifierStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'MetabolismMap':
-      return <MetabolismMap config={{ ...metabolismMapStandardDemo, ...mergedConfig }} />;
+      return <MetabolismMap config={{ ...metabolismMapStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'DoseResponseCurve':
       return <DoseResponseCurve config={{ ...doseResponseCurveStandardDemo, ...mergedConfig }} locale={locale} />;
     case 'PkSimulator':
@@ -141,7 +141,7 @@ function renderInteractiveWidget(
     case 'PkCockpit':
       return <PkCockpit config={mergedConfig} locale={locale} />;
     case 'ClinicalOrderVerification':
-      return <ClinicalOrderVerification config={mergedConfig} />;
+      return <ClinicalOrderVerification config={mergedConfig} locale={locale} />;
     default:
       return null;
   }
@@ -635,10 +635,18 @@ export const LessonPage: React.FC = () => {
     goToMissions: locale === 'tr' ? 'Keşfi Tamamladım, Görevlere Başla → (+25 XP)' : locale === 'ar' ? 'أنهيت الاستكشاف، ابدأ بالمهام → (+25 XP)' : 'Exploration Done, Start Missions → (+25 XP)',
     goToQuiz: locale === 'tr' ? 'Görevler Tamamlandı! Kavram Testine Geç → (+50 XP)' : locale === 'ar' ? 'أنجزت المهام! انتقل إلى اختبار المفاهيم → (+50 XP)' : 'Missions Solved! Start Concept Quiz → (+50 XP)',
     howItWorksToggle: locale === 'tr' ? 'Nasıl Çalışır? Biyofiziksel İlkeler ve Formüller' : locale === 'ar' ? 'كيف يعمل؟ المبادئ الفيزيائية الحيوية والمعادلات' : 'How It Works: Principles & Formulas',
+    references: locale === 'tr' ? 'Referanslar:' : locale === 'ar' ? 'المراجع:' : 'References:',
+    topic: locale === 'tr' ? 'Konu:' : locale === 'ar' ? 'الموضوع:' : 'Topic:',
+    slideProvenance: locale === 'tr' ? 'Akademik Ders Slaytı Kaynağı:' : locale === 'ar' ? 'مصدر شرائح المحاضرات الأكاديمية:' : 'Academic Lecture Slide Provenance:',
+    courseLabel: locale === 'tr' ? 'Ders:' : locale === 'ar' ? 'المقرر:' : 'Course:',
+    deckLabel: locale === 'tr' ? 'Sunum:' : locale === 'ar' ? 'العرض:' : 'Deck:',
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 pb-28 md:pb-6 space-y-6 scroll-pt-20">
+    <div
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className="max-w-4xl mx-auto px-4 sm:px-6 py-6 pb-28 md:pb-6 space-y-6 scroll-pt-20"
+    >
       {/* Top Header / Context Bar */}
       <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-3 border-black dark:border-slate-700 pb-4">
         <div className="space-y-1">
@@ -651,7 +659,9 @@ export const LessonPage: React.FC = () => {
             </Link>
             <span className="text-gray-400">•</span>
             <StickerBadge variant="blue" size="sm">
-              {courseId === 'pharmacology' ? (locale === 'en' ? 'Pharmacology' : 'Farmakoloji') : (locale === 'en' ? 'Medicinal Chemistry' : 'Farmasötik Kimya')} • {lesson.moduleId || 'Mod 01'}
+              {courseId === 'pharmacology'
+                ? (locale === 'en' ? 'Pharmacology' : locale === 'ar' ? 'علم الأدوية' : 'Farmakoloji')
+                : (locale === 'en' ? 'Medicinal Chemistry' : locale === 'ar' ? 'الكيمياء الصيدلية' : 'Farmasötik Kimya')} • {lesson.moduleId || 'Mod 01'}
             </StickerBadge>
             <StickerBadge variant="green" size="sm">
               {t.freeForever}
@@ -1502,12 +1512,12 @@ export const LessonPage: React.FC = () => {
             {/* Textbook Citations */}
             <div className="space-y-2">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                References:
+                {t.references}
               </span>
               <ul className="list-disc pl-5 space-y-1.5 text-gray-800 dark:text-gray-200">
                 {(lesson.citations || []).map((c: StepCitation) => (
                   <li key={c.id}>
-                    <strong>{c.book}</strong> ({c.edition}) • Topic: &quot;{c.topic}&quot;
+                    <strong>{c.book}</strong> ({c.edition}) • {t.topic} &quot;{c.topic}&quot;
                   </li>
                 ))}
               </ul>
@@ -1516,11 +1526,11 @@ export const LessonPage: React.FC = () => {
             {/* University Lecture Provenance */}
             <div className="space-y-1">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
-                Academic Lecture Slide Provenance:
+                {t.slideProvenance}
               </span>
               <p className="text-gray-800 dark:text-gray-200">
-                Course: <code>{interactiveData.facultySource.courseName}</code> ({interactiveData.facultySource.instructor}).
-                Deck: <code>{interactiveData.facultySource.deck}</code> ({interactiveData.facultySource.slides}).
+                {t.courseLabel} <code>{interactiveData.facultySource.courseName}</code> ({interactiveData.facultySource.instructor}).{' '}
+                {t.deckLabel} <code>{interactiveData.facultySource.deck}</code> ({interactiveData.facultySource.slides}).
               </p>
             </div>
           </div>

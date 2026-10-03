@@ -9,11 +9,113 @@ export type DoseResponseCurveProps = BaseWidgetProps<DoseResponseCurveConfig, { 
 
 export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
   config,
-  locale = 'tr',
+  locale = 'en',
   onAttempt,
   disabled = false,
   className,
 }) => {
+  const dict = {
+    tr: {
+      badge: 'Doz-Yanıt Simülatörü',
+      source: 'Kaynak: ',
+      page: 's. ',
+      modes: {
+        agonist: 'Agonist',
+        partial_agonist: 'Parsiyel Agonist',
+        competitive_antagonist: 'Yarışmalı Antagonist',
+        noncompetitive_antagonist: 'Yarışmasız Antagonist',
+      } as Record<string, string>,
+      xAxis: 'log[Doz] (Molar)',
+      plotAria: 'Doz yanıt eğrisi grafiği',
+      activeResponse: 'Aktif Yanıt',
+      agonistAlone: 'Tek Başına Agonist',
+      apparentEc50: 'Görünür EC₅₀: ',
+      emax: 'E_maks: ',
+      agonistPotency: 'Agonist Potensi (log EC50)',
+      antagonistRatio: 'Antagonist Oranı ([I] / Ki)',
+      maximalEfficacy: 'Maksimal Etkinlik (Emax)',
+      assumptions: [
+        'Yedek reseptör rezervi bulunmayan kütle-etki dengesi bağlanması',
+        'Hill katsayısı n = 1.0 (kooperatif olmayan bağlanma)',
+        'Schild yarışmalı modeli: görünür EC50 = EC50 * (1 + [I]/Ki)',
+      ],
+    },
+    ar: {
+      badge: 'محاكي الجرعة والاستجابة',
+      source: 'المصدر: ',
+      page: 'ص. ',
+      modes: {
+        agonist: 'ناهض',
+        partial_agonist: 'ناهض جزئي',
+        competitive_antagonist: 'مناهض تنافسي',
+        noncompetitive_antagonist: 'مناهض غير تنافسي',
+      } as Record<string, string>,
+      xAxis: 'log[الجرعة] (مولار)',
+      plotAria: 'رسم منحنى الجرعة والاستجابة',
+      activeResponse: 'الاستجابة النشطة',
+      agonistAlone: 'الناهض بمفرده',
+      apparentEc50: 'التركيز الفعّال الظاهري EC₅₀: ',
+      emax: 'الاستجابة القصوى E_max: ',
+      agonistPotency: 'فاعلية الناهض (log EC50)',
+      antagonistRatio: 'نسبة المناهض ([I] / Ki)',
+      maximalEfficacy: 'الفعالية القصوى (Emax)',
+      assumptions: [
+        'ارتباط توازن فعل الكتلة مع غياب المستقبلات الاحتياطية',
+        'معامل هيل n = 1.0 (ارتباط غير تعاوني)',
+        'نموذج شيلد التنافسي: التركيز الفعال الظاهري EC50 = EC50 * (1 + [I]/Ki)',
+      ],
+    },
+    en: {
+      badge: 'Dose-Response Simulator',
+      source: 'Source: ',
+      page: 'p. ',
+      modes: {
+        agonist: 'Agonist',
+        partial_agonist: 'Partial Agonist',
+        competitive_antagonist: 'Competitive Antagonist',
+        noncompetitive_antagonist: 'Noncompetitive Antagonist',
+      } as Record<string, string>,
+      xAxis: 'log[Dose] (Molar)',
+      plotAria: 'Dose response curve plot',
+      activeResponse: 'Active Response',
+      agonistAlone: 'Agonist Alone',
+      apparentEc50: 'Apparent EC₅₀: ',
+      emax: 'E_max: ',
+      agonistPotency: 'Agonist Potency (log EC50)',
+      antagonistRatio: 'Antagonist Ratio ([I] / Ki)',
+      maximalEfficacy: 'Maximal Efficacy (Emax)',
+      assumptions: [
+        'Equilibrium mass-action binding with no spare receptor reserve',
+        'Hill coefficient n = 1.0 (non-cooperative binding)',
+        'Schild competitive model: apparent EC50 = EC50 * (1 + [I]/Ki)',
+      ],
+    },
+  }[locale || 'en'] || {
+    badge: 'Dose-Response Simulator',
+    source: 'Source: ',
+    page: 'p. ',
+    modes: {
+      agonist: 'Agonist',
+      partial_agonist: 'Partial Agonist',
+      competitive_antagonist: 'Competitive Antagonist',
+      noncompetitive_antagonist: 'Noncompetitive Antagonist',
+    } as Record<string, string>,
+    xAxis: 'log[Dose] (Molar)',
+    plotAria: 'Dose response curve plot',
+    activeResponse: 'Active Response',
+    agonistAlone: 'Agonist Alone',
+    apparentEc50: 'Apparent EC₅₀: ',
+    emax: 'E_max: ',
+    agonistPotency: 'Agonist Potency (log EC50)',
+    antagonistRatio: 'Antagonist Ratio ([I] / Ki)',
+    maximalEfficacy: 'Maximal Efficacy (Emax)',
+    assumptions: [
+      'Equilibrium mass-action binding with no spare receptor reserve',
+      'Hill coefficient n = 1.0 (non-cooperative binding)',
+      'Schild competitive model: apparent EC50 = EC50 * (1 + [I]/Ki)',
+    ],
+  };
+
   const [activeMode, setActiveMode] = useState<string>(config.modes[0] || 'agonist');
   const [logEc50, setLogEc50] = useState<number>(-7); // 10^-7 M = 100 nM
   const [emax, setEmax] = useState<number>(config.defaultEmax || 100);
@@ -70,14 +172,18 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
   };
 
   return (
-    <Card variant="default" className={clsx('w-full flex flex-col gap-4', className)}>
+    <Card
+      variant="default"
+      dir={locale === 'ar' ? 'rtl' : 'ltr'}
+      className={clsx('w-full flex flex-col gap-4', className)}
+    >
       <div className="space-y-1.5">
         <div className="flex items-center justify-between">
           <StickerBadge variant="orange" size="sm">
-            Dose-Response Simulator
+            {dict.badge}
           </StickerBadge>
           <span className="text-[11px] font-mono text-gray-600 dark:text-gray-400">
-            Source: {config.source.file} (p. {config.source.page})
+            {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
         <h3 className="font-display font-bold text-base sm:text-lg">
@@ -103,7 +209,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
                 : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
             )}
           >
-            {mode.replace('_', ' ')}
+            {dict.modes[mode] || mode.replace('_', ' ')}
           </button>
         ))}
       </div>
@@ -114,7 +220,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"
           role="img"
-          aria-label="Dose response curve plot"
+          aria-label={dict.plotAria}
         >
           {/* Grid lines */}
           <line x1="50" y1="40" x2="370" y2="40" stroke="#E5E7EB" strokeWidth="1" strokeDasharray="3 3" />
@@ -134,7 +240,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           <text x="141" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁸</text>
           <text x="233" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁶</text>
           <text x="324" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁴</text>
-          <text x="215" y="238" textAnchor="middle" fontSize="11" fontFamily="sans-serif" fontWeight="bold" fill="currentColor">log[Dose] (Molar)</text>
+          <text x="215" y="238" textAnchor="middle" fontSize="11" fontFamily="sans-serif" fontWeight="bold" fill="currentColor">{dict.xAxis}</text>
 
           {/* Baseline Curve if antagonist mode active */}
           {compPoints.length > 0 && (
@@ -171,16 +277,16 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
         <div aria-live="polite" className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-slate-700 text-[11px] font-mono">
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
-              <span className="w-3 h-3 bg-[#FF9F45] border border-black inline-block" /> Active Response
+              <span className="w-3 h-3 bg-[#FF9F45] border border-black inline-block" /> {dict.activeResponse}
             </span>
             {compPoints.length > 0 && (
               <span className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                <span className="w-3 h-0.5 border-t border-dashed border-gray-400 inline-block" /> Agonist Alone
+                <span className="w-3 h-0.5 border-t border-dashed border-gray-400 inline-block" /> {dict.agonistAlone}
               </span>
             )}
           </div>
           <div>
-            Apparent EC₅₀: <strong>10^{effectiveLogEc50.toFixed(1)} M</strong> | E_max: <strong>{Math.round(effectiveEmax)}%</strong>
+            {dict.apparentEc50}<strong>10^{effectiveLogEc50.toFixed(1)} M</strong> | {dict.emax}<strong>{Math.round(effectiveEmax)}%</strong>
           </div>
         </div>
       </div>
@@ -188,7 +294,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
       {/* Interactive Controls */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
         <Slider
-          label="Agonist Potency (log EC50)"
+          label={dict.agonistPotency}
           value={logEc50}
           min={-9}
           max={-5}
@@ -200,7 +306,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
 
         {(activeMode === 'competitive_antagonist' || activeMode === 'noncompetitive_antagonist') ? (
           <Slider
-            label="Antagonist Ratio ([I] / Ki)"
+            label={dict.antagonistRatio}
             value={antagonistConc}
             min={1}
             max={10}
@@ -211,7 +317,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           />
         ) : (
           <Slider
-            label="Maximal Efficacy (Emax)"
+            label={dict.maximalEfficacy}
             value={emax}
             min={20}
             max={100}
@@ -228,11 +334,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
         locale={locale}
         equation="E = (E_max * [D]^n) / (EC_50^n + [D]^n)"
         sourceReference="Katzung Basic & Clinical Pharmacology, Chapter 2 (Drug Receptors & Pharmacodynamics)"
-        assumptions={[
-          'Equilibrium mass-action binding with no spare receptor reserve',
-          'Hill coefficient n = 1.0 (non-cooperative binding)',
-          'Schild competitive model: apparent EC50 = EC50 * (1 + [I]/Ki)',
-        ]}
+        assumptions={dict.assumptions}
       />
     </Card>
   );
