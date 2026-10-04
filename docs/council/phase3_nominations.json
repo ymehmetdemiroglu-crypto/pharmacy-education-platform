@@ -1,0 +1,2130 @@
+{
+  "metadata": {
+    "title": "The Learning Council — Phase 3: Cross-Seat Nominations & Consensus Tally",
+    "generated_at": "2026-10-03T20:30:00Z",
+    "total_council_seats": 7,
+    "nominations_per_seat": 10,
+    "total_nominations_cast": 70,
+    "unique_ideas_nominated": 27,
+    "consensus_breakdown": {
+      "high_consensus_count": 10,
+      "high_consensus_votes": 47,
+      "moderate_consensus_count": 6,
+      "moderate_consensus_votes": 12,
+      "specialist_endorsement_count": 11,
+      "specialist_endorsement_votes": 11
+    }
+  },
+  "top_5_finalists_for_phase4_debate": [
+    {
+      "overall_rank": 1,
+      "idea_id": "CON-028",
+      "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 7,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Generates the hypercorrection effect and forces retrieval-induced active prediction, dismantling the illusion of explanatory depth.",
+        "TEA": "Enforces the mandatory Step 1 predict-then-reveal pedagogical invariant, compelling active hypothesis generation prior to instruction.",
+        "GAM": "Transforms passive reading into active ludic commitment by creating curiosity and stakes before the mechanical reveal.",
+        "ADV": "Removes fear of failure by establishing a zero-penalty prediction space that rewards curiosity rather than perfection.",
+        "DAT": "Captures pristine pre-instruction prior belief states versus post-instruction accuracy to quantify true single-step normalized learning gain.",
+        "TEC": "Executes as a lightweight deterministic client-side state machine with zero API roundtrip latency and instant UI feedback.",
+        "ECO": "Yields the highest learner engagement and completion rate lift per engineering dollar spent of any pedagogical interaction."
+      }
+    },
+    {
+      "overall_rank": 2,
+      "idea_id": "CON-070",
+      "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Dual-codes abstract logarithmic pKa equilibrium into simultaneous visual-spatial compartments of ionized vs unionized species.",
+        "TEA": "Deconstructs the most persistent 3rd-year conceptual stumbling block: predicting drug absorption, clearance, and blood-brain barrier permeability from ionization.",
+        "GAM": "Delivers an engaging tactile simulation where adjusting the pH slider produces immediate kinetic consequences on molecular permeability.",
+        "DAT": "Yields continuous slider-adjustment telemetry that captures the exact inflection point where student intuition diverges from physicochemical reality.",
+        "TEC": "Renders closed-form physicochemical equations via client-side SVG and Canvas at 60 FPS without requiring any backend server compute.",
+        "ECO": "Functions as the premier high-conversion demonstration widget in free preview lessons, accelerating freemium-to-paid trial conversion."
+      }
+    },
+    {
+      "overall_rank": 3,
+      "idea_id": "CON-031",
+      "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calibrates scaffolding dynamically across 3 cognitive tiers to maintain desirable difficulty without working-memory exhaustion.",
+        "TEA": "Provides structured pedagogical fading that prevents student surrender during challenging SAR derivations while fostering autonomous problem solving.",
+        "GAM": "Establishes a progressive hint unlock economy that preserves flow state and prevents game-over frustration during difficult steps.",
+        "ADV": "Eliminates dead-end cognitive paralysis and shame during late-night solo study by offering accessible, non-judgmental hint ladders.",
+        "DAT": "Quantifies latent knowledge state transitions by measuring exact hint-depth consumption (Nudge vs Clue vs Solution) prior to item success.",
+        "ECO": "Provides an infinitely reusable, template-driven scaffolding system across all 22 modules, drastically minimizing authoring and QA expenses."
+      }
+    },
+    {
+      "overall_rank": 4,
+      "idea_id": "CON-001",
+      "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calculates individualized memory half-life decay curves to trigger synaptic consolidation before forgetting thresholds occur.",
+        "TEA": "Ensures foundational autonomic receptor pharmacology is systematically reinforced across later medicinal chemistry modules through scheduled spaced review.",
+        "ADV": "Protects exhausted pharmacy students' limited 15-30 minute study windows by eliminating wasteful over-practice and cramming anxiety.",
+        "DAT": "Generates high-resolution longitudinal retention telemetry, calibrating empirical forgetting curve parameters for each learner-concept pair.",
+        "TEC": "Runs completely client-side via LocalStorage and IndexedDB, providing offline-capable spaced scheduling with zero recurring cloud compute costs.",
+        "ECO": "Drives 30-day retention and semester-long subscription renewal rates at zero marginal cloud compute or API cost."
+      }
+    },
+    {
+      "overall_rank": 5,
+      "idea_id": "CON-067",
+      "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 5,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Bridges the didactic gap between 2D chemical structure and clinical consequence through interactive functional group bioisosterism manipulation.",
+        "GAM": "Creates a high-agency molecular sandbox where students freely swap functional groups like tactile building blocks with instant visual reward.",
+        "DAT": "Logs exploratory navigation paths through chemical property space, differentiating systematic structure-activity deduction from random search.",
+        "TEC": "Computes molecular property deltas (logP, pKa, MW) in-browser via lightweight deterministic lookup tables and Wasm routines.",
+        "ECO": "Serves as the flagship commercial value differentiator for the Medicinal Chemistry course, establishing a defensible competitive moat."
+      }
+    }
+  ],
+  "runners_up_ranks_6_to_10": [
+    {
+      "overall_rank": 6,
+      "idea_id": "CON-035",
+      "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Imposes a hard 40-word ceiling to eliminate extraneous cognitive load and prevent working-memory buffer overflow on mobile displays.",
+        "ADV": "Eliminates student cognitive fatigue and screen exhaustion by strictly outlawing dense, impenetrable walls of textbook prose.",
+        "TEC": "Enforces cognitive content constraints programmatically via automated build-time Markdown AST linters and CI quality gates.",
+        "ECO": "Slashes curriculum authoring, editing, and bilingual translation costs by over 50% by enforcing strict word count brevity at compile time."
+      }
+    },
+    {
+      "overall_rank": 7,
+      "idea_id": "CON-030",
+      "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT"
+      ],
+      "rationales": {
+        "COG": "Exploits error-driven reconsolidation by explicitly activating and falsifying entrenched student misconceptions with targeted diagnostic alerts.",
+        "TEA": "Decontaminates multiple-choice questions by diagnosing specific named 3rd-year misconceptions rather than trivial arithmetic or recall errors.",
+        "ADV": "Replaces demoralizing 'incorrect' alerts with empathetic, constructive diagnostic explanations that validate student reasoning.",
+        "DAT": "Maximizes psychometric item discrimination by mapping each distractor selection to a distinct latent misconception node."
+      }
+    },
+    {
+      "overall_rank": 8,
+      "idea_id": "CON-204",
+      "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "ADV": "Guarantees stress-free offline learning continuity during hospital basement rotations and subway commutes without data dropouts.",
+        "TEC": "Delivers an offline-first PWA architecture with Service Worker caching and IndexedDB synchronization, ensuring 100% uptime in poor network conditions.",
+        "ECO": "Reduces Firebase Firestore read and write operations by over 80% through local persistence, directly protecting the target 93%+ gross margins."
+      }
+    },
+    {
+      "overall_rank": 9,
+      "idea_id": "CON-148",
+      "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+      "theme_id": 4,
+      "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "ADV",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Seamlessly bridges Turkish pharmacy curriculum terminology ('Farmasötik Kimya') with international English board exam nomenclature.",
+        "ADV": "Removes second-language cognitive friction for Turkish students, preventing translation delays from obstructing pharmacology comprehension.",
+        "ECO": "Expands the platform's addressable market to Turkey with negligible localization overhead, unlocking substantial regional subscription revenue."
+      }
+    },
+    {
+      "overall_rank": 10,
+      "idea_id": "CON-066",
+      "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT"
+      ],
+      "rationales": {
+        "TEA": "Viscerally separates efficacy (vertical Emax ceiling) from potency (horizontal EC50 shift) on interactive sigmoidal dose-response curves.",
+        "GAM": "Translates abstract logarithmic dose equations into a responsive elastic curve-bending interaction with rich tactile feedback.",
+        "DAT": "Records parameter estimation error and micro-hesitation latencies during curve manipulation to assess numerical and pharmacological intuition."
+      }
+    }
+  ],
+  "high_consensus_pool": [
+    {
+      "overall_rank": 1,
+      "idea_id": "CON-028",
+      "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 7,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Generates the hypercorrection effect and forces retrieval-induced active prediction, dismantling the illusion of explanatory depth.",
+        "TEA": "Enforces the mandatory Step 1 predict-then-reveal pedagogical invariant, compelling active hypothesis generation prior to instruction.",
+        "GAM": "Transforms passive reading into active ludic commitment by creating curiosity and stakes before the mechanical reveal.",
+        "ADV": "Removes fear of failure by establishing a zero-penalty prediction space that rewards curiosity rather than perfection.",
+        "DAT": "Captures pristine pre-instruction prior belief states versus post-instruction accuracy to quantify true single-step normalized learning gain.",
+        "TEC": "Executes as a lightweight deterministic client-side state machine with zero API roundtrip latency and instant UI feedback.",
+        "ECO": "Yields the highest learner engagement and completion rate lift per engineering dollar spent of any pedagogical interaction."
+      }
+    },
+    {
+      "overall_rank": 2,
+      "idea_id": "CON-070",
+      "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Dual-codes abstract logarithmic pKa equilibrium into simultaneous visual-spatial compartments of ionized vs unionized species.",
+        "TEA": "Deconstructs the most persistent 3rd-year conceptual stumbling block: predicting drug absorption, clearance, and blood-brain barrier permeability from ionization.",
+        "GAM": "Delivers an engaging tactile simulation where adjusting the pH slider produces immediate kinetic consequences on molecular permeability.",
+        "DAT": "Yields continuous slider-adjustment telemetry that captures the exact inflection point where student intuition diverges from physicochemical reality.",
+        "TEC": "Renders closed-form physicochemical equations via client-side SVG and Canvas at 60 FPS without requiring any backend server compute.",
+        "ECO": "Functions as the premier high-conversion demonstration widget in free preview lessons, accelerating freemium-to-paid trial conversion."
+      }
+    },
+    {
+      "overall_rank": 3,
+      "idea_id": "CON-031",
+      "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calibrates scaffolding dynamically across 3 cognitive tiers to maintain desirable difficulty without working-memory exhaustion.",
+        "TEA": "Provides structured pedagogical fading that prevents student surrender during challenging SAR derivations while fostering autonomous problem solving.",
+        "GAM": "Establishes a progressive hint unlock economy that preserves flow state and prevents game-over frustration during difficult steps.",
+        "ADV": "Eliminates dead-end cognitive paralysis and shame during late-night solo study by offering accessible, non-judgmental hint ladders.",
+        "DAT": "Quantifies latent knowledge state transitions by measuring exact hint-depth consumption (Nudge vs Clue vs Solution) prior to item success.",
+        "ECO": "Provides an infinitely reusable, template-driven scaffolding system across all 22 modules, drastically minimizing authoring and QA expenses."
+      }
+    },
+    {
+      "overall_rank": 4,
+      "idea_id": "CON-001",
+      "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calculates individualized memory half-life decay curves to trigger synaptic consolidation before forgetting thresholds occur.",
+        "TEA": "Ensures foundational autonomic receptor pharmacology is systematically reinforced across later medicinal chemistry modules through scheduled spaced review.",
+        "ADV": "Protects exhausted pharmacy students' limited 15-30 minute study windows by eliminating wasteful over-practice and cramming anxiety.",
+        "DAT": "Generates high-resolution longitudinal retention telemetry, calibrating empirical forgetting curve parameters for each learner-concept pair.",
+        "TEC": "Runs completely client-side via LocalStorage and IndexedDB, providing offline-capable spaced scheduling with zero recurring cloud compute costs.",
+        "ECO": "Drives 30-day retention and semester-long subscription renewal rates at zero marginal cloud compute or API cost."
+      }
+    },
+    {
+      "overall_rank": 5,
+      "idea_id": "CON-067",
+      "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 5,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Bridges the didactic gap between 2D chemical structure and clinical consequence through interactive functional group bioisosterism manipulation.",
+        "GAM": "Creates a high-agency molecular sandbox where students freely swap functional groups like tactile building blocks with instant visual reward.",
+        "DAT": "Logs exploratory navigation paths through chemical property space, differentiating systematic structure-activity deduction from random search.",
+        "TEC": "Computes molecular property deltas (logP, pKa, MW) in-browser via lightweight deterministic lookup tables and Wasm routines.",
+        "ECO": "Serves as the flagship commercial value differentiator for the Medicinal Chemistry course, establishing a defensible competitive moat."
+      }
+    },
+    {
+      "overall_rank": 6,
+      "idea_id": "CON-035",
+      "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Imposes a hard 40-word ceiling to eliminate extraneous cognitive load and prevent working-memory buffer overflow on mobile displays.",
+        "ADV": "Eliminates student cognitive fatigue and screen exhaustion by strictly outlawing dense, impenetrable walls of textbook prose.",
+        "TEC": "Enforces cognitive content constraints programmatically via automated build-time Markdown AST linters and CI quality gates.",
+        "ECO": "Slashes curriculum authoring, editing, and bilingual translation costs by over 50% by enforcing strict word count brevity at compile time."
+      }
+    },
+    {
+      "overall_rank": 7,
+      "idea_id": "CON-030",
+      "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT"
+      ],
+      "rationales": {
+        "COG": "Exploits error-driven reconsolidation by explicitly activating and falsifying entrenched student misconceptions with targeted diagnostic alerts.",
+        "TEA": "Decontaminates multiple-choice questions by diagnosing specific named 3rd-year misconceptions rather than trivial arithmetic or recall errors.",
+        "ADV": "Replaces demoralizing 'incorrect' alerts with empathetic, constructive diagnostic explanations that validate student reasoning.",
+        "DAT": "Maximizes psychometric item discrimination by mapping each distractor selection to a distinct latent misconception node."
+      }
+    },
+    {
+      "overall_rank": 8,
+      "idea_id": "CON-204",
+      "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "ADV": "Guarantees stress-free offline learning continuity during hospital basement rotations and subway commutes without data dropouts.",
+        "TEC": "Delivers an offline-first PWA architecture with Service Worker caching and IndexedDB synchronization, ensuring 100% uptime in poor network conditions.",
+        "ECO": "Reduces Firebase Firestore read and write operations by over 80% through local persistence, directly protecting the target 93%+ gross margins."
+      }
+    },
+    {
+      "overall_rank": 9,
+      "idea_id": "CON-148",
+      "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+      "theme_id": 4,
+      "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "ADV",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Seamlessly bridges Turkish pharmacy curriculum terminology ('Farmasötik Kimya') with international English board exam nomenclature.",
+        "ADV": "Removes second-language cognitive friction for Turkish students, preventing translation delays from obstructing pharmacology comprehension.",
+        "ECO": "Expands the platform's addressable market to Turkey with negligible localization overhead, unlocking substantial regional subscription revenue."
+      }
+    },
+    {
+      "overall_rank": 10,
+      "idea_id": "CON-066",
+      "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT"
+      ],
+      "rationales": {
+        "TEA": "Viscerally separates efficacy (vertical Emax ceiling) from potency (horizontal EC50 shift) on interactive sigmoidal dose-response curves.",
+        "GAM": "Translates abstract logarithmic dose equations into a responsive elastic curve-bending interaction with rich tactile feedback.",
+        "DAT": "Records parameter estimation error and micro-hesitation latencies during curve manipulation to assess numerical and pharmacological intuition."
+      }
+    }
+  ],
+  "moderate_consensus_pool": [
+    {
+      "overall_rank": 11,
+      "idea_id": "CON-233",
+      "name": "Frictionless 1-Click Zero-Credit-Card Free Trial with Server-Side Fingerprinting",
+      "theme_id": 7,
+      "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "ADV",
+        "ECO"
+      ],
+      "rationales": {
+        "ADV": "Eliminates predatory commercial anxiety through a frictionless 1-click zero-credit-card trial that never traps students into surprise rebills.",
+        "ECO": "Maximizes trial activation rates by eliminating upfront credit-card requirements while preventing abuse via server-side device fingerprinting."
+      }
+    },
+    {
+      "overall_rank": 12,
+      "idea_id": "CON-175",
+      "name": "Real-Time Client-Side Bayesian Knowledge Tracing (BKT)",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "DAT",
+        "TEC"
+      ],
+      "rationales": {
+        "DAT": "Implements client-side Bayesian Knowledge Tracing to update latent skill mastery probabilities in real time without server latency.",
+        "TEC": "Executes Bayesian Knowledge Tracing locally in Web Workers, updating learner mastery graphs deterministically without backend telemetry latency."
+      }
+    },
+    {
+      "overall_rank": 13,
+      "idea_id": "CON-069",
+      "name": "Autonomic Dual-Tone Vector Balance & Baroreceptor Reflex Dynamic Seesaw",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "GAM",
+        "ADV"
+      ],
+      "rationales": {
+        "GAM": "Visualizes autonomic tone as a dynamic kinetic seesaw where compensatory baroreceptor reflex loops provide immediate counter-intuitive gameplay feedback.",
+        "ADV": "Demystifies stressful reflex pharmacology exam questions through an intuitive physical balance metaphor that reduces test anxiety."
+      }
+    },
+    {
+      "overall_rank": 14,
+      "idea_id": "CON-068",
+      "name": "AChE Catalytic Triad Hydrolysis & Organophosphate Aging Time-Stepper",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "GAM",
+        "TEC"
+      ],
+      "rationales": {
+        "GAM": "Turns irreversible covalent enzyme inhibition into a dramatic time-stepper puzzle, illustrating aging and oxime rescue before the chemical deadline.",
+        "TEC": "Simulates multi-step enzyme catalytic triad kinetics and aging time-constants deterministically through a lightweight client-side state engine."
+      }
+    },
+    {
+      "overall_rank": 15,
+      "idea_id": "CON-029",
+      "name": "Multi-Stage Backward-Faded Worked Examples (Sweller Schema Transfer)",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "COG",
+        "TEA"
+      ],
+      "rationales": {
+        "COG": "Applies Sweller's backward-fading worked-example progression to guide schema transfer from full scaffolding to independent problem solving.",
+        "TEA": "Scaffolds multi-step pharmacophore derivations through graduated worked-example fading, ensuring authentic clinical problem-solving competency."
+      }
+    },
+    {
+      "overall_rank": 16,
+      "idea_id": "CON-002",
+      "name": "Interleaved Autonomic Division Retrieval Cards",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "COG",
+        "TEA"
+      ],
+      "rationales": {
+        "COG": "Interleaves sympathetic and parasympathetic retrieval queries to induce cross-system discriminative contrast and prevent categorized rote memorization.",
+        "TEA": "Forces students to discriminate opposing autonomic drug classes within single clinical scenarios, mirroring authentic hospital pharmacy rounds."
+      }
+    }
+  ],
+  "specialist_endorsements_pool": [
+    {
+      "overall_rank": 17,
+      "idea_id": "CON-232",
+      "name": "Permanent Freemium 2-Lesson Anchor Across All 22 Modules",
+      "theme_id": 7,
+      "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "ECO"
+      ],
+      "rationales": {
+        "ECO": "Guarantees permanent free access to Lessons 1-2 across all 22 modules, establishing a low-friction freemium top-of-funnel that compounds organic growth."
+      }
+    },
+    {
+      "overall_rank": 18,
+      "idea_id": "CON-203",
+      "name": "Client-Side 4th-Order Runge-Kutta ODE Solver for Multi-Compartment PK",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "TEC"
+      ],
+      "rationales": {
+        "TEC": "Solves non-linear multi-compartment pharmacokinetic differential equations directly in-browser using a client-side 4th-order Runge-Kutta solver."
+      }
+    },
+    {
+      "overall_rank": 19,
+      "idea_id": "CON-202",
+      "name": "Client-Side WebAssembly RDKit SMILES Renderer with Vector Fallback",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "TEC"
+      ],
+      "rationales": {
+        "TEC": "Compiles RDKit cheminformatics to WebAssembly with 2D vector fallback, delivering native chemical structure rendering in the browser with zero API cost."
+      }
+    },
+    {
+      "overall_rank": 20,
+      "idea_id": "CON-178",
+      "name": "Cumulative Mastery Gate via Wald Sequential Probability Ratio Test (SPRT)",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "DAT"
+      ],
+      "rationales": {
+        "DAT": "Applies Wald Sequential Probability Ratio Tests to establish mathematically rigorous, adaptive mastery gates with minimal test length."
+      }
+    },
+    {
+      "overall_rank": 21,
+      "idea_id": "CON-174",
+      "name": "Two-Dimensional Confidence-Accuracy Calibration Matrix & Brier Tracking",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "DAT"
+      ],
+      "rationales": {
+        "DAT": "Measures student metacognitive calibration via confidence-accuracy tracking, calculating Brier scores to detect hazardous overconfidence."
+      }
+    },
+    {
+      "overall_rank": 22,
+      "idea_id": "CON-150",
+      "name": "Thumb-Zone Mobile Ergonomic Navigation & Subway Single-Handed Mode",
+      "theme_id": 4,
+      "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "ADV"
+      ],
+      "rationales": {
+        "ADV": "Provides ergonomic single-handed thumb-zone navigation optimized for mobile transit study on crowded public transit."
+      }
+    },
+    {
+      "overall_rank": 23,
+      "idea_id": "CON-095",
+      "name": "Multi-Target Polypharmacology Radar Chart: Carvedilol Cardiovascular Profile",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Employs an interactive multi-axis polypharmacology radar chart that lets students dynamically balance multi-receptor target binding profiles."
+      }
+    },
+    {
+      "overall_rank": 24,
+      "idea_id": "CON-084",
+      "name": "Therapeutic Index & Margin of Safety Elastic Hazard Buffer",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Transforms narrow therapeutic index monitoring into an elastic risk-reward margin buffer game, making toxic vs subtherapeutic windows intuitive."
+      }
+    },
+    {
+      "overall_rank": 25,
+      "idea_id": "CON-073",
+      "name": "Dale's Vasomotor Reversal & Epinephrine Multi-Receptor Switchboard",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Constructs a multi-receptor puzzle where switching alpha and beta blockers dynamically flips epinephrine's blood pressure vector in real time."
+      }
+    },
+    {
+      "overall_rank": 26,
+      "idea_id": "CON-008",
+      "name": "Varied Context Retrieval for Muscarinic and Adrenergic Toxicity",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "COG"
+      ],
+      "rationales": {
+        "COG": "Varies toxicological and clinical retrieval contexts across autonomic targets to build flexible, decontextualized schema retrieval paths."
+      }
+    },
+    {
+      "overall_rank": 27,
+      "idea_id": "CON-003",
+      "name": "Generation Effect Incomplete Receptor Signaling Cascades",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "COG"
+      ],
+      "rationales": {
+        "COG": "Forces active generative completion of incomplete intracellular second-messenger cascades, leveraging the generation effect for robust encoding."
+      }
+    }
+  ],
+  "seat_nominations": {
+    "COG": {
+      "seat_code": "COG",
+      "seat_number": 1,
+      "seat_name": "Cognitive Scientist",
+      "seat_focus": "Memory consolidation, spacing, retrieval practice, cognitive load reduction, desirable difficulties, schema construction, dual coding",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Generates the hypercorrection effect and forces retrieval-induced active prediction, dismantling the illusion of explanatory depth."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Calculates individualized memory half-life decay curves to trigger synaptic consolidation before forgetting thresholds occur."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Dual-codes abstract logarithmic pKa equilibrium into simultaneous visual-spatial compartments of ionized vs unionized species."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Calibrates scaffolding dynamically across 3 cognitive tiers to maintain desirable difficulty without working-memory exhaustion."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-030",
+          "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Exploits error-driven reconsolidation by explicitly activating and falsifying entrenched student misconceptions with targeted diagnostic alerts."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-035",
+          "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Imposes a hard 40-word ceiling to eliminate extraneous cognitive load and prevent working-memory buffer overflow on mobile displays."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-029",
+          "name": "Multi-Stage Backward-Faded Worked Examples (Sweller Schema Transfer)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Applies Sweller's backward-fading worked-example progression to guide schema transfer from full scaffolding to independent problem solving."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-002",
+          "name": "Interleaved Autonomic Division Retrieval Cards",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Interleaves sympathetic and parasympathetic retrieval queries to induce cross-system discriminative contrast and prevent categorized rote memorization."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-003",
+          "name": "Generation Effect Incomplete Receptor Signaling Cascades",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Forces active generative completion of incomplete intracellular second-messenger cascades, leveraging the generation effect for robust encoding."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-008",
+          "name": "Varied Context Retrieval for Muscarinic and Adrenergic Toxicity",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Varies toxicological and clinical retrieval contexts across autonomic targets to build flexible, decontextualized schema retrieval paths."
+        }
+      ]
+    },
+    "TEA": {
+      "seat_code": "TEA",
+      "seat_number": 2,
+      "seat_name": "Master Teacher / Instructional Designer",
+      "seat_focus": "12-stage mastery progression, misconception deconstruction, clinical relevance, worked-example fading, authentic pharmacy problems",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Enforces the mandatory Step 1 predict-then-reveal pedagogical invariant, compelling active hypothesis generation prior to instruction."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Ensures foundational autonomic receptor pharmacology is systematically reinforced across later medicinal chemistry modules through scheduled spaced review."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Deconstructs the most persistent 3rd-year conceptual stumbling block: predicting drug absorption, clearance, and blood-brain barrier permeability from ionization."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Provides structured pedagogical fading that prevents student surrender during challenging SAR derivations while fostering autonomous problem solving."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-067",
+          "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Bridges the didactic gap between 2D chemical structure and clinical consequence through interactive functional group bioisosterism manipulation."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-030",
+          "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Decontaminates multiple-choice questions by diagnosing specific named 3rd-year misconceptions rather than trivial arithmetic or recall errors."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-066",
+          "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Viscerally separates efficacy (vertical Emax ceiling) from potency (horizontal EC50 shift) on interactive sigmoidal dose-response curves."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-148",
+          "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+          "theme_id": 4,
+          "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Seamlessly bridges Turkish pharmacy curriculum terminology ('Farmasötik Kimya') with international English board exam nomenclature."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-029",
+          "name": "Multi-Stage Backward-Faded Worked Examples (Sweller Schema Transfer)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Scaffolds multi-step pharmacophore derivations through graduated worked-example fading, ensuring authentic clinical problem-solving competency."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-002",
+          "name": "Interleaved Autonomic Division Retrieval Cards",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Forces students to discriminate opposing autonomic drug classes within single clinical scenarios, mirroring authentic hospital pharmacy rounds."
+        }
+      ]
+    },
+    "GAM": {
+      "seat_code": "GAM",
+      "seat_number": 3,
+      "seat_name": "Game & Interaction Designer",
+      "seat_focus": "Flow state, predict-then-reveal tactile commitment, dynamic feedback loops, micro-mechanics, interactive widgets, tactile agency",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Transforms passive reading into active ludic commitment by creating curiosity and stakes before the mechanical reveal."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Delivers an engaging tactile simulation where adjusting the pH slider produces immediate kinetic consequences on molecular permeability."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-067",
+          "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Creates a high-agency molecular sandbox where students freely swap functional groups like tactile building blocks with instant visual reward."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Establishes a progressive hint unlock economy that preserves flow state and prevents game-over frustration during difficult steps."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-066",
+          "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Translates abstract logarithmic dose equations into a responsive elastic curve-bending interaction with rich tactile feedback."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-069",
+          "name": "Autonomic Dual-Tone Vector Balance & Baroreceptor Reflex Dynamic Seesaw",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Visualizes autonomic tone as a dynamic kinetic seesaw where compensatory baroreceptor reflex loops provide immediate counter-intuitive gameplay feedback."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-068",
+          "name": "AChE Catalytic Triad Hydrolysis & Organophosphate Aging Time-Stepper",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Turns irreversible covalent enzyme inhibition into a dramatic time-stepper puzzle, illustrating aging and oxime rescue before the chemical deadline."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-073",
+          "name": "Dale's Vasomotor Reversal & Epinephrine Multi-Receptor Switchboard",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "adjacent",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Constructs a multi-receptor puzzle where switching alpha and beta blockers dynamically flips epinephrine's blood pressure vector in real time."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-084",
+          "name": "Therapeutic Index & Margin of Safety Elastic Hazard Buffer",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Transforms narrow therapeutic index monitoring into an elastic risk-reward margin buffer game, making toxic vs subtherapeutic windows intuitive."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-095",
+          "name": "Multi-Target Polypharmacology Radar Chart: Carvedilol Cardiovascular Profile",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "adjacent",
+          "evidence_tag": "plausible",
+          "rationale": "Employs an interactive multi-axis polypharmacology radar chart that lets students dynamically balance multi-receptor target binding profiles."
+        }
+      ]
+    },
+    "ADV": {
+      "seat_code": "ADV",
+      "seat_number": 4,
+      "seat_name": "Learner Advocate",
+      "seat_focus": "Student fatigue mitigation, bilingual EN/TR fluidity, low-stress friction reduction, mobile friendliness, accessible cognitive pacing",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Removes fear of failure by establishing a zero-penalty prediction space that rewards curiosity rather than perfection."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Protects exhausted pharmacy students' limited 15-30 minute study windows by eliminating wasteful over-practice and cramming anxiety."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Eliminates dead-end cognitive paralysis and shame during late-night solo study by offering accessible, non-judgmental hint ladders."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-030",
+          "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Replaces demoralizing 'incorrect' alerts with empathetic, constructive diagnostic explanations that validate student reasoning."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-035",
+          "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Eliminates student cognitive fatigue and screen exhaustion by strictly outlawing dense, impenetrable walls of textbook prose."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-148",
+          "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+          "theme_id": 4,
+          "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Removes second-language cognitive friction for Turkish students, preventing translation delays from obstructing pharmacology comprehension."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-204",
+          "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+          "theme_id": 6,
+          "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Guarantees stress-free offline learning continuity during hospital basement rotations and subway commutes without data dropouts."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-233",
+          "name": "Frictionless 1-Click Zero-Credit-Card Free Trial with Server-Side Fingerprinting",
+          "theme_id": 7,
+          "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Eliminates predatory commercial anxiety through a frictionless 1-click zero-credit-card trial that never traps students into surprise rebills."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-150",
+          "name": "Thumb-Zone Mobile Ergonomic Navigation & Subway Single-Handed Mode",
+          "theme_id": 4,
+          "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Provides ergonomic single-handed thumb-zone navigation optimized for mobile transit study on crowded public transit."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-069",
+          "name": "Autonomic Dual-Tone Vector Balance & Baroreceptor Reflex Dynamic Seesaw",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Demystifies stressful reflex pharmacology exam questions through an intuitive physical balance metaphor that reduces test anxiety."
+        }
+      ]
+    },
+    "DAT": {
+      "seat_code": "DAT",
+      "seat_number": 5,
+      "seat_name": "Assessment & Data Scientist",
+      "seat_focus": "Measurement precision, IRT/BKT diagnostics, telemetry measurability, psychometrics, distractor diagnostic power, learning analytics",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Captures pristine pre-instruction prior belief states versus post-instruction accuracy to quantify true single-step normalized learning gain."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Generates high-resolution longitudinal retention telemetry, calibrating empirical forgetting curve parameters for each learner-concept pair."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Yields continuous slider-adjustment telemetry that captures the exact inflection point where student intuition diverges from physicochemical reality."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Quantifies latent knowledge state transitions by measuring exact hint-depth consumption (Nudge vs Clue vs Solution) prior to item success."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-067",
+          "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Logs exploratory navigation paths through chemical property space, differentiating systematic structure-activity deduction from random search."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-030",
+          "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Maximizes psychometric item discrimination by mapping each distractor selection to a distinct latent misconception node."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-066",
+          "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Records parameter estimation error and micro-hesitation latencies during curve manipulation to assess numerical and pharmacological intuition."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-175",
+          "name": "Real-Time Client-Side Bayesian Knowledge Tracing (BKT)",
+          "theme_id": 5,
+          "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+          "tier": "adjacent",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Implements client-side Bayesian Knowledge Tracing to update latent skill mastery probabilities in real time without server latency."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-174",
+          "name": "Two-Dimensional Confidence-Accuracy Calibration Matrix & Brier Tracking",
+          "theme_id": 5,
+          "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Measures student metacognitive calibration via confidence-accuracy tracking, calculating Brier scores to detect hazardous overconfidence."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-178",
+          "name": "Cumulative Mastery Gate via Wald Sequential Probability Ratio Test (SPRT)",
+          "theme_id": 5,
+          "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Applies Wald Sequential Probability Ratio Tests to establish mathematically rigorous, adaptive mastery gates with minimal test length."
+        }
+      ]
+    },
+    "TEC": {
+      "seat_code": "TEC",
+      "seat_number": 6,
+      "seat_name": "AI/Technology Engineer",
+      "seat_focus": "Client-side Wasm, deterministic execution, offline capability, zero-runtime API cost, build-time linting, static edge precomputation",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Executes as a lightweight deterministic client-side state machine with zero API roundtrip latency and instant UI feedback."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Runs completely client-side via LocalStorage and IndexedDB, providing offline-capable spaced scheduling with zero recurring cloud compute costs."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Renders closed-form physicochemical equations via client-side SVG and Canvas at 60 FPS without requiring any backend server compute."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-067",
+          "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Computes molecular property deltas (logP, pKa, MW) in-browser via lightweight deterministic lookup tables and Wasm routines."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-035",
+          "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Enforces cognitive content constraints programmatically via automated build-time Markdown AST linters and CI quality gates."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-204",
+          "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+          "theme_id": 6,
+          "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Delivers an offline-first PWA architecture with Service Worker caching and IndexedDB synchronization, ensuring 100% uptime in poor network conditions."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-202",
+          "name": "Client-Side WebAssembly RDKit SMILES Renderer with Vector Fallback",
+          "theme_id": 6,
+          "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Compiles RDKit cheminformatics to WebAssembly with 2D vector fallback, delivering native chemical structure rendering in the browser with zero API cost."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-203",
+          "name": "Client-Side 4th-Order Runge-Kutta ODE Solver for Multi-Compartment PK",
+          "theme_id": 6,
+          "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Solves non-linear multi-compartment pharmacokinetic differential equations directly in-browser using a client-side 4th-order Runge-Kutta solver."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-175",
+          "name": "Real-Time Client-Side Bayesian Knowledge Tracing (BKT)",
+          "theme_id": 5,
+          "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+          "tier": "adjacent",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Executes Bayesian Knowledge Tracing locally in Web Workers, updating learner mastery graphs deterministically without backend telemetry latency."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-068",
+          "name": "AChE Catalytic Triad Hydrolysis & Organophosphate Aging Time-Stepper",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Simulates multi-step enzyme catalytic triad kinetics and aging time-constants deterministically through a lightweight client-side state engine."
+        }
+      ]
+    },
+    "ECO": {
+      "seat_code": "ECO",
+      "seat_number": 7,
+      "seat_name": "Skeptic-Economist",
+      "seat_focus": "Cost-to-build, 93%+ gross margins, ruthless subtraction of UI bloat, commercial conversion, Freemium trial funnel, ROI on dev time",
+      "nomination_count": 10,
+      "nominations": [
+        {
+          "seat_rank": 1,
+          "idea_id": "CON-028",
+          "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Yields the highest learner engagement and completion rate lift per engineering dollar spent of any pedagogical interaction."
+        },
+        {
+          "seat_rank": 2,
+          "idea_id": "CON-001",
+          "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+          "theme_id": 1,
+          "theme_name": "Memory, Spacing & Desirable Difficulties",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Drives 30-day retention and semester-long subscription renewal rates at zero marginal cloud compute or API cost."
+        },
+        {
+          "seat_rank": 3,
+          "idea_id": "CON-070",
+          "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Functions as the premier high-conversion demonstration widget in free preview lessons, accelerating freemium-to-paid trial conversion."
+        },
+        {
+          "seat_rank": 4,
+          "idea_id": "CON-031",
+          "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Provides an infinitely reusable, template-driven scaffolding system across all 22 modules, drastically minimizing authoring and QA expenses."
+        },
+        {
+          "seat_rank": 5,
+          "idea_id": "CON-067",
+          "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+          "theme_id": 3,
+          "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Serves as the flagship commercial value differentiator for the Medicinal Chemistry course, establishing a defensible competitive moat."
+        },
+        {
+          "seat_rank": 6,
+          "idea_id": "CON-035",
+          "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+          "theme_id": 2,
+          "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Slashes curriculum authoring, editing, and bilingual translation costs by over 50% by enforcing strict word count brevity at compile time."
+        },
+        {
+          "seat_rank": 7,
+          "idea_id": "CON-204",
+          "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+          "theme_id": 6,
+          "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Reduces Firebase Firestore read and write operations by over 80% through local persistence, directly protecting the target 93%+ gross margins."
+        },
+        {
+          "seat_rank": 8,
+          "idea_id": "CON-232",
+          "name": "Permanent Freemium 2-Lesson Anchor Across All 22 Modules",
+          "theme_id": 7,
+          "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Guarantees permanent free access to Lessons 1-2 across all 22 modules, establishing a low-friction freemium top-of-funnel that compounds organic growth."
+        },
+        {
+          "seat_rank": 9,
+          "idea_id": "CON-233",
+          "name": "Frictionless 1-Click Zero-Credit-Card Free Trial with Server-Side Fingerprinting",
+          "theme_id": 7,
+          "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Maximizes trial activation rates by eliminating upfront credit-card requirements while preventing abuse via server-side device fingerprinting."
+        },
+        {
+          "seat_rank": 10,
+          "idea_id": "CON-148",
+          "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+          "theme_id": 4,
+          "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+          "tier": "proven",
+          "evidence_tag": "evidence-backed",
+          "rationale": "Expands the platform's addressable market to Turkey with negligible localization overhead, unlocking substantial regional subscription revenue."
+        }
+      ]
+    }
+  },
+  "master_tally": [
+    {
+      "overall_rank": 1,
+      "idea_id": "CON-028",
+      "name": "Predict-Then-Reveal Forced Cognitive Commitment Mechanics",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 7,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Generates the hypercorrection effect and forces retrieval-induced active prediction, dismantling the illusion of explanatory depth.",
+        "TEA": "Enforces the mandatory Step 1 predict-then-reveal pedagogical invariant, compelling active hypothesis generation prior to instruction.",
+        "GAM": "Transforms passive reading into active ludic commitment by creating curiosity and stakes before the mechanical reveal.",
+        "ADV": "Removes fear of failure by establishing a zero-penalty prediction space that rewards curiosity rather than perfection.",
+        "DAT": "Captures pristine pre-instruction prior belief states versus post-instruction accuracy to quantify true single-step normalized learning gain.",
+        "TEC": "Executes as a lightweight deterministic client-side state machine with zero API roundtrip latency and instant UI feedback.",
+        "ECO": "Yields the highest learner engagement and completion rate lift per engineering dollar spent of any pedagogical interaction."
+      }
+    },
+    {
+      "overall_rank": 2,
+      "idea_id": "CON-070",
+      "name": "Dynamic Henderson-Hasselbalch pH-Compartment Ionization & Permeability Chamber",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Dual-codes abstract logarithmic pKa equilibrium into simultaneous visual-spatial compartments of ionized vs unionized species.",
+        "TEA": "Deconstructs the most persistent 3rd-year conceptual stumbling block: predicting drug absorption, clearance, and blood-brain barrier permeability from ionization.",
+        "GAM": "Delivers an engaging tactile simulation where adjusting the pH slider produces immediate kinetic consequences on molecular permeability.",
+        "DAT": "Yields continuous slider-adjustment telemetry that captures the exact inflection point where student intuition diverges from physicochemical reality.",
+        "TEC": "Renders closed-form physicochemical equations via client-side SVG and Canvas at 60 FPS without requiring any backend server compute.",
+        "ECO": "Functions as the premier high-conversion demonstration widget in free preview lessons, accelerating freemium-to-paid trial conversion."
+      }
+    },
+    {
+      "overall_rank": 3,
+      "idea_id": "CON-031",
+      "name": "Scaffolded 3-Tier Hint Ladder (Nudge -> Clue -> Solution)",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "GAM",
+        "ADV",
+        "DAT",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calibrates scaffolding dynamically across 3 cognitive tiers to maintain desirable difficulty without working-memory exhaustion.",
+        "TEA": "Provides structured pedagogical fading that prevents student surrender during challenging SAR derivations while fostering autonomous problem solving.",
+        "GAM": "Establishes a progressive hint unlock economy that preserves flow state and prevents game-over frustration during difficult steps.",
+        "ADV": "Eliminates dead-end cognitive paralysis and shame during late-night solo study by offering accessible, non-judgmental hint ladders.",
+        "DAT": "Quantifies latent knowledge state transitions by measuring exact hint-depth consumption (Nudge vs Clue vs Solution) prior to item success.",
+        "ECO": "Provides an infinitely reusable, template-driven scaffolding system across all 22 modules, drastically minimizing authoring and QA expenses."
+      }
+    },
+    {
+      "overall_rank": 4,
+      "idea_id": "CON-001",
+      "name": "Ebbinghaus-Pimsleur Half-Life Decay Spaced Retrieval Scheduler",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 6,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Calculates individualized memory half-life decay curves to trigger synaptic consolidation before forgetting thresholds occur.",
+        "TEA": "Ensures foundational autonomic receptor pharmacology is systematically reinforced across later medicinal chemistry modules through scheduled spaced review.",
+        "ADV": "Protects exhausted pharmacy students' limited 15-30 minute study windows by eliminating wasteful over-practice and cramming anxiety.",
+        "DAT": "Generates high-resolution longitudinal retention telemetry, calibrating empirical forgetting curve parameters for each learner-concept pair.",
+        "TEC": "Runs completely client-side via LocalStorage and IndexedDB, providing offline-capable spaced scheduling with zero recurring cloud compute costs.",
+        "ECO": "Drives 30-day retention and semester-long subscription renewal rates at zero marginal cloud compute or API cost."
+      }
+    },
+    {
+      "overall_rank": 5,
+      "idea_id": "CON-067",
+      "name": "Split-Screen Bioisosteric Replacement Sandbox with Real-Time Delta Readout",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 5,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Bridges the didactic gap between 2D chemical structure and clinical consequence through interactive functional group bioisosterism manipulation.",
+        "GAM": "Creates a high-agency molecular sandbox where students freely swap functional groups like tactile building blocks with instant visual reward.",
+        "DAT": "Logs exploratory navigation paths through chemical property space, differentiating systematic structure-activity deduction from random search.",
+        "TEC": "Computes molecular property deltas (logP, pKa, MW) in-browser via lightweight deterministic lookup tables and Wasm routines.",
+        "ECO": "Serves as the flagship commercial value differentiator for the Medicinal Chemistry course, establishing a defensible competitive moat."
+      }
+    },
+    {
+      "overall_rank": 6,
+      "idea_id": "CON-035",
+      "name": "Strict 40-Word Cognitive Load Guardrail & Build-Time Linter",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "COG": "Imposes a hard 40-word ceiling to eliminate extraneous cognitive load and prevent working-memory buffer overflow on mobile displays.",
+        "ADV": "Eliminates student cognitive fatigue and screen exhaustion by strictly outlawing dense, impenetrable walls of textbook prose.",
+        "TEC": "Enforces cognitive content constraints programmatically via automated build-time Markdown AST linters and CI quality gates.",
+        "ECO": "Slashes curriculum authoring, editing, and bilingual translation costs by over 50% by enforcing strict word count brevity at compile time."
+      }
+    },
+    {
+      "overall_rank": 7,
+      "idea_id": "CON-030",
+      "name": "Misconception-Targeted Diagnostic Distractors with Zero-Shame Formative Alerts",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 4,
+      "nominating_seats": [
+        "COG",
+        "TEA",
+        "ADV",
+        "DAT"
+      ],
+      "rationales": {
+        "COG": "Exploits error-driven reconsolidation by explicitly activating and falsifying entrenched student misconceptions with targeted diagnostic alerts.",
+        "TEA": "Decontaminates multiple-choice questions by diagnosing specific named 3rd-year misconceptions rather than trivial arithmetic or recall errors.",
+        "ADV": "Replaces demoralizing 'incorrect' alerts with empathetic, constructive diagnostic explanations that validate student reasoning.",
+        "DAT": "Maximizes psychometric item discrimination by mapping each distractor selection to a distinct latent misconception node."
+      }
+    },
+    {
+      "overall_rank": 8,
+      "idea_id": "CON-204",
+      "name": "Offline-First Service Worker & IndexedDB State Persistence Engine",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "ADV",
+        "TEC",
+        "ECO"
+      ],
+      "rationales": {
+        "ADV": "Guarantees stress-free offline learning continuity during hospital basement rotations and subway commutes without data dropouts.",
+        "TEC": "Delivers an offline-first PWA architecture with Service Worker caching and IndexedDB synchronization, ensuring 100% uptime in poor network conditions.",
+        "ECO": "Reduces Firebase Firestore read and write operations by over 80% through local persistence, directly protecting the target 93%+ gross margins."
+      }
+    },
+    {
+      "overall_rank": 9,
+      "idea_id": "CON-148",
+      "name": "Bilingual Medical Terminology Tooltip Swapper & Turkish-English Crosswalk",
+      "theme_id": 4,
+      "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "ADV",
+        "ECO"
+      ],
+      "rationales": {
+        "TEA": "Seamlessly bridges Turkish pharmacy curriculum terminology ('Farmasötik Kimya') with international English board exam nomenclature.",
+        "ADV": "Removes second-language cognitive friction for Turkish students, preventing translation delays from obstructing pharmacology comprehension.",
+        "ECO": "Expands the platform's addressable market to Turkey with negligible localization overhead, unlocking substantial regional subscription revenue."
+      }
+    },
+    {
+      "overall_rank": 10,
+      "idea_id": "CON-066",
+      "name": "Tactile Log-Dose Step Slider & Real-Time Emax/EC50 Curve Manipulator",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 3,
+      "nominating_seats": [
+        "TEA",
+        "GAM",
+        "DAT"
+      ],
+      "rationales": {
+        "TEA": "Viscerally separates efficacy (vertical Emax ceiling) from potency (horizontal EC50 shift) on interactive sigmoidal dose-response curves.",
+        "GAM": "Translates abstract logarithmic dose equations into a responsive elastic curve-bending interaction with rich tactile feedback.",
+        "DAT": "Records parameter estimation error and micro-hesitation latencies during curve manipulation to assess numerical and pharmacological intuition."
+      }
+    },
+    {
+      "overall_rank": 11,
+      "idea_id": "CON-233",
+      "name": "Frictionless 1-Click Zero-Credit-Card Free Trial with Server-Side Fingerprinting",
+      "theme_id": 7,
+      "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "ADV",
+        "ECO"
+      ],
+      "rationales": {
+        "ADV": "Eliminates predatory commercial anxiety through a frictionless 1-click zero-credit-card trial that never traps students into surprise rebills.",
+        "ECO": "Maximizes trial activation rates by eliminating upfront credit-card requirements while preventing abuse via server-side device fingerprinting."
+      }
+    },
+    {
+      "overall_rank": 12,
+      "idea_id": "CON-175",
+      "name": "Real-Time Client-Side Bayesian Knowledge Tracing (BKT)",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "DAT",
+        "TEC"
+      ],
+      "rationales": {
+        "DAT": "Implements client-side Bayesian Knowledge Tracing to update latent skill mastery probabilities in real time without server latency.",
+        "TEC": "Executes Bayesian Knowledge Tracing locally in Web Workers, updating learner mastery graphs deterministically without backend telemetry latency."
+      }
+    },
+    {
+      "overall_rank": 13,
+      "idea_id": "CON-069",
+      "name": "Autonomic Dual-Tone Vector Balance & Baroreceptor Reflex Dynamic Seesaw",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "GAM",
+        "ADV"
+      ],
+      "rationales": {
+        "GAM": "Visualizes autonomic tone as a dynamic kinetic seesaw where compensatory baroreceptor reflex loops provide immediate counter-intuitive gameplay feedback.",
+        "ADV": "Demystifies stressful reflex pharmacology exam questions through an intuitive physical balance metaphor that reduces test anxiety."
+      }
+    },
+    {
+      "overall_rank": 14,
+      "idea_id": "CON-068",
+      "name": "AChE Catalytic Triad Hydrolysis & Organophosphate Aging Time-Stepper",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "GAM",
+        "TEC"
+      ],
+      "rationales": {
+        "GAM": "Turns irreversible covalent enzyme inhibition into a dramatic time-stepper puzzle, illustrating aging and oxime rescue before the chemical deadline.",
+        "TEC": "Simulates multi-step enzyme catalytic triad kinetics and aging time-constants deterministically through a lightweight client-side state engine."
+      }
+    },
+    {
+      "overall_rank": 15,
+      "idea_id": "CON-029",
+      "name": "Multi-Stage Backward-Faded Worked Examples (Sweller Schema Transfer)",
+      "theme_id": 2,
+      "theme_name": "Scaffolding, Sequencing & Misconception Deconstruction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "COG",
+        "TEA"
+      ],
+      "rationales": {
+        "COG": "Applies Sweller's backward-fading worked-example progression to guide schema transfer from full scaffolding to independent problem solving.",
+        "TEA": "Scaffolds multi-step pharmacophore derivations through graduated worked-example fading, ensuring authentic clinical problem-solving competency."
+      }
+    },
+    {
+      "overall_rank": 16,
+      "idea_id": "CON-002",
+      "name": "Interleaved Autonomic Division Retrieval Cards",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 2,
+      "nominating_seats": [
+        "COG",
+        "TEA"
+      ],
+      "rationales": {
+        "COG": "Interleaves sympathetic and parasympathetic retrieval queries to induce cross-system discriminative contrast and prevent categorized rote memorization.",
+        "TEA": "Forces students to discriminate opposing autonomic drug classes within single clinical scenarios, mirroring authentic hospital pharmacy rounds."
+      }
+    },
+    {
+      "overall_rank": 17,
+      "idea_id": "CON-232",
+      "name": "Permanent Freemium 2-Lesson Anchor Across All 22 Modules",
+      "theme_id": 7,
+      "theme_name": "Cost Optimization, Frugal Engineering & Commercial Viability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "ECO"
+      ],
+      "rationales": {
+        "ECO": "Guarantees permanent free access to Lessons 1-2 across all 22 modules, establishing a low-friction freemium top-of-funnel that compounds organic growth."
+      }
+    },
+    {
+      "overall_rank": 18,
+      "idea_id": "CON-203",
+      "name": "Client-Side 4th-Order Runge-Kutta ODE Solver for Multi-Compartment PK",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "TEC"
+      ],
+      "rationales": {
+        "TEC": "Solves non-linear multi-compartment pharmacokinetic differential equations directly in-browser using a client-side 4th-order Runge-Kutta solver."
+      }
+    },
+    {
+      "overall_rank": 19,
+      "idea_id": "CON-202",
+      "name": "Client-Side WebAssembly RDKit SMILES Renderer with Vector Fallback",
+      "theme_id": 6,
+      "theme_name": "Scalable Architecture, Wasm Cheminformatics & Deterministic AI",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "TEC"
+      ],
+      "rationales": {
+        "TEC": "Compiles RDKit cheminformatics to WebAssembly with 2D vector fallback, delivering native chemical structure rendering in the browser with zero API cost."
+      }
+    },
+    {
+      "overall_rank": 20,
+      "idea_id": "CON-178",
+      "name": "Cumulative Mastery Gate via Wald Sequential Probability Ratio Test (SPRT)",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "DAT"
+      ],
+      "rationales": {
+        "DAT": "Applies Wald Sequential Probability Ratio Tests to establish mathematically rigorous, adaptive mastery gates with minimal test length."
+      }
+    },
+    {
+      "overall_rank": 21,
+      "idea_id": "CON-174",
+      "name": "Two-Dimensional Confidence-Accuracy Calibration Matrix & Brier Tracking",
+      "theme_id": 5,
+      "theme_name": "Diagnostic Assessment, Psychometrics & Learning Analytics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "DAT"
+      ],
+      "rationales": {
+        "DAT": "Measures student metacognitive calibration via confidence-accuracy tracking, calculating Brier scores to detect hazardous overconfidence."
+      }
+    },
+    {
+      "overall_rank": 22,
+      "idea_id": "CON-150",
+      "name": "Thumb-Zone Mobile Ergonomic Navigation & Subway Single-Handed Mode",
+      "theme_id": 4,
+      "theme_name": "Friction Reduction, Student Fatigue & Bilingual Usability",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "ADV"
+      ],
+      "rationales": {
+        "ADV": "Provides ergonomic single-handed thumb-zone navigation optimized for mobile transit study on crowded public transit."
+      }
+    },
+    {
+      "overall_rank": 23,
+      "idea_id": "CON-095",
+      "name": "Multi-Target Polypharmacology Radar Chart: Carvedilol Cardiovascular Profile",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Employs an interactive multi-axis polypharmacology radar chart that lets students dynamically balance multi-receptor target binding profiles."
+      }
+    },
+    {
+      "overall_rank": 24,
+      "idea_id": "CON-084",
+      "name": "Therapeutic Index & Margin of Safety Elastic Hazard Buffer",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Transforms narrow therapeutic index monitoring into an elastic risk-reward margin buffer game, making toxic vs subtherapeutic windows intuitive."
+      }
+    },
+    {
+      "overall_rank": 25,
+      "idea_id": "CON-073",
+      "name": "Dale's Vasomotor Reversal & Epinephrine Multi-Receptor Switchboard",
+      "theme_id": 3,
+      "theme_name": "Active Interactivity, Widgets & Molecular Manipulation",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "GAM"
+      ],
+      "rationales": {
+        "GAM": "Constructs a multi-receptor puzzle where switching alpha and beta blockers dynamically flips epinephrine's blood pressure vector in real time."
+      }
+    },
+    {
+      "overall_rank": 26,
+      "idea_id": "CON-008",
+      "name": "Varied Context Retrieval for Muscarinic and Adrenergic Toxicity",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "COG"
+      ],
+      "rationales": {
+        "COG": "Varies toxicological and clinical retrieval contexts across autonomic targets to build flexible, decontextualized schema retrieval paths."
+      }
+    },
+    {
+      "overall_rank": 27,
+      "idea_id": "CON-003",
+      "name": "Generation Effect Incomplete Receptor Signaling Cascades",
+      "theme_id": 1,
+      "theme_name": "Memory, Spacing & Desirable Difficulties",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "vote_count": 1,
+      "nominating_seats": [
+        "COG"
+      ],
+      "rationales": {
+        "COG": "Forces active generative completion of incomplete intracellular second-messenger cascades, leveraging the generation effect for robust encoding."
+      }
+    }
+  ],
+  "cross_seat_alignment_matrix": {
+    "COG": {
+      "COG": 10,
+      "TEA": 7,
+      "GAM": 3,
+      "ADV": 5,
+      "DAT": 5,
+      "TEC": 4,
+      "ECO": 5
+    },
+    "TEA": {
+      "COG": 7,
+      "TEA": 10,
+      "GAM": 5,
+      "ADV": 5,
+      "DAT": 7,
+      "TEC": 4,
+      "ECO": 6
+    },
+    "GAM": {
+      "COG": 3,
+      "TEA": 5,
+      "GAM": 10,
+      "ADV": 3,
+      "DAT": 5,
+      "TEC": 4,
+      "ECO": 4
+    },
+    "ADV": {
+      "COG": 5,
+      "TEA": 5,
+      "GAM": 3,
+      "ADV": 10,
+      "DAT": 4,
+      "TEC": 4,
+      "ECO": 7
+    },
+    "DAT": {
+      "COG": 5,
+      "TEA": 7,
+      "GAM": 5,
+      "ADV": 4,
+      "DAT": 10,
+      "TEC": 5,
+      "ECO": 5
+    },
+    "TEC": {
+      "COG": 4,
+      "TEA": 4,
+      "GAM": 4,
+      "ADV": 4,
+      "DAT": 5,
+      "TEC": 10,
+      "ECO": 6
+    },
+    "ECO": {
+      "COG": 5,
+      "TEA": 6,
+      "GAM": 4,
+      "ADV": 7,
+      "DAT": 5,
+      "TEC": 6,
+      "ECO": 10
+    }
+  }
+}

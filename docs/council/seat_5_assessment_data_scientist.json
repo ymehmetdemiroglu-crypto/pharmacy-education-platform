@@ -1,0 +1,911 @@
+{
+  "seat": "Seat 5: Assessment & Data Scientist",
+  "total_count": 100,
+  "breakdown": {
+    "proven": 30,
+    "adjacent": 50,
+    "wild": 20
+  },
+  "ideas": [
+    {
+      "id": "DAT-001",
+      "name": "Misconception-Mapped Diagnostic Distractors",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Each incorrect multiple-choice option in autonomic receptor and SAR steps explicitly encodes an empirically documented 3rd-year pharmacy misconception (e.g. confusing alpha-2 presynaptic autoreceptor inhibition with postsynaptic excitation, or assuming ester-to-amide bioisosterism only alters steric bulk rather than enzymatic hydrolysis rate); selecting it immediately logs the specific misconception code and routes to targeted contrastive remediation.",
+      "expected_effect": "Pinpoints student misconceptions at the item level and accelerates unlearning of persistent pharmacology errors by 40% compared to generic wrong-answer feedback.",
+      "formatted": "[Misconception-Mapped Diagnostic Distractors]: [Each incorrect multiple-choice option in autonomic receptor and SAR steps explicitly encodes an empirically documented 3rd-year pharmacy misconception (e.g. confusing alpha-2 presynaptic autoreceptor inhibition with postsynaptic excitation, or assuming ester-to-amide bioisosterism only alters steric bulk rather than enzymatic hydrolysis rate); selecting it immediately logs the specific misconception code and routes to targeted contrastive remediation.] -> [Pinpoints student misconceptions at the item level and accelerates unlearning of persistent pharmacology errors by 40% compared to generic wrong-answer feedback.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-002",
+      "name": "Two-Dimensional Confidence-Accuracy Calibration Matrix",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Learners declare certainty (Low, Medium, High) alongside their answer on critical drug-action predictions; telemetry plots responses into a 4-quadrant matrix (Mastery, Lucky Guess, Hesitant Correct, Confident Error), triggering high-urgency unlearning protocols for high-confidence errors.",
+      "expected_effect": "Eradicates dangerous unconscious incompetence where students prescribe lethal contraindications with high subjective certainty, improving metacognitive calibration by 35%.",
+      "formatted": "[Two-Dimensional Confidence-Accuracy Calibration Matrix]: [Learners declare certainty (Low, Medium, High) alongside their answer on critical drug-action predictions; telemetry plots responses into a 4-quadrant matrix (Mastery, Lucky Guess, Hesitant Correct, Confident Error), triggering high-urgency unlearning protocols for high-confidence errors.] -> [Eradicates dangerous unconscious incompetence where students prescribe lethal contraindications with high subjective certainty, improving metacognitive calibration by 35%.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-003",
+      "name": "2-Parameter Logistic (2PL) Computerized Adaptive Testing (CAT)",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Item bank questions are parameterized by difficulty (b) and discrimination (a); after each response, maximum Fisher information selection serves the next item nearest the learner's estimated latent ability (theta), stopping when the standard error of measurement drops below 0.30.",
+      "expected_effect": "Cuts testing time by 50% while estimating true student pharmacology knowledge with twice the precision of fixed-length quizzes.",
+      "formatted": "[2-Parameter Logistic (2PL) Computerized Adaptive Testing (CAT)]: [Item bank questions are parameterized by difficulty (b) and discrimination (a); after each response, maximum Fisher information selection serves the next item nearest the learner's estimated latent ability (theta), stopping when the standard error of measurement drops below 0.30.] -> [Cuts testing time by 50% while estimating true student pharmacology knowledge with twice the precision of fixed-length quizzes.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-004",
+      "name": "Pre-Test / Post-Test Normalized Learning Gain (Hake's Gain) Tracking",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Pre-module 3-question diagnostic probes are paired with isomorphic post-module challenge steps, calculating Hake's normalized gain score g = (%post - %pre)/(100 - %pre) per learner and per module cohort.",
+      "expected_effect": "Isolates true instructional value-add from prior student background knowledge, highlighting modules that fail to shift conceptual understanding regardless of raw post-test scores.",
+      "formatted": "[Pre-Test / Post-Test Normalized Learning Gain (Hake's Gain) Tracking]: [Pre-module 3-question diagnostic probes are paired with isomorphic post-module challenge steps, calculating Hake's normalized gain score g = (%post - %pre)/(100 - %pre) per learner and per module cohort.] -> [Isolates true instructional value-add from prior student background knowledge, highlighting modules that fail to shift conceptual understanding regardless of raw post-test scores.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-005",
+      "name": "Immediate Item Discrimination Index Continuous Telemetry Flagging",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Real-time point-biserial correlation (r_pbis) is computed between individual step correctness and overall module score; any question with r_pbis < 0.20 or negative discrimination is automatically quarantined for curriculum audit.",
+      "expected_effect": "Eliminates confusing, ambiguously phrased, or deceptive pharmacology questions that inadvertently penalize high-performing students.",
+      "formatted": "[Immediate Item Discrimination Index Continuous Telemetry Flagging]: [Real-time point-biserial correlation (r_pbis) is computed between individual step correctness and overall module score; any question with r_pbis < 0.20 or negative discrimination is automatically quarantined for curriculum audit.] -> [Eliminates confusing, ambiguously phrased, or deceptive pharmacology questions that inadvertently penalize high-performing students.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-006",
+      "name": "Wise-Kong Response Time Thresholding for Rapid Guessing Detection",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Tracks time elapsed before submission against a normative threshold (10% of median response time, e.g. <2.5s); submissions below threshold are flagged as non-effortful rapid guesses, excluded from ability scoring, and met with a pacing prompt.",
+      "expected_effect": "Prevents artificial deflation of student mastery estimates and preserves clean psychometric validity by filtering out off-task clicking behavior.",
+      "formatted": "[Wise-Kong Response Time Thresholding for Rapid Guessing Detection]: [Tracks time elapsed before submission against a normative threshold (10% of median response time, e.g. <2.5s); submissions below threshold are flagged as non-effortful rapid guesses, excluded from ability scoring, and met with a pacing prompt.] -> [Prevents artificial deflation of student mastery estimates and preserves clean psychometric validity by filtering out off-task clicking behavior.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-007",
+      "name": "Certainty-Based Marking (CBM) with Asymmetric Penalty Matrices",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Implements Gardner-Medwin scoring on pharmacotherapy selection (Certainty 1: +1/0; Certainty 2: +2/-2; Certainty 3: +3/-6); heavily penalizes confident errors in fatal clinical scenarios (e.g. administering non-selective beta-blockers in asthma).",
+      "expected_effect": "Discourages wild guessing and conditions pharmacy students to recognize the severe clinical risk of overconfident incorrect decision-making.",
+      "formatted": "[Certainty-Based Marking (CBM) with Asymmetric Penalty Matrices]: [Implements Gardner-Medwin scoring on pharmacotherapy selection (Certainty 1: +1/0; Certainty 2: +2/-2; Certainty 3: +3/-6); heavily penalizes confident errors in fatal clinical scenarios (e.g. administering non-selective beta-blockers in asthma).] -> [Discourages wild guessing and conditions pharmacy students to recognize the severe clinical risk of overconfident incorrect decision-making.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-008",
+      "name": "Cumulative Mastery Gate with Wald Sequential Probability Ratio Test",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Evaluates sequential step responses against null hypothesis theta <= theta_0 (non-mastery) vs alternative theta >= theta_1 (mastery) with Type I/II error rates alpha=beta=0.05, terminating practice as soon as the likelihood ratio boundary is crossed.",
+      "expected_effect": "Enables rapid exit for fast learners within 4-6 questions while providing struggling students sufficient practice without arbitrary fixed question limits.",
+      "formatted": "[Cumulative Mastery Gate with Wald Sequential Probability Ratio Test]: [Evaluates sequential step responses against null hypothesis theta <= theta_0 (non-mastery) vs alternative theta >= theta_1 (mastery) with Type I/II error rates alpha=beta=0.05, terminating practice as soon as the likelihood ratio boundary is crossed.] -> [Enables rapid exit for fast learners within 4-6 questions while providing struggling students sufficient practice without arbitrary fixed question limits.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-009",
+      "name": "Multi-Facet Rasch Measurement for Worked-Example Step Fading",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Calibrates the cognitive difficulty of individual faded completion steps (blanking out intermediate PK derivation lines or SAR pharmacophore groups) on a shared logit scale alongside learner proficiency.",
+      "expected_effect": "Ensures scaffolding steps fade at an empirically validated difficulty gradient, avoiding sudden cognitive cliff-edges during transition from observation to independent problem-solving.",
+      "formatted": "[Multi-Facet Rasch Measurement for Worked-Example Step Fading]: [Calibrates the cognitive difficulty of individual faded completion steps (blanking out intermediate PK derivation lines or SAR pharmacophore groups) on a shared logit scale alongside learner proficiency.] -> [Ensures scaffolding steps fade at an empirically validated difficulty gradient, avoiding sudden cognitive cliff-edges during transition from observation to independent problem-solving.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-010",
+      "name": "Dynamic Spaced Repetition Scheduling via Ebbinghaus-Pimsleur Half-Life Decay",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Computes memory retention probability R = exp(-t / S) where memory stability S expands multiplicatively upon successful retrieval and contracts upon failure; schedules review cards when retention drops to 90%.",
+      "expected_effect": "Achieves >85% 30-day concept retention for autonomic drug classifications and receptor subtypes with minimal review overhead.",
+      "formatted": "[Dynamic Spaced Repetition Scheduling via Ebbinghaus-Pimsleur Half-Life Decay]: [Computes memory retention probability R = exp(-t / S) where memory stability S expands multiplicatively upon successful retrieval and contracts upon failure; schedules review cards when retention drops to 90%.] -> [Achieves >85% 30-day concept retention for autonomic drug classifications and receptor subtypes with minimal review overhead.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-011",
+      "name": "Brier Score Calibration Feedback for Dose-Response Predictions",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Prompts students to assign probability distributions (e.g. 70% shift right, 30% shift down) to drug curve changes upon antagonist addition; computes quadratic Brier score BS = (1/N)*sum((f_t - o_t)^2) and displays a calibration feedback curve.",
+      "expected_effect": "Trains students to evaluate clinical uncertainty rigorously, shifting overconfident novice hunches toward probabilistic pharmacological reasoning.",
+      "formatted": "[Brier Score Calibration Feedback for Dose-Response Predictions]: [Prompts students to assign probability distributions (e.g. 70% shift right, 30% shift down) to drug curve changes upon antagonist addition; computes quadratic Brier score BS = (1/N)*sum((f_t - o_t)^2) and displays a calibration feedback curve.] -> [Trains students to evaluate clinical uncertainty rigorously, shifting overconfident novice hunches toward probabilistic pharmacological reasoning.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-012",
+      "name": "Contrastive Pair Discrimination Testing",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Presents side-by-side structurally near-identical drug pairs (e.g. Physostigmine tertiary amine vs Neostigmine quaternary ammonium) and tests blood-brain barrier penetration differential; logs cross-pair confusion error rates.",
+      "expected_effect": "Resolves fine-grained structural boundary conditions in medicinal chemistry, increasing blood-brain barrier prediction accuracy by 45%.",
+      "formatted": "[Contrastive Pair Discrimination Testing]: [Presents side-by-side structurally near-identical drug pairs (e.g. Physostigmine tertiary amine vs Neostigmine quaternary ammonium) and tests blood-brain barrier penetration differential; logs cross-pair confusion error rates.] -> [Resolves fine-grained structural boundary conditions in medicinal chemistry, increasing blood-brain barrier prediction accuracy by 45%.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-013",
+      "name": "Differential Item Functioning (DIF) Auditing for Bilingual EN/TR Curricula",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Uses Mantel-Haenszel odds-ratio statistics on matched-ability English and Turkish student cohorts to detect items where linguistic nuance or terminology (e.g. 'adrenoseptör' vs 'adrenoceptor') creates unfair group bias.",
+      "expected_effect": "Guarantees psychometric measurement equivalence across language tracks, ensuring neither Turkish nor English learners face artifactual item disadvantage.",
+      "formatted": "[Differential Item Functioning (DIF) Auditing for Bilingual EN/TR Curricula]: [Uses Mantel-Haenszel odds-ratio statistics on matched-ability English and Turkish student cohorts to detect items where linguistic nuance or terminology (e.g. 'adrenoseptör' vs 'adrenoceptor') creates unfair group bias.] -> [Guarantees psychometric measurement equivalence across language tracks, ensuring neither Turkish nor English learners face artifactual item disadvantage.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-014",
+      "name": "Deterministic Input, Noisy And Gate (DINA) Cognitive Diagnosis for Bioisosterism",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Maps SAR items to a binary Q-matrix of required latent skills (e.g. hydrogen bonding, steric volume, electronic resonance); models ideal response vectors to diagnose exact missing bioisosteric transformation skills.",
+      "expected_effect": "Yields fine-grained multi-dimensional diagnostic profiles showing exactly which chemical property attributes a student fails to synthesize.",
+      "formatted": "[Deterministic Input, Noisy And Gate (DINA) Cognitive Diagnosis for Bioisosterism]: [Maps SAR items to a binary Q-matrix of required latent skills (e.g. hydrogen bonding, steric volume, electronic resonance); models ideal response vectors to diagnose exact missing bioisosteric transformation skills.] -> [Yields fine-grained multi-dimensional diagnostic profiles showing exactly which chemical property attributes a student fails to synthesize.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-015",
+      "name": "Predict-Then-Reveal Prior Knowledge Elicitation Telemetry",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Forces an active prediction on organ response before displaying physiological cascade results, logging prediction discrepancy and response latency in Firestore telemetry.",
+      "expected_effect": "Activates prior mental schemata and primes attentional focus for corrective feedback, doubling retention of counter-intuitive ANS drug paradoxes like reflex bradycardia.",
+      "formatted": "[Predict-Then-Reveal Prior Knowledge Elicitation Telemetry]: [Forces an active prediction on organ response before displaying physiological cascade results, logging prediction discrepancy and response latency in Firestore telemetry.] -> [Activates prior mental schemata and primes attentional focus for corrective feedback, doubling retention of counter-intuitive ANS drug paradoxes like reflex bradycardia.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-016",
+      "name": "Cumulative Sum (CUSUM) Item Drift Detection on Cohort Telemetry",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Continuously tracks cumulative sum of residuals between predicted item success probability (via 1PL) and actual student responses over time; triggers an alert when CUSUM crosses decision interval h = 4.",
+      "expected_effect": "Detects compromised test questions, lecture syllabus drift, or sudden cohort-wide misunderstandings within 48 hours of occurrence.",
+      "formatted": "[Cumulative Sum (CUSUM) Item Drift Detection on Cohort Telemetry]: [Continuously tracks cumulative sum of residuals between predicted item success probability (via 1PL) and actual student responses over time; triggers an alert when CUSUM crosses decision interval h = 4.] -> [Detects compromised test questions, lecture syllabus drift, or sudden cohort-wide misunderstandings within 48 hours of occurrence.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-017",
+      "name": "Modified Angoff Standard Setting for Licensure Readiness Benchmarks",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Assembles expert-rated Angoff cut-scores across foundational pharmacokinetics and ANS item pools to establish an empirical criterion-referenced passing threshold for licensure readiness.",
+      "expected_effect": "Gives students a reliable, criterion-grounded indicator of whether their performance meets licensure board exam standards rather than an arbitrary percentage grade.",
+      "formatted": "[Modified Angoff Standard Setting for Licensure Readiness Benchmarks]: [Assembles expert-rated Angoff cut-scores across foundational pharmacokinetics and ANS item pools to establish an empirical criterion-referenced passing threshold for licensure readiness.] -> [Gives students a reliable, criterion-grounded indicator of whether their performance meets licensure board exam standards rather than an arbitrary percentage grade.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-018",
+      "name": "Formative Feedback Latency Zero-Delay Enforcement",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Automatically displays diagnostic explanation and misconception-specific contrast within <100ms of submission rather than delaying feedback until quiz completion.",
+      "expected_effect": "Exploits the immediate feedback effect to prevent incorrect memory traces from consolidating, reducing error persistence on subsequent retrieval by 50%.",
+      "formatted": "[Formative Feedback Latency Zero-Delay Enforcement]: [Automatically displays diagnostic explanation and misconception-specific contrast within <100ms of submission rather than delaying feedback until quiz completion.] -> [Exploits the immediate feedback effect to prevent incorrect memory traces from consolidating, reducing error persistence on subsequent retrieval by 50%.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-019",
+      "name": "Test-Retest Reliability Indexing for Core Clinical Pharmacokinetics Equations",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Evaluates stability of clearance, half-life, and volume of distribution calculations across two-week intervals using parallel isomorphic parameter sets; computes Pearson r and intra-class correlation coefficients.",
+      "expected_effect": "Verifies that conceptual PK derivation mastery represents stable mental models rather than transient memorization of calculation shortcuts.",
+      "formatted": "[Test-Retest Reliability Indexing for Core Clinical Pharmacokinetics Equations]: [Evaluates stability of clearance, half-life, and volume of distribution calculations across two-week intervals using parallel isomorphic parameter sets; computes Pearson r and intra-class correlation coefficients.] -> [Verifies that conceptual PK derivation mastery represents stable mental models rather than transient memorization of calculation shortcuts.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-020",
+      "name": "Distractor Efficiency Analysis and Non-Functional Distractor Pruning",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Calculates the selection frequency of each multiple-choice distractor across cohort attempts; identifies distractors chosen by <5% of low-performing students and flags them for revision.",
+      "expected_effect": "Tightens question efficiency and eliminates implausible foils, converting weak 4-option questions into highly discriminating diagnostic instruments.",
+      "formatted": "[Distractor Efficiency Analysis and Non-Functional Distractor Pruning]: [Calculates the selection frequency of each multiple-choice distractor across cohort attempts; identifies distractors chosen by <5% of low-performing students and flags them for revision.] -> [Tightens question efficiency and eliminates implausible foils, converting weak 4-option questions into highly discriminating diagnostic instruments.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-021",
+      "name": "Expected Calibration Error (ECE) Tracking on Student Self-Ratings",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Bins student confidence ratings (0-100%) into 10 deciles and computes weighted absolute difference between confidence and accuracy (ECE = sum(|acc_b - conf_b| * (|B_b|/N))); displays a calibration radar chart.",
+      "expected_effect": "Provides quantifiable visualization of overconfidence and underconfidence, fostering accurate metacognitive self-assessment before exams.",
+      "formatted": "[Expected Calibration Error (ECE) Tracking on Student Self-Ratings]: [Bins student confidence ratings (0-100%) into 10 deciles and computes weighted absolute difference between confidence and accuracy (ECE = sum(|acc_b - conf_b| * (|B_b|/N))); displays a calibration radar chart.] -> [Provides quantifiable visualization of overconfidence and underconfidence, fostering accurate metacognitive self-assessment before exams.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-022",
+      "name": "Clustered Knowledge Component (KC) Prerequisite Directed Acyclic Graph",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Structures curriculum competencies into an empirical prerequisite graph where mastery of parent nodes (e.g. pKa & Henderson-Hasselbalch) statistically bounds mastery probability of child nodes (e.g. urinary ion trapping).",
+      "expected_effect": "Prevents students from attempting advanced clinical pharmacokinetics before foundational physicochemical concepts are mathematically confirmed.",
+      "formatted": "[Clustered Knowledge Component (KC) Prerequisite Directed Acyclic Graph]: [Structures curriculum competencies into an empirical prerequisite graph where mastery of parent nodes (e.g. pKa & Henderson-Hasselbalch) statistically bounds mastery probability of child nodes (e.g. urinary ion trapping).] -> [Prevents students from attempting advanced clinical pharmacokinetics before foundational physicochemical concepts are mathematically confirmed.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-023",
+      "name": "Standard Error of Measurement (SEM) Bounded Progress Visualization",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Replaces misleading deterministic progress bars with shaded confidence intervals representing student latent ability theta +/- 1.96 * SEM(theta) across module competencies.",
+      "expected_effect": "Accurately communicates measurement uncertainty and encourages students to continue practicing until the uncertainty interval shifts fully into the mastery zone.",
+      "formatted": "[Standard Error of Measurement (SEM) Bounded Progress Visualization]: [Replaces misleading deterministic progress bars with shaded confidence intervals representing student latent ability theta +/- 1.96 * SEM(theta) across module competencies.] -> [Accurately communicates measurement uncertainty and encourages students to continue practicing until the uncertainty interval shifts fully into the mastery zone.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-024",
+      "name": "Adaptive Hint Ladder Stepping with Logit Penalty Scaling",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Offers a 3-tier hint ladder (Nudge, Clue, Solution) where requesting each successive tier applies a mathematically graduated reduction to item score credit based on information gain.",
+      "expected_effect": "Incentivizes self-directed retrieval attempts while preserving access to progressive scaffolding, preventing hint abuse and gaming the system.",
+      "formatted": "[Adaptive Hint Ladder Stepping with Logit Penalty Scaling]: [Offers a 3-tier hint ladder (Nudge, Clue, Solution) where requesting each successive tier applies a mathematically graduated reduction to item score credit based on information gain.] -> [Incentivizes self-directed retrieval attempts while preserving access to progressive scaffolding, preventing hint abuse and gaming the system.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-025",
+      "name": "Drift-Diffusion Model (DDM) Telemetry for Speed-Accuracy Trade-off",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Fits drift rate (v), boundary separation (a), and non-decision time (t_0) to reaction time and accuracy distributions on ANS receptor identification tasks.",
+      "expected_effect": "Distinguishes whether low accuracy stems from impulsive responding (low boundary a) or genuine lack of conceptual knowledge (low drift rate v), routing to customized pacing interventions.",
+      "formatted": "[Drift-Diffusion Model (DDM) Telemetry for Speed-Accuracy Trade-off]: [Fits drift rate (v), boundary separation (a), and non-decision time (t_0) to reaction time and accuracy distributions on ANS receptor identification tasks.] -> [Distinguishes whether low accuracy stems from impulsive responding (low boundary a) or genuine lack of conceptual knowledge (low drift rate v), routing to customized pacing interventions.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-026",
+      "name": "Partial Credit Model (PCM) Scoring for Multi-Step SAR Modifications",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Employs polytomous Rasch Partial Credit Model to score multi-step molecule modification tasks, rewarding individual correct bioisosteric substitutions even if the final synthesized analog is sub-optimal.",
+      "expected_effect": "Preserves motivational engagement and measures granular intermediate competencies during complex medicinal chemistry design problems.",
+      "formatted": "[Partial Credit Model (PCM) Scoring for Multi-Step SAR Modifications]: [Employs polytomous Rasch Partial Credit Model to score multi-step molecule modification tasks, rewarding individual correct bioisosteric substitutions even if the final synthesized analog is sub-optimal.] -> [Preserves motivational engagement and measures granular intermediate competencies during complex medicinal chemistry design problems.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-027",
+      "name": "Test-Enhanced Learning (Retrieval Practice) Spacing Optimization",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Replaces passive re-reading summaries with mandatory low-stakes retrieval practice questions at spaced intervals (1 day, 3 days, 7 days, 21 days).",
+      "expected_effect": "Leverages the robust testing effect to double long-term memory retention of autonomic drug mechanisms compared to passive summary reviews.",
+      "formatted": "[Test-Enhanced Learning (Retrieval Practice) Spacing Optimization]: [Replaces passive re-reading summaries with mandatory low-stakes retrieval practice questions at spaced intervals (1 day, 3 days, 7 days, 21 days).] -> [Leverages the robust testing effect to double long-term memory retention of autonomic drug mechanisms compared to passive summary reviews.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-028",
+      "name": "Dual-Factor Concept Inventory for Autonomic Pharmacology",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Validates an 18-item standardized concept inventory measuring two orthogonal latent traits: Sympathetic vs Parasympathetic balance and Receptor Subtype Selectivity; verified via confirmatory factor analysis (CFA).",
+      "expected_effect": "Provides a standardized, psychometrically benchmarked pre/post instrument to evaluate overall course efficacy across academic semesters.",
+      "formatted": "[Dual-Factor Concept Inventory for Autonomic Pharmacology]: [Validates an 18-item standardized concept inventory measuring two orthogonal latent traits: Sympathetic vs Parasympathetic balance and Receptor Subtype Selectivity; verified via confirmatory factor analysis (CFA).] -> [Provides a standardized, psychometrically benchmarked pre/post instrument to evaluate overall course efficacy across academic semesters.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-029",
+      "name": "Interleaving Telemetry Index for Blocked vs Mixed Practice Distribution",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Computes an interleaving entropy metric H = -sum(p_i * log2(p_i)) on successive practice items across drug classes; dynamically injects inter-category items when practice becomes too homogeneous.",
+      "expected_effect": "Forces discriminative contrast between look-alike drug classes (e.g. alpha-agonists vs beta-blockers), eliminating the blocked practice illusion of mastery.",
+      "formatted": "[Interleaving Telemetry Index for Blocked vs Mixed Practice Distribution]: [Computes an interleaving entropy metric H = -sum(p_i * log2(p_i)) on successive practice items across drug classes; dynamically injects inter-category items when practice becomes too homogeneous.] -> [Forces discriminative contrast between look-alike drug classes (e.g. alpha-agonists vs beta-blockers), eliminating the blocked practice illusion of mastery.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-030",
+      "name": "Guttman Scalogram Validation for Pharmacokinetic Derivation Ladders",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Validates that step sequences in pharmacokinetic derivations follow a strict cumulative Guttman scale (Coefficient of Reproducibility > 0.90), confirming that mastering Step N strictly implies mastery of Steps 1 ... N-1.",
+      "expected_effect": "Guarantees that learning sequences contain zero hidden pedagogical leaps or illogical dependency inversions.",
+      "formatted": "[Guttman Scalogram Validation for Pharmacokinetic Derivation Ladders]: [Validates that step sequences in pharmacokinetic derivations follow a strict cumulative Guttman scale (Coefficient of Reproducibility > 0.90), confirming that mastering Step N strictly implies mastery of Steps 1 ... N-1.] -> [Guarantees that learning sequences contain zero hidden pedagogical leaps or illogical dependency inversions.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-031",
+      "name": "Real-Time Bayesian Knowledge Tracing (BKT) Updating on Client-Side",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Updates latent mastery probability P(L_t) on the client using closed-form Bayes rule incorporating item slip (P(S)), guess (P(G)), and transit (P(T)) parameters upon every step submission.",
+      "expected_effect": "Provides instantaneous, mathematically sound mastery updates without server roundtrips, keeping client UI responsive and pedagogically adaptive.",
+      "formatted": "[Real-Time Bayesian Knowledge Tracing (BKT) Updating on Client-Side]: [Updates latent mastery probability P(L_t) on the client using closed-form Bayes rule incorporating item slip (P(S)), guess (P(G)), and transit (P(T)) parameters upon every step submission.] -> [Provides instantaneous, mathematically sound mastery updates without server roundtrips, keeping client UI responsive and pedagogically adaptive.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-032",
+      "name": "Cross-Module Misconception Co-Occurrence Graphing",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Constructs an undirected co-occurrence graph of diagnostic distractor selections across MedChem and Pharmacology; runs Louvain community detection to isolate cross-disciplinary error clusters.",
+      "expected_effect": "Reveals unexpected root misconceptions (e.g. pKa misunderstanding directly causing incorrect urinary excretion predictions 3 modules later), prompting unified remediation.",
+      "formatted": "[Cross-Module Misconception Co-Occurrence Graphing]: [Constructs an undirected co-occurrence graph of diagnostic distractor selections across MedChem and Pharmacology; runs Louvain community detection to isolate cross-disciplinary error clusters.] -> [Reveals unexpected root misconceptions (e.g. pKa misunderstanding directly causing incorrect urinary excretion predictions 3 modules later), prompting unified remediation.] [plausible]"
+    },
+    {
+      "id": "DAT-033",
+      "name": "Half-Life Decay Spaced Review Scheduling via Individualized Forgetting Rates",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Fits learner-specific memory stability parameters S_i using power-law regression over historical review latencies and correctness; personalizes spaced intervals rather than relying on population averages.",
+      "expected_effect": "Reduces student review workload by 25% while maintaining individual retention above 90% across all memorized drug-receptor pairings.",
+      "formatted": "[Half-Life Decay Spaced Review Scheduling via Individualized Forgetting Rates]: [Fits learner-specific memory stability parameters S_i using power-law regression over historical review latencies and correctness; personalizes spaced intervals rather than relying on population averages.] -> [Reduces student review workload by 25% while maintaining individual retention above 90% across all memorized drug-receptor pairings.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-034",
+      "name": "Dwell-Time Anomaly Detection on SMILES Molecule Viewers",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Measures gaze/viewport dwell time on interactive 2D Lewis/SMILES structures; flags anomalies where dwell time exceeds 2.5 standard deviations of cohort mean without user interaction as a signal of cognitive freeze.",
+      "expected_effect": "Proactively offers targeted structural annotation overlays (highlighting pharmacophore cores) before the student abandons the lesson in frustration.",
+      "formatted": "[Dwell-Time Anomaly Detection on SMILES Molecule Viewers]: [Measures gaze/viewport dwell time on interactive 2D Lewis/SMILES structures; flags anomalies where dwell time exceeds 2.5 standard deviations of cohort mean without user interaction as a signal of cognitive freeze.] -> [Proactively offers targeted structural annotation overlays (highlighting pharmacophore cores) before the student abandons the lesson in frustration.] [plausible]"
+    },
+    {
+      "id": "DAT-035",
+      "name": "Deep Knowledge Tracing (DKT) with Client-Side ONNX Neural Sequence Models",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Runs a lightweight LSTM/Transformer knowledge tracing model in browser via ONNX Runtime Web, predicting probability of correctness on future related drug items given past 20 interaction vectors.",
+      "expected_effect": "Captures non-linear skill dependencies across pharmacology topics that rigid Markovian BKT models fail to represent.",
+      "formatted": "[Deep Knowledge Tracing (DKT) with Client-Side ONNX Neural Sequence Models]: [Runs a lightweight LSTM/Transformer knowledge tracing model in browser via ONNX Runtime Web, predicting probability of correctness on future related drug items given past 20 interaction vectors.] -> [Captures non-linear skill dependencies across pharmacology topics that rigid Markovian BKT models fail to represent.] [plausible]"
+    },
+    {
+      "id": "DAT-036",
+      "name": "Step-Level Drag-and-Drop Trajectory Micro-Telemetry for Pharmacophore Mapping",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Logs mouse/touch coordinate trajectories, path tortuosity (actual path length / Euclidean distance), and hesitation pauses when dragging functional groups into receptor binding pockets.",
+      "expected_effect": "Differentiates confident spatial reasoning from erratic trial-and-error hunting, assigning partial credit based on target convergence efficiency.",
+      "formatted": "[Step-Level Drag-and-Drop Trajectory Micro-Telemetry for Pharmacophore Mapping]: [Logs mouse/touch coordinate trajectories, path tortuosity (actual path length / Euclidean distance), and hesitation pauses when dragging functional groups into receptor binding pockets.] -> [Differentiates confident spatial reasoning from erratic trial-and-error hunting, assigning partial credit based on target convergence efficiency.] [plausible]"
+    },
+    {
+      "id": "DAT-037",
+      "name": "Latent Dirichlet Allocation (LDA) Topic Modeling on Student Error Notes",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Ingests voluntary student scratchpad notes and error reflections, running LDA topic modeling to cluster latent confusion themes and feeding top keywords back into diagnostic item authoring.",
+      "expected_effect": "Surfaces emerging student vocabulary gaps and non-standard mental models that formal question banks failed to foresee.",
+      "formatted": "[Latent Dirichlet Allocation (LDA) Topic Modeling on Student Error Notes]: [Ingests voluntary student scratchpad notes and error reflections, running LDA topic modeling to cluster latent confusion themes and feeding top keywords back into diagnostic item authoring.] -> [Surfaces emerging student vocabulary gaps and non-standard mental models that formal question banks failed to foresee.] [plausible]"
+    },
+    {
+      "id": "DAT-038",
+      "name": "Multi-Armed Bandit Dynamic Item Selection for Fast Diagnostic Placement",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Uses Thompson Sampling on an item bank to balance exploration (gathering psychometric data on new items) and exploitation (serving items that maximize diagnostic information about learner state).",
+      "expected_effect": "Calibrates new exam items rapidly with live learner responses while ensuring students receive diagnostically optimal test questions.",
+      "formatted": "[Multi-Armed Bandit Dynamic Item Selection for Fast Diagnostic Placement]: [Uses Thompson Sampling on an item bank to balance exploration (gathering psychometric data on new items) and exploitation (serving items that maximize diagnostic information about learner state).] -> [Calibrates new exam items rapidly with live learner responses while ensuring students receive diagnostically optimal test questions.] [plausible]"
+    },
+    {
+      "id": "DAT-039",
+      "name": "Automated Item Generation (AIG) via Isomorphic Pharmacophore Templates",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Programmatically instantiates isomorphic SAR challenge items by substituting homologous substituents on core pharmacophore scaffold templates while preserving identical psychometric item parameters.",
+      "expected_effect": "Eliminates item exposure exhaustion and memorization of specific examples, testing authentic conceptual transfer across novel chemical analogs.",
+      "formatted": "[Automated Item Generation (AIG) via Isomorphic Pharmacophore Templates]: [Programmatically instantiates isomorphic SAR challenge items by substituting homologous substituents on core pharmacophore scaffold templates while preserving identical psychometric item parameters.] -> [Eliminates item exposure exhaustion and memorization of specific examples, testing authentic conceptual transfer across novel chemical analogs.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-040",
+      "name": "Dynamic Slider Hover-Pause Latency as Receptor Affinity Ambiguity Index",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Analyzes micro-pauses during dose-response slider adjustments near the EC50 value; prolonged hesitation within 0.1 log-units of EC50 indicates difficulty distinguishing potency from efficacy.",
+      "expected_effect": "Triggers targeted contrastive prompts on the exact distinction between horizontal curve shifts (potency) and vertical ceiling shifts (efficacy).",
+      "formatted": "[Dynamic Slider Hover-Pause Latency as Receptor Affinity Ambiguity Index]: [Analyzes micro-pauses during dose-response slider adjustments near the EC50 value; prolonged hesitation within 0.1 log-units of EC50 indicates difficulty distinguishing potency from efficacy.] -> [Triggers targeted contrastive prompts on the exact distinction between horizontal curve shifts (potency) and vertical ceiling shifts (efficacy).] [plausible]"
+    },
+    {
+      "id": "DAT-041",
+      "name": "State-Space Latent Skill Modeling with Kalman Filtering for Daily Fluctuations",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Models latent student ability as a dynamic state vector with process noise representing day-to-day fatigue or sleep deprivation; updates state using Kalman filter equations after each study session.",
+      "expected_effect": "Smooths transient performance dips caused by acute fatigue, preventing premature demotion of mastery levels during late-night study sessions.",
+      "formatted": "[State-Space Latent Skill Modeling with Kalman Filtering for Daily Fluctuations]: [Models latent student ability as a dynamic state vector with process noise representing day-to-day fatigue or sleep deprivation; updates state using Kalman filter equations after each study session.] -> [Smooths transient performance dips caused by acute fatigue, preventing premature demotion of mastery levels during late-night study sessions.] [plausible]"
+    },
+    {
+      "id": "DAT-042",
+      "name": "Confusion Matrix Heatmaps for Adrenoceptor Subtype Overlap",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Generates an N x N matrix mapping intended receptor targets against student-selected targets across all ANS items; normalizes off-diagonal misclassifications into a personal confusion heatmap.",
+      "expected_effect": "Immediately alerts students to specific paired confusions (e.g. 78% of their errors confuse alpha-2 with beta-2), guiding hyper-focused contrastive drills.",
+      "formatted": "[Confusion Matrix Heatmaps for Adrenoceptor Subtype Overlap]: [Generates an N x N matrix mapping intended receptor targets against student-selected targets across all ANS items; normalizes off-diagonal misclassifications into a personal confusion heatmap.] -> [Immediately alerts students to specific paired confusions (e.g. 78% of their errors confuse alpha-2 with beta-2), guiding hyper-focused contrastive drills.] [plausible]"
+    },
+    {
+      "id": "DAT-043",
+      "name": "Continuous Cognitive Load Telemetry via Interaction Hesitation Index",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculates a normalized hesitation index I_h = (time to first interaction / total step time) combined with click rate variance across multi-step calculation steps.",
+      "expected_effect": "Detects acute working memory overload within steps, automatically offering intermediate scratchpad scaffolding before failure occurs.",
+      "formatted": "[Continuous Cognitive Load Telemetry via Interaction Hesitation Index]: [Calculates a normalized hesitation index I_h = (time to first interaction / total step time) combined with click rate variance across multi-step calculation steps.] -> [Detects acute working memory overload within steps, automatically offering intermediate scratchpad scaffolding before failure occurs.] [plausible]"
+    },
+    {
+      "id": "DAT-044",
+      "name": "Item-Family Calibration Transfer across Bioisosteric Analogs",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Estimates IRT difficulty and discrimination parameters for entire item families sharing identical chemical transformations (e.g. ester-to-amide substitution), transferring priors to newly authored analogs.",
+      "expected_effect": "Drastically reduces the sample size needed to pre-calibrate new medicinal chemistry items from 200 responses to 20 responses.",
+      "formatted": "[Item-Family Calibration Transfer across Bioisosteric Analogs]: [Estimates IRT difficulty and discrimination parameters for entire item families sharing identical chemical transformations (e.g. ester-to-amide substitution), transferring priors to newly authored analogs.] -> [Drastically reduces the sample size needed to pre-calibrate new medicinal chemistry items from 200 responses to 20 responses.] [plausible]"
+    },
+    {
+      "id": "DAT-045",
+      "name": "Survival Analysis for Student Drop-Off Hazard Prediction in Tough Modules",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Fits Cox proportional hazards model on student interaction telemetry (dwell time, consecutive errors, hint calls) to forecast the risk of session abandonment in complex PK modules.",
+      "expected_effect": "Enables proactive intervention (e.g. offering an encouraging summary or break suggestion) exactly before high-hazard dropout inflection points.",
+      "formatted": "[Survival Analysis for Student Drop-Off Hazard Prediction in Tough Modules]: [Fits Cox proportional hazards model on student interaction telemetry (dwell time, consecutive errors, hint calls) to forecast the risk of session abandonment in complex PK modules.] -> [Enables proactive intervention (e.g. offering an encouraging summary or break suggestion) exactly before high-hazard dropout inflection points.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-046",
+      "name": "Interactive Dose-Response Curvature Error Quantification Metric",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculates root-mean-square error (RMSE) between a student's hand-sketched dose-response curve and the true Hill equation curve E = (E_max * [D]^n)/(EC50^n + [D]^n) across the transition phase.",
+      "expected_effect": "Trains precise visual intuition for Hill slopes and partial agonism, improving quantitative receptor theory comprehension by 30%.",
+      "formatted": "[Interactive Dose-Response Curvature Error Quantification Metric]: [Calculates root-mean-square error (RMSE) between a student's hand-sketched dose-response curve and the true Hill equation curve E = (E_max * [D]^n)/(EC50^n + [D]^n) across the transition phase.] -> [Trains precise visual intuition for Hill slopes and partial agonism, improving quantitative receptor theory comprehension by 30%.] [plausible]"
+    },
+    {
+      "id": "DAT-047",
+      "name": "Adaptive Scaffolding Fading Rate Tuned to Bayesian Slip Probabilities",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Monitors estimated slip probability P(S) in BKT; when slip drops below 0.05 and mastery exceeds 0.85, system accelerates removal of step-by-step guidance.",
+      "expected_effect": "Prevents the expertise reversal effect by rapidly stripping away redundant scaffolding from students who have internalized core SAR rules.",
+      "formatted": "[Adaptive Scaffolding Fading Rate Tuned to Bayesian Slip Probabilities]: [Monitors estimated slip probability P(S) in BKT; when slip drops below 0.05 and mastery exceeds 0.85, system accelerates removal of step-by-step guidance.] -> [Prevents the expertise reversal effect by rapidly stripping away redundant scaffolding from students who have internalized core SAR rules.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-048",
+      "name": "Misconception Persistence Half-Life Estimation",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Tracks recurrence of specific diagnostic error codes over longitudinal re-testing sessions; computes the decay rate of misconception recurrence probability over time.",
+      "expected_effect": "Quantifies which pharmacology misconceptions are stubborn (requiring deep re-teaching) versus transient (requiring only brief reminders).",
+      "formatted": "[Misconception Persistence Half-Life Estimation]: [Tracks recurrence of specific diagnostic error codes over longitudinal re-testing sessions; computes the decay rate of misconception recurrence probability over time.] -> [Quantifies which pharmacology misconceptions are stubborn (requiring deep re-teaching) versus transient (requiring only brief reminders).] [plausible]"
+    },
+    {
+      "id": "DAT-049",
+      "name": "Latent Class Analysis (LCA) for Student Study Phenotyping",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Clusters students into discrete behavioral phenotypes (e.g. Impulsive Clicker, Cautious Deliberator, Hint-Reliant, Mastery Seeker) using multi-dimensional session telemetry.",
+      "expected_effect": "Tailors UI pacing and feedback style to individual study styles, increasing course completion rates across diverse student profiles.",
+      "formatted": "[Latent Class Analysis (LCA) for Student Study Phenotyping]: [Clusters students into discrete behavioral phenotypes (e.g. Impulsive Clicker, Cautious Deliberator, Hint-Reliant, Mastery Seeker) using multi-dimensional session telemetry.] -> [Tailors UI pacing and feedback style to individual study styles, increasing course completion rates across diverse student profiles.] [plausible]"
+    },
+    {
+      "id": "DAT-050",
+      "name": "Inverted Confidence Trapping: Identifying Unconscious Incompetence Hubs",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Aggregates cohort-wide instances of High-Confidence / Incorrect answers to pinpoint toxic concepts in the curriculum where lecture slides foster false confidence.",
+      "expected_effect": "Identifies curricular failure points where instructional materials mislead students, driving targeted re-authoring of confusing textbook explanations.",
+      "formatted": "[Inverted Confidence Trapping: Identifying Unconscious Incompetence Hubs]: [Aggregates cohort-wide instances of High-Confidence / Incorrect answers to pinpoint toxic concepts in the curriculum where lecture slides foster false confidence.] -> [Identifies curricular failure points where instructional materials mislead students, driving targeted re-authoring of confusing textbook explanations.] [plausible]"
+    },
+    {
+      "id": "DAT-051",
+      "name": "Graph Centrality Scoring on Curricular Knowledge Graphs for High-Yield Review",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Models all drug-receptor and SAR concepts as nodes in a graph with biochemical interaction edges; computes PageRank and Betweenness Centrality to rank highest-yield concepts for exam review.",
+      "expected_effect": "Prioritizes spaced review on high-centrality foundational drugs (e.g. Epinephrine, Atropine) that form structural bridges across multiple organ systems.",
+      "formatted": "[Graph Centrality Scoring on Curricular Knowledge Graphs for High-Yield Review]: [Models all drug-receptor and SAR concepts as nodes in a graph with biochemical interaction edges; computes PageRank and Betweenness Centrality to rank highest-yield concepts for exam review.] -> [Prioritizes spaced review on high-centrality foundational drugs (e.g. Epinephrine, Atropine) that form structural bridges across multiple organ systems.] [plausible]"
+    },
+    {
+      "id": "DAT-052",
+      "name": "Post-Error Slowing (PES) Telemetry as Reflective Metacognition Metric",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Computes the difference in response latency on Step N+1 following an error on Step N versus following a correct response; absence of PES flags mindless guessing.",
+      "expected_effect": "Prompts students who rush past errors with a mandatory 5-second reflection prompt, increasing subsequent recovery accuracy by 28%.",
+      "formatted": "[Post-Error Slowing (PES) Telemetry as Reflective Metacognition Metric]: [Computes the difference in response latency on Step N+1 following an error on Step N versus following a correct response; absence of PES flags mindless guessing.] -> [Prompts students who rush past errors with a mandatory 5-second reflection prompt, increasing subsequent recovery accuracy by 28%.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-053",
+      "name": "Adaptive Flashcard Expansion Triggered by Near-Threshold Latent Mastery",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "When a student's BKT latent mastery sits in the ambiguous zone (0.45 < P(L) < 0.75), system dynamically injects 2 high-discrimination micro-flashcards into their daily review queue.",
+      "expected_effect": "Efficiently resolves ability uncertainty on borderline concepts without subjecting confident masters to unnecessary drill.",
+      "formatted": "[Adaptive Flashcard Expansion Triggered by Near-Threshold Latent Mastery]: [When a student's BKT latent mastery sits in the ambiguous zone (0.45 < P(L) < 0.75), system dynamically injects 2 high-discrimination micro-flashcards into their daily review queue.] -> [Efficiently resolves ability uncertainty on borderline concepts without subjecting confident masters to unnecessary drill.] [plausible]"
+    },
+    {
+      "id": "DAT-054",
+      "name": "Algorithmic Distractor Regeneration via Empirical Cohort Error Frequencies",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Automatically updates multiple-choice distractor options over successive academic terms by replacing unselected foils with the top free-text incorrect answers submitted by previous cohorts.",
+      "expected_effect": "Continually sharpens item diagnostic power, ensuring questions evolve to capture current student misunderstandings.",
+      "formatted": "[Algorithmic Distractor Regeneration via Empirical Cohort Error Frequencies]: [Automatically updates multiple-choice distractor options over successive academic terms by replacing unselected foils with the top free-text incorrect answers submitted by previous cohorts.] -> [Continually sharpens item diagnostic power, ensuring questions evolve to capture current student misunderstandings.] [plausible]"
+    },
+    {
+      "id": "DAT-055",
+      "name": "Micro-Item Paired Pre-Post Testing for Specific Functional Group Substitutions",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Deploys 20-second paired micro-items immediately before and after an interactive SAR widget exploration to calculate localized micro-gain on individual chemical substitutions.",
+      "expected_effect": "Isolates the pedagogical effectiveness of individual interactive widgets from overall lesson reading comprehension.",
+      "formatted": "[Micro-Item Paired Pre-Post Testing for Specific Functional Group Substitutions]: [Deploys 20-second paired micro-items immediately before and after an interactive SAR widget exploration to calculate localized micro-gain on individual chemical substitutions.] -> [Isolates the pedagogical effectiveness of individual interactive widgets from overall lesson reading comprehension.] [plausible]"
+    },
+    {
+      "id": "DAT-056",
+      "name": "Multi-Objective Optimization for Daily 15-Minute Micro-Study Review Sessions",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Formulates the daily review queue as a knapsack optimization problem maximizing expected retention gain across due items subject to a strict 15-minute time budget constraint.",
+      "expected_effect": "Prevents review backlog debt from overwhelming busy 3rd-year pharmacy students, sustaining consistent daily engagement.",
+      "formatted": "[Multi-Objective Optimization for Daily 15-Minute Micro-Study Review Sessions]: [Formulates the daily review queue as a knapsack optimization problem maximizing expected retention gain across due items subject to a strict 15-minute time budget constraint.] -> [Prevents review backlog debt from overwhelming busy 3rd-year pharmacy students, sustaining consistent daily engagement.] [plausible]"
+    },
+    {
+      "id": "DAT-057",
+      "name": "Bayesian Network Diagnosis of Multi-Step PK Calculation Failure Points",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Models multi-step steady-state clearance calculations as a directed Bayesian network; infers the exact step where arithmetic, unit conversion, or conceptual formula errors occurred.",
+      "expected_effect": "Prevents students from incorrectly believing an entire complex derivation is wrong when they merely made an intermediate unit conversion error (e.g. mg to mcg).",
+      "formatted": "[Bayesian Network Diagnosis of Multi-Step PK Calculation Failure Points]: [Models multi-step steady-state clearance calculations as a directed Bayesian network; infers the exact step where arithmetic, unit conversion, or conceptual formula errors occurred.] -> [Prevents students from incorrectly believing an entire complex derivation is wrong when they merely made an intermediate unit conversion error (e.g. mg to mcg).] [plausible]"
+    },
+    {
+      "id": "DAT-058",
+      "name": "Latent Transition Analysis (LTA) for Tracing Developmental Stages in SAR Intuition",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Models longitudinal student progression through qualitative stages of chemical reasoning (Novice: 2D formula matching -> Intermediate: Functional group recognition -> Expert: 3D electronic/steric integration).",
+      "expected_effect": "Identifies key transition bottlenecks and provides phase-appropriate instructional prompts that match the student's cognitive stage.",
+      "formatted": "[Latent Transition Analysis (LTA) for Tracing Developmental Stages in SAR Intuition]: [Models longitudinal student progression through qualitative stages of chemical reasoning (Novice: 2D formula matching -> Intermediate: Functional group recognition -> Expert: 3D electronic/steric integration).] -> [Identifies key transition bottlenecks and provides phase-appropriate instructional prompts that match the student's cognitive stage.] [plausible]"
+    },
+    {
+      "id": "DAT-059",
+      "name": "Predictive Retention Decay Alarms Before Clinical Rotations",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Extrapolates forgetting curves across semester breaks to forecast which crucial autonomic emergency drug dosages will drop below the safe retention threshold (<80%) prior to experiential rotations.",
+      "expected_effect": "Delivers targeted booster micro-quizzes 10 days before hospital rotations, eliminating dangerous clinical amnesia on high-alert medications.",
+      "formatted": "[Predictive Retention Decay Alarms Before Clinical Rotations]: [Extrapolates forgetting curves across semester breaks to forecast which crucial autonomic emergency drug dosages will drop below the safe retention threshold (<80%) prior to experiential rotations.] -> [Delivers targeted booster micro-quizzes 10 days before hospital rotations, eliminating dangerous clinical amnesia on high-alert medications.] [plausible]"
+    },
+    {
+      "id": "DAT-060",
+      "name": "Student Trajectory Clustering via Dynamic Time Warping on Step Latencies",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compares time-series vectors of step completion speeds across a module using DTW; clusters students into fast-intuitive, slow-deliberate, and disengaged-stalled cohorts.",
+      "expected_effect": "Enables proactive intervention for stalled trajectories before complete module failure or abandonment occurs.",
+      "formatted": "[Student Trajectory Clustering via Dynamic Time Warping on Step Latencies]: [Compares time-series vectors of step completion speeds across a module using DTW; clusters students into fast-intuitive, slow-deliberate, and disengaged-stalled cohorts.] -> [Enables proactive intervention for stalled trajectories before complete module failure or abandonment occurs.] [plausible]"
+    },
+    {
+      "id": "DAT-061",
+      "name": "Automated Cognitive Load Spike Detection via Rapid Re-Reading Telemetry",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Detects rapid back-and-forth toggling between question prompts and reference diagrams (>3 switches in 10s); interprets this pattern as working memory overload and auto-splits screen panes.",
+      "expected_effect": "Reduces split-attention effect and cognitive friction during complex pharmacokinetic multi-compartment diagram interpretations.",
+      "formatted": "[Automated Cognitive Load Spike Detection via Rapid Re-Reading Telemetry]: [Detects rapid back-and-forth toggling between question prompts and reference diagrams (>3 switches in 10s); interprets this pattern as working memory overload and auto-splits screen panes.] -> [Reduces split-attention effect and cognitive friction during complex pharmacokinetic multi-compartment diagram interpretations.] [plausible]"
+    },
+    {
+      "id": "DAT-062",
+      "name": "Hierarchical Bayesian Modeling for Small-Cohort Licensure Item Calibration",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Employs empirical Bayes shrinkage priors to estimate IRT item parameters from small pharmacy school cohorts (N < 50), pooling variance across related item clusters.",
+      "expected_effect": "Enables robust, well-calibrated adaptive testing even in boutique courses or specialized elective electives without requiring massive test populations.",
+      "formatted": "[Hierarchical Bayesian Modeling for Small-Cohort Licensure Item Calibration]: [Employs empirical Bayes shrinkage priors to estimate IRT item parameters from small pharmacy school cohorts (N < 50), pooling variance across related item clusters.] -> [Enables robust, well-calibrated adaptive testing even in boutique courses or specialized elective electives without requiring massive test populations.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-063",
+      "name": "Counterfactual Diagnostic Feedback Simulation",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Computes and displays what the physiological or pharmacokinetic outcome would have been if the student's chosen incorrect drug had actually been administered to the simulated patient.",
+      "expected_effect": "Vividly demonstrates real-world clinical consequences of receptor misidentification (e.g. precipitating hypertensive crisis), making error feedback memorable and clinically salient.",
+      "formatted": "[Counterfactual Diagnostic Feedback Simulation]: [Computes and displays what the physiological or pharmacokinetic outcome would have been if the student's chosen incorrect drug had actually been administered to the simulated patient.] -> [Vividly demonstrates real-world clinical consequences of receptor misidentification (e.g. precipitating hypertensive crisis), making error feedback memorable and clinically salient.] [plausible]"
+    },
+    {
+      "id": "DAT-064",
+      "name": "Item Discrimination-Weighted Spaced Repetition Priority Queuing",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Weights due spaced repetition flashcards by their psychometric item discrimination index (r_pbis); highly discriminating items are served first when study time is limited.",
+      "expected_effect": "Maximizes diagnostic information yield and board-exam predictive value within short, constrained study windows.",
+      "formatted": "[Item Discrimination-Weighted Spaced Repetition Priority Queuing]: [Weights due spaced repetition flashcards by their psychometric item discrimination index (r_pbis); highly discriminating items are served first when study time is limited.] -> [Maximizes diagnostic information yield and board-exam predictive value within short, constrained study windows.] [plausible]"
+    },
+    {
+      "id": "DAT-065",
+      "name": "Cross-Lingual Concept Parity Auditing via Differential Distractor Attraction",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compares the relative selection percentages of distractors between English and Turkish student groups on identical translated questions to detect cultural or semantic misalignments.",
+      "expected_effect": "Ensures translation fidelity and prevents translated questions from creating false clinical impressions in bilingual pharmacy curricula.",
+      "formatted": "[Cross-Lingual Concept Parity Auditing via Differential Distractor Attraction]: [Compares the relative selection percentages of distractors between English and Turkish student groups on identical translated questions to detect cultural or semantic misalignments.] -> [Ensures translation fidelity and prevents translated questions from creating false clinical impressions in bilingual pharmacy curricula.] [plausible]"
+    },
+    {
+      "id": "DAT-066",
+      "name": "Predictive Licensure Exam (EUS/NAPLEX) Sub-Score Forecast Intervals",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Maps mastery state vectors across pharmacology and medchem sub-domains to historical licensure exam score distributions using ridge regression; outputs 90% confidence bands for each sub-topic.",
+      "expected_effect": "Gives students clear, actionable guidance on which exact sub-domains (e.g. ANS pharmacology vs Antineoplastics) need remediation to secure passing scores.",
+      "formatted": "[Predictive Licensure Exam (EUS/NAPLEX) Sub-Score Forecast Intervals]: [Maps mastery state vectors across pharmacology and medchem sub-domains to historical licensure exam score distributions using ridge regression; outputs 90% confidence bands for each sub-topic.] -> [Gives students clear, actionable guidance on which exact sub-domains (e.g. ANS pharmacology vs Antineoplastics) need remediation to secure passing scores.] [plausible]"
+    },
+    {
+      "id": "DAT-067",
+      "name": "Real-Time Guess-versus-Knowledge Classifier via Touch Velocity and Dwell Telemetry",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Trains a logistic regression classifier on initial tap coordinates, dwell time, and drag velocity to classify each response as informed selection vs lucky guess with >80% precision.",
+      "expected_effect": "Downweights the mastery credit awarded to accidental or lucky guesses, preserving psychometric integrity of latent skill estimates.",
+      "formatted": "[Real-Time Guess-versus-Knowledge Classifier via Touch Velocity and Dwell Telemetry]: [Trains a logistic regression classifier on initial tap coordinates, dwell time, and drag velocity to classify each response as informed selection vs lucky guess with >80% precision.] -> [Downweights the mastery credit awarded to accidental or lucky guesses, preserving psychometric integrity of latent skill estimates.] [plausible]"
+    },
+    {
+      "id": "DAT-068",
+      "name": "Knowledge State Vector Projection on 2D Curricular UMAP Manifolds",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Projects high-dimensional learner knowledge vectors (mastery across 120 KCs) into an interactive 2D UMAP space where neighboring dots represent students with identical conceptual profiles.",
+      "expected_effect": "Allows students to visualize their comprehensive knowledge landscape, spotting isolated islands of weakness across the pharmacology curriculum.",
+      "formatted": "[Knowledge State Vector Projection on 2D Curricular UMAP Manifolds]: [Projects high-dimensional learner knowledge vectors (mastery across 120 KCs) into an interactive 2D UMAP space where neighboring dots represent students with identical conceptual profiles.] -> [Allows students to visualize their comprehensive knowledge landscape, spotting isolated islands of weakness across the pharmacology curriculum.] [plausible]"
+    },
+    {
+      "id": "DAT-069",
+      "name": "Diagnostic Remediation Branching via Shortest-Path Directed Acyclic Graphs",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Computes the shortest pedagogical remediation path on a curricular DAG to bridge diagnosed knowledge gaps with minimum necessary step count.",
+      "expected_effect": "Keeps remedial instruction strictly lean and non-punitive, returning learners to the primary lesson track in <= 3 targeted steps.",
+      "formatted": "[Diagnostic Remediation Branching via Shortest-Path Directed Acyclic Graphs]: [Computes the shortest pedagogical remediation path on a curricular DAG to bridge diagnosed knowledge gaps with minimum necessary step count.] -> [Keeps remedial instruction strictly lean and non-punitive, returning learners to the primary lesson track in <= 3 targeted steps.] [plausible]"
+    },
+    {
+      "id": "DAT-070",
+      "name": "Inter-Question Interference Metric for Look-Alike Sound-Alike (LASA) Drugs",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Tracks error probability spikes when two similarly named drugs (e.g. Hydralazine vs Hydroxyzine) are tested in close temporal proximity; computes an empirical interference index.",
+      "expected_effect": "Schedules deliberate contrastive discrimination drills exactly when phonetic and orthographic interference is highest, preventing dangerous medication errors.",
+      "formatted": "[Inter-Question Interference Metric for Look-Alike Sound-Alike (LASA) Drugs]: [Tracks error probability spikes when two similarly named drugs (e.g. Hydralazine vs Hydroxyzine) are tested in close temporal proximity; computes an empirical interference index.] -> [Schedules deliberate contrastive discrimination drills exactly when phonetic and orthographic interference is highest, preventing dangerous medication errors.] [plausible]"
+    },
+    {
+      "id": "DAT-071",
+      "name": "Personalized Optimal Review Spacing via Reinforcement Learning (Q-Learning)",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Models spacing interval selection as a Markov Decision Process where an agent learns the reward function (retention vs time cost) to discover optimal review intervals per student.",
+      "expected_effect": "Outperforms static heuristic spacing algorithms by adapting to non-standard individual study schedules and irregular review habits.",
+      "formatted": "[Personalized Optimal Review Spacing via Reinforcement Learning (Q-Learning)]: [Models spacing interval selection as a Markov Decision Process where an agent learns the reward function (retention vs time cost) to discover optimal review intervals per student.] -> [Outperforms static heuristic spacing algorithms by adapting to non-standard individual study schedules and irregular review habits.] [plausible]"
+    },
+    {
+      "id": "DAT-072",
+      "name": "Entropy Reduction-Guided Active Question Querying",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Selects the next question from the bank that minimizes the expected Shannon entropy of the student's multi-dimensional knowledge state vector H(K) = -sum(P(k) * log P(k)).",
+      "expected_effect": "Extracts maximum diagnostic knowledge with the minimum number of questions, respecting the learner's 15-30 minute daily study constraint.",
+      "formatted": "[Entropy Reduction-Guided Active Question Querying]: [Selects the next question from the bank that minimizes the expected Shannon entropy of the student's multi-dimensional knowledge state vector H(K) = -sum(P(k) * log P(k)).] -> [Extracts maximum diagnostic knowledge with the minimum number of questions, respecting the learner's 15-30 minute daily study constraint.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-073",
+      "name": "Step Attempt Count Distribution Fitting (Negative Binomial) for Content Bug Detection",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Fits Poisson vs Negative Binomial distributions to attempt counts per step; severe overdispersion (alpha > 2.0) flags poorly worded instructions, unclear interactive widgets, or platform bugs.",
+      "expected_effect": "Flags and prioritizes content defects for editorial remediation within hours of lesson publication.",
+      "formatted": "[Step Attempt Count Distribution Fitting (Negative Binomial) for Content Bug Detection]: [Fits Poisson vs Negative Binomial distributions to attempt counts per step; severe overdispersion (alpha > 2.0) flags poorly worded instructions, unclear interactive widgets, or platform bugs.] -> [Flags and prioritizes content defects for editorial remediation within hours of lesson publication.] [plausible]"
+    },
+    {
+      "id": "DAT-074",
+      "name": "Peer Cohort Percentile Mastery Bands Stratified by Study Window Consistency",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Benchmarks student mastery percentiles exclusively against peers with similar daily study time budgets (e.g. 15-min daily study band vs 60-min cramming band).",
+      "expected_effect": "Prevents demotivating comparisons with outliers who study all day, proving that consistent 15-minute daily practice yields superior retention efficiency.",
+      "formatted": "[Peer Cohort Percentile Mastery Bands Stratified by Study Window Consistency]: [Benchmarks student mastery percentiles exclusively against peers with similar daily study time budgets (e.g. 15-min daily study band vs 60-min cramming band).] -> [Prevents demotivating comparisons with outliers who study all day, proving that consistent 15-minute daily practice yields superior retention efficiency.] [plausible]"
+    },
+    {
+      "id": "DAT-075",
+      "name": "Diagnostic Error Signature Vectorization for Cross-Student Similarity Search",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Encodes each student's error history into a binary vector of chosen distractors; computes cosine similarity to group students with identical idiosyncratic misconceptions.",
+      "expected_effect": "Facilitates targeted cohort study recommendations and identifies shared clinical blindspots across classroom sections.",
+      "formatted": "[Diagnostic Error Signature Vectorization for Cross-Student Similarity Search]: [Encodes each student's error history into a binary vector of chosen distractors; computes cosine similarity to group students with identical idiosyncratic misconceptions.] -> [Facilitates targeted cohort study recommendations and identifies shared clinical blindspots across classroom sections.] [plausible]"
+    },
+    {
+      "id": "DAT-076",
+      "name": "Adaptive Hint Ladder Penalty Calibration via Item Information Functions",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Dynamically calculates the psychometric Fisher information loss of viewing each hint tier, adjusting post-hint score credit according to remaining item information.",
+      "expected_effect": "Mathematically balances assistance with assessment validity, ensuring hint usage does not falsely inflate latent ability estimates.",
+      "formatted": "[Adaptive Hint Ladder Penalty Calibration via Item Information Functions]: [Dynamically calculates the psychometric Fisher information loss of viewing each hint tier, adjusting post-hint score credit according to remaining item information.] -> [Mathematically balances assistance with assessment validity, ensuring hint usage does not falsely inflate latent ability estimates.] [plausible]"
+    },
+    {
+      "id": "DAT-077",
+      "name": "Cumulative Fatigue Index Telemetry via Normalized Session Velocity Decay",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Tracks the slope of response times and error rates across consecutive steps within a single session; triggers a diminishing returns rest recommendation when efficiency drops >35%.",
+      "expected_effect": "Protects students from cognitive burnout and prevents low-quality fatigued study from degrading memory consolidation.",
+      "formatted": "[Cumulative Fatigue Index Telemetry via Normalized Session Velocity Decay]: [Tracks the slope of response times and error rates across consecutive steps within a single session; triggers a diminishing returns rest recommendation when efficiency drops >35%.] -> [Protects students from cognitive burnout and prevents low-quality fatigued study from degrading memory consolidation.] [plausible]"
+    },
+    {
+      "id": "DAT-078",
+      "name": "Multi-Component Rubric Scoring for Predict-Then-Reveal Mechanism Sketches",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Breaks down complex drug-receptor predictions into discrete categorical micro-judgments (organ effect, receptor subtype, secondary messenger, onset speed) scored via conjunctive psychometric rules.",
+      "expected_effect": "Provides granular diagnostic feedback on multi-part physiological mechanisms, preventing all-or-nothing scoring frustration.",
+      "formatted": "[Multi-Component Rubric Scoring for Predict-Then-Reveal Mechanism Sketches]: [Breaks down complex drug-receptor predictions into discrete categorical micro-judgments (organ effect, receptor subtype, secondary messenger, onset speed) scored via conjunctive psychometric rules.] -> [Provides granular diagnostic feedback on multi-part physiological mechanisms, preventing all-or-nothing scoring frustration.] [plausible]"
+    },
+    {
+      "id": "DAT-079",
+      "name": "Structural Equation Modeling (SEM) of MedChem Fluency on ANS Pharmacology Success",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Analyzes latent path coefficients from medicinal chemistry structural competencies (logP, pKa, bioisosterism) to clinical pharmacology reasoning (receptor selectivity, duration of action).",
+      "expected_effect": "Quantifies the exact prerequisite contribution of chemical structure understanding to clinical pharmacotherapy competence, validating integrated curricula.",
+      "formatted": "[Structural Equation Modeling (SEM) of MedChem Fluency on ANS Pharmacology Success]: [Analyzes latent path coefficients from medicinal chemistry structural competencies (logP, pKa, bioisosterism) to clinical pharmacology reasoning (receptor selectivity, duration of action).] -> [Quantifies the exact prerequisite contribution of chemical structure understanding to clinical pharmacotherapy competence, validating integrated curricula.] [evidence-backed]"
+    },
+    {
+      "id": "DAT-080",
+      "name": "Dynamic Forgetting Rate Adjustment Based on Clinical Case Complexity",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Scales memory decay constants proportionally to contextual case complexity (e.g. isolated receptor binding vs multi-drug polypharmacy interactions in renal failure).",
+      "expected_effect": "Schedules earlier reviews for multi-factorial clinical scenarios that decay faster from memory than simple one-to-one drug facts.",
+      "formatted": "[Dynamic Forgetting Rate Adjustment Based on Clinical Case Complexity]: [Scales memory decay constants proportionally to contextual case complexity (e.g. isolated receptor binding vs multi-drug polypharmacy interactions in renal failure).] -> [Schedules earlier reviews for multi-factorial clinical scenarios that decay faster from memory than simple one-to-one drug facts.] [plausible]"
+    },
+    {
+      "id": "DAT-081",
+      "name": "Bayesian Stealth Assessment via Micro-Hesitations in SMILES Fragment Docking Gestures",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Silently captures touch micro-jitters, velocity inflection counts, and rotational hesitations as students drag and orient chemical fragments into receptor binding pockets; feeds kinematic features into a Bayesian network to estimate spatial affinity intuition without explicit test questions.",
+      "expected_effect": "Accurately gauges student medicinal chemistry structural fluency during open interactive play, eliminating testing anxiety while maintaining continuous psychometric measurement.",
+      "formatted": "[Bayesian Stealth Assessment via Micro-Hesitations in SMILES Fragment Docking Gestures]: [Silently captures touch micro-jitters, velocity inflection counts, and rotational hesitations as students drag and orient chemical fragments into receptor binding pockets; feeds kinematic features into a Bayesian network to estimate spatial affinity intuition without explicit test questions.] -> [Accurately gauges student medicinal chemistry structural fluency during open interactive play, eliminating testing anxiety while maintaining continuous psychometric measurement.] [speculative]"
+    },
+    {
+      "id": "DAT-082",
+      "name": "Synthetic Cohort Twin Simulation for Individual Counterfactual Learning Trajectories",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Trains a generative Markov / agent-based model on thousands of past pharmacy student learning traces; simulates 1,000 synthetic clone trajectories of the current student under different study habits (e.g. cramming vs 15-min daily spacing) to forecast exact 6-month retention distributions.",
+      "expected_effect": "Visually proves to the student the exact long-term memory cost of skipping daily spaced reviews, driving intrinsic motivation through personalized empirical forecasting.",
+      "formatted": "[Synthetic Cohort Twin Simulation for Individual Counterfactual Learning Trajectories]: [Trains a generative Markov / agent-based model on thousands of past pharmacy student learning traces; simulates 1,000 synthetic clone trajectories of the current student under different study habits (e.g. cramming vs 15-min daily spacing) to forecast exact 6-month retention distributions.] -> [Visually proves to the student the exact long-term memory cost of skipping daily spaced reviews, driving intrinsic motivation through personalized empirical forecasting.] [speculative]"
+    },
+    {
+      "id": "DAT-083",
+      "name": "Predictive Board Exam (NAPLEX/EUS) Passing Probability Cone with Dynamic Confidence Envelopes",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Maps live BKT/IRT multi-topic mastery vectors into a real-time predictive probability distribution of passing national licensure examinations, rendering a dynamic passing cone that narrows as evidence accumulates.",
+      "expected_effect": "Replaces vague grades with actionable, high-stakes licensure readiness probabilities, providing clear peace-of-mind or targeted wake-up calls months before the exam.",
+      "formatted": "[Predictive Board Exam (NAPLEX/EUS) Passing Probability Cone with Dynamic Confidence Envelopes]: [Maps live BKT/IRT multi-topic mastery vectors into a real-time predictive probability distribution of passing national licensure examinations, rendering a dynamic passing cone that narrows as evidence accumulates.] -> [Replaces vague grades with actionable, high-stakes licensure readiness probabilities, providing clear peace-of-mind or targeted wake-up calls months before the exam.] [speculative]"
+    },
+    {
+      "id": "DAT-084",
+      "name": "Dynamic Difficulty Adjustment (DDA) via Real-Time Keystroke & Jitter Entropy",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Uses webcam-free cognitive load proxies—keystroke micro-latency variance, cursor jitter entropy, and viewport scroll oscillations—to infer acute cognitive overload; dynamically throttles chemical formula complexity or expands scaffolding in real time.",
+      "expected_effect": "Keeps 3rd-year pharmacy students continuously suspended in the optimal Flow zone, preventing both frustrated dropout during tough PK equations and boredom during basic anatomy reviews.",
+      "formatted": "[Dynamic Difficulty Adjustment (DDA) via Real-Time Keystroke & Jitter Entropy]: [Uses webcam-free cognitive load proxies—keystroke micro-latency variance, cursor jitter entropy, and viewport scroll oscillations—to infer acute cognitive overload; dynamically throttles chemical formula complexity or expands scaffolding in real time.] -> [Keeps 3rd-year pharmacy students continuously suspended in the optimal Flow zone, preventing both frustrated dropout during tough PK equations and boredom during basic anatomy reviews.] [speculative]"
+    },
+    {
+      "id": "DAT-085",
+      "name": "Generative Adversarial Distractor Evolution: Self-Tuning Misconceptions",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Employs a generator LLM constrained by clinical pharmacology knowledge graphs that invents plausible decoy distractors, while a discriminator model trained on cohort error telemetry evaluates distractor allure; iteratively converges on maximum-entropy diagnostic distractors.",
+      "expected_effect": "Continuously evolves an uncrackable, evergreen question bank that outsmarts student test-taking shortcuts and exposes latent conceptual loopholes.",
+      "formatted": "[Generative Adversarial Distractor Evolution: Self-Tuning Misconceptions]: [Employs a generator LLM constrained by clinical pharmacology knowledge graphs that invents plausible decoy distractors, while a discriminator model trained on cohort error telemetry evaluates distractor allure; iteratively converges on maximum-entropy diagnostic distractors.] -> [Continuously evolves an uncrackable, evergreen question bank that outsmarts student test-taking shortcuts and exposes latent conceptual loopholes.] [speculative]"
+    },
+    {
+      "id": "DAT-086",
+      "name": "Multi-Agent Psychometric Socratic Probing with Latent Diagnostic Extraction",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Deploys an automated Socratic conversational micro-agent that asks 2 sharp clinical counter-questions upon anomalous student answers, using NLP to update a multi-trait IRT ability vector without rigid multiple-choice constraints.",
+      "expected_effect": "Replicates oral board examination rigor at scale, diagnosing nuanced misconceptions in complex ANS drug interactions that fixed options fail to capture.",
+      "formatted": "[Multi-Agent Psychometric Socratic Probing with Latent Diagnostic Extraction]: [Deploys an automated Socratic conversational micro-agent that asks 2 sharp clinical counter-questions upon anomalous student answers, using NLP to update a multi-trait IRT ability vector without rigid multiple-choice constraints.] -> [Replicates oral board examination rigor at scale, diagnosing nuanced misconceptions in complex ANS drug interactions that fixed options fail to capture.] [speculative]"
+    },
+    {
+      "id": "DAT-087",
+      "name": "Quantum Cognitive Decision Modeling for Drug-Receptor Affinity Ambiguity",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Models student indecision between non-selective vs subtype-selective beta-blockers as a quantum probability state vector in Hilbert space rather than classical Markov probability, capturing context-order effects and cognitive superposition prior to choice collapse.",
+      "expected_effect": "Accurately predicts and resolves order-of-presentation biases in diagnostic exams, ensuring questions measure true pharmacology knowledge independent of prompt sequence.",
+      "formatted": "[Quantum Cognitive Decision Modeling for Drug-Receptor Affinity Ambiguity]: [Models student indecision between non-selective vs subtype-selective beta-blockers as a quantum probability state vector in Hilbert space rather than classical Markov probability, capturing context-order effects and cognitive superposition prior to choice collapse.] -> [Accurately predicts and resolves order-of-presentation biases in diagnostic exams, ensuring questions measure true pharmacology knowledge independent of prompt sequence.] [speculative]"
+    },
+    {
+      "id": "DAT-088",
+      "name": "Reinforcement Learning Policy for Cognitive Overload Intervention Scheduling",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Trains a Deep Q-Network (DQN) where state is user session telemetry (error rate, hesitation, time-of-day), actions are pedagogical interventions (offer hint, simplify visual, force 2-min pause, switch to gamified drill), and reward is 30-day concept retention.",
+      "expected_effect": "Autonomously learns the mathematically optimal micro-intervention policy for preventing student cognitive burnout across diverse international cohorts.",
+      "formatted": "[Reinforcement Learning Policy for Cognitive Overload Intervention Scheduling]: [Trains a Deep Q-Network (DQN) where state is user session telemetry (error rate, hesitation, time-of-day), actions are pedagogical interventions (offer hint, simplify visual, force 2-min pause, switch to gamified drill), and reward is 30-day concept retention.] -> [Autonomously learns the mathematically optimal micro-intervention policy for preventing student cognitive burnout across diverse international cohorts.] [speculative]"
+    },
+    {
+      "id": "DAT-089",
+      "name": "Knowledge Graph Embeddings (RotatE) for Predicting Unencountered Pharmacotherapy Errors",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Embeds the entire pharmacology curriculum graph (drugs, receptors, adverse effects, contraindications) into vector space; uses geometric proximity of a student's error history to predict which untaught drug contraindications they are at risk of violating.",
+      "expected_effect": "Proactively inoculates students against predictable clinical mistakes before they ever encounter those specific drugs in clinical coursework.",
+      "formatted": "[Knowledge Graph Embeddings (RotatE) for Predicting Unencountered Pharmacotherapy Errors]: [Embeds the entire pharmacology curriculum graph (drugs, receptors, adverse effects, contraindications) into vector space; uses geometric proximity of a student's error history to predict which untaught drug contraindications they are at risk of violating.] -> [Proactively inoculates students against predictable clinical mistakes before they ever encounter those specific drugs in clinical coursework.] [speculative]"
+    },
+    {
+      "id": "DAT-090",
+      "name": "Invisible Micro-Probes Embedded within Functional Molecule Synthesis Widgets",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Embeds silent, non-graded decision forks within sandbox molecule-builder widgets (e.g. choosing between carboxylic acid vs tetrazole bioisostere under physiological pH); logs decisions directly into the latent competence vector without interrupting exploratory flow.",
+      "expected_effect": "Gathers pure, unconfounded behavioral evidence of medicinal chemistry intuition free from test-taking anxiety or guessing artifacts.",
+      "formatted": "[Invisible Micro-Probes Embedded within Functional Molecule Synthesis Widgets]: [Embeds silent, non-graded decision forks within sandbox molecule-builder widgets (e.g. choosing between carboxylic acid vs tetrazole bioisostere under physiological pH); logs decisions directly into the latent competence vector without interrupting exploratory flow.] -> [Gathers pure, unconfounded behavioral evidence of medicinal chemistry intuition free from test-taking anxiety or guessing artifacts.] [speculative]"
+    },
+    {
+      "id": "DAT-091",
+      "name": "Collective Intelligence Consensus Weighting: Crowdsourced Clinical Calibration",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Aggregates real-time probabilistic predictions from thousands of pharmacy students on ambiguous clinical polypharmacy dilemmas; applies Bayesian truth serum scoring to reward learners whose predictions reveal true clinical consensus beyond the common naive answer.",
+      "expected_effect": "Cultivates advanced clinical judgment in grey-area pharmacology scenarios where rigid binary answer keys fail to capture real-world medical nuance.",
+      "formatted": "[Collective Intelligence Consensus Weighting: Crowdsourced Clinical Calibration]: [Aggregates real-time probabilistic predictions from thousands of pharmacy students on ambiguous clinical polypharmacy dilemmas; applies Bayesian truth serum scoring to reward learners whose predictions reveal true clinical consensus beyond the common naive answer.] -> [Cultivates advanced clinical judgment in grey-area pharmacology scenarios where rigid binary answer keys fail to capture real-world medical nuance.] [speculative]"
+    },
+    {
+      "id": "DAT-092",
+      "name": "Automated Socratic Counterfactual Generation for Confident Erroneous Prescriptions",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "When a student prescribes a contraindicated drug with 100% confidence, a generative pipeline instantly simulates a patient physiological monitor responding to that error (e.g. bronchospasm spike after propranolol in asthma) and challenges the student to diagnose what went wrong.",
+      "expected_effect": "Induces sharp, memorable cognitive dissonance that permanently shatters dangerous medical overconfidence without clinical harm.",
+      "formatted": "[Automated Socratic Counterfactual Generation for Confident Erroneous Prescriptions]: [When a student prescribes a contraindicated drug with 100% confidence, a generative pipeline instantly simulates a patient physiological monitor responding to that error (e.g. bronchospasm spike after propranolol in asthma) and challenges the student to diagnose what went wrong.] -> [Induces sharp, memorable cognitive dissonance that permanently shatters dangerous medical overconfidence without clinical harm.] [speculative]"
+    },
+    {
+      "id": "DAT-093",
+      "name": "Real-Time Neuromorphic Spiking Neural Network Knowledge Tracing on Client Edge",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Implements an ultra-low-power spiking neural network (SNN) in WebAssembly that processes continuous temporal streams of user keystrokes, clicks, and pauses to track latent mastery as continuous synaptic weights.",
+      "expected_effect": "Achieves sub-millisecond adaptive response recommendations with zero server latency and zero cloud compute cost, preserving 95%+ gross margins.",
+      "formatted": "[Real-Time Neuromorphic Spiking Neural Network Knowledge Tracing on Client Edge]: [Implements an ultra-low-power spiking neural network (SNN) in WebAssembly that processes continuous temporal streams of user keystrokes, clicks, and pauses to track latent mastery as continuous synaptic weights.] -> [Achieves sub-millisecond adaptive response recommendations with zero server latency and zero cloud compute cost, preserving 95%+ gross margins.] [speculative]"
+    },
+    {
+      "id": "DAT-094",
+      "name": "Inverse Reinforcement Learning to Infer Learner Mental Models of Receptor Kinetics",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Uses Inverse Reinforcement Learning (IRL) on student manipulation trajectories of dose-response and PK sliders to mathematically infer the implicit reward function and physical laws the student believes govern the system.",
+      "expected_effect": "Explicitly reconstructs the student's buggy mental model (e.g. believing antagonists destroy receptors rather than competing for binding sites), allowing customized conceptual reprogramming.",
+      "formatted": "[Inverse Reinforcement Learning to Infer Learner Mental Models of Receptor Kinetics]: [Uses Inverse Reinforcement Learning (IRL) on student manipulation trajectories of dose-response and PK sliders to mathematically infer the implicit reward function and physical laws the student believes govern the system.] -> [Explicitly reconstructs the student's buggy mental model (e.g. believing antagonists destroy receptors rather than competing for binding sites), allowing customized conceptual reprogramming.] [speculative]"
+    },
+    {
+      "id": "DAT-095",
+      "name": "Pharmacokinetic Parameter Intuition Estimation via Phase-Plane Trajectory Analysis",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Tasks students with sketching two-compartment drug concentration trajectories across blood and tissue phase-planes; analyzes topological characteristics of their drawn curves to calculate mathematical fidelity to underlying differential equations.",
+      "expected_effect": "Bridges the gap between abstract calculus and physical pharmacological intuition, grounding quantitative PK without requiring tedious manual algebra.",
+      "formatted": "[Pharmacokinetic Parameter Intuition Estimation via Phase-Plane Trajectory Analysis]: [Tasks students with sketching two-compartment drug concentration trajectories across blood and tissue phase-planes; analyzes topological characteristics of their drawn curves to calculate mathematical fidelity to underlying differential equations.] -> [Bridges the gap between abstract calculus and physical pharmacological intuition, grounding quantitative PK without requiring tedious manual algebra.] [speculative]"
+    },
+    {
+      "id": "DAT-096",
+      "name": "Epistemic Uncertainty Decomposition in Latent Ability Estimates for High-Stakes Certification",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Employs Bayesian Deep Ensembles to decompose assessment uncertainty into aleatoric (inherent student variability/guessing) and epistemic (lack of test data on specific SAR sub-topics); prevents graduation certification until epistemic uncertainty is minimized.",
+      "expected_effect": "Guarantees that passing credentials reflect comprehensive, verified competency across the entire curriculum with zero unexamined blind spots.",
+      "formatted": "[Epistemic Uncertainty Decomposition in Latent Ability Estimates for High-Stakes Certification]: [Employs Bayesian Deep Ensembles to decompose assessment uncertainty into aleatoric (inherent student variability/guessing) and epistemic (lack of test data on specific SAR sub-topics); prevents graduation certification until epistemic uncertainty is minimized.] -> [Guarantees that passing credentials reflect comprehensive, verified competency across the entire curriculum with zero unexamined blind spots.] [speculative]"
+    },
+    {
+      "id": "DAT-097",
+      "name": "Bi-Directional Knowledge State Mirroring: Cross-Topic Metacognitive Transference Index",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Analyzes correlation between student confidence calibration accuracy in Medicinal Chemistry and their subsequent calibration accuracy in Clinical Pharmacology; computes a global metacognitive transference coefficient.",
+      "expected_effect": "Identifies whether students possess domain-general metacognitive skills or topic-isolated heuristics, training transferable clinical self-monitoring.",
+      "formatted": "[Bi-Directional Knowledge State Mirroring: Cross-Topic Metacognitive Transference Index]: [Analyzes correlation between student confidence calibration accuracy in Medicinal Chemistry and their subsequent calibration accuracy in Clinical Pharmacology; computes a global metacognitive transference coefficient.] -> [Identifies whether students possess domain-general metacognitive skills or topic-isolated heuristics, training transferable clinical self-monitoring.] [speculative]"
+    },
+    {
+      "id": "DAT-098",
+      "name": "Federated Client-Side Differential Privacy Psychometrics across Pharmacy Schools",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Computes IRT item calibration gradients locally on student devices using (epsilon, delta)-differential privacy noise; aggregates model updates across participating pharmacy schools without sharing individual student records.",
+      "expected_effect": "Enables cross-institutional benchmarking and continuous item bank calibration while strictly respecting student privacy regulations.",
+      "formatted": "[Federated Client-Side Differential Privacy Psychometrics across Pharmacy Schools]: [Computes IRT item calibration gradients locally on student devices using (epsilon, delta)-differential privacy noise; aggregates model updates across participating pharmacy schools without sharing individual student records.] -> [Enables cross-institutional benchmarking and continuous item bank calibration while strictly respecting student privacy regulations.] [speculative]"
+    },
+    {
+      "id": "DAT-099",
+      "name": "Adaptive Misconception Inoculation: Controlled Vulnerability Induction via Paradoxical Items",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Intentionally presents subtle, counter-intuitive paradoxical clinical scenarios (e.g. epinephrine reversal by alpha-blockers) designed to trap intuitive heuristic thinking, followed immediately by mechanistic debriefing.",
+      "expected_effect": "Inoculates students against cognitive biases and superficial pattern matching, forcing rigorous first-principles mechanistic reasoning.",
+      "formatted": "[Adaptive Misconception Inoculation: Controlled Vulnerability Induction via Paradoxical Items]: [Intentionally presents subtle, counter-intuitive paradoxical clinical scenarios (e.g. epinephrine reversal by alpha-blockers) designed to trap intuitive heuristic thinking, followed immediately by mechanistic debriefing.] -> [Inoculates students against cognitive biases and superficial pattern matching, forcing rigorous first-principles mechanistic reasoning.] [speculative]"
+    },
+    {
+      "id": "DAT-100",
+      "name": "Latent Clinical Instinct Velocity: Measuring Intuitive vs Analytic Reasoning Transitions",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Tracks the evolution of response time distributions and error rates on receptor selectivity identification over a 12-week semester; fits dual-process cognitive models to detect the exact phase shift where slow System 2 deliberation becomes rapid, accurate System 1 clinical instinct.",
+      "expected_effect": "Provides an objective empirical metric of professional automaticity, certifying when a pharmacy student has achieved true expert clinical fluency.",
+      "formatted": "[Latent Clinical Instinct Velocity: Measuring Intuitive vs Analytic Reasoning Transitions]: [Tracks the evolution of response time distributions and error rates on receptor selectivity identification over a 12-week semester; fits dual-process cognitive models to detect the exact phase shift where slow System 2 deliberation becomes rapid, accurate System 1 clinical instinct.] -> [Provides an objective empirical metric of professional automaticity, certifying when a pharmacy student has achieved true expert clinical fluency.] [speculative]"
+    }
+  ]
+}

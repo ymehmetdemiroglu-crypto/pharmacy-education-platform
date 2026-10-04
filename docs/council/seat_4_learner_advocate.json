@@ -1,0 +1,911 @@
+{
+  "seat": "Seat 4: Learner Advocate",
+  "total_count": 100,
+  "breakdown": {
+    "proven": 30,
+    "adjacent": 50,
+    "wild": 20
+  },
+  "ideas": [
+    {
+      "id": "ADV-001",
+      "name": "Bilingual Medical Terminology Tooltip Swapper",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Tapping any underlined pharmacological term toggles an instant inline micro-card displaying its Turkish, English, and Latin equivalents (e.g., 'Sempatomimetik' ↔ 'Sympathomimetic' ↔ 'Adrenergic Agonist') alongside phonetic pronunciation without navigating away from the active step.",
+      "expected_effect": "Eliminates translation friction and foreign-language hesitation for bilingual pharmacy students switching between Turkish lectures and English reference texts.",
+      "formatted": "[Bilingual Medical Terminology Tooltip Swapper]: Tapping any underlined pharmacological term toggles an instant inline micro-card displaying its Turkish, English, and Latin equivalents (e.g., 'Sempatomimetik' ↔ 'Sympathomimetic' ↔ 'Adrenergic Agonist') alongside phonetic pronunciation without navigating away from the active step. -> Eliminates translation friction and foreign-language hesitation for bilingual pharmacy students switching between Turkish lectures and English reference texts. [evidence-backed]"
+    },
+    {
+      "id": "ADV-002",
+      "name": "Zero-Shame Misconception Reframing Alerts",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "When an incorrect distractor is selected, replace standard red error banners with an amber 'Common Diagnostic Discovery' badge that explicitly details why 45% of students make that exact error (e.g., confusing α1 vasoconstriction with β2 vasodilation in skeletal muscle vascular beds).",
+      "expected_effect": "Alleviates test anxiety and removes psychological stigma around errors, encouraging active exploratory guessing rather than passive freeze.",
+      "formatted": "[Zero-Shame Misconception Reframing Alerts]: When an incorrect distractor is selected, replace standard red error banners with an amber 'Common Diagnostic Discovery' badge that explicitly details why 45% of students make that exact error (e.g., confusing α1 vasoconstriction with β2 vasodilation in skeletal muscle vascular beds). -> Alleviates test anxiety and removes psychological stigma around errors, encouraging active exploratory guessing rather than passive freeze. [evidence-backed]"
+    },
+    {
+      "id": "ADV-003",
+      "name": "Bite-Sized Micro-Session Pacing Badges",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Render dynamic, empirically calibrated time-to-complete badges (e.g., '⚡ 3 min focus') at the head of every lesson stage based on median cohort completion times, updating in real time as the student advances.",
+      "expected_effect": "Mitigates cognitive dread and helps time-starved students initiate quick study bouts during 5-minute hospital rotation or lecture breaks.",
+      "formatted": "[Bite-Sized Micro-Session Pacing Badges]: Render dynamic, empirically calibrated time-to-complete badges (e.g., '⚡ 3 min focus') at the head of every lesson stage based on median cohort completion times, updating in real time as the student advances. -> Mitigates cognitive dread and helps time-starved students initiate quick study bouts during 5-minute hospital rotation or lecture breaks. [evidence-backed]"
+    },
+    {
+      "id": "ADV-004",
+      "name": "Persistent Sub-Step State Preservation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Automatically serialize student input (partially adjusted sliders, active radio selections, or SMILES canvas coordinates) to IndexedDB on every input event, restoring identical interactive states immediately upon mobile app reload or browser refresh.",
+      "expected_effect": "Eliminates student frustration and lost effort caused by subway signal drops or sudden mobile browser tab discards.",
+      "formatted": "[Persistent Sub-Step State Preservation]: Automatically serialize student input (partially adjusted sliders, active radio selections, or SMILES canvas coordinates) to IndexedDB on every input event, restoring identical interactive states immediately upon mobile app reload or browser refresh. -> Eliminates student frustration and lost effort caused by subway signal drops or sudden mobile browser tab discards. [evidence-backed]"
+    },
+    {
+      "id": "ADV-005",
+      "name": "Three-Tier Transparent Hint Ladder",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide a 3-step scaffolded help drawer on complex SAR problems that unlocks: Tier 1 (conceptual nudge), Tier 2 (structural clue highlighting the pharmacophore), and Tier 3 (worked explanation) without applying punitive grade deductions.",
+      "expected_effect": "Preserves autonomy, prevents student learned helplessness, and fosters productive struggle without grading penalty fear.",
+      "formatted": "[Three-Tier Transparent Hint Ladder]: Provide a 3-step scaffolded help drawer on complex SAR problems that unlocks: Tier 1 (conceptual nudge), Tier 2 (structural clue highlighting the pharmacophore), and Tier 3 (worked explanation) without applying punitive grade deductions. -> Preserves autonomy, prevents student learned helplessness, and fosters productive struggle without grading penalty fear. [evidence-backed]"
+    },
+    {
+      "id": "ADV-006",
+      "name": "High-Contrast Pure-Dark Mode for Night Study",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide a single-tap toggle to switch the neo-brutalist interface from cream #FFF8E7 to true OLED #121212 with recalibrated #FFE600 accent borders and high-contrast #FFFFFF text.",
+      "expected_effect": "Reduces digital eye strain and retinal fatigue during late-night study sessions in darkened dorms or library basements.",
+      "formatted": "[High-Contrast Pure-Dark Mode for Night Study]: Provide a single-tap toggle to switch the neo-brutalist interface from cream #FFF8E7 to true OLED #121212 with recalibrated #FFE600 accent borders and high-contrast #FFFFFF text. -> Reduces digital eye strain and retinal fatigue during late-night study sessions in darkened dorms or library basements. [evidence-backed]"
+    },
+    {
+      "id": "ADV-007",
+      "name": "Predict-Then-Reveal Mechanism Safeguard",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Conceal the mechanistic explanation behind an interactive prediction prompt (e.g., 'Predict if adding an α-methyl group increases or decreases MAO susceptibility') until the learner registers a commitment.",
+      "expected_effect": "Breaks the illusion of explanatory depth (hypercorrection effect), forcing active cognitive retrieval before revealing the textbook resolution.",
+      "formatted": "[Predict-Then-Reveal Mechanism Safeguard]: Conceal the mechanistic explanation behind an interactive prediction prompt (e.g., 'Predict if adding an α-methyl group increases or decreases MAO susceptibility') until the learner registers a commitment. -> Breaks the illusion of explanatory depth (hypercorrection effect), forcing active cognitive retrieval before revealing the textbook resolution. [evidence-backed]"
+    },
+    {
+      "id": "ADV-008",
+      "name": "Monospace Chemical Notation Accessibility Mode",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Format all pKa constants, LogP values, half-lives, and chemical formulas in tabular JetBrains Mono with explicit mathematical superscripts and subscripts rather than plain italicized inline text.",
+      "expected_effect": "Eliminates misreading of critical dosing numbers, charges, and ionization states for visually fatigued or dyslexic students.",
+      "formatted": "[Monospace Chemical Notation Accessibility Mode]: Format all pKa constants, LogP values, half-lives, and chemical formulas in tabular JetBrains Mono with explicit mathematical superscripts and subscripts rather than plain italicized inline text. -> Eliminates misreading of critical dosing numbers, charges, and ionization states for visually fatigued or dyslexic students. [evidence-backed]"
+    },
+    {
+      "id": "ADV-009",
+      "name": "Non-Punitive Spaced Review Grace Periods",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow overdue spaced-repetition flashcards to be reviewed without resetting the mastery interval to zero, using an exponential decay-dampened penalty rather than a total streak wipeout.",
+      "expected_effect": "Prevents the 'streak despair effect' where missed study days during exam weeks cause students to abandon spaced review entirely.",
+      "formatted": "[Non-Punitive Spaced Review Grace Periods]: Allow overdue spaced-repetition flashcards to be reviewed without resetting the mastery interval to zero, using an exponential decay-dampened penalty rather than a total streak wipeout. -> Prevents the 'streak despair effect' where missed study days during exam weeks cause students to abandon spaced review entirely. [evidence-backed]"
+    },
+    {
+      "id": "ADV-010",
+      "name": "Instant Pharmacophore Zoom & Pan Gesture",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Support pinch-to-zoom and double-tap recentering on complex 2D molecular structures (e.g., cardiac glycosides or steroid backbones) with clear vector scaling up to 400%.",
+      "expected_effect": "Resolves mobile usability complaints regarding cramped chemical structures, allowing effortless inspection of stereochemical wedges and dashes on small screens.",
+      "formatted": "[Instant Pharmacophore Zoom & Pan Gesture]: Support pinch-to-zoom and double-tap recentering on complex 2D molecular structures (e.g., cardiac glycosides or steroid backbones) with clear vector scaling up to 400%. -> Resolves mobile usability complaints regarding cramped chemical structures, allowing effortless inspection of stereochemical wedges and dashes on small screens. [evidence-backed]"
+    },
+    {
+      "id": "ADV-011",
+      "name": "Strict 40-Word Micro-Chunk Cognitive Guardrail",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Hard-cap all instructional step text at 40 words, forcing authors to split multifaceted pharmacology concepts into distinct bite-sized conceptual propositions.",
+      "expected_effect": "Prevents cognitive overload and working memory saturation during high-stakes multi-system autonomic pharmacology study.",
+      "formatted": "[Strict 40-Word Micro-Chunk Cognitive Guardrail]: Hard-cap all instructional step text at 40 words, forcing authors to split multifaceted pharmacology concepts into distinct bite-sized conceptual propositions. -> Prevents cognitive overload and working memory saturation during high-stakes multi-system autonomic pharmacology study. [evidence-backed]"
+    },
+    {
+      "id": "ADV-012",
+      "name": "One-Tap Interactive Reset Button",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Include a prominent, tactile 'Reset Canvas' button on all interactive PK/PD curve and receptor binding simulators that snaps parameters back to baseline physiological values in 0ms.",
+      "expected_effect": "Encourages fearless parameter experimentation by ensuring students can always return to a known baseline if they get lost in complex multi-variable interactions.",
+      "formatted": "[One-Tap Interactive Reset Button]: Include a prominent, tactile 'Reset Canvas' button on all interactive PK/PD curve and receptor binding simulators that snaps parameters back to baseline physiological values in 0ms. -> Encourages fearless parameter experimentation by ensuring students can always return to a known baseline if they get lost in complex multi-variable interactions. [evidence-backed]"
+    },
+    {
+      "id": "ADV-013",
+      "name": "Transparent Module Progress Checklist",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Render a compact, honest progress tray showing exact completed steps (e.g., 'Step 4 of 7 • 2 questions remaining') with zero hidden expansions or surprise bonus stages.",
+      "expected_effect": "Builds student trust and reduces completion ambiguity, allowing learners to accurately budget remaining study time before class.",
+      "formatted": "[Transparent Module Progress Checklist]: Render a compact, honest progress tray showing exact completed steps (e.g., 'Step 4 of 7 • 2 questions remaining') with zero hidden expansions or surprise bonus stages. -> Builds student trust and reduces completion ambiguity, allowing learners to accurately budget remaining study time before class. [evidence-backed]"
+    },
+    {
+      "id": "ADV-014",
+      "name": "Colorblind-Safe Bioisostere Highlighting",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Pair all color-coded chemical group replacements (e.g., bioisosteric -OH to -NH2 swaps) with distinct geometric shapes (circles, squares, dashes) and textural patterns adhering to WCAG AAA standards.",
+      "expected_effect": "Ensures deuteranopic and protanopic pharmacy students can reliably distinguish functional group substitutions without perceptual ambiguity.",
+      "formatted": "[Colorblind-Safe Bioisostere Highlighting]: Pair all color-coded chemical group replacements (e.g., bioisosteric -OH to -NH2 swaps) with distinct geometric shapes (circles, squares, dashes) and textural patterns adhering to WCAG AAA standards. -> Ensures deuteranopic and protanopic pharmacy students can reliably distinguish functional group substitutions without perceptual ambiguity. [evidence-backed]"
+    },
+    {
+      "id": "ADV-015",
+      "name": "Clear Exam Relevance Anchor Tags",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Annotate high-yield concepts with a discreet badge linking directly to the national licensure exam syllabus (e.g., '📌 TUS / Eczacılıkta Uzmanlık Core Competency: Autonomic Receptors').",
+      "expected_effect": "Directly addresses the student anxiety question 'Will this be on the exam?', boosting motivation and focused attention.",
+      "formatted": "[Clear Exam Relevance Anchor Tags]: Annotate high-yield concepts with a discreet badge linking directly to the national licensure exam syllabus (e.g., '📌 TUS / Eczacılıkta Uzmanlık Core Competency: Autonomic Receptors'). -> Directly addresses the student anxiety question 'Will this be on the exam?', boosting motivation and focused attention. [evidence-backed]"
+    },
+    {
+      "id": "ADV-016",
+      "name": "Worked-Example Fading on Receptor Math",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Structure receptor binding calculations (Kd, EC50, Henderson-Hasselbalch) across three consecutive steps: first fully worked, second with intermediate values pre-filled, third fully independent.",
+      "expected_effect": "Scaffolds computational confidence and bridges the gap between passive formula viewing and independent quantitative problem-solving.",
+      "formatted": "[Worked-Example Fading on Receptor Math]: Structure receptor binding calculations (Kd, EC50, Henderson-Hasselbalch) across three consecutive steps: first fully worked, second with intermediate values pre-filled, third fully independent. -> Scaffolds computational confidence and bridges the gap between passive formula viewing and independent quantitative problem-solving. [evidence-backed]"
+    },
+    {
+      "id": "ADV-017",
+      "name": "Thumb-Zone Ergonomic Navigation Controls",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Anchor primary action buttons ('Check Answer', 'Next Step', 'Unlock Hint') within the bottom 25% of the mobile viewport with a minimum tap target of 48×48px.",
+      "expected_effect": "Enables effortless one-handed mobile navigation while standing on crowded transit without thumb strain or accidental drops.",
+      "formatted": "[Thumb-Zone Ergonomic Navigation Controls]: Anchor primary action buttons ('Check Answer', 'Next Step', 'Unlock Hint') within the bottom 25% of the mobile viewport with a minimum tap target of 48×48px. -> Enables effortless one-handed mobile navigation while standing on crowded transit without thumb strain or accidental drops. [evidence-backed]"
+    },
+    {
+      "id": "ADV-018",
+      "name": "Instant Text-Size Scaler Control",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide an in-lesson persistent typography control (100%, 125%, 150%) that reflows text dynamically without breaking SVG widget layouts or horizontal scrolling.",
+      "expected_effect": "Accommodates varied visual acuity and tired student eyes during marathon study sessions without forcing OS-level zoom compromises.",
+      "formatted": "[Instant Text-Size Scaler Control]: Provide an in-lesson persistent typography control (100%, 125%, 150%) that reflows text dynamically without breaking SVG widget layouts or horizontal scrolling. -> Accommodates varied visual acuity and tired student eyes during marathon study sessions without forcing OS-level zoom compromises. [evidence-backed]"
+    },
+    {
+      "id": "ADV-019",
+      "name": "Diagnostic Distractor Specificity",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Eliminate all frivolous, joke, or implausible options from multiple-choice steps; ensure every distractor matches a verified clinical or chemical misconception documented in exam archives.",
+      "expected_effect": "Respects student time and intellectual dignity, ensuring every incorrect choice teaches a high-value diagnostic distinction.",
+      "formatted": "[Diagnostic Distractor Specificity]: Eliminate all frivolous, joke, or implausible options from multiple-choice steps; ensure every distractor matches a verified clinical or chemical misconception documented in exam archives. -> Respects student time and intellectual dignity, ensuring every incorrect choice teaches a high-value diagnostic distinction. [evidence-backed]"
+    },
+    {
+      "id": "ADV-020",
+      "name": "Immediate Acoustic & Tactile Confirmation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Trigger a subtle 15ms haptic tick and pleasant low-frequency confirmation sound upon correct submissions, with complete mute settings togglable in one tap.",
+      "expected_effect": "Delivers crisp sensory closure on step completion, reinforcing mastery without disturbing classmates in silent library study halls.",
+      "formatted": "[Immediate Acoustic & Tactile Confirmation]: Trigger a subtle 15ms haptic tick and pleasant low-frequency confirmation sound upon correct submissions, with complete mute settings togglable in one tap. -> Delivers crisp sensory closure on step completion, reinforcing mastery without disturbing classmates in silent library study halls. [evidence-backed]"
+    },
+    {
+      "id": "ADV-021",
+      "name": "Non-Destructive Lesson Pausing",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow students to pause mid-lesson and close the tab without marking the session as 'abandoned' or penalizing retention metrics.",
+      "expected_effect": "Respects unpredictable clinical shifts, family interruptions, and transit arrivals, preserving psychological safety around study habits.",
+      "formatted": "[Non-Destructive Lesson Pausing]: Allow students to pause mid-lesson and close the tab without marking the session as 'abandoned' or penalizing retention metrics. -> Respects unpredictable clinical shifts, family interruptions, and transit arrivals, preserving psychological safety around study habits. [evidence-backed]"
+    },
+    {
+      "id": "ADV-022",
+      "name": "Chemical Functional Group Pronunciation Guides",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Embed native audio and phonetic spelling popovers for complex IUPAC chemical names and receptor subclasses (e.g., 'Phenoxybenzamine' /fe-nok-see-BEN-zuh-meen/).",
+      "expected_effect": "Removes verbal embarrassment and builds professional communication confidence during faculty ward rounds and viva exams.",
+      "formatted": "[Chemical Functional Group Pronunciation Guides]: Embed native audio and phonetic spelling popovers for complex IUPAC chemical names and receptor subclasses (e.g., 'Phenoxybenzamine' /fe-nok-see-BEN-zuh-meen/). -> Removes verbal embarrassment and builds professional communication confidence during faculty ward rounds and viva exams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-023",
+      "name": "Formula Breakdown Variable Highlighting",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Hovering over or tapping any variable in a PK equation (e.g., Vd = Dose / C0) simultaneously highlights its unit of measurement and clinical definition in an accompanying legend.",
+      "expected_effect": "Demystifies dense pharmacokinetic formulas and prevents dimensional analysis errors on dosage calculations.",
+      "formatted": "[Formula Breakdown Variable Highlighting]: Hovering over or tapping any variable in a PK equation (e.g., Vd = Dose / C0) simultaneously highlights its unit of measurement and clinical definition in an accompanying legend. -> Demystifies dense pharmacokinetic formulas and prevents dimensional analysis errors on dosage calculations. [evidence-backed]"
+    },
+    {
+      "id": "ADV-024",
+      "name": "End-of-Lesson Source Provenance Drawer",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display a collapsible drawer at the conclusion of every lesson listing exact textbook chapters, slide numbers, and faculty curriculum references for every scientific claim presented.",
+      "expected_effect": "Reassures skeptical students that platform content strictly mirrors their official university syllabus and course exams.",
+      "formatted": "[End-of-Lesson Source Provenance Drawer]: Display a collapsible drawer at the conclusion of every lesson listing exact textbook chapters, slide numbers, and faculty curriculum references for every scientific claim presented. -> Reassures skeptical students that platform content strictly mirrors their official university syllabus and course exams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-025",
+      "name": "Self-Selected Practice Session Length",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow learners entering a review session to choose their exact target batch size (5, 10, or 15 questions) before starting, with no penalty for choosing the shortest option.",
+      "expected_effect": "Eliminates the feeling of being trapped in an endless review queue, lowering activation energy for daily study habits.",
+      "formatted": "[Self-Selected Practice Session Length]: Allow learners entering a review session to choose their exact target batch size (5, 10, or 15 questions) before starting, with no penalty for choosing the shortest option. -> Eliminates the feeling of being trapped in an endless review queue, lowering activation energy for daily study habits. [evidence-backed]"
+    },
+    {
+      "id": "ADV-026",
+      "name": "Clear Visual Separation of MedChem vs Pharmacology",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Maintain consistent distinct thematic color accents throughout all UI chrome (Electric Blue #4D96FF for MedChem SAR, Warm Orange #FF9F45 for Pharmacology mechanisms).",
+      "expected_effect": "Prevents cognitive blurring between structural chemistry mechanisms and clinical organ-system drug effects in concurrent semester courses.",
+      "formatted": "[Clear Visual Separation of MedChem vs Pharmacology]: Maintain consistent distinct thematic color accents throughout all UI chrome (Electric Blue #4D96FF for MedChem SAR, Warm Orange #FF9F45 for Pharmacology mechanisms). -> Prevents cognitive blurring between structural chemistry mechanisms and clinical organ-system drug effects in concurrent semester courses. [evidence-backed]"
+    },
+    {
+      "id": "ADV-027",
+      "name": "Keyboard-First Desktop Accessibility Shortcuts",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Support complete hands-on-keyboard navigation using standard shortcuts (1-4 for options, Space for check, Enter for next step, H for hint) on desktop browsers.",
+      "expected_effect": "Streamlines rapid study sessions for power users on laptops, eliminating repetitive mouse movements and wrist fatigue.",
+      "formatted": "[Keyboard-First Desktop Accessibility Shortcuts]: Support complete hands-on-keyboard navigation using standard shortcuts (1-4 for options, Space for check, Enter for next step, H for hint) on desktop browsers. -> Streamlines rapid study sessions for power users on laptops, eliminating repetitive mouse movements and wrist fatigue. [evidence-backed]"
+    },
+    {
+      "id": "ADV-028",
+      "name": "Clear Visual Feedback on Interactive Sliders",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display live numerical readouts directly above slider thumbs (e.g., 'Dose: 50 mg • Plasma Conc: 2.4 µg/mL') rather than in distant peripheral text boxes.",
+      "expected_effect": "Eliminates visual split-attention effect, allowing students to correlate continuous slider motion with quantitative pharmacological outputs.",
+      "formatted": "[Clear Visual Feedback on Interactive Sliders]: Display live numerical readouts directly above slider thumbs (e.g., 'Dose: 50 mg • Plasma Conc: 2.4 µg/mL') rather than in distant peripheral text boxes. -> Eliminates visual split-attention effect, allowing students to correlate continuous slider motion with quantitative pharmacological outputs. [evidence-backed]"
+    },
+    {
+      "id": "ADV-029",
+      "name": "Impostor-Resistant Mastery Benchmarks",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Frame progress bars around personal skill acquisition tiers ('Developing', 'Competent', 'Mastered') rather than competitive cohort percentile rankings or public leaderboards.",
+      "expected_effect": "Protects struggling students from toxic social comparison and imposter syndrome, fostering intrinsic academic growth.",
+      "formatted": "[Impostor-Resistant Mastery Benchmarks]: Frame progress bars around personal skill acquisition tiers ('Developing', 'Competent', 'Mastered') rather than competitive cohort percentile rankings or public leaderboards. -> Protects struggling students from toxic social comparison and imposter syndrome, fostering intrinsic academic growth. [evidence-backed]"
+    },
+    {
+      "id": "ADV-030",
+      "name": "Plain-Language Intuition Preceding Formal Nomenclature",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Structure every introductory concept to present the physical biological metaphor first (e.g., 'a key that fits the lock but refuses to turn') before introducing formal terminology ('competitive antagonist with zero intrinsic activity').",
+      "expected_effect": "Establishes a sticky intuitive mental model before burdening working memory with dense Greek/Latin pharmacological jargon.",
+      "formatted": "[Plain-Language Intuition Preceding Formal Nomenclature]: Structure every introductory concept to present the physical biological metaphor first (e.g., 'a key that fits the lock but refuses to turn') before introducing formal terminology ('competitive antagonist with zero intrinsic activity'). -> Establishes a sticky intuitive mental model before burdening working memory with dense Greek/Latin pharmacological jargon. [evidence-backed]"
+    },
+    {
+      "id": "ADV-031",
+      "name": "Smart Commute Transit Re-Sync",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Detect network dropouts via navigator.onLine and service workers, seamlessly caching step interactions locally and syncing background telemetry only when a reliable connection returns without showing blocking modal alerts.",
+      "expected_effect": "Enables uninterrupted study on underground subways and bus transit without losing student momentum or causing modal frustration.",
+      "formatted": "[Smart Commute Transit Re-Sync]: Detect network dropouts via navigator.onLine and service workers, seamlessly caching step interactions locally and syncing background telemetry only when a reliable connection returns without showing blocking modal alerts. -> Enables uninterrupted study on underground subways and bus transit without losing student momentum or causing modal frustration. [evidence-backed]"
+    },
+    {
+      "id": "ADV-032",
+      "name": "Single-Handed Subway Mode",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide a toggle that clusters all interactive widgets, choice buttons, and navigation controls into the bottom right (or left) corner within easy reach of a single thumb.",
+      "expected_effect": "Allows pharmacy students to comfortably complete interactive lessons with one hand while holding a subway strap with the other.",
+      "formatted": "[Single-Handed Subway Mode]: Provide a toggle that clusters all interactive widgets, choice buttons, and navigation controls into the bottom right (or left) corner within easy reach of a single thumb. -> Allows pharmacy students to comfortably complete interactive lessons with one hand while holding a subway strap with the other. [plausible]"
+    },
+    {
+      "id": "ADV-033",
+      "name": "Fatigue-Aware Pacing Prompts",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Track response latency anomalies and repeated multi-click patterns on simple steps; after three fatigue indicators, gently display an optional 'Take a 2-Minute Breathing Pause' prompt.",
+      "expected_effect": "Prevents burnout-induced reckless clicking and encourages healthy cognitive recovery during late-night cramming sessions.",
+      "formatted": "[Fatigue-Aware Pacing Prompts]: Track response latency anomalies and repeated multi-click patterns on simple steps; after three fatigue indicators, gently display an optional 'Take a 2-Minute Breathing Pause' prompt. -> Prevents burnout-induced reckless clicking and encourages healthy cognitive recovery during late-night cramming sessions. [plausible]"
+    },
+    {
+      "id": "ADV-034",
+      "name": "Low-Bandwidth Lightweight Static Fallback",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Automatically swap heavy 3D or animated molecular rendering with pre-rendered crisp SVGs and inline ASCII/2D SMILES diagrams whenever connection speed drops below 2G/3G thresholds.",
+      "expected_effect": "Ensures students with limited mobile data packages or spotty campus Wi-Fi experience zero latency lag or asset timeouts.",
+      "formatted": "[Low-Bandwidth Lightweight Static Fallback]: Automatically swap heavy 3D or animated molecular rendering with pre-rendered crisp SVGs and inline ASCII/2D SMILES diagrams whenever connection speed drops below 2G/3G thresholds. -> Ensures students with limited mobile data packages or spotty campus Wi-Fi experience zero latency lag or asset timeouts. [evidence-backed]"
+    },
+    {
+      "id": "ADV-035",
+      "name": "One-Click Panic Formula Sheet Modal",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Embed a persistent header icon that instantly slides out a clean, categorized reference sheet of all ANS receptors, second messengers, and PK formulas without unloading the active lesson step.",
+      "expected_effect": "Relieves exam panic by providing a reliable cognitive safety net, allowing students to check foundational formulas without breaking study flow.",
+      "formatted": "[One-Click Panic Formula Sheet Modal]: Embed a persistent header icon that instantly slides out a clean, categorized reference sheet of all ANS receptors, second messengers, and PK formulas without unloading the active lesson step. -> Relieves exam panic by providing a reliable cognitive safety net, allowing students to check foundational formulas without breaking study flow. [plausible]"
+    },
+    {
+      "id": "ADV-036",
+      "name": "Soundless Haptic Feedback Mode for Silent Study Halls",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Offer a one-tap 'Library Mode' that mutes all audio chimes and substitutes variable haptic vibrations (short buzz for wrong, double pulse for correct) on supported mobile devices.",
+      "expected_effect": "Allows tactile feedback in strict silent study halls without anxiety over accidental headphone unplugging or speaker blaring.",
+      "formatted": "[Soundless Haptic Feedback Mode for Silent Study Halls]: Offer a one-tap 'Library Mode' that mutes all audio chimes and substitutes variable haptic vibrations (short buzz for wrong, double pulse for correct) on supported mobile devices. -> Allows tactile feedback in strict silent study halls without anxiety over accidental headphone unplugging or speaker blaring. [evidence-backed]"
+    },
+    {
+      "id": "ADV-037",
+      "name": "Bilingual Audio Pronunciation Playback",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Add a small speaker icon next to complex chemical entities (e.g., 'Dobutamine', 'Succinylcholine') that plays both Turkish faculty pronunciation and international English pronunciation in under 1 second.",
+      "expected_effect": "Eliminates auditory dissonance for students transitioning between Turkish-speaking professors and English video lectures.",
+      "formatted": "[Bilingual Audio Pronunciation Playback]: Add a small speaker icon next to complex chemical entities (e.g., 'Dobutamine', 'Succinylcholine') that plays both Turkish faculty pronunciation and international English pronunciation in under 1 second. -> Eliminates auditory dissonance for students transitioning between Turkish-speaking professors and English video lectures. [evidence-backed]"
+    },
+    {
+      "id": "ADV-038",
+      "name": "Anonymous Peer Error Normalization Stats",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Upon submitting a wrong answer, display an unobtrusive stat line: '💡 62% of your peers also selected Option B on their first attempt because both drugs target β-receptors.'",
+      "expected_effect": "Normalizes struggle and dispels impostor syndrome by demonstrating that confusion is a shared developmental milestone rather than personal incompetence.",
+      "formatted": "[Anonymous Peer Error Normalization Stats]: Upon submitting a wrong answer, display an unobtrusive stat line: '💡 62% of your peers also selected Option B on their first attempt because both drugs target β-receptors.' -> Normalizes struggle and dispels impostor syndrome by demonstrating that confusion is a shared developmental milestone rather than personal incompetence. [evidence-backed]"
+    },
+    {
+      "id": "ADV-039",
+      "name": "Interactive Pharmacophore Difference Highlighter",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "When comparing two related drugs (e.g., Epinephrine vs Norepinephrine), provide a toggle that dims identical atoms and highlights only the divergent functional groups (the N-methyl group) with high-contrast pulsing rings.",
+      "expected_effect": "Drastically reduces visual search time and isolates the exact structural determinant of β2 selectivity.",
+      "formatted": "[Interactive Pharmacophore Difference Highlighter]: When comparing two related drugs (e.g., Epinephrine vs Norepinephrine), provide a toggle that dims identical atoms and highlights only the divergent functional groups (the N-methyl group) with high-contrast pulsing rings. -> Drastically reduces visual search time and isolates the exact structural determinant of β2 selectivity. [plausible]"
+    },
+    {
+      "id": "ADV-040",
+      "name": "Cognitive Offloading Scratchpad Canvas",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide an expandable drawing overlay on PK calculation steps allowing students to scribble calculations or balance charges directly on the mobile screen using their fingertip.",
+      "expected_effect": "Eliminates the need to carry physical scratch paper or switch back and forth between calculator apps during mobile study.",
+      "formatted": "[Cognitive Offloading Scratchpad Canvas]: Provide an expandable drawing overlay on PK calculation steps allowing students to scribble calculations or balance charges directly on the mobile screen using their fingertip. -> Eliminates the need to carry physical scratch paper or switch back and forth between calculator apps during mobile study. [plausible]"
+    },
+    {
+      "id": "ADV-041",
+      "name": "Pre-Exam Confidence Calibrator",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Ask learners to self-rate their confidence (Low, Medium, High) before answering a high-stakes mastery check, then contrast confidence with accuracy in the post-step debrief.",
+      "expected_effect": "Enhances metacognitive awareness and corrects dangerous illusions of competence on deceptively simple autonomic questions.",
+      "formatted": "[Pre-Exam Confidence Calibrator]: Ask learners to self-rate their confidence (Low, Medium, High) before answering a high-stakes mastery check, then contrast confidence with accuracy in the post-step debrief. -> Enhances metacognitive awareness and corrects dangerous illusions of competence on deceptively simple autonomic questions. [evidence-backed]"
+    },
+    {
+      "id": "ADV-042",
+      "name": "Guilt-Free Streak Freeze Bank",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide students with 2 automatic 'Life Happens' freeze tokens per month that preserve their study streak during intense exam weeks or clinical ward rotations.",
+      "expected_effect": "Prevents catastrophic demotivation caused by losing long streaks due to unavoidable clinical or personal emergencies.",
+      "formatted": "[Guilt-Free Streak Freeze Bank]: Provide students with 2 automatic 'Life Happens' freeze tokens per month that preserve their study streak during intense exam weeks or clinical ward rotations. -> Prevents catastrophic demotivation caused by losing long streaks due to unavoidable clinical or personal emergencies. [evidence-backed]"
+    },
+    {
+      "id": "ADV-043",
+      "name": "Explain Like I'm at the Pharmacy Counter Contextualizer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide a secondary tab on complex pharmacology steps that restates the molecular mechanism as a practical patient-counseling scenario (e.g., 'Why we tell a patient taking prazosin to stand up slowly').",
+      "expected_effect": "Bridges the gap between abstract academic receptor theory and meaningful clinical practice, deepening conceptual encoding.",
+      "formatted": "[Explain Like I'm at the Pharmacy Counter Contextualizer]: Provide a secondary tab on complex pharmacology steps that restates the molecular mechanism as a practical patient-counseling scenario (e.g., 'Why we tell a patient taking prazosin to stand up slowly'). -> Bridges the gap between abstract academic receptor theory and meaningful clinical practice, deepening conceptual encoding. [plausible]"
+    },
+    {
+      "id": "ADV-044",
+      "name": "Interactive Receptor Subtype Comparison Dock",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide a pinned comparison tray at the bottom of the screen where learners can pin two receptors (e.g., α1 vs α2) to compare G-protein coupling (Gq vs Gi) and tissue distributions side-by-side.",
+      "expected_effect": "Prevents cross-talk confusion between opposing autonomic receptor subtypes during revision.",
+      "formatted": "[Interactive Receptor Subtype Comparison Dock]: Provide a pinned comparison tray at the bottom of the screen where learners can pin two receptors (e.g., α1 vs α2) to compare G-protein coupling (Gq vs Gi) and tissue distributions side-by-side. -> Prevents cross-talk confusion between opposing autonomic receptor subtypes during revision. [plausible]"
+    },
+    {
+      "id": "ADV-045",
+      "name": "Low-Glare Ambient Screen Auto-Dimming",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Use the Ambient Light Sensor API (where available) or system time to progressively soften contrast and lower canvas luminance after 10 PM.",
+      "expected_effect": "Protects circadian rhythms and reduces sleep-onset disruption for students who review pharmacology right before bed.",
+      "formatted": "[Low-Glare Ambient Screen Auto-Dimming]: Use the Ambient Light Sensor API (where available) or system time to progressively soften contrast and lower canvas luminance after 10 PM. -> Protects circadian rhythms and reduces sleep-onset disruption for students who review pharmacology right before bed. [plausible]"
+    },
+    {
+      "id": "ADV-046",
+      "name": "Step Countdown Timer with Non-Punitive Zen Mode",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Offer a subtle timer that can be toggled between 'Target Pace (e.g. 2:00)' and 'Zen Mode (hidden timer with no ticking)' according to individual anxiety preferences.",
+      "expected_effect": "Accommodates students who thrive under timed pace drills while completely shielding time-anxious students from debilitating pressure.",
+      "formatted": "[Step Countdown Timer with Non-Punitive Zen Mode]: Offer a subtle timer that can be toggled between 'Target Pace (e.g. 2:00)' and 'Zen Mode (hidden timer with no ticking)' according to individual anxiety preferences. -> Accommodates students who thrive under timed pace drills while completely shielding time-anxious students from debilitating pressure. [plausible]"
+    },
+    {
+      "id": "ADV-047",
+      "name": "Dynamic SMILES to 2D Structure Instant Converter",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow students to tap any SMILES string in medicinal chemistry lessons to render an interactive 2D Lewis/skeletal structure in an inline floating modal.",
+      "expected_effect": "Decodes intimidating linear chemical strings into readable, intuitive visual structures without requiring external chemistry software.",
+      "formatted": "[Dynamic SMILES to 2D Structure Instant Converter]: Allow students to tap any SMILES string in medicinal chemistry lessons to render an interactive 2D Lewis/skeletal structure in an inline floating modal. -> Decodes intimidating linear chemical strings into readable, intuitive visual structures without requiring external chemistry software. [evidence-backed]"
+    },
+    {
+      "id": "ADV-048",
+      "name": "Micro-Reward Dopamine-Calibrated Celebrations",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Replace loud, explosive confetti animations with a refined, tactile 150ms border flash and a subtle geometric seal stamp upon completing a difficult 12-stage module.",
+      "expected_effect": "Delivers satisfying emotional validation while maintaining professional medical dignity without childish gamification clutter.",
+      "formatted": "[Micro-Reward Dopamine-Calibrated Celebrations]: Replace loud, explosive confetti animations with a refined, tactile 150ms border flash and a subtle geometric seal stamp upon completing a difficult 12-stage module. -> Delivers satisfying emotional validation while maintaining professional medical dignity without childish gamification clutter. [evidence-backed]"
+    },
+    {
+      "id": "ADV-049",
+      "name": "Context-Preserving Glossary Anchors",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Clicking a highlighted clinical term opens a side-drawer glossary that covers only 30% of the screen, keeping the original question and molecular widget visible in the background.",
+      "expected_effect": "Prevents spatial disorientation and context-switching amnesia caused by full-screen modal glossary takeovers.",
+      "formatted": "[Context-Preserving Glossary Anchors]: Clicking a highlighted clinical term opens a side-drawer glossary that covers only 30% of the screen, keeping the original question and molecular widget visible in the background. -> Prevents spatial disorientation and context-switching amnesia caused by full-screen modal glossary takeovers. [evidence-backed]"
+    },
+    {
+      "id": "ADV-050",
+      "name": "Drug Suffix & Stem Decomposition Widget",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Break down drug generic names into highlighted morphological roots (e.g., '-olol' = beta-blocker, '-zosin' = alpha-1 blocker, '-stigmine' = AChE inhibitor) with interactive definitions on hover.",
+      "expected_effect": "Accelerates drug classification mastery and equips students to deduce the clinical class of unfamiliar novel agents on exams.",
+      "formatted": "[Drug Suffix & Stem Decomposition Widget]: Break down drug generic names into highlighted morphological roots (e.g., '-olol' = beta-blocker, '-zosin' = alpha-1 blocker, '-stigmine' = AChE inhibitor) with interactive definitions on hover. -> Accelerates drug classification mastery and equips students to deduce the clinical class of unfamiliar novel agents on exams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-051",
+      "name": "Autonomic System Flowchart Navigator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide an interactive mini-map of the entire autonomic nervous system (sympathetic vs parasympathetic branches) that highlights the exact anatomical location targeted by the current drug.",
+      "expected_effect": "Prevents students from losing the macroscopic physiological forest while memorizing microscopic receptor trees.",
+      "formatted": "[Autonomic System Flowchart Navigator]: Provide an interactive mini-map of the entire autonomic nervous system (sympathetic vs parasympathetic branches) that highlights the exact anatomical location targeted by the current drug. -> Prevents students from losing the macroscopic physiological forest while memorizing microscopic receptor trees. [plausible]"
+    },
+    {
+      "id": "ADV-052",
+      "name": "Misconception Re-Check Spacing Interval",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Tag questions answered incorrectly and re-inject them into the student's review flow 10 minutes later with identical underlying logic but altered surface variables (e.g., different drug in the same class).",
+      "expected_effect": "Validates true conceptual remediation rather than superficial short-term rote recall of the previously seen answer key.",
+      "formatted": "[Misconception Re-Check Spacing Interval]: Tag questions answered incorrectly and re-inject them into the student's review flow 10 minutes later with identical underlying logic but altered surface variables (e.g., different drug in the same class). -> Validates true conceptual remediation rather than superficial short-term rote recall of the previously seen answer key. [evidence-backed]"
+    },
+    {
+      "id": "ADV-053",
+      "name": "Visual Dose-Response Curve Slope Inspector",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Allow learners to drag their finger along a sigmoidal dose-response curve to see instantaneous tangent slope lines explaining potency (EC50) versus maximal efficacy (Emax).",
+      "expected_effect": "Transforms confusing calculus-based pharmacology graphs into intuitive, tangible physical slopes.",
+      "formatted": "[Visual Dose-Response Curve Slope Inspector]: Allow learners to drag their finger along a sigmoidal dose-response curve to see instantaneous tangent slope lines explaining potency (EC50) versus maximal efficacy (Emax). -> Transforms confusing calculus-based pharmacology graphs into intuitive, tangible physical slopes. [plausible]"
+    },
+    {
+      "id": "ADV-054",
+      "name": "Turkish-English Curriculum Terminology Crosswalk",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide an explicit toggle for Turkish pharmacy schools (e.g., Istanbul, Hacettepe, Ankara) showing how their localized lecture slide terms map to international USMLE/NAPLEX standards.",
+      "expected_effect": "Eliminates syllabus anxiety for students aiming for international residency programs or foreign board exams.",
+      "formatted": "[Turkish-English Curriculum Terminology Crosswalk]: Provide an explicit toggle for Turkish pharmacy schools (e.g., Istanbul, Hacettepe, Ankara) showing how their localized lecture slide terms map to international USMLE/NAPLEX standards. -> Eliminates syllabus anxiety for students aiming for international residency programs or foreign board exams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-055",
+      "name": "What If I Get It Wrong Safety Preview",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Display a small reassuring footnote beneath the check button: 'Incorrect choices never deduct points and unlock a targeted diagnostic breakdown.'",
+      "expected_effect": "Neutralizes fear of failure and reduces avoidance behaviors among perfectionist medical/pharmacy students.",
+      "formatted": "[What If I Get It Wrong Safety Preview]: Display a small reassuring footnote beneath the check button: 'Incorrect choices never deduct points and unlock a targeted diagnostic breakdown.' -> Neutralizes fear of failure and reduces avoidance behaviors among perfectionist medical/pharmacy students. [plausible]"
+    },
+    {
+      "id": "ADV-056",
+      "name": "Bioisosteric Replacement Drag-and-Drop Playground",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow students to drag a bioisosteric carboxyl group onto a tetrazole ring and see immediate computed changes in metabolic stability and lipid solubility.",
+      "expected_effect": "Deepens intuitive grasp of medicinal chemistry structure-activity relationships through tactile cause-and-effect manipulation.",
+      "formatted": "[Bioisosteric Replacement Drag-and-Drop Playground]: Allow students to drag a bioisosteric carboxyl group onto a tetrazole ring and see immediate computed changes in metabolic stability and lipid solubility. -> Deepens intuitive grasp of medicinal chemistry structure-activity relationships through tactile cause-and-effect manipulation. [evidence-backed]"
+    },
+    {
+      "id": "ADV-057",
+      "name": "Quick-Save to Personal Review Binder",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Place a one-tap bookmark ribbon on any step that immediately files the step into a custom 'High-Yield Cram Binder' categorized by organ system.",
+      "expected_effect": "Empowers students to curate high-stress topics for rapid triage during the 30 minutes preceding their university exams.",
+      "formatted": "[Quick-Save to Personal Review Binder]: Place a one-tap bookmark ribbon on any step that immediately files the step into a custom 'High-Yield Cram Binder' categorized by organ system. -> Empowers students to curate high-stress topics for rapid triage during the 30 minutes preceding their university exams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-058",
+      "name": "Split-Screen Molecular Interaction Visualizer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Render a side-by-side view showing the chemical ligand in 2D on the left and its corresponding receptor binding pocket hydrogen bonds on the right, highlighting linked residues in unison.",
+      "expected_effect": "Connects 2D medicinal chemistry structures to 3D biological pharmacology targets without overwhelming the learner with complex 3D orientation controls.",
+      "formatted": "[Split-Screen Molecular Interaction Visualizer]: Render a side-by-side view showing the chemical ligand in 2D on the left and its corresponding receptor binding pocket hydrogen bonds on the right, highlighting linked residues in unison. -> Connects 2D medicinal chemistry structures to 3D biological pharmacology targets without overwhelming the learner with complex 3D orientation controls. [plausible]"
+    },
+    {
+      "id": "ADV-059",
+      "name": "Student Workload Horizon Indicator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Display an estimated daily time investment badge (e.g., 'Today: 12 minutes to maintain target mastery') based on current forgetting curve algorithms.",
+      "expected_effect": "Demystifies spaced repetition requirements and prevents students from over-studying or abandoning their review routine.",
+      "formatted": "[Student Workload Horizon Indicator]: Display an estimated daily time investment badge (e.g., 'Today: 12 minutes to maintain target mastery') based on current forgetting curve algorithms. -> Demystifies spaced repetition requirements and prevents students from over-studying or abandoning their review routine. [plausible]"
+    },
+    {
+      "id": "ADV-060",
+      "name": "Zero-Jargon Emergency Tooltips",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide double-tap access on any advanced biophysical term (e.g., 'Allosteric modulation') that reveals a one-sentence everyday analogy ('A volume knob rather than an on/off switch').",
+      "expected_effect": "Prevents cognitive freeze-up when students encounter intimidating biophysical terminology for the first time.",
+      "formatted": "[Zero-Jargon Emergency Tooltips]: Provide double-tap access on any advanced biophysical term (e.g., 'Allosteric modulation') that reveals a one-sentence everyday analogy ('A volume knob rather than an on/off switch'). -> Prevents cognitive freeze-up when students encounter intimidating biophysical terminology for the first time. [plausible]"
+    },
+    {
+      "id": "ADV-061",
+      "name": "Interactive Henderson-Hasselbalch Ionization Bar",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide a continuous pH slider across a stomach-to-intestine gradient (pH 1.5 to 8.0) that dynamically visualizes the percentage of drug molecules in ionized vs unionized states.",
+      "expected_effect": "Clarifies the abstract concept of drug absorption and ion trapping in a single, visually intuitive interactive bar.",
+      "formatted": "[Interactive Henderson-Hasselbalch Ionization Bar]: Provide a continuous pH slider across a stomach-to-intestine gradient (pH 1.5 to 8.0) that dynamically visualizes the percentage of drug molecules in ionized vs unionized states. -> Clarifies the abstract concept of drug absorption and ion trapping in a single, visually intuitive interactive bar. [plausible]"
+    },
+    {
+      "id": "ADV-062",
+      "name": "Non-Overlapping Option Card Typography",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Enforce strict responsive card layouts with independent text-wrapping and 16px margins, ensuring long Turkish clinical answer choices never truncate or overflow touch boundaries.",
+      "expected_effect": "Eliminates reading frustration and misclicks on mobile devices with non-standard aspect ratios.",
+      "formatted": "[Non-Overlapping Option Card Typography]: Enforce strict responsive card layouts with independent text-wrapping and 16px margins, ensuring long Turkish clinical answer choices never truncate or overflow touch boundaries. -> Eliminates reading frustration and misclicks on mobile devices with non-standard aspect ratios. [evidence-backed]"
+    },
+    {
+      "id": "ADV-063",
+      "name": "Audio Lecture Cross-Reference Timestamps",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Link relevant steps to corresponding minute-markers in standardized faculty lecture recordings or open-access pharmacology video series.",
+      "expected_effect": "Saves hours of manual video scrubbing when students need deeper remediation on a tricky autonomic mechanism.",
+      "formatted": "[Audio Lecture Cross-Reference Timestamps]: Link relevant steps to corresponding minute-markers in standardized faculty lecture recordings or open-access pharmacology video series. -> Saves hours of manual video scrubbing when students need deeper remediation on a tricky autonomic mechanism. [plausible]"
+    },
+    {
+      "id": "ADV-064",
+      "name": "Visual Therapeutic Window Safety Margin Gauge",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Render a dynamic gauge showing the distance between ED50 and TD50 that shifts from calm green to warning yellow as the Therapeutic Index narrows (e.g., Digoxin vs Penicillin).",
+      "expected_effect": "Visually cements the clinical danger of narrow therapeutic window drugs, linking mathematical ratios to patient safety intuition.",
+      "formatted": "[Visual Therapeutic Window Safety Margin Gauge]: Render a dynamic gauge showing the distance between ED50 and TD50 that shifts from calm green to warning yellow as the Therapeutic Index narrows (e.g., Digoxin vs Penicillin). -> Visually cements the clinical danger of narrow therapeutic window drugs, linking mathematical ratios to patient safety intuition. [evidence-backed]"
+    },
+    {
+      "id": "ADV-065",
+      "name": "Post-Submission Explanatory Highlight Sync",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "When the explanation is revealed after a choice, automatically highlight the single sentence in the explanation that directly disproves the chosen incorrect distractor.",
+      "expected_effect": "Eliminates the cognitive burden of reading a long paragraph to find why a specific guess was wrong.",
+      "formatted": "[Post-Submission Explanatory Highlight Sync]: When the explanation is revealed after a choice, automatically highlight the single sentence in the explanation that directly disproves the chosen incorrect distractor. -> Eliminates the cognitive burden of reading a long paragraph to find why a specific guess was wrong. [plausible]"
+    },
+    {
+      "id": "ADV-066",
+      "name": "Personalized Weak-Spot Diagnostic Radar",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display a private, non-judgmental 5-axis radar chart showing relative competence across ANS Receptors, SAR Chemistry, PK Calculations, Side Effects, and Drug Interactions.",
+      "expected_effect": "Provides clear diagnostic self-awareness, allowing students to target study efforts where clinical risks are highest.",
+      "formatted": "[Personalized Weak-Spot Diagnostic Radar]: Display a private, non-judgmental 5-axis radar chart showing relative competence across ANS Receptors, SAR Chemistry, PK Calculations, Side Effects, and Drug Interactions. -> Provides clear diagnostic self-awareness, allowing students to target study efforts where clinical risks are highest. [evidence-backed]"
+    },
+    {
+      "id": "ADV-067",
+      "name": "One-Touch Chemical Bond Rotation Controls",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Add simple clockwise/counter-clockwise 90-degree rotate buttons to molecular structures to help students recognize identical molecules drawn in different orientations on exams.",
+      "expected_effect": "Dismantles spatial visualization barriers that cause students to fail stereochemistry identification questions.",
+      "formatted": "[One-Touch Chemical Bond Rotation Controls]: Add simple clockwise/counter-clockwise 90-degree rotate buttons to molecular structures to help students recognize identical molecules drawn in different orientations on exams. -> Dismantles spatial visualization barriers that cause students to fail stereochemistry identification questions. [plausible]"
+    },
+    {
+      "id": "ADV-068",
+      "name": "Multi-Step Calculation Intermediate Verification",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "In multi-step loading dose problems, check and validate Step 1 (Volume of Distribution) before prompting for Step 2 (Total Dose).",
+      "expected_effect": "Prevents cascading calculation errors where a minor initial arithmetic slip invalidates 10 minutes of subsequent mathematical reasoning.",
+      "formatted": "[Multi-Step Calculation Intermediate Verification]: In multi-step loading dose problems, check and validate Step 1 (Volume of Distribution) before prompting for Step 2 (Total Dose). -> Prevents cascading calculation errors where a minor initial arithmetic slip invalidates 10 minutes of subsequent mathematical reasoning. [evidence-backed]"
+    },
+    {
+      "id": "ADV-069",
+      "name": "Focused High-Yield Exam Cram Mode",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Allow students within 48 hours of an exam to toggle a 'High-Yield Filter' that suppresses exploratory edge cases and focuses solely on the top 20 core autonomic drugs.",
+      "expected_effect": "Alleviates panic during the final 48 hours of exam preparation by establishing clear, achievable revision boundaries.",
+      "formatted": "[Focused High-Yield Exam Cram Mode]: Allow students within 48 hours of an exam to toggle a 'High-Yield Filter' that suppresses exploratory edge cases and focuses solely on the top 20 core autonomic drugs. -> Alleviates panic during the final 48 hours of exam preparation by establishing clear, achievable revision boundaries. [plausible]"
+    },
+    {
+      "id": "ADV-070",
+      "name": "Subtle Error State Color Coding for Anxiety Reduction",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Replace harsh crimson #FF0000 error highlights with a warm, gentle coral #FF6B9D combined with a soft explanatory icon.",
+      "expected_effect": "Reduces the visceral sympathetic fight-or-flight response triggered by harsh grading palettes in test-anxious students.",
+      "formatted": "[Subtle Error State Color Coding for Anxiety Reduction]: Replace harsh crimson #FF0000 error highlights with a warm, gentle coral #FF6B9D combined with a soft explanatory icon. -> Reduces the visceral sympathetic fight-or-flight response triggered by harsh grading palettes in test-anxious students. [plausible]"
+    },
+    {
+      "id": "ADV-071",
+      "name": "Pharmacophore Functional Group Legend Drawer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide a slide-out legend explaining common medicinal chemistry functional group abbreviations (e.g., -OAc, -TFA, -Bn, -Mes) with one-line chemical properties.",
+      "expected_effect": "Prevents chemistry notation barriers from impeding students who understand the biological concept but forgot synthetic abbreviations.",
+      "formatted": "[Pharmacophore Functional Group Legend Drawer]: Provide a slide-out legend explaining common medicinal chemistry functional group abbreviations (e.g., -OAc, -TFA, -Bn, -Mes) with one-line chemical properties. -> Prevents chemistry notation barriers from impeding students who understand the biological concept but forgot synthetic abbreviations. [plausible]"
+    },
+    {
+      "id": "ADV-072",
+      "name": "Reversible Practice Exam Sandbox",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow students to take practice mock quizzes in an 'Exploratory Mode' where they can peek at hints and retry missed questions without recording a failure on their permanent profile.",
+      "expected_effect": "Encourages low-stakes diagnostic practice among risk-averse students who avoid mock exams due to grade anxiety.",
+      "formatted": "[Reversible Practice Exam Sandbox]: Allow students to take practice mock quizzes in an 'Exploratory Mode' where they can peek at hints and retry missed questions without recording a failure on their permanent profile. -> Encourages low-stakes diagnostic practice among risk-averse students who avoid mock exams due to grade anxiety. [evidence-backed]"
+    },
+    {
+      "id": "ADV-073",
+      "name": "Interactive First-Pass Metabolism Hepatic Shunt",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Visual simulation allowing students to toggle between Oral and IV administration, tracing the drug bolus through the portal vein and liver to visually demonstrate bioavailability (F).",
+      "expected_effect": "Grounds the abstract mathematical fraction (F = AUC_oral / AUC_iv) in an intuitive physical anatomical journey.",
+      "formatted": "[Interactive First-Pass Metabolism Hepatic Shunt]: Visual simulation allowing students to toggle between Oral and IV administration, tracing the drug bolus through the portal vein and liver to visually demonstrate bioavailability (F). -> Grounds the abstract mathematical fraction (F = AUC_oral / AUC_iv) in an intuitive physical anatomical journey. [plausible]"
+    },
+    {
+      "id": "ADV-074",
+      "name": "Screen-Reader Optimized Chemical Structure Transcripts",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide rich, human-authored ARIA labels describing chemical structures in verbal sequence (e.g., 'Benzene ring with an ester linkage at position 2 and a tertiary amine at position 4').",
+      "expected_effect": "Enables visually impaired pharmacy students using NVDA or VoiceOver to comprehend medicinal chemistry relationships without visual diagrams.",
+      "formatted": "[Screen-Reader Optimized Chemical Structure Transcripts]: Provide rich, human-authored ARIA labels describing chemical structures in verbal sequence (e.g., 'Benzene ring with an ester linkage at position 2 and a tertiary amine at position 4'). -> Enables visually impaired pharmacy students using NVDA or VoiceOver to comprehend medicinal chemistry relationships without visual diagrams. [evidence-backed]"
+    },
+    {
+      "id": "ADV-075",
+      "name": "Smart Review Batching by Cognitive Affinity",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Group spaced retrieval cards into thematically coherent mini-clusters (e.g., all cholinergic agonists together, then all antagonists) rather than completely randomized interleaving during initial learning phases.",
+      "expected_effect": "Prevents cognitive whiplash and schema confusion for novice 3rd-year students still solidifying basic autonomic categories.",
+      "formatted": "[Smart Review Batching by Cognitive Affinity]: Group spaced retrieval cards into thematically coherent mini-clusters (e.g., all cholinergic agonists together, then all antagonists) rather than completely randomized interleaving during initial learning phases. -> Prevents cognitive whiplash and schema confusion for novice 3rd-year students still solidifying basic autonomic categories. [plausible]"
+    },
+    {
+      "id": "ADV-076",
+      "name": "Offline PDF Export for Commute Reading",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide a clean, print-friendly one-click PDF export of completed lesson summaries, formulas, and structural comparison tables formatted specifically for A4 paper.",
+      "expected_effect": "Supports students who prefer annotating physical paper on the commute or who study in hospitals where mobile devices are restricted.",
+      "formatted": "[Offline PDF Export for Commute Reading]: Provide a clean, print-friendly one-click PDF export of completed lesson summaries, formulas, and structural comparison tables formatted specifically for A4 paper. -> Supports students who prefer annotating physical paper on the commute or who study in hospitals where mobile devices are restricted. [evidence-backed]"
+    },
+    {
+      "id": "ADV-077",
+      "name": "Receptor Second-Messenger Pathway Animation Speed Slider",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Include a 0.5x, 1x, 2x playback speed slider on G-protein signaling cascade diagrams (Gs → AC → cAMP → PKA).",
+      "expected_effect": "Gives neurodivergent students and deliberate learners full control over temporal information processing speeds.",
+      "formatted": "[Receptor Second-Messenger Pathway Animation Speed Slider]: Include a 0.5x, 1x, 2x playback speed slider on G-protein signaling cascade diagrams (Gs → AC → cAMP → PKA). -> Gives neurodivergent students and deliberate learners full control over temporal information processing speeds. [plausible]"
+    },
+    {
+      "id": "ADV-078",
+      "name": "Anti-Distraction Minimalist Canvas Toggle",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Offer a 'Zen Focus' button that hides all peripheral navigation chrome, headers, and progress bars, displaying only the prompt and the interactive widget.",
+      "expected_effect": "Minimizes visual clutter and cognitive extraneous load for ADHD students struggling with sensory distractibility.",
+      "formatted": "[Anti-Distraction Minimalist Canvas Toggle]: Offer a 'Zen Focus' button that hides all peripheral navigation chrome, headers, and progress bars, displaying only the prompt and the interactive widget. -> Minimizes visual clutter and cognitive extraneous load for ADHD students struggling with sensory distractibility. [plausible]"
+    },
+    {
+      "id": "ADV-079",
+      "name": "Instant Drug Class Disambiguation Cards",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "When a student confuses two sound-alike drugs (e.g., Physostigmine vs Neostigmine), show an instant side-by-side card highlighting their central vs peripheral nervous system penetration (tertiary vs quaternary amine).",
+      "expected_effect": "Directly resolves the single most common lethal pharmacology board exam trap in a memorable visual flashcard.",
+      "formatted": "[Instant Drug Class Disambiguation Cards]: When a student confuses two sound-alike drugs (e.g., Physostigmine vs Neostigmine), show an instant side-by-side card highlighting their central vs peripheral nervous system penetration (tertiary vs quaternary amine). -> Directly resolves the single most common lethal pharmacology board exam trap in a memorable visual flashcard. [plausible]"
+    },
+    {
+      "id": "ADV-080",
+      "name": "Learner Feedback & Typo Reporting Pill",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Include a discreet 'Report Confusion / Typo' flag on every step that opens a 2-second feedback prompt without breaking the lesson flow.",
+      "expected_effect": "Empowers students to flag confusing wording, giving them agency while providing real-time data on pedagogical sticking points.",
+      "formatted": "[Learner Feedback & Typo Reporting Pill]: Include a discreet 'Report Confusion / Typo' flag on every step that opens a 2-second feedback prompt without breaking the lesson flow. -> Empowers students to flag confusing wording, giving them agency while providing real-time data on pedagogical sticking points. [evidence-backed]"
+    },
+    {
+      "id": "ADV-081",
+      "name": "Explain Like I'm Exhausted Emergency Toggle",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "A one-tap toggle that dynamically replaces all dense multi-clause academic explanations across the lesson with ultra-concise, high-impact bulleted summaries written at a 6th-grade reading level.",
+      "expected_effect": "Rescues cognitively depleted students who are studying after 12-hour hospital shifts and cannot process dense academic prose.",
+      "formatted": "[Explain Like I'm Exhausted Emergency Toggle]: A one-tap toggle that dynamically replaces all dense multi-clause academic explanations across the lesson with ultra-concise, high-impact bulleted summaries written at a 6th-grade reading level. -> Rescues cognitively depleted students who are studying after 12-hour hospital shifts and cannot process dense academic prose. [plausible]"
+    },
+    {
+      "id": "ADV-082",
+      "name": "Anxiety-Dampening Biofeedback Pacing Rhythm",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Subtle rhythmic pulsing of the step interface border at 6 breaths per minute (0.1 Hz coherence pacing) that unobtrusively guides autonomic parasympathetic calming during high-stress problem solving.",
+      "expected_effect": "Lowers sympathetic arousal and physiological panic, allowing students to access prefrontal executive function during difficult pharmacology assessments.",
+      "formatted": "[Anxiety-Dampening Biofeedback Pacing Rhythm]: Subtle rhythmic pulsing of the step interface border at 6 breaths per minute (0.1 Hz coherence pacing) that unobtrusively guides autonomic parasympathetic calming during high-stress problem solving. -> Lowers sympathetic arousal and physiological panic, allowing students to access prefrontal executive function during difficult pharmacology assessments. [speculative]"
+    },
+    {
+      "id": "ADV-083",
+      "name": "Peer Solidarity Anonymous Real-Time Error Heatmaps",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Render a subtle, ambient glow over the distractors proportional to where the last 100 students made their initial mistakes, labeled 'Where our community wrestled most.'",
+      "expected_effect": "Transforms isolation and shame into collective intellectual solidarity, framing difficult concepts as shared clinical challenges.",
+      "formatted": "[Peer Solidarity Anonymous Real-Time Error Heatmaps]: Render a subtle, ambient glow over the distractors proportional to where the last 100 students made their initial mistakes, labeled 'Where our community wrestled most.' -> Transforms isolation and shame into collective intellectual solidarity, framing difficult concepts as shared clinical challenges. [plausible]"
+    },
+    {
+      "id": "ADV-084",
+      "name": "Rage-Click Empathy Detector & Intervention",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Detect rapid, repeated clicks (>3 clicks within 1.5 seconds) on an unresponsive or failed interactive widget, automatically popping up a friendly mascot offering: 'Stuck? Let\\'s break this down together step-by-step.'",
+      "expected_effect": "Intercepts acute learner frustration before it escalates into app abandonment, transforming a point of failure into a supportive pedagogical intervention.",
+      "formatted": "[Rage-Click Empathy Detector & Intervention]: Detect rapid, repeated clicks (>3 clicks within 1.5 seconds) on an unresponsive or failed interactive widget, automatically popping up a friendly mascot offering: 'Stuck? Let\\'s break this down together step-by-step.' -> Intercepts acute learner frustration before it escalates into app abandonment, transforming a point of failure into a supportive pedagogical intervention. [plausible]"
+    },
+    {
+      "id": "ADV-085",
+      "name": "Circadian-Aware Late-Night Brain Fatigue Governor",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "If active study occurs between 1:00 AM and 5:00 AM, the platform automatically soft-caps new conceptual lessons, shifts priority to gentle spaced review, and displays an encouraging reminder that sleep consolidates long-term memory.",
+      "expected_effect": "Protects pharmacy students from self-destructive all-nighters, reinforcing healthy sleep hygiene grounded in cognitive neuroscience.",
+      "formatted": "[Circadian-Aware Late-Night Brain Fatigue Governor]: If active study occurs between 1:00 AM and 5:00 AM, the platform automatically soft-caps new conceptual lessons, shifts priority to gentle spaced review, and displays an encouraging reminder that sleep consolidates long-term memory. -> Protects pharmacy students from self-destructive all-nighters, reinforcing healthy sleep hygiene grounded in cognitive neuroscience. [speculative]"
+    },
+    {
+      "id": "ADV-086",
+      "name": "Impostor Syndrome Antidote Milestone Cards",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Periodically present retrospective milestone summaries demonstrating tangible past mastery: 'Remember when Muscarinic Receptors confused you? You have now answered 14 consecutive M1-M3 questions correctly.'",
+      "expected_effect": "Directly counteracts the impostor syndrome belief that 'I haven\\'t learned anything,' providing concrete historical proof of academic growth.",
+      "formatted": "[Impostor Syndrome Antidote Milestone Cards]: Periodically present retrospective milestone summaries demonstrating tangible past mastery: 'Remember when Muscarinic Receptors confused you? You have now answered 14 consecutive M1-M3 questions correctly.' -> Directly counteracts the impostor syndrome belief that 'I haven\\'t learned anything,' providing concrete historical proof of academic growth. [plausible]"
+    },
+    {
+      "id": "ADV-087",
+      "name": "Simulated Clinical Emergency Adrenaline Sandbox",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "An optional high-immersion mode where a virtual patient's vitals (heart rate, blood pressure) deteriorate in real time, requiring the student to choose between Atropine and Epinephrine under realistic acoustic monitoring.",
+      "expected_effect": "Inoculates students against clinical panic, transforming dry textbook receptor theory into visceral, life-saving decision-making reflexes.",
+      "formatted": "[Simulated Clinical Emergency Adrenaline Sandbox]: An optional high-immersion mode where a virtual patient's vitals (heart rate, blood pressure) deteriorate in real time, requiring the student to choose between Atropine and Epinephrine under realistic acoustic monitoring. -> Inoculates students against clinical panic, transforming dry textbook receptor theory into visceral, life-saving decision-making reflexes. [speculative]"
+    },
+    {
+      "id": "ADV-088",
+      "name": "Student Vulnerability-Free Anonymous Confession Booth",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "A community tab where students anonymously post the fundamental concepts they are 'too embarrassed to ask their professor' (e.g., 'I still confuse agonist with affinity'), which the platform automatically matches to curated 2-minute remediation steps.",
+      "expected_effect": "Dismantles academic shame barriers in competitive medical faculties, normalizing foundational knowledge gaps.",
+      "formatted": "[Student Vulnerability-Free Anonymous Confession Booth]: A community tab where students anonymously post the fundamental concepts they are 'too embarrassed to ask their professor' (e.g., 'I still confuse agonist with affinity'), which the platform automatically matches to curated 2-minute remediation steps. -> Dismantles academic shame barriers in competitive medical faculties, normalizing foundational knowledge gaps. [speculative]"
+    },
+    {
+      "id": "ADV-089",
+      "name": "Audio-Only Eyes-Free Subway Podcast Mode",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "An automated toggle converting the lesson into a dynamic conversational dialogue between two synthetic clinical preceptors debating the step's pharmacology prediction, controllable entirely via headphone media buttons.",
+      "expected_effect": "Unlocks hands-free study during packed, standing-room-only commute rides where looking at a phone screen causes motion sickness.",
+      "formatted": "[Audio-Only Eyes-Free Subway Podcast Mode]: An automated toggle converting the lesson into a dynamic conversational dialogue between two synthetic clinical preceptors debating the step's pharmacology prediction, controllable entirely via headphone media buttons. -> Unlocks hands-free study during packed, standing-room-only commute rides where looking at a phone screen causes motion sickness. [plausible]"
+    },
+    {
+      "id": "ADV-090",
+      "name": "Socratic Devil's Advocate Self-Doubt Challenging",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "After a student confidently selects the correct answer, an optional prompt pops up: 'A resident claims the opposite because of reflex bradycardia. How would you defend your choice?'",
+      "expected_effect": "Builds deep clinical conviction and resilience against intimidating senior physicians on hospital clinical rounds.",
+      "formatted": "[Socratic Devil's Advocate Self-Doubt Challenging]: After a student confidently selects the correct answer, an optional prompt pops up: 'A resident claims the opposite because of reflex bradycardia. How would you defend your choice?' -> Builds deep clinical conviction and resilience against intimidating senior physicians on hospital clinical rounds. [plausible]"
+    },
+    {
+      "id": "ADV-091",
+      "name": "Adaptive Kinetic Friction Based on Hesitation Speed",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Detect mouse hover hesitations or long touch dwells (>10s) over two competing answer choices, dynamically surfacing an expandable hint that highlights the single clinical pivot point distinguishing those two options.",
+      "expected_effect": "Provides proactive scaffolding at the precise moment of cognitive indecision before the student succumbs to blind guessing.",
+      "formatted": "[Adaptive Kinetic Friction Based on Hesitation Speed]: Detect mouse hover hesitations or long touch dwells (>10s) over two competing answer choices, dynamically surfacing an expandable hint that highlights the single clinical pivot point distinguishing those two options. -> Provides proactive scaffolding at the precise moment of cognitive indecision before the student succumbs to blind guessing. [speculative]"
+    },
+    {
+      "id": "ADV-092",
+      "name": "Micro-Nap Power Reset Sleep Timer",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "An integrated 20-minute scientifically timed 'NASA Power Nap' timer featuring binaural relaxation audio, followed by a gentle wake-up routine that immediately re-tests the last concept viewed before the nap.",
+      "expected_effect": "Leverages post-nap memory consolidation to lock in difficult medicinal chemistry pharmacophores.",
+      "formatted": "[Micro-Nap Power Reset Sleep Timer]: An integrated 20-minute scientifically timed 'NASA Power Nap' timer featuring binaural relaxation audio, followed by a gentle wake-up routine that immediately re-tests the last concept viewed before the nap. -> Leverages post-nap memory consolidation to lock in difficult medicinal chemistry pharmacophores. [plausible]"
+    },
+    {
+      "id": "ADV-093",
+      "name": "Multi-Sensory Pharmacophore Tactile Soundscapes",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Assign distinct musical harmonies to chemical bonds (major triads for stable aromatic rings, sharp dissonances for labile esters) that sound when dragging functional groups across a binding pocket.",
+      "expected_effect": "Engages auditory working memory pathways to aid students with weak visual-spatial processing in internalizing chemical stability.",
+      "formatted": "[Multi-Sensory Pharmacophore Tactile Soundscapes]: Assign distinct musical harmonies to chemical bonds (major triads for stable aromatic rings, sharp dissonances for labile esters) that sound when dragging functional groups across a binding pocket. -> Engages auditory working memory pathways to aid students with weak visual-spatial processing in internalizing chemical stability. [speculative]"
+    },
+    {
+      "id": "ADV-094",
+      "name": "Personalized Exam Day Simulation Anxiety Thermometer",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "A diagnostic slider where students input their current exam anxiety level (1-10); the platform dynamically tunes the UI contrast, reduces timers, and emphasizes confidence-building review questions accordingly.",
+      "expected_effect": "Calibrates pedagogical intensity to current emotional bandwidth, preventing emotional overwhelm during finals week.",
+      "formatted": "[Personalized Exam Day Simulation Anxiety Thermometer]: A diagnostic slider where students input their current exam anxiety level (1-10); the platform dynamically tunes the UI contrast, reduces timers, and emphasizes confidence-building review questions accordingly. -> Calibrates pedagogical intensity to current emotional bandwidth, preventing emotional overwhelm during finals week. [plausible]"
+    },
+    {
+      "id": "ADV-095",
+      "name": "Reverse-Tutor Teach the Virtual Intern Mode",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present a simulated junior pharmacy intern who repeatedly proposes common patient misconceptions; the learner must select the correct pedagogical analogy to correct the intern's thinking.",
+      "expected_effect": "Exploits the protégé effect, solidifying mastery and fostering empathy for future patients by stepping into the teacher role.",
+      "formatted": "[Reverse-Tutor Teach the Virtual Intern Mode]: Present a simulated junior pharmacy intern who repeatedly proposes common patient misconceptions; the learner must select the correct pedagogical analogy to correct the intern's thinking. -> Exploits the protégé effect, solidifying mastery and fostering empathy for future patients by stepping into the teacher role. [plausible]"
+    },
+    {
+      "id": "ADV-096",
+      "name": "Post-Exam Decompression & Cognitive Closure Flow",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "An automated post-exam sequence where students can log which topics appeared on their actual university exam, receiving personalized validation and immediate removal of obsolete stress flags.",
+      "expected_effect": "Provides psychological closure after exhausting exam blocks and reinforces trust in the platform's diagnostic predictive validity.",
+      "formatted": "[Post-Exam Decompression & Cognitive Closure Flow]: An automated post-exam sequence where students can log which topics appeared on their actual university exam, receiving personalized validation and immediate removal of obsolete stress flags. -> Provides psychological closure after exhausting exam blocks and reinforces trust in the platform's diagnostic predictive validity. [plausible]"
+    },
+    {
+      "id": "ADV-097",
+      "name": "Gamified Medical Mythbusters De-Conditioning Arena",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present viral internet health myths and social media supplement claims (e.g., 'adrenal fatigue cures') and challenge students to debunk them using rigorous autonomic pharmacology principles.",
+      "expected_effect": "Transforms dry textbook pharmacology into rewarding, real-world critical thinking that students can immediately use to protect family and friends.",
+      "formatted": "[Gamified Medical Mythbusters De-Conditioning Arena]: Present viral internet health myths and social media supplement claims (e.g., 'adrenal fatigue cures') and challenge students to debunk them using rigorous autonomic pharmacology principles. -> Transforms dry textbook pharmacology into rewarding, real-world critical thinking that students can immediately use to protect family and friends. [plausible]"
+    },
+    {
+      "id": "ADV-098",
+      "name": "Emotional Resilience Bad Day Study Stream",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "A one-click mode that filters out all new or difficult concepts, serving only highly consolidated, familiar review questions accompanied by gentle encouragement and low cognitive load.",
+      "expected_effect": "Preserves the student's daily study habit and self-efficacy on emotionally difficult days without triggering cognitive defeat.",
+      "formatted": "[Emotional Resilience Bad Day Study Stream]: A one-click mode that filters out all new or difficult concepts, serving only highly consolidated, familiar review questions accompanied by gentle encouragement and low cognitive load. -> Preserves the student's daily study habit and self-efficacy on emotionally difficult days without triggering cognitive defeat. [speculative]"
+    },
+    {
+      "id": "ADV-099",
+      "name": "Crowd-Sourced Mnemonics Upvoting & Cultural Localization",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "A vetted community drawer where Turkish pharmacy students share local cultural mnemonics (e.g., humorous Turkish acronyms for cholinergic toxidromes like SLUDGE/DUMBELS) with peer rating and faculty accuracy verification.",
+      "expected_effect": "Bridges international textbook medicine with localized cultural memory hooks, dramatically increasing retention speed.",
+      "formatted": "[Crowd-Sourced Mnemonics Upvoting & Cultural Localization]: A vetted community drawer where Turkish pharmacy students share local cultural mnemonics (e.g., humorous Turkish acronyms for cholinergic toxidromes like SLUDGE/DUMBELS) with peer rating and faculty accuracy verification. -> Bridges international textbook medicine with localized cultural memory hooks, dramatically increasing retention speed. [plausible]"
+    },
+    {
+      "id": "ADV-100",
+      "name": "Neuro-Ergonomic Visual Rest Breathing Transitions",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Insert a mandatory 10-second dark, soothing visual field with an expanding/contracting geometric mandala after every 15 minutes of continuous interactive problem solving before the next module can be opened.",
+      "expected_effect": "Enforces retinal de-accommodation and mental attention restoration, preventing eye strain and cognitive saturation.",
+      "formatted": "[Neuro-Ergonomic Visual Rest Breathing Transitions]: Insert a mandatory 10-second dark, soothing visual field with an expanding/contracting geometric mandala after every 15 minutes of continuous interactive problem solving before the next module can be opened. -> Enforces retinal de-accommodation and mental attention restoration, preventing eye strain and cognitive saturation. [plausible]"
+    }
+  ]
+}

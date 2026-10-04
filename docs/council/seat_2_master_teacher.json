@@ -1,0 +1,911 @@
+{
+  "seat": "Seat 2: Master Teacher / Instructional Designer",
+  "total_count": 100,
+  "breakdown": {
+    "proven": 30,
+    "adjacent": 50,
+    "wild": 20
+  },
+  "ideas": [
+    {
+      "id": "TEA-001",
+      "name": "Backward Faded SAR Derivation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present a 3-step sequence transitioning from a fully annotated morphine scaffold to a partially faded oxycodone structure and finally an unannotated naloxone molecule requiring active substituent identification",
+      "expected_effect": "Gradually transfers cognitive load from working memory to schema construction while building independent SAR derivation skills",
+      "formatted": "Backward Faded SAR Derivation: Present a 3-step sequence transitioning from a fully annotated morphine scaffold to a partially faded oxycodone structure and finally an unannotated naloxone molecule requiring active substituent identification -> Gradually transfers cognitive load from working memory to schema construction while building independent SAR derivation skills [evidence-backed]"
+    },
+    {
+      "id": "TEA-002",
+      "name": "Predict-First Dose-Response Shift",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Force students to drag a predicted dose-response curve on a blank semi-log grid for acetylcholine plus atropine before revealing the true parallel shift",
+      "expected_effect": "Induces productive failure by exposing the misconception that competitive antagonists reduce Emax, priming deep attention for the formal mechanism",
+      "formatted": "Predict-First Dose-Response Shift: Force students to drag a predicted dose-response curve on a blank semi-log grid for acetylcholine plus atropine before revealing the true parallel shift -> Induces productive failure by exposing the misconception that competitive antagonists reduce Emax, priming deep attention for the formal mechanism [evidence-backed]"
+    },
+    {
+      "id": "TEA-003",
+      "name": "Contrasting Bioisostere Pair Elimination",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present procaine (ester) and procainamide (amide) side-by-side with obscured metabolic lifespans, prompting learners to identify the enzymatic cleavage resistance determinant",
+      "expected_effect": "Isolates the critical structural difference governing hydrolytic stability through analogical comparison",
+      "formatted": "Contrasting Bioisostere Pair Elimination: Present procaine (ester) and procainamide (amide) side-by-side with obscured metabolic lifespans, prompting learners to identify the enzymatic cleavage resistance determinant -> Isolates the critical structural difference governing hydrolytic stability through analogical comparison [evidence-backed]"
+    },
+    {
+      "id": "TEA-004",
+      "name": "Three-Tier Hint Scaffold for pKa Henderson-Hasselbalch",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Implement an escalating 3-tier hint ladder (nudge towards gastric pH 1.5, formula clue for non-ionized fraction, full worked solution) for aspirin absorption",
+      "expected_effect": "Preserves desirable difficulty and self-efficacy without inducing learned helplessness or unearned answers",
+      "formatted": "Three-Tier Hint Scaffold for pKa Henderson-Hasselbalch: Implement an escalating 3-tier hint ladder (nudge towards gastric pH 1.5, formula clue for non-ionized fraction, full worked solution) for aspirin absorption -> Preserves desirable difficulty and self-efficacy without inducing learned helplessness or unearned answers [evidence-backed]"
+    },
+    {
+      "id": "TEA-005",
+      "name": "Dual-Coded Ionization State Highlighting",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Synchronize an interactive pH slider with simultaneous recoloring of a basic amine scaffold (charged blue vs neutral grey) and a membrane-crossing icon",
+      "expected_effect": "Maximizes working memory bandwidth via dual-channel visual-spatial processing without cognitive split-attention",
+      "formatted": "Dual-Coded Ionization State Highlighting: Synchronize an interactive pH slider with simultaneous recoloring of a basic amine scaffold (charged blue vs neutral grey) and a membrane-crossing icon -> Maximizes working memory bandwidth via dual-channel visual-spatial processing without cognitive split-attention [evidence-backed]"
+    },
+    {
+      "id": "TEA-006",
+      "name": "Concept Checkpoint Gate for Adrenergic Selectivity",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Enforce a mandatory 2-question checkpoint discriminating alpha-1 vasoconstriction from beta-2 vasodilation before unlocking mixed norepinephrine kinetics",
+      "expected_effect": "Guarantees foundational receptor mastery before introducing composite physiological reflex mechanisms",
+      "formatted": "Concept Checkpoint Gate for Adrenergic Selectivity: Enforce a mandatory 2-question checkpoint discriminating alpha-1 vasoconstriction from beta-2 vasodilation before unlocking mixed norepinephrine kinetics -> Guarantees foundational receptor mastery before introducing composite physiological reflex mechanisms [evidence-backed]"
+    },
+    {
+      "id": "TEA-007",
+      "name": "Interleaved Autonomic Receptor Retrieval",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Intersperse rapid-retrieval prompts on cardiac muscarinic M2 bradycardia directly inside beta-1 adrenergic inotropy steps",
+      "expected_effect": "Forces discriminative contrast between opposing autonomic branches, significantly increasing long-term exam retention",
+      "formatted": "Interleaved Autonomic Receptor Retrieval: Intersperse rapid-retrieval prompts on cardiac muscarinic M2 bradycardia directly inside beta-1 adrenergic inotropy steps -> Forces discriminative contrast between opposing autonomic branches, significantly increasing long-term exam retention [evidence-backed]"
+    },
+    {
+      "id": "TEA-008",
+      "name": "Misconception-Targeted Distractor Feedback for Agonist Efficacy",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Route incorrect MCQ selections claiming high affinity guarantees high efficacy to targeted feedback distinguishing binding affinity (Kd) from intrinsic activity (alpha)",
+      "expected_effect": "Dismantles the prevalent student fallacy that tight binding implies maximal signaling",
+      "formatted": "Misconception-Targeted Distractor Feedback for Agonist Efficacy: Route incorrect MCQ selections claiming high affinity guarantees high efficacy to targeted feedback distinguishing binding affinity (Kd) from intrinsic activity (alpha) -> Dismantles the prevalent student fallacy that tight binding implies maximal signaling [evidence-backed]"
+    },
+    {
+      "id": "TEA-009",
+      "name": "Analogical Enactive-to-Symbolic Bridge for Receptor Locking",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Transition from dragging a mechanical key into a tumbler lock to an iconic steric-clash 2D schematic and finally to a symbolic ionic bonding equation",
+      "expected_effect": "Anchors abstract molecular interaction thermodynamics in intuitive spatial-mechanical mental models",
+      "formatted": "Analogical Enactive-to-Symbolic Bridge for Receptor Locking: Transition from dragging a mechanical key into a tumbler lock to an iconic steric-clash 2D schematic and finally to a symbolic ionic bonding equation -> Anchors abstract molecular interaction thermodynamics in intuitive spatial-mechanical mental models [evidence-backed]"
+    },
+    {
+      "id": "TEA-010",
+      "name": "Generating Self-Explanation Prompts for CYP Induction",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Require learners to complete a structured causal sentence explaining why rifampin reduces warfarin efficacy before showing clinical lab outcomes",
+      "expected_effect": "Activates constructive cognitive processing and deep causal schema integration of enzyme upregulation",
+      "formatted": "Generating Self-Explanation Prompts for CYP Induction: Require learners to complete a structured causal sentence explaining why rifampin reduces warfarin efficacy before showing clinical lab outcomes -> Activates constructive cognitive processing and deep causal schema integration of enzyme upregulation [evidence-backed]"
+    },
+    {
+      "id": "TEA-011",
+      "name": "Spaced Micro-Retrieval Leitner Token Injection",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Automatically convert completed lesson discriminators (e.g. quaternary amine BBB exclusion) into scheduled 1-day, 3-day, and 7-day retrieval items",
+      "expected_effect": "Interrupts the Ebbinghaus forgetting curve and consolidates short-term lesson insights into durable semantic memory",
+      "formatted": "Spaced Micro-Retrieval Leitner Token Injection: Automatically convert completed lesson discriminators (e.g. quaternary amine BBB exclusion) into scheduled 1-day, 3-day, and 7-day retrieval items -> Interrupts the Ebbinghaus forgetting curve and consolidates short-term lesson insights into durable semantic memory [evidence-backed]"
+    },
+    {
+      "id": "TEA-012",
+      "name": "Progressive Part-Whole Integration of Epinephrine Biosynthesis",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Teach tyrosine hydroxylase and DOPA decarboxylation as isolated micro-steps before assembling the full four-enzyme catecholamine synthesis pathway",
+      "expected_effect": "Prevents cognitive overload by managing element interactivity before complex biological pathway integration",
+      "formatted": "Progressive Part-Whole Integration of Epinephrine Biosynthesis: Teach tyrosine hydroxylase and DOPA decarboxylation as isolated micro-steps before assembling the full four-enzyme catecholamine synthesis pathway -> Prevents cognitive overload by managing element interactivity before complex biological pathway integration [evidence-backed]"
+    },
+    {
+      "id": "TEA-013",
+      "name": "Worked Example Comparison of Competitive vs Noncompetitive Antagonism",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present side-by-side worked derivations contrasting EC50 rightward shift against Emax downward depression",
+      "expected_effect": "Enables relational structure mapping and rapid alignment of mathematical invariants across pharmacological antagonist classes",
+      "formatted": "Worked Example Comparison of Competitive vs Noncompetitive Antagonism: Present side-by-side worked derivations contrasting EC50 rightward shift against Emax downward depression -> Enables relational structure mapping and rapid alignment of mathematical invariants across pharmacological antagonist classes [evidence-backed]"
+    },
+    {
+      "id": "TEA-014",
+      "name": "Segmented Step-by-Step Mechanism of Acetylcholinesterase Hydrolysis",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Segment AChE catalytic triad hydrolysis into four user-paced micro-clicks (nucleophilic attack, tetrahedral intermediate, choline release, deacetylation)",
+      "expected_effect": "Eliminates the transient information effect and gives learners temporal processing control over electron movements",
+      "formatted": "Segmented Step-by-Step Mechanism of Acetylcholinesterase Hydrolysis: Segment AChE catalytic triad hydrolysis into four user-paced micro-clicks (nucleophilic attack, tetrahedral intermediate, choline release, deacetylation) -> Eliminates the transient information effect and gives learners temporal processing control over electron movements [evidence-backed]"
+    },
+    {
+      "id": "TEA-015",
+      "name": "Boundary Condition Testing for LogP Membrane Permeation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Prompt students to evaluate extreme logP values (-4 vs +9) against a simulated lipid bilayer membrane",
+      "expected_effect": "Establishes robust conceptual boundaries for Lipinski's rules by demonstrating membrane entrapment versus entry failure",
+      "formatted": "Boundary Condition Testing for LogP Membrane Permeation: Prompt students to evaluate extreme logP values (-4 vs +9) against a simulated lipid bilayer membrane -> Establishes robust conceptual boundaries for Lipinski's rules by demonstrating membrane entrapment versus entry failure [evidence-backed]"
+    },
+    {
+      "id": "TEA-016",
+      "name": "Error-Detection in Erroneous Catecholamine Inactivation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present an intentionally flawed pathway diagram where COMT deaminates and MAO methylates, requiring learners to pinpoint the swapped enzymes",
+      "expected_effect": "Stimulates metacognitive monitoring and deep diagnostic verification superior to passive pathway review",
+      "formatted": "Error-Detection in Erroneous Catecholamine Inactivation: Present an intentionally flawed pathway diagram where COMT deaminates and MAO methylates, requiring learners to pinpoint the swapped enzymes -> Stimulates metacognitive monitoring and deep diagnostic verification superior to passive pathway review [evidence-backed]"
+    },
+    {
+      "id": "TEA-017",
+      "name": "Modality Principle Visual Atom-Tapping",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Replace descriptive text questions with direct interactive tapping on the protonatable nitrogen of lidocaine on a rendered 2D structure",
+      "expected_effect": "Offloads verbal cognitive load into direct spatial-structural identification, following Mayer's modality principle",
+      "formatted": "Modality Principle Visual Atom-Tapping: Replace descriptive text questions with direct interactive tapping on the protonatable nitrogen of lidocaine on a rendered 2D structure -> Offloads verbal cognitive load into direct spatial-structural identification, following Mayer's modality principle [evidence-backed]"
+    },
+    {
+      "id": "TEA-018",
+      "name": "Goal-Free Exploration of Autonomic Synaptic Knobs",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Provide an interactive synapse where clicking any transporter, autoreceptor, or pump reveals downstream transmitter shifts without an evaluative task",
+      "expected_effect": "Eliminates means-ends anxiety and encourages broad schema exploration of autonomic feedback loops",
+      "formatted": "Goal-Free Exploration of Autonomic Synaptic Knobs: Provide an interactive synapse where clicking any transporter, autoreceptor, or pump reveals downstream transmitter shifts without an evaluative task -> Eliminates means-ends anxiety and encourages broad schema exploration of autonomic feedback loops [evidence-backed]"
+    },
+    {
+      "id": "TEA-019",
+      "name": "Pre-training Jargon Defusal for Cholinomimetics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Deploy a 30-second pre-training card defining muscarinic vs nicotinic sites prior to presenting cholinergic drug mechanisms",
+      "expected_effect": "Pre-establishes component vocabulary in memory, preventing linguistic cognitive overload during complex mechanism analysis",
+      "formatted": "Pre-training Jargon Defusal for Cholinomimetics: Deploy a 30-second pre-training card defining muscarinic vs nicotinic sites prior to presenting cholinergic drug mechanisms -> Pre-establishes component vocabulary in memory, preventing linguistic cognitive overload during complex mechanism analysis [evidence-backed]"
+    },
+    {
+      "id": "TEA-020",
+      "name": "Signaled Hierarchy for Beta-Blocker Subclasses",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Tag beta-blocker drug names with consistent generation badges (1st-gen nonselective, 2nd-gen beta-1, 3rd-gen vasodilatory) using distinct neo-brutalist accent colors",
+      "expected_effect": "Cues structural hierarchy instantly via signaling principles, accelerating drug classification schema acquisition",
+      "formatted": "Signaled Hierarchy for Beta-Blocker Subclasses: Tag beta-blocker drug names with consistent generation badges (1st-gen nonselective, 2nd-gen beta-1, 3rd-gen vasodilatory) using distinct neo-brutalist accent colors -> Cues structural hierarchy instantly via signaling principles, accelerating drug classification schema acquisition [evidence-backed]"
+    },
+    {
+      "id": "TEA-021",
+      "name": "Spacing Gap Escalation for Half-Life Elimination Rules",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Test the 4-to-5 half-lives elimination heuristic at expanding intervals (post-step, 24h, 5 days) inside diverse clinical scenarios",
+      "expected_effect": "Builds automatic, reflexive pharmacokinetic estimation habits through empirically validated expanding retrieval schedules",
+      "formatted": "Spacing Gap Escalation for Half-Life Elimination Rules: Test the 4-to-5 half-lives elimination heuristic at expanding intervals (post-step, 24h, 5 days) inside diverse clinical scenarios -> Builds automatic, reflexive pharmacokinetic estimation habits through empirically validated expanding retrieval schedules [evidence-backed]"
+    },
+    {
+      "id": "TEA-022",
+      "name": "Interactive Enactive Slider for Spare Receptor Reserve",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow learners to drag an irreversible antagonist slider alkylating 10% to 90% of receptors while observing maintained maximal tissue response",
+      "expected_effect": "Translates abstract receptor reserve theory into tangible experiential observation via interactive physiological manipulation",
+      "formatted": "Interactive Enactive Slider for Spare Receptor Reserve: Allow learners to drag an irreversible antagonist slider alkylating 10% to 90% of receptors while observing maintained maximal tissue response -> Translates abstract receptor reserve theory into tangible experiential observation via interactive physiological manipulation [evidence-backed]"
+    },
+    {
+      "id": "TEA-023",
+      "name": "Delayed Feedback on Complex Organ Clearance Decisions",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Delay answer validation on organ clearance problems until the student submits judgments for both blood flow and intrinsic clearance",
+      "expected_effect": "Encourages internal hypothesis evaluation and suppresses superficial trial-and-error guessing through strategic feedback delay",
+      "formatted": "Delayed Feedback on Complex Organ Clearance Decisions: Delay answer validation on organ clearance problems until the student submits judgments for both blood flow and intrinsic clearance -> Encourages internal hypothesis evaluation and suppresses superficial trial-and-error guessing through strategic feedback delay [evidence-backed]"
+    },
+    {
+      "id": "TEA-024",
+      "name": "Spatial Contiguity Molecule-Receptor Pocket Alignment",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Place receptor contact residues (Asp103, Phe204) directly on the interacting drug functional groups rather than in a detached reference legend",
+      "expected_effect": "Eliminates split-attention eye movements, focusing cognitive bandwidth directly on binding thermodynamics",
+      "formatted": "Spatial Contiguity Molecule-Receptor Pocket Alignment: Place receptor contact residues (Asp103, Phe204) directly on the interacting drug functional groups rather than in a detached reference legend -> Eliminates split-attention eye movements, focusing cognitive bandwidth directly on binding thermodynamics [evidence-backed]"
+    },
+    {
+      "id": "TEA-025",
+      "name": "Concrete-to-Abstract Fading of Prodrug Cleavage Kinetics",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Sequence instruction from a mechanical scissor graphic to an esterase chemical mechanism and finally to the symbolic rate equation d[Drug]/dt",
+      "expected_effect": "Bridges physical intuition into formal pharmacokinetic kinetics via validated concreteness fading progressions",
+      "formatted": "Concrete-to-Abstract Fading of Prodrug Cleavage Kinetics: Sequence instruction from a mechanical scissor graphic to an esterase chemical mechanism and finally to the symbolic rate equation d[Drug]/dt -> Bridges physical intuition into formal pharmacokinetic kinetics via validated concreteness fading progressions [evidence-backed]"
+    },
+    {
+      "id": "TEA-026",
+      "name": "Testing Without Penalty Diagnostic Warmup",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Open modules with a zero-stakes 3-item diagnostic check explicitly labeled non-evaluative",
+      "expected_effect": "Eliminates evaluative anxiety while exploiting retrieval-induced potentiation to prime upcoming lesson encoding",
+      "formatted": "Testing Without Penalty Diagnostic Warmup: Open modules with a zero-stakes 3-item diagnostic check explicitly labeled non-evaluative -> Eliminates evaluative anxiety while exploiting retrieval-induced potentiation to prime upcoming lesson encoding [evidence-backed]"
+    },
+    {
+      "id": "TEA-027",
+      "name": "Anchor-Based Calibration for Therapeutic Window",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present penicillin's wide therapeutic window as a baseline anchor before asking students to set digoxin's narrow toxic margin",
+      "expected_effect": "Calibrates clinical risk sensitivity through cognitive anchoring, emphasizing narrow therapeutic index vigilance",
+      "formatted": "Anchor-Based Calibration for Therapeutic Window: Present penicillin's wide therapeutic window as a baseline anchor before asking students to set digoxin's narrow toxic margin -> Calibrates clinical risk sensitivity through cognitive anchoring, emphasizing narrow therapeutic index vigilance [evidence-backed]"
+    },
+    {
+      "id": "TEA-028",
+      "name": "Progressive Difficulty Ladder for Chirality and Eutomer Potency",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Ladder stereochemistry instruction across three stages: stereocenter identification, 3D pocket clash visualization, and eudismic ratio computation",
+      "expected_effect": "Scaffolds learners through Vygotsky's zone of proximal development from 2D recognition to 3D receptor thermodynamics",
+      "formatted": "Progressive Difficulty Ladder for Chirality and Eutomer Potency: Ladder stereochemistry instruction across three stages: stereocenter identification, 3D pocket clash visualization, and eudismic ratio computation -> Scaffolds learners through Vygotsky's zone of proximal development from 2D recognition to 3D receptor thermodynamics [evidence-backed]"
+    },
+    {
+      "id": "TEA-029",
+      "name": "Socratic Misconception Unpacking for Acidic vs Basic Ion Trapping",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Lead students through a two-step guided question sequence on ionization state and tubular reabsorption when they mispredict urine pH modulation",
+      "expected_effect": "Resolves renal ion-trapping misconceptions through self-discovered logical contradictions",
+      "formatted": "Socratic Misconception Unpacking for Acidic vs Basic Ion Trapping: Lead students through a two-step guided question sequence on ionization state and tubular reabsorption when they mispredict urine pH modulation -> Resolves renal ion-trapping misconceptions through self-discovered logical contradictions [evidence-backed]"
+    },
+    {
+      "id": "TEA-030",
+      "name": "Schema Acquisition Verification via Dual-Representation Matching",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Require rapid pairing between functional pharmacology statements and corresponding molecular 2D chemical scaffolds",
+      "expected_effect": "Verifies full schema integration across pharmacology concepts and medicinal chemistry visual representations",
+      "formatted": "Schema Acquisition Verification via Dual-Representation Matching: Require rapid pairing between functional pharmacology statements and corresponding molecular 2D chemical scaffolds -> Verifies full schema integration across pharmacology concepts and medicinal chemistry visual representations [evidence-backed]"
+    },
+    {
+      "id": "TEA-031",
+      "name": "Micro-Vignette Anaphylaxis Epinephrine Dose Triage",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Deliver a 38-word emergency vignette with bronchospasm and hypotension, prompting instant selection between intramuscular epinephrine and oral albuterol",
+      "expected_effect": "Translates autonomic receptor knowledge into urgent clinical decision schemas under realistic cognitive constraints",
+      "formatted": "Micro-Vignette Anaphylaxis Epinephrine Dose Triage: Deliver a 38-word emergency vignette with bronchospasm and hypotension, prompting instant selection between intramuscular epinephrine and oral albuterol -> Translates autonomic receptor knowledge into urgent clinical decision schemas under realistic cognitive constraints [evidence-backed]"
+    },
+    {
+      "id": "TEA-032",
+      "name": "Contrasting Drug Pair: Propranolol vs Atenolol BBB Triage",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present propranolol (lipophilic) and atenolol (hydrophilic) alongside a blood-brain barrier toggle to explain sleep disturbances vs peripheral cardiac specificity",
+      "expected_effect": "Grounds adverse drug reaction profiling directly in physicochemical membrane permeability",
+      "formatted": "Contrasting Drug Pair: Propranolol vs Atenolol BBB Triage: Present propranolol (lipophilic) and atenolol (hydrophilic) alongside a blood-brain barrier toggle to explain sleep disturbances vs peripheral cardiac specificity -> Grounds adverse drug reaction profiling directly in physicochemical membrane permeability [evidence-backed]"
+    },
+    {
+      "id": "TEA-033",
+      "name": "Pharmacophore Hotspot Pinpointing on Muscarinic Agonists",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Require learners to tap the essential three-carbon ethylene bridge and quaternary ammonium head on acetylcholine before unlocking bethanechol",
+      "expected_effect": "Ingrains Ing's Rule of Five through active structural pattern recognition rather than rote chemical memorization",
+      "formatted": "Pharmacophore Hotspot Pinpointing on Muscarinic Agonists: Require learners to tap the essential three-carbon ethylene bridge and quaternary ammonium head on acetylcholine before unlocking bethanechol -> Ingrains Ing's Rule of Five through active structural pattern recognition rather than rote chemical memorization [plausible]"
+    },
+    {
+      "id": "TEA-034",
+      "name": "Reverse Toxicological Autopsy for Organophosphate Poisoning",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present a patient with SLUDGE symptoms and require backward-tracing from muscarinic hyperactivation to phosphorylated acetylcholinesterase and pralidoxime aging",
+      "expected_effect": "Builds robust backward-chaining clinical diagnostic reasoning from symptom cluster to molecular mechanism",
+      "formatted": "Reverse Toxicological Autopsy for Organophosphate Poisoning: Present a patient with SLUDGE symptoms and require backward-tracing from muscarinic hyperactivation to phosphorylated acetylcholinesterase and pralidoxime aging -> Builds robust backward-chaining clinical diagnostic reasoning from symptom cluster to molecular mechanism [evidence-backed]"
+    },
+    {
+      "id": "TEA-035",
+      "name": "Split-Screen Bioavailability Shift: IV vs Oral First-Pass Extraction",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display synchronized portal vein and systemic circulation plasma concentration curves when toggling oral versus intravenous propranolol administration",
+      "expected_effect": "Creates vivid visual mental models of hepatic first-pass metabolism and bioavailability fraction F",
+      "formatted": "Split-Screen Bioavailability Shift: IV vs Oral First-Pass Extraction: Display synchronized portal vein and systemic circulation plasma concentration curves when toggling oral versus intravenous propranolol administration -> Creates vivid visual mental models of hepatic first-pass metabolism and bioavailability fraction F [evidence-backed]"
+    },
+    {
+      "id": "TEA-036",
+      "name": "Side-Effect Root Cause Tracing: Dry Mouth to M3 Gq-Protein Pathway",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Present an interactive flowchart linking anticholinergic drug administration to M3 receptor blockade, IP3/DAG reduction, intracellular calcium drop, and salivary cessation",
+      "expected_effect": "Bridges macroscopic clinical side effects to subcellular second-messenger signaling pathways",
+      "formatted": "Side-Effect Root Cause Tracing: Dry Mouth to M3 Gq-Protein Pathway: Present an interactive flowchart linking anticholinergic drug administration to M3 receptor blockade, IP3/DAG reduction, intracellular calcium drop, and salivary cessation -> Bridges macroscopic clinical side effects to subcellular second-messenger signaling pathways [plausible]"
+    },
+    {
+      "id": "TEA-037",
+      "name": "Functional Group Substitution Sandbox: Carboxylic Acid to Tetrazole",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Allow learners to swap an acidic carboxylate with a bioisosteric tetrazole ring on losartan and observe preserved pKa alongside boosted lipophilicity",
+      "expected_effect": "Demystifies bioisosteric drug design by demonstrating planar charge distribution and enhanced oral absorption",
+      "formatted": "Functional Group Substitution Sandbox: Carboxylic Acid to Tetrazole: Allow learners to swap an acidic carboxylate with a bioisosteric tetrazole ring on losartan and observe preserved pKa alongside boosted lipophilicity -> Demystifies bioisosteric drug design by demonstrating planar charge distribution and enhanced oral absorption [plausible]"
+    },
+    {
+      "id": "TEA-038",
+      "name": "Receptor Reserve Depletion Simulation under Phenoxybenzamine Challenge",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Simulate vascular smooth muscle contraction under increasing doses of irreversible phenoxybenzamine to demonstrate that Emax is preserved until spare alpha-receptors are exhausted",
+      "expected_effect": "Solidifies the quantitative boundary between receptor occupancy and maximal physiological tissue response",
+      "formatted": "Receptor Reserve Depletion Simulation under Phenoxybenzamine Challenge: Simulate vascular smooth muscle contraction under increasing doses of irreversible phenoxybenzamine to demonstrate that Emax is preserved until spare alpha-receptors are exhausted -> Solidifies the quantitative boundary between receptor occupancy and maximal physiological tissue response [evidence-backed]"
+    },
+    {
+      "id": "TEA-039",
+      "name": "Drug-Drug Interaction Counter-Prescription Matcher",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present an electronic prescription pairing clarithromycin with simvastatin and prompt learners to intercept the lethal rhabdomyolysis risk via CYP3A4 inhibition",
+      "expected_effect": "Replicates real-world community pharmacy clinical order verification under high-fidelity cognitive conditions",
+      "formatted": "Drug-Drug Interaction Counter-Prescription Matcher: Present an electronic prescription pairing clarithromycin with simvastatin and prompt learners to intercept the lethal rhabdomyolysis risk via CYP3A4 inhibition -> Replicates real-world community pharmacy clinical order verification under high-fidelity cognitive conditions [evidence-backed]"
+    },
+    {
+      "id": "TEA-040",
+      "name": "Rapid-Fire Orthosteric vs Allosteric Site Distinction",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Display a dynamic receptor animation and require learners to categorize drug binding events as orthosteric (ACh site) or allosteric (PAM/NAM site) within 10 seconds",
+      "expected_effect": "Sharpens perceptual differentiation between primary substrate pockets and modern allosteric modulatory sites",
+      "formatted": "Rapid-Fire Orthosteric vs Allosteric Site Distinction: Display a dynamic receptor animation and require learners to categorize drug binding events as orthosteric (ACh site) or allosteric (PAM/NAM site) within 10 seconds -> Sharpens perceptual differentiation between primary substrate pockets and modern allosteric modulatory sites [plausible]"
+    },
+    {
+      "id": "TEA-041",
+      "name": "Renal Tubular pH Shift and Amphetamine Excretion Triage",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present an amphetamine overdose case and require learners to adjust urine pH to <5.5 using ammonium chloride to trap the basic drug in its ionized form",
+      "expected_effect": "Deepens comprehension of renal tubular ion trapping and pH-dependent clearance in acute emergency toxicology",
+      "formatted": "Renal Tubular pH Shift and Amphetamine Excretion Triage: Present an amphetamine overdose case and require learners to adjust urine pH to <5.5 using ammonium chloride to trap the basic drug in its ionized form -> Deepens comprehension of renal tubular ion trapping and pH-dependent clearance in acute emergency toxicology [evidence-backed]"
+    },
+    {
+      "id": "TEA-042",
+      "name": "Intrinsic Sympathomimetic Activity (ISA) Paradox Resolution",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Simulate resting heart rate versus exercise heart rate under pindolol (ISA partial agonist) to reveal basal stimulation alongside exercise attenuation",
+      "expected_effect": "Resolves the clinical paradox of partial agonism exhibiting dual stimulatory and inhibitory behaviors",
+      "formatted": "Intrinsic Sympathomimetic Activity (ISA) Paradox Resolution: Simulate resting heart rate versus exercise heart rate under pindolol (ISA partial agonist) to reveal basal stimulation alongside exercise attenuation -> Resolves the clinical paradox of partial agonism exhibiting dual stimulatory and inhibitory behaviors [evidence-backed]"
+    },
+    {
+      "id": "TEA-043",
+      "name": "Ester Prodrug Hydrolysis Latency Estimator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Present enalapril vs enalaprilat and prompt learners to predict the onset-of-action lag based on esterase cleavage kinetics in the hepatic parenchyma",
+      "expected_effect": "Links medicinal chemical prodrug masking with pharmacokinetic absorption and activation timelines",
+      "formatted": "Ester Prodrug Hydrolysis Latency Estimator: Present enalapril vs enalaprilat and prompt learners to predict the onset-of-action lag based on esterase cleavage kinetics in the hepatic parenchyma -> Links medicinal chemical prodrug masking with pharmacokinetic absorption and activation timelines [plausible]"
+    },
+    {
+      "id": "TEA-044",
+      "name": "Baroreceptor Reflex Seesaw Calibration",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Simulate the immediate blood pressure surge from pure alpha-1 agonist phenylephrine and prompt learners to predict the compensatory vagal bradycardia",
+      "expected_effect": "Prevents the frequent board exam mistake of attributing reflex bradycardia to direct myocardial drug effects",
+      "formatted": "Baroreceptor Reflex Seesaw Calibration: Simulate the immediate blood pressure surge from pure alpha-1 agonist phenylephrine and prompt learners to predict the compensatory vagal bradycardia -> Prevents the frequent board exam mistake of attributing reflex bradycardia to direct myocardial drug effects [evidence-backed]"
+    },
+    {
+      "id": "TEA-045",
+      "name": "CYP Induction vs Inhibition Timetable Slider",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compare ketoconazole (rapid CYP inhibition in hours) vs rifampin (delayed CYP induction requiring days for de novo protein synthesis) on an interactive timeline",
+      "expected_effect": "Instills biological time-scale awareness, preventing premature clinical clearance assumptions during therapy",
+      "formatted": "CYP Induction vs Inhibition Timetable Slider: Compare ketoconazole (rapid CYP inhibition in hours) vs rifampin (delayed CYP induction requiring days for de novo protein synthesis) on an interactive timeline -> Instills biological time-scale awareness, preventing premature clinical clearance assumptions during therapy [evidence-backed]"
+    },
+    {
+      "id": "TEA-046",
+      "name": "Chiral Switch Purity and Omeprazole vs Esomeprazole Comparison",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compare racemic omeprazole with pure S-enantiomer esomeprazole, displaying metabolic clearance by CYP2C19 and clinical inter-patient variability",
+      "expected_effect": "Illuminates the commercial, regulatory, and pharmacokinetic rationale behind chiral switches in modern pharmaceutical pipelines",
+      "formatted": "Chiral Switch Purity and Omeprazole vs Esomeprazole Comparison: Compare racemic omeprazole with pure S-enantiomer esomeprazole, displaying metabolic clearance by CYP2C19 and clinical inter-patient variability -> Illuminates the commercial, regulatory, and pharmacokinetic rationale behind chiral switches in modern pharmaceutical pipelines [evidence-backed]"
+    },
+    {
+      "id": "TEA-047",
+      "name": "Partial Agonist Buprenorphine Precipitated Withdrawal Prediction",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Simulate administering high-affinity partial agonist buprenorphine to a patient saturated with full agonist morphine and observe acute receptor signaling collapse",
+      "expected_effect": "Demystifies precipitated withdrawal by demonstrating how partial agonists functionally act as competitive antagonists at high baseline tone",
+      "formatted": "Partial Agonist Buprenorphine Precipitated Withdrawal Prediction: Simulate administering high-affinity partial agonist buprenorphine to a patient saturated with full agonist morphine and observe acute receptor signaling collapse -> Demystifies precipitated withdrawal by demonstrating how partial agonists functionally act as competitive antagonists at high baseline tone [evidence-backed]"
+    },
+    {
+      "id": "TEA-048",
+      "name": "Blood-Brain Barrier Trojan Horse: L-DOPA vs Dopamine Transporter Selection",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present dopamine (blocked by BBB charge) vs L-DOPA (recognized by LAT1 neutral amino acid transporter) at the cerebral capillary endothelium",
+      "expected_effect": "Highlights nutrient transporter hijacking as a fundamental medicinal chemistry strategy for central nervous system drug delivery",
+      "formatted": "Blood-Brain Barrier Trojan Horse: L-DOPA vs Dopamine Transporter Selection: Present dopamine (blocked by BBB charge) vs L-DOPA (recognized by LAT1 neutral amino acid transporter) at the cerebral capillary endothelium -> Highlights nutrient transporter hijacking as a fundamental medicinal chemistry strategy for central nervous system drug delivery [evidence-backed]"
+    },
+    {
+      "id": "TEA-049",
+      "name": "Half-Life Accumulation to Steady-State Rule of 5 Slider",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow learners to adjust constant dosing intervals across drugs with 2-hour vs 24-hour half-lives, tracking the exact number of cycles needed to reach 96.875% Css",
+      "expected_effect": "Ingrains the fundamental clinical pharmacokinetics principle that time to steady state depends exclusively on elimination half-life, not dose",
+      "formatted": "Half-Life Accumulation to Steady-State Rule of 5 Slider: Allow learners to adjust constant dosing intervals across drugs with 2-hour vs 24-hour half-lives, tracking the exact number of cycles needed to reach 96.875% Css -> Ingrains the fundamental clinical pharmacokinetics principle that time to steady state depends exclusively on elimination half-life, not dose [evidence-backed]"
+    },
+    {
+      "id": "TEA-050",
+      "name": "Bioisosteric Halogen Swap for Metabolic Shielding (Fluorine Block)",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present an aromatic ring vulnerable to CYP-mediated para-hydroxylation and prompt learners to insert a fluorine atom to block metabolic degradation without steric hindrance",
+      "expected_effect": "Teaches rational lead optimization and metabolic shielding using classic medicinal chemistry isosteric strategies",
+      "formatted": "Bioisosteric Halogen Swap for Metabolic Shielding (Fluorine Block): Present an aromatic ring vulnerable to CYP-mediated para-hydroxylation and prompt learners to insert a fluorine atom to block metabolic degradation without steric hindrance -> Teaches rational lead optimization and metabolic shielding using classic medicinal chemistry isosteric strategies [evidence-backed]"
+    },
+    {
+      "id": "TEA-051",
+      "name": "Anticholinergic Toxidrome Symptom Pattern Matcher",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present classic clinical cues ('blind as a bat, mad as a hatter, red as a beet, hot as a hare, dry as a bone') and prompt rapid selection of physostigmine reversal",
+      "expected_effect": "Translates mnemonic board exam heuristics into concrete mechanistic receptor reversal actions",
+      "formatted": "Anticholinergic Toxidrome Symptom Pattern Matcher: Present classic clinical cues ('blind as a bat, mad as a hatter, red as a beet, hot as a hare, dry as a bone') and prompt rapid selection of physostigmine reversal -> Translates mnemonic board exam heuristics into concrete mechanistic receptor reversal actions [evidence-backed]"
+    },
+    {
+      "id": "TEA-052",
+      "name": "Volume of Distribution Physical Sump Metaphor",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Illustrate chloroquine entering a massive deep tissue adipose/lysosomal 'sump' resulting in a theoretical Vd of >1000 L exceeding total human anatomical volume",
+      "expected_effect": "Eliminates the persistent student confusion equating mathematical apparent volume of distribution with anatomical fluid compartments",
+      "formatted": "Volume of Distribution Physical Sump Metaphor: Illustrate chloroquine entering a massive deep tissue adipose/lysosomal 'sump' resulting in a theoretical Vd of >1000 L exceeding total human anatomical volume -> Eliminates the persistent student confusion equating mathematical apparent volume of distribution with anatomical fluid compartments [plausible]"
+    },
+    {
+      "id": "TEA-053",
+      "name": "Beta-1 vs Beta-2 Cardioselective Concentration Window Slider",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Slide metoprolol dose from therapeutic (cardioselective beta-1 blockade) to supra-therapeutic levels and observe progressive bronchoconstriction via loss of beta-2 selectivity",
+      "expected_effect": "Instills the vital clinical pharmacology lesson that drug receptor selectivity is relative and concentration-dependent, never absolute",
+      "formatted": "Beta-1 vs Beta-2 Cardioselective Concentration Window Slider: Slide metoprolol dose from therapeutic (cardioselective beta-1 blockade) to supra-therapeutic levels and observe progressive bronchoconstriction via loss of beta-2 selectivity -> Instills the vital clinical pharmacology lesson that drug receptor selectivity is relative and concentration-dependent, never absolute [evidence-backed]"
+    },
+    {
+      "id": "TEA-054",
+      "name": "Bioequivalent Formulation Curve Superposition",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Overlay brand vs generic plasma concentration-time profiles and require learners to evaluate whether Cmax and AUC fall within the 80-125% 90% confidence interval",
+      "expected_effect": "Provides authentic regulatory science training in generic drug evaluation and bioequivalence statistical standards",
+      "formatted": "Bioequivalent Formulation Curve Superposition: Overlay brand vs generic plasma concentration-time profiles and require learners to evaluate whether Cmax and AUC fall within the 80-125% 90% confidence interval -> Provides authentic regulatory science training in generic drug evaluation and bioequivalence statistical standards [evidence-backed]"
+    },
+    {
+      "id": "TEA-055",
+      "name": "Irreversible Covalent Warhead Trapping: Aspirin COX Serine Acetylation",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Animate aspirin transferring its acetyl group to Ser530 of COX-1, leaving an irreversibly blocked hydrophobic catalytic tunnel throughout the 7-day platelet lifespan",
+      "expected_effect": "Contrasts reversible competitive kinetics with irreversible covalent inactivation and turnover-dependent recovery",
+      "formatted": "Irreversible Covalent Warhead Trapping: Aspirin COX Serine Acetylation: Animate aspirin transferring its acetyl group to Ser530 of COX-1, leaving an irreversibly blocked hydrophobic catalytic tunnel throughout the 7-day platelet lifespan -> Contrasts reversible competitive kinetics with irreversible covalent inactivation and turnover-dependent recovery [evidence-backed]"
+    },
+    {
+      "id": "TEA-056",
+      "name": "Dual Autonomic Tone Antagonist Challenge: Ganglionic Blockade",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Administer hexamethonium (nicotinic ganglionic blocker) to a virtual organ model and prompt learners to deduce the dominant resting tone for each vascular bed and pupil",
+      "expected_effect": "Solidifies understanding of autonomic basal tone (sympathetic in arterioles vs parasympathetic in heart and ciliary muscle)",
+      "formatted": "Dual Autonomic Tone Antagonist Challenge: Ganglionic Blockade: Administer hexamethonium (nicotinic ganglionic blocker) to a virtual organ model and prompt learners to deduce the dominant resting tone for each vascular bed and pupil -> Solidifies understanding of autonomic basal tone (sympathetic in arterioles vs parasympathetic in heart and ciliary muscle) [evidence-backed]"
+    },
+    {
+      "id": "TEA-057",
+      "name": "Plasma Protein Binding Displacement Crisis: Warfarin and Sulfonamides",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Demonstrate a shift from 99% to 98% albumin binding of warfarin caused by sulfonamide displacement, tracking the 100% surge in free active drug fraction and bleeding risk",
+      "expected_effect": "Dramatizes the profound clinical leverage of minor percentage changes in free fraction for highly protein-bound narrow-TI drugs",
+      "formatted": "Plasma Protein Binding Displacement Crisis: Warfarin and Sulfonamides: Demonstrate a shift from 99% to 98% albumin binding of warfarin caused by sulfonamide displacement, tracking the 100% surge in free active drug fraction and bleeding risk -> Dramatizes the profound clinical leverage of minor percentage changes in free fraction for highly protein-bound narrow-TI drugs [evidence-backed]"
+    },
+    {
+      "id": "TEA-058",
+      "name": "Muscarinic Receptor Subtype Knockout Phenotype Matching",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Present isolated organ responses in virtual M1, M2, and M3 knockout phenotypes and prompt learners to deduce the corresponding receptor subtype",
+      "expected_effect": "Disentangles individual muscarinic receptor subtypes through systematic biological subtraction logic",
+      "formatted": "Muscarinic Receptor Subtype Knockout Phenotype Matching: Present isolated organ responses in virtual M1, M2, and M3 knockout phenotypes and prompt learners to deduce the corresponding receptor subtype -> Disentangles individual muscarinic receptor subtypes through systematic biological subtraction logic [plausible]"
+    },
+    {
+      "id": "TEA-059",
+      "name": "Glucuronidation Conjugation Site Tagging",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Highlight nucleophilic handles (-OH, -COOH, -NH2) on acetaminophen and morphine, requiring learners to tag the exact site of UDP-glucuronosyltransferase attack",
+      "expected_effect": "Builds predictive chemical competence for Phase II xenobiotic metabolism and hydrophilic renal excretory prep",
+      "formatted": "Glucuronidation Conjugation Site Tagging: Highlight nucleophilic handles (-OH, -COOH, -NH2) on acetaminophen and morphine, requiring learners to tag the exact site of UDP-glucuronosyltransferase attack -> Builds predictive chemical competence for Phase II xenobiotic metabolism and hydrophilic renal excretory prep [plausible]"
+    },
+    {
+      "id": "TEA-060",
+      "name": "Competitive Agonist Concentration Jump Against Fixed Beta-Blocker",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Simulate surmounting a fixed 10 nM propranolol blockade of isoproterenol by sequentially raising agonist concentration until 100% Emax is fully restored",
+      "expected_effect": "Provides concrete intuitive experience of the law of mass action and the reversible surmountability of competitive antagonism",
+      "formatted": "Competitive Agonist Concentration Jump Against Fixed Beta-Blocker: Simulate surmounting a fixed 10 nM propranolol blockade of isoproterenol by sequentially raising agonist concentration until 100% Emax is fully restored -> Provides concrete intuitive experience of the law of mass action and the reversible surmountability of competitive antagonism [evidence-backed]"
+    },
+    {
+      "id": "TEA-061",
+      "name": "Pilocarpine vs Atropine Pupillometry Slider",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Allow learners to slide topical ocular autonomic agonists and antagonists, observing pupillary sphincter miosis vs radial mydriasis alongside canal of Schlemm outflow",
+      "expected_effect": "Unifies autonomic pharmacology with ocular anatomy and acute angle-closure glaucoma pathophysiology",
+      "formatted": "Pilocarpine vs Atropine Pupillometry Slider: Allow learners to slide topical ocular autonomic agonists and antagonists, observing pupillary sphincter miosis vs radial mydriasis alongside canal of Schlemm outflow -> Unifies autonomic pharmacology with ocular anatomy and acute angle-closure glaucoma pathophysiology [evidence-backed]"
+    },
+    {
+      "id": "TEA-062",
+      "name": "Non-Classical Bioisosterism: Nitro to Sulfonamide Replacement",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Present nimesulide structural modification replacing a toxic nitroaromatic group with a bioisosteric methanesulfonamido group while maintaining COX-2 selectivity",
+      "expected_effect": "Demonstrates rational toxicophore elimination while preserving target pharmacological potency in medicinal chemistry",
+      "formatted": "Non-Classical Bioisosterism: Nitro to Sulfonamide Replacement: Present nimesulide structural modification replacing a toxic nitroaromatic group with a bioisosteric methanesulfonamido group while maintaining COX-2 selectivity -> Demonstrates rational toxicophore elimination while preserving target pharmacological potency in medicinal chemistry [plausible]"
+    },
+    {
+      "id": "TEA-063",
+      "name": "Zero-Order vs First-Order Phenytoin Clearance Inflection Point",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Plot daily phenytoin dosage against steady-state serum concentration, showing the linear first-order slope suddenly inflecting vertically into non-linear Michaelis-Menten toxicity",
+      "expected_effect": "Eliminates dangerous linear dosing assumptions for capacity-limited metabolic enzyme systems",
+      "formatted": "Zero-Order vs First-Order Phenytoin Clearance Inflection Point: Plot daily phenytoin dosage against steady-state serum concentration, showing the linear first-order slope suddenly inflecting vertically into non-linear Michaelis-Menten toxicity -> Eliminates dangerous linear dosing assumptions for capacity-limited metabolic enzyme systems [evidence-backed]"
+    },
+    {
+      "id": "TEA-064",
+      "name": "Alpha-2 Clonidine Rebound Hypertension Mechanism Path",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Trace chronic central presynaptic alpha-2 receptor down-regulation during clonidine use followed by abrupt discontinuation and explosive sympathetic catecholamine release",
+      "expected_effect": "Explains the deadly pathophysiology of medication non-compliance via autonomic autoreceptor neurochemistry",
+      "formatted": "Alpha-2 Clonidine Rebound Hypertension Mechanism Path: Trace chronic central presynaptic alpha-2 receptor down-regulation during clonidine use followed by abrupt discontinuation and explosive sympathetic catecholamine release -> Explains the deadly pathophysiology of medication non-compliance via autonomic autoreceptor neurochemistry [evidence-backed]"
+    },
+    {
+      "id": "TEA-065",
+      "name": "Chelating Functional Group Food-Drug Interaction: Ciprofloxacin & Calcium",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Animate the 4-keto and 3-carboxyl groups of ciprofloxacin coordinating with a polyvalent Ca2+ ion from dairy, forming an insoluble non-absorbable precipitate in the gut lumen",
+      "expected_effect": "Directly links coordination chemistry functional groups to everyday community pharmacy patient counseling warnings",
+      "formatted": "Chelating Functional Group Food-Drug Interaction: Ciprofloxacin & Calcium: Animate the 4-keto and 3-carboxyl groups of ciprofloxacin coordinating with a polyvalent Ca2+ ion from dairy, forming an insoluble non-absorbable precipitate in the gut lumen -> Directly links coordination chemistry functional groups to everyday community pharmacy patient counseling warnings [evidence-backed]"
+    },
+    {
+      "id": "TEA-066",
+      "name": "Epinephrine Reversal Phenomenon Prediction under Phentolamine",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Walk students through the classic Dale pharmacology experiment where pre-administering alpha-blocker phentolamine converts an epinephrine pressor response into a pure beta-2 depressor fall",
+      "expected_effect": "Demonstrates differential receptor subtype affinities and unmasks underlying vascular vascular tone in mixed agonists",
+      "formatted": "Epinephrine Reversal Phenomenon Prediction under Phentolamine: Walk students through the classic Dale pharmacology experiment where pre-administering alpha-blocker phentolamine converts an epinephrine pressor response into a pure beta-2 depressor fall -> Demonstrates differential receptor subtype affinities and unmasks underlying vascular vascular tone in mixed agonists [evidence-backed]"
+    },
+    {
+      "id": "TEA-067",
+      "name": "Sulfonamide Antibacterial Mimicry: PABA Competitive Inhibition",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display p-aminobenzoic acid (PABA) and sulfamethoxazole in a 3D dihydropteroate synthase catalytic cleft to demonstrate steric and electronic structural mimicry",
+      "expected_effect": "Grounds antimetabolite pharmacology in exact structural and electronic bioisosteric dimensions",
+      "formatted": "Sulfonamide Antibacterial Mimicry: PABA Competitive Inhibition: Display p-aminobenzoic acid (PABA) and sulfamethoxazole in a 3D dihydropteroate synthase catalytic cleft to demonstrate steric and electronic structural mimicry -> Grounds antimetabolite pharmacology in exact structural and electronic bioisosteric dimensions [evidence-backed]"
+    },
+    {
+      "id": "TEA-068",
+      "name": "Therapeutic Drug Monitoring Peak-and-Trough Triage for Vancomycin",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present a hospital lab report with a vancomycin trough of 28 mcg/mL and elevated serum creatinine, prompting recalculation of dosing interval to prevent acute tubular necrosis",
+      "expected_effect": "Develops pragmatic clinical pharmacokinetic dosage adjustment reflexes for narrow therapeutic index antibiotics",
+      "formatted": "Therapeutic Drug Monitoring Peak-and-Trough Triage for Vancomycin: Present a hospital lab report with a vancomycin trough of 28 mcg/mL and elevated serum creatinine, prompting recalculation of dosing interval to prevent acute tubular necrosis -> Develops pragmatic clinical pharmacokinetic dosage adjustment reflexes for narrow therapeutic index antibiotics [evidence-backed]"
+    },
+    {
+      "id": "TEA-069",
+      "name": "Guanethidine Sympathetic Nerve Terminal Depletion Kinetic Sequence",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Step through guanethidine uptake via NET, initial transient displacement of norepinephrine (pressor bump), followed by vesicle destruction and prolonged chemical sympathectomy",
+      "expected_effect": "Teaches multi-phase pharmacological kinetics and presynaptic storage biology in neurotransmission",
+      "formatted": "Guanethidine Sympathetic Nerve Terminal Depletion Kinetic Sequence: Step through guanethidine uptake via NET, initial transient displacement of norepinephrine (pressor bump), followed by vesicle destruction and prolonged chemical sympathectomy -> Teaches multi-phase pharmacological kinetics and presynaptic storage biology in neurotransmission [plausible]"
+    },
+    {
+      "id": "TEA-070",
+      "name": "Quaternary Ammonium Impermeability: Atropine vs Ipratropium",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compare tertiary amine atropine (diffuses systemically, causing urinary retention) with permanently charged quaternary ipratropium (confined to bronchial airway mucosa)",
+      "expected_effect": "Illustrates how targeted synthetic charge installation restricts drug distribution to desired anatomical compartments",
+      "formatted": "Quaternary Ammonium Impermeability: Atropine vs Ipratropium: Compare tertiary amine atropine (diffuses systemically, causing urinary retention) with permanently charged quaternary ipratropium (confined to bronchial airway mucosa) -> Illustrates how targeted synthetic charge installation restricts drug distribution to desired anatomical compartments [evidence-backed]"
+    },
+    {
+      "id": "TEA-071",
+      "name": "Nitroglycerin Tolerance and Sulfhydryl Depletion Curve",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Model continuous 24-hour transdermal nitroglycerin delivery showing loss of cyclic GMP generation due to mitochondrial aldehyde dehydrogenase inactivation and free thiol depletion",
+      "expected_effect": "Explains the pharmacological necessity of a mandatory daily 10-12 hour nitrate-free interval in angina management",
+      "formatted": "Nitroglycerin Tolerance and Sulfhydryl Depletion Curve: Model continuous 24-hour transdermal nitroglycerin delivery showing loss of cyclic GMP generation due to mitochondrial aldehyde dehydrogenase inactivation and free thiol depletion -> Explains the pharmacological necessity of a mandatory daily 10-12 hour nitrate-free interval in angina management [evidence-backed]"
+    },
+    {
+      "id": "TEA-072",
+      "name": "CYP Genetic Polymorphism Dose Adjustment (CYP2D6 Codeine)",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present a CYP2D6 ultra-rapid metabolizer pediatric patient and predict fatal respiratory depression from rapid morphine conversion following standard codeine dosing",
+      "expected_effect": "Bridges pharmacogenomics, metabolic bioactivation, and black-box safety warnings in pediatric therapeutics",
+      "formatted": "CYP Genetic Polymorphism Dose Adjustment (CYP2D6 Codeine): Present a CYP2D6 ultra-rapid metabolizer pediatric patient and predict fatal respiratory depression from rapid morphine conversion following standard codeine dosing -> Bridges pharmacogenomics, metabolic bioactivation, and black-box safety warnings in pediatric therapeutics [evidence-backed]"
+    },
+    {
+      "id": "TEA-073",
+      "name": "Reserpine-Induced Depression Neurochemical Tracing",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Trace reserpine irreversible VMAT-2 blockade leading to cytosolic monoamine leakage, MAO breakdown, and severe depletion of dopamine, serotonin, and norepinephrine",
+      "expected_effect": "Demonstrates the historical discovery of the monoamine hypothesis of mood and the mechanics of vesicular storage",
+      "formatted": "Reserpine-Induced Depression Neurochemical Tracing: Trace reserpine irreversible VMAT-2 blockade leading to cytosolic monoamine leakage, MAO breakdown, and severe depletion of dopamine, serotonin, and norepinephrine -> Demonstrates the historical discovery of the monoamine hypothesis of mood and the mechanics of vesicular storage [plausible]"
+    },
+    {
+      "id": "TEA-074",
+      "name": "Tyramine Cheese Effect MAO-Inhibition Hypertensive Crisis",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present an MAO-A inhibited patient consuming aged cheddar cheese and trace dietary tyramine entering systemic circulation, displacing vesicular NE via NET reversal",
+      "expected_effect": "Connects dietary warnings, indirect sympathomimetic displacement, and catastrophic hypertensive crisis pathophysiology",
+      "formatted": "Tyramine Cheese Effect MAO-Inhibition Hypertensive Crisis: Present an MAO-A inhibited patient consuming aged cheddar cheese and trace dietary tyramine entering systemic circulation, displacing vesicular NE via NET reversal -> Connects dietary warnings, indirect sympathomimetic displacement, and catastrophic hypertensive crisis pathophysiology [evidence-backed]"
+    },
+    {
+      "id": "TEA-075",
+      "name": "Receptor Downregulation / Desensitization Tachyphylaxis Timeline",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Animate rapid beta-2 adrenergic receptor phosphorylation by GRK, beta-arrestin steric uncoupling from Gs, and clathrin-mediated endocytosis during continuous albuterol exposure",
+      "expected_effect": "Provides clear molecular mechanics explaining clinical tachyphylaxis and diminished drug responsiveness over time",
+      "formatted": "Receptor Downregulation / Desensitization Tachyphylaxis Timeline: Animate rapid beta-2 adrenergic receptor phosphorylation by GRK, beta-arrestin steric uncoupling from Gs, and clathrin-mediated endocytosis during continuous albuterol exposure -> Provides clear molecular mechanics explaining clinical tachyphylaxis and diminished drug responsiveness over time [evidence-backed]"
+    },
+    {
+      "id": "TEA-076",
+      "name": "Soft Drug Design: Hydrolytic Inactivation of Remifentanil",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Highlight the ester side-chain on remifentanil designed to undergo ultra-rapid blood and tissue non-specific esterase cleavage, creating an ultra-short 3-minute context-sensitive half-time",
+      "expected_effect": "Teaches deliberate metabolic deactivation engineering (soft drugs) to achieve precise titratability in clinical anesthesia",
+      "formatted": "Soft Drug Design: Hydrolytic Inactivation of Remifentanil: Highlight the ester side-chain on remifentanil designed to undergo ultra-rapid blood and tissue non-specific esterase cleavage, creating an ultra-short 3-minute context-sensitive half-time -> Teaches deliberate metabolic deactivation engineering (soft drugs) to achieve precise titratability in clinical anesthesia [evidence-backed]"
+    },
+    {
+      "id": "TEA-077",
+      "name": "Loading Dose vs Maintenance Dose Formula Deconstruction",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Present a critical care sepsis scenario requiring students to pair Target Concentration with Volume of Distribution for loading dose, and Clearance for maintenance infusion",
+      "expected_effect": "Permanently decouples Vd and Clearance in student mental models, eliminating the most pervasive equation error on board exams",
+      "formatted": "Loading Dose vs Maintenance Dose Formula Deconstruction: Present a critical care sepsis scenario requiring students to pair Target Concentration with Volume of Distribution for loading dose, and Clearance for maintenance infusion -> Permanently decouples Vd and Clearance in student mental models, eliminating the most pervasive equation error on board exams [evidence-backed]"
+    },
+    {
+      "id": "TEA-078",
+      "name": "Neuromuscular Depolarizing vs Non-Depolarizing Twitch Curve Comparison",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Display train-of-four muscle twitch monitors contrasting rocuronium (gradual fade without fasciculation) vs succinylcholine (initial fasciculation followed by non-fading Phase I block)",
+      "expected_effect": "Translates electrophysiological neuromuscular junction pharmacology into clinical operating room monitoring skills",
+      "formatted": "Neuromuscular Depolarizing vs Non-Depolarizing Twitch Curve Comparison: Display train-of-four muscle twitch monitors contrasting rocuronium (gradual fade without fasciculation) vs succinylcholine (initial fasciculation followed by non-fading Phase I block) -> Translates electrophysiological neuromuscular junction pharmacology into clinical operating room monitoring skills [evidence-backed]"
+    },
+    {
+      "id": "TEA-079",
+      "name": "Ionization-Dependent Urinary Clearance Manipulation",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Prompt administration of IV sodium bicarbonate in a severe salicylate overdose, showing urinary pH rising from 5.0 to 8.0 and trapped ionized salicylate renal excretion surging twenty-fold",
+      "expected_effect": "Solidifies the quantitative therapeutic power of ion trapping in systemic clinical toxicology protocols",
+      "formatted": "Ionization-Dependent Urinary Clearance Manipulation: Prompt administration of IV sodium bicarbonate in a severe salicylate overdose, showing urinary pH rising from 5.0 to 8.0 and trapped ionized salicylate renal excretion surging twenty-fold -> Solidifies the quantitative therapeutic power of ion trapping in systemic clinical toxicology protocols [evidence-backed]"
+    },
+    {
+      "id": "TEA-080",
+      "name": "Multi-Target Polypharmacology Radar Chart: Carvedilol Profile",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Present a multi-axis spider radar plot displaying carvedilol's affinities for beta-1, beta-2, and alpha-1 receptors alongside antioxidant radical scavenging capacity",
+      "expected_effect": "Broadens learner thinking beyond single-target magic bullets into modern polypharmacological cardiovascular therapeutics",
+      "formatted": "Multi-Target Polypharmacology Radar Chart: Carvedilol Profile: Present a multi-axis spider radar plot displaying carvedilol's affinities for beta-1, beta-2, and alpha-1 receptors alongside antioxidant radical scavenging capacity -> Broadens learner thinking beyond single-target magic bullets into modern polypharmacological cardiovascular therapeutics [plausible]"
+    },
+    {
+      "id": "TEA-081",
+      "name": "The Molecule Autopsy: Reverse-Engineering a Failed Drug Candidate",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide the complete preclinical file of a terminated lead candidate (e.g. Phase II liver necrosis or hERG QT prolongation) and task students with identifying the structural toxicophore",
+      "expected_effect": "Inverts standard affirmative drug design into post-mortem forensic toxicology, cultivating rigorous risk-spotting intuition",
+      "formatted": "The Molecule Autopsy: Reverse-Engineering a Failed Drug Candidate: Provide the complete preclinical file of a terminated lead candidate (e.g. Phase II liver necrosis or hERG QT prolongation) and task students with identifying the structural toxicophore -> Inverts standard affirmative drug design into post-mortem forensic toxicology, cultivating rigorous risk-spotting intuition [plausible]"
+    },
+    {
+      "id": "TEA-082",
+      "name": "Red-Teaming an Erroneous Pharmacy Board Exam Question",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present an official-looking licensure exam question containing a subtle scientific flaw (e.g. confusing Kd with IC50 in non-competitive conditions) and challenge students to debunk the answer key",
+      "expected_effect": "Elevates learners from passive test-takers to adversarial critical evaluators of authoritative medical literature",
+      "formatted": "Red-Teaming an Erroneous Pharmacy Board Exam Question: Present an official-looking licensure exam question containing a subtle scientific flaw (e.g. confusing Kd with IC50 in non-competitive conditions) and challenge students to debunk the answer key -> Elevates learners from passive test-takers to adversarial critical evaluators of authoritative medical literature [plausible]"
+    },
+    {
+      "id": "TEA-083",
+      "name": "Inverted Mastery: Student Designs a Fatal Toxidrome First",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Challenge students to select a combination of autonomic agonists and enzyme blockers that would theoretically produce a specific lethal hemodynamic collapse, then synthesize the antidote",
+      "expected_effect": "Exploits reverse-outcome engineering to achieve deeper mechanistic synthesis than conventional symptom-to-drug diagnosis",
+      "formatted": "Inverted Mastery: Student Designs a Fatal Toxidrome First: Challenge students to select a combination of autonomic agonists and enzyme blockers that would theoretically produce a specific lethal hemodynamic collapse, then synthesize the antidote -> Exploits reverse-outcome engineering to achieve deeper mechanistic synthesis than conventional symptom-to-drug diagnosis [speculative]"
+    },
+    {
+      "id": "TEA-084",
+      "name": "Blinded Molecule Dating Profile Receptor Matching",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Present molecules stripped of names, writing quirky personal profiles ('Seeking hydrophobic pocket; dislikes polar water; prone to hydrolytic breakup after 20 minutes') for receptor matching",
+      "expected_effect": "Dismantles intimidation around complex nomenclature by anchoring chemical properties in playful anthropomorphic relational schemas",
+      "formatted": "Blinded Molecule Dating Profile Receptor Matching: Present molecules stripped of names, writing quirky personal profiles ('Seeking hydrophobic pocket; dislikes polar water; prone to hydrolytic breakup after 20 minutes') for receptor matching -> Dismantles intimidation around complex nomenclature by anchoring chemical properties in playful anthropomorphic relational schemas [speculative]"
+    },
+    {
+      "id": "TEA-085",
+      "name": "The Black Box Drug Discovery Challenge",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide an unlabelled compound 'Agent X' and grant the learner three virtual laboratory assays (isolated heart rate, vascular strip tension, radioligand displacement) to deduce its exact receptor mechanism",
+      "expected_effect": "Simulates pure scientific induction and experimental pharmacology deduction without reliance on memorized drug names",
+      "formatted": "The Black Box Drug Discovery Challenge: Provide an unlabelled compound 'Agent X' and grant the learner three virtual laboratory assays (isolated heart rate, vascular strip tension, radioligand displacement) to deduce its exact receptor mechanism -> Simulates pure scientific induction and experimental pharmacology deduction without reliance on memorized drug names [plausible]"
+    },
+    {
+      "id": "TEA-086",
+      "name": "Chemical Sabotage: Introduce One Atom to Nullify Agonism",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present an active full agonist nestled in its binding cavity and challenge the student to add or mutate exactly ONE atom (e.g. bulky methyl clash or loss of key H-bond) to destroy receptor signaling",
+      "expected_effect": "Sharpens spatial and energetic steric sensitivity by turning negative space and structural vulnerability into an interactive game",
+      "formatted": "Chemical Sabotage: Introduce One Atom to Nullify Agonism: Present an active full agonist nestled in its binding cavity and challenge the student to add or mutate exactly ONE atom (e.g. bulky methyl clash or loss of key H-bond) to destroy receptor signaling -> Sharpens spatial and energetic steric sensitivity by turning negative space and structural vulnerability into an interactive game [plausible]"
+    },
+    {
+      "id": "TEA-087",
+      "name": "Socratic Patient Trial in Silico: Titrating to Disaster",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Let students freely push an intravenous infusion rate of dobutamine in a virtual patient until ventricular arrhythmias emerge, requiring immediate emergency intervention",
+      "expected_effect": "Provides safe-to-fail clinical boundary testing, converting dry therapeutic index numbers into vivid emotional memories of toxicity thresholds",
+      "formatted": "Socratic Patient Trial in Silico: Titrating to Disaster: Let students freely push an intravenous infusion rate of dobutamine in a virtual patient until ventricular arrhythmias emerge, requiring immediate emergency intervention -> Provides safe-to-fail clinical boundary testing, converting dry therapeutic index numbers into vivid emotional memories of toxicity thresholds [plausible]"
+    },
+    {
+      "id": "TEA-088",
+      "name": "The Counterfeit Drug Spectroscopic Detective",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present a simulated seized street pill claiming to be sildenafil but showing an anomalous mass spectrum and NMR peak, prompting students to deduce the unapproved adulterant analogue",
+      "expected_effect": "Connects core analytical chemistry instrumentation directly to global public health forensics and regulatory vigilance",
+      "formatted": "The Counterfeit Drug Spectroscopic Detective: Present a simulated seized street pill claiming to be sildenafil but showing an anomalous mass spectrum and NMR peak, prompting students to deduce the unapproved adulterant analogue -> Connects core analytical chemistry instrumentation directly to global public health forensics and regulatory vigilance [plausible]"
+    },
+    {
+      "id": "TEA-089",
+      "name": "Time-Machine Drug Re-Engineering: Modernizing Atropine",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Transport students to 1890 with crude belladonna alkaloid atropine, challenging them with modern medicinal chemistry tools to chemically modify it sequentially into homatropine, ipratropium, and tiotropium",
+      "expected_effect": "Reconstructs the historical evolution of medicinal chemistry as an intentional sequence of engineering solutions to clinical drawbacks",
+      "formatted": "Time-Machine Drug Re-Engineering: Modernizing Atropine: Transport students to 1890 with crude belladonna alkaloid atropine, challenging them with modern medicinal chemistry tools to chemically modify it sequentially into homatropine, ipratropium, and tiotropium -> Reconstructs the historical evolution of medicinal chemistry as an intentional sequence of engineering solutions to clinical drawbacks [plausible]"
+    },
+    {
+      "id": "TEA-090",
+      "name": "Two Truths and a Lie Pharmacokinetic Profile",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Display three concise pharmacokinetic claims for a drug (e.g. '98% bioavailable', 'Cleared primarily by renal filtration unchanged', 'Half-life is 30 minutes in severe hepatic failure') with one hidden falsehood",
+      "expected_effect": "Forces multi-variable verification and cross-checking between organ clearance, metabolic fate, and bioavailability parameters",
+      "formatted": "Two Truths and a Lie Pharmacokinetic Profile: Display three concise pharmacokinetic claims for a drug (e.g. '98% bioavailable', 'Cleared primarily by renal filtration unchanged', 'Half-life is 30 minutes in severe hepatic failure') with one hidden falsehood -> Forces multi-variable verification and cross-checking between organ clearance, metabolic fate, and bioavailability parameters [plausible]"
+    },
+    {
+      "id": "TEA-091",
+      "name": "Student-as-Formulary Director: Budget vs Efficacy Dilemma",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Put students in charge of a hospital drug budget, forcing trade-offs between expensive novel selective beta-blockers versus cheap first-generation drugs with higher monitoring overhead",
+      "expected_effect": "Introduces pharmacoeconomic consciousness and real-world institutional constraints into pure biochemical reasoning",
+      "formatted": "Student-as-Formulary Director: Budget vs Efficacy Dilemma: Put students in charge of a hospital drug budget, forcing trade-offs between expensive novel selective beta-blockers versus cheap first-generation drugs with higher monitoring overhead -> Introduces pharmacoeconomic consciousness and real-world institutional constraints into pure biochemical reasoning [speculative]"
+    },
+    {
+      "id": "TEA-092",
+      "name": "Micro-Dosing Virtual Organ Perfusion Simulator",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present an interactive isolated perfused rat heart where learners can drop micro-liters of acetylcholine, epinephrine, and propranolol into the perfusion bath to see real-time cardiac pressure traces",
+      "expected_effect": "Recreates classical classical organ bath pharmacology experimentation in a lightweight, zero-latency browser widget",
+      "formatted": "Micro-Dosing Virtual Organ Perfusion Simulator: Present an interactive isolated perfused rat heart where learners can drop micro-liters of acetylcholine, epinephrine, and propranolol into the perfusion bath to see real-time cardiac pressure traces -> Recreates classical classical organ bath pharmacology experimentation in a lightweight, zero-latency browser widget [plausible]"
+    },
+    {
+      "id": "TEA-093",
+      "name": "The Allergic-to-Jargon Explainer Challenge",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Challenge students to explain how a beta-blocker prevents a heart attack using a 30-word limit and strict banned-word filter (banning 'beta-1', 'catecholamine', 'inotrope', 'antagonist')",
+      "expected_effect": "Forces the Feynman technique of conceptual distillation, converting memorized academic jargon into authentic functional intuition",
+      "formatted": "The Allergic-to-Jargon Explainer Challenge: Challenge students to explain how a beta-blocker prevents a heart attack using a 30-word limit and strict banned-word filter (banning 'beta-1', 'catecholamine', 'inotrope', 'antagonist') -> Forces the Feynman technique of conceptual distillation, converting memorized academic jargon into authentic functional intuition [plausible]"
+    },
+    {
+      "id": "TEA-094",
+      "name": "Mutated Receptor Rescue: Engineering for a Variant Pocket",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Present a patient with a rare genetic point mutation in the beta-2 receptor (Asp113Glu) altering the binding pocket, challenging students to modify albuterol to fit the enlarged cavity",
+      "expected_effect": "Pioneers precision medicine and structural pharmacogenomics intuition by tailoring chemical scaffolds to individualized receptor geometries",
+      "formatted": "Mutated Receptor Rescue: Engineering for a Variant Pocket: Present a patient with a rare genetic point mutation in the beta-2 receptor (Asp113Glu) altering the binding pocket, challenging students to modify albuterol to fit the enlarged cavity -> Pioneers precision medicine and structural pharmacogenomics intuition by tailoring chemical scaffolds to individualized receptor geometries [speculative]"
+    },
+    {
+      "id": "TEA-095",
+      "name": "Pharmacological Whodunit: Mystery Poisoning at the Bedside",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present a 5-step interactive murder mystery where suspect drugs are ruled out one by one based on toxicological kinetics, pupil diameter, and ECG rhythm strips",
+      "expected_effect": "Drives exceptional engagement through narrative suspense while demanding rigorous application of autonomic and toxicology concepts",
+      "formatted": "Pharmacological Whodunit: Mystery Poisoning at the Bedside: Present a 5-step interactive murder mystery where suspect drugs are ruled out one by one based on toxicological kinetics, pupil diameter, and ECG rhythm strips -> Drives exceptional engagement through narrative suspense while demanding rigorous application of autonomic and toxicology concepts [plausible]"
+    },
+    {
+      "id": "TEA-096",
+      "name": "Molecular Sculptor: Carving Subtype Selectivity from Non-Selective Agonists",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Provide epinephrine and challenge learners to iteratively add steric bulk to the amine nitrogen to transform it into beta-selective isoproterenol and then beta-2 selective albuterol",
+      "expected_effect": "Provides tactile appreciation of how increasing N-alkyl steric bulk selectively exploits the wider hydrophobic pocket of beta receptors",
+      "formatted": "Molecular Sculptor: Carving Subtype Selectivity from Non-Selective Agonists: Provide epinephrine and challenge learners to iteratively add steric bulk to the amine nitrogen to transform it into beta-selective isoproterenol and then beta-2 selective albuterol -> Provides tactile appreciation of how increasing N-alkyl steric bulk selectively exploits the wider hydrophobic pocket of beta receptors [plausible]"
+    },
+    {
+      "id": "TEA-097",
+      "name": "The Zero-Info Dosage Guess before Pharmacokinetic Reveal",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Ask students to guess the standard daily dose of a newly introduced drug (0.1 mg vs 10 mg vs 1000 mg) based solely on its molecular weight and logP before revealing potency data",
+      "expected_effect": "Demolishes arbitrary assumptions and calibrates learners to the vast spans of drug potencies and receptor binding affinities",
+      "formatted": "The Zero-Info Dosage Guess before Pharmacokinetic Reveal: Ask students to guess the standard daily dose of a newly introduced drug (0.1 mg vs 10 mg vs 1000 mg) based solely on its molecular weight and logP before revealing potency data -> Demolishes arbitrary assumptions and calibrates learners to the vast spans of drug potencies and receptor binding affinities [speculative]"
+    },
+    {
+      "id": "TEA-098",
+      "name": "Drug-Receptor Tug-of-War: Real-Time Dynamic Antagonist Washout",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Run a live continuous simulation where the student must continuously pulse agonist molecules to displace competitive antagonists before dissociation kinetics allow rebinding",
+      "expected_effect": "Instills a visceral kinetic appreciation of receptor off-rates (koff) and equilibrium dissociation constant thermodynamics",
+      "formatted": "Drug-Receptor Tug-of-War: Real-Time Dynamic Antagonist Washout: Run a live continuous simulation where the student must continuously pulse agonist molecules to displace competitive antagonists before dissociation kinetics allow rebinding -> Instills a visceral kinetic appreciation of receptor off-rates (koff) and equilibrium dissociation constant thermodynamics [plausible]"
+    },
+    {
+      "id": "TEA-099",
+      "name": "The Corrupt Pharmacopeia: Spotting the Chemically Impossible Molecule",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Present four candidate drug structures where one contains a pentavalent nitrogen or chemically impossible esterase-resistant acetal, challenging students to flag the fraud",
+      "expected_effect": "Builds vigilance and foundational chemical structural literacy, eliminating uncritical acceptance of drawn chemical diagrams",
+      "formatted": "The Corrupt Pharmacopeia: Spotting the Chemically Impossible Molecule: Present four candidate drug structures where one contains a pentavalent nitrogen or chemically impossible esterase-resistant acetal, challenging students to flag the fraud -> Builds vigilance and foundational chemical structural literacy, eliminating uncritical acceptance of drawn chemical diagrams [plausible]"
+    },
+    {
+      "id": "TEA-100",
+      "name": "Flash-Forward Case Evolution: Tracking 48 Hours of Receptor Internalization",
+      "tier": "wild",
+      "evidence_tag": "plausible",
+      "mechanism": "Allow students to scrub a 48-hour time slider on an asthma patient using continuous high-dose beta-agonist, observing receptor count dwindling from 10,000 to 800 per cell",
+      "expected_effect": "Provides dynamic temporal visualization of receptor homeostasis and down-regulation kinetics across multi-day clinical therapy",
+      "formatted": "Flash-Forward Case Evolution: Tracking 48 Hours of Receptor Internalization: Allow students to scrub a 48-hour time slider on an asthma patient using continuous high-dose beta-agonist, observing receptor count dwindling from 10,000 to 800 per cell -> Provides dynamic temporal visualization of receptor homeostasis and down-regulation kinetics across multi-day clinical therapy [plausible]"
+    }
+  ]
+}

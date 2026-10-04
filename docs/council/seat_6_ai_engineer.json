@@ -1,0 +1,911 @@
+{
+  "seat": "Seat 6: AI/Technology Engineer",
+  "total_count": 100,
+  "breakdown": {
+    "proven": 30,
+    "adjacent": 50,
+    "wild": 20
+  },
+  "ideas": [
+    {
+      "id": "TEC-001",
+      "name": "Client-Side WebAssembly RDKit SMILES Renderer",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compile a trimmed build of RDKit C++ to WebAssembly running directly in the browser to parse SMILES strings and generate vector SVGs with 0ms server latency",
+      "expected_effect": "Eliminates network wait times during molecular inspections and enables instant, risk-free chemical exploration",
+      "formatted": "Client-Side WebAssembly RDKit SMILES Renderer: Compile a trimmed build of RDKit C++ to WebAssembly running directly in the browser to parse SMILES strings and generate vector SVGs with 0ms server latency -> Eliminates network wait times during molecular inspections and enables instant, risk-free chemical exploration [evidence-backed]"
+    },
+    {
+      "id": "TEC-002",
+      "name": "Analytical Henderson-Hasselbalch In-Browser Solver",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Evaluate pH and pKa values via direct algebraic floating-point calculations in JavaScript to dynamically compute ionization percentages as the learner moves a pH slider",
+      "expected_effect": "Provides instantaneous visual feedback on drug ionization across biological compartments without cognitive delay",
+      "formatted": "Analytical Henderson-Hasselbalch In-Browser Solver: Evaluate pH and pKa values via direct algebraic floating-point calculations in JavaScript to dynamically compute ionization percentages as the learner moves a pH slider -> Provides instantaneous visual feedback on drug ionization across biological compartments without cognitive delay [evidence-backed]"
+    },
+    {
+      "id": "TEC-003",
+      "name": "Client-Side 4th-Order Runge-Kutta ODE Solver for Multi-Compartment PK",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Implement a pure JavaScript RK4 numerical integrator to compute differential concentration changes for two-compartment intravenous infusion and oral absorption models",
+      "expected_effect": "Allows students to dynamically manipulate clearance and volume of distribution and observe real-time curve shifts without backend roundtrips",
+      "formatted": "Client-Side 4th-Order Runge-Kutta ODE Solver for Multi-Compartment PK: Implement a pure JavaScript RK4 numerical integrator to compute differential concentration changes for two-compartment intravenous infusion and oral absorption models -> Allows students to dynamically manipulate clearance and volume of distribution and observe real-time curve shifts without backend roundtrips [evidence-backed]"
+    },
+    {
+      "id": "TEC-004",
+      "name": "Offline-First IndexedDB Step and State Persistence Engine",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Store learner progress, widget configuration states, and step submission records in browser IndexedDB with a transactional Dexie-backed wrapper",
+      "expected_effect": "Enables uninterrupted study during spotty transit commutes while ensuring zero progress loss upon unexpected tab closure",
+      "formatted": "Offline-First IndexedDB Step and State Persistence Engine: Store learner progress, widget configuration states, and step submission records in browser IndexedDB with a transactional Dexie-backed wrapper -> Enables uninterrupted study during spotty transit commutes while ensuring zero progress loss upon unexpected tab closure [evidence-backed]"
+    },
+    {
+      "id": "TEC-005",
+      "name": "Static Pre-Hydrated JSON Curriculum Chunks with Zero-RTT Route Transitions",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Bundle curriculum structures as statically typed, pre-split JSON files imported via dynamic import on route transition",
+      "expected_effect": "Eliminates database query latency during lesson navigation, preserving the student's train of thought",
+      "formatted": "Static Pre-Hydrated JSON Curriculum Chunks with Zero-RTT Route Transitions: Bundle curriculum structures as statically typed, pre-split JSON files imported via dynamic import on route transition -> Eliminates database query latency during lesson navigation, preserving the student's train of thought [evidence-backed]"
+    },
+    {
+      "id": "TEC-006",
+      "name": "Headless SVG Bond-Highlighting Generator for Pharmacophore Alignments",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Generate parameterized SVG paths with deterministic color-coded strokes identifying pharmacophore features directly from atom indices",
+      "expected_effect": "Highlights essential receptor interaction points without layout shifts or third-party image asset dependencies",
+      "formatted": "Headless SVG Bond-Highlighting Generator for Pharmacophore Alignments: Generate parameterized SVG paths with deterministic color-coded strokes identifying pharmacophore features directly from atom indices -> Highlights essential receptor interaction points without layout shifts or third-party image asset dependencies [evidence-backed]"
+    },
+    {
+      "id": "TEC-007",
+      "name": "Client-Side Chemical Formula AST Parser and Charge Balancer",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Parse string representations of chemical formulas into an Abstract Syntax Tree using a lightweight lexer to validate formal charges and elemental counts",
+      "expected_effect": "Instantaneously checks student molecular balance inputs locally without leaking solutions or requiring server computation",
+      "formatted": "Client-Side Chemical Formula AST Parser and Charge Balancer: Parse string representations of chemical formulas into an Abstract Syntax Tree using a lightweight lexer to validate formal charges and elemental counts -> Instantaneously checks student molecular balance inputs locally without leaking solutions or requiring server computation [evidence-backed]"
+    },
+    {
+      "id": "TEC-008",
+      "name": "Zero-Cost Anonymous Firebase Auth to Persistent Session Migration",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Initialize users immediately with Firebase anonymous auth tokens and seamlessly link credentials via linkWithCredential when upgrading or signing in",
+      "expected_effect": "Minimizes initial friction, allowing students to start learning in seconds while preserving all early trial progress",
+      "formatted": "Zero-Cost Anonymous Firebase Auth to Persistent Session Migration: Initialize users immediately with Firebase anonymous auth tokens and seamlessly link credentials via linkWithCredential when upgrading or signing in -> Minimizes initial friction, allowing students to start learning in seconds while preserving all early trial progress [evidence-backed]"
+    },
+    {
+      "id": "TEC-009",
+      "name": "Service Worker Pre-Caching for Commute-Mode Lesson Bundles",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Register a Cache API service worker that pre-fetches and caches active module assets, lesson JSONs, and Wasm binaries upon module registration",
+      "expected_effect": "Guarantees full offline functionality for 3rd-year pharmacy students studying during hospital rotations or transit",
+      "formatted": "Service Worker Pre-Caching for Commute-Mode Lesson Bundles: Register a Cache API service worker that pre-fetches and caches active module assets, lesson JSONs, and Wasm binaries upon module registration -> Guarantees full offline functionality for 3rd-year pharmacy students studying during hospital rotations or transit [evidence-backed]"
+    },
+    {
+      "id": "TEC-010",
+      "name": "Web Worker Offloading for 2D Molecular Coordinate Layout",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Offload force-directed 2D molecular coordinate generation and overlap minimization from SMILES to a dedicated background Web Worker",
+      "expected_effect": "Prevents main-thread UI stutter, ensuring smooth 60fps micro-motion during interactive structure rendering",
+      "formatted": "Web Worker Offloading for 2D Molecular Coordinate Layout: Offload force-directed 2D molecular coordinate generation and overlap minimization from SMILES to a dedicated background Web Worker -> Prevents main-thread UI stutter, ensuring smooth 60fps micro-motion during interactive structure rendering [evidence-backed]"
+    },
+    {
+      "id": "TEC-011",
+      "name": "Pre-Calculated Hill Equation Dose-Response Lookup Table Interpolator",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Pre-compute dense logarithmic grids of agonist-antagonist concentration-effect responses and linearly interpolate in real-time",
+      "expected_effect": "Enables fluid 120Hz slider scrubbing of competitive vs noncompetitive antagonist curves with zero numerical lag",
+      "formatted": "Pre-Calculated Hill Equation Dose-Response Lookup Table Interpolator: Pre-compute dense logarithmic grids of agonist-antagonist concentration-effect responses and linearly interpolate in real-time -> Enables fluid 120Hz slider scrubbing of competitive vs noncompetitive antagonist curves with zero numerical lag [evidence-backed]"
+    },
+    {
+      "id": "TEC-012",
+      "name": "Deterministic Pseudo-Random Seeded Drug Property Generator",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Generate randomized pharmacokinetics parameters using a seeded linear congruential generator tied to the student's session ID",
+      "expected_effect": "Presents varied practice numbers on spaced retrieval repeats while maintaining reproducible validation across devices",
+      "formatted": "Deterministic Pseudo-Random Seeded Drug Property Generator: Generate randomized pharmacokinetics parameters using a seeded linear congruential generator tied to the student's session ID -> Presents varied practice numbers on spaced retrieval repeats while maintaining reproducible validation across devices [evidence-backed]"
+    },
+    {
+      "id": "TEC-013",
+      "name": "CSS Transform-Only Hardware-Accelerated Micro-Motion Engine",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Constrain all UI animations to GPU-accelerated CSS transform and opacity properties with fixed sub-250ms cubic-bezier transitions",
+      "expected_effect": "Delivers instantaneous, crisp Neo-brutalist tactile feedback without triggering browser reflow or layout thrashing",
+      "formatted": "CSS Transform-Only Hardware-Accelerated Micro-Motion Engine: Constrain all UI animations to GPU-accelerated CSS transform and opacity properties with fixed sub-250ms cubic-bezier transitions -> Delivers instantaneous, crisp Neo-brutalist tactile feedback without triggering browser reflow or layout thrashing [evidence-backed]"
+    },
+    {
+      "id": "TEC-014",
+      "name": "Strict Zod Step-Data Schema Validation in Pre-Commit CI Gate",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Validate 100% of curriculum JSON files against a rigid Zod TypeScript schema during CI builds, asserting step types, exact sources, and word count bounds",
+      "expected_effect": "Eliminates production runtime rendering crashes and guarantees lesson data integrity before deployment",
+      "formatted": "Strict Zod Step-Data Schema Validation in Pre-Commit CI Gate: Validate 100% of curriculum JSON files against a rigid Zod TypeScript schema during CI builds, asserting step types, exact sources, and word count bounds -> Eliminates production runtime rendering crashes and guarantees lesson data integrity before deployment [evidence-backed]"
+    },
+    {
+      "id": "TEC-015",
+      "name": "Client-Side SMILES Canonicalization and Equivalence Checker",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Normalize student-entered or modified chemical SMILES into canonical Morgan atom order in JavaScript to evaluate structural equivalence against the answer key",
+      "expected_effect": "Allows flexible, valid alternative drawing representations without false negative rejections",
+      "formatted": "Client-Side SMILES Canonicalization and Equivalence Checker: Normalize student-entered or modified chemical SMILES into canonical Morgan atom order in JavaScript to evaluate structural equivalence against the answer key -> Allows flexible, valid alternative drawing representations without false negative rejections [evidence-backed]"
+    },
+    {
+      "id": "TEC-016",
+      "name": "LocalStorage Leitner Spaced-Repetition Box Scheduler",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Implement a 5-box Leitner scheduling algorithm in pure client TypeScript calculating review intervals and next-review timestamps directly from local storage timestamps",
+      "expected_effect": "Delivers personalized, low-latency daily review queues without requiring constant cloud database sync",
+      "formatted": "LocalStorage Leitner Spaced-Repetition Box Scheduler: Implement a 5-box Leitner scheduling algorithm in pure client TypeScript calculating review intervals and next-review timestamps directly from local storage timestamps -> Delivers personalized, low-latency daily review queues without requiring constant cloud database sync [evidence-backed]"
+    },
+    {
+      "id": "TEC-017",
+      "name": "Canvas 2D Direct Rasterization for Multi-Point Receptor Saturation Curves",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Render radioligand receptor binding saturation curves onto an HTML5 Canvas using direct 2D context path drawing rather than heavy SVG DOM elements",
+      "expected_effect": "Maintains silky smooth rendering performance even with 500+ data points and simultaneous non-specific binding plots",
+      "formatted": "Canvas 2D Direct Rasterization for Multi-Point Receptor Saturation Curves: Render radioligand receptor binding saturation curves onto an HTML5 Canvas using direct 2D context path drawing rather than heavy SVG DOM elements -> Maintains silky smooth rendering performance even with 500+ data points and simultaneous non-specific binding plots [evidence-backed]"
+    },
+    {
+      "id": "TEC-018",
+      "name": "Zero-Network Client-Side Multiple-Choice Distractor Diagnostic Dispatcher",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Bundle diagnostic feedback strings for every distractor directly into the client step payload and reveal them immediately via local React state upon option selection",
+      "expected_effect": "Provides instant, targeted misconception remediation at the exact moment of error without network latency",
+      "formatted": "Zero-Network Client-Side Multiple-Choice Distractor Diagnostic Dispatcher: Bundle diagnostic feedback strings for every distractor directly into the client step payload and reveal them immediately via local React state upon option selection -> Provides instant, targeted misconception remediation at the exact moment of error without network latency [evidence-backed]"
+    },
+    {
+      "id": "TEC-019",
+      "name": "Lazy-Loaded Wasm Dynamic Module Splitting by Lesson Widget Requirement",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Dynamically import RDKit WebAssembly binaries only when navigating into lessons explicitly requiring chemical drawing or SAR widgets",
+      "expected_effect": "Keeps initial landing and text-concept page bundles under 180KB, ensuring sub-2.5s initial load times on mobile networks",
+      "formatted": "Lazy-Loaded Wasm Dynamic Module Splitting by Lesson Widget Requirement: Dynamically import RDKit WebAssembly binaries only when navigating into lessons explicitly requiring chemical drawing or SAR widgets -> Keeps initial landing and text-concept page bundles under 180KB, ensuring sub-2.5s initial load times on mobile networks [evidence-backed]"
+    },
+    {
+      "id": "TEC-020",
+      "name": "Static Bilingual (EN/TR) Terminology Tokenizer and In-Place Glossary Tooltip",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Tokenize pharmacological and medicinal chemistry terms against a build-time pre-compiled bilingual lexicon to render instant, zero-network hover/tap definitions",
+      "expected_effect": "Clarifies technical Latin/English pharmacology concepts for Turkish students without context-switching away from the problem",
+      "formatted": "Static Bilingual (EN/TR) Terminology Tokenizer and In-Place Glossary Tooltip: Tokenize pharmacological and medicinal chemistry terms against a build-time pre-compiled bilingual lexicon to render instant, zero-network hover/tap definitions -> Clarifies technical Latin/English pharmacology concepts for Turkish students without context-switching away from the problem [evidence-backed]"
+    },
+    {
+      "id": "TEC-021",
+      "name": "Fixed-Dimension SVG ViewBox Layout to Prevent Cumulative Layout Shift",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Enforce fixed aspect ratio viewBox attributes and CSS container queries on all chemical and pharmacological diagrams",
+      "expected_effect": "Prevents Cumulative Layout Shift (CLS < 0.05) when interactive diagrams initialize, avoiding visual disorientation",
+      "formatted": "Fixed-Dimension SVG ViewBox Layout to Prevent Cumulative Layout Shift: Enforce fixed aspect ratio viewBox attributes and CSS container queries on all chemical and pharmacological diagrams -> Prevents Cumulative Layout Shift (CLS < 0.05) when interactive diagrams initialize, avoiding visual disorientation [evidence-backed]"
+    },
+    {
+      "id": "TEC-022",
+      "name": "Client-Side Michaelis-Menten and Lineweaver-Burk Kinetics Calculator",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compute enzyme velocity and reciprocal coordinates in JavaScript with automatic reciprocal transformation",
+      "expected_effect": "Allows students to toggle between non-linear and double-reciprocal plots instantaneously, cementing competitive vs uncompetitive enzyme inhibition differences",
+      "formatted": "Client-Side Michaelis-Menten and Lineweaver-Burk Kinetics Calculator: Compute enzyme velocity and reciprocal coordinates in JavaScript with automatic reciprocal transformation -> Allows students to toggle between non-linear and double-reciprocal plots instantaneously, cementing competitive vs uncompetitive enzyme inhibition differences [evidence-backed]"
+    },
+    {
+      "id": "TEC-023",
+      "name": "Sub-Millisecond Form Input Debouncing for PK Parameter Sliders",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Implement a requestAnimationFrame-throttled debouncer on continuous input sliders for clearance and dose sliders",
+      "expected_effect": "Prevents UI thread blocking during rapid scrubbing while maintaining instant visual continuity",
+      "formatted": "Sub-Millisecond Form Input Debouncing for PK Parameter Sliders: Implement a requestAnimationFrame-throttled debouncer on continuous input sliders for clearance and dose sliders -> Prevents UI thread blocking during rapid scrubbing while maintaining instant visual continuity [evidence-backed]"
+    },
+    {
+      "id": "TEC-024",
+      "name": "Native Browser SpeechSynthesis API for Latin/Turkish IUPAC Pronunciation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Invoke window.speechSynthesis with configured Turkish (tr-TR) and English (en-US) phonetic voice targets to pronounce drug names and chemical stems on tap",
+      "expected_effect": "Eliminates pronunciation anxiety and reinforces phonological memory encoding of complex multi-syllabic pharmacological agents without server audio streaming",
+      "formatted": "Native Browser SpeechSynthesis API for Latin/Turkish IUPAC Pronunciation: Invoke window.speechSynthesis with configured Turkish (tr-TR) and English (en-US) phonetic voice targets to pronounce drug names and chemical stems on tap -> Eliminates pronunciation anxiety and reinforces phonological memory encoding of complex multi-syllabic pharmacological agents without server audio streaming [evidence-backed]"
+    },
+    {
+      "id": "TEC-025",
+      "name": "Pre-Rendered Vector Icon Sprite Sheets for Pharmacological Receptor Subtypes",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compile all autonomic receptor diagrams into a single inline SVG sprite sheet",
+      "expected_effect": "Guarantees zero HTTP request overhead and instantaneous rendering across the entire ANS pharmacology module",
+      "formatted": "Pre-Rendered Vector Icon Sprite Sheets for Pharmacological Receptor Subtypes: Compile all autonomic receptor diagrams into a single inline SVG sprite sheet -> Guarantees zero HTTP request overhead and instantaneous rendering across the entire ANS pharmacology module [evidence-backed]"
+    },
+    {
+      "id": "TEC-026",
+      "name": "Local Client-Side Diff Engine for Student Structure Modifications",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Calculate atom and bond delta graphs between a reference scaffold and student-modified analogs in memory",
+      "expected_effect": "Visually isolates structural modifications with contrasting borders, directing attention directly to the active pharmacophore changes",
+      "formatted": "Local Client-Side Diff Engine for Student Structure Modifications: Calculate atom and bond delta graphs between a reference scaffold and student-modified analogs in memory -> Visually isolates structural modifications with contrasting borders, directing attention directly to the active pharmacophore changes [evidence-backed]"
+    },
+    {
+      "id": "TEC-027",
+      "name": "Deterministic Cryptographic Hash Checksum for Lesson Verification States",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Compute SHA-256 hashes of client answer vectors in Web Crypto API to verify local lesson completion milestones before dispatching completion beacons",
+      "expected_effect": "Prevents client tampering and guarantees consistent step sequencing without server validation calls",
+      "formatted": "Deterministic Cryptographic Hash Checksum for Lesson Verification States: Compute SHA-256 hashes of client answer vectors in Web Crypto API to verify local lesson completion milestones before dispatching completion beacons -> Prevents client tampering and guarantees consistent step sequencing without server validation calls [evidence-backed]"
+    },
+    {
+      "id": "TEC-028",
+      "name": "Client-Side Session Replay Event Buffer for Widget State Restoration",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Record lightweight delta interaction snapshots (slider values, clicked atoms, selected options) in a 10-entry circular memory buffer",
+      "expected_effect": "Enables students to undo actions or resume interactive simulations exactly where they left off after an interruption",
+      "formatted": "Client-Side Session Replay Event Buffer for Widget State Restoration: Record lightweight delta interaction snapshots (slider values, clicked atoms, selected options) in a 10-entry circular memory buffer -> Enables students to undo actions or resume interactive simulations exactly where they left off after an interruption [evidence-backed]"
+    },
+    {
+      "id": "TEC-029",
+      "name": "Web Audio API Synthesized Micro-Acoustic Feedback for Step Affirmation",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Generate gentle, synthesized sine-wave audio tones directly through Web Audio oscillators without downloading audio files",
+      "expected_effect": "Provides immediate sensory feedback on prediction reveals with 0KB bandwidth overhead and zero playback latency",
+      "formatted": "Web Audio API Synthesized Micro-Acoustic Feedback for Step Affirmation: Generate gentle, synthesized sine-wave audio tones directly through Web Audio oscillators without downloading audio files -> Provides immediate sensory feedback on prediction reveals with 0KB bandwidth overhead and zero playback latency [evidence-backed]"
+    },
+    {
+      "id": "TEC-030",
+      "name": "Static Content Security Policy and Subresource Integrity Sandbox",
+      "tier": "proven",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Enforce strict CSP headers and SRI hashes across all hosted static assets, prohibiting unsafe-eval and unverified external scripts",
+      "expected_effect": "Ensures an ultra-secure, tamper-proof testing environment while maintaining zero external dependency attack vectors",
+      "formatted": "Static Content Security Policy and Subresource Integrity Sandbox: Enforce strict CSP headers and SRI hashes across all hosted static assets, prohibiting unsafe-eval and unverified external scripts -> Ensures an ultra-secure, tamper-proof testing environment while maintaining zero external dependency attack vectors [evidence-backed]"
+    },
+    {
+      "id": "TEC-031",
+      "name": "Build-Time LLM-Synthesized Diagnostic Distractor Generation with Zod Verification",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Generate candidate multiple-choice distractors during offline builds using structured LLM prompts, validating each distractor through automated Zod schemas to ensure it maps to a documented 3rd-year pharmacy misconception",
+      "expected_effect": "Provides rich, targeted misconception feedback for every option without incurring runtime LLM latency or API costs",
+      "formatted": "Build-Time LLM-Synthesized Diagnostic Distractor Generation with Zod Verification: Generate candidate multiple-choice distractors during offline builds using structured LLM prompts, validating each distractor through automated Zod schemas to ensure it maps to a documented 3rd-year pharmacy misconception -> Provides rich, targeted misconception feedback for every option without incurring runtime LLM latency or API costs [plausible]"
+    },
+    {
+      "id": "TEC-032",
+      "name": "Client-Side HNSW Vector Search for Instant Drug-Class & Mechanism Lookup",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Bundle a quantized 64-dimensional embedding index of drug classes, receptor mechanisms, and adverse effects into an in-memory client HNSW vector graph",
+      "expected_effect": "Allows instant natural-language semantic querying of drug relationships directly in the browser with sub-5ms latency",
+      "formatted": "Client-Side HNSW Vector Search for Instant Drug-Class & Mechanism Lookup: Bundle a quantized 64-dimensional embedding index of drug classes, receptor mechanisms, and adverse effects into an in-memory client HNSW vector graph -> Allows instant natural-language semantic querying of drug relationships directly in the browser with sub-5ms latency [plausible]"
+    },
+    {
+      "id": "TEC-033",
+      "name": "Declarative SVG-to-Canvas Bond-Angle Morphing for Agonist-Induced Fit",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Interpolate 2D Cartesian atom coordinates from ligand-free to receptor-bound conformations using cubic Bezier motion curves rendered to Canvas",
+      "expected_effect": "Helps students visually grasp how ligand binding induces conformational shifts in GPCR transmembrane helices",
+      "formatted": "Declarative SVG-to-Canvas Bond-Angle Morphing for Agonist-Induced Fit: Interpolate 2D Cartesian atom coordinates from ligand-free to receptor-bound conformations using cubic Bezier motion curves rendered to Canvas -> Helps students visually grasp how ligand binding induces conformational shifts in GPCR transmembrane helices [plausible]"
+    },
+    {
+      "id": "TEC-034",
+      "name": "Build-Time Automated 3-Tier Scaffolded Hint Ladder Validator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Run an automated static analysis script across all curriculum lesson files to verify that every problem step contains exactly 3 progressive hints meeting specific lexical divergence metrics",
+      "expected_effect": "Ensures students always receive consistent, non-redundant cognitive scaffolding when stuck",
+      "formatted": "Build-Time Automated 3-Tier Scaffolded Hint Ladder Validator: Run an automated static analysis script across all curriculum lesson files to verify that every problem step contains exactly 3 progressive hints meeting specific lexical divergence metrics -> Ensures students always receive consistent, non-redundant cognitive scaffolding when stuck [plausible]"
+    },
+    {
+      "id": "TEC-035",
+      "name": "In-Browser Bitset Morgan Fingerprint Similarity Scorer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compute 1024-bit Morgan circular fingerprints and Tanimoto similarity coefficients in JavaScript between student-modified molecules and reference agonists",
+      "expected_effect": "Gives students real-time quantitative feedback on structural similarity as they modify substituents on adrenergic cores",
+      "formatted": "In-Browser Bitset Morgan Fingerprint Similarity Scorer: Compute 1024-bit Morgan circular fingerprints and Tanimoto similarity coefficients in JavaScript between student-modified molecules and reference agonists -> Gives students real-time quantitative feedback on structural similarity as they modify substituents on adrenergic cores [plausible]"
+    },
+    {
+      "id": "TEC-036",
+      "name": "WebAssembly Easson-Stedman Three-Point Pharmacophore Triangulation Engine",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compute Euclidean 3D spatial distances between aromatic, cationic, and hydroxyl pharmacophore points in WebAssembly to check binding compatibility",
+      "expected_effect": "Visually demonstrates why (R)-(-)-epinephrine has significantly higher potency than the (S)-(+)-enantiomer through tactile geometric alignment",
+      "formatted": "WebAssembly Easson-Stedman Three-Point Pharmacophore Triangulation Engine: Compute Euclidean 3D spatial distances between aromatic, cationic, and hydroxyl pharmacophore points in WebAssembly to check binding compatibility -> Visually demonstrates why (R)-(-)-epinephrine has significantly higher potency than the (S)-(+)-enantiomer through tactile geometric alignment [plausible]"
+    },
+    {
+      "id": "TEC-037",
+      "name": "Local Compressed Trie for Real-Time IUPAC and Drug Name Autocomplete",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Index 2,000+ pharmacological drugs, IUPAC stems, and receptor targets into a compressed Radix Trie stored in memory",
+      "expected_effect": "Accelerates active-recall retrieval practice by completing drug stems in under 2ms without network calls",
+      "formatted": "Local Compressed Trie for Real-Time IUPAC and Drug Name Autocomplete: Index 2,000+ pharmacological drugs, IUPAC stems, and receptor targets into a compressed Radix Trie stored in memory -> Accelerates active-recall retrieval practice by completing drug stems in under 2ms without network calls [plausible]"
+    },
+    {
+      "id": "TEC-038",
+      "name": "Automated Word-Count Linter Enforcing 40-Word Cognitive Load Ceiling",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Execute an AST-based word-count linter across all lesson prompt markdown blocks in pre-commit hooks, rejecting any step with more than 40 words",
+      "expected_effect": "Protects learners from cognitive overload by strictly enforcing bite-sized, single-concept pedagogical steps",
+      "formatted": "Automated Word-Count Linter Enforcing 40-Word Cognitive Load Ceiling: Execute an AST-based word-count linter across all lesson prompt markdown blocks in pre-commit hooks, rejecting any step with more than 40 words -> Protects learners from cognitive overload by strictly enforcing bite-sized, single-concept pedagogical steps [evidence-backed]"
+    },
+    {
+      "id": "TEC-039",
+      "name": "Client-Side Bioisosteric Replacement Matrix with LogP/pKa Delta Predictor",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Embed a lookup matrix of classical and non-classical bioisosteric substitutions that updates predicted LogP and pKa deltas in real-time",
+      "expected_effect": "Allows students to observe how functional group swaps alter lipophilicity and bioavailability instantaneously",
+      "formatted": "Client-Side Bioisosteric Replacement Matrix with LogP/pKa Delta Predictor: Embed a lookup matrix of classical and non-classical bioisosteric substitutions that updates predicted LogP and pKa deltas in real-time -> Allows students to observe how functional group swaps alter lipophilicity and bioavailability instantaneously [plausible]"
+    },
+    {
+      "id": "TEC-040",
+      "name": "Web Worker Parallelized Monte Carlo PK Population Variability Simulator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Run 1,000 parallel stochastic pharmacokinetic trajectories varying clearance and volume of distribution across random normal distributions inside a Web Worker",
+      "expected_effect": "Displays 95% confidence intervals and therapeutic window breaches without freezing the interactive UI",
+      "formatted": "Web Worker Parallelized Monte Carlo PK Population Variability Simulator: Run 1,000 parallel stochastic pharmacokinetic trajectories varying clearance and volume of distribution across random normal distributions inside a Web Worker -> Displays 95% confidence intervals and therapeutic window breaches without freezing the interactive UI [plausible]"
+    },
+    {
+      "id": "TEC-041",
+      "name": "Graphlib DAG AST Traversal for Receptor Signaling Cascade Dependencies",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Model autonomic second messenger pathways as a Directed Acyclic Graph with client-side state propagation",
+      "expected_effect": "Enables learners to perturb specific downstream nodes and trace immediate biological cascade consequences",
+      "formatted": "Graphlib DAG AST Traversal for Receptor Signaling Cascade Dependencies: Model autonomic second messenger pathways as a Directed Acyclic Graph with client-side state propagation -> Enables learners to perturb specific downstream nodes and trace immediate biological cascade consequences [plausible]"
+    },
+    {
+      "id": "TEC-042",
+      "name": "Build-Time Visual Regression Snapshot Pipeline for Chemical Structure Rendering",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Render headless browser SVG snapshots of all chemical structures during CI and compare pixel hashes against approved baselines",
+      "expected_effect": "Prevents accidental visual corruption, clipping, or dropped bonds in SMILES structures across deployments",
+      "formatted": "Build-Time Visual Regression Snapshot Pipeline for Chemical Structure Rendering: Render headless browser SVG snapshots of all chemical structures during CI and compare pixel hashes against approved baselines -> Prevents accidental visual corruption, clipping, or dropped bonds in SMILES structures across deployments [plausible]"
+    },
+    {
+      "id": "TEC-043",
+      "name": "Client-Side Topological Polar Surface Area and Rule of 5 Estimator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculate TPSA, molecular weight, H-bond donors/acceptors, and Rotatable Bonds in real-time in JavaScript from molecular SMILES",
+      "expected_effect": "Provides instant Lipinski Rule of 5 oral bioavailability compliance checks as students add or remove substituents",
+      "formatted": "Client-Side Topological Polar Surface Area and Rule of 5 Estimator: Calculate TPSA, molecular weight, H-bond donors/acceptors, and Rotatable Bonds in real-time in JavaScript from molecular SMILES -> Provides instant Lipinski Rule of 5 oral bioavailability compliance checks as students add or remove substituents [plausible]"
+    },
+    {
+      "id": "TEC-044",
+      "name": "Dynamic Canvas-Rendered Membrane Bilayer Particle Diffusion Simulator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Simulate 200 Brownian motion particles representing ionized and unionized drug species interacting with a lipid bilayer on Canvas at 60fps",
+      "expected_effect": "Visually reinforces how only non-ionized lipophilic fractions cross cellular membranes in real time",
+      "formatted": "Dynamic Canvas-Rendered Membrane Bilayer Particle Diffusion Simulator: Simulate 200 Brownian motion particles representing ionized and unionized drug species interacting with a lipid bilayer on Canvas at 60fps -> Visually reinforces how only non-ionized lipophilic fractions cross cellular membranes in real time [plausible]"
+    },
+    {
+      "id": "TEC-045",
+      "name": "Offline Fallback Telemetry Queue with Exponential Backoff Batch Flusher",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Buffer interaction metrics, completion timestamps, and diagnostic answers into an IndexedDB queue, batch-flushing to Firestore when connectivity is restored",
+      "expected_effect": "Guarantees accurate learning analytics without dropping data during intermittent mobile connectivity",
+      "formatted": "Offline Fallback Telemetry Queue with Exponential Backoff Batch Flusher: Buffer interaction metrics, completion timestamps, and diagnostic answers into an IndexedDB queue, batch-flushing to Firestore when connectivity is restored -> Guarantees accurate learning analytics without dropping data during intermittent mobile connectivity [plausible]"
+    },
+    {
+      "id": "TEC-046",
+      "name": "WebAssembly-Compiled MiniSat Boolean Solver for Drug-Drug Interaction Chains",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compile a lightweight Boolean SAT solver to Wasm to evaluate multi-drug enzyme competition and metabolic pathway inhibition conflicts in real time",
+      "expected_effect": "Allows students to test complex co-administration scenarios and detect CYP3A4/CYP2D6 metabolic bottlenecks instantly",
+      "formatted": "WebAssembly-Compiled MiniSat Boolean Solver for Drug-Drug Interaction Chains: Compile a lightweight Boolean SAT solver to Wasm to evaluate multi-drug enzyme competition and metabolic pathway inhibition conflicts in real time -> Allows students to test complex co-administration scenarios and detect CYP3A4/CYP2D6 metabolic bottlenecks instantly [plausible]"
+    },
+    {
+      "id": "TEC-047",
+      "name": "Pure Client-Side Ferguson Thermodynamic Activity Equilibrium Solver",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculate relative saturation and thermodynamic activity indices in pure client TypeScript to model non-specific CNS depressant potency",
+      "expected_effect": "Demystifies Ferguson's principle through interactive vapor pressure and solubility sliders with zero server latency",
+      "formatted": "Pure Client-Side Ferguson Thermodynamic Activity Equilibrium Solver: Calculate relative saturation and thermodynamic activity indices in pure client TypeScript to model non-specific CNS depressant potency -> Demystifies Ferguson's principle through interactive vapor pressure and solubility sliders with zero server latency [plausible]"
+    },
+    {
+      "id": "TEC-048",
+      "name": "Build-Time Automated Semantic Check Against Verified Lecture Slide Corpus",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Run an offline script matching curriculum claims and numeric constants against text extracted from course PDF decks, flagging discrepancies",
+      "expected_effect": "Ensures 100% factual fidelity to course materials while eliminating hallucinations before code review",
+      "formatted": "Build-Time Automated Semantic Check Against Verified Lecture Slide Corpus: Run an offline script matching curriculum claims and numeric constants against text extracted from course PDF decks, flagging discrepancies -> Ensures 100% factual fidelity to course materials while eliminating hallucinations before code review [evidence-backed]"
+    },
+    {
+      "id": "TEC-049",
+      "name": "Client-Side Structural Substructure Pattern Matching via SMARTS Engine",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compile a lightweight SMARTS pattern matcher in JavaScript to scan student-drawn chemical structures for specific pharmacophoric motifs",
+      "expected_effect": "Automatically detects and confirms essential binding moieties as the student constructs molecules",
+      "formatted": "Client-Side Structural Substructure Pattern Matching via SMARTS Engine: Compile a lightweight SMARTS pattern matcher in JavaScript to scan student-drawn chemical structures for specific pharmacophoric motifs -> Automatically detects and confirms essential binding moieties as the student constructs molecules [plausible]"
+    },
+    {
+      "id": "TEC-050",
+      "name": "Predictive Next-Step Asset Speculative Prefetching on Hover/Step-Focus",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Monitor student step completion velocity and pre-fetch the next step's interactive widget bundles upon 80% step dwell time",
+      "expected_effect": "Eliminates perceptible step transition delays, sustaining uninterrupted immersion and flow state",
+      "formatted": "Predictive Next-Step Asset Speculative Prefetching on Hover/Step-Focus: Monitor student step completion velocity and pre-fetch the next step's interactive widget bundles upon 80% step dwell time -> Eliminates perceptible step transition delays, sustaining uninterrupted immersion and flow state [plausible]"
+    },
+    {
+      "id": "TEC-051",
+      "name": "Client-Side Shuffled Distractor Permutation Engine with Seeded Randomness",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Shuffle multiple-choice options using a deterministic Fisher-Yates algorithm seeded with the student ID and attempt count",
+      "expected_effect": "Prevents position-based guessing and pattern memorization while ensuring consistent diagnostic feedback mapping",
+      "formatted": "Client-Side Shuffled Distractor Permutation Engine with Seeded Randomness: Shuffle multiple-choice options using a deterministic Fisher-Yates algorithm seeded with the student ID and attempt count -> Prevents position-based guessing and pattern memorization while ensuring consistent diagnostic feedback mapping [plausible]"
+    },
+    {
+      "id": "TEC-052",
+      "name": "Real-Time Canvas-Based Schild Regression Dynamic Slope Plotter",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Dynamically calculate log(dose ratio - 1) vs log[antagonist] and plot the resulting linear regression on Canvas as antagonist concentrations change",
+      "expected_effect": "Directly demonstrates competitive antagonism and pA2 determination in an interactive, visual manner",
+      "formatted": "Real-Time Canvas-Based Schild Regression Dynamic Slope Plotter: Dynamically calculate log(dose ratio - 1) vs log[antagonist] and plot the resulting linear regression on Canvas as antagonist concentrations change -> Directly demonstrates competitive antagonism and pA2 determination in an interactive, visual manner [plausible]"
+    },
+    {
+      "id": "TEC-053",
+      "name": "Automated Transpilation of Pharmacological PK Equations into WebAssembly",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Transpile mathematical pharmacokinetic formulas directly from symbolic LaTeX definitions to WebAssembly during the build process",
+      "expected_effect": "Guarantees identical numerical precision across all student browser engines while maximizing simulation calculation speed",
+      "formatted": "Automated Transpilation of Pharmacological PK Equations into WebAssembly: Transpile mathematical pharmacokinetic formulas directly from symbolic LaTeX definitions to WebAssembly during the build process -> Guarantees identical numerical precision across all student browser engines while maximizing simulation calculation speed [plausible]"
+    },
+    {
+      "id": "TEC-054",
+      "name": "Client-Side B-Tree Index for Micro-Second Spaced Review Querying",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Maintain an in-memory B-Tree index of past student mistake tags and concept mastery scores in the client SPA",
+      "expected_effect": "Instantly queries and prioritizes the most urgent retrieval cards without roundtrip database delay",
+      "formatted": "Client-Side B-Tree Index for Micro-Second Spaced Review Querying: Maintain an in-memory B-Tree index of past student mistake tags and concept mastery scores in the client SPA -> Instantly queries and prioritizes the most urgent retrieval cards without roundtrip database delay [plausible]"
+    },
+    {
+      "id": "TEC-055",
+      "name": "Zero-Cost Ephemeral State Machine for Predict-Then-Reveal Phasing",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Orchestrate the 2-phase predict-then-reveal UI cycle via an explicit finite state machine with strict transition guards",
+      "expected_effect": "Prevents learners from viewing explanations before committing their prediction, enforcing active retrieval effort",
+      "formatted": "Zero-Cost Ephemeral State Machine for Predict-Then-Reveal Phasing: Orchestrate the 2-phase predict-then-reveal UI cycle via an explicit finite state machine with strict transition guards -> Prevents learners from viewing explanations before committing their prediction, enforcing active retrieval effort [evidence-backed]"
+    },
+    {
+      "id": "TEC-056",
+      "name": "Wasm-Driven 2D Molecular Graph Edit Distance Calculator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compute the minimum graph edit distance between a student's modified structure and the target active drug scaffold in WebAssembly",
+      "expected_effect": "Provides adaptive, graduated feedback indicating how many atomic or bond modifications remain to achieve target activity",
+      "formatted": "Wasm-Driven 2D Molecular Graph Edit Distance Calculator: Compute the minimum graph edit distance between a student's modified structure and the target active drug scaffold in WebAssembly -> Provides adaptive, graduated feedback indicating how many atomic or bond modifications remain to achieve target activity [plausible]"
+    },
+    {
+      "id": "TEC-057",
+      "name": "Automated Translation Parity Auditor for Turkish/English Curriculum ASTs",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Parse English and Turkish lesson ASTs during pre-commit to assert identical step counts, widget configurations, and source slide references",
+      "expected_effect": "Guarantees bilingual curriculum parity so Turkish and English students receive equivalent educational quality",
+      "formatted": "Automated Translation Parity Auditor for Turkish/English Curriculum ASTs: Parse English and Turkish lesson ASTs during pre-commit to assert identical step counts, widget configurations, and source slide references -> Guarantees bilingual curriculum parity so Turkish and English students receive equivalent educational quality [evidence-backed]"
+    },
+    {
+      "id": "TEC-058",
+      "name": "In-Browser WebCodecs Video/Animation Loop for Ion Channel Gating States",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Render micro-animations of nicotinic receptor ion channel opening upon dual acetylcholine binding using lightweight hardware-decoded WebCodecs",
+      "expected_effect": "Delivers vivid structural visualization of ion conductance without high-bandwidth video streaming",
+      "formatted": "In-Browser WebCodecs Video/Animation Loop for Ion Channel Gating States: Render micro-animations of nicotinic receptor ion channel opening upon dual acetylcholine binding using lightweight hardware-decoded WebCodecs -> Delivers vivid structural visualization of ion conductance without high-bandwidth video streaming [plausible]"
+    },
+    {
+      "id": "TEC-059",
+      "name": "Client-Side G-Protein Coupled Receptor Desensitization Kinetics Solver",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Model beta-2-adrenoceptor phosphorylation by GRK and beta-arrestin uncoupling over time using client-side exponential decay functions",
+      "expected_effect": "Allows students to visualize homologous desensitization and tachyphylaxis following continuous agonist exposure",
+      "formatted": "Client-Side G-Protein Coupled Receptor Desensitization Kinetics Solver: Model beta-2-adrenoceptor phosphorylation by GRK and beta-arrestin uncoupling over time using client-side exponential decay functions -> Allows students to visualize homologous desensitization and tachyphylaxis following continuous agonist exposure [plausible]"
+    },
+    {
+      "id": "TEC-060",
+      "name": "Build-Time Dead-Code & Unused Asset Eliminator for Lightweight Bundles",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Analyze all lesson JSON configs during compilation to bundle only the exact subset of widget components and SVG icons used in that module",
+      "expected_effect": "Minimizes JavaScript payload size to preserve mobile load speed and low memory footprint on budget smartphones",
+      "formatted": "Build-Time Dead-Code & Unused Asset Eliminator for Lightweight Bundles: Analyze all lesson JSON configs during compilation to bundle only the exact subset of widget components and SVG icons used in that module -> Minimizes JavaScript payload size to preserve mobile load speed and low memory footprint on budget smartphones [evidence-backed]"
+    },
+    {
+      "id": "TEC-061",
+      "name": "Web Worker Multi-Threaded Organ Clearance Differential Equation Solver",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Solve physiological organ extraction and hepatic first-pass metabolism models across liver and renal compartments using Web Worker threads",
+      "expected_effect": "Allows students to manipulate hepatic blood flow and intrinsic clearance to see oral bioavailability consequences instantly",
+      "formatted": "Web Worker Multi-Threaded Organ Clearance Differential Equation Solver: Solve physiological organ extraction and hepatic first-pass metabolism models across liver and renal compartments using Web Worker threads -> Allows students to manipulate hepatic blood flow and intrinsic clearance to see oral bioavailability consequences instantly [plausible]"
+    },
+    {
+      "id": "TEC-062",
+      "name": "Client-Side Vector Matrix Projection for Drug Class Clustering",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Compute 2D PCA projections of autonomic drug chemical properties in JavaScript and display them on an interactive scatter plot",
+      "expected_effect": "Enables students to explore how structural clustering corresponds to pharmacological receptor selectivity",
+      "formatted": "Client-Side Vector Matrix Projection for Drug Class Clustering: Compute 2D PCA projections of autonomic drug chemical properties in JavaScript and display them on an interactive scatter plot -> Enables students to explore how structural clustering corresponds to pharmacological receptor selectivity [plausible]"
+    },
+    {
+      "id": "TEC-063",
+      "name": "Declarative State-Driven Neo-Brutalist Border and Shadow Theme Tokens",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Centralize 3-4px high-contrast borders and 6px zero-blur hard shadow styles in pure CSS variables, toggled via data attributes",
+      "expected_effect": "Provides an unambiguous, high-contrast visual environment that reduces UI ambiguity and eye fatigue during late-night study sessions",
+      "formatted": "Declarative State-Driven Neo-Brutalist Border and Shadow Theme Tokens: Centralize 3-4px high-contrast borders and 6px zero-blur hard shadow styles in pure CSS variables, toggled via data attributes -> Provides an unambiguous, high-contrast visual environment that reduces UI ambiguity and eye fatigue during late-night study sessions [evidence-backed]"
+    },
+    {
+      "id": "TEC-064",
+      "name": "Client-Side AST Validator for Student-Drawn Molecular Functional Groups",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Parse drawn molecular graphs into functional group trees to verify specific pharmacophore additions",
+      "expected_effect": "Gives pinpoint automated feedback on specific structural substitutions without requiring manual human grading",
+      "formatted": "Client-Side AST Validator for Student-Drawn Molecular Functional Groups: Parse drawn molecular graphs into functional group trees to verify specific pharmacophore additions -> Gives pinpoint automated feedback on specific structural substitutions without requiring manual human grading [plausible]"
+    },
+    {
+      "id": "TEC-065",
+      "name": "Automated Build-Time Provenance Linker Mapping Every Step to Slide Deck Numbers",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Match step citations to exact slide numbers in course PDFs via an automated verification script that compiles a static citation manifest",
+      "expected_effect": "Guarantees institutional trustworthiness and enables students to cross-reference lecture slides with one click",
+      "formatted": "Automated Build-Time Provenance Linker Mapping Every Step to Slide Deck Numbers: Match step citations to exact slide numbers in course PDFs via an automated verification script that compiles a static citation manifest -> Guarantees institutional trustworthiness and enables students to cross-reference lecture slides with one click [evidence-backed]"
+    },
+    {
+      "id": "TEC-066",
+      "name": "Offline Dynamic Calibration of Student Response Time Latency Baselines",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Record client-side interaction dwell times in local storage to compute personalized cognitive latency baselines per problem type",
+      "expected_effect": "Flags rapid guessing vs thoughtful deliberation without transmitting raw millisecond telemetry to the cloud",
+      "formatted": "Offline Dynamic Calibration of Student Response Time Latency Baselines: Record client-side interaction dwell times in local storage to compute personalized cognitive latency baselines per problem type -> Flags rapid guessing vs thoughtful deliberation without transmitting raw millisecond telemetry to the cloud [plausible]"
+    },
+    {
+      "id": "TEC-067",
+      "name": "In-Memory Directed Acyclic Graph for Prerequisite Concept Unlocking",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Encode curriculum prerequisite dependencies as an in-memory DAG, evaluating student module access client-side based on stored mastery tokens",
+      "expected_effect": "Prevents learners from skipping foundational pharmacology concepts before tackling complex autonomic therapeutics",
+      "formatted": "In-Memory Directed Acyclic Graph for Prerequisite Concept Unlocking: Encode curriculum prerequisite dependencies as an in-memory DAG, evaluating student module access client-side based on stored mastery tokens -> Prevents learners from skipping foundational pharmacology concepts before tackling complex autonomic therapeutics [evidence-backed]"
+    },
+    {
+      "id": "TEC-068",
+      "name": "Browser Native CSS Houdini Custom Paint for Dynamic Biomembrane Lipids",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Render phospholipid bilayer lipid head-groups and hydrophobic tails using CSS Houdini paint offloaded directly to the browser paint pipeline",
+      "expected_effect": "Generates infinitely sharp, performant biological membrane backgrounds with zero DOM node overhead",
+      "formatted": "Browser Native CSS Houdini Custom Paint for Dynamic Biomembrane Lipids: Render phospholipid bilayer lipid head-groups and hydrophobic tails using CSS Houdini paint offloaded directly to the browser paint pipeline -> Generates infinitely sharp, performant biological membrane backgrounds with zero DOM node overhead [plausible]"
+    },
+    {
+      "id": "TEC-069",
+      "name": "Zero-Cost Static CDN Edge-Cached Curriculum Distribution Pipeline",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Distribute all curriculum assets, pre-rendered SVGs, and Wasm binaries via global edge CDN caches with immutable cache-control headers",
+      "expected_effect": "Delivers sub-50ms Time-to-First-Byte worldwide while maintaining 93%+ gross profit margins",
+      "formatted": "Zero-Cost Static CDN Edge-Cached Curriculum Distribution Pipeline: Distribute all curriculum assets, pre-rendered SVGs, and Wasm binaries via global edge CDN caches with immutable cache-control headers -> Delivers sub-50ms Time-to-First-Byte worldwide while maintaining 93%+ gross profit margins [evidence-backed]"
+    },
+    {
+      "id": "TEC-070",
+      "name": "Local Naive Bayes Classifier for Real-Time Misconception Pattern Profiling",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Classify student error sequences against 5 prototypical misconception archetypes using an in-memory lightweight Naive Bayes model in TypeScript",
+      "expected_effect": "Dynamically routes the student to targeted remedial micro-steps without cloud AI inferencing costs",
+      "formatted": "Local Naive Bayes Classifier for Real-Time Misconception Pattern Profiling: Classify student error sequences against 5 prototypical misconception archetypes using an in-memory lightweight Naive Bayes model in TypeScript -> Dynamically routes the student to targeted remedial micro-steps without cloud AI inferencing costs [plausible]"
+    },
+    {
+      "id": "TEC-071",
+      "name": "Client-Side Canvas-Based Drug Bioavailability Comparison Radar Chart",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Render multi-axis radar plots of bioavailability, volume of distribution, half-life, protein binding, and renal clearance using HTML5 Canvas drawing routines",
+      "expected_effect": "Facilitates rapid visual comparison between prototypical drugs in a single interactive graphic",
+      "formatted": "Client-Side Canvas-Based Drug Bioavailability Comparison Radar Chart: Render multi-axis radar plots of bioavailability, volume of distribution, half-life, protein binding, and renal clearance using HTML5 Canvas drawing routines -> Facilitates rapid visual comparison between prototypical drugs in a single interactive graphic [plausible]"
+    },
+    {
+      "id": "TEC-072",
+      "name": "WebAssembly-Accelerated Chiral Inversion & Stereocenter Visualizer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Invert chiral centers in WebAssembly and re-render the 2D projection with corresponding wedge and dash bond updates",
+      "expected_effect": "Clarifies the dramatic pharmacological differences between enantiomers through direct manipulation",
+      "formatted": "WebAssembly-Accelerated Chiral Inversion & Stereocenter Visualizer: Invert chiral centers in WebAssembly and re-render the 2D projection with corresponding wedge and dash bond updates -> Clarifies the dramatic pharmacological differences between enantiomers through direct manipulation [plausible]"
+    },
+    {
+      "id": "TEC-073",
+      "name": "Client-Side Session Storage Recovery for Mid-Lesson Browser Tab Closures",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Mirror active step form inputs and slider settings into sessionStorage on every input event",
+      "expected_effect": "Restores the exact interactive simulation state when a student reopens an accidentally closed browser tab",
+      "formatted": "Client-Side Session Storage Recovery for Mid-Lesson Browser Tab Closures: Mirror active step form inputs and slider settings into sessionStorage on every input event -> Restores the exact interactive simulation state when a student reopens an accidentally closed browser tab [evidence-backed]"
+    },
+    {
+      "id": "TEC-074",
+      "name": "Build-Time Automated Synthetic Question Distractor Hardness Scorer",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Run a linguistic and domain overlap model during content authoring to evaluate distractor plausibility and surface trivially obvious answers",
+      "expected_effect": "Flags weak distractors for human refinement, ensuring all multiple-choice options test genuine clinical reasoning",
+      "formatted": "Build-Time Automated Synthetic Question Distractor Hardness Scorer: Run a linguistic and domain overlap model during content authoring to evaluate distractor plausibility and surface trivially obvious answers -> Flags weak distractors for human refinement, ensuring all multiple-choice options test genuine clinical reasoning [plausible]"
+    },
+    {
+      "id": "TEC-075",
+      "name": "Client-Side Non-Negative Matrix Factorization for Autonomic Receptor Selectivity",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Decompose multi-receptor affinity matrices into component selectivity weights in JavaScript",
+      "expected_effect": "Visually reveals receptor selectivity profiles of autonomic drugs in intuitive heatmaps",
+      "formatted": "Client-Side Non-Negative Matrix Factorization for Autonomic Receptor Selectivity: Decompose multi-receptor affinity matrices into component selectivity weights in JavaScript -> Visually reveals receptor selectivity profiles of autonomic drugs in intuitive heatmaps [plausible]"
+    },
+    {
+      "id": "TEC-076",
+      "name": "Service Worker Cache-First Avatar & Badge Vector Pipeline",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Cache all Neo-brutalist milestone sticker badges and achievement tokens using a cache-first service worker strategy",
+      "expected_effect": "Delivers instantaneous visual rewards upon step completion even when the student is entirely offline",
+      "formatted": "Service Worker Cache-First Avatar & Badge Vector Pipeline: Cache all Neo-brutalist milestone sticker badges and achievement tokens using a cache-first service worker strategy -> Delivers instantaneous visual rewards upon step completion even when the student is entirely offline [evidence-backed]"
+    },
+    {
+      "id": "TEC-077",
+      "name": "Client-Side Real-Time Chemical Valence and Octet Rule Enforcement Engine",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Validate nitrogen, oxygen, and carbon valence states on every bond addition in the interactive molecular builder",
+      "expected_effect": "Prevents chemically invalid inputs before they can occur, eliminating student confusion about basic organic chemistry rules",
+      "formatted": "Client-Side Real-Time Chemical Valence and Octet Rule Enforcement Engine: Validate nitrogen, oxygen, and carbon valence states on every bond addition in the interactive molecular builder -> Prevents chemically invalid inputs before they can occur, eliminating student confusion about basic organic chemistry rules [evidence-backed]"
+    },
+    {
+      "id": "TEC-078",
+      "name": "Automated Structural Sanity Checker for SMILES Chirality Specification",
+      "tier": "adjacent",
+      "evidence_tag": "evidence-backed",
+      "mechanism": "Run an offline CI script checking that all chiral drug SMILES in curriculum files contain explicit stereo-specifiers",
+      "expected_effect": "Protects students from learning ambiguous stereochemical configurations in medicinal chemistry lessons",
+      "formatted": "Automated Structural Sanity Checker for SMILES Chirality Specification: Run an offline CI script checking that all chiral drug SMILES in curriculum files contain explicit stereo-specifiers -> Protects students from learning ambiguous stereochemical configurations in medicinal chemistry lessons [evidence-backed]"
+    },
+    {
+      "id": "TEC-079",
+      "name": "Client-Side Dynamic Curve Derivative Evaluator for Slope Concept Mastery",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculate numerical derivatives along dose-response curves in real time to highlight the region of steepest slope",
+      "expected_effect": "Helps students intuitively connect the mid-slope to receptor sensitivity and potency without complex manual calculus",
+      "formatted": "Client-Side Dynamic Curve Derivative Evaluator for Slope Concept Mastery: Calculate numerical derivatives along dose-response curves in real time to highlight the region of steepest slope -> Helps students intuitively connect the mid-slope to receptor sensitivity and potency without complex manual calculus [plausible]"
+    },
+    {
+      "id": "TEC-080",
+      "name": "Web Worker-Managed Multi-Dosing Accumulation Regime Simulator",
+      "tier": "adjacent",
+      "evidence_tag": "plausible",
+      "mechanism": "Calculate repetitive multi-dose accumulation curves across 20 consecutive doses inside a Web Worker",
+      "expected_effect": "Allows students to adjust dosing intervals and half-life to see steady-state fluctuations with zero UI stutter",
+      "formatted": "Web Worker-Managed Multi-Dosing Accumulation Regime Simulator: Calculate repetitive multi-dose accumulation curves across 20 consecutive doses inside a Web Worker -> Allows students to adjust dosing intervals and half-life to see steady-state fluctuations with zero UI stutter [plausible]"
+    },
+    {
+      "id": "TEC-081",
+      "name": "In-Browser WebGPU Parallelized Molecular Docking Energy Approximation",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Execute parallel grid-based electrostatic and van der Waals force field energy evaluations on the user's GPU via WebGPU shaders",
+      "expected_effect": "Enables students to drag small molecules into an autonomic receptor binding pocket and feel real-time energy minima locking in under 16ms",
+      "formatted": "In-Browser WebGPU Parallelized Molecular Docking Energy Approximation: Execute parallel grid-based electrostatic and van der Waals force field energy evaluations on the user's GPU via WebGPU shaders -> Enables students to drag small molecules into an autonomic receptor binding pocket and feel real-time energy minima locking in under 16ms [speculative]"
+    },
+    {
+      "id": "TEC-082",
+      "name": "On-Device Tiny SMILES Transformer for Generative Bioisostere Suggestions",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Run an in-browser quantized 8-bit Transformer model via ONNX Web to suggest context-aware bioisosteric substitutions for student-drawn structures",
+      "expected_effect": "Encourages open-ended medicinal chemistry hypothesis testing without server hosting costs or external API calls",
+      "formatted": "On-Device Tiny SMILES Transformer for Generative Bioisostere Suggestions: Run an in-browser quantized 8-bit Transformer model via ONNX Web to suggest context-aware bioisosteric substitutions for student-drawn structures -> Encourages open-ended medicinal chemistry hypothesis testing without server hosting costs or external API calls [speculative]"
+    },
+    {
+      "id": "TEC-083",
+      "name": "WebAssembly-Compiled Graph Neural Network for Affinity Delta Prediction",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Execute a pruned Graph Neural Network in Wasm to predict binding affinity deltas at the beta-2-adrenoceptor as atoms are modified",
+      "expected_effect": "Provides immediate machine-learning-guided feedback on whether a chemical modification improves receptor binding",
+      "formatted": "WebAssembly-Compiled Graph Neural Network for Affinity Delta Prediction: Execute a pruned Graph Neural Network in Wasm to predict binding affinity deltas at the beta-2-adrenoceptor as atoms are modified -> Provides immediate machine-learning-guided feedback on whether a chemical modification improves receptor binding [speculative]"
+    },
+    {
+      "id": "TEC-084",
+      "name": "Client-Side WebGL Interactive 3D Electrostatic Potential Surface Mapper",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Render 3D solvent-accessible molecular surfaces color-coded by Gasteiger partial charges using custom WebGL vertex and fragment shaders",
+      "expected_effect": "Allows students to rotate and inspect electron-rich vs electron-poor regions of autonomic ligands in real time",
+      "formatted": "Client-Side WebGL Interactive 3D Electrostatic Potential Surface Mapper: Render 3D solvent-accessible molecular surfaces color-coded by Gasteiger partial charges using custom WebGL vertex and fragment shaders -> Allows students to rotate and inspect electron-rich vs electron-poor regions of autonomic ligands in real time [speculative]"
+    },
+    {
+      "id": "TEC-085",
+      "name": "Browser-Native WebNN Accelerated Receptor Matcher",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Leverage on-device NPU/GPU hardware via the emerging Web Neural Network API to evaluate drug-receptor pharmacophore compatibility",
+      "expected_effect": "Delivers zero-latency machine learning inference for structure-activity predictions across autonomic receptor targets",
+      "formatted": "Browser-Native WebNN Accelerated Receptor Matcher: Leverage on-device NPU/GPU hardware via the emerging Web Neural Network API to evaluate drug-receptor pharmacophore compatibility -> Delivers zero-latency machine learning inference for structure-activity predictions across autonomic receptor targets [speculative]"
+    },
+    {
+      "id": "TEC-086",
+      "name": "On-Device Phonetic Phoneme Aligner for Bilingual Turkish/English Medical Terms",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Align speech input phonemes locally against Turkish and Latin IUPAC drug names using WebAssembly-compiled acoustic alignment",
+      "expected_effect": "Provides instantaneous, private verbal pronunciation coaching for challenging pharmaceutical nomenclature",
+      "formatted": "On-Device Phonetic Phoneme Aligner for Bilingual Turkish/English Medical Terms: Align speech input phonemes locally against Turkish and Latin IUPAC drug names using WebAssembly-compiled acoustic alignment -> Provides instantaneous, private verbal pronunciation coaching for challenging pharmaceutical nomenclature [speculative]"
+    },
+    {
+      "id": "TEC-087",
+      "name": "Zero-Knowledge Proof Step-Completion Token Verification",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Generate client-side cryptographic SNARK proofs of mastery step completions without sending detailed student response vectors to the server",
+      "expected_effect": "Proves academic milestone mastery for course credit while providing mathematical privacy guarantees",
+      "formatted": "Zero-Knowledge Proof Step-Completion Token Verification: Generate client-side cryptographic SNARK proofs of mastery step completions without sending detailed student response vectors to the server -> Proves academic milestone mastery for course credit while providing mathematical privacy guarantees [speculative]"
+    },
+    {
+      "id": "TEC-088",
+      "name": "Client-Side WebAssembly AlphaFold-Lite Backbone Distance Matrix Heatmap",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Compute residue-residue alpha-carbon distance contact matrices for adrenergic receptor structures in Wasm and render as interactive heatmaps",
+      "expected_effect": "Visualizes structural conformational rearrangements between active and inactive GPCR states during drug binding",
+      "formatted": "Client-Side WebAssembly AlphaFold-Lite Backbone Distance Matrix Heatmap: Compute residue-residue alpha-carbon distance contact matrices for adrenergic receptor structures in Wasm and render as interactive heatmaps -> Visualizes structural conformational rearrangements between active and inactive GPCR states during drug binding [speculative]"
+    },
+    {
+      "id": "TEC-089",
+      "name": "In-Browser WebRTC Peer-to-Peer Collaborative Pharmacokinetics Lab",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Synchronize pharmacokinetic simulation states between peer study partners via WebRTC data channels without an active application server",
+      "expected_effect": "Allows two pharmacy students to collaboratively solve emergency dosing titration scenarios with zero server hosting overhead",
+      "formatted": "In-Browser WebRTC Peer-to-Peer Collaborative Pharmacokinetics Lab: Synchronize pharmacokinetic simulation states between peer study partners via WebRTC data channels without an active application server -> Allows two pharmacy students to collaboratively solve emergency dosing titration scenarios with zero server hosting overhead [speculative]"
+    },
+    {
+      "id": "TEC-090",
+      "name": "Local Small Language Model WebLLM Diagnostic Socratic Co-Pilot",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Run a 1.5B parameter quantized LLM directly in WebGPU memory via WebLLM to generate Socratic diagnostic hints strictly constrained by lesson JSON schema",
+      "expected_effect": "Provides conversational tutoring without recurring cloud token costs, operating entirely offline on capable student laptops",
+      "formatted": "Local Small Language Model WebLLM Diagnostic Socratic Co-Pilot: Run a 1.5B parameter quantized LLM directly in WebGPU memory via WebLLM to generate Socratic diagnostic hints strictly constrained by lesson JSON schema -> Provides conversational tutoring without recurring cloud token costs, operating entirely offline on capable student laptops [speculative]"
+    },
+    {
+      "id": "TEC-091",
+      "name": "WebGPU-Accelerated 10,000-Particle Stochastic Drug-Receptor Diffusion Sim",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Simulate 10,000 Brownian particles diffusing across a synaptic cleft and binding to postsynaptic nicotinic receptors using compute shaders",
+      "expected_effect": "Makes microscopic mass-action kinetics and competitive displacement visually obvious at 60fps",
+      "formatted": "WebGPU-Accelerated 10,000-Particle Stochastic Drug-Receptor Diffusion Sim: Simulate 10,000 Brownian particles diffusing across a synaptic cleft and binding to postsynaptic nicotinic receptors using compute shaders -> Makes microscopic mass-action kinetics and competitive displacement visually obvious at 60fps [speculative]"
+    },
+    {
+      "id": "TEC-092",
+      "name": "Browser-Native Eye-Tracking Gaze Estimation via Lightweight FaceMesh for Cognitive Load",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Estimate pupil fixation and gaze dispersion over complex SAR diagrams locally using a lightweight in-browser FaceMesh model",
+      "expected_effect": "Automatically detects visual confusion or information search loops and offers gentle scaffolding without uploading video",
+      "formatted": "Browser-Native Eye-Tracking Gaze Estimation via Lightweight FaceMesh for Cognitive Load: Estimate pupil fixation and gaze dispersion over complex SAR diagrams locally using a lightweight in-browser FaceMesh model -> Automatically detects visual confusion or information search loops and offers gentle scaffolding without uploading video [speculative]"
+    },
+    {
+      "id": "TEC-093",
+      "name": "Client-Side Generative Adversarial Chemical Structure Morphing in WebGL",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Morph 2D skeletal structures smoothly into 3D conformers using a lightweight client GAN generator with WebGL tweening",
+      "expected_effect": "Bridges the conceptual gap between 2D paper textbook SMILES formulas and 3D biological reality",
+      "formatted": "Client-Side Generative Adversarial Chemical Structure Morphing in WebGL: Morph 2D skeletal structures smoothly into 3D conformers using a lightweight client GAN generator with WebGL tweening -> Bridges the conceptual gap between 2D paper textbook SMILES formulas and 3D biological reality [speculative]"
+    },
+    {
+      "id": "TEC-094",
+      "name": "On-Device Whisper-Tiny WebAssembly Voice Answering for Hands-Free Flashcards",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Transcribe spoken student answers locally in real-time using a Wasm-compiled Whisper-Tiny model during flashcard spaced-retrieval rounds",
+      "expected_effect": "Enables hands-free active recall study while walking or commuting without audio upload privacy risks",
+      "formatted": "On-Device Whisper-Tiny WebAssembly Voice Answering for Hands-Free Flashcards: Transcribe spoken student answers locally in real-time using a Wasm-compiled Whisper-Tiny model during flashcard spaced-retrieval rounds -> Enables hands-free active recall study while walking or commuting without audio upload privacy risks [speculative]"
+    },
+    {
+      "id": "TEC-095",
+      "name": "WebAssembly-Compiled PyMOL/RCSB Subset for Interactive Pocket Cavity Exploration",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Run a stripped-down crystallographic viewer in WebAssembly to slice through the muscarinic M2 binding pocket cavity",
+      "expected_effect": "Lets students explore orthosteric vs allosteric binding crevices from their browser without installing desktop software",
+      "formatted": "WebAssembly-Compiled PyMOL/RCSB Subset for Interactive Pocket Cavity Exploration: Run a stripped-down crystallographic viewer in WebAssembly to slice through the muscarinic M2 binding pocket cavity -> Lets students explore orthosteric vs allosteric binding crevices from their browser without installing desktop software [speculative]"
+    },
+    {
+      "id": "TEC-096",
+      "name": "Browser-Native Differential Privacy Local Noise Injection for Cohort Benchmarking",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Add calibrated Laplace noise locally to student score aggregates before sending progress pings to peer comparison servers",
+      "expected_effect": "Gives students reliable percentiles on their pharmacology preparation without exposing individual quiz attempts",
+      "formatted": "Browser-Native Differential Privacy Local Noise Injection for Cohort Benchmarking: Add calibrated Laplace noise locally to student score aggregates before sending progress pings to peer comparison servers -> Gives students reliable percentiles on their pharmacology preparation without exposing individual quiz attempts [speculative]"
+    },
+    {
+      "id": "TEC-097",
+      "name": "In-Browser WebAudio Acoustic Bio-Feedback for Sympathetic/Parasympathetic Tone",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Modulate rhythmic ambient soundscapes in real-time via WebAudio oscillators reflecting simulated autonomic balance",
+      "expected_effect": "Auditory feedback reinforces visceral understanding of heart rate and vagal tone changes during adrenergic drug titration",
+      "formatted": "In-Browser WebAudio Acoustic Bio-Feedback for Sympathetic/Parasympathetic Tone: Modulate rhythmic ambient soundscapes in real-time via WebAudio oscillators reflecting simulated autonomic balance -> Auditory feedback reinforces visceral understanding of heart rate and vagal tone changes during adrenergic drug titration [speculative]"
+    },
+    {
+      "id": "TEC-098",
+      "name": "Client-Side Dynamic Knowledge Graph Neural Embedding for Misconception Prediction",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Map the pharmacology curriculum into an in-browser 32-dimensional Poincaré hyperbolic embedding space to predict prerequisite concept gaps",
+      "expected_effect": "Accurately flags foundational knowledge deficits before the student fails complex clinical vignette questions",
+      "formatted": "Client-Side Dynamic Knowledge Graph Neural Embedding for Misconception Prediction: Map the pharmacology curriculum into an in-browser 32-dimensional Poincaré hyperbolic embedding space to predict prerequisite concept gaps -> Accurately flags foundational knowledge deficits before the student fails complex clinical vignette questions [speculative]"
+    },
+    {
+      "id": "TEC-099",
+      "name": "WebAssembly Quantum-Mechanical Semi-Empirical PM3 Molecular Orbital Visualizer",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Compute HOMO/LUMO electron density distributions for small catecholamine molecules in WebAssembly using a lightweight PM3 solver",
+      "expected_effect": "Visually explains nucleophilic attack and oxidative metabolic vulnerability of drugs at the electronic orbital level",
+      "formatted": "WebAssembly Quantum-Mechanical Semi-Empirical PM3 Molecular Orbital Visualizer: Compute HOMO/LUMO electron density distributions for small catecholamine molecules in WebAssembly using a lightweight PM3 solver -> Visually explains nucleophilic attack and oxidative metabolic vulnerability of drugs at the electronic orbital level [speculative]"
+    },
+    {
+      "id": "TEC-100",
+      "name": "Browser-Based Local Neuro-Symbolic Reasoning Engine for Complex Polypharmacy Regimens",
+      "tier": "wild",
+      "evidence_tag": "speculative",
+      "mechanism": "Combine an in-browser Datalog symbolic rule engine with neural ranking to evaluate 5-drug autonomic polypharmacy interactions locally",
+      "expected_effect": "Teaches complex clinical contraindication reasoning without cloud inference latency or privacy violations",
+      "formatted": "Browser-Based Local Neuro-Symbolic Reasoning Engine for Complex Polypharmacy Regimens: Combine an in-browser Datalog symbolic rule engine with neural ranking to evaluate 5-drug autonomic polypharmacy interactions locally -> Teaches complex clinical contraindication reasoning without cloud inference latency or privacy violations [speculative]"
+    }
+  ]
+}
