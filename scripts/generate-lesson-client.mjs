@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * scripts/generate-lesson-client.mjs
  * 
