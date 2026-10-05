@@ -25,6 +25,7 @@ function parseSlides(text) {
  * @returns {{ concepts: object[], errors: string[], deck: string | null }}
  */
 export function parseTeachingMd(markdown, ctx) {
+  markdown = (markdown || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
   const errors = [];
   const deckMatch = markdown.match(/\|\s*Kaynak dosya\s*\|\s*`([^`]+)`/);
   const deck = deckMatch ? deckMatch[1] : null;

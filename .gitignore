@@ -50,7 +50,7 @@ desktop.ini
 # Temporary / scratch
 tmp/
 *.tmp
-.agents/
+.agents/teamwork/
 .scratch/
 scratch/
 package-lock.json
