@@ -126,4 +126,36 @@ describe('ResetPasswordPage', () => {
 
     expect(await screen.findByText('Şifreniz başarıyla güncellendi! Giriş yapılıyor...')).toBeTruthy();
   });
+
+  it('disables input fields and submit button when session is invalid', async () => {
+    mockGetSession.mockResolvedValue({ data: { session: null } });
+    renderPage();
+    await screen.findByRole('heading', { level: 1 });
+
+    await waitFor(() => {
+      const passwordInput = screen.getByPlaceholderText('En az 6 karakter') as HTMLInputElement;
+      expect(passwordInput.disabled).toBe(true);
+    });
+
+    const confirmInput = screen.getByPlaceholderText('Şifrenizi tekrar girin') as HTMLInputElement;
+    const submitBtn = screen.getByRole('button', { name: 'Şifremi Güncelle' }) as HTMLButtonElement;
+    expect(confirmInput.disabled).toBe(true);
+    expect(submitBtn.disabled).toBe(true);
+  });
+
+  it('scrubs URL tokens via window.history.replaceState after session parsing', async () => {
+    const replaceStateSpy = vi.spyOn(window.history, 'replaceState');
+    window.location.hash = '#access_token=test_token&type=recovery';
+
+    renderPage();
+    await screen.findByRole('heading', { level: 1 });
+
+    await waitFor(() => {
+      expect(replaceStateSpy).toHaveBeenCalledWith({}, document.title, window.location.pathname);
+    });
+
+    replaceStateSpy.mockRestore();
+    window.location.hash = '';
+  });
 });
+

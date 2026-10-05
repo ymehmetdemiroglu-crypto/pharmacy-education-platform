@@ -48,6 +48,11 @@ const FORBIDDEN_TOKENS = [
   'citation-status',
   'Citation Status: Unverified',
   'Pending Physical Copy Verification',
+  'service_role',
+  'whsec_',
+  'dodo_live_',
+  'dodo_test_',
+  '-----BEGIN PRIVATE KEY-----',
 ];
 
 function getAllFiles(dir, fileList = []) {

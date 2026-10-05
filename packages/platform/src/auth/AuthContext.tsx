@@ -331,7 +331,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (password) {
         const redirectUrl = typeof window !== 'undefined'
           ? `${window.location.origin}/dashboard`
-          : 'http://localhost:3000/dashboard';
+          : 'https://optimusrufus.com/dashboard';
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
@@ -446,7 +446,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     try {
       const redirectUrl = typeof window !== 'undefined'
         ? `${window.location.origin}/reset-password`
-        : 'http://localhost:3000/reset-password';
+        : 'https://optimusrufus.com/reset-password';
       const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
         redirectTo: redirectUrl,
       });

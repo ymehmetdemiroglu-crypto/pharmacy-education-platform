@@ -1,6 +1,18 @@
-# Minimal Supabase CLI config (local dev + function deploy). The remote project ref is NOT stored here;
-# link it with `supabase link --project-ref <ref>` when the owner approves remote changes.
+# Supabase CLI config (local dev + function deploy + auth config)
 project_id = "pharmacy-education-platform"
+
+[auth]
+site_url = "https://optimusrufus.com"
+additional_redirect_urls = [
+  "https://optimusrufus.com/**",
+  "https://pharmacy-platform.pages.dev/**",
+  "https://*.pharmacy-platform-9u0.pages.dev/**",
+  "https://*.pharmacy-platform.pages.dev/**"
+]
+
+[auth.email.template.recovery]
+subject = "Şifrenizi Sıfırlayın | Eczacılık Eğitimi Platformu"
+content_path = "./supabase/templates/recovery.html"
 
 # Gateway JWT verification is off on purpose: the project uses `sb_publishable_...` API keys (not JWTs).
 # Both functions authenticate the caller themselves with `auth.getUser(<bearer token>)` and reject otherwise.

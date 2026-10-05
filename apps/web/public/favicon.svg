@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Neo-Brutalist Hard Shadow -->
+  <rect x="8" y="8" width="48" height="48" rx="6" fill="#000000" />
+  <!-- Neo-Brutalist Card Canvas -->
+  <rect x="4" y="4" width="48" height="48" rx="6" fill="#FFF8E7" stroke="#000000" stroke-width="4" />
+  <!-- Pharmacy Cross Hard Shadow -->
+  <path d="M 24 16 H 32 V 24 H 40 V 32 H 32 V 40 H 24 V 32 H 16 V 24 H 24 Z" fill="#000000" transform="translate(2, 2)" />
+  <!-- Pharmacy Cross (Emerald Green #6BCB77 with stark #000000 border) -->
+  <path d="M 24 16 H 32 V 24 H 40 V 32 H 32 V 40 H 24 V 32 H 16 V 24 H 24 Z" fill="#6BCB77" stroke="#000000" stroke-width="3" stroke-linejoin="round" />
+</svg>

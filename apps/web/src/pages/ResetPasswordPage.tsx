@@ -19,6 +19,12 @@ export const ResetPasswordPage: React.FC = () => {
   const [hasValidSession, setHasValidSession] = useState<boolean | null>(null);
 
   useEffect(() => {
+    const scrubUrlTokens = () => {
+      if (typeof window !== 'undefined' && (window.location.hash || window.location.search)) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    };
+
     // 1. Check for URL error fragments (e.g. expired or invalid reset link)
     const hash = window.location.hash;
     const search = window.location.search;
@@ -28,6 +34,7 @@ export const ResetPasswordPage: React.FC = () => {
     if (errorDesc) {
       setError(decodeURIComponent(errorDesc).replace(/\+/g, ' '));
       setHasValidSession(false);
+      scrubUrlTokens();
       return;
     }
 
@@ -35,11 +42,13 @@ export const ResetPasswordPage: React.FC = () => {
     supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
         setHasValidSession(true);
+        scrubUrlTokens();
       } else {
         // Give listener a moment in case token exchange is in-flight
         setTimeout(() => {
           supabase.auth.getSession().then(({ data: { session: retrySession } }) => {
             setHasValidSession(!!retrySession);
+            scrubUrlTokens();
           });
         }, 800);
       }
@@ -51,6 +60,7 @@ export const ResetPasswordPage: React.FC = () => {
       if (event === 'PASSWORD_RECOVERY' || (event === 'SIGNED_IN' && session)) {
         setHasValidSession(true);
         setError(null);
+        scrubUrlTokens();
       }
     });
 
@@ -61,6 +71,11 @@ export const ResetPasswordPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (hasValidSession === false) {
+      setError(t('resetPasswordPage.invalidSession'));
+      return;
+    }
+
     if (!newPassword || !confirmPassword) {
       setError(t('modals.auth.fillAllFields'));
       return;
@@ -90,6 +105,9 @@ export const ResetPasswordPage: React.FC = () => {
       }
 
       setSuccess(true);
+      if (typeof window !== 'undefined' && (window.location.hash || window.location.search)) {
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
       setTimeout(() => {
         navigate('/dashboard');
       }, 2000);
@@ -157,7 +175,7 @@ export const ResetPasswordPage: React.FC = () => {
               placeholder={t('resetPasswordPage.newPasswordPlaceholder')}
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              disabled={isSubmitting}
+              disabled={isSubmitting || hasValidSession === false}
               required
             />
 
@@ -167,7 +185,7 @@ export const ResetPasswordPage: React.FC = () => {
               placeholder={t('resetPasswordPage.confirmPasswordPlaceholder')}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              disabled={isSubmitting}
+              disabled={isSubmitting || hasValidSession === false}
               required
             />
 
@@ -177,6 +195,7 @@ export const ResetPasswordPage: React.FC = () => {
               fullWidth
               size="md"
               isLoading={isSubmitting}
+              disabled={isSubmitting || hasValidSession === false}
               leftIcon={<KeyRound className="w-4 h-4" />}
             >
               {t('resetPasswordPage.submit')}
