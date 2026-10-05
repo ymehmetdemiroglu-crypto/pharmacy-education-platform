@@ -28,7 +28,7 @@ import {
   type SpacedReviewCardSeed,
   type UserProgress,
 } from '@pharmacy/platform';
-import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/firebase';
+import { FREE_PILOT_MODE, callCreateCheckoutSession, callStartFreeTrial } from '../lib/billing';
 import {
   ChevronLeft,
   ChevronRight,
@@ -188,9 +188,12 @@ export const LessonPage: React.FC = () => {
   const isFreePreviewLesson =
     lessonId !== '3' && lessonId !== 'mc-mod1-les3' && (lesson.access === 'free' || lesson.order <= 2);
 
-  const hasAccess = hasCourseAccess(user, entitlements, courseId, {
-    isFreePreview: isFreePreviewLesson,
-  });
+  // Free pilot: the whole class studies free; the real gate returns when VITE_FREE_PILOT_MODE=false.
+  const hasAccess =
+    FREE_PILOT_MODE ||
+    hasCourseAccess(user, entitlements, courseId, {
+      isFreePreview: isFreePreviewLesson,
+    });
 
   const isPremiumOrTrial =
     user?.plan === 'trial' ||

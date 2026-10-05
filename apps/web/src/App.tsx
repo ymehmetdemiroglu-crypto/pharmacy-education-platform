@@ -4,9 +4,11 @@ import { Navbar } from './components/Navbar';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { TrialBanner, PaywallModal, SkeletonLoader } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
-import { callCreateCheckoutSession, callStartFreeTrial } from './lib/firebase';
+import { callCreateCheckoutSession, callStartFreeTrial } from './lib/billing';
 import { useTranslation } from './context/TranslationContext';
 
+const DashboardPage = lazy(() => import('./pages/DashboardPage').then((m) => ({ default: m.DashboardPage })));
+const WhiteboardTutorPage = lazy(() => import('./pages/WhiteboardTutorPage').then((m) => ({ default: m.WhiteboardTutorPage })));
 const CatalogPage = lazy(() => import('./pages/CatalogPage').then((m) => ({ default: m.CatalogPage })));
 const LessonPage = lazy(() => import('./pages/LessonPage').then((m) => ({ default: m.LessonPage })));
 const GalleryPage = lazy(() => import('./pages/GalleryPage').then((m) => ({ default: m.GalleryPage })));
@@ -16,6 +18,7 @@ const SettingsPage = lazy(() => import('./pages/SettingsPage').then((m) => ({ de
 const TermsPage = lazy(() => import('./pages/TermsPage').then((m) => ({ default: m.TermsPage })));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then((m) => ({ default: m.PrivacyPage })));
 const RefundPage = lazy(() => import('./pages/RefundPage').then((m) => ({ default: m.RefundPage })));
+const ResetPasswordPage = lazy(() => import('./pages/ResetPasswordPage').then((m) => ({ default: m.ResetPasswordPage })));
 
 export const App: React.FC = () => {
   const { user, startTrial } = useAuth();
@@ -59,7 +62,9 @@ export const App: React.FC = () => {
             }
           >
             <Routes>
-              <Route path="/" element={<Navigate to="/catalog" replace />} />
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<DashboardPage />} />
+              <Route path="/tutor/:lectureSlug" element={<WhiteboardTutorPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/catalog" element={<CatalogPage />} />
               <Route path="/pricing" element={<PricingPage />} />
@@ -68,6 +73,7 @@ export const App: React.FC = () => {
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/refund" element={<RefundPage />} />
+              <Route path="/reset-password" element={<ResetPasswordPage />} />
               <Route path="/courses/medchem/lessons/:lessonId" element={<LessonPage />} />
               <Route path="/courses/medchem/lessons" element={<Navigate to="/courses/medchem/lessons/1" replace />} />
               <Route path="/courses/pharmacology/lessons/:lessonId" element={<LessonPage />} />

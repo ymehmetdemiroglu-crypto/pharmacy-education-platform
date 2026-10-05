@@ -66,3 +66,15 @@ html {
     transform: none !important;
   }
 }
+
+/* Whiteboard tutor reply entrance: opacity + 8px transform only (AGENTS.md motion rules) */
+@keyframes wb-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

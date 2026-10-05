@@ -204,7 +204,15 @@
         "description": "Google sign-in is not yet enabled on this server. Please use Email & Password below to log in or register immediately.",
         "adminTip": "Admin Note: Enable Google OAuth in Supabase Dashboard > Authentication > Providers > Google by adding your Client ID and Client Secret.",
         "useEmailCta": "Continue with Email"
-      }
+      },
+      "forgotPasswordLink": "Forgot password?",
+      "forgotPasswordTitle": "Reset Password",
+      "forgotPasswordDesc": "Enter your registered email address and we'll send you a link to reset your password.",
+      "sendResetLink": "Send Reset Link",
+      "resetEmailSent": "Password reset link sent to your email! Please check your inbox (and spam folder).",
+      "resetEmailRequired": "Please enter your email address.",
+      "resetEmailFailed": "Failed to send reset email. Please verify your address.",
+      "backToLogin": "Back to Login"
     },
     "paywall": {
       "title": "Unlock Complete Pharmacy Mastery",
@@ -465,5 +473,20 @@
       "sec5Title": "5. Effect on Account Access & Learning Progress",
       "sec5Body": "When a refund is completed, your account returns to the Free plan. 100% of your completed lessons, quiz scores, and Leitner flashcards remain permanently preserved."
     }
+  },
+  "resetPasswordPage": {
+    "title": "Set New Password",
+    "desc": "Enter a new secure password for your account.",
+    "newPassword": "New Password",
+    "newPasswordPlaceholder": "At least 6 characters",
+    "confirmPassword": "Confirm New Password",
+    "confirmPasswordPlaceholder": "Re-enter your new password",
+    "submit": "Update Password",
+    "passwordsDoNotMatch": "Passwords do not match.",
+    "passwordTooShort": "Password must be at least 6 characters.",
+    "success": "Password updated successfully! Logging you in...",
+    "error": "Failed to update password. The reset link may have expired.",
+    "goToDashboard": "Go to Dashboard",
+    "invalidSession": "No active password reset session found. Please re-open the link from your email or request a new reset link."
   }
 }

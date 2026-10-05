@@ -20,6 +20,10 @@ export function getSupabase(): SupabaseClient {
         autoRefreshToken: true,
         detectSessionInUrl: true,
       },
+      realtime: {
+        // Whiteboard state stream (Broadcast). Throttle so a dragged slider cannot flood the channel.
+        params: { eventsPerSecond: 20 },
+      },
     });
   }
   return supabaseInstance;

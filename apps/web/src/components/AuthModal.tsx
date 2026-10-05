@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Button, Input } from '@pharmacy/ui';
 import { useAuth, OAuthProviderDisabledError } from '@pharmacy/platform';
-import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap, AlertTriangle, ArrowRight } from 'lucide-react';
+import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap, AlertTriangle, ArrowRight, KeyRound } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
 
 export interface AuthModalProps {
@@ -52,9 +52,9 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   onSuccess,
 }) => {
   const { t } = useTranslation();
-  const { signInGuest, signInWithEmail, signUpWithEmail, signInWithGoogle } = useAuth();
+  const { signInGuest, signInWithEmail, signUpWithEmail, signInWithGoogle, resetPasswordForEmail } = useAuth();
 
-  const [tab, setTab] = useState<'login' | 'signup'>(defaultTab);
+  const [tab, setTab] = useState<'login' | 'signup' | 'forgot-password'>(defaultTab);
 
   // Form states
   const [loginEmail, setLoginEmail] = useState('');
@@ -190,7 +190,35 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }
   };
 
-  const modalTitle = tab === 'login' ? t('modals.auth.loginTitle') : t('modals.auth.signupTitle');
+  const handleForgotPasswordSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!loginEmail.trim()) {
+      setError(t('modals.auth.resetEmailRequired'));
+      return;
+    }
+
+    setIsSubmitting(true);
+    setError(null);
+    setSuccessMessage(null);
+
+    try {
+      if (resetPasswordForEmail) {
+        await resetPasswordForEmail(loginEmail.trim());
+      }
+      setSuccessMessage(t('modals.auth.resetEmailSent'));
+    } catch (err: any) {
+      setError(err?.message || t('modals.auth.resetEmailFailed'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const modalTitle =
+    tab === 'login'
+      ? t('modals.auth.loginTitle')
+      : tab === 'signup'
+      ? t('modals.auth.signupTitle')
+      : t('modals.auth.forgotPasswordTitle');
 
   return (
     <Modal
@@ -312,6 +340,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               required
             />
 
+            <div className="flex justify-end -mt-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setTab('forgot-password');
+                  resetForm();
+                }}
+                className="text-xs font-mono font-bold text-gray-700 dark:text-slate-300 hover:text-black dark:hover:text-white underline hover:no-underline cursor-pointer"
+              >
+                {t('modals.auth.forgotPasswordLink')}
+              </button>
+            </div>
+
             <Button
               type="submit"
               variant="primary"
@@ -343,6 +384,49 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             >
               {t('modals.auth.googleContinue')}
             </Button>
+          </form>
+        )}
+
+        {/* Tab 3: Forgot Password Form */}
+        {tab === 'forgot-password' && (
+          <form onSubmit={handleForgotPasswordSubmit} className="space-y-4">
+            <p className="font-sans text-xs sm:text-sm text-gray-700 dark:text-slate-300 font-medium">
+              {t('modals.auth.forgotPasswordDesc')}
+            </p>
+
+            <Input
+              label={t('modals.auth.email')}
+              type="email"
+              placeholder={t('modals.auth.emailPlaceholder')}
+              value={loginEmail}
+              onChange={(e) => setLoginEmail(e.target.value)}
+              disabled={isSubmitting}
+              required
+            />
+
+            <Button
+              type="submit"
+              variant="primary"
+              fullWidth
+              size="md"
+              isLoading={isSubmitting}
+              leftIcon={<KeyRound className="w-4 h-4" />}
+            >
+              {t('modals.auth.sendResetLink')}
+            </Button>
+
+            <div className="pt-2 text-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setTab('login');
+                  resetForm();
+                }}
+                className="text-xs font-mono font-bold text-gray-700 dark:text-slate-300 hover:text-black dark:hover:text-white underline hover:no-underline cursor-pointer"
+              >
+                ← {t('modals.auth.backToLogin')}
+              </button>
+            </div>
           </form>
         )}
 

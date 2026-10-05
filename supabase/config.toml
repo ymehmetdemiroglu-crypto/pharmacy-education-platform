@@ -1,0 +1,11 @@
+# Minimal Supabase CLI config (local dev + function deploy). The remote project ref is NOT stored here;
+# link it with `supabase link --project-ref <ref>` when the owner approves remote changes.
+project_id = "pharmacy-education-platform"
+
+# Gateway JWT verification is off on purpose: the project uses `sb_publishable_...` API keys (not JWTs).
+# Both functions authenticate the caller themselves with `auth.getUser(<bearer token>)` and reject otherwise.
+[functions.whiteboard-tutor]
+verify_jwt = false
+
+[functions.delete-account]
+verify_jwt = false

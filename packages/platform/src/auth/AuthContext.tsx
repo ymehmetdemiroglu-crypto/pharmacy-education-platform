@@ -18,6 +18,8 @@ export interface AuthContextType {
   signInWithEmail?: (email: string, password?: string | undefined) => Promise<void>;
   signUpWithEmail?: (details: { name: string; email: string; password?: string | undefined; university?: string | undefined }) => Promise<void>;
   signInWithGoogle?: () => Promise<void>;
+  resetPasswordForEmail?: (email: string) => Promise<void>;
+  updatePassword?: (newPassword: string) => Promise<void>;
   startTrial: () => Promise<boolean>;
   logout: () => void;
 }
@@ -327,10 +329,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setLoading(true);
     try {
       if (password) {
+        const redirectUrl = typeof window !== 'undefined'
+          ? `${window.location.origin}/dashboard`
+          : 'http://localhost:3000/dashboard';
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: {
+            emailRedirectTo: redirectUrl,
             data: {
               display_name: name,
               university: university || 'İstanbul Üniversitesi',
@@ -435,6 +441,46 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const resetPasswordForEmail = async (email: string): Promise<void> => {
+    setLoading(true);
+    try {
+      const redirectUrl = typeof window !== 'undefined'
+        ? `${window.location.origin}/reset-password`
+        : 'http://localhost:3000/reset-password';
+      const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: redirectUrl,
+      });
+      if (error) {
+        throw error;
+      }
+    } catch (err: any) {
+      console.warn('[Supabase resetPasswordForEmail]:', err?.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updatePassword = async (newPassword: string): Promise<void> => {
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.auth.updateUser({
+        password: newPassword,
+      });
+      if (error) {
+        throw error;
+      }
+      if (data?.user) {
+        await syncSupabaseUserData(data.user);
+      }
+    } catch (err: any) {
+      console.warn('[Supabase updatePassword]:', err?.message);
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const logout = async () => {
     try {
       await supabase.auth.signOut();
@@ -459,6 +505,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         signInWithEmail,
         signUpWithEmail,
         signInWithGoogle,
+        resetPasswordForEmail,
+        updatePassword,
         startTrial,
         logout,
       }}

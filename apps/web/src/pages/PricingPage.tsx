@@ -4,7 +4,7 @@ import { Check, Sparkles, ArrowRight, Zap, AlertTriangle, ShieldCheck } from 'lu
 import { useAuth } from '@pharmacy/platform';
 import { useTranslation } from '../context/TranslationContext';
 import { dictionaries } from '../locales';
-import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/firebase';
+import { callCreateCheckoutSession, callStartFreeTrial } from '../lib/billing';
 
 export const PricingPage: React.FC = () => {
   const { locale, t } = useTranslation();

@@ -1,5 +1,7 @@
 export * from './types';
 export * from './common/ModelIllustrationNotice';
+export * from './common/WhiteboardProtocol';
+export * from './common/useWhiteboardChannel';
 
 export * from './PredictThenReveal/schema';
 export * from './PredictThenReveal/PredictThenReveal';

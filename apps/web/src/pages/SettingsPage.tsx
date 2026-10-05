@@ -3,7 +3,7 @@ import { Card, Button, StickerBadge } from '@pharmacy/ui';
 import { User, CreditCard, Trash2, ShieldAlert, ExternalLink } from 'lucide-react';
 import { useAuth } from '@pharmacy/platform';
 import { useTranslation } from '../context/TranslationContext';
-import { callCreateCustomerPortalSession, callDeleteUserAccount } from '../lib/firebase';
+import { callCreateCustomerPortalSession, callDeleteUserAccount } from '../lib/billing';
 import { Link } from 'react-router-dom';
 
 export const SettingsPage: React.FC = () => {

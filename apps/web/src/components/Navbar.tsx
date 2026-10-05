@@ -5,6 +5,8 @@ import { useAuth } from '@pharmacy/platform';
 import { Button, StickerBadge } from '@pharmacy/ui';
 import { Sun, Moon, Sparkles, BookOpen, Layers, CreditCard, LogIn, User, RotateCw } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
+import { FREE_PILOT_MODE } from '../lib/billing';
+import { wbText } from '../lib/whiteboardStrings';
 import { AuthModal } from './AuthModal';
 
 export const Navbar: React.FC = () => {
@@ -19,15 +21,16 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks = [
+    { to: '/dashboard', label: wbText(locale).dashTitle, icon: Sparkles },
     { to: '/gallery', label: t('navbar.gallery'), icon: Layers },
     { to: '/catalog', label: t('navbar.courses'), icon: BookOpen },
     { to: '/review', label: t('navbar.review'), icon: RotateCw },
     { to: '/pricing', label: t('navbar.pricing'), icon: CreditCard },
-  ];
+  ].filter((link) => !(FREE_PILOT_MODE && link.to === '/pricing'));
 
   return (
     <header className="sticky top-0 z-40 w-full bg-white dark:bg-[#131B2A] border-b-3 border-black dark:border-slate-700 shadow-[0_4px_0_0_#000000] dark:shadow-[0_4px_0_0_#030712]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Logo */}
         <Link
           to="/gallery"
@@ -47,7 +50,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Navigation items */}
-        <nav className="hidden md:flex items-center gap-1 font-mono text-xs font-bold uppercase">
+        <nav className="hidden lg:flex items-center gap-1 font-mono text-xs font-bold uppercase">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             const Icon = link.icon;
@@ -69,13 +72,13 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Controls: Locales, Theme, Trial Action */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* Multilingual Locale Picker (TR default primary, AR RTL, EN) */}
           <div className="flex items-center border-2 border-black dark:border-slate-700 text-xs font-mono font-bold">
             <button
               type="button"
               onClick={() => handleLocaleChange('tr')}
-              className={`px-2.5 py-1 ${locale === 'tr' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-1.5 sm:px-2.5 py-1 ${locale === 'tr' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
               title="Türkçe (Varsayılan)"
             >
               TR
@@ -83,7 +86,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLocaleChange('ar')}
-              className={`px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'ar' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-1.5 sm:px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'ar' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
               title="العربية (RTL)"
             >
               AR
@@ -91,7 +94,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLocaleChange('en')}
-              className={`px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'en' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-1.5 sm:px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'en' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
               title="English"
             >
               EN
@@ -121,7 +124,7 @@ export const Navbar: React.FC = () => {
             <StickerBadge variant="green" size="sm" className="inline-flex">
               {t('navbar.passActive')}
             </StickerBadge>
-          ) : (
+          ) : FREE_PILOT_MODE ? null : (
             <Button
               size="sm"
               variant="primary"
@@ -161,7 +164,7 @@ export const Navbar: React.FC = () => {
               variant="secondary"
               onClick={() => setAuthModalOpen(true)}
               className="text-xs py-1 px-2 sm:px-3 border-2 border-black dark:border-slate-700"
-              leftIcon={<LogIn className="w-3.5 h-3.5" />}
+              leftIcon={<LogIn className="hidden sm:block w-3.5 h-3.5" />}
             >
               {t('navbar.login')}
             </Button>

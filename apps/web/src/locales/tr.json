@@ -204,7 +204,15 @@
         "description": "Google ile giriş bu sunucuda henüz etkinleştirilmemiştir. Lütfen aşağıdaki E-posta ve Şifre bölümünü kullanarak hemen giriş yapın veya ücretsiz kaydolun.",
         "adminTip": "Yönetici Notu: Supabase Dashboard > Authentication > Providers > Google bölümünden Client ID ve Client Secret bilgilerini girerek etkinleştirin.",
         "useEmailCta": "E-posta ile Devam Et"
-      }
+      },
+      "forgotPasswordLink": "Şifremi unuttum",
+      "forgotPasswordTitle": "Şifre Sıfırlama",
+      "forgotPasswordDesc": "Kayıtlı e-posta adresinizi girin. Şifrenizi sıfırlamanız için size güvenli bir bağlantı göndereceğiz.",
+      "sendResetLink": "Sıfırlama Bağlantısı Gönder",
+      "resetEmailSent": "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi! Lütfen gelen kutunuzu (ve spam klasörünü) kontrol edin.",
+      "resetEmailRequired": "Lütfen e-posta adresinizi giriniz.",
+      "resetEmailFailed": "Sıfırlama e-postası gönderilemedi. Lütfen adresi kontrol ediniz.",
+      "backToLogin": "Giriş Ekranına Dön"
     },
     "paywall": {
       "title": "Tüm Eczacılık Müfredatını Aç",
@@ -465,5 +473,20 @@
       "sec5Title": "5. İade Sonrası İlerleme Durumu",
       "sec5Body": "İade tamamlandığında hesabınız ücretsiz plana döner. Tamamladığınız derslerin, test puanlarınızın ve Leitner aralıklı tekrar kartlarınızın %100'ü güvenle saklanmaya devam eder."
     }
+  },
+  "resetPasswordPage": {
+    "title": "Yeni Şifre Belirleyin",
+    "desc": "Hesabınız için yeni ve güvenli bir şifre giriniz.",
+    "newPassword": "Yeni Şifre",
+    "newPasswordPlaceholder": "En az 6 karakter",
+    "confirmPassword": "Yeni Şifre (Tekrar)",
+    "confirmPasswordPlaceholder": "Şifrenizi tekrar girin",
+    "submit": "Şifremi Güncelle",
+    "passwordsDoNotMatch": "Girdiğiniz şifreler birbiriyle eşleşmiyor.",
+    "passwordTooShort": "Şifreniz en az 6 karakter olmalıdır.",
+    "success": "Şifreniz başarıyla güncellendi! Giriş yapılıyor...",
+    "error": "Şifre güncellenirken bir hata oluştu. Bağlantı süresi dolmuş olabilir.",
+    "goToDashboard": "Öğrenci Paneline Git",
+    "invalidSession": "Geçerli bir şifre sıfırlama oturumu bulunamadı. Lütfen e-postanızdaki bağlantıyı tekrar açın veya yeni bir sıfırlama bağlantısı isteyin."
   }
 }
