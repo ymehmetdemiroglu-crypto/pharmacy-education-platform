@@ -125,9 +125,123 @@ export const FLAGSHIP_AUDIO_SUMMARY: LectureAudioSummary = {
   ],
 };
 
+export const PHARMACOLOGY_AUDIO_SUMMARY: LectureAudioSummary = {
+  lectureSlug: 'farmakoloji-temelleri',
+  title: 'Farmakoloji Temelleri: Doz-Yanıt, Reseptör Teorileri ve GPCR Sinyalleri — Sesli Vize Özeti',
+  duration: 320, // 5 min 20 sec
+  cues: [
+    {
+      id: 'ph-cue-1',
+      startTime: 0,
+      endTime: 30,
+      sectionId: 'pharm-1',
+      conceptId: 'pharm:receptor_types',
+      slide: 3,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Reseptörler dört ana sınıfa ayrılır: İyon kanalları milisaniyelerde, GPCR saniyelerde, tirozin kinaz enzimatik reseptörler dakikalarda, hücre içi nükleer reseptörler ise saatler içinde yanıt üretir.',
+    },
+    {
+      id: 'ph-cue-2',
+      startTime: 30,
+      endTime: 60,
+      sectionId: 'pharm-2',
+      conceptId: 'pharm:kd_affinity',
+      slide: 10,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Kütle hareketi kanununa göre Kd denge ayrışma sabitidir. Afinite bir bölü Kd ile orantılıdır. İlaç konsantrasyonu Kd değerine eşit olduğunda toplam reseptörlerin tam olarak yüzde ellisi doludur.',
+    },
+    {
+      id: 'ph-cue-3',
+      startTime: 60,
+      endTime: 95,
+      sectionId: 'pharm-3',
+      conceptId: 'pharm:ec50_emax',
+      slide: 16,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Kademeli doz yanıtta EC50 potens, Emax ise tavan etkinliktir. Klinikte iki ilaç arasında seçim yaparken her zaman Emax tavan etkinliği potense üstün tutulur.',
+    },
+    {
+      id: 'ph-cue-4',
+      startTime: 95,
+      endTime: 130,
+      sectionId: 'pharm-4',
+      conceptId: 'pharm:partial_agonism',
+      slide: 22,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Tam agonist reseptörleri aktive ederek tam etki verir. Parsiyel agonist ise tek başına zayıf agonisttir; ancak tam agonist varlığında reseptörleri doldurarak yarışmalı antagonist gibi davranır.',
+    },
+    {
+      id: 'ph-cue-5',
+      startTime: 130,
+      endTime: 165,
+      sectionId: 'pharm-5',
+      conceptId: 'pharm:antagonism',
+      slide: 26,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Kompetitif antagonist dozu artırılarak aşılabilir; eğriyi paralel sağa kaydırır, Emax değişmez. Non-kompetitif blokaj ise aşılamaz ve Emax tavan yanıtını çökerterek baskılar.',
+    },
+    {
+      id: 'ph-cue-6',
+      startTime: 165,
+      endTime: 195,
+      sectionId: 'pharm-6',
+      conceptId: 'pharm:inverse_agonism',
+      slide: 32,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'İki durumlu modelde ligandsız ortamda bazal sinyal üreten konstitütif aktivite vardır. Ters agonistler inaktif reseptörü stabilize ederek bu bazal sinyali sıfırın altına düşürür.',
+    },
+    {
+      id: 'ph-cue-7',
+      startTime: 195,
+      endTime: 230,
+      sectionId: 'pharm-7',
+      conceptId: 'pharm:spare_receptors',
+      slide: 38,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Maksimal yanıt için reseptörlerin tamamının dolması şart değildir. Sinyal amplifikasyonu sayesinde küçük bir reseptör doluluğuyla tam etki alınır; kalan reseptörler yedek reseptördür.',
+    },
+    {
+      id: 'ph-cue-8',
+      startTime: 230,
+      endTime: 265,
+      sectionId: 'pharm-8',
+      conceptId: 'pharm:therapeutic_index',
+      slide: 43,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Kuantal yanıtta Terapötik İndeks TD50 bölü ED50 oranıdır. Varfarin, digoksin, lityum ve teofilin gibi dar terapötik ilaçlar kanda mutlaka laboratuvar takibi gerektirir.',
+    },
+    {
+      id: 'ph-cue-9',
+      startTime: 265,
+      endTime: 295,
+      sectionId: 'pharm-9',
+      conceptId: 'pharm:gpcr_cascade',
+      slide: 48,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Gs proteni adenilat siklazı uyararak cAMP üretir. Gi adenilat siklazı baskılar. Gq ise fosfolipaz C üzerinden IP3 ile kalsiyum salınımı ve DAG ile protein kinaz C aktivasyonu yapar.',
+    },
+    {
+      id: 'ph-cue-10',
+      startTime: 295,
+      endTime: 320,
+      sectionId: 'pharm-10',
+      conceptId: 'pharm:receptor_regulation',
+      slide: 56,
+      speaker: 'Prof. Dr. Feyza Arıcıoğlu Notları',
+      text: 'Kronik antagonist kullanımı reseptör sayısını artırarak up-regülasyon yapar. Propranolol gibi beta blokerlerin aniden kesilmesi ölümcül rebound kriz tablosu doğurabilir.',
+    },
+  ],
+};
+
 export function getAudioSummaryForLecture(lectureSlug: string): LectureAudioSummary {
-  if (lectureSlug === 'reseptor-etkilesimleri' || !lectureSlug) {
-    return FLAGSHIP_AUDIO_SUMMARY;
+  const slug = (lectureSlug || '').toLowerCase();
+  if (
+    slug.includes('pharm') ||
+    slug.includes('farmakoloji') ||
+    slug.includes('doz-yanit') ||
+    slug.includes('reseptor-teorileri')
+  ) {
+    return PHARMACOLOGY_AUDIO_SUMMARY;
   }
   return FLAGSHIP_AUDIO_SUMMARY;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Input, Button, Alert, Radio, Steps, Space, Tag } from 'antd';
+import { Modal, Input, Button, Radio, Space, Tag, Segmented } from 'antd';
 import {
   SafetyCertificateOutlined,
   ThunderboltOutlined,
@@ -8,8 +8,16 @@ import {
   CloseCircleFilled,
   ReloadOutlined,
   BookOutlined,
+  FireOutlined,
+  AppstoreOutlined,
+  UploadOutlined,
 } from '@ant-design/icons';
-import { pastExamService, TwinQuestion, ExamScrubResult } from '../../services/pastExamService';
+import {
+  pastExamService,
+  TwinQuestion,
+  ExamScrubResult,
+  CuratedExamQuestion,
+} from '../../services/pastExamService';
 
 interface PastExamPracticeModalProps {
   open: boolean;
@@ -20,17 +28,31 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
   open,
   onClose,
 }) => {
+  const [activeTab, setActiveTab] = useState<'bank' | 'upload'>('bank');
+  const [courseFilter, setCourseFilter] = useState<'all' | 'medchem' | 'pharmacology'>('all');
+
+  // Question solving state
+  const [activeQuestion, setActiveQuestion] = useState<TwinQuestion | CuratedExamQuestion | null>(null);
+  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [revealedHintTier, setRevealedHintTier] = useState<number>(0);
+
+  // Upload/Scrub state
   const [rawText, setRawText] = useState(
     'Marmara Üniversitesi Eczacılık 2023 Vizesi: Prokain ile Dibukain etki sürelerini ve stabilitelerini karşılaştırınız.'
   );
   const [isProcessing, setIsProcessing] = useState(false);
   const [scrubResult, setScrubResult] = useState<ExamScrubResult | null>(null);
-  const [twinQuestion, setTwinQuestion] = useState<TwinQuestion | null>(null);
 
-  // Solving state
-  const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [revealedHintTier, setRevealedHintTier] = useState<number>(0);
+  const curatedList = pastExamService.getCuratedQuestions(courseFilter);
+
+  const handleSelectCurated = (question: CuratedExamQuestion) => {
+    setActiveQuestion(question);
+    setSelectedOptionId(null);
+    setIsSubmitted(false);
+    setRevealedHintTier(0);
+    setScrubResult(null);
+  };
 
   const handleSynthesize = async () => {
     if (!rawText.trim()) return;
@@ -42,7 +64,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
 
     // 2. Synthesize original isomorphic twin question
     const twin = await pastExamService.synthesizeTwinQuestion(scrubbed);
-    setTwinQuestion(twin);
+    setActiveQuestion(twin);
 
     // Reset interaction state
     setSelectedOptionId(null);
@@ -51,12 +73,12 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
     setIsProcessing(false);
   };
 
-  const handleReset = () => {
-    setScrubResult(null);
-    setTwinQuestion(null);
+  const handleBackToList = () => {
+    setActiveQuestion(null);
     setSelectedOptionId(null);
     setIsSubmitted(false);
     setRevealedHintTier(0);
+    setScrubResult(null);
   };
 
   return (
@@ -64,7 +86,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
       open={open}
       onCancel={onClose}
       footer={null}
-      width={720}
+      width={780}
       centered
       getContainer={false}
       transitionName=""
@@ -72,7 +94,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
       className="past-exam-modal"
       title={
         <div className="flex items-center gap-2 pt-1">
-          <div className="w-7 h-7 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm border border-emerald-200 dark:border-emerald-800">
+          <div className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm border border-emerald-200 dark:border-emerald-800">
             <SafetyCertificateOutlined />
           </div>
           <div>
@@ -80,7 +102,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
               Çıkmış Soru Analizi & İkiz Soru Sentez Motoru
             </h3>
             <p className="text-[11px] text-slate-400 font-normal m-0">
-              Telif korumalı anonimleştirme ve Sokratik vize pratiği
+              FSEK Safe Harbor güvencesiyle anonimleştirilmiş vize pratiği
             </p>
           </div>
         </div>
@@ -88,7 +110,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
     >
       <div className="flex flex-col gap-4 py-2">
         {/* Legal Shield Disclaimer */}
-        <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] text-xs text-slate-600 dark:text-[#B4B4B4] flex items-start gap-2.5">
+        <div className="p-3 rounded-xl bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] text-xs text-slate-600 dark:text-[#B4B4B4] flex items-start gap-2.5">
           <SafetyCertificateOutlined className="text-emerald-500 text-base mt-0.5 shrink-0" />
           <div>
             <strong className="text-slate-800 dark:text-[#ECECEC]">Hukuki & Telif Kalkanı:</strong>{' '}
@@ -98,83 +120,107 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
           </div>
         </div>
 
-        {!twinQuestion ? (
-          /* Step 1: Input / Paste */
-          <div className="flex flex-col gap-3">
-            <label className="text-xs font-semibold text-slate-700 dark:text-[#ECECEC]">
-              Geçmiş Yıl Sınav Sorusunu Yapıştırın veya Yazın:
-            </label>
-            <Input.TextArea
-              rows={4}
-              value={rawText}
-              onChange={(e) => setRawText(e.target.value)}
-              placeholder="Örn: 2023 Vizesi: Prokain ve Dibukain etki sürelerini ester-amit bağı açısından kıyaslayınız..."
-              className="rounded-xl font-sans text-xs bg-white dark:bg-[#212121] border-slate-200 dark:border-[#2F2F2F] text-slate-900 dark:text-[#ECECEC]"
+        {/* View Segmented Switcher (Bank vs Upload) */}
+        {!activeQuestion && (
+          <div className="flex items-center justify-between gap-3">
+            <Segmented
+              value={activeTab}
+              onChange={(val) => setActiveTab(val as 'bank' | 'upload')}
+              options={[
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5 px-1 py-0.5">
+                      <AppstoreOutlined />
+                      <span>Hazır Çıkmış Soru Bankası (10 Soru)</span>
+                    </span>
+                  ),
+                  value: 'bank',
+                },
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5 px-1 py-0.5">
+                      <UploadOutlined />
+                      <span>Kendi Sorunu Yükle & Anonimleştir</span>
+                    </span>
+                  ),
+                  value: 'upload',
+                },
+              ]}
+              className="bg-slate-100 dark:bg-[#212121] p-1 rounded-xl"
             />
-
-            <div className="flex items-center justify-between pt-1">
-              <span className="text-[11px] text-slate-400">
-                Örnek: Marmara, Hacettepe, İstanbul Eczacılık vize soruları
-              </span>
-              <Button
-                type="primary"
-                onClick={handleSynthesize}
-                loading={isProcessing}
-                icon={<ThunderboltOutlined />}
-                className="bg-[#10A37F] hover:bg-[#0E8C6D] text-white font-semibold rounded-xl h-10 px-5 border-0 shadow-xs"
-              >
-                Anonimleştir & İkiz Soru Üret
-              </Button>
-            </div>
           </div>
-        ) : (
-          /* Step 2: Interactive Twin Question Solver */
+        )}
+
+        {/* ACTIVE QUESTION SOLVER (If solving a question) */}
+        {activeQuestion ? (
           <div className="flex flex-col gap-4 animate-fadeIn">
-            {/* Scrubbed Banner */}
+            {/* Header with back button */}
             <div className="flex items-center justify-between p-2.5 rounded-xl bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 text-xs">
               <div className="flex items-center gap-2 text-emerald-800 dark:text-emerald-300">
                 <CheckCircleFilled className="text-emerald-500" />
                 <span>
-                  <strong>Hukuki Kalkan Aktif:</strong> {scrubResult?.removedEntities.length ? scrubResult.removedEntities.join(', ') : 'Öğretim kurumu'} ibareleri temizlendi.
+                  <strong>Hukuki Kalkan Aktif:</strong>{' '}
+                  {scrubResult?.removedEntities.length
+                    ? `${scrubResult.removedEntities.join(', ')} ibareleri temizlendi.`
+                    : 'Telif güvenceli pedagojik ikiz soru.'}
                 </span>
               </div>
               <Button
                 size="small"
                 type="text"
-                onClick={handleReset}
+                onClick={handleBackToList}
                 icon={<ReloadOutlined />}
                 className="text-xs text-slate-500 hover:text-slate-800 dark:text-slate-400"
               >
-                Yeni Soru Gir
+                Soru Listesine Dön
               </Button>
             </div>
 
-            {/* Twin Question Card */}
+            {/* Question Card */}
             <div className="p-5 rounded-2xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] flex flex-col gap-4">
-              <div className="flex items-center justify-between">
-                <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 font-bold text-xs">
-                  Sentezlenen Pedagojik İkiz Soru
-                </span>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 font-bold text-xs">
+                    Sentezlenen Pedagojik İkiz Soru
+                  </span>
+                  {'difficulty' in activeQuestion && (
+                    <Tag
+                      color={
+                        activeQuestion.difficulty.includes('Tuzağı')
+                          ? 'error'
+                          : activeQuestion.difficulty === 'Orta'
+                          ? 'warning'
+                          : 'default'
+                      }
+                      className="rounded-lg text-[11px]"
+                    >
+                      {activeQuestion.difficulty}
+                    </Tag>
+                  )}
+                </div>
                 <span className="text-xs text-slate-400 font-mono">
-                  Slayt {twinQuestion.slideReferences.join(', ')} Atıflı
+                  Slayt {activeQuestion.slideReferences.join(', ')} Atıflı
                 </span>
               </div>
 
               <h4 className="text-sm sm:text-base font-semibold text-slate-900 dark:text-[#ECECEC] m-0 leading-relaxed">
-                {twinQuestion.questionPrompt}
+                {activeQuestion.questionPrompt}
               </h4>
 
               {/* Options */}
               <div className="flex flex-col gap-2.5">
-                {twinQuestion.options.map((opt) => {
+                {activeQuestion.options.map((opt) => {
                   const isSelected = selectedOptionId === opt.id;
-                  let cardStyle = 'border-slate-200 dark:border-[#2F2F2F] hover:border-slate-400 dark:hover:border-[#555]';
+                  let cardStyle =
+                    'border-slate-200 dark:border-[#2F2F2F] hover:border-slate-400 dark:hover:border-[#555]';
 
                   if (isSubmitted) {
                     if (opt.isCorrect) {
-                      cardStyle = 'border-emerald-500 bg-emerald-50/40 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200';
+                      cardStyle =
+                        'border-emerald-500 bg-emerald-50/40 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200';
                     } else if (isSelected && !opt.isCorrect) {
-                      cardStyle = 'border-rose-500 bg-rose-50/40 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200';
+                      cardStyle =
+                        'border-rose-500 bg-rose-50/40 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200';
                     }
                   } else if (isSelected) {
                     cardStyle = 'border-emerald-500 bg-slate-50 dark:bg-[#262626]';
@@ -228,7 +274,7 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
                   </Button>
                 ) : (
                   <Button
-                    onClick={handleReset}
+                    onClick={handleBackToList}
                     className="rounded-xl text-xs border-slate-200 dark:border-[#2F2F2F] text-slate-700 dark:text-[#ECECEC]"
                   >
                     Başka Soru Çöz
@@ -239,9 +285,10 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
               {/* Revealed Hints */}
               {revealedHintTier > 0 && (
                 <div className="flex flex-col gap-2 p-3.5 rounded-xl bg-amber-50/50 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/60 text-xs">
-                  {twinQuestion.scaffoldingLadder.slice(0, revealedHintTier).map((hint, idx) => (
+                  {activeQuestion.scaffoldingLadder.slice(0, revealedHintTier).map((hint, idx) => (
                     <div key={idx} className="text-amber-900 dark:text-amber-200">
-                      <strong>{hint.split(':')[0]}:</strong>{hint.substring(hint.indexOf(':') + 1)}
+                      <strong>{hint.split(':')[0]}:</strong>
+                      {hint.substring(hint.indexOf(':') + 1)}
                     </div>
                   ))}
                 </div>
@@ -252,15 +299,110 @@ export const PastExamPracticeModal: React.FC<PastExamPracticeModalProps> = ({
                 <div className="flex flex-col gap-3 pt-2">
                   <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] text-xs">
                     <p className="text-slate-800 dark:text-[#ECECEC] m-0 leading-relaxed">
-                      {twinQuestion.explanation}
+                      {activeQuestion.explanation}
                     </p>
                   </div>
 
                   <div className="p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-800 dark:text-emerald-300 font-semibold flex items-center gap-2">
-                    <BookOutlined /> {twinQuestion.pedagogicalTakeaway}
+                    <BookOutlined /> {activeQuestion.pedagogicalTakeaway}
                   </div>
                 </div>
               )}
+            </div>
+          </div>
+        ) : activeTab === 'bank' ? (
+          /* TAB 1: CURATED QUESTION BANK */
+          <div className="flex flex-col gap-3 animate-fadeIn">
+            {/* Filters */}
+            <div className="flex items-center justify-between">
+              <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                Ders Filtresi:
+              </span>
+              <Segmented
+                size="small"
+                value={courseFilter}
+                onChange={(val) => setCourseFilter(val as any)}
+                options={[
+                  { label: 'Tüm Dersler (10)', value: 'all' },
+                  { label: 'Farmasötik Kimya (5)', value: 'medchem' },
+                  { label: 'Farmakoloji (5)', value: 'pharmacology' },
+                ]}
+                className="bg-slate-100 dark:bg-[#212121] rounded-xl text-xs"
+              />
+            </div>
+
+            {/* Questions Grid */}
+            <div className="flex flex-col gap-2.5 max-h-[380px] overflow-y-auto pr-1">
+              {curatedList.map((q) => (
+                <div
+                  key={q.id}
+                  onClick={() => handleSelectCurated(q)}
+                  className="p-3.5 rounded-xl bg-white dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] hover:border-[#10A37F] dark:hover:border-[#10A37F] transition-all cursor-pointer flex flex-col gap-2"
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
+                        {q.originalTopic}
+                      </span>
+                      <Tag
+                        color={
+                          q.difficulty.includes('Tuzağı')
+                            ? 'error'
+                            : q.difficulty === 'Orta'
+                            ? 'warning'
+                            : 'default'
+                        }
+                        className="rounded-lg text-[10px] m-0"
+                      >
+                        {q.difficulty}
+                      </Tag>
+                    </div>
+                    <span className="text-[11px] text-slate-400 font-mono">
+                      Slayt {q.slideReferences.join(', ')}
+                    </span>
+                  </div>
+
+                  <p className="text-xs text-slate-600 dark:text-[#A0A0A0] line-clamp-2 m-0 leading-relaxed">
+                    {q.questionPrompt}
+                  </p>
+
+                  <div className="flex items-center justify-between pt-1 text-[11px]">
+                    <span className="text-slate-400">{q.facultyOrigin}</span>
+                    <span className="text-[#10A37F] font-semibold flex items-center gap-1">
+                      Çözmeye Başla →
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          /* TAB 2: UPLOAD & SCRUB */
+          <div className="flex flex-col gap-3 animate-fadeIn">
+            <label className="text-xs font-semibold text-slate-700 dark:text-[#ECECEC]">
+              Geçmiş Yıl Sınav Sorusunu Yapıştırın veya Yazın:
+            </label>
+            <Input.TextArea
+              rows={4}
+              value={rawText}
+              onChange={(e) => setRawText(e.target.value)}
+              placeholder="Örn: 2023 Vizesi: Prokain ve Dibukain etki sürelerini ester-amit bağı açısından kıyaslayınız..."
+              className="rounded-xl font-sans text-xs bg-white dark:bg-[#212121] border-slate-200 dark:border-[#2F2F2F] text-slate-900 dark:text-[#ECECEC]"
+            />
+
+            <div className="flex items-center justify-between pt-1">
+              <span className="text-[11px] text-slate-400">
+                Örnek: Marmara, Hacettepe, İstanbul Eczacılık vize soruları
+              </span>
+              <Button
+                type="primary"
+                onClick={handleSynthesize}
+                loading={isProcessing}
+                icon={<ThunderboltOutlined />}
+                className="bg-[#10A37F] hover:bg-[#0E8C6D] text-white font-semibold rounded-xl h-10 px-5 border-0 shadow-xs"
+              >
+                Anonimleştir & İkiz Soru Üret
+              </Button>
             </div>
           </div>
         )}

@@ -16,5 +16,11 @@
 ### Phase 3: Advanced Simulation Widgets & Leitner Spaced Review
 - **Goal**: Implement `EassonStedmanStage`, `ReceptorOperationalModel`, `PkCockpit`, and the Clinical Order Verification Station with calibrated decay ($R \ge 0.85$).
 
-### Phase 4: Commercialization, Dodo MoR & Dual-Brave Verification
+### Phase 4: Commercialization, Dodo MoR & Dual-Brave Verification [COMPLETED]
 - **Goal**: Dodo Payments integration, dynamic TRY PPP pricing, faculty-reviewed Arabic translation, and Playwright UI tests with Brave Shields on/off.
+
+### Phase 5: ChatGPT Aesthetic, Minimalist Dashboard & Study Pulse [COMPLETED]
+- **Goal**: Obsidian/Emerald dark theme, squircle tokens, exam countdown dashboard, live peer presence (Study Pulse 39-42 students), and initial MedChem RAG nodes.
+
+### Phase 6: Multi-Course RAG (Pharmacology MD Nodes), Socratic Exam Bank & Audio Pipeline [IN PROGRESS]
+- **Goal**: Author 10 atomic Pharmacology Markdown knowledge nodes, upgrade `lectureRagService` with multi-course filtering, deliver 10-question pre-loaded isomorphic past-exam bank, and enable synchronized audio-karaoke summaries.

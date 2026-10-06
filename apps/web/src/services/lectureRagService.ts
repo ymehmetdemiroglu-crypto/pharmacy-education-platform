@@ -113,23 +113,129 @@ export const ATOMIC_KNOWLEDGE_NODES: KnowledgeNode[] = [
     summary: 'Lokal anestezikler aromatik halka, ara köprü (ester/amit) ve amin ucundan oluşur. Esterler (Prokain) hızla hidroliz edilir; amitler (Dibukain) dirençlidir ve kinolin halkası sayesinde 20 kat güçlüdür.',
     contentMarkdown: `Lokal anesteziklerde aromatik halka hidrofobik bağlanma, ara köprü (ester/amit) stabilite, amin ucu ise iyonik bağlanma sağlar (Slayt 31). Ester köprülü Prokain plazma psödokolinesterazıyla dakikalar içinde hidroliz olur. Amit köprülü Dibukain ise kinolin çekirdeği ve butoksi zinciriyle çok güçlü bağlanır ve plazma hidrolizine tamamen dirençlidir (Slayt 33).`,
   },
+  // --- Pharmacology Course Nodes (Prof. Dr. Feyza Arıcıoğlu) ---
+  {
+    id: 'pharm-node-01-reseptor-turleri',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Reseptör Kavramı ve Dört Temel Reseptör Ailesi',
+    slides: [1, 2, 3, 5, 6, 7],
+    keywords: ['reseptör', 'iyon kanalı', 'GPCR', 'tirozin kinaz', 'nükleer reseptör', 'intraselüler', 'transdüksiyon'],
+    summary: 'İlaçların hedefi olan 4 reseptör ailesi: İyonotropik (milisaniyeler), GPCR (saniyeler), Enzim kenetli/kinaz (dakikalar-saatler) ve Nükleer reseptörler (saatler-günler).',
+    contentMarkdown: `Dört temel reseptör ailesi: 1) İyonotropik kanallar (nikotinik ACh, GABAA): milisaniyeler. 2) GPCR (muskarinik, adrenerjik): saniyeler. 3) Enzim kenetli reseptörler (insülin tirozin kinaz): dakikalar-saatler. 4) Nükleer reseptörler (glukokortikoid, tiroid T3/T4): intraselüler yerleşimlidir ve gen ekspresyonunu modüle eder (saatler-günler, Slayt 1-7).`,
+  },
+  {
+    id: 'pharm-node-02-kd-ve-afinite',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Kütle Hareketi Kanunu ve Kd Ayrışma Sabiti',
+    slides: [9, 10, 11, 12, 13],
+    keywords: ['kd', 'afinite', 'kütle hareketi', 'langmuir', 'fraksiyonel doluluk'],
+    summary: 'Afinite 1/Kd ile orantılıdır. Kd toplam reseptörlerin %50’sini doyuran serbest ilaç konsantrasyonudur.',
+    contentMarkdown: `Kütle hareketi kanununa göre Kd = koff / kon = [D][R] / [DR]. Afinite 1/Kd ile ters orantılıdır. Hill-Langmuir denklemine göre serbest ilaç konsantrasyonu [D] = Kd olduğunda reseptörlerin tam olarak %50’si doludur (f_occ = 0.5, Slayt 10, 12).`,
+  },
+  {
+    id: 'pharm-node-03-ec50-ve-emax',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Kademeli Doz-Yanıt Eğrileri, EC50 Potens ve Emax',
+    slides: [14, 15, 16, 17, 18],
+    keywords: ['ec50', 'emax', 'potens', 'etkinlik', 'efficacy', 'doz yanıt', 'sigmoidal'],
+    summary: 'EC50 ilacın potensini (yarı maksimal etki konsantrasyonu), Emax ise maksimal klinik etkinliğini temsil eder. Klinikte daima Emax potense tercih edilir.',
+    contentMarkdown: `Semilogaritmik doz-yanıt grafiği sigmoidaldir (Slayt 14). Emax ilacın üretebileceği tavan biyolojik yanıttır (etkinlik/efficacy). EC50 ise %50 Emax oluşturan konsantrasyondur (potens). Küçük EC50 yüksek potens demektir; fakat klinik üstünlüğü belirleyen temel parametre Emax tavan etkinliğidir (Slayt 16, 18).`,
+  },
+  {
+    id: 'pharm-node-04-tam-ve-parsiyel-agonist',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Tam Agonist, Parsiyel Agonist ve İntrensek Aktivite',
+    slides: [20, 21, 22, 23, 24],
+    keywords: ['tam agonist', 'parsiyel agonist', 'intrensek aktivite', 'alfa', 'buprenorfin', 'antagonist etki'],
+    summary: 'Tam agonist α=1.0 ile %100 tavan yanıt üretir; parsiyel agonist 0<α<1.0 üretir. Tam agonist varlığında parsiyel agonist kompetitif antagonist gibi davranır.',
+    contentMarkdown: `Tam agonist α=1.0 intrinsik aktiviteyle maksimal yanıt verir. Parsiyel agonist (0 < α < 1.0) reseptörlerin tamamını doldursa bile submaksimal yanıt üretir (Slayt 20-22). Kritik vize kuralı: Yüksek doz tam agonist varlığında ortama parsiyel agonist eklenirse tam agonisti yerinden ederek sistem yanıtını düşürür ve yarışmalı antagonist gibi davranır (örn. Morfin varlığında Buprenorfin, Slayt 23-24).`,
+  },
+  {
+    id: 'pharm-node-05-kompetitif-antagonizma',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Kompetitif ve Non-Kompetitif Antagonizma (Schild Analizi)',
+    slides: [25, 26, 27, 28, 29],
+    keywords: ['kompetitif', 'non-kompetitif', 'antagonizma', 'sağa kayma', 'emax düşüşü', 'schild', 'pa2'],
+    summary: 'Kompetitif antagonizma aşılabilir (surmountable); eğri paralel sağa kayar, Emax değişmez, EC50 artar. Non-kompetitif aşılamaz, Emax çöker.',
+    contentMarkdown: `Kompetitif antagonist agonist ile aynı ortosterik bölge için yarışır; aşılabilirdir (surmountable). Doz-yanıt eğrisi paralel sağa kayar; Emax değişmez, görünür EC50 artar (Slayt 26). Non-kompetitif allosterik veya kovalenttir; aşılamaz (insurmountable), Emax baskılanır (Slayt 28). Schild denkleminde log(DR-1) = log[B] - logKB bağıntısıyla pA2 hesaplanır (Slayt 29).`,
+  },
+  {
+    id: 'pharm-node-06-ters-agonist',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Konstitütif Reseptör Aktivitesi ve Ters Agonistler',
+    slides: [31, 32, 33, 34],
+    keywords: ['ters agonist', 'inverse agonist', 'konstitütif', 'bazal aktivite', 'iki durumlu model'],
+    summary: 'İki durumlu modelde ligand yokken bile oluşan bazal aktiviteyi sıfırın altına düşüren moleküller ters agonisttir (negatif intrensek aktivite).',
+    contentMarkdown: `İki durumlu modelde (R <-> R*) ligandsız ortamda kendiliğinden bazal sinyal üreten duruma konstitütif aktivite denir (Slayt 31). Ters agonist (inverse agonist) seçici olarak inaktif R konformasyonuna bağlanıp bazal aktiviteyi baskılar (negatif intrensek aktivite α < 0, Slayt 33). Örn. H1 antihistaminiklerin çoğu gerçekte H1 ters agonistidir.`,
+  },
+  {
+    id: 'pharm-node-07-yedek-reseptorler',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Yedek Reseptörler (Spare Receptors) ve Furchgott Deneyi',
+    slides: [36, 37, 38, 39],
+    keywords: ['yedek reseptör', 'spare receptor', 'furchgott', 'ec50 < kd', 'sinyal amplifikasyonu'],
+    summary: 'Maksimal yanıt için tüm reseptörlerin dolmasına gerek yoktur (EC50 < Kd). İrreversibl blokörle reseptörlerin bir kısmı yok edilse de Emax korunur.',
+    contentMarkdown: `Biyokimyasal sinyal kaskadındaki amplifikasyon sayesinde maksimal etki (Emax) için reseptör havuzunun tamamının dolması gerekmez. Kalan işgal edilmemiş reseptörlere yedek reseptör denir ve EC50 < Kd durumunu gösterir (Slayt 36). Furchgott deneyinde doku fenoksibenzaminle muamele edildiğinde yedek reseptörler tükenene kadar Emax değişmez, sadece eğri sağa kayar (Slayt 39).`,
+  },
+  {
+    id: 'pharm-node-08-kuantal-ve-terapotik-indeks',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Kuantal Doz-Yanıt, ED50 ve Terapötik İndeks (TI)',
+    slides: [41, 42, 43, 44, 45],
+    keywords: ['kuantal', 'ed50', 'ld50', 'td50', 'terapötik indeks', 'dar terapötik', 'varfarin', 'digoksin'],
+    summary: 'Kuantal yanıt popülasyonda ya-hep-ya-hiçtir. Terapötik İndeks TI = TD50 / ED50. Dar terapötik indeksli ilaçlar: Varfarin, Digoksin, Lityum, Teofilin, Fenitoin.',
+    contentMarkdown: `Kuantal doz-yanıt popülasyondaki yanıt frekansını ölçer (ED50, TD50, LD50, Slayt 41). Terapötik İndeks TI = TD50 / ED50 güvenlik aralığını verir (Slayt 43). Küçük TI değerine sahip dar terapötik indeksli 5 kritik ilaç: Varfarin, Digoksin, Lityum, Teofilin, Fenitoin (TDM gerektirir, Slayt 44-45).`,
+  },
+  {
+    id: 'pharm-node-09-gpcr-yolaklari',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'GPCR Sinyal İletim Yolları (Gs, Gi, Gq)',
+    slides: [46, 47, 48, 49, 50],
+    keywords: ['gpcr', 'gs', 'gi', 'gq', 'camp', 'ip3', 'dag', 'adenilat siklaz', 'plc'],
+    summary: 'Gs adenilat siklazı uyarır (cAMP/PKA). Gi adenilat siklazı baskılar. Gq fosfolipaz C uyarır (IP3/DAG/Ca2+).',
+    contentMarkdown: `Gs heterotrimerik G proteini Adenilat Siklazı uyarır -> cAMP artar -> PKA aktive olur (beta1, beta2, D1, H2). Gi Adenilat Siklazı inhibe eder -> cAMP azalır (alfa2, M2). Gq Fosfolipaz C'yi (PLC) aktive eder -> PIP2 yıkılarak IP3 (hücre içi Ca2+ salınımı) ve DAG (PKC aktivasyonu) üretilir (alfa1, M1, M3, Slayt 46-49).`,
+  },
+  {
+    id: 'pharm-node-10-desensitizasyon-updown',
+    lectureId: 'pharm-1',
+    courseId: 'pharmacology',
+    title: 'Desensitizasyon, Takifilaksi, Up- ve Down-Regülasyon',
+    slides: [53, 54, 55, 56, 57],
+    keywords: ['desensitizasyon', 'takifilaksi', 'down-regülasyon', 'up-regülasyon', 'rebound', 'beta bloker'],
+    summary: 'Kronik agonist down-regülasyon ve tolerans yapar. Kronik antagonist up-regülasyon yapar; ilacın ani kesilmesinde ölümcül rebound kriz tetiklenir.',
+    contentMarkdown: `Takifilaksi dakikalar içinde hızla gelişen akut toleranstır (efedrin, nitratlar, dekonjestanlar, Slayt 53). Homolog desensitizasyonda GRK ve beta-arrestin rol oynar. Kronik agonist maruziyetinde reseptörler endositozla yıkılır (down-regülasyon). Kronik antagonistte reseptör sayısı artar (up-regülasyon); beta bloker aniden kesilirse şiddetli rebound taşikardi ve hipertansif kriz doğar (Slayt 56-57).`,
+  },
 ];
 
 export class LectureRagService {
   /**
    * Retrieves the most relevant knowledge nodes using semantic lexical matching and Supabase pgvector fallback
    */
-  public async retrieveRelevantNodes(query: string, limit = 2): Promise<KnowledgeNode[]> {
+  public async retrieveRelevantNodes(
+    query: string,
+    limit = 2,
+    courseId?: 'medchem' | 'pharmacology' | 'all'
+  ): Promise<KnowledgeNode[]> {
     const q = query.toLowerCase().trim();
     const queryTokens = q.split(/\s+/).filter((t) => t.length > 2);
+    const targetCourse = courseId || 'all';
 
     // 1. Optional Supabase pgvector RPC lookup
     try {
       const client = getSupabase();
       if (client && typeof client.rpc === 'function') {
         const { data, error } = await client.rpc('match_lecture_concepts', {
-          p_course_id: 'medchem',
-          p_lecture_slug: 'ilac-reseptor-etkilesimi',
+          p_course_id: targetCourse === 'all' ? 'medchem' : targetCourse,
+          p_lecture_slug: targetCourse === 'pharmacology' ? 'farmakoloji-temelleri' : 'ilac-reseptor-etkilesimi',
           match_threshold: 0.5,
           match_count: limit,
         });
@@ -138,8 +244,8 @@ export class LectureRagService {
           // Map to KnowledgeNode
           return data.map((d: any) => ({
             id: d.id,
-            lectureId: 'medchem-1',
-            courseId: 'medchem',
+            lectureId: targetCourse === 'pharmacology' ? 'pharm-1' : 'medchem-1',
+            courseId: targetCourse === 'all' ? 'medchem' : targetCourse,
             title: d.concept_title,
             slides: d.slide_numbers,
             keywords: [],
@@ -152,8 +258,13 @@ export class LectureRagService {
       // Fallback seamlessly to local indexed knowledge nodes
     }
 
+    // Filter candidate nodes by course if specified
+    const candidateNodes = targetCourse === 'all'
+      ? ATOMIC_KNOWLEDGE_NODES
+      : ATOMIC_KNOWLEDGE_NODES.filter((n) => n.courseId === targetCourse);
+
     // 2. High-precision client-side scoring
-    const scored = ATOMIC_KNOWLEDGE_NODES.map((node) => {
+    const scored = candidateNodes.map((node) => {
       let score = 0;
 
       // Exact phrase match
@@ -174,9 +285,9 @@ export class LectureRagService {
 
     scored.sort((a, b) => b.score - a.score);
 
-    // Return top matching nodes, or default to node-01 if no strong match
+    // Return top matching nodes, or default to candidateNodes[0] if no strong match
     const matches = scored.filter((s) => s.score > 0).slice(0, limit).map((s) => s.node);
-    return matches.length > 0 ? matches : [ATOMIC_KNOWLEDGE_NODES[0]!];
+    return matches.length > 0 ? matches : [candidateNodes[0] || ATOMIC_KNOWLEDGE_NODES[0]!];
   }
 
   /**

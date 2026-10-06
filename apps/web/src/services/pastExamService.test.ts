@@ -1,7 +1,32 @@
 import { describe, it, expect } from 'vitest';
-import { pastExamService } from './pastExamService';
+import { pastExamService, CURATED_EXAM_BANK } from './pastExamService';
 
 describe('pastExamService', () => {
+  it('contains exactly 10 reviewed high-yield curated exam questions across MedChem and Pharmacology', () => {
+    expect(CURATED_EXAM_BANK.length).toBe(10);
+    const medchemQuestions = pastExamService.getCuratedQuestions('medchem');
+    const pharmQuestions = pastExamService.getCuratedQuestions('pharmacology');
+    expect(medchemQuestions.length).toBe(5);
+    expect(pharmQuestions.length).toBe(5);
+
+    // Verify all questions have 4 diagnostic options, 3-tier scaffolding ladders, and slide references
+    CURATED_EXAM_BANK.forEach((q) => {
+      expect(q.options.length).toBe(4);
+      expect(q.options.filter((o) => o.isCorrect).length).toBe(1);
+      expect(q.scaffoldingLadder.length).toBe(3);
+      expect(q.slideReferences.length).toBeGreaterThan(0);
+      expect(q.facultyOrigin).toBeTruthy();
+      expect(q.pedagogicalTakeaway).toBeTruthy();
+    });
+  });
+
+  it('retrieves questions by specific ID', () => {
+    const q = pastExamService.getQuestionById('curated-ph-1');
+    expect(q).toBeDefined();
+    expect(q?.originalTopic).toContain('Potens vs Etkinlik');
+    expect(q?.slideReferences).toContain(18);
+  });
+
   it('scrubs university names, professor titles, and exam headers to ensure zero legal liability', () => {
     const rawExamSnippet = `
       Marmara Üniversitesi Eczacılık Fakültesi

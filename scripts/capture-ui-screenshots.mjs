@@ -94,12 +94,27 @@ async function capture() {
         fullPage: false,
       });
 
-      // 17 & 18. Past Exam & Isomorphic Twin Question Engine
-      console.log('Capturing 17_past_exam_modal_input.png...');
+      // 17, 18 & 19. Past Exam Question Bank & Twin Question Engine
+      console.log('Capturing 19_past_exam_bank_browser.png...');
       const examBtn = page2.locator('button').filter({ hasText: 'Çıkmış Soru Analizi' }).first();
       if (await examBtn.isVisible()) {
         await examBtn.click();
         await page2.waitForTimeout(600);
+
+        // 19: Capture curated question bank tab
+        await page2.screenshot({
+          path: path.join(OUTPUT_DIR, '19_past_exam_bank_browser.png'),
+          fullPage: false,
+        });
+
+        // Switch to upload tab
+        console.log('Capturing 17_past_exam_modal_input.png...');
+        const uploadTab = page2.locator('.past-exam-modal .ant-segmented-item').filter({ hasText: 'Kendi Sorunu' }).first();
+        if (await uploadTab.isVisible()) {
+          await uploadTab.click();
+          await page2.waitForTimeout(400);
+        }
+
         await page2.screenshot({
           path: path.join(OUTPUT_DIR, '17_past_exam_modal_input.png'),
           fullPage: false,
@@ -152,6 +167,18 @@ async function capture() {
         await canvasTab.click();
         await page2.waitForTimeout(400);
       }
+
+      // 20. Synchronized Audio Karaoke Summary Bar
+      console.log('Capturing 20_audio_karaoke_summary.png...');
+      const playBtn = page2.locator('button:has(.anticon-caret-right)').first();
+      if (await playBtn.isVisible()) {
+        await playBtn.click();
+        await page2.waitForTimeout(600);
+      }
+      await page2.screenshot({
+        path: path.join(OUTPUT_DIR, '20_audio_karaoke_summary.png'),
+        fullPage: false,
+      });
     }
 
     // 4. Focus on 3D Molecular Viewer & SAR Matrix

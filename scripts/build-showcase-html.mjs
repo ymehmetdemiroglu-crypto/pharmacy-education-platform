@@ -34,6 +34,13 @@ const items = [
     desc: 'Mobil uyumlu geri sayım kartı, tek sütunlu modül listesi ve başparmakla tek dokunuşta derse devam etme aksiyonları.'
   },
   {
+    id: 'past-exam-bank',
+    title: 'Çıkmış Soru Bankası & Filtreleme (10 Özgün Vize İkizi)',
+    tag: 'Curated 10-Exam Bank',
+    file: '19_past_exam_bank_browser.png',
+    desc: 'Farmasötik Kimya ve Farmakoloji dersleri için kategorize edilmiş 10 yüksek verimli vize ikiz sorusu (Marmara, Hacettepe, İÜ). Zorluk etiketleri ve slayt atıflarıyla anında çözüme başlama imkanı.'
+  },
+  {
     id: 'past-exam-input',
     title: 'Hukuki Kalkanlı Çıkmış Soru & Sınav Motoru (Soru Yükleme & Anonimleştirme)',
     tag: 'FSEK Safe Harbor Input',
@@ -46,6 +53,13 @@ const items = [
     tag: 'Isomorphic Twin Question',
     file: '18_past_exam_modal_twin_solved.png',
     desc: 'Orijinal sınav sorusunun farmakolojik mantığını koruyarak yeni bir bileşik üzerinden üretilen ikiz soru. 3 kademeli Sokratik ipucu merdiveni, tanısal geri bildirim ve kesin slayt atıfları içerir.'
+  },
+  {
+    id: 'audio-karaoke-summary',
+    title: 'Senkronize Sesli Ders Özeti (Karaoke Vurgusu & Tutor Butonu)',
+    tag: 'Audio Karaoke + Socratic',
+    file: '20_audio_karaoke_summary.png',
+    desc: 'Slayt bazında senkronize sesli özet oynatıcı. Oynatılan cümlenin canlı vurgulanması, hız seçicisi (1.0x-1.5x) ve tek tıkla cümleyi Sokratik Eğitmene sorma butonu.'
   },
   {
     id: 'desktop-light',

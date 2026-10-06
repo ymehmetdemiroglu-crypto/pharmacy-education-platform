@@ -60,7 +60,13 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
 
   // Browser speech synthesis for live vocal reading
   useEffect(() => {
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+    if (
+      typeof window === 'undefined' ||
+      !('speechSynthesis' in window) ||
+      typeof SpeechSynthesisUtterance === 'undefined'
+    ) {
+      return;
+    }
 
     if (isPlaying && currentCue) {
       window.speechSynthesis.cancel();
@@ -113,9 +119,9 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
           </Tooltip>
 
           <div className="flex flex-col">
-            <span className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-[#ECECEC] flex items-center gap-1.5">
-              <SoundOutlined className="text-[#10A37F] inline" />
-              Sesli Ders Özeti (Slayt 1–33 Vize İncelemesi)
+            <span className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-[#ECECEC] flex items-center gap-1.5 truncate max-w-xs sm:max-w-md">
+              <SoundOutlined className="text-[#10A37F] inline shrink-0" />
+              <span className="truncate">{summary.title}</span>
             </span>
             <span className="font-mono text-[11px] text-slate-500 dark:text-[#8E8E8E]">
               {formatTime(currentTime)} / {formatTime(summary.duration)}
