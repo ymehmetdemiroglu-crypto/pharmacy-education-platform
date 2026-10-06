@@ -1,16 +1,20 @@
 # Project State
 
-## Current Phase: 07-student-notes-vault-and-synthesizer
+## Current Phase: 08-preflight-resilience-and-audit
 - **Status**: COMPLETED & VERIFIED (100% Pass Rate Across All Suites)
 - **Scope**:
-  - Secure personal student document vault in `studentDocumentService.ts` and `StudentDocumentVaultModal.tsx`
-  - Integration with Supabase Storage `student-documents` bucket and transparent local persistence
-  - Auto-synthesized Socratic study guides with active-recall flashcards, 3-tier hints, and exam trap warnings
-  - Direct integration into `MinimalCourseDashboard.tsx` and `PharmLearnShell.tsx` top bar and layout
-  - 16/16 web test files passed (71/71 tests), TypeScript 0 errors
-  - 22 high-resolution Brave Browser screenshots captured and compiled into `pharmlearn_showcase.html`
+  - Live network connectivity sentinel (`ConnectivitySentinel.tsx`) with non-intrusive offline/online pill
+  - Obsidian-styled `ErrorBoundary.tsx` with WebGL context recovery and safe cache reset
+  - Comprehensive pre-flight launch audit document (`docs/PREFLIGHT_LAUNCH_AUDIT.md`)
+  - 18/18 web test files passed (76/76 tests passing), TypeScript 0 errors (`tsc --noEmit`)
+  - 22 Brave Browser full-resolution screenshots in `pharmlearn_showcase.html`
 
 ## Completed Phases
+### Phase 8: Pre-Flight Launch Audit, Edge-Case Resilience & Socratic Guardrails [COMPLETED]
+- Offline sentinel notifying students of local saving during wifi/mobile disconnects.
+- Polished Obsidian ErrorBoundary with 1-click workspace restart.
+- Pre-flight launch audit covering 8 lecture decks, FSEK legal safe harbor, Dodo payments, zero-localhost and deployment readiness.
+- 18/18 test suites passing (76/76 tests), 0 TypeScript errors.
 ### Phase 7: Student Notes Vault, Document Ingestion & AI Smart Study Guide Synthesizer [COMPLETED]
 - Secure document handling for PDFs and notes with client encryption pill.
 - Pre-loaded authentic Marmara and Hacettepe student study notes.

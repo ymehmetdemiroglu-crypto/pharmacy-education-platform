@@ -21,6 +21,7 @@ import { ArtifactCanvas } from './ArtifactCanvas';
 import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
+import { ConnectivitySentinel } from '../common/ConnectivitySentinel';
 import { useAuth } from '@pharmacy/platform';
 
 interface PharmLearnShellProps {
@@ -454,6 +455,9 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             </>
           )}
         </div>
+
+        {/* Network & Offline Connectivity Sentinel */}
+        <ConnectivitySentinel />
 
         {/* Student Personal Notes Vault & AI Study Guide Synthesizer */}
         <StudentDocumentVaultModal
