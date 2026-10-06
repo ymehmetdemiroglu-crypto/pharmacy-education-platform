@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ConfigProvider, App, Drawer, Dropdown, FloatButton, Tooltip, Button, theme } from 'antd';
+import { ConfigProvider, App, Drawer, Dropdown, FloatButton, Tooltip, Button, Segmented, theme } from 'antd';
 import type { MenuProps } from 'antd';
 import {
   RobotOutlined,
@@ -12,9 +12,13 @@ import {
   UserOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
+  AppstoreOutlined,
+  FileTextOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
+import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
+import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { useAuth } from '@pharmacy/platform';
 
 interface PharmLearnShellProps {
@@ -39,6 +43,9 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
 
   // 2-Pane desktop layout state: open by default per /grill-me agreement
   const [isTutorOpen, setIsTutorOpen] = useState(true);
+
+  // Active view: Canvas (Ders Tuvali) or Dashboard (Ders Panosu)
+  const [activeView, setActiveView] = useState<'canvas' | 'dashboard'>('canvas');
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
@@ -193,16 +200,18 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
       theme={{
         algorithm: isDark ? theme.darkAlgorithm : theme.defaultAlgorithm,
         token: {
-          colorPrimary: '#2563EB',
-          colorSuccess: '#10B981',
+          colorPrimary: '#10A37F', // OpenAI Emerald
+          colorSuccess: '#10A37F',
           colorWarning: '#F59E0B',
           colorError: '#EF4444',
-          colorInfo: '#0EA5E9',
-          colorBgBase: isDark ? '#0B0F17' : '#FFFFFF',
-          colorBgContainer: isDark ? '#131B2A' : '#FFFFFF',
-          colorBgLayout: isDark ? '#0B0F17' : '#F8FAFC',
-          colorBorder: isDark ? '#1E293B' : '#E2E8F0',
-          colorBorderSecondary: isDark ? '#1E293B' : '#F1F5F9',
+          colorInfo: '#10A37F',
+          colorBgBase: isDark ? '#212121' : '#FFFFFF',
+          colorBgContainer: isDark ? '#171717' : '#FFFFFF',
+          colorBgLayout: isDark ? '#212121' : '#F9F9F9',
+          colorBorder: isDark ? '#2F2F2F' : '#E5E5E5',
+          colorBorderSecondary: isDark ? '#262626' : '#F0F0F0',
+          colorText: isDark ? '#ECECEC' : '#0D0D0D',
+          colorTextSecondary: isDark ? '#B4B4B4' : '#5D5D5D',
           fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
           borderRadius: 12,
           borderRadiusLG: 16,
@@ -217,15 +226,15 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             borderRadiusLG: 16,
           },
           Table: {
-            headerBg: isDark ? '#1E293B' : '#F8FAFC',
-            headerColor: isDark ? '#CBD5E1' : '#475569',
-            rowHoverBg: isDark ? '#1E293B' : '#F1F5F9',
+            headerBg: isDark ? '#262626' : '#F9F9F9',
+            headerColor: isDark ? '#ECECEC' : '#333333',
+            rowHoverBg: isDark ? '#202020' : '#F4F4F4',
             borderRadius: 12,
           },
           Segmented: {
-            trackBg: isDark ? '#1E293B' : '#F1F5F9',
-            itemSelectedBg: isDark ? '#2563EB' : '#FFFFFF',
-            itemSelectedColor: isDark ? '#FFFFFF' : '#0F172A',
+            trackBg: isDark ? '#2A2A2A' : '#EFEFEF',
+            itemSelectedBg: isDark ? '#10A37F' : '#FFFFFF',
+            itemSelectedColor: isDark ? '#FFFFFF' : '#0D0D0D',
             borderRadius: 12,
             borderRadiusSM: 8,
           },
@@ -245,13 +254,13 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
       }}
     >
       <App>
-        <div className="flex flex-col h-screen w-screen overflow-hidden bg-[#F8FAFC] dark:bg-[#0B0F17] text-slate-900 dark:text-[#F1F5F9] font-sans antialiased">
+        <div className="flex flex-col h-screen w-screen overflow-hidden bg-white dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] font-sans antialiased">
         {/* Ultra-Minimalist Top Bar (48px) */}
-        <header className="h-12 shrink-0 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] px-4 flex items-center justify-between z-30 select-none">
-          {/* Left: Brand + Course/Lecture Dropdown */}
+        <header className="h-12 shrink-0 border-b border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] px-4 flex items-center justify-between z-30 select-none">
+          {/* Left: Brand + View Switcher + Course/Lecture Dropdown */}
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-md bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm">
+              <div className="w-7 h-7 rounded-xl bg-[#10A37F] text-white flex items-center justify-center font-bold text-xs shadow-xs">
                 PL
               </div>
               <span className="font-bold text-sm tracking-tight hidden sm:inline">
@@ -259,16 +268,43 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
               </span>
             </div>
 
-            <div className="h-4 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block" />
+            <div className="h-4 w-px bg-slate-200 dark:bg-[#2F2F2F] hidden sm:block" />
+
+            {/* View Switcher: Tuval vs Pano (Icons on mobile, text on desktop) */}
+            <Segmented
+              value={activeView}
+              onChange={(val) => setActiveView(val as 'canvas' | 'dashboard')}
+              options={[
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5" title="Çalışma Tuvali">
+                      <FileTextOutlined />
+                      <span className="hidden sm:inline">Çalışma Tuvali</span>
+                    </span>
+                  ),
+                  value: 'canvas',
+                },
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5" title="Ders Panosu">
+                      <AppstoreOutlined />
+                      <span className="hidden sm:inline">Ders Panosu</span>
+                    </span>
+                  ),
+                  value: 'dashboard',
+                },
+              ]}
+              className="inline-flex text-xs font-medium bg-slate-100 dark:bg-[#2A2A2A]"
+            />
 
             {/* Lecture Dropdown Selector */}
             <Dropdown menu={{ items: lectureMenuItems }} trigger={['click']}>
               <Button
                 type="text"
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all"
+                className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all text-slate-700 dark:text-[#ECECEC]"
               >
-                <span className="text-gray-500 dark:text-gray-400 hidden md:inline">Farmasötik Kimya ›</span>
-                <span className="font-semibold text-slate-800 dark:text-slate-100 truncate max-w-[200px] sm:max-w-xs">
+                <span className="text-gray-400 hidden md:inline">Farmasötik Kimya ›</span>
+                <span className="font-semibold truncate max-w-[110px] sm:max-w-xs">
                   İlaç Reseptör Etkileşimi
                 </span>
                 <DownOutlined className="text-[10px] text-gray-400" />
@@ -276,14 +312,17 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             </Dropdown>
           </div>
 
-          {/* Right: Actions (Theme, User, AI Tutor Toggle) */}
+          {/* Right: Actions (Study Pulse, Theme, User, AI Tutor Toggle) */}
           <div className="flex items-center gap-2">
+            {/* Live Co-Presence & Pomodoro Indicator */}
+            <CompactPulseIndicator />
+
             {/* Theme Toggle */}
             <Tooltip title={isDark ? 'Açık Temaya Geç' : 'Koyu Temaya Geç'}>
               <Button
                 type="text"
                 onClick={handleToggleTheme}
-                className="flex items-center justify-center w-8 h-8 rounded-xl"
+                className="flex items-center justify-center w-8 h-8 rounded-xl text-slate-600 dark:text-[#ECECEC]"
                 icon={isDark ? <SunOutlined className="text-amber-400 text-sm" /> : <MoonOutlined className="text-slate-600 text-sm" />}
               />
             </Tooltip>
@@ -293,7 +332,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
               <Button
                 type="text"
                 onClick={logout}
-                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs"
+                className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs text-slate-600 dark:text-[#ECECEC]"
                 title="Çıkış Yap"
                 icon={<UserOutlined />}
               >
@@ -304,82 +343,95 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
               <Button
                 type="primary"
                 onClick={onOpenAuthModal}
-                className="rounded-xl px-4 font-medium text-xs"
+                className="rounded-xl px-4 font-medium text-xs bg-[#10A37F] hover:bg-[#0E8C6D] border-0"
               >
                 Giriş Yap
               </Button>
             ) : null}
 
             {/* Desktop AI Tutor Panel Toggle */}
-            <Button
-              type={isTutorOpen ? 'primary' : 'default'}
-              ghost={isTutorOpen}
-              onClick={() => setIsTutorOpen(!isTutorOpen)}
-              icon={<RobotOutlined className="text-blue-500" />}
-              className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl text-xs font-semibold shadow-xs"
-            >
-              <span>AI Tutor</span>
-              {isTutorOpen ? (
-                <MenuFoldOutlined className="text-gray-400 text-xs ml-0.5" />
-              ) : (
-                <MenuUnfoldOutlined className="text-gray-400 text-xs ml-0.5" />
-              )}
-            </Button>
+            {activeView === 'canvas' && (
+              <Button
+                type={isTutorOpen ? 'primary' : 'default'}
+                ghost={isTutorOpen}
+                onClick={() => setIsTutorOpen(!isTutorOpen)}
+                icon={<RobotOutlined className="text-emerald-500" />}
+                className="hidden md:inline-flex items-center gap-1.5 px-3.5 py-1 rounded-xl text-xs font-semibold shadow-xs"
+              >
+                <span>AI Tutor</span>
+                {isTutorOpen ? (
+                  <MenuFoldOutlined className="text-gray-400 text-xs ml-0.5" />
+                ) : (
+                  <MenuUnfoldOutlined className="text-gray-400 text-xs ml-0.5" />
+                )}
+              </Button>
+            )}
           </div>
         </header>
 
-        {/* 2-Pane Workspace */}
+        {/* 2-Pane Workspace or Dashboard */}
         <div className="flex-1 flex overflow-hidden relative">
-          {/* Main Study Canvas (Spacious Left/Center Pane) */}
-          <main className="flex-1 h-full overflow-hidden flex flex-col">
-            <ArtifactCanvas
-              onAskTutor={handleAskTutor}
-              activeConceptId={activeConceptId}
-              onActiveConceptChange={setActiveConceptId}
-            />
-          </main>
-
-          {/* Right Pane: AI Socratic Tutor (Desktop) */}
-          {isTutorOpen && (
-            <aside className="hidden md:flex flex-col w-[380px] shrink-0 h-full border-l border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] z-20">
-              <TutorChatPane
-                activeConceptId={activeConceptId}
-                onNavigateToSlide={handleNavigateToSlide}
-                onExecuteCanvasAction={handleExecuteCanvasAction}
-                externalPrompt={tutorQuery}
-                onClearExternalPrompt={() => setTutorQuery(null)}
-                onClose={() => setIsTutorOpen(false)}
+          {/* Main Content Area */}
+          {activeView === 'dashboard' ? (
+            <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
+              <MinimalCourseDashboard
+                onSelectLecture={(_id) => setActiveView('canvas')}
               />
-            </aside>
+            </main>
+          ) : (
+            <>
+              {/* Main Study Canvas (Spacious Left/Center Pane) */}
+              <main className="flex-1 h-full overflow-hidden flex flex-col">
+                <ArtifactCanvas
+                  onAskTutor={handleAskTutor}
+                  activeConceptId={activeConceptId}
+                  onActiveConceptChange={setActiveConceptId}
+                />
+              </main>
+
+              {/* Right Pane: AI Socratic Tutor (Desktop) */}
+              {isTutorOpen && (
+                <aside className="hidden md:flex flex-col w-[380px] shrink-0 h-full border-l border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] z-20">
+                  <TutorChatPane
+                    activeConceptId={activeConceptId}
+                    onNavigateToSlide={handleNavigateToSlide}
+                    onExecuteCanvasAction={handleExecuteCanvasAction}
+                    externalPrompt={tutorQuery}
+                    onClearExternalPrompt={() => setTutorQuery(null)}
+                    onClose={() => setIsTutorOpen(false)}
+                  />
+                </aside>
+              )}
+
+              {/* Mobile Slide-Over AI Tutor Drawer */}
+              <Drawer
+                placement="right"
+                open={isMobileTutorOpen}
+                onClose={() => setIsMobileTutorOpen(false)}
+                width="100%"
+                styles={{ body: { padding: 0 } }}
+              >
+                <TutorChatPane
+                  activeConceptId={activeConceptId}
+                  onNavigateToSlide={handleNavigateToSlide}
+                  onExecuteCanvasAction={handleExecuteCanvasAction}
+                  externalPrompt={tutorQuery}
+                  onClearExternalPrompt={() => setTutorQuery(null)}
+                  onClose={() => setIsMobileTutorOpen(false)}
+                />
+              </Drawer>
+
+              {/* Floating AI Tutor Bubble Button (Mobile Only) */}
+              <button
+                type="button"
+                onClick={() => setIsMobileTutorOpen(true)}
+                className="md:hidden fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-[#10A37F] hover:bg-[#0E8C6D] active:scale-95 text-white font-medium px-4 py-3 rounded-2xl shadow-lg transition-transform cursor-pointer"
+              >
+                <RobotOutlined className="text-base text-yellow-300" />
+                <span className="text-xs font-semibold">AI Tutor'a Sor</span>
+              </button>
+            </>
           )}
-
-          {/* Mobile Slide-Over AI Tutor Drawer */}
-          <Drawer
-            placement="right"
-            open={isMobileTutorOpen}
-            onClose={() => setIsMobileTutorOpen(false)}
-            width="100%"
-            styles={{ body: { padding: 0 } }}
-          >
-            <TutorChatPane
-              activeConceptId={activeConceptId}
-              onNavigateToSlide={handleNavigateToSlide}
-              onExecuteCanvasAction={handleExecuteCanvasAction}
-              externalPrompt={tutorQuery}
-              onClearExternalPrompt={() => setTutorQuery(null)}
-              onClose={() => setIsMobileTutorOpen(false)}
-            />
-          </Drawer>
-
-          {/* Floating AI Tutor Bubble Button (Mobile Only) */}
-          <button
-            type="button"
-            onClick={() => setIsMobileTutorOpen(true)}
-            className="md:hidden fixed bottom-6 right-6 z-40 flex items-center gap-2 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-medium px-4 py-3 rounded-2xl shadow-xl border border-blue-400/30 transition-transform cursor-pointer"
-          >
-            <RobotOutlined className="text-base text-yellow-300" />
-            <span className="text-xs font-semibold">AI Tutor'a Sor</span>
-          </button>
         </div>
       </div>
     </App>

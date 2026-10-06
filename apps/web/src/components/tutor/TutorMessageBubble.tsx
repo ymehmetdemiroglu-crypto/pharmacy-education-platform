@@ -19,10 +19,10 @@ export const TutorMessageBubble: React.FC<TutorMessageBubbleProps> = ({
   if (isUser) {
     return (
       <div className="flex justify-end gap-2 my-2 animate-in fade-in slide-in-from-bottom-2 duration-150">
-        <div className="max-w-[85%] bg-blue-600 text-white p-3 rounded-2xl rounded-tr-none text-xs sm:text-sm font-medium shadow-sm leading-relaxed">
+        <div className="max-w-[85%] bg-slate-100 dark:bg-[#2F2F2F] text-slate-900 dark:text-[#ECECEC] p-3 rounded-2xl rounded-tr-none text-xs sm:text-sm font-medium shadow-xs leading-relaxed border border-slate-200 dark:border-[#383838]">
           {message.content}
         </div>
-        <div className="w-7 h-7 rounded-xl bg-blue-700 text-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+        <div className="w-7 h-7 rounded-xl bg-slate-200 dark:bg-[#383838] text-slate-700 dark:text-[#ECECEC] flex items-center justify-center shrink-0 mt-1 shadow-xs">
           <UserOutlined className="text-xs" />
         </div>
       </div>
@@ -32,7 +32,7 @@ export const TutorMessageBubble: React.FC<TutorMessageBubbleProps> = ({
   const levelTag = message.scaffoldLevel
     ? {
         nudge: { color: 'gold', text: 'Dürtme' },
-        clue: { color: 'blue', text: 'İpucu' },
+        clue: { color: 'cyan', text: 'İpucu' },
         remediation: { color: 'magenta', text: 'Yanılgı Düzeltme' },
         mastery: { color: 'green', text: 'Kavram Ustalığı' },
       }[message.scaffoldLevel]
@@ -40,15 +40,15 @@ export const TutorMessageBubble: React.FC<TutorMessageBubbleProps> = ({
 
   return (
     <div className="flex items-start gap-2.5 my-3 animate-in fade-in slide-in-from-bottom-2 duration-150">
-      <div className="w-7 h-7 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 mt-1 shadow-sm">
+      <div className="w-7 h-7 rounded-xl bg-[#10A37F] text-white flex items-center justify-center shrink-0 mt-1 shadow-xs">
         <RobotOutlined className="text-xs" />
       </div>
 
-      <div className="flex-1 max-w-[92%] flex flex-col gap-2 bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700/80 p-3.5 rounded-2xl rounded-tl-none shadow-sm">
+      <div className="flex-1 max-w-[92%] flex flex-col gap-2 bg-slate-50 dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] p-3.5 rounded-2xl rounded-tl-none shadow-xs">
         {/* Header badges */}
-        <div className="flex flex-wrap items-center justify-between gap-1.5 border-b border-slate-200 dark:border-slate-700/80 pb-1.5">
+        <div className="flex flex-wrap items-center justify-between gap-1.5 border-b border-slate-200 dark:border-[#2F2F2F] pb-1.5">
           <div className="flex items-center gap-1.5">
-            <span className="font-semibold text-xs text-blue-600 dark:text-blue-400">
+            <span className="font-semibold text-xs text-[#10A37F]">
               AI Sokratik Eğitmen
             </span>
             {levelTag && (
@@ -60,22 +60,21 @@ export const TutorMessageBubble: React.FC<TutorMessageBubbleProps> = ({
         </div>
 
         {/* Message body */}
-        <p className="text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed font-normal m-0 whitespace-pre-wrap">
+        <p className="text-xs sm:text-sm text-slate-800 dark:text-[#ECECEC] leading-relaxed font-normal m-0 whitespace-pre-wrap">
           {message.content}
         </p>
 
         {/* Slide Citation Pills */}
         {message.slideCitation && (
           <div className="flex flex-wrap items-center gap-1.5 pt-1">
-            <span className="text-[11px] font-mono text-gray-500 flex items-center gap-1">
-              <BookOutlined className="text-blue-500" />
+            <span className="text-[11px] font-mono text-slate-500 dark:text-[#8E8E8E] flex items-center gap-1">
+              <BookOutlined className="text-[#10A37F]" />
               Slayt:
             </span>
             {message.slideCitation.slideNumbers.map((s) => (
               <Tag
                 key={s}
-                color="blue"
-                className="cursor-pointer font-mono text-[10px] m-0 rounded-lg hover:opacity-80 transition-opacity"
+                className="cursor-pointer font-mono text-[10px] m-0 rounded-lg bg-white dark:bg-[#171717] text-slate-700 dark:text-[#ECECEC] border border-slate-200 dark:border-[#2F2F2F] hover:border-[#10A37F] transition-colors"
                 onClick={() => onNavigateToSlide?.(s)}
               >
                 Slayt {s} →
@@ -92,7 +91,7 @@ export const TutorMessageBubble: React.FC<TutorMessageBubbleProps> = ({
               size="small"
               icon={<ExportOutlined />}
               onClick={() => onExecuteCanvasAction?.(message.canvasAction!.target)}
-              className="text-xs flex items-center gap-1 text-blue-600 dark:text-blue-400 font-medium p-0 h-auto"
+              className="text-xs flex items-center gap-1 text-[#10A37F] hover:text-[#0E8C6D] font-medium p-0 h-auto"
             >
               <span>Ders notunda göster ({message.canvasAction.target})</span>
             </Button>

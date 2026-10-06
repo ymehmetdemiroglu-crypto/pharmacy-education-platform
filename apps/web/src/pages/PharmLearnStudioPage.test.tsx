@@ -117,6 +117,43 @@ describe('PharmLearnStudioPage (Clean 2-Pane Study Workspace)', () => {
     expect(screen.getByText(/Dinamik SAR Matrisi/i)).toBeTruthy();
   });
 
+  it('allows switching between study canvas and course dashboard views', async () => {
+    mockUser = {
+      userId: 'usr-12345',
+      email: 'student@pharmacy.edu.tr',
+      displayName: 'Eczacılık Öğrencisi',
+      plan: 'free',
+    };
+
+    render(
+      <BrowserRouter>
+        <PharmLearnStudioPage />
+      </BrowserRouter>
+    );
+
+    // Initial state: Canvas view
+    expect(screen.getByText(/3D WebGL/i)).toBeTruthy();
+
+    // Switch to Dashboard view
+    const dashboardTab = screen.getByText('Ders Panosu');
+    fireEvent.click(dashboardTab);
+
+    // Expect Dashboard elements to be rendered
+    await waitFor(() => {
+      expect(screen.getByText(/Eczacılık Vize Hazırlık Panosu/i)).toBeTruthy();
+      expect(screen.getByText(/Bahar Vizesine 28 Gün Kaldı/i)).toBeTruthy();
+      expect(screen.getByText(/Aktif Kurslar & Ders Modülleri/i)).toBeTruthy();
+    });
+
+    // Clicking "Çalışmaya Devam Et" switches back to Canvas
+    const resumeBtn = screen.getByRole('button', { name: /Çalışmaya Devam Et/i });
+    fireEvent.click(resumeBtn);
+
+    await waitFor(() => {
+      expect(screen.getByText(/3D WebGL/i)).toBeTruthy();
+    });
+  });
+
   it('allows sending a question to the Socratic AI Tutor and receives slide-cited reply', async () => {
     mockUser = {
       userId: 'usr-12345',

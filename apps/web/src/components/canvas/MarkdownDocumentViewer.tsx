@@ -29,22 +29,22 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
   return (
     <div className="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-200 font-sans">
       {/* Lecture Title & Provenance Header */}
-      <header className="mb-8 border-b border-slate-200 dark:border-slate-800 pb-5">
+      <header className="mb-8 border-b border-slate-200 dark:border-[#2F2F2F] pb-5">
         <div className="flex flex-wrap items-center gap-2 mb-2.5">
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300 font-medium border border-blue-200 dark:border-blue-900">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 font-medium border border-emerald-200 dark:border-emerald-900/60">
             Farmasötik Kimya 1
           </span>
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 font-medium border border-slate-200 dark:border-slate-700">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-100 text-slate-700 dark:bg-[#2A2A2A] dark:text-[#B4B4B4] font-medium border border-slate-200 dark:border-[#2F2F2F]">
             Ders 01 • Vize Konusu
           </span>
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 font-medium border border-emerald-200 dark:border-emerald-900">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 font-medium border border-emerald-200 dark:border-emerald-900/60">
             Doğrulanmış Slayt Özeti (33 Slayt)
           </span>
         </div>
-        <h1 className="font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight mb-2">
+        <h1 className="font-bold text-2xl sm:text-3xl text-slate-900 dark:text-[#ECECEC] tracking-tight mb-2">
           İlaç Reseptör Etkileşimi (Kimyasal Bağlar)
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 font-normal m-0">
+        <p className="text-sm text-slate-500 dark:text-[#8E8E8E] font-normal m-0">
           Marmara Üniversitesi Eczacılık Fakültesi — <strong>Prof. Dr. Bedia Kaymakçıoğlu</strong> ders notlarından derlenmiştir.
         </p>
       </header>
@@ -52,12 +52,12 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
       {/* Flagship 2D/3D Molecule Canvas Showcase */}
       <section className="my-8">
         <div className="flex items-center gap-2 mb-2">
-          <ExperimentOutlined className="text-blue-500" />
-          <h2 className="font-bold text-lg m-0 text-slate-900 dark:text-white">
+          <ExperimentOutlined className="text-[#10A37F]" />
+          <h2 className="font-bold text-lg m-0 text-slate-900 dark:text-[#ECECEC]">
             İnteraktif Moleküler Yapı & Reseptör Etkileşim Haritası
           </h2>
         </div>
-        <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+        <p className="text-xs text-slate-500 dark:text-[#8E8E8E] mb-3">
           Aşağıdaki 3D rotatable WebGL ve 2D modelinde molekülleri fareyle döndürebilir, farmakofor bağlanma bölgelerine tıklayarak AI Tutor'dan anlık açıklama alabilirsiniz.
         </p>
         <DualModeMoleculeViewer
@@ -71,15 +71,15 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-1"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:receptor_tanimi'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
-          <h3 className="font-bold text-base sm:text-lg m-0 text-slate-900 dark:text-white">
+          <h3 className="font-bold text-base sm:text-lg m-0 text-slate-900 dark:text-[#ECECEC]">
             1. Reseptör Tanımı ve Bağ Gücü Dengesi
           </h3>
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-900">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60">
             Slayt 2, 3, 5, 6
           </span>
         </div>
@@ -111,8 +111,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-2"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:kovalan_baglar'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -155,8 +155,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-3"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:iyonik_bag'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -188,8 +188,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-4"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:hidrojen_bagi' || activeConceptId === 'rr:hbag_ozellik_etkisi'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -231,8 +231,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-6"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:iyon_dipol_dipol_dipol'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -261,8 +261,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-7"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:yuk_transferi'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -291,8 +291,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-8"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:vdw_hidrofobik'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -329,8 +329,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-9"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:selasyon'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -368,8 +368,8 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
         id="concept-10"
         className={`my-8 p-5 rounded-xl border transition-colors ${
           activeConceptId === 'rr:dibukain_entegrasyon'
-            ? 'border-blue-500 bg-blue-50/20 dark:bg-blue-950/20'
-            : 'border-slate-200 dark:border-slate-800'
+            ? 'border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20'
+            : 'border-slate-200 dark:border-[#2F2F2F]'
         }`}
       >
         <div className="flex items-center justify-between gap-2 mb-2">
@@ -404,15 +404,15 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
       </section>
 
       {/* Mandatory End-of-Lesson Provenance Attribution (AGENTS.md Rule 2) */}
-      <footer className="mt-12 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/60 text-xs">
-        <h4 className="font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5 mb-3">
-          <BookOutlined className="text-blue-600" />
+      <footer className="mt-12 p-5 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1A1A1A] text-xs transition-colors">
+        <h4 className="font-bold uppercase tracking-wider text-slate-900 dark:text-[#ECECEC] flex items-center gap-1.5 mb-3">
+          <BookOutlined className="text-[#10A37F]" />
           Kaynak ve Atıf Tablosu (Provenance Attribution)
         </h4>
         <div className="overflow-x-auto">
           <table className="w-full text-left font-mono text-[11px]">
             <thead>
-              <tr className="border-b border-slate-300 dark:border-slate-700 text-slate-500">
+              <tr className="border-b border-slate-200 dark:border-[#2F2F2F] text-slate-500 dark:text-[#8E8E8E]">
                 <th className="py-1.5">Konsept</th>
                 <th className="py-1.5">Başlık</th>
                 <th className="py-1.5">Kaynak</th>
@@ -421,11 +421,11 @@ export const MarkdownDocumentViewer: React.FC<MarkdownDocumentViewerProps> = ({
             </thead>
             <tbody>
               {generatedConcepts.map((c, i) => (
-                <tr key={c.id} className="border-b border-slate-200 dark:border-slate-800/80">
-                  <td className="py-1.5 font-bold text-slate-700 dark:text-slate-300">{i + 1}</td>
-                  <td className="py-1.5 text-slate-800 dark:text-slate-200">{c.conceptTitle}</td>
-                  <td className="py-1.5 text-gray-500 truncate max-w-[200px]">{c.sourceDeck}</td>
-                  <td className="py-1.5 text-blue-600 dark:text-blue-400">Slayt {c.slideNumbers.join(', ')}</td>
+                <tr key={c.id} className="border-b border-slate-200 dark:border-[#2F2F2F]">
+                  <td className="py-1.5 font-bold text-slate-700 dark:text-[#ECECEC]">{i + 1}</td>
+                  <td className="py-1.5 text-slate-800 dark:text-[#ECECEC]">{c.conceptTitle}</td>
+                  <td className="py-1.5 text-slate-500 dark:text-[#8E8E8E] truncate max-w-[200px]">{c.sourceDeck}</td>
+                  <td className="py-1.5 text-[#10A37F] font-semibold">Slayt {c.slideNumbers.join(', ')}</td>
                 </tr>
               ))}
             </tbody>

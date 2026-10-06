@@ -71,18 +71,18 @@ export const ConceptQuizWidget: React.FC<ConceptQuizWidgetProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] p-4 sm:p-5 shadow-sm">
-      <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-2.5">
-        <span className="font-bold text-xs uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-5 shadow-xs transition-colors">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-2.5">
+        <span className="font-bold text-xs uppercase tracking-wider text-[#10A37F] flex items-center gap-1.5">
           <QuestionCircleOutlined className="text-sm" />
           Konsept Kontrolü
         </span>
-        <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400 border border-slate-200 dark:border-slate-700">
+        <span className="text-[11px] font-mono px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-[#2A2A2A] text-slate-600 dark:text-[#B4B4B4] border border-slate-200 dark:border-[#2F2F2F]">
           Slayt {concept.slideNumbers.join(', ')}
         </span>
       </div>
 
-      <p className="font-medium text-sm leading-relaxed text-slate-900 dark:text-slate-100 m-0">
+      <p className="font-medium text-sm leading-relaxed text-slate-900 dark:text-[#ECECEC] m-0">
         {prompt}
       </p>
 
@@ -90,9 +90,9 @@ export const ConceptQuizWidget: React.FC<ConceptQuizWidgetProps> = ({
       <div className="flex flex-col gap-2">
         {options.map((opt) => {
           const isSelected = selectedOptionId === opt.id;
-          let btnStyle = 'border-slate-200 dark:border-slate-700/80 hover:border-slate-400 dark:hover:border-slate-500 bg-slate-50/50 dark:bg-slate-800/40';
+          let btnStyle = 'border-slate-200 dark:border-[#2F2F2F] hover:border-slate-400 dark:hover:border-slate-600 bg-slate-50 dark:bg-[#212121] text-slate-800 dark:text-[#ECECEC]';
           if (isSelected) {
-            btnStyle = 'border-blue-500 bg-blue-50 dark:bg-blue-950/40 text-blue-900 dark:text-blue-200';
+            btnStyle = 'border-[#10A37F] bg-emerald-50/60 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300';
           }
           if (isSubmitted) {
             if (opt.isCorrect) {
@@ -131,17 +131,17 @@ export const ConceptQuizWidget: React.FC<ConceptQuizWidgetProps> = ({
             type="primary"
             onClick={handleSubmit}
             disabled={!selectedOptionId || (isSubmitted && isCorrect)}
-            className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-sm rounded-xl px-5 h-9 font-semibold"
+            className="bg-[#10A37F] hover:bg-[#0E8C6D] text-white border-0 shadow-xs rounded-xl px-5 h-9 font-semibold"
           >
             {isSubmitted && isCorrect ? 'Doğrulandı ✓' : 'Cevabı Onayla'}
           </Button>
 
           {concept.scaffoldingLadder.length > 0 && hintTier < concept.scaffoldingLadder.length && (
             <Button
-              icon={<BulbOutlined />}
+              icon={<BulbOutlined className="text-amber-500" />}
               onClick={handleRevealNextHint}
               size="middle"
-              className="rounded-xl h-9"
+              className="rounded-xl h-9 border-slate-200 dark:border-[#2F2F2F] text-slate-700 dark:text-[#ECECEC] bg-white dark:bg-[#212121]"
             >
               İpucu İste ({hintTier + 1}/3)
             </Button>
@@ -152,9 +152,9 @@ export const ConceptQuizWidget: React.FC<ConceptQuizWidgetProps> = ({
           <Button
             type="link"
             size="small"
-            icon={<RobotOutlined className="text-blue-500" />}
+            icon={<RobotOutlined className="text-[#10A37F]" />}
             onClick={() => onAskTutor(`Bu soruda zorlandım: "${prompt}". Bana Sokratik bir ipucu verir misin?`)}
-            className="text-xs font-semibold text-blue-600 dark:text-blue-400 p-0 rounded-lg"
+            className="text-xs font-semibold text-[#10A37F] hover:text-[#0E8C6D] p-0 rounded-lg"
           >
             Tutor'a Sor →
           </Button>
@@ -163,7 +163,7 @@ export const ConceptQuizWidget: React.FC<ConceptQuizWidgetProps> = ({
 
       {/* 3-Tier Scaffolding Ladder Progression */}
       {concept.scaffoldingLadder.length > 0 && (
-        <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
+        <div className="pt-2 border-t border-slate-200 dark:border-[#2F2F2F]">
           <Steps
             size="small"
             current={hintTier}

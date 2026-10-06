@@ -134,16 +134,16 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-full bg-white dark:bg-[#131B2A] text-slate-800 dark:text-slate-100">
+    <div className="flex flex-col h-full bg-white dark:bg-[#171717] text-slate-800 dark:text-[#ECECEC] transition-colors">
       {/* Clean Tutor Header */}
-      <div className="h-12 shrink-0 flex items-center justify-between px-3.5 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A]">
+      <div className="h-12 shrink-0 flex items-center justify-between px-3.5 border-b border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717]">
         <div className="flex items-center gap-2">
-          <RobotOutlined className="text-blue-500 text-sm" />
-          <span className="font-semibold text-xs text-slate-900 dark:text-white">
+          <RobotOutlined className="text-[#10A37F] text-sm" />
+          <span className="font-semibold text-xs text-slate-900 dark:text-[#ECECEC]">
             AI Sokratik Eğitmen
           </span>
-          <span className="flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="flex items-center gap-1 text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#10A37F] animate-pulse" />
             33 Slayt Doğrulandı
           </span>
         </div>
@@ -155,7 +155,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
               shape="circle"
               size="small"
               onClick={handleClearChat}
-              icon={<DeleteOutlined className="text-xs text-gray-400 hover:text-gray-600" />}
+              icon={<DeleteOutlined className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" />}
             />
           </Tooltip>
           {onClose && (
@@ -165,7 +165,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
                 shape="circle"
                 size="small"
                 onClick={onClose}
-                icon={<CloseOutlined className="text-xs text-gray-400 hover:text-gray-600" />}
+                icon={<CloseOutlined className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" />}
               />
             </Tooltip>
           )}
@@ -184,7 +184,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
         ))}
 
         {isLoading && (
-          <div className="flex items-center gap-2 text-xs font-mono text-gray-500 my-2 bg-slate-50 dark:bg-slate-800/50 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800">
+          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-[#8E8E8E] my-2 bg-slate-50 dark:bg-[#212121] p-2.5 rounded-xl border border-slate-200 dark:border-[#2F2F2F]">
             <Spin size="small" />
             <span>AI Eğitmen düşünüyor ve ders notunu tarıyor...</span>
           </div>
@@ -194,7 +194,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
 
       {/* Proactive Socratic Nudge Pill */}
       {activeNudge && (
-        <div className="mx-3 mb-1 p-3 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/60 dark:to-orange-950/60 border border-amber-300 dark:border-amber-700/80 rounded-xl shadow-sm flex flex-col gap-1.5 transition-all">
+        <div className="mx-3 mb-1 p-3 bg-amber-50/80 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800/60 rounded-xl shadow-xs flex flex-col gap-1.5 transition-all">
           <div className="flex items-start justify-between gap-2">
             <div className="flex items-center gap-1.5 text-amber-800 dark:text-amber-300 font-semibold text-xs">
               <BulbOutlined className="text-amber-500" />
@@ -202,13 +202,13 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
             </div>
             <button
               onClick={() => setActiveNudge(null)}
-              className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-xs p-0.5 rounded cursor-pointer border-0 bg-transparent"
+              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs p-0.5 rounded cursor-pointer border-0 bg-transparent"
               title="Kapat"
             >
               <CloseOutlined className="text-[10px]" />
             </button>
           </div>
-          <p className="text-[11px] text-amber-900/80 dark:text-amber-200/90 leading-relaxed m-0">
+          <p className="text-[11px] text-amber-900/90 dark:text-amber-200/90 leading-relaxed m-0">
             {activeNudge.rationale}
           </p>
           <div className="flex justify-end pt-1">
@@ -221,7 +221,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
                 handleSendMessage(q);
               }}
               icon={<ArrowRightOutlined />}
-              className="bg-amber-600 hover:bg-amber-700 text-white border-0 text-xs h-7 px-3 rounded-xl flex items-center gap-1 font-medium shadow-sm"
+              className="bg-amber-600 hover:bg-amber-700 text-white border-0 text-xs h-7 px-3 rounded-xl flex items-center gap-1 font-medium shadow-xs"
             >
               Sokratik İpucu Al
             </Button>
@@ -230,7 +230,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
       )}
 
       {/* Prompt Suggestion Chips & Input */}
-      <div className="p-3 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] flex flex-col gap-2">
+      <div className="p-3 border-t border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] flex flex-col gap-2">
         <PromptSuggestionChips
           disabled={isLoading}
           onSelectPrompt={(prompt) => handleSendMessage(prompt)}
@@ -243,7 +243,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
             onKeyDown={handleKeyDown}
             placeholder="Tutor'a soru sor (Enter ile gönder)..."
             autoSize={{ minRows: 2, maxRows: 4 }}
-            className="text-xs sm:text-sm font-sans rounded-xl"
+            className="text-xs sm:text-sm font-sans rounded-xl bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] border-slate-200 dark:border-[#2F2F2F]"
             disabled={isLoading}
           />
           <Button
@@ -252,7 +252,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
             onClick={() => handleSendMessage()}
             disabled={!inputVal.trim() || isLoading}
             icon={<SendOutlined />}
-            className="bg-blue-600 hover:bg-blue-700 text-white border-0 h-10 px-4 rounded-xl shadow-sm cursor-pointer"
+            className="bg-[#10A37F] hover:bg-[#0E8C6D] text-white border-0 h-10 px-4 rounded-xl shadow-xs cursor-pointer flex items-center justify-center"
           />
         </div>
       </div>

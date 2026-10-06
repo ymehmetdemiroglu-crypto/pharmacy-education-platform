@@ -125,14 +125,14 @@ export const SarMatrixWidget: React.FC<{ onAskTutor?: (query: string) => void }>
   ];
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] p-4 sm:p-5 shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-5 shadow-xs transition-colors">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-3">
         <div>
-          <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 m-0 text-slate-900 dark:text-white">
-            <ExperimentOutlined className="text-blue-500" />
+          <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 m-0 text-slate-900 dark:text-[#ECECEC]">
+            <ExperimentOutlined className="text-[#10A37F]" />
             Dinamik SAR Matrisi (Yapı-Aktivite İlişkisi)
           </h3>
-          <p className="text-xs text-gray-500 m-0 mt-0.5">{current.subtitle}</p>
+          <p className="text-xs text-slate-500 dark:text-[#8E8E8E] m-0 mt-0.5">{current.subtitle}</p>
         </div>
 
         <Segmented
@@ -155,12 +155,12 @@ export const SarMatrixWidget: React.FC<{ onAskTutor?: (query: string) => void }>
           className="text-xs"
           expandable={{
             expandedRowRender: (record) => (
-              <div className="p-3.5 bg-slate-50 dark:bg-slate-900/60 rounded-xl border border-slate-200 dark:border-slate-800 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="p-3.5 bg-slate-50 dark:bg-[#212121] rounded-xl border border-slate-200 dark:border-[#2F2F2F] text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex flex-col gap-1">
-                  <div className="font-semibold text-slate-800 dark:text-slate-200">
-                    Kimyasal Modifikasyon: <span className="font-normal text-blue-600 dark:text-blue-400">{record.chemicalModification}</span>
+                  <div className="font-semibold text-slate-800 dark:text-[#ECECEC]">
+                    Kimyasal Modifikasyon: <span className="font-normal text-[#10A37F]">{record.chemicalModification}</span>
                   </div>
-                  <div className="text-gray-500">
+                  <div className="text-slate-500 dark:text-[#8E8E8E]">
                     Farmasötik Mekanizma: {record.stability} (Referans: Slayt {record.slideRef})
                   </div>
                 </div>
@@ -175,7 +175,7 @@ export const SarMatrixWidget: React.FC<{ onAskTutor?: (query: string) => void }>
                         `${record.substituent} (${record.bondType}) modifikasyonunun farmakolojik etkisini ve Slayt ${record.slideRef}'deki önemini açıklar mısın?`
                       )
                     }
-                    className="shrink-0 rounded-xl px-3 py-1 font-medium"
+                    className="shrink-0 rounded-xl px-3 py-1 font-medium border-[#10A37F] text-[#10A37F] hover:border-[#0E8C6D] hover:text-[#0E8C6D]"
                   >
                     Bu Yapıyı Tutor'a Sor
                   </Button>
@@ -187,9 +187,9 @@ export const SarMatrixWidget: React.FC<{ onAskTutor?: (query: string) => void }>
         />
       </div>
 
-      <div className="flex items-center justify-between gap-2 text-[11px] text-gray-500 bg-slate-50 dark:bg-slate-900/50 p-2.5 rounded-xl border border-slate-200 dark:border-slate-800">
+      <div className="flex items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-[#8E8E8E] bg-slate-50 dark:bg-[#212121] p-2.5 rounded-xl border border-slate-200 dark:border-[#2F2F2F]">
         <div className="flex items-center gap-1.5">
-          <InfoCircleOutlined className="text-blue-500 shrink-0" />
+          <InfoCircleOutlined className="text-[#10A37F] shrink-0" />
           <span>Model illüstrasyonu: Bağıntılar ders slaytlarındaki nitel afinite ilkelerine dayanmaktadır.</span>
         </div>
         {onAskTutor && (

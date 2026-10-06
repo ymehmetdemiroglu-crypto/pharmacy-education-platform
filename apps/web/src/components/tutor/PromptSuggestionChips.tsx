@@ -31,7 +31,7 @@ export const PromptSuggestionChips: React.FC<PromptSuggestionChipsProps> = ({
           <Tag
             key={idx}
             onClick={() => !disabled && onSelectPrompt(chip)}
-            className="text-[11px] font-normal cursor-pointer hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors py-0.5 px-2.5 rounded-full m-0"
+            className="text-[11px] font-normal cursor-pointer py-1 px-2.5 rounded-lg m-0 transition-colors bg-slate-100 dark:bg-[#262626] text-slate-700 dark:text-[#ECECEC] border-slate-200 dark:border-[#333333] hover:border-[#10A37F] hover:text-[#10A37F] dark:hover:text-[#10A37F]"
           >
             {chip}
           </Tag>

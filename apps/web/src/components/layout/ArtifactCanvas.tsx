@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { Tag } from 'antd';
 import { MarkdownDocumentViewer } from '../canvas/MarkdownDocumentViewer';
 import { TextSelectionPopover } from '../canvas/TextSelectionPopover';
+import { AudioSummaryBar } from '../canvas/AudioSummaryBar';
 
 const { CheckableTag } = Tag;
 
@@ -40,7 +41,7 @@ export const ArtifactCanvas: React.FC<ArtifactCanvasProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative flex-1 h-full overflow-y-auto bg-[#F8FAFC] dark:bg-[#0B0F17] p-4 sm:p-8"
+      className="relative flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121] p-4 sm:p-8 transition-colors"
     >
       {/* Floating Text Selection Action for Instant Socratic Tutor */}
       <TextSelectionPopover
@@ -51,9 +52,22 @@ export const ArtifactCanvas: React.FC<ArtifactCanvasProps> = ({
       />
 
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
+        {/* Synchronized Audio Summary Player Bar */}
+        <AudioSummaryBar
+          lectureSlug="reseptor-etkilesimleri"
+          onCueChange={(cue) => {
+            if (cue) {
+              onActiveConceptChange?.(cue.sectionId);
+            }
+          }}
+          onAskTutorAboutAudio={(query) => {
+            onAskTutor(query);
+          }}
+        />
+
         {/* Minimalist Concept Quick Navigation Bar */}
-        <div className="flex flex-wrap items-center gap-1.5 py-2 px-3 bg-white dark:bg-[#131B2A] rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm overflow-x-auto">
-          <span className="text-[11px] font-medium text-gray-500 mr-1 shrink-0">Bölümler:</span>
+        <div className="flex flex-wrap items-center gap-1.5 py-2.5 px-3 bg-white dark:bg-[#171717] rounded-xl border border-slate-200 dark:border-[#2F2F2F] shadow-xs overflow-x-auto transition-colors">
+          <span className="text-[11px] font-medium text-slate-500 dark:text-[#8E8E8E] mr-1 shrink-0">Bölümler:</span>
           {CONCEPTS_NAV.map((c) => {
             const isSelected = activeConceptId === c.id;
             return (
@@ -64,7 +78,9 @@ export const ArtifactCanvas: React.FC<ArtifactCanvasProps> = ({
                   scrollToSection(c.id);
                   onActiveConceptChange?.(c.id);
                 }}
-                className="text-[11px] font-medium transition-all cursor-pointer m-0.5"
+                className={`text-[11px] font-medium transition-all cursor-pointer m-0.5 rounded-lg ${
+                  isSelected ? 'bg-[#10A37F] text-white' : 'text-slate-700 dark:text-[#ECECEC]'
+                }`}
               >
                 {c.label} <span className="opacity-60 text-[10px] ml-0.5">(S{c.slide})</span>
               </CheckableTag>
@@ -73,7 +89,7 @@ export const ArtifactCanvas: React.FC<ArtifactCanvasProps> = ({
         </div>
 
         {/* Clean, Spacious Interactive Document Surface */}
-        <article className="bg-white dark:bg-[#131B2A] rounded-xl border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-sm">
+        <article className="bg-white dark:bg-[#171717] rounded-2xl border border-slate-200 dark:border-[#2F2F2F] p-6 sm:p-10 shadow-xs transition-colors">
           <MarkdownDocumentViewer
             onAskTutor={onAskTutor}
             activeConceptId={activeConceptId}

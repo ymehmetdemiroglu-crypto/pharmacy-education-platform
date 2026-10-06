@@ -355,9 +355,9 @@ export const DualModeMoleculeViewer: React.FC<DualModeMoleculeViewerProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] p-4 sm:p-5 shadow-sm">
+    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-5 shadow-xs transition-colors">
       {/* Top Bar: Clean Molecule Tabs & 2D/3D Toggle (Gesture Based, Zero Clutter) */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-3">
         <Segmented
           value={selectedKey}
           onChange={(val) => {
@@ -389,7 +389,7 @@ export const DualModeMoleculeViewer: React.FC<DualModeMoleculeViewerProps> = ({
 
       {/* Main Visual Display */}
       <div
-        className="relative rounded-lg bg-slate-50 dark:bg-[#0B0F17] border border-slate-200 dark:border-slate-800 flex items-center justify-center min-h-[260px] overflow-hidden"
+        className="relative rounded-xl bg-slate-50 dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] flex items-center justify-center min-h-[260px] overflow-hidden"
         onWheel={(e) => {
           if (mode === '3d') {
             e.preventDefault();

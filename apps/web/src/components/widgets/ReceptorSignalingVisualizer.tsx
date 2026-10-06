@@ -236,20 +236,20 @@ export const ReceptorSignalingVisualizer: React.FC<{
   };
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] p-4 sm:p-6 shadow-sm">
+    <div className="flex flex-col gap-4 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-6 shadow-xs transition-colors">
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-3">
         <div>
           <div className="flex items-center gap-2">
-            <ThunderboltOutlined className="text-blue-500 text-base" />
-            <h3 className="font-bold text-sm sm:text-base m-0 text-slate-900 dark:text-white">
+            <ThunderboltOutlined className="text-[#10A37F] text-base" />
+            <h3 className="font-bold text-sm sm:text-base m-0 text-slate-900 dark:text-[#ECECEC]">
               Reseptör Sinyal Yolağı & GPCR Kaskad Simülatörü
             </h3>
-            <Tag color="blue" className="text-[10px] font-mono rounded-lg m-0">
+            <Tag color="green" className="text-[10px] font-mono rounded-lg m-0 border-0 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400">
               Slayt 5 & 6
             </Tag>
           </div>
-          <p className="text-xs text-gray-500 dark:text-gray-400 m-0 mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-[#8E8E8E] m-0 mt-0.5">
             Heterotrimerik G-proteini sinyal iletimi ve ikincil haberci kaskadı
           </p>
         </div>
@@ -268,25 +268,25 @@ export const ReceptorSignalingVisualizer: React.FC<{
       </div>
 
       {/* Pathway Quick Facts Card */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-200 dark:border-slate-800">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs bg-slate-50 dark:bg-[#212121] p-3 rounded-xl border border-slate-200 dark:border-[#2F2F2F]">
         <div>
-          <span className="text-gray-500 block font-mono text-[10px] uppercase">Örnek Reseptörler:</span>
-          <strong className="text-slate-800 dark:text-slate-200">{pathway.receptors}</strong>
+          <span className="text-slate-400 block font-mono text-[10px] uppercase">Örnek Reseptörler:</span>
+          <strong className="text-slate-800 dark:text-[#ECECEC]">{pathway.receptors}</strong>
         </div>
         <div>
-          <span className="text-gray-500 block font-mono text-[10px] uppercase">Agonist / Antagonist:</span>
+          <span className="text-slate-400 block font-mono text-[10px] uppercase">Agonist / Antagonist:</span>
           <span className="text-emerald-600 dark:text-emerald-400 font-semibold">{pathway.agonist}</span>
-          <span className="text-gray-400 mx-1">/</span>
+          <span className="text-slate-400 mx-1">/</span>
           <span className="text-red-500 font-medium">{pathway.antagonist}</span>
         </div>
         <div>
-          <span className="text-gray-500 block font-mono text-[10px] uppercase">Hücresel Yanıt:</span>
-          <span className="text-blue-600 dark:text-blue-400 font-semibold">{pathway.physiologicalEffect}</span>
+          <span className="text-slate-400 block font-mono text-[10px] uppercase">Hücresel Yanıt:</span>
+          <span className="text-[#10A37F] font-semibold">{pathway.physiologicalEffect}</span>
         </div>
       </div>
 
       {/* Interactive SVG Membrane & Cascade Diagram */}
-      <div className="relative rounded-2xl bg-gradient-to-b from-slate-900 to-[#0B0F17] p-4 text-white overflow-hidden border border-slate-800 min-h-[220px] flex flex-col justify-between">
+      <div className="relative rounded-2xl bg-gradient-to-b from-[#1C1C1C] to-[#121212] p-4 text-white overflow-hidden border border-[#2F2F2F] min-h-[220px] flex flex-col justify-between">
         {/* Membrane bilayer indicator */}
         <div className="absolute top-20 left-0 right-0 h-4 bg-amber-500/20 border-y border-amber-400/40 flex items-center justify-around pointer-events-none">
           <span className="text-[9px] font-mono text-amber-300 tracking-wider">LİPİT ÇİFT KATMAN (HÜCRE ZARI) [Slayt 5]</span>
@@ -416,17 +416,17 @@ export const ReceptorSignalingVisualizer: React.FC<{
 
       {/* Predict-then-Reveal Challenge Card */}
       {challenge && currentStep < 3 && (
-        <div className="flex flex-col gap-3 p-4 rounded-xl border border-blue-200 dark:border-blue-900 bg-blue-50/40 dark:bg-blue-950/20">
-          <span className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-white leading-relaxed">
+        <div className="flex flex-col gap-3 p-4 rounded-xl border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#212121]">
+          <span className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-[#ECECEC] leading-relaxed">
             {challenge.prompt}
           </span>
 
           <div className="flex flex-col gap-2">
             {challenge.options.map((opt) => {
               const isSelected = selectedOptionId === opt.id;
-              let style = 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200';
+              let style = 'border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] text-slate-800 dark:text-[#ECECEC]';
               if (isSelected) {
-                style = 'border-blue-500 bg-blue-50 dark:bg-blue-950/50 text-blue-900 dark:text-blue-100 font-semibold';
+                style = 'border-[#10A37F] bg-emerald-50/50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold';
               }
               if (stepFeedback && isSelected) {
                 style = stepFeedback.isCorrect
@@ -475,7 +475,7 @@ export const ReceptorSignalingVisualizer: React.FC<{
                 type="primary"
                 onClick={handleVerifyStep}
                 disabled={!selectedOptionId || (stepFeedback?.isCorrect ?? false)}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-4 h-9 font-semibold border-0 shadow-sm"
+                className="bg-[#10A37F] hover:bg-[#0E8C6D] text-white rounded-xl px-4 h-9 font-semibold border-0 shadow-xs"
               >
                 {stepFeedback?.isCorrect ? 'Onaylandı ✓' : 'Tahmini Doğrula'}
               </Button>
@@ -485,7 +485,7 @@ export const ReceptorSignalingVisualizer: React.FC<{
                   type="default"
                   onClick={handleNextStep}
                   icon={<RightOutlined />}
-                  className="rounded-xl h-9 font-semibold text-emerald-600 border-emerald-400 hover:border-emerald-500"
+                  className="rounded-xl h-9 font-semibold text-[#10A37F] border-[#10A37F] hover:border-[#0E8C6D] bg-white dark:bg-[#171717]"
                 >
                   Sonraki Aşamaya İlerle →
                 </Button>
@@ -496,13 +496,13 @@ export const ReceptorSignalingVisualizer: React.FC<{
               <Button
                 type="link"
                 size="small"
-                icon={<RobotOutlined className="text-blue-500" />}
+                icon={<RobotOutlined className="text-[#10A37F]" />}
                 onClick={() =>
                   onAskTutor(
                     `${pathway.name} konusundaki ${currentStep + 1}. adımda (${challenge.prompt}) ilacın ve G-protein kaskadının mekanizmasını detaylandırır mısın?`
                   )
                 }
-                className="text-xs font-semibold text-blue-600 dark:text-blue-400 p-0"
+                className="text-xs font-semibold text-[#10A37F] hover:text-[#0E8C6D] p-0"
               >
                 Tutor'a Sor →
               </Button>

@@ -70,14 +70,14 @@ export const PkCurveWidget: React.FC = () => {
   }, [curvePoints, maxConc]);
 
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#131B2A] p-4 sm:p-5 shadow-sm">
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+    <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-5 shadow-xs transition-colors">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-3">
         <div>
-          <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 m-0 text-slate-900 dark:text-white">
-            <LineChartOutlined className="text-emerald-500" />
+          <h3 className="font-bold text-sm sm:text-base flex items-center gap-1.5 m-0 text-slate-900 dark:text-[#ECECEC]">
+            <LineChartOutlined className="text-[#10A37F]" />
             İlaç Konsantrasyonu & Farmakokinetik Eğri Simülatörü
           </h3>
-          <p className="text-xs text-gray-500 m-0 mt-0.5">
+          <p className="text-xs text-slate-500 dark:text-[#8E8E8E] m-0 mt-0.5">
             Doz, klerens ve eliminasyon yarı ömrünün plazma profiline etkisi
           </p>
         </div>
@@ -101,30 +101,30 @@ export const PkCurveWidget: React.FC = () => {
 
       {/* Quick Clinical Preset Scenarios (Squircle Buttons) */}
       <div className="flex flex-wrap items-center gap-2 py-1">
-        <span className="text-[11px] font-medium text-gray-500 mr-1">Hızlı Klinik Senaryolar:</span>
+        <span className="text-[11px] font-medium text-slate-500 dark:text-[#8E8E8E] mr-1">Hızlı Klinik Senaryolar:</span>
         <Button
           size="small"
           onClick={() => { setDose(500); setClearance(50); setHalfLife(4); }}
-          className="rounded-xl text-xs h-7 font-medium"
+          className="rounded-xl text-xs h-7 font-medium border-slate-200 dark:border-[#2F2F2F] text-slate-700 dark:text-[#ECECEC] bg-white dark:bg-[#212121]"
         >
           Normal Doz (500mg)
         </Button>
         <Button
           size="small"
           onClick={() => { setDose(500); setClearance(15); setHalfLife(10); }}
-          className="rounded-xl text-xs h-7 font-medium border-red-300 dark:border-red-900 text-red-700 dark:text-red-300 bg-red-50/50 dark:bg-red-950/30"
+          className="rounded-xl text-xs h-7 font-medium border-red-300 dark:border-red-900/60 text-red-700 dark:text-red-400 bg-red-50/50 dark:bg-red-950/30"
         >
           Böbrek Yetmezliği (Düşük CL)
         </Button>
         <Button
           size="small"
           onClick={() => { setDose(1100); setClearance(50); setHalfLife(4); }}
-          className="rounded-xl text-xs h-7 font-medium border-amber-300 dark:border-amber-900 text-amber-700 dark:text-amber-300 bg-amber-50/50 dark:bg-amber-950/30"
+          className="rounded-xl text-xs h-7 font-medium border-amber-300 dark:border-amber-900/60 text-amber-700 dark:text-amber-400 bg-amber-50/50 dark:bg-amber-950/30"
         >
           Yüksek Doz / Toksisite
         </Button>
       </div>
-      <div className="rounded-xl bg-slate-900 p-2 text-white overflow-hidden shadow-inner">
+      <div className="rounded-xl bg-[#121212] border border-[#2F2F2F] p-2 text-white overflow-hidden shadow-xs">
         <svg viewBox={`0 0 ${svgWidth} ${svgHeight}`} className="w-full h-40">
           {/* Grid lines */}
           <line x1={padding} y1={svgHeight - padding} x2={svgWidth - padding} y2={svgHeight - padding} stroke="#334155" strokeWidth="1" />
@@ -198,7 +198,7 @@ export const PkCurveWidget: React.FC = () => {
         </div>
       </div>
 
-      <p className="text-[11px] text-gray-500 bg-slate-50 dark:bg-slate-900/40 p-1.5 rounded">
+      <p className="text-[11px] text-slate-500 dark:text-[#8E8E8E] bg-slate-50 dark:bg-[#212121] p-2.5 rounded-xl border border-slate-200 dark:border-[#2F2F2F] m-0">
         <strong>Model İllüstrasyonu:</strong> Tek kompartmanlı oral emilim modeli: C(t) = [F·D·k_a / (V_d·(k_a - k_e))] · (e^(-k_e·t) - e^(-k_a·t)). Klinik teşhis için kullanılmaz.
       </p>
     </div>

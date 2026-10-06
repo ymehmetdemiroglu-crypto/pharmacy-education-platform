@@ -1,16 +1,51 @@
 import fs from 'fs';
 import path from 'path';
 
-const brainDir = 'C:\\Users\\hp\\.gemini\\antigravity\\brain\\33e95f3d-5b4d-4363-a44d-b2b0e8953cfc';
+const brainDir = 'C:\\Users\\hp\\.gemini\\antigravity\\brain\\6ba7b02f-9f30-4af6-bf50-274703b549e3';
 const screenshotsDir = path.join(brainDir, 'screenshots');
 
 const items = [
   {
     id: 'landing-hero',
-    title: 'Minimalist Giriş & Tanıtım Sayfası (Squircle Butonlar)',
+    title: 'Minimalist Giriş & Tanıtım Sayfası (ChatGPT Tarzı & Squircle Butonlar)',
     tag: 'Hero Landing',
     file: '01_landing_hero.png',
-    desc: 'Ant Design yuvarlatılmış köşeli squircle (rounded-xl) butonlar, @ant-design/icons (RightOutlined, BookOutlined, ExperimentOutlined, RobotOutlined) ve 3 temel değer sütunu.'
+    desc: 'ChatGPT koyu gri tonları (#212121 / #171717), OpenAI zümrüt yeşili (#10A37F), Ant Design squircle (rounded-xl) butonlar ve 3 temel değer sütunu.'
+  },
+  {
+    id: 'course-dashboard-desktop',
+    title: 'Eczacılık Vize Hazırlık Panosu (Açık Tema)',
+    tag: 'Dashboard 1440x900',
+    file: '14_course_dashboard_desktop.png',
+    desc: 'Bahar vizesi geri sayımı (28 gün), 4 günlük çalışma serisi rozeti, %70 genel vize hazırlık skoru ve Farmasötik Kimya & Farmakoloji modül kartları.'
+  },
+  {
+    id: 'course-dashboard-dark',
+    title: 'Eczacılık Vize Hazırlık Panosu (Gece Teması)',
+    tag: 'Dashboard Obsidian Dark',
+    file: '15_course_dashboard_dark.png',
+    desc: 'Obsidian #212121 arka plan, #171717 kart yüzeyleri, OpenAI zümrüt yeşili ilerleme çubukları ve gözü yormayan yüksek kontrastlı tipografi.'
+  },
+  {
+    id: 'course-dashboard-mobile',
+    title: 'Mobil Eczacılık Vize Hazırlık Panosu (390x844)',
+    tag: 'Mobile Dashboard',
+    file: '16_course_dashboard_mobile.png',
+    desc: 'Mobil uyumlu geri sayım kartı, tek sütunlu modül listesi ve başparmakla tek dokunuşta derse devam etme aksiyonları.'
+  },
+  {
+    id: 'past-exam-input',
+    title: 'Hukuki Kalkanlı Çıkmış Soru & Sınav Motoru (Soru Yükleme & Anonimleştirme)',
+    tag: 'FSEK Safe Harbor Input',
+    file: '17_past_exam_modal_input.png',
+    desc: 'FSEK Safe Harbor yasal güvencesi: Öğrencinin girdiği üniversite, hoca veya ham sınav kağıdı verileri otomatik olarak temizlenir. Asla ham sınav sorusu yayınlanmaz.'
+  },
+  {
+    id: 'past-exam-twin-solved',
+    title: 'Sentezlenmiş İkiz Soru & Sokratik İskele İpucu',
+    tag: 'Isomorphic Twin Question',
+    file: '18_past_exam_modal_twin_solved.png',
+    desc: 'Orijinal sınav sorusunun farmakolojik mantığını koruyarak yeni bir bileşik üzerinden üretilen ikiz soru. 3 kademeli Sokratik ipucu merdiveni, tanısal geri bildirim ve kesin slayt atıfları içerir.'
   },
   {
     id: 'desktop-light',
@@ -21,10 +56,10 @@ const items = [
   },
   {
     id: 'desktop-dark',
-    title: 'Gece Çalışma Modu (Koyu Tema)',
-    tag: 'Ant Design Token Dark',
+    title: 'Gece Çalışma Modu (ChatGPT Obsidian Koyu Tema)',
+    tag: 'Obsidian #212121 Dark',
     file: '03_study_workspace_dark.png',
-    desc: '#0B0F17 derin arka plan, #131B2A kart yüzeyleri ve yüksek kontrastlı tipografi ile gece çalışma modu.'
+    desc: '#212121 koyu gri tuval, #171717 kart yüzeyleri, #2F2F2F yumuşak kenarlıklar ve OpenAI zümrüt yeşili (#10A37F) vurgular.'
   },
   {
     id: 'molecule-sar',
@@ -127,7 +162,7 @@ const html = `<!DOCTYPE html>
       </div>
       <div class="flex items-center gap-2">
         <span class="text-xs font-mono px-2.5 py-1 rounded-full bg-emerald-950 text-emerald-300 border border-emerald-800">
-          ✓ 7 Yüksek Çözünürlüklü Görünüm
+          ✓ \${items.length} Yüksek Çözünürlüklü Görünüm
         </span>
       </div>
     </div>
@@ -228,3 +263,7 @@ const html = `<!DOCTYPE html>
 const outPath = path.join(brainDir, 'pharmlearn_showcase.html');
 fs.writeFileSync(outPath, html, 'utf8');
 console.log('Successfully written self-contained showcase to:', outPath);
+
+const rootPath = path.join(process.cwd(), 'pharmlearn_showcase.html');
+fs.writeFileSync(rootPath, html, 'utf8');
+console.log('Successfully written copy to workspace root:', rootPath);

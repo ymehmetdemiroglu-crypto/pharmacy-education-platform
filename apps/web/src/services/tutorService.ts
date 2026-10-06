@@ -1,5 +1,6 @@
 import generatedConcepts from '../data/teaching.concepts.generated.json';
 import { realtimeTelemetry } from './realtimeTelemetryService';
+import { lectureRag, KnowledgeNode } from './lectureRagService';
 
 export interface SlideCitation {
   deck: string;
@@ -23,13 +24,12 @@ export interface TutorMessage {
 }
 
 const SYSTEM_PROMPT = `Sen PharmLearn platformunda 3. sınıf eczacılık öğrencilerine rehberlik eden Sokratik bir Farmasötik Kimya ve Farmakoloji AI Eğitmenisin.
-Arkanda 'inclusionai/ling-3.0-flash-sante' modeli çalışmaktadır.
 
 Temel Kurallar:
-1. Kaynak Sadakati: Tüm kimyasal ve biyolojik açıklamalarını Prof. Dr. Bedia Kaymakçıoğlu'nun 'İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf' slaytlarına dayandır. Her yanıtında kesin slayt numaralarını [Slayt X] olarak belirt.
+1. Kaynak Sadakati: Tüm açıklamalarını aşağıdaki DOĞRULANMIŞ DERS NOTU BİLGİ TABANI (RAG) verilerine dayandır. Her yanıtında kesin slayt numaralarını [Slayt X] olarak belirt.
 2. Sokratik Öğretim: Doğrudan cevabı vermek yerine öğrenciye düşünme basamakları sun.
 3. Kısa ve Öz: 40-50 kelimeyi aşma. Önce sezgisel açıklama, sonra teknik terim.
-4. Yanılgı Düzeltme: Öğrenci bir kavramı karıştırdığında (örneğin açilasyon ile fosforilasyon, Gq ile Gs efektörleri veya entropi ile bağ enerjisi), kesin slayt atfıyla doğrusunu açıkla.`;
+4. Yanılgı Düzeltme: Öğrenci bir kavramı karıştırdığında (örneğin açilasyon ile fosforilasyon veya entropi ile bağ enerjisi), kesin slayt atfıyla doğrusunu açıkla.`;
 
 export async function askTutor({
   prompt,
@@ -47,15 +47,28 @@ export async function askTutor({
   const currentConcept = generatedConcepts.find((c) => c.id === activeConceptId) || generatedConcepts[0]!;
   const telemetryContext = realtimeTelemetry.getFormattedContextForTutor();
 
+  // Retrieve relevant atomic lecture knowledge nodes via RAG
+  const relevantNodes = await lectureRag.retrieveRelevantNodes(
+    selectedText ? `${prompt} ${selectedText}` : prompt
+  );
+  const primaryNode = relevantNodes[0];
+  const ragContext = lectureRag.formatRagContext(relevantNodes);
+
   // If OpenRouter API key is provided in localStorage or env, attempt live call
   const openRouterKey = apiKey || (typeof window !== 'undefined' ? localStorage.getItem('pep_openrouter_key') || '' : '');
 
   if (openRouterKey) {
     try {
+      const fullSystemPrompt = [
+        SYSTEM_PROMPT,
+        ragContext,
+        telemetryContext,
+      ].filter(Boolean).join('\n\n');
+
       const messages = [
         {
           role: 'system',
-          content: telemetryContext ? `${SYSTEM_PROMPT}\n\n${telemetryContext}` : SYSTEM_PROMPT,
+          content: fullSystemPrompt,
         },
         ...conversationHistory.slice(-6).map((m) => ({
           role: m.sender === 'user' ? 'user' : 'assistant',
@@ -70,8 +83,10 @@ export async function askTutor({
       ];
 
       const modelsToTry = [
+        'meta-llama/llama-3.3-70b-instruct:free',
+        'google/gemini-2.0-flash-exp:free',
+        'qwen/qwen-2.5-72b-instruct:free',
         'inclusionai/ling-3.0-flash-sante',
-        'qwen/qwen3.8-27b:free',
       ];
 
       for (const model of modelsToTry) {
@@ -119,13 +134,14 @@ export async function askTutor({
   }
 
   // Deterministic Medical Reasoning Engine (Offline/Local/Fast Socratic Tutor)
-  return generateDeterministicTutorReply(prompt, selectedText, currentConcept);
+  return generateDeterministicTutorReply(prompt, selectedText, currentConcept, primaryNode);
 }
 
 function generateDeterministicTutorReply(
   prompt: string,
   selectedText?: string,
-  concept: (typeof generatedConcepts)[0] = generatedConcepts[0]!
+  concept: (typeof generatedConcepts)[0] = generatedConcepts[0]!,
+  ragNode?: KnowledgeNode
 ): TutorMessage {
   const p = prompt.toLowerCase();
   const sel = (selectedText || '').toLowerCase();

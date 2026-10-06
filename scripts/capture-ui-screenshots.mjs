@@ -1,11 +1,16 @@
 import { chromium } from '@playwright/test';
 import path from 'path';
+import fs from 'fs';
 
 const BRAVE_PATH = 'C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe';
-const OUTPUT_DIR = 'C:\\Users\\hp\\.gemini\\antigravity\\brain\\33e95f3d-5b4d-4363-a44d-b2b0e8953cfc\\screenshots';
+const OUTPUT_DIR = 'C:\\Users\\hp\\.gemini\\antigravity\\brain\\6ba7b02f-9f30-4af6-bf50-274703b549e3\\screenshots';
 const BASE_URL = 'http://localhost:3000';
 
 async function capture() {
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  }
+
   console.log('Launching Brave Browser...');
   const browser = await chromium.launch({
     executablePath: BRAVE_PATH,
@@ -65,6 +70,89 @@ async function capture() {
       path: path.join(OUTPUT_DIR, '03_study_workspace_dark.png'),
       fullPage: false,
     });
+
+    // 14 & 15. Minimalist Course Dashboard (Light & Dark)
+    console.log('Capturing 14_course_dashboard_desktop.png & 15_course_dashboard_dark.png...');
+    await page2.evaluate(() => {
+      document.documentElement.classList.remove('dark');
+    });
+    const dashTab = page2.locator('.ant-segmented-item, button, span').filter({ hasText: 'Ders Panosu' }).first();
+    if (await dashTab.isVisible()) {
+      await dashTab.click();
+      await page2.waitForTimeout(600);
+      await page2.screenshot({
+        path: path.join(OUTPUT_DIR, '14_course_dashboard_desktop.png'),
+        fullPage: false,
+      });
+
+      await page2.evaluate(() => {
+        document.documentElement.classList.add('dark');
+      });
+      await page2.waitForTimeout(400);
+      await page2.screenshot({
+        path: path.join(OUTPUT_DIR, '15_course_dashboard_dark.png'),
+        fullPage: false,
+      });
+
+      // 17 & 18. Past Exam & Isomorphic Twin Question Engine
+      console.log('Capturing 17_past_exam_modal_input.png...');
+      const examBtn = page2.locator('button').filter({ hasText: 'Çıkmış Soru Analizi' }).first();
+      if (await examBtn.isVisible()) {
+        await examBtn.click();
+        await page2.waitForTimeout(600);
+        await page2.screenshot({
+          path: path.join(OUTPUT_DIR, '17_past_exam_modal_input.png'),
+          fullPage: false,
+        });
+
+        console.log('Capturing 18_past_exam_modal_twin_solved.png...');
+        const synthesizeBtn = page2.locator('button').filter({ hasText: 'Anonimleştir & İkiz Soru Üret' }).first();
+        if (await synthesizeBtn.isVisible()) {
+          await synthesizeBtn.click();
+          await page2.waitForTimeout(600);
+
+          // Click Socratic hint button
+          const hintBtn = page2.locator('button').filter({ hasText: 'Sokratik İpucu İste' }).first();
+          if (await hintBtn.isVisible()) {
+            await hintBtn.click();
+            await page2.waitForTimeout(300);
+          }
+
+          // Select first option and submit
+          const firstOpt = page2.locator('.past-exam-modal .cursor-pointer').first();
+          if (await firstOpt.isVisible()) {
+            await firstOpt.click();
+            await page2.waitForTimeout(300);
+            const checkBtn = page2.locator('button').filter({ hasText: 'Seçimi Kontrol Et' }).first();
+            if (await checkBtn.isVisible()) {
+              await checkBtn.click();
+              await page2.waitForTimeout(400);
+            }
+          }
+
+          await page2.screenshot({
+            path: path.join(OUTPUT_DIR, '18_past_exam_modal_twin_solved.png'),
+            fullPage: false,
+          });
+        }
+
+        // Close modal
+        const closeBtn = page2.locator('.ant-modal-close').first();
+        if (await closeBtn.isVisible()) {
+          await closeBtn.click();
+          await page2.waitForTimeout(400);
+        }
+      }
+
+      await page2.evaluate(() => {
+        document.documentElement.classList.remove('dark');
+      });
+      const canvasTab = page2.locator('.ant-segmented-item, button, span').filter({ hasText: 'Çalışma Tuvali' }).first();
+      if (await canvasTab.isVisible()) {
+        await canvasTab.click();
+        await page2.waitForTimeout(400);
+      }
+    }
 
     // 4. Focus on 3D Molecular Viewer & SAR Matrix
     console.log('Capturing 04_molecule_viewer_sar.png...');
@@ -133,6 +221,26 @@ async function capture() {
         path: path.join(OUTPUT_DIR, '07_mobile_tutor_drawer.png'),
         fullPage: false,
       });
+      // Close drawer if needed by pressing Escape or close button
+      const closeBtn = page3.locator('.ant-drawer-close').first();
+      if (await closeBtn.isVisible()) {
+        await closeBtn.click();
+        await page3.waitForTimeout(400);
+      }
+    }
+
+    // 16. Mobile Course Dashboard
+    console.log('Capturing 16_course_dashboard_mobile.png...');
+    const mobDashTab = page3.locator('.ant-segmented-item').filter({ has: page3.locator('.anticon-appstore') }).first();
+    if (await mobDashTab.isVisible()) {
+      await mobDashTab.click();
+      await page3.waitForTimeout(800);
+      await page3.screenshot({
+        path: path.join(OUTPUT_DIR, '16_course_dashboard_mobile.png'),
+        fullPage: false,
+      });
+    } else {
+      console.warn('Could not locate mobile dashboard tab!');
     }
 
     // 8. 2D Molecule Structure View

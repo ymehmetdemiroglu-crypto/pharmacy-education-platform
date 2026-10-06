@@ -94,30 +94,30 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
   };
 
   return (
-    <div className="sticky top-0 z-20 flex flex-col gap-2 bg-slate-900 text-white p-3 rounded-2xl border-2 border-black shadow-md backdrop-blur-md">
+    <div className="sticky top-0 z-20 flex flex-col gap-2.5 bg-white/95 dark:bg-[#171717]/95 text-slate-900 dark:text-[#ECECEC] p-3.5 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] shadow-xs backdrop-blur-md transition-colors">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <Button
             type="primary"
-            icon={isPlaying ? <PauseOutlined className="text-black text-base" /> : <CaretRightOutlined className="text-black text-base ml-0.5" />}
+            icon={isPlaying ? <PauseOutlined className="text-white text-sm" /> : <CaretRightOutlined className="text-white text-sm ml-0.5" />}
             onClick={handlePlayPause}
-            className="bg-emerald-500 hover:bg-emerald-400 border-0 flex items-center justify-center text-black rounded-xl w-9 h-9 shadow-sm"
+            className="bg-[#10A37F] hover:bg-[#0E8C6D] border-0 flex items-center justify-center text-white rounded-xl w-9 h-9 shadow-xs"
           />
           <Tooltip title="Başa Sar">
             <Button
               size="small"
               icon={<ReloadOutlined className="text-xs" />}
               onClick={handleReset}
-              className="bg-slate-800 text-slate-300 border-slate-700 rounded-xl w-8 h-8 flex items-center justify-center"
+              className="bg-slate-100 dark:bg-[#2A2A2A] text-slate-700 dark:text-[#ECECEC] border-slate-200 dark:border-[#2F2F2F] rounded-xl w-8 h-8 flex items-center justify-center"
             />
           </Tooltip>
 
           <div className="flex flex-col">
-            <span className="font-display font-bold text-xs sm:text-sm text-slate-100 flex items-center gap-1.5">
-              <SoundOutlined className="text-emerald-400 inline" />
+            <span className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-[#ECECEC] flex items-center gap-1.5">
+              <SoundOutlined className="text-[#10A37F] inline" />
               Sesli Ders Özeti (Slayt 1–33 Vize İncelemesi)
             </span>
-            <span className="font-mono text-[11px] text-slate-400">
+            <span className="font-mono text-[11px] text-slate-500 dark:text-[#8E8E8E]">
               {formatTime(currentTime)} / {formatTime(summary.duration)}
             </span>
           </div>
@@ -125,7 +125,7 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
 
         <div className="flex items-center gap-2">
           {currentCue && (
-            <Tag color="cyan" className="font-mono text-[11px] rounded-lg">
+            <Tag className="font-mono text-[11px] rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-900/60">
               Slayt {currentCue.slide}
             </Tag>
           )}
@@ -134,7 +134,7 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
             size="small"
             value={playbackRate}
             onChange={setPlaybackRate}
-            className="w-20"
+            className="w-20 rounded-xl"
             options={[
               { label: '1.0x', value: 1.0 },
               { label: '1.25x', value: 1.25 },
@@ -162,11 +162,11 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
 
       {/* Active Live Transcript Cue with Sentence Highlight */}
       {currentCue && (
-        <div className="flex items-start justify-between gap-2 bg-slate-800/80 border border-slate-700/80 rounded-xl p-2.5 text-xs">
-          <div className="flex items-start gap-1.5 flex-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse mt-1 shrink-0" />
-            <p className="font-medium text-slate-200 leading-snug">
-              <strong className="text-emerald-400 mr-1">[{formatTime(currentCue.startTime)}]</strong>
+        <div className="flex items-start justify-between gap-2.5 bg-slate-50 dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] rounded-xl p-3 text-xs">
+          <div className="flex items-start gap-2 flex-1">
+            <span className="w-2 h-2 rounded-full bg-[#10A37F] animate-pulse mt-1 shrink-0" />
+            <p className="font-medium text-slate-800 dark:text-[#ECECEC] leading-snug m-0">
+              <strong className="text-[#10A37F] mr-1.5 font-mono">[{formatTime(currentCue.startTime)}]</strong>
               {currentCue.text}
             </p>
           </div>
@@ -174,9 +174,9 @@ export const AudioSummaryBar: React.FC<AudioSummaryBarProps> = ({
           {onAskTutorAboutAudio && (
             <Button
               size="small"
-              icon={<RobotOutlined className="text-amber-400" />}
+              icon={<RobotOutlined className="text-amber-500" />}
               onClick={() => onAskTutorAboutAudio(`Sesli özetteki şu açıklamayı derinleştirir misin: "${currentCue.text}"?`)}
-              className="rounded-xl bg-slate-900/60 border-slate-700 text-amber-300 hover:text-amber-200 font-semibold text-xs shrink-0"
+              className="rounded-xl bg-white dark:bg-[#171717] border-slate-200 dark:border-[#2F2F2F] text-amber-600 dark:text-amber-400 font-semibold text-xs shrink-0 hover:border-amber-500"
             >
               Tutor'a Sor
             </Button>

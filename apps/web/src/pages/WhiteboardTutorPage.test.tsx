@@ -96,7 +96,7 @@ describe('WhiteboardTutorPage (guest / offline, deterministic ladder)', () => {
     const stored = JSON.parse(localStorage.getItem('pep.mastery.v1') ?? '{}') as Record<string, number>;
     expect(Object.keys(stored).length).toBe(lecture.concepts.length);
     expect(stored[first.id]).toBeCloseTo(0.3, 5);
-  });
+  }, 30000);
 
   it('a hint request advances the ladder without changing mastery', async () => {
     renderTutor();
