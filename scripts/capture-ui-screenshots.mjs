@@ -151,10 +151,57 @@ async function capture() {
           });
         }
 
-        // Close modal
+        // Close exam modal
         const closeBtn = page2.locator('.ant-modal-close').first();
         if (await closeBtn.isVisible()) {
           await closeBtn.click();
+          await page2.waitForTimeout(400);
+        }
+      }
+
+      // 21 & 22. Student Document Vault & AI Synthesized Study Guide
+      console.log('Capturing 21_student_vault_documents.png & 22_synthesized_study_guide.png...');
+      const vaultBtn = page2.locator('button').filter({ hasText: 'Ders Notlarım & Doküman Deposu' }).first();
+      if (await vaultBtn.isVisible()) {
+        await vaultBtn.click();
+        await page2.waitForTimeout(600);
+
+        // 21: Capture Document Vault modal with documents and course filters
+        await page2.screenshot({
+          path: path.join(OUTPUT_DIR, '21_student_vault_documents.png'),
+          fullPage: false,
+        });
+
+        // Open the first document to show the synthesized study guide
+        const firstDoc = page2.locator('.student-vault-modal .cursor-pointer').first();
+        if (await firstDoc.isVisible()) {
+          await firstDoc.click();
+          await page2.waitForTimeout(600);
+
+          // Request a hint and reveal answer on the first card
+          const cardHintBtn = page2.locator('.student-vault-modal button').filter({ hasText: 'İpucu İste' }).first();
+          if (await cardHintBtn.isVisible()) {
+            await cardHintBtn.click();
+            await page2.waitForTimeout(300);
+          }
+
+          const cardAnswerBtn = page2.locator('.student-vault-modal button').filter({ hasText: 'Cevabı Gör' }).first();
+          if (await cardAnswerBtn.isVisible()) {
+            await cardAnswerBtn.click();
+            await page2.waitForTimeout(300);
+          }
+
+          // 22: Capture synthesized study guide
+          await page2.screenshot({
+            path: path.join(OUTPUT_DIR, '22_synthesized_study_guide.png'),
+            fullPage: false,
+          });
+        }
+
+        // Close vault modal
+        const vaultCloseBtn = page2.locator('.student-vault-modal .ant-modal-close').first();
+        if (await vaultCloseBtn.isVisible()) {
+          await vaultCloseBtn.click();
           await page2.waitForTimeout(400);
         }
       }

@@ -62,6 +62,20 @@ const items = [
     desc: 'Slayt bazında senkronize sesli özet oynatıcı. Oynatılan cümlenin canlı vurgulanması, hız seçicisi (1.0x-1.5x) ve tek tıkla cümleyi Sokratik Eğitmene sorma butonu.'
   },
   {
+    id: 'student-vault-documents',
+    title: 'Ders Notlarım & Kişisel Doküman Deposu (Supabase Storage)',
+    tag: 'Student Vault + Security Pill',
+    file: '21_student_vault_documents.png',
+    desc: 'Öğrencinin kendi üniversite ders notlarını ve PDF slaytlarını yükleyip yönetebileceği şifreli doküman kasası. Ders bazlı filtreleme (Farmasötik Kimya, Farmakoloji) ve sayfa/fakülte metaverileri.'
+  },
+  {
+    id: 'synthesized-study-guide',
+    title: 'Sentezlenmiş Sokratik Vize Rehberi & Aktif Hatırlama Kartları',
+    tag: 'AI Study Guide + Flashcards',
+    file: '22_synthesized_study_guide.png',
+    desc: 'Yüklenen ders notundan otomatik üretilen 3 yapısal sütun: Vize kritik ilkeleri, 3 kademeli ipucu ve sınav tuzağı uyarıları barındıran aktif hatırlama flaşkartları ve tek tıkla Tutor\'a sorma butonu.'
+  },
+  {
     id: 'desktop-light',
     title: 'Masaüstü Odak Çalışma Alanı (Açık Tema)',
     tag: 'Desktop 1440x900',

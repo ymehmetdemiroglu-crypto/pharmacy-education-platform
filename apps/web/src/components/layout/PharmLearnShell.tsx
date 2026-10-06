@@ -14,11 +14,13 @@ import {
   MenuUnfoldOutlined,
   AppstoreOutlined,
   FileTextOutlined,
+  FolderOpenOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
 import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
+import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 import { useAuth } from '@pharmacy/platform';
 
 interface PharmLearnShellProps {
@@ -49,6 +51,9 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
+
+  // Student Document Vault modal state
+  const [isVaultOpen, setIsVaultOpen] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -317,6 +322,18 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             {/* Live Co-Presence & Pomodoro Indicator */}
             <CompactPulseIndicator />
 
+            {/* Student Notes Vault Trigger */}
+            <Tooltip title="Ders Notlarım & Doküman Deposu">
+              <Button
+                type="text"
+                onClick={() => setIsVaultOpen(true)}
+                className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs text-slate-700 dark:text-[#ECECEC] hover:text-[#10A37F]"
+                icon={<FolderOpenOutlined className="text-emerald-500 text-sm" />}
+              >
+                <span>Notlarım</span>
+              </Button>
+            </Tooltip>
+
             {/* Theme Toggle */}
             <Tooltip title={isDark ? 'Açık Temaya Geç' : 'Koyu Temaya Geç'}>
               <Button
@@ -376,6 +393,10 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <MinimalCourseDashboard
                 onSelectLecture={(_id) => setActiveView('canvas')}
+                onAskTutor={(prompt) => {
+                  setActiveView('canvas');
+                  handleAskTutor(prompt);
+                }}
               />
             </main>
           ) : (
@@ -433,6 +454,13 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             </>
           )}
         </div>
+
+        {/* Student Personal Notes Vault & AI Study Guide Synthesizer */}
+        <StudentDocumentVaultModal
+          open={isVaultOpen}
+          onClose={() => setIsVaultOpen(false)}
+          onAskTutorAboutExcerpt={handleAskTutor}
+        />
       </div>
     </App>
     </ConfigProvider>

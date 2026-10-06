@@ -1,17 +1,22 @@
 # Project State
 
-## Current Phase: 06-multi-course-rag-exam-bank-and-audio
+## Current Phase: 07-student-notes-vault-and-synthesizer
 - **Status**: COMPLETED & VERIFIED (100% Pass Rate Across All Suites)
 - **Scope**:
-  - 10 atomic, reviewed Markdown knowledge nodes for Course B (Pharmacology) in `courses/pharmacology/knowledge_nodes/`
-  - Multi-course RAG expansion in `lectureRagService.ts` with course filtering and Supabase pgvector RPC fallback
-  - Curated 10-question past exam bank (`CURATED_EXAM_BANK`) across MedChem and Pharmacology with 3-tier Socratic ladders
-  - Two-tab modal in `PastExamPracticeModal.tsx` (Curated Bank Browser + Upload/Scrub)
-  - Synchronized audio-karaoke summary with dynamic lecture switching in `AudioSummaryBar.tsx` and `audioService.ts`
-  - 20 high-resolution screenshots captured with Brave Browser and compiled into `pharmlearn_showcase.html`
-  - 14/14 web test files passed (64/64 tests), TypeScript 0 errors
+  - Secure personal student document vault in `studentDocumentService.ts` and `StudentDocumentVaultModal.tsx`
+  - Integration with Supabase Storage `student-documents` bucket and transparent local persistence
+  - Auto-synthesized Socratic study guides with active-recall flashcards, 3-tier hints, and exam trap warnings
+  - Direct integration into `MinimalCourseDashboard.tsx` and `PharmLearnShell.tsx` top bar and layout
+  - 16/16 web test files passed (71/71 tests), TypeScript 0 errors
+  - 22 high-resolution Brave Browser screenshots captured and compiled into `pharmlearn_showcase.html`
 
 ## Completed Phases
+### Phase 7: Student Notes Vault, Document Ingestion & AI Smart Study Guide Synthesizer [COMPLETED]
+- Secure document handling for PDFs and notes with client encryption pill.
+- Pre-loaded authentic Marmara and Hacettepe student study notes.
+- Synthesizes 3 structured pillars: Vize İlkeleri, Sokratik Flaşkartlar (ipucu/cevap açma), Sınav Yanılgı Uyarıları.
+- One-click "Tutor'a Sor" excerpt linking directly to Socratic AI Tutor.
+- 16/16 test files passed (71/71 tests), 0 TypeScript errors, 22 Brave screenshots.
 ### Phase 6: Multi-Course RAG, Exam Bank & Audio Pipeline [COMPLETED]
 - 10 atomic Pharmacology nodes created covering Prof. Dr. Feyza Arıcıoğlu slide decks.
 - Multi-course RAG service tested with course filtering (6/6 tests pass).

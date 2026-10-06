@@ -10,22 +10,27 @@ import {
   ThunderboltOutlined,
   CalendarOutlined,
   SafetyCertificateOutlined,
+  FolderOpenOutlined,
 } from '@ant-design/icons';
 import { StudyPulseLounge } from '../study/StudyPulseLounge';
 import { PastExamPracticeModal } from '../exam/PastExamPracticeModal';
+import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 
 interface MinimalCourseDashboardProps {
   onSelectLecture: (lectureId: string) => void;
   completedConceptsCount?: number;
   totalConceptsCount?: number;
+  onAskTutor?: (prompt: string) => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   onSelectLecture,
   completedConceptsCount = 6,
   totalConceptsCount = 10,
+  onAskTutor,
 }) => {
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
+  const [isVaultModalOpen, setIsVaultModalOpen] = useState(false);
   const readinessPercent = Math.round((completedConceptsCount / totalConceptsCount) * 100);
 
   return (
@@ -49,7 +54,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
               Ders notlarındaki vize konularını interaktif 3D modeller, GPCR simülatörleri ve Sokratik AI desteği ile adım adım pekiştirin.
             </p>
 
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <Button
+                onClick={() => setIsVaultModalOpen(true)}
+                icon={<FolderOpenOutlined className="text-[#10A37F]" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
+              >
+                Ders Notlarım & Doküman Deposu 📂
+              </Button>
               <Button
                 onClick={() => setIsExamModalOpen(true)}
                 icon={<SafetyCertificateOutlined className="text-emerald-500" />}
@@ -273,6 +285,13 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
       <PastExamPracticeModal
         open={isExamModalOpen}
         onClose={() => setIsExamModalOpen(false)}
+      />
+
+      {/* Student Personal Notes Vault & AI Study Guide Synthesizer */}
+      <StudentDocumentVaultModal
+        open={isVaultModalOpen}
+        onClose={() => setIsVaultModalOpen(false)}
+        onAskTutorAboutExcerpt={onAskTutor}
       />
     </div>
   );

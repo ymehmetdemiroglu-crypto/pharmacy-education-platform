@@ -22,5 +22,9 @@
 ### Phase 5: ChatGPT Aesthetic, Minimalist Dashboard & Study Pulse [COMPLETED]
 - **Goal**: Obsidian/Emerald dark theme, squircle tokens, exam countdown dashboard, live peer presence (Study Pulse 39-42 students), and initial MedChem RAG nodes.
 
-### Phase 6: Multi-Course RAG (Pharmacology MD Nodes), Socratic Exam Bank & Audio Pipeline [IN PROGRESS]
+### Phase 6: Multi-Course RAG (Pharmacology MD Nodes), Socratic Exam Bank & Audio Pipeline [COMPLETED]
 - **Goal**: Author 10 atomic Pharmacology Markdown knowledge nodes, upgrade `lectureRagService` with multi-course filtering, deliver 10-question pre-loaded isomorphic past-exam bank, and enable synchronized audio-karaoke summaries.
+
+### Phase 7: Student Notes Vault, Document Ingestion & AI Smart Study Guide Synthesizer [COMPLETED]
+- **Goal**: Secure document vault for university notes/PDFs, Supabase Storage integration with offline fallback, and AI-synthesized Socratic study guides with active-recall flashcards.
+
