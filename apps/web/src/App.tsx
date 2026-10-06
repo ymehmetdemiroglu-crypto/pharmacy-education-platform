@@ -1,5 +1,5 @@
 import React, { useState, Suspense, lazy } from 'react';
-import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { TrialBanner, PaywallModal, SkeletonLoader } from '@pharmacy/ui';
@@ -7,6 +7,7 @@ import { useAuth } from '@pharmacy/platform';
 import { callCreateCheckoutSession, callStartFreeTrial } from './lib/billing';
 import { useTranslation } from './context/TranslationContext';
 
+const PharmLearnStudioPage = lazy(() => import('./pages/PharmLearnStudioPage').then((m) => ({ default: m.PharmLearnStudioPage })));
 const DashboardPage = lazy(() => import('./pages/DashboardPage').then((m) => ({ default: m.DashboardPage })));
 const WhiteboardTutorPage = lazy(() => import('./pages/WhiteboardTutorPage').then((m) => ({ default: m.WhiteboardTutorPage })));
 const CatalogPage = lazy(() => import('./pages/CatalogPage').then((m) => ({ default: m.CatalogPage })));
@@ -31,6 +32,25 @@ export const App: React.FC = () => {
     const diffMs = new Date(user.trialEndsAt).getTime() - Date.now();
     return Math.max(1, Math.ceil(diffMs / (1000 * 60 * 60 * 24)));
   };
+
+  const location = useLocation();
+  const isStudio = location.pathname === '/' || location.pathname === '/studio';
+
+  if (isStudio) {
+    return (
+      <ErrorBoundary>
+        <Suspense
+          fallback={
+            <div className="h-screen w-screen flex items-center justify-center font-mono bg-slate-900 text-white">
+              PharmLearn Studio Yükleniyor...
+            </div>
+          }
+        >
+          <PharmLearnStudioPage />
+        </Suspense>
+      </ErrorBoundary>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FFF8E7] dark:bg-[#0B0F17] text-black dark:text-[#F1F5F9] transition-colors duration-150">
@@ -62,7 +82,8 @@ export const App: React.FC = () => {
             }
           >
             <Routes>
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/" element={<PharmLearnStudioPage />} />
+              <Route path="/studio" element={<PharmLearnStudioPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/tutor/:lectureSlug" element={<WhiteboardTutorPage />} />
               <Route path="/gallery" element={<GalleryPage />} />

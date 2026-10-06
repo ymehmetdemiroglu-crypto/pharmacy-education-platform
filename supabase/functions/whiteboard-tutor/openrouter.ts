@@ -5,6 +5,7 @@ import { LlmTutorOutputSchema, type LlmTutorOutput } from '../_shared/whiteboard
  * this was written; override with the TUTOR_MODELS secret (comma separated) without a redeploy.
  */
 export const DEFAULT_MODELS = [
+  'inclusionai/ling-3.0-flash-sante',
   'qwen/qwen3.8-27b:free',
   'nvidia/nemotron-3-super-120b-a12b:free',
   'google/gemma-4-26b-a4b-it:free',
