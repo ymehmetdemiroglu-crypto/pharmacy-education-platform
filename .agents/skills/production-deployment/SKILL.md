@@ -35,7 +35,7 @@ Use this skill whenever deploying web updates to production, updating Supabase A
      - `https://optimusrufus.com/**`
      - `https://pharmacy-platform.pages.dev/**`
      - `https://*.pharmacy-platform-9u0.pages.dev/**`
-2. Ensure `supabase/templates/recovery.html` uses `{{ .ConfirmationURL }}` styled with Neo-Brutalist design.
+2. Ensure `supabase/templates/recovery.html` uses `{{ .ConfirmationURL }}` styled with Modern Obsidian & Emerald design.
 
 ## 4. Post-Deployment Verification Checklist
 - [ ] Zero `localhost` or `127.0.0.1` references in client runtime network requests.
