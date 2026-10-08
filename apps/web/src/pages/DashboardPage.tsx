@@ -13,13 +13,13 @@ const ARC = 'M60 16 a44 44 0 1 1 0 88 a44 44 0 1 1 0 -88';
 const ReadinessGauge: React.FC<{ percent: number; label: string }> = ({ percent, label }) => (
   <div className="relative h-36 w-36 shrink-0" role="img" aria-label={`${label}: ${percent}%`}>
     <svg viewBox="0 0 120 120" className="h-full w-full" aria-hidden="true">
-      <circle cx="60" cy="60" r="56" fill="#FFFFFF" stroke="#000000" strokeWidth="4" />
-      <path d={ARC} fill="none" stroke="#E5E7EB" strokeWidth="12" />
+      <circle cx="60" cy="60" r="54" className="fill-white dark:fill-[#1E1E1E] stroke-slate-200 dark:stroke-[#2F2F2F]" strokeWidth="1.5" />
+      <path d={ARC} fill="none" className="stroke-slate-100 dark:stroke-[#2A2A2A]" strokeWidth="8" />
       {percent > 0 ? (
-        <path d={ARC} fill="none" stroke="#6BCB77" strokeWidth="12" pathLength={100} strokeDasharray={`${percent} 100`} />
+        <path d={ARC} fill="none" stroke="#10A37F" strokeWidth="8" strokeLinecap="round" pathLength={100} strokeDasharray={`${percent} 100`} />
       ) : null}
     </svg>
-    <span className="absolute inset-0 flex items-center justify-center font-display text-3xl font-black">{percent}%</span>
+    <span className="absolute inset-0 flex items-center justify-center font-display text-3xl font-bold text-slate-900 dark:text-white">{percent}%</span>
   </div>
 );
 

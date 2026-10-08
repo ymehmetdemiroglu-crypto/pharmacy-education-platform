@@ -270,11 +270,12 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
             y={winTopY}
             width="320"
             height={winHeight}
-            fill="#6BCB77"
-            fillOpacity="0.2"
-            stroke="#6BCB77"
+            fill="#10A37F"
+            fillOpacity="0.12"
+            stroke="#10A37F"
             strokeWidth="1"
             strokeDasharray="4 2"
+            rx="4"
           />
           <text
             x="365"
@@ -282,15 +283,15 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
             textAnchor="end"
             fontSize="9"
             fontFamily="monospace"
-            fill="#2E7D32"
+            fill="#10A37F"
             fontWeight="bold"
           >
             {dict.therapeuticWindow} ({config.therapeuticWindow[0]}–{config.therapeuticWindow[1]} mg/L)
           </text>
 
           {/* Axes */}
-          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
-          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
+          <line x1="50" y1="30" x2="50" y2="210" stroke="#94A3B8" strokeWidth="1" />
+          <line x1="50" y1="210" x2="380" y2="210" stroke="#94A3B8" strokeWidth="1" />
 
           {/* Axis Labels */}
           <text x="35" y="40" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">
@@ -314,8 +315,8 @@ export const PkSimulator: React.FC<PkSimulatorProps> = ({
           <path
             d={pathData}
             fill="none"
-            stroke="#FF9F45"
-            strokeWidth="3.5"
+            stroke="#10A37F"
+            strokeWidth="2.5"
             strokeLinecap="round"
           />
         </svg>

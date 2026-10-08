@@ -303,8 +303,8 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               const x = toSvgX(val);
               return (
                 <g key={val}>
-                  <line x1={x} y1={padding.top + plotHeight} x2={x} y2={padding.top + plotHeight + 5} stroke="#000" strokeWidth="2" />
-                  <text x={x} y={padding.top + plotHeight + 18} textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold">
+                  <line x1={x} y1={padding.top + plotHeight} x2={x} y2={padding.top + plotHeight + 4} stroke="#94A3B8" strokeWidth="1" />
+                  <text x={x} y={padding.top + plotHeight + 16} textAnchor="middle" fontSize="10" fontFamily="monospace" className="fill-slate-600 dark:fill-slate-400">
                     10^{val}
                   </text>
                 </g>
@@ -312,7 +312,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             })}
 
             {/* Axis Labels */}
-            <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="10" fontWeight="bold">
+            <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="11" fontWeight="600" className="fill-slate-700 dark:fill-slate-300">
               {t.xAxisLabel}
             </text>
 
@@ -321,8 +321,8 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               data-testid="black-leff-curve"
               d={pathD}
               fill="none"
-              stroke="#000"
-              strokeWidth="4"
+              stroke="#10A37F"
+              strokeWidth="2.5"
               strokeLinecap="round"
             />
 
@@ -332,8 +332,8 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               y1={ec50Y}
               x2={ec50X}
               y2={padding.top + plotHeight}
-              stroke="#4D96FF"
-              strokeWidth="2"
+              stroke="#0284C7"
+              strokeWidth="1.5"
               strokeDasharray="3 3"
             />
             <line
@@ -341,13 +341,13 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               y1={ec50Y}
               x2={ec50X}
               y2={ec50Y}
-              stroke="#4D96FF"
-              strokeWidth="2"
+              stroke="#0284C7"
+              strokeWidth="1.5"
               strokeDasharray="3 3"
             />
 
             {/* EC50 Point Marker */}
-            <circle cx={ec50X} cy={ec50Y} r="5" fill="#4D96FF" stroke="#000" strokeWidth="2" />
+            <circle cx={ec50X} cy={ec50Y} r="4.5" fill="#0284C7" stroke="#FFFFFF" strokeWidth="1.5" />
           </svg>
         </div>
 

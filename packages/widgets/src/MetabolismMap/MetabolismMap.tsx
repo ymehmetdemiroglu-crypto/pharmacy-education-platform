@@ -159,11 +159,28 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
             const isSelected = selectedSiteId === site.id;
             const isCorrect = site.isTargetSite;
 
-            let badgeFill = '#FFD93D';
+            let badgeFill = '#F8FAFC';
+            let badgeStroke = '#CBD5E1';
+            let textFill = '#0F172A';
+
             if (isSubmitted) {
-              badgeFill = isCorrect ? '#6BCB77' : '#FF6B9D';
+              if (isCorrect) {
+                badgeFill = '#10A37F';
+                badgeStroke = '#059669';
+                textFill = '#FFFFFF';
+              } else if (isSelected) {
+                badgeFill = '#F43F5E';
+                badgeStroke = '#E11D48';
+                textFill = '#FFFFFF';
+              } else {
+                badgeFill = '#94A3B8';
+                badgeStroke = '#64748B';
+                textFill = '#FFFFFF';
+              }
             } else if (isSelected) {
-              badgeFill = '#FF9F45';
+              badgeFill = '#10A37F';
+              badgeStroke = '#059669';
+              textFill = '#FFFFFF';
             }
 
             return (
@@ -174,18 +191,17 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                 aria-pressed={isSelected}
                 aria-label={t.siteAria(site.label, site.enzyme)}
                 onClick={() => handleSelectSite(site.id)}
-                className="cursor-pointer transition-transform duration-100 hover:scale-110 focus:outline-none"
+                className="cursor-pointer transition-transform duration-150 hover:scale-105 focus:outline-none"
               >
-                {/* Connecting arrow/line */}
+                {/* Connecting line */}
                 <line
                   x1="200"
                   y1="100"
                   x2={site.x}
                   y2={site.y}
-                  stroke="#000000"
-                  strokeWidth="2.5"
-                  strokeDasharray="4 3"
-                  className="dark:stroke-slate-500"
+                  stroke="#94A3B8"
+                  strokeWidth="1.5"
+                  strokeDasharray="3 3"
                 />
 
                 {/* Hotspot Box */}
@@ -194,10 +210,12 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                   y={site.y - 18}
                   width="90"
                   height="36"
+                  rx="8"
+                  ry="8"
                   fill={badgeFill}
-                  stroke="#000000"
-                  strokeWidth="2.5"
-                  className={isSelected ? 'filter drop-shadow-md' : ''}
+                  stroke={badgeStroke}
+                  strokeWidth="1.5"
+                  className={isSelected ? 'filter drop-shadow-sm' : ''}
                 />
                 <text
                   x={site.x}
@@ -206,7 +224,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                   fontSize="10"
                   fontFamily="monospace"
                   fontWeight="bold"
-                  fill="#000000"
+                  fill={textFill}
                 >
                   {site.label}
                 </text>
@@ -216,7 +234,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                   textAnchor="middle"
                   fontSize="9"
                   fontFamily="monospace"
-                  fill="#000000"
+                  fill={textFill}
                 >
                   [{site.enzyme}]
                 </text>
