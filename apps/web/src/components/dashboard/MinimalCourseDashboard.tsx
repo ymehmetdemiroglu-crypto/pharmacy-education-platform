@@ -22,6 +22,7 @@ interface MinimalCourseDashboardProps {
   completedConceptsCount?: number;
   totalConceptsCount?: number;
   onAskTutor?: (prompt: string) => void;
+  onOpenTriage?: () => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
@@ -29,6 +30,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   completedConceptsCount = 6,
   totalConceptsCount = 10,
   onAskTutor,
+  onOpenTriage,
 }) => {
   const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
@@ -66,18 +68,26 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 Günün 10 Sorusuna Başla ⚡
               </Button>
               <Button
+                data-testid="dashboard-vize-cram-btn"
+                onClick={() => onOpenTriage && onOpenTriage()}
+                icon={<FireFilled className="text-red-500" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-red-50/80 dark:bg-red-950/30 border border-red-200 dark:border-red-900/60 text-red-700 dark:text-red-400 hover:border-red-500 shadow-xs flex items-center gap-1.5"
+              >
+                Vize Kampı (Top %20 Slayt) 🔥
+              </Button>
+              <Button
                 onClick={() => setIsVaultModalOpen(true)}
                 icon={<FolderOpenOutlined className="text-[#10A37F]" />}
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
               >
-                Ders Notlarım & Doküman Deposu 📂
+                Ders Notlarım 📂
               </Button>
               <Button
                 onClick={() => setIsExamModalOpen(true)}
                 icon={<SafetyCertificateOutlined className="text-emerald-500" />}
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-slate-50 dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] text-slate-800 dark:text-[#ECECEC] hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
               >
-                Çıkmış Soru Analizi & İkiz Soru Motoru 🛡️
+                Çıkmış Soru Analizi 🛡️
               </Button>
             </div>
 

@@ -17,11 +17,13 @@ import {
   FolderOpenOutlined,
   CrownOutlined,
   ThunderboltOutlined,
+  FireFilled,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
 import { DynamicLessonCanvas } from '../canvas/DynamicLessonCanvas';
 import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
+import { SlideHeatmapView } from '../triage/SlideHeatmapView';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 import { DailyChallengeModal } from '../study/DailyChallengeModal';
@@ -56,8 +58,8 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
   // 2-Pane desktop layout state: open by default per /grill-me agreement
   const [isTutorOpen, setIsTutorOpen] = useState(true);
 
-  // Active view: Canvas (Ders Tuvali) or Dashboard (Ders Panosu)
-  const [activeView, setActiveView] = useState<'canvas' | 'dashboard'>('canvas');
+  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), or Triage (Vize Isı Haritası)
+  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage'>('canvas');
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
@@ -313,10 +315,10 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
 
             <div className="h-4 w-px bg-slate-200 dark:bg-[#2F2F2F] hidden sm:block" />
 
-            {/* View Switcher: Tuval vs Pano (Icons on mobile, text on desktop) */}
+            {/* View Switcher: Tuval vs Pano vs Vize Triage (Icons on mobile, text on desktop) */}
             <Segmented
               value={activeView}
-              onChange={(val) => setActiveView(val as 'canvas' | 'dashboard')}
+              onChange={(val) => setActiveView(val as 'canvas' | 'dashboard' | 'triage')}
               options={[
                 {
                   label: (
@@ -335,6 +337,15 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                     </span>
                   ),
                   value: 'dashboard',
+                },
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5 text-red-500 font-semibold" title="Vize Isı Haritası">
+                      <FireFilled className="text-red-500" />
+                      <span className="hidden sm:inline">Vize Triage ⚡</span>
+                    </span>
+                  ),
+                  value: 'triage',
                 },
               ]}
               className="inline-flex text-xs font-medium bg-slate-100 dark:bg-[#2A2A2A]"
@@ -458,10 +469,14 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
           </div>
         </header>
 
-        {/* 2-Pane Workspace or Dashboard */}
+        {/* 2-Pane Workspace, Dashboard, or Vize Triage */}
         <div className="flex-1 flex overflow-hidden relative">
           {/* Main Content Area */}
-          {activeView === 'dashboard' ? (
+          {activeView === 'triage' ? (
+            <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
+              <SlideHeatmapView onBackToCanvas={() => setActiveView('canvas')} />
+            </main>
+          ) : activeView === 'dashboard' ? (
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <MinimalCourseDashboard
                 onSelectLecture={(id) => {
@@ -472,6 +487,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                   setActiveView('canvas');
                   handleAskTutor(prompt);
                 }}
+                onOpenTriage={() => setActiveView('triage')}
               />
             </main>
           ) : (

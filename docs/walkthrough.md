@@ -814,3 +814,23 @@ Testing was performed in the user's authentic local **Brave Browser installation
   - All modified source and test files synchronized with worktree: `C:\Users\hp\.gemini\antigravity\worktrees\valiant-raman\pharmacy_education_platform_setup`.
   - Re-generated client curriculum cache (`apps/web/src/data/curriculum.client.ts`).
 
+---
+
+## 13. Phase 9: Pillar 1 Slayt Isı Haritası & 1-Click Vize Cram Mode (Wave 1 Triage)
+
+**Status**: **COMPLETED & VERIFIED (100% PASS RATE)**  
+**Date**: October 2026  
+**Artifacts Generated & Updated**:
+- `apps/web/src/types/vizeTriage.types.ts`: Zod schemas & TypeScript definitions (`CanonicalTrapCodeSchema`, `HighYieldSlideSchema`, etc.)
+- `apps/web/src/data/highYieldSlides.data.ts`: 20 authentic lecture slides with exact slide citations from `/materials/` and canonical pharmacy traps (`TRAP-01` through `TRAP-10`)
+- `apps/web/src/services/vizeTriageService.ts` & `vizeTriageService.test.ts`: Normalized multi-factor High-Yield Scorer ($HYS \in [0, 100]$), symmetric calendar decay, and deck statistics (13/13 tests green)
+- `apps/web/src/lib/security/ClientMemorySandbox.ts` & `ClientMemorySandbox.test.ts`: In-memory Blob allocator, 150MB quota cap, 24h TTL auto-purge, and explicit `URL.revokeObjectURL` cleanup (4/4 tests green)
+- `apps/web/src/stores/vizeTriageStore.ts` & `vizeTriageStore.test.ts`: Zustand state machine for cram session progression and FSRS retrievability integration (6/6 tests green)
+- `apps/web/src/components/triage/SlideHeatmapView.tsx` & `SlideHeatmapView.test.tsx`: Thermal badges (Thermal Red $\ge 75$, Amber $45\text{--}74$, Cool Gray $<45$) and 80/20 Pareto indicator (5/5 tests green)
+- `apps/web/src/components/triage/VizeCramCarouselModal.tsx` & `VizeCramCarouselModal.test.tsx`: 5-step rapid mastery progression with predict-then-reveal guard, 3-tier scaffolding hints, and keyboard navigation (5/5 tests green)
+- `apps/web/src/components/layout/PharmLearnShell.tsx`: Top `Segmented` switcher tab ("Vize Triage ⚡") routing to `<SlideHeatmapView />`
+- `apps/web/src/components/dashboard/MinimalCourseDashboard.tsx`: "Vize Kampı (Top %20 Slayt) 🔥" hero action button
+- Visual Artifacts in Brave Browser: `scripts/capture-vize-triage-visual.mjs` (7 screenshots in `brain/screenshots/`)
+- Production Bundle Dev Notes Audit: 277 bundle files verified clean (0 internal notes)
+- Monorepo Test Suite: 88/88 test files, 366/366 tests passed (100% green)
+

@@ -47,5 +47,15 @@ describe('MinimalCourseDashboard', () => {
     expect(screen.getByText('Günün 10 Yüksek Verimli Vize Sorusu')).toBeDefined();
     expect(screen.getByText(/Soru 1 \/ 10/i)).toBeDefined();
   });
+
+  it('triggers onOpenTriage when Vize Kampı button is clicked', () => {
+    const handleTriage = vi.fn();
+    render(<MinimalCourseDashboard onSelectLecture={vi.fn()} onOpenTriage={handleTriage} />);
+
+    const cramBtn = screen.getByTestId('dashboard-vize-cram-btn');
+    fireEvent.click(cramBtn);
+
+    expect(handleTriage).toHaveBeenCalled();
+  });
 });
 
