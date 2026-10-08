@@ -8,6 +8,7 @@ describe('StickerBadge Component', () => {
     render(<StickerBadge variant="green">Bioisostere</StickerBadge>);
     const badge = screen.getByText('Bioisostere');
     expect(badge).toBeInTheDocument();
-    expect(badge).toHaveClass('border-2');
+    expect(badge).toHaveClass('border');
+    expect(badge).toHaveClass('rounded-full');
   });
 });

@@ -15,6 +15,7 @@ import {
 import { StudyPulseLounge } from '../study/StudyPulseLounge';
 import { PastExamPracticeModal } from '../exam/PastExamPracticeModal';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
+import { DailyChallengeModal } from '../study/DailyChallengeModal';
 
 interface MinimalCourseDashboardProps {
   onSelectLecture: (lectureId: string) => void;
@@ -29,6 +30,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   totalConceptsCount = 10,
   onAskTutor,
 }) => {
+  const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
   const [isVaultModalOpen, setIsVaultModalOpen] = useState(false);
   const readinessPercent = Math.round((completedConceptsCount / totalConceptsCount) * 100);
@@ -56,6 +58,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
 
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <Button
+                type="primary"
+                onClick={() => setIsDailyChallengeOpen(true)}
+                icon={<ThunderboltOutlined />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-[#10A37F] hover:bg-[#0E8C6D] border-0 text-white shadow-xs flex items-center gap-1.5"
+              >
+                Günün 10 Sorusuna Başla ⚡
+              </Button>
+              <Button
                 onClick={() => setIsVaultModalOpen(true)}
                 icon={<FolderOpenOutlined className="text-[#10A37F]" />}
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
@@ -70,6 +80,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 Çıkmış Soru Analizi & İkiz Soru Motoru 🛡️
               </Button>
             </div>
+
           </div>
 
           {/* Readiness Circle & Quick Metric */}
@@ -228,7 +239,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
               type="default"
               size="large"
               icon={<ArrowRightOutlined />}
-              onClick={() => onSelectLecture('medchem-1')}
+              onClick={() => onSelectLecture('pharm-1')}
               className="w-full bg-slate-100 dark:bg-[#2A2A2A] hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-800 dark:text-[#ECECEC] font-semibold rounded-xl h-11 border-slate-200 dark:border-[#2F2F2F] shadow-xs flex items-center justify-center gap-2"
             >
               Simülatörü Başlat
@@ -240,42 +251,57 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
       {/* Upcoming Curriculum Pipeline */}
       <section className="bg-slate-50 dark:bg-[#1A1A1A] rounded-2xl border border-slate-200 dark:border-[#2F2F2F] p-6 transition-colors">
         <h3 className="text-sm font-bold text-slate-800 dark:text-[#ECECEC] uppercase tracking-wider mb-3">
-          Sırada Gelecek Vize Modülleri
+          Öne Çıkan Vize Ders Modülleri
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          <div className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F]">
-            <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
-              Fizikokimyasal Özellikler
+          <div
+            onClick={() => onSelectLecture('medchem-2')}
+            className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] hover:border-emerald-500 cursor-pointer transition-all shadow-xs flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
+                Fizikokimyasal Özellikler
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
+                pKa, logP, Henderson-Hasselbalch dengesi
+              </div>
             </div>
-            <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
-              pKa, logP, Henderson-Hasselbalch
-            </div>
-            <span className="inline-block mt-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-[#2F2F2F] text-slate-600 dark:text-[#B4B4B4]">
-              Hazırlanıyor
+            <span className="inline-block mt-3 text-[11px] font-medium text-[#10A37F]">
+              Derse Başla →
             </span>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F]">
-            <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
-              İlaç Metabolizması
+          <div
+            onClick={() => onSelectLecture('medchem-3')}
+            className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] hover:border-emerald-500 cursor-pointer transition-all shadow-xs flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
+                Lokal Anestezikler SAR
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
+                Ester vs Amit izosterizmi ve QSAR
+              </div>
             </div>
-            <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
-              Faz I CYP enzimleri, Faz II konjugasyon
-            </div>
-            <span className="inline-block mt-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-[#2F2F2F] text-slate-600 dark:text-[#B4B4B4]">
-              Hazırlanıyor
+            <span className="inline-block mt-3 text-[11px] font-medium text-[#10A37F]">
+              Derse Başla →
             </span>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F]">
-            <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
-              Otonom Sinir Sistemi
+          <div
+            onClick={() => onSelectLecture('pharm-7')}
+            className="p-3.5 rounded-xl bg-white dark:bg-[#212121] border border-slate-200 dark:border-[#2F2F2F] hover:border-emerald-500 cursor-pointer transition-all shadow-xs flex flex-col justify-between"
+          >
+            <div>
+              <div className="text-xs font-semibold text-slate-800 dark:text-[#ECECEC]">
+                Kolinerjik Sistem & Reseptörler
+              </div>
+              <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
+                Muskarinik / Nikotinik alt tipler
+              </div>
             </div>
-            <div className="text-[11px] text-slate-500 dark:text-[#8E8E8E] mt-1">
-              Adrenerjik & Kolinerjik Reseptörler
-            </div>
-            <span className="inline-block mt-2 text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-[#2F2F2F] text-slate-600 dark:text-[#B4B4B4]">
-              Hazırlanıyor
+            <span className="inline-block mt-3 text-[11px] font-medium text-[#10A37F]">
+              Derse Başla →
             </span>
           </div>
         </div>
@@ -293,6 +319,13 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
         onClose={() => setIsVaultModalOpen(false)}
         onAskTutorAboutExcerpt={onAskTutor}
       />
+
+      {/* Daily 10 High-Yield Challenge Loop Modal */}
+      <DailyChallengeModal
+        open={isDailyChallengeOpen}
+        onClose={() => setIsDailyChallengeOpen(false)}
+      />
     </div>
   );
 };
+

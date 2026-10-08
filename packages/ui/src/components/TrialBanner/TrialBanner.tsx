@@ -130,15 +130,15 @@ export const TrialBanner: React.FC<TrialBannerProps> = ({
       role="region"
       data-testid="trial-banner"
       className={clsx(
-        'w-full py-2.5 px-4 sm:px-6 border-b-3 border-black dark:border-slate-700 select-none',
+        'w-full py-2 px-4 sm:px-6 border-b transition-colors select-none',
         'flex flex-col sm:flex-row items-center justify-between gap-3',
-        status === 'active_trial' && 'bg-[#FFD93D] text-black',
-        status === 'free_preview' && 'bg-[#FFF8E7] dark:bg-[#131B2A] text-black dark:text-slate-100',
-        status === 'expired_trial' && 'bg-[#FF6B9D] text-black',
+        status === 'active_trial' && 'bg-emerald-50 text-emerald-950 dark:bg-[#12281e] dark:text-emerald-300 border-b border-emerald-200 dark:border-emerald-900/60',
+        status === 'free_preview' && 'bg-slate-50 text-slate-800 dark:bg-[#1C1C1C] dark:text-[#ECECEC] border-b border-slate-200 dark:border-[#2F2F2F]',
+        status === 'expired_trial' && 'bg-amber-50 text-amber-950 dark:bg-[#2b1f14] dark:text-amber-200 border-b border-amber-200 dark:border-amber-900/60',
         className
       )}
     >
-      <div className="flex items-center gap-2.5 text-xs sm:text-sm font-display font-bold">
+      <div className="flex items-center gap-2.5 text-xs sm:text-sm font-sans font-medium">
         {status === 'active_trial' && (
           <>
             <Clock className="w-4 h-4 shrink-0 stroke-[2.5]" />

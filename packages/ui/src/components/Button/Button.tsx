@@ -23,19 +23,19 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-[#FFD93D] text-black hover:bg-[#FACC15]',
-  secondary: 'bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
-  success: 'bg-[#6BCB77] text-black hover:bg-[#5BB866]',
-  danger: 'bg-[#FF6B9D] text-black hover:bg-[#FF558F]',
-  medchem: 'bg-[#4D96FF] text-black hover:bg-[#3B82F6]',
-  pharm: 'bg-[#FF9F45] text-black hover:bg-[#F97316]',
-  ghost: 'bg-transparent text-black dark:text-slate-100 hover:bg-black/5 dark:hover:bg-slate-800/50',
+  primary: 'bg-[#10A37F] text-white hover:bg-[#0E8C6D] active:bg-[#0D7A5F] border-0 shadow-xs',
+  secondary: 'bg-white dark:bg-[#212121] text-slate-800 dark:text-[#ECECEC] border border-slate-200 dark:border-[#2F2F2F] hover:bg-slate-50 dark:hover:bg-[#2A2A2A] shadow-xs',
+  success: 'bg-emerald-600 text-white hover:bg-emerald-700 border-0 shadow-xs',
+  danger: 'bg-rose-600 text-white hover:bg-rose-700 border-0 shadow-xs',
+  medchem: 'bg-blue-600 text-white hover:bg-blue-700 border-0 shadow-xs',
+  pharm: 'bg-amber-600 text-white hover:bg-amber-700 border-0 shadow-xs',
+  ghost: 'bg-transparent text-slate-700 dark:text-[#ECECEC] hover:bg-slate-100 dark:hover:bg-[#2F2F2F] border-0',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-xs font-bold gap-1.5',
-  md: 'px-4 py-2 text-sm font-bold gap-2',
-  lg: 'px-6 py-3 text-base font-bold gap-2.5',
+  sm: 'px-3 py-1.5 text-xs font-medium gap-1.5 rounded-lg',
+  md: 'px-4 py-2 text-sm font-medium gap-2 rounded-xl',
+  lg: 'px-6 py-2.5 text-base font-semibold gap-2.5 rounded-xl',
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -64,16 +64,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={isLoading}
         className={twMerge(
           clsx(
-            // Base structural Neo-Brutalist styles
-            'inline-flex items-center justify-center font-display tracking-tight uppercase select-none',
-            'border-3 border-black dark:border-slate-700 rounded-none',
-            'transition-all duration-150 ease-neo',
-            // Elevation & drop shadow
-            !isEffectiveDisabled && 'shadow-neo dark:shadow-neo-dark hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-neo-lg dark:hover:shadow-neo-dark-lg active:translate-x-1.5 active:translate-y-1.5 active:shadow-none',
+            // Modern ergonomic squircle standards (ChatGPT Obsidian palette)
+            'inline-flex items-center justify-center font-sans tracking-normal select-none transition-all duration-150',
             // Focus ring standards
-            'focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-black dark:focus-visible:ring-[#F59E0B] focus-visible:ring-offset-2',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10A37F] focus-visible:ring-offset-2',
             // Disabled / Loading state
-            isEffectiveDisabled && 'bg-gray-200 dark:bg-gray-800 text-gray-500 border-gray-400 dark:border-gray-600 shadow-none cursor-not-allowed',
+            isEffectiveDisabled && 'opacity-50 cursor-not-allowed shadow-none',
             variantStyles[variant],
             sizeStyles[size],
             fullWidth && 'w-full',
@@ -95,7 +91,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <span>Loading...</span>
+            <span>Yükleniyor...</span>
           </span>
         ) : (
           <>

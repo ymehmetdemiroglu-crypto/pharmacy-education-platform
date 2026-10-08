@@ -15,16 +15,20 @@ vi.mock('../context/TranslationContext', () => ({
 // Mutable mock user for auth testing
 let mockUser: any = null;
 
-// Mock platform useAuth
-vi.mock('@pharmacy/platform', () => ({
-  useAuth: () => ({
-    user: mockUser,
-    startTrial: vi.fn(),
-    logout: vi.fn(),
-    signInGuest: vi.fn(),
-  }),
-  OAuthProviderDisabledError: class extends Error {},
-}));
+// Mock platform useAuth while preserving other platform utilities
+vi.mock('@pharmacy/platform', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@pharmacy/platform')>();
+  return {
+    ...actual,
+    useAuth: () => ({
+      user: mockUser,
+      startTrial: vi.fn(),
+      logout: vi.fn(),
+      signInGuest: vi.fn(),
+    }),
+    OAuthProviderDisabledError: class extends Error {},
+  };
+});
 
 describe('PharmLearnStudioPage (Clean 2-Pane Study Workspace)', () => {
   beforeEach(() => {
@@ -169,7 +173,7 @@ describe('PharmLearnStudioPage (Clean 2-Pane Study Workspace)', () => {
     );
 
     // Click quick prompt chip
-    const chip = screen.getByText(/Dibukain molekülünün çoklu reseptör bağları nelerdir\?/i);
+    const chip = screen.getByText(/Dibukain SAR/i);
     fireEvent.click(chip);
 
     await waitFor(

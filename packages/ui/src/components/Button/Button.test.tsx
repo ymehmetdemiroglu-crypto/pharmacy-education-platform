@@ -25,11 +25,10 @@ describe('Button Component', () => {
     expect(handleClick).not.toHaveBeenCalled();
   });
 
-  it('applies neo-brutalist border and shadow classes', () => {
+  it('applies primary button classes', () => {
     const { container } = render(<Button variant="primary">Neo Button</Button>);
     const btn = container.querySelector('button');
-    expect(btn).toHaveClass('border-3');
-    expect(btn).toHaveClass('border-black');
-    expect(btn).toHaveClass('shadow-neo');
+    expect(btn).toHaveClass('bg-[#10A37F]');
+    expect(btn).toHaveClass('text-white');
   });
 });

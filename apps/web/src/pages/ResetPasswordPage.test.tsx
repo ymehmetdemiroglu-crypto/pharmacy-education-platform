@@ -7,19 +7,25 @@ const mockUpdatePassword = vi.fn();
 const mockGetSession = vi.fn();
 const mockOnAuthStateChange = vi.fn();
 
-vi.mock('@pharmacy/platform', () => ({
-  useAuth: () => ({
-    user: { email: 'student@pharmacy.edu.tr' },
-    updatePassword: mockUpdatePassword,
-  }),
-  supabase: {
+vi.mock('@pharmacy/platform', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@pharmacy/platform')>();
+  const mockClient = {
     auth: {
       getSession: () => mockGetSession(),
       onAuthStateChange: (...args: any[]) => mockOnAuthStateChange(...args),
       updateUser: vi.fn(),
     },
-  },
-}));
+  };
+  return {
+    ...actual,
+    useAuth: () => ({
+      user: { email: 'student@pharmacy.edu.tr' },
+      updatePassword: mockUpdatePassword,
+    }),
+    supabase: mockClient,
+    getSupabase: () => mockClient,
+  };
+});
 
 vi.mock('../context/TranslationContext', () => ({
   useTranslation: () => ({

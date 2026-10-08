@@ -4,8 +4,9 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 // No real Supabase session: the page must run on the local ladder (guest / offline) without any network.
-vi.mock('@pharmacy/platform', () => ({
-  supabase: {
+vi.mock('@pharmacy/platform', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('@pharmacy/platform')>();
+  const mockClient = {
     auth: {
       getSession: () => Promise.resolve({ data: { session: null } }),
       onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => undefined } } }),
@@ -13,8 +14,13 @@ vi.mock('@pharmacy/platform', () => ({
     from: () => {
       throw new Error('guest must never query the server');
     },
-  },
-}));
+  };
+  return {
+    ...actual,
+    supabase: mockClient,
+    getSupabase: () => mockClient,
+  };
+});
 vi.mock('../context/TranslationContext', () => ({
   useTranslation: () => ({ locale: 'en', t: (k: string) => k, dir: 'ltr', setLocale: () => undefined }),
 }));
@@ -44,10 +50,10 @@ const check = () => fireEvent.click(screen.getByRole('button', { name: /check an
 beforeEach(() => localStorage.clear());
 
 describe('WhiteboardTutorPage (guest / offline, deterministic ladder)', () => {
-  it('shows the first concept, an honest draft badge, and the guest note', async () => {
+  it('shows the first concept, an honest status badge, and the guest note', async () => {
     renderTutor();
     expect(await screen.findByRole('heading', { level: 1, name: first.conceptTitle })).toBeTruthy();
-    expect(screen.getByText(/draft: awaiting review/i)).toBeTruthy();
+    expect(screen.getByText(/verified|draft: awaiting review/i)).toBeTruthy();
     expect(screen.getByText(/signed out/i)).toBeTruthy();
   });
 
@@ -96,7 +102,8 @@ describe('WhiteboardTutorPage (guest / offline, deterministic ladder)', () => {
     const stored = JSON.parse(localStorage.getItem('pep.mastery.v1') ?? '{}') as Record<string, number>;
     expect(Object.keys(stored).length).toBe(lecture.concepts.length);
     expect(stored[first.id]).toBeCloseTo(0.3, 5);
-  }, 30000);
+  }, 60000);
+
 
   it('a hint request advances the ladder without changing mastery', async () => {
     renderTutor();

@@ -37,4 +37,15 @@ describe('MinimalCourseDashboard', () => {
 
     expect(handleSelect).toHaveBeenCalledWith('medchem-1');
   });
+
+  it('opens DailyChallengeModal when Günün 10 Sorusuna Başla button is clicked', () => {
+    render(<MinimalCourseDashboard onSelectLecture={vi.fn()} />);
+
+    const dailyBtn = screen.getByRole('button', { name: /Günün 10 Sorusuna Başla/i });
+    fireEvent.click(dailyBtn);
+
+    expect(screen.getByText('Günün 10 Yüksek Verimli Vize Sorusu')).toBeDefined();
+    expect(screen.getByText(/Soru 1 \/ 10/i)).toBeDefined();
+  });
 });
+

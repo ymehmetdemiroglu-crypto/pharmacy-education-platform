@@ -15,21 +15,29 @@ import {
   AppstoreOutlined,
   FileTextOutlined,
   FolderOpenOutlined,
+  CrownOutlined,
+  ThunderboltOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
+import { DynamicLessonCanvas } from '../canvas/DynamicLessonCanvas';
 import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
+import { DailyChallengeModal } from '../study/DailyChallengeModal';
 import { ConnectivitySentinel } from '../common/ConnectivitySentinel';
+
 import { useAuth } from '@pharmacy/platform';
+import { PaywallModal } from '@pharmacy/ui';
+import { callCreateCheckoutSession } from '../../lib/billing';
+import { allClientLessons } from '../../data/curriculum.client';
 
 interface PharmLearnShellProps {
   onOpenAuthModal?: () => void;
 }
 
 export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModal }) => {
-  const { user, logout } = useAuth();
+  const { user, logout, startTrial } = useAuth();
 
   // Theme state: default dark per user PRD
   const [isDark, setIsDark] = useState<boolean>(() => {
@@ -42,6 +50,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
   });
 
   const [activeConceptId, setActiveConceptId] = useState<string>('rr:receptor_tanimi');
+  const [selectedLectureId, setSelectedLectureId] = useState<string>('medchem-1');
   const [tutorQuery, setTutorQuery] = useState<string | null>(null);
 
   // 2-Pane desktop layout state: open by default per /grill-me agreement
@@ -55,6 +64,13 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
 
   // Student Document Vault modal state
   const [isVaultOpen, setIsVaultOpen] = useState(false);
+
+  // Daily Challenge modal state
+  const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
+
+  // Academic Pass / Paywall modal state
+  const [isPaywallOpen, setIsPaywallOpen] = useState(false);
+
 
   useEffect(() => {
     if (isDark) {
@@ -126,80 +142,101 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
     }
   };
 
-  // Lecture directory menu items
+  // 22-Lesson Curriculum Definitions for MedChem and Pharmacology
+  const medchemLessons = [
+    { id: 'medchem-1', title: 'İlaç Reseptör Etkileşimi (Kimyasal Bağlar)', slides: '33 Slayt' },
+    { id: 'medchem-2', title: 'İyonlaşma Dengesi ve pH Bağımlı Dağılma', slides: '28 Slayt' },
+    { id: 'medchem-3', title: 'Lokal Anesteziklerde SAR ve İzosterizm', slides: '30 Slayt' },
+    { id: 'medchem-4', title: 'Genel Anesteziklerde Membran Etkileşimleri', slides: '26 Slayt' },
+    { id: 'medchem-5', title: 'Sedatif-Hipnotiklerde Kimyasal Sınıflandırma', slides: '32 Slayt' },
+    { id: 'medchem-6', title: 'Antiepileptik İlaçlarda Farmakofor Analizi', slides: '34 Slayt' },
+    { id: 'medchem-7', title: 'Antipsikotiklerde Fenotiyazin SAR ve Biyoizosterizm', slides: '35 Slayt' },
+    { id: 'medchem-8', title: 'Antidepresanlarda Geri Alım İnhibitör Yapıları', slides: '31 Slayt' },
+    { id: 'medchem-9', title: 'Opioid Analjeziklerde Morfinan İskeleti ve SAR', slides: '36 Slayt' },
+    { id: 'medchem-10', title: 'NSAİİ Ajanlarda Karboksilik Asit Türevleri', slides: '29 Slayt' },
+  ];
+
+  const pharmLessons = [
+    { id: 'pharm-1', title: 'Reseptör Tipleri ve Sinyal İletim Mekanizmaları', slides: '40 Slayt' },
+    { id: 'pharm-2', title: 'İkinci Haberciler (cAMP, IP3/DAG) ve Kaskatlar', slides: '35 Slayt' },
+    { id: 'pharm-3', title: 'Konsantrasyon-Etki İlişkileri ve Agonist Tipleri', slides: '32 Slayt' },
+    { id: 'pharm-4', title: 'Antagonizma Türleri (Yarışmalı vs Yarışmasız)', slides: '28 Slayt' },
+    { id: 'pharm-5', title: 'İlaç Absorpsiyonu ve Biyoyararlanım', slides: '30 Slayt' },
+    { id: 'pharm-6', title: 'Dağılım Hacmi ve Plazma Proteinlerine Bağlanma', slides: '33 Slayt' },
+    { id: 'pharm-7', title: 'Kolinerjik Sistem ve Reseptör Alt Tipleri', slides: '42 Slayt' },
+    { id: 'pharm-8', title: 'Adrenerjik Sistem ve Sempatomimetikler', slides: '38 Slayt' },
+    { id: 'pharm-9', title: 'Otonom Sinir Sistemi İlaç Etkileşimleri', slides: '36 Slayt' },
+    { id: 'pharm-10', title: 'Kardiyovasküler Farmakolojiye Giriş', slides: '45 Slayt' },
+    { id: 'pharm-11', title: 'Antihipertansif İlaç Grupları ve Mekanizmaları', slides: '40 Slayt' },
+    { id: 'pharm-12', title: 'Santral Sinir Sistemi Farmakolojisi ve Nörotransmisyon', slides: '44 Slayt' },
+  ];
+
   const lectureMenuItems: MenuProps['items'] = [
     {
-      key: 'course-header',
+      key: 'course-header-medchem',
       type: 'group',
       label: (
         <span className="flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-          <ExperimentOutlined className="text-sm" /> Farmasötik Kimya
+          <ExperimentOutlined className="text-sm" /> Farmasötik Kimya (10 Ders)
         </span>
       ),
-      children: [
-        {
-          key: 'medchem-1',
-          label: (
-            <div className="flex items-center justify-between gap-4 py-1">
-              <div>
-                <div className="font-semibold text-xs text-blue-600 dark:text-blue-400">
-                  İlaç Reseptör Etkileşimi (Kimyasal Bağlar)
-                </div>
-                <div className="text-[11px] text-gray-500">Prof. Dr. Bedia Kaymakçıoğlu • 33 Slayt</div>
+      children: medchemLessons.map((l) => ({
+        key: l.id,
+        label: (
+          <div className="flex items-center justify-between gap-4 py-1">
+            <div>
+              <div className={`font-semibold text-xs ${selectedLectureId === l.id ? 'text-blue-600 dark:text-blue-400' : 'text-slate-800 dark:text-[#ECECEC]'}`}>
+                {l.title}
               </div>
+              <div className="text-[11px] text-gray-500">{l.slides}</div>
+            </div>
+            {selectedLectureId === l.id && (
               <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 font-bold">
                 AKTİF
               </span>
-            </div>
-          ),
-        },
-        {
-          key: 'medchem-2',
-          disabled: true,
-          label: (
-            <div className="flex items-center justify-between gap-4 py-1 opacity-60">
-              <span className="text-xs">Fizikokimyasal Özellikler & İyonlaşma</span>
-              <span className="text-[10px] text-gray-400 font-mono">Yakında</span>
-            </div>
-          ),
-        },
-        {
-          key: 'medchem-3',
-          disabled: true,
-          label: (
-            <div className="flex items-center justify-between gap-4 py-1 opacity-60">
-              <span className="text-xs">İlaç Metabolizması (Faz I & II)</span>
-              <span className="text-[10px] text-gray-400 font-mono">Yakında</span>
-            </div>
-          ),
-        },
-      ],
+            )}
+          </div>
+        ),
+      })),
     },
     {
       type: 'divider',
     },
     {
-      key: 'pharm-header',
+      key: 'course-header-pharm',
       type: 'group',
       label: (
         <span className="flex items-center gap-1.5 text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">
-          <BookOutlined className="text-sm" /> Farmakoloji
+          <BookOutlined className="text-sm" /> Farmakoloji (12 Ders)
         </span>
       ),
-      children: [
-        {
-          key: 'pharm-1',
-          disabled: true,
-          label: (
-            <div className="flex items-center justify-between gap-4 py-1 opacity-60">
-              <span className="text-xs">Farmakodinamik & Reseptör Sinyal Yolakları</span>
-              <span className="text-[10px] text-gray-400 font-mono">Yakında</span>
+      children: pharmLessons.map((l) => ({
+        key: l.id,
+        label: (
+          <div className="flex items-center justify-between gap-4 py-1">
+            <div>
+              <div className={`font-semibold text-xs ${selectedLectureId === l.id ? 'text-amber-600 dark:text-amber-400' : 'text-slate-800 dark:text-[#ECECEC]'}`}>
+                {l.title}
+              </div>
+              <div className="text-[11px] text-gray-500">{l.slides}</div>
             </div>
-          ),
-        },
-      ],
+            {selectedLectureId === l.id && (
+              <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 font-bold">
+                AKTİF
+              </span>
+            )}
+          </div>
+        ),
+      })),
     },
   ];
+
+  const selectedLesson = allClientLessons[selectedLectureId] || allClientLessons['mc-mod1-les1'];
+  const isMedChem = selectedLectureId.startsWith('medchem') || selectedLesson?.courseId === 'medchem';
+  const courseDisplayPrefix = isMedChem ? 'Farmasötik Kimya ›' : 'Farmakoloji ›';
+  const lessonDisplayTitle = selectedLectureId === 'medchem-1'
+    ? 'İlaç Reseptör Etkileşimi'
+    : (typeof selectedLesson?.title === 'object' ? (selectedLesson.title.tr || selectedLectureId) : (selectedLesson?.title || selectedLectureId));
 
   return (
     <ConfigProvider
@@ -304,14 +341,23 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             />
 
             {/* Lecture Dropdown Selector */}
-            <Dropdown menu={{ items: lectureMenuItems }} trigger={['click']}>
+            <Dropdown
+              menu={{
+                items: lectureMenuItems,
+                onClick: ({ key }) => {
+                  setSelectedLectureId(key);
+                  setActiveView('canvas');
+                },
+              }}
+              trigger={['click']}
+            >
               <Button
                 type="text"
                 className="flex items-center gap-1.5 px-2 sm:px-3 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-all text-slate-700 dark:text-[#ECECEC]"
               >
-                <span className="text-gray-400 hidden md:inline">Farmasötik Kimya ›</span>
+                <span className="text-gray-400 hidden md:inline">{courseDisplayPrefix}</span>
                 <span className="font-semibold truncate max-w-[110px] sm:max-w-xs">
-                  İlaç Reseptör Etkileşimi
+                  {lessonDisplayTitle}
                 </span>
                 <DownOutlined className="text-[10px] text-gray-400" />
               </Button>
@@ -322,6 +368,18 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
           <div className="flex items-center gap-2">
             {/* Live Co-Presence & Pomodoro Indicator */}
             <CompactPulseIndicator />
+
+            {/* Academic Pass / Premium Modal Trigger */}
+            <Tooltip title="Akademik Paketler & Ücretsiz Deneme">
+              <Button
+                type="text"
+                onClick={() => setIsPaywallOpen(true)}
+                className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold text-[#10A37F] bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/60 shadow-2xs"
+                icon={<CrownOutlined className="text-[#10A37F] text-xs" />}
+              >
+                <span>Premium</span>
+              </Button>
+            </Tooltip>
 
             {/* Student Notes Vault Trigger */}
             <Tooltip title="Ders Notlarım & Doküman Deposu">
@@ -334,6 +392,19 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 <span>Notlarım</span>
               </Button>
             </Tooltip>
+
+            {/* Daily 10 High Yield Challenge Trigger */}
+            <Tooltip title="Günün 10 Yüksek Verimli Vize Sorusu (FSRS-4.5)">
+              <Button
+                type="text"
+                onClick={() => setIsDailyChallengeOpen(true)}
+                className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold text-amber-500 bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 shadow-2xs"
+                icon={<ThunderboltOutlined className="text-amber-500 text-xs" />}
+              >
+                <span>Günün 10'u ⚡</span>
+              </Button>
+            </Tooltip>
+
 
             {/* Theme Toggle */}
             <Tooltip title={isDark ? 'Açık Temaya Geç' : 'Koyu Temaya Geç'}>
@@ -393,7 +464,10 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
           {activeView === 'dashboard' ? (
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <MinimalCourseDashboard
-                onSelectLecture={(_id) => setActiveView('canvas')}
+                onSelectLecture={(id) => {
+                  setSelectedLectureId(id);
+                  setActiveView('canvas');
+                }}
                 onAskTutor={(prompt) => {
                   setActiveView('canvas');
                   handleAskTutor(prompt);
@@ -404,11 +478,18 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             <>
               {/* Main Study Canvas (Spacious Left/Center Pane) */}
               <main className="flex-1 h-full overflow-hidden flex flex-col">
-                <ArtifactCanvas
-                  onAskTutor={handleAskTutor}
-                  activeConceptId={activeConceptId}
-                  onActiveConceptChange={setActiveConceptId}
-                />
+                {selectedLectureId === 'medchem-1' ? (
+                  <ArtifactCanvas
+                    onAskTutor={handleAskTutor}
+                    activeConceptId={activeConceptId}
+                    onActiveConceptChange={setActiveConceptId}
+                  />
+                ) : (
+                  <DynamicLessonCanvas
+                    lessonId={selectedLectureId}
+                    onAskTutor={handleAskTutor}
+                  />
+                )}
               </main>
 
               {/* Right Pane: AI Socratic Tutor (Desktop) */}
@@ -464,6 +545,47 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
           open={isVaultOpen}
           onClose={() => setIsVaultOpen(false)}
           onAskTutorAboutExcerpt={handleAskTutor}
+        />
+
+        {/* Daily 10 High-Yield Challenge Loop Modal */}
+        <DailyChallengeModal
+          open={isDailyChallengeOpen}
+          onClose={() => setIsDailyChallengeOpen(false)}
+        />
+
+        {/* Academic Pass & Paywall Modal */}
+
+        <PaywallModal
+          isOpen={isPaywallOpen}
+          onClose={() => setIsPaywallOpen(false)}
+          canStartTrial={user?.plan === 'free' && !user?.trialUsed}
+          onStartTrial={async () => {
+            if (startTrial) {
+              await startTrial();
+            }
+            setIsPaywallOpen(false);
+          }}
+          onSelectPlan={async (plan) => {
+            const planIdMap: Record<string, 'monthly' | 'semester_pass' | 'annual'> = {
+              monthly: 'monthly',
+              semester: 'semester_pass',
+              annual: 'annual',
+            };
+            const mappedPlanId = planIdMap[plan] || 'semester_pass';
+            try {
+              const res = await callCreateCheckoutSession({
+                courseId: 'medchem',
+                planId: mappedPlanId,
+                currency: 'TRY',
+                returnUrl: `${window.location.origin}/studio?checkout=success`,
+              });
+              if (res?.data?.checkoutUrl) {
+                window.location.href = res.data.checkoutUrl;
+              }
+            } catch (e) {
+              console.error('Checkout error:', e);
+            }
+          }}
         />
       </div>
     </App>

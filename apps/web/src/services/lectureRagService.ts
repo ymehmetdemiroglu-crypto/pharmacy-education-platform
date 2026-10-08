@@ -238,6 +238,8 @@ export class LectureRagService {
           p_lecture_slug: targetCourse === 'pharmacology' ? 'farmakoloji-temelleri' : 'ilac-reseptor-etkilesimi',
           match_threshold: 0.5,
           match_count: limit,
+          query_text: q,
+          query_embedding: null,
         });
 
         if (!error && Array.isArray(data) && data.length > 0) {

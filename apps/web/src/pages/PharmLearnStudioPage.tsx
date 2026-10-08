@@ -16,11 +16,12 @@ export const PharmLearnStudioPage: React.FC = () => {
   const { user } = useAuth();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authDefaultTab, setAuthDefaultTab] = useState<'login' | 'signup'>('signup');
+  const [isGuestExploring, setIsGuestExploring] = useState(false);
 
   // A student is authenticated if they have a real Supabase user email (not guest)
   const isAuthenticated = Boolean(user && user.email && !user.userId.startsWith('guest-'));
 
-  if (isAuthenticated) {
+  if (isAuthenticated || isGuestExploring) {
     return (
       <div className="h-screen w-screen overflow-hidden">
         <PharmLearnShell
@@ -93,10 +94,7 @@ export const PharmLearnStudioPage: React.FC = () => {
               type="primary"
               size="large"
               icon={<RightOutlined />}
-              onClick={() => {
-                setAuthDefaultTab('signup');
-                setIsAuthModalOpen(true);
-              }}
+              onClick={() => setIsGuestExploring(true)}
               className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#10A37F] hover:bg-[#0E8C6D] text-white text-sm font-semibold px-6 h-11 rounded-xl shadow-xs border-0"
             >
               Öğrenmeye Başla

@@ -215,17 +215,42 @@ async function capture() {
         await page2.waitForTimeout(400);
       }
 
-      // 20. Synchronized Audio Karaoke Summary Bar
-      console.log('Capturing 20_audio_karaoke_summary.png...');
-      const playBtn = page2.locator('button:has(.anticon-caret-right)').first();
-      if (await playBtn.isVisible()) {
-        await playBtn.click();
-        await page2.waitForTimeout(600);
+      // 20. Modern ChatGPT Obsidian Auth Modal
+      console.log('Capturing 20_auth_modal_obsidian.png...');
+      const authCtx = await browser.newContext({
+        viewport: { width: 1440, height: 900 },
+        deviceScaleFactor: 2,
+      });
+      const authPage = await authCtx.newPage();
+      await authPage.goto(BASE_URL, { waitUntil: 'networkidle' });
+      await authPage.waitForTimeout(500);
+      const loginBtn = authPage.locator('button:has-text("Giriş Yap")').first();
+      if (await loginBtn.isVisible()) {
+        await loginBtn.click();
+        await authPage.waitForTimeout(600);
       }
-      await page2.screenshot({
-        path: path.join(OUTPUT_DIR, '20_audio_karaoke_summary.png'),
+      await authPage.screenshot({
+        path: path.join(OUTPUT_DIR, '20_auth_modal_obsidian.png'),
         fullPage: false,
       });
+      await authCtx.close();
+
+      // 23. Modern ChatGPT Obsidian Paywall Modal
+      console.log('Capturing 23_paywall_modal_obsidian.png...');
+      const premiumBtn = page2.locator('button:has-text("Premium")').first();
+      if (await premiumBtn.isVisible()) {
+        await premiumBtn.click();
+        await page2.waitForTimeout(600);
+        await page2.screenshot({
+          path: path.join(OUTPUT_DIR, '23_paywall_modal_obsidian.png'),
+          fullPage: false,
+        });
+        const closeBtn = page2.locator('button:has-text("Ders 1 ve 2 ile Ücretsiz Devam Et")').first();
+        if (await closeBtn.isVisible()) {
+          await closeBtn.click();
+          await page2.waitForTimeout(400);
+        }
+      }
     }
 
     // 4. Focus on 3D Molecular Viewer & SAR Matrix

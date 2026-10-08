@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '@pharmacy/ui';
 import { useAuth } from '@pharmacy/platform';
-import { Button, StickerBadge } from '@pharmacy/ui';
+import { StickerBadge } from '@pharmacy/ui';
 import { Sun, Moon, Sparkles, BookOpen, Layers, CreditCard, LogIn, User, RotateCw } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
 import { FREE_PILOT_MODE } from '../lib/billing';
@@ -29,28 +29,28 @@ export const Navbar: React.FC = () => {
   ].filter((link) => !(FREE_PILOT_MODE && link.to === '/pricing'));
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-white dark:bg-[#131B2A] border-b-3 border-black dark:border-slate-700 shadow-[0_4px_0_0_#000000] dark:shadow-[0_4px_0_0_#030712]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2 sm:gap-4">
+    <header className="sticky top-0 z-40 w-full bg-white/90 dark:bg-[#171717]/90 backdrop-blur-sm border-b border-slate-200 dark:border-[#2F2F2F] transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Logo */}
         <Link
-          to="/gallery"
+          to="/studio"
           className="flex items-center gap-2 select-none group focus:outline-none"
         >
-          <div className="w-9 h-9 bg-[#FFD93D] text-black border-3 border-black flex items-center justify-center font-black text-lg shadow-[2px_2px_0px_#000000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
-            Rx
+          <div className="w-8 h-8 rounded-xl bg-[#10A37F] text-white flex items-center justify-center font-bold text-sm shadow-xs transition-transform group-hover:scale-105">
+            PL
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-black text-base sm:text-lg uppercase tracking-tight text-black dark:text-slate-100 leading-none">
+            <span className="font-sans font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-[#ECECEC] leading-none">
               {t('navbar.brandName')}
             </span>
-            <span className="text-[10px] font-mono text-gray-600 dark:text-slate-400 uppercase tracking-wider">
+            <span className="text-[10px] font-sans text-slate-500 dark:text-slate-400">
               {t('navbar.brandSubtitle')}
             </span>
           </div>
         </Link>
 
         {/* Navigation items */}
-        <nav className="hidden lg:flex items-center gap-1 font-mono text-xs font-bold uppercase">
+        <nav className="hidden lg:flex items-center gap-1 font-sans text-xs font-medium">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             const Icon = link.icon;
@@ -58,10 +58,10 @@ export const Navbar: React.FC = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-2 border-2 transition-all flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-xl transition-all flex items-center gap-1.5 ${
                   isActive
-                    ? 'bg-[#FFD93D] text-black border-black shadow-[2px_2px_0px_#000000]'
-                    : 'bg-transparent border-transparent hover:border-black/30 dark:hover:border-slate-600 text-black dark:text-slate-200'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 text-[#10A37F] dark:text-[#10A37F] font-semibold border border-emerald-200/60 dark:border-emerald-900/60'
+                    : 'text-slate-600 dark:text-[#B4B4B4] hover:bg-slate-100 dark:hover:bg-[#252525] hover:text-slate-900 dark:hover:text-white'
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -72,13 +72,17 @@ export const Navbar: React.FC = () => {
         </nav>
 
         {/* Controls: Locales, Theme, Trial Action */}
-        <div className="flex items-center gap-1.5 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           {/* Multilingual Locale Picker (TR default primary, AR RTL, EN) */}
-          <div className="flex items-center border-2 border-black dark:border-slate-700 text-xs font-mono font-bold">
+          <div className="flex items-center rounded-xl border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#212121] p-0.5 text-xs font-medium">
             <button
               type="button"
               onClick={() => handleLocaleChange('tr')}
-              className={`px-1.5 sm:px-2.5 py-1 ${locale === 'tr' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-2 py-0.5 rounded-lg transition-colors cursor-pointer ${
+                locale === 'tr'
+                  ? 'bg-white dark:bg-[#2F2F2F] text-slate-900 dark:text-white shadow-xs font-semibold'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
               title="Türkçe (Varsayılan)"
             >
               TR
@@ -86,7 +90,11 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLocaleChange('ar')}
-              className={`px-1.5 sm:px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'ar' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-2 py-0.5 rounded-lg transition-colors cursor-pointer ${
+                locale === 'ar'
+                  ? 'bg-white dark:bg-[#2F2F2F] text-slate-900 dark:text-white shadow-xs font-semibold'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
               title="العربية (RTL)"
             >
               AR
@@ -94,7 +102,11 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => handleLocaleChange('en')}
-              className={`px-1.5 sm:px-2.5 py-1 border-l border-black dark:border-slate-700 ${locale === 'en' ? 'bg-black text-white dark:bg-amber-400 dark:text-black' : 'hover:bg-gray-100 dark:hover:bg-slate-800 text-black dark:text-slate-200'}`}
+              className={`px-2 py-0.5 rounded-lg transition-colors cursor-pointer ${
+                locale === 'en'
+                  ? 'bg-white dark:bg-[#2F2F2F] text-slate-900 dark:text-white shadow-xs font-semibold'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+              }`}
               title="English"
             >
               EN
@@ -106,12 +118,12 @@ export const Navbar: React.FC = () => {
             type="button"
             onClick={toggleTheme}
             aria-label={t('navbar.toggleTheme')}
-            className="p-1.5 border-2 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#1E293B] shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] active:translate-x-0.5 active:translate-y-0.5 transition-transform"
+            className="p-2 rounded-xl border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#212121] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#2A2A2A] transition-colors cursor-pointer"
           >
             {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-[#FFD93D]" />
+              <Sun className="w-3.5 h-3.5 text-amber-400" />
             ) : (
-              <Moon className="w-4 h-4 text-black" />
+              <Moon className="w-3.5 h-3.5 text-slate-700" />
             )}
           </button>
 
@@ -125,23 +137,22 @@ export const Navbar: React.FC = () => {
               {t('navbar.passActive')}
             </StickerBadge>
           ) : FREE_PILOT_MODE ? null : (
-            <Button
-              size="sm"
-              variant="primary"
+            <button
+              type="button"
               onClick={startTrial}
-              className="hidden sm:inline-flex"
-              leftIcon={<Sparkles className="w-3.5 h-3.5" />}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#10A37F] hover:bg-[#0E8C6D] active:bg-[#0C7A5F] text-white text-xs font-medium transition-colors shadow-xs cursor-pointer"
             >
-              {t('navbar.freeTrial')}
-            </Button>
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{t('navbar.freeTrial')}</span>
+            </button>
           )}
 
           {/* Student Auth / Login Button */}
           {user?.email ? (
-            <div className="flex items-center gap-1.5 font-mono text-xs">
+            <div className="flex items-center gap-1.5 text-xs font-medium">
               <Link
                 to="/settings"
-                className="hidden lg:inline-flex items-center gap-1 font-bold text-gray-800 dark:text-slate-200 hover:text-[#4D96FF] transition-colors"
+                className="hidden lg:inline-flex items-center gap-1 text-slate-700 dark:text-[#ECECEC] hover:text-[#10A37F] transition-colors px-2 py-1"
                 title="Hesap Ayarları / Settings"
               >
                 <User className="w-3.5 h-3.5" />
@@ -149,25 +160,23 @@ export const Navbar: React.FC = () => {
                   {user.displayName || user.email.split('@')[0]}
                 </span>
               </Link>
-              <Button
-                size="sm"
-                variant="ghost"
+              <button
+                type="button"
                 onClick={logout}
-                className="text-xs py-1 px-2 border-2 border-black dark:border-slate-700 hover:bg-rose-100 dark:hover:bg-rose-950/40"
+                className="text-xs py-1.5 px-2.5 rounded-xl border border-slate-200 dark:border-[#2F2F2F] hover:bg-rose-50 dark:hover:bg-rose-950/30 text-rose-600 dark:text-rose-400 font-medium transition-colors cursor-pointer"
               >
                 {t('navbar.logout')}
-              </Button>
+              </button>
             </div>
           ) : (
-            <Button
-              size="sm"
-              variant="secondary"
+            <button
+              type="button"
               onClick={() => setAuthModalOpen(true)}
-              className="text-xs py-1 px-2 sm:px-3 border-2 border-black dark:border-slate-700"
-              leftIcon={<LogIn className="hidden sm:block w-3.5 h-3.5" />}
+              className="text-xs py-1.5 px-3 rounded-xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#212121] hover:bg-slate-50 dark:hover:bg-[#2A2A2A] text-slate-800 dark:text-[#ECECEC] font-medium flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
             >
-              {t('navbar.login')}
-            </Button>
+              <LogIn className="hidden sm:block w-3.5 h-3.5" />
+              <span>{t('navbar.login')}</span>
+            </button>
           )}
         </div>
       </div>

@@ -114,7 +114,7 @@ export const PricingPage: React.FC = () => {
   return (
     <div className="w-full pb-20 space-y-12">
       {/* Hero Header */}
-      <section className="bg-[#FFF8E7] dark:bg-[#0B0F17] border-b-3 border-black dark:border-slate-700 py-12 px-4 sm:px-6">
+      <section className="bg-white dark:bg-[#171717] border-b border-slate-200 dark:border-[#2F2F2F] py-12 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <StickerBadge variant="green" size="sm">
@@ -124,10 +124,10 @@ export const PricingPage: React.FC = () => {
               {copy.badgeTrial}
             </StickerBadge>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-slate-100">
+          <h1 className="font-extrabold text-3xl sm:text-5xl tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {copy.heroTitle}
           </h1>
-          <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-2xl leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-[#8E8E8E] max-w-2xl leading-relaxed">
             {copy.heroDesc}
           </p>
         </div>
@@ -136,29 +136,29 @@ export const PricingPage: React.FC = () => {
       {/* Guaranteed Free Tier Highlights */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#6BCB77] border-2 border-black flex items-center justify-center font-bold text-black shrink-0">
-              <ShieldCheck className="w-6 h-6 stroke-[2.5]" />
+          <div className="p-4 bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 rounded-xl shadow-xs flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/60 flex items-center justify-center text-[#10A37F] shrink-0">
+              <ShieldCheck className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 block">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-800 dark:text-emerald-300 block">
                 {t('catalog.freemiumBadge')}
               </span>
-              <p className="font-display font-black text-sm sm:text-base text-black dark:text-slate-100 leading-snug">
+              <p className="font-bold text-sm sm:text-base text-slate-900 dark:text-[#ECECEC] leading-snug">
                 {copy.guaranteeFreeLessons}
               </p>
             </div>
           </div>
 
-          <div className="p-4 bg-[#FFD93D]/25 dark:bg-[#FFD93D]/10 border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#FFD93D] border-2 border-black flex items-center justify-center font-bold text-black shrink-0">
-              <Sparkles className="w-6 h-6 text-black" />
+          <div className="p-4 bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-xl shadow-xs flex items-center gap-3.5">
+            <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/60 flex items-center justify-center text-amber-600 shrink-0">
+              <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <span className="font-mono text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300 block">
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-amber-800 dark:text-amber-300 block">
                 {t('pricing.riskFreeStart')}
               </span>
-              <p className="font-display font-black text-sm sm:text-base text-black dark:text-slate-100 leading-snug">
+              <p className="font-bold text-sm sm:text-base text-slate-900 dark:text-[#ECECEC] leading-snug">
                 {copy.guaranteeCardlessTrial}
               </p>
             </div>
@@ -168,40 +168,42 @@ export const PricingPage: React.FC = () => {
 
       {/* Pricing Controls: Bundle Scope in strictly TRY */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-3.5 bg-white dark:bg-[#171717] rounded-xl border border-slate-200 dark:border-[#2F2F2F] shadow-xs">
           {/* Bundle Toggle */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300 mr-2">
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-medium text-slate-500 dark:text-[#8E8E8E]">
               {copy.scopeLabel}
             </span>
-            <button
-              type="button"
-              onClick={() => setIsBundle(false)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-colors ${
-                !isBundle
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
-              }`}
-            >
-              {copy.singleCourse}
-            </button>
-            <button
-              type="button"
-              onClick={() => setIsBundle(true)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-colors ${
-                isBundle
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
-              }`}
-            >
-              {copy.dualBundle}
-            </button>
+            <div className="flex items-center p-0.5 bg-slate-100 dark:bg-[#212121] rounded-xl border border-slate-200 dark:border-[#2F2F2F]">
+              <button
+                type="button"
+                onClick={() => setIsBundle(false)}
+                className={`px-3 py-1 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+                  !isBundle
+                    ? 'bg-white dark:bg-[#2F2F2F] text-slate-900 dark:text-white shadow-xs font-semibold'
+                    : 'text-slate-600 dark:text-[#8E8E8E] hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                {copy.singleCourse}
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsBundle(true)}
+                className={`px-3 py-1 text-xs font-medium rounded-lg transition-all cursor-pointer ${
+                  isBundle
+                    ? 'bg-white dark:bg-[#2F2F2F] text-slate-900 dark:text-white shadow-xs font-semibold'
+                    : 'text-slate-600 dark:text-[#8E8E8E] hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                {copy.dualBundle}
+              </button>
+            </div>
           </div>
 
           {/* Strictly Turkish Lira Indicator */}
-          <div className="flex items-center gap-1.5 font-mono text-xs">
-            <span className="px-3 py-1 bg-black text-white dark:bg-[#1E293B] dark:text-slate-100 font-bold border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-1">
-              <Zap className="w-3.5 h-3.5 text-[#FFD93D]" />
+          <div className="flex items-center gap-1.5 text-xs">
+            <span className="px-2.5 py-0.5 rounded-full font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60 flex items-center gap-1">
+              <Zap className="w-3.5 h-3.5 text-emerald-500" />
               <span>{copy.currencyBadge}</span>
             </span>
           </div>
@@ -212,28 +214,28 @@ export const PricingPage: React.FC = () => {
           {/* Monthly */}
           <Card variant="default" className="p-6 space-y-5 flex flex-col justify-between">
             <div className="space-y-3">
-              <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">
+              <span className="text-xs font-semibold text-slate-600 dark:text-[#8E8E8E]">
                 {copy.monthlyTitle}
               </span>
               <div className="flex items-baseline gap-1" dir="ltr">
-                <span className="font-display font-black text-4xl">{active.monthly}</span>
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">{copy.monthlyPeriod}</span>
+                <span className="font-extrabold text-3xl text-slate-900 dark:text-[#ECECEC]">{active.monthly}</span>
+                <span className="text-xs text-slate-500 dark:text-[#8E8E8E]">{copy.monthlyPeriod}</span>
               </div>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-slate-500 dark:text-[#8E8E8E]">
                 {copy.monthlyDesc}
               </p>
-              <ul className="space-y-2 pt-2 text-xs font-mono">
+              <ul className="space-y-2 pt-2 text-xs text-slate-700 dark:text-[#CCCCCC]">
                 {copy.features.monthly.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
+                    <Check className="w-4 h-4 text-[#10A37F] shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
             {errorMessage && (
-              <div className="p-3 bg-red-100 dark:bg-red-950/60 border-2 border-red-600 text-red-800 dark:text-red-200 text-xs font-mono flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 shrink-0 text-red-600" />
+              <div className="p-3 bg-red-50 dark:bg-red-950/60 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-300 text-xs rounded-xl flex items-center gap-2">
+                <AlertTriangle className="w-4 h-4 shrink-0 text-red-500" />
                 <span>{errorMessage}</span>
               </div>
             )}
@@ -251,28 +253,28 @@ export const PricingPage: React.FC = () => {
           <Card
             variant="default"
             elevated
-            className="p-6 space-y-5 flex flex-col justify-between relative bg-[#FFFDF7] dark:bg-[#131B2A] ring-3 ring-black dark:ring-amber-500 scale-[102%] z-10"
+            className="p-6 space-y-5 flex flex-col justify-between relative border-2 border-[#10A37F] bg-emerald-50/20 dark:bg-emerald-950/20 shadow-sm scale-[101%] z-10"
           >
-            <div className="absolute -top-3.5 start-6">
-              <StickerBadge variant="green" size="md">
+            <div className="absolute -top-3 start-6">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#10A37F] text-white shadow-xs">
                 {copy.semesterBadge}
-              </StickerBadge>
+              </span>
             </div>
             <div className="space-y-3 pt-2">
-              <span className="text-xs font-mono font-bold uppercase text-emerald-700 dark:text-emerald-400">
+              <span className="text-xs font-bold text-[#10A37F]">
                 {copy.semesterTitle}
               </span>
               <div className="flex items-baseline gap-1" dir="ltr">
-                <span className="font-display font-black text-4xl">{active.semester}</span>
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">{copy.semesterPeriod}</span>
+                <span className="font-extrabold text-3xl text-slate-900 dark:text-[#ECECEC]">{active.semester}</span>
+                <span className="text-xs text-slate-500 dark:text-[#8E8E8E]">{copy.semesterPeriod}</span>
               </div>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-slate-500 dark:text-[#8E8E8E]">
                 {copy.semesterDesc}
               </p>
-              <ul className="space-y-2 pt-2 text-xs font-mono">
+              <ul className="space-y-2 pt-2 text-xs text-slate-700 dark:text-[#CCCCCC]">
                 {copy.features.semester.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-emerald-700 dark:text-emerald-400 shrink-0" />
+                    <Check className="w-4 h-4 text-[#10A37F] shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -291,26 +293,26 @@ export const PricingPage: React.FC = () => {
 
           {/* Annual (Best Value) */}
           <Card variant="default" className="p-6 space-y-5 flex flex-col justify-between relative">
-            <div className="absolute -top-3 start-6">
-              <StickerBadge variant="yellow" size="sm">
+            <div className="absolute -top-2.5 start-6">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-white shadow-xs">
                 {copy.annualBadge}
-              </StickerBadge>
+              </span>
             </div>
             <div className="space-y-3 pt-1">
-              <span className="text-xs font-mono font-bold uppercase text-amber-700 dark:text-amber-400">
+              <span className="text-xs font-bold text-amber-600 dark:text-amber-400">
                 {copy.annualTitle}
               </span>
               <div className="flex items-baseline gap-1" dir="ltr">
-                <span className="font-display font-black text-4xl">{active.annual}</span>
-                <span className="font-mono text-xs text-gray-700 dark:text-gray-300">{copy.annualPeriod}</span>
+                <span className="font-extrabold text-3xl text-slate-900 dark:text-[#ECECEC]">{active.annual}</span>
+                <span className="text-xs text-slate-500 dark:text-[#8E8E8E]">{copy.annualPeriod}</span>
               </div>
-              <p className="text-xs text-gray-600 dark:text-gray-400">
+              <p className="text-xs text-slate-500 dark:text-[#8E8E8E]">
                 {copy.annualDesc}
               </p>
-              <ul className="space-y-2 pt-2 text-xs font-mono">
+              <ul className="space-y-2 pt-2 text-xs text-slate-700 dark:text-[#CCCCCC]">
                 {copy.features.annual.map((feat, idx) => (
                   <li key={idx} className="flex items-center gap-2">
-                    <Check className="w-4 h-4 text-amber-700 dark:text-amber-400 shrink-0" />
+                    <Check className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -328,13 +330,13 @@ export const PricingPage: React.FC = () => {
         </div>
 
         {/* 7-Day Free Trial Banner */}
-        <div className="p-6 bg-[#FFF8E7] dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-6 bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 rounded-2xl shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1">
-            <h3 className="font-display font-black text-lg uppercase flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-amber-700 dark:text-amber-400" />
+            <h3 className="font-bold text-base text-slate-900 dark:text-[#ECECEC] flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               {copy.trialBannerTitle}
             </h3>
-            <p className="text-xs font-body text-gray-700 dark:text-gray-300">
+            <p className="text-xs text-slate-600 dark:text-[#8E8E8E]">
               {copy.trialBannerDesc}
             </p>
           </div>

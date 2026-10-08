@@ -120,16 +120,16 @@ export const CatalogPage: React.FC = () => {
   return (
     <div className="w-full pb-20 space-y-12">
       {/* Catalog Hero */}
-      <section className="bg-[#FFF8E7] dark:bg-[#0B0F17] border-b-3 border-black dark:border-slate-700 py-12 px-4 sm:px-6">
+      <section className="bg-white dark:bg-[#171717] border-b border-slate-200 dark:border-[#2F2F2F] py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
             <StickerBadge variant="green" size="sm">{copy.freemiumBadge}</StickerBadge>
             <StickerBadge variant="yellow" size="sm">{copy.freeLessonsBadge}</StickerBadge>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-slate-100">
+          <h1 className="font-extrabold text-3xl sm:text-5xl tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {copy.heroTitle}
           </h1>
-          <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 dark:text-[#8E8E8E] max-w-3xl leading-relaxed">
             {copy.heroDesc}
           </p>
         </div>
@@ -145,38 +145,38 @@ export const CatalogPage: React.FC = () => {
             className="p-6 sm:p-8 space-y-6"
           >
             {/* Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-black/20 dark:border-slate-700 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
               <div className="space-y-1">
                 <StickerBadge variant={course.badgeColor} size="sm">
                   {course.code}
                 </StickerBadge>
-                <h2 className="font-display font-black text-2xl sm:text-3xl uppercase tracking-tight">
+                <h2 className="font-extrabold text-2xl sm:text-3xl tracking-tight text-slate-900 dark:text-[#ECECEC]">
                   {course.title}
                 </h2>
-                <p className="font-body text-sm font-semibold text-gray-600 dark:text-gray-400">
+                <p className="text-sm font-medium text-slate-500 dark:text-[#8E8E8E]">
                   {course.tagline}
                 </p>
               </div>
 
-              <div className="flex items-center gap-4 text-xs font-mono">
+              <div className="flex items-center gap-4 text-xs text-slate-500 dark:text-[#8E8E8E]">
                 <div className="flex items-center gap-1.5">
-                  <Layers className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+                  <Layers className="w-4 h-4 text-slate-500 dark:text-[#8E8E8E]" />
                   <span>{copy.modulesCountLabel(course.modulesCount, course.totalLessons)}</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4 text-gray-700 dark:text-gray-300" />
+                  <Clock className="w-4 h-4 text-slate-500 dark:text-[#8E8E8E]" />
                   <span>{copy.hoursLabel(course.estimatedHours)}</span>
                 </div>
               </div>
             </div>
 
-            <p className="font-body text-sm leading-relaxed text-gray-800 dark:text-gray-200 max-w-4xl">
+            <p className="text-sm leading-relaxed text-slate-700 dark:text-[#CCCCCC] max-w-4xl">
               {course.description}
             </p>
 
             {/* Exam Alignment */}
-            <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 flex items-center gap-2 text-xs font-mono">
-              <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+            <div className="p-3.5 bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60 rounded-xl flex items-center gap-2.5 text-xs text-slate-800 dark:text-[#ECECEC]">
+              <ShieldCheck className="w-4 h-4 text-[#10A37F] shrink-0" />
               <span>
                 {copy.examAlignmentLabel} <strong>{course.examAlignment}</strong>
               </span>
@@ -184,7 +184,7 @@ export const CatalogPage: React.FC = () => {
 
             {/* Modules List */}
             <div className="space-y-3">
-              <h3 className="font-mono font-bold text-xs uppercase tracking-wider text-gray-700 dark:text-gray-300">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-[#8E8E8E]">
                 {copy.curriculumTitle}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -192,17 +192,17 @@ export const CatalogPage: React.FC = () => {
                   <Link
                     key={m.id}
                     to={`/courses/${course.id}/lessons/${idx * 5 + 1}`}
-                    className="p-3 bg-gray-50 hover:bg-amber-50 dark:bg-[#1E293B] dark:hover:bg-[#28384E] border-2 border-black dark:border-slate-700 flex items-center justify-between gap-2 transition-colors cursor-pointer group"
+                    className="p-3.5 bg-slate-50 hover:bg-emerald-50/40 dark:bg-[#212121] dark:hover:bg-[#2A2A2A] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex items-center justify-between gap-2 transition-colors cursor-pointer group shadow-2xs"
                   >
                     <div className="space-y-0.5">
-                      <span className="text-[10px] font-mono font-semibold text-gray-700 dark:text-gray-300 uppercase">
+                      <span className="text-[10px] font-semibold text-slate-500 dark:text-[#8E8E8E] uppercase">
                         {copy.moduleNumber(idx + 1)}
                       </span>
-                      <h4 className="font-display font-bold text-xs sm:text-sm group-hover:text-[#4D96FF] transition-colors">
+                      <h4 className="font-semibold text-xs sm:text-sm text-slate-900 dark:text-[#ECECEC] group-hover:text-[#10A37F] transition-colors">
                         {m.name}
                       </h4>
                     </div>
-                    <span className="shrink-0 text-[10px] font-mono font-bold bg-[#6BCB77] text-black px-1.5 py-0.5 border border-black shadow-[1px_1px_0px_#000000]">
+                    <span className="shrink-0 text-[10px] font-semibold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800/60">
                       {copy.freeLessonsTag}
                     </span>
                   </Link>
@@ -211,12 +211,12 @@ export const CatalogPage: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <div className="pt-2 flex flex-wrap items-center justify-between gap-4 border-t-2 border-black/20 dark:border-slate-700">
-              <span className="text-xs font-mono text-gray-600 dark:text-gray-400 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <div className="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-slate-200 dark:border-[#2F2F2F]">
+              <span className="text-xs text-slate-500 dark:text-[#8E8E8E] flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-[#10A37F]" />
                 {copy.noCreditCard}
               </span>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2.5">
                 <Link to={`/courses/${course.id}/lessons/1`}>
                   <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4 rtl:rotate-180" />}>
                     {copy.startFreeLessonBtn}

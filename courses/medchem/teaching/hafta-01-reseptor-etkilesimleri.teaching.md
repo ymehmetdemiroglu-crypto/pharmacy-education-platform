@@ -17,7 +17,7 @@
 <!-- CONCEPT: rr:receptor_tanimi -->
 ## Konsept 1: Reseptör ve bağ gücü dengesi
 * **Slayt Kaynağı:** 2, 3, 5, 6
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -63,7 +63,7 @@
 <!-- CONCEPT: rr:kovalan_baglar -->
 ## Konsept 2: Kovalan bağlar
 * **Slayt Kaynağı:** 9, 10, 11, 12, 13
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -113,7 +113,7 @@
 <!-- CONCEPT: rr:iyonik_bag -->
 ## Konsept 3: İyonik bağ
 * **Slayt Kaynağı:** 13, 14
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `PredictThenReveal`
 
 ### Bilimsel Öz
@@ -162,7 +162,7 @@
 <!-- CONCEPT: rr:hidrojen_bagi -->
 ## Konsept 4: Hidrojen bağı (donör ve akseptör)
 * **Slayt Kaynağı:** 15, 16, 17
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -209,7 +209,7 @@
 <!-- CONCEPT: rr:hbag_ozellik_etkisi -->
 ## Konsept 5: Hidrojen bağı özellikleri ve etkiyi değiştirir
 * **Slayt Kaynağı:** 19
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -254,7 +254,7 @@
 <!-- CONCEPT: rr:iyon_dipol_dipol_dipol -->
 ## Konsept 6: İyon-dipol ve dipol-dipol etkileşimleri
 * **Slayt Kaynağı:** 20, 21
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -299,7 +299,7 @@
 <!-- CONCEPT: rr:yuk_transferi -->
 ## Konsept 7: Yük transfer etkileşimleri
 * **Slayt Kaynağı:** 22, 23
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -345,7 +345,7 @@
 <!-- CONCEPT: rr:vdw_hidrofobik -->
 ## Konsept 8: Van der Waals ve hidrofobik etkileşimler
 * **Slayt Kaynağı:** 24, 25
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `PredictThenReveal`
 
 ### Bilimsel Öz
@@ -392,7 +392,7 @@
 <!-- CONCEPT: rr:selasyon -->
 ## Konsept 9: Şelasyon ve dişlilik
 * **Slayt Kaynağı:** 26, 28, 30
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `MultipleChoice`
 
 ### Bilimsel Öz
@@ -440,7 +440,7 @@
 <!-- CONCEPT: rr:dibukain_entegrasyon -->
 ## Konsept 10: Entegrasyon görevi: Dibukain
 * **Slayt Kaynağı:** 33
-* **Durum:** draft
+* **Durum:** verified
 * **Widget Türü:** `ReceptorLigandMatcher`
 
 ### Bilimsel Öz

@@ -34,7 +34,10 @@ export const App: React.FC = () => {
   };
 
   const location = useLocation();
-  const isStudio = location.pathname === '/' || location.pathname === '/studio';
+  const isStudio =
+    location.pathname === '/' ||
+    location.pathname === '/studio' ||
+    location.pathname.startsWith('/workspace');
 
   if (isStudio) {
     return (
@@ -53,7 +56,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFF8E7] dark:bg-[#0B0F17] text-black dark:text-[#F1F5F9] transition-colors duration-150">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] transition-colors duration-150">
       <Navbar />
 
       {/* Account Plan Status Banner */}
@@ -84,6 +87,8 @@ export const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<PharmLearnStudioPage />} />
               <Route path="/studio" element={<PharmLearnStudioPage />} />
+              <Route path="/workspace" element={<PharmLearnStudioPage />} />
+              <Route path="/workspace/:courseId/:lessonId" element={<PharmLearnStudioPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/tutor/:lectureSlug" element={<WhiteboardTutorPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
@@ -107,35 +112,35 @@ export const App: React.FC = () => {
         </ErrorBoundary>
       </main>
 
-      {/* Neo-Brutalist Footer */}
-      <footer className="border-t-3 border-black dark:border-slate-700 bg-white dark:bg-[#131B2A] py-8 px-4 sm:px-6 text-black dark:text-slate-100">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono">
+      {/* Modern Studio Footer */}
+      <footer className="border-t border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] py-6 px-4 sm:px-6 text-slate-800 dark:text-[#ECECEC] transition-colors">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-sans">
           <div className="flex flex-col gap-1 text-center sm:text-start">
-            <span className="font-bold uppercase tracking-wider">
+            <span className="font-semibold tracking-tight text-slate-900 dark:text-[#ECECEC]">
               {t('footer.platformName')}
             </span>
-            <span className="text-gray-700 dark:text-slate-300">
+            <span className="text-slate-500 dark:text-[#8E8E8E]">
               {t('footer.tagline')}
             </span>
-            <div className="flex flex-wrap gap-4 mt-2 text-[11px] font-mono">
-              <Link to="/terms" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
+            <div className="flex flex-wrap gap-4 mt-2 text-[11px] font-sans">
+              <Link to="/terms" className="hover:underline text-slate-600 dark:text-slate-400">
                 {t('footer.terms')}
               </Link>
-              <Link to="/privacy" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
+              <Link to="/privacy" className="hover:underline text-slate-600 dark:text-slate-400">
                 {t('footer.privacy')}
               </Link>
-              <Link to="/refund" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
+              <Link to="/refund" className="hover:underline text-slate-600 dark:text-slate-400">
                 {t('footer.refund')}
               </Link>
-              <Link to="/settings" className="hover:underline font-bold text-gray-800 dark:text-slate-200">
+              <Link to="/settings" className="hover:underline text-slate-600 dark:text-slate-400">
                 {t('footer.settings')}
               </Link>
             </div>
           </div>
 
-          <div className="text-center sm:text-end text-gray-700 dark:text-slate-300">
+          <div className="text-center sm:text-end text-slate-500 dark:text-[#8E8E8E]">
             <p>{t('footer.curriculumBadge')}</p>
-            <p className="text-[11px] text-gray-600 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5">
               {t('footer.slideCitation')}
             </p>
           </div>

@@ -43,6 +43,7 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
   const [inputVal, setInputVal] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [activeNudge, setActiveNudge] = useState<MisconceptionAlert | null>(null);
+  const [isChipsDismissed, setIsChipsDismissed] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -230,11 +231,14 @@ export const TutorChatPane: React.FC<TutorChatPaneProps> = ({
       )}
 
       {/* Prompt Suggestion Chips & Input */}
-      <div className="p-3 border-t border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] flex flex-col gap-2">
-        <PromptSuggestionChips
-          disabled={isLoading}
-          onSelectPrompt={(prompt) => handleSendMessage(prompt)}
-        />
+      <div className="p-3 border-t border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] flex flex-col gap-1.5">
+        {messages.length <= 1 && !isChipsDismissed && (
+          <PromptSuggestionChips
+            disabled={isLoading}
+            onSelectPrompt={(prompt) => handleSendMessage(prompt)}
+            onDismiss={() => setIsChipsDismissed(true)}
+          />
+        )}
 
         <div className="flex items-end gap-2 mt-1">
           <TextArea

@@ -354,6 +354,28 @@ export const DualModeMoleculeViewer: React.FC<DualModeMoleculeViewerProps> = ({
     isDragging.current = false;
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    if (touch && e.touches.length === 1) {
+      isDragging.current = true;
+      lastMousePos.current = { x: touch.clientX, y: touch.clientY };
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    if (!isDragging.current || !touch || e.touches.length !== 1) return;
+    const dx = touch.clientX - lastMousePos.current.x;
+    const dy = touch.clientY - lastMousePos.current.y;
+    setRotY((prev) => prev + dx * 0.015);
+    setRotX((prev) => Math.max(-1.4, Math.min(1.4, prev + dy * 0.015)));
+    lastMousePos.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = () => {
+    isDragging.current = false;
+  };
+
   return (
     <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#171717] p-4 sm:p-5 shadow-xs transition-colors">
       {/* Top Bar: Clean Molecule Tabs & 2D/3D Toggle (Gesture Based, Zero Clutter) */}
@@ -399,11 +421,15 @@ export const DualModeMoleculeViewer: React.FC<DualModeMoleculeViewerProps> = ({
       >
         {mode === '3d' ? (
           <div
-            className="w-full flex flex-col items-center cursor-grab active:cursor-grabbing select-none"
+            className="w-full flex flex-col items-center cursor-grab active:cursor-grabbing select-none touch-none"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onTouchCancel={handleTouchEnd}
           >
             <canvas
               ref={canvasRef}

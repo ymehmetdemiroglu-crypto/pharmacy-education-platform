@@ -66,7 +66,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:kovalan_baglar",
@@ -150,7 +150,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:iyonik_bag",
@@ -229,7 +229,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:hidrojen_bagi",
@@ -296,7 +296,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:hbag_ozellik_etkisi",
@@ -361,7 +361,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:iyon_dipol_dipol_dipol",
@@ -428,7 +428,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:yuk_transferi",
@@ -494,7 +494,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:vdw_hidrofobik",
@@ -562,7 +562,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:selasyon",
@@ -629,7 +629,7 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
   },
   {
     "id": "rr:dibukain_entegrasyon",
@@ -665,6 +665,704 @@
         ]
       }
     },
-    "status": "draft"
+    "status": "verified"
+  },
+  {
+    "id": "ph:reseptor_aileleri",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 1,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      1,
+      2,
+      3,
+      5,
+      6,
+      7
+    ],
+    "conceptTitle": "Dört Temel Reseptör Ailesi ve Yanıt Hızları",
+    "scientificSummary": "İlaçların bağlandığı 4 temel reseptör süper ailesi mevcuttur (Slayt 1, 2). İyonotropik reseptörler (Nikotinik ACh, GABAA) milisaniyeler içinde en hızlı yanıtı üretir (Slayt 3). Metabotropik GPCR reseptörleri saniyeler içinde yanıt verir (Slayt 5). Enzim kenetli tirozin kinaz reseptörleri dakikalar-saatler sürer (Slayt 6). Lipofilik hormonların bağlandığı nükleer reseptörler intraselülerdir ve gen transkripsiyonu ile saatler-günler sürer (Slayt 7).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Hücre zarı yüzeyinde değil, hücre içinde yer alıp gen ekspresyonunu yönlendiren reseptör ailesi hangisidir?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Nükleer / İntraselüler Reseptörler (Glukokortikoid, Tiroid)",
+            "isCorrect": true
+          },
+          {
+            "id": "ALL_MEMBRANE_TRAP",
+            "text": "İyonotropik Ligand Kapılı Kanallar",
+            "isCorrect": false,
+            "distractorRationale": "İyonotropik reseptörler hücre zarında yer alır ve milisaniyede iyon akışı başlatır (Slayt 3)."
+          },
+          {
+            "id": "KINASE_GENE_TRAP",
+            "text": "Metabotropik G-Proteini Kenetli Reseptörler",
+            "isCorrect": false,
+            "distractorRationale": "GPCR'lar zar reseptörüdür ve saniyeler içinde ikincil haberci üretir (Slayt 5)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Steroid ve tiroid hormonları intraselüler nükleer reseptörlere bağlanarak gen transkripsiyonunu saatler-günler içinde değiştirir.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 7
+        }
+      }
+    },
+    "studentTask": "Hücre içine doğrudan geçerek gen transkripsiyonunu değiştiren ve etkisi saatler ile günler süren reseptör ailesi hangisidir?",
+    "scaffoldingLadder": [
+      "Zardan doğrudan geçebilen lipofilik steroid moleküllerin reseptörlerinin nerede yerleştiğini düşün.",
+      "Bu reseptörler hücre zarında değil; sitozolde veya nükleusta DNA üzerinde yer alır.",
+      "Gen transkripsiyonunu yönlendiren nükleer intraselüler reseptörlerdir ve en yavaş yanıta sahiptir. (Slayt 7)"
+    ],
+    "misconceptionMap": {
+      "ALL_MEMBRANE_TRAP": {
+        "diagnosis": "Tüm reseptörlerin hücre zarında olduğu ve iyon akışı başlattığı sanılıyor.",
+        "slides": [
+          5,
+          7
+        ]
+      },
+      "KINASE_GENE_TRAP": {
+        "diagnosis": "Tirozin kinaz reseptörlerinin birincil gen transkripsiyon faktörü olduğu sanılıyor.",
+        "slides": [
+          6
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:kd_ve_afinite",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 2,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "conceptTitle": "Kütle Hareketi ve Kd Ayrışma Sabiti",
+    "scientificSummary": "İlaç-reseptör bağlanması kütle hareketi kanununa uyar (Slayt 9, 10). Kd (ayrışma sabiti) reseptör havuzunun tam %50'sini doyuran serbest ilaç konsantrasyonudur (Slayt 12). İlacın reseptöre afinitesi Kd ile ters orantılıdır (1/Kd) (Slayt 11, 13). Düşük Kd değeri ilacın reseptöre çok yüksek afiniteyle bağlandığını gösterir (Slayt 13).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Kd değeri 1 nM olan İlaç X ile 50 nM olan İlaç Y karşılaştırıldığında hangisi doğrudur?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "İlaç X'in reseptöre bağlanma afinitesi İlaç Y'den 50 kat daha yüksektir",
+            "isCorrect": true
+          },
+          {
+            "id": "HIGH_KD_HIGH_AFFINITY",
+            "text": "İlaç Y'nin afinitesi daha yüksektir çünkü Kd değeri daha büyüktür",
+            "isCorrect": false,
+            "distractorRationale": "Afinite Kd ile ters orantılıdır; küçük Kd yüksek afinite demektir (Slayt 13)."
+          },
+          {
+            "id": "EFFICACY_KD_CONFUSION",
+            "text": "İlaç Y daha yüksek maksimal klinik etki (Emax) üretir",
+            "isCorrect": false,
+            "distractorRationale": "Kd yalnızca bağlanma afinitesini gösterir, intrinsik etkinlik (Emax) hakkında bilgi vermez (Slayt 12)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Kd reseptörlerin %50'sini doyuran konsantrasyondur; küçük Kd yüksek afinite demektir.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 13
+        }
+      }
+    },
+    "studentTask": "İki ilaçtan İlaç A'nın Kd değeri 1 nM, İlaç B'nin Kd değeri 100 nM'dir. Hangi ilacın afinitesi daha yüksektir?",
+    "scaffoldingLadder": [
+      "Kd ayrışma sabitidir; ayrışma sabiti küçüldükçe molekül reseptörden kolay mı ayrılır yoksa sıkı mı bağlanır?",
+      "Afinite 1/Kd bağıntısıyla ters orantılıdır; daha az konsantrasyonda %50 doluluk sağlayan daha güçlü bağlanır.",
+      "1 nM Kd değerine sahip İlaç A, 100 kat daha yüksek afiniteye sahiptir. (Slayt 13)"
+    ],
+    "misconceptionMap": {
+      "HIGH_KD_HIGH_AFFINITY": {
+        "diagnosis": "Yüksek Kd değerinin yüksek afinite anlamına geldiği yanılgısı.",
+        "slides": [
+          11,
+          13
+        ]
+      },
+      "EFFICACY_KD_CONFUSION": {
+        "diagnosis": "Kd değerinin klinik etkinliği (Emax) belirlediği yanılgısı.",
+        "slides": [
+          12
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:ec50_ve_emax",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 3,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "conceptTitle": "Kademeli Doz-Yanıt Eğrileri, EC50 Potens ve Emax",
+    "scientificSummary": "Kademeli doz-yanıt eğrileri semilogaritmik eksende sigmoidaldir (Slayt 14). Emax ilacın oluşturabileceği tavan biyolojik yanıttır ve intrinsik etkinliği (efficacy) temsil eder (Slayt 16). EC50 yarı maksimal yanıta (%50 Emax) yol açan konsantrasyondur ve ilacın potensini yansıtır (Slayt 17). Küçük EC50 yüksek potens demektir; klinik tedavide tavan etkinlik (Emax) daima potense tercih edilir (Slayt 18).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Klinik farmakolojide iki analjezik karşılaştırılırken hangisi birincil terapötik üstünlük kriteridir?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Maksimal tavan etki kapasitesi (Emax / Efficacy)",
+            "isCorrect": true
+          },
+          {
+            "id": "POTENCY_OVER_EFFICACY",
+            "text": "Daha düşük miligramda etki göstermesi (EC50 / Potens)",
+            "isCorrect": false,
+            "distractorRationale": "Potens sadece dozu belirler; yetersiz tavan etki veren bir ilaç doz artırılsa bile ağrıyı dindiremez (Slayt 18)."
+          },
+          {
+            "id": "SLOPE_EFFICACY_TRAP",
+            "text": "Doz-yanıt eğrisinin dik eğime sahip olması",
+            "isCorrect": false,
+            "distractorRationale": "Eğim terapötik aralık güvenliğini gösterir, klinik tavan etkiyi yansıtmaz (Slayt 14)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Klinik etkinlikte tavan yanıt (Emax) temel belirleyicidir; potens sadece hapın miligram büyüklüğünü değiştirir.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 18
+        }
+      }
+    },
+    "studentTask": "İlaç 1'in EC50'si 2 mg ve Emax'ı %60; İlaç 2'nin EC50'si 20 mg ve Emax'ı %100'dür. Şiddetli ağrıda hangisi üstündür?",
+    "scaffoldingLadder": [
+      "Klinikte hastanın ağrısını tamamen kesmek için ilacın miligramı mı yoksa tavan etkisi mi önemlidir?",
+      "Potens (EC50) yalnızca verilecek dozu belirler; klinik tavan cevabı ise Emax belirler.",
+      "İlaç 2 daha yüksek Emax (%100) sağladığı için klinik olarak üstündür. (Slayt 18)"
+    ],
+    "misconceptionMap": {
+      "POTENCY_OVER_EFFICACY": {
+        "diagnosis": "Küçük dozda etkili olan (yüksek potensli) ilacın daima daha üstün olduğu yanılgısı.",
+        "slides": [
+          16,
+          18
+        ]
+      },
+      "SLOPE_EFFICACY_TRAP": {
+        "diagnosis": "Eğrinin eğiminin tavan klinik etkiyi belirlediği sanrısı.",
+        "slides": [
+          14
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:tam_ve_parsiyel_agonist",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 4,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "conceptTitle": "Tam Agonist, Parsiyel Agonist ve İntrensek Aktivite",
+    "scientificSummary": "Tam agonist reseptörleri aktive ederek maksimal tavan yanıt üretir (alfa = 1.0) (Slayt 20, 21). Parsiyel agonist tüm reseptörleri doldursa bile submaksimal yanıt verir (0 < alfa < 1.0) (Slayt 22). Yüksek doz tam agonist varlığında ortama parsiyel agonist eklenirse net sistem yanıtı düşer (Slayt 23). Bu durumda parsiyel agonist kompetitif antagonist gibi davranır (Morfin varlığında Buprenorfin) (Slayt 24).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Tam agonist ile doymuş bir biyolojik sisteme parsiyel agonist eklendiğinde ortaya çıkan etki nedir?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Tam agonisti reseptörden kovarak sistem yanıtını düşürür ve yarışmalı antagonist gibi davranır",
+            "isCorrect": true
+          },
+          {
+            "id": "ADDITIVE_EFFECT_TRAP",
+            "text": "İki agonist birleştiği için tavan etki ve yanıt iki katına çıkar",
+            "isCorrect": false,
+            "distractorRationale": "Parsiyel agonistin içsel etkinliği düşüktür; tam agonistin yerini aldığında net yanıt azalır (Slayt 23)."
+          },
+          {
+            "id": "PARTIAL_ZERO_ACTIVITY",
+            "text": "Reseptöre hiç bağlanamaz çünkü tam agonist tarafından geri dönüşümsüz bloke edilmiştir",
+            "isCorrect": false,
+            "distractorRationale": "Parsiyel agonist yüksek afiniteyle reseptöre bağlanıp tam agonisti yerinden edebilir (Slayt 24)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Tam agonist varlığında parsiyel agonist kompetitif antagonist gibi etki göstererek yanıtı submaksimal düzeye çeker.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 24
+        }
+      }
+    },
+    "studentTask": "Yüksek doz morfin (tam agonist) alan bir hastaya buprenorfin (parsiyel agonist) verilirse ağrı kesici yanıtta ne olur?",
+    "scaffoldingLadder": [
+      "Buprenorfin reseptöre bağlandığında morfin moleküllerini oradan kovar mı?",
+      "Morfin %100 yanıt verirken, buprenorfin sadece %50 tavan yanıt verebilir.",
+      "Morfini yerinden eden parsiyel agonist toplam yanıtı düşürür ve yoksunluk tetikler. (Slayt 24)"
+    ],
+    "misconceptionMap": {
+      "ADDITIVE_EFFECT_TRAP": {
+        "diagnosis": "İki agonistin birlikte verildiğinde daima sinerjik etkiyle yanıtı artıracağı yanılgısı.",
+        "slides": [
+          23,
+          24
+        ]
+      },
+      "PARTIAL_ZERO_ACTIVITY": {
+        "diagnosis": "Parsiyel agonistin intrinsik aktivitesinin sıfır (antagonist) olduğu sanrısı.",
+        "slides": [
+          22
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:kompetitif_antagonizma",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 5,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "conceptTitle": "Kompetitif ve Non-Kompetitif Antagonizma (Schild Analizi)",
+    "scientificSummary": "Kompetitif antagonist agonist ile aynı ortosterik bağlanma cebi için yarışır (Slayt 25). Kompetitif blokaj agonist dozu artırılarak tamamen aşılabilir (surmountable) (Slayt 26). Kompetitif antagonist varlığında doz-yanıt eğrisi paralel sağa kayar; Emax değişmez, EC50 artar (Slayt 26). Non-kompetitif blokaj allosterik veya kovalenttir; aşılamaz ve Emax çöker (Slayt 28). Schild regresyonunda log(DR-1) = log[B] - logKB formülüyle pA2 antagonist gücü ölçülür (Slayt 29).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Kompetitif (yarışmalı) antagonistlerin doz-yanıt eğrisi üzerindeki tipik etkisi nedir?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Eğriyi paralel sağa kaydırır; Emax değişmez, görünür EC50 artar",
+            "isCorrect": true
+          },
+          {
+            "id": "NONCOMP_PARALLEL_TRAP",
+            "text": "Emax tavan yanıtını kalıcı olarak düşürür, EC50 değişmez",
+            "isCorrect": false,
+            "distractorRationale": "Emax düşüşü non-kompetitif (aşılmaz) antagonizmanın işaretidir (Slayt 28)."
+          },
+          {
+            "id": "IRREVERSIBLE_SURMOUNTABLE",
+            "text": "Eğriyi sola kaydırarak agonistin potensini artırır",
+            "isCorrect": false,
+            "distractorRationale": "Antagonist agonistin potensini düşürür, daha yüksek doz gerektirir (Slayt 26)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Kompetitif antagonist agonist ile yarışır; yüksek agonist konsantrasyonu ile blokaj aşılır ve Emax korunur.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 26
+        }
+      }
+    },
+    "studentTask": "Bir antagonist eklendiğinde agonist eğrisi paralel sağa kaymış fakat Emax tavan yanıtı değişmemiştir. Bu hangi blokajdır?",
+    "scaffoldingLadder": [
+      "Agonist dozu artırıldığında eski tavan etkiye ulaşılabiliyor mu?",
+      "Aşılabilen ve aynı bölgeye bağlanan antagonist türünü hatırla.",
+      "Emax'ı değiştirmeyip eğriyi paralel sağa kaydıran yarışmalı kompetitif antagonizmadır. (Slayt 26)"
+    ],
+    "misconceptionMap": {
+      "NONCOMP_PARALLEL_TRAP": {
+        "diagnosis": "Non-kompetitif antagonizmanın da paralel sağa kayma yaptığı yanılgısı.",
+        "slides": [
+          26,
+          28
+        ]
+      },
+      "IRREVERSIBLE_SURMOUNTABLE": {
+        "diagnosis": "Kovalent kilitlenen antagonizmanın agonist dozuyla aşılabileceği yanılgısı.",
+        "slides": [
+          28
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:ters_agonist",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 6,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      31,
+      32,
+      33,
+      34
+    ],
+    "conceptTitle": "Konstitütif Reseptör Aktivitesi ve Ters Agonistler",
+    "scientificSummary": "İki durumlu reseptör modelinde reseptörler inaktif (R) ve aktif (R*) konformasyon dengesindedir (Slayt 31). Ligand yokluğunda bile kendiliğinden sinyal üreten bu duruma konstitütif (bazal) aktivite denir (Slayt 31, 32). Nötral antagonist her iki duruma eşit bağlanır ve bazal aktiviteyi değiştirmez (Slayt 32). Ters agonist (inverse agonist) seçici olarak inaktif R formuna bağlanıp bazal aktiviteyi sıfırın altına düşürür (alfa < 0) (Slayt 33, 34).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Konstitütif (kendiliğinden bazal sinyal üreten) bir reseptör sisteminde ters agonist (inverse agonist) ne yapar?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "İnaktif R durumunu stabilize ederek bazal aktiviteyi sıfırın altına baskılar (alfa < 0)",
+            "isCorrect": true
+          },
+          {
+            "id": "NEUTRAL_INVERSE_CONFUSION",
+            "text": "Bazal aktiviteyi hiç değiştirmeden sadece dışarıdan gelen agonisti engeller",
+            "isCorrect": false,
+            "distractorRationale": "Bazal aktiviteyi değiştirmeyen ajan nötral antagonisttir, ters agonist değildir (Slayt 32)."
+          },
+          {
+            "id": "PARTIAL_INVERSE_TRAP",
+            "text": "Reseptörü kısmen uyararak düşük düzeyde pozitif yanıt üretir",
+            "isCorrect": false,
+            "distractorRationale": "Pozitif submaksimal yanıt üreten ajan parsiyel agonisttir (Slayt 22)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Ters agonistler negatif içsel etkinliğe sahiptir ve ligandsız durumdaki konstitütif bazal sinyali sustururlar.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 33
+        }
+      }
+    },
+    "studentTask": "Ligand yokluğunda bile bazal sinyal üreten bir reseptörde, bu bazal sinyali sıfırın altına baskılayan ilaç türü nedir?",
+    "scaffoldingLadder": [
+      "Nötral antagonist bazal sinyali değiştirmez; sıfırın altına düşüren negatif intrinsik aktiviteye sahip molekülü düşün.",
+      "Bu molekül inaktif R konformasyonunu seçici olarak stabilize eder.",
+      "Bazal konstitütif aktiviteyi sıfırın altına düşüren ters agonisttir (inverse agonist). (Slayt 33)"
+    ],
+    "misconceptionMap": {
+      "NEUTRAL_INVERSE_CONFUSION": {
+        "diagnosis": "Nötral antagonistin de bazal reseptör sinyalini sıfırladığı yanılgısı.",
+        "slides": [
+          32,
+          33
+        ]
+      },
+      "PARTIAL_INVERSE_TRAP": {
+        "diagnosis": "Ters agonistin zayıf bir parsiyel agonist olduğu yanılgısı.",
+        "slides": [
+          22,
+          33
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:yedek_reseptorler",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 7,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      36,
+      37,
+      38,
+      39
+    ],
+    "conceptTitle": "Yedek Reseptörler (Spare Receptors) ve Furchgott Deneyi",
+    "scientificSummary": "Biyokimyasal amplifikasyon nedeniyle maksimal doku yanıtı (Emax) için reseptörlerin tamamının dolması gerekmez (Slayt 36). EC50 değeri Kd ayrışma sabitinden belirgin derecede küçüktür (EC50 < Kd) (Slayt 37). Furchgott deneyinde doku geri dönüşümsüz blokörle (fenoksibenzamin) muamele edildiğinde yedek reseptörler tükenene kadar Emax korunur (Slayt 38, 39). Sadece eğri sağa kayar; ancak yedek reseptör havuzu bittiğinde Emax çökmeye başlar (Slayt 39).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Bir dokuda EC50 konsantrasyonunun Kd değerinden çok daha küçük olması (EC50 < Kd) neyi kanıtlar?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Dokuda yedek reseptör bulunduğunu ve sinyal kaskadında amplifikasyon olduğunu",
+            "isCorrect": true
+          },
+          {
+            "id": "ALL_MUST_BIND_TRAP",
+            "text": "İlacın tüm reseptörleri kovalent olarak kilitlediğini",
+            "isCorrect": false,
+            "distractorRationale": "Kovalent kilitlenme yedek reseptör anlamına gelmez; EC50 < Kd fraksiyonel doluluğun yeterli olduğunu gösterir (Slayt 36)."
+          },
+          {
+            "id": "SPARE_IS_INACTIVE",
+            "text": "Dokudaki reseptörlerin çoğunun işlevsiz ve hasarlı olduğunu",
+            "isCorrect": false,
+            "distractorRationale": "Yedek reseptörler tamamen fonksiyoneldir ve yedek kapasite sunar (Slayt 37)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "EC50 < Kd olması, sistemde yedek reseptör varlığını ve küçük bir dolulukla tam yanıt üretildiğini gösterir.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 37
+        }
+      }
+    },
+    "studentTask": "Reseptör havuzunun yalnızca %10'u dolduğunda %100 tavan yanıt (Emax) elde ediliyorsa bu farmakolojik durum nedir?",
+    "scaffoldingLadder": [
+      "Geriye kalan ve maksimal yanıtta işgal edilmeyen %90 reseptöre ne ad verilir?",
+      "Bu durum hücre içi sinyal amplifikasyonu sayesinde oluşur (EC50 < Kd).",
+      "Tam yanıt için tüm reseptörlerin dolmasına gerek olmaması yedek reseptör (spare receptor) kavramıdır. (Slayt 36)"
+    ],
+    "misconceptionMap": {
+      "ALL_MUST_BIND_TRAP": {
+        "diagnosis": "Maksimal etki için daima reseptörlerin %100'ünün bağlanması gerektiği yanılgısı.",
+        "slides": [
+          36
+        ]
+      },
+      "SPARE_IS_INACTIVE": {
+        "diagnosis": "Yedek reseptörlerin yapısal olarak kusurlu ve inaktif olduğu sanrısı.",
+        "slides": [
+          37
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:kuantal_ve_terapotik_indeks",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 8,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      41,
+      42,
+      43,
+      44,
+      45
+    ],
+    "conceptTitle": "Kuantal Doz-Yanıt, ED50 ve Terapötik İndeks (TI)",
+    "scientificSummary": "Kuantal doz-yanıt popülasyonda ya-hep-ya-hiç şeklinde yanıt sıklığını inceler (Slayt 41, 42). ED50 popülasyonun %50'sinde terapötik etki gösteren medyan dozdur; TD50 toksik dozdur (Slayt 42). Terapötik İndeks TI = TD50 / ED50 güvenlik aralığını belirler (Slayt 43). Küçük TI dar terapötik indeksi gösterir ve TDM kan düzeyi izlemi gerektirir (Varfarin, Digoksin, Lityum) (Slayt 44, 45).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Bir ilacın Terapötik İndeksi (TI = TD50 / ED50) hakkında hangisi doğrudur?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "TI değeri küçüldükçe güvenlik aralığı daralır ve toksisite riski artar",
+            "isCorrect": true
+          },
+          {
+            "id": "HIGH_TI_DANGEROUS",
+            "text": "TI değeri ne kadar büyükse ilaç o kadar zehirli ve tehlikelidir",
+            "isCorrect": false,
+            "distractorRationale": "TI büyüdükçe toksik doz uzaklaşır ve ilacın güvenliği artar (Slayt 43)."
+          },
+          {
+            "id": "GRADED_QUANTAL_CONFUSION",
+            "text": "TI sadece tek bir bireyin kan basıncı düşüş şiddetini temsil eder",
+            "isCorrect": false,
+            "distractorRationale": "TI popülasyon düzeyindeki kuantal ya-hep-ya-hiç oranlarını temsil eder (Slayt 41)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Küçük TI değeri toksik doz ile tedavi dozunun birbirine yakın olduğunu gösterir; TDM takibi şarttır.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 43
+        }
+      }
+    },
+    "studentTask": "Terapötik İndeksi (TI) çok dar olan ve klinikte rutin terapötik ilaç düzeyi izlemi (TDM) gerektiren ilaç hangisidir?",
+    "scaffoldingLadder": [
+      "TI formülü TD50 / ED50'dir; bu oran küçükse toksik doz ile tedavi edici doz birbirine çok yakındır.",
+      "Marmara slaytlarında vurgulanan dar pencereli kardiyak glikozidi hatırla.",
+      "Digoksin çok dar terapötik indekse sahiptir ve toksisite riski yüksektir. (Slayt 45)"
+    ],
+    "misconceptionMap": {
+      "HIGH_TI_DANGEROUS": {
+        "diagnosis": "Büyük TI değerinin tehlikeli olduğu yanılgısı.",
+        "slides": [
+          43
+        ]
+      },
+      "GRADED_QUANTAL_CONFUSION": {
+        "diagnosis": "Kuantal eğrinin tek bir bireydeki biyolojik yanıt şiddetini ölçtüğü sanrısı.",
+        "slides": [
+          41
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:gpcr_yolaklari",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 9,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "conceptTitle": "GPCR Sinyal İletim Yolları (Gs, Gi, Gq)",
+    "scientificSummary": "GPCR'lar 7 transmembran helezondan oluşan heterotrimerik G-proteini kenetli reseptörlerdir (Slayt 46). Gs proteini Adenilat Siklazı aktive eder, cAMP artar ve Protein Kinaz A (PKA) uyarılır (Slayt 47). Gi proteini Adenilat Siklazı inhibe eder ve cAMP sentezini baskılar (Slayt 48). Gq proteini Fosfolipaz C'yi (PLC) aktive eder; PIP2 yıkılarak IP3 (Ca2+ salınımı) ve DAG (PKC aktivasyonu) üretilir (Slayt 49, 50).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Gq proteinine kenetli alfa-1 adrenerjik reseptör uyarıldığında hangi sinyal kaskadı tetiklenir?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Fosfolipaz C (PLC) aktivasyonu ile IP3 ve DAG üretimi, intraselüler Ca2+ artışı",
+            "isCorrect": true
+          },
+          {
+            "id": "GQ_MAKES_CAMP",
+            "text": "Adenilat siklaz uyarımı ve hücre içi cAMP düzeyinde artış",
+            "isCorrect": false,
+            "distractorRationale": "Adenilat siklaz ve cAMP artışı Gs proteininin yolağıdır, Gq'nun değil (Slayt 47)."
+          },
+          {
+            "id": "IP3_BLOCKS_CALCIUM",
+            "text": "İntraselüler kalsiyum kanallarının tamamen kapatılması",
+            "isCorrect": false,
+            "distractorRationale": "IP3 endoplazmik retikulumdan sitozole Ca2+ salınımını güçlü şekilde uyarır (Slayt 50)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Gq uyarımı PLC'yi aktive eder; oluşan IP3 kalsiyum salar, DAG ise PKC'yi uyarır.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 49
+        }
+      }
+    },
+    "studentTask": "Gq kenetli bir reseptör aktive edildiğinde hücre içinde üretilen iki temel ikincil haberci molekül hangisidir?",
+    "scaffoldingLadder": [
+      "Gq proteini adenilat siklazı değil, membran fosfolipitlerini yıkan Fosfolipaz C enzimini uyarır.",
+      "PIP2 membran fosfolipiti parçalandığında kalsiyum salan bir molekül ve membran enzimi aktive eden bir lipit doğar.",
+      "Fosfolipaz C aktivasyonuyla IP3 ve DAG ikincil habercileri üretilir. (Slayt 49)"
+    ],
+    "misconceptionMap": {
+      "GQ_MAKES_CAMP": {
+        "diagnosis": "Gq proteininin de cAMP ve PKA yolağını kullandığı yanılgısı.",
+        "slides": [
+          47,
+          49
+        ]
+      },
+      "IP3_BLOCKS_CALCIUM": {
+        "diagnosis": "IP3'ün kalsiyum girişini engellediği yanılgısı.",
+        "slides": [
+          50
+        ]
+      }
+    },
+    "status": "verified"
+  },
+  {
+    "id": "ph:desensitizasyon",
+    "courseId": "pharmacology",
+    "lectureSlug": "farmakodinami",
+    "sortOrder": 10,
+    "sourceDeck": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+    "slideNumbers": [
+      53,
+      54,
+      55,
+      56,
+      57
+    ],
+    "conceptTitle": "Desensitizasyon, Takifilaksi ve Up/Down Regülasyon",
+    "scientificSummary": "Takifilaksi dakikalar içinde hızla gelişen akut desensitizasyondur (efedrin, nitratlar) (Slayt 53). Homolog desensitizasyonda GRK reseptörü fosforiller ve beta-arrestin bağlanarak reseptörü kilitler (Slayt 54, 55). Sürekli agonist maruziyeti reseptörlerin endositozla yıkılmasına (down-regülasyon) ve toleransa yol açar (Slayt 56). Sürekli antagonist maruziyeti reseptör sayısını artırır (up-regülasyon); ilacın ani kesilmesinde tehlikeli rebound kriz doğar (Slayt 57).",
+    "recommendedWidget": "MultipleChoice",
+    "widget": {
+      "type": "MultipleChoice",
+      "config": {
+        "prompt": "Kronik antagonist kullanımında reseptör yoğunluğunda ne gerçekleşir ve ani ilaç kesiminde neye yol açar?",
+        "options": [
+          {
+            "id": "correct",
+            "text": "Up-regülasyon gerçekleşir; ilaç aniden kesilirse şiddetli rebound aşırı uyarılma krizi doğar",
+            "isCorrect": true
+          },
+          {
+            "id": "ANTAGONIST_DOWNREG",
+            "text": "Down-regülasyon gerçekleşir; reseptör sayısı sıfıra iner ve hücre felç olur",
+            "isCorrect": false,
+            "distractorRationale": "Down-regülasyon kronik agonist maruziyetinde görülür; antagonistler up-regülasyona neden olur (Slayt 56, 57)."
+          },
+          {
+            "id": "TACHYPHYLAXIS_IS_GENETIC",
+            "text": "Reseptörlerin genetik DNA yapısı mutasyona uğrayarak kalıcı olarak silinir",
+            "isCorrect": false,
+            "distractorRationale": "Up- ve down-regülasyon fizyolojik homeostazis yanıtıdır, DNA mutasyonu değildir (Slayt 57)."
+          }
+        ],
+        "isMultiSelect": false,
+        "explanation": "Antagonist maruziyeti reseptör sayısını artırır (up-regülasyon); ilaç aniden kesildiğinde endojen aminler rebound kriz yaratır.",
+        "source": {
+          "file": "İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf",
+          "page": 57
+        }
+      }
+    },
+    "studentTask": "Kronik beta bloker kullanan bir hastada ilacın aniden kesilmesi neden tehlikeli rebound taşikardiye yol açar?",
+    "scaffoldingLadder": [
+      "Uzun süre reseptörü bloke edilen bir hücre, reseptör sayısını artırır mı azaltır mı?",
+      "Reseptör sayısı arttığında (up-regülasyon) ortamdaki endojen adrenalin hücreyi aşırı uyarır.",
+      "Kronik antagonist maruziyeti up-regülasyon yapar; aniden kesilince aşırı uyarılma krizi gelişir. (Slayt 57)"
+    ],
+    "misconceptionMap": {
+      "ANTAGONIST_DOWNREG": {
+        "diagnosis": "Antagonistlerin reseptörleri yok ederek down-regülasyon yaptığı yanılgısı.",
+        "slides": [
+          56,
+          57
+        ]
+      },
+      "TACHYPHYLAXIS_IS_GENETIC": {
+        "diagnosis": "Takifilaksinin genetik mutasyonlarla aylarca sürede geliştiği sanrısı.",
+        "slides": [
+          53
+        ]
+      }
+    },
+    "status": "verified"
   }
 ]

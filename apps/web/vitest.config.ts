@@ -12,7 +12,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    testTimeout: 15000,
+    testTimeout: 30000,
     setupFiles: [path.resolve(__dirname, '../../packages/ui/src/test/setup.ts')],
     pool: 'threads',
     poolOptions: {

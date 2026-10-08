@@ -12,16 +12,16 @@ export interface ProgressBarProps {
 }
 
 const colorMap = {
-  green: 'bg-[#6BCB77]',
-  yellow: 'bg-[#FFD93D]',
-  blue: 'bg-[#4D96FF]',
-  orange: 'bg-[#FF9F45]',
+  green: 'bg-[#10A37F]',
+  yellow: 'bg-amber-500',
+  blue: 'bg-blue-500',
+  orange: 'bg-orange-500',
 };
 
 const heightMap = {
-  sm: 'h-2.5',
-  md: 'h-4',
-  lg: 'h-6',
+  sm: 'h-1.5',
+  md: 'h-2.5',
+  lg: 'h-4',
 };
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({
@@ -37,7 +37,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   return (
     <div className={twMerge('w-full', className)}>
       {label && (
-        <div className="flex justify-between items-center text-xs font-mono font-bold mb-1.5 uppercase">
+        <div className="flex justify-between items-center text-xs font-sans font-medium text-slate-600 dark:text-[#8E8E8E] mb-1.5">
           <span>{label}</span>
           <span>{Math.round(percentage)}%</span>
         </div>
@@ -49,14 +49,13 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         aria-valuemax={100}
         aria-label={label || 'Progress'}
         className={clsx(
-          'w-full bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none',
-          'shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] overflow-hidden',
+          'w-full bg-slate-100 dark:bg-[#2F2F2F] rounded-full overflow-hidden border border-slate-200 dark:border-[#383838]',
           heightMap[size]
         )}
       >
         <div
           className={clsx(
-            'h-full border-r-3 rtl:border-r-0 rtl:border-l-3 border-black dark:border-slate-700 transition-all duration-300 ease-neo',
+            'h-full rounded-full transition-all duration-300 ease-out',
             colorMap[variant]
           )}
           style={{ width: `${percentage}%` }}

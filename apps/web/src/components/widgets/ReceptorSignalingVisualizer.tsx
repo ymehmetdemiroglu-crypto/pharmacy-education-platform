@@ -144,6 +144,29 @@ const STEP_CHALLENGES: Record<number, Record<GProteinType, StepChallenge>> = {
       ],
     },
   },
+  3: {
+    Gs: {
+      prompt: '4. Adım: PKA aktivasyonu sonrasında organda hangi nihai fizyolojik yanıt ortaya çıkar?',
+      options: [
+        { id: 'a', label: 'Kalp kasında kasılma gücü/hızı artar ve bronş düz kasında dilatasyon oluşur', isCorrect: true },
+        { id: 'b', label: 'Damarlarda ani vazokonstriksiyon ile tansiyon fırlar', isCorrect: false, misconceptionFeedback: 'Vazokonstriksiyon Gq/alfa-1 yolunun sonucudur; beta-2/Gs bronkodilatasyon ve vazodilatasyon yapar.' },
+      ],
+    },
+    Gi: {
+      prompt: '4. Adım: Gi aktivasyonu ve cAMP azalması sonucunda hangi nihai fizyolojik etki gözlenir?',
+      options: [
+        { id: 'a', label: 'Sempatik deşarj baskılanır, periferik direnç ve kalp hızı düşer', isCorrect: true },
+        { id: 'b', label: 'Hücre içi kalsiyum patlamasıyla glikojenoliz hızlanır', isCorrect: false, misconceptionFeedback: 'Kalsiyum patlaması Gq yoluna aittir; Gi yolu adenilat siklazı inhibe ederek aktiviteyi yavaşlatır.' },
+      ],
+    },
+    Gq: {
+      prompt: '4. Adım: Endoplazmik retikulumdan sitoplazmaya yayılan yüksek Ca²⁺ iyonları hangi sonuca yol açar?',
+      options: [
+        { id: 'a', label: 'Kalmodulin ve MLCK aktive olarak güçlü damar düz kası kasılması (vazokonstriksiyon) oluşturur', isCorrect: true },
+        { id: 'b', label: 'cAMP artışı ile solunum yollarını gevşetir', isCorrect: false, misconceptionFeedback: 'Hücre içi kalsiyum artışı gevşeme değil, güçlü kas kasılması ve vazokonstriksiyon yapar.' },
+      ],
+    },
+  },
 };
 
 export const ReceptorSignalingVisualizer: React.FC<{

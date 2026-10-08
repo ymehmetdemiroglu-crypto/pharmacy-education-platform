@@ -1,9 +1,11 @@
 export * from './types';
 export * from './access/AccessControl';
 export * from './spaced_repetition/LeitnerEngine';
+export * from './spaced_repetition/FsrsEngine';
 export * from './progress/ProgressStore';
 export * from './auth/AuthContext';
 export * from './auth/oauthPreflight';
 export * from './curriculum/schema';
 export * from './curriculum/knowledgeGraph';
 export * from './supabase';
+

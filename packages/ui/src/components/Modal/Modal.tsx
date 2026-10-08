@@ -110,9 +110,9 @@ export const Modal: React.FC<ModalProps> = ({
         dir={locale === 'ar' ? 'rtl' : 'ltr'}
         className={twMerge(
           clsx(
-            'w-full bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
-            'border-4 border-black dark:border-slate-700 rounded-none',
-            'shadow-[8px_8px_0px_#000000] dark:shadow-[8px_8px_0px_#030712]',
+            'w-full bg-white dark:bg-[#171717] text-slate-900 dark:text-[#ECECEC]',
+            'border border-slate-200 dark:border-[#2F2F2F] rounded-2xl',
+            'shadow-2xl',
             'flex flex-col overflow-hidden max-h-[90vh]',
             maxWidthMap[maxWidth],
             className
@@ -120,10 +120,10 @@ export const Modal: React.FC<ModalProps> = ({
         )}
       >
         {/* Header - [DES-P1-02] RTL layout handling */}
-        <div className="flex items-center justify-between p-4 sm:p-5 border-b-3 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0B0F17]">
+        <div className="flex items-center justify-between p-4 sm:p-5 border-b border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1F1F1F]">
           <h2
             id="modal-title"
-            className="font-display font-black text-lg sm:text-xl tracking-tight uppercase"
+            className="font-sans font-semibold text-base sm:text-lg tracking-tight text-slate-900 dark:text-[#ECECEC]"
           >
             {title}
           </h2>
@@ -131,9 +131,9 @@ export const Modal: React.FC<ModalProps> = ({
             type="button"
             onClick={onClose}
             aria-label={activeCloseLabel}
-            className="p-1.5 border-2 border-black dark:border-slate-700 hover:bg-black/10 dark:hover:bg-slate-800 text-black dark:text-slate-100 active:translate-x-0.5 active:translate-y-0.5 transition-transform"
+            className="p-1.5 rounded-lg border border-transparent hover:bg-slate-200 dark:hover:bg-[#2A2A2A] text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
           >
-            <X className="w-5 h-5 stroke-[2.5]" />
+            <X className="w-5 h-5 stroke-[2]" />
           </button>
         </div>
 
@@ -142,7 +142,7 @@ export const Modal: React.FC<ModalProps> = ({
 
         {/* Footer */}
         {footer && (
-          <div className="p-4 border-t-3 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0B0F17]">
+          <div className="p-4 border-t border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1F1F1F]">
             {footer}
           </div>
         )}

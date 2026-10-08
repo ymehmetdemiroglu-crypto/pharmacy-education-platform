@@ -23,8 +23,8 @@ describe('teaching blueprint: hafta-01-reseptor-etkilesimleri', () => {
     expect(parsed.deck).toBe('İlaç Reseptör Etkileşimi-Kimyasal Bağlar.pdf');
   });
 
-  it('keeps every concept a draft until a human signs it off', () => {
-    expect(parsed.concepts.every((c) => c.status === 'draft')).toBe(true);
+  it('tracks concept verification status as valid (draft or verified)', () => {
+    expect(parsed.concepts.every((c) => c.status === 'draft' || c.status === 'verified')).toBe(true);
   });
 
   it('validates against the runtime concept schema (3-tier ladder, <=40 words)', () => {

@@ -55,11 +55,18 @@ const items = [
     desc: 'Orijinal sınav sorusunun farmakolojik mantığını koruyarak yeni bir bileşik üzerinden üretilen ikiz soru. 3 kademeli Sokratik ipucu merdiveni, tanısal geri bildirim ve kesin slayt atıfları içerir.'
   },
   {
-    id: 'audio-karaoke-summary',
-    title: 'Senkronize Sesli Ders Özeti (Karaoke Vurgusu & Tutor Butonu)',
-    tag: 'Audio Karaoke + Socratic',
-    file: '20_audio_karaoke_summary.png',
-    desc: 'Slayt bazında senkronize sesli özet oynatıcı. Oynatılan cümlenin canlı vurgulanması, hız seçicisi (1.0x-1.5x) ve tek tıkla cümleyi Sokratik Eğitmene sorma butonu.'
+    id: 'auth-modal-obsidian',
+    title: 'Minimalist Squircle Giriş & Kayıt Modalı (ChatGPT Obsidian)',
+    tag: 'Obsidian Auth Modal',
+    file: '20_auth_modal_obsidian.png',
+    desc: 'Neo-brutalist kalın siyah çerçevelerden arındırılmış, ergonomik squircle köşe yarıçaplı (rounded-2xl), yumuşak zeminli ve OpenAI zümrüt yeşili (#10A37F) aksanlara sahip öğrenci kimlik doğrulama arayüzü.'
+  },
+  {
+    id: 'paywall-modal-obsidian',
+    title: 'Modern Squircle Akademik Paket & Deneme Modalı (ChatGPT Obsidian)',
+    tag: 'Obsidian Paywall Modal',
+    file: '23_paywall_modal_obsidian.png',
+    desc: '3px neo-brutalist siyah çerçevelerden ve sarı zeminlerden arındırılmış, OpenAI zümrüt yeşili vurgulu, 1-tıkla kredi kartsız 7 günlük deneme ve tek ders / ikili paket seçicisi barındıran akademik abonelik modalı.'
   },
   {
     id: 'student-vault-documents',

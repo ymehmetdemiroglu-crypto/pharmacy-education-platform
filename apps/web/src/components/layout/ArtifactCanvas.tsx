@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import { Tag } from 'antd';
 import { MarkdownDocumentViewer } from '../canvas/MarkdownDocumentViewer';
 import { TextSelectionPopover } from '../canvas/TextSelectionPopover';
-import { AudioSummaryBar } from '../canvas/AudioSummaryBar';
 
 const { CheckableTag } = Tag;
 
@@ -52,19 +51,6 @@ export const ArtifactCanvas: React.FC<ArtifactCanvasProps> = ({
       />
 
       <div className="max-w-4xl mx-auto flex flex-col gap-6">
-        {/* Synchronized Audio Summary Player Bar */}
-        <AudioSummaryBar
-          lectureSlug="reseptor-etkilesimleri"
-          onCueChange={(cue) => {
-            if (cue) {
-              onActiveConceptChange?.(cue.sectionId);
-            }
-          }}
-          onAskTutorAboutAudio={(query) => {
-            onAskTutor(query);
-          }}
-        />
-
         {/* Minimalist Concept Quick Navigation Bar */}
         <div className="flex flex-wrap items-center gap-1.5 py-2.5 px-3 bg-white dark:bg-[#171717] rounded-xl border border-slate-200 dark:border-[#2F2F2F] shadow-xs overflow-x-auto transition-colors">
           <span className="text-[11px] font-medium text-slate-500 dark:text-[#8E8E8E] mr-1 shrink-0">Bölümler:</span>

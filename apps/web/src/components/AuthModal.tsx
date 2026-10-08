@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Input } from '@pharmacy/ui';
+import { Modal } from '@pharmacy/ui';
 import { useAuth, OAuthProviderDisabledError } from '@pharmacy/platform';
 import { LogIn, UserPlus, Sparkles, CheckCircle2, AlertCircle, GraduationCap, AlertTriangle, ArrowRight, KeyRound } from 'lucide-react';
 import { useTranslation } from '../context/TranslationContext';
@@ -228,15 +228,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       maxWidth="md"
     >
       <div className="space-y-4">
-        {/* Neo-brutalist Tab Switcher */}
-        <div className="grid grid-cols-2 gap-2 border-b-2 border-black/20 dark:border-slate-700 pb-3">
+        {/* ChatGPT Style Squircle Segmented Tabs */}
+        <div className="grid grid-cols-2 gap-1 p-1 bg-slate-100 dark:bg-[#262626] rounded-xl">
           <button
             type="button"
             onClick={() => handleTabSwitch('login')}
-            className={`py-2 px-3 text-xs sm:text-sm font-mono font-bold uppercase border-2 border-black dark:border-slate-700 flex items-center justify-center gap-2 transition-all ${
+            className={`py-2 px-3 text-xs sm:text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-all cursor-pointer ${
               tab === 'login'
-                ? 'bg-[#FFD93D] text-black shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712]'
-                : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                ? 'bg-white dark:bg-[#171717] text-slate-900 dark:text-white shadow-xs font-semibold'
+                : 'text-slate-500 dark:text-[#8E8E8E] hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <LogIn className="w-4 h-4" />
@@ -245,10 +245,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           <button
             type="button"
             onClick={() => handleTabSwitch('signup')}
-            className={`py-2 px-3 text-xs sm:text-sm font-mono font-bold uppercase border-2 border-black dark:border-slate-700 flex items-center justify-center gap-2 transition-all ${
+            className={`py-2 px-3 text-xs sm:text-sm font-medium rounded-lg flex items-center justify-center gap-2 transition-all cursor-pointer ${
               tab === 'signup'
-                ? 'bg-[#FFD93D] text-black shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712]'
-                : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                ? 'bg-white dark:bg-[#171717] text-slate-900 dark:text-white shadow-xs font-semibold'
+                : 'text-slate-500 dark:text-[#8E8E8E] hover:text-slate-900 dark:hover:text-white'
             }`}
           >
             <UserPlus className="w-4 h-4" />
@@ -256,33 +256,29 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           </button>
         </div>
 
-        {/* Google OAuth Disabled In-App Neo-Brutalist Notice Card */}
+        {/* Google OAuth Notice Card */}
         {googleDisabledNotice && (
           <div
             data-testid="google-oauth-disabled-notice"
-            className="border-4 border-black dark:border-slate-700 bg-[#FFF8E7] dark:bg-[#0F172A] p-4 shadow-[6px_6px_0px_#000000] dark:shadow-[6px_6px_0px_#030712] space-y-3 rounded-none animate-in fade-in duration-200"
+            className="rounded-xl border border-amber-300 dark:border-amber-800/80 bg-amber-50/80 dark:bg-amber-950/40 p-4 space-y-3 animate-in fade-in duration-200"
           >
-            {/* Warning Badge & Header */}
-            <div className="flex items-center gap-2.5 pb-2.5 border-b-2 border-black/20 dark:border-slate-700">
-              <div className="w-7 h-7 bg-[#FFD93D] border-2 border-black flex items-center justify-center shrink-0 shadow-[2px_2px_0px_#000000]">
-                <AlertTriangle className="w-4 h-4 text-black" />
+            <div className="flex items-center gap-2.5 pb-2 border-b border-amber-200 dark:border-amber-800/50">
+              <div className="w-6 h-6 rounded-lg bg-amber-100 dark:bg-amber-900/60 text-amber-700 dark:text-amber-400 flex items-center justify-center shrink-0">
+                <AlertTriangle className="w-3.5 h-3.5" />
               </div>
-              <h4 className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider text-black dark:text-slate-100">
+              <h4 className="font-sans text-xs sm:text-sm font-semibold text-amber-900 dark:text-amber-200">
                 {t('modals.auth.googleNotice.title')}
               </h4>
             </div>
 
-            {/* Localized Explanation */}
-            <p className="font-sans text-xs sm:text-sm text-gray-800 dark:text-slate-200 leading-relaxed font-medium">
+            <p className="font-sans text-xs text-amber-900/90 dark:text-amber-200/90 leading-relaxed">
               {t('modals.auth.googleNotice.description')}
             </p>
 
-            {/* Admin Guidance / Tip */}
-            <div className="p-2.5 bg-amber-50 dark:bg-amber-950/40 border-2 border-black/30 dark:border-slate-600 text-[11px] font-mono text-amber-900 dark:text-amber-200 leading-normal">
+            <div className="p-2.5 bg-amber-100/50 dark:bg-amber-900/30 rounded-lg text-[11px] font-mono text-amber-900 dark:text-amber-300 leading-normal">
               {t('modals.auth.googleNotice.adminTip')}
             </div>
 
-            {/* Email/Password Fallback CTA */}
             <button
               type="button"
               onClick={() => {
@@ -293,7 +289,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   input?.focus();
                 }, 50);
               }}
-              className="w-full py-2.5 px-3 bg-[#6BCB77] hover:bg-[#58ba64] text-black font-mono text-xs sm:text-sm font-bold uppercase border-3 border-black shadow-[4px_4px_0px_#000000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full py-2.5 px-3 bg-[#10A37F] hover:bg-[#0E8C6D] active:bg-[#0C7A5F] text-white font-sans text-xs sm:text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs"
             >
               <LogIn className="w-4 h-4" />
               <span>{t('modals.auth.googleNotice.useEmailCta')}</span>
@@ -304,15 +300,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
 
         {/* Status Alerts */}
         {error && (
-          <div className="p-3 bg-[#FF6B9D]/20 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-2 text-xs font-mono font-bold text-rose-800 dark:text-rose-300">
-            <AlertCircle className="w-4 h-4 shrink-0" />
+          <div className="p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 rounded-xl flex items-center gap-2 text-xs font-medium text-rose-800 dark:text-rose-300 shadow-xs">
+            <AlertCircle className="w-4 h-4 shrink-0 text-rose-600 dark:text-rose-400" />
             <span>{error}</span>
           </div>
         )}
 
         {successMessage && (
-          <div className="p-3 bg-emerald-100 dark:bg-emerald-950/60 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-2 text-xs font-mono font-bold text-emerald-800 dark:text-emerald-300">
-            <CheckCircle2 className="w-4 h-4 shrink-0" />
+          <div className="p-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 rounded-xl flex items-center gap-2 text-xs font-medium text-emerald-800 dark:text-emerald-300 shadow-xs">
+            <CheckCircle2 className="w-4 h-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
             <span>{successMessage}</span>
           </div>
         )}
@@ -320,100 +316,109 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {/* Tab 1: Log In Form */}
         {tab === 'login' && (
           <form onSubmit={handleLoginSubmit} className="space-y-4">
-            <Input
-              label={t('modals.auth.email')}
-              type="email"
-              placeholder={t('modals.auth.emailPlaceholder')}
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.email')}
+              </label>
+              <input
+                type="email"
+                placeholder={t('modals.auth.emailPlaceholder')}
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
-            <Input
-              label={t('modals.auth.password')}
-              type="password"
-              placeholder={t('modals.auth.passwordPlaceholder')}
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.password')}
+              </label>
+              <input
+                type="password"
+                placeholder={t('modals.auth.passwordPlaceholder')}
+                value={loginPassword}
+                onChange={(e) => setLoginPassword(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
-            <div className="flex justify-end -mt-2">
+            <div className="flex justify-end -mt-1">
               <button
                 type="button"
                 onClick={() => {
                   setTab('forgot-password');
                   resetForm();
                 }}
-                className="text-xs font-mono font-bold text-gray-700 dark:text-slate-300 hover:text-black dark:hover:text-white underline hover:no-underline cursor-pointer"
+                className="text-xs text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 font-medium cursor-pointer"
               >
                 {t('modals.auth.forgotPasswordLink')}
               </button>
             </div>
 
-            <Button
+            <button
               type="submit"
-              variant="primary"
-              fullWidth
-              size="md"
-              isLoading={isSubmitting}
-              leftIcon={<LogIn className="w-4 h-4" />}
+              disabled={isSubmitting}
+              className="w-full py-2.5 px-4 bg-[#10A37F] hover:bg-[#0E8C6D] active:bg-[#0C7A5F] text-white font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors shadow-xs disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
-              {t('modals.auth.submitLogin')}
-            </Button>
+              <LogIn className="w-4 h-4" />
+              <span>{t('modals.auth.submitLogin')}</span>
+            </button>
 
-            {/* Neo-brutalist Divider */}
+            {/* Subtle Divider */}
             <div className="relative flex py-1 items-center">
-              <div className="flex-grow border-t-2 border-black/20 dark:border-slate-700"></div>
-              <span className="flex-shrink mx-3 font-mono text-[11px] font-bold text-gray-500 uppercase">
+              <div className="flex-grow border-t border-slate-200 dark:border-[#2F2F2F]"></div>
+              <span className="flex-shrink mx-3 text-xs font-medium text-slate-400 dark:text-[#7A7A7A]">
                 {t('modals.auth.orText')}
               </span>
-              <div className="flex-grow border-t-2 border-black/20 dark:border-slate-700"></div>
+              <div className="flex-grow border-t border-slate-200 dark:border-[#2F2F2F]"></div>
             </div>
 
-            <Button
+            <button
               type="button"
-              variant="secondary"
-              fullWidth
-              size="md"
               disabled={isSubmitting}
               onClick={handleGoogleAuth}
-              leftIcon={<GoogleIcon className="w-4 h-4" />}
+              className="w-full py-2.5 px-4 bg-white dark:bg-[#212121] hover:bg-slate-50 dark:hover:bg-[#2A2A2A] text-slate-800 dark:text-[#ECECEC] border border-slate-200 dark:border-[#2F2F2F] rounded-xl font-medium text-sm flex items-center justify-center gap-2.5 transition-colors shadow-xs disabled:opacity-60 cursor-pointer"
             >
-              {t('modals.auth.googleContinue')}
-            </Button>
+              <GoogleIcon className="w-4 h-4 shrink-0" />
+              <span>{t('modals.auth.googleContinue')}</span>
+            </button>
           </form>
         )}
 
         {/* Tab 3: Forgot Password Form */}
         {tab === 'forgot-password' && (
           <form onSubmit={handleForgotPasswordSubmit} className="space-y-4">
-            <p className="font-sans text-xs sm:text-sm text-gray-700 dark:text-slate-300 font-medium">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-[#B4B4B4] leading-relaxed">
               {t('modals.auth.forgotPasswordDesc')}
             </p>
 
-            <Input
-              label={t('modals.auth.email')}
-              type="email"
-              placeholder={t('modals.auth.emailPlaceholder')}
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.email')}
+              </label>
+              <input
+                type="email"
+                placeholder={t('modals.auth.emailPlaceholder')}
+                value={loginEmail}
+                onChange={(e) => setLoginEmail(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
-            <Button
+            <button
               type="submit"
-              variant="primary"
-              fullWidth
-              size="md"
-              isLoading={isSubmitting}
-              leftIcon={<KeyRound className="w-4 h-4" />}
+              disabled={isSubmitting}
+              className="w-full py-2.5 px-4 bg-[#10A37F] hover:bg-[#0E8C6D] active:bg-[#0C7A5F] text-white font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors shadow-xs disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
-              {t('modals.auth.sendResetLink')}
-            </Button>
+              <KeyRound className="w-4 h-4" />
+              <span>{t('modals.auth.sendResetLink')}</span>
+            </button>
 
             <div className="pt-2 text-center">
               <button
@@ -422,7 +427,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   setTab('login');
                   resetForm();
                 }}
-                className="text-xs font-mono font-bold text-gray-700 dark:text-slate-300 hover:text-black dark:hover:text-white underline hover:no-underline cursor-pointer"
+                className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-medium cursor-pointer"
               >
                 ← {t('modals.auth.backToLogin')}
               </button>
@@ -433,43 +438,58 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         {/* Tab 2: Sign Up Form */}
         {tab === 'signup' && (
           <form onSubmit={handleSignupSubmit} className="space-y-3.5">
-            <Input
-              label={t('modals.auth.fullName')}
-              type="text"
-              placeholder={t('modals.auth.fullNamePlaceholder')}
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.fullName')}
+              </label>
+              <input
+                type="text"
+                placeholder={t('modals.auth.fullNamePlaceholder')}
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
-            <Input
-              label={t('modals.auth.email')}
-              type="email"
-              placeholder={t('modals.auth.emailPlaceholder')}
-              value={signupEmail}
-              onChange={(e) => setSignupEmail(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.email')}
+              </label>
+              <input
+                type="email"
+                placeholder={t('modals.auth.emailPlaceholder')}
+                value={signupEmail}
+                onChange={(e) => setSignupEmail(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
-            <Input
-              label={t('modals.auth.password')}
-              type="password"
-              placeholder={t('modals.auth.passwordPlaceholder')}
-              value={signupPassword}
-              onChange={(e) => setSignupPassword(e.target.value)}
-              disabled={isSubmitting}
-              required
-            />
+            <div className="space-y-1.5">
+              <label className="block text-xs font-medium text-slate-700 dark:text-[#B4B4B4]">
+                {t('modals.auth.password')}
+              </label>
+              <input
+                type="password"
+                placeholder={t('modals.auth.passwordPlaceholder')}
+                value={signupPassword}
+                onChange={(e) => setSignupPassword(e.target.value)}
+                disabled={isSubmitting}
+                required
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 dark:focus:ring-[#10A37F]/30 transition-all placeholder:text-slate-400 dark:placeholder:text-slate-500 shadow-xs"
+              />
+            </div>
 
             {/* Eczacılık Fakültesi Dropdown */}
             <div className="w-full flex flex-col gap-1.5">
               <label
                 htmlFor="faculty-select"
-                className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100 flex items-center gap-1.5"
+                className="text-xs font-medium text-slate-700 dark:text-[#B4B4B4] flex items-center gap-1.5"
               >
-                <GraduationCap className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+                <GraduationCap className="w-3.5 h-3.5 text-amber-500" />
                 <span>{t('modals.auth.faculty')}</span>
               </label>
               <select
@@ -477,10 +497,10 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                 value={faculty}
                 onChange={(e) => setFaculty(e.target.value)}
                 disabled={isSubmitting}
-                className="w-full px-3.5 py-2.5 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100 font-mono text-sm border-3 border-black dark:border-slate-700 rounded-none shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712] focus:outline-none focus:ring-2 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B] transition-all duration-150"
+                className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC] font-sans text-sm border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-xs focus:outline-none focus:border-[#10A37F] focus:ring-2 focus:ring-[#10A37F]/20 transition-all cursor-pointer"
               >
                 {PHARMACY_FACULTIES.map((fac) => (
-                  <option key={fac} value={fac} className="bg-white dark:bg-[#131B2A] text-black dark:text-slate-100">
+                  <option key={fac} value={fac} className="bg-white dark:bg-[#212121] text-slate-900 dark:text-[#ECECEC]">
                     {fac}
                   </option>
                 ))}
@@ -488,21 +508,19 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </div>
 
             {/* Free lessons guarantee note */}
-            <div className="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-2 text-[11px] font-mono text-emerald-800 dark:text-emerald-300">
-              <Sparkles className="w-4 h-4 shrink-0 text-emerald-600" />
+            <div className="p-2.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-xl flex items-center gap-2 text-xs text-emerald-800 dark:text-emerald-300 font-medium">
+              <Sparkles className="w-4 h-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span>{t('modals.auth.unlock22Lessons')}</span>
             </div>
 
-            <Button
+            <button
               type="submit"
-              variant="primary"
-              fullWidth
-              size="md"
-              isLoading={isSubmitting}
-              leftIcon={<UserPlus className="w-4 h-4" />}
+              disabled={isSubmitting}
+              className="w-full py-2.5 px-4 bg-[#10A37F] hover:bg-[#0E8C6D] active:bg-[#0C7A5F] text-white font-medium text-sm rounded-xl flex items-center justify-center gap-2 transition-colors shadow-xs disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
             >
-              {t('modals.auth.signupAndStart')}
-            </Button>
+              <UserPlus className="w-4 h-4" />
+              <span>{t('modals.auth.signupAndStart')}</span>
+            </button>
           </form>
         )}
       </div>

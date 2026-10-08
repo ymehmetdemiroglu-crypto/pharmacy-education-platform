@@ -62,7 +62,7 @@ export const ModelStatusBadge: React.FC = () => {
             <Input.Password
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
-              placeholder="sk-or-v1-..."
+              placeholder="OpenRouter API anahtarı (isteğe bağlı)..."
             />
           </div>
           <p className="text-[11px] text-gray-500">
