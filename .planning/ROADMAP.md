@@ -37,4 +37,8 @@
 ### Phase 10: Pillar 2 Fotokopiden Etkileşime (Dynamic Slide Re-Animator) [COMPLETED]
 - **Goal**: Implement dynamic slide re-animator pipeline parsing chemical and pharmacological constants from static student lecture slides, mounting calibrated interactive widgets, generating Socratic active-recall challenges with 3-tier hints, producing 1-click Anki export decks, and providing persistent cloud & local storage.
 
+### Phase 11: Pillar 3 — Tactile "Çizerek Öğren" (Mechanism Arrow Pushing & Substituent Snapping) [COMPLETED]
+- **Goal**: Implement low-latency multi-touch and stylus reaction mechanism canvas (`TactileArrowCanvas`) and dynamic SAR substituent snap palette (`SubstituentSnapPalette`), backed by real-time chemoinformatics valence validation (Texas Carbon octet rules, hypervalent $P(V)$ and $S(VI)$ support, 4-stage worked-example fading, Hammett $\Delta pK_a$, and Wildman-Crippen $\Delta \log P$).
+
+
 

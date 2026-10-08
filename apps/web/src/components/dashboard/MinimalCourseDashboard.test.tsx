@@ -67,5 +67,16 @@ describe('MinimalCourseDashboard', () => {
 
     expect(handleReanimator).toHaveBeenCalled();
   });
+
+  it('triggers onOpenTactile when Çizerek Öğren button is clicked', () => {
+    const handleTactile = vi.fn();
+    render(<MinimalCourseDashboard onSelectLecture={vi.fn()} onOpenTactile={handleTactile} />);
+
+    const tactileBtn = screen.getByTestId('dashboard-tactile-btn');
+    fireEvent.click(tactileBtn);
+
+    expect(handleTactile).toHaveBeenCalled();
+  });
 });
+
 

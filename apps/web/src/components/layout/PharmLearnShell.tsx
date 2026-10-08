@@ -18,6 +18,7 @@ import {
   CrownOutlined,
   ThunderboltOutlined,
   FireFilled,
+  EditOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
@@ -25,6 +26,7 @@ import { DynamicLessonCanvas } from '../canvas/DynamicLessonCanvas';
 import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
 import { SlideHeatmapView } from '../triage/SlideHeatmapView';
 import { SlideReAnimatorView } from '../reanimator/SlideReAnimatorView';
+import { TactileMechanismView } from '../tactile/TactileMechanismView';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 import { DailyChallengeModal } from '../study/DailyChallengeModal';
@@ -59,8 +61,8 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
   // 2-Pane desktop layout state: open by default per /grill-me agreement
   const [isTutorOpen, setIsTutorOpen] = useState(true);
 
-  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), Triage (Vize Isı Haritası), or Reanimator (Slayt Canlandır)
-  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator'>('canvas');
+  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), Tactile (Çizerek Öğren), Reanimator (Slayt Canlandır), or Triage (Vize Isı Haritası)
+  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile'>('canvas');
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
@@ -341,6 +343,15 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 },
                 {
                   label: (
+                    <span className="flex items-center gap-1.5 text-emerald-500 font-semibold" title="Çizerek Öğren">
+                      <EditOutlined className="text-emerald-500" />
+                      <span className="hidden sm:inline">Çizerek Öğren ✍️</span>
+                    </span>
+                  ),
+                  value: 'tactile',
+                },
+                {
+                  label: (
                     <span className="flex items-center gap-1.5 text-blue-500 font-semibold" title="Slayt Canlandır">
                       <ExperimentOutlined className="text-blue-500" />
                       <span className="hidden sm:inline">Slayt Canlandır 🔬</span>
@@ -482,7 +493,11 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
         {/* 2-Pane Workspace, Dashboard, or Vize Triage */}
         <div className="flex-1 flex overflow-hidden relative">
           {/* Main Content Area */}
-          {activeView === 'reanimator' ? (
+          {activeView === 'tactile' ? (
+            <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
+              <TactileMechanismView />
+            </main>
+          ) : activeView === 'reanimator' ? (
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <SlideReAnimatorView onBackToDashboard={() => setActiveView('dashboard')} />
             </main>
@@ -503,6 +518,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 }}
                 onOpenTriage={() => setActiveView('triage')}
                 onOpenReanimator={() => setActiveView('reanimator')}
+                onOpenTactile={() => setActiveView('tactile')}
               />
             </main>
           ) : (

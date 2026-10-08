@@ -11,6 +11,7 @@ import {
   CalendarOutlined,
   SafetyCertificateOutlined,
   FolderOpenOutlined,
+  EditOutlined,
 } from '@ant-design/icons';
 import { StudyPulseLounge } from '../study/StudyPulseLounge';
 import { PastExamPracticeModal } from '../exam/PastExamPracticeModal';
@@ -24,6 +25,7 @@ interface MinimalCourseDashboardProps {
   onAskTutor?: (prompt: string) => void;
   onOpenTriage?: () => void;
   onOpenReanimator?: () => void;
+  onOpenTactile?: () => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
@@ -33,6 +35,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   onAskTutor,
   onOpenTriage,
   onOpenReanimator,
+  onOpenTactile,
 }) => {
   const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
@@ -84,6 +87,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-blue-50/80 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/60 text-blue-700 dark:text-blue-400 hover:border-blue-500 shadow-xs flex items-center gap-1.5"
               >
                 Fotokopiden Canlandır 🔬
+              </Button>
+              <Button
+                data-testid="dashboard-tactile-btn"
+                onClick={() => onOpenTactile && onOpenTactile()}
+                icon={<EditOutlined className="text-emerald-500" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/60 text-emerald-700 dark:text-emerald-400 hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
+              >
+                Çizerek Öğren ✍️
               </Button>
               <Button
                 onClick={() => setIsVaultModalOpen(true)}

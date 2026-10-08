@@ -898,4 +898,61 @@ Testing was performed in the user's authentic local **Brave Browser installation
   - `39_slide_reanimator_quiz_feedback.png`: Revealed feedback with diagnostic exam trap explanation and hint ladder.
   - `40_slide_reanimator_anki_export.png`: Anki flashcard preview with tab-separated cloze export and direct download trigger.
 
+---
+
+## 15. Phase 11: Pillar 3 — Tactile "Çizerek Öğren" (Mechanism Arrow Pushing & Substituent Snapping)
+
+**Status**: **COMPLETED & VERIFIED (100% PASS RATE)**  
+**Date**: October 2026  
+**Artifacts Generated & Updated**:
+- `apps/web/src/types/tactileMechanism.types.ts`: Zod schemas & TypeScript definitions for `ChemicalPoint`, `CurvedArrow`, `MechanismChallenge`, `ValenceValidationResponse`, `SubstituentType`, `DrugScaffold`, and `SarEvaluationResult`.
+- `apps/web/src/services/valenceOctetEngine.ts` & `valenceOctetEngine.test.ts`: Chemoinformatics valence validator preventing Texas Carbon ($>4$ bonds for Period 2 elements), supporting hypervalent $P(V)$ and $S(VI)$ octet expansions, computing Hammett $\Delta pK_a$ shifts ($\Delta pK_a = -\rho \cdot \sigma_x$), and Wildman-Crippen lipophilicity change $\Delta \log P$ (7/7 tests green).
+- `apps/web/src/data/tactileMechanisms.data.ts`: 4 authentic Turkish pharmacy mechanisms with exact citations from `/materials/` (AChE Ser-203 Acetylation, Organophosphate Aging TRAP-08, Procaine vs Lidocaine Hydrolysis TRAP-03, and Beta-Lactam Ring Opening TRAP-09), and 3 drug scaffolds (Procaine/Lidocaine, Propranolol, Nifedipine).
+- `apps/web/src/components/tactile/TactileArrowCanvas.tsx` & `TactileArrowCanvas.test.tsx`: PointerEvents tactile drawing canvas with 56px bond baseline target geometry, Voronoi snapping, perpendicular Bézier control points ($h = 0.25 d$), 4-stage worked-example fading state machine, and haptic feedback (`navigator.vibrate([30, 20, 30])`) (4/4 tests green).
+- `apps/web/src/components/tactile/SubstituentSnapPalette.tsx` & `SubstituentSnapPalette.test.tsx`: 2D skeletal scaffold with clickable hotspots and 8 functional group chips, backed by real-time analog gauges for $\Delta \log P$, $\Delta pK_a$, metabolic $t_{1/2}$, and receptor affinity (3/3 tests green).
+- `apps/web/src/components/tactile/TactileMechanismView.tsx` & `TactileMechanismView.test.tsx`: Full dark Obsidian workspace integrating Arrow Pushing and SAR Snapping, 3-tier Socratic hint ladders, and canonical exam trap alerts (4/4 tests green).
+- `apps/web/src/components/layout/PharmLearnShell.tsx`: Added `'tactile'` navigation tab (`Çizerek Öğren ✍️`) with routed full-page workspace.
+- `apps/web/src/components/dashboard/MinimalCourseDashboard.tsx`: Added `"Çizerek Öğren (Mekanizma & SAR) ✍️"` quick-action CTA button.
+- `scripts/capture-tactile-visual.mjs`: Automated Playwright visual verification script in Brave Browser.
+
+---
+
+### 15.1 Technical Architecture & Pedagogical Invariants
+
+1. **Strict Octet vs Hypervalent Engine**:
+   - Strictly rejects 5-coordinate Texas Carbon when students attack carbonyl centers without opening the $\pi$-bond, triggering haptic pulse and diagnostic feedback: *"Texas Karbon Hatası! Karbon 5 bağ yapamaz (oktet aşımı)."*
+   - Explicitly validates pentacoordinate Phosphorus ($P(V)$, 10 electrons) in organophosphate poisoning / 2-PAM reactivation and hexavalent Sulfur ($S(VI)$, 12 electrons) in sulfonamides, eliminating false-positive rejections.
+
+2. **Curved Bézier Trajectories**:
+   - Calculates quadratic Bézier curves with automatic perpendicular offset:
+     $$P_{\text{ctrl}} = \frac{P_0 + P_1}{2} + 0.25 \|\vec{P_1 - P_0}\| \hat{n}$$
+   - Supports selecting covalent bond midpoints as $\pi$-bond electron donors ($C=C$ attack or $C=O$ opening).
+
+3. **4-Stage Worked-Example Fading**:
+   - `STAGE_DEMO`: Animated expert demonstration of electron flow.
+   - `STAGE_FADED_1`: Primary nucleophilic attack arrow is pre-drawn; student completes secondary $\pi$-opening arrow.
+   - `STAGE_FADED_2`: Reactive centers highlighted with pulsating amber targets; student draws both arrows.
+   - `STAGE_INDEPENDENT`: Freeform challenge with zero visual aids.
+
+4. **Dynamic SAR Exploration**:
+   - Real-time Hammett relation ($\Delta pK_a = -\rho \cdot \sigma_x$) and Wildman-Crippen lipophilicity update meters in $<10\text{ms}$.
+   - Ortho steric hindrance ($E_s$) dynamically shields esters/amides, calculating extended metabolic half-life ($t_{1/2}$).
+
+---
+
+### 15.2 Verification Matrix & Brave Browser Visual Audit
+
+- **TypeScript Strict Typecheck**: Passed with **0 errors** across all packages (`tsc --noEmit` exited code 0).
+- **Production Bundle Dev-Notes Audit**: Passed with **0 dev notes leaked** across 327 compiled bundle files.
+- **Unit Test Suite**: Passed **100% green** (38/38 test files, 184/184 tests in `apps/web`; monorepo all tests green).
+- **Playwright Visual Verification (Brave Browser)**:
+  Captured and audited 6 high-fidelity screenshots in `brain/screenshots/`:
+  - `41_tactile_mechanism_overview.png`: Full workspace layout and animated demo electron-flow arrows.
+  - `42_tactile_worked_example_fading.png`: Stage 2 (Yarı İpucu) with pre-drawn primary scaffold arrow.
+  - `43_tactile_arrow_pushing_canvas.png`: Stage 3 (Hedefli) with pulsing amber target circles.
+  - `44_tactile_texas_carbon_feedback.png`: Diagnostic Texas Karbon oktet hatası error feedback and unlocked Tier 1 hint.
+  - `45_tactile_sar_snap_palette.png`: SAR Snapping mode with 2D Procaine/Lidocaine scaffold.
+  - `46_tactile_sar_gauges_dynamic.png`: Live $\Delta\log P$, $\Delta pK_a$, and metabolic half-life gauges upon applying `-NO₂`.
+
+
 
