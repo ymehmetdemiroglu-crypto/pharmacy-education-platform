@@ -834,3 +834,68 @@ Testing was performed in the user's authentic local **Brave Browser installation
 - Production Bundle Dev Notes Audit: 277 bundle files verified clean (0 internal notes)
 - Monorepo Test Suite: 88/88 test files, 366/366 tests passed (100% green)
 
+---
+
+## 14. Phase 10: Pillar 2 Fotokopiden Etkileşime (Dynamic Slide Re-Animator)
+
+**Status**: **COMPLETED & VERIFIED (100% PASS RATE)**  
+**Date**: October 2026  
+**Artifacts Generated & Updated**:
+- `apps/web/src/types/slideReAnimator.types.ts`: Type-safe Zod schemas and TypeScript interfaces for chemoinformatics entities, widget configs, Socratic quiz challenges, Anki flashcard payloads, and reanimated slide structures.
+- `apps/web/src/data/reanimatedSlides.data.ts`: 4 authentic Turkish pharmacy slide exemplars (Dibucaine SAR, Furchgott Spare Receptors, Salicylic Acid Intramolecular H-Bonding, Schild Regression Antagonism) with precise slide and book citations from `/materials/`.
+- `apps/web/src/services/slideReAnimatorService.ts` & `slideReAnimatorService.test.ts`: Deterministic chemoinformatics entity lexer, interactive widget resolver, Socratic challenge builder with 3-tier scaffolding hint ladders, and Anki-compliant TSV export generator (9/9 Vitest tests green).
+- `apps/web/src/services/slideStorageService.ts` & `slideStorageService.test.ts`: Hybrid cloud-and-local persistence layer supporting Supabase Storage uploads, public CDN URL generation, and `localStorage` caching (`pharmlearn_reanimated_slides_v1`) (6/6 Vitest tests green).
+- `apps/web/src/stores/useSlideReAnimatorStore.ts` & `useSlideReAnimatorStore.test.ts`: Zustand store managing slide re-animation state, active slide selection, course switching, hypothesis lock-in, hint ladder reveals, and Anki card staging (7/7 Vitest tests green).
+- `apps/web/src/components/reanimator/SlideReAnimatorView.tsx` & `SlideReAnimatorView.test.tsx`: 2-column workstation with entity chips, live interactive simulator (`IonizationChamber`, `SarMatrixWidget`, `DoseResponseCurve`, `DualModeMoleculeViewer`), predict-then-reveal quiz, and Anki export preview (4/4 Vitest tests green).
+- `apps/web/src/components/reanimator/SlideReAnimatorModal.tsx` & `SlideReAnimatorModal.test.tsx`: Modal dialog wrapper for quick slide re-animation across app contexts (1/1 Vitest test green).
+- `apps/web/src/components/layout/PharmLearnShell.tsx`: Navigation bar integration with `'reanimator'` tab (`Slayt Canlandır 🔬`).
+- `apps/web/src/components/dashboard/MinimalCourseDashboard.tsx`: Quick-action CTA button (`Fotokopiden Canlandır 🔬`) routing to the slide re-animator workspace.
+- `packages/ui/src/test/setup.ts`: Hardened JSDOM `window.matchMedia` mocks to support Ant Design `ResponsiveObserver` during full monorepo test sweeps.
+- `scripts/capture-slide-reanimator-visual.mjs`: Automated Playwright script executing Brave Browser visual audits.
+
+---
+
+### 14.1 Technical Architecture & Pedagogical Invariants
+
+1. **Chemoinformatics & Pharmacological Entity Lexer**:
+   - Accurately identifies numerical and chemical entities from raw slide OCR/text: pKa values, pH conditions, dissociation constants ($K_d$), potencies ($EC_{50}$), efficacies ($E_{max}$), Schild slope values, and chemical scaffold names.
+   - Categorizes entities into interactive chips (`scaffold`, `pka`, `pharmacology`, `exam_trap`, `mechanism`) with visual badges.
+
+2. **Deterministic Interactive Widget Resolution**:
+   - Dynamically inspects extracted concepts and resolves the optimal interactive simulation widget:
+     - Acid-base ionization / pKa concepts $\to$ `IonizationChamber`
+     - Structure-activity relationships $\to$ `SarMatrixWidget`
+     - Receptor reserve & dose-response $\to$ `DoseResponseCurve` (operational model)
+     - Molecular conformation & H-bonding $\to$ `DualModeMoleculeViewer`
+
+3. **Predict-Then-Reveal Socratic Challenge Engine**:
+   - Enforces a strict hypothesis lock: students cannot inspect feedback or answers until they choose an option and click "Tahminimi Kilitle".
+   - 3-tier scaffolding hint ladders (`[Nudge, Clue, Solution]`) unlocked on demand without spoiling the learning moment.
+   - Decontaminated distractors mapping directly to faculty exam traps (`TRAP-01` to `TRAP-10`).
+
+4. **1-Click Compliant Anki Flashcard Export**:
+   - Generates `#separator:tab`, `#html:true`, `#tags column:4` formatted TSV files.
+   - Front contains the slide title, context, and cloze-formatted core question.
+   - Back contains the correct chemical/pharmacological rationale and diagnostic misconception explanation.
+   - Instant browser download with automatic sanitized filename generation (`anki_deck_<title>.txt`).
+
+5. **Cloud-First & Local-First Hybrid Storage**:
+   - Per explicit user directive, slide images and generated re-animated workspaces are backed by Supabase Storage (`slides` bucket) with local-first `localStorage` caching for instant offline loads and session persistence.
+
+---
+
+### 14.2 Verification Matrix & Brave Browser Visual Audit
+
+- **TypeScript Strict Typecheck**: Passed with **0 errors** across all packages (`tsc --noEmit` exited code 0).
+- **Production Bundle Dev-Notes Audit**: Passed with **0 dev notes leaked** across 302 compiled bundle files.
+- **Unit Test Suite**: Passed **100% green** (34/34 test files, 165/165 tests in `apps/web`; 90/90 test files, 393/393 tests across monorepo).
+- **Playwright Visual Verification (Brave Browser)**:
+  Captured and audited 6 high-fidelity screenshots in `brain/screenshots/`:
+  - `35_slide_reanimator_overview.png`: Full workspace layout showing extracted chips, metadata, and live simulator.
+  - `36_slide_reanimator_widget_sar.png`: Interactive `SarMatrixWidget` mounted for Dibucaine SAR slide.
+  - `37_slide_reanimator_widget_ionization.png`: Interactive `IonizationChamber` mounted for Salicylic Acid slide.
+  - `38_slide_reanimator_predict_step.png`: Socratic quiz step before prediction lock-in.
+  - `39_slide_reanimator_quiz_feedback.png`: Revealed feedback with diagnostic exam trap explanation and hint ladder.
+  - `40_slide_reanimator_anki_export.png`: Anki flashcard preview with tab-separated cloze export and direct download trigger.
+
+

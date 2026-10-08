@@ -23,6 +23,7 @@ interface MinimalCourseDashboardProps {
   totalConceptsCount?: number;
   onAskTutor?: (prompt: string) => void;
   onOpenTriage?: () => void;
+  onOpenReanimator?: () => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
@@ -31,6 +32,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   totalConceptsCount = 10,
   onAskTutor,
   onOpenTriage,
+  onOpenReanimator,
 }) => {
   const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
@@ -74,6 +76,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-red-50/80 dark:bg-red-950/30 border border-red-200 dark:border-red-900/60 text-red-700 dark:text-red-400 hover:border-red-500 shadow-xs flex items-center gap-1.5"
               >
                 Vize Kampı (Top %20 Slayt) 🔥
+              </Button>
+              <Button
+                data-testid="dashboard-reanimator-btn"
+                onClick={() => onOpenReanimator && onOpenReanimator()}
+                icon={<ExperimentOutlined className="text-blue-500" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-blue-50/80 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/60 text-blue-700 dark:text-blue-400 hover:border-blue-500 shadow-xs flex items-center gap-1.5"
+              >
+                Fotokopiden Canlandır 🔬
               </Button>
               <Button
                 onClick={() => setIsVaultModalOpen(true)}

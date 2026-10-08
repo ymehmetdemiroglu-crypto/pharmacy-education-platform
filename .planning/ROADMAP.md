@@ -34,3 +34,7 @@
 ### Phase 9: Pillar 1 Slayt Isı Haritası & 1-Click Vize Cram Mode (Wave 1 Triage) [COMPLETED]
 - **Goal**: Implement algorithmic High-Yield Scoring ($HYS_s$), slide-to-trap ontology linking authentic Marmara/Hacettepe exam traps, visual slide heatmap (`SlideHeatmapView`), and 1-Click Vize Cram Carousel with zero-server privacy sandbox.
 
+### Phase 10: Pillar 2 Fotokopiden Etkileşime (Dynamic Slide Re-Animator) [COMPLETED]
+- **Goal**: Implement dynamic slide re-animator pipeline parsing chemical and pharmacological constants from static student lecture slides, mounting calibrated interactive widgets, generating Socratic active-recall challenges with 3-tier hints, producing 1-click Anki export decks, and providing persistent cloud & local storage.
+
+

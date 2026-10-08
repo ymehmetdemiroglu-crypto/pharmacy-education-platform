@@ -57,5 +57,15 @@ describe('MinimalCourseDashboard', () => {
 
     expect(handleTriage).toHaveBeenCalled();
   });
+
+  it('triggers onOpenReanimator when Fotokopiden Canlandır button is clicked', () => {
+    const handleReanimator = vi.fn();
+    render(<MinimalCourseDashboard onSelectLecture={vi.fn()} onOpenReanimator={handleReanimator} />);
+
+    const reanimatorBtn = screen.getByTestId('dashboard-reanimator-btn');
+    fireEvent.click(reanimatorBtn);
+
+    expect(handleReanimator).toHaveBeenCalled();
+  });
 });
 
