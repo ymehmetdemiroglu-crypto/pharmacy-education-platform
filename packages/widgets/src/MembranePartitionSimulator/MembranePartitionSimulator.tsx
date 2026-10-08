@@ -356,9 +356,9 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
       </div>
 
       {/* Compound Type Selector */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
+          <span className="text-xs font-mono font-semibold uppercase text-slate-700 dark:text-neutral-300">
             {t.compoundTypeLabel}
           </span>
           <div className="flex items-center gap-1.5">
@@ -367,10 +367,10 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
               disabled={disabled}
               onClick={() => handleCompoundTypeChange('acid')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
                 compoundType === 'acid'
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-amber-500 text-white border-amber-500 shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {t.acid}
@@ -380,10 +380,10 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
               disabled={disabled}
               onClick={() => handleCompoundTypeChange('base')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
                 compoundType === 'base'
-                  ? 'bg-[#6BCB77] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {t.base}
@@ -393,10 +393,10 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
               disabled={disabled}
               onClick={() => handleCompoundTypeChange('neutral')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
                 compoundType === 'neutral'
-                  ? 'bg-[#4D96FF] text-white shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {t.neutral}
@@ -405,15 +405,15 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
         </div>
 
         <div className="flex items-center gap-2 text-xs font-mono" dir="ltr">
-          <span className="font-bold text-gray-600 dark:text-slate-400">{t.totalPiShift}</span>
+          <span className="font-semibold text-slate-500 dark:text-neutral-400">{t.totalPiShift}</span>
           <span
             className={clsx(
-              'px-2 py-0.5 border border-black/30 dark:border-slate-600 font-bold',
+              'px-2 py-0.5 border rounded-lg font-semibold',
               substituentPiSum > 0
-                ? 'bg-amber-100 text-amber-900'
+                ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-300 dark:border-amber-800'
                 : substituentPiSum < 0
-                ? 'bg-blue-100 text-blue-900'
-                : 'bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-slate-200'
+                ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-800'
+                : 'bg-slate-100 dark:bg-[#2A2A2A] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838]'
             )}
           >
             {(substituentPiSum >= 0 ? '+' : '') + substituentPiSum.toFixed(2)}
@@ -422,52 +422,52 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
       </div>
 
       {/* Hansch Substituent Modifiers */}
-      <div className="p-3 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 space-y-2">
+      <div className="p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs space-y-2">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-slate-300">
+          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
             {t.hanschTitle}
           </span>
-          <span className="text-[11px] font-mono text-gray-500 dark:text-slate-400">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-neutral-400">
             {t.hanschRule}
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
           {HANSCH_SUBSTITUENTS.map((sub) => {
             const count = activeSubstituents[sub.id] || 0;
             const subName = activeLocale === 'ar' ? sub.nameAr : activeLocale === 'en' ? (sub.nameEn || sub.nameTr) : sub.nameTr;
             return (
               <div
                 key={sub.id}
-                className="p-2 border border-black/30 dark:border-slate-700 bg-gray-50 dark:bg-[#1E293B] flex flex-col gap-1 items-center justify-between"
+                className="p-2.5 border border-slate-200 dark:border-[#333333] rounded-xl bg-slate-50 dark:bg-[#252525] flex flex-col gap-1 items-center justify-between"
               >
-                <div className="text-[11px] font-mono font-bold text-center">
-                  <span>{subName}</span>
+                <div className="text-[11px] font-mono font-semibold text-center">
+                  <span className="text-slate-900 dark:text-[#ECECEC]">{subName}</span>
                   <span
                     className={clsx(
                       'block text-[10px]',
-                      sub.pi > 0 ? 'text-amber-800 dark:text-amber-400' : 'text-blue-600 dark:text-blue-400'
+                      sub.pi > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-blue-600 dark:text-blue-400'
                     )}
                   >
                     π = {sub.pi > 0 ? `+${sub.pi}` : sub.pi}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-1.5 mt-1" dir="ltr">
+                <div className="flex items-center gap-2 mt-1" dir="ltr">
                   <button
                     type="button"
                     disabled={disabled || count === 0}
                     onClick={() => handleSubstituentChange(sub.id, -1)}
-                    className="w-5 h-5 flex items-center justify-center font-mono font-bold text-xs bg-white dark:bg-slate-700 border border-black dark:border-slate-600 disabled:opacity-30"
+                    className="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-white dark:bg-[#333333] border border-slate-300 dark:border-[#444444] rounded-md hover:bg-slate-100 dark:hover:bg-[#3C3C3C] text-slate-800 dark:text-white disabled:opacity-30 transition-colors"
                   >
                     -
                   </button>
-                  <span className="font-mono text-xs font-bold w-4 text-center">{count}</span>
+                  <span className="font-mono text-xs font-semibold w-4 text-center text-slate-800 dark:text-neutral-200">{count}</span>
                   <button
                     type="button"
                     disabled={disabled || count >= 3}
                     onClick={() => handleSubstituentChange(sub.id, 1)}
-                    className="w-5 h-5 flex items-center justify-center font-mono font-bold text-xs bg-white dark:bg-slate-700 border border-black dark:border-slate-600 disabled:opacity-30"
+                    className="w-6 h-6 flex items-center justify-center font-mono font-bold text-xs bg-white dark:bg-[#333333] border border-slate-300 dark:border-[#444444] rounded-md hover:bg-slate-100 dark:hover:bg-[#3C3C3C] text-slate-800 dark:text-white disabled:opacity-30 transition-colors"
                   >
                     +
                   </button>
@@ -479,7 +479,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
       </div>
 
       {/* Sliders: Base logP, pKa (if not neutral), pH */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <Slider
           label={t.baseLogPLabel}
           value={baseLogP}
@@ -513,7 +513,7 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
       {isLipinskiViolated && (
         <div
           role="alert"
-          className="p-2.5 bg-amber-500/20 border-2 border-amber-600 text-amber-950 dark:text-amber-200 text-xs font-mono font-bold flex items-center justify-between"
+          className="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 rounded-xl text-amber-900 dark:text-amber-200 text-xs font-mono font-semibold flex items-center justify-between"
         >
           <span>
             {t.lipinskiWarning(effectiveLogP)}
@@ -524,43 +524,43 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
 
       {/* SVG Membrane Cross-Section & Particle Partition Visualizer (Strict LTR Isolation) */}
       <div
-        className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3.5 space-y-3"
+        className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4 space-y-3"
         dir="ltr"
       >
-        <div className="flex items-center justify-between text-xs font-mono font-bold">
+        <div className="flex items-center justify-between text-xs font-mono font-semibold">
           <span className="flex items-center gap-1.5 text-blue-700 dark:text-blue-400">
-            <span className="w-3.5 h-3.5 bg-blue-500 border border-black inline-block" />
+            <span className="w-3 h-3 bg-blue-500 rounded-sm inline-block" />
             {t.aqueousLegend(aqueousCount)}
           </span>
-          <span className="flex items-center gap-1.5 text-amber-800 dark:text-amber-400">
-            <span className="w-3.5 h-3.5 bg-amber-500 border border-black inline-block" />
+          <span className="flex items-center gap-1.5 text-amber-700 dark:text-amber-400">
+            <span className="w-3 h-3 bg-amber-500 rounded-sm inline-block" />
             {t.lipidLegend(lipidCount)}
           </span>
         </div>
 
         <svg
           viewBox="0 0 500 180"
-          className="w-full h-auto select-none border-2 border-black dark:border-slate-700 bg-[#F8FAFC] dark:bg-[#0B0F17]"
+          className="w-full h-auto select-none border border-slate-200 dark:border-[#2F2F2F] rounded-xl bg-slate-50 dark:bg-[#171717]"
           role="img"
           aria-label={t.svgAria}
         >
           {/* Upper Aqueous Phase */}
-          <rect x="0" y="0" width="500" height="45" fill="#3B82F6" fillOpacity="0.12" />
-          <text x="25" y="22" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="#1D4ED8">
+          <rect x="0" y="0" width="500" height="45" fill="#3B82F6" fillOpacity="0.08" />
+          <text x="25" y="22" fontSize="10" fontFamily="monospace" fontWeight="600" fill="#2563EB">
             {t.donorCompartment}
           </text>
 
           {/* Lipid Bilayer */}
-          <rect x="0" y="45" width="500" height="90" fill="#F59E0B" fillOpacity="0.16" stroke="#F59E0B" strokeWidth="1" strokeDasharray="3 3" />
+          <rect x="0" y="45" width="500" height="90" fill="#F59E0B" fillOpacity="0.10" stroke="#F59E0B" strokeWidth="1" strokeDasharray="3 3" />
 
           {/* Upper polar head leaflet */}
           {Array.from({ length: 25 }).map((_, i) => (
-            <circle key={`top-head-${i}`} cx={10 + i * 20} cy="48" r="4.5" fill="#3B82F6" stroke="#000" strokeWidth="1" />
+            <circle key={`top-head-${i}`} cx={10 + i * 20} cy="48" r="4.5" fill="#3B82F6" stroke="#2563EB" strokeWidth="1" />
           ))}
 
           {/* Lower polar head leaflet */}
           {Array.from({ length: 25 }).map((_, i) => (
-            <circle key={`bottom-head-${i}`} cx={10 + i * 20} cy="132" r="4.5" fill="#3B82F6" stroke="#000" strokeWidth="1" />
+            <circle key={`bottom-head-${i}`} cx={10 + i * 20} cy="132" r="4.5" fill="#3B82F6" stroke="#2563EB" strokeWidth="1" />
           ))}
 
           {/* Hydrocarbon lipid tails */}
@@ -577,8 +577,8 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
           })}
 
           {/* Lower Aqueous Phase */}
-          <rect x="0" y="135" width="500" height="45" fill="#10B981" fillOpacity="0.10" />
-          <text x="25" y="160" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="#047857">
+          <rect x="0" y="135" width="500" height="45" fill="#10B981" fillOpacity="0.08" />
+          <text x="25" y="160" fontSize="10" fontFamily="monospace" fontWeight="600" fill="#059669">
             {t.acceptorCompartment}
           </text>
 
@@ -594,8 +594,8 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
                 cy={y}
                 r="4.5"
                 fill="#3B82F6"
-                stroke="#000000"
-                strokeWidth="1.2"
+                stroke="#2563EB"
+                strokeWidth="1"
               />
             );
           })}
@@ -609,10 +609,10 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
                 key={`lip-${i}`}
                 cx={x}
                 cy={y}
-                r="5.5"
+                r="5"
                 fill="#F59E0B"
-                stroke="#000000"
-                strokeWidth="1.5"
+                stroke="#B45309"
+                strokeWidth="1.2"
               />
             );
           })}
@@ -620,9 +620,9 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
           {/* Diffusion Flux Vector Indicator */}
           {membraneFlux > 10 && (
             <g>
-              <line x1="470" y1="20" x2="470" y2="155" stroke="#10B981" strokeWidth={membraneFlux > 50 ? '3.5' : '2'} strokeDasharray="4 2" />
+              <line x1="470" y1="20" x2="470" y2="155" stroke="#10B981" strokeWidth={membraneFlux > 50 ? '3' : '1.5'} strokeDasharray="4 2" />
               <polygon points="470,165 464,153 476,153" fill="#10B981" />
-              <text x="460" y="90" fontSize="9" fontFamily="monospace" fill="#10B981" fontWeight="bold" textAnchor="end">
+              <text x="460" y="90" fontSize="9" fontFamily="monospace" fill="#059669" fontWeight="bold" textAnchor="end">
                 {t.flux(membraneFlux)}
               </text>
             </g>
@@ -632,26 +632,26 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
         {/* Readout Summary Grid */}
         <div
           aria-live="polite"
-          className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-2 border-t border-black/10 dark:border-slate-800 text-xs font-mono text-center"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-3 border-t border-slate-200 dark:border-[#2F2F2F] text-xs font-mono text-center"
         >
-          <div className="bg-gray-50 dark:bg-[#1E293B] p-2 border border-black/20 dark:border-slate-700">
-            <span className="text-[10px] text-gray-600 dark:text-slate-400 block uppercase">
+          <div className="bg-slate-50 dark:bg-[#252525] p-3 border border-slate-200 dark:border-[#333333] rounded-xl">
+            <span className="text-[10px] text-slate-500 dark:text-neutral-400 block uppercase font-medium">
               {t.effectiveLogP}
             </span>
-            <strong className="text-sm font-bold">{effectiveLogP.toFixed(2)}</strong>
+            <strong className="text-sm font-bold text-slate-900 dark:text-[#ECECEC]">{effectiveLogP.toFixed(2)}</strong>
           </div>
 
-          <div className="bg-gray-50 dark:bg-[#1E293B] p-2 border border-black/20 dark:border-slate-700">
-            <span className="text-[10px] text-gray-600 dark:text-slate-400 block uppercase">
+          <div className="bg-slate-50 dark:bg-[#252525] p-3 border border-slate-200 dark:border-[#333333] rounded-xl">
+            <span className="text-[10px] text-slate-500 dark:text-neutral-400 block uppercase font-medium">
               {t.physioLogD}
             </span>
-            <strong className="text-sm font-bold text-amber-800 dark:text-amber-400">
+            <strong className="text-sm font-bold text-amber-600 dark:text-amber-400">
               {calculatedLogD.toFixed(2)}
             </strong>
           </div>
 
-          <div className="bg-gray-50 dark:bg-[#1E293B] p-2 border border-black/20 dark:border-slate-700">
-            <span className="text-[10px] text-gray-600 dark:text-slate-400 block uppercase">
+          <div className="bg-slate-50 dark:bg-[#252525] p-3 border border-slate-200 dark:border-[#333333] rounded-xl">
+            <span className="text-[10px] text-slate-500 dark:text-neutral-400 block uppercase font-medium">
               {t.membranePermeability}
             </span>
             <strong className="text-sm font-bold text-emerald-600 dark:text-emerald-400">
@@ -659,18 +659,18 @@ export const MembranePartitionSimulator: React.FC<MembranePartitionSimulatorProp
             </strong>
           </div>
 
-          <div className="bg-gray-50 dark:bg-[#1E293B] p-2 border border-black/20 dark:border-slate-700">
-            <span className="text-[10px] text-gray-600 dark:text-slate-400 block uppercase">
+          <div className="bg-slate-50 dark:bg-[#252525] p-3 border border-slate-200 dark:border-[#333333] rounded-xl">
+            <span className="text-[10px] text-slate-500 dark:text-neutral-400 block uppercase font-medium">
               {t.bbbPermeability}
             </span>
             <span
               className={clsx(
-                'text-[10px] font-bold block mt-0.5',
+                'text-[10px] font-semibold block mt-0.5',
                 bbbStatus.level === 'high'
                   ? 'text-emerald-600 dark:text-emerald-400'
                   : bbbStatus.level === 'moderate'
                   ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-amber-800 dark:text-amber-400'
+                  : 'text-amber-700 dark:text-amber-400'
               )}
             >
               {activeLocale === 'ar' ? bbbStatus.statusAr : activeLocale === 'en' ? bbbStatus.statusEn : bbbStatus.statusTr}

@@ -162,7 +162,7 @@ const LectureRunner: React.FC<RunnerProps> = ({ concepts, title, userId, text, w
       sources.set(c.sourceDeck, set);
     }
     return (
-      <Card className="mx-auto flex max-w-2xl flex-col gap-4 border-4 shadow-[6px_6px_0_0_#000000]" data-testid="lecture-summary">
+      <Card className="mx-auto flex max-w-2xl flex-col gap-4" data-testid="lecture-summary">
         <h1 className="font-display text-2xl font-black uppercase">{text.summaryTitle}</h1>
         <p className="font-semibold">{title}</p>
         <section aria-label={text.summaryMastery} className="flex flex-col gap-2">
@@ -171,7 +171,7 @@ const LectureRunner: React.FC<RunnerProps> = ({ concepts, title, userId, text, w
             {concepts.map((c) => {
               const pct = Math.round((mastery[c.id] ?? 0) * 100);
               return (
-                <li key={c.id} className="flex items-center justify-between gap-2 border-3 border-black bg-white p-2 text-sm">
+                <li key={c.id} className="flex items-center justify-between gap-2 border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E] p-3 rounded-xl text-sm">
                   <span>{c.conceptTitle}</span>
                   <StickerBadge variant={(mastery[c.id] ?? 0) >= MASTERY_THRESHOLD ? 'green' : 'pink'} size="sm">
                     {text.masteryPct(pct)}
@@ -295,7 +295,7 @@ export const WhiteboardTutorPage: React.FC = () => {
   if (resolved.concepts.length === 0) {
     return (
       <div className="mx-auto flex max-w-xl flex-col gap-4 p-8">
-        <Card className="border-4 shadow-[6px_6px_0_0_#000000]">
+        <Card className="rounded-2xl border border-slate-200 dark:border-[#2F2F2F] shadow-xs">
           <p className="font-semibold">{lectureSlug === 'daily' ? text.daily10Empty : text.noConcepts}</p>
         </Card>
         <Link to="/dashboard" className="inline-flex">

@@ -289,7 +289,7 @@ export const SlideReAnimatorView: React.FC<SlideReAnimatorViewProps> = ({ onBack
                     return (
                       <Tooltip key={ent.id} title={`Güven Skoru: %${Math.round(ent.confidence * 100)}`}>
                         <span
-                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded text-xs font-semibold text-white shadow-sm border border-black/20"
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold text-white shadow-2xs border border-white/20"
                           style={{ backgroundColor: color }}
                         >
                           <span>{ent.type === 'trap' ? '⚠️' : '⚡'}</span>

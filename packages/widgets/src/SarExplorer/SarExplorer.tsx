@@ -188,28 +188,28 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
       </div>
 
       {/* Target Goal Banner */}
-      <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] text-xs font-mono text-black dark:text-slate-100">
-        <span className="font-bold text-[#92400E] dark:text-amber-400 uppercase">{dict.target}</span>
+      <div className="p-3.5 bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-xl text-xs font-mono text-slate-800 dark:text-neutral-200 shadow-xs">
+        <span className="font-bold text-amber-800 dark:text-amber-400 uppercase mr-1">{dict.target}</span>
         <span>{config.targetGoal.description}</span>
       </div>
 
       {/* Dynamic Property Readout Box */}
-      <div className="grid grid-cols-3 gap-2 p-3 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark text-center" dir="ltr">
+      <div className="grid grid-cols-3 gap-3 p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs text-center" dir="ltr">
         <div>
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.logP}</span>
-          <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
+          <span className="text-[10px] font-mono text-slate-500 dark:text-neutral-400 uppercase block font-medium">{dict.logP}</span>
+          <span className="font-mono font-bold text-lg text-slate-900 dark:text-[#ECECEC]">
             {roundedLogP}
           </span>
         </div>
-        <div className="border-x-2 border-black/20 dark:border-slate-700">
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.pKa}</span>
-          <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
+        <div className="border-x border-slate-200 dark:border-[#383838]">
+          <span className="text-[10px] font-mono text-slate-500 dark:text-neutral-400 uppercase block font-medium">{dict.pKa}</span>
+          <span className="font-mono font-bold text-lg text-slate-900 dark:text-[#ECECEC]">
             {roundedPka}
           </span>
         </div>
         <div>
-          <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300 uppercase block">{dict.affinityKd}</span>
-          <span className="font-mono font-bold text-lg text-black dark:text-slate-100">
+          <span className="text-[10px] font-mono text-slate-500 dark:text-neutral-400 uppercase block font-medium">{dict.affinityKd}</span>
+          <span className="font-mono font-bold text-lg text-emerald-600 dark:text-emerald-400">
             {currentAffinityNm} nM
           </span>
         </div>
@@ -222,10 +222,10 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
 
           return (
             <div key={pos.positionName} className="space-y-2">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
+              <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
                 {dict.site}{pos.positionName}
               </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
                 {pos.options.map((opt) => {
                   const isSelected = currentSelected === opt.id;
                   return (
@@ -235,19 +235,19 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
                       disabled={disabled || isSubmitted}
                       onClick={() => handleSelectSubstituent(pos.positionName, opt.id)}
                       className={clsx(
-                        'p-2.5 border-2 border-black dark:border-slate-700 rounded-none text-start transition-all duration-100 flex flex-col justify-between',
+                        'p-3 border rounded-xl text-start transition-all flex flex-col justify-between shadow-2xs',
                         isSelected
-                          ? 'bg-[#FFD93D] text-black font-bold shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] scale-102'
-                          : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
+                          ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 text-emerald-950 dark:text-emerald-200 ring-2 ring-emerald-500/20 shadow-xs'
+                          : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-800 dark:text-neutral-200 hover:bg-slate-50 dark:hover:bg-[#2A2A2A]'
                       )}
                     >
                       <div className="flex justify-between items-center text-xs">
-                        <span>{opt.name}</span>
-                        <code className="text-[10px] opacity-80" dir="ltr">{opt.structureSnippet}</code>
+                        <span className="font-semibold">{opt.name}</span>
+                        <code className="text-[10px] px-1 py-0.5 bg-slate-100 dark:bg-[#333333] rounded text-slate-600 dark:text-neutral-300" dir="ltr">{opt.structureSnippet}</code>
                       </div>
                       <div className={clsx(
                         "mt-2 text-[10px] font-mono flex justify-between",
-                        isSelected ? "text-black font-bold" : "text-gray-700 dark:text-slate-300"
+                        isSelected ? "text-emerald-800 dark:text-emerald-300 font-semibold" : "text-slate-500 dark:text-neutral-400"
                       )}>
                         <span>ΔlogP: {opt.deltaLogP > 0 ? `+${opt.deltaLogP}` : opt.deltaLogP}</span>
                         <span>{dict.affinityLabel}{opt.affinityMultiplier}x</span>
@@ -275,21 +275,21 @@ export const SarExplorer: React.FC<SarExplorerProps> = ({
 
       {/* Result Outcome */}
       {isSubmitted && (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
+        <div className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] space-y-3">
           <div className="flex items-center gap-2">
             {isSuccess ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.achieved}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.suboptimal}</span>
               </div>
             )}
           </div>
-          <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-body leading-relaxed text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+          <div className="p-3.5 bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl text-xs font-body leading-relaxed text-slate-800 dark:text-neutral-200 shadow-xs">
             {config.explanation}
           </div>
         </div>

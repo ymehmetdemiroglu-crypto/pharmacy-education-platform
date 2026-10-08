@@ -131,15 +131,15 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       </div>
 
       {/* Chemical Metadata Bar */}
-      <div className="flex flex-wrap items-center justify-between gap-2 p-2 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-mono">
-        <span>{t.molecule}: <strong>{config.moleculeName}</strong></span>
+      <div className="flex flex-wrap items-center justify-between gap-2 p-3 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl text-xs font-mono text-slate-800 dark:text-neutral-200 shadow-2xs">
+        <span>{t.molecule}: <strong className="text-slate-900 dark:text-[#ECECEC]">{config.moleculeName}</strong></span>
         <span className="truncate max-w-xs" title={config.smiles}>
-          {t.smiles}: <code className="bg-white dark:bg-[#0B0F17] px-1 border border-black/20 dark:border-slate-700" dir="ltr">{config.smiles}</code>
+          {t.smiles}: <code className="bg-white dark:bg-[#252525] px-1.5 py-0.5 rounded border border-slate-200 dark:border-[#333333] text-slate-700 dark:text-neutral-300" dir="ltr">{config.smiles}</code>
         </span>
       </div>
 
       {/* Interactive Molecule SVG Canvas */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex items-center justify-center relative overflow-hidden" dir="ltr">
+      <div className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-6 flex items-center justify-center relative overflow-hidden" dir="ltr">
         <svg
           viewBox="0 0 400 240"
           className="w-full max-w-md h-auto select-none"
@@ -159,10 +159,9 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                   y1={start.y}
                   x2={end.x}
                   y2={end.y}
-                  stroke="#000000"
-                  strokeWidth="3.5"
+                  stroke="#94A3B8"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
-                  className="dark:stroke-slate-300"
                 />
                 {isDouble && (
                   <line
@@ -170,10 +169,9 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                     y1={start.y + 3}
                     x2={end.x + 3}
                     y2={end.y + 3}
-                    stroke="#000000"
-                    strokeWidth="2"
+                    stroke="#94A3B8"
+                    strokeWidth="1.5"
                     strokeLinecap="round"
-                    className="dark:stroke-slate-300"
                   />
                 )}
               </g>
@@ -186,14 +184,22 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
             const isTarget = atom.isTarget;
 
             let fill = '#FFFFFF';
-            const stroke = '#000000';
+            let stroke = '#CBD5E1';
+            let textColor = '#0F172A';
+
             if (isSelected && !isSubmitted) {
-              fill = '#FFD93D';
+              fill = '#10A37F';
+              stroke = '#10A37F';
+              textColor = '#FFFFFF';
             } else if (isSubmitted) {
               if (isTarget) {
-                fill = '#6BCB77';
+                fill = '#10A37F';
+                stroke = '#059669';
+                textColor = '#FFFFFF';
               } else if (isSelected && !isTarget) {
-                fill = '#FF6B9D';
+                fill = '#F43F5E';
+                stroke = '#E11D48';
+                textColor = '#FFFFFF';
               }
             }
 
@@ -213,29 +219,31 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
                 }}
                 className={clsx(
                   'cursor-pointer transition-transform duration-100 focus:outline-none',
-                  !isSubmitted && !disabled && 'hover:scale-125'
+                  !isSubmitted && !disabled && 'hover:scale-115'
                 )}
               >
-                {/* Node Box / Circle */}
+                {/* Node Squircle */}
                 <rect
                   x={atom.x - 14}
                   y={atom.y - 14}
                   width="28"
                   height="28"
+                  rx="6"
+                  ry="6"
                   fill={fill}
                   stroke={stroke}
-                  strokeWidth="3"
-                  className="shadow-sm"
+                  strokeWidth="1.5"
+                  className="shadow-xs transition-colors"
                 />
                 {/* Atom Label */}
                 <text
                   x={atom.x}
                   y={atom.y + 4}
                   textAnchor="middle"
-                  fill="#000000"
+                  fill={textColor}
                   fontSize="12"
                   fontFamily="JetBrains Mono, monospace"
-                  fontWeight="bold"
+                  fontWeight="600"
                 >
                   {atom.label}
                 </text>
@@ -248,7 +256,7 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
       {/* Controls & Feedback */}
       {!isSubmitted ? (
         <div className="flex items-center justify-between gap-3 pt-2">
-          <span className="text-xs font-mono text-gray-700 dark:text-gray-300">
+          <span className="text-xs font-mono text-slate-600 dark:text-neutral-400">
             {selectedAtom ? `${t.selected}: ${selectedAtom.label} (${t.node} ${selectedAtom.id})` : t.promptClick}
           </span>
           <Button
@@ -260,27 +268,27 @@ export const StructureIdentifier: React.FC<StructureIdentifierProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
+        <div className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] space-y-3">
           <div className="flex items-center gap-2">
             {selectedAtom?.isTarget ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{t.correctTitle}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{t.incorrectTitle}</span>
               </div>
             )}
           </div>
           {selectedAtom && !selectedAtom.isTarget && selectedAtom.distractorRationale && (
-            <div className="p-3 bg-[#FFF0F5] dark:bg-[#2D1B22] border-2 border-[#FF6B9D] text-xs font-body leading-relaxed text-black dark:text-rose-200">
-              <span className="font-bold font-mono text-[#D92662] dark:text-[#FF85B2] uppercase block mb-1">{t.misconception}</span>
+            <div className="p-3.5 bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 rounded-xl text-xs font-body leading-relaxed text-rose-900 dark:text-rose-200">
+              <span className="font-bold font-mono text-rose-700 dark:text-rose-400 uppercase block mb-1">{t.misconception}</span>
               {selectedAtom.distractorRationale}
             </div>
           )}
-          <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-body leading-relaxed text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+          <div className="p-3.5 bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl text-xs font-body leading-relaxed text-slate-800 dark:text-neutral-200 shadow-xs">
             {config.explanation}
           </div>
         </div>

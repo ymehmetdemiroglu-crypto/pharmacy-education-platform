@@ -123,7 +123,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       </div>
 
       {/* Interactive Molecule & Metabolic Sites Diagram */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-4 flex flex-col items-center" dir="ltr">
+      <div className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4 flex flex-col items-center" dir="ltr">
         <svg
           viewBox="0 0 400 200"
           className="w-full max-w-md h-auto select-none"
@@ -136,10 +136,11 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
             y="70"
             width="120"
             height="60"
-            fill="#FFF8E7"
-            stroke="#000000"
-            strokeWidth="3"
-            className="dark:fill-[#1E293B] dark:stroke-slate-600"
+            rx="12"
+            fill="#F1F5F9"
+            stroke="#CBD5E1"
+            strokeWidth="1.5"
+            className="dark:fill-[#252525] dark:stroke-[#383838]"
           />
           <text
             x="200"
@@ -227,9 +228,9 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
 
       {/* Selected Site Detail Inspection */}
       {selectedSite && (
-        <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] space-y-2">
+        <div className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-xs space-y-2">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono font-bold uppercase text-black dark:text-slate-100">
+            <span className="text-xs font-semibold uppercase text-slate-900 dark:text-[#ECECEC]">
               {t.selectedPathway} {selectedSite.label} ({selectedSite.reactionType})
             </span>
             <div className="flex items-center gap-1.5">
@@ -240,13 +241,13 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
                 {selectedSite.phase}
               </StickerBadge>
               {selectedSite.toxicityFlag === 'toxic' && (
-                <span className="inline-flex items-center gap-1 bg-[#FF6B9D] text-black px-1.5 py-0.5 border border-black text-[10px] font-mono font-bold">
+                <span className="inline-flex items-center gap-1 bg-rose-50 text-rose-700 dark:bg-rose-950/40 dark:text-rose-400 border border-rose-200 dark:border-rose-800/60 rounded px-2 py-0.5 text-[10px] font-mono font-semibold">
                   <AlertTriangle className="w-3 h-3" /> {t.bioactivation}
                 </span>
               )}
             </div>
           </div>
-          <p className="text-xs font-body text-gray-700 dark:text-slate-300">
+          <p className="text-xs font-sans text-slate-600 dark:text-neutral-300">
             <strong>{t.outcome} </strong> {selectedSite.metaboliteOutcome}
           </p>
         </div>
@@ -255,7 +256,7 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
       {/* Submit / Outcome */}
       {!isSubmitted ? (
         <div className="flex items-center justify-between pt-2">
-          <span className="text-xs font-mono text-gray-700 dark:text-slate-300">
+          <span className="text-xs text-slate-500 dark:text-neutral-400">
             {selectedSite ? t.confirmPrompt : t.selectPrompt}
           </span>
           <Button
@@ -267,21 +268,21 @@ export const MetabolismMap: React.FC<MetabolismMapProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
+        <div className="pt-3 border-t border-slate-200 dark:border-[#2F2F2F] space-y-2">
           <div className="flex items-center gap-2">
             {selectedSite?.isTargetSite ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{t.correctTitle}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{t.incorrectTitle}</span>
               </div>
             )}
           </div>
-          <div className="p-3 bg-white dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 text-xs font-body leading-relaxed text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+          <div className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl text-xs font-sans leading-relaxed text-slate-800 dark:text-[#ECECEC] shadow-xs">
             {config.explanation}
           </div>
         </div>

@@ -359,9 +359,9 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       </div>
 
       {/* Mode Selector: Vapor Phase vs Solution Phase */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
+          <span className="text-xs font-mono font-semibold uppercase text-slate-700 dark:text-neutral-300">
             {isEn ? 'Phase Type:' : isAr ? 'طور المحاكاة:' : 'Faz Türü:'}
           </span>
           <div className="flex items-center gap-1.5">
@@ -370,10 +370,10 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
               disabled={disabled}
               onClick={() => handleModeChange('vapor')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
                 mode === 'vapor'
-                  ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-amber-500 text-white border-amber-500 shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {isEn ? 'Vapor Phase (a = Pt/P₀)' : isAr ? 'طور البخار (a = Pt/P₀)' : 'Buhar Fazı (a = Pt/P₀)'}
@@ -383,10 +383,10 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
               disabled={disabled}
               onClick={() => handleModeChange('solution')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
                 mode === 'solution'
-                  ? 'bg-[#4D96FF] text-white shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {isEn ? 'Solution Phase (a = St/S₀)' : isAr ? 'طور المحلول (a = St/S₀)' : 'Çözelti Fazı (a = St/S₀)'}
@@ -394,7 +394,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
           </div>
         </div>
 
-        <div className="text-xs font-mono font-bold" dir="ltr">
+        <div className="text-xs font-mono font-semibold text-slate-700 dark:text-neutral-300" dir="ltr">
           {mode === 'vapor'
             ? isEn
               ? 'P₀ (Saturation Vapor Pressure)'
@@ -407,15 +407,15 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             ? 'S₀ (ذائبية الإشباع)'
             : 'S₀ (Doygunluk Çözünürlüğü)'}
           :{' '}
-          <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-slate-800 border border-black/20 dark:border-slate-600">
+          <span className="px-2 py-0.5 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] rounded-lg">
             {currentAgent.saturationValue} {currentAgent.unit}
           </span>
         </div>
       </div>
 
       {/* Preset Agent Selector */}
-      <div className="flex flex-col gap-1.5 p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-        <span className="text-[11px] font-mono font-bold uppercase text-gray-700 dark:text-slate-300">
+      <div className="flex flex-col gap-1.5 p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
+        <span className="text-[11px] font-mono font-semibold uppercase text-slate-500 dark:text-neutral-400">
           {isEn ? 'Model Agents:' : isAr ? 'المركبات النموذجية:' : 'Model Ajanlar:'}
         </span>
         <div className="flex flex-wrap gap-2">
@@ -428,10 +428,10 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                 disabled={disabled}
                 onClick={() => handleAgentSelect(agent)}
                 className={clsx(
-                  'px-2.5 py-1 text-xs font-mono font-bold border-2 border-black dark:border-slate-700 transition-all',
+                  'px-3 py-1.5 text-xs font-mono font-semibold rounded-xl border transition-all',
                   isSelected
-                    ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000] scale-102'
-                    : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
+                    ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                    : 'bg-slate-50 dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
                 )}
               >
                 {isEn ? (agent.nameEn || agent.nameTr) : isAr ? agent.nameAr : agent.nameTr}
@@ -442,7 +442,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       </div>
 
       {/* Interactive Slider for Pt or St */}
-      <div className="p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <Slider
           label={
             mode === 'vapor'
@@ -469,23 +469,23 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
 
       {/* Real-Time Thermodynamic Activity Gauge & Scale (Strict LTR Isolation) */}
       <div
-        className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3.5 space-y-3"
+        className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4 space-y-3"
         dir="ltr"
       >
-        <div className="flex items-center justify-between text-xs font-mono font-bold">
-          <span>
+        <div className="flex items-center justify-between text-xs font-mono font-semibold">
+          <span className="text-slate-700 dark:text-neutral-300">
             Thermodynamic Activity (a = {mode === 'vapor' ? 'Pt/P₀' : 'St/S₀'}):{' '}
-            <strong className="text-sm font-bold text-amber-800 dark:text-amber-400">
+            <strong className="text-sm font-bold text-amber-600 dark:text-amber-400">
               {calc.activity.toFixed(3)}
             </strong>
           </span>
           <span>
             {calc.isCutoff ? (
-              <span className="text-purple-600 dark:text-purple-400 font-bold animate-pulse">
+              <span className="text-purple-600 dark:text-purple-400 font-semibold animate-pulse">
                 ⚠️ a &gt; 1.0 (CUTOFF TRIGGERED)
               </span>
             ) : (
-              <span className="text-gray-600 dark:text-slate-400">
+              <span className="text-slate-500 dark:text-neutral-400">
                 Eff. Activity: {calc.effectiveActivity.toFixed(3)}
               </span>
             )}
@@ -493,11 +493,11 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
         </div>
 
         {/* Visual Thermodynamic Activity Scale / Track */}
-        <div className="relative w-full h-8 border-3 border-black dark:border-slate-700 bg-gray-200 dark:bg-slate-800 flex overflow-hidden">
+        <div className="relative w-full h-7 border border-slate-300 dark:border-[#383838] rounded-xl bg-slate-200 dark:bg-neutral-800 flex overflow-hidden">
           {/* Conscious Zone: 0 to 0.02 (0 to 1.6% width) */}
           <div
             style={{ width: `${mapActivityToGaugePercent(0.02)}%` }}
-            className="h-full bg-emerald-400 flex items-center justify-center text-[9px] font-mono font-bold text-black"
+            className="h-full bg-emerald-400 flex items-center justify-center text-[9px] font-mono font-bold text-slate-900"
             title="Conscious (a < 0.02)"
           />
 
@@ -506,7 +506,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             style={{
               width: `${mapActivityToGaugePercent(0.05) - mapActivityToGaugePercent(0.02)}%`,
             }}
-            className="h-full bg-[#FFD93D] flex items-center justify-center text-[9px] font-mono font-bold text-black border-x border-black"
+            className="h-full bg-amber-400 flex items-center justify-center text-[9px] font-mono font-bold text-slate-900 border-x border-amber-600/30"
             title="Ferguson Surgical Window (a: 0.02 - 0.05)"
           />
 
@@ -524,7 +524,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             style={{
               width: `${mapActivityToGaugePercent(1.0) - mapActivityToGaugePercent(0.1)}%`,
             }}
-            className="h-full bg-red-500"
+            className="h-full bg-rose-500"
             title="Fatal Cardiorespiratory Collapse (a: 0.10 - 1.00)"
           />
 
@@ -542,27 +542,27 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             style={{
               left: `${mapActivityToGaugePercent(calc.activity)}%`,
             }}
-            className="absolute top-0 bottom-0 w-1.5 bg-black dark:bg-white shadow-[0px_0px_4px_#000] -translate-x-1/2 z-10"
+            className="absolute top-0 bottom-0 w-1 bg-slate-900 dark:bg-white shadow-xs -translate-x-1/2 z-10 rounded-full"
           />
         </div>
 
         {/* Legend */}
-        <div className="flex flex-wrap items-center justify-between text-[10px] font-mono text-gray-600 dark:text-slate-400 pt-1">
+        <div className="flex flex-wrap items-center justify-between text-[10px] font-mono text-slate-500 dark:text-neutral-400 pt-1">
           <div className="flex items-center gap-2">
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-emerald-400 border border-black inline-block" />{' '}
+              <span className="w-2.5 h-2.5 bg-emerald-400 rounded-sm inline-block" />{' '}
               {isEn ? 'Conscious (0-0.02)' : isAr ? 'واعي (0-0.02)' : 'Bilinç (0-0.02)'}
             </span>
-            <span className="flex items-center gap-1 font-bold text-amber-800 dark:text-amber-400">
-              <span className="w-2.5 h-2.5 bg-[#FFD93D] border border-black inline-block" />{' '}
+            <span className="flex items-center gap-1 font-semibold text-amber-700 dark:text-amber-400">
+              <span className="w-2.5 h-2.5 bg-amber-400 rounded-sm inline-block" />{' '}
               {isEn ? 'Ferguson Anesthesia (0.02-0.05)' : isAr ? 'تخدير فيرغسون (0.02-0.05)' : 'Ferguson Anestezi (0.02-0.05)'}
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-red-500 border border-black inline-block" />{' '}
+              <span className="w-2.5 h-2.5 bg-rose-500 rounded-sm inline-block" />{' '}
               {isEn ? 'Toxic (0.10-1.0)' : isAr ? 'سام (0.10-1.0)' : 'Toksik (0.10-1.0)'}
             </span>
             <span className="flex items-center gap-1">
-              <span className="w-2.5 h-2.5 bg-purple-700 border border-black inline-block" />{' '}
+              <span className="w-2.5 h-2.5 bg-purple-700 rounded-sm inline-block" />{' '}
               {isEn ? 'Cutoff (>1.0)' : isAr ? 'انقطاع (>1.0)' : 'Kesilme (>1.0)'}
             </span>
           </div>
@@ -575,52 +575,52 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
       {/* Biological Response Card */}
       <div
         className={clsx(
-          'p-3 border-2 border-black dark:border-slate-700 flex flex-col gap-1.5 shadow-[2px_2px_0px_#000000]',
+          'p-4 border rounded-2xl flex flex-col gap-1.5 shadow-xs transition-colors',
           biologicalStatus.severity === 'surgical'
-            ? 'bg-[#FFD93D]/30 border-amber-600'
+            ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800'
             : biologicalStatus.severity === 'cutoff'
-            ? 'bg-purple-500/20 border-purple-600'
+            ? 'bg-purple-50 dark:bg-purple-950/40 border-purple-300 dark:border-purple-800'
             : biologicalStatus.severity === 'toxic'
-            ? 'bg-red-500/20 border-red-600'
+            ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800'
             : biologicalStatus.severity === 'deep'
-            ? 'bg-orange-500/20 border-orange-600'
-            : 'bg-emerald-500/15 border-emerald-600'
+            ? 'bg-orange-50 dark:bg-orange-950/40 border-orange-300 dark:border-orange-800'
+            : 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800'
         )}
       >
         <div className="flex items-center justify-between">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider">
+          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
             {isEn ? 'Biological & Clinical Status:' : isAr ? 'الحالة الحيوية والسريرية:' : 'Biyolojik ve Klinik Durum:'}
           </span>
-          <span className="text-xs font-mono font-bold">
+          <span className="text-xs font-mono font-bold text-slate-900 dark:text-[#ECECEC]">
             {isEn ? (biologicalStatus.stageEn || biologicalStatus.stageTr) : isAr ? biologicalStatus.stageAr : biologicalStatus.stageTr}
           </span>
         </div>
-        <p className="text-xs font-body text-gray-700 dark:text-slate-300">
+        <p className="text-xs font-body text-slate-600 dark:text-neutral-300 leading-relaxed">
           {isEn ? (biologicalStatus.descriptionEn || biologicalStatus.descriptionTr) : isAr ? biologicalStatus.descriptionAr : biologicalStatus.descriptionTr}
         </p>
       </div>
 
       {/* Membrane Expansion & Phase Separation SVG (Strict LTR Isolation) */}
       <div
-        className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3"
+        className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4"
         dir="ltr"
       >
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
+          <span className="text-xs font-mono font-semibold uppercase text-slate-700 dark:text-neutral-300">
             {isEn
               ? 'Neuronal Membrane Volume Expansion (ΔV/V Model):'
               : isAr
               ? 'التمدد الحجمي للغشاء العصبي (نموذج ΔV/V):'
               : 'Nöronal Membran Hacimsel Genleşmesi (ΔV/V Modeli):'}
           </span>
-          <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-400">
+          <span className="text-xs font-mono font-bold text-amber-600 dark:text-amber-400">
             ΔV/V = +{calc.membraneVolumeExpansion}%
           </span>
         </div>
 
         <svg
           viewBox="0 0 500 150"
-          className="w-full h-auto select-none border-2 border-black dark:border-slate-700 bg-[#F8FAFC] dark:bg-[#0B0F17]"
+          className="w-full h-auto select-none border border-slate-200 dark:border-[#2F2F2F] rounded-xl bg-slate-50 dark:bg-[#171717]"
           role="img"
           aria-label="Membrane volume expansion and phase cutoff diagram"
         >
@@ -659,7 +659,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
               cy={55 + ((i * 19) % 40)}
               r="4"
               fill="#F59E0B"
-              stroke="#000"
+              stroke="#B45309"
               strokeWidth="1"
             />
           ))}
@@ -671,7 +671,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
             width={Math.max(4, 20 - calc.membraneVolumeExpansion * 3.5)}
             height={66 + calc.membraneVolumeExpansion * 3}
             fill="#3B82F6"
-            stroke="#000"
+            stroke="#1D4ED8"
             strokeWidth="1.5"
           />
           <text
@@ -721,7 +721,7 @@ export const ThermodynamicActivityFergusonSlider: React.FC<
                   key={`cryst-${i}`}
                   points={`${80 + i * 45},15 ${85 + i * 45},8 ${90 + i * 45},15 ${85 + i * 45},22`}
                   fill="#7E22CE"
-                  stroke="#000"
+                  stroke="#581C87"
                   strokeWidth="1"
                 />
               ))}

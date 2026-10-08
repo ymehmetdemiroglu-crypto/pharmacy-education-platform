@@ -9,6 +9,6 @@ describe('SkeletonLoader Component', () => {
     const el = screen.getByRole('status');
     expect(el).toBeInTheDocument();
     expect(el).toHaveClass('h-24');
-    expect(el).toHaveClass('border-3');
+    expect(el).toHaveClass('border');
   });
 });

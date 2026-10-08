@@ -499,8 +499,8 @@ export const LessonPage: React.FC = () => {
     return (
       <div className="min-h-[80vh] flex items-center justify-center p-4">
         <Card variant="default" elevated className="max-w-xl w-full p-8 text-center space-y-6">
-          <div className="w-16 h-16 bg-[#FF6B9D] border-3 border-black mx-auto flex items-center justify-center shadow-neo">
-            <Lock className="w-8 h-8 text-black" />
+          <div className="w-16 h-16 rounded-2xl bg-rose-500/15 border border-rose-500/30 mx-auto flex items-center justify-center shadow-xs">
+            <Lock className="w-8 h-8 text-rose-500 dark:text-rose-400" />
           </div>
 
           <div className="space-y-2">
@@ -541,7 +541,7 @@ export const LessonPage: React.FC = () => {
             </Button>
           </div>
 
-          <div className="pt-4 border-t-2 border-black/10 dark:border-slate-700 text-xs font-mono text-gray-600 dark:text-gray-400">
+          <div className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] text-xs font-mono text-gray-600 dark:text-gray-400">
             <Link to="/courses/medchem/lessons/1" className="underline hover:text-black dark:hover:text-amber-400 font-bold">
               {locale === 'tr' ? '← Ücretsiz Ders 1\'e Dön' : locale === 'ar' ? '← العودة إلى الدرس 1 المجاني' : '← Return to Free Lesson 1'}
             </Link>
@@ -651,7 +651,7 @@ export const LessonPage: React.FC = () => {
       className="max-w-4xl mx-auto px-4 sm:px-6 py-6 pb-28 md:pb-6 space-y-6 scroll-pt-20"
     >
       {/* Top Header / Context Bar */}
-      <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-3 border-black dark:border-slate-700 pb-4">
+      <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <Link
@@ -677,11 +677,11 @@ export const LessonPage: React.FC = () => {
 
         {/* Stats: Streak & XP */}
         <div className="flex items-center gap-3 font-mono text-xs">
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FFF8E7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-orange-50 dark:bg-orange-950/30 text-orange-900 dark:text-orange-300 border border-orange-200 dark:border-orange-800/40 rounded-xl shadow-xs">
             <Flame className="w-4 h-4 text-orange-500 fill-orange-500" />
             <span className="font-bold">{progress.streakDays} {t.dayStreak}</span>
           </div>
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FFD93D] text-black border-2 border-black shadow-[2px_2px_0px_#000000]">
+          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 dark:bg-amber-950/30 text-amber-900 dark:text-amber-300 border border-amber-200 dark:border-amber-800/40 rounded-xl shadow-xs">
             <Award className="w-4 h-4" />
             <span className="font-bold">{progress.totalXP} XP</span>
           </div>
@@ -722,34 +722,34 @@ export const LessonPage: React.FC = () => {
       {/* 3-Phase Concept Journey Navigation Bar */}
       <nav
         aria-label="Lesson Journey Navigation"
-        className="flex items-center gap-1 sm:gap-2 p-1.5 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo-sm overflow-x-auto scrollbar-none"
+        className="flex items-center gap-1.5 p-1.5 bg-slate-100 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs overflow-x-auto scrollbar-none"
       >
         <button
           type="button"
           onClick={() => setActiveJourneyPhase('explore')}
-          className={`flex items-center gap-1.5 px-3 py-2 font-display font-black text-xs sm:text-sm uppercase tracking-tight transition-all shrink-0 ${
+          className={`flex items-center gap-1.5 px-3.5 py-2 font-sans font-semibold text-xs sm:text-sm tracking-tight transition-all rounded-xl shrink-0 ${
             activeJourneyPhase === 'explore'
-              ? 'bg-[#4D96FF] text-black border-2 border-black dark:border-blue-400 shadow-[2px_2px_0px_#000000] ring-2 ring-black'
-              : 'hover:bg-black/5 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300'
+              ? 'bg-blue-600 text-white shadow-xs'
+              : 'hover:bg-slate-200 dark:hover:bg-[#2A2A2A] text-slate-600 dark:text-slate-400'
           }`}
         >
-          <Sparkles className="w-4 h-4 text-black" />
+          <Sparkles className="w-4 h-4" />
           <span>{t.phase1Explore}</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveJourneyPhase('missions')}
-          className={`flex items-center gap-1.5 px-3 py-2 font-display font-black text-xs sm:text-sm uppercase tracking-tight transition-all shrink-0 ${
+          className={`flex items-center gap-1.5 px-3.5 py-2 font-sans font-semibold text-xs sm:text-sm tracking-tight transition-all rounded-xl shrink-0 ${
             activeJourneyPhase === 'missions'
-              ? 'bg-[#FFD93D] text-black border-2 border-black dark:border-amber-400 shadow-[2px_2px_0px_#000000] ring-2 ring-black'
-              : 'hover:bg-black/5 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300'
+              ? 'bg-amber-600 text-white shadow-xs'
+              : 'hover:bg-slate-200 dark:hover:bg-[#2A2A2A] text-slate-600 dark:text-slate-400'
           }`}
         >
-          <CheckCircle2 className="w-4 h-4 text-orange-600" />
+          <CheckCircle2 className="w-4 h-4" />
           <span>{t.phase2Missions}</span>
           {Object.keys(completedMissions).length > 0 && (
-            <span className="px-1.5 py-0.2 bg-black text-white text-[10px] font-mono">
+            <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-mono">
               {Object.keys(completedMissions).length}/{interactiveData.missions.length}
             </span>
           )}
@@ -758,15 +758,15 @@ export const LessonPage: React.FC = () => {
         <button
           type="button"
           onClick={() => setActiveJourneyPhase('quiz')}
-          className={`flex items-center gap-1.5 px-3 py-2 font-display font-black text-xs sm:text-sm uppercase tracking-tight transition-all shrink-0 ${
+          className={`flex items-center gap-1.5 px-3.5 py-2 font-sans font-semibold text-xs sm:text-sm tracking-tight transition-all rounded-xl shrink-0 ${
             activeJourneyPhase === 'quiz'
-              ? 'bg-[#6BCB77] text-black border-2 border-black dark:border-emerald-400 shadow-[2px_2px_0px_#000000] ring-2 ring-black'
-              : 'hover:bg-black/5 dark:hover:bg-slate-800 text-gray-700 dark:text-slate-300'
+              ? 'bg-[#10A37F] text-white shadow-xs'
+              : 'hover:bg-slate-200 dark:hover:bg-[#2A2A2A] text-slate-600 dark:text-slate-400'
           }`}
         >
-          <Award className="w-4 h-4 text-emerald-800" />
+          <Award className="w-4 h-4" />
           <span>{t.phase3Quiz}</span>
-          <span className="px-1.5 py-0.2 bg-black/10 dark:bg-white/20 text-[10px] font-mono">
+          <span className="px-1.5 py-0.5 rounded-full bg-white/20 text-white text-[10px] font-mono">
             {currentStepIndex + 1}/{totalSteps}
           </span>
         </button>
@@ -775,8 +775,8 @@ export const LessonPage: React.FC = () => {
       {/* PHASE 1: KEŞFET VE ANLA (EXPLORE & UNDERSTAND) */}
       {activeJourneyPhase === 'explore' && (
         <article aria-label="Interactive Simulation Lab" className="space-y-6 animate-in fade-in duration-200">
-          <Card variant="default" elevated className="p-6 sm:p-8 space-y-6 border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
-            <div className="space-y-2 border-b-2 border-black/15 dark:border-slate-700 pb-4">
+          <Card variant="default" elevated className="p-6 sm:p-8 space-y-6">
+            <div className="space-y-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
               <div className="flex items-center justify-between">
                 <StickerBadge variant="blue" size="md">
                   🔬 {t.exploreBannerTitle}
@@ -806,22 +806,22 @@ export const LessonPage: React.FC = () => {
                       key={preset.id}
                       type="button"
                       onClick={() => handleSelectPreset(preset)}
-                      className={`p-3 border-2 border-black dark:border-slate-700 text-start space-y-1.5 transition-all ${
+                      className={`p-3.5 border rounded-xl text-start space-y-1.5 transition-all ${
                         isSelected
-                          ? 'bg-[#FFD93D] text-black shadow-neo-sm ring-2 ring-black -translate-y-0.5'
-                          : 'bg-[#FFFDF7] dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800'
+                          ? 'border-amber-500 bg-amber-50/80 dark:bg-amber-950/40 text-amber-950 dark:text-amber-100 shadow-xs'
+                          : 'border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E] text-slate-800 dark:text-[#ECECEC] hover:bg-slate-50 dark:hover:bg-[#262626]'
                       }`}
                     >
                       <div className="flex items-center justify-between">
-                        <span className="font-display font-black text-xs uppercase tracking-tight line-clamp-1">
+                        <span className="font-sans font-bold text-xs uppercase tracking-tight line-clamp-1">
                           {getLocalizedText(preset.label, locale)}
                         </span>
-                        <span className="text-[10px] font-mono px-1 bg-black text-white shrink-0">
+                        <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-200 dark:bg-[#333333] text-slate-700 dark:text-slate-300 shrink-0">
                           {getLocalizedText(preset.badge, locale)}
                         </span>
                       </div>
                       <p className={`text-[11px] font-body line-clamp-2 leading-snug ${
-                        isSelected ? 'text-gray-900 font-medium' : 'text-gray-600 dark:text-gray-300'
+                        isSelected ? 'text-amber-900 dark:text-amber-200 font-medium' : 'text-slate-500 dark:text-slate-400'
                       }`}>
                         {getLocalizedText(preset.description, locale)}
                       </p>
@@ -832,7 +832,7 @@ export const LessonPage: React.FC = () => {
             </div>
 
             {/* Front & Center Interactive Biophysical Widget */}
-            <div className="p-4 bg-gray-50 dark:bg-[#0B0F17] border-3 border-black dark:border-slate-700 shadow-inner">
+            <div className="p-4 bg-slate-50 dark:bg-[#141414] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
               {renderInteractiveWidget(
                 interactiveData.widgetType || getDefaultWidgetType(lesson.id),
                 simParams,
@@ -842,8 +842,8 @@ export const LessonPage: React.FC = () => {
             </div>
 
             {/* Live Biophysical HUD / Inspection Card */}
-            <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 space-y-2 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
-              <div className="flex items-center justify-between border-b border-black/10 dark:border-slate-700 pb-2">
+            <div className="p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl space-y-2 shadow-xs">
+              <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2A2A2A] pb-2">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
@@ -863,23 +863,23 @@ export const LessonPage: React.FC = () => {
             </div>
 
             {/* Expandable "How It Works" Guide */}
-            <div className="border-2 border-black dark:border-slate-700 p-4 bg-white dark:bg-[#131B2A] space-y-3">
-              <h3 className="font-display font-black text-sm uppercase tracking-tight flex items-center gap-2">
+            <div className="border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-5 bg-white dark:bg-[#1E1E1E] shadow-xs space-y-3">
+              <h3 className="font-bold text-sm text-slate-900 dark:text-[#ECECEC] flex items-center gap-2">
                 <Info className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 {t.howItWorksToggle}
               </h3>
               {interactiveData.howItWorks.coreFormula && (
-                <div className="p-3 bg-gray-50 dark:bg-[#0B0F17] border border-black dark:border-slate-700 font-mono text-center text-sm font-bold text-blue-700 dark:text-blue-400">
+                <div className="p-3 bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl font-mono text-center text-sm font-semibold text-blue-700 dark:text-blue-400">
                   {interactiveData.howItWorks.coreFormula}
                 </div>
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs leading-relaxed">
                 {interactiveData.howItWorks.takeaways.map((takeaway, idx) => (
-                  <div key={idx} className="p-2.5 bg-gray-50 dark:bg-slate-800/50 border border-black/10 dark:border-slate-700 space-y-1">
-                    <span className="font-bold text-black dark:text-slate-100">
+                  <div key={idx} className="p-3 bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl space-y-1">
+                    <span className="font-semibold text-slate-900 dark:text-[#ECECEC] block">
                       {getLocalizedText(takeaway.title, locale)}
                     </span>
-                    <p className="text-gray-600 dark:text-gray-300">
+                    <p className="text-slate-600 dark:text-neutral-400">
                       {getLocalizedText(takeaway.body, locale)}
                     </p>
                   </div>
@@ -908,8 +908,8 @@ export const LessonPage: React.FC = () => {
       {/* PHASE 2: UYGULAMALI GÖREVLER (GUIDED MISSIONS) */}
       {activeJourneyPhase === 'missions' && (
         <section aria-label="Guided Interactive Missions" className="space-y-6 animate-in fade-in duration-200">
-          <Card variant="default" elevated className="p-6 sm:p-8 space-y-6 border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
-            <div className="space-y-2 border-b-2 border-black/15 dark:border-slate-700 pb-4">
+          <Card variant="default" elevated className="p-6 sm:p-8 space-y-6">
+            <div className="space-y-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
               <div className="flex items-center justify-between">
                 <StickerBadge variant="yellow" size="md">
                   🎯 {t.phase2Missions}
@@ -931,7 +931,7 @@ export const LessonPage: React.FC = () => {
             </div>
 
             {/* Interactive Simulation Mini-Lab */}
-            <div className="p-4 bg-gray-50 dark:bg-[#0B0F17] border-2 border-black dark:border-slate-700">
+            <div className="p-4 bg-slate-50 dark:bg-[#141414] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
               {renderInteractiveWidget(
                 interactiveData.widgetType || getDefaultWidgetType(lesson.id),
                 simParams,
@@ -947,20 +947,20 @@ export const LessonPage: React.FC = () => {
                 return (
                   <div
                     key={mission.id}
-                    className={`p-4 border-2 border-black dark:border-slate-700 transition-all ${
+                    className={`p-4 border rounded-2xl transition-all ${
                       isDone
-                        ? 'bg-[#EBFBEE] dark:bg-[#072518] shadow-neo-sm'
-                        : 'bg-white dark:bg-[#1E293B]'
+                        ? 'border-emerald-500/40 bg-emerald-500/10 shadow-xs'
+                        : 'border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E]'
                     }`}
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-black/10 dark:border-slate-700 pb-2 mb-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 dark:border-[#2F2F2F] pb-2 mb-2">
                       <div className="flex items-center gap-2">
                         <span className={`w-6 h-6 rounded-full flex items-center justify-center font-mono text-xs font-bold ${
-                          isDone ? 'bg-emerald-600 text-white' : 'bg-black text-white'
+                          isDone ? 'bg-emerald-600 text-white' : 'bg-slate-900 dark:bg-slate-100 dark:text-slate-900 text-white'
                         }`}>
                           {idx + 1}
                         </span>
-                        <h4 className="font-display font-black text-sm uppercase">
+                        <h4 className="font-bold text-sm text-slate-900 dark:text-[#ECECEC]">
                           {getLocalizedText(mission.title, locale)}
                         </h4>
                       </div>
@@ -1064,10 +1064,10 @@ export const LessonPage: React.FC = () => {
             <Card
               variant="default"
               elevated
-              className="p-6 sm:p-8 space-y-6 border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark transition-all duration-200"
+              className="p-6 sm:p-8 space-y-6 transition-all duration-200"
             >
               {/* Step Badge & Title */}
-              <div className="space-y-2 border-b-2 border-black/15 dark:border-slate-700 pb-4">
+              <div className="space-y-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
                 <div className="flex items-center justify-between">
                   <StickerBadge
                     variant={
@@ -1124,7 +1124,7 @@ export const LessonPage: React.FC = () => {
               {/* Step 1: Hook Comparison Vignette (Lesson 1 or lessons with drugA/drugB) */}
               {currentStepIndex === 0 && (Boolean(currentStep.config?.drugA) || lesson.id === 'mc-mod1-les1') && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                  <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-start">
+                  <div className="p-4 bg-slate-50/70 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs space-y-2 text-start">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-xs font-mono font-bold uppercase text-blue-700 dark:text-blue-400">
                         {locale === 'ar' ? 'المادة أ:' : locale === 'tr' ? 'Madde A:' : 'Agent A:'}
@@ -1137,11 +1137,11 @@ export const LessonPage: React.FC = () => {
                     <div className="text-xs font-mono space-y-1">
                       <p><strong>{locale === 'ar' ? 'الجرعة السريرية:' : locale === 'tr' ? 'Klinik Doz:' : 'Clinical Dose:'}</strong> {locale === 'tr' ? '~20–50 gram (kanda yüksek molar konsantrasyon)' : locale === 'ar' ? '~20–50 غرام (تركيز جزيئي مرتفع في الدم)' : '~20–50 grams (high molar concentration in blood)'}</p>
                       <p><strong>{locale === 'ar' ? 'الهدف:' : locale === 'tr' ? 'Hedef:' : 'Target:'}</strong> {locale === 'tr' ? 'Hücre zarı lipidleri / fiziksel düzensizlik' : locale === 'ar' ? 'دهون الغشاء الخلوي / اضطراب فيزيائي' : 'Membrane lipids / physical disorder'}</p>
-                      <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحراري:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-amber-700 dark:text-amber-300">{locale === 'tr' ? 'a ≈ 0.03–0.05 (Yüksek Bağıl Doygunluk)' : locale === 'ar' ? 'a ≈ 0.03–0.05 (تشبع نسبي مرتفع)' : 'a ≈ 0.03–0.05 (High Saturation)'}</span></p>
+                      <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحرari:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-amber-700 dark:text-amber-300">{locale === 'tr' ? 'a ≈ 0.03–0.05 (Yüksek Bağıl Doygunluk)' : locale === 'ar' ? 'a ≈ 0.03–0.05 (تشبع نسبي مرتفع)' : 'a ≈ 0.03–0.05 (High Saturation)'}</span></p>
                     </div>
                   </div>
 
-                  <div className="p-4 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[3px_3px_0px_#000000] dark:shadow-[3px_3px_0px_#030712] space-y-2 text-start">
+                  <div className="p-4 bg-slate-50/70 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs space-y-2 text-start">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-xs font-mono font-bold uppercase text-emerald-700 dark:text-emerald-400">
                         {locale === 'ar' ? 'المادة ب:' : locale === 'tr' ? 'Madde B:' : 'Agent B:'}
@@ -1154,7 +1154,7 @@ export const LessonPage: React.FC = () => {
                     <div className="text-xs font-mono space-y-1">
                       <p><strong>{locale === 'ar' ? 'الجرعة السريرية:' : locale === 'tr' ? 'Klinik Doz:' : 'Clinical Dose:'}</strong> {locale === 'tr' ? '10–40 miligram (nanomolar konsantrasyon)' : locale === 'ar' ? '10–40 ميلي غرام (تركيز نانومولي)' : '10–40 milligrams (nanomolar concentration)'}</p>
                       <p><strong>{locale === 'ar' ? 'الهدف:' : locale === 'tr' ? 'Hedef:' : 'Target:'}</strong> {locale === 'tr' ? 'Stereo-seçici β1/β2 reseptör cebi' : locale === 'ar' ? 'جيب مستقبلات β1/β2 الانتقائي فراغياً' : 'Stereoselective β1/β2 receptor pocket'}</p>
-                      <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحراري:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-emerald-700 dark:text-emerald-300">{locale === 'tr' ? 'a < 0.0001 (Aşırı Seyreltik / Yüksek Özgüllük)' : locale === 'ar' ? 'a < 0.0001 (تخفيف فائق / نوعية مرتفعة)' : 'a < 0.0001 (Extreme Dilution)'}</span></p>
+                      <p><strong>{locale === 'ar' ? 'النشاط الديناميكي الحرari:' : locale === 'tr' ? 'Termodinamik Aktivite:' : 'Thermodynamic Activity:'}</strong> <span className="font-bold text-emerald-700 dark:text-emerald-300">{locale === 'tr' ? 'a < 0.0001 (Aşırı Seyreltik / Yüksek Özgüllük)' : locale === 'ar' ? 'a < 0.0001 (تخفيف فائق / نوعية مرتفعة)' : 'a < 0.0001 (Extreme Dilution)'}</span></p>
                     </div>
                   </div>
                 </div>
@@ -1178,14 +1178,14 @@ export const LessonPage: React.FC = () => {
 
               {/* Formal Formula Callout (Stage 7) */}
               {currentStep.stage === 'formal_explanation' && Boolean(currentStep.config?.formula) && (
-                <div className="p-4 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 font-mono text-center text-sm sm:text-base font-bold text-blue-700 dark:text-blue-400">
+                <div className="p-4 bg-blue-50/50 dark:bg-blue-950/20 border border-blue-200 dark:border-blue-800/40 rounded-xl font-mono text-center text-sm sm:text-base font-bold text-blue-700 dark:text-blue-400">
                   {String(currentStep.config.formula)}
                 </div>
               )}
 
               {/* Retrieval Target Concept Callout (Stage 10) */}
               {currentStep.stage === 'retrieval' && Boolean(currentStep.config?.targetConcept) && (
-                <div className="p-4 bg-purple-50 dark:bg-purple-950/20 border-2 border-black dark:border-slate-700 flex items-center justify-between">
+                <div className="p-4 bg-purple-50/50 dark:bg-purple-950/20 border border-purple-200 dark:border-purple-800/40 rounded-xl flex items-center justify-between">
                   <span className="text-xs font-mono font-bold uppercase text-purple-800 dark:text-purple-300">
                     {locale === 'ar' ? 'المفهوم المستهدف:' : locale === 'en' ? 'Target Concept:' : 'Hedef Kavram:'}
                   </span>
@@ -1234,20 +1234,20 @@ export const LessonPage: React.FC = () => {
                               (e.currentTarget.parentElement?.children[prevIdx] as HTMLElement)?.focus();
                             }
                           }}
-                          className={`w-full text-start p-3.5 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm sm:text-base transition-all duration-150 flex items-center justify-between ${
+                          className={`w-full text-start p-3.5 border rounded-xl font-body text-sm sm:text-base transition-all duration-150 flex items-center justify-between ${
                             isSelected
-                              ? 'bg-[#FFD93D] text-black shadow-neo-sm font-bold ltr:translate-x-1 rtl:-translate-x-1 ring-2 ring-black'
-                              : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800'
+                              ? 'border-[#10A37F] bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-100 shadow-xs ring-1 ring-[#10A37F]'
+                              : 'border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E] text-slate-800 dark:text-[#ECECEC] hover:bg-slate-50 dark:hover:bg-[#262626]'
                           } ${isRevealed ? 'cursor-default' : 'cursor-pointer'}`}
                         >
                           <div className="flex items-center gap-3">
-                            <span className="w-6 h-6 border-2 border-black dark:border-slate-700 flex items-center justify-center font-mono text-xs font-bold shrink-0 bg-white dark:bg-[#131B2A] text-black dark:text-slate-100">
+                            <span className="w-6 h-6 rounded-lg border border-slate-200 dark:border-[#383838] flex items-center justify-center font-mono text-xs font-semibold shrink-0 bg-slate-100 dark:bg-[#2A2A2A] text-slate-700 dark:text-slate-300">
                               {String.fromCharCode(65 + idx)}
                             </span>
                             <span>{optText}</span>
                           </div>
                           {isSelected && (
-                            <span className="text-xs font-mono font-bold uppercase px-2 py-0.5 bg-black text-white ms-2 shrink-0">
+                            <span className="text-[11px] font-mono font-medium uppercase px-2 py-0.5 rounded-full bg-[#10A37F] text-white ms-2 shrink-0">
                               {locale === 'tr' ? 'Seçildi' : locale === 'ar' ? 'محدد' : 'Selected'}
                             </span>
                           )}
@@ -1277,16 +1277,16 @@ export const LessonPage: React.FC = () => {
                       role="status"
                       aria-live="polite"
                       aria-atomic="true"
-                      className="pt-4 border-t-3 border-black dark:border-slate-700 space-y-3 animate-in fade-in duration-200"
+                      className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] space-y-3 animate-in fade-in duration-200"
                     >
                       <div className="flex items-center gap-2">
                         {selectedOpt.isCorrect ? (
-                          <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+                          <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
                             <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                             <span>{locale === 'tr' ? 'Hipotez Doğrulandı' : locale === 'ar' ? 'تم تأكيد الفرضية' : 'Hypothesis Confirmed'}</span>
                           </div>
                         ) : (
-                          <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+                          <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm">
                             <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                             <span>{locale === 'tr' ? 'Tanısal Geri Bildirim: Yanılgı Belirlendi' : locale === 'ar' ? 'ملاحظة تشخيصية: تم تحديد مفهوم خاطئ' : 'Diagnostic Feedback: Misconception Identified'}</span>
                           </div>
@@ -1296,10 +1296,10 @@ export const LessonPage: React.FC = () => {
                       {/* Rationale / Misconception Feedback */}
                       {(selectedOpt.misconceptionFeedback || selectedOpt.distractorRationale) && (
                         <div
-                          className={`p-3 border-2 border-black dark:border-slate-700 font-body text-xs sm:text-sm leading-relaxed ${
+                          className={`p-4 border rounded-xl shadow-xs font-sans text-xs sm:text-sm leading-relaxed ${
                             selectedOpt.isCorrect
-                              ? 'bg-[#E8F5E9] dark:bg-[#064E3B]/40 text-emerald-950 dark:text-emerald-100'
-                              : 'bg-[#FFE4E6] dark:bg-[#4C0519]/40 text-black dark:text-rose-200'
+                              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800/60 text-emerald-950 dark:text-emerald-100'
+                              : 'bg-rose-50 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800/60 text-rose-950 dark:text-rose-200'
                           }`}
                         >
                           <strong>
@@ -1314,7 +1314,7 @@ export const LessonPage: React.FC = () => {
                       )}
 
                       {/* Model Outcome & Rationale */}
-                      <div className="p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 space-y-2 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
+                      <div className="p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl space-y-2 shadow-xs">
                         <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                           {locale === 'tr' ? 'Bilimsel Çıkarım:' : locale === 'ar' ? 'الاستنتاج العلمي:' : 'Scientific Deduction:'}
                         </span>
@@ -1335,10 +1335,10 @@ export const LessonPage: React.FC = () => {
               {/* Step 10/12: Recap, Celebration & Flashcards Enqueue */}
               {currentStepIndex === totalSteps - 1 && (
                 <div className="space-y-6 pt-2">
-                  <div className="p-4 bg-[#6BCB77]/20 border-3 border-black dark:border-slate-700 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-[#6BCB77] border-2 border-black flex items-center justify-center shrink-0">
-                        <Check className="w-7 h-7 text-black stroke-[3]" />
+                      <div className="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0">
+                        <Check className="w-6 h-6 stroke-[2.5]" />
                       </div>
                       <div>
                         <h3 className="font-display font-black text-lg uppercase">
@@ -1373,7 +1373,7 @@ export const LessonPage: React.FC = () => {
                       {lesson.spacedReviewCards.map((card: SpacedReviewCardSeed, idx: number) => (
                         <div
                           key={card.cardId}
-                          className="p-3 bg-[#FFFDF7] dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex flex-col justify-between gap-2"
+                          className="p-3.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-xs flex flex-col justify-between gap-2"
                         >
                           <div>
                             <div className="flex items-center justify-between mb-1">
@@ -1388,7 +1388,7 @@ export const LessonPage: React.FC = () => {
                               {getLocalizedText(card.prompt as any, locale) || card.prompt}
                             </p>
                           </div>
-                          <div className="pt-2 border-t border-black/10 dark:border-slate-700 text-[10px] font-mono text-emerald-700 dark:text-emerald-400 font-bold">
+                          <div className="pt-2 border-t border-slate-100 dark:border-[#2F2F2F] text-[10px] font-mono text-emerald-700 dark:text-emerald-400 font-bold">
                             {locale === 'tr' ? '1. Kutu (Aralık: 1 Gün)' : locale === 'ar' ? 'الصندوق 1 (الفاصل: يوم واحد)' : 'Box 1 (Interval: 1 Day)'}
                           </div>
                         </div>
@@ -1412,7 +1412,7 @@ export const LessonPage: React.FC = () => {
               </div>
 
               {/* Step Navigation Controls (Desktop) */}
-              <div className="hidden md:flex pt-4 border-t-3 border-black dark:border-slate-700 items-center justify-between gap-4">
+              <div className="hidden md:flex pt-4 border-t border-slate-200 dark:border-[#2F2F2F] items-center justify-between gap-4">
                 <Button
                   variant="secondary"
                   size="md"
@@ -1452,7 +1452,7 @@ export const LessonPage: React.FC = () => {
       )}
 
       {/* Sticky Bottom Action Bar on Mobile Viewports (<768px) per Section 6 of ui-guidelines */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white dark:bg-[#131B2A] border-t-3 border-black dark:border-slate-700 p-3 shadow-neo dark:shadow-neo-dark flex items-center justify-between gap-2">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/95 dark:bg-[#171717]/95 backdrop-blur-md border-t border-slate-200 dark:border-[#2F2F2F] p-3 shadow-lg flex items-center justify-between gap-2">
         {currentStepIndex > 0 ? (
           <Button
             variant="secondary"
@@ -1493,25 +1493,25 @@ export const LessonPage: React.FC = () => {
       </div>
 
       {/* Sources & Citations Drawer (E1 & Non-Negotiable Provenance) */}
-      <footer className="border-2 border-black dark:border-slate-700 bg-[#FFFDF7] dark:bg-[#131B2A]">
+      <footer className="border border-slate-200 dark:border-[#2F2F2F] rounded-2xl bg-white dark:bg-[#1E1E1E] shadow-xs overflow-hidden">
         <button
           type="button"
           onClick={() => setSourcesOpen(!sourcesOpen)}
-          className="w-full p-3 flex items-center justify-between text-start hover:bg-black/5 dark:hover:bg-slate-800 transition-colors"
+          className="w-full p-4 flex items-center justify-between text-start hover:bg-slate-50 dark:hover:bg-[#252525] transition-colors"
         >
           <div className="flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className="font-display font-black text-xs uppercase tracking-tight">
+            <span className="font-bold text-xs text-slate-800 dark:text-[#ECECEC]">
               {t.academicSources}
             </span>
           </div>
-          <span className="text-xs font-mono underline font-bold">
+          <span className="text-xs font-mono underline font-medium text-slate-500 dark:text-neutral-400">
             {sourcesOpen ? t.hideSources : t.viewCitations}
           </span>
         </button>
 
         {sourcesOpen && (
-          <div className="p-4 border-t-2 border-black dark:border-slate-700 space-y-4 text-xs font-mono">
+          <div className="p-5 border-t border-slate-200 dark:border-[#2F2F2F] space-y-4 text-xs font-mono">
             {/* Textbook Citations */}
             <div className="space-y-2">
               <span className="font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">

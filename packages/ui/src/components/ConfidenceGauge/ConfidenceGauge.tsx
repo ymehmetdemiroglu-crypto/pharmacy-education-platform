@@ -44,17 +44,17 @@ const optionConfig: Record<
 > = {
   sure: {
     key: 'sure',
-    activeBg: 'bg-[#6BCB77] text-black border-black',
+    activeBg: 'bg-emerald-600 text-white border-emerald-600 shadow-xs',
     badgeText: '✓',
   },
   medium: {
     key: 'medium',
-    activeBg: 'bg-[#FFD93D] text-black border-black',
+    activeBg: 'bg-amber-500 text-white border-amber-500 shadow-xs',
     badgeText: '½',
   },
   guessing: {
     key: 'guessing',
-    activeBg: 'bg-[#FF6B9D] text-black border-black',
+    activeBg: 'bg-rose-500 text-white border-rose-500 shadow-xs',
     badgeText: '?',
   },
 };
@@ -100,18 +100,18 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({
       dir={isRtl ? 'rtl' : 'ltr'}
       className={twMerge(
         clsx(
-          'p-3 border-3 border-black dark:border-slate-700 bg-white dark:bg-[#131B2A]',
-          'shadow-neo dark:shadow-neo-dark transition-all duration-150 select-none',
+          'p-3.5 border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E] rounded-2xl',
+          'shadow-xs transition-all duration-150 select-none',
           className
         )
       )}
     >
-      <div className="flex items-center justify-between mb-2">
-        <span className="font-display text-xs uppercase tracking-wider font-extrabold text-black dark:text-white">
+      <div className="flex items-center justify-between mb-2.5">
+        <span className="font-sans text-xs uppercase tracking-wider font-semibold text-slate-700 dark:text-slate-300">
           {t.prompt}
         </span>
         {value && (
-          <span className="text-[10px] font-mono px-1.5 py-0.5 border border-black dark:border-slate-600 bg-black/5 dark:bg-white/10 font-bold uppercase">
+          <span className="text-[10px] font-medium px-2 py-0.5 rounded-full border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-[#2A2A2A] text-slate-700 dark:text-slate-300">
             {t[value]}
           </span>
         )}
@@ -135,17 +135,17 @@ export const ConfidenceGauge: React.FC<ConfidenceGaugeProps> = ({
               onKeyDown={(e) => handleKeyDown(e, idx)}
               className={twMerge(
                 clsx(
-                  'relative flex items-center justify-center font-display font-bold uppercase transition-all duration-150',
-                  'border-2 border-black dark:border-slate-600 outline-none',
+                  'relative flex items-center justify-center font-sans font-medium transition-all duration-150 rounded-xl',
+                  'border outline-none',
                   size === 'sm' ? 'py-1 px-2 text-xs' : 'py-2 px-3 text-xs md:text-sm',
                   isSelected
-                    ? `${conf.activeBg} shadow-none translate-x-0.5 translate-y-0.5 ring-2 ring-black dark:ring-white`
-                    : 'bg-[#FFF8E7] dark:bg-slate-800 text-black dark:text-white hover:bg-yellow-50 dark:hover:bg-slate-700 shadow-neo-sm',
+                    ? `${conf.activeBg} scale-[1.02]`
+                    : 'border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#262626] text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-[#2F2F2F]',
                   disabled && 'opacity-50 cursor-not-allowed hover:bg-inherit shadow-none'
                 )
               )}
             >
-              <span className="mr-1.5 text-xs font-mono font-black opacity-75">
+              <span className="mr-1.5 text-xs font-mono font-bold opacity-80">
                 {conf.badgeText}
               </span>
               <span>{label}</span>

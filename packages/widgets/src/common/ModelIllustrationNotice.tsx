@@ -61,14 +61,14 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
     <div
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       aria-label={t.badge}
-      className={`border-2 border-black dark:border-slate-700 bg-[#FFFDF7] dark:bg-[#131B2A] p-2 text-xs font-mono select-none text-black dark:text-slate-100 ${className || ''}`}
+      className={`border border-slate-200 dark:border-[#2F2F2F] rounded-xl bg-slate-50/70 dark:bg-[#1E1E1E] p-3 text-xs font-sans select-none text-slate-800 dark:text-[#ECECEC] shadow-2xs ${className || ''}`}
     >
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2">
-          <StickerBadge variant="yellow" size="sm">
+          <span className="px-2 py-0.5 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800/60 rounded-md text-[11px] font-semibold">
             {t.badge}
-          </StickerBadge>
-          <span className="text-[11px] text-gray-700 dark:text-slate-300">
+          </span>
+          <span className="text-[11px] text-slate-500 dark:text-neutral-400">
             {t.subtitle}
           </span>
         </div>
@@ -76,7 +76,7 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
           type="button"
           onClick={() => setIsExpanded(!isExpanded)}
           aria-expanded={isExpanded}
-          className="flex items-center gap-1 font-bold underline hover:text-amber-500 cursor-pointer"
+          className="flex items-center gap-1 font-semibold text-slate-600 dark:text-neutral-300 hover:text-emerald-600 dark:hover:text-emerald-400 cursor-pointer"
         >
           <Info className="w-3.5 h-3.5" />
           <span>{isExpanded ? t.hideEq : t.viewEq}</span>
@@ -85,10 +85,10 @@ export const ModelIllustrationNotice: React.FC<ModelIllustrationNoticeProps> = (
       </div>
 
       {isExpanded && (
-        <div className="mt-2 pt-2 border-t border-black/20 dark:border-slate-700 space-y-1.5 text-[11px]">
+        <div className="mt-3 pt-2.5 border-t border-slate-200 dark:border-[#2F2F2F] space-y-2 text-[11px]">
           <div>
-            <span className="font-bold text-gray-700 dark:text-slate-300">{t.governingEq}</span>
-            <code className="bg-black/5 dark:bg-[#1E293B] px-1 py-0.5 font-mono text-black dark:text-amber-300 border border-black/20 dark:border-slate-700" dir="ltr">
+            <span className="font-semibold text-slate-700 dark:text-neutral-300">{t.governingEq}</span>
+            <code className="bg-slate-100 dark:bg-[#252525] px-1.5 py-0.5 font-mono text-emerald-700 dark:text-emerald-400 border border-slate-200 dark:border-[#333333] rounded" dir="ltr">
               {equation}
             </code>
           </div>

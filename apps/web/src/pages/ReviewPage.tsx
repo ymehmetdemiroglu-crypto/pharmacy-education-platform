@@ -43,10 +43,10 @@ export const ReviewPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8E7] dark:bg-[#121212] py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#171717] py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto space-y-6">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-3 border-black dark:border-slate-700 pb-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
           <div>
             <div className="flex items-center gap-2">
               <Brain className="w-6 h-6 text-amber-500" />
@@ -60,23 +60,23 @@ export const ReviewPage: React.FC = () => {
           </div>
 
           {/* Course Switcher */}
-          <div className="flex border-3 border-black dark:border-slate-700 bg-white dark:bg-slate-800 shadow-neo-sm">
+          <div className="flex rounded-xl border border-slate-200 dark:border-[#2F2F2F] bg-slate-100 dark:bg-[#212121] p-1 shadow-xs">
             <button
               onClick={() => setCourseId('medchem')}
-              className={`px-3 py-1.5 font-mono text-xs font-bold uppercase transition-colors ${
+              className={`px-3 py-1.5 font-sans text-xs font-semibold rounded-lg transition-colors ${
                 courseId === 'medchem'
-                  ? 'bg-[#4D96FF] text-black font-black'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700'
+                  ? 'bg-blue-600 text-white shadow-xs'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t('review.medchemCourse')}
             </button>
             <button
               onClick={() => setCourseId('pharmacology')}
-              className={`px-3 py-1.5 font-mono text-xs font-bold uppercase border-s-3 border-black dark:border-slate-700 transition-colors ${
+              className={`px-3 py-1.5 font-sans text-xs font-semibold rounded-lg transition-colors ${
                 courseId === 'pharmacology'
-                  ? 'bg-[#FF9F45] text-black font-black'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-700'
+                  ? 'bg-amber-600 text-white shadow-xs'
+                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {t('review.pharmCourse')}
@@ -85,7 +85,7 @@ export const ReviewPage: React.FC = () => {
         </div>
 
         {/* Status Bar */}
-        <div className="flex items-center justify-between text-xs font-mono bg-white dark:bg-slate-900 border-3 border-black dark:border-slate-700 p-3 shadow-neo-sm">
+        <div className="flex items-center justify-between text-xs font-mono bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-3.5 shadow-xs">
           <span>
             {t('review.dueCards')}{' '}
             <strong>{dueCards.length}</strong> / {cards.length}
@@ -96,7 +96,7 @@ export const ReviewPage: React.FC = () => {
               return (
                 <span
                   key={b}
-                  className="px-1.5 py-0.5 border border-black dark:border-slate-700 bg-slate-50 dark:bg-slate-800 font-bold"
+                  className="px-2 py-0.5 rounded-md border border-slate-200 dark:border-[#333333] bg-slate-50 dark:bg-[#262626] font-medium"
                   title={t('review.boxLabel', { box: b })}
                 >
                   {t('review.boxShort', { box: b, count })}
@@ -111,7 +111,7 @@ export const ReviewPage: React.FC = () => {
           <Card
             variant="default"
             elevated
-            className="p-8 space-y-6 bg-white dark:bg-slate-900 border-4 border-black dark:border-slate-700 shadow-neo min-h-[320px] flex flex-col justify-between"
+            className="p-8 space-y-6 min-h-[320px] flex flex-col justify-between"
           >
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -130,11 +130,11 @@ export const ReviewPage: React.FC = () => {
               </div>
 
               {isFlipped && (
-                <div className="pt-4 border-t-3 border-black/10 dark:border-slate-700 space-y-2">
+                <div className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] space-y-2">
                   <span className="font-mono text-xs font-bold uppercase text-emerald-700 dark:text-emerald-400">
                     {t('review.answerLabel')}
                   </span>
-                  <p className="font-body text-base text-gray-800 dark:text-gray-200 bg-emerald-50 dark:bg-emerald-950/30 p-4 border-2 border-emerald-500">
+                  <p className="font-body text-base text-emerald-950 dark:text-emerald-100 bg-emerald-500/10 dark:bg-emerald-950/30 p-4 border border-emerald-500/40 rounded-xl">
                     {currentCard.answer}
                   </p>
                 </div>
@@ -179,10 +179,10 @@ export const ReviewPage: React.FC = () => {
           <Card
             variant="default"
             elevated
-            className="p-10 text-center space-y-6 bg-white dark:bg-slate-900 border-4 border-black dark:border-slate-700 shadow-neo"
+            className="p-10 text-center space-y-6"
           >
-            <div className="w-16 h-16 bg-[#6BCB77] border-3 border-black mx-auto flex items-center justify-center shadow-neo">
-              <Sparkles className="w-8 h-8 text-black" />
+            <div className="w-16 h-16 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 mx-auto flex items-center justify-center shadow-xs">
+              <Sparkles className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
             </div>
             <div className="space-y-2">
               <h2 className="font-display font-black text-2xl uppercase tracking-tight text-gray-950 dark:text-white">

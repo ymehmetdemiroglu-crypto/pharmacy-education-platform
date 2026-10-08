@@ -250,15 +250,15 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
       role="region"
       aria-labelledby={headingId}
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black ${className}`}
+      className={`p-6 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs max-w-3xl mx-auto font-sans text-slate-900 dark:text-[#ECECEC] ${className}`}
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b-4 border-black gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-[#2F2F2F] gap-2">
         <div>
-          <span className="inline-block text-xs uppercase tracking-widest font-black bg-[#FF9F45] text-black px-2 py-0.5 border-2 border-black mb-1">
+          <span className="inline-block text-xs font-semibold bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-400 px-2.5 py-0.5 border border-orange-200 dark:border-orange-800/60 rounded-md mb-1">
             {dict.badge}
           </span>
-          <h3 id={headingId} className="text-xl sm:text-2xl font-black uppercase tracking-tight">
+          <h3 id={headingId} className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {dict.title}
           </h3>
         </div>
@@ -269,8 +269,10 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             type="button"
             onClick={() => setRoute('oral')}
             data-testid="toggle-oral"
-            className={`px-3 py-1 font-bold text-xs border-2 border-black ${
-              route === 'oral' ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white'
+            className={`px-3 py-1.5 font-semibold text-xs rounded-xl border transition-all ${
+              route === 'oral'
+                ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C]'
             }`}
           >
             {dict.oralRoute(config.defaultBioavailabilityF)}
@@ -279,8 +281,10 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             type="button"
             onClick={() => setRoute('iv_bolus')}
             data-testid="toggle-iv"
-            className={`px-3 py-1 font-bold text-xs border-2 border-black ${
-              route === 'iv_bolus' ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]' : 'bg-white'
+            className={`px-3 py-1.5 font-semibold text-xs rounded-xl border transition-all ${
+              route === 'iv_bolus'
+                ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C]'
             }`}
           >
             {dict.ivRoute}
@@ -291,15 +295,15 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
       {/* Main Vector Multi-Dose Time Course & Alerts */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         {/* SVG Plot (2 cols) */}
-        <div className="md:col-span-2 bg-white border-4 border-black p-4 flex flex-col items-center">
-          <div className="w-full flex justify-between items-center text-xs font-mono font-bold mb-2">
+        <div className="md:col-span-2 bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 flex flex-col items-center">
+          <div className="w-full flex justify-between items-center text-xs font-mono font-semibold mb-2 text-slate-800 dark:text-[#ECECEC]">
             <span>{dict.plotTitle}</span>
-            <span className="text-gray-500">{config.drugName}</span>
+            <span className="text-slate-400 dark:text-neutral-500">{config.drugName}</span>
           </div>
 
           <svg
             viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-            className="w-full h-auto bg-[#FAFAFA] border-2 border-black"
+            className="w-full h-auto bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl"
             aria-label={dict.plotAria}
           >
             {/* Shaded Green Therapeutic Target Window */}
@@ -309,8 +313,8 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               y={mtcY}
               width={plotWidth}
               height={Math.max(0, windowHeight)}
-              fill="#E8F5E9"
-              opacity="0.8"
+              fill="#10A37F"
+              opacity="0.12"
             />
 
             {/* MTC & MEC Dashed Lines */}
@@ -319,11 +323,11 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               y1={mtcY}
               x2={padding.left + plotWidth}
               y2={mtcY}
-              stroke="#D32F2F"
-              strokeWidth="2"
+              stroke="#E11D48"
+              strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            <text x={padding.left + plotWidth - 5} y={mtcY - 4} textAnchor="end" fontSize="9" fontWeight="bold" fill="#D32F2F">
+            <text x={padding.left + plotWidth - 5} y={mtcY - 4} textAnchor="end" fontSize="9" fontWeight="bold" fill="#E11D48">
               MTC ({config.mtcMgL} mg/L)
             </text>
 
@@ -332,11 +336,11 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               y1={mecY}
               x2={padding.left + plotWidth}
               y2={mecY}
-              stroke="#F57C00"
-              strokeWidth="2"
+              stroke="#D97706"
+              strokeWidth="1.5"
               strokeDasharray="4 4"
             />
-            <text x={padding.left + plotWidth - 5} y={mecY + 12} textAnchor="end" fontSize="9" fontWeight="bold" fill="#F57C00">
+            <text x={padding.left + plotWidth - 5} y={mecY + 12} textAnchor="end" fontSize="9" fontWeight="bold" fill="#D97706">
               MEC ({config.mecMgL} mg/L)
             </text>
 
@@ -346,7 +350,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               y1={toSvgY(cssAvg)}
               x2={padding.left + plotWidth}
               y2={toSvgY(cssAvg)}
-              stroke="#1976D2"
+              stroke="#2563EB"
               strokeWidth="1.5"
               strokeDasharray="2 2"
             />
@@ -356,14 +360,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               data-testid="pk-time-course-curve"
               d={pathD}
               fill="none"
-              stroke="#000"
-              strokeWidth="3.5"
+              stroke="#10A37F"
+              strokeWidth="3"
               strokeLinecap="round"
             />
 
             {/* Axis Lines */}
-            <line x1={padding.left} y1={padding.top} x2={padding.left} y2={padding.top + plotHeight} stroke="#000" strokeWidth="2" />
-            <line x1={padding.left} y1={padding.top + plotHeight} x2={padding.left + plotWidth} y2={padding.top + plotHeight} stroke="#000" strokeWidth="2" />
+            <line x1={padding.left} y1={padding.top} x2={padding.left} y2={padding.top + plotHeight} stroke="#94A3B8" strokeWidth="1" />
+            <line x1={padding.left} y1={padding.top + plotHeight} x2={padding.left + plotWidth} y2={padding.top + plotHeight} stroke="#94A3B8" strokeWidth="1" />
 
             {/* X-axis ticks (doses) */}
             {Array.from({ length: totalDoses + 1 }).map((_, idx) => {
@@ -371,8 +375,8 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               const x = toSvgX(t);
               return (
                 <g key={idx}>
-                  <line x1={x} y1={padding.top + plotHeight} x2={x} y2={padding.top + plotHeight + 5} stroke="#000" strokeWidth="2" />
-                  <text x={x} y={padding.top + plotHeight + 16} textAnchor="middle" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                  <line x1={x} y1={padding.top + plotHeight} x2={x} y2={padding.top + plotHeight + 5} stroke="#94A3B8" strokeWidth="1" />
+                  <text x={x} y={padding.top + plotHeight + 16} textAnchor="middle" fontSize="9" fontFamily="monospace" fill="#64748B">
                     {t}h
                   </text>
                 </g>
@@ -384,57 +388,57 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               const y = toSvgY(val);
               return (
                 <g key={val}>
-                  <line x1={padding.left - 4} y1={y} x2={padding.left} y2={y} stroke="#000" strokeWidth="2" />
-                  <text x={padding.left - 6} y={y + 3} textAnchor="end" fontSize="9" fontFamily="monospace" fontWeight="bold">
+                  <line x1={padding.left - 4} y1={y} x2={padding.left} y2={y} stroke="#94A3B8" strokeWidth="1" />
+                  <text x={padding.left - 6} y={y + 3} textAnchor="end" fontSize="9" fontFamily="monospace" fill="#64748B">
                     {val}
                   </text>
                 </g>
               );
             })}
 
-            <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="10" fontWeight="bold">
+            <text x={padding.left + plotWidth / 2} y={svgHeight - 6} textAnchor="middle" fontSize="10" fontWeight="bold" fill="#64748B">
               {dict.timeAxis}
             </text>
           </svg>
         </div>
 
         {/* Calculated Safety & Accumulation Metrics (1 col) */}
-        <div className="bg-white border-4 border-black p-4 flex flex-col justify-between">
+        <div className="bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 flex flex-col justify-between">
           <div>
-            <div className="text-xs font-black uppercase text-gray-500 mb-2">{dict.dataHeader}</div>
+            <div className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400 mb-2">{dict.dataHeader}</div>
 
-            <div className="space-y-2.5 font-mono text-xs mb-3">
-              <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">{dict.peak}</span>
-                <span data-testid="metric-css-max" className={`font-black ${isToxic ? 'text-red-600' : 'text-black'}`}>
+            <div className="space-y-2 font-mono text-xs mb-3">
+              <div className="p-2.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex justify-between shadow-2xs">
+                <span className="text-slate-500 dark:text-neutral-400">{dict.peak}</span>
+                <span data-testid="metric-css-max" className={`font-bold ${isToxic ? 'text-rose-600' : 'text-slate-900 dark:text-[#ECECEC]'}`}>
                   {cssMax.toFixed(1)} mg/L
                 </span>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">{dict.trough}</span>
-                <span data-testid="metric-css-min" className={`font-black ${isSubtherapeutic ? 'text-amber-600' : 'text-black'}`}>
+              <div className="p-2.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex justify-between shadow-2xs">
+                <span className="text-slate-500 dark:text-neutral-400">{dict.trough}</span>
+                <span data-testid="metric-css-min" className={`font-bold ${isSubtherapeutic ? 'text-amber-600' : 'text-slate-900 dark:text-[#ECECEC]'}`}>
                   {cssMin.toFixed(1)} mg/L
                 </span>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">{dict.average}</span>
-                <span data-testid="metric-css-avg" className="font-black text-blue-700">
+              <div className="p-2.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex justify-between shadow-2xs">
+                <span className="text-slate-500 dark:text-neutral-400">{dict.average}</span>
+                <span data-testid="metric-css-avg" className="font-bold text-blue-600 dark:text-blue-400">
                   {cssAvg.toFixed(1)} mg/L
                 </span>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">{dict.accumulation}</span>
-                <span data-testid="metric-r-acc" className="font-black text-black">
+              <div className="p-2.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex justify-between shadow-2xs">
+                <span className="text-slate-500 dark:text-neutral-400">{dict.accumulation}</span>
+                <span data-testid="metric-r-acc" className="font-bold text-slate-900 dark:text-[#ECECEC]">
                   {rAcc.toFixed(2)}x
                 </span>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black flex justify-between">
-                <span className="text-gray-600">{dict.halfLife}</span>
-                <span data-testid="metric-half-life" className="font-black text-black">
+              <div className="p-2.5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex justify-between shadow-2xs">
+                <span className="text-slate-500 dark:text-neutral-400">{dict.halfLife}</span>
+                <span data-testid="metric-half-life" className="font-bold text-slate-900 dark:text-[#ECECEC]">
                   {halfLifeHours.toFixed(1)} {dict.hoursUnit}
                 </span>
               </div>
@@ -444,7 +448,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             {isOptimal && (
               <div
                 data-testid="alert-target-range"
-                className="p-2.5 bg-[#E8F5E9] border-2 border-green-700 text-green-900 font-sans font-bold text-xs"
+                className="p-3 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800/60 text-emerald-800 dark:text-emerald-300 rounded-xl font-medium text-xs shadow-2xs"
               >
                 {dict.optimalAlert}
               </div>
@@ -452,7 +456,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             {isToxic && (
               <div
                 data-testid="alert-toxicity-warning"
-                className="p-2.5 bg-[#FFEBEE] border-2 border-red-700 text-red-900 font-sans font-bold text-xs"
+                className="p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800/60 text-rose-800 dark:text-rose-300 rounded-xl font-medium text-xs shadow-2xs"
               >
                 {dict.toxicAlert(cssMax.toFixed(1))}
               </div>
@@ -460,7 +464,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
             {isSubtherapeutic && (
               <div
                 data-testid="alert-subtherapeutic-warning"
-                className="p-2.5 bg-[#FFF9C4] border-2 border-amber-700 text-amber-900 font-sans font-bold text-xs mt-1.5"
+                className="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800/60 text-amber-800 dark:text-amber-300 rounded-xl font-medium text-xs shadow-2xs mt-2"
               >
                 {dict.subtherapeuticAlert(cssMin.toFixed(1))}
               </div>
@@ -470,15 +474,15 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
       </div>
 
       {/* Interactive Sliders & WCAG 2.2 Controls */}
-      <div className="p-4 bg-white border-4 border-black mb-4">
-        <div className="text-xs font-black uppercase tracking-wider mb-4">{dict.paramsHeader}</div>
+      <div className="p-5 bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl mb-4 shadow-xs">
+        <div className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400 mb-4">{dict.paramsHeader}</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Dose (mg) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{dict.singleDoseAmount}</span>
-              <span data-testid="value-dose" className="text-black font-black">{doseMg} mg</span>
+              <span data-testid="value-dose" className="text-emerald-700 dark:text-emerald-400 font-bold">{doseMg} mg</span>
             </div>
             <input
               type="range"
@@ -488,14 +492,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               value={doseMg}
               onChange={(e) => setDoseMg(parseInt(e.target.value, 10))}
               aria-label={dict.doseAria}
-              className="w-full accent-black cursor-pointer"
+              className="w-full accent-[#10A37F] cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setDoseMg((prev) => Math.max(100, prev - 50))}
                 aria-label={dict.decDoseAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -50 mg
               </button>
@@ -503,7 +507,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 type="button"
                 onClick={() => setDoseMg((prev) => Math.min(1200, prev + 50))}
                 aria-label={dict.incDoseAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +50 mg
               </button>
@@ -512,9 +516,9 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
 
           {/* Dosing Interval (tau) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{dict.dosingInterval}</span>
-              <span data-testid="value-tau" className="text-black font-black">{tauHours} {dict.hoursUnit}</span>
+              <span data-testid="value-tau" className="text-emerald-700 dark:text-emerald-400 font-bold">{tauHours} {dict.hoursUnit}</span>
             </div>
             <input
               type="range"
@@ -524,14 +528,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               value={tauHours}
               onChange={(e) => setTauHours(parseInt(e.target.value, 10))}
               aria-label={dict.tauAria}
-              className="w-full accent-black cursor-pointer"
+              className="w-full accent-[#10A37F] cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setTauHours((prev) => Math.max(4, prev - 2))}
                 aria-label={dict.decTauAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -2h
               </button>
@@ -539,7 +543,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 type="button"
                 onClick={() => setTauHours((prev) => Math.min(24, prev + 2))}
                 aria-label={dict.incTauAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +2h
               </button>
@@ -548,9 +552,9 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
 
           {/* Clearance (CL) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{dict.clearance}</span>
-              <span data-testid="value-cl" className="text-black font-black">{clearanceLHr.toFixed(1)} L/h</span>
+              <span data-testid="value-cl" className="text-emerald-700 dark:text-emerald-400 font-bold">{clearanceLHr.toFixed(1)} L/h</span>
             </div>
             <input
               type="range"
@@ -560,14 +564,14 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
               value={clearanceLHr}
               onChange={(e) => setClearanceLHr(parseFloat(e.target.value))}
               aria-label={dict.clAria}
-              className="w-full accent-black cursor-pointer"
+              className="w-full accent-[#10A37F] cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setClearanceLHr((prev) => Math.max(1.0, parseFloat((prev - 0.5).toFixed(1))))}
                 aria-label={dict.decClAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -0.5
               </button>
@@ -575,7 +579,7 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
                 type="button"
                 onClick={() => setClearanceLHr((prev) => Math.min(10.0, parseFloat((prev + 0.5).toFixed(1))))}
                 aria-label={dict.incClAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +0.5
               </button>
@@ -587,9 +591,9 @@ export const PkCockpit: React.FC<PkCockpitProps> = ({
       {/* Model Illustration Notice */}
       <aside
         data-testid="model-illustration-notice"
-        className="p-3 bg-[#FFF] border-2 border-black text-xs text-gray-700 font-mono leading-relaxed"
+        className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl text-xs text-slate-600 dark:text-neutral-400 font-sans leading-relaxed shadow-2xs"
       >
-        <span className="font-bold text-black uppercase">{dict.noticeHeader}</span>{' '}
+        <span className="font-semibold text-slate-900 dark:text-[#ECECEC] uppercase">{dict.noticeHeader}</span>{' '}
         {dict.noticeText + config.equationRef}
       </aside>
     </section>

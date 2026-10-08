@@ -45,14 +45,14 @@ export const TechnicalTermBadge: React.FC<TechnicalTermBadgeProps> = ({
         clsx(
           // Semantic inline layout and typography
           'inline-flex items-center gap-1 px-1.5 py-0.5 my-0.5 mx-1 align-baseline',
-          'font-mono font-bold text-xs uppercase tracking-wide',
-          'rounded-sm select-none',
-          // Academic Midnight Slate palette
-          'bg-slate-900 dark:bg-[#1E293B] text-amber-400 dark:text-amber-300',
-          'border border-[#F59E0B]/60 dark:border-[#F59E0B]/50',
-          'shadow-[1px_1px_0px_#000000] dark:shadow-[1px_1px_0px_#030712]',
+          'font-mono font-medium text-xs tracking-wide',
+          'rounded-md select-none',
+          // Academic Slate palette
+          'bg-slate-100 dark:bg-[#262626] text-amber-800 dark:text-amber-300',
+          'border border-amber-300/80 dark:border-amber-700/60',
+          'shadow-xs',
           // Focus and interactive styles
-          'focus:outline-none focus:ring-1 focus:ring-[#F59E0B]',
+          'focus:outline-none focus:ring-1 focus:ring-[#10A37F]',
           tooltipText && 'cursor-help border-b-2',
           className
         )

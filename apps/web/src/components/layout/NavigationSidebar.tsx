@@ -33,11 +33,11 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
   const progressPercent = Math.round((masteryCount / totalConcepts) * 100);
 
   return (
-    <div className="flex flex-col h-full bg-white dark:bg-[#131B2A] border-r-2 border-black dark:border-slate-800 text-slate-800 dark:text-slate-100 select-none">
+    <div className="flex flex-col h-full bg-white dark:bg-[#171717] border-r border-slate-200 dark:border-[#2F2F2F] text-slate-800 dark:text-[#ECECEC] select-none">
       {/* Brand Header */}
-      <div className="p-4 border-b-2 border-black dark:border-slate-800 bg-slate-50 dark:bg-[#0B0F17]">
+      <div className="p-4 border-b border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1A1A1A]">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-black text-white flex items-center justify-center font-black font-display text-base shadow-[2px_2px_0_0_#3B82F6]">
+          <div className="w-8 h-8 rounded-xl bg-slate-900 dark:bg-[#252525] text-white flex items-center justify-center font-bold font-sans text-base shadow-xs">
             PL
           </div>
           <div className="flex flex-col">
@@ -71,7 +71,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
 
           <div className="mt-1 space-y-1">
             {/* Active Flagship Lecture */}
-            <div className="p-3 rounded-xl border-2 border-black dark:border-blue-500 bg-blue-50/60 dark:bg-blue-950/30 shadow-[2px_2px_0_0_#000000] dark:shadow-none cursor-pointer">
+            <div className="p-3 rounded-xl border border-blue-500/30 dark:border-blue-500/40 bg-blue-50/50 dark:bg-blue-950/20 shadow-xs cursor-pointer">
               <div className="flex items-start justify-between gap-1">
                 <span className="font-bold text-xs text-blue-900 dark:text-blue-200 leading-snug">
                   İlaç Reseptör Etkileşimi (Kimyasal Bağlar)
@@ -127,7 +127,7 @@ export const NavigationSidebar: React.FC<NavigationSidebarProps> = ({
       </div>
 
       {/* Footer: Theme Toggle & User Status */}
-      <div className="p-3 border-t-2 border-black dark:border-slate-800 bg-slate-50 dark:bg-[#0B0F17] flex flex-col gap-2.5">
+      <div className="p-3 border-t border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1A1A1A] flex flex-col gap-2.5">
         {/* Theme Toggle */}
         <div className="flex items-center justify-between text-xs px-1 font-mono">
           <span className="flex items-center gap-1.5">

@@ -37,51 +37,50 @@ export const MetrobusAudioVisualizer: React.FC<MetrobusAudioVisualizerProps> = (
   }, []);
 
   return (
-    <div className="w-full bg-[#1A1A1A] border-3 border-black shadow-[4px_4px_0px_#000] p-3 text-white rounded-none">
-      <div className="flex items-center justify-between mb-2">
+    <div className="w-full bg-[#1A1A1A] dark:bg-[#141414] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 text-white shadow-xs">
+      <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-[#6BCB77] animate-pulse" />
-          <span className="text-xs font-mono uppercase tracking-wider text-neutral-300 font-bold">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="text-xs font-mono tracking-wide text-neutral-300 font-semibold">
             {acousticFilterEnabled ? 'DSP Kaskat Biquad Filtresi (4. Derece)' : 'Ham Ses Girişi (Filtresiz)'}
           </span>
         </div>
-        <span className="text-[10px] font-mono px-2 py-0.5 bg-neutral-800 text-yellow-400 border border-neutral-700">
+        <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-[#262626] text-neutral-300 border border-[#383838]">
           {transitLabel}
         </span>
       </div>
 
       {showEqCurve ? (
         // EQ Frequency Response SVG
-        <div className="relative h-20 w-full bg-neutral-900 border border-neutral-800 p-1 mb-2">
+        <div className="relative h-24 w-full bg-[#111111] border border-[#262626] rounded-xl p-2 mb-2">
           <svg className="w-full h-full" viewBox="0 0 240 70" preserveAspectRatio="none">
             {/* Grid lines */}
-            <line x1="0" y1="35" x2="240" y2="35" stroke="#333" strokeDasharray="2,2" />
-            <line x1="60" y1="0" x2="60" y2="70" stroke="#262626" />
-            <line x1="120" y1="0" x2="120" y2="70" stroke="#262626" />
-            <line x1="180" y1="0" x2="180" y2="70" stroke="#262626" />
+            <line x1="0" y1="35" x2="240" y2="35" stroke="#262626" strokeDasharray="3,3" />
+            <line x1="60" y1="0" x2="60" y2="70" stroke="#1F1F1F" />
+            <line x1="120" y1="0" x2="120" y2="70" stroke="#1F1F1F" />
+            <line x1="180" y1="0" x2="180" y2="70" stroke="#1F1F1F" />
 
-            {/* Raw Cabin Noise (Red dashed line showing diesel rumble at low freqs) */}
+            {/* Raw Cabin Noise (Red/Rose dashed line showing diesel rumble at low freqs) */}
             <polyline
               fill="none"
-              stroke="#FF6B9D"
-              strokeWidth="2"
+              stroke="#F43F5E"
+              strokeWidth="1.5"
               strokeDasharray="3,3"
               opacity="0.8"
               points={profilePoints
                 .map((pt, idx) => {
                   const x = (idx / (profilePoints.length - 1)) * 240;
-                  // Map rawMagnitudeDb (-20 to +20) to SVG y (65 to 5)
                   const y = 35 - pt.rawMagnitudeDb * 1.5;
                   return `${x},${Math.max(5, Math.min(65, y))}`;
                 })
                 .join(' ')}
             />
 
-            {/* Filtered Profile (Green solid curve showing -24 dB attenuation at <150 Hz) */}
+            {/* Filtered Profile (Emerald solid curve showing -24 dB attenuation at <150 Hz) */}
             {acousticFilterEnabled && (
               <polyline
                 fill="none"
-                stroke="#6BCB77"
+                stroke="#10A37F"
                 strokeWidth="2.5"
                 points={profilePoints
                   .map((pt, idx) => {
@@ -95,34 +94,34 @@ export const MetrobusAudioVisualizer: React.FC<MetrobusAudioVisualizerProps> = (
           </svg>
 
           {/* Legend */}
-          <div className="absolute bottom-1 right-2 flex items-center gap-3 text-[9px] font-mono">
-            <span className="text-[#FF6B9D] flex items-center gap-1">
-              <span className="inline-block w-2 h-0.5 bg-[#FF6B9D]" /> Dizel Gürültüsü (&lt;150Hz)
+          <div className="absolute bottom-1.5 right-2.5 flex items-center gap-3 text-[10px] font-mono">
+            <span className="text-rose-400 flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-0.5 bg-rose-400" /> Dizel Gürültüsü (&lt;150Hz)
             </span>
-            <span className="text-[#6BCB77] flex items-center gap-1">
-              <span className="inline-block w-2 h-0.5 bg-[#6BCB77]" /> Filtrelenmiş Ses (+4dB Formant)
+            <span className="text-emerald-400 flex items-center gap-1.5">
+              <span className="inline-block w-2.5 h-0.5 bg-emerald-400" /> Filtrelenmiş Ses (+4dB)
             </span>
           </div>
         </div>
       ) : (
         // Dynamic Waveform Spectrum Bars
-        <div className="h-12 w-full flex items-end justify-between gap-1 px-1 bg-black/60 border border-neutral-800 py-1">
+        <div className="h-14 w-full flex items-end justify-between gap-1 px-2 bg-[#111111] border border-[#262626] rounded-xl py-2">
           {bars.map((height, idx) => {
             const isSpeechZone = idx >= 6 && idx <= 18;
-            let barColor = '#4D96FF'; // default cyan/blue
-            if (status === 'LISTENING') barColor = '#6BCB77'; // emerald
-            if (status === 'AFFIRMATION') barColor = '#6BCB77';
-            if (status === 'VERBAL_NUDGE') barColor = '#FFD93D';
-            if (!acousticFilterEnabled && idx < 6) barColor = '#FF6B9D'; // red low diesel rumble
+            let barColor = '#3B82F6'; // modern indigo/blue
+            if (status === 'LISTENING') barColor = '#10A37F'; // emerald
+            if (status === 'AFFIRMATION') barColor = '#10A37F';
+            if (status === 'VERBAL_NUDGE') barColor = '#F59E0B'; // amber
+            if (!acousticFilterEnabled && idx < 6) barColor = '#F43F5E'; // rose low diesel rumble
 
             return (
               <div
                 key={idx}
-                className="flex-1 rounded-none transition-all duration-100"
+                className="flex-1 rounded-t-sm transition-all duration-100"
                 style={{
                   height: `${height}%`,
                   backgroundColor: barColor,
-                  opacity: isSpeechZone ? 1.0 : 0.6
+                  opacity: isSpeechZone ? 1.0 : 0.45
                 }}
               />
             );
@@ -130,7 +129,7 @@ export const MetrobusAudioVisualizer: React.FC<MetrobusAudioVisualizerProps> = (
         </div>
       )}
 
-      <div className="flex items-center justify-between mt-1 text-[10px] font-mono text-neutral-400">
+      <div className="flex items-center justify-between mt-2 text-[10px] font-mono text-neutral-400">
         <span>40 Hz (Dizel Motor)</span>
         <span>1.8 kHz (Ses Formantı)</span>
         <span>8.0 kHz</span>

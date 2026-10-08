@@ -47,11 +47,11 @@ export const Slider: React.FC<SliderProps> = ({
 
   return (
     <div className={twMerge('w-full flex flex-col gap-2', className)}>
-      <div className="flex justify-between items-center text-xs font-mono font-bold uppercase">
-        <label htmlFor={`slider-${label}`} className="text-black dark:text-slate-100">
+      <div className="flex justify-between items-center text-xs font-medium">
+        <label htmlFor={`slider-${label}`} className="text-slate-700 dark:text-slate-300">
           {label}
         </label>
-        <span className="px-2 py-0.5 bg-[#FFD93D] border-2 border-black text-black font-mono">
+        <span className="px-2 py-0.5 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 rounded-md font-mono text-xs">
           {valueText}
         </span>
       </div>
@@ -72,20 +72,19 @@ export const Slider: React.FC<SliderProps> = ({
           onKeyDown={handleKeyDown}
           onChange={(e) => onChange(parseFloat(e.target.value))}
           className={clsx(
-            'w-full h-3 bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 rounded-none appearance-none cursor-pointer',
-            'shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]',
-            'focus:outline-none focus:ring-2 focus:ring-[#FFD93D] dark:focus:ring-[#F59E0B]',
+            'w-full h-2 bg-slate-200 dark:bg-[#2A2A2A] rounded-full appearance-none cursor-pointer',
+            'focus:outline-none focus:ring-2 focus:ring-[#10A37F]/40',
             // Custom thumb styling
-            '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6',
-            '[&::-webkit-slider-thumb]:bg-[#FFD93D] [&::-webkit-slider-thumb]:border-3 [&::-webkit-slider-thumb]:border-black',
-            '[&::-webkit-slider-thumb]:shadow-[2px_2px_0px_#000000] [&::-webkit-slider-thumb]:cursor-pointer',
-            '[&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6 [&::-moz-range-thumb]:bg-[#FFD93D]',
-            '[&::-moz-range-thumb]:border-3 [&::-moz-range-thumb]:border-black [&::-moz-range-thumb]:rounded-none',
+            '[&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5',
+            '[&::-webkit-slider-thumb]:bg-white dark:[&::-webkit-slider-thumb]:bg-[#10A37F] [&::-webkit-slider-thumb]:border-2 [&::-webkit-slider-thumb]:border-[#10A37F]',
+            '[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-sm [&::-webkit-slider-thumb]:cursor-pointer',
+            '[&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5 [&::-moz-range-thumb]:bg-white dark:[&::-moz-range-thumb]:bg-[#10A37F]',
+            '[&::-moz-range-thumb]:border-2 [&::-moz-range-thumb]:border-[#10A37F] [&::-moz-range-thumb]:rounded-full',
             disabled && 'opacity-50 cursor-not-allowed'
           )}
         />
       </div>
-      <div className="flex justify-between text-[10px] font-mono text-gray-500 dark:text-slate-400">
+      <div className="flex justify-between text-[10px] font-mono text-slate-400 dark:text-slate-500">
         <span>{min} {unit}</span>
         <span>{max} {unit}</span>
       </div>

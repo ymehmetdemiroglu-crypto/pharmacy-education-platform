@@ -127,17 +127,17 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
             {dict.source}{config.source.file} ({dict.page}{config.source.page})
           </span>
         </div>
-        <h3 className="font-display font-black text-base sm:text-lg uppercase tracking-tight">
+        <h3 className="font-bold text-base sm:text-lg tracking-tight text-slate-900 dark:text-[#ECECEC]">
           {config.prompt}
         </h3>
-        <p className="font-body text-sm leading-relaxed text-gray-800 dark:text-gray-200">
+        <p className="font-sans text-sm leading-relaxed text-slate-600 dark:text-neutral-300">
           {config.scenarioDescription}
         </p>
       </div>
 
       {/* Options Selection */}
       <div className="space-y-2.5">
-        <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-neutral-400">
           {dict.step1}
         </span>
         <div className="grid grid-cols-1 gap-2">
@@ -150,16 +150,16 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
                 disabled={isRevealed || disabled}
                 onClick={() => handleSelect(opt.id)}
                 className={clsx(
-                  'w-full text-start p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
+                  'w-full text-start p-3.5 border rounded-xl font-sans text-sm shadow-2xs',
                   'transition-all duration-150 flex items-center justify-between',
                   isSelected
-                    ? 'bg-[#FFD93D] text-black shadow-neo-sm font-bold translate-x-1'
-                    : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800',
+                    ? 'bg-emerald-50/70 dark:bg-emerald-950/30 border-emerald-500 dark:border-emerald-600 text-emerald-950 dark:text-emerald-200 font-semibold shadow-xs ring-1 ring-emerald-500/20'
+                    : 'bg-white dark:bg-[#1E1E1E] border-slate-200 dark:border-[#2F2F2F] text-slate-800 dark:text-[#ECECEC] hover:bg-slate-50 dark:hover:bg-[#252525]',
                   disabled && 'opacity-60 cursor-not-allowed'
                 )}
               >
                 <span>{opt.label}</span>
-                {isSelected && <span className="text-xs font-mono uppercase ms-2">{dict.selected}</span>}
+                {isSelected && <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400 uppercase ms-2">{dict.selected}</span>}
               </button>
             );
           })}
@@ -169,7 +169,7 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
       {/* Metacognitive Confidence Rating Gauge */}
       {selectedOptionId && !isRevealed && (
         <div className="space-y-1.5 animate-in fade-in duration-150">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
+          <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-neutral-400">
             {dict.step2}
           </span>
           <ConfidenceGauge
@@ -195,15 +195,15 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-3 animate-in fade-in duration-200">
+        <div className="pt-3 border-t border-slate-200 dark:border-[#2F2F2F] space-y-3 animate-in fade-in duration-200">
           <div className="flex items-center gap-2">
             {selectedOption?.isCorrect ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.confirmed}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.misconceptionAlert}</span>
               </div>
@@ -214,14 +214,14 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
           {isHighConfidenceError && (
             <div
               data-testid="hypercorrection-alert"
-              className="p-3 bg-[#FF6B9D] text-black border-3 border-black font-body text-xs shadow-neo-sm flex items-start gap-2"
+              className="p-4 bg-rose-50 dark:bg-rose-950/50 text-rose-950 dark:text-rose-200 border border-rose-300 dark:border-rose-800/80 rounded-xl font-sans text-xs shadow-xs flex items-start gap-2.5"
             >
-              <Zap className="w-4 h-4 shrink-0 fill-current mt-0.5" />
+              <Zap className="w-4 h-4 shrink-0 text-rose-600 mt-0.5" />
               <div>
-                <strong className="font-display font-black uppercase tracking-wider block">
+                <strong className="font-semibold block">
                   {dict.hypercorrectionTitle}
                 </strong>
-                <p className="mt-0.5 leading-relaxed">
+                <p className="mt-0.5 leading-relaxed text-rose-800 dark:text-rose-300">
                   {dict.hypercorrectionDesc}
                 </p>
               </div>
@@ -230,19 +230,19 @@ export const PredictThenReveal: React.FC<PredictThenRevealProps> = ({
 
           {/* Targeted Misconception feedback if incorrect */}
           {!selectedOption?.isCorrect && selectedOption?.misconceptionFeedback && (
-            <div className="p-3 bg-[#FFE4E6] dark:bg-[#2A0E18] border-2 border-black dark:border-rose-600 font-body text-xs leading-relaxed text-rose-900 dark:text-rose-200">
+            <div className="p-4 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/60 rounded-xl font-sans text-xs leading-relaxed text-rose-900 dark:text-rose-200">
               <strong>{dict.targetedNote}</strong>
               {selectedOption.misconceptionFeedback}
             </div>
           )}
 
           {/* Outcome & Full Explanation */}
-          <div className="p-3 bg-white dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 space-y-1.5 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] text-black dark:text-slate-100">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-slate-300">
+          <div className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl space-y-2 shadow-xs text-slate-800 dark:text-[#ECECEC]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-neutral-400">
               {dict.finding}
             </span>
-            <p className="font-body text-sm font-semibold">{config.revealedOutcome}</p>
-            <p className="font-body text-xs text-gray-700 dark:text-slate-300 leading-relaxed pt-1">
+            <p className="font-sans text-sm font-semibold">{config.revealedOutcome}</p>
+            <p className="font-sans text-xs text-slate-600 dark:text-neutral-300 leading-relaxed pt-1">
               {config.explanation}
             </p>
           </div>

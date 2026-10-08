@@ -307,8 +307,8 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       </div>
 
       {/* Preset Molecules Selector */}
-      <div className="flex flex-col gap-1.5 p-2.5 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-        <span className="text-[11px] font-mono font-bold uppercase text-gray-700 dark:text-slate-300">
+      <div className="flex flex-col gap-1.5 p-3 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
+        <span className="text-[11px] font-mono font-semibold uppercase text-slate-500 dark:text-neutral-400">
           {labels.presets}
         </span>
         <div className="flex flex-wrap gap-2">
@@ -321,10 +321,10 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
                 disabled={disabled}
                 onClick={() => handlePresetSelect(preset)}
                 className={clsx(
-                  'px-2.5 py-1 text-xs font-mono font-bold border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
+                  'px-3 py-1.5 text-xs font-mono font-semibold rounded-xl border transition-all cursor-pointer',
                   isSelected
-                    ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000] scale-102'
-                    : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
+                    ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                    : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
                 )}
               >
                 {getPresetName(preset)}
@@ -336,9 +336,9 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       </div>
 
       {/* Drug Type Toggle */}
-      <div className="flex flex-wrap items-center justify-between gap-3 p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="flex flex-wrap items-center justify-between gap-3 p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <div className="flex items-center gap-2">
-          <span className="text-xs font-mono font-bold uppercase">
+          <span className="text-xs font-mono font-semibold uppercase text-slate-700 dark:text-neutral-300">
             {labels.compType}
           </span>
           <div className="flex items-center gap-1.5">
@@ -347,10 +347,10 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
               disabled={disabled}
               onClick={() => handleTypeToggle('acid')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all cursor-pointer',
                 drugType === 'acid'
-                  ? 'bg-[#FFD93D] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-amber-500 text-white border-amber-500 shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {labels.acid}
@@ -360,10 +360,10 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
               disabled={disabled}
               onClick={() => handleTypeToggle('base')}
               className={clsx(
-                'px-3 py-1 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all cursor-pointer',
+                'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all cursor-pointer',
                 drugType === 'base'
-                  ? 'bg-[#6BCB77] text-black shadow-[2px_2px_0px_#000000]'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-200 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                  : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-100 dark:hover:bg-[#2C2C2C]'
               )}
             >
               {labels.base}
@@ -372,15 +372,15 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
         </div>
 
         <div className="flex items-center gap-2 text-xs font-mono" dir="ltr">
-          <span className="font-bold text-amber-800 dark:text-amber-400">Δ = pH - pKa:</span>
-          <span className="px-2 py-0.5 bg-gray-100 dark:bg-slate-800 border border-black/30 dark:border-slate-600 font-bold">
+          <span className="font-semibold text-amber-700 dark:text-amber-400">Δ = pH - pKa:</span>
+          <span className="px-2 py-0.5 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] rounded-lg font-semibold text-slate-800 dark:text-neutral-200">
             {(pH - pKa >= 0 ? '+' : '') + (pH - pKa).toFixed(2)}
           </span>
         </div>
       </div>
 
       {/* Sliders for pKa and pH */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <Slider
           label={labels.pka}
           value={pKa}
@@ -403,17 +403,17 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
 
       {/* Real-Time Visual Fraction Bar (Strict LTR Container Isolation) */}
       <div
-        className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3.5 space-y-3"
+        className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4 space-y-3"
         dir="ltr"
       >
-        <div className="flex items-center justify-between text-xs font-mono font-bold">
+        <div className="flex items-center justify-between text-xs font-mono font-semibold">
           <span className="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400">
-            <span className="w-3.5 h-3.5 bg-emerald-500 border border-black inline-block" />
+            <span className="w-3 h-3 bg-emerald-500 rounded-sm inline-block" />
             {`${labels.unionized} [${drugType === 'acid' ? 'HA' : 'B'}]: ${unIonizedPct.toFixed(1)}%`}
           </span>
 
           <span className="flex items-center gap-1.5 text-blue-700 dark:text-blue-400">
-            <span className="w-3.5 h-3.5 bg-blue-500 border border-black inline-block" />
+            <span className="w-3 h-3 bg-blue-500 rounded-sm inline-block" />
             {`${labels.ionized} [${drugType === 'acid' ? 'A⁻' : 'BH⁺'}]: ${ionizedPct.toFixed(1)}%`}
           </span>
         </div>
@@ -425,18 +425,18 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
           aria-valuemin={0}
           aria-valuemax={100}
           aria-label="Ionization fraction percentage bar"
-          className="w-full h-8 flex border-3 border-black dark:border-slate-700 bg-gray-200 dark:bg-slate-800 overflow-hidden shadow-[2px_2px_0px_#000000]"
+          className="w-full h-7 flex border border-slate-300 dark:border-[#383838] rounded-xl bg-slate-200 dark:bg-neutral-800 overflow-hidden shadow-xs"
         >
           <div
             style={{ width: `${unIonizedPct}%` }}
-            className="h-full bg-emerald-500 flex items-center justify-center text-xs font-mono font-bold text-white transition-all duration-150 overflow-hidden"
+            className="h-full bg-emerald-500 flex items-center justify-center text-xs font-mono font-semibold text-white transition-all duration-150 overflow-hidden"
             title={`Un-ionized: ${unIonizedPct.toFixed(1)}%`}
           >
             {unIonizedPct >= 12 && `${unIonizedPct.toFixed(0)}% [${drugType === 'acid' ? 'HA' : 'B'}]`}
           </div>
           <div
             style={{ width: `${ionizedPct}%` }}
-            className="h-full bg-blue-500 flex items-center justify-center text-xs font-mono font-bold text-white transition-all duration-150 overflow-hidden"
+            className="h-full bg-blue-500 flex items-center justify-center text-xs font-mono font-semibold text-white transition-all duration-150 overflow-hidden"
             title={`Ionized: ${ionizedPct.toFixed(1)}%`}
           >
             {ionizedPct >= 12 && `${ionizedPct.toFixed(0)}% [${drugType === 'acid' ? 'A⁻' : 'BH⁺'}]`}
@@ -444,7 +444,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
         </div>
 
         {/* Equivalence Milestone Indicator */}
-        <div className="flex items-center justify-between text-[11px] font-mono text-gray-600 dark:text-slate-400 pt-1 border-t border-black/10 dark:border-slate-800">
+        <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 dark:text-neutral-400 pt-1 border-t border-slate-200 dark:border-[#2F2F2F]">
           <span>{labels.equilibrium}</span>
           <span>
             {drugType === 'acid'
@@ -456,48 +456,48 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
 
       {/* Lipid Bilayer Membrane Diffusion Visualizer (Strict LTR Container Isolation) */}
       <div
-        className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3"
+        className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4"
         dir="ltr"
       >
         <div className="flex items-center justify-between mb-2">
-          <span className="text-xs font-mono font-bold uppercase text-gray-800 dark:text-slate-200">
+          <span className="text-xs font-mono font-semibold uppercase text-slate-700 dark:text-neutral-300">
             {labels.membraneTitle}
           </span>
-          <span className="text-[11px] font-mono text-gray-500 dark:text-slate-400">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-neutral-400">
             {unIonizedPct >= 50 ? labels.passiveActive : labels.ionicRepelled}
           </span>
         </div>
 
         <svg
           viewBox="0 0 500 160"
-          className="w-full h-auto select-none bg-[#F8FAFC] dark:bg-[#0B0F17] border-2 border-black dark:border-slate-700"
+          className="w-full h-auto select-none bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-xl"
           role="img"
           aria-label="Lipid bilayer membrane model diagram"
         >
           {/* Header Zones */}
-          <rect x="0" y="0" width="180" height="30" fill="#E2E8F0" className="dark:fill-slate-800" />
-          <text x="90" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
+          <rect x="0" y="0" width="180" height="30" fill="#F1F5F9" className="dark:fill-[#222222]" />
+          <text x="90" y="19" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="600" fill="#64748B">
             {isEn ? 'Donor Aqueous (GI Lumen)' : isAr ? 'الوسط المائي المانح (تجويف الأنبوب)' : 'Verici Sulu Faz (Lümen)'}
           </text>
 
-          <rect x="180" y="0" width="140" height="30" fill="#FEF3C7" className="dark:fill-amber-950/60" />
-          <text x="250" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="#D97706">
+          <rect x="180" y="0" width="140" height="30" fill="#FEF3C7" className="dark:fill-amber-950/40" />
+          <text x="250" y="19" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="600" fill="#D97706">
             {isEn ? 'Lipid Bilayer Membrane' : isAr ? 'الغشاء الشحمي الثنائي' : 'Lipit Çift Tabaka'}
           </text>
 
-          <rect x="320" y="0" width="180" height="30" fill="#E2E8F0" className="dark:fill-slate-800" />
-          <text x="410" y="20" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="bold" fill="currentColor">
+          <rect x="320" y="0" width="180" height="30" fill="#F1F5F9" className="dark:fill-[#222222]" />
+          <text x="410" y="19" textAnchor="middle" fontSize="10" fontFamily="monospace" fontWeight="600" fill="#64748B">
             {isEn ? 'Acceptor Aqueous (Capillary Blood)' : isAr ? 'الوسط المستقبل (الدوران الدموي)' : 'Alıcı Sulu Faz (Plazma)'}
           </text>
 
           {/* Left Aqueous Zone */}
-          <rect x="0" y="30" width="180" height="130" fill="#3B82F6" fillOpacity="0.08" />
+          <rect x="0" y="30" width="180" height="130" fill="#3B82F6" fillOpacity="0.05" />
 
           {/* Bilayer Center Zone */}
-          <rect x="180" y="30" width="140" height="130" fill="#F59E0B" fillOpacity="0.12" stroke="#F59E0B" strokeWidth="1" strokeDasharray="2 2" />
+          <rect x="180" y="30" width="140" height="130" fill="#F59E0B" fillOpacity="0.08" stroke="#F59E0B" strokeWidth="1" strokeDasharray="2 2" />
 
           {/* Right Aqueous Zone */}
-          <rect x="320" y="30" width="180" height="130" fill="#10B981" fillOpacity="0.08" />
+          <rect x="320" y="30" width="180" height="130" fill="#10B981" fillOpacity="0.05" />
 
           {/* Bilayer Polar Heads and Hydrocarbon Tails */}
           {Array.from({ length: 8 }).map((_, i) => {
@@ -505,14 +505,14 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
             return (
               <g key={`bilayer-left-${i}`}>
                 {/* Left leaflet outer heads */}
-                <circle cx="190" cy={y} r="5" fill="#3B82F6" stroke="#000" strokeWidth="1" />
-                <line x1="195" y1={y} x2="230" y2={y - 1} stroke="#D97706" strokeWidth="1.5" />
-                <line x1="195" y1={y} x2="230" y2={y + 1} stroke="#D97706" strokeWidth="1.5" />
+                <circle cx="190" cy={y} r="4.5" fill="#3B82F6" stroke="#2563EB" strokeWidth="1" />
+                <line x1="195" y1={y} x2="230" y2={y - 1} stroke="#D97706" strokeWidth="1.2" />
+                <line x1="195" y1={y} x2="230" y2={y + 1} stroke="#D97706" strokeWidth="1.2" />
 
                 {/* Right leaflet outer heads */}
-                <circle cx="310" cy={y} r="5" fill="#3B82F6" stroke="#000" strokeWidth="1" />
-                <line x1="305" y1={y} x2="270" y2={y - 1} stroke="#D97706" strokeWidth="1.5" />
-                <line x1="305" y1={y} x2="270" y2={y + 1} stroke="#D97706" strokeWidth="1.5" />
+                <circle cx="310" cy={y} r="4.5" fill="#3B82F6" stroke="#2563EB" strokeWidth="1" />
+                <line x1="305" y1={y} x2="270" y2={y - 1} stroke="#D97706" strokeWidth="1.2" />
+                <line x1="305" y1={y} x2="270" y2={y + 1} stroke="#D97706" strokeWidth="1.2" />
               </g>
             );
           })}
@@ -520,22 +520,22 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
           {/* Un-ionized Permeable Particles Crossing */}
           {unIonizedPct > 5 && (
             <g>
-              <circle cx="100" cy="65" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
+              <circle cx="100" cy="65" r="7" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
               <text x="100" y="68" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'HA' : 'B'}
               </text>
               <path d="M 112 65 Q 250 55 380 65" fill="none" stroke="#10B981" strokeWidth="2.5" strokeDasharray="4 2" />
-              <circle cx="250" cy="59" r="6" fill="#10B981" stroke="#000" strokeWidth="1.5" />
-              <circle cx="395" cy="65" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
+              <circle cx="250" cy="59" r="6" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
+              <circle cx="395" cy="65" r="7" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
               <polygon points="405,65 397,61 397,69" fill="#10B981" />
 
-              <circle cx="60" cy="115" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
+              <circle cx="60" cy="115" r="7" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
               <text x="60" y="118" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'HA' : 'B'}
               </text>
               <path d="M 72 115 Q 250 125 390 115" fill="none" stroke="#10B981" strokeWidth="2.5" strokeDasharray="4 2" />
-              <circle cx="250" cy="120" r="6" fill="#10B981" stroke="#000" strokeWidth="1.5" />
-              <circle cx="405" cy="115" r="7" fill="#10B981" stroke="#000" strokeWidth="1.5" />
+              <circle cx="250" cy="120" r="6" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
+              <circle cx="405" cy="115" r="7" fill="#10B981" stroke="#059669" strokeWidth="1.5" />
               <polygon points="415,115 407,111 407,119" fill="#10B981" />
             </g>
           )}
@@ -543,13 +543,13 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
           {/* Ionized Polar Particles Repelled */}
           {ionizedPct > 5 && (
             <g>
-              <circle cx="120" cy="95" r="7" fill="#3B82F6" stroke="#000" strokeWidth="1.5" />
+              <circle cx="120" cy="95" r="7" fill="#3B82F6" stroke="#2563EB" strokeWidth="1.5" />
               <text x="120" y="98" fontSize="8" fontFamily="monospace" textAnchor="middle" fill="#FFF" fontWeight="bold">
                 {drugType === 'acid' ? 'A⁻' : 'BH⁺'}
               </text>
-              <path d="M 130 95 Q 185 95 180 80 Q 170 70 120 75" fill="none" stroke="#EF4444" strokeWidth="2" strokeDasharray="3 2" />
-              <polygon points="115,75 125,71 123,79" fill="#EF4444" />
-              <text x="150" y="112" fontSize="8" fontFamily="monospace" fill="#EF4444" fontWeight="bold">
+              <path d="M 130 95 Q 185 95 180 80 Q 170 70 120 75" fill="none" stroke="#F43F5E" strokeWidth="2" strokeDasharray="3 2" />
+              <polygon points="115,75 125,71 123,79" fill="#F43F5E" />
+              <text x="150" y="112" fontSize="8" fontFamily="monospace" fill="#F43F5E" fontWeight="bold">
                 {labels.repulsion}
               </text>
             </g>
@@ -560,10 +560,10 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
       {/* Biological pH Gradients (4 Compartments) */}
       <div className="space-y-2">
         <div className="flex items-center justify-between">
-          <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-gray-700 dark:text-slate-300">
+          <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
             {labels.gradientsTitle}
           </h4>
-          <span className="text-[11px] font-mono text-gray-500 dark:text-slate-400">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-neutral-400">
             {labels.gradientsSub}
           </span>
         </div>
@@ -574,21 +574,21 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
             return (
               <div
                 key={bg.id}
-                className="p-2.5 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 flex flex-col gap-1.5 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]"
+                className="p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl flex flex-col gap-2 shadow-xs"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold flex items-center gap-1">
+                  <span className="text-xs font-mono font-semibold text-slate-900 dark:text-[#ECECEC] flex items-center gap-1.5">
                     <span>{bg.icon}</span>
                     <span>{compName}</span>
                   </span>
-                  <span className="px-1.5 py-0.5 text-[10px] font-mono font-bold bg-[#FFD93D] border border-black text-black">
+                  <span className="px-2 py-0.5 text-[10px] font-mono font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800 rounded-md">
                     pH {bg.pH}
                   </span>
                 </div>
 
                 {/* Mini visual ratio bar */}
                 <div
-                  className="w-full h-3 border border-black dark:border-slate-700 flex bg-gray-200 dark:bg-slate-800 overflow-hidden"
+                  className="w-full h-2 rounded-full flex bg-slate-200 dark:bg-neutral-800 overflow-hidden"
                   dir="ltr"
                 >
                   <div
@@ -604,7 +604,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
                 </div>
 
                 <div className="flex justify-between text-[11px] font-mono" dir="ltr">
-                  <span className="text-emerald-700 dark:text-emerald-400 font-bold">
+                  <span className="text-emerald-700 dark:text-emerald-400 font-semibold">
                     {bg.unIonizedPct.toFixed(1)}% {labels.nonIonLabel}
                   </span>
                   <span className="text-blue-700 dark:text-blue-400">
@@ -614,7 +614,7 @@ export const IonizationEquilibriumSlider: React.FC<IonizationEquilibriumSliderPr
 
                 <div
                   className={clsx(
-                    'text-[10px] font-mono font-bold p-1 border text-center mt-auto',
+                    'text-[10px] font-mono font-semibold p-1.5 rounded-lg border text-center mt-auto',
                     bg.statusColor
                   )}
                 >

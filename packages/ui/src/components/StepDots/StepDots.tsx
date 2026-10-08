@@ -40,30 +40,29 @@ export const StepDots: React.FC<StepDotsProps> = ({
             aria-label={`Step ${idx + 1}${isCurrent ? ' (current)' : ''}${isCompleted ? ' (completed)' : ''}`}
             aria-current={isCurrent ? 'step' : undefined}
             className={clsx(
-              // Responsive touch hit target area (compact on mobile to prevent clipping)
-              'min-w-[28px] sm:min-w-[40px] md:min-w-[44px] min-h-[36px] sm:min-h-[44px] p-0.5 sm:p-1.5 flex items-center justify-center select-none rounded-none',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black dark:focus-visible:ring-[#F59E0B]',
+              'min-w-[28px] sm:min-w-[36px] md:min-w-[40px] min-h-[32px] sm:min-h-[40px] p-0.5 sm:p-1 flex items-center justify-center select-none rounded-lg',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#10A37F]',
               isClickable ? 'cursor-pointer' : 'cursor-default'
             )}
           >
             <div
               className={clsx(
-                'w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center text-[9px] sm:text-[10px] font-mono font-bold select-none rounded-none',
-                'transition-all duration-150 ease-neo',
+                'w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center text-[10px] sm:text-xs font-mono font-medium select-none rounded-full',
+                'transition-all duration-150',
                 // State styles
                 isCurrent &&
-                  'bg-[#FFD93D] border-2 sm:border-3 border-black text-black shadow-[2px_2px_0px_#000000] scale-110 z-10',
+                  'bg-[#10A37F] text-white shadow-xs scale-110 ring-2 ring-[#10A37F]/30 z-10 font-bold',
                 isCompleted &&
                   !isCurrent &&
-                  'bg-[#6BCB77] border-2 border-black text-black shadow-[1px_1px_0px_#000000]',
+                  'bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30',
                 !isCurrent &&
                   !isCompleted &&
-                  'bg-white dark:bg-[#1E293B] border-2 border-black/60 dark:border-slate-700 text-gray-700 dark:text-slate-300',
-                isClickable && !isCurrent && 'hover:scale-105'
+                  'bg-slate-100 dark:bg-[#262626] text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-[#333333]',
+                isClickable && !isCurrent && 'hover:scale-105 hover:bg-slate-200 dark:hover:bg-[#303030]'
               )}
             >
               {isCompleted && !isCurrent ? (
-                <Check className="w-3.5 h-3.5 stroke-[3]" />
+                <Check className="w-3.5 h-3.5 stroke-[2.5]" />
               ) : (
                 <span>{idx + 1}</span>
               )}

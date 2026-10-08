@@ -208,15 +208,15 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
       role="region"
       aria-label={t.title}
       dir={isAr ? 'rtl' : 'ltr'}
-      className={clsx('space-y-4 p-4 md:p-6 bg-[#FFF8E7] dark:bg-[#0B0F17] text-start', className)}
+      className={clsx('space-y-4 p-4 md:p-6 bg-white dark:bg-[#1E1E1E] text-start border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs', className)}
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-3 border-black dark:border-slate-700 pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-[#2F2F2F] pb-3">
         <div>
-          <h3 className="font-display font-black text-base md:text-lg uppercase tracking-tight text-black dark:text-white">
+          <h3 className="font-display font-bold text-base md:text-lg tracking-tight text-slate-900 dark:text-white">
             {t.title}
           </h3>
-          <p className="font-mono text-xs text-gray-700 dark:text-slate-300">
+          <p className="font-mono text-xs text-slate-500 dark:text-neutral-400">
             {t.subtitle(config.drugName, config.pKa)}
           </p>
         </div>
@@ -252,15 +252,15 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
       </div>
 
       {/* Interactive pH Stepper (WCAG 2.2 Compliant) */}
-      <div className="bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 p-3 shadow-neo-sm">
+      <div className="bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] p-4 rounded-xl shadow-xs">
         <div className="flex justify-between items-center mb-1">
           <label
             htmlFor={sliderId}
-            className="font-display font-extrabold text-xs uppercase tracking-wider text-black dark:text-white"
+            className="font-display font-bold text-xs uppercase tracking-wider text-slate-800 dark:text-neutral-200"
           >
-            {t.phControl} <span className="font-mono text-sm text-[#4D96FF]">pH {currentPh.toFixed(1)}</span>
+            {t.phControl} <span className="font-mono text-sm text-emerald-600 dark:text-emerald-400">pH {currentPh.toFixed(1)}</span>
           </label>
-          <span className="font-mono text-xs text-gray-600 dark:text-slate-400">
+          <span className="font-mono text-xs text-slate-500 dark:text-neutral-400">
             pKₐ = {config.pKa.toFixed(1)}
           </span>
         </div>
@@ -279,30 +279,30 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
           aria-valuemax={config.compartmentA.maxPh}
           aria-valuenow={currentPh}
           aria-valuetext={`pH ${currentPh.toFixed(1)}, ${nonIonizedPct}% neutral, ${ionizedPct}% ionized`}
-          className="w-full accent-black dark:accent-[#FFD93D] cursor-pointer"
+          className="w-full accent-[#10A37F] cursor-pointer"
         />
 
-        <div className="flex justify-between text-[10px] font-mono text-gray-500 mt-1">
+        <div className="flex justify-between text-[10px] font-mono text-slate-500 dark:text-neutral-400 mt-1">
           <span>pH {config.compartmentA.minPh.toFixed(1)} {t.acidic}</span>
-          <span className="font-bold text-black dark:text-white">{t.ratioHalf(config.pKa)}</span>
+          <span className="font-bold text-slate-900 dark:text-white">{t.ratioHalf(config.pKa)}</span>
           <span>pH {config.compartmentA.maxPh.toFixed(1)} {t.basic}</span>
         </div>
       </div>
 
       {/* Biophysical Chamber Visualization */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-2 border-3 border-black dark:border-slate-700 bg-white dark:bg-[#131B2A] p-4 shadow-neo">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-3 border border-slate-200 dark:border-[#2F2F2F] rounded-2xl bg-white dark:bg-[#1E1E1E] p-4 shadow-xs">
         {/* Left: Donor Lumen Compartment */}
         <div className="md:col-span-2 space-y-2">
-          <div className="flex items-center justify-between border-b-2 border-black dark:border-slate-700 pb-1">
-            <span className="font-display font-bold text-xs uppercase text-black dark:text-white">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2F2F2F] pb-1.5">
+            <span className="font-display font-bold text-xs uppercase text-slate-900 dark:text-white">
               {config.compartmentA.name}
             </span>
-            <span className="font-mono text-xs px-1.5 py-0.5 bg-yellow-100 dark:bg-yellow-950/40 text-black dark:text-white border border-black">
+            <span className="font-mono text-xs px-2 py-0.5 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800 rounded-md font-semibold">
               {t.areaLabel(currentSurfaceArea)}
             </span>
           </div>
 
-          <div className="min-h-[140px] border-2 border-dashed border-black/30 dark:border-slate-700 p-2 flex flex-wrap content-start gap-1.5 bg-[#FFFDF7] dark:bg-[#1A2234]">
+          <div className="min-h-[140px] border border-dashed border-slate-300 dark:border-[#383838] p-3 rounded-xl flex flex-wrap content-start gap-1.5 bg-slate-50 dark:bg-[#171717]">
             {Array.from({ length: totalDots }).map((_, idx) => {
               const isIonized = idx < ionizedDots;
               return (
@@ -310,10 +310,10 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
                   key={idx}
                   title={isIonized ? `${t.ionizedLabel}` : `${t.nonIonizedLabel}`}
                   className={clsx(
-                    'w-6 h-6 border-2 border-black flex items-center justify-center text-[10px] font-mono font-bold select-none transition-transform duration-150',
+                    'w-6 h-6 rounded-md border flex items-center justify-center text-[10px] font-mono font-bold select-none transition-transform duration-150',
                     isIonized
-                      ? 'bg-[#FF6B9D] text-black shadow-[0_0_8px_rgba(255,107,157,0.6)]'
-                      : 'bg-[#6BCB77] text-black'
+                      ? 'bg-rose-100 dark:bg-rose-950/50 border-rose-300 dark:border-rose-800 text-rose-800 dark:text-rose-300'
+                      : 'bg-emerald-100 dark:bg-emerald-950/50 border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300'
                   )}
                 >
                   {isIonized ? 'A⁻' : 'HA'}
@@ -324,58 +324,58 @@ export const IonizationChamber: React.FC<IonizationChamberProps> = ({
 
           {/* Ratio summary bar */}
           <div className="grid grid-cols-2 gap-2 text-xs font-mono">
-            <div className="p-1.5 bg-[#6BCB77]/20 border border-black dark:border-slate-700 text-black dark:text-white">
+            <div className="p-2 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800/60 rounded-lg text-emerald-900 dark:text-emerald-300">
               <span className="font-bold">HA:</span> {nonIonizedPct}%
             </div>
-            <div className="p-1.5 bg-[#FF6B9D]/20 border border-black dark:border-slate-700 text-black dark:text-white">
+            <div className="p-2 bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/60 rounded-lg text-rose-900 dark:text-rose-300">
               <span className="font-bold">A⁻:</span> {ionizedPct}%
             </div>
           </div>
         </div>
 
         {/* Center: Lipid Bilayer Barrier */}
-        <div className="md:col-span-1 flex flex-col items-center justify-center border-2 border-black dark:border-slate-700 bg-amber-100 dark:bg-amber-950/30 p-2 text-center">
-          <div className="w-2 h-16 bg-amber-400 dark:bg-amber-600 border border-black my-1" />
-          <span className="font-display font-extrabold text-[10px] uppercase tracking-tighter text-black dark:text-white leading-tight">
+        <div className="md:col-span-1 flex flex-col items-center justify-center border border-slate-200 dark:border-[#2F2F2F] rounded-xl bg-amber-50/60 dark:bg-amber-950/20 p-2 text-center">
+          <div className="w-1.5 h-16 bg-amber-400 dark:bg-amber-600 rounded-full my-1" />
+          <span className="font-display font-bold text-[10px] uppercase tracking-tight text-slate-900 dark:text-white leading-tight">
             {t.membraneLabel}
           </span>
-          <span className="font-mono text-[9px] text-gray-600 dark:text-slate-400 mt-1">
+          <span className="font-mono text-[9px] text-slate-500 dark:text-neutral-400 mt-1">
             {t.membraneSub}
           </span>
         </div>
 
         {/* Right: Receptor / Blood Sink Compartment */}
         <div className="md:col-span-2 space-y-2">
-          <div className="flex items-center justify-between border-b-2 border-black dark:border-slate-700 pb-1">
-            <span className="font-display font-bold text-xs uppercase text-black dark:text-white">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2F2F2F] pb-1.5">
+            <span className="font-display font-bold text-xs uppercase text-slate-900 dark:text-white">
               {config.compartmentB.name}
             </span>
-            <span className="font-mono text-xs px-1.5 py-0.5 bg-blue-100 dark:bg-blue-950/40 text-black dark:text-white border border-black">
+            <span className="font-mono text-xs px-2 py-0.5 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 rounded-md font-semibold">
               pH {config.compartmentB.ph}
             </span>
           </div>
 
-          <div className="min-h-[140px] border-2 border-dashed border-black/30 dark:border-slate-700 p-3 flex flex-col justify-center items-center bg-[#F0F7FF] dark:bg-[#162238] text-center">
-            <span className="font-mono text-xs text-gray-700 dark:text-slate-300">
+          <div className="min-h-[140px] border border-dashed border-slate-300 dark:border-[#383838] p-4 rounded-xl flex flex-col justify-center items-center bg-blue-50/40 dark:bg-blue-950/20 text-center">
+            <span className="font-mono text-xs text-slate-600 dark:text-neutral-300">
               {t.massFlux}
             </span>
-            <span className="font-display text-2xl font-black text-black dark:text-white my-1">
-              {relativeFlux} <span className="text-xs font-mono font-normal">{t.fluxUnit}</span>
+            <span className="font-display text-2xl font-bold text-slate-900 dark:text-white my-1">
+              {relativeFlux} <span className="text-xs font-mono font-normal text-slate-500 dark:text-neutral-400">{t.fluxUnit}</span>
             </span>
-            <span className="text-[11px] font-mono text-gray-600 dark:text-slate-400">
+            <span className="text-[11px] font-mono text-slate-500 dark:text-neutral-400">
               J = P · ({currentSurfaceArea} m²) · ({nonIonizedPct}%)
             </span>
           </div>
 
-          <div className="p-1.5 bg-blue-50 dark:bg-blue-950/20 border border-black dark:border-slate-700 text-[11px] font-mono text-black dark:text-white">
+          <div className="p-2 bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800/60 rounded-lg text-[11px] font-mono text-blue-900 dark:text-blue-300">
             {t.bloodLabel}
           </div>
         </div>
       </div>
 
       {/* Clinical Insight / Paradox Callout */}
-      <div className="p-3 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700 text-xs text-black dark:text-slate-200">
-        <span className="font-bold text-amber-600 dark:text-amber-400 mr-1">💡</span>
+      <div className="p-3.5 bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl text-xs text-slate-700 dark:text-neutral-300 leading-relaxed">
+        <span className="font-bold text-amber-600 dark:text-amber-400 mr-1.5">💡</span>
         {t.paradoxAlert}
       </div>
 

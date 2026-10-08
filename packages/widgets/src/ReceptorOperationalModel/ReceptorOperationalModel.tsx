@@ -203,15 +203,15 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
       role="region"
       aria-labelledby={headingId}
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black text-start ${className}`}
+      className={`p-6 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs max-w-3xl mx-auto font-sans text-slate-900 dark:text-[#ECECEC] text-start ${className}`}
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b-4 border-black gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-[#2F2F2F] gap-2">
         <div>
-          <span className="inline-block text-xs uppercase tracking-widest font-black bg-[#6BCB77] text-black px-2 py-0.5 border-2 border-black mb-1">
+          <span className="inline-block text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 px-2.5 py-0.5 border border-emerald-200 dark:border-emerald-800/60 rounded-md mb-1">
             {t.badge}
           </span>
-          <h3 id={headingId} className="text-xl sm:text-2xl font-black uppercase tracking-tight">
+          <h3 id={headingId} className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {t.title}
           </h3>
         </div>
@@ -222,7 +222,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             type="button"
             onClick={() => applyPreset(10.0, -6.0, 0)}
             data-testid="preset-full-agonist"
-            className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
+            className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
           >
             {t.presetFull}
           </button>
@@ -230,7 +230,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             type="button"
             onClick={() => applyPreset(0.8, -6.0, 0)}
             data-testid="preset-partial-agonist"
-            className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
+            className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
           >
             {t.presetPartial}
           </button>
@@ -238,7 +238,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             type="button"
             onClick={() => applyPreset(10.0, -6.0, 80)}
             data-testid="preset-depleted-reserve"
-            className="px-2 py-1 bg-white border-2 border-black font-bold text-xs hover:bg-gray-100"
+            className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
           >
             {t.presetBlockade}
           </button>
@@ -248,15 +248,15 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
       {/* Main Interactive Graph & Metrics */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         {/* SVG Curve Plot (2 cols) */}
-        <div className="md:col-span-2 bg-white border-4 border-black p-4 flex flex-col items-center">
-          <div className="w-full flex justify-between items-center text-xs font-mono font-bold mb-2">
+        <div className="md:col-span-2 bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 flex flex-col items-center">
+          <div className="w-full flex justify-between items-center text-xs font-mono font-semibold mb-2 text-slate-800 dark:text-[#ECECEC]">
             <span>{t.plotTitle}</span>
-            <span className="text-gray-500">{t.target(config.targetReceptor)}</span>
+            <span className="text-slate-400 dark:text-neutral-500">{t.target(config.targetReceptor)}</span>
           </div>
 
           <svg
             viewBox={`0 0 ${svgWidth} ${svgHeight}`}
-            className="w-full h-auto bg-[#FAFAFA] border-2 border-black"
+            className="w-full h-auto bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl"
             aria-label={t.plotAria}
           >
             {/* Grid & Axis Lines */}
@@ -265,16 +265,16 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               y1={padding.top}
               x2={padding.left}
               y2={padding.top + plotHeight}
-              stroke="#000"
-              strokeWidth="2"
+              stroke="#94A3B8"
+              strokeWidth="1"
             />
             <line
               x1={padding.left}
               y1={padding.top + plotHeight}
               x2={padding.left + plotWidth}
               y2={padding.top + plotHeight}
-              stroke="#000"
-              strokeWidth="2"
+              stroke="#94A3B8"
+              strokeWidth="1"
             />
 
             {/* Y-axis Ticks (% Effect: 0, 50, 100) */}
@@ -352,40 +352,40 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
         </div>
 
         {/* Calculated Biophysical Metrics (1 col) */}
-        <div className="bg-white border-4 border-black p-4 flex flex-col justify-between">
+        <div className="bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 flex flex-col justify-between shadow-xs">
           <div>
-            <div className="text-xs font-black uppercase text-gray-500 mb-2">{t.panelTitle}</div>
+            <div className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400 mb-2">{t.panelTitle}</div>
 
             <div className="space-y-3 font-mono text-xs">
-              <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">{t.emaxLabel}</div>
-                <div data-testid="metric-emax" className="text-lg font-black text-black">
+              <div className="p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-2xs">
+                <div className="text-slate-500 dark:text-neutral-400 text-xs">{t.emaxLabel}</div>
+                <div data-testid="metric-emax" className="text-lg font-bold text-slate-900 dark:text-[#ECECEC]">
                   {observedEmax.toFixed(1)}%
                 </div>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">{t.ec50Label}</div>
-                <div data-testid="metric-ec50" className="text-base font-black text-[#4D96FF]">
-                  {(ec50 * 1e6).toFixed(2)} μM <span className="text-[10px] text-gray-500">(10^{logEC50.toFixed(2)})</span>
+              <div className="p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-2xs">
+                <div className="text-slate-500 dark:text-neutral-400 text-xs">{t.ec50Label}</div>
+                <div data-testid="metric-ec50" className="text-base font-bold text-blue-600 dark:text-blue-400">
+                  {(ec50 * 1e6).toFixed(2)} μM <span className="text-[10px] text-slate-400 dark:text-neutral-500">(10^{logEC50.toFixed(2)})</span>
                 </div>
               </div>
 
-              <div className="p-2 bg-gray-50 border-2 border-black">
-                <div className="text-gray-600">{t.occupancyLabel}</div>
-                <div data-testid="metric-occupancy" className="text-base font-black text-black">
+              <div className="p-3 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-2xs">
+                <div className="text-slate-500 dark:text-neutral-400 text-xs">{t.occupancyLabel}</div>
+                <div data-testid="metric-occupancy" className="text-base font-bold text-slate-900 dark:text-[#ECECEC]">
                   {t.occupancyVal(occupancyAtEC50.toFixed(1))}
                 </div>
               </div>
 
               <div
                 data-testid="spare-receptor-banner"
-                className={`p-2 border-2 border-black font-sans font-bold text-xs ${
+                className={`p-3 border rounded-xl font-medium text-xs shadow-2xs ${
                   spareReceptorPercent > 50
-                    ? 'bg-[#E8F5E9] text-green-900 border-green-700'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800/60'
                     : spareReceptorPercent > 10
-                    ? 'bg-[#FFF9C4] text-yellow-900 border-yellow-700'
-                    : 'bg-[#FFEBEE] text-red-900 border-red-700'
+                    ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border-amber-300 dark:border-amber-800/60'
+                    : 'bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border-rose-300 dark:border-rose-800/60'
                 }`}
               >
                 {spareReceptorPercent > 50
@@ -397,22 +397,22 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
             </div>
           </div>
 
-          <div className="text-[11px] text-gray-600 leading-tight mt-3">
+          <div className="text-[11px] text-slate-500 dark:text-neutral-400 leading-tight mt-3">
             {t.footnote}
           </div>
         </div>
       </div>
 
       {/* Interactive Controls & WCAG 2.2 Steppers */}
-      <div className="p-4 bg-white border-4 border-black mb-4">
-        <div className="text-xs font-black uppercase tracking-wider mb-4">{t.controlsTitle}</div>
+      <div className="p-5 bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl mb-4 shadow-xs">
+        <div className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400 mb-4">{t.controlsTitle}</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {/* Parameter 1: Operational Efficacy (tau) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{t.paramTau}</span>
-              <span data-testid="value-tau" className="text-black font-black">{tau.toFixed(1)}</span>
+              <span data-testid="value-tau" className="text-emerald-700 dark:text-emerald-400 font-bold">{tau.toFixed(1)}</span>
             </div>
             <input
               type="range"
@@ -422,14 +422,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               value={tau}
               onChange={(e) => setTau(parseFloat(e.target.value))}
               aria-label={t.tauAria}
-              className="w-full accent-black cursor-pointer"
+              className="w-full accent-[#10A37F] cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setTau((prev) => Math.max(0.1, parseFloat((prev - 0.5).toFixed(1))))}
                 aria-label={t.tauDecAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -0.5
               </button>
@@ -437,7 +437,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
                 type="button"
                 onClick={() => setTau((prev) => Math.min(20, parseFloat((prev + 0.5).toFixed(1))))}
                 aria-label={t.tauIncAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +0.5
               </button>
@@ -446,9 +446,9 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
 
           {/* Parameter 2: Affinity (logKA) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{t.paramLogKA}</span>
-              <span className="text-black font-black">{logKA.toFixed(1)} M</span>
+              <span className="text-blue-600 dark:text-blue-400 font-bold">{logKA.toFixed(1)} M</span>
             </div>
             <input
               type="range"
@@ -458,14 +458,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               value={logKA}
               onChange={(e) => setLogKA(parseFloat(e.target.value))}
               aria-label={t.logKAAria}
-              className="w-full accent-black cursor-pointer"
+              className="w-full accent-[#10A37F] cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setLogKA((prev) => Math.max(-8, parseFloat((prev - 0.2).toFixed(1))))}
                 aria-label={t.logKADecAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -0.2
               </button>
@@ -473,7 +473,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
                 type="button"
                 onClick={() => setLogKA((prev) => Math.min(-4, parseFloat((prev + 0.2).toFixed(1))))}
                 aria-label={t.logKAIncAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +0.2
               </button>
@@ -482,9 +482,9 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
 
           {/* Parameter 3: Irreversible Receptor Blockade (%) */}
           <div className="flex flex-col gap-1.5">
-            <div className="flex justify-between items-center text-xs font-bold font-mono">
+            <div className="flex justify-between items-center text-xs font-semibold font-mono text-slate-800 dark:text-[#ECECEC]">
               <span>{t.paramBlockade}</span>
-              <span data-testid="value-blockade" className="text-red-600 font-black">{t.blockadeVal(blockadePercent)}</span>
+              <span data-testid="value-blockade" className="text-rose-600 dark:text-rose-400 font-bold">{t.blockadeVal(blockadePercent)}</span>
             </div>
             <input
               type="range"
@@ -494,14 +494,14 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
               value={blockadePercent}
               onChange={(e) => setBlockadePercent(parseInt(e.target.value, 10))}
               aria-label={t.blockadeAria}
-              className="w-full accent-red-600 cursor-pointer"
+              className="w-full accent-rose-600 cursor-pointer"
             />
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => setBlockadePercent((prev) => Math.max(0, prev - 10))}
                 aria-label={t.blockadeDecAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 -10%
               </button>
@@ -509,7 +509,7 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
                 type="button"
                 onClick={() => setBlockadePercent((prev) => Math.min(95, prev + 10))}
                 aria-label={t.blockadeIncAria}
-                className="px-2 py-0.5 bg-gray-200 border-2 border-black font-mono font-bold text-xs"
+                className="px-2.5 py-1 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] rounded-lg font-mono font-semibold text-xs text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C] shadow-2xs"
               >
                 +10%
               </button>
@@ -521,9 +521,9 @@ export const ReceptorOperationalModel: React.FC<ReceptorOperationalModelProps> =
       {/* Model Illustration Notice */}
       <aside
         data-testid="model-illustration-notice"
-        className="p-3 bg-[#FFF] border-2 border-black text-xs text-gray-700 font-mono leading-relaxed"
+        className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl text-xs text-slate-600 dark:text-neutral-400 font-sans leading-relaxed shadow-2xs"
       >
-        <span className="font-bold text-black uppercase">{t.noticeLabel}</span>{' '}
+        <span className="font-semibold text-slate-900 dark:text-[#ECECEC] uppercase">{t.noticeLabel}</span>{' '}
         {t.noticeText(config.equationRef)}
       </aside>
     </section>

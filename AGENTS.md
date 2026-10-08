@@ -11,7 +11,7 @@ Build and operate **ONE commercial-grade interactive learning platform** hosting
 2. **Course B: Pharmacology** (Source: `/materials/pharmacology`)
 
 - **Pedagogical Core**: Active learn-by-doing in the style of Brilliant (short bite-sized steps, predict-then-reveal interactions, immediate misconception-targeted feedback, 3-tiered hint ladders, worked-example fading, and spaced review).
-- **Visual Design**: Refined Neo-Brutalist design language (stark 3-4px high-contrast borders `#000000`, 6px hard drop shadows with zero blur, restrained palette with purposeful semantic accents, heavy grotesque typography, monospace chemistry/math notation, and smooth 150–250ms micro-motion without layout thrashing).
+- **Visual Design**: Modern Obsidian & Emerald design system (sleek dark `#171717`/`#212121` surfaces, crisp 1px borders `border-slate-200 dark:border-[#2F2F2F]`, smooth rounded squircles `rounded-xl`/`rounded-2xl`, soft ambient elevation, Emerald `#10A37F` accent, monospace chemistry/math notation, and smooth 150–250ms micro-motion without layout thrashing).
 - **Commercial Strategy**: High-conversion accessible student monetization:
   - **Permanent Freemium**: Lessons 1 and 2 of **every single module** free forever with core widgets and Tier 1 hints.
   - **7-Day Free Trial of Full Premium**: Frictionless 1-click activation without upfront credit card requirements. Auto-downgrades to Free on Day 8 with 100% student progress preserved. Server-side single-use enforcement.
@@ -103,20 +103,21 @@ UI verification is executed exclusively via Playwright controlling the user's lo
 
 ---
 
-## 5. Refined Design & Motion Standards
+## 5. Modern Design & Motion Standards
 
 1. **Geometry & Palette**:
-   - 3px or 4px solid `#000000` borders on all cards, inputs, and modals.
-   - Zero-blur hard drop shadows: 6px resting, 8px hover, 0px active sink.
-   - Restrained palette: Warm cream `#FFF8E7`, Pure White `#FFFFFF`, Ink `#000000`. Semantic accents: Yellow `#FFD93D` (hints/active), Green `#6BCB77` (correct/mastery), Pink `#FF6B9D` (misconceptions/errors), Blue `#4D96FF` (MedChem), Orange `#FF9F45` (Pharm).
+   - Modern subtle 1px borders (`border-slate-200 dark:border-white/10` or `dark:border-[#2F2F2F]`). Zero chunky 3px/4px black borders.
+   - Soft ambient depth: subtle shadows (`shadow-sm`, `shadow-md`, `shadow-xl`) and smooth glowing accents. Zero hard 0-blur black drop shadows.
+   - Refined palette: Obsidian `#171717` canvas, `#212121` card surface, `#2A2A2A` active/hover, Pure White `#FFFFFF` text. Semantic accents: Emerald `#10A37F` (active/primary/success), Indigo `#3B82F6` (MedChem), Amber `#F59E0B` (Pharm/hints), Rose `#EF4444` (misconceptions/errors).
+   - Modern squircles: `rounded-xl` for cards, `rounded-2xl` for modals and interactive canvases, `rounded-full` for chips and pills.
 2. **Spacing & Typography Scale**:
    - Strict 8-point geometric scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px).
-   - Space Grotesk / Archivo Black for display headers; Inter / Space Grotesk for body; JetBrains Mono for SMILES, pKa, constants.
+   - Space Grotesk / Inter for display headers; Inter / system-ui for body; JetBrains Mono for SMILES, pKa, constants.
 3. **Motion Constraints**:
    - Micro-interactions: 150ms–250ms. Page/step transitions: up to 400ms.
    - Easing: `cubic-bezier(0.22, 1, 0.36, 1)` or `ease-out`. Never use bounce or overshoot.
    - Animate `transform` and `opacity` ONLY. Layout-thrashing properties (`width`, `height`, `margin`, `padding`) are strictly forbidden. Small offsets (4px–12px max).
-   - Feedback: Gentle 4px lift + green tint for correct; gentle 4px horizontal shift + pink tint for incorrect. No confetti, no screen shaking.
+   - Feedback: Gentle 4px lift + emerald tint for correct; gentle 4px horizontal shift + rose tint for incorrect. No confetti, no screen shaking.
    - Strict adherence to `prefers-reduced-motion: reduce`.
 
 ---
@@ -149,7 +150,7 @@ UI verification is executed exclusively via Playwright controlling the user's lo
 ├── apps/
 │   └── web/                   # Vite + React 18 + TypeScript + Tailwind CSS (SPA)
 ├── packages/
-│   ├── ui/                    # Neo-brutalist component library & design tokens
+│   ├── ui/                    # Modern Obsidian & Emerald component library & design tokens
 │   ├── widgets/               # Interactive pharmacy widgets (SAR, PK, Curves, etc.)
 │   └── platform/              # Auth, progress sync, access control (hasAccess), analytics
 ├── courses/

@@ -50,7 +50,7 @@ export const DashboardPage: React.FC = () => {
       </header>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <Card className="flex items-center gap-4 border-4 shadow-[6px_6px_0_0_#000000]">
+        <Card className="flex items-center gap-4">
           <ReadinessGauge percent={readiness} label={text.readiness} />
           <div className="flex min-w-0 flex-col gap-1">
             <span className="font-mono text-xs font-bold uppercase">{text.examCountdown}</span>
@@ -61,7 +61,7 @@ export const DashboardPage: React.FC = () => {
           </div>
         </Card>
 
-        <Card variant="highlight" className="flex flex-col gap-3 border-4 shadow-[6px_6px_0_0_#000000]">
+        <Card variant="highlight" className="flex flex-col gap-3">
           <h2 className="font-display text-xl font-black uppercase">{text.daily10}</h2>
           <p className="text-sm font-semibold">{daily.length > 0 ? text.daily10Desc : text.daily10Empty}</p>
           {daily.length > 0 ? (
@@ -72,13 +72,13 @@ export const DashboardPage: React.FC = () => {
         </Card>
       </div>
 
-      <Card className="flex flex-col gap-3 border-4 shadow-[6px_6px_0_0_#000000]">
+      <Card className="flex flex-col gap-3">
         <h2 className="font-display text-lg font-black uppercase">{text.weakest}</h2>
         <ul className="flex flex-col gap-2">
           {weakest.map((c) => {
             const m = mastery[c.id];
             return (
-              <li key={c.id} className="flex items-center justify-between gap-2 border-3 border-black bg-white p-2 text-sm">
+              <li key={c.id} className="flex items-center justify-between gap-2 border border-slate-200 dark:border-[#2F2F2F] bg-white dark:bg-[#1E1E1E] p-3 rounded-xl text-sm">
                 <span>{c.conceptTitle}</span>
                 <StickerBadge variant={m === undefined ? 'outline' : m >= MASTERY_THRESHOLD ? 'green' : 'pink'} size="sm">
                   {m === undefined ? text.notStarted : text.masteryPct(Math.round(m * 100))}
@@ -92,7 +92,7 @@ export const DashboardPage: React.FC = () => {
       <section aria-label={text.catalog} className="flex flex-col gap-3">
         <h2 className="font-display text-lg font-black uppercase">{text.catalog}</h2>
         {lectures.map((l) => (
-          <Card key={l.slug} variant="medchem" className="flex flex-wrap items-center justify-between gap-3 border-4 shadow-[6px_6px_0_0_#000000]">
+          <Card key={l.slug} variant="medchem" className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex min-w-0 flex-col gap-1">
               <span className="font-display text-lg font-black">{l.deck.replace(/\.pdf$/i, '')}</span>
               <span className="font-mono text-xs">{text.conceptsCount(l.concepts.length)}</span>

@@ -122,16 +122,16 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           const isSelected = selectedIds.includes(opt.id);
           const correct = isOptionCorrect(opt.id);
 
-          let optionStyle = 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-50 dark:hover:bg-slate-800';
+          let optionStyle = 'bg-white dark:bg-[#1E1E1E] border-slate-200 dark:border-[#2F2F2F] text-slate-800 dark:text-[#ECECEC] hover:bg-slate-50 dark:hover:bg-[#252525] shadow-2xs';
           if (isSelected && !isSubmitted) {
-            optionStyle = 'bg-[#FFD93D] text-black font-bold shadow-neo-sm translate-x-1';
+            optionStyle = 'bg-emerald-50/70 dark:bg-emerald-950/30 border-emerald-500 dark:border-emerald-600 text-emerald-950 dark:text-emerald-200 font-semibold shadow-xs ring-1 ring-emerald-500/20';
           } else if (isSubmitted) {
             if (correct) {
-              optionStyle = 'bg-[#EBFBEE] dark:bg-[#072518] border-[#6BCB77] dark:border-emerald-600 text-black dark:text-emerald-200 font-bold';
+              optionStyle = 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-400 dark:border-emerald-700 text-emerald-950 dark:text-emerald-200 font-semibold shadow-xs';
             } else if (isSelected && !correct) {
-              optionStyle = 'bg-[#FFF0F5] dark:bg-[#2A0E18] border-[#FF6B9D] dark:border-rose-600 text-black dark:text-rose-200';
+              optionStyle = 'bg-rose-50 dark:bg-rose-950/40 border-rose-400 dark:border-rose-700 text-rose-950 dark:text-rose-200 shadow-xs';
             } else {
-              optionStyle = 'opacity-60 bg-gray-100 dark:bg-[#0B0F17] text-gray-500 dark:text-slate-400';
+              optionStyle = 'opacity-50 bg-slate-50 dark:bg-[#171717] border-slate-200 dark:border-[#2F2F2F] text-slate-400 dark:text-neutral-500';
             }
           }
 
@@ -144,7 +144,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
                 disabled={isSubmitted || disabled}
                 onClick={() => toggleSelect(opt.id)}
                 className={clsx(
-                  'w-full text-start p-3 border-3 border-black dark:border-slate-700 rounded-none font-body text-sm',
+                  'w-full text-start p-3.5 border rounded-xl font-sans text-sm',
                   'transition-all duration-150 flex items-center justify-between gap-3',
                   optionStyle,
                   disabled && 'opacity-50 cursor-not-allowed'
@@ -152,15 +152,17 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
               >
                 <span>{opt.text}</span>
                 <span className="shrink-0 flex items-center gap-1.5">
-                  {isSubmitted && correct && <Check className="w-5 h-5 text-emerald-600 stroke-[3]" />}
+                  {isSubmitted && correct && <Check className="w-5 h-5 text-emerald-600 stroke-[2.5]" />}
                   {isSubmitted && isSelected && !correct && (
-                    <X className="w-5 h-5 text-rose-600 stroke-[3]" />
+                    <X className="w-5 h-5 text-rose-600 stroke-[2.5]" />
                   )}
                   {!isSubmitted && (
                     <span
                       className={clsx(
-                        'w-4 h-4 border-2 border-black dark:border-slate-700 inline-block',
-                        isSelected ? 'bg-black dark:bg-amber-400' : 'bg-white dark:bg-[#131B2A]'
+                        'w-4 h-4 rounded-full border inline-block transition-colors',
+                        isSelected
+                          ? 'bg-emerald-600 border-emerald-600 ring-2 ring-emerald-500/20'
+                          : 'border-slate-300 dark:border-[#383838] bg-white dark:bg-[#252525]'
                       )}
                     />
                   )}
@@ -169,7 +171,7 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
 
               {/* Show distractor rationale when selected and incorrect */}
               {isSubmitted && isSelected && !correct && opt.distractorRationale && (
-                <div className="p-2.5 bg-[#FFE4E6] dark:bg-[#2A0E18] border-2 border-black dark:border-rose-600 text-xs font-body text-rose-900 dark:text-rose-200">
+                <div className="p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/60 rounded-xl text-xs font-sans text-rose-900 dark:text-rose-200 leading-relaxed">
                   <strong>{dict.misconception}</strong>
                   {opt.distractorRationale}
                 </div>
@@ -191,26 +193,26 @@ export const MultipleChoice: React.FC<MultipleChoiceProps> = ({
           </Button>
         </div>
       ) : (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
+        <div className="pt-3 border-t border-slate-200 dark:border-[#2F2F2F] space-y-2">
           <div className="flex items-center gap-2">
             {config.options
               .filter((o) => o.isCorrect)
               .every((o) => selectedIds.includes(o.id)) &&
             selectedIds.every((id) => isOptionCorrect(id)) ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.correct}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.needsReview}</span>
               </div>
             )}
           </div>
-          <div className="p-3 bg-[#FFFDF7] dark:bg-[#1E293B] border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]">
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-slate-300">{dict.explanation}</span>
-            <p className="text-xs font-body leading-relaxed pt-1 text-gray-800 dark:text-slate-200">
+          <div className="p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl shadow-xs">
+            <span className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400">{dict.explanation}</span>
+            <p className="text-xs font-sans leading-relaxed pt-1 text-slate-800 dark:text-neutral-200">
               {config.explanation}
             </p>
           </div>

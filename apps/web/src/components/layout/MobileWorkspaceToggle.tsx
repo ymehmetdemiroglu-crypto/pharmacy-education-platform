@@ -16,7 +16,7 @@ export const MobileWorkspaceToggle: React.FC<MobileWorkspaceToggleProps> = ({
   hasUnreadTutorUpdate = false,
 }) => {
   return (
-    <div className="flex md:hidden items-center justify-between p-2.5 bg-white dark:bg-[#131B2A] border-b-2 border-black dark:border-slate-800 shadow-sm">
+    <div className="flex md:hidden items-center justify-between p-2.5 bg-white dark:bg-[#171717] border-b border-slate-200 dark:border-[#2F2F2F] shadow-xs">
       <Button
         icon={<MenuOutlined />}
         onClick={onOpenNavDrawer}

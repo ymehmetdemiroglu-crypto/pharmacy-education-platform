@@ -123,16 +123,16 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
       ref={containerRef}
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
       className={clsx(
-        'w-full bg-[#FFFDF7] dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 rounded-none text-start',
-        'shadow-neo dark:shadow-neo-dark transition-all duration-200',
+        'w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl text-start',
+        'shadow-xs transition-all duration-200 overflow-hidden',
         className
       )}
     >
       {/* Header bar */}
-      <div className="flex items-center justify-between p-3 border-b-3 border-black dark:border-slate-700 bg-[#FFD93D] text-black">
+      <div className="flex items-center justify-between p-3.5 border-b border-slate-100 dark:border-[#2A2A2A] bg-slate-50/80 dark:bg-[#252525]/80">
         <div className="flex items-center gap-2">
-          <Lightbulb className="w-5 h-5 stroke-[2.5]" />
-          <span className="font-display font-black text-xs sm:text-sm uppercase tracking-tight">
+          <Lightbulb className="w-4 h-4 text-amber-500 dark:text-amber-400" />
+          <span className="font-sans font-semibold text-xs sm:text-sm tracking-tight text-slate-800 dark:text-slate-200">
             {headerTitle}
           </span>
         </div>
@@ -142,10 +142,10 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
               size="sm"
               variant="secondary"
               onClick={handleNextHint}
-              className="!border-black !text-black !bg-white hover:!bg-gray-100 !shadow-[2px_2px_0px_#000000] active:translate-x-0.5 active:translate-y-0.5"
+              className="text-xs py-1 px-2.5 rounded-lg"
               leftIcon={
                 unlockedTier >= 1 && !isPremiumOrTrial ? (
-                  <Lock className="w-3.5 h-3.5 text-black" />
+                  <Lock className="w-3 h-3 text-slate-400" />
                 ) : undefined
               }
             >
@@ -156,7 +156,7 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
             type="button"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={toggleAriaLabel}
-            className="p-1 border-2 border-black hover:bg-black/10 active:translate-y-0.5"
+            className="p-1.5 rounded-lg border border-slate-200 dark:border-[#333333] hover:bg-slate-100 dark:hover:bg-[#333333] text-slate-500 dark:text-slate-400 transition-colors"
           >
             {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
@@ -174,18 +174,18 @@ export const HintDrawer: React.FC<HintDrawerProps> = ({
               <div
                 key={idx}
                 className={clsx(
-                  'p-3 border-2 border-black dark:border-slate-700 rounded-none transition-all duration-150',
+                  'p-3.5 border rounded-xl transition-all duration-150',
                   isRevealed
-                    ? 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712]'
-                    : 'bg-gray-100 dark:bg-[#0B0F17] text-gray-400 dark:text-slate-500 border-dashed'
+                    ? 'border-slate-200 dark:border-[#2F2F2F] bg-slate-50/50 dark:bg-[#262626]/50 text-slate-800 dark:text-slate-200 shadow-xs'
+                    : 'border-dashed border-slate-200 dark:border-[#2F2F2F] bg-slate-50/20 dark:bg-[#141414] text-slate-400 dark:text-slate-600'
                 )}
               >
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-200">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-medium uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     {getTierLabel(idx)}
                   </span>
                   {!isPremiumOrTrial && idx >= 1 && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-mono font-bold bg-[#FF6B9D] text-black px-1.5 py-0.5 border border-black">
+                    <span className="inline-flex items-center gap-1 text-[10px] font-medium bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded-full border border-amber-200 dark:border-amber-800/40">
                       <Lock className="w-2.5 h-2.5" /> Premium
                     </span>
                   )}

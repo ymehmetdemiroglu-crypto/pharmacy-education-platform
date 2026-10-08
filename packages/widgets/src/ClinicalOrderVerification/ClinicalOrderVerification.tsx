@@ -795,21 +795,21 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
   return (
     <div
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`border-4 border-black bg-[#FFF8E7] p-5 shadow-[6px_6px_0px_#000000] text-black text-start ${className}`}
+      className={`rounded-2xl border border-slate-200 bg-white p-5 shadow-sm text-slate-900 text-start dark:border-[#2F2F2F] dark:bg-[#1E1E1E] dark:text-slate-100 ${className}`}
       data-testid="clinical-order-verification-station"
     >
       {/* Header */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b-4 border-black pb-4">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
         <div>
           <div className="flex items-center gap-2">
-            <span className="bg-[#4D96FF] px-2 py-0.5 text-xs font-black uppercase text-white border-2 border-black shadow-[2px_2px_0px_#000000]">
+            <span className="rounded-md bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold uppercase text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               {t.stationBadge}
             </span>
-            <span className="font-mono text-xs font-bold text-gray-700">
+            <span className="font-mono text-xs font-medium text-slate-500 dark:text-slate-400">
               {t.pharmacovigilanceTag}
             </span>
           </div>
-          <h2 className="mt-1 font-heading text-xl font-black text-black">
+          <h2 className="mt-1 font-heading text-lg font-bold text-slate-900 dark:text-white">
             {t.stationTitle}
           </h2>
         </div>
@@ -824,10 +824,10 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                 role="tab"
                 aria-selected={isCurrent}
                 onClick={() => handleSelectCase(c.caseId)}
-                className={`border-2 border-black px-3 py-1 text-xs font-black uppercase transition-transform ${
+                className={`rounded-lg px-3 py-1.5 text-xs font-medium transition-colors border ${
                   isCurrent
-                    ? 'bg-[#FFD93D] shadow-[3px_3px_0px_#000000] -translate-y-0.5'
-                    : 'bg-white hover:bg-gray-100 shadow-[2px_2px_0px_#000000]'
+                    ? 'bg-slate-900 text-white border-slate-900 dark:bg-emerald-500 dark:text-slate-950 dark:border-emerald-500 shadow-sm'
+                    : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200 dark:bg-[#252525] dark:text-slate-400 dark:border-[#333333] dark:hover:bg-[#2E2E2E]'
                 }`}
               >
                 {c.caseId === 'ciprofloxacin_caco3' && t.tabCase1}
@@ -842,91 +842,91 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
       {/* Case Overview & Patient Vignette */}
       <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-3">
         {/* Patient Profile Box */}
-        <div className="border-3 border-black bg-white p-3 shadow-[4px_4px_0px_#000000]">
-          <div className="flex items-center justify-between border-b-2 border-black pb-1">
-            <span className="text-xs font-black uppercase tracking-wider text-black">
+        <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-3.5 dark:border-[#2F2F2F] dark:bg-[#252525]/50">
+          <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2F2F2F] pb-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
               {t.patientChart}
             </span>
-            <span className="bg-[#6BCB77] px-1.5 py-0.2 text-[10px] font-black text-black border border-black">
+            <span className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               {t.inpatientWard}
             </span>
           </div>
-          <div className="mt-2 space-y-1 font-mono text-xs text-gray-800">
+          <div className="mt-2.5 space-y-1 font-mono text-xs text-slate-700 dark:text-slate-300">
             <div>
-              <span className="font-bold">{t.ageGender}</span> {activeCase.patientProfile.age} {t.yearsOld},{' '}
+              <span className="font-bold text-slate-900 dark:text-slate-100">{t.ageGender}</span> {activeCase.patientProfile.age} {t.yearsOld},{' '}
               {activeCase.patientProfile.gender}
             </div>
             <div>
-              <span className="font-bold">{t.weight}</span> {activeCase.patientProfile.weightKg} kg
+              <span className="font-bold text-slate-900 dark:text-slate-100">{t.weight}</span> {activeCase.patientProfile.weightKg} kg
             </div>
             <div>
-              <span className="font-bold">{t.indication}</span>{' '}
-              <span className="font-semibold text-black">{activeCase.patientProfile.indication}</span>
+              <span className="font-bold text-slate-900 dark:text-slate-100">{t.indication}</span>{' '}
+              <span className="font-semibold text-slate-900 dark:text-slate-100">{activeCase.patientProfile.indication}</span>
             </div>
             <div>
-              <span className="font-bold">{t.renalFunction}</span>{' '}
-              <span className="bg-yellow-100 px-1 font-bold text-black border border-black">
+              <span className="font-bold text-slate-900 dark:text-slate-100">{t.renalFunction}</span>{' '}
+              <span className="rounded bg-amber-500/10 px-1.5 py-0.5 font-medium text-amber-700 dark:text-amber-400 border border-amber-500/20">
                 {activeCase.patientProfile.renalFunction}
               </span>
             </div>
             <div>
-              <span className="font-bold">{t.allergies}</span> {activeCase.patientProfile.allergies}
+              <span className="font-bold text-slate-900 dark:text-slate-100">{t.allergies}</span> {activeCase.patientProfile.allergies}
             </div>
           </div>
         </div>
 
         {/* Active Order & Concomitant Meds */}
-        <div className="border-3 border-black bg-white p-3 shadow-[4px_4px_0px_#000000] md:col-span-2">
-          <div className="text-xs font-black uppercase tracking-wider text-black border-b-2 border-black pb-1">
+        <div className="rounded-xl border border-slate-200 bg-slate-50/50 p-3.5 dark:border-[#2F2F2F] dark:bg-[#252525]/50 md:col-span-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-[#2F2F2F] pb-2">
             {t.medicationRegimen}
           </div>
-          <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <div className="border-2 border-black bg-[#E8F0FE] p-2.5 shadow-[2px_2px_0px_#000000]">
-              <div className="text-[11px] font-black uppercase text-[#1A73E8]">
+          <div className="mt-2.5 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="rounded-lg border border-sky-500/20 bg-sky-50/50 p-3 dark:border-sky-500/30 dark:bg-sky-950/20">
+              <div className="text-[11px] font-bold uppercase text-sky-600 dark:text-sky-400">
                 {t.orderAwaitingVerification}
               </div>
-              <div className="mt-1 font-bold text-sm text-black">
+              <div className="mt-1 font-bold text-sm text-slate-900 dark:text-slate-100">
                 {activeCase.activeOrder.drugName}
               </div>
-              <div className="font-mono text-xs text-gray-900 mt-0.5">
-                {t.dose} <span className="font-black">{activeCase.activeOrder.dose}</span> (
+              <div className="font-mono text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+                {t.dose} <span className="font-bold text-slate-800 dark:text-slate-200">{activeCase.activeOrder.dose}</span> (
                 {activeCase.activeOrder.route})
               </div>
-              <div className="font-mono text-xs text-gray-700">
+              <div className="font-mono text-xs text-slate-500 dark:text-slate-400">
                 {t.frequency} {activeCase.activeOrder.frequency}
               </div>
             </div>
 
-            <div className="border-2 border-black bg-[#FFF3E0] p-2.5 shadow-[2px_2px_0px_#000000]">
-              <div className="text-[11px] font-black uppercase text-[#E65100]">
+            <div className="rounded-lg border border-amber-500/20 bg-amber-50/50 p-3 dark:border-amber-500/30 dark:bg-amber-950/20">
+              <div className="text-[11px] font-bold uppercase text-amber-600 dark:text-amber-400">
                 {t.concomitantTherapy}
               </div>
-              <div className="mt-1 font-bold text-sm text-black">
+              <div className="mt-1 font-bold text-sm text-slate-900 dark:text-slate-100">
                 {activeCase.concomitantMedication.drugName}
               </div>
-              <div className="font-mono text-xs text-gray-900 mt-0.5">
+              <div className="font-mono text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                 {t.dose} {activeCase.concomitantMedication.dose}
               </div>
-              <div className="font-mono text-xs text-gray-700">
+              <div className="font-mono text-xs text-slate-500 dark:text-slate-400">
                 {t.detail} {activeCase.concomitantMedication.indication}
               </div>
             </div>
           </div>
 
-          <div className="mt-3 border-l-4 border-[#FF9F45] bg-[#FFF8E7] p-2 text-xs font-medium text-black">
-            <span className="font-black uppercase">{t.clinicalScenario}</span>
+          <div className="mt-3 rounded-lg border-l-2 border-emerald-500 bg-slate-100/70 p-3 text-xs text-slate-700 dark:bg-[#1E1E1E] dark:text-slate-300">
+            <span className="font-bold uppercase mr-1 text-slate-900 dark:text-slate-100">{t.clinicalScenario}</span>
             {activeCase.clinicalScenario}
           </div>
         </div>
       </div>
 
       {/* Decision Options */}
-      <div className="mt-5 border-3 border-black bg-white p-4 shadow-[4px_4px_0px_#000000]">
-        <div className="flex items-center justify-between border-b-2 border-black pb-2">
-          <div className="text-xs font-black uppercase tracking-wider text-black">
+      <div className="mt-5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-[#2F2F2F] dark:bg-[#1E1E1E]">
+        <div className="flex items-center justify-between border-b border-slate-200 dark:border-[#2F2F2F] pb-2">
+          <div className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
             {t.decisionTitle}
           </div>
-          <span className="font-mono text-xs text-gray-600">
+          <span className="font-mono text-xs text-slate-500 dark:text-slate-400">
             {hasSubmitted ? t.evalCompleted : t.selectOneOption}
           </span>
         </div>
@@ -934,19 +934,18 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         <div className="mt-3 space-y-2.5" role="radiogroup" aria-label={t.optionsAria}>
           {activeCase.options.map((option) => {
             const isSelected = selectedOptionId === option.id;
-            let containerBg = 'bg-white hover:bg-yellow-50';
-            let borderStyle = 'border-2 border-black';
+            let containerStyle = 'bg-white hover:bg-slate-50 border-slate-200 dark:bg-[#1E1E1E] dark:hover:bg-[#252525] dark:border-[#2F2F2F]';
 
             if (hasSubmitted) {
               if (option.isCorrect) {
-                containerBg = 'bg-[#E8F5E9] border-[#2E7D32] border-3 shadow-[3px_3px_0px_#2E7D32]';
+                containerStyle = 'bg-emerald-500/10 border-emerald-500/40 text-emerald-950 dark:text-emerald-200';
               } else if (isSelected && !option.isCorrect) {
-                containerBg = 'bg-[#FFEBEE] border-[#C62828] border-3 shadow-[3px_3px_0px_#C62828]';
+                containerStyle = 'bg-rose-500/10 border-rose-500/40 text-rose-950 dark:text-rose-200';
               } else {
-                containerBg = 'bg-gray-50 opacity-60';
+                containerStyle = 'bg-slate-50 dark:bg-[#252525] opacity-50 border-slate-200 dark:border-[#2F2F2F]';
               }
             } else if (isSelected) {
-              containerBg = 'bg-[#FFD93D] shadow-[3px_3px_0px_#000000] -translate-y-0.5';
+              containerStyle = 'bg-emerald-500/5 border-emerald-500 dark:bg-emerald-500/10 dark:border-emerald-500 ring-1 ring-emerald-500';
             }
 
             return (
@@ -961,28 +960,30 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
                     handleSelectOption(option.id);
                   }
                 }}
-                className={`cursor-pointer p-3 transition-transform ${borderStyle} ${containerBg}`}
+                className={`cursor-pointer rounded-xl p-3.5 border transition-all ${containerStyle}`}
               >
                 <div className="flex items-start gap-3">
                   <span
-                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 border-black text-xs font-black ${
-                      isSelected ? 'bg-black text-white' : 'bg-white'
+                    className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-xs font-bold transition-colors ${
+                      isSelected
+                        ? 'bg-emerald-500 border-emerald-500 text-white'
+                        : 'border-slate-300 bg-white dark:border-slate-600 dark:bg-[#252525]'
                     }`}
                   >
                     {isSelected ? '✓' : ''}
                   </span>
-                  <div className="flex-1 text-sm font-medium text-black">
+                  <div className="flex-1 text-sm font-medium text-slate-800 dark:text-slate-200">
                     {option.text}
                   </div>
                 </div>
 
                 {hasSubmitted && (option.isCorrect || isSelected) && (
                   <div
-                    className={`mt-2 border-t-2 border-black pt-2 text-xs font-medium ${
-                      option.isCorrect ? 'text-[#1B5E20]' : 'text-[#B71C1C]'
+                    className={`mt-2.5 border-t border-slate-200/60 dark:border-slate-700/60 pt-2.5 text-xs font-normal ${
+                      option.isCorrect ? 'text-emerald-800 dark:text-emerald-300' : 'text-rose-800 dark:text-rose-300'
                     }`}
                   >
-                    <span className="font-black uppercase">
+                    <span className="font-bold uppercase mr-1">
                       {option.isCorrect ? t.clinicalRationale : t.diagnosticError}
                     </span>
                     {option.feedback}
@@ -994,17 +995,17 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
         </div>
 
         {/* Action Controls */}
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t-2 border-black pt-3">
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 dark:border-[#2F2F2F] pt-3">
           <div className="flex items-center gap-2">
             {!hasSubmitted ? (
               <button
                 type="button"
                 disabled={!selectedOptionId}
                 onClick={handleSubmitVerification}
-                className={`border-3 border-black px-5 py-2 font-black uppercase text-sm shadow-[4px_4px_0px_#000000] transition-transform ${
+                className={`rounded-lg px-5 py-2 font-semibold text-xs transition-colors shadow-sm ${
                   selectedOptionId
-                    ? 'bg-[#6BCB77] hover:bg-[#58b763] active:translate-x-1 active:translate-y-1'
-                    : 'bg-gray-300 opacity-60 cursor-not-allowed'
+                    ? 'bg-emerald-500 text-white hover:bg-emerald-600'
+                    : 'bg-slate-200 text-slate-400 dark:bg-[#2E2E2E] dark:text-slate-600 cursor-not-allowed'
                 }`}
               >
                 {t.verifyBtn}
@@ -1013,7 +1014,7 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
               <button
                 type="button"
                 onClick={handleReset}
-                className="border-3 border-black bg-white px-4 py-2 font-black uppercase text-xs shadow-[3px_3px_0px_#000000] hover:bg-gray-100 active:translate-x-1 active:translate-y-1"
+                className="rounded-lg border border-slate-200 bg-slate-100 px-4 py-2 font-semibold text-xs text-slate-700 dark:border-[#2F2F2F] dark:bg-[#252525] dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#2E2E2E] transition-colors"
               >
                 {t.tryAgainBtn}
               </button>
@@ -1022,30 +1023,30 @@ export const ClinicalOrderVerification: React.FC<ClinicalOrderVerificationProps>
             <button
               type="button"
               onClick={() => setShowMechanismDeepDive(!showMechanismDeepDive)}
-              className="border-2 border-black bg-white px-3 py-2 text-xs font-black uppercase shadow-[2px_2px_0px_#000000] hover:bg-gray-50"
+              className="rounded-lg border border-slate-200 bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700 dark:border-[#2F2F2F] dark:bg-[#252525] dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-[#2E2E2E] transition-colors"
             >
               {showMechanismDeepDive ? t.hideMechanismBtn : t.showMechanismBtn}
             </button>
           </div>
 
-          <div className="text-right text-[11px] font-mono text-gray-600">
-            {t.source} <span className="font-bold">{activeCase.keyEvidenceCitation}</span>
+          <div className="text-right text-[11px] font-mono text-slate-500 dark:text-slate-400">
+            {t.source} <span className="font-semibold text-slate-700 dark:text-slate-300">{activeCase.keyEvidenceCitation}</span>
           </div>
         </div>
       </div>
 
       {/* Mechanism Deep-Dive Panel */}
       {showMechanismDeepDive && (
-        <div className="mt-4 border-3 border-black bg-[#E8F0FE] p-4 shadow-[4px_4px_0px_#000000]">
-          <div className="flex items-center justify-between border-b-2 border-black pb-1">
-            <span className="text-xs font-black uppercase text-[#1A73E8]">
+        <div className="mt-4 rounded-xl border border-sky-500/20 bg-sky-50/50 p-4 dark:border-sky-500/30 dark:bg-sky-950/20">
+          <div className="flex items-center justify-between border-b border-sky-500/20 pb-2">
+            <span className="text-xs font-bold uppercase text-sky-600 dark:text-sky-400">
               {t.mechanismSummary}
             </span>
-            <span className="font-mono text-xs font-bold text-gray-700">
+            <span className="font-mono text-xs font-semibold text-sky-700 dark:text-sky-300">
               {activeCase.caseId}
             </span>
           </div>
-          <p className="mt-2 text-xs leading-relaxed text-black font-medium">
+          <p className="mt-2 text-xs leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
             {activeCase.pharmacologicalMechanism}
           </p>
           <div className="mt-3">

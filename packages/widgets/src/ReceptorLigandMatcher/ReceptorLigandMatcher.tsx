@@ -167,22 +167,22 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   key={pair.id}
                   onClick={() => handleSelectPair(pair.id)}
                   className={clsx(
-                    'p-3 border-2 border-black dark:border-slate-700 cursor-pointer transition-all flex flex-col gap-1',
-                    isSelected && 'ring-2 ring-[#FFD93D] bg-[#FFF8E7] dark:bg-[#1E293B] shadow-neo-sm ltr:translate-x-1 rtl:-translate-x-1',
-                    !isSelected && 'bg-white dark:bg-[#131B2A] hover:bg-gray-50 dark:hover:bg-slate-800 text-black dark:text-slate-100',
-                    isSubmitted && isCorrect && 'border-[#6BCB77] dark:border-emerald-600 bg-[#EBFBEE] dark:bg-[#072518] text-black dark:text-emerald-200',
-                    isSubmitted && !isCorrect && 'border-[#FF6B9D] dark:border-rose-600 bg-[#FFF0F5] dark:bg-[#2A0E18] text-black dark:text-rose-200'
+                    'p-3 border rounded-xl cursor-pointer transition-all flex flex-col gap-1',
+                    isSelected && 'border-emerald-500 ring-2 ring-emerald-500/20 bg-emerald-50/50 dark:bg-emerald-950/30 text-emerald-950 dark:text-emerald-200 shadow-xs',
+                    !isSelected && 'bg-white dark:bg-[#1E1E1E] border-slate-200 dark:border-[#2F2F2F] hover:border-slate-300 dark:hover:border-[#383838] text-slate-900 dark:text-[#ECECEC]',
+                    isSubmitted && isCorrect && 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-200',
+                    isSubmitted && !isCorrect && 'border-rose-500 bg-rose-50 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200'
                   )}
                 >
                   <div className="flex items-center justify-between">
                     <strong className="text-xs font-mono">{pair.drugGroup}</strong>
-                    <span className="text-[10px] font-mono text-gray-700 dark:text-slate-300">[{pair.energyKcalMol}]</span>
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-neutral-400">[{pair.energyKcalMol}]</span>
                   </div>
-                  <div className="text-[11px] font-mono flex items-center gap-1 text-gray-700 dark:text-slate-300">
-                    <LinkIcon className="w-3 h-3 text-gray-400" />
+                  <div className="text-[11px] font-mono flex items-center gap-1 text-slate-500 dark:text-neutral-400">
+                    <LinkIcon className="w-3 h-3 text-slate-400" />
                     <span>
                       {dict.pairedTo}{' '}
-                      <strong>{matchedResidue ? matchedResidue.residueName : dict.clickToSelect}</strong>
+                      <strong className="text-slate-800 dark:text-neutral-200">{matchedResidue ? matchedResidue.residueName : dict.clickToSelect}</strong>
                     </span>
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
 
         {/* Right Column: Receptor Residues */}
         <div className="space-y-2">
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-black dark:text-slate-100">
+          <span className="text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-neutral-300">
             {dict.receptorHeader(config.receptorName)}
           </span>
           <div className="space-y-2">
@@ -207,18 +207,18 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
                   disabled={disabled || isSubmitted || !selectedPairId}
                   onClick={() => handleSelectResidue(res.id)}
                   className={clsx(
-                    'w-full p-2.5 border-2 border-black dark:border-slate-700 text-start transition-all flex items-center justify-between',
-                    selectedPairId && 'hover:bg-[#FFD93D] hover:text-black cursor-pointer shadow-sm',
-                    isUsed ? 'bg-gray-100 dark:bg-[#1E293B] border-dashed text-gray-700 dark:text-slate-300' : 'bg-white dark:bg-[#131B2A] text-black dark:text-slate-100',
+                    'w-full p-3 border rounded-xl text-start transition-all flex items-center justify-between',
+                    selectedPairId && 'hover:border-emerald-500 hover:bg-slate-50 dark:hover:bg-[#252525] cursor-pointer shadow-xs',
+                    isUsed ? 'bg-slate-100 dark:bg-[#252525] border-slate-200 dark:border-[#333333] text-slate-500 dark:text-neutral-400' : 'bg-white dark:bg-[#1E1E1E] border-slate-200 dark:border-[#2F2F2F] text-slate-900 dark:text-[#ECECEC]',
                     (!selectedPairId || isSubmitted) && 'cursor-default'
                   )}
                 >
                   <div>
                     <strong className="text-xs font-mono">{res.residueName}</strong>
-                    <p className="text-[10px] text-gray-700 dark:text-slate-300">{res.description}</p>
+                    <p className="text-[10px] text-slate-500 dark:text-neutral-400">{res.description}</p>
                   </div>
                   {isUsed && (
-                    <span className="text-[10px] font-mono font-bold bg-[#FFD93D] text-black px-1.5 py-0.5 border border-black">
+                    <span className="text-[10px] font-mono font-semibold bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 px-2 py-0.5 rounded-lg border border-emerald-300 dark:border-emerald-800">
                       {dict.linked}
                     </span>
                   )}
@@ -243,24 +243,24 @@ export const ReceptorLigandMatcher: React.FC<ReceptorLigandMatcherProps> = ({
 
       {/* Feedback Summary */}
       {isSubmitted && (
-        <div className="pt-3 border-t-3 border-black dark:border-slate-700 space-y-2">
+        <div className="pt-4 border-t border-slate-200 dark:border-[#2F2F2F] space-y-3">
           <div className="flex items-center gap-2">
             {isAllCorrect ? (
-              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-display font-bold text-sm">
                 <CheckCircle2 className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.allCorrect}</span>
               </div>
             ) : (
-              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-black text-sm uppercase">
+              <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-display font-bold text-sm">
                 <AlertCircle className="w-5 h-5 stroke-[2.5]" />
                 <span>{dict.mismatch}</span>
               </div>
             )}
           </div>
-          <div className="space-y-1.5">
+          <div className="space-y-2">
             {config.pairs.map((p) => (
-              <div key={p.id} className="p-2 bg-[#FFFDF7] dark:bg-[#1E293B] border border-black/20 dark:border-slate-700 text-xs font-body text-black dark:text-slate-100">
-                <strong>{p.drugGroup} ↔ {p.correctResidueId}: </strong>
+              <div key={p.id} className="p-3 bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl text-xs font-body text-slate-700 dark:text-neutral-300">
+                <strong className="text-slate-900 dark:text-[#ECECEC]">{p.drugGroup} ↔ {p.correctResidueId}: </strong>
                 {p.explanation}
               </div>
             ))}

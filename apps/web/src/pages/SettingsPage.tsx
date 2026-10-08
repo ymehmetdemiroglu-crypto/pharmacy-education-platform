@@ -59,10 +59,10 @@ export const SettingsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8E7] dark:bg-[#121212] py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#171717] py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto space-y-6">
         {/* Header */}
-        <div className="border-b-3 border-black dark:border-slate-700 pb-4">
+        <div className="border-b border-slate-200 dark:border-[#2F2F2F] pb-4">
           <div className="flex items-center gap-2">
             <User className="w-6 h-6 text-indigo-500" />
             <h1 className="font-display font-black text-2xl uppercase tracking-tight text-gray-900 dark:text-white">
@@ -75,14 +75,14 @@ export const SettingsPage: React.FC = () => {
         </div>
 
         {statusMessage && (
-          <div className="p-3 bg-red-100 dark:bg-red-950/60 border-2 border-red-600 text-red-800 dark:text-red-200 text-xs font-mono">
+          <div className="p-3 bg-red-100 dark:bg-red-950/60 border border-red-500/40 rounded-xl text-red-800 dark:text-red-200 text-xs font-mono">
             {statusMessage}
           </div>
         )}
 
         {/* Profile Details Card */}
-        <Card variant="default" elevated className="p-6 space-y-4 bg-white dark:bg-slate-900 border-4 border-black dark:border-slate-700 shadow-neo">
-          <div className="flex items-center justify-between border-b-2 border-black/10 dark:border-slate-700 pb-3">
+        <Card variant="default" elevated className="p-6 space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-100 dark:border-[#2A2A2A] pb-3">
             <div>
               <h2 className="font-display font-bold text-base text-gray-900 dark:text-white">
                 {user?.displayName || t('settings.studentName')}
@@ -110,7 +110,7 @@ export const SettingsPage: React.FC = () => {
         </Card>
 
         {/* Subscription & Billing Management */}
-        <Card variant="default" elevated className="p-6 space-y-4 bg-white dark:bg-slate-900 border-4 border-black dark:border-slate-700 shadow-neo">
+        <Card variant="default" elevated className="p-6 space-y-4">
           <div className="flex items-center gap-2">
             <CreditCard className="w-5 h-5 text-emerald-600" />
             <h3 className="font-display font-bold text-base text-gray-900 dark:text-white">
@@ -139,14 +139,14 @@ export const SettingsPage: React.FC = () => {
         </Card>
 
         {/* KVKK / GDPR Account Deletion Card */}
-        <Card variant="default" className="p-6 space-y-4 bg-red-50/50 dark:bg-red-950/20 border-3 border-red-500 dark:border-red-800">
-          <div className="flex items-center gap-2 text-red-700 dark:text-red-400">
+        <Card variant="default" className="p-6 space-y-4 bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-800/40">
+          <div className="flex items-center gap-2 text-rose-700 dark:text-rose-400">
             <ShieldAlert className="w-5 h-5 shrink-0" />
             <h3 className="font-display font-bold text-base">
               {t('settings.deleteTitle')}
             </h3>
           </div>
-          <p className="font-body text-xs text-red-900 dark:text-red-200">
+          <p className="font-body text-xs text-rose-900 dark:text-rose-200">
             {t('settings.deleteDesc')}
           </p>
 
@@ -163,9 +163,9 @@ export const SettingsPage: React.FC = () => {
 
       {/* Confirmation Modal */}
       {showDeleteModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-slate-900 border-4 border-black dark:border-slate-700 max-w-md w-full p-6 space-y-4 shadow-neo">
-            <h3 className="font-display font-black text-lg text-red-600 uppercase">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl">
+            <h3 className="font-display font-black text-lg text-rose-600 uppercase">
               {t('settings.confirmTitle')}
             </h3>
             <p className="text-xs font-mono text-gray-700 dark:text-gray-300">
@@ -176,7 +176,7 @@ export const SettingsPage: React.FC = () => {
               value={deleteConfirmation}
               onChange={(e) => setDeleteConfirmation(e.target.value)}
               placeholder="DELETE"
-              className="w-full p-2 border-2 border-black dark:border-slate-700 font-mono text-sm uppercase"
+              className="w-full p-2.5 rounded-xl border border-slate-300 dark:border-[#383838] bg-slate-50 dark:bg-[#252525] font-mono text-sm uppercase focus:outline-none focus:ring-2 focus:ring-rose-500/40"
             />
             <div className="flex justify-end gap-3 pt-2">
               <Button variant="secondary" size="sm" onClick={() => setShowDeleteModal(false)}>

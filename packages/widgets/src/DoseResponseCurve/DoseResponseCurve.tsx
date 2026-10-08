@@ -203,10 +203,10 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
             disabled={disabled}
             onClick={() => handleModeChange(mode)}
             className={clsx(
-              'px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all',
+              'px-3.5 py-1.5 text-xs font-mono font-semibold uppercase rounded-xl border transition-all',
               activeMode === mode
-                ? 'bg-[#FF9F45] text-black shadow-[2px_2px_0px_#000000] scale-102'
-                : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
+                ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                : 'bg-white dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838] hover:bg-slate-50 dark:hover:bg-[#2C2C2C]'
             )}
           >
             {dict.modes[mode] || mode.replace('_', ' ')}
@@ -215,7 +215,7 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
       </div>
 
       {/* SVG Canvas Curve */}
-      <div className="w-full bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark p-3" dir="ltr">
+      <div className="w-full bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-4" dir="ltr">
         <svg
           viewBox="0 0 400 240"
           className="w-full h-auto select-none"
@@ -223,32 +223,32 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           aria-label={dict.plotAria}
         >
           {/* Grid lines */}
-          <line x1="50" y1="40" x2="370" y2="40" stroke="#E5E7EB" strokeWidth="1" strokeDasharray="3 3" />
-          <line x1="50" y1="125" x2="370" y2="125" stroke="#E5E7EB" strokeWidth="1" strokeDasharray="3 3" />
-          <line x1="50" y1="210" x2="370" y2="210" stroke="#E5E7EB" strokeWidth="1" />
+          <line x1="50" y1="40" x2="370" y2="40" stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 3" className="dark:stroke-[#2F2F2F]" />
+          <line x1="50" y1="125" x2="370" y2="125" stroke="#E2E8F0" strokeWidth="1" strokeDasharray="3 3" className="dark:stroke-[#2F2F2F]" />
+          <line x1="50" y1="210" x2="370" y2="210" stroke="#E2E8F0" strokeWidth="1" className="dark:stroke-[#2F2F2F]" />
 
           {/* Axes */}
-          <line x1="50" y1="30" x2="50" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
-          <line x1="50" y1="210" x2="380" y2="210" stroke="#000000" strokeWidth="3" className="dark:stroke-slate-500" />
+          <line x1="50" y1="30" x2="50" y2="210" stroke="#94A3B8" strokeWidth="1.5" />
+          <line x1="50" y1="210" x2="380" y2="210" stroke="#94A3B8" strokeWidth="1.5" />
 
           {/* Axis Labels */}
-          <text x="35" y="45" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">100%</text>
-          <text x="35" y="130" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">50%</text>
-          <text x="35" y="215" textAnchor="end" fontSize="10" fontFamily="monospace" fill="currentColor">0%</text>
+          <text x="35" y="45" textAnchor="end" fontSize="10" fontFamily="monospace" fill="#64748B">100%</text>
+          <text x="35" y="130" textAnchor="end" fontSize="10" fontFamily="monospace" fill="#64748B">50%</text>
+          <text x="35" y="215" textAnchor="end" fontSize="10" fontFamily="monospace" fill="#64748B">0%</text>
 
-          <text x="50" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻¹⁰</text>
-          <text x="141" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁸</text>
-          <text x="233" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁶</text>
-          <text x="324" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="currentColor">10⁻⁴</text>
-          <text x="215" y="238" textAnchor="middle" fontSize="11" fontFamily="sans-serif" fontWeight="bold" fill="currentColor">{dict.xAxis}</text>
+          <text x="50" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="#64748B">10⁻¹⁰</text>
+          <text x="141" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="#64748B">10⁻⁸</text>
+          <text x="233" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="#64748B">10⁻⁶</text>
+          <text x="324" y="226" textAnchor="middle" fontSize="10" fontFamily="monospace" fill="#64748B">10⁻⁴</text>
+          <text x="215" y="238" textAnchor="middle" fontSize="11" fontFamily="sans-serif" fontWeight="600" fill="#64748B">{dict.xAxis}</text>
 
           {/* Baseline Curve if antagonist mode active */}
           {compPoints.length > 0 && (
             <path
               d={compPathData}
               fill="none"
-              stroke="#A0AEC0"
-              strokeWidth="2.5"
+              stroke="#94A3B8"
+              strokeWidth="2"
               strokeDasharray="4 4"
             />
           )}
@@ -257,8 +257,8 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           <path
             d={pathData}
             fill="none"
-            stroke="#FF9F45"
-            strokeWidth="4"
+            stroke="#10A37F"
+            strokeWidth="3"
             strokeLinecap="round"
           />
 
@@ -266,33 +266,33 @@ export const DoseResponseCurve: React.FC<DoseResponseCurveProps> = ({
           <circle
             cx={mapX(effectiveLogEc50)}
             cy={mapY(effectiveEmax / 2)}
-            r="5"
-            fill="#FFD93D"
-            stroke="#000000"
-            strokeWidth="2.5"
+            r="4.5"
+            fill="#10A37F"
+            stroke="#FFFFFF"
+            strokeWidth="2"
           />
         </svg>
 
         {/* Legend */}
-        <div aria-live="polite" className="flex items-center justify-between mt-2 pt-2 border-t border-black/10 dark:border-slate-700 text-[11px] font-mono">
+        <div aria-live="polite" className="flex items-center justify-between mt-3 pt-3 border-t border-slate-200 dark:border-[#2F2F2F] text-[11px] font-mono">
           <div className="flex items-center gap-3">
-            <span className="flex items-center gap-1">
-              <span className="w-3 h-3 bg-[#FF9F45] border border-black inline-block" /> {dict.activeResponse}
+            <span className="flex items-center gap-1.5 text-slate-700 dark:text-neutral-300 font-medium">
+              <span className="w-2.5 h-2.5 bg-emerald-500 rounded-sm inline-block" /> {dict.activeResponse}
             </span>
             {compPoints.length > 0 && (
-              <span className="flex items-center gap-1 text-gray-600 dark:text-gray-400">
-                <span className="w-3 h-0.5 border-t border-dashed border-gray-400 inline-block" /> {dict.agonistAlone}
+              <span className="flex items-center gap-1.5 text-slate-500 dark:text-neutral-400">
+                <span className="w-3 h-0.5 border-t border-dashed border-slate-400 inline-block" /> {dict.agonistAlone}
               </span>
             )}
           </div>
-          <div>
-            {dict.apparentEc50}<strong>10^{effectiveLogEc50.toFixed(1)} M</strong> | {dict.emax}<strong>{Math.round(effectiveEmax)}%</strong>
+          <div className="text-slate-600 dark:text-neutral-400">
+            {dict.apparentEc50}<strong className="text-slate-900 dark:text-[#ECECEC]">10^{effectiveLogEc50.toFixed(1)} M</strong> | {dict.emax}<strong className="text-slate-900 dark:text-[#ECECEC]">{Math.round(effectiveEmax)}%</strong>
           </div>
         </div>
       </div>
 
       {/* Interactive Controls */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 bg-gray-50 dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
         <Slider
           label={dict.agonistPotency}
           value={logEc50}

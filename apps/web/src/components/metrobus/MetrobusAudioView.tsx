@@ -177,23 +177,25 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
   }, []);
 
   return (
-    <div className="w-full max-w-2xl mx-auto flex flex-col gap-4 p-4 font-sans text-neutral-900 select-none pb-20">
+    <div className="w-full max-w-2xl mx-auto flex flex-col gap-5 p-4 sm:p-6 font-sans text-slate-900 dark:text-[#ECECEC] select-none pb-24 animate-fadeIn">
       {/* Top Navigation & Commuter Status Bar */}
-      <div className="flex items-center justify-between bg-[#FFF8E7] border-3 border-black p-3 shadow-[4px_4px_0px_#000]">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center justify-between bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-4 shadow-xs">
+        <div className="flex items-center gap-3">
           {onBackToDashboard && (
             <button
               onClick={onBackToDashboard}
-              className="p-1.5 bg-white border-2 border-black hover:bg-neutral-100 font-mono text-sm font-bold active:translate-x-0.5 active:translate-y-0.5"
+              className="px-3 py-1.5 bg-slate-100 dark:bg-[#2A2A2A] hover:bg-slate-200 dark:hover:bg-[#333333] border border-slate-300 dark:border-[#383838] rounded-xl text-xs font-semibold text-slate-700 dark:text-[#ECECEC] transition-colors"
               title="Panele Dön"
             >
               ← Geri
             </button>
           )}
-          <span className="text-xl">{transitConfig.icon}</span>
+          <span className="text-2xl">{transitConfig.icon}</span>
           <div>
-            <h1 className="text-sm font-black uppercase tracking-tight">Metrobüs Modu</h1>
-            <p className="text-[11px] font-mono text-neutral-600 font-bold">
+            <h1 className="text-sm font-bold tracking-tight text-slate-900 dark:text-[#ECECEC]">
+              Metrobüs Modu
+            </h1>
+            <p className="text-[11px] font-mono text-slate-500 dark:text-neutral-400">
               {transitConfig.label}
             </p>
           </div>
@@ -201,10 +203,10 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
 
         {/* Offline tunnel cache & XP badge */}
         <div className="flex items-center gap-2">
-          <span className="hidden sm:inline-block px-2 py-0.5 bg-[#6BCB77] border-2 border-black text-[10px] font-mono font-bold text-black shadow-[2px_2px_0px_#000]">
+          <span className="hidden sm:inline-flex items-center gap-1 px-3 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 text-xs font-semibold border border-emerald-200 dark:border-emerald-800/60 rounded-xl">
             Tünel Çevrimdışı Hazır ⚡
           </span>
-          <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FFD93D] border-2 border-black text-xs font-mono font-black shadow-[2px_2px_0px_#000]">
+          <div className="flex items-center gap-1.5 px-3 py-1 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 text-xs font-semibold border border-amber-200 dark:border-amber-800/60 rounded-xl">
             <span>🔥 {streakCount} Seri</span>
             <span>•</span>
             <span>+{sessionXp} XP</span>
@@ -213,7 +215,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
       </div>
 
       {/* Transit Route Switcher Strip */}
-      <div className="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
         {(Object.keys(TRANSIT_MODE_CONFIGS) as TransitMode[]).map(mode => {
           const cfg = TRANSIT_MODE_CONFIGS[mode];
           const isSelected = transitMode === mode;
@@ -221,14 +223,24 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
             <button
               key={mode}
               onClick={() => setTransitMode(mode)}
-              className={`flex items-center gap-1 px-3 py-1.5 border-2 border-black text-xs font-bold whitespace-nowrap transition-all ${
+              className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
                 isSelected
-                  ? 'bg-black text-white shadow-[3px_3px_0px_#FFD93D]'
-                  : 'bg-white hover:bg-neutral-100 text-neutral-800'
+                  ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                  : 'bg-white dark:bg-[#1E1E1E] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#2F2F2F] hover:bg-slate-50 dark:hover:bg-[#262626]'
               }`}
             >
               <span>{cfg.icon}</span>
-              <span>{mode === 'METROBUS' ? 'Metrobüs' : mode === 'MARMARAY' ? 'Marmaray' : mode === 'METRO' ? 'M4 Metro' : mode === 'OTOBUS' ? 'Otobüs' : 'Sessiz'}</span>
+              <span>
+                {mode === 'METROBUS'
+                  ? 'Metrobüs'
+                  : mode === 'MARMARAY'
+                  ? 'Marmaray'
+                  : mode === 'METRO'
+                  ? 'M4 Metro'
+                  : mode === 'OTOBUS'
+                  ? 'Otobüs'
+                  : 'Sessiz'}
+              </span>
             </button>
           );
         })}
@@ -238,10 +250,10 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
       <div className="flex items-center justify-between px-1">
         <button
           onClick={() => setAcousticFilterEnabled(!acousticFilterEnabled)}
-          className={`flex items-center gap-1.5 px-3 py-1 border-2 border-black text-xs font-mono font-bold ${
+          className={`flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-medium border transition-all ${
             acousticFilterEnabled
-              ? 'bg-[#6BCB77] text-black shadow-[2px_2px_0px_#000]'
-              : 'bg-neutral-300 text-neutral-700'
+              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-400'
+              : 'bg-slate-100 dark:bg-[#262626] border-slate-300 dark:border-[#383838] text-slate-600 dark:text-neutral-400'
           }`}
         >
           <span>{acousticFilterEnabled ? '🛡️ Dizel Filtresi: AKTİF (-24dB)' : '⚠️ Filtresiz Ham Ses'}</span>
@@ -249,7 +261,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
 
         <button
           onClick={() => setShowEqCurve(!showEqCurve)}
-          className="text-xs font-mono font-bold text-neutral-200 hover:text-white bg-neutral-900 hover:bg-neutral-800 px-2.5 py-1 border-2 border-black shadow-[2px_2px_0px_#000]"
+          className="text-xs font-mono font-medium px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-[#2A2A2A] hover:bg-slate-200 dark:hover:bg-[#333333] border border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300 transition-colors"
         >
           {showEqCurve ? '📊 Spektrum Çubukları' : '📈 DSP EQ Eğrisi'}
         </button>
@@ -264,11 +276,11 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
       />
 
       {/* Central Commuter Thumb Zone: Glowing Voice Orb */}
-      <div className="flex flex-col items-center justify-center py-6 bg-gradient-to-b from-[#FFF8E7] to-[#FFE8A3] border-3 border-black shadow-[6px_6px_0px_#000] relative overflow-hidden">
-        {/* Decorative background radar circles */}
+      <div className="flex flex-col items-center justify-center py-10 bg-gradient-to-b from-white to-slate-50/80 dark:from-[#1E1E1E] dark:to-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-3xl shadow-xs relative overflow-hidden">
+        {/* Subtle ambient ripple rings */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-          <div className="w-64 h-64 border-2 border-black rounded-full animate-ping duration-1000" />
-          <div className="w-48 h-48 border-2 border-black rounded-full" />
+          <div className="w-56 h-56 border border-emerald-500/40 rounded-full animate-ping duration-1000" />
+          <div className="w-44 h-44 border border-emerald-500/30 rounded-full" />
         </div>
 
         {/* Pulse Orb */}
@@ -278,23 +290,22 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
               if (drillStatus === 'IDLE') {
                 startPromptPlayback();
               } else if (drillStatus === 'LISTENING') {
-                // If student taps while listening, simulate speech completion
                 handleEvaluateAnswer(currentPrompt.expectedKeywords[0]!);
               } else if (drillStatus === 'PROMPT_PLAYING') {
                 handleRepeatPrompt();
               }
             }}
-            className={`w-32 h-32 rounded-full border-4 border-black flex flex-col items-center justify-center shadow-[6px_6px_0px_#000] active:scale-95 transition-all duration-200 cursor-pointer ${
+            className={`w-32 h-32 rounded-full flex flex-col items-center justify-center transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
               drillStatus === 'IDLE'
-                ? 'bg-[#4D96FF] text-white hover:bg-blue-600'
+                ? 'bg-gradient-to-tr from-blue-600 to-indigo-500 text-white shadow-blue-500/20 hover:scale-105'
                 : drillStatus === 'PROMPT_PLAYING'
-                ? 'bg-[#FFD93D] text-black animate-pulse'
+                ? 'bg-gradient-to-tr from-amber-500 to-yellow-400 text-white shadow-amber-500/25 animate-pulse'
                 : drillStatus === 'LISTENING'
-                ? 'bg-[#6BCB77] text-black shadow-[0_0_25px_#6BCB77]'
+                ? 'bg-gradient-to-tr from-emerald-600 to-teal-400 text-white shadow-emerald-500/30 ring-8 ring-emerald-500/20 animate-pulse'
                 : drillStatus === 'AFFIRMATION'
-                ? 'bg-[#6BCB77] text-white'
+                ? 'bg-gradient-to-tr from-emerald-500 to-emerald-600 text-white shadow-emerald-500/30 scale-105'
                 : drillStatus === 'VERBAL_NUDGE'
-                ? 'bg-[#FFD93D] text-black'
+                ? 'bg-gradient-to-tr from-amber-500 to-amber-600 text-white shadow-amber-500/25'
                 : 'bg-neutral-800 text-white'
             }`}
             data-testid="metrobus-voice-orb"
@@ -307,7 +318,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
               {drillStatus === 'AFFIRMATION' && '✓'}
               {drillStatus === 'VERBAL_NUDGE' && '💡'}
             </span>
-            <span className="text-[11px] font-black font-mono uppercase tracking-wider text-center px-2">
+            <span className="text-[11px] font-bold font-mono uppercase tracking-wider text-center px-2">
               {drillStatus === 'IDLE' && 'BAŞLA'}
               {drillStatus === 'PROMPT_PLAYING' && 'OKUNUYOR'}
               {drillStatus === 'LISTENING' && 'DİNLİYOR...'}
@@ -318,8 +329,8 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
           </button>
 
           {/* Subtext under Orb */}
-          <div className="mt-3 text-center">
-            <p className="text-xs font-bold font-mono text-neutral-700">
+          <div className="mt-4 text-center">
+            <p className="text-xs font-medium text-slate-600 dark:text-neutral-400">
               {drillStatus === 'IDLE' && 'Kulaklık mikrofona konuşun veya dokunun'}
               {drillStatus === 'PROMPT_PLAYING' && 'Sesli soru okunuyor (AirPods aktif)'}
               {drillStatus === 'LISTENING' && 'Cevabınızı söyleyin (Örn: "Enzim yaşlanır")'}
@@ -330,10 +341,10 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
         </div>
 
         {/* 1-Tap Repeat Action (No penalty) */}
-        <div className="mt-4 flex items-center gap-3">
+        <div className="mt-5 flex items-center gap-3">
           <button
             onClick={handleRepeatPrompt}
-            className="px-4 py-2 bg-white border-2 border-black font-mono font-bold text-xs shadow-[3px_3px_0px_#000] hover:bg-neutral-100 active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
+            className="px-4 py-2 bg-white dark:bg-[#252525] border border-slate-200 dark:border-[#383838] hover:bg-slate-50 dark:hover:bg-[#2C2C2C] text-slate-800 dark:text-neutral-200 rounded-xl font-medium text-xs shadow-2xs flex items-center gap-1.5 transition-colors"
             data-testid="metrobus-repeat-btn"
           >
             <span>🔄</span>
@@ -342,7 +353,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
 
           <button
             onClick={handleUnlockHint}
-            className="px-4 py-2 bg-[#FFD93D] border-2 border-black font-mono font-bold text-xs shadow-[3px_3px_0px_#000] hover:bg-yellow-400 active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-1.5"
+            className="px-4 py-2 bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/60 text-amber-700 dark:text-amber-400 rounded-xl font-medium text-xs shadow-2xs flex items-center gap-1.5 transition-colors"
             data-testid="metrobus-hint-btn"
           >
             <span>💡</span>
@@ -352,31 +363,31 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
       </div>
 
       {/* Socratic Question Card */}
-      <div className="bg-white border-3 border-black p-4 shadow-[5px_5px_0px_#000]">
-        <div className="flex items-center justify-between mb-2">
+      <div className="bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl p-6 shadow-xs">
+        <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-2">
-            <span className="px-2 py-0.5 bg-[#4D96FF] text-white border-2 border-black text-[10px] font-mono font-bold">
+            <span className="px-2.5 py-0.5 bg-blue-50 text-blue-700 dark:bg-blue-950/50 dark:text-blue-400 rounded-lg text-[11px] font-semibold">
               {currentPrompt.courseId === 'medchem' ? 'Farmasötik Kimya' : 'Farmakoloji'}
             </span>
-            <span className="px-2 py-0.5 bg-[#FF6B9D] text-black border-2 border-black text-[10px] font-mono font-bold">
+            <span className="px-2.5 py-0.5 bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-400 rounded-lg text-[11px] font-mono font-semibold">
               {currentPrompt.trapCode}
             </span>
           </div>
-          <span className="text-xs font-mono font-bold text-neutral-500">
+          <span className="text-xs font-mono text-slate-400 dark:text-neutral-500">
             Soru {currentPromptIndex + 1} / {METROBUS_AUDIO_PROMPTS.length}
           </span>
         </div>
 
-        <h2 className="text-base font-black mb-1">{currentPrompt.title}</h2>
-        <p className="text-xs text-neutral-600 font-mono mb-3">{currentPrompt.topic}</p>
+        <h2 className="text-base font-bold mb-1 text-slate-900 dark:text-[#ECECEC]">{currentPrompt.title}</h2>
+        <p className="text-xs text-slate-500 dark:text-neutral-400 mb-4">{currentPrompt.topic}</p>
 
         {/* Turkish speech prompt text (strictly <= 25 words) */}
-        <div className="bg-[#FFF8E7] border-2 border-black p-3 mb-3">
-          <p className="text-sm font-bold text-neutral-900 leading-snug">
+        <div className="bg-slate-50 dark:bg-[#252525] border border-slate-200 dark:border-[#333333] rounded-xl p-4 mb-4">
+          <p className="text-sm font-medium text-slate-900 dark:text-[#ECECEC] leading-relaxed">
             "{currentPrompt.turkishSpeechText}"
           </p>
-          <div className="mt-1 text-right">
-            <span className="text-[10px] font-mono text-neutral-500">
+          <div className="mt-2 text-right">
+            <span className="text-[10px] font-mono text-slate-400 dark:text-neutral-500">
               Konuşma Sınırı: {currentPrompt.turkishSpeechText.split(/\s+/).length} kelime (Maks 25)
             </span>
           </div>
@@ -384,12 +395,12 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
 
         {/* Verbal Nudge Drawer if unlocked */}
         {isHintUnlocked && (
-          <div className="bg-[#FFF9D2] border-2 border-black p-3 mb-3 border-dashed" data-testid="metrobus-hint-box">
-            <div className="flex items-center gap-1.5 mb-1 text-xs font-bold text-neutral-800">
+          <div className="bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 rounded-xl p-4 mb-4" data-testid="metrobus-hint-box">
+            <div className="flex items-center gap-1.5 mb-1.5 text-xs font-semibold text-amber-800 dark:text-amber-400">
               <span>💡</span>
               <span>1. Kademe Sözlü İpucu:</span>
             </div>
-            <p className="text-xs font-medium text-neutral-900">
+            <p className="text-xs font-medium text-slate-800 dark:text-neutral-200 leading-relaxed">
               {currentPrompt.verbalNudgeText}
             </p>
           </div>
@@ -397,7 +408,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
 
         {/* Commuter Touch Fallback Options (for silent subway / packed bus) */}
         <div>
-          <p className="text-xs font-mono font-bold text-neutral-600 mb-2">
+          <p className="text-xs font-medium text-slate-500 dark:text-neutral-400 mb-2.5">
             🚇 Sessiz Metrobüs / Dokunmatik Hızlı Yanıt:
           </p>
           <div className="flex flex-col gap-2">
@@ -405,7 +416,7 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
               <button
                 key={option.id}
                 onClick={() => handleEvaluateAnswer(option.label)}
-                className="w-full text-left p-2.5 bg-neutral-50 hover:bg-neutral-100 border-2 border-black text-xs font-medium active:bg-neutral-200 transition-colors shadow-[2px_2px_0px_#000]"
+                className="w-full text-left p-3.5 bg-slate-50/70 dark:bg-[#252525] hover:bg-slate-100 dark:hover:bg-[#2C2C2C] border border-slate-200 dark:border-[#333333] rounded-xl text-xs font-medium text-slate-800 dark:text-[#ECECEC] transition-all shadow-2xs"
               >
                 {option.label}
               </button>
@@ -414,45 +425,45 @@ export const MetrobusAudioView: React.FC<MetrobusAudioViewProps> = ({
         </div>
       </div>
 
-      {/* Verdict & Feedback Modal Card */}
+      {/* Verdict & Feedback Card */}
       {verdict && (
         <div
-          className={`border-3 border-black p-4 shadow-[6px_6px_0px_#000] animate-fadeIn ${
+          className={`border rounded-2xl p-6 shadow-sm animate-fadeIn ${
             verdict === 'CORRECT'
-              ? 'bg-[#E8F8EA] border-black'
-              : 'bg-[#FFF0F5] border-black'
+              ? 'bg-emerald-50/90 dark:bg-emerald-950/40 border-emerald-300 dark:border-emerald-800/80'
+              : 'bg-rose-50/90 dark:bg-rose-950/40 border-rose-300 dark:border-rose-800/80'
           }`}
           data-testid="metrobus-verdict-box"
         >
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2.5">
               <span className="text-2xl">{verdict === 'CORRECT' ? '🎉' : '⚠️'}</span>
-              <h3 className="text-base font-black">
+              <h3 className="text-base font-bold text-slate-900 dark:text-[#ECECEC]">
                 {verdict === 'CORRECT' ? 'Tam İsabet!' : 'Vize Tuzağı Saptandı!'}
               </h3>
             </div>
             {verdict === 'CORRECT' && (
-              <span className="px-2 py-0.5 bg-[#6BCB77] border-2 border-black text-xs font-mono font-bold">
+              <span className="px-2.5 py-0.5 bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 rounded-lg text-xs font-semibold">
                 +10 XP
               </span>
             )}
           </div>
 
-          <p className="text-xs font-bold text-neutral-800 mb-2">
+          <p className="text-xs font-medium text-slate-800 dark:text-neutral-200 mb-3 leading-relaxed">
             {verdict === 'CORRECT'
               ? currentPrompt.affirmationText
               : 'Verilen cevap yaygın bir kavram yanılgısına işaret ediyor.'}
           </p>
 
-          <div className="bg-white border-2 border-black p-2.5 text-xs text-neutral-700 mb-3">
-            <span className="font-bold text-black block mb-1">Mekanizma Açıklaması:</span>
+          <div className="bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl p-4 text-xs text-slate-700 dark:text-neutral-300 mb-4 leading-relaxed">
+            <span className="font-semibold text-slate-900 dark:text-[#ECECEC] block mb-1">Mekanizma Açıklaması:</span>
             {currentPrompt.detailedExplanation}
           </div>
 
-          <div className="flex items-center justify-end gap-2">
+          <div className="flex items-center justify-end">
             <button
               onClick={handleNextPrompt}
-              className="px-5 py-2.5 bg-black text-white hover:bg-neutral-800 border-2 border-black font-mono font-bold text-xs shadow-[3px_3px_0px_#FFD93D] active:translate-x-0.5 active:translate-y-0.5"
+              className="px-6 py-2.5 bg-[#10A37F] hover:bg-[#0E8C6D] text-white rounded-xl text-xs font-semibold shadow-xs transition-colors"
               data-testid="metrobus-next-btn"
             >
               Sonraki Soru ⚡ →

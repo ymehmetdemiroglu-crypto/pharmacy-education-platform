@@ -190,15 +190,15 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
       role="region"
       aria-labelledby={headingId}
       dir={isRtl ? 'rtl' : 'ltr'}
-      className={`p-6 bg-[#FFF8E7] border-4 border-black shadow-[6px_6px_0px_#000000] rounded-none max-w-3xl mx-auto font-sans text-black text-start ${className}`}
+      className={`p-6 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs max-w-3xl mx-auto font-sans text-slate-900 dark:text-[#ECECEC] text-start ${className}`}
     >
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b-4 border-black gap-2">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 border-b border-slate-200 dark:border-[#2F2F2F] gap-2">
         <div>
-          <span className="inline-block text-xs uppercase tracking-widest font-black bg-[#4D96FF] text-white px-2 py-0.5 border-2 border-black mb-1">
+          <span className="inline-block text-xs font-semibold bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 px-2.5 py-0.5 border border-blue-200 dark:border-blue-800/60 rounded-md mb-1">
             {t.badge}
           </span>
-          <h3 id={headingId} className="text-xl sm:text-2xl font-black uppercase tracking-tight">
+          <h3 id={headingId} className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {t.title}
           </h3>
         </div>
@@ -209,10 +209,10 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
             type="button"
             onClick={() => setEnantiomer('eutomer')}
             data-testid="toggle-eutomer"
-            className={`px-3 py-1.5 font-bold text-xs sm:text-sm border-2 border-black transition-transform ${
+            className={`px-3.5 py-1.5 font-semibold text-xs sm:text-sm rounded-xl border transition-all ${
               enantiomer === 'eutomer'
-                ? 'bg-[#6BCB77] text-black shadow-[2px_2px_0px_#000000] -translate-y-0.5'
-                : 'bg-white text-gray-700 hover:bg-gray-100'
+                ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C]'
             }`}
           >
             {t.eutomerBtn(config.eutomerName)}
@@ -221,10 +221,10 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
             type="button"
             onClick={() => setEnantiomer('distomer')}
             data-testid="toggle-distomer"
-            className={`px-3 py-1.5 font-bold text-xs sm:text-sm border-2 border-black transition-transform ${
+            className={`px-3.5 py-1.5 font-semibold text-xs sm:text-sm rounded-xl border transition-all ${
               enantiomer === 'distomer'
-                ? 'bg-[#FF6B9D] text-white shadow-[2px_2px_0px_#000000] -translate-y-0.5'
-                : 'bg-white text-gray-700 hover:bg-gray-100'
+                ? 'bg-rose-600 text-white border-rose-600 shadow-xs'
+                : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300 hover:bg-slate-50 dark:hover:bg-[#2C2C2C]'
             }`}
           >
             {t.distomerBtn(config.distomerName)}
@@ -235,8 +235,8 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
       {/* Main 3D Stage & Target Receptor View */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {/* 3D Molecule Visualizer */}
-        <div className="flex flex-col items-center justify-center p-4 bg-white border-4 border-black min-h-[260px] relative overflow-hidden">
-          <div className="absolute top-2 left-2 text-[10px] font-mono uppercase font-black bg-black text-white px-1.5 py-0.5">
+        <div className="flex flex-col items-center justify-center p-4 bg-slate-50 dark:bg-[#171717] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl min-h-[260px] relative overflow-hidden shadow-xs">
+          <div className="absolute top-2 left-2 text-[10px] font-mono uppercase font-bold bg-slate-900 text-white dark:bg-white dark:text-slate-900 px-2 py-0.5 rounded-md">
             {t.configBadge(enantiomer)}
           </div>
 
@@ -257,7 +257,7 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
             >
               {/* Central Chiral Carbon */}
               <div
-                className="absolute top-1/2 left-1/2 w-6 h-6 -mt-3 -ml-3 bg-black rounded-full border-2 border-white flex items-center justify-center text-white text-[10px] font-mono font-bold"
+                className="absolute top-1/2 left-1/2 w-6 h-6 -mt-3 -ml-3 bg-slate-900 dark:bg-slate-100 dark:text-slate-900 rounded-full border border-slate-300 dark:border-slate-700 flex items-center justify-center text-white text-[10px] font-mono font-bold"
                 style={{ transform: 'translateZ(0px)' }}
               >
                 C*
@@ -266,8 +266,10 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
               {/* Group 1: Aromatic Ring */}
               <div
                 data-testid="group-aromatic"
-                className={`absolute top-0 left-1/2 -ml-8 px-2 py-1 border-2 border-black text-xs font-bold text-center ${
-                  locus1Docked ? 'bg-[#6BCB77] text-black ring-2 ring-black' : 'bg-gray-200'
+                className={`absolute top-0 left-1/2 -ml-8 px-2.5 py-1 border rounded-lg text-xs font-semibold text-center ${
+                  locus1Docked
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 text-emerald-800 dark:text-emerald-300 shadow-xs'
+                    : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300'
                 }`}
                 style={{ transform: 'translateY(-20px) translateZ(25px)' }}
               >
@@ -277,12 +279,12 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
               {/* Group 2: Hydroxyl (-OH) - Chiral Position flips in distomer! */}
               <div
                 data-testid="group-hydroxyl"
-                className={`absolute bottom-2 left-0 px-2 py-1 border-2 border-black text-xs font-bold text-center ${
+                className={`absolute bottom-2 left-0 px-2.5 py-1 border rounded-lg text-xs font-semibold text-center ${
                   locus2Docked
-                    ? 'bg-[#6BCB77] text-black ring-2 ring-black'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 text-emerald-800 dark:text-emerald-300 shadow-xs'
                     : enantiomer === 'distomer'
-                    ? 'bg-[#FF6B9D] text-white'
-                    : 'bg-gray-200'
+                    ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-500 text-rose-800 dark:text-rose-300'
+                    : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300'
                 }`}
                 style={{
                   transform:
@@ -297,8 +299,10 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
               {/* Group 3: Protonated Amine */}
               <div
                 data-testid="group-amine"
-                className={`absolute bottom-2 right-0 px-2 py-1 border-2 border-black text-xs font-bold text-center ${
-                  locus3Docked ? 'bg-[#6BCB77] text-black ring-2 ring-black' : 'bg-gray-200'
+                className={`absolute bottom-2 right-0 px-2.5 py-1 border rounded-lg text-xs font-semibold text-center ${
+                  locus3Docked
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 text-emerald-800 dark:text-emerald-300 shadow-xs'
+                    : 'bg-white dark:bg-[#252525] border-slate-200 dark:border-[#383838] text-slate-700 dark:text-neutral-300'
                 }`}
                 style={{ transform: 'translateX(15px) translateY(10px) translateZ(25px)' }}
               >
@@ -307,24 +311,26 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
             </div>
           </div>
 
-          <div className="text-xs font-mono font-bold text-gray-600 mt-2">
+          <div className="text-xs font-mono font-medium text-slate-500 dark:text-neutral-400 mt-2">
             {t.angle(rotX, rotY, rotZ)}
           </div>
         </div>
 
         {/* Receptor Cleft & Docking Status */}
-        <div className="flex flex-col justify-between p-4 bg-white border-4 border-black">
+        <div className="flex flex-col justify-between p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
           <div>
-            <div className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-1">
+            <div className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-neutral-400 mb-1">
               {t.target(config.targetReceptor)}
             </div>
-            <h4 className="text-lg font-black uppercase mb-3">{t.pocketsTitle}</h4>
+            <h4 className="text-base font-bold text-slate-900 dark:text-[#ECECEC] mb-3">{t.pocketsTitle}</h4>
 
             <div className="space-y-2 mb-4">
               <div
                 data-testid="locus-1-status"
-                className={`p-2 border-2 border-black flex items-center justify-between text-xs font-bold ${
-                  locus1Docked ? 'bg-[#E8F5E9] text-green-900 border-green-700' : 'bg-gray-100 text-gray-600'
+                className={`p-2.5 border rounded-xl flex items-center justify-between text-xs font-semibold ${
+                  locus1Docked
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
+                    : 'bg-slate-50 dark:bg-[#252525] text-slate-600 dark:text-neutral-400 border-slate-200 dark:border-[#383838]'
                 }`}
               >
                 <span>{t.locus1}</span>
@@ -333,12 +339,12 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
 
               <div
                 data-testid="locus-2-status"
-                className={`p-2 border-2 border-black flex items-center justify-between text-xs font-bold ${
+                className={`p-2.5 border rounded-xl flex items-center justify-between text-xs font-semibold ${
                   locus2Docked
-                    ? 'bg-[#E8F5E9] text-green-900 border-green-700'
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
                     : enantiomer === 'distomer' && isOrientationOptimal
-                    ? 'bg-[#FFEBEE] text-red-900 border-red-700'
-                    : 'bg-gray-100 text-gray-600'
+                    ? 'bg-rose-50 dark:bg-rose-950/40 text-rose-800 dark:text-rose-300 border-rose-300 dark:border-rose-800'
+                    : 'bg-slate-50 dark:bg-[#252525] text-slate-600 dark:text-neutral-400 border-slate-200 dark:border-[#383838]'
                 }`}
               >
                 <span>{t.locus2}</span>
@@ -353,8 +359,10 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
 
               <div
                 data-testid="locus-3-status"
-                className={`p-2 border-2 border-black flex items-center justify-between text-xs font-bold ${
-                  locus3Docked ? 'bg-[#E8F5E9] text-green-900 border-green-700' : 'bg-gray-100 text-gray-600'
+                className={`p-2.5 border rounded-xl flex items-center justify-between text-xs font-semibold ${
+                  locus3Docked
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800'
+                    : 'bg-slate-50 dark:bg-[#252525] text-slate-600 dark:text-neutral-400 border-slate-200 dark:border-[#383838]'
                 }`}
               >
                 <span>{t.locus3}</span>
@@ -367,12 +375,12 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
           <div
             id={statusId}
             data-testid="docking-result-banner"
-            className={`p-3 border-2 border-black font-mono text-xs ${
+            className={`p-3.5 border rounded-xl font-mono text-xs ${
               isFullyDocked
-                ? 'bg-[#6BCB77] text-black font-black'
+                ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-300 border-emerald-300 dark:border-emerald-800 font-bold'
                 : contactsCount === 2
-                ? 'bg-[#FFD93D] text-black font-bold'
-                : 'bg-gray-200 text-gray-700'
+                ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-800 font-bold'
+                : 'bg-slate-100 dark:bg-[#252525] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#383838]'
             }`}
           >
             <div className="flex justify-between items-center mb-1">
@@ -391,19 +399,19 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
       </div>
 
       {/* 3D Rotation Controls & WCAG 2.2 Steppers */}
-      <div className="p-4 bg-white border-4 border-black mb-4">
-        <div className="text-xs font-black uppercase tracking-wider mb-3">{t.controlsTitle}</div>
+      <div className="p-4 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs mb-4">
+        <div className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-neutral-400 mb-3">{t.controlsTitle}</div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
           {/* Axis X */}
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-bold font-mono">{t.axisX(rotX)}</span>
-            <div className="flex items-center gap-1">
+            <span className="text-xs font-semibold font-mono text-slate-700 dark:text-neutral-300">{t.axisX(rotX)}</span>
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => handleRotate('x', -15)}
                 aria-label={t.xMinusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 -15°
               </button>
@@ -411,7 +419,7 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
                 type="button"
                 onClick={() => handleRotate('x', 15)}
                 aria-label={t.xPlusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 +15°
               </button>
@@ -420,13 +428,13 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
 
           {/* Axis Y */}
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-bold font-mono">{t.axisY(rotY)}</span>
-            <div className="flex items-center gap-1">
+            <span className="text-xs font-semibold font-mono text-slate-700 dark:text-neutral-300">{t.axisY(rotY)}</span>
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => handleRotate('y', -15)}
                 aria-label={t.yMinusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 -15°
               </button>
@@ -434,7 +442,7 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
                 type="button"
                 onClick={() => handleRotate('y', 15)}
                 aria-label={t.yPlusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 +15°
               </button>
@@ -443,13 +451,13 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
 
           {/* Axis Z */}
           <div className="flex flex-col gap-1">
-            <span className="text-xs font-bold font-mono">{t.axisZ(rotZ)}</span>
-            <div className="flex items-center gap-1">
+            <span className="text-xs font-semibold font-mono text-slate-700 dark:text-neutral-300">{t.axisZ(rotZ)}</span>
+            <div className="flex items-center gap-1.5">
               <button
                 type="button"
                 onClick={() => handleRotate('z', -15)}
                 aria-label={t.zMinusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 -15°
               </button>
@@ -457,7 +465,7 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
                 type="button"
                 onClick={() => handleRotate('z', 15)}
                 aria-label={t.zPlusAria}
-                className="px-2.5 py-1 bg-gray-200 border-2 border-black font-mono font-bold hover:bg-gray-300"
+                className="px-3 py-1 bg-slate-100 dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#383838] font-mono text-xs font-semibold rounded-lg hover:bg-slate-200 dark:hover:bg-[#333333] text-slate-700 dark:text-neutral-200 transition-colors"
               >
                 +15°
               </button>
@@ -471,7 +479,7 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
             type="button"
             onClick={handleSnap}
             data-testid="snap-bioactive-button"
-            className="px-4 py-2 bg-[#FFD93D] border-2 border-black font-bold text-xs uppercase shadow-[2px_2px_0px_#000000] hover:bg-yellow-400 active:translate-y-0.5"
+            className="px-4 py-2 bg-[#10A37F] hover:bg-[#0E8C6D] text-white border border-[#10A37F] font-semibold text-xs rounded-xl shadow-xs transition-colors"
           >
             {t.snapBtn}
           </button>
@@ -481,9 +489,9 @@ export const EassonStedmanStage: React.FC<EassonStedmanStageProps> = ({
       {/* Model Illustration Notice */}
       <aside
         data-testid="model-illustration-notice"
-        className="p-3 bg-[#FFF] border-2 border-black text-xs text-gray-700 font-mono leading-relaxed"
+        className="p-3.5 bg-slate-50 dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-xl text-xs text-slate-600 dark:text-neutral-400 font-mono leading-relaxed"
       >
-        <span className="font-bold text-black uppercase">{t.noticeLabel}</span>{' '}
+        <span className="font-semibold text-slate-900 dark:text-[#ECECEC] uppercase">{t.noticeLabel}</span>{' '}
         {t.noticeText(config.eutomerName, config.distomerName, config.equationRef)}
       </aside>
     </section>

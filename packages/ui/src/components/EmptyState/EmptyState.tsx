@@ -25,21 +25,19 @@ export const EmptyState: React.FC<EmptyStateProps> = ({
       className={twMerge(
         clsx(
           'w-full p-8 sm:p-12 text-center flex flex-col items-center justify-center',
-          'border-3 border-black dark:border-slate-700 rounded-none',
-          'shadow-neo dark:shadow-neo-dark',
-          'bg-[repeating-linear-gradient(45deg,#FFF8E7,#FFF8E7_10px,#F3ECE0_10px,#F3ECE0_20px)]',
-          'dark:bg-[repeating-linear-gradient(45deg,#0B0F17,#0B0F17_10px,#131B2A_10px,#131B2A_20px)]',
+          'border border-slate-200 dark:border-[#2F2F2F] rounded-2xl',
+          'shadow-xs bg-slate-50/50 dark:bg-[#1E1E1E]/50 backdrop-blur-sm',
           className
         )
       )}
     >
-      <div className="p-4 bg-white dark:bg-[#1E293B] border-3 border-black dark:border-slate-700 shadow-[4px_4px_0px_#000000] dark:shadow-[4px_4px_0px_#030712] mb-4 text-black dark:text-slate-100">
+      <div className="w-14 h-14 rounded-2xl bg-white dark:bg-[#2A2A2A] border border-slate-200 dark:border-[#333333] shadow-xs flex items-center justify-center text-slate-700 dark:text-slate-200 mb-4">
         {icon}
       </div>
-      <h3 className="font-display font-black text-lg sm:text-xl uppercase tracking-tight text-black dark:text-slate-100 mb-2">
+      <h3 className="font-sans font-bold text-lg sm:text-xl text-slate-900 dark:text-[#ECECEC] mb-1.5 tracking-tight">
         {title}
       </h3>
-      <p className="font-body text-sm text-gray-700 dark:text-slate-300 max-w-md mb-6 leading-relaxed">
+      <p className="font-sans text-sm text-slate-600 dark:text-slate-400 max-w-md mb-6 leading-relaxed">
         {description}
       </p>
       {actionLabel && onAction && (

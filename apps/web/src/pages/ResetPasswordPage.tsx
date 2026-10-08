@@ -120,30 +120,30 @@ export const ResetPasswordPage: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto px-4 py-16 sm:py-24">
-      <div className="bg-white dark:bg-[#131B2A] border-3 sm:border-4 border-black dark:border-slate-700 shadow-[6px_6px_0px_#000000] dark:shadow-[6px_6px_0px_#030712] p-6 sm:p-8 space-y-6">
+      <div className="bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs p-6 sm:p-8 space-y-6">
         {/* Header */}
-        <div className="space-y-2 pb-4 border-b-2 border-black/10 dark:border-slate-700">
-          <div className="w-12 h-12 bg-[#FFD93D] border-3 border-black flex items-center justify-center shadow-[3px_3px_0px_#000000]">
-            <KeyRound className="w-6 h-6 text-black" />
+        <div className="space-y-2 pb-4 border-b border-slate-100 dark:border-[#2F2F2F]">
+          <div className="w-12 h-12 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-xl flex items-center justify-center">
+            <KeyRound className="w-6 h-6 text-amber-600 dark:text-amber-400" />
           </div>
-          <h1 className="text-xl sm:text-2xl font-mono font-bold uppercase tracking-tight text-black dark:text-white">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {t('resetPasswordPage.title')}
           </h1>
-          <p className="font-sans text-xs sm:text-sm text-gray-700 dark:text-slate-300">
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-neutral-400">
             {t('resetPasswordPage.desc')}
           </p>
         </div>
 
         {/* Status Alerts */}
         {error && (
-          <div className="p-3 bg-[#FF6B9D]/20 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-start gap-2.5 text-xs font-mono font-bold text-rose-800 dark:text-rose-300">
+          <div className="p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-800/60 rounded-xl flex items-start gap-2.5 text-xs font-semibold text-rose-800 dark:text-rose-300">
             <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
             <span>{error}</span>
           </div>
         )}
 
         {hasValidSession === false && !error && (
-          <div className="p-3 bg-amber-50 dark:bg-amber-950/40 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-start gap-2.5 text-xs font-mono text-amber-900 dark:text-amber-200">
+          <div className="p-3 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-xl flex items-start gap-2.5 text-xs text-amber-900 dark:text-amber-200">
             <AlertCircle className="w-4 h-4 shrink-0 text-amber-600 mt-0.5" />
             <span>{t('resetPasswordPage.invalidSession')}</span>
           </div>
@@ -151,7 +151,7 @@ export const ResetPasswordPage: React.FC = () => {
 
         {success ? (
           <div className="space-y-4">
-            <div className="p-4 bg-emerald-100 dark:bg-emerald-950/60 border-2 border-black dark:border-slate-700 shadow-[2px_2px_0px_#000000] dark:shadow-[2px_2px_0px_#030712] flex items-center gap-2.5 text-xs sm:text-sm font-mono font-bold text-emerald-800 dark:text-emerald-300">
+            <div className="p-4 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 rounded-xl flex items-center gap-2.5 text-xs sm:text-sm font-semibold text-emerald-800 dark:text-emerald-300">
               <CheckCircle2 className="w-5 h-5 shrink-0" />
               <span>{t('resetPasswordPage.success')}</span>
             </div>

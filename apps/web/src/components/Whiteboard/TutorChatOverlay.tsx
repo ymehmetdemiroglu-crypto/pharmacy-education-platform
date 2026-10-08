@@ -41,9 +41,9 @@ export const TutorChatOverlay: React.FC<TutorChatOverlayProps> = ({
     connection === 'connected' ? text.connConnected : connection === 'connecting' ? text.connConnecting : text.connOffline;
 
   return (
-    <Card className="flex flex-col gap-4 border-4 shadow-[6px_6px_0_0_#000000]" data-testid="tutor-panel">
+    <Card className="flex flex-col gap-4 border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-sm" data-testid="tutor-panel">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <h2 className="font-display text-lg font-black uppercase tracking-tight">{text.tutorTitle}</h2>
+        <h2 className="font-sans text-lg font-bold tracking-tight text-slate-900 dark:text-white">{text.tutorTitle}</h2>
         <div className="flex flex-wrap items-center gap-2">
           {isDraft ? <StickerBadge variant="yellow" size="sm">{text.draftBadge}</StickerBadge> : <StickerBadge variant="green" size="sm">{text.verifiedBadge}</StickerBadge>}
           <StickerBadge variant="outline" size="sm" aria-label={`${text.connLabel}: ${connLabel}`}>
@@ -57,7 +57,7 @@ export const TutorChatOverlay: React.FC<TutorChatOverlayProps> = ({
       {/* aria-live so screen readers announce the tutor reply; min-h avoids layout shift between states */}
       <div className="min-h-[120px]" aria-live="polite" aria-atomic="true">
         {pending ? (
-          <p className="font-mono text-sm text-gray-700">{text.tutorThinking}</p>
+          <p className="font-mono text-sm text-slate-500 dark:text-slate-400">{text.tutorThinking}</p>
         ) : action ? (
           <div
             key={`${action.scaffoldLevel}-${action.tutorMessage}`}
@@ -69,24 +69,24 @@ export const TutorChatOverlay: React.FC<TutorChatOverlayProps> = ({
                 {action.messageSource === 'llm' ? text.sourceLlm : text.sourceLadder}
               </StickerBadge>
             </div>
-            <p className="text-base font-semibold leading-snug">{action.tutorMessage}</p>
+            <p className="text-base font-semibold leading-snug text-slate-900 dark:text-[#ECECEC]">{action.tutorMessage}</p>
             {highlightedOptionText ? (
-              <p className="border-3 border-black bg-[#6BCB77] p-2 text-sm font-bold">
+              <p className="border border-emerald-500/40 bg-emerald-500/15 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 p-2.5 rounded-xl text-sm font-semibold">
                 {text.correctAnswerIs}: {highlightedOptionText}
               </p>
             ) : null}
-            <p className="font-mono text-xs text-gray-700">
+            <p className="font-mono text-xs text-slate-500 dark:text-slate-400">
               {text.deck}: {action.slideCitation.deck} · {text.slide} {action.slideCitation.slideNumbers.join(', ')}
             </p>
           </div>
         ) : (
-          <p className="text-sm text-gray-800">{text.tutorIdle}</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">{text.tutorIdle}</p>
         )}
       </div>
 
-      {usedFallback ? <p className="border-3 border-black bg-white p-2 text-xs font-mono">{text.offlineNote}</p> : null}
-      {guest ? <p className="border-3 border-black bg-white p-2 text-xs font-mono">{text.guestNote}</p> : null}
-      <p className="text-xs text-gray-600">{text.modelNotice}</p>
+      {usedFallback ? <p className="border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1E1E1E] p-2.5 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-400">{text.offlineNote}</p> : null}
+      {guest ? <p className="border border-slate-200 dark:border-[#2F2F2F] bg-slate-50 dark:bg-[#1E1E1E] p-2.5 rounded-xl text-xs font-mono text-slate-600 dark:text-slate-400">{text.guestNote}</p> : null}
+      <p className="text-xs text-slate-500 dark:text-slate-400">{text.modelNotice}</p>
     </Card>
   );
 };

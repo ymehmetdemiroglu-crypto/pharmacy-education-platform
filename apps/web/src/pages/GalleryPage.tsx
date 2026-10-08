@@ -69,17 +69,23 @@ export const GalleryPage: React.FC = () => {
   return (
     <div className="w-full pb-20 space-y-12">
       {/* Hero Header */}
-      <section className="bg-[#FFF8E7] dark:bg-[#0B0F17] border-b-3 border-black dark:border-slate-700 py-12 px-4 sm:px-6">
+      <section className="bg-slate-50 dark:bg-[#1A1A1A] border-b border-slate-200 dark:border-[#2F2F2F] py-12 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <StickerBadge variant="black" size="sm">{t('gallery.badgeGallery')}</StickerBadge>
-            <StickerBadge variant="green" size="sm">{t('gallery.commercialGrade')}</StickerBadge>
-            <StickerBadge variant="yellow" size="sm">{t('gallery.neoBrutalist')}</StickerBadge>
+            <span className="px-2.5 py-1 bg-slate-200 dark:bg-[#2A2A2A] text-slate-800 dark:text-[#ECECEC] rounded-lg text-xs font-semibold">
+              {t('gallery.badgeGallery')}
+            </span>
+            <span className="px-2.5 py-1 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 rounded-lg text-xs font-semibold">
+              {t('gallery.commercialGrade')}
+            </span>
+            <span className="px-2.5 py-1 bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400 rounded-lg text-xs font-semibold">
+              Obsidian & Emerald
+            </span>
           </div>
-          <h1 className="font-display font-black text-3xl sm:text-5xl uppercase tracking-tight text-black dark:text-slate-100">
+          <h1 className="font-sans font-bold text-3xl sm:text-4xl tracking-tight text-slate-900 dark:text-[#ECECEC]">
             {t('gallery.heroTitle')}
           </h1>
-          <p className="font-body text-base sm:text-lg text-gray-800 dark:text-gray-200 max-w-3xl leading-relaxed">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-neutral-300 max-w-3xl leading-relaxed">
             {t('gallery.heroDesc')}
           </p>
           <div className="pt-2 flex flex-wrap gap-3">
@@ -92,9 +98,9 @@ export const GalleryPage: React.FC = () => {
 
       {/* Trial Banners Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-4">
-        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
-          <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionBanners')}</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionBannersDesc')}</p>
+        <div className="border-b border-slate-200 dark:border-[#2F2F2F] pb-2">
+          <h2 className="font-bold text-lg tracking-tight text-slate-900 dark:text-[#ECECEC]">{t('gallery.sectionBanners')}</h2>
+          <p className="text-xs text-slate-500 dark:text-neutral-400">{t('gallery.sectionBannersDesc')}</p>
         </div>
         <div data-testid="section-trial-banners" className="space-y-3">
           <div data-testid="banner-free-preview">
@@ -111,12 +117,14 @@ export const GalleryPage: React.FC = () => {
 
       {/* Interactive Pharmacy Widgets Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
-        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="border-b border-slate-200 dark:border-[#2F2F2F] pb-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionWidgets')}</h2>
-            <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionWidgetsDesc')}</p>
+            <h2 className="font-bold text-lg tracking-tight text-slate-900 dark:text-[#ECECEC]">{t('gallery.sectionWidgets')}</h2>
+            <p className="text-xs text-slate-500 dark:text-neutral-400">{t('gallery.sectionWidgetsDesc')}</p>
           </div>
-          <StickerBadge variant="orange" size="sm">{t('gallery.dedicatedWidgets')}</StickerBadge>
+          <span className="px-2.5 py-1 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 rounded-lg text-xs font-semibold">
+            {t('gallery.dedicatedWidgets')}
+          </span>
         </div>
 
         {/* Widget Selector Pills */}
@@ -126,10 +134,10 @@ export const GalleryPage: React.FC = () => {
               key={w.id}
               type="button"
               onClick={() => setActiveWidgetTab(w.id)}
-              className={`px-3 py-1.5 text-xs font-mono font-bold uppercase border-2 border-black dark:border-slate-700 transition-all ${
+              className={`px-3 py-1.5 text-xs font-semibold rounded-xl border transition-all ${
                 activeWidgetTab === w.id
-                  ? 'bg-[#FFD93D] text-black shadow-[3px_3px_0px_#000000] scale-102'
-                  : 'bg-white dark:bg-[#1E293B] text-black dark:text-slate-100 hover:bg-gray-100 dark:hover:bg-slate-800'
+                  ? 'bg-[#10A37F] text-white border-[#10A37F] shadow-xs'
+                  : 'bg-white dark:bg-[#1E1E1E] text-slate-700 dark:text-neutral-300 border-slate-200 dark:border-[#2F2F2F] hover:bg-slate-50 dark:hover:bg-[#252525]'
               }`}
             >
               {w.name}
@@ -138,21 +146,21 @@ export const GalleryPage: React.FC = () => {
         </div>
 
         {/* Active Widget Display */}
-        <div data-testid="active-widget-container" className="p-2 sm:p-4 bg-gray-50 dark:bg-[#0B0F17] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
+        <div data-testid="active-widget-container" className="p-3 sm:p-6 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
           {widgets.find((w) => w.id === activeWidgetTab)?.component}
         </div>
       </section>
 
       {/* Core UI Components Showcase */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 space-y-8">
-        <div className="border-b-2 border-black/20 dark:border-slate-700 pb-2">
-          <h2 className="font-display font-black text-xl uppercase tracking-tight">{t('gallery.sectionPrimitives')}</h2>
-          <p className="text-xs text-gray-600 dark:text-gray-400">{t('gallery.sectionPrimitivesDesc')}</p>
+        <div className="border-b border-slate-200 dark:border-[#2F2F2F] pb-2">
+          <h2 className="font-bold text-lg tracking-tight text-slate-900 dark:text-[#ECECEC]">{t('gallery.sectionPrimitives')}</h2>
+          <p className="text-xs text-slate-500 dark:text-neutral-400">{t('gallery.sectionPrimitivesDesc')}</p>
         </div>
 
         {/* Buttons Grid with State Matrix */}
         <div data-testid="section-buttons" className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionButtons')}</h3>
+          <h3 className="font-semibold text-xs text-slate-700 dark:text-neutral-300">{t('gallery.sectionButtons')}</h3>
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="primary" data-testid="btn-default">{t('gallery.buttons.default')}</Button>
             <Button variant="secondary" data-testid="btn-secondary">{t('gallery.buttons.secondary')}</Button>
@@ -168,22 +176,22 @@ export const GalleryPage: React.FC = () => {
 
         {/* Cards Grid */}
         <div className="space-y-3">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionCards')}</h3>
+          <h3 className="font-semibold text-xs text-slate-700 dark:text-neutral-300">{t('gallery.sectionCards')}</h3>
           <div data-testid="section-cards" className="grid grid-cols-1 sm:grid-cols-4 gap-4">
             <Card variant="default" data-testid="card-default">
-              <h4 className="font-display font-bold text-sm uppercase">{t('gallery.cards.defaultTitle')}</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">{t('gallery.cards.defaultDesc')}</p>
+              <h4 className="font-bold text-sm text-slate-900 dark:text-[#ECECEC]">{t('gallery.cards.defaultTitle')}</h4>
+              <p className="text-xs text-slate-600 dark:text-neutral-400 mt-1">{t('gallery.cards.defaultDesc')}</p>
             </Card>
             <Card variant="highlight" data-testid="card-highlight">
-              <h4 className="font-display font-bold text-sm uppercase">{t('gallery.cards.highlightTitle')}</h4>
-              <p className="text-xs text-black dark:text-amber-200 mt-1">{t('gallery.cards.highlightDesc')}</p>
+              <h4 className="font-bold text-sm text-amber-800 dark:text-amber-200">{t('gallery.cards.highlightTitle')}</h4>
+              <p className="text-xs text-amber-700 dark:text-amber-300 mt-1">{t('gallery.cards.highlightDesc')}</p>
             </Card>
             <Card variant="misconception" data-testid="card-misconception">
-              <h4 className="font-display font-bold text-sm uppercase text-rose-800 dark:text-rose-200">{t('gallery.cards.misconceptionTitle')}</h4>
+              <h4 className="font-bold text-sm text-rose-800 dark:text-rose-200">{t('gallery.cards.misconceptionTitle')}</h4>
               <p className="text-xs text-rose-700 dark:text-rose-300 mt-1">{t('gallery.cards.misconceptionDesc')}</p>
             </Card>
             <Card variant="success" data-testid="card-success">
-              <h4 className="font-display font-bold text-sm uppercase text-emerald-800 dark:text-emerald-200">{t('gallery.cards.successTitle')}</h4>
+              <h4 className="font-bold text-sm text-emerald-800 dark:text-emerald-200">{t('gallery.cards.successTitle')}</h4>
               <p className="text-xs text-emerald-700 dark:text-emerald-300 mt-1">{t('gallery.cards.successDesc')}</p>
             </Card>
           </div>
@@ -191,8 +199,8 @@ export const GalleryPage: React.FC = () => {
 
         {/* StepDots & ProgressBars */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div data-testid="section-steppers" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionSteppers')}</h3>
+          <div data-testid="section-steppers" className="space-y-3 p-5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
+            <h3 className="font-semibold text-xs text-slate-700 dark:text-neutral-300">{t('gallery.sectionSteppers')}</h3>
             <div className="space-y-3">
               <StepDots
                 totalSteps={6}
@@ -201,8 +209,8 @@ export const GalleryPage: React.FC = () => {
                 onSelectStep={setStepDotIdx}
                 data-testid="stepdots-interactive"
               />
-              <div className="pt-2 border-t border-gray-200 dark:border-gray-700">
-                <span className="text-[11px] font-mono text-gray-700 dark:text-gray-300 block mb-1">
+              <div className="pt-2 border-t border-slate-100 dark:border-[#2F2F2F]">
+                <span className="text-[11px] font-mono text-slate-500 dark:text-neutral-400 block mb-1">
                   {locale === 'tr' ? 'Tamamlanmış Durum:' : locale === 'ar' ? 'حالة الاكتمال:' : 'Completed State:'}
                 </span>
                 <StepDots
@@ -213,13 +221,13 @@ export const GalleryPage: React.FC = () => {
                 />
               </div>
             </div>
-            <p className="text-[11px] font-mono text-gray-700 dark:text-gray-300">
+            <p className="text-[11px] text-slate-500 dark:text-neutral-400">
               {locale === 'tr' ? 'Aktif adımı değiştirmek için bir noktaya tıklayın.' : locale === 'ar' ? 'انقر على النقطة لتغيير الخطوة النشطة.' : 'Click a dot to change active step.'}
             </p>
           </div>
 
-          <div data-testid="section-progress" className="space-y-3 p-4 bg-white dark:bg-[#131B2A] border-2 border-black dark:border-slate-700">
-            <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">{t('gallery.sectionProgress')}</h3>
+          <div data-testid="section-progress" className="space-y-3 p-5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
+            <h3 className="font-semibold text-xs text-slate-700 dark:text-neutral-300">{t('gallery.sectionProgress')}</h3>
             <div className="space-y-3">
               <ProgressBar
                 value={68}
@@ -229,7 +237,7 @@ export const GalleryPage: React.FC = () => {
               />
               <ProgressBar
                 value={100}
-                label={locale === 'tr' ? 'Modül Ustalığı (Tamamlandı)' : locale === 'ar' ? 'إتقان الموديول (مكتمل)' : 'Module Mastery (Completed)'}
+                label={locale === 'tr' ? 'Modül Ustalığı (Tamamlandı)' : locale === 'ar' ? 'إتقan الموديول (مكتمل)' : 'Module Mastery (Completed)'}
                 variant="green"
                 data-testid="progress-completed"
               />
@@ -246,10 +254,10 @@ export const GalleryPage: React.FC = () => {
 
         {/* Form Controls: Input, Slider, Toggle across all states */}
         <div className="space-y-4">
-          <h3 className="font-mono font-bold text-xs uppercase text-gray-700 dark:text-gray-300">
+          <h3 className="font-semibold text-xs text-slate-700 dark:text-neutral-300">
             {t('gallery.sectionFormControls')}
           </h3>
-          <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-4 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark">
+          <div data-testid="section-form-controls" className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-5 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs">
             <div className="space-y-4">
               <Input
                 label={t('gallery.formControls.phLabel')}
@@ -333,9 +341,9 @@ export const GalleryPage: React.FC = () => {
 
           <div
             data-testid="state-loading"
-            className="space-y-4 p-6 bg-white dark:bg-[#131B2A] border-3 border-black dark:border-slate-700 shadow-neo dark:shadow-neo-dark flex flex-col justify-center"
+            className="space-y-4 p-6 bg-white dark:bg-[#1E1E1E] border border-slate-200 dark:border-[#2F2F2F] rounded-2xl shadow-xs flex flex-col justify-center"
           >
-            <span className="text-xs font-mono font-bold uppercase text-gray-700 dark:text-gray-300">
+            <span className="text-xs font-semibold uppercase text-slate-500 dark:text-neutral-400">
               {t('gallery.skeletonTitle')}
             </span>
             <SkeletonLoader height="h-8" />
