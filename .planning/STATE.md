@@ -1,19 +1,30 @@
 # Project State
 
-## Current Phase: 12-pillar-4-sanal-amfi-and-fakulte-masasi
-- **Status**: COMPLETED & VERIFIED (100% Pass Rate Across All Suites)
+## Current Phase: 13-pillar-5-metrobus-modu
+- **Status**: COMPLETED & VERIFIED (100% Pass Rate Across All 44 Test Suites)
 - **Scope**:
-  - Live university cohort co-presence lounge with Supabase Realtime architecture
-  - Strict $k$-anonymity ($k \ge 10$) and Central Laplace differential privacy ($\epsilon = 0.5$) under KVKK No. 6698
-  - Ephemeral 64-char rolling daily salted hash IDs (`HMAC-SHA256(user_id, daily_salt)`)
-  - 5 authentic faculty channels (Marmara, Hacettepe, İstanbul, Ankara, Ulusal Havuz)
-  - Active study tables grouped by curriculum modules with live peer counts and trap shortcuts
-  - 15-minute sliding window Misconception Surge radar alert (`MISCONCEPTION_SURGE`)
-  - Socratic trap challenge modal with predict-then-reveal hypothesis lock, 3-tier hints, and cohort comparison
-  - 42/42 test files passed, 216/216 tests passing, 0 TypeScript errors (`tsc --noEmit`)
-  - 6 Brave Browser full-resolution screenshots (47_amfi_overview to 52_amfi_challenge_verdict)
+  - Hands-free conversational audio micro-dosing tailored for crowded transit commutes (Metrobüs, Marmaray, M4 Metro, İETT, EGO).
+  - Auditory Modality Question Scope Constraint (Learning Science Invariant): Strictly conceptual pharmacology & non-spatial MedChem, strictly 0 3D stereochemistry rotation. Prompts $\le 25$ words, affirmations $\le 20$ words, verbal nudges $\le 22$ words.
+  - Web Audio API 4th-order cascaded Biquad High-Pass filter (180 Hz, $Q=0.707$, 24 dB/octave attenuation of diesel rumble), Low-Pass filter (3800 Hz), Peaking Formant Boost (1800 Hz, +4 dB).
+  - Dynamic noise-floor tracking VAD ($\alpha = 0.05$) preventing the infinite listening trap in high-noise bus cabins.
+  - Turkish semantic evaluator with correct dotted/dotless I normalization.
+  - Web Audio earcon synthesizer (440 Hz chime, 880 Hz blip, correct chime, nudge chime, error chime).
+  - Single-thumb commuter UI (`MetrobusAudioView`, `MetrobusAudioVisualizer`), central pulse orb, 0-penalty repeat loop ("Tekrar Dinle 🔄"), touch pills fallback, and offline tunnel cache badge.
+  - 44/44 test files passed, 240/240 tests passing (100% green).
+  - Monorepo typecheck: 0 TypeScript errors (`tsc --noEmit`).
+  - Production bundle dev-notes audit: 0 dev notes leaked across all 327 compiled files.
+  - 6 Brave Browser full-resolution screenshots (`53_metrobus_overview.png` to `58_metrobus_feedback_verdict.png`).
 
 ## Completed Phases
+### Phase 12: Pillar 4 — "Sanal Amfi & Fakülte Masası" [COMPLETED]
+- Live university cohort co-presence lounge with Supabase Realtime architecture
+- Strict $k$-anonymity ($k \ge 10$) and Central Laplace differential privacy ($\epsilon = 0.5$) under KVKK No. 6698
+- Ephemeral 64-char rolling daily salted hash IDs (`HMAC-SHA256(user_id, daily_salt)`)
+- 5 authentic faculty channels (Marmara, Hacettepe, İstanbul, Ankara, Ulusal Havuz)
+- 15-minute sliding window Misconception Surge radar alert (`MISCONCEPTION_SURGE`)
+- Socratic trap challenge modal with predict-then-reveal hypothesis lock, 3-tier hints, and cohort comparison
+- 42/42 test files passed, 216/216 tests passing, 0 TypeScript errors (`tsc --noEmit`)
+- 6 Brave Browser full-resolution screenshots (47_amfi_overview to 52_amfi_challenge_verdict)
 ### Phase 8: Pre-Flight Launch Audit, Edge-Case Resilience & Socratic Guardrails [COMPLETED]
 - Offline sentinel notifying students of local saving during wifi/mobile disconnects.
 - Polished Obsidian ErrorBoundary with 1-click workspace restart.

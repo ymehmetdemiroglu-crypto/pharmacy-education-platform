@@ -20,6 +20,7 @@ import {
   FireFilled,
   EditOutlined,
   TeamOutlined,
+  SoundOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
@@ -29,6 +30,7 @@ import { SlideHeatmapView } from '../triage/SlideHeatmapView';
 import { SlideReAnimatorView } from '../reanimator/SlideReAnimatorView';
 import { TactileMechanismView } from '../tactile/TactileMechanismView';
 import { FacultyAmfiLounge } from '../amfi/FacultyAmfiLounge';
+import { MetrobusAudioView } from '../metrobus/MetrobusAudioView';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 import { DailyChallengeModal } from '../study/DailyChallengeModal';
@@ -63,8 +65,8 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
   // 2-Pane desktop layout state: open by default per /grill-me agreement
   const [isTutorOpen, setIsTutorOpen] = useState(true);
 
-  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), Tactile (Çizerek Öğren), Reanimator (Slayt Canlandır), Triage (Vize Isı Haritası), or Amfi (Sanal Amfi)
-  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile' | 'amfi'>('canvas');
+  // Active view: Canvas, Dashboard, Tactile, Reanimator, Triage, Amfi, or Metrobus
+  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile' | 'amfi' | 'metrobus'>('canvas');
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
@@ -354,6 +356,15 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 },
                 {
                   label: (
+                    <span className="flex items-center gap-1.5 text-amber-500 font-semibold" title="Metrobüs Sesli Mod">
+                      <SoundOutlined className="text-amber-500" />
+                      <span className="hidden sm:inline">Metrobüs Modu 🚌</span>
+                    </span>
+                  ),
+                  value: 'metrobus',
+                },
+                {
+                  label: (
                     <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold" title="Çizerek Öğren">
                       <EditOutlined className="text-emerald-600 dark:text-emerald-400" />
                       <span className="hidden sm:inline">Çizerek Öğren ✍️</span>
@@ -519,7 +530,11 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
         {/* 2-Pane Workspace, Dashboard, or Vize Triage */}
         <div className="flex-1 flex overflow-hidden relative">
           {/* Main Content Area */}
-          {activeView === 'amfi' ? (
+          {activeView === 'metrobus' ? (
+            <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
+              <MetrobusAudioView onBackToDashboard={() => setActiveView('dashboard')} />
+            </main>
+          ) : activeView === 'amfi' ? (
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <FacultyAmfiLounge
                 initialCourseId={isMedChem ? 'medchem' : 'pharmacology'}
@@ -556,6 +571,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 onOpenReanimator={() => setActiveView('reanimator')}
                 onOpenTactile={() => setActiveView('tactile')}
                 onOpenAmfi={() => setActiveView('amfi')}
+                onOpenMetrobus={() => setActiveView('metrobus')}
               />
             </main>
           ) : (

@@ -13,6 +13,7 @@ import {
   FolderOpenOutlined,
   EditOutlined,
   TeamOutlined,
+  SoundOutlined,
 } from '@ant-design/icons';
 import { StudyPulseLounge } from '../study/StudyPulseLounge';
 import { PastExamPracticeModal } from '../exam/PastExamPracticeModal';
@@ -28,6 +29,7 @@ interface MinimalCourseDashboardProps {
   onOpenReanimator?: () => void;
   onOpenTactile?: () => void;
   onOpenAmfi?: () => void;
+  onOpenMetrobus?: () => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
@@ -39,6 +41,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   onOpenReanimator,
   onOpenTactile,
   onOpenAmfi,
+  onOpenMetrobus,
 }) => {
   const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
@@ -82,6 +85,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-red-50/80 dark:bg-red-950/30 border border-red-200 dark:border-red-900/60 text-red-700 dark:text-red-400 hover:border-red-500 shadow-xs flex items-center gap-1.5"
               >
                 Vize Kampı (Top %20 Slayt) 🔥
+              </Button>
+              <Button
+                data-testid="dashboard-metrobus-btn"
+                onClick={() => onOpenMetrobus && onOpenMetrobus()}
+                icon={<SoundOutlined className="text-amber-500" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-amber-50/90 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 text-amber-800 dark:text-amber-300 hover:border-amber-500 shadow-xs flex items-center gap-1.5"
+              >
+                Metrobüs Sesli Mod 🚌
               </Button>
               <Button
                 data-testid="dashboard-amfi-btn"

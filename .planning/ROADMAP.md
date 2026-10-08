@@ -43,6 +43,10 @@
 ### Phase 12: Pillar 4 — "Sanal Amfi & Fakülte Masası" (Cohort Co-Presence & Misconception Broadcast) [COMPLETED]
 - **Goal**: Implement privacy-preserving ambient study rooms on Supabase Realtime enforcing $k$-anonymity ($k \ge 10$) and Central Laplace differential privacy ($\epsilon = 0.5$) under KVKK No. 6698, faculty channels (Marmara, Hacettepe, İstanbul, Ankara, Ulusal Amfi), ephemeral daily-salted hash IDs, active study tables, synchronized cohort Pomodoro blocks, and 15-minute sliding window Misconception Surge radar alerts (`MISCONCEPTION_SURGE`) with Socratic trap challenge modal.
 
+### Phase 13: Pillar 5 — "Metrobüs Modu" (Audio Socratic Micro-Dosing & Web Audio Transit Filtering) [COMPLETED]
+- **Goal**: Implement hands-free conversational audio micro-dosing tailored for crowded public transit commutes (Metrobüs, Marmaray, M4 Metro, İETT, EGO). Enforce Auditory Question Scope Constraint (strictly conceptual pharmacology & non-spatial MedChem, zero 3D stereochemistry rotation) adhering to $\le 25$ words prompt, $\le 20$ words affirmation, and $\le 22$ words verbal nudge limits. Build Web Audio API 4th-order cascaded Biquad High-Pass filter (180 Hz, $Q=0.707$, 24 dB/octave attenuation of diesel rumble), Low-Pass filter (3800 Hz), Formant Boost (1800 Hz, +4 dB), dynamic noise-floor tracking VAD ($\alpha = 0.05$), Turkish fuzzy intent evaluator, Web Audio earcon synthesizer, single-thumb commuter UI (`MetrobusAudioView`, `MetrobusAudioVisualizer`), and shell navigation integration.
+
+
 
 
 

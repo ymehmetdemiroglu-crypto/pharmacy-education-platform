@@ -995,6 +995,75 @@ Testing was performed in the user's authentic local **Brave Browser installation
   - `51_amfi_challenge_predict.png`: Challenge modal with predict-then-reveal hypothesis lock, prompt, and 3-tier hint ladder.
   - `52_amfi_challenge_verdict.png`: Verdict screen with diagnostic feedback, authentic slide citation, and cohort breakdown (`Dönem Seçimi: %32`).
 
+---
+
+## 17. Phase 13: Pillar 5 — "Metrobüs Modu" (Audio Socratic Micro-Dosing & Web Audio API Transit Filtering)
+
+**Status**: **COMPLETED & VERIFIED (100% Pass Rate Across All 44 Test Suites)**  
+**Date**: October 2026  
+**Artifacts Generated & Updated**:
+- `apps/web/src/types/metrobusAudio.types.ts`: Zod schemas & TypeScript definitions for `AudioSessionConfig`, `SocraticAudioPrompt`, `VadEventPayload`, `MetrobusTurnLog`, `AudioDrillStatus`, `TransitMode`, `EarconType`, and `FilterFrequencyResponsePoint`.
+- `apps/web/src/data/metrobusAudio.data.ts`: 6 curated, authentic Turkish Socratic audio prompts adhering strictly to $\le 25$ words prompt, $\le 20$ words affirmation, and $\le 22$ words verbal nudge limits. Co-located with authentic trap codes (`TRAP-08-AChE-AGING`, `TRAP-03-ESTER-AMIDE`, `TRAP-07-SCHILD-SLOPE`, `TRAP-05-BIOISOSTERE-LOGP`, `TRAP-02-POTENCY-EFFICACY`, `TRAP-09-PRODRUG-CES1`).
+- `apps/web/src/services/metrobusAudioEngine.ts` & `metrobusAudioEngine.test.ts`: Digital Signal Processing (DSP) and audio engine implementing:
+  - 4th-order cascaded Butterworth High-Pass Filter attenuation math ($|H(f)|^2 = [((f/f_c)^4)/(1+(f/f_c)^4)]^2$, providing $24.6\text{ dB}$ attenuation at 90 Hz).
+  - 2nd-order Low-Pass Filter ($3800\text{ Hz}$) and Peaking Formant Boost ($1800\text{ Hz}, +4\text{ dB}$).
+  - Full 32-point acoustic filter profile curve generator.
+  - Dynamic Noise-Floor Voice Activity Detector (`DynamicNoiseFloorVAD`) with exponential smoothing ($\alpha = 0.05$) and dynamic SNR trigger ($\text{SNR} \ge 8\text{ dB}$ / $\text{ratio} \ge 2.5$).
+  - Turkish semantic evaluator with correct dotted/dotless I normalization (`'İ'` $\to$ `'i'`, `'I'` $\to$ `'ı'`).
+  - Web Audio API synthesizer for 6 earcon chimes (18/18 tests green).
+- `apps/web/src/components/metrobus/MetrobusAudioVisualizer.tsx`: High-contrast Neo-Brutalist real-time waveform spectrum bars and toggleable DSP EQ frequency response SVG displaying diesel noise attenuation vs filtered passband.
+- `apps/web/src/components/metrobus/MetrobusAudioView.tsx` & `MetrobusAudioView.test.tsx`: Single-thumb commuter UI featuring:
+  - Route switcher (Metrobüs, Marmaray, M4 Metro, İETT Otobüs, Sessiz Mod).
+  - Offline tunnel cache status badge ("Tünel Çevrimdışı Hazır ⚡").
+  - Central 110px Glowing Voice Orb with state-driven pulse rings (IDLE, PROMPT_PLAYING, LISTENING, EVALUATING, AFFIRMATION, VERBAL_NUDGE).
+  - 0-penalty "Tekrar Dinle 🔄" repeat loop.
+  - 1-tap Tier 1 verbal nudge unlock drawer.
+  - Commuter quick-tap fallback response chips for quiet subway tunnels.
+  - Feedback verdict modal with detailed biochemical explanation and "Sonraki Soru ⚡" action (6/6 tests green).
+- `apps/web/src/components/layout/PharmLearnShell.tsx`: Added `'metrobus'` tab to `Segmented` options (`Metrobüs Modu 🚌`) and mounted `MetrobusAudioView` in main content area.
+- `apps/web/src/components/dashboard/MinimalCourseDashboard.tsx`: Added `"Metrobüs Sesli Mod 🚌"` quick CTA button in the dashboard banner.
+- `scripts/capture-metrobus-visual.mjs`: Automated Playwright visual verification script in Brave Browser.
+
+---
+
+### 17.1 Pedagogical & Architectural Invariants Locked
+
+1. **Auditory Modality Question Scope Constraint (Learning Science Invariant)**:
+   - Guided by Baddeley's working memory model: **complex 3D spatial stereochemistry** ($R/S$ priority inversions, dihedral angles, multi-substituent SAR matrices) is **strictly excluded** from audio mode.
+   - Question scope is **strictly confined** to verbal conceptual pharmacology (receptor dynamics, ADME, Schild regressions) and non-spatial medicinal chemistry (ester vs amide hydrolysis kinetics, AChE organophosphate aging, prodrug bioactivation).
+   - Conversational word limits: Turkish audio prompts are strictly $\le 25$ words (averaging 12-14 words), affirmations $\le 20$ words (averaging 9-11 words), and verbal nudges $\le 22$ words (averaging 10-13 words).
+
+2. **Web Audio API Transit Acoustic Filter Pipeline (Cascaded 4th-Order Biquad)**:
+   - High-Pass Filter: Two cascaded 2nd-order Biquad sections at $180\text{ Hz}$ ($Q = 0.707$) providing $24\text{ dB/octave}$ attenuation, eliminating Istanbul Metrobüs diesel engine rumble ($< 150\text{ Hz}$) without degrading fundamental speech frequencies ($100\text{--}250\text{ Hz}$).
+   - Low-Pass Filter: Attenuates pneumatic brake releases and high-frequency friction screech ($> 3800\text{ Hz}$).
+   - Peaking Formant Boost: Boosts $1800\text{ Hz}$ by $+4\text{ dB}$ to enhance Turkish consonant plosives and sibilants ($k, t, p, s, ş, ç$) carrying drug name identification.
+
+3. **Dynamic Noise-Floor Voice Activity Detector (VAD)**:
+   $$\text{NoiseFloor}(t) = (1 - \alpha) \cdot \text{NoiseFloor}(t-1) + \alpha \cdot \text{RMS}_{\text{current}}, \quad \alpha = 0.05$$
+   - Prevents the "infinite listening trap" in high-noise bus cabins where static thresholds deadlock.
+   - Speech detection requires $\text{RMS} > \text{NoiseFloor} \times 2.5$ ($+8\text{ dB SNR}$).
+
+4. **Commuter Thumb-Zone Ergonomics & Dual-Modality Redundancy**:
+   - Designed for single-hand use while holding an overhead handrail in crowded transit.
+   - Includes 0-penalty repeat action, verbal nudge drawer, and 3 quick-tap response chips for quiet underground subway sections where talking aloud is socially uncomfortable.
+
+---
+
+### 17.2 Verification Matrix & Brave Browser Visual Audit
+
+- **TypeScript Strict Typecheck**: Passed with **0 errors** across all 4 monorepo packages (`tsc --noEmit` exited code 0).
+- **Production Bundle Dev-Notes Audit**: Passed with **0 dev notes leaked** across 327 compiled bundle files (`scripts/test-prod-bundle.mjs`).
+- **Unit Test Suite**: Passed **100% green** (44/44 test files, 240/240 tests passing in `apps/web`).
+- **Playwright Visual Verification (Brave Browser)**:
+  Captured and audited 6 high-fidelity screenshots in `brain/screenshots/`:
+  - `53_metrobus_overview.png`: Full commuter interface with Metrobüs mode, route switcher, offline tunnel cache badge, and active diesel filter.
+  - `54_metrobus_acoustic_filter.png`: Acoustic transit filter details with cascaded Biquad EQ curve (raw diesel noise vs filtered passband).
+  - `55_metrobus_speaking_prompt.png`: Question prompt playback with animated visualizer and speaking orb.
+  - `56_metrobus_hint_ladder.png`: Verbal nudge drawer unlocked (`1. Kademe Sözlü İpucu`).
+  - `57_metrobus_voice_listening.png`: Commuter listening state with glowing emerald mic orb.
+  - `58_metrobus_feedback_verdict.png`: Affirmation verdict screen with score update (+10 XP) and detailed biochemical explanation.
+
+
 
 
 
