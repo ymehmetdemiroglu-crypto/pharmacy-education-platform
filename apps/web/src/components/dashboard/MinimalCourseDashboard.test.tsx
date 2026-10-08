@@ -77,6 +77,16 @@ describe('MinimalCourseDashboard', () => {
 
     expect(handleTactile).toHaveBeenCalled();
   });
+
+  it('triggers onOpenAmfi when Sanal Amfi button is clicked', () => {
+    const handleAmfi = vi.fn();
+    render(<MinimalCourseDashboard onSelectLecture={vi.fn()} onOpenAmfi={handleAmfi} />);
+
+    const amfiBtn = screen.getByTestId('dashboard-amfi-btn');
+    fireEvent.click(amfiBtn);
+
+    expect(handleAmfi).toHaveBeenCalled();
+  });
 });
 
 

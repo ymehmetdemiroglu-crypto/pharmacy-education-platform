@@ -1,13 +1,17 @@
 # Project State
 
-## Current Phase: 08-preflight-resilience-and-audit
+## Current Phase: 12-pillar-4-sanal-amfi-and-fakulte-masasi
 - **Status**: COMPLETED & VERIFIED (100% Pass Rate Across All Suites)
 - **Scope**:
-  - Live network connectivity sentinel (`ConnectivitySentinel.tsx`) with non-intrusive offline/online pill
-  - Obsidian-styled `ErrorBoundary.tsx` with WebGL context recovery and safe cache reset
-  - Comprehensive pre-flight launch audit document (`docs/PREFLIGHT_LAUNCH_AUDIT.md`)
-  - 18/18 web test files passed (76/76 tests passing), TypeScript 0 errors (`tsc --noEmit`)
-  - 22 Brave Browser full-resolution screenshots in `pharmlearn_showcase.html`
+  - Live university cohort co-presence lounge with Supabase Realtime architecture
+  - Strict $k$-anonymity ($k \ge 10$) and Central Laplace differential privacy ($\epsilon = 0.5$) under KVKK No. 6698
+  - Ephemeral 64-char rolling daily salted hash IDs (`HMAC-SHA256(user_id, daily_salt)`)
+  - 5 authentic faculty channels (Marmara, Hacettepe, İstanbul, Ankara, Ulusal Havuz)
+  - Active study tables grouped by curriculum modules with live peer counts and trap shortcuts
+  - 15-minute sliding window Misconception Surge radar alert (`MISCONCEPTION_SURGE`)
+  - Socratic trap challenge modal with predict-then-reveal hypothesis lock, 3-tier hints, and cohort comparison
+  - 42/42 test files passed, 216/216 tests passing, 0 TypeScript errors (`tsc --noEmit`)
+  - 6 Brave Browser full-resolution screenshots (47_amfi_overview to 52_amfi_challenge_verdict)
 
 ## Completed Phases
 ### Phase 8: Pre-Flight Launch Audit, Edge-Case Resilience & Socratic Guardrails [COMPLETED]

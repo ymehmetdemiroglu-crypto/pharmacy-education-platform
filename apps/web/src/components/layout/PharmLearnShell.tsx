@@ -19,6 +19,7 @@ import {
   ThunderboltOutlined,
   FireFilled,
   EditOutlined,
+  TeamOutlined,
 } from '@ant-design/icons';
 import { TutorChatPane } from './TutorChatPane';
 import { ArtifactCanvas } from './ArtifactCanvas';
@@ -27,6 +28,7 @@ import { MinimalCourseDashboard } from '../dashboard/MinimalCourseDashboard';
 import { SlideHeatmapView } from '../triage/SlideHeatmapView';
 import { SlideReAnimatorView } from '../reanimator/SlideReAnimatorView';
 import { TactileMechanismView } from '../tactile/TactileMechanismView';
+import { FacultyAmfiLounge } from '../amfi/FacultyAmfiLounge';
 import { CompactPulseIndicator } from '../study/CompactPulseIndicator';
 import { StudentDocumentVaultModal } from '../vault/StudentDocumentVaultModal';
 import { DailyChallengeModal } from '../study/DailyChallengeModal';
@@ -61,8 +63,8 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
   // 2-Pane desktop layout state: open by default per /grill-me agreement
   const [isTutorOpen, setIsTutorOpen] = useState(true);
 
-  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), Tactile (Çizerek Öğren), Reanimator (Slayt Canlandır), or Triage (Vize Isı Haritası)
-  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile'>('canvas');
+  // Active view: Canvas (Ders Tuvali), Dashboard (Ders Panosu), Tactile (Çizerek Öğren), Reanimator (Slayt Canlandır), Triage (Vize Isı Haritası), or Amfi (Sanal Amfi)
+  const [activeView, setActiveView] = useState<'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile' | 'amfi'>('canvas');
 
   // Mobile drawer state
   const [isMobileTutorOpen, setIsMobileTutorOpen] = useState(false);
@@ -318,10 +320,10 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
 
             <div className="h-4 w-px bg-slate-200 dark:bg-[#2F2F2F] hidden sm:block" />
 
-            {/* View Switcher: Tuval vs Pano vs Slayt Canlandır vs Vize Triage */}
+            {/* View Switcher: Tuval vs Pano vs Çizerek Öğren vs Slayt Canlandır vs Vize Triage vs Sanal Amfi */}
             <Segmented
               value={activeView}
-              onChange={(val) => setActiveView(val as 'canvas' | 'dashboard' | 'triage' | 'reanimator')}
+              onChange={(val) => setActiveView(val as 'canvas' | 'dashboard' | 'triage' | 'reanimator' | 'tactile' | 'amfi')}
               options={[
                 {
                   label: (
@@ -343,8 +345,17 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 },
                 {
                   label: (
-                    <span className="flex items-center gap-1.5 text-emerald-500 font-semibold" title="Çizerek Öğren">
-                      <EditOutlined className="text-emerald-500" />
+                    <span className="flex items-center gap-1.5 text-emerald-500 font-semibold" title="Sanal Amfi & Fakülte Masası">
+                      <TeamOutlined className="text-emerald-500" />
+                      <span className="hidden sm:inline">Sanal Amfi 🏛️</span>
+                    </span>
+                  ),
+                  value: 'amfi',
+                },
+                {
+                  label: (
+                    <span className="flex items-center gap-1.5 text-emerald-600 dark:text-emerald-400 font-semibold" title="Çizerek Öğren">
+                      <EditOutlined className="text-emerald-600 dark:text-emerald-400" />
                       <span className="hidden sm:inline">Çizerek Öğren ✍️</span>
                     </span>
                   ),
@@ -438,6 +449,21 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
             </Tooltip>
 
 
+            {/* Sanal Amfi Live Presence Quick Trigger */}
+            <Tooltip title="Sanal Amfi & Fakülte Masasını Aç">
+              <button
+                type="button"
+                onClick={() => setActiveView('amfi')}
+                className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-bold border border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-500/20 transition cursor-pointer"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
+                <span>42 Amfide</span>
+              </button>
+            </Tooltip>
+
             {/* Theme Toggle */}
             <Tooltip title={isDark ? 'Açık Temaya Geç' : 'Koyu Temaya Geç'}>
               <Button
@@ -493,7 +519,17 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
         {/* 2-Pane Workspace, Dashboard, or Vize Triage */}
         <div className="flex-1 flex overflow-hidden relative">
           {/* Main Content Area */}
-          {activeView === 'tactile' ? (
+          {activeView === 'amfi' ? (
+            <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
+              <FacultyAmfiLounge
+                initialCourseId={isMedChem ? 'medchem' : 'pharmacology'}
+                onNavigateToModule={(_moduleId, slideNumber) => {
+                  setActiveView('canvas');
+                  if (slideNumber) handleNavigateToSlide(slideNumber);
+                }}
+              />
+            </main>
+          ) : activeView === 'tactile' ? (
             <main className="flex-1 h-full overflow-y-auto bg-slate-50 dark:bg-[#212121]">
               <TactileMechanismView />
             </main>
@@ -519,6 +555,7 @@ export const PharmLearnShell: React.FC<PharmLearnShellProps> = ({ onOpenAuthModa
                 onOpenTriage={() => setActiveView('triage')}
                 onOpenReanimator={() => setActiveView('reanimator')}
                 onOpenTactile={() => setActiveView('tactile')}
+                onOpenAmfi={() => setActiveView('amfi')}
               />
             </main>
           ) : (

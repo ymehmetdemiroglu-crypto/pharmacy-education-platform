@@ -12,6 +12,7 @@ import {
   SafetyCertificateOutlined,
   FolderOpenOutlined,
   EditOutlined,
+  TeamOutlined,
 } from '@ant-design/icons';
 import { StudyPulseLounge } from '../study/StudyPulseLounge';
 import { PastExamPracticeModal } from '../exam/PastExamPracticeModal';
@@ -26,6 +27,7 @@ interface MinimalCourseDashboardProps {
   onOpenTriage?: () => void;
   onOpenReanimator?: () => void;
   onOpenTactile?: () => void;
+  onOpenAmfi?: () => void;
 }
 
 export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
@@ -36,6 +38,7 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
   onOpenTriage,
   onOpenReanimator,
   onOpenTactile,
+  onOpenAmfi,
 }) => {
   const [isDailyChallengeOpen, setIsDailyChallengeOpen] = useState(false);
   const [isExamModalOpen, setIsExamModalOpen] = useState(false);
@@ -79,6 +82,14 @@ export const MinimalCourseDashboard: React.FC<MinimalCourseDashboardProps> = ({
                 className="rounded-xl text-xs font-semibold h-9 px-4 bg-red-50/80 dark:bg-red-950/30 border border-red-200 dark:border-red-900/60 text-red-700 dark:text-red-400 hover:border-red-500 shadow-xs flex items-center gap-1.5"
               >
                 Vize Kampı (Top %20 Slayt) 🔥
+              </Button>
+              <Button
+                data-testid="dashboard-amfi-btn"
+                onClick={() => onOpenAmfi && onOpenAmfi()}
+                icon={<TeamOutlined className="text-emerald-500" />}
+                className="rounded-xl text-xs font-semibold h-9 px-4 bg-emerald-50/90 dark:bg-emerald-950/40 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 hover:border-emerald-500 shadow-xs flex items-center gap-1.5"
+              >
+                Sanal Amfi 🏛️
               </Button>
               <Button
                 data-testid="dashboard-reanimator-btn"

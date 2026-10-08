@@ -942,17 +942,59 @@ Testing was performed in the user's authentic local **Brave Browser installation
 
 ### 15.2 Verification Matrix & Brave Browser Visual Audit
 
-- **TypeScript Strict Typecheck**: Passed with **0 errors** across all packages (`tsc --noEmit` exited code 0).
-- **Production Bundle Dev-Notes Audit**: Passed with **0 dev notes leaked** across 327 compiled bundle files.
-- **Unit Test Suite**: Passed **100% green** (38/38 test files, 184/184 tests in `apps/web`; monorepo all tests green).
+---
+
+## 16. Phase 12: Pillar 4 — "Sanal Amfi & Fakülte Masası" (Cohort Co-Presence & Misconception Broadcast)
+
+**Status**: **COMPLETED & VERIFIED (100% PASS RATE)**  
+**Date**: October 2026  
+**Artifacts Generated & Updated**:
+- `apps/web/src/types/facultyAmfi.types.ts`: Zod schemas & TypeScript definitions for `AmfiPresencePayload`, `MisconceptionSurgeBroadcast`, `CohortErrorTelemetryReport`, `CohortHeatmapStats`, `FacultyRoomConfig`, and `MisconceptionChallenge`.
+- `apps/web/src/services/facultyAmfiService.ts` & `facultyAmfiService.test.ts`: Mathematical differential privacy engine implementing pure synchronous SHA-256 for rolling daily salted ephemeral IDs (`HMAC-SHA256(user_id, daily_salt)`), Central Laplace differential privacy noise ($b = 2.0, \epsilon = 0.5$), $k$-anonymity enforcement ($k \ge 10$), sliding-window misconception surge detection ($\ge 50\%$ failure rate over 15 min), and synchronized wall-clock cohort Pomodoro timer (17/17 tests green).
+- `apps/web/src/data/facultyAmfi.data.ts`: Curated authentic Turkish pharmacy faculty rooms (Marmara, Hacettepe, İstanbul, Ankara, Ulusal Amfi) and 4 canonical exam trap challenges (`TRAP-03-ESTER-AMIDE`, `TRAP-07-SCHILD-SLOPE`, `TRAP-08-AChE-AGING`, `TRAP-01-IONIZATION`) with authentic slide citations from `/materials/`.
+- `apps/web/src/components/amfi/MisconceptionSurgeBanner.tsx` & `MisconceptionSurgeBanner.test.tsx`: Ambient squircle alert banner with animated radar flame, failure percentage, $k \ge 10$ verification badge, and 1-click "Tuzak Mücadelesine Katıl ⚡" action (3/3 tests green).
+- `apps/web/src/components/amfi/MisconceptionChallengeModal.tsx` & `MisconceptionChallengeModal.test.tsx`: Socratic diagnostic challenge modal with predict-then-reveal hypothesis lock, 3-tier scaffolded hint ladder, diagnostic feedback card, and cohort comparison metrics (5/5 tests green).
+- `apps/web/src/components/amfi/FacultyAmfiLounge.tsx` & `FacultyAmfiLounge.test.tsx`: Full Obsidian & Emerald Neo-Brutalist co-presence workspace with faculty switcher, live pulse radar (`🟢 42 Dönem Arkadaşın Şu Anda Amfide`), active study tables, synchronized Pomodoro timer, mode switcher, and KVKK No. 6698 privacy card (6/6 tests green).
+- `apps/web/src/components/layout/PharmLearnShell.tsx`: Integrated `'amfi'` navigation tab (`Sanal Amfi 🏛️`), top bar quick presence button (`42 Amfide`), and routed lounge workspace.
+- `apps/web/src/components/dashboard/MinimalCourseDashboard.tsx` & `MinimalCourseDashboard.test.tsx`: Added `"Sanal Amfi 🏛️"` quick-action CTA button (7/7 tests green).
+- `scripts/capture-amfi-visual.mjs`: Automated Playwright visual verification script in Brave Browser.
+
+---
+
+### 16.1 Technical Architecture & Privacy Invariants
+
+1. **KVKK No. 6698 Compliant Rolling Salted Ephemeral IDs**:
+   - Students' real names, emails, and persistent user IDs are **strictly omitted** from presence channels.
+   - An ephemeral 64-char hash is computed synchronously per day:
+     $$\text{student\_ephemeral\_id} = \text{SHA256}(\text{user\_id} : \text{daily\_salt} : \text{"pharmlearn\_daily\_privacy"})$$
+   - Prevents cross-day correlation, behavioral profiling, or re-identification.
+
+2. **Strict $k$-Anonymity Gate ($k \ge 10$)**:
+   - Individual table activity and misconception statistics are only displayed when at least 10 active peers are present.
+   - For small faculty channels ($n < 10$, e.g. Ankara Eczacılık), the interface displays a clear alert badge and merges telemetry with the National Pharmacy Pool (*"Ulusal Eczacılık Havuz Ortalaması"*), eliminating Sybil or algebraic deduction attacks.
+
+3. **Central Laplace Differential Privacy ($\epsilon = 0.5$)**:
+   - Error counts and headcounts receive calibrated Laplace noise ($b = \Delta f / \epsilon = 1 / 0.5 = 2.0$), guaranteeing formal $(\epsilon, 0)$-differential privacy for all cohort metrics.
+
+4. **15-Minute Sliding Window Surge Radar (`MISCONCEPTION_SURGE`)**:
+   - Monitored continuously: when $\ge 50\%$ of active classmates fail a canonical faculty exam trap across $k \ge 10$ students, an ambient squircle pulse alert is broadcast across the channel, inviting students to solve the trap together in 2 minutes.
+
+---
+
+### 16.2 Verification Matrix & Brave Browser Visual Audit
+
+- **TypeScript Strict Typecheck**: Passed with **0 errors** across all 4 monorepo packages (`tsc --noEmit` exited code 0).
+- **Production Bundle Dev-Notes Audit**: Passed with **0 dev notes leaked** across 327 compiled bundle files (`scripts/test-prod-bundle.mjs`).
+- **Unit Test Suite**: Passed **100% green** (42/42 test files, 216/216 tests passing in `apps/web`).
 - **Playwright Visual Verification (Brave Browser)**:
   Captured and audited 6 high-fidelity screenshots in `brain/screenshots/`:
-  - `41_tactile_mechanism_overview.png`: Full workspace layout and animated demo electron-flow arrows.
-  - `42_tactile_worked_example_fading.png`: Stage 2 (Yarı İpucu) with pre-drawn primary scaffold arrow.
-  - `43_tactile_arrow_pushing_canvas.png`: Stage 3 (Hedefli) with pulsing amber target circles.
-  - `44_tactile_texas_carbon_feedback.png`: Diagnostic Texas Karbon oktet hatası error feedback and unlocked Tier 1 hint.
-  - `45_tactile_sar_snap_palette.png`: SAR Snapping mode with 2D Procaine/Lidocaine scaffold.
-  - `46_tactile_sar_gauges_dynamic.png`: Live $\Delta\log P$, $\Delta pK_a$, and metabolic half-life gauges upon applying `-NO₂`.
+  - `47_amfi_overview.png`: Full lounge overview with Marmara Eczacılık, live pulse radar, active study tables, and synchronized Pomodoro.
+  - `48_amfi_faculty_switch.png`: Switching to Hacettepe Eczacılık with updated active tables and surge alert.
+  - `49_amfi_k_anonymity_fallback.png`: $k < 10$ anonymity fallback notice and national pool fallback at Ankara Eczacılık.
+  - `50_amfi_surge_banner.png`: Ambient squircle Misconception Surge Alert banner (`🔥 Amfi Uyarısı`).
+  - `51_amfi_challenge_predict.png`: Challenge modal with predict-then-reveal hypothesis lock, prompt, and 3-tier hint ladder.
+  - `52_amfi_challenge_verdict.png`: Verdict screen with diagnostic feedback, authentic slide citation, and cohort breakdown (`Dönem Seçimi: %32`).
+
 
 
 
